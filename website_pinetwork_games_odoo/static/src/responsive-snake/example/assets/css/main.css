@@ -1,0 +1,157 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\000031}}
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #eee;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\000039}}
+body .absolute {
+  z-index: 0;
+  position: absolute;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000314}}
+body .intro {
+  position: absolute;
+  z-index: 1;
+  margin: auto;
+  left: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000320}}
+body .intro h2 {
+  color: white;
+  font-weight: 100;
+  margin: 10px auto;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000327}}
+body .intro p {
+  padding-top: 0;
+  margin-top: 0;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000334}}
+body .container {
+  background: url("../img/sand.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000347}}
+body #snake-canvas {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000351}}
+body a {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000355}}
+body .hidden {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000360}}
+body #scoreboard {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000368}}
+body #scoreboard div {
+  opacity: .6;
+  float: right;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000375}}
+body #scoreboard span {
+  font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/animations\.scss}line{font-family:\000031}}
+.animate {
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+    -webkit-animation-timing-function: ease-out;
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -webkit-animation-timing-function: ease-in;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+    animation-timing-function: ease-out;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    animation-timing-function: ease-in;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/animations\.scss}line{font-family:\0000336}}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    color: none;
+  }
+
+  50% {
+    color: #ff0000;
+  }
+
+  100% {
+    color: none;
+  }
+}
+
+@keyframes flash {
+  0% {
+    color: none;
+  }
+
+  50% {
+    color: #ff0000;
+  }
+
+  100% {
+    color: none;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/animations\.scss}line{font-family:\0000367}}
+.flash {
+  -webkit-animation: flash 1s ease-out;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation: flash 1s ease-out;
+  -moz-animation-iteration-count: 1;
+}

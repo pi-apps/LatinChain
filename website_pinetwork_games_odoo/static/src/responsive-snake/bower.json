@@ -1,0 +1,28 @@
+{
+  "name": "responsive-snake",
+  "version": "0.1.0",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "zepto": "~1.1.x"
+  },
+  "homepage": "https://github.com/iamchrismiller/responsive-snake",
+  "authors": [
+    "Chris Miller <cmille142@gmail.com>"
+  ],
+  "description": "HTML5 Responsive Snake Game",
+  "main": "build/snake.build.min.js",
+  "keywords": [
+    "snake",
+    "html5",
+    "game"
+  ],
+  "license": "MIT"
+}

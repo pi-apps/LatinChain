@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pi_admin_group_pi_admin_1,pi.admin.group.pi.admin.1,website_pinetwork_odoo.model_admin_apps,website_pinetwork_odoo.group_pi_admin,1,1,1,1
+access_pi_admin_group_pi_admin_2,pi.admin.group.pi.admin.2,website_pinetwork_odoo.model_pi_transactions,website_pinetwork_odoo.group_pi_admin,1,1,1,1
+access_pi_admin_group_pi_admin_3,pi.admin.group.pi.admin.3,website_pinetwork_odoo.model_pi_users,website_pinetwork_odoo.group_pi_admin,1,1,1,1
+access_pi_admin_group_system_1,pi.admin.group.system.1,website_pinetwork_odoo.model_admin_apps,base.group_system,1,1,1,1
+access_pi_admin_group_system_2,pi.admin.group.system.2,website_pinetwork_odoo.model_pi_transactions,base.group_system,1,1,1,1
+access_pi_admin_group_system_3,pi.admin.group.system.3,website_pinetwork_odoo.model_pi_users,base.group_system,1,1,1,1
+access_group_pi_external_user_1,group.pi.external.user.1,website_pinetwork_odoo.model_pi_users,website_pinetwork_odoo.group_pi_external_user,1,0,0,0
+access_group_pi_internal_company_user_1,group.pi.internal.company.user.1,website_pinetwork_odoo.model_pi_users,website_pinetwork_odoo.group_pi_internal_company_user,1,0,0,0
+access_group_pi_internal_company_user_2,group.pi.internal.company.user.2,website_pinetwork_odoo.model_pi_transactions,website_pinetwork_odoo.group_pi_internal_company_user,1,0,0,0
+access_group_pi_internal_company_user_3,group.pi.internal.company.user.3,website_pinetwork_odoo.model_admin_apps,website_pinetwork_odoo.group_pi_internal_company_user,1,0,0,0

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="mainpage" name="Mainpage View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                </head>
+                <body>
+                    <div class="container" style="text-align:center">
+                        Welcome to Pi TM Apps from LatinChain. 
+                        <a href="/get-points" class="btn btn-success">Leaders Board</a>. Choose your app:<br/><br/>
+                        <a href="/example" class="btn btn-primary">PIAPP EXAMPLE</a><br/><br/>
+                        <a href="https://apps.odoo.com/apps/modules/13.0/website_pinetwork_odoo/" class="btn btn-primary">PIAPP IN ODOO</a><br/><br/>
+                        <a href="https://apps.odoo.com/apps/modules/13.0/website_pinetwork_games_odoo/" class="btn btn-primary">PIAPP GAMES PLATFORM IN ODOO</a><br/><br/>
+                        INFO:<br/><br/>
+                        <a href="https://latin-chain.com" class="btn btn-link">MAIN PAGE OF THE TEAM</a><br/><br/>
+                        <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link">MORE INFO</a><br/><br/>
+                        <a href="/web" class="btn btn-link">Admin</a>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+
+</odoo>

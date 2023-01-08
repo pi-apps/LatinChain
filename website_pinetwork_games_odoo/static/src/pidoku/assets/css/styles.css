@@ -1,0 +1,50 @@
+/* Styles for the Sudoku.js demo page
+*/
+
+body {
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.container-narrow {
+    /* Custom, narrow container */
+    margin: 0 auto;
+    max-width: 600px;
+ }
+
+#footer {
+    margin-top: 120px;    
+}
+
+#sudoku-board {
+    border: 2px solid black;
+}
+
+#sudoku-board td {
+    padding: 0px;
+    margin: 0px;
+}
+
+#sudoku-board input.square {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:0px;
+    width: 30px;
+    height: 23px;
+    padding: 0px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#sudoku-board .border-right {
+    border-right: 2px solid black;
+}
+
+#sudoku-board .border-bottom {
+    border-bottom: 2px solid black;
+}
+
+.green-text {
+    color: ForestGreen !important;
+}

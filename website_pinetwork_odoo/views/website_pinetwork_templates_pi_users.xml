@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="list_points" name="Points View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <title>LatinChain Leaders Board</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        <t t-if="pi_user">
+                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)<br/><br/>
+                        </t>
+                        <t t-if="pi_users_count >= 0">
+                            Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
+                        </t>
+                        <t t-if="pi_users_verified_count >= 0">
+                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/>
+                        </t>
+                        <strong>Leaders zone <span style="color:#77d7f1">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#77d7f1'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="list_winners" name="Top 10 View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <title>LatinChain Top 10 Board</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        <t t-if="pi_user">
+                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)<br/><br/>
+                        </t>
+                        <t t-if="pi_users_count >= 0">
+                            Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
+                        </t>
+                        <t t-if="pi_users_verified_count >= 0">
+                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
+                        </t>
+                        
+                        <strong>Top 10 zone <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/>
+                        <strong>Top 10 zone Chess <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list_chess" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/>
+                        <strong>Top 10 zone Snake <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list_snake" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/>
+                        <strong>Top 10 zone Sudoku <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list_sudoku" t-as="pi_user">
+                                <t t-if="i &lt;= 10">
+                                    <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="style" t-value="''" />
+                                </t>
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="list_winners_zone" name="Winners View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <title>LatinChain Winners Board</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        <t t-if="pi_users_winners_datetime">
+                            Cut at: <span t-esc="pi_users_winners_datetime" /> UTC<br/><br/>
+                        </t>
+                        <t t-if="pi_user">
+                            Your points: <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />).
+                            <t t-foreach="pi_user.admin_apps_winners_ids" t-as="winner_app">
+                                <span t-if="winner_app.app == 'auth_platform'">
+                                    <strong> You are winner, check in this winner list.</strong>
+                                </span>
+                            </t>
+                            <t t-foreach="pi_user.admin_apps_winners_paid_ids" t-as="winner_app">
+                                <span t-if="winner_app.app == 'auth_platform'">
+                                    <strong> You have been paid
+                                    <!--<span t-if="winner_app.pi_users_winners_to_pay_per_user">
+                                        <t t-esc="winner_app.pi_users_winners_to_pay_per_user" /> Pi,
+                                    </span>-->
+                                    <span t-if="winner_app.pi_users_winners_paid_datetime">
+                                        at <t t-esc="winner_app.pi_users_winners_paid_datetime" /> UTC,
+                                    </span> check in your Pi wallet.</strong>
+                                </span>
+                            </t><br/><br/>
+                        </t>
+                        <t t-if="pi_users_count >= 0">
+                            Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
+                        </t>
+                        <t t-if="pi_users_verified_count >= 0">
+                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
+                        </t>
+                        <!--
+                        Jackpot to pay to winners: <strong><t t-esc="pi_users_winners_to_pay" /> Pi / <t t-esc="pi_users_winners_count" /></strong><br/><br/>
+                        -->
+                        
+                        <strong>Winners zone <span style="color:#a0ec97">●</span>:</strong><br/>
+                        <ul class="list-group">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="pi_users_list" t-as="pi_user">
+                                <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                <!--<t t-if="i == 11">
+                                    <t t-set="i" t-value="1"/>
+                                </t>-->
+                                
+                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                <t t-set="i" t-value="i+1"/>
+                            </t>
+                        </ul>
+                        <br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="list_credits" name="Credits">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet"/>
+                    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+                    
+                    <script type="text/javascript">
+                        $(document).ready( function () {
+                            $('#donators').DataTable( {
+                                responsive: true,
+                                ajax: '/get-credits-data',
+                                processing: true,
+                                serverSide: true,
+                                serverMethod: 'post',
+                                columns: [
+                                    { data: 'pi_user_code' },
+                                ],
+                                ordering: false,
+                            } );
+                        } );
+                    </script>
+                    
+                    <title>Credits</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        <strong>LatinChain give its thanks to all the donators who donate Pi:</strong><br/>
+                        <t t-if="pi_users_count >= 0">
+                            Total donators: <strong><t t-esc="pi_users_count" /></strong><br/>
+                            Total verified donators: <strong><t t-esc="pi_users_count_unblocked" /></strong><br/>
+                        </t>
+                        <table id="donators" class="display">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--<t t-foreach="pi_users_list" t-as="pi_user">
+                                    <tr>
+                                        <td>
+                                            <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t>
+                                        </td>
+                                    </tr>
+                                </t>-->
+                            </tbody>
+                        </table>
+                        <br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+        
+        <template id="list_transactions" name="Credits">
+            <t t-call="website.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    
+                    <script type="text/javascript">
+                        function copyToClipboard(text) {
+                            var sampleTextarea = document.createElement("textarea");
+                            document.body.appendChild(sampleTextarea);
+                            sampleTextarea.value = text; //save main text in it
+                            sampleTextarea.select(); //select textarea contenrs
+                            document.execCommand("copy");
+                            document.body.removeChild(sampleTextarea);
+                        }
+                        $(document).ready( function () {
+                            var pi_user_id = "", pi_user_code = "", accessToken = "";
+                        
+                            var myData ={};
+                            
+                            myData.pi_user_code = pi_user_code;
+                            myData.pi_user_id = pi_user_id;
+                            myData.accessToken = accessToken;
+                            
+                            var table = $('#transactions').DataTable( {
+                                responsive: true,
+                                //ajax: '/get-transactions-data',
+                                ajax: {
+                                    'type': 'POST',
+                                    'url': '/get-transactions-data',
+                                    'data': function ( d ) {
+                                       return  $.extend(d, myData);
+                                    }
+                                },
+                                processing: true,
+                                serverSide: true,
+                                serverMethod: 'post',
+                                columns: [
+                                    { data: 'memo', },
+                                    { data: 'amount', },
+                                    { data: 'txid', },
+                                ],
+                                ordering: false,
+                            } );
+                            const Pi = window.Pi;
+                            
+                            Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                            
+                            async function auth() {
+                                try {
+                                    // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                    const scopes = ['username', 'payments'];
+                                    function onIncompletePaymentFound(payment) {
+                                        
+                                    }; // Read more about this in the SDK reference
+
+                                    Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                        pi_user_id = auth.user.uid;
+                                        pi_user_code = auth.user.username;
+                                        accessToken = auth.accessToken;
+                                        
+                                        $('#username').html(" " + auth.user.username);
+                                        
+                                        myData.pi_user_code = pi_user_code;
+                                        myData.pi_user_id = pi_user_id;
+                                        myData.accessToken = accessToken;
+                                        table.ajax.reload();
+                                    }).catch(function(error) {
+                                        console.error(error);
+                                    });
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                            }
+                        
+                            auth();
+                        } );
+                    </script>
+                    
+                    <title>Credits</title>
+                </head>
+                <body>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <div class="container" style="text-align:center">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        Pi Transactions for user <strong><span id="username" /></strong>:<br/><br/>
+                        <table id="transactions" class="display">
+                            <thead>
+                                <tr>
+                                    <th>Memo</th>
+                                    <th>Amount</th>
+                                    <th>TXID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--<t t-foreach="pi_users_list" t-as="pi_user">
+                                    <tr>
+                                        <td>
+                                            <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t>
+                                        </td>
+                                    </tr>
+                                </t>-->
+                            </tbody>
+                        </table>
+                        <br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="debranding" inherit_id="web.layout">
+            <xpath expr="//title" position="replace"></xpath>
+            
+            <xpath expr="//link[@rel='shortcut icon']" position="replace">
+                <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+            </xpath>
+		</template>
+
+</odoo>

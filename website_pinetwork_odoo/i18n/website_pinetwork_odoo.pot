@@ -1,0 +1,744 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_pinetwork_odoo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-29 18:43+0000\n"
+"PO-Revision-Date: 2022-11-29 18:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "(verified)"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid ", Snake:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid ", Sudoku:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
+msgid ". Choose your app:<br/><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
+msgid ""
+"<br/>\n"
+"                            Total verified donators:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+msgid ""
+"<br/>\n"
+"                        <strong>Top 10 zone Chess <span style=\"color:#a0ec97\">●</span>:</strong><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+msgid ""
+"<br/>\n"
+"                        <strong>Top 10 zone Snake <span style=\"color:#a0ec97\">●</span>:</strong><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+msgid ""
+"<br/>\n"
+"                        <strong>Top 10 zone Sudoku <span style=\"color:#a0ec97\">●</span>:</strong><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
+msgid ""
+"<br/><br/>\n"
+"                        INFO:<br/><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "<strong> You are winner, check in this winner list.</strong>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+msgid "<strong>Leaders zone <span style=\"color:#77d7f1\">●</span>:</strong><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+msgid "<strong>Top 10 zone <span style=\"color:#a0ec97\">●</span>:</strong><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "<strong>Winners zone <span style=\"color:#a0ec97\">●</span>:</strong><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads_data
+msgid "A-Ads.com data"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads
+msgid "A-Ads.com src"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads_style
+msgid "A-Ads.com style"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__action
+msgid "Action"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__action_type
+msgid "Action type"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
+msgid "Admin"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_tree
+msgid "Admin App"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__admin_key
+msgid "Admin Key"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.actions.act_window,name:website_pinetwork_odoo.admin_pi_apps_action
+#: model:ir.model,name:website_pinetwork_odoo.model_admin_apps
+#: model:ir.ui.menu,name:website_pinetwork_odoo.menu_admin_pi_apps
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Admin Pi App"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__amount
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__amount
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+msgid "Amount"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__app_id
+msgid "App"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__app
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__app
+msgid "App code"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__action__approve
+msgid "Approve"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__block_points
+msgid "Block points"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__action__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.actions.server,name:website_pinetwork_odoo.check_pi_transactions_base_v1_ir_actions_server
+#: model:ir.cron,cron_name:website_pinetwork_odoo.check_pi_transactions_base_v1
+#: model:ir.cron,name:website_pinetwork_odoo.check_pi_transactions_base_v1
+msgid "Check Pi Transactions"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.actions.server,name:website_pinetwork_odoo.check_pi_users_base_v1_ir_actions_server
+msgid "Check Pi Users"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.pi_transactions_view_tree
+msgid "Check Transactions"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.actions.server,name:website_pinetwork_odoo.check_users_winners_base_v1_ir_actions_server
+#: model:ir.cron,cron_name:website_pinetwork_odoo.check_users_winners_base_v1
+#: model:ir.cron,name:website_pinetwork_odoo.check_users_winners_base_v1
+msgid "Check Users Winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_chess
+msgid "Chess Points"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.actions.act_window,help:website_pinetwork_odoo.admin_pi_apps_action
+msgid "Click to create a new admin_apps."
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.actions.act_window,help:website_pinetwork_odoo.pi_transactions_action
+msgid "Click to create a new pi transaction."
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.actions.act_window,help:website_pinetwork_odoo.pi_users_action
+msgid "Click to create a new pi users."
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__action__complete
+msgid "Complete"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.ui.menu,name:website_pinetwork_odoo.menu_config_admin_pi_apps
+msgid "Config Admin Pi Apps"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__create_uid
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__create_uid
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__create_date
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__create_date
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Current time:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Cut at:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__days_available
+msgid "Days available"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Delete Winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__display_name
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__display_name
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__donator
+msgid "Donator"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__email
+msgid "Email"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Fill Winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__google_adsense
+msgid "Google Adsense src"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__id
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__id
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__id
+msgid "ID"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__json_result
+msgid "JSON Result"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps____last_update
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions____last_update
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__write_uid
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__write_uid
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__write_date
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__write_date
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__last_connection
+msgid "Last connection"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_users__pi_user_role__latinchain_adm
+msgid "LatinChain Administration"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_users__pi_user_role__latinchain_dev
+msgid "LatinChain Dev"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
+msgid "Leaders Board"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
+msgid "MAIN PAGE OF THE TEAM"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
+msgid "MORE INFO"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__mainnet
+msgid "Mainnet"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__admin_apps__mainnet__mainnet_off
+msgid "Mainnet OFF"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__admin_apps__mainnet__mainnet_on
+msgid "Mainnet ON"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__memo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+msgid "Memo"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__name
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__name
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__name
+msgid "Name"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
+msgid "PIAPP EXAMPLE"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
+msgid "PIAPP GAMES PLATFORM IN ODOO"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
+msgid "PIAPP IN ODOO"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__paid_in_all_donations
+msgid "Paid by user in donations"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__paid_in_transactions
+msgid "Paid by user in transactions"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__passkey
+msgid "Pass Key"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__payment_id
+msgid "PaymentId"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:res.groups,name:website_pinetwork_odoo.group_pi_admin
+msgid "Pi Admin Group"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:res.groups,name:website_pinetwork_odoo.group_pi_external_user
+msgid "Pi External User Group"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:res.groups,name:website_pinetwork_odoo.group_pi_internal_company_user
+msgid "Pi Internal Company User Group"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.actions.act_window,name:website_pinetwork_odoo.pi_transactions_action
+#: model:ir.model,name:website_pinetwork_odoo.model_pi_transactions
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_transactions_ids
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__pi_transactions_ids
+#: model:ir.ui.menu,name:website_pinetwork_odoo.menu_pi_transactions
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.pi_transactions_view_form
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.pi_transactions_view_tree
+msgid "Pi Transactions"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__pi_user
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_users__pi_user_role__pi_user
+msgid "Pi User"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__pi_user_code
+msgid "Pi User Code"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__pi_user_id
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__pi_user_id
+msgid "Pi User ID"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points
+msgid "Pi User Points"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__pi_user_role
+msgid "Pi User Role"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.actions.act_window,name:website_pinetwork_odoo.pi_users_action
+#: model:ir.model,name:website_pinetwork_odoo.model_pi_users
+#: model:ir.ui.menu,name:website_pinetwork_odoo.menu_pi_users
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.pi_users_view_form
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.pi_users_view_tree
+msgid "Pi Users"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_datetime
+msgid "Points Datetime"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__action_type__receive
+msgid "Receive"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__sandbox
+msgid "Sandbox"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__action_type__send
+msgid "Send"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_snake
+msgid "Snake Points"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_sudoku
+msgid "Sudoku Points"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__txid
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+msgid "TXID"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__txid_url
+msgid "TXID URL"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__admin_apps__mainnet__testnet_off
+msgid "Testnet OFF"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__admin_apps__mainnet__testnet_on
+msgid "Testnet ON"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__to_address
+msgid "To address"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
+msgid "Total donators:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Total users in the app:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Total verified users in the app:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "UTC (Chess:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "UTC,"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "UTC<br/><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
+msgid ""
+"UTC<br/><br/>\n"
+"                        <strong>LatinChain give its thanks to all the donators who donate Pi:</strong><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+msgid ""
+"UTC<br/><br/>\n"
+"                        Pi Transactions for user <strong><span id=\"username\"/></strong>:<br/><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__unblocked
+msgid "Unblocked"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__user_agent
+msgid "User agent"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
+msgid "Username"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__validation_key
+msgid "Validation Key"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__pi_wallet_address
+msgid "Wallet Address"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.example
+msgid "Watch code"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
+msgid "Welcome to Pi TM Apps from LatinChain."
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_ids
+msgid "Winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__admin_apps_winners_ids
+msgid "Winners Apps"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_html
+msgid "Winners HTML"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_paid_ids
+msgid "Winners Paid"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__admin_apps_winners_paid_ids
+msgid "Winners Paid Apps"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_to_pay
+msgid "Winners To Pay"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_count
+msgid "Winners count"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_datetime
+msgid "Winners datetime"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_paid_datetime
+msgid "Winners paid datetime"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.constraint,message:website_pinetwork_odoo.constraint_admin_apps_admin_apps_unique_key
+msgid "You can not have two app with the same App code!"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.constraint,message:website_pinetwork_odoo.constraint_pi_users_pi_user_unique_key
+msgid "You can not have two users with the same User code!"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "You have been paid"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Your points:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "at"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__cancelled
+msgid "cancelled"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "check in your Pi wallet."
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__developer_approved
+msgid "developer_approved"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__developer_completed
+msgid "developer_completed"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "has"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "points at"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__transaction_verified
+msgid "transaction_verified"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__user_cancelled
+msgid "user_cancelled"
+msgstr ""

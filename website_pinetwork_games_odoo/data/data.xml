@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Groups  -->
+        <record id="sudoku_app" model="admin.apps">
+            <field name="name">Pidoku</field>
+            <field name="app">auth_pidoku</field>
+            <field name="admin_key">Your Server API Key</field>
+            <field name="sandbox">False</field>
+        </record>
+        <record id="snake_app" model="admin.apps">
+            <field name="name">Snake</field>
+            <field name="app">auth_snake</field>
+            <field name="admin_key">Your Server API Key</field>
+            <field name="sandbox">False</field>
+        </record>
+        <record id="example_app" model="admin.apps">
+            <field name="name">Donation</field>
+            <field name="app">auth_example</field>
+            <field name="admin_key">Your Server API Key</field>
+            <field name="sandbox">False</field>
+        </record>
+        <record id="platform_app" model="admin.apps">
+            <field name="name">Platform</field>
+            <field name="app">auth_platform</field>
+            <field name="admin_key">Your Server API Key</field>
+            <field name="sandbox">False</field>
+        </record>
+    </data>
+</odoo>

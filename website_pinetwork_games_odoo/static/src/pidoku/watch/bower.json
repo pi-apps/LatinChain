@@ -1,0 +1,34 @@
+{
+  "name": "countimer",
+  "version": "1.1.0",
+  "description": "Simple jQuery plugin to start a basic count up timer on any HTML element",
+  "homepage": "https://github.com/envynoiz/countimer",
+  "location": "envynoiz/countimer",
+  "main": "dist/ez.countimer.js",
+  "authors": [
+    "envynoiz https://github.com/envynoiz"
+  ],
+  "keywords": [
+    "momentjs",
+    "count",
+    "timer",
+    "chronograph",
+    "jquery",
+    "plugin"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "qunit": "~1.12.0",
+    "jquery": ">=2.1.4"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

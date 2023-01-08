@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Play Chess Against Stockfish 10 Online For Free - BoldChess</title>
+    <meta name="description" content="Play Chess Against the best AI Chess Player (Stockfish)" />
+
+    <meta property="og:url" content="index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Play Chess Against the best AI Chess Player (Stockfish)">
+    <meta property="og:description" content="Play Chess Against the best AI Chess Player (Stockfish)">
+
+    <link rel="icon" type="image/svg" href="img/icons/latin-chain-logo.jpeg" />
+
+    <link rel="stylesheet" id="chessboard-css" href="css/chessboard.css" />
+    <link rel="stylesheet" href="css/board.css" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="watch/dist/ez.countimer.js"></script>
+    
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+    
+    <script src="js/functions.js"></script>
+
+</head>
+
+<body bgcolor="#ffffff">
+    <div class="content">
+    	<span align="center">
+            <img  width="80" height="80" src="img/icons/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto">
+            <h1 align="center" style="font-weight:600">Pi Chess</h1>
+            
+            <h2 align="center" style="color:#000000">Play Chess Against the best AI Chess Player (Stockfish)</h2>
+            <br />
+            <br />
+            <div style="text-align:center" class="form-group container">
+                <div class="row">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-6">
+                        <input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" lang="en-US"/>
+                        <br/>
+                        <input id="button_click" name="button_click" value="Donate Pi" type="button" class="btn btn-success"/>
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+                <br/>
+                <br/>
+            </div>
+            
+            <style>
+            .cont { text-align:center; font-size:30px;}
+
+            </style>
+            <div class="cont">
+            <h1>Time</h1>
+            <p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
+            <div class="timer well"></div>
+            </div><br/>
+        </span>
+            <div class="chess-area">
+                <div class="board-table">
+                    <div id="board-top-controls" class="top-controls">
+                        <div id="game-promotion" class="promotion hidden">
+                            <span figure="q">Queen</span>
+                            <span figure="b">Bishop</span>
+                            <span figure="n">Knight</span>
+                            <span figure="r">Rook</span>
+                        </div>
+                        <div id="board-save-pgn-area" class="popup hidden">
+                            <span class="close"></span>
+                            <label>Save PGN Notation:</label>
+                            <textarea readonly></textarea>
+                            <button>Close</button>
+                        </div>
+                        <div id="board-load-fen-area" class="popup hidden">
+                            <span class="close"></span>
+                            <label>Load FEN Notation:</label>
+                            <textarea></textarea>
+                            <button>Load</button>
+                        </div>
+                        <div id="board-load-pgn-area" class="popup large hidden">
+                            <span class="close"></span>
+                            <label>Load PGN Notation:</label>
+                            <textarea></textarea>
+                            <button>Load</button>
+                        </div>
+                        <div id="board-resign-game-area" class="popup hidden">
+                            <span class="close"></span>
+                            <label>Do you want to resign?</label>
+                            <button class="yes">Yes</button>
+                            <button class="no">No</button>
+                        </div>
+                    </div>
+                    <div id="board" class="board"></div>
+                    <div id="board-controls" class="controls">
+                        <div class="buttons">
+                            <button id="btn-switch-sides" title="Switch Sides"><i class="icon"></i></button>
+                            <button id="btn-flip-board" title="Flip Board"><i class="icon"></i></button>
+                            <button id="btn-save-pgn" title="Save PNG"><i class="icon"></i></button>
+                            <button id="btn-engine-disable" title="Engine Toggle (On/Off)">AI</button>
+                            <button id="btn-show-hint" title="Show Hint"><i class="icon"></i></button>
+                            <button id="btn-take-back" class="disabled" title="Take Back"><i class="icon"></i></button>
+                        </div>
+                        <div class="status">
+                            <!-- <span id="game-timer" class="hidden">00:00</span> -->
+                            <span id="game-turn" style="display: none;">It's your turn!</span>
+                            <span id="game-state" class="hidden"></span>
+                        </div>
+                        <div id="board-messages" class="messages hidden" style="display: none !important;"></div>
+                    </div>
+                </div>
+                <div class="board-settings">
+                    <div class="apex">
+                        <span class="label-history">Game History</span>
+                        <div class="game-level" id="game-difficulty-option" title="Choose The Engine's Skill Level">
+                            <span class="label">Level</span>
+                            <span class="value" id="game-difficulty-skill-value">10</span>
+                        </div>
+                    </div>
+                    <div class="game-difficulty hidden" id="game-difficulty-skill-settings">
+                        <span class="label">Select Engine's Level:</span>
+                        <span class="close"></span>
+                        <div class="values">
+                            <span class="1">1</span>
+                            <span class="2">2</span>
+                            <span class="3">3</span>
+                            <span class="4">4</span>
+                            <span class="5">5</span>
+                            <span class="6">6</span>
+                            <span class="7">7</span>
+                            <span class="8">8</span>
+                            <span class="9">9</span>
+                            <span class="10 selected">10</span>
+                            <span class="11">11</span>
+                            <span class="12">12</span>
+                            <span class="13">13</span>
+                            <span class="14">14</span>
+                            <span class="15">15</span>
+                            <span class="16">16</span>
+                            <span class="17">17</span>
+                            <span class="18">18</span>
+                            <span class="19">19</span>
+                            <span class="20">20</span>
+                        </div>
+                    </div>
+                    <div class="turns-history" id="game-turns-history">
+                        <ol></ol>
+                    </div>
+                    <div class="game-analyze hidden" id="game-analyze-string"></div>
+                    <div class="game-menu hidden" id="game-settings">
+                        <span class="label-choose-side">Select Side</span>
+                        <span class="btn game-white-side selected" id="btn-choose-white-side"></span>
+                        <span class="btn game-black-side" id="btn-choose-black-side"></span>
+                    </div>
+                    <div class="tunes">
+                        <span id="btn-new-game" title="Start New Game" class="btn-new-game">
+            <span class="icon"></span>
+                        <span class="label">New Game</span>
+                        </span>
+                        <span id="btn-settings" title="Choose The Engine's Skill Level" class="btn settings"></span>
+                        <span id="btn-resign" title="Resign" class="btn resign"></span>
+                        <span id="btn-analyze" title="Request Engine Evaluation" class="btn analyze">
+            <i class="icon"></i>
+          </span>
+                    </div>
+                    <div class="params">
+                        <div class="cell side" id="game-player-side" style="display: none;">
+                            <label>Your Side:</label>
+                            <span class="white active">White</span>
+                            <span class="black">Black</span>
+                        </div>
+                        <div class="cell first-turn" id="game-first-turn" style="display: none;">
+                            <label>First Turn:</label>
+                            <span class="player active">Player</span>
+                            <span class="computer">Computer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chess-log"></div>
+    </div>
+
+    <!--<script src="js/jquery-3.4.1.min.js"></script>-->
+    <script src="js/chess.min.js"></script>
+    <script src="js/ltpgnviewer.js"></script>
+
+    <script>
+        $( document ).ready(function() {
+            function is_touch_device() {
+                return 'ontouchstart' in window || navigator.maxTouchPoints;
+            };
+
+            function loadCss(cssId, cssHref) {
+                $('#' + cssId).attr('href', cssHref);
+            }
+
+            var mobileLibs = 8;
+            var desktopLibs = 8;
+
+            var isMobile = is_touch_device();
+
+            if (isMobile == true) {
+
+                var chess, board;
+
+                loadCss('chessboard-css', 'css/caustique-chessboard.css');
+
+                $.getScript('js/chessboard-caustique-min.js', initGameBoard('mobile'));
+                $.getScript('js/board-controls-side.js', initGameBoard('mobile'));
+                $.getScript('js/board-controls-bottom.js', initGameBoard('mobile'));
+                $.getScript('js/board-sets.js', initGameBoard('mobile'));
+
+                $.getScript('js/board-time.js', initGameBoard('mobile'));
+                $.getScript('js/board-actions.js', initGameBoard('mobile'));
+                $.getScript('js/board-actions-mobile.js', initGameBoard('mobile'));
+                $.getScript('js/board-init.js', initGameBoard('mobile'));
+
+            } else {
+
+                loadCss('chessboard-css', 'css/chessboard.css');
+
+                $.getScript('js/chessboard.min.js', initGameBoard('desktop'));
+                $.getScript('js/board-controls-side.js', initGameBoard('desktop'));
+                $.getScript('js/board-controls-bottom.js', initGameBoard('desktop'));
+                $.getScript('js/board-sets.js', initGameBoard('desktop'));
+
+                $.getScript('js/board-time.js', initGameBoard('desktop'));
+                $.getScript('js/board-actions.js', initGameBoard('desktop'));
+                $.getScript('js/board-actions-desktop.js', initGameBoard('desktop'));
+                $.getScript('js/board-init.js', initGameBoard('desktop'));
+
+            }
+
+            function initGameBoard(lib = false) {
+
+                if (lib == 'mobile') {
+                    mobileLibs--;
+                    if (mobileLibs == 0) {
+                        console.log('Mobile loaded');
+                        setTimeout(function() {
+                            setMobileBoard();
+                        }, 5000);
+                    }
+                }
+
+                if (lib == 'desktop') {
+                    desktopLibs--;
+                    if (desktopLibs == 0) {
+                        console.log('Desktop loaded');
+                        setTimeout(function() {
+                            setDesktopBoard();
+                        }, 5000);
+                    }
+                }
+
+            }
+        });
+    </script>
+
+</body>
+
+</html>

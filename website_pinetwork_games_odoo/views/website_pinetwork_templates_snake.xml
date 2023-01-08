@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="snake" name="Snake">
+            <t t-call="web.layout">
+          &lt;!DOCTYPE html&gt;
+            <html class="no-js">
+            <head>
+                <meta charset="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <title>Super Snake</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                <link rel="manifest" href="/website_pinetwork_games_odoo/static/src/responsive-snake/manifest.webmanifest"/>
+                
+                <!-- ios support -->
+                <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                <meta name="theme-color" content="#db4938" />
+                
+                <meta name="application-name" content="Super Snake"/>
+                <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+
+                <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/responsive-snake/example/assets/css/main.css"/>
+
+                <script>
+                    window.requestAnimationFrame=function(){
+                        return window.requestAnimationFrame||window.webkitRequestAnimationFrame||
+                                window.mozRequestAnimationFrame||window.msRequestAnimationFrame||
+                                window.oRequestAnimationFrame||function(f){window.setTimeout(f,1e3/60)}}();
+                </script>
+                
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/jquery-3.5.1.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+                <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js"></script>
+                
+                <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                
+                <meta name="description" content="César - OpenSource Expert. OpenSource Consultant."/>
+                <link rel="canonical" href="https://cr-innova.negocio.site/"/>
+            </head>
+
+            <body>
+                <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                <input type="hidden" id="amount" t-att-value="amount"/>
+                
+                <style>
+                .square {color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
+                .square-borderless {color: black; font-weight: bold; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center;}
+                .transparent {opacity: 0.5;}
+                .bottom {
+                    position: absolute;
+                    bottom: 40px;
+                }
+                </style>
+                
+                <script type="text/javascript">
+                    $( document ).ready(function() {
+                        $("#up").draggable({ disabled: true });
+                        $("#left").draggable({ disabled: true });
+                        $("#down").draggable({ disabled: true });
+                        $("#right").draggable({ disabled: true });
+                    
+                        function press(key)
+                        {
+                            var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
+                            jQuery( "body" ).trigger( e );
+                        }
+                        
+                        $( "#left" ).mousedown(function() {
+                            press(37);
+                        });
+                        $( "#up" ).mousedown(function() {
+                            press(38);
+                        });
+                        $( "#down" ).mousedown(function() {
+                            press(40);
+                        });
+                        $( "#right" ).mousedown(function() {
+                            press(39);
+                        });
+                        $( "#reset" ).click(function() {
+                            var result = confirm("Are you sure you want to Reset?, it will restart the game.");
+                            if(result)
+                            {
+                                press(82);
+                            }
+                        });
+                        $( "#pause" ).click(function() {
+                            press(32);
+                        });
+                        /*$( "#bot" ).click(function() {
+                            press(66);
+                        });*/
+                        $( "#minus" ).click(function() {
+                            press(189);
+                        });
+                        $( "#plus" ).click(function() {
+                            press(187);
+                        });
+                        
+                        var enable_drag = false;
+                        
+                        $('#enable_dragging').click(function() {
+                            if(!enable_drag)
+                            {
+                                $("#up").draggable({ disabled: false });
+                                $("#left").draggable({ disabled: false });
+                                $("#down").draggable({ disabled: false });
+                                $("#right").draggable({ disabled: false });
+                                
+                                $("#up").css({ 'color': 'red' });
+                                $("#left").css({ 'color': 'red' });
+                                $("#down").css({ 'color': 'red' });
+                                $("#right").css({ 'color': 'red' });
+                                enable_drag = true;
+                                
+                                $('#enable_dragging').hide();
+                                $('#disable_dragging').show();
+                            }
+                        });
+                        
+                        $('#disable_dragging').click(function() {
+                            if(enable_drag)
+                            {
+                                $("#up").draggable({ disabled: true });
+                                $("#left").draggable({ disabled: true });
+                                $("#down").draggable({ disabled: true });
+                                $("#right").draggable({ disabled: true });
+                                
+                                $("#up").css({ 'color': 'black' });
+                                $("#left").css({ 'color': 'black' });
+                                $("#down").css({ 'color': 'black' });
+                                $("#right").css({ 'color': 'black' });
+                                enable_drag = false;
+                                
+                                $('#disable_dragging').hide();
+                                $('#enable_dragging').show();
+                            }
+                        });
+                        
+                        var status_audio = false;
+                        var audioElement = document.createElement('audio');
+                        audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/music.mp3');
+                        audioElement.addEventListener('ended', function() {
+                            this.play();
+                        }, false);
+                        
+                        $('#play').click(function() {
+                            if(!status_audio)
+                            {
+                                audioElement.play();
+                                status_audio = true;
+                                $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
+                            }
+                            else
+                            {
+                                audioElement.pause();
+                                status_audio = false;
+                                $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
+                            }
+                        });
+                        
+                        $( "#clear_cache" ).click(function() {
+                            var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
+                            if(result)
+                            {
+                                try {
+                                    Cache.delete();
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                                try {
+                                    window.location.reload(true);
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                            }
+                        });
+                        
+                        $( "#back" ).click(function() {
+                            var result = confirm("Are you sure you want to go back?.");
+                            if(result)
+                            {
+                                //history.back();
+                                location.href="/";
+                            }
+                        });
+                    });
+                </script>
+                <div class="intro">
+                    <!--<iframe data-aa="1429940" src="//ad.a-ads.com/1429940?size=120x60" scrolling="no" style="opacity: 0.3; width:120px; height:60px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
+                    <br>-->
+                    
+                    <h2><img class="transparent" width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /> 
+                    Super Snake<!--<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" style="color: black;">Info</a>--></h2>
+                    <p>
+                        <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal transparent" style="display: none;" lang="en-US"/>
+                        <button id="button_click" name="button_click" class="transparent" disabled="true">Unblock with <span t-esc="amount" /> Pi</button>
+                    </p>
+                    <p>
+                        <!--<div style="min-height: 60px;"></div>-->
+                        <div class="square-borderless"></div><div class="square-borderless"></div><div class="square-borderless"></div>
+                        <div class="square" id="up" draggable="true">&#8593;</div>
+                        <br/><br/><div class="square-borderless"></div><div class="square-borderless"></div>
+                        <div class="square" id="left" draggable="true">&#8592;</div>
+                        <div class="square-borderless"></div>
+                        <div class="square" id="right" draggable="true">&#8594;</div>
+                        <br/><br/><div class="square-borderless"></div><div class="square-borderless"></div><div class="square-borderless"></div>
+                        <div class="square" id="down" draggable="true">&#8595;</div></p>
+                    <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
+                </div>
+
+                <div class="container absolute">
+
+                    <canvas id="snake-canvas" autofocus="autofocus" data-full-screen="true"></canvas>
+                    
+                    <div class="bottom">
+                        <p>
+                            <span id="loading_word" style="display: none;">Loading...</span><br/>
+                            <div class="square" id="minus" style="display: none;">-</div><div class="square" id="plus" style="display: none;">+</div><br/><br/>
+                            <div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/><br/>
+                            <div class="square" id="enable_dragging" style="display: none;">Drag controls</div><div class="square" id="disable_dragging" style="display: none;">Set controls</div><br/><br/>
+                            <div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><br/><br/>            <!--<div class="square" id="bot">Bot</div>-->
+                            <div class="square-borderless fps-counter"></div>
+                            </p>
+                        <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
+                    </div>
+
+                    <div id="scoreboard">
+                        <div id="score">
+                            Score :
+                            <span>0</span>
+                        </div>
+
+                        <div id="hi-score">
+                            Hi session Score :
+                            <span>0</span>
+                        </div>
+
+                        <!--<div id="bot-hi-score">
+                            Bot Hi Score :
+                            <span>0</span>
+                        </div>-->
+                    </div>
+                </div>
+
+            <!-- Vendor Component Libraries -->
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/vendor/zepto/zepto.js"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/vendor/zepto-touch/zepto-touch.js"></script>
+
+            <!-- Browserified Build -->
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/build/snake.build.js"></script>
+
+            <script>
+                //Start Snake Game
+                $(document).ready(function() {
+                    ResponsiveSnake.start({
+                        snakePixels    : 14,
+                        snakeSize      : 2,
+                        bot            : false,
+                        explosion      : true,
+                    });
+                    ResponsiveSnake.game.pause();
+                });
+            </script>
+            </body>
+            </html>
+            </t>
+		</template>
+
+</odoo>

@@ -1,0 +1,81 @@
+body {
+  font-family : "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight : 300;
+  margin      : 0;
+  padding     : 0;
+  overflow    : hidden;
+  background-color : #eee;
+
+  .absolute {
+    z-index : 0;
+    position : absolute;
+  }
+
+  .intro {
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+    left: 20px;
+
+    h2 {
+      color: rgb(255, 255, 255);
+      font-weight: 100;
+      margin: 10px auto;
+      text-align: center;
+    }
+
+    p {
+      padding-top : 0;
+      margin-top : 0;
+      text-align : center;
+    }
+  }
+
+  .container {
+
+    background                  : url('../img/sand.jpg') no-repeat center center fixed;
+    -webkit-background-size     : cover;
+    -moz-background-size        : cover;
+    -o-background-size          : cover;
+    background-size             : cover;
+    height                      : 100%;
+    width                       : 100%;
+
+    -webkit-backface-visibility : hidden;
+  }
+
+  #snake-canvas {
+    position : relative;
+  }
+
+  a {
+    color           : white;
+  }
+
+  .hidden {
+    display : none;
+  }
+
+
+  #scoreboard {
+    position   : absolute;
+    bottom     : 0;
+    width      : 100%;
+    height     : 40px;
+    background : rgba(0, 0, 0, 0.3);
+    color      : white;
+
+    div {
+      opacity      : .6;
+      float        : right;
+      margin-right : 30px;
+      margin-top   : 10px;
+    }
+
+    span {
+      font-weight : bold;
+    }
+  }
+
+}
+

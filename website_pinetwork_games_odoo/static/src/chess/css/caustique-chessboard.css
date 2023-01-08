@@ -1,0 +1,178 @@
+div.chess_board div.chess_square_light {
+    background-color: #fff
+}
+
+div.chess_board div.chess_square_dark {
+    background-color: #e5e1d1
+}
+
+div.chess_board div.chess_square_light.chess_square_selected {
+    background-color: #eee
+}
+
+div.chess_board div.chess_square_dark.chess_square_selected {
+    background-color: #c5c1a1
+}
+
+div.chess_board div.chess_player_white {
+    color: #285e8e
+}
+
+div.chess_board div.chess_player_black {
+    color: #BD4932
+}
+
+div.chess_board div.chess_square_selected div.chess_player_white {
+    color: #487eae
+}
+
+div.chess_board div.chess_square_selected div.chess_player_black {
+    color: #dd6952
+}
+
+div.chess_board div.chess_square_light.chess_square_valid_move {
+    -webkit-box-shadow: inset 0 0 3px 3px #CDE855;
+    -moz-box-shadow: inset 0 0 3px 3px #CDE855;
+    box-shadow: inset 0 0 3px 3px #CDE855
+}
+
+div.chess_board div.chess_square_dark.chess_square_valid_move {
+    -webkit-box-shadow: inset 0 0 3px 3px #A7C520;
+    -moz-box-shadow: inset 0 0 3px 3px #A7C520;
+    box-shadow: inset 0 0 3px 3px #A7C520
+}
+
+div.chess_board div.chess_square {
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer
+}
+
+div.chess_board div.chess_piece_none {
+    cursor: auto
+}
+
+div.chess_board div.chess_square_light>div.chess_label {
+    color: #e5e1d1
+}
+
+div.chess_board div.chess_square_dark>div.chess_label {
+    color: #fff
+}
+
+div.chess_board div.chess_label {
+    font-family: "Helvetica Neue", Helvetica, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: small-caps
+}
+
+div.chess_board div.chess_player_black.chess_piece_pawn:after {
+    content: '\265F'
+}
+
+div.chess_board div.chess_player_black.chess_piece_rook:after {
+    content: '\265C'
+}
+
+div.chess_board div.chess_player_black.chess_piece_knight:after {
+    content: '\265E'
+}
+
+div.chess_board div.chess_player_black.chess_piece_bishop:after {
+    content: '\265D'
+}
+
+div.chess_board div.chess_player_black.chess_piece_queen:after {
+    content: '\265B'
+}
+
+div.chess_board div.chess_player_black.chess_piece_king:after {
+    content: '\265A'
+}
+
+div.chess_board div.chess_player_white.chess_piece_pawn:after {
+    content: '\2659'
+}
+
+div.chess_board div.chess_player_white.chess_piece_rook:after {
+    content: '\2656'
+}
+
+div.chess_board div.chess_player_white.chess_piece_knight:after {
+    content: '\2658'
+}
+
+div.chess_board div.chess_player_white.chess_piece_bishop:after {
+    content: '\2657'
+}
+
+div.chess_board div.chess_player_white.chess_piece_queen:after {
+    content: '\2655'
+}
+
+div.chess_board div.chess_player_white.chess_piece_king:after {
+    content: '\2654'
+}
+
+div.chess_board,
+div.chess_board div.chess_square,
+div.chess_board div.chess_square>div {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+div.chess_board div.chess_square {
+    position: relative;
+    float: left;
+    width: 12.5%;
+    z-index: 0
+}
+
+div.chess_board div.chess_square_last_column {
+    float: none;
+    overflow: hidden;
+    width: auto!important
+}
+
+div.chess_board div.chess_piece {
+    text-align: center;
+    line-height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%
+}
+
+div.chess_board div.chess_piece:after {
+    position: absolute;
+    top: 7.25px;
+    left: 0;
+    width: 100%
+}
+
+div.chess_board div.chess_label {
+    z-index: 0;
+    position: absolute
+}
+
+div.chess_board div.chess_label_column_reversed,
+div.chess_board div.chess_label_row {
+    top: 2px;
+    left: 2px
+}
+
+div.chess_board div.chess_label_column,
+div.chess_board div.chess_label_row_reversed {
+    bottom: 2px;
+    right: 2px
+}
+
+div.chess_board div.chess_label_hidden {
+    visibility: hidden
+}

@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/chess.min.js"></script>
+    <script src="js/chessboard-1.0.0.min.js"></script>
+    <title>Play Chess Against StockFish 10 Online For Free</title>
+</head>
+
+<div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-4 mx-auto justify-content-center">
+
+    <br />
+    <br />
+
+    <h1 class="text-center">Play Chess Against StockFish 10</h1>
+
+    <br />
+    <br />
+
+    <div class="accordion" id="accordionOptions">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Settings</button>
+                    </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOptions">
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span style="min-width:220px;" class="input-group-text" id="inputGroup-sizing-default">Base Time (min)</span>
+                        </div>
+                        <input type="number" value="5" min="1" max="360" class="form-control" aria-label="Base Time (min)" aria-describedby="inputGroup-sizing-default" id="timeBase">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span style="min-width:220px;" class="input-group-text" id="inputGroup-sizing-default">Time Increment (sec)</span>
+                        </div>
+                        <input type="number" value="0" min="0" max="3600" class="form-control" aria-label="Time Increment (sec)" aria-describedby="inputGroup-sizing-default" id="timeInc">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span style="min-width:220px;" class="input-group-text" id="inputGroup-sizing-default">Computer Difficulty (1-20)</span>
+                        </div>
+                        <input type="number" value="1" min="1" max="20" class="form-control" aria-label="Computer Difficulty (1-20)" aria-describedby="inputGroup-sizing-default" id="skillLevel">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label style="min-width:220px;" class="input-group-text" for="promote">Promote Pawns To</label>
+                        </div>
+                        <select class="custom-select" id="promote">
+                            <option value=q selected>Queen</option>
+                            <option value=r>Rook</option>
+                            <option value=b>Bishop</option>
+                            <option value=n>Knight</option>
+                        </select>
+                    </div>
+
+                    <hr>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary active" id="color-white">
+                            <input type="radio" name="color"> Play as White</label>
+                        <label class="btn btn-primary" id="color-black">
+                            <input type="radio" name="color"> Play as Black</label>
+                    </div>
+
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-warning">
+                            <input type="checkbox" id="showScore" checked> Show Evaluation Score</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Moves & Evaluation</button>
+                    </h2>
+            </div>
+
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionOptions">
+                <div class="card-body">
+                    <h4>List Of Moves:</h4>
+                    <div id="pgn"></div>
+
+                    <hr>
+                    <h4>Evaluation:</h4>
+                    <pre id=evaluation></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="btn-group" data-toggle="buttons">
+        <button type="button" class="btn btn-danger btn-lg" onclick="newGame()">Start New Game</button>
+    </div>
+
+    <hr>
+
+    <span class="h3" id="time1">...</span>
+
+    <br />
+    <br />
+
+    <div id="board"></div>
+
+    <br />
+    <br />
+
+    <span class="h3" id="time2">...</span>
+
+    <hr>
+    <div id="engineStatus">Loading Engine...</div>
+    <hr>
+
+    <button type="button" class="btn btn-warning btn-lg btn-block align-middle" onclick="window.location.href='https://boldchess.com/'">Return To BoldChess.com</button>
+
+    <br />
+    <br />
+
+</div>
+
+<script src="enginegame.js"></script>
+<script>
+    var wait_for_script;
+    var newGame = function() {};
+
+    /// We can load Stockfish.js via Web Workers or directly via a <script> tag.
+    /// Web Workers are better since they don't block the UI, but they are not always avaiable.
+    (function fix_workers() {
+        var script_tag;
+        /// Does the environment support web workers?  If not, include stockfish.js directly.
+        if (!Worker || (location && location.protocol === "file:")) {
+            var script_tag = document.createElement("script");
+            script_tag.type = "text/javascript";
+            script_tag.src = "stockfish.js";
+            script_tag.onload = init;
+            document.getElementsByTagName("head")[0].appendChild(script_tag);
+            wait_for_script = true;
+        }
+    }());
+
+    function init() {
+        var game = engineGame();
+
+        newGame = function newGame() {
+            var baseTime = parseFloat($('#timeBase').val()) * 60;
+            var inc = parseFloat($('#timeInc').val());
+            var skill = parseInt($('#skillLevel').val());
+            game.reset();
+            game.setTime(baseTime, inc);
+            game.setSkillLevel(skill);
+            game.setPlayerColor($('#color-white').hasClass('active') ? 'white' : 'black');
+            game.setDisplayScore($('#showScore').is(':checked'));
+            game.start();
+        }
+
+        game.setSkillLevel
+
+        document.getElementById("skillLevel").addEventListener("change", function() {
+            game.setSkillLevel(parseInt(this.value, 10));
+        });
+
+        newGame();
+    }
+
+    /// If we load Stockfish.js via a <script> tag, we need to wait until it loads.
+    if (!wait_for_script) {
+        document.addEventListener("DOMContentLoaded", init);
+    }
+</script>
+</body>
+
+</html>

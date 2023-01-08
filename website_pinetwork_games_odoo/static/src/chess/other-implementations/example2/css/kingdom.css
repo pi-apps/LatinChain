@@ -1,0 +1,101 @@
+html, body {
+    margin: 0;
+    font-family: Lato, arial, sans;
+}
+
+.table {
+    display: table;
+    width: 100%;
+}
+.tr {
+    display: table-row;
+}
+.td {
+    display: table-cell;
+    width: 33%;
+    vertical-align: top;
+}
+.table_row_0 {
+    height: 0px;
+}
+
+.chess_board {
+    
+}
+.fixinput {
+    /* Without this, the board moves when showing the time settings. */
+    width: 50%;
+}
+
+.loading {
+    font-size: 40px;
+    font-family: arial, sans, sans-serif;
+    opacity: .8;
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.center_el {
+    margin: 0px 4px;
+}
+
+.table_cell_1_0 {
+    padding-left: 5px;
+}
+.table_cell_1_2 {
+    padding-left: 7px;
+}
+
+
+.clock {
+    text-align: center;
+    font-family: impact, monospace, sans;
+    font-size: 35px;
+    border: black 2px solid;
+}
+
+.clock_white {
+    background-color: white;
+    color: black;
+}
+
+.clock_black {
+    background-color: black;
+    color: white;
+}
+
+.clock_right {
+    margin-left: 4px;
+}
+
+.ratingContainer {
+    position: relative;
+    background: rgb(235, 235, 235);
+    border: 2px solid #3c2d21;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    border-right: 0;
+    overflow: hidden;
+}
+
+.ratingSlider {
+    background: rgb(35, 35, 35);
+    transition: height 300ms;
+    -webkit-transition: height 600ms;
+}
+
+.ratingCanvas {
+    position: absolute;
+    left: 0;
+}
+
+.center_table, .center_td {
+    width: 0;
+}
+
+.gameInfoText {
+    margin-left: 5px;
+}

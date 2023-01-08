@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='admin_pi_apps_view_form' model='ir.ui.view'>
+        <field name="name">admin.apps.form</field>
+        <field name="model">admin.apps</field>
+        <field name="arch" type="xml">
+            <form string="Admin Pi App">
+                <header>
+                    <button name="fill_winners" confirm="Are you sure you want to fill winners?" type="object" string="Fill Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
+                    <button name="delete_winners" confirm="Are you sure you want to delete winners?" type="object" string="Delete Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
+                </header>
+                <sheet>
+                    <notebook>
+                        <page string="Admin Pi App">
+                            <group><!--<group col="4">
+                                <group colspan="2" col="2">-->
+                                    <field name="id"/>
+                                    <field name="name"/>
+                                    <field name="app"/>
+                                    <field name="validation_key"/>
+                                    <field name="admin_key"/>
+                                    <field name="sandbox"/>
+                                    <field name="mainnet"/>
+                                    <field name="amount"/>
+                                    <field name="google_adsense"/>
+                                    <field name="google_adsense_ads_txt"/>
+                                    <field name="a_ads"/>
+                                    <field name="a_ads_data"/>
+                                    <field name="a_ads_style"/>
+                                    <field name="a_ads_2"/>
+                                    <field name="a_ads_data_2"/>
+                                    <field name="a_ads_style_2"/>
+                                    <field name="a_ads_3"/>
+                                    <field name="a_ads_data_3"/>
+                                    <field name="a_ads_style_3"/>
+                                    <field name="pi_users_winners_datetime" attrs="{'required': [('pi_users_winners_count', '>', 0)]}"/>
+                                    <field name="pi_users_winners_count"/>
+                                    <field name="pi_users_winners_ids" widget="many2many_tags"/>
+                                    <field name="pi_users_winners_paid_ids" widget="many2many_tags"/>
+                                    <field name="pi_users_winners_ids_text"/>
+                                    <field name="pi_users_winners_paid_ids_text"/>
+                                    <field name="pi_users_winners_ids_wallets"/>
+                                    <field name="pi_users_winners_paid_datetime"/>
+                                    <field name="pi_users_winners_to_pay"/>
+                                    <field name="pi_users_winners_to_pay_per_user"/>
+                                    <field name="block_points"/>
+                                    <field name="pi_users_winners_html"/>
+                                    <field name="pi_transactions_ids"/>
+                                <!--</group>-->
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='admin_pi_apps_view_tree' model='ir.ui.view'>
+        <field name="name">admin.apps.tree</field>
+        <field name="model">admin.apps</field>
+        <field name="arch" type="xml">
+            <tree string="Admin App">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="amount"/>
+                <field name="app"/>
+                <field name="admin_key"/>
+                <field name="sandbox"/>
+                <field name="mainnet"/>
+                <!--<field name="pi_transactions_ids"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id='admin_pi_apps_action' model='ir.actions.act_window'>
+        <field name="name">Admin Pi App</field>
+        <field name="res_model">admin.apps</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a new admin_apps.
+          </p>
+        </field>
+    </record>
+    
+    <menuitem
+        id="menu_config_admin_pi_apps"
+        name="Config Admin Pi Apps"
+        groups="website_pinetwork_odoo.group_pi_admin,website_pinetwork_odoo.group_pi_internal_company_user,website_pinetwork_odoo.group_pi_external_user,base.group_system"
+        web_icon="website_pinetwork_odoo,static/src/img/latin-chain-logo.jpeg"
+        sequence="75"/>
+            
+    <menuitem
+        id="menu_admin_pi_apps"
+        name="Admin Pi App"
+        groups="website_pinetwork_odoo.group_pi_admin,website_pinetwork_odoo.group_pi_internal_company_user,base.group_system"
+        parent="menu_config_admin_pi_apps"
+        action="admin_pi_apps_action"
+        sequence="75"/>
+</odoo>

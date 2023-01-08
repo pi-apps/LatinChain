@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='pi_transactions_view_form' model='ir.ui.view'>
+        <field name="name">pi.transactions.form</field>
+        <field name="model">pi.transactions</field>
+        <field name="arch" type="xml">
+            <form string="Pi Transactions">
+                <sheet>
+                    <notebook>
+                        <page string="Pi Transactions">
+                            <group>
+                                <field name="id"/>
+                                <field name="name"/>
+                                <field name="app_id" readonly="True"/>
+                                <field name="app"/>
+                                <field name="action" readonly="True"/>
+                                <field name="action_type" readonly="True"/>
+                                <field name="payment_id" readonly="True"/>
+                                <field name="txid" readonly="True"/>
+                                <field name="txid_url" readonly="True" widget="url" text="Watch transaction in Pi Blockexplorer"/>
+                                <field name="pi_user_id" readonly="True"/>
+                                <field name="pi_user" readonly="True"/>
+                                <field name="amount" readonly="True"/>
+                                <field name="memo" readonly="True"/>
+                                <field name="to_address" readonly="True"/>
+                                <field name="developer_approved" readonly="True"/>
+                                <field name="transaction_verified" readonly="True"/>
+                                <field name="developer_completed" readonly="True"/>
+                                <field name="cancelled" readonly="True"/>
+                                <field name="user_cancelled" readonly="True"/>
+                                <field name="json_result" readonly="True"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='pi_transactions_view_tree' model='ir.ui.view'>
+        <field name="name">pi.transactions.tree</field>
+        <field name="model">pi.transactions</field>
+        <field name="arch" type="xml">
+            <tree string="Pi Transactions">
+                <header>
+                    <button name="check_transactions_one_user" type="object" string="Check Transactions" class="oe_highlight"/>
+                </header>
+                <field name="id"/>
+                <field name="app"/>
+                <field name="action"/>
+                <field name="action_type"/>
+                <!--<field name="payment_id"/>-->
+                <field name="developer_approved"/>
+                <field name="transaction_verified"/>
+                <field name="developer_completed"/>
+                <field name="cancelled"/>
+                <!--<field name="txid"/>-->
+                <field name="pi_user"/>
+                <field name="amount"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='pi_transactions_action' model='ir.actions.act_window'>
+        <field name="name">Pi Transactions</field>
+        <field name="res_model">pi.transactions</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a new pi transaction.
+          </p>
+        </field>
+    </record>
+            
+    <menuitem
+        id="menu_pi_transactions"
+        name="Pi Transactions"
+        groups="website_pinetwork_odoo.group_pi_admin,base.group_system,website_pinetwork_odoo.group_pi_internal_company_user"
+        parent="menu_config_admin_pi_apps"
+        action="pi_transactions_action"
+        sequence="75"/>
+</odoo>

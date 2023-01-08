@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="rules" name="Rules View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>Rules.</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="Vote for Pi Network Games from Latin America in Pi Brainstorm."/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center">
+                            <h1>* Rules to be verified:</h1>
+                            <h3>1.- Each 30 days you should unlock the app paying <span t-esc="amount" /> Pi. Go to one of the games to do it.</h3>
+                            <h3>2.- In the mainscreen of latin-chain.com, you can watch your available days.</h3><br/>
+                            <h1>* Rules to be in the Leaders Board:</h1>
+                            <h3>1.- Be verified in LatinChain Platform.</h3>
+                            <h3>2.- Be one of the first 50 users with more total points.</h3><br/>
+                            <h1>* Rules to be in the Top 10 Board:</h1>
+                            <h3>1.- Be verified in LatinChain Platform.</h3>
+                            <h3>2.- For Top 10 zone: Have 20 or more points in Chess, more than 18 points in Sudoku and more than 20 points in Snake, <strong>and</strong> have more than 200 in total points.</h3>
+                            <h3>3.- For Top 10 zone Chess: Have 20 or more points in Chess.</h3>
+                            <h3>4.- For Top 10 zone Snake: Have more than 20 points in Snake.</h3>
+                            <h3>5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku.</h3><br/>
+                            <h1>* Rules to be in the Winners Board:</h1>
+                            <h3>1.- Be verified in LatinChain Platform.</h3>
+                            <h3>2.- Be in the first 10 on the Leaders Board or in the Top 10 Board (Top 10 zone, Top 10 zone Chess, Top 10 zone Snake or Top 10 zone Sudoku). It is filled automatically at 16:00 UTC.</h3>
+                            <h3>3.- You should fill your Pi Wallet address in the mainscreen on latin-chain.com, to receive prizes as winner on Pi Mainnet.</h3>
+                        </div>
+
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>

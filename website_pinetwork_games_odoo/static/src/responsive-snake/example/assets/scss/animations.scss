@@ -1,0 +1,72 @@
+.animate {
+  -webkit-animation-fill-mode : both;
+  -moz-animation-fill-mode    : both;
+  -o-animation-fill-mode      : both;
+  animation-fill-mode         : both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity                           : 0;
+    -webkit-transform                 : scale(1.2);
+    -webkit-animation-timing-function : ease-out;
+  }
+
+  100% {
+    opacity                           : 1;
+    -webkit-transform                 : scale(1);
+    -webkit-animation-timing-function : ease-in;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity                   : 0;
+    transform                 : scale(1.2);
+    animation-timing-function : ease-out;
+  }
+
+  100% {
+    opacity                   : 1;
+    transform                 : scale(1);
+    animation-timing-function : ease-in;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name            : fadeIn;
+  animation-name                    : fadeIn;
+  -webkit-animation-timing-function : ease-in;
+  animation-timing-function         : ease-in;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    color : none;
+  }
+  50% {
+    color : #ff0000;
+  }
+  100% {
+    color : none;
+  }
+}
+
+@keyframes flash {
+  0% {
+    color : none;
+  }
+  50% {
+    color : #ff0000;
+  }
+  100% {
+    color : none;
+  }
+}
+
+.flash {
+  -webkit-animation                 : flash 1s ease-out;
+  -webkit-animation-iteration-count : 1;
+  -moz-animation                    : flash 1s ease-out;
+  -moz-animation-iteration-count    : 1;
+}

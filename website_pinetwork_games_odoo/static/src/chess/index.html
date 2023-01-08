@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pi Chess</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=yes">
+        
+        <!-- ios support -->
+        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+        <meta name="theme-color" content="#db4938" />
+        
+        <meta name="application-name" content="Pidoku Solver">
+        <link rel="icon" sizes="16x16 32x32 48x48" href="https://latin-chain.com/latin-chain-logo.jpeg">
+        <link rel="icon" sizes="192x192" href="https://latin-chain.com/latin-chain-logo.jpeg">
+        
+        <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="icon.png">
+        <meta name="description" content="César - OpenSource Expert. OpenSource Consultant.">
+        <link rel="canonical" href="https://cr-innova.negocio.site/">
+        
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+
+        <script type="text/javascript">
+            $( document ).ready(function() {
+                const Pi = window.Pi;
+                Pi.init({ version: "2.0" });
+                
+                async function auth() {
+                    try {
+                        // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
+                        const scopes = ['username', 'payments'];
+                        function onIncompletePaymentFound(payment) {
+                            
+                        }; // Read more about this in the SDK reference
+
+                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                            $("#username").html(" " + auth.user.username);
+                        }).catch(function(error) {
+                            //Pi.openShareDialog("Error", error);
+                            //alert(err);
+                            console.error(error);
+                        });
+                    } catch (err) {
+                        //Pi.openShareDialog("Error", err);
+                        //alert(err);
+                        console.error(err);
+                        // Not able to fetch the user
+                    }
+                }
+                
+                auth();
+                
+                const shareData = {
+                    title: 'LatinChain Platform',
+                    text: 'Hi. Check it out this Pi App: LatinChain Platform (Pi Network Games from Latin America). Try it in Pi Browser. #PiNetwork #PiApps',
+                    url: 'https://latin-chain.com/',
+                }
+                
+                if (!navigator.share) {
+                    $("#social_div").html("");
+                }else
+                {
+                    $("#social_div").css("visibility", "visible");
+                    const btn = document.querySelector('#button1');
+                    //const resultPara = document.querySelector('.result');
+                    
+                    // Must be triggered some kind of "user activation"
+                    btn.addEventListener('click', async () => {
+                      try {
+                        await navigator.share(shareData);
+                        //resultPara.textContent = 'MDN shared successfully'
+                      } catch(err) {
+                        //alert('Error: ' + err);
+                      }
+                    });
+
+                }
+            });
+
+        </script>
+	</head>
+	<body>
+ 		<div class="container" style="text-align:center">
+			<br/>Hi<strong><span id="username"></span></strong>. Welcome to Pi Network Games from Latin America (LatinChain). Choose your app:<br/><br/>
+			<a href="https://latin-chain.com/chess/main.html" class="btn btn-primary">CHESS</a><br/><br/>
+            Other developments:<br/><br/>
+			<a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-primary">WATCH OUR ODOO APP</a><br/><br/>
+            <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-primary">PIAPP GAMES PLATFORM IN ODOO</a><br/><br/>
+			INFO:<br/><br/>
+			<a href="https://latin-chain.com/weblatin" class="btn btn-link"> <img src="https://latin-chain.com/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /></a><br/><br/>
+            <a href="https://latin-chain.com/weblatin" class="btn btn-link">MAIN PAGE OF LATINCHAIN</a><br/><br/>
+			<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a><br/><br/>
+            <div id="social_div" style="visibility: hidden">Share in Social Networks:<br/><br/>
+            <button id="button1"class="btn btn-primary">Share</button><br/><br/>
+            </div>
+		</div>
+	</body>
+</html>

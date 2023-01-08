@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='pi_users_view_form' model='ir.ui.view'>
+        <field name="name">pi.users.form</field>
+        <field name="model">pi.users</field>
+        <field name="arch" type="xml">
+            <form string="Pi Users">
+                <sheet>
+                    <notebook>
+                        <page string="Pi Users">
+                            <group>
+                                <field name="id"/>
+                                <field name="name" readonly="True"/>
+                                <field name="email" readonly="True"/>
+                                <field name="donator" readonly="True"/>
+                                <field name="paid_in_all_donations" readonly="True"/>
+                                <field name="pi_user_id" readonly="True"/>
+                                <field name="pi_user_code" readonly="True"/>
+                                <field name="pi_wallet_address" readonly="True"/>
+                                <field name="pi_user_role" />
+                                <field name="points" readonly="True"/>
+                                <field name="points_chess" readonly="True"/>
+                                <field name="points_sudoku" readonly="True"/>
+                                <field name="points_snake" readonly="True"/>
+                                <field name="points_datetime" readonly="True"/>
+                                <field name="paid_in_transactions" readonly="True"/>
+                                <field name="unblocked" readonly="False"/>
+                                <field name="user_agent" readonly="True"/>
+                                <field name="last_connection" readonly="True"/>
+                                <field name="days_available" readonly="True"/>
+                                <field name="admin_apps_winners_ids" widget="many2many_tags"/>
+                                <field name="admin_apps_winners_paid_ids" widget="many2many_tags"/>
+                                <field name="pi_transactions_ids" readonly="True"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='pi_users_view_tree' model='ir.ui.view'>
+        <field name="name">pi.users.tree</field>
+        <field name="model">pi.users</field>
+        <field name="arch" type="xml">
+            <tree string="Pi Users">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="donator"/>
+                <field name="paid_in_all_donations"/>
+                <!--<field name="pi_user_id"/>-->
+                <field name="pi_user_code"/>
+                <field name="pi_user_role"/>
+                <field name="points"/>
+                <field name="points_chess"/>
+                <field name="points_sudoku"/>
+                <field name="points_snake"/>
+                <field name="paid_in_transactions"/>
+                <field name="unblocked"/>
+                <field name="days_available"/>
+                <field name="last_connection"/>
+                <field name="points_datetime"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='pi_users_action' model='ir.actions.act_window'>
+        <field name="name">Pi Users</field>
+        <field name="res_model">pi.users</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a new pi users.
+          </p>
+        </field>
+    </record>
+            
+    <menuitem
+        id="menu_pi_users"
+        name="Pi Users"
+        groups="website_pinetwork_odoo.group_pi_admin,website_pinetwork_odoo.group_pi_external_user,website_pinetwork_odoo.group_pi_internal_company_user,base.group_system"
+        parent="menu_config_admin_pi_apps"
+        action="pi_users_action"
+        sequence="75"/>
+</odoo>
