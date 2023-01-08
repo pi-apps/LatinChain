@@ -24,5 +24,9 @@ https://github.com/rockcesar/PiNetworkDevelopments/tree/master/piapp-example
 This is for server side (PHP):
 https://github.com/rockcesar/PiNetworkDevelopments/blob/master/server1.php
 
+To make it works, in server1.php, you need to change the auth_app1
+by the one coming from client request. Example: if you have auth_example
+in client JavaScript side, you must set it in server1.php.
+
 Check here:
 https://dev-rockcesar.blogspot.com/2022/10/how-to-develop-pi-app.html
