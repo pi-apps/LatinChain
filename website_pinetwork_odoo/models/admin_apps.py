@@ -55,15 +55,15 @@ class pi_transactions(models.Model):
         for pit in self:
             try:
                 
-                if pit.action == "cancelled" and (pit.cancelled or pit.user_cancelled) and \
+                if pit.action == "cancelled" and pit.action_type == "receive" and (pit.cancelled or pit.user_cancelled) and \
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
-                elif pit.action == "approve" and pit.developer_approved and \
+                elif pit.action == "approve" and pit.action_type == "receive" and pit.developer_approved and \
                     pit.transaction_verified and not pit.developer_completed and \
                     not (pit.cancelled or pit.user_cancelled):
                     self.env["admin.apps"].pi_api({'action': "complete", 'txid': pit.txid, 
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
-                elif pit.action == "approve" and pit.developer_approved and \
+                elif pit.action == "approve" and pit.action_type == "receive" and pit.developer_approved and \
                     not pit.transaction_verified and \
                     not (pit.cancelled or pit.user_cancelled) and \
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
@@ -84,11 +84,11 @@ class pi_transactions(models.Model):
                 
                 result_dict = json.loads(str(json.dumps(result)))
                 
-                if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled":
+                if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled" and pit.action_type == "receive":
                     pit.write({'action': 'cancelled'})
-                elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve":
+                elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve" and pit.action_type == "receive":
                     pit.write({'action': 'approve'})
-                if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete":
+                if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete" and pit.action_type == "receive":
                     pit.write({'name': "complete. PaymentId: " + pit.payment_id,
                                 'action': 'complete',
                                 'payment_id': pit.payment_id,
@@ -105,15 +105,16 @@ class pi_transactions(models.Model):
                         'user_cancelled': result_dict["status"]["user_cancelled"],
                         'json_result': str(result_dict)})
                 
-                if pit.action == "cancelled" and (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
+                if pit.action == "cancelled" and pit.action_type == "receive" and \
+                    (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
-                elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
+                elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
                     result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
                     self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
-                elif pit.action == "approve" and result_dict["status"]["developer_approved"] and \
+                elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
                     not result_dict["status"]["transaction_verified"] and \
                     not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
