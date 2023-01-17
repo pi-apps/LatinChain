@@ -150,6 +150,8 @@ class admin_apps(models.Model):
     pi_users_winners_paid_datetime = fields.Datetime(string='Winners paid datetime', default="", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_html = fields.Html('Winners HTML', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay = fields.Float('Winners To Pay', digits=(50,7), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_to_pay_percent = fields.Float('Winners To Pay percent (from 0 to 100)', digits=(50,2), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_to_pay_days = fields.Integer('Winners To Pay days', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_per_user = fields.Float('Winners To Pay per user', digits=(50,7), compute="_compute_to_pay", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,7), default=1)
@@ -194,7 +196,7 @@ class admin_apps(models.Model):
             point_list.append(i.id)
         
         for i in self:
-            transactions_domain = [('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(days=28))]
+            transactions_domain = [('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(days=i.pi_users_winners_to_pay_days))]
 
             transactions_ids = self.env["pi.transactions"].search(transactions_domain)
 
@@ -202,7 +204,7 @@ class admin_apps(models.Model):
             for t in transactions_ids:
                 i.pi_users_winners_to_pay += t.amount
                 
-            i.pi_users_winners_to_pay = i.pi_users_winners_to_pay * 0.10
+            i.pi_users_winners_to_pay = i.pi_users_winners_to_pay * (i.pi_users_winners_to_pay_percent/100)
 
             i.pi_users_winners_ids = [(6, 0, point_list)]
             i.pi_users_winners_datetime = datetime.now()
