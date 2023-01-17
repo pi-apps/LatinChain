@@ -16,10 +16,10 @@ To use these sources codes in Pi Sandbox (https://developers.minepi.com/), put i
 In the HTTP Server, where you put these codes, you can use domains or subdomains.
 
 website_pinetwork_odoo (PiOS License) is a Pi Network First App for Odoo.
-# Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
+#Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
 website_pinetwork_games_odoo (PiOS License) is a Pi Network Games Engine and Platform for Odoo.
-# Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
+#Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
 
 In client, for using Sandbox you must set, sandox: true, in Pi.init().
 
