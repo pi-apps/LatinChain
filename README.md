@@ -26,8 +26,10 @@ website_pinetwork_games_odoo (PiOS License) is a Pi Network Games Engine and Pla
 
 In client, for using Sandbox you must set, sandox: true, in Pi.init().
 
-  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-  <script>Pi.init({ version: "2.0", sandbox: true })</script>
+```javascript
+  <script src="https://sdk.minepi.com/pi-sdk.js" ></script>
+  <script> Pi.init({ version: "2.0", sandbox: true }) </script>
+```
 
 Apps published:
 
