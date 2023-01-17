@@ -1,3 +1,6 @@
+LatinChain Platform
+-----------------
+
 Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
 
 Original Repository: https://github.com/rockcesar/PiNetworkDevelopments
