@@ -15,7 +15,8 @@ https://minepi.com/blog/hackathon-winners-announcement
 To use these sources codes in Pi Sandbox (https://developers.minepi.com/), put it in the root of HTTP Server.
 In the HTTP Server, where you put these codes, you can use domains or subdomains.
 
-# Apps
+Apps
+-----------------
 
 website_pinetwork_odoo (PiOS License) is a Pi Network First App for Odoo.
 #Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
