@@ -171,7 +171,7 @@ class PiNetwork:
         # TODO: get this from horizon
         fee = 100000 # 0.01π
         to_address = transaction_data["to_address"]
-        memo = transaction_data["memo"]
+        memo = transaction_data["identifier"]
         
         print("MEMO " + str(memo))
         
@@ -250,7 +250,11 @@ incomplete_payments = pi.get_incomplete_server_payments()
 print("INCOMPLETE")
 print(str(incomplete_payments))
 
+from typing import Union
+
 for i in incomplete_payments:
+    r = s_sdk.HashMemo(str("From app to user test"), str(i["identifier"]))
+    print(str(r))
     if i["transaction"] == None:
         txid = pi.submit_payment(i["identifier"], i)
         pi.complete_payment(i["identifier"], txid)
