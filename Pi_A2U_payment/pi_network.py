@@ -13,18 +13,23 @@ class PiNetwork:
     base_url = ""
     from_address = ""
     open_payments = {}
+    network = ""
+    server = ""
+    keypair = ""
 
-    def initialize(self, api_key, wallet_private_key):
+    def initialize(self, api_key, wallet_private_key, network):
         if not self.validate_private_seed_format(wallet_private_key):
             print("Not valid private seed")
         self.api_key = api_key
-        self.account = self.load_account(wallet_private_key)
+        self.load_account(wallet_private_key, network)
         self.base_url = "https://api.minepi.com"
 
         self.open_payments = {}
+        
+        self.network = network
 
     def get_payment(self, payment_id):
-        url = base_url + "/v2/payments/" + payment_id
+        url = self.base_url + "/v2/payments/" + payment_id
         
         re = requests.get(url,headers=self.get_http_headers())
 
@@ -46,7 +51,7 @@ class PiNetwork:
             
             obj = json.dumps(obj)
             
-            print(str(obj))
+            #print(str(obj))
             
             url = self.base_url + "/v2/payments"
 
@@ -61,8 +66,14 @@ class PiNetwork:
         except:
             return ""
 
-    def submit_payment(self, payment_id):
-        payment = self.open_payments[payment_id]
+    def submit_payment(self, payment_id, pending_payment):
+        if pending_payment == False or payment_id in self.open_payments:
+            payment = self.open_payments[payment_id]
+        else:
+            payment = pending_payment
+            
+        print(str(payment))
+        #return False
 
         self.set_horizon_client(payment["network"])
         from_address = payment["from_address"]
@@ -73,15 +84,19 @@ class PiNetwork:
           "recipient": payment["to_address"]
         }
 
-        transaction = self.build_a2u_transaction(transaction_data)
+        transaction = self.build_a2u_transaction(payment)
         txid = self.submit_transaction(transaction)
 
-        self.open_payments.delete(payment_id)
+        if payment_id in self.open_payments:
+            del self.open_payments[payment_id]
 
         return txid
 
     def complete_payment(self, identifier, txid):
-        obj = {"txid": txid}
+        if not txid:
+            obj = {}
+        else:
+            obj = {"txid": txid}
         
         obj = json.dumps(obj)
             
@@ -103,12 +118,12 @@ class PiNetwork:
         self.handle_http_response(re)
 
     def get_incomplete_server_payments(self):
-        url = base_url + "/v2/payments/incomplete_server_payments"
+        url = self.base_url + "/v2/payments/incomplete_server_payments"
         
         re = requests.get(url,headers=self.get_http_headers())
 
         res = self.handle_http_response(re)
-        res["incomplete_server_payments"]
+        return res["incomplete_server_payments"]
 
     def get_http_headers(self):
         return {'Authorization': "Key " + self.api_key, "Content-Type": "application/json"}
@@ -120,69 +135,78 @@ class PiNetwork:
             
             result_dict = json.loads(str(json.dumps(result)))
             print(str(result_dict))
-            if re.status == 200:
-                result = re.json()
             
-                result_dict = json.loads(str(json.dumps(result)))
-                
-                parsed_response = result_dict
-                return parsed_response
-            else:
-                return False
+            return result_dict
         except:
             return False
 
     def set_horizon_client(self, network):
+        self.client = self.server
+        pass
+
+    def load_account(self, private_seed, network):
+        self.keypair = s_sdk.Keypair.from_secret(private_seed)
+        
         if network == "Pi Network":
             host = "api.mainnet.minepi.com"
             horizon = "https://api.mainnet.minepi.com"
         else:
             host = "api.testnet.minepi.com"
             horizon = "https://api.testnet.minepi.com"
-            
-        client = s_sdk.Client(host=host, horizon=horizon)
-        s_sdk.default_network = network
-
-        client = client
-
-    def load_account(self, private_seed):
-        keypair = s_sdk.Keypair.from_secret(private_seed)
         
-        server = s_sdk.Server("https://api.testnet.minepi.com")
-        self.account = server.load_account(keypair.public_key)
+        self.server = s_sdk.Server(horizon)
+        self.account = self.server.load_account(self.keypair.public_key)
+        
+        #print("HOLAAA " + str(self.account))
 
     def build_a2u_transaction(self, transaction_data):
         #raise StandardError.new("You should use a private seed of your app wallet!") if self.from_address != self.account.address
 
+        print("MEMO ")
         if not self.validate_payment_data(transaction_data):
             print("Not valid transaction")
-
-        amount = s_sdk.Amount(transaction_data[amount])
+            
+        amount = str(transaction_data["amount"])
+        
         # TODO: get this from horizon
         fee = 100000 # 0.01π
-        recipient = s_sdk.Keypair.from_address(transaction_data[recipient])
-        memo = s_sdk.Memo(memo_text, transaction_data[identifier])
-
-        payment_operation = s_sdk.Operation.payment({
-          destination: recipient,
-          amount: amount.to_payment
-        })
-
-        my_public_key = self.account.address
-        sequence_number = self.client.account_info(my_public_key).sequence.to_i
-        transaction_builder = s_sdk.TransactionBuilder(
-          source_account = self.account.keypair,
-          sequence_number = sequence_number + 1,
-          base_fee = fee,
-          memo = memo
+        to_address = transaction_data["to_address"]
+        memo = transaction_data["memo"]
+        
+        print("MEMO " + str(memo))
+        
+        from_address = transaction_data["from_address"]
+            
+        transaction = (
+            s_sdk.TransactionBuilder(
+                source_account=self.account,
+                network_passphrase=self.network,
+                base_fee=fee,
+            )
+            .add_text_memo(memo)
+            .append_payment_op(to_address, s_sdk.Asset.native(), amount)
+            .set_timeout(30)
+            .build()
         )
-
-        transaction = transaction_builder.add_operation(payment_operation).set_timeout(180000).build
+        
+        return transaction
 
     def submit_transaction(self, transaction):
-        envelope = transaction.to_envelope(self.account.keypair)
-        response = self.client.submit_transaction(tx_envelope= envelope)
-        txid = response._response.body["id"]
+        #print(str(self.keypair))
+        transaction.sign(self.keypair)
+        response = self.server.submit_transaction(transaction)
+        
+        #envelope = transaction.to_envelope(self.keypair)
+        #response = self.server.submit_transaction(transaction)
+        
+        
+        #envelope = transaction.to_envelope(self.account.keypair)
+        #response = self.client.submit_transaction(tx_envelope= envelope)
+        
+        #print(str(response["id"]))
+        txid = response["id"]
+        
+        return txid
 
     def validate_payment_data(self, data):
         if "amount" not in data:
@@ -211,7 +235,7 @@ api_key = ""
 wallet_private_seed = "" # starts with S
 
 pi = PiNetwork()
-pi.initialize(api_key, wallet_private_seed)
+pi.initialize(api_key, wallet_private_seed, "Pi Testnet")
 
 user_uid = ""
 payment_data = {
@@ -220,10 +244,24 @@ payment_data = {
   "metadata": {"test": "your metadata"},
   "uid": user_uid
 }
+
+incomplete_payments = pi.get_incomplete_server_payments()
+
+print("INCOMPLETE")
+print(str(incomplete_payments))
+
+for i in incomplete_payments:
+    if i["transaction"] == None:
+        txid = pi.submit_payment(i["identifier"], i)
+        print(str(txid))
+        pi.complete_payment(i["identifier"], txid)
+    #else:
+    #    print("txid " + i["transaction"]["txid"])
+    #    pi.complete_payment(i["identifier"], i["transaction"]["txid"])
+
 payment_id = pi.create_payment(payment_data)
 
-print(payment_id)
-
-txid = pi.submit_payment(payment_id)
+txid = pi.submit_payment(payment_id, False)
+#txid = pi.submit_payment("jGCjzZqgg78B6Pf1wzYHFSBTqNIv")
 
 payment = pi.complete_payment(payment_id, txid)
