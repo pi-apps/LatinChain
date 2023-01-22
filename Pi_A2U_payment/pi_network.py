@@ -253,11 +253,9 @@ print(str(incomplete_payments))
 for i in incomplete_payments:
     if i["transaction"] == None:
         txid = pi.submit_payment(i["identifier"], i)
-        print(str(txid))
         pi.complete_payment(i["identifier"], txid)
-    #else:
-    #    print("txid " + i["transaction"]["txid"])
-    #    pi.complete_payment(i["identifier"], i["transaction"]["txid"])
+    else:
+        pi.complete_payment(i["identifier"], i["transaction"]["txid"])
 
 payment_id = pi.create_payment(payment_data)
 
