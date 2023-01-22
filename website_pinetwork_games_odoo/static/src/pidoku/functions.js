@@ -92,7 +92,7 @@ $( document ).ready(function() {
         
         try {
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
-            const scopes = ['username', 'payments'];
+            const scopes = ['username', 'payments', 'wallet_address'];
             function onIncompletePaymentFound(payment) {
                 
                 try {

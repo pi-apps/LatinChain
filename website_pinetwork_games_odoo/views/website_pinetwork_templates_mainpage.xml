@@ -396,7 +396,7 @@
                             async function auth() {
                                 try {
                                     // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
-                                    const scopes = ['username', 'payments'];
+                                    const scopes = ['username', 'payments', 'wallet_address'];
                                     function onIncompletePaymentFound(payment) {
                                         
                                     }; // Read more about this in the SDK reference
