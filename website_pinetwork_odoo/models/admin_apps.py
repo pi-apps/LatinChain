@@ -18,8 +18,6 @@ from datetime import datetime, timedelta
 
 from dateutil.relativedelta import relativedelta, MO
 
-from psycopg2 import OperationalError, errorcodes, errors
-
 class pi_transactions(models.Model):
     _name = "pi.transactions"
     _description = "Pi Transactions"
@@ -334,8 +332,6 @@ class admin_apps(models.Model):
                         transaction[0].sudo().write({'action': 'approve'})
             else:
                 result = {"result": True, "completed": False, "approved": False}
-        except errors.InFailedSqlTransaction:
-            result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
         except:
             result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
         
