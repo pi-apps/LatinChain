@@ -310,7 +310,7 @@ class admin_apps(models.Model):
                             'cancelled': result_dict["status"]["cancelled"], 
                             'user_cancelled': result_dict["status"]["user_cancelled"]}
                             
-                if result_dict["direction"] == "app_to_user":
+                if "direction" in result_dict and result_dict["direction"] == "app_to_user":
                     data_dict.update({'action_type': 'send'})
                 
                 transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
