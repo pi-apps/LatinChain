@@ -22,6 +22,7 @@
                                 <field name="pi_user" readonly="True"/>
                                 <field name="amount" readonly="True"/>
                                 <field name="memo" readonly="True"/>
+                                <field name="from_address" readonly="True"/>
                                 <field name="to_address" readonly="True"/>
                                 <field name="developer_approved" readonly="True"/>
                                 <field name="transaction_verified" readonly="True"/>

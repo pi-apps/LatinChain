@@ -18,6 +18,8 @@ from datetime import datetime, timedelta
 
 from dateutil.relativedelta import relativedelta, MO
 
+import ast
+
 class pi_transactions(models.Model):
     _name = "pi.transactions"
     _description = "Pi Transactions"
@@ -34,6 +36,7 @@ class pi_transactions(models.Model):
     pi_user = fields.Many2one('pi.users', ondelete='restrict')
     amount = fields.Float('Amount', digits=(50,7))
     memo = fields.Char('Memo')
+    from_address = fields.Char('From address', compute="_compute_json_values", store=True)
     to_address = fields.Char('To address')
     developer_approved = fields.Boolean('developer_approved')
     transaction_verified = fields.Boolean('transaction_verified')
@@ -41,6 +44,18 @@ class pi_transactions(models.Model):
     cancelled = fields.Boolean('cancelled')
     user_cancelled = fields.Boolean('user_cancelled')
     json_result = fields.Text('JSON Result', required=True)
+    
+    @api.depends("json_result")
+    def _compute_json_values(self):
+        for pit in self:
+            if pit.json_result:
+                json_result = ast.literal_eval(pit.json_result)
+                if "from_address" in json_result:
+                    pit.from_address = json_result["from_address"]
+                else:
+                    pit.from_address = ""
+            else:
+                pit.from_address = ""
     
     def _compute_txid_url(self):
         for pit in self:
