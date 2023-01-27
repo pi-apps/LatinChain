@@ -286,7 +286,7 @@ class admin_apps(models.Model):
                     else:
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
                         if len(pi_user) > 0:
-                            self.pi_api({'paymentId': i["identifier"], 
+                            result = self.pi_api({'paymentId': i["identifier"], 
                                             'app_client': 'auth_platform', 
                                             'action': 'complete',
                                             'pi_user_code': pi_user[0].pi_user_code,
@@ -328,7 +328,7 @@ class admin_apps(models.Model):
 
                     if txid:
                         """ Complete the Payment """
-                        self.pi_api({'paymentId': payment_id,
+                        result = self.pi_api({'paymentId': payment_id,
                                         'app_client': 'auth_platform',
                                         'action': 'complete',
                                         'pi_user_code': i.pi_user_code,
