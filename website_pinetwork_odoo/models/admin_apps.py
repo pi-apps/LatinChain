@@ -269,13 +269,14 @@ class admin_apps(models.Model):
                     if len(pi_user) > 0:
                         txid = pi.submit_payment(i["identifier"], i)
                         
-                        self.pi_api({'paymentId': i["identifier"], 
-                                    'app_client': 'auth_platform',
-                                    'action': 'complete',
-                                    'pi_user_code': pi_user[0].pi_user_code,
-                                    'txid': txid})
-                        #pi.complete_payment(i["identifier"], txid)
-                        self.env.cr.commit()
+                        if txid:
+                            self.pi_api({'paymentId': i["identifier"], 
+                                        'app_client': 'auth_platform',
+                                        'action': 'complete',
+                                        'pi_user_code': pi_user[0].pi_user_code,
+                                        'txid': txid})
+                            #pi.complete_payment(i["identifier"], txid)
+                            self.env.cr.commit()
                 else:
                     pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
                     if len(pi_user) > 0:
@@ -318,17 +319,18 @@ class admin_apps(models.Model):
                     """
                     txid = pi.submit_payment(payment_id, False)
 
-                    """ Complete the Payment """
-                    self.pi_api({'paymentId': payment_id,
-                                    'app_client': 'auth_platform',
-                                    'action': 'complete',
-                                    'pi_user_code': i.pi_user_code,
-                                    'txid': txid})
-                
-                    #payment = pi.complete_payment(payment_id, txid)
+                    if txid:
+                        """ Complete the Payment """
+                        self.pi_api({'paymentId': payment_id,
+                                        'app_client': 'auth_platform',
+                                        'action': 'complete',
+                                        'pi_user_code': i.pi_user_code,
+                                        'txid': txid})
                     
-                    winner_paid_list.append(i.id)
-                    
+                        #payment = pi.complete_payment(payment_id, txid)
+                        
+                        winner_paid_list.append(i.id)
+                        
                     self_i.pi_users_winners_paid_ids = [(6, 0, winner_paid_list)]
                     
                     self.env.cr.commit()

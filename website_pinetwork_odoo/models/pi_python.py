@@ -59,6 +59,8 @@ class PiNetwork:
             return ""
 
     def submit_payment(self, payment_id, pending_payment):
+        if payment_id not in self.open_payments:
+            return False
         if pending_payment == False or payment_id in self.open_payments:
             payment = self.open_payments[payment_id]
         else:
