@@ -279,6 +279,7 @@ class admin_apps(models.Model):
                                             'action': 'complete',
                                             'pi_user_code': pi_user[0].pi_user_code,
                                             'txid': txid})
+                                result = ast.literal_eval(result)
                                 #pi.complete_payment(i["identifier"], txid)
                                 if result["result"]:
                                     self_i.pi_users_winners_completed_payments += 1
@@ -291,6 +292,7 @@ class admin_apps(models.Model):
                                             'action': 'complete',
                                             'pi_user_code': pi_user[0].pi_user_code,
                                             'txid': i["transaction"]["txid"]})
+                            result = ast.literal_eval(result)
                             if result["result"]:
                                 self_i.pi_users_winners_completed_payments += 1
                             #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
@@ -333,7 +335,8 @@ class admin_apps(models.Model):
                                         'action': 'complete',
                                         'pi_user_code': i.pi_user_code,
                                         'txid': txid})
-                                        
+                        
+                        result = ast.literal_eval(result)
                         if result["result"]:
                             self_i.pi_users_winners_completed_payments += 1
                     
