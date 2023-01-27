@@ -169,6 +169,7 @@ class admin_apps(models.Model):
     pi_users_winners_to_pay_percent = fields.Float('Winners To Pay percent (from 0 to 100)', digits=(50,2), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_days = fields.Integer('Winners To Pay days', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_per_user = fields.Float('Winners To Pay per user', digits=(50,7), compute="_compute_to_pay", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_completed_payments = fields.Integer('Winners To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,7), default=1)
     google_adsense = fields.Char('Google Adsense src', required=True, default="Set your Google Adsense", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -236,65 +237,71 @@ class admin_apps(models.Model):
             i.pi_users_winners_datetime = datetime.now()
     
     def pay_winners(self):
-        winner_paid_list = []
-        
-        """ 
-            Your SECRET Data 
-            Visit the Pi Developer Portal to get these data
-            
-             DO NOT expose these values to public
-        """
-        admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
-        
-        api_key = admin_app_list[0].admin_key
-        wallet_private_seed = admin_app_list[0].wallet_private_seed
-        
-        if admin_app_list[0].mainnet == "Mainnet ON":
-            network = "Pi Network"
-        else:
-            network = "Pi Testnet"
-
-        """ Initialization """
-        pi = pi_python.PiNetwork()
-        pi.initialize(api_key, wallet_private_seed, network)
-        
-        """ Check for incomplete payments """
-        incomplete_payments = pi.get_incomplete_server_payments()
-
-        """ Handle incomplete payments first """
-        if len(incomplete_payments) > 0:
-            for i in incomplete_payments:
-                if i["transaction"] == None:
-                    pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
-                    if len(pi_user) > 0:
-                        txid = pi.submit_payment(i["identifier"], i)
-                        
-                        if txid:
-                            self.pi_api({'paymentId': i["identifier"], 
-                                        'app_client': 'auth_platform',
-                                        'action': 'complete',
-                                        'pi_user_code': pi_user[0].pi_user_code,
-                                        'txid': txid})
-                            #pi.complete_payment(i["identifier"], txid)
-                            self.env.cr.commit()
-                else:
-                    pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
-                    if len(pi_user) > 0:
-                        self.pi_api({'paymentId': i["identifier"], 
-                                        'app_client': 'auth_platform', 
-                                        'action': 'complete',
-                                        'pi_user_code': pi_user[0].pi_user_code,
-                                        'txid': i["transaction"]["txid"]})
-                        #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
-                        self.env.cr.commit()
-                        
         for self_i in self:
+            winner_paid_list = []
+            
+            """ 
+                Your SECRET Data 
+                Visit the Pi Developer Portal to get these data
+                
+                 DO NOT expose these values to public
+            """
+            admin_app_list = self_i
+            
+            api_key = admin_app_list.admin_key
+            wallet_private_seed = admin_app_list.wallet_private_seed
+            
+            if admin_app_list.mainnet == "Mainnet ON":
+                network = "Pi Network"
+            else:
+                network = "Pi Testnet"
+
+            """ Initialization """
+            pi = pi_python.PiNetwork()
+            pi.initialize(api_key, wallet_private_seed, network)
+            
+            self_i.pi_users_winners_completed_payments = 0
+            
+            """ Check for incomplete payments """
+            incomplete_payments = pi.get_incomplete_server_payments()
+
+            """ Handle incomplete payments first """
+            if len(incomplete_payments) > 0:
+                for i in incomplete_payments:
+                    if i["transaction"] == None:
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
+                        if len(pi_user) > 0:
+                            txid = pi.submit_payment(i["identifier"], i)
+                            
+                            if txid:
+                                result = self.pi_api({'paymentId': i["identifier"], 
+                                            'app_client': 'auth_platform',
+                                            'action': 'complete',
+                                            'pi_user_code': pi_user[0].pi_user_code,
+                                            'txid': txid})
+                                #pi.complete_payment(i["identifier"], txid)
+                                if result["result"]:
+                                    self_i.pi_users_winners_completed_payments += 1
+                                self.env.cr.commit()
+                    else:
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
+                        if len(pi_user) > 0:
+                            self.pi_api({'paymentId': i["identifier"], 
+                                            'app_client': 'auth_platform', 
+                                            'action': 'complete',
+                                            'pi_user_code': pi_user[0].pi_user_code,
+                                            'txid': i["transaction"]["txid"]})
+                            if result["result"]:
+                                self_i.pi_users_winners_completed_payments += 1
+                            #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
+                            self.env.cr.commit()
+            
             for i in self_i.pi_users_winners_ids:
                 transactions_domain = [('pi_user', '=', i.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))]
                 
                 transactions_ids = self.env["pi.transactions"].search(transactions_domain)
 
-                if len(transactions_ids) == 0 and float(admin_app_list[0].pi_users_winners_to_pay_per_user) > 0:
+                if len(transactions_ids) == 0 and float(admin_app_list.pi_users_winners_to_pay_per_user) > 0:
                     """ 
                         Example Data
                         Get the user_uid from the Frontend
@@ -303,7 +310,7 @@ class admin_apps(models.Model):
 
                     """ Build your payment """
                     payment_data = {
-                      "amount": float(admin_app_list[0].pi_users_winners_to_pay_per_user),
+                      "amount": float(admin_app_list.pi_users_winners_to_pay_per_user),
                       "memo": "Payment prize from LatinChain Platform",
                       "metadata": {"internal_data": "Payment prize from LatinChain Platform"},
                       "uid": user_uid
@@ -326,6 +333,9 @@ class admin_apps(models.Model):
                                         'action': 'complete',
                                         'pi_user_code': i.pi_user_code,
                                         'txid': txid})
+                                        
+                        if result["result"]:
+                            self_i.pi_users_winners_completed_payments += 1
                     
                         #payment = pi.complete_payment(payment_id, txid)
                         
