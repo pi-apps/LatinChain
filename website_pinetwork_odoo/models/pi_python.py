@@ -21,8 +21,9 @@ class PiNetwork:
     network = ""
     server = ""
     keypair = ""
+    fee = ""
 
-    def initialize(self, api_key, wallet_private_key, network):
+    def initialize(self, api_key, wallet_private_key, network, fee):
         if not self.validate_private_seed_format(wallet_private_key):
             print("No valid private seed!")
         self.api_key = api_key
@@ -30,6 +31,7 @@ class PiNetwork:
         self.base_url = "https://api.minepi.com"
         self.open_payments = {}        
         self.network = network
+        self.fee = fee
 
     def get_payment(self, payment_id):
         url = self.base_url + "/v2/payments/" + payment_id
@@ -149,7 +151,7 @@ class PiNetwork:
         amount = str(transaction_data["amount"])
         
         # TODO: get this from horizon
-        fee = 100000 # 0.01π
+        fee = self.fee # 100000 # 0.01π
         to_address = transaction_data["to_address"]
         memo = transaction_data["identifier"]
         
