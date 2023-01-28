@@ -169,6 +169,7 @@ class admin_apps(models.Model):
     pi_users_winners_to_pay_percent = fields.Float('Winners To Pay percent (from 0 to 100)', digits=(50,2), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_days = fields.Integer('Winners To Pay days', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_per_user = fields.Float('Winners To Pay per user', digits=(50,7), compute="_compute_to_pay", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_fee_to_pay = fields.Integer('Winners Fee To Pay', default=100000, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_completed_payments = fields.Integer('Winners To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,7), default=1)
@@ -258,7 +259,7 @@ class admin_apps(models.Model):
 
             """ Initialization """
             pi = pi_python.PiNetwork()
-            pi.initialize(api_key, wallet_private_seed, network)
+            pi.initialize(api_key, wallet_private_seed, network, admin_app_list.pi_users_winners_fee_to_pay)
             
             self_i.pi_users_winners_completed_payments = 0
             
