@@ -309,7 +309,7 @@ class admin_apps(models.Model):
             for i in self_i.pi_users_winners_ids:
                 transactions_domain = [('pi_user', '=', i.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))]
                 
-                transactions_ids = self.env["pi.transactions"].search(transactions_domain)
+                transactions_ids = self.env["pi.transactions"].search(transactions_domain, limit=1)
 
                 if len(transactions_ids) == 0 and float(admin_app_list.pi_users_winners_to_pay_per_user) > 0:
                     """ 
