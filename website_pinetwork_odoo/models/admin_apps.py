@@ -288,6 +288,8 @@ class admin_apps(models.Model):
                                     self_i.pi_users_winners_completed_payments += 1
                                     self_i.pi_users_winners_paid_ids = [(4, pi_user[0].id)]
                                     self_i.pi_users_winners_to_pay = self_i.pi_users_winners_to_pay - float(i["amount"])
+                                    if self_i.pi_users_winners_to_pay < 0:
+                                        self_i.pi_users_winners_to_pay = 0
                                 self.env.cr.commit()
                     else:
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
@@ -303,6 +305,8 @@ class admin_apps(models.Model):
                                 self_i.pi_users_winners_completed_payments += 1
                                 self_i.pi_users_winners_paid_ids = [(4, pi_user[0].id)]
                                 self_i.pi_users_winners_to_pay = self_i.pi_users_winners_to_pay - float(i["amount"])
+                                if self_i.pi_users_winners_to_pay < 0:
+                                    self_i.pi_users_winners_to_pay = 0
                             #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
                             self.env.cr.commit()
             
@@ -349,6 +353,8 @@ class admin_apps(models.Model):
                             self_i.pi_users_winners_completed_payments += 1
                             self_i.pi_users_winners_paid_ids = [(4, i.id)]
                             self_i.pi_users_winners_to_pay = self_i.pi_users_winners_to_pay - float(payment_data["amount"])
+                            if self_i.pi_users_winners_to_pay < 0:
+                                self_i.pi_users_winners_to_pay = 0
                     
                         #payment = pi.complete_payment(payment_id, txid)
                         
