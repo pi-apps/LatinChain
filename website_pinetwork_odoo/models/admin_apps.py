@@ -214,7 +214,7 @@ class admin_apps(models.Model):
             point_list.append(i.id)
         
         for i in self:
-            transactions_domain = [('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(days=i.pi_users_winners_to_pay_days))]
+            """transactions_domain = [('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(days=i.pi_users_winners_to_pay_days))]
 
             transactions_ids = self.env["pi.transactions"].search(transactions_domain)
 
@@ -233,6 +233,7 @@ class admin_apps(models.Model):
                 i.pi_users_winners_to_pay = 0
             
             i.pi_users_winners_to_pay = i.pi_users_winners_to_pay * (i.pi_users_winners_to_pay_percent/100)
+            """
 
             i.pi_users_winners_ids = [(6, 0, point_list)]
             i.pi_users_winners_datetime = datetime.now()
@@ -286,12 +287,13 @@ class admin_apps(models.Model):
                                 if result["result"]:
                                     self_i.pi_users_winners_completed_payments += 1
                                     self_i.pi_users_winners_paid_ids = [(4, pi_user[0].id)]
+                                    self_i.pi_users_winners_to_pay = self_i.pi_users_winners_to_pay - float(i["amount"])
                                 self.env.cr.commit()
                     else:
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
                         if len(pi_user) > 0:
-                            result = self.pi_api({'paymentId': i["identifier"], 
-                                            'app_client': 'auth_platform', 
+                            result = self.pi_api({'paymentId': i["identifier"],
+                                            'app_client': 'auth_platform',
                                             'action': 'complete',
                                             'pi_user_code': pi_user[0].pi_user_code,
                                             'txid': i["transaction"]["txid"]})
@@ -300,6 +302,7 @@ class admin_apps(models.Model):
                             if result["result"]:
                                 self_i.pi_users_winners_completed_payments += 1
                                 self_i.pi_users_winners_paid_ids = [(4, pi_user[0].id)]
+                                self_i.pi_users_winners_to_pay = self_i.pi_users_winners_to_pay - float(i["amount"])
                             #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
                             self.env.cr.commit()
             
@@ -345,6 +348,7 @@ class admin_apps(models.Model):
                         if result["result"]:
                             self_i.pi_users_winners_completed_payments += 1
                             self_i.pi_users_winners_paid_ids = [(4, i.id)]
+                            self_i.pi_users_winners_to_pay = self_i.pi_users_winners_to_pay - float(payment_data["amount"])
                     
                         #payment = pi.complete_payment(payment_id, txid)
                         
@@ -454,9 +458,13 @@ class admin_apps(models.Model):
                             'developer_completed': result_dict["status"]["developer_completed"], 
                             'cancelled': result_dict["status"]["cancelled"], 
                             'user_cancelled': result_dict["status"]["user_cancelled"]}
-                            
+                
+                admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
                 if "direction" in result_dict and result_dict["direction"] == "app_to_user":
                     data_dict.update({'action_type': 'send'})
+                elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                    data_dict.update({'action_type': 'receive'})
+                    admin_app[0].pi_users_winners_to_pay = admin_app[0].pi_users_winners_to_pay + (float(result_dict["amount"]) * (admin_app[0].pi_users_winners_to_pay_percent/100))
                 
                 transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
                 if transaction_count == 0:
