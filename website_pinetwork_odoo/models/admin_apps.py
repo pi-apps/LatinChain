@@ -312,7 +312,18 @@ class admin_apps(models.Model):
             
             self_i._compute_to_pay()
             
-            for i in self_i.pi_users_winners_ids:
+            winners = list()
+            
+            for j in self_i.pi_users_winners_ids:
+                winner_paid = False
+                for k in self_i.pi_users_winners_paid_ids:
+                    if j.pi_user_code == k.pi_user_code:
+                        winner_paid = True
+                        break
+                if not winner_paid:
+                    winners.append(j)
+            
+            for i in winners:
                 transactions_domain = [('pi_user', '=', i.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))]
                 
                 transactions_ids = self.env["pi.transactions"].search(transactions_domain, limit=1)
