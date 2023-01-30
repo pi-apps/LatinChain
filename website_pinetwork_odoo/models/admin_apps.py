@@ -310,18 +310,7 @@ class admin_apps(models.Model):
                             #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
                             self.env.cr.commit()
             
-            self_i._compute_to_pay()
-            
-            winners = list()
-            
-            for j in self_i.pi_users_winners_ids:
-                winner_paid = False
-                for k in self_i.pi_users_winners_paid_ids:
-                    if j.pi_user_code == k.pi_user_code:
-                        winner_paid = True
-                        break
-                if not winner_paid:
-                    winners.append(j)
+            winners = self_i._compute_to_pay()
             
             for i in winners:
                 transactions_domain = [('pi_user', '=', i.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))]
@@ -389,21 +378,31 @@ class admin_apps(models.Model):
             i.pi_users_winners_count = len(i.pi_users_winners_ids)
     
     def _compute_to_pay(self):
+        winners_list = list()
         for i in self:
             if len(i.pi_users_winners_ids) == 0:
                 i.pi_users_winners_to_pay_per_user = 0
             else:
                 counter_winner = len(i.pi_users_winners_ids.ids)
+                winners = list()
                 for j in i.pi_users_winners_ids:
+                    winner_paid = False
                     for k in i.pi_users_winners_paid_ids:
                         if j.pi_user_code == k.pi_user_code:
+                            winner_paid = True
                             counter_winner-=1
                             break
+                    if not winner_paid:
+                        winners.append(j)
                         
                 if counter_winner > 0:
                     i.pi_users_winners_to_pay_per_user = i.pi_users_winners_to_pay / counter_winner
                 else:
                     i.pi_users_winners_to_pay_per_user = 0
+                    
+                winners_list = winners
+        
+        return winners_list
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_pi_winner_text(self):
