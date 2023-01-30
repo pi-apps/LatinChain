@@ -310,7 +310,7 @@ class admin_apps(models.Model):
                             #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
                             self.env.cr.commit()
             
-            self_i._compute_to_pay(self)
+            self_i._compute_to_pay()
             
             for i in self_i.pi_users_winners_ids:
                 transactions_domain = [('pi_user', '=', i.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))]
