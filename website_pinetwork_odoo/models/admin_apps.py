@@ -375,13 +375,23 @@ class admin_apps(models.Model):
         for i in self:
             i.pi_users_winners_count = len(i.pi_users_winners_ids)
     
-    @api.depends("pi_users_winners_to_pay")
+    @api.depends("pi_users_winners_to_pay", "pi_users_winners_paid_ids", "pi_users_winners_ids")
     def _compute_to_pay(self):
         for i in self:
             if len(i.pi_users_winners_ids) == 0:
                 i.pi_users_winners_to_pay_per_user = 0
             else:
-                i.pi_users_winners_to_pay_per_user = i.pi_users_winners_to_pay / len(i.pi_users_winners_ids)
+                counter_winner = len(i.pi_users_winners_ids.ids)
+                for j in i.pi_users_winners_ids:
+                    for k in i.pi_users_winners_paid_ids:
+                        if j.pi_user_code == k.pi_user_code:
+                            counter_winner-=1
+                            break
+                        
+                if counter_winner > 0:
+                    i.pi_users_winners_to_pay_per_user = i.pi_users_winners_to_pay / counter_winner
+                else:
+                    i.pi_users_winners_to_pay_per_user = 0
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_pi_winner_text(self):
