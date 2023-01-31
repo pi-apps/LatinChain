@@ -22,6 +22,8 @@ import ast
 
 from . import pi_python
 
+import threading
+
 class pi_transactions(models.Model):
     _name = "pi.transactions"
     _description = "Pi Transactions"
@@ -627,6 +629,13 @@ class pi_users(models.Model):
                     i.unblocked = False
 
     def check_users(self):
+        threaded_calculation = threading.Thread(
+                        target=self._check_users,
+                        args=([]))
+                        #args=([[move.id]]))
+        threaded_calculation.start()
+    
+    def _check_users(self):
         for piu in self:
             transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
             
