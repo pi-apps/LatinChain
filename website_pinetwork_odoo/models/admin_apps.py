@@ -639,6 +639,7 @@ class pi_users(models.Model):
         _logger.info("Hello")
         self_users = self.search([('unblocked', '=', False)])
         for piu in self_users:
+            _logger.info(piu.pi_user_code)
             transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
