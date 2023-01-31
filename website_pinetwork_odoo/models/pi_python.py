@@ -31,7 +31,8 @@ class PiNetwork:
         self.base_url = "https://api.minepi.com"
         self.open_payments = {}        
         self.network = network
-        self.fee = fee
+        self.fee = self.server.fetch_base_fee()
+        #self.fee = fee
 
     def get_payment(self, payment_id):
         url = self.base_url + "/v2/payments/" + payment_id
@@ -43,6 +44,9 @@ class PiNetwork:
             if not self.validate_payment_data(payment_data):
                 if __debug__:
                     print("No valid payments found. Creating a new one...")
+            
+            if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(self.server.accounts().account_id(self.keypair.public_key).call()["balances"][0]["balance"]):
+                return ""
 
             obj = {
               'payment': payment_data,
@@ -68,6 +72,9 @@ class PiNetwork:
         else:
             payment = pending_payment
         
+        if (float(payment["amount"]) + (float(self.fee)/10000000)) > float(self.server.accounts().account_id(self.keypair.public_key).call()["balances"][0]["balance"]):
+            return False
+        
         if __debug__:
             print("Debug_Data: Payment information\n" + str(payment))
 
@@ -86,6 +93,7 @@ class PiNetwork:
             del self.open_payments[payment_id]
 
         return txid
+            
 
     def complete_payment(self, identifier, txid):
         if not txid:
