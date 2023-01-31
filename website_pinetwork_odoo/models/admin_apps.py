@@ -31,7 +31,6 @@ class pi_transactions(models.Model):
     app = fields.Char(related="app_id.app")
     action = fields.Selection([('approve', 'Approve'), ('complete', 'Complete'), ('cancelled', 'Cancelled')], 'Action', required=True)
     action_type = fields.Selection([('receive', 'Receive'), ('send', 'Send')], 'Action type', default="receive")
-    counted_to_pay = fields.Selection([('counted', 'Counted'), ('not_counted', 'Not Counted')], 'Counted to pay', default="not_counted")
     payment_id = fields.Char('PaymentId', required=True)
     txid = fields.Text('TXID')
     txid_url = fields.Text('TXID URL', compute="_compute_txid_url")
@@ -169,7 +168,7 @@ class admin_apps(models.Model):
     pi_users_winners_to_pay = fields.Float('Winners To Pay', digits=(50,7), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_percent = fields.Float('Winners To Pay percent (from 0 to 100)', digits=(50,2), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_days = fields.Integer('Winners To Pay days', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_winners_to_pay_seconds = fields.Integer('Winners To Fill the winners seconds', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_paying = fields.Boolean('Paying to winners', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_per_user = fields.Float('Winners To Pay per user', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_fee_to_pay = fields.Integer('Winners Fee To Pay', default=100000, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_completed_payments = fields.Integer('Winners To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -216,6 +215,7 @@ class admin_apps(models.Model):
             point_list.append(i.id)
         
         for i in self:
+            """
             transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(seconds=i.pi_users_winners_to_pay_seconds))]
 
             transactions_ids = self.env["pi.transactions"].search(transactions_domain)
@@ -236,12 +236,16 @@ class admin_apps(models.Model):
             
             if i.pi_users_winners_to_pay < 0:
                 i.pi_users_winners_to_pay = 0
+            """
 
             i.pi_users_winners_ids = [(6, 0, point_list)]
             i.pi_users_winners_datetime = datetime.now()
     
     def pay_winners(self):
         for self_i in self:
+            self_i.pi_users_winners_paying = True
+            self.env.cr.commit()
+            
             winner_paid_list = []
             
             """ 
@@ -373,6 +377,9 @@ class admin_apps(models.Model):
                         self.env.cr.commit()
                     else:
                         pi.cancel_payment(payment_id)
+                        
+            self_i.pi_users_winners_paying = False
+            self.env.cr.commit()
         
     def delete_winners(self):
         for i in self:
@@ -499,7 +506,8 @@ class admin_apps(models.Model):
                     data_dict.update({'action_type': 'send'})
                 elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
                     data_dict.update({'action_type': 'receive'})
-                    #admin_app[0].pi_users_winners_to_pay = admin_app[0].pi_users_winners_to_pay + (float(result_dict["amount"]) * (admin_app[0].pi_users_winners_to_pay_percent/100))
+                    if not admin_app[0].pi_users_winners_paying:
+                        admin_app[0].pi_users_winners_to_pay = admin_app[0].pi_users_winners_to_pay + (float(result_dict["amount"]) * (admin_app[0].pi_users_winners_to_pay_percent/100))
                 
                 transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
                 if transaction_count == 0:
