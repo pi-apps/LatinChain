@@ -84,7 +84,7 @@ class pi_transactions(models.Model):
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
                 
-                self.env.cr.commit()
+                #self.env.cr.commit()
             except:
                 _logger.info(str("ERROR TRANSACTIONS"))
     
@@ -135,7 +135,7 @@ class pi_transactions(models.Model):
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
                 
-                self.env.cr.commit()
+                #self.env.cr.commit()
             except:
                 _logger.info(str(re))
 
