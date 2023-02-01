@@ -25,7 +25,6 @@ from . import pi_python
 class pi_transactions(models.Model):
     _name = "pi.transactions"
     _description = "Pi Transactions"
-    _order = "create_date desc"
 
     name = fields.Char('Name')
     app_id = fields.Many2one('admin.apps', required=True, ondelete='restrict')
@@ -630,7 +629,7 @@ class pi_users(models.Model):
     def check_users(self):
         i = 0
         for piu in self:
-            transaction = piu.pi_transactions_ids.ids # self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
+            transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
                 piu.write({'unblocked': False, 'days_available': 0})
