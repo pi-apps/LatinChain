@@ -627,7 +627,7 @@ class pi_users(models.Model):
                     i.unblocked = False
 
     def check_users(self):
-        i = 0
+        #i = 0
         for piu in self:
             transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
             
@@ -643,7 +643,7 @@ class pi_users(models.Model):
                 
                 if days_available == 0:
                     piu.write({'unblocked': False})
-            _logger.info(str(i))
-            i+=1
+            #_logger.info(str(i))
+            #i+=1
             
             self.env.cr.commit()
