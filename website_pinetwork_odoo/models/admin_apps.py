@@ -637,11 +637,11 @@ class pi_users(models.Model):
                 
                 if days_available < 0:
                     days_available = 0
-                    
+                
                 piu.write({'days_available': days_available})
                 
                 if days_available == 0:
                     piu.write({'unblocked': False})
-            #_logger.info(piu.pi_user_code)
+            _logger.info(piu.pi_user_code)
             
             self.env.cr.commit()
