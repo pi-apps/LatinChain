@@ -603,7 +603,10 @@ class pi_users(models.Model):
     @api.depends("unblocked_datetime")
     def _compute_unblocked(self):
         for i in self:
-            i.days_available = 30 - (datetime.now() - i.unblocked_datetime).days
+            if i.unblocked_datetime:
+                i.days_available = 30 - (datetime.now() - i.unblocked_datetime).days
+            else:
+                i.days_available = 0
             
             if i.days_available < 0:
                 i.days_available = 0
