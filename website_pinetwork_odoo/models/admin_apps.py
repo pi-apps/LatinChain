@@ -631,7 +631,7 @@ class pi_users(models.Model):
     def check_users(self):
         counter = 0
         lenght = len(self.ids)
-        total = int(lenght/10)+1
+        total = int(lenght/1)+1
         
         while counter < lenght:
             user_ids = self.ids[counter:counter+total]
