@@ -20,7 +20,7 @@
             <field name="state">code</field>
            <field name="code">
                # model.search([('action', 'in', ['approve', 'cancelled'])]).check_transactions()
-               env['pi.users'].search([('unblocked', '=', True)]).check_users()
+               # env['pi.users'].search([('unblocked', '=', True)]).check_users()
             </field>
            <field eval="False" name="doall"/>
         </record>

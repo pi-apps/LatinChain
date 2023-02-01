@@ -187,17 +187,17 @@ class admin_apps(models.Model):
     a_ads_style_3 = fields.Char('A-Ads.com style 3', required=True, default="width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     def fill_winners(self):
-        winner_domain = [('unblocked', '=', True), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
-        winner_chess_domain = [('unblocked', '=', True), ('points_chess', '>=', 20)]
-        winner_sudoku_domain = [('unblocked', '=', True), ('points_sudoku', '>', 18)]
-        winner_snake_domain = [('unblocked', '=', True), ('points_snake', '>', 20)]
-        leaders_domain = [('unblocked', '=', True)]
+        winner_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
+        winner_chess_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20)]
+        winner_sudoku_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_sudoku', '>', 18)]
+        winner_snake_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_snake', '>', 20)]
+        leaders_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))]
         
-        pi_users_leaders = self.env["pi.users"].search(leaders_domain, limit=10, order="points desc,unblocked desc,points_datetime asc,id asc")
-        pi_users_list = self.env["pi.users"].search(winner_domain, limit=10, order="points desc,unblocked desc,points_datetime asc,id asc")
-        pi_users_list_chess = self.env["pi.users"].search(winner_chess_domain, limit=10, order="points_chess desc,unblocked desc,points_datetime asc,points desc,id asc")
-        pi_users_list_snake = self.env["pi.users"].search(winner_snake_domain, limit=10, order="points_snake desc,unblocked desc,points_datetime asc,points desc,id asc")
-        pi_users_list_sudoku = self.env["pi.users"].search(winner_sudoku_domain, limit=10, order="points_sudoku desc,unblocked desc,points_datetime asc,points desc,id asc")
+        pi_users_leaders = self.env["pi.users"].search(leaders_domain, limit=10, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+        pi_users_list = self.env["pi.users"].search(winner_domain, limit=10, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+        pi_users_list_chess = self.env["pi.users"].search(winner_chess_domain, limit=10, order="points_chess desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
+        pi_users_list_snake = self.env["pi.users"].search(winner_snake_domain, limit=10, order="points_snake desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
+        pi_users_list_sudoku = self.env["pi.users"].search(winner_sudoku_domain, limit=10, order="points_sudoku desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
         
         point_list = []
         point_list_name = []
@@ -528,7 +528,7 @@ class admin_apps(models.Model):
                         
                         if len(users) > 0:
                             if users[0].paid_in_transactions >= admin_app_list[0].amount:
-                                users[0].sudo().write({'unblocked': True})
+                                users[0].sudo().write({'unblocked_datetime': datetime.now()})
                             
                         result = {"result": True, "completed": True}
                     elif not result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
@@ -543,7 +543,7 @@ class admin_apps(models.Model):
 class pi_users(models.Model):
     _name = "pi.users"
     _description = "Pi Users"
-    _order = "points desc,unblocked desc,points_datetime asc,id asc"
+    _order = "points desc,unblocked_datetime desc,points_datetime asc,id asc"
     
     _sql_constraints = [
         # Partial constraint, complemented by a python constraint (see below).
@@ -564,10 +564,11 @@ class pi_users(models.Model):
     points_datetime = fields.Datetime('Points Datetime', compute="_total_points", store=True, default=datetime.now())
     paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True, digits=(50,7), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    unblocked = fields.Boolean('Unblocked', compute="_total_paid_transactions", store=True)
+    unblocked = fields.Boolean('Unblocked', compute="_compute_unblocked", store=False)
+    unblocked_datetime = fields.Datetime('Unblocked datetime', compute="_total_paid_transactions", store=True)
     user_agent = fields.Char('User agent')
     last_connection = fields.Datetime(string='Last connection', default="")
-    days_available = fields.Integer('Days available', store=True, default=0)
+    days_available = fields.Integer('Days available', compute="_compute_unblocked", store=False)
     admin_apps_winners_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_rel', string='Winners Apps', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid Apps', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     donator = fields.Boolean('Donator', compute="_compute_donator", store=True)
@@ -598,6 +599,19 @@ class pi_users(models.Model):
             i.points = i.points_chess + i.points_sudoku + i.points_snake
             if i.points != total_points:
                 i.points_datetime = datetime.now()
+                
+    @api.depends("unblocked_datetime")
+    def _compute_unblocked(self):
+        for i in self:
+            i.days_available = 30 - (datetime.now() - i.unblocked_datetime).days
+            
+            if i.days_available < 0:
+                i.days_available = 0
+            
+            if i.days_available == 0:
+                i.unblocked = False
+            else:
+                i.unblocked = True
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
     def _total_paid_transactions(self):
@@ -609,23 +623,27 @@ class pi_users(models.Model):
             
             i.paid_in_transactions = total
             
-            if i.paid_in_transactions > 0:
-                i.unblocked = True
+            #if i.paid_in_transactions > 0:
+            #    i.unblocked = True
                 
             transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
-                i.unblocked = False
-                i.days_available = 0
+                #i.unblocked = False
+                #i.days_available = 0
+                i.unblocked_datetime = ""
             else:
-                i.days_available = 30 - (datetime.now() - transaction[0].create_date).days
+                #days_available = 30 - (datetime.now() - transaction[0].create_date).days
                 
-                if i.days_available < 0:
-                    i.days_available = 0
+                i.unblocked_datetime = transaction[0].create_date
                 
-                if i.days_available == 0:
-                    i.unblocked = False
+                #if days_available < 0:
+                #    days_available = 0
+                
+                #if i.days_available == 0:
+                #    i.unblocked = False
 
+    """
     def check_users(self):
         #i = 0
         for piu in self:
@@ -647,3 +665,4 @@ class pi_users(models.Model):
             #i+=1
             
             self.env.cr.commit()
+    """

@@ -24,7 +24,8 @@
                                 <field name="points_snake" readonly="True"/>
                                 <field name="points_datetime" readonly="True"/>
                                 <field name="paid_in_transactions" readonly="True"/>
-                                <field name="unblocked" readonly="False"/>
+                                <field name="unblocked" readonly="True"/>
+                                <field name="unblocked_datetime" readonly="True"/>
                                 <field name="user_agent" readonly="True"/>
                                 <field name="last_connection" readonly="True"/>
                                 <field name="days_available" readonly="True"/>
