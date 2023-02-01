@@ -22,6 +22,8 @@ import ast
 
 from . import pi_python
 
+import threading
+
 class pi_transactions(models.Model):
     _name = "pi.transactions"
     _description = "Pi Transactions"
@@ -627,20 +629,41 @@ class pi_users(models.Model):
                     i.unblocked = False
 
     def check_users(self):
-        for piu in self:
-            transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
+        counter = 0
+        lenght = len(self.ids)
+        total = int(lenght/10)+1
+        
+        while counter < lenght:
+            user_ids = self.ids[counter:counter+total]
+            counter+=total
             
-            if len(transaction) == 0:
-                piu.write({'unblocked': False, 'days_available': 0})
-            else:
-                days_available = 30 - (datetime.now() - transaction[0].create_date).days
-                
-                if days_available < 0:
-                    days_available = 0
+            threaded_calculation = threading.Thread(target=self._check_users, args=([user_ids]))
+            threaded_calculation.start()
+
+    def _check_users(self, user_ids):
+        with api.Environment.manage(), self.pool.cursor() as new_cr:
+            self = self.with_env(self.env(cr=new_cr))
+            
+            try:
+                users = self.env['pi.users'].search([('id', 'in', user_ids)])
+                for piu in users:
+                    transaction = self.env['pi.transactions'].search([('id', 'in', piu.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
                     
-                piu.write({'days_available': days_available})
-                
-                if days_available == 0:
-                    piu.write({'unblocked': False})
-                
-            self.env.cr.commit()
+                    if len(transaction) == 0:
+                        piu.write({'unblocked': False, 'days_available': 0})
+                    else:
+                        days_available = 30 - (datetime.now() - transaction[0].create_date).days
+                        
+                        if days_available < 0:
+                            days_available = 0
+                            
+                        piu.write({'days_available': days_available})
+                        
+                        if days_available == 0:
+                            piu.write({'unblocked': False})
+                        
+                    self.env.cr.commit()
+                #_logger.info("done")
+            except Exception:
+                _logger.info('Attempt to run procurement scheduler aborted, as already running')
+                #self._cr.rollback()
