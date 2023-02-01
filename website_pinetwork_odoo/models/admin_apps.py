@@ -25,7 +25,7 @@ from . import pi_python
 class pi_transactions(models.Model):
     _name = "pi.transactions"
     _description = "Pi Transactions"
-    _order = "id desc"
+    _order = "create_date desc"
 
     name = fields.Char('Name')
     app_id = fields.Many2one('admin.apps', required=True, ondelete='restrict')
