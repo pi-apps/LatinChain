@@ -84,7 +84,7 @@ class pi_transactions(models.Model):
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
                 
-                #self.env.cr.commit()
+                self.env.cr.commit()
             except:
                 _logger.info(str("ERROR TRANSACTIONS"))
     
@@ -135,7 +135,7 @@ class pi_transactions(models.Model):
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
                 
-                #self.env.cr.commit()
+                self.env.cr.commit()
             except:
                 _logger.info(str(re))
 
@@ -644,4 +644,4 @@ class pi_users(models.Model):
                     piu.write({'unblocked': False})
             #_logger.info(piu.pi_user_code)
             
-            #self.env.cr.commit()
+            self.env.cr.commit()
