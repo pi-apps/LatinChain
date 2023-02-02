@@ -86,7 +86,7 @@ class PiNetwork:
         for i in balances:
             if i["asset_type"] == "native":
                 balance_found = True
-                if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
+                if (float(payment["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
                     return ""
                 break
                 
