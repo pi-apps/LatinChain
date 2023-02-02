@@ -23,7 +23,7 @@ class PiNetwork:
     keypair = ""
     fee = ""
 
-    def initialize(self, api_key, wallet_private_key, network, fee):
+    def initialize(self, api_key, wallet_private_key, network):
         if not self.validate_private_seed_format(wallet_private_key):
             print("No valid private seed!")
         self.api_key = api_key
