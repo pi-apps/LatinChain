@@ -45,7 +45,16 @@ class PiNetwork:
                 if __debug__:
                     print("No valid payments found. Creating a new one...")
             
-            if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(self.server.accounts().account_id(self.keypair.public_key).call()["balances"][0]["balance"]):
+            balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
+            balance_found = False
+            for i in balances:
+                if i["asset_type"] == "native":
+                    balance_found = True
+                    if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
+                        return ""
+                    break
+                    
+            if balance_found == False:
                 return ""
 
             obj = {
@@ -72,8 +81,17 @@ class PiNetwork:
         else:
             payment = pending_payment
         
-        if (float(payment["amount"]) + (float(self.fee)/10000000)) > float(self.server.accounts().account_id(self.keypair.public_key).call()["balances"][0]["balance"]):
-            return False
+        balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
+        balance_found = False
+        for i in balances:
+            if i["asset_type"] == "native":
+                balance_found = True
+                if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
+                    return ""
+                break
+                
+        if balance_found == False:
+            return ""
         
         if __debug__:
             print("Debug_Data: Payment information\n" + str(payment))
