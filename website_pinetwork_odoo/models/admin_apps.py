@@ -382,33 +382,34 @@ class admin_apps(models.Model):
                         
                         Store the txid on your side!
                     """
-                    txid = pi.submit_payment(payment_id, False)
+                    if payment_id and len(payment_id) > 0:
+                        txid = pi.submit_payment(payment_id, False)
 
-                    if txid:
-                        """ Complete the Payment """
-                        result = self.pi_api({'paymentId': payment_id,
-                                        'app_client': 'auth_platform',
-                                        'action': 'complete',
-                                        'pi_user_code': i.pi_user_code,
-                                        'txid': txid})
-                                        
-                        result = json.loads(result)
-                        if result["result"]:
-                            self_i.pi_users_winners_completed_payments += 1
-                            self_i.pi_users_winners_paid_ids = [(4, i.id)]
-                            self_i.pi_users_winners_to_pay = self_i.pi_users_winners_to_pay - float(payment_data["amount"])
-                            if self_i.pi_users_winners_to_pay < 0:
-                                self_i.pi_users_winners_to_pay = 0
-                    
-                        #payment = pi.complete_payment(payment_id, txid)
+                        if txid and len(txid) > 0:
+                            """ Complete the Payment """
+                            result = self.pi_api({'paymentId': payment_id,
+                                            'app_client': 'auth_platform',
+                                            'action': 'complete',
+                                            'pi_user_code': i.pi_user_code,
+                                            'txid': txid})
+                                            
+                            result = json.loads(result)
+                            if result["result"]:
+                                self_i.pi_users_winners_completed_payments += 1
+                                self_i.pi_users_winners_paid_ids = [(4, i.id)]
+                                self_i.pi_users_winners_to_pay = self_i.pi_users_winners_to_pay - float(payment_data["amount"])
+                                if self_i.pi_users_winners_to_pay < 0:
+                                    self_i.pi_users_winners_to_pay = 0
                         
-                        #winner_paid_list.append(i.id)
-                        
-                        #self_i.pi_users_winners_paid_ids = [(4, i.id)]
-                        
-                        self.env.cr.commit()
-                    else:
-                        pi.cancel_payment(payment_id)
+                            #payment = pi.complete_payment(payment_id, txid)
+                            
+                            #winner_paid_list.append(i.id)
+                            
+                            #self_i.pi_users_winners_paid_ids = [(4, i.id)]
+                            
+                            self.env.cr.commit()
+                        else:
+                            pi.cancel_payment(payment_id)
                         
             self_i.pi_users_winners_paying = False
             self.env.cr.commit()
