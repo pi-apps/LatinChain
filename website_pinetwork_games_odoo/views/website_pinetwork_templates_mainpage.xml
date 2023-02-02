@@ -287,7 +287,7 @@
                                         passkey=data.passkey;
                                         if(data.unblocked)
                                         {
-                                            $("#verified").html(" (verified)");
+                                            $("#verified").html(" (verified, " + data.unblocked_datetime + ")");
                                             $("#verified").show();
                                             
                                             winner = ""
@@ -295,7 +295,7 @@
                                                 winner = ". You are a winner. Check in Winners Board."
                                             
                                             $("#user_logged").html(data.pi_user_code);
-                                            $(".user_status").html("<br/>verified. Days available: " + data.days_available + winner + "<br/>");
+                                            $(".user_status").html("<br/>(verified, " + data.unblocked_datetime + "). Days available: " + data.days_available + winner + "<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                             $("#user_points_datetime").html(data.points_datetime);
