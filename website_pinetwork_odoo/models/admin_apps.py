@@ -169,6 +169,7 @@ class admin_apps(models.Model):
     pi_users_winners_to_pay = fields.Float('Winners To Pay', digits=(50,7), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_percent = fields.Float('Winners To Pay percent (from 0 to 100)', digits=(50,2), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_days = fields.Integer('Winners To Pay days', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_to_pay_seconds = fields.Integer('Winners To fill winners seconds', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_paying = fields.Boolean('Paying to winners', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_per_user = fields.Float('Winners To Pay per user', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_fee_to_pay = fields.Integer('Winners Fee To Pay', default=100000, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -216,7 +217,7 @@ class admin_apps(models.Model):
             point_list.append(i.id)
         
         for i in self:
-            transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(days=1)), ('create_date', '<=', datetime.now() - timedelta(seconds=1800))]
+            transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(seconds=i.pi_users_winners_to_pay_seconds)), ('create_date', '<=', datetime.now() - timedelta(seconds=1800))]
 
             transactions_ids = self.env["pi.transactions"].search(transactions_domain)
 
