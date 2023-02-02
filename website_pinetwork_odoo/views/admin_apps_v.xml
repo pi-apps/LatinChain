@@ -9,7 +9,8 @@
                     <button name="fill_winners" confirm="Are you sure you want to fill winners?" type="object" string="Fill Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
                     <button name="delete_winners" confirm="Are you sure you want to delete winners?" type="object" string="Delete Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
                     <button name="pay_winners" confirm="Are you sure you want to PAY winners?" type="object" string="Pay Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
-                    <button name="delete_paid_winners" confirm="Are you sure you want to delete PAID winners?" type="object" string="Pay Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
+                    <button name="fill_paid_winners" confirm="Are you sure you want to fill PAID winners?" type="object" string="Fill Paid Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
+                    <button name="delete_paid_winners" confirm="Are you sure you want to delete PAID winners?" type="object" string="Delete Paid Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
                 </header>
                 <sheet>
                     <notebook>
