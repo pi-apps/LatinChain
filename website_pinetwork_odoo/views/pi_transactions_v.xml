@@ -15,6 +15,7 @@
                                 <field name="app"/>
                                 <field name="action" readonly="True"/>
                                 <field name="action_type" readonly="True"/>
+                                <field name="counted_to_pay" readonly="True"/>
                                 <field name="payment_id" readonly="True"/>
                                 <field name="txid" readonly="True"/>
                                 <field name="txid_url" readonly="True" widget="url" text="Watch transaction in Pi Blockexplorer"/>

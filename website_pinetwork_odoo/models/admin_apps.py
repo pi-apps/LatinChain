@@ -31,6 +31,7 @@ class pi_transactions(models.Model):
     app = fields.Char(related="app_id.app")
     action = fields.Selection([('approve', 'Approve'), ('complete', 'Complete'), ('cancelled', 'Cancelled')], 'Action', required=True)
     action_type = fields.Selection([('receive', 'Receive'), ('send', 'Send')], 'Action type', default="receive")
+    counted_to_pay = fields.Selection([('counted', 'Counted'), ('not_counted', 'Not counted')], 'Counted to pay', default="not_counted")
     payment_id = fields.Char('PaymentId', required=True)
     txid = fields.Text('TXID')
     txid_url = fields.Text('TXID URL', compute="_compute_txid_url")
@@ -215,8 +216,7 @@ class admin_apps(models.Model):
             point_list.append(i.id)
         
         for i in self:
-            """
-            transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(seconds=i.pi_users_winners_to_pay_seconds))]
+            transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(days=1))]
 
             transactions_ids = self.env["pi.transactions"].search(transactions_domain)
 
@@ -225,18 +225,18 @@ class admin_apps(models.Model):
                 i.pi_users_winners_to_pay += t.amount * (i.pi_users_winners_to_pay_percent/100)
             transactions_ids.write({'counted_to_pay': 'counted'})
                 
-            transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(seconds=i.pi_users_winners_to_pay_seconds))]
+            #transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=1))]
 
-            transactions_ids = self.env["pi.transactions"].search(transactions_domain)
+            #transactions_ids = self.env["pi.transactions"].search(transactions_domain)
 
-            for t in transactions_ids:
-                _logger.info("counted_to_pay " + str(t.counted_to_pay))
-                i.pi_users_winners_to_pay -= t.amount
-            transactions_ids.write({'counted_to_pay': 'counted'})
+            #for t in transactions_ids:
+                #_logger.info("counted_to_pay " + str(t.counted_to_pay))
+            #    i.pi_users_winners_to_pay -= t.amount
             
-            if i.pi_users_winners_to_pay < 0:
-                i.pi_users_winners_to_pay = 0
-            """
+            #transactions_ids.write({'counted_to_pay': 'counted'})
+            
+            #if i.pi_users_winners_to_pay < 0:
+            #    i.pi_users_winners_to_pay = 0
 
             i.pi_users_winners_ids = [(6, 0, point_list)]
             i.pi_users_winners_datetime = datetime.now()
@@ -510,8 +510,8 @@ class admin_apps(models.Model):
                     data_dict.update({'action_type': 'send'})
                 elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
                     data_dict.update({'action_type': 'receive'})
-                    if not admin_app[0].pi_users_winners_paying:
-                        admin_app[0].pi_users_winners_to_pay = admin_app[0].pi_users_winners_to_pay + (float(result_dict["amount"]) * (admin_app[0].pi_users_winners_to_pay_percent/100))
+                    #if not admin_app[0].pi_users_winners_paying:
+                    #    admin_app[0].pi_users_winners_to_pay = admin_app[0].pi_users_winners_to_pay + (float(result_dict["amount"]) * (admin_app[0].pi_users_winners_to_pay_percent/100))
                 
                 transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
                 if transaction_count == 0:
