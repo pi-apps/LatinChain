@@ -252,7 +252,7 @@ class admin_apps(models.Model):
             for j in self.pi_users_winners_ids:
                 transactions_domain = [('pi_user', '=', j.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(i.pi_users_winners_to_pay_days)))]
                     
-                transactions_count = self.env["pi.transactions"].search_count(transactions_domain)
+                transactions_count = self.env["pi.transactions"].search_count(transactions_domain, limit=1)
 
                 if transactions_count > 0:
                     winner.append(j.id)
