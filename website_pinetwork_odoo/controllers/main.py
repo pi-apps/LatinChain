@@ -89,7 +89,8 @@ class PiNetworkBaseController(http.Controller):
                     'points': pi_user.points, 'points_chess': pi_user.points_chess, 
                     'points_sudoku': pi_user.points_sudoku,
                     'points_snake': pi_user.points_snake, 'points_datetime': str(pi_user.points_datetime) + " UTC",
-                    'unblocked': pi_user.unblocked, 'is_winner': is_winner})
+                    'unblocked': pi_user.unblocked, 'unblocked_datetime': str(pi_user.unblocked_datetime) + " UTC", 
+                    'is_winner': is_winner})
         
         headers = {'Content-Type': 'application/json'}
         return Response(json.dumps({'result': True, 'pi_winner_list': pi_winner_list}), headers=headers)
@@ -126,7 +127,8 @@ class PiNetworkBaseController(http.Controller):
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
-                            'unblocked': pi_users_list[0].unblocked, 'is_winner': is_winner}), headers=headers)
+                            'unblocked': pi_users_list[0].unblocked, 'unblocked_datetime': str(pi_users_list[0].unblocked_datetime) + " UTC", 
+                            'is_winner': is_winner}), headers=headers)
     
     @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
@@ -167,6 +169,7 @@ class PiNetworkBaseController(http.Controller):
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
                             'unblocked': pi_users_list[0].unblocked,
+                            'unblocked_datetime': str(pi_users_list[0].unblocked_datetime) + " UTC",
                             'days_available': pi_users_list[0].days_available,
                             'amount': apps_list[0].amount,
                             'passkey': passkey,
