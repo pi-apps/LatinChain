@@ -242,6 +242,10 @@ class admin_apps(models.Model):
             i.pi_users_winners_ids = [(6, 0, point_list)]
             i.pi_users_winners_datetime = datetime.now()
     
+    def delete_paid_winners(self):
+        for i in self:
+            self_i.pi_users_winners_paid_ids = [(6, 0, [])]
+    
     def pay_winners(self):
         for self_i in self:
             self_i.pi_users_winners_paying = True
@@ -320,9 +324,6 @@ class admin_apps(models.Model):
                             self.env.cr.commit()
                         else:
                             pi.cancel_payment(i["identifier"])
-                            
-            if (datetime.now() - (datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days)))).days <= 0:
-                self_i.pi_users_winners_paid_ids = [(6, 0, [])]
             
             winners = self_i._compute_to_pay()
             
