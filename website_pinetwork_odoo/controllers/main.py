@@ -443,7 +443,7 @@ class PiNetworkBaseController(http.Controller):
         for i in pi_users_list:
             verified = ""
             if i.unblocked:
-                verified = " (verified, " + str(i.unblocked_datetime) + ")"
+                verified = " (verified, " + str(i.unblocked_datetime) + " UTC)"
             else:
                 verified = ""
             
