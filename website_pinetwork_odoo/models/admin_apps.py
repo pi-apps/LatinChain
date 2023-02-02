@@ -244,20 +244,20 @@ class admin_apps(models.Model):
     
     def delete_paid_winners(self):
         for i in self:
-            self_i.pi_users_winners_paid_ids = [(6, 0, [])]
+            i.pi_users_winners_paid_ids = [(6, 0, [])]
             
     def fill_paid_winners(self):
-        for j in self:
+        for i in self:
             winner = []
-            for i in self.pi_users_winners_ids:
-                transactions_domain = [('pi_user', '=', i.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))]
+            for j in self.pi_users_winners_ids:
+                transactions_domain = [('pi_user', '=', j.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(i.pi_users_winners_to_pay_days-1)))]
                     
                 transactions_ids = self.env["pi.transactions"].search(transactions_domain, limit=1)
 
                 if len(transactions_ids) > 0:
-                    winner.append(i.id)
+                    winner.append(j.id)
                     
-            j.pi_users_winners_paid_ids = [(6, 0, winner)]
+            i.pi_users_winners_paid_ids = [(6, 0, winner)]
     
     def pay_winners(self):
         for self_i in self:
