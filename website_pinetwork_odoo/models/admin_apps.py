@@ -252,9 +252,9 @@ class admin_apps(models.Model):
             for j in self.pi_users_winners_ids:
                 transactions_domain = [('pi_user', '=', j.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(i.pi_users_winners_to_pay_days)))]
                     
-                transactions_ids = self.env["pi.transactions"].search_count(transactions_domain)
+                transactions_count = self.env["pi.transactions"].search_count(transactions_domain)
 
-                if len(transactions_ids) > 0:
+                if transactions_count > 0:
                     winner.append(j.id)
                     
             i.pi_users_winners_paid_ids = [(6, 0, winner)]
@@ -343,9 +343,9 @@ class admin_apps(models.Model):
             for i in winners:
                 transactions_domain = [('pi_user', '=', i.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))]
                 
-                transactions_ids = self.env["pi.transactions"].search(transactions_domain, limit=1)
+                transactions_count = self.env["pi.transactions"].search_count(transactions_domain, limit=1)
 
-                if len(transactions_ids) == 0 and float(admin_app_list.pi_users_winners_to_pay_per_user) > 0:
+                if transactions_count == 0 and float(admin_app_list.pi_users_winners_to_pay_per_user) > 0:
                     """ 
                         Example Data
                         Get the user_uid from the Frontend
