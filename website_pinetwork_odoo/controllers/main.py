@@ -85,11 +85,15 @@ class PiNetworkBaseController(http.Controller):
             if pi_user.id in app.pi_users_winners_ids.ids:
                 is_winner = True
             
+            if not pi_user.unblocked_datetime:
+                unblocked_datetime = ""
+            else:
+                unblocked_datetime = pi_user.unblocked_datetime
             pi_winner_list.append({'pi_user_code': pi_user.pi_user_code,
                     'points': pi_user.points, 'points_chess': pi_user.points_chess, 
                     'points_sudoku': pi_user.points_sudoku,
                     'points_snake': pi_user.points_snake, 'points_datetime': str(pi_user.points_datetime) + " UTC",
-                    'unblocked': pi_user.unblocked, 'unblocked_datetime': str(pi_user.unblocked_datetime) + " UTC", 
+                    'unblocked': pi_user.unblocked, 'unblocked_datetime': str(unblocked_datetime) + " UTC", 
                     'is_winner': is_winner})
         
         headers = {'Content-Type': 'application/json'}
@@ -123,11 +127,16 @@ class PiNetworkBaseController(http.Controller):
             is_winner = True
         
         headers = {'Content-Type': 'application/json'}
+        
+        if not pi_users_list[0].unblocked_datetime:
+            unblocked_datetime = ""
+        else:
+            unblocked_datetime = pi_users_list[0].unblocked_datetime
         return Response(json.dumps({'result': True, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
-                            'unblocked': pi_users_list[0].unblocked, 'unblocked_datetime': str(pi_users_list[0].unblocked_datetime) + " UTC", 
+                            'unblocked': pi_users_list[0].unblocked, 'unblocked_datetime': str(unblocked_datetime) + " UTC", 
                             'is_winner': is_winner}), headers=headers)
     
     @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
@@ -163,13 +172,18 @@ class PiNetworkBaseController(http.Controller):
         im_winner = False
         if pi_users_list[0].id in apps_list.pi_users_winners_ids.ids:
             im_winner = True
-                    
+        
+        if not pi_users_list[0].unblocked_datetime:
+            unblocked_datetime = ""
+        else:
+            unblocked_datetime = pi_users_list[0].unblocked_datetime
+        
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
                             'unblocked': pi_users_list[0].unblocked,
-                            'unblocked_datetime': str(pi_users_list[0].unblocked_datetime) + " UTC",
+                            'unblocked_datetime': str(unblocked_datetime) + " UTC",
                             'days_available': pi_users_list[0].days_available,
                             'amount': apps_list[0].amount,
                             'passkey': passkey,
