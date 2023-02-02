@@ -217,7 +217,8 @@ class admin_apps(models.Model):
             point_list.append(i.id)
         
         for i in self:
-            transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', datetime.now() - timedelta(seconds=i.pi_users_winners_to_pay_seconds))]
+            date_now = datetime.now()
+            transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', date_now - timedelta(seconds=i.pi_users_winners_to_pay_seconds)), ('create_date', '<=', date_now - timedelta(seconds=1800))]
 
             transactions_ids = self.env["pi.transactions"].read_group(transactions_domain, ['amount', 'action_type'], ['action_type'])
             
