@@ -323,6 +323,9 @@ class admin_apps(models.Model):
             
             winners = self_i._compute_to_pay()
             
+            if (datetime.now() - (datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))).days == 0:
+                self_i.pi_users_winners_paid_ids = [(6, 0, [])]
+            
             for i in winners:
                 transactions_domain = [('pi_user', '=', i.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))]
                 
