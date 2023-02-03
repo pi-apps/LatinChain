@@ -35,7 +35,7 @@
                     </t>
                     <div style="text-align:center">
                         <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
-                            <!--<strong>Translate</strong>-->
+                            <strong>Translate</strong>
                         </div>                    
                         <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                     </div>
@@ -66,7 +66,7 @@
                     </style>
 
                     <script type="text/javascript">
-                        /*function googleTranslateElementInit() {
+                        function googleTranslateElementInit() {
                           if(location.pathname.substring(0, 4) != "/web")
                           {
                               var lang_google='en';
@@ -77,9 +77,26 @@
                               new google.translate.TranslateElement({pageLanguage: lang_google, 
                                                                     layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                                     'google_translate_element');
-                                
+                            
+                                const el = document.querySelector('#goog-gt-');
+                                const el2 = document.querySelector('.skiptranslate');
+                                const el3 = document.querySelector('circle');
+                                const observer = new window.IntersectionObserver(([entry]) => {
+
+                                    document.getElementsByClassName("skiptranslate")[0].style.display = "none";
+                                    document.getElementsByClassName("skiptranslate")[1].style.display = "none";
+                                    document.getElementById("goog-gt-").style.display = "none";
+                                    document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+                                }, {
+                                    root: null,
+                                    threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+                                })
+
+                                observer.observe(el);
+                                observer.observe(el2);
+                                observer.observe(el3);
                           }
-                        }*/
+                        }
                     
                         document.addEventListener("DOMContentLoaded", function(event) {
                             if(location.pathname.substring(0, 4) == "/web")
@@ -89,7 +106,7 @@
                         });
                     </script>
 
-                    <!--<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                     
                     
                 </span>
@@ -134,7 +151,7 @@
                 </t>
                 <div class="container" style="text-align:center">
                     <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
-                        <!--<strong>Translate</strong>-->
+                        <strong>Translate</strong>
                     </div>
                     <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                 </div>
@@ -165,7 +182,7 @@
                 </style>
 
                 <script type="text/javascript">
-                    /*function googleTranslateElementInit() {
+                    function googleTranslateElementInit() {
                       if(location.pathname.substring(0, 4) != "/web")
                       {
                           var lang_google='en';
@@ -177,8 +194,25 @@
                                                                 layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                                 'google_translate_element');
                          
+                            const el = document.querySelector('#goog-gt-');
+                            const el2 = document.querySelector('.skiptranslate');
+                            const el3 = document.querySelector('circle');
+                            const observer = new window.IntersectionObserver(([entry]) => {
+
+                                document.getElementsByClassName("skiptranslate")[0].style.display = "none";
+                                document.getElementsByClassName("skiptranslate")[1].style.display = "none";
+                                document.getElementById("goog-gt-").style.display = "none";
+                                document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+                            }, {
+                                root: null,
+                                threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+                            })
+
+                            observer.observe(el);
+                            observer.observe(el2);
+                            observer.observe(el3);
                       }
-                    }*/
+                    }
                 
                     document.addEventListener("DOMContentLoaded", function(event) {
                         if(location.pathname.substring(0, 4) == "/web")
@@ -188,7 +222,7 @@
                     });
                 </script>
 
-                <!--<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 
            </xpath>
            
