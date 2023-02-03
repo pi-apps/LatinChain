@@ -66,7 +66,7 @@
                     </style>
 
                     <script type="text/javascript">
-                        function googleTranslateElementInit() {
+                        /*function googleTranslateElementInit() {
                           if(location.pathname.substring(0, 4) != "/web")
                           {
                               var lang_google='en';
@@ -79,7 +79,7 @@
                                                                     'google_translate_element');
                                 
                           }
-                        }
+                        }*/
                     
                         document.addEventListener("DOMContentLoaded", function(event) {
                             if(location.pathname.substring(0, 4) == "/web")
@@ -165,7 +165,7 @@
                 </style>
 
                 <script type="text/javascript">
-                    function googleTranslateElementInit() {
+                    /*function googleTranslateElementInit() {
                       if(location.pathname.substring(0, 4) != "/web")
                       {
                           var lang_google='en';
@@ -178,7 +178,7 @@
                                                                 'google_translate_element');
                          
                       }
-                    }
+                    }*/
                 
                     document.addEventListener("DOMContentLoaded", function(event) {
                         if(location.pathname.substring(0, 4) == "/web")
