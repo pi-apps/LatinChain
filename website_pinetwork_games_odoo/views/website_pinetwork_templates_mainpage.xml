@@ -74,9 +74,10 @@
                               {
                                   lang_google='es';
                               }
-                              new google.translate.TranslateElement({pageLanguage: lang_google, 
+                              /*new google.translate.TranslateElement({pageLanguage: lang_google, 
                                                                     layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                                     'google_translate_element');
+                                */
                           }
                         }
                     
@@ -133,7 +134,7 @@
                 </t>
                 <div class="container" style="text-align:center">
                     <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
-                        <strong>Translate</strong>
+                        <!--<strong>Translate</strong>-->
                     </div>
                     <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                 </div>
@@ -172,9 +173,10 @@
                           {
                               lang_google='es';
                           }
-                          new google.translate.TranslateElement({pageLanguage: lang_google, 
+                          /*new google.translate.TranslateElement({pageLanguage: lang_google, 
                                                                 layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                                 'google_translate_element');
+                         */
                       }
                     }
                 
