@@ -84,7 +84,14 @@
                                 const el3 = document.querySelector('circle');
                                 const el4 = document.querySelector('.goog-te-gadget');
                                 const observer = new window.IntersectionObserver(([entry]) => {
-                                    document.getElementsByClassName("skiptranslate")[0].style.display = "none";
+                                    for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
+                                    {
+                                        for(var j = 0; j &lt; document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
+                                        {
+                                            if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
+                                                document.getElementsByClassName("skiptranslate")[i].style.display = "none";
+                                        }
+                                    }
                                     document.getElementById("goog-gt-").style.display = "none";
                                     document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
                                 }, {
@@ -201,7 +208,14 @@
                             const el3 = document.querySelector('circle');
                             const el4 = document.querySelector('.goog-te-gadget');
                             const observer = new window.IntersectionObserver(([entry]) => {
-                                document.getElementsByClassName("skiptranslate")[0].style.display = "none";
+                                for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
+                                {
+                                    for(var j = 0; j &lt; document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
+                                    {
+                                        if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
+                                            document.getElementsByClassName("skiptranslate")[i].style.display = "none";
+                                    }
+                                }
                                 document.getElementById("goog-gt-").style.display = "none";
                                 document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
                             }, {
