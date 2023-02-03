@@ -43,7 +43,11 @@
                     <style>
                         .goog-te-banner-frame.skiptranslate {
                             display: none !important;
-                        } 
+                        }
+                        .skiptranslate > iframe {
+                            display: none !important;
+                        }
+                        
                         body {
                             top: 0px !important; 
                         }
@@ -58,7 +62,7 @@
                             height:auto !important; 
                         }
                         
-                        #goog-gt-tt, .goog-te-balloon-frame{display: none !important;} 
+                        #goog-gt-tt, #goog-gt-, .goog-te-balloon-frame{display: none !important;} 
                         .goog-text-highlight { background: none !important; box-shadow: none !important;}
                         
                         .goog-logo-link{display: none !important;}
@@ -84,7 +88,7 @@
                                 const el3 = document.querySelector('circle');
                                 const el4 = document.querySelector('.goog-te-gadget');
                                 const observer = new window.IntersectionObserver(([entry]) => {
-                                    for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
+                                    /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
                                     {
                                         for(var j = 0; j &lt; document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
                                         {
@@ -92,7 +96,7 @@
                                                 document.getElementsByClassName("skiptranslate")[i].style.display = "none";
                                         }
                                     }
-                                    document.getElementById("goog-gt-").style.display = "none";
+                                    document.getElementById("goog-gt-").style.display = "none";*/
                                     document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
                                 }, {
                                     root: null,
@@ -167,7 +171,11 @@
                 <style>
                     .goog-te-banner-frame.skiptranslate {
                         display: none !important;
-                    } 
+                    }
+                    .skiptranslate > iframe {
+                        display: none !important;
+                    }
+                    
                     body {
                         top: 0px !important; 
                     }
@@ -182,7 +190,7 @@
                         height:auto !important; 
                     }
                     
-                    #goog-gt-tt, .goog-te-balloon-frame{display: none !important;} 
+                    #goog-gt-tt, #goog-gt-, .goog-te-balloon-frame{display: none !important;} 
                     .goog-text-highlight { background: none !important; box-shadow: none !important;}
                     
                     .goog-logo-link{display: none !important;}
@@ -208,7 +216,7 @@
                             const el3 = document.querySelector('circle');
                             const el4 = document.querySelector('.goog-te-gadget');
                             const observer = new window.IntersectionObserver(([entry]) => {
-                                for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
+                                /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
                                 {
                                     for(var j = 0; j &lt; document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
                                     {
@@ -216,7 +224,7 @@
                                             document.getElementsByClassName("skiptranslate")[i].style.display = "none";
                                     }
                                 }
-                                document.getElementById("goog-gt-").style.display = "none";
+                                document.getElementById("goog-gt-").style.display = "none";*/
                                 document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
                             }, {
                                 root: null,
