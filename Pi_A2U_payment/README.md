@@ -1,7 +1,7 @@
 Payment from A2U in Python
 -----------------
 
-In development, not functional yet.
+Currently working well.
 
 This is a version of
 -----------------
