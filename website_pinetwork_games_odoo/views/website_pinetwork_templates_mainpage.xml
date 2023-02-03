@@ -74,27 +74,28 @@
                               {
                                   lang_google='es';
                               }
-                              new google.translate.TranslateElement({pageLanguage: lang_google, 
+                              new google.translate.TranslateElement({pageLanguage: lang_google,
+                                                                    autoDisplay: true,
                                                                     layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                                     'google_translate_element');
-                            
+                             
                                 const el = document.querySelector('#goog-gt-');
                                 const el2 = document.querySelector('.skiptranslate');
                                 const el3 = document.querySelector('circle');
+                                const el4 = document.querySelector('.goog-te-gadget');
                                 const observer = new window.IntersectionObserver(([entry]) => {
-
                                     document.getElementsByClassName("skiptranslate")[0].style.display = "none";
-                                    document.getElementsByClassName("skiptranslate")[1].style.display = "none";
                                     document.getElementById("goog-gt-").style.display = "none";
                                     document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
                                 }, {
                                     root: null,
                                     threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
-                                })
+                                });
 
                                 observer.observe(el);
                                 observer.observe(el2);
                                 observer.observe(el3);
+                                observer.observe(el4);
                           }
                         }
                     
@@ -190,27 +191,28 @@
                           {
                               lang_google='es';
                           }
-                          new google.translate.TranslateElement({pageLanguage: lang_google, 
+                          new google.translate.TranslateElement({pageLanguage: lang_google,
+                                                                autoDisplay: true,
                                                                 layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                                 'google_translate_element');
                          
                             const el = document.querySelector('#goog-gt-');
                             const el2 = document.querySelector('.skiptranslate');
                             const el3 = document.querySelector('circle');
+                            const el4 = document.querySelector('.goog-te-gadget');
                             const observer = new window.IntersectionObserver(([entry]) => {
-
                                 document.getElementsByClassName("skiptranslate")[0].style.display = "none";
-                                document.getElementsByClassName("skiptranslate")[1].style.display = "none";
                                 document.getElementById("goog-gt-").style.display = "none";
                                 document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
                             }, {
                                 root: null,
                                 threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
-                            })
+                            });
 
                             observer.observe(el);
                             observer.observe(el2);
                             observer.observe(el3);
+                            observer.observe(el4);
                       }
                     }
                 
