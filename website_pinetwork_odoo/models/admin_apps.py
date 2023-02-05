@@ -174,6 +174,11 @@ class admin_apps(models.Model):
     pi_users_winners_to_pay_per_user = fields.Float('Winners To Pay per user', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     #pi_users_winners_fee_to_pay = fields.Integer('Winners Fee To Pay', default=100000, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_completed_payments = fields.Integer('Winners To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_devs_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_devs_rel', string='Devs', domain=[('pi_user_role', 'in', ['latinchain_dev', 'latinchain_adm'])], groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_devs_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_devs_paid_rel', string='Devs Paid', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_account_balance = fields.Float('Account Balance', digits=(50,7), compute='_get_balance', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_devs_to_pay_per_user = fields.Float('Devs To Pay per user', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_devs_completed_payments = fields.Integer('Devs To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,7), default=1)
     google_adsense = fields.Char('Google Adsense src', required=True, default="Set your Google Adsense", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -188,6 +193,22 @@ class admin_apps(models.Model):
     a_ads_data_3 = fields.Char('A-Ads.com data 3', required=True, default="Set your A-Ads.com data ID", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     a_ads_style_3 = fields.Char('A-Ads.com style 3', required=True, default="width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
+    def _get_balance(self):
+        for i in self:
+            api_key = i.admin_key
+            wallet_private_seed = i.wallet_private_seed
+            
+            if i.mainnet == "Mainnet ON":
+                network = "Pi Network"
+            else:
+                network = "Pi Testnet"
+
+            """ Initialization """
+            pi = pi_python.PiNetwork()
+            pi.initialize(api_key, wallet_private_seed, network)
+    
+            i.pi_users_account_balance = pi.get_balance()
+
     def fill_winners(self):
         winner_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
         winner_chess_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20)]
@@ -413,6 +434,129 @@ class admin_apps(models.Model):
                         
             self_i.pi_users_winners_paying = False
             self.env.cr.commit()
+
+    def pay_devs(self):
+        for self_i in self:
+            
+            """ 
+                Your SECRET Data 
+                Visit the Pi Developer Portal to get these data
+                
+                 DO NOT expose these values to public
+            """
+            admin_app_list = self_i
+
+            self_i.pi_users_devs_paid_ids = [(6, 0, [])]
+            
+            api_key = admin_app_list.admin_key
+            wallet_private_seed = admin_app_list.wallet_private_seed
+            
+            if admin_app_list.mainnet == "Mainnet ON":
+                network = "Pi Network"
+            else:
+                network = "Pi Testnet"
+
+            """ Initialization """
+            pi = pi_python.PiNetwork()
+            pi.initialize(api_key, wallet_private_seed, network)
+            
+            self_i.pi_users_devs_completed_payments = 0
+            
+            """ Check for incomplete payments """
+            incomplete_payments = pi.get_incomplete_server_payments()
+
+            """ Handle incomplete payments first """
+            if len(incomplete_payments) > 0:
+                for i in incomplete_payments:
+                    if i["transaction"] == None:
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
+                        if len(pi_user) > 0:
+                            txid = pi.submit_payment(i["identifier"], i)
+                            
+                            if txid:
+                                result = self.pi_api({'paymentId': i["identifier"],
+                                            'app_client': 'auth_platform',
+                                            'action': 'complete',
+                                            'pi_user_code': pi_user[0].pi_user_code,
+                                            'txid': txid})
+                            
+                                result = json.loads(result)
+                                #pi.complete_payment(i["identifier"], txid)
+                                if result["result"]:
+                                    self_i.pi_users_devs_completed_payments += 1
+                                    self_i.pi_users_devs_paid_ids = [(4, pi_user[0].id)]
+                                self.env.cr.commit()
+                            else:
+                                pi.cancel_payment(i["identifier"])
+                    else:
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
+                        if len(pi_user) > 0:
+                            result = self.pi_api({'paymentId': i["identifier"],
+                                            'app_client': 'auth_platform',
+                                            'action': 'complete',
+                                            'pi_user_code': pi_user[0].pi_user_code,
+                                            'txid': i["transaction"]["txid"]})
+                            
+                            result = json.loads(result)
+                            if result["result"]:
+                                self_i.pi_users_devs_completed_payments += 1
+                                self_i.pi_users_devs_paid_ids = [(4, pi_user[0].id)]
+                            #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
+                            self.env.cr.commit()
+                        else:
+                            pi.cancel_payment(i["identifier"])
+            
+            devs = self_i.pi_users_devs_ids
+            
+            for i in devs:
+                if float(admin_app_list.pi_users_devs_to_pay_per_user) > 0:
+                    """ 
+                        Example Data
+                        Get the user_uid from the Frontend
+                    """
+                    user_uid = i.pi_user_id #unique for every user
+
+                    """ Build your payment """
+                    payment_data = {
+                      "amount": float(admin_app_list.pi_users_devs_to_pay_per_user),
+                      "memo": "Dev payment from LatinChain Platform",
+                      "metadata": {"internal_data": "Payment prize from LatinChain Platform"},
+                      "uid": user_uid
+                    }
+
+                    """ Create an payment """
+                    payment_id = pi.create_payment(payment_data)
+
+                    """ 
+                        Submit the payment and receive the txid
+                        
+                        Store the txid on your side!
+                    """
+                    if payment_id and len(payment_id) > 0:
+                        txid = pi.submit_payment(payment_id, False)
+
+                        if txid and len(txid) > 0:
+                            """ Complete the Payment """
+                            result = self.pi_api({'paymentId': payment_id,
+                                            'app_client': 'auth_platform',
+                                            'action': 'complete',
+                                            'pi_user_code': i.pi_user_code,
+                                            'txid': txid})
+                                            
+                            result = json.loads(result)
+                            if result["result"]:
+                                self_i.pi_users_devs_completed_payments += 1
+                                self_i.pi_users_devs_paid_ids = [(4, i.id)]
+                        
+                            #payment = pi.complete_payment(payment_id, txid)
+                            
+                            #winner_paid_list.append(i.id)
+                            
+                            #self_i.pi_users_winners_paid_ids = [(4, i.id)]
+                            
+                            self.env.cr.commit()
+                        else:
+                            pi.cancel_payment(payment_id)
         
     def delete_winners(self):
         for i in self:
