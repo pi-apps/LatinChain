@@ -447,8 +447,6 @@ class admin_apps(models.Model):
                  DO NOT expose these values to public
             """
             admin_app_list = self_i
-
-            self_i.pi_users_devs_paid_ids = [(6, 0, [])]
             
             api_key = admin_app_list.admin_key
             wallet_private_seed = admin_app_list.wallet_private_seed
@@ -509,59 +507,59 @@ class admin_apps(models.Model):
                             pi.cancel_payment(i["identifier"])
             
             devs = self_i._compute_to_pay_devs()
-            #self_i.pi_users_devs_ids
             
-            _logger.info("DEVS " + str(devs))
-            
-            for i in devs:
-                if float(admin_app_list.pi_users_devs_to_pay_per_user) > 0:
-                    """ 
-                        Example Data
-                        Get the user_uid from the Frontend
-                    """
-                    user_uid = i.pi_user_id #unique for every user
+            if len(devs) > 0:
+                self_i.pi_users_devs_paid_ids = [(6, 0, [])]
+                
+                for i in devs:
+                    if float(admin_app_list.pi_users_devs_to_pay_per_user) > 0:
+                        """ 
+                            Example Data
+                            Get the user_uid from the Frontend
+                        """
+                        user_uid = i.pi_user_id #unique for every user
 
-                    """ Build your payment """
-                    payment_data = {
-                      "amount": float(admin_app_list.pi_users_devs_to_pay_per_user),
-                      "memo": "Dev payment from LatinChain Platform",
-                      "metadata": {"internal_data": "Payment prize from LatinChain Platform"},
-                      "uid": user_uid
-                    }
+                        """ Build your payment """
+                        payment_data = {
+                          "amount": float(admin_app_list.pi_users_devs_to_pay_per_user),
+                          "memo": "Dev payment from LatinChain Platform",
+                          "metadata": {"internal_data": "Payment prize from LatinChain Platform"},
+                          "uid": user_uid
+                        }
 
-                    """ Create an payment """
-                    payment_id = pi.create_payment(payment_data)
+                        """ Create an payment """
+                        payment_id = pi.create_payment(payment_data)
 
-                    """ 
-                        Submit the payment and receive the txid
-                        
-                        Store the txid on your side!
-                    """
-                    if payment_id and len(payment_id) > 0:
-                        txid = pi.submit_payment(payment_id, False)
-
-                        if txid and len(txid) > 0:
-                            """ Complete the Payment """
-                            result = self.pi_api({'paymentId': payment_id,
-                                            'app_client': 'auth_platform',
-                                            'action': 'complete',
-                                            'pi_user_code': i.pi_user_code,
-                                            'txid': txid})
-                                            
-                            result = json.loads(result)
-                            if result["result"]:
-                                self_i.pi_users_devs_completed_payments += 1
-                                self_i.pi_users_devs_paid_ids = [(4, i.id)]
-                        
-                            #payment = pi.complete_payment(payment_id, txid)
+                        """ 
+                            Submit the payment and receive the txid
                             
-                            #winner_paid_list.append(i.id)
+                            Store the txid on your side!
+                        """
+                        if payment_id and len(payment_id) > 0:
+                            txid = pi.submit_payment(payment_id, False)
+
+                            if txid and len(txid) > 0:
+                                """ Complete the Payment """
+                                result = self.pi_api({'paymentId': payment_id,
+                                                'app_client': 'auth_platform',
+                                                'action': 'complete',
+                                                'pi_user_code': i.pi_user_code,
+                                                'txid': txid})
+                                                
+                                result = json.loads(result)
+                                if result["result"]:
+                                    self_i.pi_users_devs_completed_payments += 1
+                                    self_i.pi_users_devs_paid_ids = [(4, i.id)]
                             
-                            #self_i.pi_users_winners_paid_ids = [(4, i.id)]
-                            
-                            self.env.cr.commit()
-                        else:
-                            pi.cancel_payment(payment_id)
+                                #payment = pi.complete_payment(payment_id, txid)
+                                
+                                #winner_paid_list.append(i.id)
+                                
+                                #self_i.pi_users_winners_paid_ids = [(4, i.id)]
+                                
+                                self.env.cr.commit()
+                            else:
+                                pi.cancel_payment(payment_id)
         
     def delete_winners(self):
         for i in self:
@@ -607,13 +605,9 @@ class admin_apps(models.Model):
             devs = list()
             for j in i.pi_users_devs_ids:
                 dev_paid = False
-                _logger.info("1 " + str(dev_paid))
-                _logger.info("10 " + str(i.pi_users_devs_paid_ids))
                 for k in i.pi_users_devs_paid_ids:
-                    _logger.info("2 " + str(dev_paid))
                     if j.pi_user_code == k.pi_user_code:
                         dev_paid = True
-                        _logger.info("3 " + str(dev_paid))
                         break
                 if not dev_paid:
                     devs.append(j)
