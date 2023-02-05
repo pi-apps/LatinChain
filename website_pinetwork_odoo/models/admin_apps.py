@@ -239,9 +239,9 @@ class admin_apps(models.Model):
         
         for i in self:
             date_now = datetime.now()
-            transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', date_now - timedelta(seconds=i.pi_users_winners_to_pay_seconds)), ('create_date', '<=', date_now - timedelta(seconds=1800))]
+            #transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('create_date', '>=', date_now - timedelta(seconds=i.pi_users_winners_to_pay_seconds)), ('create_date', '<=', date_now - timedelta(seconds=1800))]
 
-            transactions_ids = self.env["pi.transactions"].read_group(transactions_domain, ['amount', 'action_type'], ['action_type'])
+            #transactions_ids = self.env["pi.transactions"].read_group(transactions_domain, ['amount', 'action_type'], ['action_type'])
             
             #if len(transactions_ids) > 0:
             #    _logger.info(str(transactions_ids))
@@ -249,12 +249,14 @@ class admin_apps(models.Model):
             #break
 
             #i.pi_users_winners_to_pay = 0
-            if len(transactions_ids) > 0:
-                #_logger.info(str(transactions_ids[0]['amount']))
-                i.pi_users_winners_to_pay += transactions_ids[0]['amount'] * (i.pi_users_winners_to_pay_percent/100)
+            #if len(transactions_ids) > 0:
+            #    #_logger.info(str(transactions_ids[0]['amount']))
+            #    i.pi_users_winners_to_pay += transactions_ids[0]['amount'] * (i.pi_users_winners_to_pay_percent/100)
                 
-            transactions_ids = self.env["pi.transactions"].search(transactions_domain)
-            transactions_ids.write({'counted_to_pay': 'counted'})
+            #transactions_ids = self.env["pi.transactions"].search(transactions_domain)
+            #transactions_ids.write({'counted_to_pay': 'counted'})
+            
+            i.pi_users_winners_to_pay = i.pi_users_account_balance * (i.pi_users_winners_to_pay_percent/100)
             
             """    
             transactions_domain = [('counted_to_pay', '=', 'not_counted'), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(seconds=i.pi_users_winners_to_pay_seconds))]
