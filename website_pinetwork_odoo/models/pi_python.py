@@ -34,6 +34,15 @@ class PiNetwork:
         self.fee = self.server.fetch_base_fee()
         #self.fee = fee
 
+    def get_balance(self):
+        balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
+        balance_found = False
+        for i in balances:
+            if i["asset_type"] == "native":
+                return float(i["balance"])
+                
+        return 0
+
     def get_payment(self, payment_id):
         url = self.base_url + "/v2/payments/" + payment_id
         re = requests.get(url,headers=self.get_http_headers())
