@@ -511,6 +511,8 @@ class admin_apps(models.Model):
             devs = self_i._compute_to_pay_devs()
             #self_i.pi_users_devs_ids
             
+            _logger.info(str(devs))
+            
             for i in devs:
                 if float(admin_app_list.pi_users_devs_to_pay_per_user) > 0:
                     """ 
