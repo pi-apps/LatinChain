@@ -24,6 +24,7 @@
                                     <field name="validation_key"/>
                                     <field name="admin_key"/>
                                     <field name="wallet_private_seed"/>
+                                    <field name="pi_users_account_balance"/>
                                     <field name="sandbox"/>
                                     <field name="mainnet"/>
                                     <field name="amount"/>
@@ -55,7 +56,6 @@
                                     <field name="pi_users_winners_completed_payments"/>
                                     <field name="pi_users_devs_ids" widget="many2many_tags"/>
                                     <field name="pi_users_devs_paid_ids" widget="many2many_tags"/>
-                                    <field name="pi_users_account_balance"/>
                                     <field name="pi_users_devs_to_pay_per_user"/>
                                     <field name="pi_users_devs_completed_payments"/>
                                     <field name="block_points"/>
