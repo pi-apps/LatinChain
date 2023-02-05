@@ -609,10 +609,10 @@ class admin_apps(models.Model):
                 dev_paid = False
                 _logger.info("1 " + str(dev_paid))
                 for k in i.pi_users_devs_paid_ids:
-                    _logger.info("2 " str(dev_paid))
+                    _logger.info("2 " + str(dev_paid))
                     if j.pi_user_code == k.pi_user_code:
                         dev_paid = True
-                        _logger.info("3 " str(dev_paid))
+                        _logger.info("3 " + str(dev_paid))
                         break
                 if not dev_paid:
                     devs.append(j)
