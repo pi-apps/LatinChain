@@ -608,6 +608,7 @@ class admin_apps(models.Model):
             for j in i.pi_users_devs_ids:
                 dev_paid = False
                 _logger.info("1 " + str(dev_paid))
+                _logger.info("10 " + str(i.pi_users_devs_paid_ids))
                 for k in i.pi_users_devs_paid_ids:
                     _logger.info("2 " + str(dev_paid))
                     if j.pi_user_code == k.pi_user_code:
