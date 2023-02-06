@@ -846,10 +846,14 @@ class pi_users(models.Model):
             if len(transaction) == 0:
                 i.unblocked_datetime = ""
             else:
+                i.unblocked_datetime = transaction[0].create_date
+                
+                """
                 if i.paid_in_transactions >= transaction[0].app_id.amount:
                     i.unblocked_datetime = transaction[0].create_date
                 else:
                     i.unblocked_datetime = ""
+                """
     
     """
     def total_paid_transactions_exec(self):
