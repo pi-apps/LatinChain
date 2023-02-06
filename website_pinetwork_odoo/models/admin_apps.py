@@ -683,53 +683,57 @@ class admin_apps(models.Model):
                 else:
                     result = {"result": True, "approved": False}
             elif kw['action'] == "complete":
-                pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
-                data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
-                            'app_id': admin_app_list[0].id,
-                            'action': kw['action'],
-                            'payment_id': kw['paymentId'],
-                            'txid': kw['txid'],
-                            'pi_user_id': result_dict["user_uid"],
-                            'pi_user': pi_user[0].id,
-                            'json_result': str(result_dict),
-                            'pi_user_id': result_dict["user_uid"],
-                            'amount': result_dict["amount"],
-                            'memo': result_dict["memo"],
-                            'to_address': result_dict["to_address"],
-                            'developer_approved': result_dict["status"]["developer_approved"], 
-                            'transaction_verified': result_dict["status"]["transaction_verified"], 
-                            'developer_completed': result_dict["status"]["developer_completed"], 
-                            'cancelled': result_dict["status"]["cancelled"], 
-                            'user_cancelled': result_dict["status"]["user_cancelled"]}
-                
-                admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
-                if "direction" in result_dict and result_dict["direction"] == "app_to_user":
-                    data_dict.update({'action_type': 'send'})
-                elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
-                    data_dict.update({'action_type': 'receive'})
-                    #if not admin_app[0].pi_users_winners_paying:
-                    #    admin_app[0].pi_users_winners_to_pay = admin_app[0].pi_users_winners_to_pay + (float(result_dict["amount"]) * (admin_app[0].pi_users_winners_to_pay_percent/100))
-                
-                transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
-                if transaction_count == 0:
-                    self.env["pi.transactions"].sudo().create(data_dict)
-                else:
-                    self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
+                if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
+                    pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+                    data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
+                                'app_id': admin_app_list[0].id,
+                                'action': kw['action'],
+                                'payment_id': kw['paymentId'],
+                                'txid': kw['txid'],
+                                'pi_user_id': result_dict["user_uid"],
+                                'pi_user': pi_user[0].id,
+                                'json_result': str(result_dict),
+                                'pi_user_id': result_dict["user_uid"],
+                                'amount': result_dict["amount"],
+                                'memo': result_dict["memo"],
+                                'to_address': result_dict["to_address"],
+                                'developer_approved': result_dict["status"]["developer_approved"], 
+                                'transaction_verified': result_dict["status"]["transaction_verified"], 
+                                'developer_completed': result_dict["status"]["developer_completed"], 
+                                'cancelled': result_dict["status"]["cancelled"], 
+                                'user_cancelled': result_dict["status"]["user_cancelled"]}
                     
-                transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
-                
-                result = {"result": True, "completed": False}
-                if len(transaction) > 0 and kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
-                    if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
-                        users = transaction[0].pi_user
+                    admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+                    if "direction" in result_dict and result_dict["direction"] == "app_to_user":
+                        data_dict.update({'action_type': 'send'})
+                    elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                        data_dict.update({'action_type': 'receive'})
+                        #if not admin_app[0].pi_users_winners_paying:
+                        #    admin_app[0].pi_users_winners_to_pay = admin_app[0].pi_users_winners_to_pay + (float(result_dict["amount"]) * (admin_app[0].pi_users_winners_to_pay_percent/100))
+                    
+                    transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
+                    if transaction_count == 0:
+                        self.env["pi.transactions"].sudo().create(data_dict)
+                    else:
+                        self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
                         
-                        if len(users) > 0:
-                            if users[0].paid_in_transactions >= admin_app_list[0].amount:
-                                users[0].sudo().write({'unblocked_datetime': datetime.now()})
+                    transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
+                    
+                    result = {"result": True, "completed": False}
+                    if len(transaction) > 0 and kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
+                        if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
+                            users = transaction[0].pi_user
                             
-                        result = {"result": True, "completed": True}
-                    elif not result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
-                        transaction[0].sudo().write({'action': 'approve'})
+                            if len(users) > 0:
+                                if users[0].paid_in_transactions >= admin_app_list[0].amount:
+                                    if "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                                        users[0].sudo().write({'unblocked_datetime': datetime.now()})
+                                
+                            result = {"result": True, "completed": True}
+                        #elif not result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
+                        #    transaction[0].sudo().write({'action': 'approve'})
+                else:
+                    result = {"result": True, "completed": False, "approved": False}
             else:
                 result = {"result": True, "completed": False, "approved": False}
         except:
