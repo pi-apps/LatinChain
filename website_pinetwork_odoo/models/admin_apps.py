@@ -823,9 +823,18 @@ class pi_users(models.Model):
     def _total_paid_transactions(self):
         for i in self:
             total = 0
+            
+            transactions_domain = [('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')]
+            transactions_ids = self.env["pi.transactions"].read_group(transactions_domain, ['amount', 'action_type'], ['action_type'])
+            
+            if len(transactions_ids) > 0:
+                total = transactions_ids[0]['amount']
+            
+            """
             for j in i.pi_transactions_ids:
                 if j.action == "complete" and j.action_type == "receive":
                     total += j.amount
+            """
             
             i.paid_in_transactions = total
             
