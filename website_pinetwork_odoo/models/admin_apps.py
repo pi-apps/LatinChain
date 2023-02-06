@@ -851,10 +851,12 @@ class pi_users(models.Model):
                 else:
                     i.unblocked_datetime = ""
     
+    """
     def total_paid_transactions_exec(self):
         self._total_paid_transactions()
         
         return True
+    """
 
     """
     def check_users(self):
