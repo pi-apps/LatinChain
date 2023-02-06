@@ -748,7 +748,7 @@ class pi_users(models.Model):
     ]
 
     name = fields.Char('Name')
-    email = fields.Char('Email')
+    email = fields.Char('Email', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_user_id = fields.Char('Pi User ID', required=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_user_code = fields.Char('Pi User Code', required=True)
     pi_user_role = fields.Selection([('pi_user', 'Pi User'), ('latinchain_dev', 'LatinChain Dev'), ('latinchain_adm', 'LatinChain Administration')], 'Pi User Role', default="pi_user", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
