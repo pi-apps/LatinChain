@@ -722,12 +722,13 @@ class admin_apps(models.Model):
                     result = {"result": True, "completed": False}
                     if len(transaction) > 0 and kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
                         if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
-                            users = transaction[0].pi_user
+                            """users = transaction[0].pi_user
                             
                             if len(users) > 0:
                                 if users[0].paid_in_transactions >= admin_app_list[0].amount:
                                     if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                         users[0].sudo().write({'unblocked_datetime': datetime.now()})
+                            """
                                 
                             result = {"result": True, "completed": True}
                         #elif not result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
