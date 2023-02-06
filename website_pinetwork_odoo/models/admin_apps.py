@@ -839,34 +839,19 @@ class pi_users(models.Model):
             if len(transactions_ids) > 0:
                 total = transactions_ids[0]['amount']
             
-            """
-            for j in i.pi_transactions_ids:
-                if j.action == "complete" and j.action_type == "receive":
-                    total += j.amount
-            """
-            
             i.paid_in_transactions = total
-            
-            #if i.paid_in_transactions > 0:
-            #    i.unblocked = True
                 
             transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
-                #i.unblocked = False
-                #i.days_available = 0
                 i.unblocked_datetime = ""
             else:
-                #days_available = 30 - (datetime.now() - transaction[0].create_date).days
-                
                 if i.paid_in_transactions >= transaction[0].app_id.amount:
                     i.unblocked_datetime = transaction[0].create_date
-                
-                #if days_available < 0:
-                #    days_available = 0
-                
-                #if i.days_available == 0:
-                #    i.unblocked = False
+    
+    def total_paid_transactions_exec(self):
+        for i in self:
+            i._total_paid_transactions()
 
     """
     def check_users(self):
