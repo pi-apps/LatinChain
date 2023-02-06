@@ -788,10 +788,19 @@ class pi_users(models.Model):
             else:
                 i.donator = True
             
-            total = 0    
+            total = 0
+            
+            transactions_domain = [('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete'), ('action_type', '=', 'receive')]
+            transactions_ids = self.env["pi.transactions"].read_group(transactions_domain, ['amount', 'action_type'], ['action_type'])
+            
+            if len(transactions_ids) > 0:
+                total = transactions_ids[0]['amount']
+                
+            """
             for j in i.pi_transactions_ids:
                 if j.action == "complete" and j.action_type == "receive" and j.app_id.app == "auth_example":
                     total += j.amount
+            """
             
             i.paid_in_all_donations = total
                         
@@ -850,7 +859,8 @@ class pi_users(models.Model):
             else:
                 #days_available = 30 - (datetime.now() - transaction[0].create_date).days
                 
-                i.unblocked_datetime = transaction[0].create_date
+                if i.paid_in_transactions >= transaction[0].app_id.amount:
+                    i.unblocked_datetime = transaction[0].create_date
                 
                 #if days_available < 0:
                 #    days_available = 0
