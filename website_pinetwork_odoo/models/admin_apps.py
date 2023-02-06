@@ -730,6 +730,9 @@ class admin_apps(models.Model):
                                     if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                         users[0].sudo().write({'unblocked_datetime': datetime.now()})
                             """
+                            
+                            if "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                                users[0].sudo().write({'unblocked_datetime': datetime.now()})
                                 
                             result = {"result": True, "completed": True}
                         #elif not result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
