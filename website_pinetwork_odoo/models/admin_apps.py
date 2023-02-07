@@ -174,7 +174,7 @@ class admin_apps(models.Model):
     pi_users_winners_to_pay_per_user = fields.Float('Winners To Pay per user', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     #pi_users_winners_fee_to_pay = fields.Integer('Winners Fee To Pay', default=100000, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_completed_payments = fields.Integer('Winners To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_devs_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_devs_rel', string='Devs', domain=[('pi_user_role', 'in', ['latinchain_dev', 'latinchain_adm'])], groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_devs_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_devs_rel', string='Devs', domain=[('pi_user_role', 'in', ['latinchain_dev'])], groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_devs_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_devs_paid_rel', string='Devs Paid', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_account_balance = fields.Float('Account Balance', digits=(50,7), compute='_get_balance', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_devs_to_pay_per_user = fields.Float('Devs To Pay per user', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
