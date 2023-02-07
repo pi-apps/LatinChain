@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-31 15:08+0000\n"
-"PO-Revision-Date: 2022-12-31 15:08+0000\n"
+"POT-Creation-Date: 2023-02-07 21:36+0000\n"
+"PO-Revision-Date: 2023-02-07 21:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -106,17 +106,17 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "3.- For Top 10 zone Chess: Have 20 or more points in Chess."
-msgstr "3.- Para el Top 10 zone Chess: Tener 20 ó más puntos en Chess."
+msgid ""
+"3.- All prize payments will be paid automatically to your Pi Wallet "
+"associated in your Pi Browser."
+msgstr ""
+"3.- Todos los pagos de premios se pagarán automáticamente a su Pi Wallet "
+"asociada en su navegador Pi."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"3.- You should fill your Pi Wallet address in the mainscreen on latin-"
-"chain.com, to receive prizes as winner on Pi Mainnet."
-msgstr ""
-"3.- Debes rellenar tu dirección de Pi Wallet en la página principal de "
-"latin-chain.com, para recibir premios como ganador en la Pi Mainnet."
+msgid "3.- For Top 10 zone Chess: Have 20 or more points in Chess."
+msgstr "3.- Para el Top 10 zone Chess: Tener 20 ó más puntos en Chess."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -146,7 +146,7 @@ msgid ""
 msgstr ""
 "<br/>\n"
 "                                    <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
-"                                    <br/>"
+"                                    <br/>Disfrute:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -161,7 +161,8 @@ msgstr ""
 "                        <br/>\n"
 "                        <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
 "                        <br/>\n"
-"                        <ins class=\"adsbygoogle\" style=\"display:block\" data-ad-format=\"autorelaxed\" data-ad-client=\"ca-pub-2334449220276386\" data-ad-slot=\"1794208680\"/>"
+"                        <ins class=\"adsbygoogle\" style=\"display:block\" data-ad-format=\"autorelaxed\" data-ad-client=\"ca-pub-2334449220276386\" data-ad-slot=\"1794208680\"/>\n"
+"                        <br/><br/>Noticias cripto:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -425,6 +426,12 @@ msgid ""
 "                                                <span id=\"btn-settings\" title=\"Choose The Engine's Skill Level\" class=\"btn settings\"/>\n"
 "                                                <span id=\"btn-resign\" title=\"Resign\" class=\"btn resign\"/>"
 msgstr ""
+"<span id=\"btn-new-game\" title=\"Inicia Nuevo Juego\" class=\"btn-new-game\">\n"
+"                                    <span class=\"icon\"/>\n"
+"                                                <span class=\"label\">Nuevo Juego</span>\n"
+"                                                </span>\n"
+"                                                <span id=\"btn-settings\" title=\"Choose The Engine's Skill Level\" class=\"btn settings\"/>\n"
+"                                                <span id=\"btn-resign\" title=\"Resignarse\" class=\"btn resign\"/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -441,24 +448,10 @@ msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...</span><br/>
 msgstr "<span id=\"loading_word\" style=\"display: none;\">Cargando...</span>"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"<strong>Set your Pi wallet address here and click in Save</strong> (DON'T "
-"SEND YOUR PASSPHRASE):"
-msgstr ""
-"<strong>Coloca tu dirección de Pi wallet aquí y dale click en "
-"Guardar</strong> (NO ENVÍES TU PASSPHRASE):"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.new_header
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.new_header_layout
 msgid "<strong>Translate</strong>"
 msgstr "<strong>Traducir</strong>"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "A normal Pi wallet address looks like this:<br/>"
-msgstr "Una dirección de Pi wallet normal luce como esto:<br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -469,6 +462,15 @@ msgstr "IA"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "API Docs"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>\n"
+"                                            Here you can watch your incomming and outcomming transactions:<br/>"
+msgstr ""
+"Todos los pagos de premios se pagarán automáticamente a su Pi Wallet asociada en su navegador Pi.<br/><br/>\n"
+"                                            Aquí puede ver sus transacciones entrantes y salientes:<br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -593,11 +595,6 @@ msgstr "Primer Turno:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Flip Board"
 msgstr "Intercambia Tablero"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "GAABCDEFGHIJKLMNOPQ..."
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -840,11 +837,6 @@ msgid "Rules"
 msgstr "Reglas"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Save"
-msgstr "Guardar"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Save PGN Notation:"
 msgstr "Salvar Notación PGN:"
@@ -865,11 +857,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "Set controls"
 msgstr "Fijar controles"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Set your Pi wallet address"
-msgstr "Coloca tu dirección de Pi wallet"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
