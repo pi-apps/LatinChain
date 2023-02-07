@@ -12,6 +12,7 @@
                     <button name="fill_paid_winners" confirm="Are you sure you want to fill PAID winners?" type="object" string="Fill Paid Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
                     <button name="delete_paid_winners" confirm="Are you sure you want to delete PAID winners?" type="object" string="Delete Paid Winners" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
                     <button name="pay_devs" confirm="Are you sure you want to PAY devs?" type="object" string="Pay Devs" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
+                    <button name="pay_devs_percent" confirm="Are you sure you want to PAY PERCENT devs?" type="object" string="Pay Devs Percent" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
                 </header>
                 <sheet>
                     <notebook>
@@ -57,6 +58,7 @@
                                     <field name="pi_users_devs_ids" widget="many2many_tags"/>
                                     <field name="pi_users_devs_paid_ids" widget="many2many_tags"/>
                                     <field name="pi_users_devs_to_pay_per_user"/>
+                                    <field name="pi_users_devs_to_pay_percent"/>
                                     <field name="pi_users_devs_completed_payments"/>
                                     <field name="block_points"/>
                                     <field name="pi_users_winners_html"/>
