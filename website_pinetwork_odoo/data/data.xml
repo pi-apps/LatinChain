@@ -35,7 +35,9 @@
            <field ref="model_admin_apps" name="model_id" />
            <field name="state">code</field>
            <field name="code">
+model.search([('app', 'in', ['auth_platform'])]).delete_paid_devs()
 model.search([('app', 'in', ['auth_platform'])]).pay_devs_percent()
+model.search([('app', 'in', ['auth_platform'])]).delete_paid_winners()
 model.search([('app', 'in', ['auth_platform'])]).pay_winners()
             </field>
            <field eval="False" name="doall"/>

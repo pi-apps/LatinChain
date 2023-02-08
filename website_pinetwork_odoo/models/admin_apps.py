@@ -685,6 +685,10 @@ class admin_apps(models.Model):
                                 self.env.cr.commit()
                             else:
                                 pi.cancel_payment(payment_id)
+    
+    def delete_paid_devs(self):
+        for i in self:
+            i.pi_users_devs_paid_ids = [(6, 0, [])]
         
     def delete_winners(self):
         for i in self:
