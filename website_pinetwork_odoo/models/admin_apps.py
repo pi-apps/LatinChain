@@ -434,7 +434,10 @@ class admin_apps(models.Model):
                             self.env.cr.commit()
                         else:
                             pi.cancel_payment(payment_id)
-                        
+            
+            #if self_i.pi_users_winners_completed_payments > 0:
+            self_i.pi_users_winners_paid_datetime = datetime.now()
+            
             self_i.pi_users_winners_paying = False
             self.env.cr.commit()
 

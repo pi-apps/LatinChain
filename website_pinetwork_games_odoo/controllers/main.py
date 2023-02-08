@@ -199,7 +199,9 @@ class PiNetworkController(http.Controller):
         
         if len(admin_app_list) == 0:
             amount = False
+            pi_users_winners_paid_datetime = False
         else:
             amount = admin_app_list[0].amount
+            pi_users_winners_paid_datetime = admin_app_list[0].pi_users_winners_paid_datetime
         
-        return http.request.render('website_pinetwork_games_odoo.rules', {'amount': amount})
+        return http.request.render('website_pinetwork_games_odoo.rules', {'amount': amount, 'pi_users_winners_paid_datetime': pi_users_winners_paid_datetime})
