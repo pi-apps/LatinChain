@@ -56,7 +56,7 @@
                         
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                            $("#a-ads").prop('src', $("#a_ads_val").val());
+                            //$("#a-ads").prop('src', $("#a_ads_val").val());
                             /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
                             $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
                             //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
@@ -156,7 +156,17 @@
                                             
                                             <div class="item active" t-att-style="background">
                                                 <div align="center" style="text-align:center">
-                                                    <iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>
+                                                    <script type="text/javascript">
+                                                        atOptions = {
+                                                            'key' : 'b3626277f6615b27c340298a132b7897',
+                                                            'format' : 'iframe',
+                                                            'height' : 250,
+                                                            'width' : 300,
+                                                            'params' : {}
+                                                        };
+                                                    </script>
+                                                    <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
+                                                    <!--<iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>-->
                                                 </div>
                                             </div>
                                             
