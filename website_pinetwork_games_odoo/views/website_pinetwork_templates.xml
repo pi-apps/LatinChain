@@ -43,7 +43,7 @@
                         
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                            //$("#a-ads").prop('src', $("#a_ads_val").val());
+                            $("#a-ads").prop('src', $("#a_ads_val").val());
                             /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
                             $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
                             //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
@@ -131,7 +131,7 @@
                                 <t t-set="background" t-value="'background-image: url(&quot;/website_pinetwork_games_odoo/static/src/img/image_banners.jpg&quot;); background-size: 100% 100%; height: 290px; max-height: 290px'"/>
                                 <div class="carousel-item active" t-att-style="background">
                                     <div align="center" style="text-align:center">
-                                        <script type="text/javascript">
+                                        <!--<script type="text/javascript">
                                             atOptions = {
                                                 'key' : 'b3626277f6615b27c340298a132b7897',
                                                 'format' : 'iframe',
@@ -140,8 +140,8 @@
                                                 'params' : {}
                                             };
                                         </script>
-                                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
-                                        <!--<iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>-->
+                                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>-->
+                                        <iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>
                                     </div>
                                 </div>
                                 <!--<div class="carousel-item" t-att-style="background">
