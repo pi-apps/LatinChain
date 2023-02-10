@@ -17,9 +17,9 @@ const {derivePath} = require('@hawkingnetwork/ed25519-hd-key-rn');
 const testnetApiEndpoint = 'https://api.testnet.minepi.com/';
 const server = new StellarSdk.Server(testnetApiEndpoint);
 
-const mnemonic_passphrase = ""; // Set here your passphrase seed. Don't share it with anyone.
+const mnemonic_passphrase = ""; // Set here your 24 words passphrase seed from Pi Network. Don't share it with anyone.
 
-async function getApplicationPrivateKey() {
+async function getAppPrivateKey() {
   const seed = await bip39.mnemonicToSeed(mnemonic_passphrase);
   const derivedSeed = derivePath("m/44'/314159'/0'", seed); //derivation path of Pi Network mnemonic
 
@@ -29,7 +29,7 @@ async function getApplicationPrivateKey() {
 }
 
 async function printKeys(){
-    const result = await getApplicationPrivateKey();
+    const result = await getAppPrivateKey();
 
     console.log(result);
 }
