@@ -233,12 +233,6 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
-            
-            pi_user = request.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code']), ('pi_user_id', '=', kw['pi_user_id'])])
-
-            if len(pi_user) == 0:
-                _logger.info("Authorization failed")
-                return json.dumps({"result": False})
         except:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
@@ -264,12 +258,6 @@ class PiNetworkBaseController(http.Controller):
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
-                
-            if float(kw['points']) > 0:
-                pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code']), ('pi_user_id', '=', kw['pi_user_id'])])
-                if len(pi_users_list) == 0:
-                    _logger.info("Authorization failed")
-                    return json.dumps({'result': False})
         except:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
