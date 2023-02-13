@@ -237,6 +237,7 @@ class PiNetworkBaseController(http.Controller):
             pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
             if len(pi_users_list) == 0:
+                _logger.info("Authorization failed")
                 return json.dumps({'result': False})
         except:
             _logger.info("Authorization error")
