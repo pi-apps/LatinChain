@@ -775,12 +775,6 @@ class admin_apps(models.Model):
             else:
                 obj = {'txid': kw['txid']}
 
-        pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
-
-        if len(pi_user) == 0:
-            result = {"result": False, "error": "SERVER MESSAGE: User not found"}
-            return json.dumps(result)
-
         admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
         
         if len(admin_app_list) == 0:
