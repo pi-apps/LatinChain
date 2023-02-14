@@ -23,7 +23,11 @@ Base path: `/api/get-external-user`.
 Get information about an user.
 
 ```
-GET /api/get-external-user/{pi_user_code}
+POST /api/get-external-user
+
+$.post("https://latin-chain.com/api/get-external-user", data={'pi_user_code': 'rockcesar'}, function(data, status){
+  alert("Data: " + data.pi_user_code + "\nStatus: " + status);
+});
 ```
 
 * Response type: [UserDTO](#UserDTO)

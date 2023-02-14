@@ -4,11 +4,15 @@ Watch these docs also at: https://latin-chain.com/api-docs/
 
 You can play games at https://latin-chain.com, but you can also browse data as developer, as easy as send a request to:
 
-https://latin-chain.com/api/get-external-user/{pi_user_code}
+https://latin-chain.com/api/get-external-user
 
-Changing {pi_user_code}, by your user. Example:
+Sending by POST {pi_user_code}, example:
 
-https://latin-chain.com/api/get-external-user/rockcesar
+```
+$.post("https://latin-chain.com/api/get-external-user", data={'pi_user_code': 'rockcesar'}, function(data, status){
+  alert("Data: " + data.pi_user_code + "\nStatus: " + status);
+});
+```
 
 Or you can browse at the following, to get the winners:
 
