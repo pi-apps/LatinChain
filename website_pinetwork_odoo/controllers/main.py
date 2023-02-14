@@ -58,10 +58,10 @@ class PiNetworkBaseController(http.Controller):
         return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
         
     @http.route('/api-docs/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
-    def api_external_user(self, **kw):
+    def api_external_docs(self, **kw):
         return http.request.redirect('https://github.com/pi-apps/LatinChain/tree/main/docs')
     
-    @http.route('/api/get-external-winners', type='http', auth="public", website=True, csrf=False, methods=['GET'])
+    @http.route('/api/get-external-winners', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_external_winners(self, **kw):
 
         """
