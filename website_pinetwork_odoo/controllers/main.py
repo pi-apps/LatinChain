@@ -61,7 +61,7 @@ class PiNetworkBaseController(http.Controller):
     def api_external_user(self, **kw):
         return http.request.redirect('https://github.com/pi-apps/LatinChain/tree/main/docs')
     
-    @http.route('/api/get-external-winners/', type='http', auth="public", website=True, csrf=False, methods=['GET'], cors="*")
+    @http.route('/api/get-external-winners/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def get_external_winners(self, **kw):
 
         """
@@ -99,7 +99,7 @@ class PiNetworkBaseController(http.Controller):
         headers = {'Content-Type': 'application/json'}
         return Response(json.dumps({'result': True, 'pi_winner_list': pi_winner_list}), headers=headers)
     
-    @http.route('/api/get-external-user/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, methods=['GET'], cors="*")
+    @http.route('/api/get-external-user/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def get_external_user(self, pi_user_code, **kw):
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
@@ -139,7 +139,7 @@ class PiNetworkBaseController(http.Controller):
                             'unblocked': pi_users_list[0].unblocked, 'unblocked_datetime': str(unblocked_datetime), 
                             'is_winner': is_winner}), headers=headers)
     
-    @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'], cors="latin-chain.com,test.latin-chain.com")
+    @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
@@ -189,7 +189,7 @@ class PiNetworkBaseController(http.Controller):
                             'passkey': passkey,
                             'im_winner': im_winner, 'pi_wallet_address': pi_users_list[0].pi_wallet_address})
     
-    @http.route('/set-pi-wallet', type='http', auth="public", website=True, csrf=False, methods=['POST'], cors="latin-chain.com,test.latin-chain.com")
+    @http.route('/set-pi-wallet', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def set_pi_wallet(self, **kw):
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
@@ -216,7 +216,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'result': True})
         
-    @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'], cors="latin-chain.com,test.latin-chain.com")
+    @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):
         admin_apps_block_list = request.env["admin.apps"].sudo().search([('app', '=', "auth_platform"), ('block_points', '=', True)])
         
@@ -245,7 +245,7 @@ class PiNetworkBaseController(http.Controller):
         
         return request.env["admin.apps"].pi_api(kw)
         
-    @http.route('/pi-points', type='http', auth="public", website=True, csrf=False, methods=['POST'], cors="latin-chain.com,test.latin-chain.com")
+    @http.route('/pi-points', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_points(self, **kw):
         """
         admin_apps_block_list = request.env["admin.apps"].sudo().search([('app', '=', "auth_platform"), ('block_points', '=', True)])
