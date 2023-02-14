@@ -18,6 +18,12 @@ Or you can browse at the following, to get the winners:
 
 https://latin-chain.com/api/get-external-winners
 
+```
+$.post("https://latin-chain.com/api/get-external-winners", function(data, status){
+  alert("Data: " + data + "\nStatus: " + status);
+});
+```
+
 ## Usage
 
 ### Find an user
