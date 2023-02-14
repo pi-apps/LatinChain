@@ -259,70 +259,75 @@ class PiNetworkBaseController(http.Controller):
             return json.dumps({'result': False})
         """
         
-        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
-        #_logger.info(kw['accessToken'])
-        try:
-            result = re.json()
-            
-            result_dict = json.loads(str(json.dumps(result)))
-            
-            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
-                _logger.info("Authorization failed")
+        try:            
+        
+            re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+            #_logger.info(kw['accessToken'])
+            try:
+                result = re.json()
+                
+                result_dict = json.loads(str(json.dumps(result)))
+                
+                if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                    _logger.info("Authorization failed")
+                    return json.dumps({'result': False})
+            except:
+                _logger.info("Authorization error")
                 return json.dumps({'result': False})
+            
+            pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+            
+            if len(pi_users_list) == 0:
+                request.env["pi.users"].sudo().create({'name': kw['pi_user_code'],
+                                                        'pi_user_id': kw['pi_user_id'],
+                                                        'pi_user_code': kw['pi_user_code'],
+                                                        'points': 0,
+                                                        'points_chess': 0,
+                                                        'points_sudoku': 0,
+                                                        'points_snake': 0,
+                                                        'unblocked_datetime': "",
+                                                        'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
+                                                        'last_connection': datetime.now(),
+                                                    })
+            else:
+                #if 'passkey' not in kw:
+                #    _logger.info("PASSKEY NOT PRESENT")
+                #    return json.dumps({'result': False})
+                    
+                #if kw['passkey'] != pi_users_list[0].passkey:
+                #    _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
+                #    return json.dumps({'result': False})
+                
+                values = {'name': kw['pi_user_code'],
+                                    'pi_user_id': kw['pi_user_id'],
+                                    'pi_user_code': kw['pi_user_code'],
+                                    'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
+                                    'last_connection': datetime.now(),
+                                }
+                
+                if pi_users_list[0].unblocked:
+                    #if float(kw['points']) > 0:
+                    #    pi_users_winnners_count = request.env["pi.users"].sudo().search_count(winner_domain)
+                    #    
+                    #    if pi_users_winnners_count >= 10:
+                    #        return json.dumps({'result': False})
+                    
+                    if 'app_client' in kw:
+                        if kw['app_client'] == "auth_platform":
+                            values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
+                        elif kw['app_client'] == "auth_pidoku":
+                            values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
+                        elif kw['app_client'] == "auth_snake":
+                            values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
+                elif not pi_users_list[0].unblocked and float(kw['points']) > 0:
+                    return json.dumps({'result': False})
+                
+                pi_users_list[0].sudo().write(values)
+            
+            return json.dumps({'result': True})
         except:
-            _logger.info("Authorization error")
-            return json.dumps({'result': False})
-        
-        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
-        
-        if len(pi_users_list) == 0:
-            request.env["pi.users"].sudo().create({'name': kw['pi_user_code'],
-                                                    'pi_user_id': kw['pi_user_id'],
-                                                    'pi_user_code': kw['pi_user_code'],
-                                                    'points': 0,
-                                                    'points_chess': 0,
-                                                    'points_sudoku': 0,
-                                                    'points_snake': 0,
-                                                    'unblocked_datetime': "",
-                                                    'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
-                                                    'last_connection': datetime.now(),
-                                                })
-        else:
-            #if 'passkey' not in kw:
-            #    _logger.info("PASSKEY NOT PRESENT")
-            #    return json.dumps({'result': False})
-                
-            #if kw['passkey'] != pi_users_list[0].passkey:
-            #    _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
-            #    return json.dumps({'result': False})
-            
-            values = {'name': kw['pi_user_code'],
-                                'pi_user_id': kw['pi_user_id'],
-                                'pi_user_code': kw['pi_user_code'],
-                                'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
-                                'last_connection': datetime.now(),
-                            }
-            
-            if pi_users_list[0].unblocked:
-                #if float(kw['points']) > 0:
-                #    pi_users_winnners_count = request.env["pi.users"].sudo().search_count(winner_domain)
-                #    
-                #    if pi_users_winnners_count >= 10:
-                #        return json.dumps({'result': False})
-                
-                if 'app_client' in kw:
-                    if kw['app_client'] == "auth_platform":
-                        values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
-                    elif kw['app_client'] == "auth_pidoku":
-                        values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
-                    elif kw['app_client'] == "auth_snake":
-                        values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
-            elif not pi_users_list[0].unblocked and float(kw['points']) > 0:
-                return json.dumps({'result': False})
-            
-            pi_users_list[0].sudo().write(values)
-        
-        return json.dumps({'result': True})
+            request.env.cr.rollback()
+            return json.dumps({'result': True})
         
     @http.route('/get-points/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_points_user(self, pi_user_code, **kw):
