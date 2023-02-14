@@ -139,7 +139,7 @@ class PiNetworkBaseController(http.Controller):
                             'unblocked': pi_users_list[0].unblocked, 'unblocked_datetime': str(unblocked_datetime), 
                             'is_winner': is_winner}), headers=headers)
     
-    @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'], cors="latin-chain-com,test.latin-chain.com")
     def get_user(self, **kw):
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
