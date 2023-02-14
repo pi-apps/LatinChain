@@ -93,7 +93,7 @@ class PiNetworkBaseController(http.Controller):
                     'points': pi_user.points, 'points_chess': pi_user.points_chess, 
                     'points_sudoku': pi_user.points_sudoku,
                     'points_snake': pi_user.points_snake, 'points_datetime': str(pi_user.points_datetime) + " UTC",
-                    'unblocked': pi_user.unblocked, 'unblocked_datetime': str(unblocked_datetime), 
+                    'unblocked': pi_user.unblocked, 'unblocked_datetime': str(unblocked_datetime) + " UTC", 
                     'is_winner': is_winner})
         
         headers = {'Content-Type': 'application/json'}
@@ -141,7 +141,7 @@ class PiNetworkBaseController(http.Controller):
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
-                            'unblocked': pi_users_list[0].unblocked, 'unblocked_datetime': str(unblocked_datetime), 
+                            'unblocked': pi_users_list[0].unblocked, 'unblocked_datetime': str(unblocked_datetime) + " UTC", 
                             'is_winner': is_winner}), headers=headers)
     
     @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
