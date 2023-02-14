@@ -101,6 +101,11 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/api/get-external-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_external_user(self, **kw):
+        
+        if 'pi_user_code' not in kw:
+            headers = {'Content-Type': 'application/json'}
+            return Response(json.dumps({'result': False}), headers=headers)
+        
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
         if len(pi_users_list) == 0:
