@@ -17,7 +17,7 @@ function set_points(points) {
             'csrf_token': odoo.csrf_token,
         };
         //$.ajaxSetup({async: false});
-        return $.post( "https://test.latin-chain.com/pi-points", data).done(function(data) {
+        return $.post( "/pi-points", data).done(function(data) {
             data = JSON.parse(data);
             if(data.result && points > 0)
             {
