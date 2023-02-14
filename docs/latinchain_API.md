@@ -43,7 +43,11 @@ Base path: `/api/get-external-winners`.
 Get information about winners.
 
 ```
-GET /api/get-external-winners
+POST /api/get-external-winners
+
+$.post("https://latin-chain.com/api/get-external-winners", function(data, status){
+  alert("Data: " + data + "\nStatus: " + status);
+});
 ```
 
 * Response type: [WinnerDTO](#WinnerDTO)
