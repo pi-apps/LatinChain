@@ -894,7 +894,7 @@ class pi_users(models.Model):
     pi_user_code = fields.Char('Pi User Code', required=True)
     pi_user_role = fields.Selection([('pi_user', 'Pi User'), ('latinchain_dev', 'LatinChain Dev'), ('latinchain_adm', 'LatinChain Administration')], 'Pi User Role', default="pi_user", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_wallet_address = fields.Char('Wallet Address', size=56, default="", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    passkey = fields.Char('Pass Key')
+    passkey = fields.Char('Pass Key', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     points = fields.Float('Pi User Points', compute="_total_points", store=True, digits=(50,7))
     points_chess = fields.Float('Chess Points', required=True, default=0, digits=(50,7))
     points_sudoku = fields.Float('Sudoku Points', required=True, default=0, digits=(50,7))
