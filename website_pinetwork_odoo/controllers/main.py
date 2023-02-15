@@ -170,6 +170,10 @@ class PiNetworkBaseController(http.Controller):
         
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
+            
+        if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+            _logger.info("Not the same pi_user_id")
+            return json.dumps({'result': False})
         
         apps_list = request.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
         
@@ -227,6 +231,10 @@ class PiNetworkBaseController(http.Controller):
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         else:
+            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                _logger.info("Not the same pi_user_id")
+                return json.dumps({'result': False})
+            
             if 'pi_wallet_address' not in kw:
                 _logger.info("pi_wallet_address not present")
                 return json.dumps({'result': False})
@@ -262,6 +270,10 @@ class PiNetworkBaseController(http.Controller):
         
             if len(pi_users_list) == 0:
                 _logger.info("Authorization failed")
+                return json.dumps({'result': False})
+            
+            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                _logger.info("Not the same pi_user_id")
                 return json.dumps({'result': False})
                 
         except:
@@ -313,6 +325,11 @@ class PiNetworkBaseController(http.Controller):
                                                 })
         else:
             
+            if pi_users_list[0].pi_user_id != '':
+                if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                    _logger.info("Not the same pi_user_id")
+                    return json.dumps({'result': False})
+            
             if 'points' not in kw:
                 _logger.info("points not present")
                 return json.dumps({'result': False})
@@ -340,13 +357,14 @@ class PiNetworkBaseController(http.Controller):
                 #    if pi_users_winnners_count >= 10:
                 #        return json.dumps({'result': False})
                 
-                if 'app_client' in kw:
-                    if kw['app_client'] == "auth_platform":
-                        values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
-                    elif kw['app_client'] == "auth_pidoku":
-                        values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
-                    elif kw['app_client'] == "auth_snake":
-                        values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
+                if pi_users_list[0].pi_user_id != '':
+                    if 'app_client' in kw:
+                        if kw['app_client'] == "auth_platform":
+                            values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
+                        elif kw['app_client'] == "auth_pidoku":
+                            values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
+                        elif kw['app_client'] == "auth_snake":
+                            values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
             elif not pi_users_list[0].unblocked and float(kw['points']) > 0:
                 return json.dumps({'result': False})
             
