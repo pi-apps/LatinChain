@@ -170,7 +170,7 @@ class PiNetworkBaseController(http.Controller):
         if len(apps_list) == 0:
             return json.dumps({'result': False})
         
-        passkey = ''.join([choice('abcdefghijklmnopqrstuvwxyz0123456789%^*(-_=+)') for i in range(10)])
+        passkey = ''.join([choice('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789%^*(-_=+)') for i in range(20)])
         
         pi_users_list[0].sudo().write({'passkey': passkey})
         
