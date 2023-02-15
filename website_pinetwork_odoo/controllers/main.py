@@ -290,13 +290,13 @@ class PiNetworkBaseController(http.Controller):
                                                         'last_connection': datetime.now(),
                                                     })
             else:
-                #if 'passkey' not in kw:
-                #    _logger.info("PASSKEY NOT PRESENT")
-                #    return json.dumps({'result': False})
+                if 'passkey' not in kw:
+                    _logger.info("PASSKEY NOT PRESENT")
+                    return json.dumps({'result': False})
                     
-                #if kw['passkey'] != pi_users_list[0].passkey:
-                #    _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
-                #    return json.dumps({'result': False})
+                if kw['passkey'] != pi_users_list[0].passkey:
+                    _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
+                    return json.dumps({'result': False})
                 
                 values = {'name': kw['pi_user_code'],
                                     'pi_user_id': kw['pi_user_id'],
