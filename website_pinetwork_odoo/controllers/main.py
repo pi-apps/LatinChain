@@ -319,7 +319,7 @@ class PiNetworkBaseController(http.Controller):
                                                     'points_chess': 0,
                                                     'points_sudoku': 0,
                                                     'points_snake': 0,
-                                                    'unblocked_datetime': "",
+                                                    'unblocked_datetime': False,
                                                     'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
                                                     'last_connection': datetime.now(),
                                                 })

@@ -979,7 +979,7 @@ class pi_users(models.Model):
             transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
-                i.unblocked_datetime = ""
+                i.unblocked_datetime = False
             else:
                 i.unblocked_datetime = transaction[0].create_date
                 
