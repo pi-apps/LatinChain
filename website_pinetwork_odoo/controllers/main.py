@@ -359,10 +359,10 @@ class PiNetworkBaseController(http.Controller):
                 if pi_users_list[0].pi_user_id != '':
                     if 'app_client' in kw:
                         if kw['app_client'] == "auth_platform":
-                            if float(kw['points']) >= 1 or float(kw['points']) <= 20:
+                            if float(kw['points']) >= 1 and float(kw['points']) <= 20:
                                 values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
                         elif kw['app_client'] == "auth_pidoku":
-                            if float(kw['points']) % 3 == 0 and (float(kw['points']) >= 9 or float(kw['points']) <= 18):
+                            if float(kw['points']) % 3 == 0 and (float(kw['points']) >= 9 and float(kw['points']) <= 18):
                                 values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
                         elif kw['app_client'] == "auth_snake":
                             if float(kw['points']) % 10 == 0:
