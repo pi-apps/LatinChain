@@ -342,11 +342,14 @@ class PiNetworkBaseController(http.Controller):
                 
                 if 'app_client' in kw:
                     if kw['app_client'] == "auth_platform":
-                        values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
+                        if float(kw['points']) >= 1 or float(kw['points']) <= 20:
+                            values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
                     elif kw['app_client'] == "auth_pidoku":
-                        values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
+                        if float(kw['points']) % 3 == 0 and (float(kw['points']) >= 9 or float(kw['points']) <= 18):
+                            values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
                     elif kw['app_client'] == "auth_snake":
-                        values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
+                        if float(kw['points']) % 10 == 0:
+                            values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
             elif not pi_users_list[0].unblocked and float(kw['points']) > 0:
                 return json.dumps({'result': False})
             
