@@ -324,11 +324,13 @@ class PiNetworkBaseController(http.Controller):
                     return json.dumps({'result': False})
                 
                 pi_users_list[0].sudo().write(values)
+                
+                request.env.cr.commit()
             
             return json.dumps({'result': True})
         except:
             request.env.cr.rollback()
-            return json.dumps({'result': True})
+            return json.dumps({'result': False})
         
     @http.route('/get-points/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_points_user(self, pi_user_code, **kw):
