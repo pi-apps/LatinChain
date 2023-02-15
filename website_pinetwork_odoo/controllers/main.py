@@ -166,10 +166,9 @@ class PiNetworkBaseController(http.Controller):
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         
-        if pi_users_list[0].pi_user_id != '':
-            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
-                _logger.info("Authorization error")
-                return json.dumps({'result': False})
+        if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+            _logger.info("Authorization error")
+            return json.dumps({'result': False})
         
         apps_list = request.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
         
@@ -223,10 +222,9 @@ class PiNetworkBaseController(http.Controller):
         else:
             values = {'pi_wallet_address': kw['pi_wallet_address']}
         
-            if pi_users_list[0].pi_user_id != '':
-                if pi_users_list[0].pi_user_id != kw['pi_user_id']:
-                    _logger.info("Authorization error")
-                    return json.dumps({'result': False})
+            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                _logger.info("Authorization error")
+                return json.dumps({'result': False})
         
         pi_users_list[0].sudo().write(values)
         
@@ -256,10 +254,9 @@ class PiNetworkBaseController(http.Controller):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
             
-            if pi_users_list[0].pi_user_id != '':
-                if pi_users_list[0].pi_user_id != kw['pi_user_id']:
-                    _logger.info("Authorization error")
-                    return json.dumps({'result': False})
+            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                _logger.info("Authorization error")
+                return json.dumps({'result': False})
         except:
             _logger.info("Authorization error")
             return json.dumps({'result': False})
