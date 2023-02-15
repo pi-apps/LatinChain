@@ -187,6 +187,8 @@ class PiNetworkBaseController(http.Controller):
             unblocked_datetime = ""
         else:
             unblocked_datetime = str(pi_users_list[0].unblocked_datetime) + " UTC"
+            
+        request.env.cr.commit()
         
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
