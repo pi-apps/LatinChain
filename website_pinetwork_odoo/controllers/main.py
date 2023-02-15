@@ -146,6 +146,11 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_user(self, **kw):
+        
+        if 'accessToken' not in kw:
+            _logger.info("accessToken not present")
+            return json.dumps({'result': False})
+        
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
         try:
@@ -199,6 +204,10 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/set-pi-wallet', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def set_pi_wallet(self, **kw):
+        if 'accessToken' not in kw:
+            _logger.info("accessToken not present")
+            return json.dumps({'result': False})
+        
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         
         try:
@@ -218,6 +227,9 @@ class PiNetworkBaseController(http.Controller):
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         else:
+            if 'pi_wallet_address' not in kw:
+                _logger.info("pi_wallet_address not present")
+                return json.dumps({'result': False})
             values = {'pi_wallet_address': kw['pi_wallet_address']}
         
         pi_users_list[0].sudo().write(values)
@@ -229,6 +241,10 @@ class PiNetworkBaseController(http.Controller):
         admin_apps_block_list = request.env["admin.apps"].sudo().search([('app', '=', "auth_platform"), ('block_points', '=', True)])
         
         if len(admin_apps_block_list) > 0:
+            return json.dumps({'result': False})
+        
+        if 'accessToken' not in kw:
+            _logger.info("accessToken not present")
             return json.dumps({'result': False})
         
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
@@ -263,6 +279,10 @@ class PiNetworkBaseController(http.Controller):
             return json.dumps({'result': False})
         """
         
+        if 'accessToken' not in kw:
+            _logger.info("accessToken not present")
+            return json.dumps({'result': False})
+        
         re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
         #_logger.info(kw['accessToken'])
         try:
@@ -292,6 +312,10 @@ class PiNetworkBaseController(http.Controller):
                                                     'last_connection': datetime.now(),
                                                 })
         else:
+            
+            if 'points' not in kw:
+                _logger.info("points not present")
+                return json.dumps({'result': False})
             
             if float(kw['points']) > 0:
                 if 'passkey' not in kw:
