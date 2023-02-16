@@ -158,8 +158,6 @@ class PiNetworkBaseController(http.Controller):
             
             result_dict = json.loads(str(json.dumps(result)))
             
-            _logger.info("result_dict " + str(result_dict))
-            
             if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
