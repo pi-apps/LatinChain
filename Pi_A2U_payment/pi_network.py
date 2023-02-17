@@ -249,7 +249,7 @@ class PiNetwork:
      DO NOT expose these values to public
 """
 api_key = "Enter Here Your API Key" 
-wallet_private_seed = "SecretWalletPassphrase" 
+wallet_private_seed = "SecretWalletSeed" 
 
 """ Initialization """
 pi = PiNetwork()
