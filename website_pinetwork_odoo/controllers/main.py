@@ -325,10 +325,12 @@ class PiNetworkBaseController(http.Controller):
                                                 })
         else:
             
+            """
             if pi_users_list[0].pi_user_id != '':
                 if pi_users_list[0].pi_user_id != kw['pi_user_id']:
                     _logger.info("not equeals pi_user_id")
                     return json.dumps({'result': False})
+            """
             
             if 'points' not in kw:
                 _logger.info("points not present")
@@ -356,17 +358,18 @@ class PiNetworkBaseController(http.Controller):
                 #    
                 #    if pi_users_winnners_count >= 10:
                 #        return json.dumps({'result': False})
-                if pi_users_list[0].pi_user_id != '':
-                    if 'app_client' in kw:
-                        if kw['app_client'] == "auth_platform":
-                            if float(kw['points']) >= 1 and float(kw['points']) <= 20:
-                                values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
-                        elif kw['app_client'] == "auth_pidoku":
-                            if float(kw['points']) % 3 == 0 and (float(kw['points']) >= 9 and float(kw['points']) <= 18):
-                                values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
-                        elif kw['app_client'] == "auth_snake":
-                            if float(kw['points']) % 10 == 0:
-                                values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
+                #if pi_users_list[0].pi_user_id != '':
+                
+                if 'app_client' in kw:
+                    if kw['app_client'] == "auth_platform":
+                        if float(kw['points']) >= 1 and float(kw['points']) <= 20:
+                            values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
+                    elif kw['app_client'] == "auth_pidoku":
+                        if float(kw['points']) % 3 == 0 and (float(kw['points']) >= 9 and float(kw['points']) <= 18):
+                            values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
+                    elif kw['app_client'] == "auth_snake":
+                        if float(kw['points']) % 10 == 0:
+                            values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
             elif not pi_users_list[0].unblocked and float(kw['points']) > 0:
                 return json.dumps({'result': False})
             
