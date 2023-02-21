@@ -28,5 +28,8 @@ To make it works, in server1.php, you need to change the app code as auth_app1
 by the one coming from client request. Example: if you have auth_example
 in client JavaScript side, you must set it in server1.php.
 
+And you need to implement authentication:
+https://github.com/pi-apps/pi-platform-docs/blob/master/authentication.md
+
 Check here:
 https://dev-rockcesar.blogspot.com/2022/10/how-to-develop-pi-app.html
