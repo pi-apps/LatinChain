@@ -19,7 +19,7 @@
     'name': 'LatinChain Platform (Pi Network First App for Odoo)',
     'category': 'Website/Website',
     'sequence': 54,
-    'summary': 'Pi Network First App for Odoo',
+    'summary': 'LatinChain Platform (Pi Network First App for Odoo)',
     'version': '2.1',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "https://cr-innova.negocio.site/",
