@@ -16,7 +16,7 @@
 #
 ##############################################################################
 {
-    'name': 'Pi Network First App for Odoo',
+    'name': 'LatinChain Platform (Pi Network First App for Odoo)',
     'category': 'Website/Website',
     'sequence': 54,
     'summary': 'Pi Network First App for Odoo',
@@ -32,7 +32,7 @@ Pi Hackathon winners: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-publish
 
 Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
 
-Pi Network First App for Odoo
+LatinChain Platform (Pi Network First App for Odoo)
 -----------------
 
 Games Leaders board, Pi API Platform integration, Games.
