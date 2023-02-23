@@ -41,10 +41,10 @@ Snake
 Chess
 PiApp Example
 
-Pi Network First App for Odoo:
+LatinChain Platform (Pi Network First App for Odoo):
 https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/
 
-Pi Network Games Engine and Platform for Odoo:
+LatinChain Platform (Pi Network Games Engine and Platform for Odoo):
 https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/
 
 Link for info:
