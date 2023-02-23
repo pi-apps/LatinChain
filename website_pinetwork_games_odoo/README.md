@@ -1,4 +1,4 @@
-Pi Network Games Engine and Platform for Odoo
+LatinChain Platform (Pi Network Games Engine and Platform for Odoo)
 -----------------
 
 Pi Hackathon winners: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html

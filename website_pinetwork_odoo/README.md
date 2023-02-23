@@ -1,4 +1,4 @@
-Pi Network First App for Odoo
+LatinChain Platform (Pi Network First App for Odoo)
 -----------------
 
 Pi Hackathon winners: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
