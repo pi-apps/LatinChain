@@ -7,9 +7,6 @@ import requests
 import json
 import stellar_sdk as s_sdk
 
-import logging
-_logger = logging.getLogger(__name__)
-
 class PiNetwork:    
      
     api_key = ""
