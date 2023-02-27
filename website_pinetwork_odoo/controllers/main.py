@@ -368,14 +368,14 @@ class PiNetworkBaseController(http.Controller):
                         if int(kw['points']) % 3 == 0 and (int(kw['points']) >= 9 and int(kw['points']) <= 18):
                             values.update({'points_sudoku': pi_users_list[0].points_sudoku + int(kw['points'])})
                     elif kw['app_client'] == "auth_snake":
-                        if (int(kw['points'])*10) % 10 == 0:
+                        if (int(kw['points'])*10) % 10 == 0 and int(kw['points']) > 0:
                             values.update({'points_snake': pi_users_list[0].points_snake + int(kw['points'])})
             elif not pi_users_list[0].unblocked and int(kw['points']) > 0:
                 return json.dumps({'result': False})
             
             pi_users_list[0].sudo().write(values)
             
-            request.env.cr.commit()
+        request.env.cr.commit()
         
         return json.dumps({'result': True})
         
