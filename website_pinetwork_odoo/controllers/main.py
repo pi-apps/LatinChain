@@ -170,10 +170,12 @@ class PiNetworkBaseController(http.Controller):
         
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
-            
+        
+        """
         if pi_users_list[0].pi_user_id != kw['pi_user_id']:
             _logger.info("not equeals pi_user_id")
             return json.dumps({'result': False})
+        """
         
         apps_list = request.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
         
@@ -231,9 +233,11 @@ class PiNetworkBaseController(http.Controller):
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         else:
+            """
             if pi_users_list[0].pi_user_id != kw['pi_user_id']:
                 _logger.info("not equeals pi_user_id")
                 return json.dumps({'result': False})
+            """
             
             if 'pi_wallet_address' not in kw:
                 _logger.info("pi_wallet_address not present")
@@ -272,9 +276,11 @@ class PiNetworkBaseController(http.Controller):
                 _logger.info("Authorization failed")
                 return json.dumps({'result': False})
             
+            """
             if pi_users_list[0].pi_user_id != kw['pi_user_id']:
                 _logger.info("not equeals pi_user_id")
                 return json.dumps({'result': False})
+            """
                 
         except:
             _logger.info("Authorization error")
@@ -336,6 +342,7 @@ class PiNetworkBaseController(http.Controller):
                 _logger.info("points not present")
                 return json.dumps({'result': False})
             
+            """
             if int(kw['points']) > 0:
                 if 'passkey' not in kw:
                     _logger.info("PASSKEY NOT PRESENT")
@@ -344,6 +351,7 @@ class PiNetworkBaseController(http.Controller):
                 if kw['passkey'] != pi_users_list[0].passkey:
                     _logger.info("PASSKEY DOESN'T MATCH: " + str(kw['passkey']))
                     return json.dumps({'result': False})
+            """
             
             values = {'name': kw['pi_user_code'],
                                 'pi_user_id': kw['pi_user_id'],
