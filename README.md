@@ -9,7 +9,7 @@ Institutional Repository: https://github.com/pi-apps/LatinChain
 
 Currently https://latin-chain.com is working with website_pinetwork_odoo and website_pinetwork_games_odoo, made in Odoo.
 
-We won an Honorable mention in Pi Hackathon with our project, Pi Network Games from Latin America!!!:
+We won an Honorable mention in Pi Hackathon with our project, Games from Latin America for Pi!!!:
 https://minepi.com/blog/hackathon-winners-announcement
 
 To use these sources codes in Pi Sandbox (https://developers.minepi.com/), put it in the root of HTTP Server.
@@ -41,10 +41,10 @@ Snake
 Chess
 PiApp Example
 
-LatinChain Platform (Pi Network First App for Odoo):
+LatinChain Platform (First App in Odoo for Pi):
 https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/
 
-LatinChain Platform (Pi Network Games Engine and Platform for Odoo):
+LatinChain Platform (Games Engine and Platform in Odoo for Pi):
 https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/
 
 Link for info:

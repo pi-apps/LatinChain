@@ -16,10 +16,10 @@
 #
 ##############################################################################
 {
-    'name': 'LatinChain Platform (Pi Network Games Engine and Platform for Odoo)',
+    'name': 'LatinChain Platform (Games Engine and Platform in Odoo for Pi)',
     'category': 'Website/Website',
     'sequence': 54,
-    'summary': 'LatinChain Platform (Pi Network Games Engine and Platform for Odoo)',
+    'summary': 'LatinChain Platform (Games Engine and Platform in Odoo for Pi)',
     'version': '2.1',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     "website": "https://cr-innova.negocio.site/",
@@ -32,7 +32,7 @@ Pi Hackathon winners: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-publish
 
 Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
 
-LatinChain Platform (Pi Network Games Engine and Platform for Odoo)
+LatinChain Platform (Games Engine and Platform in Odoo for Pi)
 -----------------
 
 Games Leaders board, Pi API Platform integration, Games.
