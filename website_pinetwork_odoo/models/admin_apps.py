@@ -876,6 +876,8 @@ class admin_apps(models.Model):
         except:
             result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
         
+        self.env.cr.commit()
+        
         return json.dumps(result)
 
 class pi_users(models.Model):
