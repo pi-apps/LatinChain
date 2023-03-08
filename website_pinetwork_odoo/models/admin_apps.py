@@ -183,7 +183,7 @@ class admin_apps(models.Model):
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,7), default=1)
     google_adsense = fields.Char('Google Adsense src', required=True, default="Set your Google Adsense", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    google_adsense_ads_txt = fields.Char('Google Adsense ads.txt', default="Set your Google Adsense ads.txt", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    google_adsense_ads_txt = fields.Text('Google Adsense ads.txt', default="Set your Google Adsense ads.txt", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     a_ads = fields.Char('A-Ads.com src', required=True, default="Set your A-Ads.com URL", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     a_ads_data = fields.Char('A-Ads.com data', required=True, default="Set your A-Ads.com data ID", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     a_ads_style = fields.Char('A-Ads.com style', required=True, default="width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
