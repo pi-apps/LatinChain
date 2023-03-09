@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 22:50+0000\n"
-"PO-Revision-Date: 2023-03-02 22:50+0000\n"
+"POT-Creation-Date: 2023-03-09 15:56+0000\n"
+"PO-Revision-Date: 2023-03-09 15:56+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -142,8 +142,7 @@ msgid ""
 "<br/>\n"
 "                        <br/>\n"
 "                        <span id=\"loading_word\" style=\"display: none;\">Loading...</span>\n"
-"                        <br/>\n"
-"                        <ins class=\"adsbygoogle\" style=\"display:block\" data-ad-format=\"autorelaxed\" data-ad-client=\"ca-pub-2334449220276386\" data-ad-slot=\"1794208680\"/>"
+"                        <br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -402,6 +401,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Black"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid "Chess"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -668,11 +672,6 @@ msgid "Pi"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Pi Chess"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "Pi Hackathon Announcement"
 msgstr ""
@@ -680,11 +679,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Pi Hackathon winners"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Pi Sudoku"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -793,6 +787,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "String to import in the Import tab:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Sudoku"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
