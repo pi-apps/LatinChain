@@ -272,6 +272,18 @@
                                     -->
                                     <br/><br/>Enjoy:<br/><br/>
                                     <iframe id="tiesto" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                                    
+                                    <br/>
+                                    <div id="taboola-below-article-thumbnails"></div>
+                                    <script type="text/javascript">
+                                      window._taboola = window._taboola || [];
+                                      _taboola.push({
+                                        mode: 'alternating-thumbnails-a',
+                                        container: 'taboola-below-article-thumbnails',
+                                        placement: 'Below Article Thumbnails',
+                                        target_type: 'mix'
+                                      });
+                                    </script>
                                 </div>
                           </div>
                           <div class="tab-pane" id="sudoku">

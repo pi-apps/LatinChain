@@ -182,16 +182,7 @@
                                     <!--<br/>
                                     <iframe id="a-ads_3" t-att-data-aa='a_ads_data_3' src="" t-att-style='a_ads_style_3'></iframe>-->
                                     
-                                    <div id="taboola-below-article-thumbnails"></div>
-                                    <script type="text/javascript">
-                                      window._taboola = window._taboola || [];
-                                      _taboola.push({
-                                        mode: 'alternating-thumbnails-a',
-                                        container: 'taboola-below-article-thumbnails',
-                                        placement: 'Below Article Thumbnails',
-                                        target_type: 'mix'
-                                      });
-                                    </script>
+                                    
                                     
                                     <div style="text-align:center">
                                         <!--<br/>Crypto news:<br/><br/>
@@ -205,6 +196,17 @@
                                     .cont { text-align:center; font-size:30px}
 
                                     </style>
+                                    <br/>
+                                    <div id="taboola-below-article-thumbnails"></div>
+                                    <script type="text/javascript">
+                                      window._taboola = window._taboola || [];
+                                      _taboola.push({
+                                        mode: 'alternating-thumbnails-a',
+                                        container: 'taboola-below-article-thumbnails',
+                                        placement: 'Below Article Thumbnails',
+                                        target_type: 'mix'
+                                      });
+                                    </script>
                                 </div>
                             </div>
                               <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab">
