@@ -16,7 +16,7 @@ Documentation: https://developers.minepi.com
 
 Pi Developers: https://developers.minepi.com/
 
-Repository: https://github.com/rockcesar/PiNetworkDevelopments
+Repository: https://github.com/rockcesar/LatinChainDevelopments
 
 Odoo Developments: https://github.com/rockcesar/odoo_addons
 
@@ -37,4 +37,4 @@ chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorS
 piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
 piapp-example can be browsable here: https://github.com/rockcesar/PiNetworkDevelopments/tree/master/piapp-example
 
-More Info: https://github.com/rockcesar/PiNetworkDevelopments
+More Info: https://github.com/rockcesar/LatinChainDevelopments

@@ -16,7 +16,7 @@ Documentation: https://developers.minepi.com
 
 Pi Developers: https://developers.minepi.com/
 
-Repository: https://github.com/rockcesar/PiNetworkDevelopments
+Repository: https://github.com/rockcesar/LatinChainDevelopments
 
 Odoo Developments: https://github.com/rockcesar/odoo_addons
 
