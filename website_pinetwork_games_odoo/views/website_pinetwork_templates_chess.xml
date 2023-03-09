@@ -37,7 +37,25 @@
                     
                     <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js"></script>
                     
-                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
+                    
+                    <script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({article:'auto'});
+                      !function (e, f, u, i) {
+                        if (!document.getElementById(i)){
+                          e.async = 1;
+                          e.src = u;
+                          e.id = i;
+                          f.parentNode.insertBefore(e, f);
+                        }
+                      }(document.createElement('script'),
+                      document.getElementsByTagName('script')[0],
+                      '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+                      'tb_loader_script');
+                      if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
+                        {window.performance.mark('tbl_ic');}
+                    </script>
 
                 </head>
 
@@ -61,8 +79,32 @@
                                 <div align="center" class="container" style="text-align:center">
                                     <!--<strong>Publicity:</strong>-->
                                     <br/>
+                                    <div id="taboola-mid-article-thumbnails"></div>
+                                    <script type="text/javascript">
+                                      window._taboola = window._taboola || [];
+                                      _taboola.push({
+                                        mode: 'alternating-thumbnails-a-mid',
+                                        container: 'taboola-mid-article-thumbnails',
+                                        placement: 'Mid Article Thumbnails',
+                                        target_type: 'mix'
+                                      });
+                                    </script>
+                                    
+                                    <br/>
+                                    
+                                    <div id="taboola-below-article-thumbnails"></div>
+                                    <script type="text/javascript">
+                                      window._taboola = window._taboola || [];
+                                      _taboola.push({
+                                        mode: 'alternating-thumbnails-a',
+                                        container: 'taboola-below-article-thumbnails',
+                                        placement: 'Below Article Thumbnails',
+                                        target_type: 'mix'
+                                      });
+                                    </script>
+                                    
                                     <!-- LatinChain Ad responsive -->
-                                    <ins class="adsbygoogle"
+                                    <!--<ins class="adsbygoogle"
                                          style="display:block"
                                          data-ad-client="ca-pub-2334449220276386"
                                          data-ad-slot="6625994850"
@@ -76,7 +118,7 @@
                                          data-ad-format="fluid"
                                          data-ad-layout-key="-gc+4r+1p-d0+h0"
                                          data-ad-client="ca-pub-2334449220276386"
-                                         data-ad-slot="6758976353"></ins>
+                                         data-ad-slot="6758976353"></ins>-->
                                     <div align="center" style="text-align:center">
                                         <!--<br/>
                                         <script type="text/javascript">
@@ -145,11 +187,11 @@
                                          data-ad-layout-key="-gc+4r+1p-d0+h0"
                                          data-ad-client="ca-pub-2334449220276386"
                                          data-ad-slot="6758976353"></ins>-->
-                                    <ins class="adsbygoogle"
+                                    <!--<ins class="adsbygoogle"
                                          style="display:block"
                                          data-ad-format="autorelaxed"
                                          data-ad-client="ca-pub-2334449220276386"
-                                         data-ad-slot="1794208680"></ins>
+                                         data-ad-slot="1794208680"></ins>-->
                                     <!--<br/>
                                     <iframe id="a-ads_3" t-att-data-aa='a_ads_data_3' src="" t-att-style='a_ads_style_3'></iframe>-->
                                     <div style="text-align:center">
@@ -315,9 +357,9 @@
                         var all_was_loaded = false;
                         var all_was_loaded_lib = false;
                         $( document ).ready(function() {
+                            /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            (adsbygoogle = window.adsbygoogle || []).push({});*/
                             //$("#a-ads").prop('src', $("#a_ads_val").val());
                             /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
                             $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
@@ -449,6 +491,11 @@
                             });
                         });
 
+                    </script>
+                    
+                    <script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({flush: true});
                     </script>
 
                 </body>
