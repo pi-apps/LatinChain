@@ -400,7 +400,7 @@
                         }
 
                         $( document ).ready(function() {
-                            
+                        
                             /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});*/
@@ -733,6 +733,7 @@
                     <div class="container" style="text-align:center">
                         <!--<strong>Publicity:</strong>-->
                         <br/>
+                        
                         <div id="taboola-mid-article-thumbnails"></div>
                         <script type="text/javascript">
                           window._taboola = window._taboola || [];
@@ -743,8 +744,6 @@
                             target_type: 'mix'
                           });
                         </script>
-                        
-                        
                         
                         <!-- LatinChain Ad responsive -->
                         <!--<ins class="adsbygoogle"
@@ -977,9 +976,8 @@
                                  style="display:block"
                                  data-ad-format="autorelaxed"
                                  data-ad-client="ca-pub-2334449220276386"
-                                 data-ad-slot="1794208680"></ins>
-                        </div>-->
-                        
+                                 data-ad-slot="1794208680"></ins>-->
+                                 
                         <div id="taboola-below-article-thumbnails"></div>
                         <script type="text/javascript">
                           window._taboola = window._taboola || [];
@@ -990,12 +988,15 @@
                             target_type: 'mix'
                           });
                         </script>
+                        </div>
                         
                     </div>
+                    
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
                     </script>
+                    
                 </body>
             </html>
             </t>
