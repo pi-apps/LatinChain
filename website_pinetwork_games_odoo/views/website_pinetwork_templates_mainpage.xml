@@ -744,18 +744,7 @@
                           });
                         </script>
                         
-                        <br/>
                         
-                        <div id="taboola-below-article-thumbnails"></div>
-                        <script type="text/javascript">
-                          window._taboola = window._taboola || [];
-                          _taboola.push({
-                            mode: 'alternating-thumbnails-a',
-                            container: 'taboola-below-article-thumbnails',
-                            placement: 'Below Article Thumbnails',
-                            target_type: 'mix'
-                          });
-                        </script>
                         
                         <!-- LatinChain Ad responsive -->
                         <!--<ins class="adsbygoogle"
@@ -772,8 +761,8 @@
                              data-ad-format="fluid"
                              data-ad-layout-key="-gc+4r+1p-d0+h0"
                              data-ad-client="ca-pub-2334449220276386"
-                             data-ad-slot="6758976353"></ins>
-                        <div align="center" style="text-align:center">-->
+                             data-ad-slot="6758976353"></ins>-->
+                        <div align="center" style="text-align:center">
                             <!--<br/>
                             <script type="text/javascript">
                                 atOptions = {
@@ -990,6 +979,17 @@
                                  data-ad-client="ca-pub-2334449220276386"
                                  data-ad-slot="1794208680"></ins>
                         </div>-->
+                        
+                        <div id="taboola-below-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a',
+                            container: 'taboola-below-article-thumbnails',
+                            placement: 'Below Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
                         
                     </div>
                     <script type="text/javascript">

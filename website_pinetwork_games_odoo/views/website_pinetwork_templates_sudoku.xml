@@ -172,19 +172,6 @@
                                       });
                                     </script>
                                     
-                                    <br/>
-                                    
-                                    <div id="taboola-below-article-thumbnails"></div>
-                                    <script type="text/javascript">
-                                      window._taboola = window._taboola || [];
-                                      _taboola.push({
-                                        mode: 'alternating-thumbnails-a',
-                                        container: 'taboola-below-article-thumbnails',
-                                        placement: 'Below Article Thumbnails',
-                                        target_type: 'mix'
-                                      });
-                                    </script>
-                                    
                                     <!-- LatinChain Ad responsive -->
                                     <!--<ins class="adsbygoogle"
                                          style="display:block"
@@ -255,6 +242,18 @@
                                     <br/>
                                     <span id="loading_word" style="display: none;">Loading...</span>
                                     <br/>
+                                    
+                                    <div id="taboola-below-article-thumbnails"></div>
+                                    <script type="text/javascript">
+                                      window._taboola = window._taboola || [];
+                                      _taboola.push({
+                                        mode: 'alternating-thumbnails-a',
+                                        container: 'taboola-below-article-thumbnails',
+                                        placement: 'Below Article Thumbnails',
+                                        target_type: 'mix'
+                                      });
+                                    </script>
+                                    
                                     <!--<ins class="adsbygoogle"
                                          style="display:block"
                                          data-ad-format="fluid"
