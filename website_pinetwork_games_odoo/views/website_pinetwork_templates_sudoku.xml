@@ -274,6 +274,31 @@
                                       });
                                     </script>
                                 </div>
+                                
+                                <button id="myBtn"><a href="#top" style="color: white">Top</a></button>
+                        
+                                <style>
+                                    /*Floating Back-To-Top Button*/
+                                        #myBtn {
+                                            position: fixed;
+                                            bottom: 10px;
+                                            float: right;
+                                            right: 90%;
+                                            left: 10%;
+                                            max-width: 35px;
+                                            width: 100%;
+                                            font-size: 18px;
+                                            border-color: rgba(85, 85, 85, 0.2);
+                                            background-color: rgb(100,100,100);
+                                            padding: .5px;
+                                            border-radius: 4px;
+                                            opacity: 0.5;
+                                        }
+                                    /*On Hover Color Change*/
+                                        #myBtn:hover {
+                                            background-color: #7dbbf1;
+                                        }
+                                </style>
                           </div>
                           <div class="tab-pane" id="sudoku">
                                 
@@ -398,30 +423,6 @@
                         </div>
                     </div> <!-- /container -->
                     
-                    <button id="myBtn"><a href="#top" style="color: white">Top</a></button>
-                        
-                    <style>
-                        /*Floating Back-To-Top Button*/
-                            #myBtn {
-                                position: fixed;
-                                bottom: 10px;
-                                float: right;
-                                right: 90%;
-                                left: 10%;
-                                max-width: 35px;
-                                width: 100%;
-                                font-size: 18px;
-                                border-color: rgba(85, 85, 85, 0.2);
-                                background-color: rgb(100,100,100);
-                                padding: .5px;
-                                border-radius: 4px;
-                                opacity: 0.5;
-                            }
-                        /*On Hover Color Change*/
-                            #myBtn:hover {
-                                background-color: #7dbbf1;
-                            }
-                    </style>
                     
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
