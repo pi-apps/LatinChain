@@ -29,11 +29,13 @@ class Website(Website):
         return http.request.render('website_pinetwork_odoo.mainpage', {})
 """
 
+"""
 winner_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
 winner_chess_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20)]
 winner_sudoku_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_sudoku', '>', 18)]
 winner_snake_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_snake', '>', 20)]
 leaders_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))]
+"""
 
 class CustomerPortalInherit(CustomerPortal):
     @http.route('/my/security', type='http', auth='user', website=True, methods=['GET', 'POST'])
@@ -41,6 +43,16 @@ class CustomerPortalInherit(CustomerPortal):
         return request.redirect('/')
 
 class PiNetworkBaseController(http.Controller):
+    
+    def leaders_domain_def(self):
+        winner_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
+        winner_chess_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20)]
+        winner_sudoku_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_sudoku', '>', 18)]
+        winner_snake_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_snake', '>', 20)]
+        leaders_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))]
+        
+        return {'winner_domain': winner_domain, 'winner_chess_domain': winner_chess_domain, 'winner_sudoku_domain': winner_sudoku_domain, 'winner_snake_domain': winner_snake_domain, 'leaders_domain': leaders_domain}
+    
     @http.route('/mainpage', type='http', auth="public", website=True)
     def index(self, **kw):
                     
@@ -386,9 +398,14 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/get-points/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_points_user(self, pi_user_code, **kw):
-        pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
+        domains_def = self.leaders_domain_def()
+        leaders_domain = domains_def['leaders_domain']
+        winner_domain = domains_def['winner_domain']
+        winner_chess_domain = domains_def['winner_chess_domain']
+        winner_sudoku_domain = domains_def['winner_sudoku_domain']
+        winner_snake_domain = domains_def['winner_snake_domain']
         
-        _logger.info(str(leaders_domain))
+        pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
         
         pi_users_count = request.env["pi.users"].sudo().search_count([])
         
@@ -400,6 +417,13 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/get-points/', type='http', auth="public", website=True)
     def get_points(self, **kw):
+        domains_def = self.leaders_domain_def()
+        leaders_domain = domains_def['leaders_domain']
+        winner_domain = domains_def['winner_domain']
+        winner_chess_domain = domains_def['winner_chess_domain']
+        winner_sudoku_domain = domains_def['winner_sudoku_domain']
+        winner_snake_domain = domains_def['winner_snake_domain']
+        
         pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
         
         pi_users_count = request.env["pi.users"].sudo().search_count([])
@@ -424,6 +448,13 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/get-winners/', type='http', auth="public", website=True)
     def get_winners(self, **kw):
+        domains_def = self.leaders_domain_def()
+        leaders_domain = domains_def['leaders_domain']
+        winner_domain = domains_def['winner_domain']
+        winner_chess_domain = domains_def['winner_chess_domain']
+        winner_sudoku_domain = domains_def['winner_sudoku_domain']
+        winner_snake_domain = domains_def['winner_snake_domain']
+        
         pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
         
         pi_users_count = request.env["pi.users"].sudo().search_count([])
@@ -438,6 +469,13 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/get-winners/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_winners_user(self, pi_user_code, **kw):
+        domains_def = self.leaders_domain_def()
+        leaders_domain = domains_def['leaders_domain']
+        winner_domain = domains_def['winner_domain']
+        winner_chess_domain = domains_def['winner_chess_domain']
+        winner_sudoku_domain = domains_def['winner_sudoku_domain']
+        winner_snake_domain = domains_def['winner_snake_domain']
+        
         pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
         
         pi_users_count = request.env["pi.users"].sudo().search_count([])
@@ -454,6 +492,13 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/get-winners-zone/', type='http', auth="public", website=True)
     def get_winners_zone(self, **kw):
+        domains_def = self.leaders_domain_def()
+        leaders_domain = domains_def['leaders_domain']
+        winner_domain = domains_def['winner_domain']
+        winner_chess_domain = domains_def['winner_chess_domain']
+        winner_sudoku_domain = domains_def['winner_sudoku_domain']
+        winner_snake_domain = domains_def['winner_snake_domain']
+        
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
         if len(admin_app_list) == 0:
@@ -477,6 +522,13 @@ class PiNetworkBaseController(http.Controller):
 
     @http.route('/get-winners-zone/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_winners_zone_user(self, pi_user_code, **kw):
+        domains_def = self.leaders_domain_def()
+        leaders_domain = domains_def['leaders_domain']
+        winner_domain = domains_def['winner_domain']
+        winner_chess_domain = domains_def['winner_chess_domain']
+        winner_sudoku_domain = domains_def['winner_sudoku_domain']
+        winner_snake_domain = domains_def['winner_snake_domain']
+        
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
         if len(admin_app_list) == 0:
