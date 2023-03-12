@@ -388,6 +388,8 @@ class PiNetworkBaseController(http.Controller):
     def get_points_user(self, pi_user_code, **kw):
         pi_users_verified_count = request.env["pi.users"].sudo().search_count(leaders_domain)
         
+        _logger.info(str(leaders_domain))
+        
         pi_users_count = request.env["pi.users"].sudo().search_count([])
         
         pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc")
