@@ -305,7 +305,7 @@ class admin_apps(models.Model):
         for i in self:
             winner = []
             for j in self.pi_users_winners_ids:
-                transactions_domain = [('pi_user', '=', j.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(i.pi_users_winners_to_pay_days)))]
+                transactions_domain = [('pi_user', '=', j.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('memo', '=', "Payment prize from LatinChain Platform"), ('create_date', '>=', datetime.now() - timedelta(days=(i.pi_users_winners_to_pay_days)))]
                     
                 transactions_ids = self.env["pi.transactions"].search(transactions_domain, limit=1)
 
@@ -396,7 +396,7 @@ class admin_apps(models.Model):
             winners = self_i._compute_to_pay()
             
             for i in winners:
-                transactions_domain = [('pi_user', '=', i.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('create_date', '>=', datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))]
+                transactions_domain = [('pi_user', '=', i.id), ('action', '=', 'complete'), ('action_type', '=', 'send'), ('memo', '=', "Payment prize from LatinChain Platform"), ('create_date', '>=', datetime.now() - timedelta(days=(self_i.pi_users_winners_to_pay_days-1)))]
                 
                 transactions_ids = self.env["pi.transactions"].search(transactions_domain, limit=1)
 
