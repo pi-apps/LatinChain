@@ -171,6 +171,7 @@ class admin_apps(models.Model):
     pi_users_winners_to_pay_days = fields.Integer('Winners To Pay days', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_seconds = fields.Integer('Winners To fill winners seconds', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_paying = fields.Boolean('Paying to winners', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_all_paid = fields.Boolean('All winners paid', compute="_compute_winners_all_paid", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_to_pay_per_user = fields.Float('Winners To Pay per user', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     #pi_users_winners_fee_to_pay = fields.Integer('Winners Fee To Pay', default=100000, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_completed_payments = fields.Integer('Winners To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -193,6 +194,22 @@ class admin_apps(models.Model):
     a_ads_3 = fields.Char('A-Ads.com src 3', required=True, default="Set your A-Ads.com URL", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     a_ads_data_3 = fields.Char('A-Ads.com data 3', required=True, default="Set your A-Ads.com data ID", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     a_ads_style_3 = fields.Char('A-Ads.com style 3', required=True, default="width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    
+    @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
+    def _compute_winners_all_paid(self):
+        for i in self:
+            total_winners = len(i.pi_users_winners_ids.ids)
+            counter = 0
+            for j in i.pi_users_winners_ids.ids:
+                if j in i.pi_users_winners_paid_ids.ids:
+                    counter+=1
+            
+            if counter == total_winners == 0:
+                i.pi_users_winners_all_paid = False
+            elif counter == total_winners:
+                i.pi_users_winners_all_paid = True
+            else:
+                i.pi_users_winners_all_paid = False
     
     def _get_balance(self):
         for i in self:
