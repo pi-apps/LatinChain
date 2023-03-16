@@ -72,6 +72,14 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/api-docs/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def api_external_docs(self, **kw):
         return http.request.redirect('https://github.com/pi-apps/LatinChain/tree/main/docs')
+        
+    @http.route('/terms/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
+    def latinchain_terms(self, **kw):
+        return http.request.redirect('/blog/latinchain-blog-1/terms-of-service-6')
+        
+    @http.route('/privacy/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
+    def latinchain_privacy(self, **kw):
+        return http.request.redirect('/blog/latinchain-blog-1/privacy-policy-5')
     
     @http.route('/api/get-external-winners', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_external_winners(self, **kw):
