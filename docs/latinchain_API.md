@@ -26,7 +26,7 @@ Get information about an user.
 POST /api/get-external-user
 
 $.post("https://latin-chain.com/api/get-external-user", data={'pi_user_code': 'rockcesar'}, function(data, status){
-  alert("Data: " + data.pi_user_code + "\nStatus: " + status);
+  alert("Data: " + data.result + "\nStatus: " + status);
 });
 ```
 
@@ -46,7 +46,7 @@ Get information about winners.
 POST /api/get-external-winners
 
 $.post("https://latin-chain.com/api/get-external-winners", function(data, status){
-  alert("Data: " + data + "\nStatus: " + status);
+  alert("Data: " + data.result + "\nStatus: " + status);
 });
 ```
 

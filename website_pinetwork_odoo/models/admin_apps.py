@@ -67,6 +67,7 @@ class pi_transactions(models.Model):
             else:
                 pit.txid_url = ""
     
+    """
     def check_transactions(self):
         for pit in self:
             try:
@@ -139,6 +140,7 @@ class pi_transactions(models.Model):
                 self.env.cr.commit()
             except:
                 _logger.info(str(re))
+    """
 
 class admin_apps(models.Model):
     _name = "admin.apps"

@@ -10,7 +10,7 @@ Sending by POST {pi_user_code}, example:
 
 ```
 $.post("https://latin-chain.com/api/get-external-user", data={'pi_user_code': 'rockcesar'}, function(data, status){
-  alert("Data: " + data.pi_user_code + "\nStatus: " + status);
+  alert("Data: " + data.result + "\nStatus: " + status);
 });
 ```
 
@@ -20,7 +20,7 @@ https://latin-chain.com/api/get-external-winners
 
 ```
 $.post("https://latin-chain.com/api/get-external-winners", function(data, status){
-  alert("Data: " + data + "\nStatus: " + status);
+  alert("Data: " + data.result + "\nStatus: " + status);
 });
 ```
 
