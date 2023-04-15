@@ -317,11 +317,11 @@ class admin_apps(models.Model):
             i.pi_users_winners_paid_ids = [(6, 0, winner)]
             
     def pay_winners_monthly(self):
-		for self_i in self:
-			self_i.delete_paid_winners()
-			self_i.pay_winners()
-			self_i.delete_paid_devs()
-			self_i.pay_devs_percent()
+        for self_i in self:
+            self_i.delete_paid_winners()
+            self_i.pay_winners()
+            self_i.delete_paid_devs()
+            self_i.pay_devs_percent()
     
     def pay_winners(self):
         for self_i in self:
