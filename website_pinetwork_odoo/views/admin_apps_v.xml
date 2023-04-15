@@ -14,6 +14,7 @@
                     <button name="pay_devs" confirm="Are you sure you want to PAY devs?" type="object" string="Pay Devs" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
                     <button name="pay_devs_percent" confirm="Are you sure you want to PAY PERCENT devs?" type="object" string="Pay Devs Percent" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
                     <button name="delete_paid_devs" confirm="Are you sure you want to delete PAID devs?" type="object" string="Delete Paid Devs" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
+                    <button name="pay_winners_monthly" confirm="Are you sure you want to PAY MONTHLY all winners and devs?" type="object" string="Pay winners monthly" class="oe_highlight" groups="website_pinetwork_odoo.group_pi_admin,base.group_system"/>
                 </header>
                 <sheet>
                     <notebook>
