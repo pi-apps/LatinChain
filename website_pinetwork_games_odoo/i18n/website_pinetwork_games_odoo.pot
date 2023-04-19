@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-09 15:56+0000\n"
-"PO-Revision-Date: 2023-03-09 15:56+0000\n"
+"POT-Creation-Date: 2023-04-19 22:13+0000\n"
+"PO-Revision-Date: 2023-04-19 22:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
-msgid "* LatinChain Platorm (Games from Latin America for Pi)."
+msgid "* LatinChain Platform (Games from Latin America for Pi)."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -713,6 +713,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Privacy Policy"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Read the blog"
 msgstr ""
 
@@ -815,6 +820,11 @@ msgid "Take Back"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Terms of Service"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "Thank you very much!."
 msgstr ""
@@ -827,6 +837,14 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Time"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Top"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
