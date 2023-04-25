@@ -81,7 +81,7 @@ class pi_transactions(models.Model):
                                                         'app_client': pit.app, 'paymentId': pit.payment_id})
                 elif pit.action == "approve" and pit.action_type == "receive" and pit.developer_approved and \
                     not pit.transaction_verified and \
-                    not (pit.cancelled or pit.user_cancelled) and \
+                    (pit.cancelled or pit.user_cancelled) and \
                     (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                     pit.unlink()
                 
@@ -99,6 +99,8 @@ class pi_transactions(models.Model):
                 result = re.json()
                 
                 result_dict = json.loads(str(json.dumps(result)))
+                
+                _logger.info(str(result_dict))
                 
                 if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                 
@@ -133,7 +135,7 @@ class pi_transactions(models.Model):
                                                             'app_client': pit.app, 'paymentId': pit.payment_id})
                     elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
                         not result_dict["status"]["transaction_verified"] and \
-                        not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']): #11 horas
+                        (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']): #11 horas
                         pit.unlink()
                     
                     self.env.cr.commit()
