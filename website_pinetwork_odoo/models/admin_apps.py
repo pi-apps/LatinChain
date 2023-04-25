@@ -67,7 +67,6 @@ class pi_transactions(models.Model):
             else:
                 pit.txid_url = ""
     
-    """
     def check_transactions(self):
         for pit in self:
             try:
@@ -101,46 +100,45 @@ class pi_transactions(models.Model):
                 
                 result_dict = json.loads(str(json.dumps(result)))
                 
-                if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled" and pit.action_type == "receive":
-                    pit.write({'action': 'cancelled'})
-                elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve" and pit.action_type == "receive":
-                    pit.write({'action': 'approve'})
-                if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete" and pit.action_type == "receive":
-                    pit.write({'name': "complete. PaymentId: " + pit.payment_id,
-                                'action': 'complete',
-                                'payment_id': pit.payment_id,
-                                'txid': result_dict["transaction"]["txid"],
-                                'pi_user_id': result_dict["user_uid"],
-                                'amount': result_dict["amount"],
-                                'memo': result_dict["memo"],
-                                'to_address': result_dict["to_address"]})
+                if "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                
+                    if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled" and pit.action_type == "receive":
+                        pit.write({'action': 'cancelled'})
+                    elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve" and pit.action_type == "receive":
+                        pit.write({'action': 'approve'})
+                    if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete" and pit.action_type == "receive":
+                        pit.write({'name': "complete. PaymentId: " + pit.payment_id,
+                                    'action': 'complete',
+                                    'payment_id': pit.payment_id,
+                                    'txid': result_dict["transaction"]["txid"],
+                                    'pi_user_id': result_dict["user_uid"],
+                                    'amount': result_dict["amount"],
+                                    'memo': result_dict["memo"],
+                                    'to_address': result_dict["to_address"]})
+                        
+                    pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
+                            'transaction_verified': result_dict["status"]["transaction_verified"], 
+                            'developer_completed': result_dict["status"]["developer_completed"], 
+                            'cancelled': result_dict["status"]["cancelled"], 
+                            'user_cancelled': result_dict["status"]["user_cancelled"],
+                            'json_result': str(result_dict)})
                     
-                pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
-                        'transaction_verified': result_dict["status"]["transaction_verified"], 
-                        'developer_completed': result_dict["status"]["developer_completed"], 
-                        'cancelled': result_dict["status"]["cancelled"], 
-                        'user_cancelled': result_dict["status"]["user_cancelled"],
-                        'json_result': str(result_dict)})
-                
-                if pit.action == "cancelled" and pit.action_type == "receive" and \
-                    (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
-                    (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
-                    pit.unlink()
-                elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
-                    result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
-                    not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
-                    self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
-                                                        'app_client': pit.app, 'paymentId': pit.payment_id})
-                elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
-                    not result_dict["status"]["transaction_verified"] and \
-                    not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
-                    (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
-                    pit.unlink()
-                
-                self.env.cr.commit()
+                    if pit.action == "cancelled" and pit.action_type == "receive" and \
+                        (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']): #11 horas
+                        pit.unlink()
+                    elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
+                        result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
+                        not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
+                        self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
+                                                            'app_client': pit.app, 'paymentId': pit.payment_id})
+                    elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
+                        not result_dict["status"]["transaction_verified"] and \
+                        not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']): #11 horas
+                        pit.unlink()
+                    
+                    self.env.cr.commit()
             except:
                 _logger.info(str(re))
-    """
 
 class admin_apps(models.Model):
     _name = "admin.apps"
@@ -816,26 +814,33 @@ class admin_apps(models.Model):
             result_dict = json.loads(str(json.dumps(result)))
             
             if kw['action'] == "approve":
-                """
-                pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
-                self.env["pi.transactions"].sudo().create({'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
-                                                                'app_id': admin_app_list[0].id,
-                                                                'action': kw['action'],
-                                                                'payment_id': kw['paymentId'],
-                                                                'json_result': str(result_dict),
-                                                                'pi_user_id': result_dict["user_uid"],
-                                                                'pi_user': pi_user[0].id,
-                                                                'amount': result_dict["amount"],
-                                                                'memo': result_dict["memo"],
-                                                                'to_address': result_dict["to_address"],
-                                                                'developer_approved': result_dict["status"]["developer_approved"], 
-                                                                'transaction_verified': result_dict["status"]["transaction_verified"], 
-                                                                'developer_completed': result_dict["status"]["developer_completed"], 
-                                                                'cancelled': result_dict["status"]["cancelled"], 
-                                                                'user_cancelled': result_dict["status"]["user_cancelled"]})
-                self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
-                                                            ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
-                """
+                if "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                    pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+                    data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
+                                                                    'app_id': admin_app_list[0].id,
+                                                                    'action': kw['action'],
+                                                                    'payment_id': kw['paymentId'],
+                                                                    'json_result': str(result_dict),
+                                                                    'pi_user_id': result_dict["user_uid"],
+                                                                    'pi_user': pi_user[0].id,
+                                                                    'amount': result_dict["amount"],
+                                                                    'memo': result_dict["memo"],
+                                                                    'to_address': result_dict["to_address"],
+                                                                    'developer_approved': result_dict["status"]["developer_approved"], 
+                                                                    'transaction_verified': result_dict["status"]["transaction_verified"], 
+                                                                    'developer_completed': result_dict["status"]["developer_completed"], 
+                                                                    'cancelled': result_dict["status"]["cancelled"], 
+                                                                    'user_cancelled': result_dict["status"]["user_cancelled"]}
+                    if "direction" in result_dict and result_dict["direction"] == "app_to_user":
+                        data_dict.update({'action_type': 'send'})
+                    elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                        data_dict.update({'action_type': 'receive'})
+                        
+                    self.env["pi.transactions"].sudo().create(data_dict)
+                        
+                    self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
+                                                                ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
+                                                            
                 if result_dict["status"]["developer_approved"]:
                     result = {"result": True, "approved": True}
                 else:

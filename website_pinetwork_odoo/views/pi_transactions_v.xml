@@ -44,9 +44,9 @@
         <field name="model">pi.transactions</field>
         <field name="arch" type="xml">
             <tree string="Pi Transactions">
-                <!--<header>
+                <header>
                     <button name="check_transactions_one_user" type="object" string="Check Transactions" class="oe_highlight"/>
-                </header>-->
+                </header>
                 <field name="id"/>
                 <field name="app"/>
                 <field name="action"/>
