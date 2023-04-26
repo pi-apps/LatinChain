@@ -379,8 +379,8 @@ class admin_apps(models.Model):
                                     if self_i.pi_users_winners_to_pay < 0:
                                         self_i.pi_users_winners_to_pay = 0
                                 self.env.cr.commit()
-                            else:
-                                pi.cancel_payment(i["identifier"])
+                            #else:
+                            #    pi.cancel_payment(i["identifier"])
                     else:
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
                         if len(pi_user) > 0:
@@ -399,8 +399,8 @@ class admin_apps(models.Model):
                                     self_i.pi_users_winners_to_pay = 0
                             #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
                             self.env.cr.commit()
-                        else:
-                            pi.cancel_payment(i["identifier"])
+                        #else:
+                        #    pi.cancel_payment(i["identifier"])
             
             winners = self_i._compute_to_pay()
             
@@ -458,8 +458,8 @@ class admin_apps(models.Model):
                             #self_i.pi_users_winners_paid_ids = [(4, i.id)]
                             
                             self.env.cr.commit()
-                        else:
-                            pi.cancel_payment(payment_id)
+                        #else:
+                        #    pi.cancel_payment(payment_id)
             
             #if self_i.pi_users_winners_completed_payments > 0:
             self_i.pi_users_winners_paid_datetime = datetime.now()
@@ -516,8 +516,8 @@ class admin_apps(models.Model):
                                     self_i.pi_users_devs_completed_payments += 1
                                     self_i.pi_users_devs_paid_ids = [(4, pi_user[0].id)]
                                 self.env.cr.commit()
-                            else:
-                                pi.cancel_payment(i["identifier"])
+                            #else:
+                            #    pi.cancel_payment(i["identifier"])
                     else:
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
                         if len(pi_user) > 0:
@@ -533,8 +533,8 @@ class admin_apps(models.Model):
                                 self_i.pi_users_devs_paid_ids = [(4, pi_user[0].id)]
                             #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
                             self.env.cr.commit()
-                        else:
-                            pi.cancel_payment(i["identifier"])
+                        #else:
+                        #    pi.cancel_payment(i["identifier"])
             
             devs = self_i._compute_to_pay_devs()
             
@@ -588,8 +588,8 @@ class admin_apps(models.Model):
                                 #self_i.pi_users_winners_paid_ids = [(4, i.id)]
                                 
                                 self.env.cr.commit()
-                            else:
-                                pi.cancel_payment(payment_id)
+                            #else:
+                            #    pi.cancel_payment(payment_id)
     
     def pay_devs_percent(self):
         for self_i in self:
@@ -640,8 +640,8 @@ class admin_apps(models.Model):
                                     self_i.pi_users_devs_completed_payments += 1
                                     self_i.pi_users_devs_paid_ids = [(4, pi_user[0].id)]
                                 self.env.cr.commit()
-                            else:
-                                pi.cancel_payment(i["identifier"])
+                            #else:
+                            #    pi.cancel_payment(i["identifier"])
                     else:
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
                         if len(pi_user) > 0:
@@ -657,8 +657,8 @@ class admin_apps(models.Model):
                                 self_i.pi_users_devs_paid_ids = [(4, pi_user[0].id)]
                             #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
                             self.env.cr.commit()
-                        else:
-                            pi.cancel_payment(i["identifier"])
+                        #else:
+                        #    pi.cancel_payment(i["identifier"])
             
             devs = self_i._compute_to_pay_devs()
             
@@ -712,8 +712,8 @@ class admin_apps(models.Model):
                                 #self_i.pi_users_winners_paid_ids = [(4, i.id)]
                                 
                                 self.env.cr.commit()
-                            else:
-                                pi.cancel_payment(payment_id)
+                            #else:
+                            #    pi.cancel_payment(payment_id)
     
     def delete_paid_devs(self):
         for i in self:
