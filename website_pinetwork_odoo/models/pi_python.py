@@ -80,6 +80,8 @@ class PiNetwork:
             url = self.base_url + "/v2/payments"
             re = requests.post(url,data=obj,json=obj,headers=self.get_http_headers())
             parsed_response = self.handle_http_response(re)
+            
+            _logger.info("Create App2User payment: " + str(parsed_response))
 
             identifier = parsed_response["identifier"]
             self.open_payments[identifier] = parsed_response
