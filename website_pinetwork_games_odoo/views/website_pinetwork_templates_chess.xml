@@ -239,16 +239,18 @@
                             </div>
                               <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab">
                                   <br/>
-                                  <div id="taboola-mid-article-thumbnails-2"></div>
-                                    <script type="text/javascript">
-                                      window._taboola = window._taboola || [];
-                                      _taboola.push({
-                                        mode: 'alternating-thumbnails-a-mid',
-                                        container: 'taboola-mid-article-thumbnails-2',
-                                        placement: 'Mid Article Thumbnails 2',
-                                        target_type: 'mix'
-                                      });
-                                    </script>
+                                  <div align="center" class="container" style="text-align:center">
+									  <div id="taboola-mid-article-thumbnails-2"></div>
+										<script type="text/javascript">
+										  window._taboola = window._taboola || [];
+										  _taboola.push({
+											mode: 'alternating-thumbnails-a-mid',
+											container: 'taboola-mid-article-thumbnails-2',
+											placement: 'Mid Article Thumbnails 2',
+											target_type: 'mix'
+										  });
+										</script>
+								  </div>
                                   <br/>
                                 <span align="center">
                                     <div class="container row">
