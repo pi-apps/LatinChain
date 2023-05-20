@@ -109,7 +109,7 @@ class pi_transactions(models.Model):
                     elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve" and pit.action_type == "receive":
                         pit.write({'action': 'approve'})
                     if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete" and pit.action_type == "receive":
-                        pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', result_dict["user_uid"])])
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', result_dict["user_uid"])])
                         pit.write({'name': "complete. PaymentId: " + pit.payment_id,
                                     'action': 'complete',
                                     'payment_id': pit.payment_id,
