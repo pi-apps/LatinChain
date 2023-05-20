@@ -812,12 +812,12 @@ class admin_apps(models.Model):
             #elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
             data_dict.update({'action_type': 'receive'})
             
-            payment = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
-            
-            if len(payment) > 0:
-                payment.sudo().write(data_dict)
-            else:
+            transaction_count = self.env["pi.transactions"].sudo().search_count([('payment_id', '=', kw['paymentId'])])
+
+            if transaction_count == 0:
                 self.env["pi.transactions"].sudo().create(data_dict)
+            else:
+                self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
             self.env.cr.commit()
         elif kw['action'] == "complete":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
