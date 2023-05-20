@@ -46,7 +46,7 @@ class pi_transactions(models.Model):
     developer_completed = fields.Boolean('developer_completed')
     cancelled = fields.Boolean('cancelled')
     user_cancelled = fields.Boolean('user_cancelled')
-    json_result = fields.Text('JSON Result', required=True)
+    json_result = fields.Text('JSON Result', required=False)
     
     @api.depends("json_result")
     def _compute_json_values(self):
@@ -791,21 +791,40 @@ class admin_apps(models.Model):
     
     def pi_api(self, kw):
         
+        admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
+        
+        if len(admin_app_list) == 0:
+            result = {"result": False, "error": "SERVER MESSAGE: There is not API Key Stored in DB"}
+            return json.dumps(result)
+        
         if kw['action'] == "approve":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/approve'
             obj = {}
+            
+            pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+            data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
+                                                            'app_id': admin_app_list[0].id,
+                                                            'action': kw['action'],
+                                                            'payment_id': kw['paymentId'],
+                                                            'pi_user': pi_user[0].id}
+            #if "direction" in result_dict and result_dict["direction"] == "app_to_user":
+            #    data_dict.update({'action_type': 'send'})
+            #elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
+            data_dict.update({'action_type': 'receive'})
+            
+            payment = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
+            
+            if len(payment) > 0:
+                payment.sudo().write(data_dict)
+            else:
+                self.env["pi.transactions"].sudo().create(data_dict)
+            self.env.cr.commit()
         elif kw['action'] == "complete":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
             if kw['txid'] == "":
                 obj = {}
             else:
                 obj = {'txid': kw['txid']}
-
-        admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
-        
-        if len(admin_app_list) == 0:
-            result = {"result": False, "error": "SERVER MESSAGE: There is not API Key Stored in DB"}
-            return json.dumps(result)
         
         re = requests.post(url,data=obj,json=obj,headers={'Authorization': "Key " + admin_app_list[0].admin_key})
         
@@ -838,7 +857,9 @@ class admin_apps(models.Model):
                     elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
                         data_dict.update({'action_type': 'receive'})
                         
-                    self.env["pi.transactions"].sudo().create(data_dict)
+                    payment = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
+            
+                    payment.sudo().write(data_dict)
                         
                     self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
                                                                 ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
