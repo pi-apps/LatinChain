@@ -109,12 +109,10 @@ class pi_transactions(models.Model):
                     elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve" and pit.action_type == "receive":
                         pit.write({'action': 'approve'})
                     if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete" and pit.action_type == "receive":
-                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', result_dict["user_uid"])])
                         pit.write({'name': "complete. PaymentId: " + pit.payment_id,
                                     'action': 'complete',
                                     'payment_id': pit.payment_id,
                                     'txid': result_dict["transaction"]["txid"],
-                                    'pi_user': pi_user[0].id,
                                     'pi_user_id': result_dict["user_uid"],
                                     'amount': result_dict["amount"],
                                     'memo': result_dict["memo"],
@@ -808,7 +806,8 @@ class admin_apps(models.Model):
                                                             'app_id': admin_app_list[0].id,
                                                             'action': kw['action'],
                                                             'payment_id': kw['paymentId'],
-                                                            'pi_user': pi_user[0].id}
+                                                            'pi_user': pi_user[0].id,
+                                                            'pi_user_id': kw["pi_user_id"],}
             #if "direction" in result_dict and result_dict["direction"] == "app_to_user":
             #    data_dict.update({'action_type': 'send'})
             #elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
@@ -839,6 +838,7 @@ class admin_apps(models.Model):
             if kw['action'] == "approve":
                 if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                     pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+                    
                     data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
                                                                     'app_id': admin_app_list[0].id,
                                                                     'action': kw['action'],
@@ -862,7 +862,7 @@ class admin_apps(models.Model):
                     payment = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
             
                     payment.sudo().write(data_dict)
-                        
+                    
                     self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
                                                                 ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
                                                             
