@@ -29,7 +29,7 @@ class pi_transactions(models.Model):
     name = fields.Char('Name')
     app_id = fields.Many2one('admin.apps', required=True, ondelete='restrict')
     app = fields.Char(related="app_id.app")
-    action = fields.Selection([('approve', 'Approve'), ('complete', 'Complete'), ('cancelled', 'Cancelled')], 'Action', required=True)
+    action = fields.Selection([('approve', 'Approve'), ('complete', 'Complete'), ('cancelled', 'Cancelled')], 'Action', required=True, default='approve')
     action_type = fields.Selection([('receive', 'Receive'), ('send', 'Send')], 'Action type', default="receive")
     counted_to_pay = fields.Selection([('counted', 'Counted'), ('not_counted', 'Not counted')], 'Counted to pay', default="not_counted")
     payment_id = fields.Char('PaymentId', required=True)
@@ -109,10 +109,12 @@ class pi_transactions(models.Model):
                     elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve" and pit.action_type == "receive":
                         pit.write({'action': 'approve'})
                     if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete" and pit.action_type == "receive":
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', result_dict["user_uid"])])
                         pit.write({'name': "complete. PaymentId: " + pit.payment_id,
                                     'action': 'complete',
                                     'payment_id': pit.payment_id,
                                     'txid': result_dict["transaction"]["txid"],
+                                    'pi_user': pi_user[0].id,
                                     'pi_user_id': result_dict["user_uid"],
                                     'amount': result_dict["amount"],
                                     'memo': result_dict["memo"],

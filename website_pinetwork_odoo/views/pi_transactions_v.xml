@@ -11,16 +11,16 @@
                             <group>
                                 <field name="id"/>
                                 <field name="name"/>
-                                <field name="app_id" readonly="True"/>
+                                <field name="app_id" attrs="{'readonly': [('action', '==', 'complete')]}"/>
                                 <field name="app"/>
                                 <field name="action" readonly="True"/>
                                 <field name="action_type" readonly="True"/>
                                 <field name="counted_to_pay" readonly="True"/>
-                                <field name="payment_id" readonly="True"/>
+                                <field name="payment_id" attrs="{'readonly': [('action', '==', 'complete')]}"/>
                                 <field name="txid" readonly="True"/>
                                 <field name="txid_url" readonly="True" widget="url" text="Watch transaction in Pi Blockexplorer"/>
                                 <field name="pi_user_id" readonly="True"/>
-                                <field name="pi_user" readonly="True"/>
+                                <field name="pi_user" attrs="{'readonly': [('action', '==', 'complete')]}"/>
                                 <field name="amount" readonly="True"/>
                                 <field name="memo" readonly="True"/>
                                 <field name="from_address" readonly="True"/>
