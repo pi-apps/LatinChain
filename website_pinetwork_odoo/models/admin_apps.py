@@ -823,12 +823,11 @@ class admin_apps(models.Model):
         elif kw['action'] == "complete":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
             _logger.info(str(kw))
-            if kw['txid'] == "":
-                obj = {}
-                result = {"result": True, "completed": False, "approved": False}
-                return json.dumps(result)
-            else:
-                obj = {'txid': kw['txid']}
+            obj = {'txid': kw['txid']}
+            #if kw['txid'] == "":
+            #    obj = {}
+            #else:
+            #    obj = {'txid': kw['txid']}
         
         re = requests.post(url,data=obj,json=obj,headers={'Authorization': "Key " + admin_app_list[0].admin_key})
         
