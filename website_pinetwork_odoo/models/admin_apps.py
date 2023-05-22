@@ -822,7 +822,7 @@ class admin_apps(models.Model):
             """
         elif kw['action'] == "complete":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
-            _logger.info(str(kw))
+            
             obj = {'txid': kw['txid']}
             #if kw['txid'] == "":
             #    obj = {}
