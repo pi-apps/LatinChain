@@ -818,7 +818,6 @@ class admin_apps(models.Model):
                 self.env["pi.transactions"].sudo().create(data_dict)
             else:
                 self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
-            self.env.cr.commit()
             """
         elif kw['action'] == "complete":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
@@ -862,11 +861,9 @@ class admin_apps(models.Model):
                         data_dict.update({'action_type': 'receive'})
                         
                     self.env["pi.transactions"].sudo().create(data_dict)
-                    self.env.cr.commit()
                     
                     self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
                                                                 ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
-                    self.env.cr.commit()
                     
                 if result_dict["status"]["developer_approved"]:
                     result = {"result": True, "approved": True}
@@ -906,17 +903,15 @@ class admin_apps(models.Model):
                         self.env["pi.transactions"].sudo().create(data_dict)
                     else:
                         self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
-                    
-                    self.env.cr.commit()
                         
                     transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
                     
                     result = {"result": True, "completed": False}
                     if len(transaction) > 0 and kw['app_client'] in ['auth_pidoku', 'auth_snake', 'auth_platform', 'auth_example']:
                         if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
-                            """
                             users = transaction[0].pi_user
                             
+                            """
                             if len(users) > 0:
                                 if users[0].paid_in_transactions >= admin_app_list[0].amount:
                                     if "direction" in result_dict and result_dict["direction"] == "user_to_app":
@@ -925,7 +920,6 @@ class admin_apps(models.Model):
                             
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 users[0].sudo().write({'unblocked_datetime': datetime.now()})
-                                self.env.cr.commit()
                                 
                             result = {"result": True, "completed": True}
                         #elif not result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
@@ -934,7 +928,7 @@ class admin_apps(models.Model):
                     result = {"result": True, "completed": False, "approved": False}
             else:
                 result = {"result": True, "completed": False, "approved": False}
-        except:
+        except Exception as e:
             result = {"result": False, "error": "SERVER MESSAGE: " + str(re)}
         
         self.env.cr.commit()

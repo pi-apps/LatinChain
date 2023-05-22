@@ -206,7 +206,9 @@ $( document ).ready(function() {
                             };
                       return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
-                                    get_user();
+                                    data = JSON.parse(data);
+                                    if(data.result && data.completed)
+                                        get_user();
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });

@@ -239,7 +239,9 @@ $( document ).ready(function() {
                             
                       return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
-                                    location.reload();
+                                    data = JSON.parse(data);
+                                    if(data.result && data.completed)
+                                        location.reload();
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });
