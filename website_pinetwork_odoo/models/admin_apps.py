@@ -824,6 +824,8 @@ class admin_apps(models.Model):
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
             if kw['txid'] == "":
                 obj = {}
+                result = {"result": True, "completed": False, "approved": False}
+                return json.dumps(result)
             else:
                 obj = {'txid': kw['txid']}
         
