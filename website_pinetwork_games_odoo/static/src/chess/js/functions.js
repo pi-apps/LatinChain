@@ -236,13 +236,11 @@ $( document ).ready(function() {
                                 'pi_user_code': pi_user_code,
                                 'pi_user_id': pi_user_id,
                             };
-                            alert("1");
+                            
                       return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
-                                    alert("completed=" + data.completed);
                                     location.reload();
                                 }).fail(function() {
-                                    alert("2");
                                     $("#button_click").prop( "disabled", false );
                                 });
                   },
