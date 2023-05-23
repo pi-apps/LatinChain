@@ -84,9 +84,9 @@
                                                                     'google_translate_element');
                              
                                 //const el = document.querySelector('#goog-gt-');
-                                const el2 = document.querySelector('.skiptranslate');
+                                //const el2 = document.querySelector('.skiptranslate');
                                 const el3 = document.querySelector('circle');
-                                const el4 = document.querySelector('.goog-te-gadget');
+                                //const el4 = document.querySelector('.goog-te-gadget');
                                 const observer = new window.IntersectionObserver(([entry]) => {
                                     /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
                                     {
@@ -104,9 +104,9 @@
                                 });
 
                                 //observer.observe(el);
-                                observer.observe(el2);
+                                //observer.observe(el2);
                                 observer.observe(el3);
-                                observer.observe(el4);
+                                //observer.observe(el4);
                           }
                         }
                     
@@ -212,9 +212,9 @@
                                                                 'google_translate_element');
                          
                             //const el = document.querySelector('#goog-gt-');
-                            const el2 = document.querySelector('.skiptranslate');
+                            //const el2 = document.querySelector('.skiptranslate');
                             const el3 = document.querySelector('circle');
-                            const el4 = document.querySelector('.goog-te-gadget');
+                            //const el4 = document.querySelector('.goog-te-gadget');
                             const observer = new window.IntersectionObserver(([entry]) => {
                                 /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
                                 {
@@ -232,9 +232,9 @@
                             });
 
                             //observer.observe(el);
-                            observer.observe(el2);
+                            //observer.observe(el2);
                             observer.observe(el3);
-                            observer.observe(el4);
+                            //observer.observe(el4);
                       }
                     }
                 
