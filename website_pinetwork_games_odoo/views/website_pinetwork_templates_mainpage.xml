@@ -83,7 +83,7 @@
                                                                     layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                                     'google_translate_element');
                              
-                                const el = document.querySelector('#goog-gt-');
+                                //const el = document.querySelector('#goog-gt-');
                                 const el2 = document.querySelector('.skiptranslate');
                                 const el3 = document.querySelector('circle');
                                 const el4 = document.querySelector('.goog-te-gadget');
@@ -103,7 +103,7 @@
                                     threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
                                 });
 
-                                observer.observe(el);
+                                //observer.observe(el);
                                 observer.observe(el2);
                                 observer.observe(el3);
                                 observer.observe(el4);
@@ -211,7 +211,7 @@
                                                                 layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                                 'google_translate_element');
                          
-                            const el = document.querySelector('#goog-gt-');
+                            //const el = document.querySelector('#goog-gt-');
                             const el2 = document.querySelector('.skiptranslate');
                             const el3 = document.querySelector('circle');
                             const el4 = document.querySelector('.goog-te-gadget');
@@ -231,7 +231,7 @@
                                 threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
                             });
 
-                            observer.observe(el);
+                            //observer.observe(el);
                             observer.observe(el2);
                             observer.observe(el3);
                             observer.observe(el4);
