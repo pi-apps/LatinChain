@@ -206,7 +206,7 @@
                           {
                               lang_google='es';
                           }
-                          alert(lang_google);
+                          
                           new google.translate.TranslateElement({pageLanguage: lang_google,
                                                                 autoDisplay: true,
                                                                 layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
