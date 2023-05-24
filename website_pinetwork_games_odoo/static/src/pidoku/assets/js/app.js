@@ -25,12 +25,12 @@ var boards = {
 };
 
 var points_values = {
-    "easy": 3,
-    "medium": 6,
-    "hard": 9,
-    "very-hard": 12,
-    "insane": 15,
-    "inhuman": 18,
+    "easy": 1,
+    "medium": 2,
+    "hard": 3,
+    "very-hard": 4,
+    "insane": 5,
+    "inhuman": 6,
     "import": 0,
 };
 
