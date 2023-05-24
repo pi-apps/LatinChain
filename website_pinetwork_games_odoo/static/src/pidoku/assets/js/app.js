@@ -149,7 +149,10 @@ var refresh_board = function(){
 }
 
 var clear_this_board = function(){
-    $(PUZZLE_CONTROLS_SEL + " #clear").click();
+    var tab_name = get_tab();
+    if(tab_name !== "import"){
+        clear_puzzle(tab_name);
+    }
 }
 
 var init_controls = function(){
