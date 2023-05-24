@@ -69,10 +69,10 @@ function get_user() {
 
 $( document ).ready(function() {
     
-    $(document).blur(function(){
+    /*$(document).blur(function(){
         alert("You changed of window, puzzle will be cleared.");
         clear_this_board();
-    });
+    });*/
     
     $('.timer').countimer({
 			autoStart : false
