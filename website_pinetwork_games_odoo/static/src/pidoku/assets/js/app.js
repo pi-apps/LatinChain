@@ -148,6 +148,10 @@ var refresh_board = function(){
     }
 }
 
+var clear_this_board = function(){
+    $(PUZZLE_CONTROLS_SEL + " #clear").click();
+}
+
 var init_controls = function(){
     /* Initialize the controls
     */

@@ -68,6 +68,11 @@ function get_user() {
 }
 
 $( document ).ready(function() {
+    
+    $(document).blur(function(){
+        clear_this_board();
+    });
+    
     $('.timer').countimer({
 			autoStart : false
 			});
