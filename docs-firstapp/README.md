@@ -14,7 +14,7 @@ https://developers.minepi.com/
 Official Pi App Demo example code:
 https://github.com/pi-apps/demo
 
-# Simplest example
+# Simplest example for User2App payment
 
 And the following is my Working Example for receiving Payments in Pi Platform:
 
@@ -30,6 +30,22 @@ in client JavaScript side, you must set it in server1.php.
 
 And you need to implement authentication:
 https://github.com/pi-apps/pi-platform-docs/blob/master/authentication.md
+
+# App2User payment made by Core Team
+
+Ruby: https://github.com/pi-apps/pi-ruby
+
+NodeJS: https://github.com/pi-apps/pi-nodejs
+
+# App2User payment made by Community
+
+Python: https://github.com/pi-apps/pi-python
+
+Go: https://github.com/pi-apps/pi-go
+
+Blazor: https://github.com/pi-apps/pi-blazor
+
+C#: https://github.com/pi-apps/pi-csharp
 
 Check here:
 https://dev-rockcesar.blogspot.com/2022/10/how-to-develop-pi-app.html
