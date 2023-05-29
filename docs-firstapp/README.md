@@ -31,6 +31,9 @@ in client JavaScript side, you must set it in server1.php.
 And you need to implement authentication:
 https://github.com/pi-apps/pi-platform-docs/blob/master/authentication.md
 
+Check here:
+https://dev-rockcesar.blogspot.com/2022/10/how-to-develop-pi-app.html
+
 # App2User payment made by Core Team
 
 Ruby: https://github.com/pi-apps/pi-ruby
@@ -46,6 +49,3 @@ Go: https://github.com/pi-apps/pi-go
 Blazor: https://github.com/pi-apps/pi-blazor
 
 C#: https://github.com/pi-apps/pi-csharp
-
-Check here:
-https://dev-rockcesar.blogspot.com/2022/10/how-to-develop-pi-app.html
