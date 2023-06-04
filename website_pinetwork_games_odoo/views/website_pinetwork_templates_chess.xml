@@ -238,7 +238,7 @@
                                 </style>
                             </div>
                               <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab">
-                                  <!--<span t-if="mainnet != 'Mainnet ON'">-->
+                                  <span t-if="mainnet != 'Mainnet ON'">
                                       <br/>
                                       <div align="center" class="container" style="text-align:center">
                                           <div id="taboola-mid-article-thumbnails-2"></div>
@@ -252,7 +252,7 @@
                                               });
                                             </script>
                                       </div>
-                                  <!--</span>-->
+                                  </span>
                                   <br/>
                                 <span align="center">
                                     <div class="container row">

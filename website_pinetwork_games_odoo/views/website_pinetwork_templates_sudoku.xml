@@ -304,7 +304,7 @@
                                 </style>
                           </div>
                           <div class="tab-pane" id="sudoku">
-                              <!--<span t-if="mainnet != 'Mainnet ON'">-->
+                              <span t-if="mainnet != 'Mainnet ON'">
                                   <br/>
                                   <div id="taboola-mid-article-thumbnails-2"></div>
                                     <script type="text/javascript">
@@ -316,7 +316,7 @@
                                         target_type: 'mix'
                                       });
                                     </script>
-                              <!--</span>-->
+                              </span>
 							  <br/>
                                 
                                     <style>
