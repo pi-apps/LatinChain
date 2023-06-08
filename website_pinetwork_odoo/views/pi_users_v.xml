@@ -25,6 +25,9 @@
                                 <field name="points_chess_last" readonly="True"/>
                                 <field name="points_sudoku_last" readonly="True"/>
                                 <field name="points_snake_last" readonly="True"/>
+                                <field name="points_chess_wins" readonly="True"/>
+                                <field name="points_sudoku_wins" readonly="True"/>
+                                <field name="points_snake_wins" readonly="True"/>
                                 <field name="points_datetime" readonly="True"/>
                                 <field name="paid_in_transactions" readonly="True"/>
                                 <field name="unblocked" readonly="True"/>
@@ -62,6 +65,9 @@
                 <field name="points_chess_last"/>
                 <field name="points_sudoku_last"/>
                 <field name="points_snake_last"/>
+                <field name="points_chess_wins"/>
+                <field name="points_sudoku_wins"/>
+                <field name="points_snake_wins"/>
                 <field name="paid_in_transactions"/>
                 <field name="unblocked"/>
                 <field name="days_available"/>
