@@ -22,7 +22,9 @@
                                 <field name="points_chess" readonly="True"/>
                                 <field name="points_sudoku" readonly="True"/>
                                 <field name="points_snake" readonly="True"/>
-                                <field name="points_last" readonly="True"/>
+                                <field name="points_chess_last" readonly="True"/>
+                                <field name="points_sudoku_last" readonly="True"/>
+                                <field name="points_snake_last" readonly="True"/>
                                 <field name="points_datetime" readonly="True"/>
                                 <field name="paid_in_transactions" readonly="True"/>
                                 <field name="unblocked" readonly="True"/>
