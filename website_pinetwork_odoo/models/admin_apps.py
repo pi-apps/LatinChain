@@ -955,6 +955,7 @@ class pi_users(models.Model):
     points_chess = fields.Float('Chess Points', required=True, default=0, digits=(50,7))
     points_sudoku = fields.Float('Sudoku Points', required=True, default=0, digits=(50,7))
     points_snake = fields.Float('Snake Points', required=True, default=0, digits=(50,7))
+    points_last = fields.Char('Last Points', required=False, default="")
     points_datetime = fields.Datetime('Points Datetime', compute="_total_points", store=True, default=datetime.now())
     paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True, digits=(50,7), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
