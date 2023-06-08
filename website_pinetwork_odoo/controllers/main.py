@@ -218,7 +218,14 @@ class PiNetworkBaseController(http.Controller):
         request.env.cr.commit()
         
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
-                            'points': pi_users_list[0].points, 'points_chess': pi_users_list[0].points_chess, 
+                            'points': pi_users_list[0].points, 
+                            'points_chess_wins': pi_users_list[0].points_chess_wins, 
+                            'points_sudoku_wins': pi_users_list[0].points_sudoku_wins,
+                            'points_snake_wins': pi_users_list[0].points_snake_wins, 
+                            'points_chess_last': pi_users_list[0].points_chess_last, 
+                            'points_sudoku_last': pi_users_list[0].points_sudoku_last,
+                            'points_snake_last': pi_users_list[0].points_snake_last, 
+                            'points_chess': pi_users_list[0].points_chess, 
                             'points_sudoku': pi_users_list[0].points_sudoku,
                             'points_snake': pi_users_list[0].points_snake, 'points_datetime': str(pi_users_list[0].points_datetime) + " UTC",
                             'unblocked': pi_users_list[0].unblocked,

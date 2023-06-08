@@ -377,6 +377,8 @@
                                             $(".user_status").html("<br/>(verified, " + data.unblocked_datetime + "). Days available: " + data.days_available + winner + "<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
+                                            $("#user_points_last").html("(Chess: " + data.points_chess_last + ", Snake: " + data.points_snake_last + ", Sudoku: " + data.points_sudoku_last + ")");
+                                            $("#user_points_wins").html("(Chess: " + data.points_chess_wins + ", Snake: " + data.points_snake_wins + ", Sudoku: " + data.points_sudoku_wins + ")");
                                             $("#user_points_datetime").html(data.points_datetime);
                                             //$("#pi_wallet_address").val(data.pi_wallet_address);
                                             
@@ -387,6 +389,8 @@
                                             $(".user_status").html("<br/>Not verified. Each 30 days you should unlock the app paying " + data.amount + " Pi. Go to one of the games to do it.<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
+                                            $("#user_points_last").html("(Chess: " + data.points_chess_last + ", Snake: " + data.points_snake_last + ", Sudoku: " + data.points_sudoku_last + ")");
+                                            $("#user_points_wins").html("(Chess: " + data.points_chess_wins + ", Snake: " + data.points_snake_wins + ", Sudoku: " + data.points_sudoku_wins + ")");
                                             $("#user_points_datetime").html(data.points_datetime);
                                             //$("#pi_wallet_address").val(data.pi_wallet_address);
                                             
@@ -968,6 +972,8 @@
                             <br/>Total points: <strong id="user_points">0</strong><br/>
                             <br/>At: <strong id="user_points_datetime"></strong><br/>
                             <br/>Points per game: <strong id="user_points_per_game">0</strong><br/>
+                            <br/>Max points per game: <strong id="user_points_last">0</strong><br/>
+                            <br/># of wins per game: <strong id="user_points_wins">0</strong><br/>
                           </div>
                         </div>
                         <br/><br/>
