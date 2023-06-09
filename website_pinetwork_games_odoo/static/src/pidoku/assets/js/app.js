@@ -125,9 +125,9 @@ var init_tabs = function(){
         show_puzzle(t_name);
         $t.tab('show');
         
-        if(t_name !== "import"){
+        /*if(t_name !== "import"){
             $("#export-string").val(sudoku.board_grid_to_string(boards[t_name]));
-        }
+        }*/
     }); 
 };
 
@@ -135,7 +135,7 @@ var refresh_board = function(){
     var tab_name = get_tab();
     if(tab_name !== "import"){
         show_puzzle(tab_name, true);
-        $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
+        //$("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
         var tabs_names = ["hard",
                          "very-hard",
                          "insane",
@@ -192,15 +192,13 @@ var init_controls = function(){
         }
     });
     
-    $(PUZZLE_CONTROLS_SEL + " #export").click(function(e){
-        /* Refresh the current puzzle
-        */
+    /*$(PUZZLE_CONTROLS_SEL + " #export").click(function(e){
         e.preventDefault();
         var tab_name = get_tab();
         if(tab_name !== "import"){
             $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
         }
-    });
+    });*/
     
     function copyToClipboard(text) {
 		var $temp = $("<input>");
@@ -210,16 +208,14 @@ var init_controls = function(){
 		$temp.remove();
 	}
     
-    $(PUZZLE_CONTROLS_SEL + " #copy").click(function(e){
-        /* Refresh the current puzzle
-        */
+    /*$(PUZZLE_CONTROLS_SEL + " #copy").click(function(e){
         e.preventDefault();
         var tab_name = get_tab();
         if(tab_name !== "import"){
             $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
             copyToClipboard(sudoku.board_grid_to_string(boards[tab_name]));
         }
-    });
+    });*/
     
     $(PUZZLE_CONTROLS_SEL + " #clear").click(function(e){
         /* Refresh the current puzzle
