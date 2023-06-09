@@ -160,6 +160,22 @@ var init_controls = function(){
     */
     
     // Puzzle controls
+    $(PUZZLE_CONTROLS_SEL + " #cancel").click(function(e){
+        /* Refresh the current puzzle
+        */
+        e.preventDefault();
+        var tab_name = get_tab();
+        var r = confirm("Do you want to cancel?, it will reload the puzzle.");
+        if (r == true) {
+            refresh_board();
+            /*var tab_name = get_tab();
+            if(tab_name !== "import"){
+                show_puzzle(tab_name, true);
+                $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
+            }*/
+        }
+    });
+    
     $(PUZZLE_CONTROLS_SEL + " #refresh").click(function(e){
         /* Refresh the current puzzle
         */
@@ -253,6 +269,22 @@ var init_controls = function(){
     $(".square").on("keyup",function(e){
         /* Solve the current puzzle
         */
+        
+        var tab_name = get_tab();
+        var tabs_names = ["hard",
+                     "very-hard",
+                     "insane",
+                     "inhuman",
+                     "import"];
+        
+        if(tab_name != "import")
+        {
+            for(var i = 0; i < 5; i++){
+                if(tab_name != tabs_names[i])
+                    $("#"+tabs_names[i]).parent().hide();
+            }
+        }
+        
         var s = "";
         for(var r = 0; r < 9; ++r){
             for(var c = 0; c < 9; ++c){
