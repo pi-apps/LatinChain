@@ -145,6 +145,9 @@ var refresh_board = function(){
         for(var i = 0; i < 5; i++){
             $("#"+tabs_names[i]).parent().show();
         }
+        
+        $("#cancel").attr("disabled", false);
+        $("#clear").attr("disabled", false);
     }
 }
 
@@ -328,6 +331,7 @@ var init_controls = function(){
                         $square.change();
                     }
                 }
+                
                 set_points(points_values[get_tab()]);
             }
         }
