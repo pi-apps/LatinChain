@@ -28,9 +28,9 @@ var points_values = {
     "easy": 1,
     "medium": 2,
     "hard": 3,
-    "very-hard": 4,
-    "insane": 5,
-    "inhuman": 6,
+    "very-hard": 6,
+    "insane": 9,
+    "inhuman": 12,
     "import": 0,
 };
 
