@@ -145,9 +145,6 @@ var refresh_board = function(){
         for(var i = 0; i < 5; i++){
             $("#"+tabs_names[i]).parent().show();
         }
-        
-        $("#cancel").attr("disabled", false);
-        $("#clear").attr("disabled", false);
     }
 }
 
