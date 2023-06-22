@@ -148,6 +148,28 @@ var refresh_board = function(){
     }
 }
 
+var only_refresh_board = function(){
+    var tab_name = get_tab();
+    if(tab_name !== "import"){
+        show_puzzle(tab_name, true);
+    }
+}
+
+var only_unlock_board = function(){
+    var tab_name = get_tab();
+    if(tab_name !== "import"){
+        var tabs_names = ["hard",
+                         "very-hard",
+                         "insane",
+                         "inhuman",
+                         "import"];
+
+        for(var i = 0; i < 5; i++){
+            $("#"+tabs_names[i]).parent().show();
+        }
+    }
+}
+
 var clear_this_board = function(){
     var tab_name = get_tab();
     if(tab_name !== "import"){
@@ -328,6 +350,8 @@ var init_controls = function(){
                         $square.change();
                     }
                 }
+                
+                only_refresh_board();
                 
                 set_points(points_values[get_tab()]);
             }
