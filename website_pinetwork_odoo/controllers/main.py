@@ -664,13 +664,13 @@ class PiNetworkBaseController(http.Controller):
         
         pi_transactions_count = request.env["pi.transactions"].sudo().search_count([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete')])
         
-        pi_transactions_count_filter = request.env["pi.transactions"].sudo().search_count([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'ilike', '%' + searchValue + '%'), '|', ('memo', 'ilike', '%' + searchValue + '%'), ('txid', 'ilike', '%' + searchValue + '%')])
+        pi_transactions_count_filter = request.env["pi.transactions"].sudo().search_count([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'ilike', '%' + searchValue + '%'), '|', ('memo', 'ilike', '%' + searchValue + '%'), '|', ('create_date', 'ilike', '%' + searchValue + '%'), ('txid', 'ilike', '%' + searchValue + '%')])
         
-        pi_transactions_list = request.env["pi.transactions"].sudo().search([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'ilike', '%' + searchValue + '%'), '|', ('memo', 'ilike', '%' + searchValue + '%'), ('txid', 'ilike', '%' + searchValue + '%')], order="create_date desc", limit=int(rowperpage), offset=int(row))
+        pi_transactions_list = request.env["pi.transactions"].sudo().search([('id', 'in', pi_user[0].pi_transactions_ids.ids), ('action', '=', 'complete'), '|', ('amount', 'ilike', '%' + searchValue + '%'), '|', ('memo', 'ilike', '%' + searchValue + '%'), '|', ('create_date', 'ilike', '%' + searchValue + '%'), ('txid', 'ilike', '%' + searchValue + '%')], order="create_date desc", limit=int(rowperpage), offset=int(row))
         
         data = []
         for i in pi_transactions_list:
-            data.append({'memo': i.memo, 'amount': str(i.amount) + " Pi", 'txid': " <button class='btn btn-link' onclick='$.colorbox({href:\"" + i.txid_url + "\", iframe:true, width: \"100%\", height: \"100%\", maxWidth: \"100%\", maxHeight: \"100%\"});'>" + i.txid[:4] + "..." + i.txid[-4:] + "</button><button class='btn btn-primary' onclick='copyToClipboard(\"" + i.txid_url + "\");'>Copy</button>"})
+            data.append({'memo': i.memo + " (" + i.create_date + " UTC)", 'amount': str(i.amount) + " Pi", 'txid': " <button class='btn btn-link' onclick='$.colorbox({href:\"" + i.txid_url + "\", iframe:true, width: \"100%\", height: \"100%\", maxWidth: \"100%\", maxHeight: \"100%\"});'>" + i.txid[:4] + "..." + i.txid[-4:] + "</button><button class='btn btn-primary' onclick='copyToClipboard(\"" + i.txid_url + "\");'>Copy</button>"})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_transactions_count, "iTotalDisplayRecords": pi_transactions_count_filter})
         
