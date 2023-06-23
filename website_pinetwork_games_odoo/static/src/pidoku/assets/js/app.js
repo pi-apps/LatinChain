@@ -351,8 +351,6 @@ var init_controls = function(){
                     }
                 }
                 
-                alert("You solved the puzzle");
-                
                 only_refresh_board();
                 
                 set_points(points_values[get_tab()]);

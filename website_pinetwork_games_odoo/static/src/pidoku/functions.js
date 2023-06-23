@@ -21,7 +21,7 @@ function set_points(points) {
             data = JSON.parse(data);
             if(data.result && points > 0)
             {
-                alert("You won " + points + " points");
+                alert("You have solved the puzzle. You won " + points + " points.");
                 only_unlock_board();
             }
             
