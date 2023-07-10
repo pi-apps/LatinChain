@@ -239,7 +239,7 @@
                             </div>
                               <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab">
                                   <!--<span t-if="mainnet != 'Mainnet ON'">-->
-                                      <!--<br/>
+                                      <br/>
                                       <div align="center" class="container" style="text-align:center">
                                           <div id="taboola-mid-article-thumbnails-2"></div>
                                             <script type="text/javascript">
@@ -251,7 +251,7 @@
                                                 target_type: 'mix'
                                               });
                                             </script>
-                                      </div>-->
+                                      </div>
                                   <!--</span>-->
                                   <br/>
                                 <span align="center">
@@ -392,7 +392,7 @@
                                     
                                     <br/>
                                       <div align="center" class="container" style="text-align:center">
-                                           <div id="taboola-below-article-thumbnails-2"></div>
+                                           <!--<div id="taboola-below-article-thumbnails-2"></div>
                                             <script type="text/javascript">
                                               window._taboola = window._taboola || [];
                                               _taboola.push({
@@ -401,7 +401,7 @@
                                                 placement: 'Below Article Thumbnails 2',
                                                 target_type: 'mix'
                                               });
-                                            </script>
+                                            </script>-->
                                       </div>
                             </div>
                         </div>
