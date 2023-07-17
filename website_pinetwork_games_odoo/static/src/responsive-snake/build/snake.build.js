@@ -359,9 +359,9 @@ GameContainer.prototype.onKeydown = function (event) {
     case 187: //+
       this.inst.increaseFPS(1);
       break;
-    case 189: //-
+    /*case 189: //-
       this.inst.decreaseFPS(1);
-      break;
+      break;*/
     /*case 66 :
       if (this.inst.bot) {
         this.inst.bot.enable();
@@ -370,9 +370,9 @@ GameContainer.prototype.onKeydown = function (event) {
     case 82 : //r
       this.inst.restart();
       break;
-    case 79 : //o
+    /*case 79 : //o
       this.toggleGame();
-      break;
+      break;*/
     case 32 : //space
       if (!this.disabled) {
         if (this.started) {
