@@ -209,33 +209,7 @@
                                     </script>
                                 </div>
                                 
-                                <button id="myBtn"><a id="myABtn" href="#top" style="color: white">Top</a></button>
-                    
-                                <style>
-                                    /*Floating Back-To-Top Button*/
-                                        #myBtn {
-                                            position: fixed;
-                                            bottom: 10px;
-                                            float: right;
-                                            right: 90%;
-                                            left: 10%;
-                                            bottom: 10%;
-                                            max-width: 50px;
-                                            max-height: 50px;
-                                            width: 100%;
-                                            height: 100%;
-                                            font-size: 18px;
-                                            border-color: rgba(85, 85, 85, 0.2);
-                                            background-color: rgb(100,100,100);
-                                            /*padding: 10px;*/
-                                            border-radius: 4px;
-                                            opacity: 0.5;
-                                        }
-                                    /*On Hover Color Change*/
-                                        #myBtn:hover {
-                                            background-color: #7dbbf1;
-                                        }
-                                </style>
+                                
                             </div>
                               <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab">
                                   <!--<span t-if="mainnet != 'Mainnet ON'">-->
@@ -392,7 +366,7 @@
                                     
                                     <br/>
                                       <div align="center" class="container" style="text-align:center">
-                                           <!--<div id="taboola-below-article-thumbnails-2"></div>
+                                           <div id="taboola-below-article-thumbnails-2"></div>
                                             <script type="text/javascript">
                                               window._taboola = window._taboola || [];
                                               _taboola.push({
@@ -401,11 +375,39 @@
                                                 placement: 'Below Article Thumbnails 2',
                                                 target_type: 'mix'
                                               });
-                                            </script>-->
+                                            </script>
                                       </div>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
+                    
+                    <button id="myBtn"><a id="myABtn" href="#top" style="color: white">Top</a></button>
+                    
+                    <style>
+                        /*Floating Back-To-Top Button*/
+                            #myBtn {
+                                position: fixed;
+                                bottom: 10px;
+                                float: right;
+                                right: 90%;
+                                left: 10%;
+                                bottom: 10%;
+                                max-width: 50px;
+                                max-height: 50px;
+                                width: 100%;
+                                height: 100%;
+                                font-size: 18px;
+                                border-color: rgba(85, 85, 85, 0.2);
+                                background-color: rgb(100,100,100);
+                                /*padding: 10px;*/
+                                border-radius: 4px;
+                                opacity: 0.5;
+                            }
+                        /*On Hover Color Change*/
+                            #myBtn:hover {
+                                background-color: #7dbbf1;
+                            }
+                    </style>
 
                     <!--<script src="js/jquery-3.4.1.min.js"></script>-->
                     <script src="/website_pinetwork_games_odoo/static/src/chess/js/chess.min.js"></script>
