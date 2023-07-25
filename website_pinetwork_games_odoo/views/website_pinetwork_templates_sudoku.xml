@@ -324,6 +324,7 @@
                                     .cont { text-align:center; font-size:30px;}
 
                                     </style>
+                                    <h1 align="center" style="font-weight:600">Sudoku</h1>
                                     <div class="cont">
                                     <h1>Time</h1>
                                     <p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
