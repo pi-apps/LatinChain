@@ -17,4 +17,4 @@ https://github.com/pi-apps/pi-python
 MnemonicToSecret
 -----------------
 
-Is to get publicKey and secret in NodeJS. Usefull when we are going to use our own Mainnet wallet to Pay A2U.
+Is to get publicKey and secret in NodeJS. Useful when we are going to use our own Mainnet wallet to Pay A2U.
