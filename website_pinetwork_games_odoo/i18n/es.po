@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-09 10:16+0000\n"
-"PO-Revision-Date: 2023-06-09 10:16+0000\n"
+"POT-Creation-Date: 2023-08-04 13:45+0000\n"
+"PO-Revision-Date: 2023-08-04 13:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -165,6 +165,14 @@ msgstr ""
 "                        <br/>\n"
 "                        <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
 "                        <br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<br/><br/>\n"
+"                        <strong>Chat (Telegram):</strong>\n"
+"                        <br/><br/>"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -502,16 +510,6 @@ msgstr "Borrar Caché"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Close"
 msgstr "Cerrar"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Copy"
-msgstr "Copiar"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Copy string"
-msgstr "Copiar cadena"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -859,11 +857,6 @@ msgstr "Muestra Pista"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Start"
 msgstr "Iniciar"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "String to import in the Import tab:"
-msgstr "Cadena para importar en la pestaña Importar:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
