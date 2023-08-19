@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="radioforus" name="RadioForUs View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta charset="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                    <title>Pi Example</title>
+                    <meta name="apple-mobile-web-app-capable" content="yes" />
+                    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                    
+                    <!-- ios support -->
+                    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                    <meta name="theme-color" content="#db4938" />
+                    
+                    <meta name="application-name" content="Pi Example"/>
+                    
+                    <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+
+                    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+                    <!--[if lt IE 9]>
+                        <script src="assets/js/html5shiv-pre3.6.js"></script>
+                    <![endif]-->
+                    
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/jquery-3.5.1.min.js"></script>
+                    <!--<script src="https://downloads.minepi.com/sdk/v1/dev.js"></script>-->
+                    <!--<script src="https://downloads.minepi.com/sdk/v1/prod.js"></script>-->
+                    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js"></script>
+                    
+                    <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
+                    
+                    <script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({article:'auto'});
+                      !function (e, f, u, i) {
+                        if (!document.getElementById(i)){
+                          e.async = 1;
+                          e.src = u;
+                          e.id = i;
+                          f.parentNode.insertBefore(e, f);
+                        }
+                      }(document.createElement('script'),
+                      document.getElementsByTagName('script')[0],
+                      '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+                      'tb_loader_script');
+                      if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
+                        {window.performance.mark('tbl_ic');}
+                    </script>
+                    
+                    <script type="text/javascript">
+                        $( document ).ready(function() {
+                        
+                            /*(adsbygoogle = window.adsbygoogle || []).push({});
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            (adsbygoogle = window.adsbygoogle || []).push({});*/
+                            //$("#a-ads").prop('src', $("#a_ads_val").val());
+                            /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
+                            $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
+                            //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
+                            $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS');
+                        
+                            var status_audio = false;
+                            var audioElement = document.createElement('audio');
+                            audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/music.mp3');
+                            audioElement.addEventListener('ended', function() {
+                                this.play();
+                            }, false);
+                            
+                            $('#play').click(function() {
+                                if(!status_audio)
+                                {
+                                    audioElement.play();
+                                    status_audio = true;
+                                    $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
+                                }
+                                else
+                                {
+                                    audioElement.pause();
+                                    status_audio = false;
+                                    $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
+                                }
+                            });
+                        
+                            $( "#clear_cache" ).click(function() {
+                                var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
+                                if(result)
+                                {
+                                    try {
+                                        Cache.delete();
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                    try {
+                                        window.location.reload(true);
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                }
+                            });
+                            
+                            $( "#back" ).click(function() {
+                                var result = confirm("Are you sure you want to go back?.");
+                                if(result)
+                                {
+                                    //history.back();
+                                    location.href="/";
+                                }
+                            });
+                        });
+
+                    </script>
+                </head>
+
+                <body>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="amount" t-att-value="amount"/>
+                    <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
+                    <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
+                    <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
+                    <div class="container form-group" style="text-align:center !important">
+                        <!--<strong>Publicity:</strong>-->
+                        <br/>
+                        
+                        <div id="taboola-mid-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a-mid',
+                            container: 'taboola-mid-article-thumbnails',
+                            placement: 'Mid Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
+                        
+                        <!-- LatinChain Ad responsive -->
+                        <!--<ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="6625994850"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        
+                        <br/>
+                                    
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-format="fluid"
+                             data-ad-layout-key="-gc+4r+1p-d0+h0"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="6758976353"></ins>-->
+                        <div align="center" style="text-align:center">
+                            <!--<br/>
+                            <script type="text/javascript">
+                                atOptions = {
+                                    'key' : 'b3626277f6615b27c340298a132b7897',
+                                    'format' : 'iframe',
+                                    'height' : 250,
+                                    'width' : 300,
+                                    'params' : {}
+                                };
+                            </script>
+                            <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>-->
+                            <!--<iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>-->
+                        </div>
+                        <!--<script type="text/javascript">
+                            atOptions = {
+                                'key' : 'b3626277f6615b27c340298a132b7897',
+                                'format' : 'iframe',
+                                'height' : 250,
+                                'width' : 300,
+                                'params' : {}
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
+                        <br/>
+                        <script type="text/javascript">
+                            atOptions = {
+                                'key' : '1771e7291ef3d0a686ff7e2bb191f557',
+                                'format' : 'iframe',
+                                'height' : 50,
+                                'width' : 320,
+                                'params' : {}
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/1771e7291ef3d0a686ff7e2bb191f557/invoke.js"></script>
+                        <br/>-->
+                        <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
+                        <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
+                        <img  width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
+                        <h1 align="center" style="font-weight:600">Donate here</h1>
+                        
+                        <t t-set="amount_end" t-value="amount*10"/>
+                        <br/><br/><input id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" lang="en-US" t-att-placeholder="'From ' + str(amount) + ' Pi to ' + str(amount_end) + ' Pi'"/>
+                        <button id="button_click" name="button_click" class="btn btn-primary" disabled="true">Donate</button>
+                        
+                        <br />
+                        <br />
+                        <button id="clear_cache" class="btn btn-info">Clear Cache</button>
+                        <br/><br/>
+                        <button id="back" class="btn btn-info">Back</button>
+                        <br/><br/>
+                        <a href="https://radioforus.com" target="_blank" class="btn btn-info">RadioForUs</a>
+                        
+                        
+                        
+                        <!--<ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-format="fluid"
+                             data-ad-layout-key="-gc+4r+1p-d0+h0"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="6758976353"></ins>-->
+                             
+                        <!--<br/><br/>
+                        <iframe id="a-ads_3" t-att-data-aa='a_ads_data_3' src="" t-att-style='a_ads_style_3'></iframe>-->
+                        <br/><br/>
+                        <a href="https://github.com/pi-apps/LatinChain" target="_blank" class="btn btn-link">Watch code</a>
+                        <br />
+                        <br />
+                        <span id="loading_word" style="display: none;">Loading...</span>
+                        <br/>
+                        <!--<ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-format="autorelaxed"
+                                 data-ad-client="ca-pub-2334449220276386"
+                                 data-ad-slot="1794208680"></ins>-->
+                        <!--<br/><br/>Crypto news:<br/><br/>
+                        <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                        -->
+                        <br/><br/>Enjoy:<br/><br/>
+                        <iframe id="tiesto" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                        
+                        <br/><br/>
+                        
+                        <div id="taboola-below-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a',
+                            container: 'taboola-below-article-thumbnails',
+                            placement: 'Below Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
+                        
+                    </div>
+                    
+                    <button id="myBtn"><a id="myABtn" href="#top" style="color: white">Top</a></button>
+                    
+                    <style>
+                        /*Floating Back-To-Top Button*/
+                            #myBtn {
+                                position: fixed;
+                                bottom: 10px;
+                                float: right;
+                                right: 90%;
+                                left: 10%;
+                                bottom: 10%;
+                                max-width: 50px;
+                                max-height: 50px;
+                                width: 100%;
+                                height: 100%;
+                                font-size: 18px;
+                                border-color: rgba(85, 85, 85, 0.2);
+                                background-color: rgb(100,100,100);
+                                /*padding: 10px;*/
+                                border-radius: 4px;
+                                opacity: 0.5;
+                            }
+                        /*On Hover Color Change*/
+                            #myBtn:hover {
+                                background-color: #7dbbf1;
+                            }
+                    </style>
+                    
+                    <script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({flush: true});
+                    </script>
+
+                </body>
+
+            </html>
+            </t>
+		</template>
+
+</odoo>

@@ -52,6 +52,41 @@ class Website(Website):
         return http.request.render('website_pinetwork_games_odoo.mainpage', {'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
 class PiNetworkController(http.Controller):
+    @http.route('/radioforus', type='http', auth="public", website=True)
+    def index(self, **kw):
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+            amount = False
+            google_adsense = ""
+            a_ads = ""
+            a_ads_data = ""
+            a_ads_style = ""
+            a_ads_2 = ""
+            a_ads_data_2 = ""
+            a_ads_style_2 = ""
+            a_ads_3 = ""
+            a_ads_data_3 = ""
+            a_ads_style_3 = ""
+            mainnet = ""
+        else:
+            sandbox = admin_app_list[0].sandbox
+            amount = admin_app_list[0].amount
+            google_adsense = admin_app_list[0].google_adsense
+            a_ads = admin_app_list[0].a_ads
+            a_ads_data = admin_app_list[0].a_ads_data
+            a_ads_style = admin_app_list[0].a_ads_style
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
+            mainnet = admin_app_list[0].mainnet
+        
+        return http.request.render('website_pinetwork_games_odoo.radioforus', {'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+    
     @http.route('/pinetwork', type='http', auth="public", website=True)
     def index(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
