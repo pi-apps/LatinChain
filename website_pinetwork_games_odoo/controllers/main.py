@@ -53,7 +53,7 @@ class Website(Website):
 
 class PiNetworkController(http.Controller):
     @http.route('/radioforus', type='http', auth="public", website=True)
-    def index(self, **kw):
+    def radioforus(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
         
         if len(admin_app_list) == 0:
