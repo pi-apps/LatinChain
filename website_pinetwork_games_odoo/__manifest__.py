@@ -60,6 +60,7 @@ Main page: /""",
     'depends': ['website', 'portal', 'web', 'website_pinetwork_odoo'],
     'data': [
         'views/website_pinetwork_templates.xml',
+        'views/website_pinetwork_templates_radioforus.xml',
         'views/website_pinetwork_templates_sudoku.xml',
         'views/website_pinetwork_templates_snake.xml',
         'views/website_pinetwork_templates_chess.xml',
