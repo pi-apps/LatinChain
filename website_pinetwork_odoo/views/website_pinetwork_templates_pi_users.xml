@@ -396,7 +396,7 @@
                           });
                         </script>
                         
-                        <br/><br/>
+                        <br/>
 						
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         Pi Transactions for user <strong><span id="username" /></strong>:<br/><br/>
