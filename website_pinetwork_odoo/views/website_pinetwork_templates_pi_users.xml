@@ -289,6 +289,24 @@
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
                     <script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({article:'auto'});
+                      !function (e, f, u, i) {
+                        if (!document.getElementById(i)){
+                          e.async = 1;
+                          e.src = u;
+                          e.id = i;
+                          f.parentNode.insertBefore(e, f);
+                        }
+                      }(document.createElement('script'),
+                      document.getElementsByTagName('script')[0],
+                      '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+                      'tb_loader_script');
+                      if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
+                        {window.performance.mark('tbl_ic');}
+                    </script>
+                    
+                    <script type="text/javascript">
                         function copyToClipboard(text) {
                             var sampleTextarea = document.createElement("textarea");
                             document.body.appendChild(sampleTextarea);
@@ -366,6 +384,20 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
+						<br/>
+						<div id="taboola-mid-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a-mid',
+                            container: 'taboola-mid-article-thumbnails',
+                            placement: 'Mid Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
+                        
+                        <br/><br/>
+						
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         Pi Transactions for user <strong><span id="username" /></strong>:<br/><br/>
                         <table id="transactions" class="display">
