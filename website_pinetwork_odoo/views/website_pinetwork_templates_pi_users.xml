@@ -319,7 +319,7 @@
                             document.body.removeChild(sampleTextarea);
                         }
                         $(document).ready( function () {
-                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            /*(adsbygoogle = window.adsbygoogle || []).push({});*/
                             
                             var pi_user_id = "", pi_user_code = "", accessToken = "";
                         
@@ -390,13 +390,7 @@
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
 						<!-- LatinChain Ad responsive -->
-						<br/>
-						<ins class="adsbygoogle"
-							 style="display:block"
-							 data-ad-client="ca-pub-2334449220276386"
-							 data-ad-slot="6625994850"
-							 data-ad-format="auto"
-							 data-full-width-responsive="true"></ins>
+						
 						
 						<br/>
 						<div id="taboola-mid-article-thumbnails"></div>
@@ -409,6 +403,17 @@
                             target_type: 'mix'
                           });
                         </script>
+                        
+                        <br/>
+						<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-2334449220276386"
+							 data-ad-slot="6625994850"
+							 data-ad-format="auto"
+							 data-full-width-responsive="true"></ins>
+					    <script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
                         
                         <br/>
 						
