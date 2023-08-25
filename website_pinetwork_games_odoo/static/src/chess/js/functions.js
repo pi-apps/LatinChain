@@ -78,7 +78,6 @@ function get_user() {
                     $('#chess-tab').show();
                     $('#chess-tab').click();
                     setTimeout(function() {
-					  alert(window.adsbygoogle);
                       (adsbygoogle = window.adsbygoogle || []).push({});
 					}, 2000);
                     
