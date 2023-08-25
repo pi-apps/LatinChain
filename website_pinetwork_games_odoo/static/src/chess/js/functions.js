@@ -77,9 +77,9 @@ function get_user() {
                     $("#button_click").hide();
                     $('#chess-tab').show();
                     $('#chess-tab').click();
+                    (adsbygoogle = window.adsbygoogle || []).push({});
                     
                     load_all_boards();
-                    (adsbygoogle = window.adsbygoogle || []).push({});
                 }
                 else
                 {
