@@ -75,7 +75,7 @@ function get_user() {
                 {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
-                    $('#chess-tab').show();
+                    $('#chess-tab').prop('disabled', false);
                     $('#chess-tab').click();
                     
                     load_all_boards();
@@ -84,7 +84,7 @@ function get_user() {
                 {
                     $("#pi_donate").hide();
                     $("#button_click").show();
-                    $('#chess-tab').hide();
+                    $('#chess-tab').prop('disabled', true);
                     $("#home-tab").click();
                 }
             }
@@ -112,7 +112,7 @@ $( document ).ready(function() {
     async function auth() {
         $("#pi_donate").hide();
         $("#button_click").show();
-        $('#chess-tab').hide();
+        $('#chess-tab').prop('disabled', true);
         $("#home-tab").click();
         
         $("#loading_word").show();

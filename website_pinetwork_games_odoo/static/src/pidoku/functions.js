@@ -50,14 +50,14 @@ function get_user() {
                 {                    
                     $("#pi_donate").hide();
                     $("#button_click").hide();
-                    $("#sudoku-tab").show();
+                    $("#sudoku-tab").prop('disabled', false);
                     $("#sudoku-tab").click();
                 }
                 else
                 {
                     $("#pi_donate").hide();
                     $("#button_click").show();
-                    $("#sudoku-tab").hide();
+                    $("#sudoku-tab").prop('disabled', true);
                     $("#home-tab").click();
                 }
             }
@@ -87,7 +87,7 @@ $( document ).ready(function() {
     async function auth() {
         $("#pi_donate").hide();
         $("#button_click").show();
-        $("#sudoku-tab").hide();
+        $("#sudoku-tab").prop('disabled', true);
         $("#home-tab").click();
         
         $("#loading_word").show();
