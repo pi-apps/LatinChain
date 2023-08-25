@@ -246,9 +246,9 @@
                                 </style>
                                 
                             </div>
-                              <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab">
+                              <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab" style="min-width: 300px !important; width: 100% !important;">
                                   <!--<span t-if="mainnet != 'Mainnet ON'">-->
-                                  <div align="center" class="container">
+                                  <div style="text-align:center; min-width: 300px !important; width: 100% !important;">
                                       <br/>
                                       <div align="center" class="container" style="text-align:center">
                                           <div id="taboola-mid-article-thumbnails-2"></div>
