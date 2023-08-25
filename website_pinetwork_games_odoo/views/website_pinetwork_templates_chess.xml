@@ -71,7 +71,7 @@
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <button disabled="true" class="nav-link" id="chess-tab" data-bs-toggle="tab" data-bs-target="#chess" type="button" role="tab" aria-controls="chess" aria-selected="false">Chess<span id="counter_span"></span></button>
+                            <button style="display: none;" class="nav-link" id="chess-tab" data-bs-toggle="tab" data-bs-target="#chess" type="button" role="tab" aria-controls="chess" aria-selected="false">Chess<span id="counter_span"></span></button>
                           </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -439,7 +439,7 @@
                         $( document ).ready(function() {
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            /*(adsbygoogle = window.adsbygoogle || []).push({});*/
                             //$("#a-ads").prop('src', $("#a_ads_val").val());
                             /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
                             $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
