@@ -35,7 +35,6 @@ function load_all_boards()
         {
             setTimeout(function() {
                 setMobileBoard();
-                (adsbygoogle = window.adsbygoogle || []).push({});
             }, 1000);
         }else{
             setTimeout(function() {
@@ -48,7 +47,6 @@ function load_all_boards()
         {
             setTimeout(function() {
                 setDesktopBoard();
-                (adsbygoogle = window.adsbygoogle || []).push({});
             }, 1000);
         }else{
             setTimeout(function() {
@@ -79,6 +77,7 @@ function get_user() {
                     $("#button_click").hide();
                     $('#chess-tab').show();
                     $('#chess-tab').click();
+                    (adsbygoogle = window.adsbygoogle || []).push({});
                     
                     load_all_boards();
                 }

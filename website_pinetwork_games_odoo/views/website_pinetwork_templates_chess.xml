@@ -248,9 +248,8 @@
                             </div>
                               <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab" style="min-width: 300px !important; width: 100% !important;">
                                   <!--<span t-if="mainnet != 'Mainnet ON'">-->
-                                  <div style="text-align:center; min-width: 300px !important; width: 100% !important;">
+                                  <div align="center" class="container" style="text-align:center; min-width: 300px !important; width: 100% !important;">
                                       <br/>
-                                      <div align="center" class="container" style="text-align:center">
                                           <div id="taboola-mid-article-thumbnails-2"></div>
                                             <script type="text/javascript">
                                               window._taboola = window._taboola || [];
@@ -269,7 +268,6 @@
 											 data-ad-slot="6625994850"
 											 data-ad-format="auto"
 											 data-full-width-responsive="true"></ins>
-                                      </div>
                                   </div>
                                   <!--</span>-->
                                   <br/>
