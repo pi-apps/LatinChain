@@ -242,7 +242,7 @@ $( document ).ready(function() {
                                     $("#button_click").prop( "disabled", false );
                                     data = JSON.parse(data);
                                     if(data.result && data.completed)
-                                        location.reload();
+                                        get_user();
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });
