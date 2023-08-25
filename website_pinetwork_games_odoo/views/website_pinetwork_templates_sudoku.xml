@@ -314,9 +314,9 @@
                                 </style>
                                 
                           </div>
-                          <div class="tab-pane" id="sudoku" style="min-width: 300px; width: 100%;">
+                          <div class="tab-pane" id="sudoku" style="min-width: 300px !important; width: 100% !important;">
                               <!--<span t-if="mainnet != 'Mainnet ON'">-->
-                              <div style="text-align:center; min-width: 300px; width: 100%;">
+                              <div style="text-align:center; min-width: 300px !important; width: 100% !important;">
                                   <br/>
                                   <div id="taboola-mid-article-thumbnails-2"></div>
                                     <script type="text/javascript">
