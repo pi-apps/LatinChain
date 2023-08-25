@@ -77,6 +77,7 @@ function get_user() {
                     $("#button_click").hide();
                     $('#chess-tab').show();
                     $('#chess-tab').click();
+                    alert(window.adsbygoogle);
                     (adsbygoogle = window.adsbygoogle || []).push({});
                     
                     load_all_boards();
@@ -242,7 +243,7 @@ $( document ).ready(function() {
                                     $("#button_click").prop( "disabled", false );
                                     data = JSON.parse(data);
                                     if(data.result && data.completed)
-                                        get_user();
+                                        location.reload();
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });
