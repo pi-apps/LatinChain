@@ -288,6 +288,9 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
+                    <script async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
+					
+                    
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
@@ -316,6 +319,8 @@
                             document.body.removeChild(sampleTextarea);
                         }
                         $(document).ready( function () {
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            
                             var pi_user_id = "", pi_user_code = "", accessToken = "";
                         
                             var myData ={};
@@ -384,6 +389,15 @@
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
+						<!-- LatinChain Ad responsive -->
+						<br/>
+						<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-2334449220276386"
+							 data-ad-slot="6625994850"
+							 data-ad-format="auto"
+							 data-full-width-responsive="true"></ins>
+						
 						<br/>
 						<div id="taboola-mid-article-thumbnails"></div>
                         <script type="text/javascript">
