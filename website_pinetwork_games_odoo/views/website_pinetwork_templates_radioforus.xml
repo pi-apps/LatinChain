@@ -36,7 +36,7 @@
                     
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js"></script>
                     
-                    <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
+                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
@@ -59,8 +59,8 @@
                     <script type="text/javascript">
                         $( document ).ready(function() {
                         
-                            /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
+                            /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});*/
                             //$("#a-ads").prop('src', $("#a_ads_val").val());
                             /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
@@ -142,7 +142,8 @@
                         </script>
                         
                         <!-- LatinChain Ad responsive -->
-                        <!--<ins class="adsbygoogle"
+                        <br/>
+                        <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
                              data-ad-slot="6625994850"
@@ -150,7 +151,7 @@
                              data-full-width-responsive="true"></ins>
                         
                         <br/>
-                                    
+                        <!--            
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-format="fluid"
