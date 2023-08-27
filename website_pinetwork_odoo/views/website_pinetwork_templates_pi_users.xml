@@ -288,7 +288,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
-                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
                     
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
@@ -318,7 +318,7 @@
                             document.body.removeChild(sampleTextarea);
                         }
                         $(document).ready( function () {
-                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            //(adsbygoogle = window.adsbygoogle || []).push({});
                             
                             var pi_user_id = "", pi_user_code = "", accessToken = "";
                         
@@ -400,7 +400,7 @@
                             target_type: 'mix'
                           });
                         </script>
-                        
+                        <!--
                         <br/>
 						<ins class="adsbygoogle"
 							 style="display:block"
@@ -408,6 +408,7 @@
 							 data-ad-slot="6625994850"
 							 data-ad-format="auto"
 							 data-full-width-responsive="true"></ins>
+			-->
                         
                         <br/>
 						
