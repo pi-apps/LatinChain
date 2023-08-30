@@ -69,6 +69,7 @@ $.post("https://latin-chain.com/api/get-external-winners", function(data, status
 "points_datetime": string, // Datetime of the last update of points in any game
 "unblocked": boolean, // If the user is verified: True is verified, False is not verified
 "unblocked_datetime": string, // Datetime of user verification
+"days_available": string, // Days available since the last unblocking
 "is_winner": boolean // If the user is winner: True is winner, False is not winner
 }
 ```
@@ -88,6 +89,7 @@ $.post("https://latin-chain.com/api/get-external-winners", function(data, status
         "points_datetime": string, // Datetime of the last update of points in any game
         "unblocked": boolean, // If the user is verified: True is verified, False is not verified
         "unblocked_datetime": string, // Datetime of user verification
+        "days_available": string, // Days available since the last unblocking
         "is_winner": boolean // If the user is winner: True is winner, False is not winner
     }
 ]
