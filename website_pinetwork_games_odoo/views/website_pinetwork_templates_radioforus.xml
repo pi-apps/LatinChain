@@ -197,7 +197,9 @@
                         <br/>-->
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
-                        <img  width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
+                        <!--<img  width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>-->
+                        <img  width="80" height="80" src="https://radioforus.com/wp-content/uploads/2023/02/Radioforus.png" style="display: block; margin-left: auto; margin-right: auto"/>
+                        
                         <h1 align="center" style="font-weight:600">Donate here</h1>
                         
                         <t t-set="amount_end" t-value="amount*10"/>
