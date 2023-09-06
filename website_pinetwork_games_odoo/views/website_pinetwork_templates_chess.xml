@@ -77,7 +77,7 @@
                             <button style="display: none;" class="nav-link" id="wikipedia-tab" data-bs-toggle="tab" data-bs-target="#wikipedia" type="button" role="tab" aria-controls="wikipedia" aria-selected="false">Wikipedia</button>
                           </li>
                         </ul>
-                        <div width="100%" height="100%" class="tab-content" id="myTabContent">
+                        <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div align="center" class="container" style="text-align:center">
                                     <!--<strong>Publicity:</strong>-->
@@ -429,11 +429,11 @@
                                             </script>
                                       </div>-->
                             </div>
-                            <div width="100%" height="100%" class="tab-pane fade show" id="wikipedia" role="tabpanel" aria-labelledby="wikipedia-tab">
+                            <div class="tab-pane fade show" id="wikipedia" role="tabpanel" aria-labelledby="wikipedia-tab">
 								<div align="center" class="container" style="text-align:center;">
 									
 								</div>
-								<iframe width="100%" height="100%" src="https://wikipedia.org"/>
+								<iframe width="100%" height="400px" src="https://wikipedia.org"/>
 							</div>
                         </div>                        
                     </div>
