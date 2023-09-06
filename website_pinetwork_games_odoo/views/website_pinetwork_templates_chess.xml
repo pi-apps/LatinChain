@@ -74,7 +74,7 @@
                             <button style="display: none;" class="nav-link" id="chess-tab" data-bs-toggle="tab" data-bs-target="#chess" type="button" role="tab" aria-controls="chess" aria-selected="false">Chess<span id="counter_span"></span></button>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <button style="display: none;" class="nav-link" id="youtube-tab" data-bs-toggle="tab" data-bs-target="#youtube" type="button" role="tab" aria-controls="youtube" aria-selected="false">Youtube</button>
+                            <button style="display: none;" class="nav-link" id="wikipedia-tab" data-bs-toggle="tab" data-bs-target="#wikipedia" type="button" role="tab" aria-controls="wikipedia" aria-selected="false">Wikipedia</button>
                           </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -429,9 +429,9 @@
                                             </script>
                                       </div>-->
                             </div>
-                            <div class="tab-pane fade show" id="youtube" role="tabpanel" aria-labelledby="youtube-tab">
+                            <div class="tab-pane fade show" id="wikipedia" role="tabpanel" aria-labelledby="wikipedia-tab">
 								<div align="center" class="container" style="text-align:center;">
-									<iframe class="responsive-iframe" src="https://m.youtube.com/?app=m"/>
+									<iframe class="responsive-iframe" src="https://wikipedia.org"/>
 								</div>
 							</div>
                         </div>                        
