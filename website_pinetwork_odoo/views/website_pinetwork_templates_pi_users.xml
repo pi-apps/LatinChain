@@ -607,7 +607,10 @@
                                 {
                                     //history.back();
                                     var anchor = document.createElement('a');
-									anchor.href = "https://radioforus.com";
+									if(['Mainnet ON', 'Mainnet OFF'].includes($("mainnet").val()))
+                                        anchor.href = "https://mainnet.radioforus.com";
+                                    else
+                                        anchor.href = "https://radioforus.com";
 									anchor.target="_blank";
 									anchor.click();
                                 }
@@ -618,6 +621,7 @@
                     <title>Transactions</title>
                 </head>
                 <body>
+                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
 						<!-- LatinChain Ad responsive -->
