@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-07 09:53+0000\n"
-"PO-Revision-Date: 2023-09-07 09:53+0000\n"
+"POT-Creation-Date: 2023-09-07 16:55+0000\n"
+"PO-Revision-Date: 2023-09-07 16:55+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -125,8 +125,8 @@ msgstr "4.- Para el Top 10 zone Snake: Tener más de 20 puntos en Snake."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "4.- On OpenMainnet we will pay each 15 days."
-msgstr "4.- En OpenMainnet vamos a pagar cada 15 días."
+msgid "4.- On OpenMainnet we will pay the 15th day of each month."
+msgstr "4.- En OpenMainnet vamos a pagar el día 15 de cada mes."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -950,8 +950,8 @@ msgstr "Transacciones"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "UTC, next payment will be 15 days after that date."
-msgstr "UTC, el próximo pago será 15 días después de esa fecha."
+msgid "UTC, next payment will be the 15th day of next month."
+msgstr "UTC, el próximo pago será el día 15 del siguiente mes."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
