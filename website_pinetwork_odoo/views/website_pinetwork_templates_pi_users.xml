@@ -607,7 +607,7 @@
                                 {
                                     //history.back();
                                     var anchor = document.createElement('a');
-									if(['Mainnet ON', 'Mainnet OFF'].includes($("mainnet").val()))
+									if(['Mainnet ON', 'Mainnet OFF'].includes($("#mainnet").val()))
                                         anchor.href = "https://mainnet.radioforus.com";
                                     else
                                         anchor.href = "https://radioforus.com";
