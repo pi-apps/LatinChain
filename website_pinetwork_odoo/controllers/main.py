@@ -619,6 +619,21 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
     
+    @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True)
+    def get_transactions(self, **kw):
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+            mainnet = ""
+            google_adsense = ""
+        else:
+            sandbox = admin_app_list[0].sandbox
+            mainnet = admin_app_list[0].mainnet
+            google_adsense = admin_app_list[0].google_adsense
+        
+        return http.request.render('website_pinetwork_odoo.list_transactions_radioforus', {'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
+    
     @http.route('/get-transactions/', type='http', auth="public", website=True)
     def get_transactions(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
