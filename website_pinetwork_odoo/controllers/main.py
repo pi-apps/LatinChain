@@ -620,7 +620,7 @@ class PiNetworkBaseController(http.Controller):
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
     
     @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True)
-    def get_transactions(self, **kw):
+    def get_transactions_radioforus(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
         if len(admin_app_list) == 0:
