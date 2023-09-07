@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-29 18:43+0000\n"
-"PO-Revision-Date: 2022-11-29 18:43+0000\n"
+"POT-Creation-Date: 2023-09-07 09:54+0000\n"
+"PO-Revision-Date: 2023-09-07 09:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid "(verified)"
+msgid "(verified,"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -72,6 +72,16 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
+msgid ""
+"<br/><br/>\n"
+"                        Current time:"
+msgstr ""
+"<br/><br/>\n"
+"                        Hora actual:"
+
+#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
 msgid ""
 "<br/><br/>\n"
@@ -104,13 +114,48 @@ msgid "A-Ads.com data"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads_data_2
+msgid "A-Ads.com data 2"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads_data_3
+msgid "A-Ads.com data 3"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads
 msgid "A-Ads.com src"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads_2
+msgid "A-Ads.com src 2"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads_3
+msgid "A-Ads.com src 3"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads_style
 msgid "A-Ads.com style"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads_style_2
+msgid "A-Ads.com style 2"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__a_ads_style_3
+msgid "A-Ads.com style 3"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_account_balance
+msgid "Account Balance"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -147,9 +192,15 @@ msgid "Admin Pi App"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_all_paid
+msgid "All winners paid"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__amount
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__amount
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
 msgid "Amount"
 msgstr "Monto"
 
@@ -168,6 +219,62 @@ msgstr ""
 #: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__action__approve
 msgid "Approve"
 msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Are you sure you want to PAY MONTHLY all winners and devs?"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Are you sure you want to PAY PERCENT devs?"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Are you sure you want to PAY devs?"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Are you sure you want to PAY winners?"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Are you sure you want to delete PAID devs?"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Are you sure you want to delete PAID winners?"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Are you sure you want to delete winners?"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Are you sure you want to fill PAID winners?"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Are you sure you want to fill winners?"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
+msgid "Back to LatinChain"
+msgstr "Volver a LatinChain"
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
+msgid "Back to RadioForUs"
+msgstr "Volver a RadioForUs"
 
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__block_points
@@ -204,9 +311,25 @@ msgid "Check Users Winners"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_chess_last
+msgid "Chess Last Points"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_chess
 msgid "Chess Points"
 msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_chess_wins
+msgid "Chess Wins"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
+msgid "Clear Cache"
+msgstr "Borrar Caché"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.actions.act_window,help:website_pinetwork_odoo.admin_pi_apps_action
@@ -234,6 +357,16 @@ msgid "Config Admin Pi Apps"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__counted_to_pay__counted
+msgid "Counted"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__counted_to_pay
+msgid "Counted to pay"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__create_uid
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__create_uid
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__create_uid
@@ -250,7 +383,6 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
 msgid "Current time:"
@@ -268,7 +400,47 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Delete Paid Devs"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Delete Paid Winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
 msgid "Delete Winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__wallet_private_seed
+msgid "Dev wallet private seed"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_devs_ids
+msgid "Devs"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_devs_paid_ids
+msgid "Devs Paid"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_devs_completed_payments
+msgid "Devs To Pay completed payments"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_devs_to_pay_per_user
+msgid "Devs To Pay per user"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_devs_to_pay_percent
+msgid "Devs To Pay percent (from 0 to 100)"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -290,7 +462,22 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Fill Paid Winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
 msgid "Fill Winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__from_address
+msgid "From address"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__google_adsense_ads_txt
+msgid "Google Adsense ads.txt"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -379,6 +566,7 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__memo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
 msgid "Memo"
 msgstr ""
 
@@ -387,6 +575,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__name
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__name
 msgid "Name"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__counted_to_pay__not_counted
+msgid "Not counted"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -420,6 +613,31 @@ msgid "Pass Key"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Pay Devs"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Pay Devs Percent"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Pay Winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Pay winners monthly"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_paying
+msgid "Paying to winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__payment_id
 msgid "PaymentId"
 msgstr ""
@@ -437,6 +655,13 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:res.groups,name:website_pinetwork_odoo.group_pi_internal_company_user
 msgid "Pi Internal Company User Group"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.actions.server,name:website_pinetwork_odoo.pi_pay_winners_base_v1_ir_actions_server
+#: model:ir.cron,cron_name:website_pinetwork_odoo.pi_pay_winners_base_v1
+#: model:ir.cron,name:website_pinetwork_odoo.pi_pay_winners_base_v1
+msgid "Pi Pay Winners"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -507,8 +732,23 @@ msgid "Send"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_snake_last
+msgid "Snake Last Points"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_snake
 msgid "Snake Points"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_snake_wins
+msgid "Snake Wins"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_sudoku_last
+msgid "Sudoku Last Points"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -517,8 +757,14 @@ msgid "Sudoku Points"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_sudoku_wins
+msgid "Sudoku Wins"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__txid
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
 msgid "TXID"
 msgstr ""
 
@@ -569,6 +815,13 @@ msgid "UTC (Chess:"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "UTC)"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
 msgid "UTC,"
 msgstr ""
@@ -591,6 +844,7 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
 msgid ""
 "UTC<br/><br/>\n"
 "                        Pi Transactions for user <strong><span id=\"username\"/></strong>:<br/><br/>"
@@ -601,6 +855,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__unblocked
 msgid "Unblocked"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__unblocked_datetime
+msgid "Unblocked datetime"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -659,8 +918,43 @@ msgid "Winners Paid Apps"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_paid_ids_text
+msgid "Winners Paid Text"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_ids_text
+msgid "Winners Text"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_to_pay
 msgid "Winners To Pay"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_completed_payments
+msgid "Winners To Pay completed payments"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_to_pay_days
+msgid "Winners To Pay days"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_to_pay_per_user
+msgid "Winners To Pay per user"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_to_pay_percent
+msgid "Winners To Pay percent (from 0 to 100)"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_to_pay_seconds
+msgid "Winners To fill winners seconds"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -676,6 +970,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_paid_datetime
 msgid "Winners paid datetime"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_winners_ids_wallets
+msgid "Winners pi wallet addresses"
 msgstr ""
 
 #. module: website_pinetwork_odoo
