@@ -112,7 +112,10 @@
                                 if(result)
                                 {
                                     //history.back();
-                                    location.href="/";
+                                    var anchor = document.createElement('a');
+									anchor.href = "/";
+									anchor.target="_blank";
+									anchor.click();
                                 }
                             });
                             
