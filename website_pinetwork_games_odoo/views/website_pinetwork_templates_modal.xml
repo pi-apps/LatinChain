@@ -45,7 +45,7 @@
 		</template>
         
         <template id="latinchain_x" name="Modal View">
-            
+            <t t-call="web.layout">
                 &lt;!DOCTYPE html&gt;
                 <html>
                     <head>
@@ -78,7 +78,7 @@
 
                     </body>
                 </html>
-            
+            </t>
 		</template>
 
 </odoo>
