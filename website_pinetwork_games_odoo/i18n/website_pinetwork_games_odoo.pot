@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-07 16:55+0000\n"
-"PO-Revision-Date: 2023-09-07 16:55+0000\n"
+"POT-Creation-Date: 2023-09-11 01:42+0000\n"
+"PO-Revision-Date: 2023-09-11 01:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -166,6 +166,13 @@ msgid "<br/><br/>Enjoy:<br/><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "<br/><br/>LatinChain TV:<br/><br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/><span id=\"loading_word\" style=\"display: none;\">Loading...<br/></span>"
 msgstr ""
@@ -180,6 +187,11 @@ msgstr ""
 msgid ""
 "<br/>INFO:<br/><br/>\n"
 "                            Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.<br/><br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<br/>LatinChain TV:<br/><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
