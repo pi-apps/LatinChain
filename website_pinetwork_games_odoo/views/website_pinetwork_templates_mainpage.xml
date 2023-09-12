@@ -164,7 +164,7 @@
                 </t>
                 <div class="container" style="text-align:center">
                     <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
-                        <!--<strong>Google translate</strong>-->
+                        <strong>Google translate</strong>
                     </div>
                     <div id="google_translate_element" t-att-style="hide_google_translate_2"></div>
                 </div>
@@ -249,7 +249,7 @@
                     });
                 </script>
 
-                <!--<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 
            </xpath>
            
