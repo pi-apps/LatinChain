@@ -80,7 +80,6 @@
                               }
                               new google.translate.TranslateElement({pageLanguage: lang_google,
                                                                     autoDisplay: true,
-                                                                    multilanguagePage: true,
                                                                     layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                                     'google_translate_element');
                              
@@ -210,7 +209,6 @@
                           
                           new google.translate.TranslateElement({pageLanguage: lang_google,
                                                                 autoDisplay: true,
-                                                                multilanguagePage: true,
                                                                 layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
                                                                 'google_translate_element');
                          
