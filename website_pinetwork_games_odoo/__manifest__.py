@@ -22,7 +22,7 @@
     'summary': 'LatinChain Platform (Games Engine and Platform in Odoo for Pi)',
     'version': '2.1',
     "author": "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
-    "website": "https://cr-innova.negocio.site/",
+    "website": "https://rockcesar.github.io/",
     "contributors": [
         "César Cordero Rodríguez <cesar.cordero.r@gmail.com>",
     ],
