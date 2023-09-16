@@ -297,7 +297,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
-                    <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
+                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
@@ -408,8 +408,8 @@
 
                         $( document ).ready(function() {
                         
-                            /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
+                            /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});*/
                             //$("#a-ads").prop('src', $("#a_ads_val").val());
                             /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
@@ -771,7 +771,7 @@
                         </script>
                         
                         <!-- LatinChain Ad responsive -->
-			<!--
+			
                         <br/>
                         <ins class="adsbygoogle"
                              style="display:block"
@@ -780,7 +780,7 @@
                              data-ad-format="auto"
                              data-full-width-responsive="true"></ins>
                         
-                        <br/>
+                        <!--<br/>
                                     
                         <ins class="adsbygoogle"
                              style="display:block"
