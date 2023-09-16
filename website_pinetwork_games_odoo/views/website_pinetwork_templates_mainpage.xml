@@ -756,20 +756,6 @@
                         </section>
                     </div>
                     <div class="container" style="text-align:center">
-                        <!--<strong>Publicity:</strong>-->
-                        <br/>
-                        
-                        <div id="taboola-mid-article-thumbnails"></div>
-                        <script type="text/javascript">
-                          window._taboola = window._taboola || [];
-                          _taboola.push({
-                            mode: 'alternating-thumbnails-a-mid',
-                            container: 'taboola-mid-article-thumbnails',
-                            placement: 'Mid Article Thumbnails',
-                            target_type: 'mix'
-                          });
-                        </script>
-                        
                         <!-- LatinChain Ad responsive -->
 			
                         <br/>
@@ -788,6 +774,21 @@
                              data-ad-layout-key="-gc+4r+1p-d0+h0"
                              data-ad-client="ca-pub-2334449220276386"
                              data-ad-slot="6758976353"></ins>-->
+                        <!--<strong>Publicity:</strong>-->
+                        <br/>
+                        
+                        <div id="taboola-mid-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a-mid',
+                            container: 'taboola-mid-article-thumbnails',
+                            placement: 'Mid Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
+                        
+                        
                         <div align="center" style="text-align:center">
                             <!--<br/>
                             <script type="text/javascript">
