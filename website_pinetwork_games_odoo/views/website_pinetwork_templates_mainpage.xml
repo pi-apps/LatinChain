@@ -296,9 +296,9 @@
                     <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                    
+                    <!--
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
-                    
+                    -->
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
@@ -408,9 +408,9 @@
 
                         $( document ).ready(function() {
                         
+                            /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                            /*(adsbygoogle = window.adsbygoogle || []).push({});*/
+                            (adsbygoogle = window.adsbygoogle || []).push({});*/
                             //$("#a-ads").prop('src', $("#a_ads_val").val());
                             /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
                             $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
@@ -758,7 +758,7 @@
                     </div>
                     <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive -->
-			
+                        <!--
                         <br/>
                         <ins class="adsbygoogle"
                              style="display:block"
@@ -766,7 +766,7 @@
                              data-ad-slot="6625994850"
                              data-ad-format="auto"
                              data-full-width-responsive="true"></ins>
-                        
+                        -->
                         <!--<br/>
                                     
                         <ins class="adsbygoogle"
@@ -1015,7 +1015,7 @@
                             </div>
                         </div>
                         <br/><br/>
-			
+                        <!--
                         <ins class="adsbygoogle"
 							 style="display:block"
 							 data-ad-client="ca-pub-2334449220276386"
@@ -1023,6 +1023,7 @@
 							 data-ad-format="auto"
 							 data-full-width-responsive="true"></ins>
                         <br/>
+                        -->
                            
                         <div id="taboola-below-article-thumbnails"></div>
                         <script type="text/javascript">
