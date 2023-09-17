@@ -191,7 +191,7 @@
                                         <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                                         -->
                                         <br/><br/>LatinChain TV:<br/><br/>
-                                        <iframe width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
+                                        <iframe id="latinchain-tv" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
                                     </div>
                                     
                                     <div style="text-align:center">
@@ -456,7 +456,8 @@
                             $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
                             //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
                             $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS');
-                        
+                            $("#latinchain-tv").prop('src', 'https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG');
+                            
                             function is_touch_device() {
                                 return 'ontouchstart' in window || navigator.maxTouchPoints;
                             };
