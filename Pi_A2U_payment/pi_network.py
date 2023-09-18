@@ -53,33 +53,43 @@ class PiNetwork:
 
     def create_payment(self, payment_data):
         try:
+
             if not self.validate_payment_data(payment_data):
                 if __debug__:
                     print("No valid payments found. Creating a new one...")
-            
+
             balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
             balance_found = False
             for i in balances:
                 if i["asset_type"] == "native":
                     balance_found = True
-                    if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
+                    if (float(payment_data["amount"]) + (float(self.fee) / 10000000)) > float(i["balance"]):
                         return ""
                     break
-                    
+
             if balance_found == False:
                 return ""
 
             obj = {
-              'payment': payment_data,
+                'payment': payment_data,
             }
-            
-            obj = json.dumps(obj)            
-            url = self.base_url + "/v2/payments"
-            re = requests.post(url,data=obj,json=obj,headers=self.get_http_headers())
-            parsed_response = self.handle_http_response(re)
 
-            identifier = parsed_response["identifier"]
-            self.open_payments[identifier] = parsed_response
+            obj = json.dumps(obj)
+            url = self.base_url + "/v2/payments"
+            res = requests.post(url, data=obj, json=obj, headers=self.get_http_headers())
+            parsed_response = self.handle_http_response(res)
+
+            identifier = ""
+            identifier_data = {}
+
+            if 'error' in parsed_response:
+                identifier = parsed_response['payment']["identifier"]
+                identifier_data = parsed_response['payment']
+            else:
+                identifier = parsed_response["identifier"]
+                identifier_data = parsed_response
+
+            self.open_payments[identifier] = identifier_data
 
             return identifier
         except:
@@ -205,7 +215,7 @@ class PiNetwork:
             )
             .add_text_memo(memo)
             .append_payment_op(to_address, s_sdk.Asset.native(), amount)
-            .set_timeout(30)
+            .set_timeout(600)
             .build()
         )
         

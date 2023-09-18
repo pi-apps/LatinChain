@@ -73,18 +73,25 @@ class PiNetwork:
                 return ""
 
             obj = {
-              'payment': payment_data,
+                'payment': payment_data,
             }
-            
-            obj = json.dumps(obj)            
-            url = self.base_url + "/v2/payments"
-            re = requests.post(url,data=obj,json=obj,headers=self.get_http_headers())
-            parsed_response = self.handle_http_response(re)
-            
-            _logger.info("Create App2User payment: " + str(parsed_response))
 
-            identifier = parsed_response["identifier"]
-            self.open_payments[identifier] = parsed_response
+            obj = json.dumps(obj)
+            url = self.base_url + "/v2/payments"
+            res = requests.post(url, data=obj, json=obj, headers=self.get_http_headers())
+            parsed_response = self.handle_http_response(res)
+
+            identifier = ""
+            identifier_data = {}
+
+            if 'error' in parsed_response:
+                identifier = parsed_response['payment']["identifier"]
+                identifier_data = parsed_response['payment']
+            else:
+                identifier = parsed_response["identifier"]
+                identifier_data = parsed_response
+
+            self.open_payments[identifier] = identifier_data
 
             return identifier
         except:
