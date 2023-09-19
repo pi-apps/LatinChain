@@ -321,8 +321,8 @@ class admin_apps(models.Model):
         for self_i in self:
             self_i.delete_paid_winners()
             self_i.pay_winners()
-            self_i.delete_paid_devs()
-            self_i.pay_devs_percent()
+            #self_i.delete_paid_devs()
+            #self_i.pay_devs_percent()
     
     def pay_winners(self):
         for self_i in self:
