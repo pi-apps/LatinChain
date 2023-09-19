@@ -217,7 +217,7 @@ class PiNetwork:
             )
             .add_text_memo(memo)
             .append_payment_op(to_address, s_sdk.Asset.native(), amount)
-            .set_timeout(30)
+            .set_timeout(180)
             .build()
         )
         
