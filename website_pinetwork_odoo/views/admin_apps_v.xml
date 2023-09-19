@@ -19,7 +19,7 @@
                 <sheet>
                     <notebook>
                         <page string="Admin Pi App">
-                            <group><!--<group col="4">
+                            <group string="App config"><!--<group col="4">
                                 <group colspan="2" col="2">-->
                                     <field name="id"/>
                                     <field name="name"/>
@@ -42,6 +42,9 @@
                                     <field name="a_ads_3"/>
                                     <field name="a_ads_data_3"/>
                                     <field name="a_ads_style_3"/>
+                                    <field name="block_points"/>
+                            </group>
+                            <group string="Winners config">
                                     <field name="pi_users_winners_datetime" attrs="{'required': [('pi_users_winners_count', '>', 0)]}"/>
                                     <field name="pi_users_winners_count"/>
                                     <field name="pi_users_winners_ids" widget="many2many_tags"/>
@@ -58,16 +61,20 @@
                                     <field name="pi_users_winners_to_pay"/>
                                     <field name="pi_users_winners_to_pay_per_user"/>
                                     <field name="pi_users_winners_completed_payments"/>
+                                    <field name="pi_users_winners_html"/>
+                            </group>
+                            <group string="Devs config">
                                     <field name="pi_users_devs_ids" widget="many2many_tags"/>
                                     <field name="pi_users_devs_paid_ids" widget="many2many_tags"/>
                                     <field name="pi_users_devs_to_pay_per_user"/>
                                     <field name="pi_users_devs_to_pay_percent"/>
                                     <field name="pi_users_devs_completed_payments"/>
-                                    <field name="block_points"/>
-                                    <field name="pi_users_winners_html"/>
-                                    <field name="pi_transactions_ids"/>
+                            </group>
+                            <group string="Announcements message">
                                     <field name="announcement_html"/>
-                                <!--</group>-->
+                            </group>
+                            <group string="Transactions">        
+                                    <field name="pi_transactions_ids"/>
                             </group>
                         </page>
                     </notebook>
