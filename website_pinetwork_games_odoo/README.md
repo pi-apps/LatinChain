@@ -36,6 +36,6 @@ snake (MIT License) is the Super Snake. It's a modification of https://github.co
 chess (GPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021)
 
 piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
-piapp-example can be browsable here: https://github.com/rockcesar/PiNetworkDevelopments/tree/master/piapp-example
+piapp-example can be browsable here: https://github.com/rockcesar/LatinChainDevelopments/tree/master/piapp-example
 
 More Info: https://github.com/rockcesar/LatinChainDevelopments
