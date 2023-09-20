@@ -40,10 +40,7 @@ Apps published
 LatinChain Platform:
 https://latin-chain.com
 
-Pidoku
-Snake
-Chess
-PiApp Example
+Pidoku, Snake, Chess, App Example for Pi
 
 LatinChain Platform (First App in Odoo for Pi):
 https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/
