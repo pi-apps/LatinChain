@@ -26,7 +26,8 @@ To test, you have to use Pi Browser.
 
 Main page: /
 
-Based on the following softwares:
+Based on the following softwares
+-----------------
 
 sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License)
 
