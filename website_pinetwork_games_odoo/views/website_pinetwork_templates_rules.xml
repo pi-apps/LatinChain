@@ -46,7 +46,7 @@
                             <h3>2.- Be in the first 10 on the Leaders Board or in the Top 10 Board (Top 10 zone, Top 10 zone Chess, Top 10 zone Snake or Top 10 zone Sudoku). It is filled automatically at 16:00 UTC.</h3>
                             <h3>3.- All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.</h3>
                             <h3>4.- On OpenMainnet we will pay the 15th day of each month.<span t-if="pi_users_winners_paid_datetime"> Last payment was on <span t-esc="pi_users_winners_paid_datetime" /> UTC, next payment will be the 15th day of next month.</span></h3>
-                            <br/>
+                            <br/><br/><br/>
                         </div>
 
                     </body>
