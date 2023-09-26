@@ -39,9 +39,9 @@
                     <script src="/website_pinetwork_games_odoo/static/src/pidoku/assets/js/app.js"></script>
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js"></script>
-                    <!--
+                    
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
-                    -->
+                    
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
@@ -72,9 +72,9 @@
                     <script type="text/javascript">
                         $( document ).ready(function() {
                         
-                            /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                            (adsbygoogle = window.adsbygoogle || []).push({});*/
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            //(adsbygoogle = window.adsbygoogle || []).push({});
                             //$("#a-ads").prop('src', $("#a_ads_val").val());
                             /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
                             $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
@@ -160,7 +160,7 @@
                           <div class="tab-pane active" id="home">
                                 <div style="text-align:center">
                                     <!-- LatinChain Ad responsive -->
-                                    <!--
+                                    
                                     <br/>
                                     <ins class="adsbygoogle"
                                          style="display:block"
@@ -168,7 +168,7 @@
                                          data-ad-slot="6625994850"
                                          data-ad-format="auto"
                                          data-full-width-responsive="true"></ins>
-                                    -->
+                                    
                                     <!--
                                     <br/>
                                     
@@ -279,7 +279,7 @@
                                     </div>
                                     
                                     <br/><br/>
-                                    <!--
+                                    
                                     <ins class="adsbygoogle"
 										 style="display:block"
 										 data-ad-client="ca-pub-2334449220276386"
@@ -287,7 +287,7 @@
 										 data-ad-format="auto"
 										 data-full-width-responsive="true"></ins>
                                     <br/>
-                                    -->
+                                    
                                     <div id="taboola-below-article-thumbnails"></div>
                                     <script type="text/javascript">
                                       window._taboola = window._taboola || [];
@@ -332,7 +332,7 @@
                           <div class="tab-pane" id="sudoku" >
                               <!--<span t-if="mainnet != 'Mainnet ON'">-->
                               <div style="text-align:center;">
-                                  <!--
+                                  
                                   <br/>
                                     <ins class="adsbygoogle"
 										 style="display:block"
@@ -340,7 +340,7 @@
 										 data-ad-slot="6625994850"
 										 data-ad-format="auto"
 										 data-full-width-responsive="true"></ins>
-                                  -->
+                                  
                                   <br/>
                                   <div id="taboola-mid-article-thumbnails-2"></div>
                                     <script type="text/javascript">
