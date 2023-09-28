@@ -81,7 +81,9 @@ function get_user() {
                       (adsbygoogle = window.adsbygoogle || []).push({});
 					}, 2000);*/
                     
-                    load_all_boards();
+                    setTimeout(function() {
+                      load_all_boards();
+					}, 2000);
                 }
                 else
                 {
