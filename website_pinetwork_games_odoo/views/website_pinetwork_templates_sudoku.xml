@@ -160,8 +160,18 @@
                       });
                     </script>
                     </div>
-                    
-                    <ul class="nav nav-pills" id="myTab" style="background-color: #e3f2fd;">
+                    <style>
+                        .sticky {
+                          position: fixed;
+                          top: 0;
+                          width: 100%;
+                        }
+                        #translate_text_latinchain
+                        {
+                          margin-top: 50px !important;
+                        }
+                    </style>
+                    <ul class="nav nav-pills sticky" id="myTab" style="background-color: #e3f2fd;">
                       <li class="active" role="presentation">
                         <a href="#home" id="home-tab" data-toggle="tab">Home</a>
                       </li>
