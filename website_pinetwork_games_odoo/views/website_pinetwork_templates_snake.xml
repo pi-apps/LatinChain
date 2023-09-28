@@ -190,7 +190,7 @@
                         });
                     });
                 </script>
-                <div class="intro">
+                <div class="intro" style="width: 100%; text-align: center">
                     <!--<iframe data-aa="1429940" src="//ad.a-ads.com/1429940?size=120x60" scrolling="no" style="opacity: 0.3; width:120px; height:60px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
                     <br>-->
                     
@@ -200,16 +200,17 @@
                         <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal transparent" style="display: none;" lang="en-US"/>
                         <button id="button_click" name="button_click" class="transparent" disabled="true">Unblock with <span t-esc="amount" /> Pi</button>
                     </p>
-                    <p>
+                    <div style="margin-left: 35% !important;">
                         <!--<div style="min-height: 60px;"></div>-->
-                        <div class="square-borderless"></div><div class="square-borderless"></div><div class="square-borderless"></div>
+                        <div class="square-borderless"></div>
                         <div class="square" id="up" draggable="true">&#8593;</div>
-                        <br/><br/><div class="square-borderless"></div><div class="square-borderless"></div>
+                        <br/><br/>
                         <div class="square" id="left" draggable="true">&#8592;</div>
                         <div class="square-borderless"></div>
                         <div class="square" id="right" draggable="true">&#8594;</div>
-                        <br/><br/><div class="square-borderless"></div><div class="square-borderless"></div><div class="square-borderless"></div>
-                        <div class="square" id="down" draggable="true">&#8595;</div></p>
+                        <br/><br/><div class="square-borderless"></div>
+                        <div class="square" id="down" draggable="true">&#8595;</div>
+                    </div>
                     <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
                 </div>
 
