@@ -79,11 +79,11 @@ function get_user() {
                     $('#chess-tab').click();
                     /*setTimeout(function() {
                       (adsbygoogle = window.adsbygoogle || []).push({});
-					}, 2000);*/
+					}, 1000);*/
                     
                     setTimeout(function() {
                       load_all_boards();
-					}, 2000);
+					}, 1000);
                 }
                 else
                 {
