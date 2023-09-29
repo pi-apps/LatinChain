@@ -145,7 +145,7 @@
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
-                    <div style="text-align:center">
+                    <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive -->
                         <div style="margin: 10px">
                             <br/>
@@ -172,44 +172,9 @@
                               });
                             </script>
                         </div>
+                    </div>    
                         
-                        <div align="center" style="text-align:center">
-                            <!--<br/>
-                            <script type="text/javascript">
-                                atOptions = {
-                                    'key' : 'b3626277f6615b27c340298a132b7897',
-                                    'format' : 'iframe',
-                                    'height' : 250,
-                                    'width' : 300,
-                                    'params' : {}
-                                };
-                            </script>
-                            <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>-->
-                            <!--<iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>-->
-                        </div>
-                        <!--<script type="text/javascript">
-                            atOptions = {
-                                'key' : 'b3626277f6615b27c340298a132b7897',
-                                'format' : 'iframe',
-                                'height' : 250,
-                                'width' : 300,
-                                'params' : {}
-                            };
-                        </script>
-                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
-                        <br/>
-                        <script type="text/javascript">
-                            atOptions = {
-                                'key' : '1771e7291ef3d0a686ff7e2bb191f557',
-                                'format' : 'iframe',
-                                'height' : 50,
-                                'width' : 320,
-                                'params' : {}
-                            };
-                        </script>
-                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/1771e7291ef3d0a686ff7e2bb191f557/invoke.js"></script>
-                        <br/>-->
-                        <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
+                    <div style="text-align:center">
                         <style>
                             .sticky {
                               position: fixed;
@@ -279,9 +244,9 @@
                                 <iframe id="tiesto" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                             </div>
                         </div>
-                        
-                        <br/><br/>
-                        
+                    </div>
+                    <br/><br/>
+                    <div class="container" style="text-align:center">
                         <div style="margin: 10px">
                             <!-- LatinChain Ad responsive 2 -->
                             <ins class="adsbygoogle"
