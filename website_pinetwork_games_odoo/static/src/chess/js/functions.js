@@ -76,12 +76,11 @@ function get_user() {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     $('#chess-tab').show();
+                    $("#home-tab").prop( "disabled", true );
                     $('#chess-tab').click();
                     /*setTimeout(function() {
                       (adsbygoogle = window.adsbygoogle || []).push({});
 					}, 1000);*/
-                    
-                    $("#home-tab").prop( "disabled", true );
                     
                     setTimeout(function() {
                       load_all_boards();
