@@ -84,7 +84,9 @@ function get_user() {
                     
                     setTimeout(function() {
                       load_all_boards();
-                      $("#home-tab").prop( "disabled", false );
+                      setTimeout(function() {
+                        $("#home-tab").prop( "disabled", false );
+                      }, 2000);
 					}, 1000);
                 }
                 else
