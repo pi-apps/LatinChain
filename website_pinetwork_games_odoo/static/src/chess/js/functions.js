@@ -81,8 +81,11 @@ function get_user() {
                       (adsbygoogle = window.adsbygoogle || []).push({});
 					}, 1000);*/
                     
+                    $("#home-tab").prop( "disabled", true );
+                    
                     setTimeout(function() {
                       load_all_boards();
+                      $("#home-tab").prop( "disabled", false );
 					}, 1000);
                 }
                 else
