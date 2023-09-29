@@ -147,31 +147,29 @@
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
                     <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive -->
-                        <div style="margin: 10px">
-                            <br/>
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-client="ca-pub-2334449220276386"
-                                 data-ad-slot="6625994850"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true"></ins>
-                            <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                            
-                            <br/>
-                            
-                            <div id="taboola-mid-article-thumbnails"></div>
-                            <script type="text/javascript">
-                              window._taboola = window._taboola || [];
-                              _taboola.push({
-                                mode: 'alternating-thumbnails-a-mid',
-                                container: 'taboola-mid-article-thumbnails',
-                                placement: 'Mid Article Thumbnails',
-                                target_type: 'mix'
-                              });
-                            </script>
-                        </div>
+                        <br/>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="6625994850"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        
+                        <br/>
+                        
+                        <div id="taboola-mid-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a-mid',
+                            container: 'taboola-mid-article-thumbnails',
+                            placement: 'Mid Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
                     </div>    
                         
                     <div style="text-align:center">
@@ -247,31 +245,28 @@
                     </div>
                     <br/><br/>
                     <div class="container" style="text-align:center">
-                        <div style="margin: 10px">
-                            <!-- LatinChain Ad responsive 2 -->
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-client="ca-pub-2334449220276386"
-                                 data-ad-slot="9525388880"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true"></ins>
-                            <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                            <br/>
-                            
-                            <div id="taboola-below-article-thumbnails"></div>
-                            <script type="text/javascript">
-                              window._taboola = window._taboola || [];
-                              _taboola.push({
-                                mode: 'alternating-thumbnails-a',
-                                container: 'taboola-below-article-thumbnails',
-                                placement: 'Below Article Thumbnails',
-                                target_type: 'mix'
-                              });
-                            </script>
-                        </div>
+                        <!-- LatinChain Ad responsive 2 -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="9525388880"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        <br/>
                         
+                        <div id="taboola-below-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a',
+                            container: 'taboola-below-article-thumbnails',
+                            placement: 'Below Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
                     </div>
                     
                     <button id="myBtn"><a id="myABtn" href="#top" style="color: white">Top</a></button>
