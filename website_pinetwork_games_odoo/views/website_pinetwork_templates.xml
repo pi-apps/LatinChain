@@ -121,7 +121,7 @@
                     </script>
                 </head>
 
-                <body>
+                <body style="text-align: center">
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="amount" t-att-value="amount"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>

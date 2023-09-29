@@ -411,7 +411,7 @@
                     
                     <title>Transactions</title>
                 </head>
-                <body>
+                <body style="text-align: center">
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive -->
@@ -620,7 +620,7 @@
                     
                     <title>Transactions</title>
                 </head>
-                <body>
+                <body style="text-align: center">
                     <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
