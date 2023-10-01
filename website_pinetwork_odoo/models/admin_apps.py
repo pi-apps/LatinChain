@@ -63,7 +63,7 @@ class pi_transactions(models.Model):
     def _compute_txid_url(self):
         for pit in self:
             if pit.txid:
-                pit.txid_url = "https://minepi.com/blockexplorer/tx/" + pit.txid
+                pit.txid_url = "https://blockexplorer.minepi.com/tx/" + pit.txid
             else:
                 pit.txid_url = ""
     
