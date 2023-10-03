@@ -296,9 +296,9 @@
                     <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                    
+                    <!--
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
-                    
+                    -->
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
@@ -758,8 +758,9 @@
                     </div>
                     <div class="container" style="text-align:center">
                         
-                        <br/>
                         <!-- LatinChain Ad responsive -->
+                        <!--
+                        <br/>
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
@@ -769,16 +770,7 @@
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-                        
-                        <!--<br/>
-                                    
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-format="fluid"
-                             data-ad-layout-key="-gc+4r+1p-d0+h0"
-                             data-ad-client="ca-pub-2334449220276386"
-                             data-ad-slot="6758976353"></ins>-->
-                        <!--<strong>Publicity:</strong>-->
+                        -->
                         <br/>
                         
                         <div id="taboola-mid-article-thumbnails"></div>
@@ -1020,6 +1012,7 @@
                         <br/><br/>
                         
                         <!-- LatinChain Ad responsive 2 -->
+                        <!--
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
@@ -1030,7 +1023,7 @@
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
                         <br/>
-                        
+                        -->
                         <div id="taboola-below-article-thumbnails"></div>
                         <script type="text/javascript">
                           window._taboola = window._taboola || [];
