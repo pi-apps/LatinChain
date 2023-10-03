@@ -147,33 +147,7 @@
                         </p>
                     </div>
                     
-                    <div style="margin: 10px">
                     
-                    <!-- LatinChain Ad responsive -->
-                    <!--
-                    <br/>
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-2334449220276386"
-                         data-ad-slot="6625994850"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    -->
-                    <br/>
-                    <div id="taboola-mid-article-thumbnails"></div>
-                    <script type="text/javascript">
-                      window._taboola = window._taboola || [];
-                      _taboola.push({
-                        mode: 'alternating-thumbnails-a-mid',
-                        container: 'taboola-mid-article-thumbnails',
-                        placement: 'Mid Article Thumbnails',
-                        target_type: 'mix'
-                      });
-                    </script>
-                    </div>
                     <style>
                         .sticky {
                           position: fixed;
@@ -195,6 +169,34 @@
                       </li>
                     </ul>
                     <div id="app-wrap" class="container-narrow hidden">
+                        <div style="margin: 10px">
+                        
+                            <!-- LatinChain Ad responsive -->
+                            <!--
+                            <br/>
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-2334449220276386"
+                                 data-ad-slot="6625994850"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                            -->
+                            <br/>
+                            <div id="taboola-mid-article-thumbnails"></div>
+                            <script type="text/javascript">
+                              window._taboola = window._taboola || [];
+                              _taboola.push({
+                                mode: 'alternating-thumbnails-a-mid',
+                                container: 'taboola-mid-article-thumbnails',
+                                placement: 'Mid Article Thumbnails',
+                                target_type: 'mix'
+                              });
+                            </script>
+                        </div>
+                        
                         <div class="tab-content" id="myTabContent" style="padding:10px">
                           <div class="tab-pane active" id="home">
                                 <div style="text-align:center">
