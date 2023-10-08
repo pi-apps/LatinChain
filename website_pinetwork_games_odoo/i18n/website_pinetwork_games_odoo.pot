@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-08 00:50+0000\n"
-"PO-Revision-Date: 2023-10-08 00:50+0000\n"
+"POT-Creation-Date: 2023-10-08 08:53+0000\n"
+"PO-Revision-Date: 2023-10-08 08:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -386,6 +386,16 @@ msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...</span><br/>
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>App Store</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>Play Store</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.new_header
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.new_header_layout
 msgid "<strong>Translate</strong>"
@@ -406,11 +416,6 @@ msgstr ""
 msgid ""
 "All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>\n"
 "                                            Here you can watch your incoming and outcoming transactions:<br/>"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "App Store"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -564,9 +569,9 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Welcome "
-"to LatinChain Platform (Games from Latin America for Pi). Increase Pi mining"
-" power <i class=\"fa fa-bolt\"/> using this app. If you don't have it yet, "
-"download Pi Browser on"
+"to LatinChain Platform (Games from Latin America for Pi). Increase your Pi "
+"mining power <i class=\"fa fa-bolt\"/> using this app. If you don't have it "
+"yet, download Pi Browser on"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -738,11 +743,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Play Chess Against the best AI Chess Player (Stockfish)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Play Store"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

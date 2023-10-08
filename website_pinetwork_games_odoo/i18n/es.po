@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-08 00:51+0000\n"
-"PO-Revision-Date: 2023-10-08 00:51+0000\n"
+"POT-Creation-Date: 2023-10-08 08:53+0000\n"
+"PO-Revision-Date: 2023-10-08 08:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -449,6 +449,16 @@ msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...</span><br/>
 msgstr "<span id=\"loading_word\" style=\"display: none;\">Cargando...</span>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>App Store</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>Play Store</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.new_header
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.new_header_layout
 msgid "<strong>Translate</strong>"
@@ -472,11 +482,6 @@ msgid ""
 msgstr ""
 "Todos los pagos de premios se pagarán automáticamente a su Pi Wallet asociada en su navegador Pi.<br/><br/>\n"
 "                                            Aquí puede ver sus transacciones entrantes y salientes:<br/>"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "App Store"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -631,14 +636,14 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Hi<strong><span id=\"username\"/></strong><span id=\"verified\"/>. Welcome "
-"to LatinChain Platform (Games from Latin America for Pi). Increase Pi mining"
-" power <i class=\"fa fa-bolt\"/> using this app. If you don't have it yet, "
-"download Pi Browser on"
+"to LatinChain Platform (Games from Latin America for Pi). Increase your Pi "
+"mining power <i class=\"fa fa-bolt\"/> using this app. If you don't have it "
+"yet, download Pi Browser on"
 msgstr ""
 "Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. "
 "Bienvenido(a) a LatinChain Platform (Games from Latin America for Pi). "
-"Incrementa tu poder de minería de Pi <i class=\"fa fa-bolt\"/> usando esta app. Si"
-" no lo tienes aún, descarga Pi Browser en"
+"Incrementa tu poder de minería de Pi <i class=\"fa fa-bolt\"/> usando esta "
+"app. Si no lo tienes aún, descarga Pi Browser en"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -814,11 +819,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Play Chess Against the best AI Chess Player (Stockfish)"
 msgstr "Juega Ajedrez contra la mejor AI Chess Player (Stockfish)"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Play Store"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
