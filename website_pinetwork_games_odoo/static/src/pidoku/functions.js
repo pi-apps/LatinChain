@@ -47,9 +47,10 @@ function get_user() {
             {
                 passkey=data.passkey;
                 if(data.unblocked)
-                {                    
+                {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
+                    $(".hide_when_unblock").hide();
                     $("#sudoku-tab").show();
                     $("#sudoku-tab").click();
                     /*setTimeout(function() {
