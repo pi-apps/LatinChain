@@ -76,6 +76,7 @@ function get_user() {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     $(".hide_when_unblock").hide();
+                    $("#loading_word").hide();
                     $('#chess-tab').show();
                     $("#home-tab").prop( "disabled", true );
                     $('#chess-tab').click();
@@ -93,6 +94,7 @@ function get_user() {
                 else
                 {
                     $(".hide_when_unblock").show();
+                    $("#loading_word").hide();
                     $("#pi_donate").hide();
                     $("#button_click").show();
                     $('#chess-tab').hide();
