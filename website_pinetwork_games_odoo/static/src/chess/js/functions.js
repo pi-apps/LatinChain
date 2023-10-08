@@ -92,6 +92,7 @@ function get_user() {
                 }
                 else
                 {
+                    $(".hide_when_unblock").show();
                     $("#pi_donate").hide();
                     $("#button_click").show();
                     $('#chess-tab').hide();
