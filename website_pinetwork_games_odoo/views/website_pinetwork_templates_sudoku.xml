@@ -283,9 +283,8 @@
                                         <br/>
                                         <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Unblock with <span t-esc="amount" /> Pi</button>
                                         <br/>
-                                        <span id="loading_word" style="display: none;">Loading...</span>
-                                        <br/>
                                     </div>
+                                    <span id="loading_word" style="display: none;">Loading...</span>
                                     
                                     <!--<ins class="adsbygoogle"
                                          style="display:block"
