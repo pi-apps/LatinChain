@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-08 08:53+0000\n"
-"PO-Revision-Date: 2023-10-08 08:53+0000\n"
+"POT-Creation-Date: 2023-10-12 22:04+0000\n"
+"PO-Revision-Date: 2023-10-12 22:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -127,15 +127,15 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid ""
 "<br/>\n"
-"                                                <span id=\"loading_word\" style=\"display: none;\">Loading...</span>"
+"                                                    <span id=\"loading_word\" style=\"display: none;\">Loading...</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid ""
 "<br/>\n"
-"                                    <span id=\"loading_word\" style=\"display: none;\">Loading...</span>\n"
-"                                    <br/>"
+"                                        <span id=\"loading_word\" style=\"display: none;\">Loading...</span>\n"
+"                                        <br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -732,7 +732,8 @@ msgid ""
 "Pi. Go to one of the games to do it. Once you pay in any of the games, it "
 "won't be refunded. When you Donate it's considered a donation and it won't "
 "be refunded either. You can also unblock the games, for 30 days since the "
-"payment date, with a donation."
+"payment date, with a donation. Although, all payments to LatinChain are "
+"considered donations."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
