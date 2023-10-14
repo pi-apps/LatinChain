@@ -660,8 +660,10 @@
                         <button id="back_radioforus" class="btn btn-info">Back to RadioForUs</button>
                         <!--<a href="https://radioforus.com" target="_blank" class="btn btn-info">Back to RadioForUs</a>-->
                         <br/><br/>
+			<!--
                         <button id="back" class="btn btn-info">Back to LatinChain</button>
 						<br/><br/>
+			-->
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         Pi Transactions for user <strong><span id="username" /></strong>:<br/><br/>
                         <table id="transactions" class="display">
