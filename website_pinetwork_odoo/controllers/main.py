@@ -681,7 +681,7 @@ class PiNetworkBaseController(http.Controller):
                 direction = " <span style='color:red'><i class='fa fa-arrow-up'></i></span>"
             elif i.action_type == "send":
                 direction = " <span style='color:green'><i class='fa fa-arrow-down'></i></span>"
-            data.append({'memo': i.memo + direction + " (" + str(i.create_date) + " UTC)", 'amount': str(i.amount) + " Pi", 'txid': " <button class='btn btn-link' onclick='$.colorbox({href:\"" + i.txid_url + "\", iframe:true, width: \"100%\", height: \"100%\", maxWidth: \"100%\", maxHeight: \"100%\"});'>" + i.txid[:4] + "..." + i.txid[-4:] + "</button><button class='btn btn-primary' onclick='copyToClipboard(\"" + i.txid_url + "\");'>Copy</button>"})
+            data.append({'memo': i.memo + direction + " (" + str(i.create_date) + " UTC)", 'amount': str(i.amount) + " Pi", 'txid': " <button class='btn btn-link' onclick='$.colorbox({href:\"" + i.txid_url + "\", iframe:true, scrolling:false, width: \"100%\", height: \"100%\", maxWidth: \"100%\", maxHeight: \"100%\"});'>" + i.txid[:4] + "..." + i.txid[-4:] + "</button><button class='btn btn-primary' onclick='copyToClipboard(\"" + i.txid_url + "\");'>Copy</button>"})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_transactions_count, "iTotalDisplayRecords": pi_transactions_count_filter})
         
