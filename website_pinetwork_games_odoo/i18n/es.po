@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 09:42+0000\n"
-"PO-Revision-Date: 2023-10-13 09:42+0000\n"
+"POT-Creation-Date: 2023-10-17 20:57+0000\n"
+"PO-Revision-Date: 2023-10-17 20:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -484,6 +484,11 @@ msgstr ""
 "                                            Aquí puede ver sus transacciones entrantes y salientes:<br/>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
+msgid "Amount"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Apps"
 msgstr ""
@@ -497,11 +502,7 @@ msgid "Back"
 msgstr "Atrás"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-msgid "Back to LatinChain"
-msgstr "Volver a LatinChain"
-
-#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "Back to RadioForUs"
 msgstr "Volver a RadioForUs"
@@ -538,6 +539,7 @@ msgstr "Limpiar"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -555,6 +557,11 @@ msgstr "Cerrar"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Credits"
 msgstr "Créditos"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
+msgid "Current time:"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -647,6 +654,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -739,6 +747,11 @@ msgid "Medium puzzle"
 msgstr "Juego medio"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
+msgid "Memo"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Menu"
 msgstr "Menú"
@@ -750,6 +763,7 @@ msgstr "Más Info"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -931,6 +945,11 @@ msgid "Switch Sides"
 msgstr "Intercambia Lado"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
+msgid "TXID"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Take Back"
 msgstr "Regresar"
@@ -978,6 +997,13 @@ msgstr "Transacciones"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "UTC, next payment will be the 15th day of next month."
 msgstr "UTC, el próximo pago será el día 15 del siguiente mes."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
+msgid ""
+"UTC<br/><br/>\n"
+"                                    Pi Transactions for user <strong><span id=\"username\"/></strong>:<br/><br/>"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess

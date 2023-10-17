@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 20:37+0000\n"
-"PO-Revision-Date: 2023-10-17 20:37+0000\n"
+"POT-Creation-Date: 2023-10-17 20:57+0000\n"
+"PO-Revision-Date: 2023-10-17 20:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -199,7 +199,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__amount
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__amount
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
 msgid "Amount"
 msgstr "Monto"
 
@@ -285,11 +284,6 @@ msgid "Back to LatinChain"
 msgstr "Volver a LatinChain"
 
 #. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
-msgid "Back to RadioForUs"
-msgstr "Volver a RadioForUs"
-
-#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__block_points
 msgid "Block points"
 msgstr ""
@@ -340,7 +334,6 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
 msgid "Clear Cache"
 msgstr "Borrar Caché"
 
@@ -396,7 +389,6 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
 msgid "Current time:"
@@ -505,11 +497,6 @@ msgid "Google Adsense src"
 msgstr ""
 
 #. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
-msgid "Home"
-msgstr "Inicio"
-
-#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__id
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__id
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__id
@@ -590,7 +577,6 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__memo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
 msgid "Memo"
 msgstr ""
 
@@ -788,7 +774,6 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__txid
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
 msgid "TXID"
 msgstr ""
 
@@ -861,15 +846,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
 msgid "UTC<br/><br/>"
 msgstr ""
-
-#. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions_radioforus
-msgid ""
-"UTC<br/><br/>\n"
-"                                    Pi Transactions for user <strong><span id=\"username\"/></strong>:<br/><br/>"
-msgstr ""
-"UTC<br/><br/>\n"
-"                        Pi Transactions para el usuario <strong><span id=\"username\"/></strong>:<br/><br/>"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
