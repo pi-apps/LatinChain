@@ -411,25 +411,25 @@
                     
                     <title>Transactions</title>
                 </head>
-                <body style="text-align: center">
+                <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive -->
                         <!--
                         <br/>
-						<ins class="adsbygoogle"
-							 style="display:block"
-							 data-ad-client="ca-pub-2334449220276386"
-							 data-ad-slot="6625994850"
-							 data-ad-format="auto"
-							 data-full-width-responsive="true"></ins>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="6625994850"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-						-->
+                        -->
                         
-						<br/>
-						<div id="taboola-mid-article-thumbnails"></div>
+                        <br/>
+                        <div id="taboola-mid-article-thumbnails"></div>
                         <script type="text/javascript">
                           window._taboola = window._taboola || [];
                           _taboola.push({
@@ -441,10 +441,10 @@
                         </script>
                         
                         <br/>
-						<button id="clear_cache" class="btn btn-info">Clear Cache</button>
+                        <button id="clear_cache" class="btn btn-info">Clear Cache</button>
                         <br/><br/>
                         <button id="back" class="btn btn-info">Back to LatinChain</button>
-						<br/><br/>
+                        <br/><br/>
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         Pi Transactions for user <strong><span id="username" /></strong>:<br/><br/>
                         <table id="transactions" class="display">

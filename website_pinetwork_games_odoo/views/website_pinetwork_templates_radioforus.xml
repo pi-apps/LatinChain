@@ -519,155 +519,157 @@
                     </script>
                     
                 </head>
-                <body style="text-align: center">
-                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
-                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
-                    
-                    <div class="container" style="text-align:center">
-                        <!-- LatinChain Ad responsive -->
-                        <!--
-                        <br/>
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-2334449220276386"
-                             data-ad-slot="6625994850"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
-                        <script>
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                        -->
+                <body>
+                    <div style="text-align: center">
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                         
-                        <br/>
+                        <div class="container" style="text-align:center">
+                            <!-- LatinChain Ad responsive -->
+                            <!--
+                            <br/>
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-2334449220276386"
+                                 data-ad-slot="6625994850"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                            -->
+                            
+                            <br/>
+                            
+                            <div id="taboola-mid-article-thumbnails"></div>
+                            <script type="text/javascript">
+                              window._taboola = window._taboola || [];
+                              _taboola.push({
+                                mode: 'alternating-thumbnails-a-mid',
+                                container: 'taboola-mid-article-thumbnails',
+                                placement: 'Mid Article Thumbnails',
+                                target_type: 'mix'
+                              });
+                            </script>
+                        </div>
                         
-                        <div id="taboola-mid-article-thumbnails"></div>
-                        <script type="text/javascript">
-                          window._taboola = window._taboola || [];
-                          _taboola.push({
-                            mode: 'alternating-thumbnails-a-mid',
-                            container: 'taboola-mid-article-thumbnails',
-                            placement: 'Mid Article Thumbnails',
-                            target_type: 'mix'
-                          });
-                        </script>
-                    </div>
-                    
-                    <div style="text-align:center">
-                        <style>
-                            .sticky {
-                              position: fixed;
-                              top: 0;
-                              width: 100%;
-                              z-index:99999;
-                            }
-                            #translate_text_latinchain
-                            {
-                              margin-top: 50px !important;
-                            }
-                        </style>
-                        <ul class="nav nav-pills sticky" id="myTab" role="tablist" style="background-color: #e3f2fd;">
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
-                          </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    
-                                <div class="container" style="text-align:center">
-                                    <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
-                                    <img width="80" height="80" src="https://radioforus.com/wp-content/uploads/2023/02/Radioforus.png" style="display: block; margin-left: auto; margin-right: auto"/>
-                                    <br/>
-                                    <button id="clear_cache" class="btn btn-info">Clear Cache</button>
-                                    <br/><br/>
-                                    <button id="back_radioforus" class="btn btn-info">Back to RadioForUs</button>
-                                    <!--<a href="https://radioforus.com" target="_blank" class="btn btn-info">Back to RadioForUs</a>-->
-                                    <br/><br/>
-                        <!--
-                                    <button id="back" class="btn btn-info">Back to LatinChain</button>
-                                    <br/><br/>
-                        -->
-                                    Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
-                                    Pi Transactions for user <strong><span id="username" /></strong>:<br/><br/>
-                                    <table id="transactions" class="display">
-                                        <thead>
-                                            <tr>
-                                                <th>Memo</th>
-                                                <th>Amount</th>
-                                                <th>TXID</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!--<t t-foreach="pi_users_list" t-as="pi_user">
+                        <div style="text-align:center">
+                            <style>
+                                .sticky {
+                                  position: fixed;
+                                  top: 0;
+                                  width: 100%;
+                                  z-index:99999;
+                                }
+                                #translate_text_latinchain
+                                {
+                                  margin-top: 50px !important;
+                                }
+                            </style>
+                            <ul class="nav nav-pills sticky" id="myTab" role="tablist" style="background-color: #e3f2fd;">
+                              <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                              </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        
+                                    <div class="container" style="text-align:center">
+                                        <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
+                                        <img width="80" height="80" src="https://radioforus.com/wp-content/uploads/2023/02/Radioforus.png" style="display: block; margin-left: auto; margin-right: auto"/>
+                                        <br/>
+                                        <button id="clear_cache" class="btn btn-info">Clear Cache</button>
+                                        <br/><br/>
+                                        <button id="back_radioforus" class="btn btn-info">Back to RadioForUs</button>
+                                        <!--<a href="https://radioforus.com" target="_blank" class="btn btn-info">Back to RadioForUs</a>-->
+                                        <br/><br/>
+                            <!--
+                                        <button id="back" class="btn btn-info">Back to LatinChain</button>
+                                        <br/><br/>
+                            -->
+                                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                                        Pi Transactions for user <strong><span id="username" /></strong>:<br/><br/>
+                                        <table id="transactions" class="display">
+                                            <thead>
                                                 <tr>
-                                                    <td>
-                                                        <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t>
-                                                    </td>
+                                                    <th>Memo</th>
+                                                    <th>Amount</th>
+                                                    <th>TXID</th>
                                                 </tr>
-                                            </t>-->
-                                        </tbody>
-                                    </table>
-                                    
+                                            </thead>
+                                            <tbody>
+                                                <!--<t t-foreach="pi_users_list" t-as="pi_user">
+                                                    <tr>
+                                                        <td>
+                                                            <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t>
+                                                        </td>
+                                                    </tr>
+                                                </t>-->
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <br/><br/>
-                    <div class="container" style="text-align:center">
-                        <!-- LatinChain Ad responsive 2 -->
-                        <!--
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-2334449220276386"
-                             data-ad-slot="9525388880"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
-                        <script>
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                        <br/>
-                        -->
                         
-                        <div id="taboola-below-article-thumbnails"></div>
-                        <script type="text/javascript">
-                          window._taboola = window._taboola || [];
-                          _taboola.push({
-                            mode: 'alternating-thumbnails-a',
-                            container: 'taboola-below-article-thumbnails',
-                            placement: 'Below Article Thumbnails',
-                            target_type: 'mix'
-                          });
-                        </script>
+                        <br/><br/>
+                        <div class="container" style="text-align:center">
+                            <!-- LatinChain Ad responsive 2 -->
+                            <!--
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-2334449220276386"
+                                 data-ad-slot="9525388880"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                            <br/>
+                            -->
+                            
+                            <div id="taboola-below-article-thumbnails"></div>
+                            <script type="text/javascript">
+                              window._taboola = window._taboola || [];
+                              _taboola.push({
+                                mode: 'alternating-thumbnails-a',
+                                container: 'taboola-below-article-thumbnails',
+                                placement: 'Below Article Thumbnails',
+                                target_type: 'mix'
+                              });
+                            </script>
+                        </div>
+                        
+                        <button id="myBtn"><a id="myABtn" href="#top" style="color: white">Top</a></button>
+                        
+                        <style>
+                            /*Floating Back-To-Top Button*/
+                                #myBtn {
+                                    position: fixed;
+                                    bottom: 10px;
+                                    float: right;
+                                    right: 90%;
+                                    left: 10%;
+                                    bottom: 10%;
+                                    max-width: 50px;
+                                    max-height: 50px;
+                                    width: 100%;
+                                    height: 100%;
+                                    font-size: 18px;
+                                    border-color: rgba(85, 85, 85, 0.2);
+                                    background-color: rgb(100,100,100);
+                                    /*padding: 10px;*/
+                                    border-radius: 4px;
+                                    opacity: 0.5;
+                                    z-index:99999;
+                                }
+                            /*On Hover Color Change*/
+                                #myBtn:hover {
+                                    background-color: #7dbbf1;
+                                }
+                        </style>
                     </div>
-                    
-                    <button id="myBtn"><a id="myABtn" href="#top" style="color: white">Top</a></button>
-                    
-                    <style>
-                        /*Floating Back-To-Top Button*/
-                            #myBtn {
-                                position: fixed;
-                                bottom: 10px;
-                                float: right;
-                                right: 90%;
-                                left: 10%;
-                                bottom: 10%;
-                                max-width: 50px;
-                                max-height: 50px;
-                                width: 100%;
-                                height: 100%;
-                                font-size: 18px;
-                                border-color: rgba(85, 85, 85, 0.2);
-                                background-color: rgb(100,100,100);
-                                /*padding: 10px;*/
-                                border-radius: 4px;
-                                opacity: 0.5;
-                                z-index:99999;
-                            }
-                        /*On Hover Color Change*/
-                            #myBtn:hover {
-                                background-color: #7dbbf1;
-                            }
-                    </style>
                     
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
