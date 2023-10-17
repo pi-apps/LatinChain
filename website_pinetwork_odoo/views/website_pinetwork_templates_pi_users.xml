@@ -473,15 +473,41 @@
 		</template>
 		
 		<template id="list_transactions_radioforus" name="Transactions RadioForUs">
-            <t t-call="website.layout">
+            <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
             <html>
                 <head>
+                    <meta charset="UTF-8" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                    <title>Transactions RadioForUs</title>
+                    <meta name="apple-mobile-web-app-capable" content="yes" />
+                    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                    
+                    <!-- ios support -->
+                    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                    <meta name="theme-color" content="#db4938" />
+                    
+                    <meta name="application-name" content="Transactions RadioForUs"/>
                     
                     <link href="https://radioforus.com/wp-content/uploads/2023/02/Radioforus.png" rel="shortcut icon" />
+
+                    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+                    <!--[if lt IE 9]>
+                        <script src="assets/js/html5shiv-pre3.6.js"></script>
+                    <![endif]-->
                     
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <!--<script src="https://downloads.minepi.com/sdk/v1/dev.js"></script>-->
+                    <!--<script src="https://downloads.minepi.com/sdk/v1/prod.js"></script>-->
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet"/>
+                    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+                    
                     <!--
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -576,6 +602,28 @@
                         
                             auth();
                             
+                            var status_audio = false;
+                            var audioElement = document.createElement('audio');
+                            audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/music.mp3');
+                            audioElement.addEventListener('ended', function() {
+                                this.play();
+                            }, false);
+                            
+                            $('#play').click(function() {
+                                if(!status_audio)
+                                {
+                                    audioElement.play();
+                                    status_audio = true;
+                                    $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
+                                }
+                                else
+                                {
+                                    audioElement.pause();
+                                    status_audio = false;
+                                    $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
+                                }
+                            });
+                            
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
                                 if(result)
@@ -622,28 +670,29 @@
                         } );
                     </script>
                     
-                    <title>Transactions</title>
                 </head>
                 <body style="text-align: center">
                     <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    
                     <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive -->
                         <!--
                         <br/>
-						<ins class="adsbygoogle"
-							 style="display:block"
-							 data-ad-client="ca-pub-2334449220276386"
-							 data-ad-slot="6625994850"
-							 data-ad-format="auto"
-							 data-full-width-responsive="true"></ins>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="6625994850"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-						-->
+                        -->
                         
-						<br/>
-						<div id="taboola-mid-article-thumbnails"></div>
+                        <br/>
+                        
+                        <div id="taboola-mid-article-thumbnails"></div>
                         <script type="text/javascript">
                           window._taboola = window._taboola || [];
                           _taboola.push({
@@ -653,38 +702,94 @@
                             target_type: 'mix'
                           });
                         </script>
+                    </div>
+                    
+                    <div style="text-align:center">
+                        <style>
+                            .sticky {
+                              position: fixed;
+                              top: 0;
+                              width: 100%;
+                              z-index:99999;
+                            }
+                            #translate_text_latinchain
+                            {
+                              margin-top: 50px !important;
+                            }
+                        </style>
+                        <ul class="nav nav-pills sticky" id="myTab" role="tablist" style="background-color: #e3f2fd;">
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    
+                                <div class="container" style="text-align:center">
+                                    <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
+                                    <img width="80" height="80" src="https://radioforus.com/wp-content/uploads/2023/02/Radioforus.png" style="display: block; margin-left: auto; margin-right: auto"/>
+                                    <br/>
+                                    <button id="clear_cache" class="btn btn-info">Clear Cache</button>
+                                    <br/><br/>
+                                    <button id="back_radioforus" class="btn btn-info">Back to RadioForUs</button>
+                                    <!--<a href="https://radioforus.com" target="_blank" class="btn btn-info">Back to RadioForUs</a>-->
+                                    <br/><br/>
+                        <!--
+                                    <button id="back" class="btn btn-info">Back to LatinChain</button>
+                                    <br/><br/>
+                        -->
+                                    Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                                    Pi Transactions for user <strong><span id="username" /></strong>:<br/><br/>
+                                    <table id="transactions" class="display">
+                                        <thead>
+                                            <tr>
+                                                <th>Memo</th>
+                                                <th>Amount</th>
+                                                <th>TXID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!--<t t-foreach="pi_users_list" t-as="pi_user">
+                                                <tr>
+                                                    <td>
+                                                        <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t>
+                                                    </td>
+                                                </tr>
+                                            </t>-->
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <br/><br/>
+                    <div class="container" style="text-align:center">
+                        <!-- LatinChain Ad responsive 2 -->
+                        <!--
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="9525388880"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        <br/>
+                        -->
                         
-                        <br/>
-                        <button id="clear_cache" class="btn btn-info">Clear Cache</button>
-                        <br/><br/>
-                        <button id="back_radioforus" class="btn btn-info">Back to RadioForUs</button>
-                        <!--<a href="https://radioforus.com" target="_blank" class="btn btn-info">Back to RadioForUs</a>-->
-                        <br/><br/>
-			<!--
-                        <button id="back" class="btn btn-info">Back to LatinChain</button>
-						<br/><br/>
-			-->
-                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
-                        Pi Transactions for user <strong><span id="username" /></strong>:<br/><br/>
-                        <table id="transactions" class="display">
-                            <thead>
-                                <tr>
-                                    <th>Memo</th>
-                                    <th>Amount</th>
-                                    <th>TXID</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!--<t t-foreach="pi_users_list" t-as="pi_user">
-                                    <tr>
-                                        <td>
-                                            <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified)</t>
-                                        </td>
-                                    </tr>
-                                </t>-->
-                            </tbody>
-                        </table>
-                        <br/>
+                        <div id="taboola-below-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a',
+                            container: 'taboola-below-article-thumbnails',
+                            placement: 'Below Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
                     </div>
                 </body>
             </html>
