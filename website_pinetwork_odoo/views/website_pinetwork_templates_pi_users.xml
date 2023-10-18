@@ -333,7 +333,7 @@
                                 //ajax: '/get-transactions-data',
                                 ajax: {
                                     'type': 'POST',
-                                    'url': '/get-transactions-data',
+                                    'url': '/get-transactions-data/latinchain',
                                     'data': function ( d ) {
                                        return  $.extend(d, myData);
                                     }

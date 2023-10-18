@@ -182,7 +182,7 @@
                               position: fixed;
                               top: 0;
                               width: 100%;
-                              z-index:100;
+                              z-index:99999;
                             }
                             #translate_text_latinchain
                             {
@@ -296,7 +296,7 @@
                                 /*padding: 10px;*/
                                 border-radius: 4px;
                                 opacity: 0.5;
-                                z-index:100;
+                                z-index:99999;
                             }
                         /*On Hover Color Change*/
                             #myBtn:hover {
@@ -402,7 +402,7 @@
                                 //ajax: '/get-transactions-data',
                                 ajax: {
                                     'type': 'POST',
-                                    'url': '/get-transactions-data',
+                                    'url': '/get-transactions-data/radioforus',
                                     'data': function ( d ) {
                                        return  $.extend(d, myData);
                                     }
@@ -559,7 +559,7 @@
                                   position: fixed;
                                   top: 0;
                                   width: 100%;
-                                  z-index:100;
+                                  z-index:99999;
                                 }
                                 #translate_text_latinchain
                                 {
@@ -662,7 +662,7 @@
                                     /*padding: 10px;*/
                                     border-radius: 4px;
                                     opacity: 0.5;
-                                    z-index:100;
+                                    z-index:99999;
                                 }
                             /*On Hover Color Change*/
                                 #myBtn:hover {

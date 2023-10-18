@@ -634,8 +634,8 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.list_transactions', {'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
 
-    @http.route('/get-transactions-data/', type='http', auth="public", website=True, methods=['POST'], csrf=False)
-    def get_transactions_data(self, **kw):
+    @http.route('/get-transactions-data/<string:source>', type='http', auth="public", website=True, methods=['POST'], csrf=False)
+    def get_transactions_data(self, source, **kw):
         #_logger.info(str(kw))
         
         draw = kw['draw']
@@ -681,7 +681,10 @@ class PiNetworkBaseController(http.Controller):
                 direction = " <span style='color:red'><i class='fa fa-arrow-up'></i></span>"
             elif i.action_type == "send":
                 direction = " <span style='color:green'><i class='fa fa-arrow-down'></i></span>"
-            data.append({'memo': i.memo + direction + " (" + str(i.create_date) + " UTC)", 'amount': str(i.amount) + " Pi", 'txid': " <button class='btn btn-link' onclick='$.colorbox({href:\"" + i.txid_url + "\", iframe:true, width: \"100%\", height: \"100%\", maxWidth: \"100%\", maxHeight: \"100%\", top: 0, onOpen: function(){$(\"body\").css(\"overflow\", \"hidden\");}, onClosed: function(){$(\"body\").css(\"overflow\", \"auto\");}});'>" + i.txid[:4] + "..." + i.txid[-4:] + "</button><button class='btn btn-primary' onclick='copyToClipboard(\"" + i.txid_url + "\");'>Copy</button>"})
+            if source == "radiofourus":
+                data.append({'memo': i.memo + direction + " (" + str(i.create_date) + " UTC)", 'amount': str(i.amount) + " Pi", 'txid': " <button class='btn btn-link' onclick='$.colorbox({href:\"" + i.txid_url + "\", iframe:true, width: \"100%\", height: \"90%\", maxWidth: \"100%\", maxHeight: \"90%\", top: \"0%\", bottom: \"10%\", onOpen: function(){$(\"body\").css(\"overflow\", \"hidden\");}, onClosed: function(){$(\"body\").css(\"overflow\", \"auto\");}});'>" + i.txid[:4] + "..." + i.txid[-4:] + "</button><button class='btn btn-primary' onclick='copyToClipboard(\"" + i.txid_url + "\");'>Copy</button>"})
+            else:
+                data.append({'memo': i.memo + direction + " (" + str(i.create_date) + " UTC)", 'amount': str(i.amount) + " Pi", 'txid': " <button class='btn btn-link' onclick='$.colorbox({href:\"" + i.txid_url + "\", iframe:true, width: \"100%\", height: \"100%\", maxWidth: \"100%\", maxHeight: \"100%\"});'>" + i.txid[:4] + "..." + i.txid[-4:] + "</button><button class='btn btn-primary' onclick='copyToClipboard(\"" + i.txid_url + "\");'>Copy</button>"})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_transactions_count, "iTotalDisplayRecords": pi_transactions_count_filter})
         
