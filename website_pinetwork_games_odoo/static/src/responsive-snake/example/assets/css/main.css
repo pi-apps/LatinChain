@@ -46,6 +46,12 @@ body .container {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000347}}
 body #snake-canvas {
   position: relative;
+  height: 93% !important;
+  width: 99% !important;
+  max-height: 93% !important;
+  max-width: 99% !important;
+  border: 1px;
+  border-style: solid;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cmiller\/development\/src\/snake-game\/example\/assets\/scss\/layout\.scss}line{font-family:\0000351}}
 body a {
