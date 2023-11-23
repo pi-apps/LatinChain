@@ -24,8 +24,9 @@
                             Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
                         </t>
                         <t t-if="pi_users_verified_count >= 0">
-                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/>
+                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
                         </t>
+                        
                         <strong>Leaders zone <span style="color:#77d7f1">●</span>:</strong><br/>
                         <ul class="list-group">
                             <t t-set="i" t-value="1"/>
