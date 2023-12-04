@@ -22,6 +22,7 @@
                     <meta name="application-name" content="Pidoku Solver"/>
                     <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
 
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
                     <!-- Styles -->
                     <link href="/website_pinetwork_games_odoo/static/src/pidoku/assets/css/bootstrap.min.css" rel="stylesheet" />
                     <link href="/website_pinetwork_games_odoo/static/src/pidoku/assets/css/styles.css" rel="stylesheet" />
@@ -104,7 +105,7 @@
                                 }
                             });
                         
-                            $( "#clear_cache" ).click(function() {
+                            $( ".clear_cache" ).click(function() {
                                 var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
                                 if(result)
                                 {
@@ -120,7 +121,7 @@
                                     }
                                 }
                             });
-                            $( "#back" ).click(function() {
+                            $( ".back" ).click(function() {
                                 var result = confirm("Are you sure you want to go back?.");
                                 if(result)
                                 {
@@ -200,9 +201,22 @@
                       <li class="nav-item" role="presentation">
                         <a href="#sudoku" id="sudoku-tab" style="display: none;" data-toggle="tab">Sudoku<span id="counter_span"></span></a>
                       </li>
+                      <li class="nav-item" role="presentation">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                              <i class="fa fa-list"></i>
+                              <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="clear_cache" href="#">Clear Cache</a></li>
+                              <li><a class="back" href="#">Back</a></li>
+                            </ul>
+                        </div>
+                      </li>
+                      
+                      
                     </ul>
                     <div id="app-wrap" class="container-narrow hidden">
-                        
                         
                         <div class="tab-content" id="myTabContent" style="padding:10px">
                           <div class="tab-pane active" id="home">
@@ -275,9 +289,9 @@
                                     <h3 align="center" style="color:#000000">Play Sudoku any time you want</h3>
                                     
                                     <br />
-                                    <button id="clear_cache" class="btn btn-info">Clear Cache</button>
+                                    <button id="clear_cache" class="btn btn-info clear_cache">Clear Cache</button>
                                     <br /><br />
-                                    <button id="back" class="btn btn-info">Back</button><br />
+                                    <button id="back" class="btn btn-info back">Back</button><br />
                                     <div class="hide_when_unblock">
                                         <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
                                         <br/>

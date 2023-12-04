@@ -26,6 +26,8 @@
                         <script src="assets/js/html5shiv-pre3.6.js"></script>
                     <![endif]-->
                     
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+                    
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/jquery-3.5.1.min.js"></script>
                     <!--<script src="https://downloads.minepi.com/sdk/v1/dev.js"></script>-->
                     <!--<script src="https://downloads.minepi.com/sdk/v1/prod.js"></script>-->
@@ -92,7 +94,7 @@
                                 }
                             });
                         
-                            $( "#clear_cache" ).click(function() {
+                            $( ".clear_cache" ).click(function() {
                                 var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
                                 if(result)
                                 {
@@ -109,7 +111,7 @@
                                 }
                             });
                             
-                            $( "#back" ).click(function() {
+                            $( ".back" ).click(function() {
                                 var result = confirm("Are you sure you want to go back?.");
                                 if(result)
                                 {
@@ -121,7 +123,7 @@
                                 }
                             });
                             
-                            $( "#back_radioforus" ).click(function() {
+                            $( ".back_radioforus" ).click(function() {
                                 var result = confirm("Are you sure you want to go back?.");
                                 if(result)
                                 {
@@ -193,6 +195,18 @@
                           <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
                           </li>
+                          
+                          <li class="nav-item" role="presentation">
+                            <div class="btn-group">
+                              <button class="btn btn-info dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                                <i class="fa fa-list"></i>
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+                                <li><a class="dropdown-item clear_cache" href="#">Clear Cache</a></li>
+                                <li><a class="dropdown-item back_radioforus" href="#">Back to RadioForUs</a></li>
+                              </ul>
+                            </div>
+                          </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -211,9 +225,9 @@
                                 Click in Clear Cache if button Donate doesn't activate.
                                 <br />
                                 <br />
-                                <button id="clear_cache" class="btn btn-info">Clear Cache</button>
+                                <button id="clear_cache" class="btn btn-info clear_cache">Clear Cache</button>
                                 <br/><br/>
-                                <button id="back_radioforus" class="btn btn-info">Back to RadioForUs</button>
+                                <button id="back_radioforus" class="btn btn-info back_radioforus">Back to RadioForUs</button>
                                 <!--<a href="https://radioforus.com" target="_blank" class="btn btn-info">Back to RadioForUs</a>-->
                                 <!--<br/><br/>
                                 <button id="back" class="btn btn-info">Back to LatinChain</button>
@@ -339,6 +353,8 @@
                     <!--[if lt IE 9]>
                         <script src="assets/js/html5shiv-pre3.6.js"></script>
                     <![endif]-->
+
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
                     
                     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                     <!--<script src="https://downloads.minepi.com/sdk/v1/dev.js"></script>-->
@@ -472,7 +488,7 @@
                                 }
                             });
                             
-                            $( "#clear_cache" ).click(function() {
+                            $( ".clear_cache" ).click(function() {
                                 var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
                                 if(result)
                                 {
@@ -489,7 +505,7 @@
                                 }
                             });
                             
-                            $( "#back" ).click(function() {
+                            $( ".back" ).click(function() {
                                 var result = confirm("Are you sure you want to go back?.");
                                 if(result)
                                 {
@@ -501,7 +517,7 @@
                                 }
                             });
                             
-                            $( "#back_radioforus" ).click(function() {
+                            $( ".back_radioforus" ).click(function() {
                                 var result = confirm("Are you sure you want to go back?.");
                                 if(result)
                                 {
@@ -570,6 +586,17 @@
                               <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
                               </li>
+                              <li class="nav-item" role="presentation">
+                                <div class="btn-group">
+                                  <button class="btn btn-info dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                                    <i class="fa fa-list"></i>
+                                  </button>
+                                  <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+                                    <li><a class="dropdown-item clear_cache" href="#">Clear Cache</a></li>
+                                    <li><a class="dropdown-item back_radioforus" href="#">Back to RadioForUs</a></li>
+                                  </ul>
+                                </div>
+                              </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -578,9 +605,9 @@
                                         <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
                                         <img width="80" height="80" src="https://radioforus.com/wp-content/uploads/2023/02/Radioforus.png" style="display: block; margin-left: auto; margin-right: auto"/>
                                         <br/>
-                                        <button id="clear_cache" class="btn btn-info">Clear Cache</button>
+                                        <button id="clear_cache" class="btn btn-info clear_cache">Clear Cache</button>
                                         <br/><br/>
-                                        <button id="back_radioforus" class="btn btn-info">Back to RadioForUs</button>
+                                        <button id="back_radioforus" class="btn btn-info back_radioforus">Back to RadioForUs</button>
                                         <!--<a href="https://radioforus.com" target="_blank" class="btn btn-info">Back to RadioForUs</a>-->
                                         <br/><br/>
                             <!--
