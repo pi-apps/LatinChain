@@ -30,6 +30,8 @@
                                 window.oRequestAnimationFrame||function(f){window.setTimeout(f,1e3/60)}}();
                 </script>
                 
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+                
                 <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/jquery-3.5.1.min.js"></script>
                 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
@@ -194,6 +196,24 @@
                                 location.href="/";
                             }
                         });
+                        
+                        $( "#show" ).click(function() {
+                            if($( "#show" ).html() == '<i class="fa fa-eye"></i>')
+                            {
+                                $( "#show" ).html('<i class="fa fa-eye-slash"></i>');
+                                $( "#bottom_controls" ).show();
+                                $( "#clear_cache" ).removeClass("transparent");
+                                $( "#back" ).removeClass("transparent");
+                                $( ".fps-counter" ).removeClass("transparent");
+                            }else if($( "#show" ).html() == '<i class="fa fa-eye-slash"></i>')
+                            {
+                                $( "#show" ).html('<i class="fa fa-eye"></i>');
+                                $( "#bottom_controls" ).hide();
+                                $( "#clear_cache" ).addClass("transparent");
+                                $( "#back" ).addClass("transparent");
+                                $( ".fps-counter" ).addClass("transparent");
+                            }
+                        });
                     });
                 </script>
                 <div class="intro" style="width: 100%; text-align: center">
@@ -227,13 +247,20 @@
                     
                     <div class="bottom">
                         <p>
-                            <span id="loading_word" style="display: none;">Loading...</span><br/>
-                            <!--<div class="square" id="minus" style="display: none;">-</div>--><div class="square" id="plus" style="display: none;">+</div><br/><br/>
-                            <div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/><br/>
-                            <div class="square" id="enable_dragging" style="display: none;">Drag controls</div><div class="square" id="disable_dragging" style="display: none;">Set controls</div><br/><br/>
-                            <div class="square" id="clear_cache" style="">Clear Cache</div><div class="square" id="back" style="">Back</div><br/><br/>            <!--<div class="square" id="bot">Bot</div>-->
-                            <div class="square-borderless fps-counter"></div>
-                            </p>
+                            <span id="show" class="transparent square"><i class="fa fa-eye"></i></span><br/>
+                            <span id="loading_word" style="display: none; margin-left: 5px;">Loading...</span><br/>
+                            <div id="bottom_controls" style="display: none;">
+                                <div id="plus_minus_controls" style="display: none;">
+                                    <!--<div class="square" id="minus" style="display: none;">-</div>--><div class="square" id="plus" >+</div><br/><br/>
+                                </div>
+                                <div id="reset_pause_controls" style="display: none;">
+                                    <div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/><br/>
+                                </div>
+                                <div class="square" id="enable_dragging" >Drag controls</div><div class="square" id="disable_dragging" style="display: none;">Set controls</div><br/><br/>
+                            </div>
+                            <div class="square transparent" id="clear_cache" style="">Clear Cache</div><div class="square transparent" id="back" style="">Back</div><br/><br/>            <!--<div class="square" id="bot">Bot</div>-->
+                            <div class="square-borderless fps-counter transparent"></div>
+                        </p>
                         <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
                     </div>
 

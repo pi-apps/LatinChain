@@ -44,6 +44,8 @@ function get_user(pause) {
                 passkey=data.passkey;
                 if(data.unblocked)
                 {
+                    $("#reset_pause_controls").show();
+                    $("#plus_minus_controls").show();
                     $("#pause").show();
                     $("#reset").show();
                     $("#minus").show();
@@ -58,6 +60,8 @@ function get_user(pause) {
                 }
                 else
                 {
+                    $("#reset_pause_controls").hide();
+                    $("#plus_minus_controls").hide();
                     $("#pause").hide();
                     $("#reset").hide();
                     $("#minus").hide();
