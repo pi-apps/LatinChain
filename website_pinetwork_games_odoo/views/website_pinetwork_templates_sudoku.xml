@@ -428,7 +428,7 @@
                                     <div id="puzzle-controls">
                                         <a id="clear" class="pull-left btn btn-primary" rel="tooltip"
                                                 title="This puzzle" href="#">
-                                            Clear  
+                                            <i class="fa fa-eraser" ></i>
                                         </a>
                                         
                                         <!--<a id="export" class="pull-left btn btn-primary" style="margin-left:10px" rel="tooltip" 
@@ -443,7 +443,7 @@
                                         
                                         <a id="cancel" class="pull-right btn" rel="tooltip" 
                                                 title="This puzzle" href="#">
-                                            Cancel
+                                            <i class="fa fa-ban" ></i>
                                         </a>
                                         
                                         <a id="refresh" class="pull-right btn hidden" rel="tooltip" 
