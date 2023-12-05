@@ -997,13 +997,15 @@
                             </div>
                           </div>
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
-                            <br/>User: <strong id="user_logged">--</strong><br/>
-                            <br/>Status: <strong class="user_status">Access through Pi Browser.<br/></strong>
-                            <br/>Total points: <strong id="user_points">0</strong><br/>
-                            <br/>At: <strong id="user_points_datetime"></strong><br/>
-                            <br/>Points per game: <strong id="user_points_per_game">0</strong><br/>
-                            <br/>Max points per game: <strong id="user_points_last">0</strong><br/>
-                            <br/># of wins per game: <strong id="user_points_wins">0</strong><br/>
+                            <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
+                                <br/>User: <strong id="user_logged">--</strong><br/>
+                                <br/>Status: <strong class="user_status">Access through Pi Browser.<br/></strong>
+                                <br/>Total points: <strong id="user_points">0</strong><br/>
+                                <br/>At: <strong id="user_points_datetime"></strong><br/>
+                                <br/>Points per game: <strong id="user_points_per_game">0</strong><br/>
+                                <br/>Max points per game: <strong id="user_points_last">0</strong><br/>
+                                <br/># of wins per game: <strong id="user_points_wins">0</strong><br/>
+                            </div>
                           </div>
                         </div>
                         <br/><br/>
