@@ -198,16 +198,16 @@
                         });
                         
                         $( "#show" ).click(function() {
-                            if($( "#show" ).html() == '<i class="fa fa-eye"></i>')
+                            if($( "#show" ).html() == '<i class="fa fa-eye-slash"></i>')
                             {
-                                $( "#show" ).html('<i class="fa fa-eye-slash"></i>');
+                                $( "#show" ).html('<i class="fa fa-eye"></i>');
                                 $( "#bottom_controls" ).show();
                                 $( "#clear_cache" ).removeClass("transparent");
                                 $( "#back" ).removeClass("transparent");
                                 $( ".fps-counter" ).removeClass("transparent");
-                            }else if($( "#show" ).html() == '<i class="fa fa-eye-slash"></i>')
+                            }else if($( "#show" ).html() == '<i class="fa fa-eye"></i>')
                             {
-                                $( "#show" ).html('<i class="fa fa-eye"></i>');
+                                $( "#show" ).html('<i class="fa fa-eye-slash"></i>');
                                 $( "#bottom_controls" ).hide();
                                 $( "#clear_cache" ).addClass("transparent");
                                 $( "#back" ).addClass("transparent");
@@ -247,7 +247,7 @@
                     
                     <div class="bottom">
                         <p>
-                            <span id="show" class="transparent square"><i class="fa fa-eye"></i></span><br/>
+                            <span id="show" class="transparent square"><i class="fa fa-eye-slash"></i></span><br/>
                             <span id="loading_word" style="display: none; margin-left: 5px;">Loading...</span><br/>
                             <div id="bottom_controls" style="display: none;">
                                 <div id="plus_minus_controls" style="display: none;">
