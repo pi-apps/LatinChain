@@ -410,7 +410,7 @@
                                             </a>
                                         </li>
                                         <li class="pull-right">
-                                            <a id="import" rel="tooltip" title="Your own puzzle" 
+                                            <a id="import" rel="tooltip" title="Import..." 
                                                     href="#">
                                                 <i class="fa fa-upload"></i>
                                             </a>
@@ -427,7 +427,7 @@
                                     
                                     <div id="puzzle-controls">
                                         <a id="clear" class="pull-left btn btn-primary" rel="tooltip"
-                                                title="This puzzle" href="#">
+                                                title="Clear" href="#">
                                             <i class="fa fa-eraser" ></i>
                                         </a>
                                         
@@ -442,12 +442,12 @@
                                         </a>-->
                                         
                                         <a id="cancel" class="pull-right btn" rel="tooltip" 
-                                                title="This puzzle" href="#">
+                                                title="Cancel" href="#">
                                             <i class="fa fa-ban" ></i>
                                         </a>
                                         
                                         <a id="refresh" class="pull-right btn hidden" rel="tooltip" 
-                                                title="This puzzle" href="#">
+                                                title="Refresh" href="#">
                                             Refresh
                                         </a>
                                         
