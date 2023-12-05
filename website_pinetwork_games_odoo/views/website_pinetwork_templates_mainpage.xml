@@ -885,19 +885,19 @@
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa fa-list"></i></a>
                             <ul class="dropdown-menu">
                               <li>
-                                <a class="dropdown-item" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false">User</a>
+                                <a class="dropdown-item" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false"><i class="fa fa-user"></i></a>
                               </li>
                               <li><hr class="dropdown-divider"/></li>
                               <li>
-                                <a class="dropdown-item" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Dev</a>
+                                <a class="dropdown-item" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-laptop"></i></a>
                               </li>
                               <li><hr class="dropdown-divider"/></li>
                               <li>
-                                <a class="dropdown-item" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Info</a>
+                                <a class="dropdown-item" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false"><i class="fa fa-info"></i></a>
                               </li>
                               <li><hr class="dropdown-divider"/></li>
                               <li>
-                                <a class="dropdown-item" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">Video</a>
+                                <a class="dropdown-item" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false"><i class="fa fa-youtube-play"></i></a>
                               </li>
                             </ul>
                           </li>
