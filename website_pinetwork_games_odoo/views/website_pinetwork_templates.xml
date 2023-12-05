@@ -175,17 +175,8 @@
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
                           </li>
                           
-                          <li class="nav-item" role="presentation">
-                            <div class="btn-group">
-                              <button class="btn btn-info dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-                                <i class="fa fa-list"></i>
-                              </button>
-                              <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-                                <li><a class="dropdown-item clear_cache" href="#">Clear Cache</a></li>
-                                <li><a class="dropdown-item back" href="#">Back</a></li>
-                              </ul>
-                            </div>
-                          </li>
+                          <li><button style="margin-left:5px" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
+                          <li><button style="margin-left:5px" class="back btn btn-info"><i class="fa fa-step-backward"></i></button></li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">

@@ -132,14 +132,6 @@
                             
                             $('.carousel').carousel({'interval': 30000});
                             
-                            $('#list_menu').click(function(){
-                                $('#list_menu_items').show();
-                            });
-                            
-                            $('#list_menu').blur(function(){
-                                $('#list_menu_items').hide();
-                            });
-                            
                         });
 
                     </script>
@@ -210,18 +202,8 @@
                       <li class="nav-item" role="presentation">
                         <a href="#sudoku" id="sudoku-tab" style="display: none;" data-toggle="tab">Sudoku<span id="counter_span"></span></a>
                       </li>
-                      <li class="nav-item dropdown" role="presentation">
-                        <a class="dropdown-toggle"
-                           data-toggle="dropdown"
-                           href="#" id="list_menu">
-                            <i class="fa fa-list"></i>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu" id="list_menu_items">
-                          <li><a class="clear_cache" href="#">Clear Cache</a></li>
-                          <li><a class="back" href="#">Back</a></li>
-                        </ul>
-                      </li>
+                      <li><button style="margin-left:5px" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
+                      <li><button style="margin-left:5px" class="back btn btn-info"><i class="fa fa-step-backward"></i></button></li>
                       
                     </ul>
                     <div id="app-wrap" class="container-narrow hidden">
