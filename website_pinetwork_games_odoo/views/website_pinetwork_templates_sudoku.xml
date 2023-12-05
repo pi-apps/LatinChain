@@ -132,7 +132,6 @@
                             
                             $('.carousel').carousel({'interval': 30000});
                             
-                            $('#inp_impact').dropdown();
                         });
 
                     </script>
@@ -203,14 +202,16 @@
                       <li class="nav-item" role="presentation">
                         <a href="#sudoku" id="sudoku-tab" style="display: none;" data-toggle="tab">Sudoku<span id="counter_span"></span></a>
                       </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="dropdown-toggle" id="inp_impact" data-toggle="dropdown" >
+                      <li class="dropdown">
+                        <a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">
                             <i class="fa fa-list"></i>
-                            <span class="caret"></span>
-                        </a>
+                            <b class="caret"></b>
+                          </a>
                         <ul class="dropdown-menu">
-                            <li><a class="clear_cache" href="#">Clear Cache</a></li>
-                            <li><a class="back" href="#">Back</a></li>
+                          <li><a class="clear_cache" href="#">Clear Cache</a></li>
+                          <li><a class="back" href="#">Back</a></li>
                         </ul>
                       </li>
                       
