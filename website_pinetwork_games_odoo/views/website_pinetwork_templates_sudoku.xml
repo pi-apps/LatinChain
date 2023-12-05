@@ -134,7 +134,6 @@
                             
                             $('#list_menu').click(function(){
                                 $('#list_menu').focus();
-                                $('#list_menu').dropdown();
                             });
                             
                         });
