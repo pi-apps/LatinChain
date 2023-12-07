@@ -187,7 +187,7 @@ var init_controls = function(){
         */
         e.preventDefault();
         var tab_name = get_tab();
-        var r = confirm("Do you want to cancel?, it will reload the puzzle.");
+        var r = confirm($("#cancel_board_message").text());
         if (r == true) {
             refresh_board();
             /*var tab_name = get_tab();
@@ -245,7 +245,7 @@ var init_controls = function(){
         e.preventDefault();
         var tab_name = get_tab();
         if(tab_name !== "import"){
-            var r = confirm("Do you want to clear?, it will clear the puzzle, to its initial state.");
+            var r = confirm($("#clear_board_message").text());
             if (r == true) {
                 clear_puzzle(tab_name);
             }

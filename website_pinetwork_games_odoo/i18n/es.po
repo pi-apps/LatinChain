@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 17:53+0000\n"
-"PO-Revision-Date: 2023-12-07 17:53+0000\n"
+"POT-Creation-Date: 2023-12-07 19:40+0000\n"
+"PO-Revision-Date: 2023-12-07 19:40+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -520,6 +520,11 @@ msgid "Are you sure you want to Clear Cache?, it will reloads the page."
 msgstr "Estás seguro(a) que quieres Borrar Caché?, esto recargará la página."
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
+msgid "Are you sure you want to Reset?, it will restart the game."
+msgstr "Estás seguro que quieres Reiniciar?, esto reiniciará a un nuevo juego."
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -583,6 +588,16 @@ msgstr "Hora actual:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Days available:"
 msgstr "Días disponibles:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Do you want to cancel?, it will reload the puzzle."
+msgstr "Quieres cancelar?, esto recargará a un nuevo juego."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Do you want to clear?, it will clear the puzzle, to its initial state."
+msgstr "Quieres limpiar?, esto limpiará el juego, a su estado inicial."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -872,7 +887,7 @@ msgstr "Repositorio"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku

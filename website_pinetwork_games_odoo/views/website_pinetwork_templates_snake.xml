@@ -53,6 +53,7 @@
                 <div id="unblocked_message" style="display:none;">Thank you for your donation. You were unblocked.</div>
                 <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
                 <div id="payment_lessthan_message" style="display:none;">You can't pay less than </div>
+                <div id="reset_message" style="display:none;">Are you sure you want to Reset?, it will restart the game.</div>
                 
                 <style>
                 .square {color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
@@ -90,7 +91,7 @@
                             press(39);
                         });
                         $( "#reset" ).click(function() {
-                            var result = confirm("Are you sure you want to Reset?, it will restart the game.");
+                            var result = confirm($( "#reset_message" ).text());
                             if(result)
                             {
                                 press(82);
