@@ -27,21 +27,33 @@
                             Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
                         </t>
                         
-                        <strong>Leaders zone <span style="color:#77d7f1">●</span>:</strong><br/>
-                        <ul class="list-group">
-                            <t t-set="i" t-value="1"/>
-                            <t t-foreach="pi_users_list" t-as="pi_user">
-                                <t t-if="i &lt;= 10">
-                                    <t t-set="style" t-value="'background-color:#77d7f1'" />
-                                </t>
-                                <t t-else="">
-                                    <t t-set="style" t-value="''" />
-                                </t>
-                                
-                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
-                                <t t-set="i" t-value="i+1"/>
-                            </t>
-                        </ul>
+                        <div class="accordion" id="accordionExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Leaders zone <span style="color:#77d7f1">●</span></strong>
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <ul class="list-group">
+                                    <t t-set="i" t-value="1"/>
+                                    <t t-foreach="pi_users_list" t-as="pi_user">
+                                        <t t-if="i &lt;= 10">
+                                            <t t-set="style" t-value="'background-color:#77d7f1'" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="style" t-value="''" />
+                                        </t>
+                                        
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <br/><br/><br/>
                     </div>
                 </body>
@@ -295,20 +307,31 @@
                         <!--
                         Jackpot to pay to winners: <strong><t t-esc="pi_users_winners_to_pay" /> Pi / <t t-esc="pi_users_winners_count" /></strong><br/><br/>
                         -->
-                        
-                        <strong>Winners zone <span style="color:#a0ec97">●</span>:</strong><br/>
-                        <ul class="list-group">
-                            <t t-set="i" t-value="1"/>
-                            <t t-foreach="pi_users_list" t-as="pi_user">
-                                <t t-set="style" t-value="'background-color:#a0ec97'" />
-                                <!--<t t-if="i == 11">
+                        <div class="accordion" id="accordionExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Winners zone <span style="color:#a0ec97">●</span></strong>
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <ul class="list-group">
                                     <t t-set="i" t-value="1"/>
-                                </t>-->
-                                
-                                <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
-                                <t t-set="i" t-value="i+1"/>
-                            </t>
-                        </ul>
+                                    <t t-foreach="pi_users_list" t-as="pi_user">
+                                        <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                        <!--<t t-if="i == 11">
+                                            <t t-set="i" t-value="1"/>
+                                        </t>-->
+                                        
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (verified, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC (Chess: <t t-esc="pi_user.points_chess" />, Snake: <t t-esc="pi_user.points_snake" />, Sudoku: <t t-esc="pi_user.points_sudoku" />)</li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <br/><br/><br/>
                     </div>
                 </body>
