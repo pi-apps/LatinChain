@@ -611,11 +611,17 @@ class PiNetworkBaseController(http.Controller):
         for i in pi_users_list:
             verified = ""
             if i.unblocked:
-                verified = " (verified, " + str(i.unblocked_datetime) + " UTC)"
+                if request.env.context.get("lang") == "es_ES":
+                    verified = " (verificado, " + str(i.unblocked_datetime) + " UTC)"
+                else:
+                    verified = " (verified, " + str(i.unblocked_datetime) + " UTC)"
             else:
                 verified = ""
             
-            data.append({'pi_user_code': "<strong>" + i.pi_user_code + "</strong>" + verified + ". Donation: " + str(i.paid_in_all_donations) + " Pi"})
+            if request.env.context.get("lang") == "es_ES":
+                data.append({'pi_user_code': "<strong>" + i.pi_user_code + "</strong>" + verified + ". Donación: " + str(i.paid_in_all_donations) + " Pi"})
+            else:
+                data.append({'pi_user_code': "<strong>" + i.pi_user_code + "</strong>" + verified + ". Donation: " + str(i.paid_in_all_donations) + " Pi"})
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
     
