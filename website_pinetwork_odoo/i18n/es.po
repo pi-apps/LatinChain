@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 17:02+0000\n"
-"PO-Revision-Date: 2023-12-07 17:02+0000\n"
+"POT-Creation-Date: 2023-12-07 19:01+0000\n"
+"PO-Revision-Date: 2023-12-07 19:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -72,8 +72,13 @@ msgid "<strong> You are winner, check in this winner list.</strong>"
 msgstr "<strong> Eres ganador, chequea en esta lista de ganadores.</strong>"
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
+msgid "<strong>Donators</strong>"
+msgstr "<strong>Donadores</strong>"
+
+#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
-msgid "<strong>Leaders zone <span style=\"color:#77d7f1\">●</span>:</strong><br/>"
+msgid "<strong>Leaders zone <span style=\"color:#77d7f1\">●</span></strong>"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -98,7 +103,7 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid "<strong>Winners zone <span style=\"color:#a0ec97\">●</span>:</strong><br/>"
+msgid "<strong>Winners zone <span style=\"color:#a0ec97\">●</span></strong>"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -845,6 +850,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
 msgid ""
 "UTC<br/><br/>\n"
+"                        \n"
 "                        <strong>LatinChain give its thanks to all the donators who donate Pi:</strong><br/>"
 msgstr ""
 "UTC<br/><br/>\n"
