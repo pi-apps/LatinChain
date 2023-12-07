@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 20:57+0000\n"
-"PO-Revision-Date: 2023-10-17 20:57+0000\n"
+"POT-Creation-Date: 2023-12-07 15:27+0000\n"
+"PO-Revision-Date: 2023-12-07 15:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -51,27 +51,6 @@ msgstr ""
 "                            Total de donadores verificados:"
 
 #. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
-msgid ""
-"<br/>\n"
-"                        <strong>Top 10 zone Chess <span style=\"color:#a0ec97\">●</span>:</strong><br/>"
-msgstr ""
-
-#. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
-msgid ""
-"<br/>\n"
-"                        <strong>Top 10 zone Snake <span style=\"color:#a0ec97\">●</span>:</strong><br/>"
-msgstr ""
-
-#. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
-msgid ""
-"<br/>\n"
-"                        <strong>Top 10 zone Sudoku <span style=\"color:#a0ec97\">●</span>:</strong><br/>"
-msgstr ""
-
-#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
 msgid ""
 "<br/><br/>\n"
@@ -99,7 +78,22 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
-msgid "<strong>Top 10 zone <span style=\"color:#a0ec97\">●</span>:</strong><br/>"
+msgid "<strong>Top 10 zone <span style=\"color:#a0ec97\">●</span></strong><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+msgid "<strong>Top 10 zone Chess <span style=\"color:#a0ec97\">●</span></strong>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+msgid "<strong>Top 10 zone Snake <span style=\"color:#a0ec97\">●</span></strong>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+msgid "<strong>Top 10 zone Sudoku <span style=\"color:#a0ec97\">●</span></strong>"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -234,6 +228,11 @@ msgid "Approve"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+msgid "Are you sure you want to Clear Cache?, it will reloads the page."
+msgstr "Estás seguro(a) que quieres Borrar Caché?, esto recargará la página."
+
+#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
 msgid "Are you sure you want to PAY MONTHLY all winners and devs?"
 msgstr ""
@@ -280,8 +279,8 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
-msgid "Back to LatinChain"
-msgstr "Volver a LatinChain"
+msgid "Are you sure you want to go back?."
+msgstr "Estás seguro(a) que quieres ir atrás?."
 
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__block_points
@@ -331,11 +330,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_chess_wins
 msgid "Chess Wins"
 msgstr ""
-
-#. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
-msgid "Clear Cache"
-msgstr "Borrar Caché"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.actions.act_window,help:website_pinetwork_odoo.admin_pi_apps_action

@@ -47,6 +47,8 @@
             <body>
                 <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                 <input type="hidden" id="amount" t-att-value="amount"/>
+                <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
                 
                 <style>
                 .square {color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
@@ -172,7 +174,7 @@
                         });
                         
                         $( "#clear_cache" ).click(function() {
-                            var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
+                            var result = confirm($("#clear_cache_message").text());
                             if(result)
                             {
                                 try {
@@ -189,7 +191,7 @@
                         });
                         
                         $( "#back" ).click(function() {
-                            var result = confirm("Are you sure you want to go back?.");
+                            var result = confirm($("#back_message").text());
                             if(result)
                             {
                                 //history.back();
@@ -202,15 +204,15 @@
                             {
                                 $( "#show" ).html('<i class="fa fa-eye"></i>');
                                 $( "#bottom_controls" ).show();
-                                $( "#clear_cache" ).removeClass("transparent");
-                                $( "#back" ).removeClass("transparent");
+                                //$( "#clear_cache" ).removeClass("transparent");
+                                //$( "#back" ).removeClass("transparent");
                                 $( ".fps-counter" ).removeClass("transparent");
                             }else if($( "#show" ).html() == '<i class="fa fa-eye"></i>')
                             {
                                 $( "#show" ).html('<i class="fa fa-eye-slash"></i>');
                                 $( "#bottom_controls" ).hide();
-                                $( "#clear_cache" ).addClass("transparent");
-                                $( "#back" ).addClass("transparent");
+                                //$( "#clear_cache" ).addClass("transparent");
+                                //$( "#back" ).addClass("transparent");
                                 $( ".fps-counter" ).addClass("transparent");
                             }
                         });
@@ -258,7 +260,7 @@
                                 </div>
                                 <div class="square" id="enable_dragging" >Drag controls</div><div class="square" id="disable_dragging" style="display: none;">Set controls</div><br/><br/>
                             </div>
-                            <div class="square transparent" id="clear_cache" style="">Clear Cache</div><div class="square transparent" id="back" style="">Back</div><br/><br/>            <!--<div class="square" id="bot">Bot</div>-->
+                            <div class="square transparent" id="clear_cache" style=""><i class="fa fa-refresh"></i></div><div class="square transparent" id="back" style=""><i class="fa fa-step-backward"></i></div><br/><br/>            <!--<div class="square" id="bot">Bot</div>-->
                             <div class="square-borderless fps-counter transparent"></div>
                         </p>
                         <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->

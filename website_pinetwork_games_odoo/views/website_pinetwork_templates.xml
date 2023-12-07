@@ -94,7 +94,7 @@
                             });
                         
                             $( ".clear_cache" ).click(function() {
-                                var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
+                                var result = confirm($("#clear_cache_message").text());
                                 if(result)
                                 {
                                     try {
@@ -111,7 +111,7 @@
                             });
                             
                             $( ".back" ).click(function() {
-                                var result = confirm("Are you sure you want to go back?.");
+                                var result = confirm($("#back_message").text());
                                 if(result)
                                 {
                                     //history.back();
@@ -127,6 +127,8 @@
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="amount" t-att-value="amount"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
+                    <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                    <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
                     <div class="container" style="text-align:center">
@@ -191,9 +193,8 @@
                                 
                                 <br />
                                 <br />
-                                <button id="clear_cache" class="btn btn-info clear_cache">Clear Cache</button>
-                                <br/><br/>
-                                <button id="back" class="btn btn-info back">Back</button>
+                                <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>
+                                <button id="back" class="btn btn-info back" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                                 
                                 <!--<ins class="adsbygoogle"
                                      style="display:block"

@@ -392,6 +392,8 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+                    
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
                     <script type="text/javascript">
@@ -486,7 +488,7 @@
                             auth();
                             
                             $( "#clear_cache" ).click(function() {
-                                var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
+                                var result = confirm($( "#clear_cache_message" ).text());
                                 if(result)
                                 {
                                     try {
@@ -503,7 +505,7 @@
                             });
                             
                             $( "#back" ).click(function() {
-                                var result = confirm("Are you sure you want to go back?.");
+                                var result = confirm($( "#back_message" ).text());
                                 if(result)
                                 {
                                     //history.back();
@@ -517,6 +519,9 @@
                 </head>
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                    <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
+                    
                     <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive -->
                         
@@ -545,9 +550,8 @@
                         </script>
                         
                         <br/>
-                        <button id="clear_cache" class="btn btn-info">Clear Cache</button>
-                        <br/><br/>
-                        <button id="back" class="btn btn-info">Back to LatinChain</button>
+                        <button id="clear_cache" class="btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <button id="back" class="btn btn-info" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                         <br/><br/>
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         Pi Transactions for user <strong><span id="username" /></strong>:<br/><br/>

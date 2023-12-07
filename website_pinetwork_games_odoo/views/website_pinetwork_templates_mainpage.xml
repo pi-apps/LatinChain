@@ -586,7 +586,7 @@
                             
                             
                             $( "#clear_cache" ).click(function() {
-                                var result = confirm("Are you sure you want to Clear Cache?, it will reloads the page.");
+                                var result = confirm($( "#clear_cache_message" ).text());
                                 if(result)
                                 {
                                     try {
@@ -611,6 +611,7 @@
                     
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
+                    <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
                     <div id="wrap">

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 20:56+0000\n"
-"PO-Revision-Date: 2023-10-17 20:56+0000\n"
+"POT-Creation-Date: 2023-12-07 15:26+0000\n"
+"PO-Revision-Date: 2023-12-07 15:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -153,7 +153,7 @@ msgstr ""
 msgid ""
 "<br/>\n"
 "                                <br/>\n"
-"                                Click in Clear Cache if button Donate doesn't activate.\n"
+"                                Click in Clear Cache or <i class=\"fa fa-refresh\"/> if button Donate doesn't activate.\n"
 "                                <br/>\n"
 "                                <br/>"
 msgstr ""
@@ -205,12 +205,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>User: <strong id=\"user_logged\">--</strong><br/>\n"
-"                            <br/>Status: <strong class=\"user_status\">Access through Pi Browser.<br/></strong>\n"
-"                            <br/>Total points: <strong id=\"user_points\">0</strong><br/>\n"
-"                            <br/>At: <strong id=\"user_points_datetime\"/><br/>\n"
-"                            <br/>Points per game: <strong id=\"user_points_per_game\">0</strong><br/>\n"
-"                            <br/>Max points per game: <strong id=\"user_points_last\">0</strong><br/>\n"
-"                            <br/># of wins per game: <strong id=\"user_points_wins\">0</strong><br/>"
+"                                <br/>Status: <strong class=\"user_status\">Access through Pi Browser.<br/></strong>\n"
+"                                <br/>Total points: <strong id=\"user_points\">0</strong><br/>\n"
+"                                <br/>At: <strong id=\"user_points_datetime\"/><br/>\n"
+"                                <br/>Points per game: <strong id=\"user_points_per_game\">0</strong><br/>\n"
+"                                <br/>Max points per game: <strong id=\"user_points_last\">0</strong><br/>\n"
+"                                <br/># of wins per game: <strong id=\"user_points_wins\">0</strong><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -382,7 +382,9 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
-msgid "<span id=\"loading_word\" style=\"display: none;\">Loading...</span><br/>"
+msgid ""
+"<span id=\"loading_word\" style=\"display: none; margin-left: 5px;\">Loading...</span><br/>\n"
+"                            <span id=\"show\" class=\"transparent square\"><i class=\"fa fa-eye-slash\"/></span><br/><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -430,16 +432,23 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Back"
+msgid "Are you sure you want to Clear Cache?, it will reloads the page."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-msgid "Back to RadioForUs"
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Are you sure you want to go back?."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -473,13 +482,7 @@ msgid "Clear"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Clear Cache"
 msgstr ""
 
@@ -496,11 +499,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "Current time:"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Dev"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -527,11 +525,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Easy"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Easy puzzle"
 msgstr ""
 
@@ -553,11 +546,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Flip Board"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Hard"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -593,11 +581,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Import..."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Info"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -667,22 +650,12 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Medium"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Medium puzzle"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "Memo"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Menu"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -829,11 +802,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Share"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Share in Social Networks:<br/><br/>"
 msgstr ""
 
@@ -890,16 +858,12 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "This puzzle"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Time"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -926,7 +890,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid ""
 "UTC<br/><br/>\n"
-"                                    Pi Transactions for user <strong><span id=\"username\"/></strong>:<br/><br/>"
+"                                        Pi Transactions for user <strong><span id=\"username\"/></strong>:<br/><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -937,23 +901,8 @@ msgid "Unblock with"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "User"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Very Hard"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Very Hard puzzle"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Video"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -999,11 +948,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Your Side:"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Your own puzzle"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
