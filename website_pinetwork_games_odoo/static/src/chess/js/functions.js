@@ -20,7 +20,7 @@ function set_points(points) {
         return $.post( "/pi-points", data).done(function(data) {
             data = JSON.parse(data);
             if(data.result && points > 0)
-                alert("You won " + points + " points");
+                alert("+" + points + $("#points_message").text());
         }).fail(function() {
             
         });
@@ -161,7 +161,7 @@ $( document ).ready(function() {
                                         data = JSON.parse(data);
                                         if(data.result && data.completed)
                                         {
-                                            alert("A payment was registered. Reload the page to view the changes.");
+                                            alert($("#payment_message").text());
                                         }
                                     } catch (e) {
                                     }
@@ -188,7 +188,7 @@ $( document ).ready(function() {
                                 }, 10000);*/
                                 transfer();
                             }else{
-                                alert("You can't pay less than " + $("#amount").val() + " Pi.");
+                                alert($("#payment_lessthan_message").text() + $("#amount").val() + " Pi.");
                             }
                         });
                         $("#button_click").prop( "disabled", false );
