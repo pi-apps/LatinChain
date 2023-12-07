@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 16:28+0000\n"
-"PO-Revision-Date: 2023-12-07 16:28+0000\n"
+"POT-Creation-Date: 2023-12-07 17:01+0000\n"
+"PO-Revision-Date: 2023-12-07 17:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -58,6 +58,11 @@ msgstr "* Usa este código para unirte a Pi Network: rockcesar"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "* Use this link to join Pi Network:"
 msgstr "* Usa este link para unirte a Pi Network:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ". You are a winner. Check in Winners Board."
+msgstr ". Eres un ganador. Chequea en el Winners Board."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -575,6 +580,11 @@ msgid "Current time:"
 msgstr "Hora actual:"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Days available:"
+msgstr "Días disponibles:"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Do you want to resign?"
 msgstr "Quiere resignarse?"
@@ -622,6 +632,11 @@ msgstr "Primer Turno:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Flip Board"
 msgstr "Intercambia Tablero"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Go to one of the games to do it."
+msgstr "Ve a uno de los juegos para hacerlo."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -764,6 +779,11 @@ msgstr "Siguiente"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "No"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Not verified. Each 30 days you should unlock the app paying"
+msgstr "No verificado. Cada 30 días to debes desbloquear la app pagando"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1085,3 +1105,8 @@ msgstr "a"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "to watch it working.<br/>"
 msgstr "para verlo funcionando.<br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "verified"
+msgstr "verificado"

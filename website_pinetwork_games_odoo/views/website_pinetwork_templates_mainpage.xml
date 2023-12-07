@@ -368,15 +368,15 @@
                                         passkey=data.passkey;
                                         if(data.unblocked)
                                         {
-                                            $("#verified").html(" (verified, " + data.unblocked_datetime + ")");
+                                            $("#verified").html(" (" + $("#verified_message").text() + ", " + data.unblocked_datetime + ")");
                                             $("#verified").show();
                                             
                                             winner = ""
                                             if(data.im_winner)
-                                                winner = ". You are a winner. Check in Winners Board."
+                                                winner = $("#winner_message").text();
                                             
                                             $("#user_logged").html(data.pi_user_code);
-                                            $(".user_status").html("<br/>(verified, " + data.unblocked_datetime + "). Days available: " + data.days_available + winner + "<br/>");
+                                            $(".user_status").html("<br/>(" + $("#verified_message").text() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner + "<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                             $("#user_points_last").html("(Chess: " + data.points_chess_last + ", Snake: " + data.points_snake_last + ", Sudoku: " + data.points_sudoku_last + ")");
@@ -388,7 +388,7 @@
                                             //$("#pi_wallet_address").prop( "disabled", false );
                                         }else{
                                             $("#user_logged").html(data.pi_user_code);
-                                            $(".user_status").html("<br/>Not verified. Each 30 days you should unlock the app paying " + data.amount + " Pi. Go to one of the games to do it.<br/>");
+                                            $(".user_status").html("<br/>" + $("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text() + "<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                             $("#user_points_last").html("(Chess: " + data.points_chess_last + ", Snake: " + data.points_snake_last + ", Sudoku: " + data.points_sudoku_last + ")");
@@ -608,10 +608,15 @@
                 </head>
                 <body>
                     
-                    
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                    <div id="winner_message" style="display:none;">. You are a winner. Check in Winners Board.</div>
+                    <div id="available_days_message" style="display:none;">Days available: </div>
+                    <div id="verified_message" style="display:none;">verified</div>
+                    <div id="not_verified_1_message" style="display:none;">Not verified. Each 30 days you should unlock the app paying </div>
+                    <div id="not_verified_2_message" style="display:none;">Go to one of the games to do it.</div>
+                    
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
                     <div id="wrap">
