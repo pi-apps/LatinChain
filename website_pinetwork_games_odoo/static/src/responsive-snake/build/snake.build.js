@@ -368,7 +368,11 @@ GameContainer.prototype.onKeydown = function (event) {
       }
       break;*/
     case 82 : //r
-      this.inst.restart();
+        var result = confirm($( "#reset_message" ).text());
+        if(result)
+        {
+            this.inst.restart();
+        }
       break;
     /*case 79 : //o
       this.toggleGame();
@@ -376,9 +380,11 @@ GameContainer.prototype.onKeydown = function (event) {
     case 32 : //space
       if (!this.disabled) {
         if (this.started) {
-          this.pause();
+            $('#pause').text($('#resume_text_message').text());
+            this.pause();
         } else {
-          this.play();
+            $('#pause').text($('#pause_text_message').text());
+            this.play();
         }
       }
       break;
