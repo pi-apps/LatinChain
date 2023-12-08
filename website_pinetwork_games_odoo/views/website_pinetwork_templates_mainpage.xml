@@ -529,7 +529,7 @@
                             
                             const shareData = {
                                 title: 'LatinChain Platform',
-                                text: $("#share_message").text(),
+                                text: $("#share_message").text() + "\n\nMainnet:\nhttps://latin-chain.com/\nTestnet:\nhttps://test.latin-chain.com/",
                                 //url: 'https://latin-chain.com/',
                             }
 
@@ -616,7 +616,7 @@
                     <div id="verified_message" style="display:none;">verified</div>
                     <div id="not_verified_1_message" style="display:none;">Not verified. Each 30 days you should unlock the app paying </div>
                     <div id="not_verified_2_message" style="display:none;">Go to one of the games to do it.</div>
-                    <div id="share_message" style="display:none;">Hi. Check it out this Pi App: LatinChain Platform (Games from Latin America for Pi). Try it in Pi Browser. #PiNetwork #PiApps\n\nMainnet:\nhttps://latin-chain.com/\nTestnet:\nhttps://test.latin-chain.com/</div>
+                    <div id="share_message" style="display:none;">Hi. Check it out this Pi App: LatinChain Platform (Games from Latin America for Pi). Try it in Pi Browser. #PiNetwork #PiApps</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
