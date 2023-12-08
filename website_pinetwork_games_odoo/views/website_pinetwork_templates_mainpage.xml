@@ -526,12 +526,6 @@
                             }
                             
                             auth();
-                            
-                            const shareData = {
-                                title: 'LatinChain Platform',
-                                text: $("#share_message").text() + "\n\nMainnet:\nhttps://latin-chain.com/\nTestnet:\nhttps://test.latin-chain.com/",
-                                //url: 'https://latin-chain.com/',
-                            }
 
                             //$("#social_div").css("visibility", "visible");
                             const btn = document.querySelector('#button1');
@@ -539,6 +533,12 @@
                             
                             // Must be triggered some kind of "user activation"
                             btn.addEventListener('click', async () => {
+                                const shareData = {
+                                    title: 'LatinChain Platform',
+                                    text: $("#share_message").text() + "\n\nMainnet:\nhttps://latin-chain.com/\nTestnet:\nhttps://test.latin-chain.com/",
+                                    //url: 'https://latin-chain.com/',
+                                }
+                                
                                 if (!navigator.share) {
                                     Pi.openShareDialog(shareData.title, shareData.text);
                                 }else
