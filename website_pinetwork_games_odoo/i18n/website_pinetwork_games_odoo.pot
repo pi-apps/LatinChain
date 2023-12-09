@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-09 10:46+0000\n"
-"PO-Revision-Date: 2023-12-09 10:46+0000\n"
+"POT-Creation-Date: 2023-12-09 12:14+0000\n"
+"PO-Revision-Date: 2023-12-09 12:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -881,6 +881,11 @@ msgstr ""
 msgid ""
 "Score :\n"
 "                            <span>0</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
+msgid "Session points:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

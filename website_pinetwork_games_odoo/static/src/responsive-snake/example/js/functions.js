@@ -3,6 +3,7 @@ var pi_user_code = "";
 var accessToken = "";
 var passkey = "";
 const Pi = window.Pi;
+var totalpoints = 0;
 
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
@@ -20,7 +21,11 @@ function set_points(points) {
         return $.post( "/pi-points", data).done(function(data) {
             data = JSON.parse(data);
             if(data.result && points > 0)
-                alert("+" + points + $("#points_message").text());
+            {
+                totalpoints += points;
+                $("#score-points").html("+" + points + " <i class='fa fa-level-up'></i>. <strong>" + $("#session_points_message").text() + "</strong>" + totalpoints);
+                //alert("+" + points + $("#points_message").text());
+            }
         }).fail(function() {
             
         });

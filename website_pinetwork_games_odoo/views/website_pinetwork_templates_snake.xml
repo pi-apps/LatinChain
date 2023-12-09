@@ -36,7 +36,7 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
                 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js"></script>
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js?v=1"></script>
                 
                 <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
                 
@@ -50,6 +50,7 @@
                 <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                 <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
                 <div id="points_message" style="display:none;"> points.</div>
+                <div id="session_points_message" style="display:none;">Session points: </div>
                 <div id="unblocked_message" style="display:none;">Thank you for your donation. You were unblocked.</div>
                 <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
                 <div id="payment_lessthan_message" style="display:none;">You can't pay less than </div>
@@ -219,6 +220,8 @@
                                 //$( ".fps-counter" ).addClass("transparent");
                             }
                         });
+                        
+                        $("#score-points").html("<strong>" + $("#session_points_message").text() + "</strong> 0");
                     });
                 </script>
                 <div class="intro" style="width: 100%; text-align: center">
@@ -278,9 +281,12 @@
                             <span>0</span>
                         </div>
 
-                        <div id="hi-score">
+                        <div id="hi-score" style="display:none">
                             Hi session Score :
                             <span>0</span>
+                        </div>
+                        
+                        <div id="score-points">
                         </div>
 
                         <!--<div id="bot-hi-score">
