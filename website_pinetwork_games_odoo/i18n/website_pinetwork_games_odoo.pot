@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-09 00:34+0000\n"
-"PO-Revision-Date: 2023-12-09 00:34+0000\n"
+"POT-Creation-Date: 2023-12-09 10:46+0000\n"
+"PO-Revision-Date: 2023-12-09 10:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -418,7 +418,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid ""
 "<span id=\"loading_word\" style=\"display: none; margin-left: 5px;\">Loading...</span><br/>\n"
-"                            <span id=\"show\" class=\"transparent square\"><i class=\"fa fa-eye-slash\"/></span><br/><br/>"
+"                            <span id=\"show\" class=\"transparent square\"><i class=\"fa fa-eye\"/></span><br/><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -588,11 +588,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "Donate to unblock"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
-msgid "Drag controls"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -780,7 +775,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Pause"
 msgstr ""
@@ -863,12 +857,6 @@ msgid "Repository"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
-msgid "Reset"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Resume"
 msgstr ""
@@ -893,11 +881,6 @@ msgstr ""
 msgid ""
 "Score :\n"
 "                            <span>0</span>"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
-msgid "Set controls"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

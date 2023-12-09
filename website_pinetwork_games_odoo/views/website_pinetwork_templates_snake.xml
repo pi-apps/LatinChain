@@ -209,14 +209,14 @@
                                 $( "#bottom_controls" ).show();
                                 //$( "#clear_cache" ).removeClass("transparent");
                                 //$( "#back" ).removeClass("transparent");
-                                $( ".fps-counter" ).removeClass("transparent");
+                                //$( ".fps-counter" ).removeClass("transparent");
                             }else if($( "#show" ).html() == '<i class="fa fa-eye"></i>')
                             {
                                 $( "#show" ).html('<i class="fa fa-eye-slash"></i>');
                                 $( "#bottom_controls" ).hide();
                                 //$( "#clear_cache" ).addClass("transparent");
                                 //$( "#back" ).addClass("transparent");
-                                $( ".fps-counter" ).addClass("transparent");
+                                //$( ".fps-counter" ).addClass("transparent");
                             }
                         });
                     });
@@ -253,8 +253,8 @@
                     <div class="bottom">
                         <p>
                             <span id="loading_word" style="display: none; margin-left: 5px;">Loading...</span><br/>
-                            <span id="show" class="transparent square"><i class="fa fa-eye-slash"></i></span><br/><br/>
-                            <div id="bottom_controls" style="display: none;">
+                            <span id="show" class="transparent square"><i class="fa fa-eye"></i></span><br/><br/>
+                            <div id="bottom_controls" style="">
                                 <div id="plus_minus_controls" style="display: none;">
                                     <!--<div class="square" id="minus" style="display: none;">-</div>--><div class="square transparent" id="plus" >+</div>
                                 </div>
