@@ -54,8 +54,8 @@
                 <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
                 <div id="payment_lessthan_message" style="display:none;">You can't pay less than </div>
                 <div id="reset_message" style="display:none;">Are you sure you want to Reset?, it will restart the game.</div>
-                <div id="pause_text_message" style="display:none;">Pause</div>
-                <div id="resume_text_message" style="display:none;">Resume</div>
+                <div id="pause_text_message" style="display:none;"><i class="fa fa-pause"></i></div>
+                <div id="resume_text_message" style="display:none;"><i class="fa fa-play"></i></div>
                 
                 <style>
                 .square {color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
@@ -256,14 +256,17 @@
                             <span id="show" class="transparent square"><i class="fa fa-eye-slash"></i></span><br/><br/>
                             <div id="bottom_controls" style="display: none;">
                                 <div id="plus_minus_controls" style="display: none;">
-                                    <!--<div class="square" id="minus" style="display: none;">-</div>--><div class="square" id="plus" >+</div><br/><br/>
+                                    <!--<div class="square" id="minus" style="display: none;">-</div>--><div class="square transparent" id="plus" >+</div>
                                 </div>
                                 <div id="reset_pause_controls" style="display: none;">
-                                    <div class="square" id="reset" style="display: none;">Reset</div><div class="square" id="pause" style="display: none;">Pause</div><br/><br/>
+                                    <div class="square transparent" id="reset" style="display: none;"><i class="fa fa-repeat"></i></div><div class="square transparent" id="pause" style="display: none;"><i class="fa fa-play"></i></div>
                                 </div>
-                                <div class="square" id="enable_dragging" >Drag controls</div><div class="square" id="disable_dragging" style="display: none;">Set controls</div><br/><br/>
+                                <div class="square transparent" id="enable_dragging" ><i class="fa fa-hand-paper-o"></i></div><div class="square transparent" id="disable_dragging" style="display: none;"><i class="fa fa-hand-rock-o"></i></div>
+                                <div class="square transparent" id="clear_cache" style=""><i class="fa fa-refresh"></i></div><div class="square transparent" id="back" style=""><i class="fa fa-step-backward"></i></div>
+                                <!--<div class="square" id="bot">Bot</div>-->
+                                <br/><br/>
                             </div>
-                            <div class="square transparent" id="clear_cache" style=""><i class="fa fa-refresh"></i></div><div class="square transparent" id="back" style=""><i class="fa fa-step-backward"></i></div><br/><br/>            <!--<div class="square" id="bot">Bot</div>-->
+                            
                             <div class="square-borderless fps-counter transparent"></div>
                         </p>
                         <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->

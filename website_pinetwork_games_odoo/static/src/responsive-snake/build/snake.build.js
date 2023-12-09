@@ -380,10 +380,10 @@ GameContainer.prototype.onKeydown = function (event) {
     case 32 : //space
       if (!this.disabled) {
         if (this.started) {
-            $('#pause').text($('#resume_text_message').text());
+            $('#pause').html($('#resume_text_message').html());
             this.pause();
         } else {
-            $('#pause').text($('#pause_text_message').text());
+            $('#pause').html($('#pause_text_message').html());
             this.play();
         }
       }
