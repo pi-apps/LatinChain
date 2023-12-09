@@ -180,13 +180,8 @@
                             var result = confirm($("#clear_cache_message").text());
                             if(result)
                             {
-                                /*try {
-                                    Cache.delete();
-                                } catch (err) {
-                                    console.error(err);
-                                }*/
                                 try {
-                                    window.location.reload(true);
+                                    location.reload(true);
                                 } catch (err) {
                                     console.error(err);
                                 }
