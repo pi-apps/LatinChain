@@ -181,6 +181,11 @@
                             if(result)
                             {
                                 try {
+                                    Cache.delete();
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                                try {
                                     location.reload(true);
                                 } catch (err) {
                                     console.error(err);
