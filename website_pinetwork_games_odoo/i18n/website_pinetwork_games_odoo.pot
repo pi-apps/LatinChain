@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 16:12+0000\n"
-"PO-Revision-Date: 2023-12-08 16:12+0000\n"
+"POT-Creation-Date: 2023-12-09 00:34+0000\n"
+"PO-Revision-Date: 2023-12-09 00:34+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -48,6 +48,13 @@ msgid "* Rules to be verified:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"* These are the reasons why you should subscribe to LatinChain Platform by "
+"paying"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "* Use this code to join Pi Network: rockcesar"
 msgstr ""
@@ -70,6 +77,13 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "1.- Each 30 days you should unlock the app paying"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"1.- You'll have access to many games, as Chess, Sudoku and Snake, with "
+"multilanguage interface."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -104,6 +118,14 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
+"2.- Your playing records will be saved in our servers, you can consult them "
+"anytime. After finish the subscription, your records would be hidden, but "
+"when you start the subscription again, your records will be shown again."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
 "3.- All prize payments will be paid automatically to your Pi Wallet "
 "associated in your Pi Browser."
 msgstr ""
@@ -111,6 +133,13 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "3.- For Top 10 zone Chess: Have 20 or more points in Chess."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"3.- You could gain prizes if you are one of the leaders. Read the Rules "
+"section for more info."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -398,8 +427,18 @@ msgid "<strong>App Store</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "<strong>Membership</strong><br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>Play Store</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "<strong>Rules</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -765,6 +804,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Pi each 30 days:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "Pi. Go to one of the games to do it. Once you pay in any of the games, it "
 "won't be refunded. When you Donate it's considered a donation and it won't "
@@ -796,6 +840,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Privacy Policy"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Read both sections: Membership (why to subscribe) and Rules (norms)."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

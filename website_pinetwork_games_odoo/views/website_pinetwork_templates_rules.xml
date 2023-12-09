@@ -29,23 +29,55 @@
                     <body>
                         <div class="container form-group" style="text-align:center">
                             <br/>
-                            <h1>* Rules to be verified:</h1>
-                            <h3>1.- Each 30 days you should unlock the app paying <span t-esc="amount" /> Pi. Go to one of the games to do it. Once you pay in any of the games, it won't be refunded. When you Donate it's considered a donation and it won't be refunded either. You can also unblock the games, for 30 days since the payment date, with a donation. Although, all payments to LatinChain are considered donations.</h3>
-                            <h3>2.- In the mainscreen of latin-chain.com (Mainnet) or test.latin-chain.com (Testnet), depending which version of LatinChain are you using, you can watch your available days.</h3><br/>
-                            <h1>* Rules to be in the Leaders Board:</h1>
-                            <h3>1.- Be verified in LatinChain Platform.</h3>
-                            <h3>2.- Be one of the first 50 users with more total points.</h3><br/>
-                            <h1>* Rules to be in the Top 10 Board:</h1>
-                            <h3>1.- Be verified in LatinChain Platform.</h3>
-                            <h3>2.- For Top 10 zone: Have 20 or more points in Chess, more than 18 points in Sudoku and more than 20 points in Snake, <strong>and</strong> have more than 200 in total points.</h3>
-                            <h3>3.- For Top 10 zone Chess: Have 20 or more points in Chess.</h3>
-                            <h3>4.- For Top 10 zone Snake: Have more than 20 points in Snake.</h3>
-                            <h3>5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku.</h3><br/>
-                            <h1>* Rules to be in the Winners Board:</h1>
-                            <h3>1.- Be verified in LatinChain Platform.</h3>
-                            <h3>2.- Be in the first 10 on the Leaders Board or in the Top 10 Board (Top 10 zone, Top 10 zone Chess, Top 10 zone Snake or Top 10 zone Sudoku). It is filled automatically at 16:00 UTC.</h3>
-                            <h3>3.- All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.</h3>
-                            <h3>4.- On OpenMainnet we will pay the 15th day of each month.<span t-if="pi_users_winners_paid_datetime"> Last payment was on <span t-esc="pi_users_winners_paid_datetime" /> UTC, next payment will be the 15th day of next month.</span></h3>
+                            <h3>Read both sections: Membership (why to subscribe) and Rules (norms).</h3>
+                            <br/>
+                            <div class="accordion" id="accordionPanelsStayOpenExample">
+                              <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                                    <strong>Membership</strong><br/>
+                                  </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                                  <div class="accordion-body">
+                                    <h1>* These are the reasons why you should subscribe to LatinChain Platform by paying <span t-esc="amount" /> Pi each 30 days:</h1>
+                                    <h3>1.- You'll have access to many games, as Chess, Sudoku and Snake, with multilanguage interface.</h3>
+                                    <h3>2.- Your playing records will be saved in our servers, you can consult them anytime. After finish the subscription, your records would be hidden, but when you start the subscription again, your records will be shown again.</h3>
+                                    <h3>3.- You could gain prizes if you are one of the leaders. Read the Rules section for more info.</h3>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                    <strong>Rules</strong>
+                                  </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                                  <div class="accordion-body">
+                                    <br/>
+                                    <h1>* Rules to be verified:</h1>
+                                    <h3>1.- Each 30 days you should unlock the app paying <span t-esc="amount" /> Pi. Go to one of the games to do it. Once you pay in any of the games, it won't be refunded. When you Donate it's considered a donation and it won't be refunded either. You can also unblock the games, for 30 days since the payment date, with a donation. Although, all payments to LatinChain are considered donations.</h3>
+                                    <h3>2.- In the mainscreen of latin-chain.com (Mainnet) or test.latin-chain.com (Testnet), depending which version of LatinChain are you using, you can watch your available days.</h3><br/>
+                                    <h1>* Rules to be in the Leaders Board:</h1>
+                                    <h3>1.- Be verified in LatinChain Platform.</h3>
+                                    <h3>2.- Be one of the first 50 users with more total points.</h3><br/>
+                                    <h1>* Rules to be in the Top 10 Board:</h1>
+                                    <h3>1.- Be verified in LatinChain Platform.</h3>
+                                    <h3>2.- For Top 10 zone: Have 20 or more points in Chess, more than 18 points in Sudoku and more than 20 points in Snake, <strong>and</strong> have more than 200 in total points.</h3>
+                                    <h3>3.- For Top 10 zone Chess: Have 20 or more points in Chess.</h3>
+                                    <h3>4.- For Top 10 zone Snake: Have more than 20 points in Snake.</h3>
+                                    <h3>5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku.</h3><br/>
+                                    <h1>* Rules to be in the Winners Board:</h1>
+                                    <h3>1.- Be verified in LatinChain Platform.</h3>
+                                    <h3>2.- Be in the first 10 on the Leaders Board or in the Top 10 Board (Top 10 zone, Top 10 zone Chess, Top 10 zone Snake or Top 10 zone Sudoku). It is filled automatically at 16:00 UTC.</h3>
+                                    <h3>3.- All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.</h3>
+                                    <h3>4.- On OpenMainnet we will pay the 15th day of each month.<span t-if="pi_users_winners_paid_datetime"> Last payment was on <span t-esc="pi_users_winners_paid_datetime" /> UTC, next payment will be the 15th day of next month.</span></h3>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
                             <br/><br/><br/>
                         </div>
 

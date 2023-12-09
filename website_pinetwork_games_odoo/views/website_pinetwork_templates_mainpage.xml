@@ -556,7 +556,7 @@
                                 $.colorbox({href:"/modal-vote", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
-                            $( "#rules_button" ).click(function() {
+                            $( ".rules_button" ).click(function() {
                                 $.colorbox({href:"/modal-rules", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
@@ -930,6 +930,10 @@
                             
                             <div class="container" style="text-align:center">
                                 <div class="row">
+                                    <div class="col-12"><button id="rules_button_2" class="btn btn-warning rules_button">Rules</button></div>
+                                </div>
+                                <br/>
+                                <div class="row">
                                     <div class="col-6"><a href="/chess" class="btn btn-success"><i class="fa fa-gamepad"></i> CHESS</a><button id="chessinfo" class="btn btn-info chessinfo"><i class="fa fa-info"></i></button></div>
                                     <div class="col-6"><a href="/sudoku" class="btn btn-primary"><i class="fa fa-gamepad"></i> SUDOKU</a><button id="sudokuinfo" class="btn btn-info sudokuinfo"><i class="fa fa-info"></i></button></div>
                                 </div>
@@ -998,7 +1002,7 @@
                           <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
                             <br/>Leaders and rules:<br/><br/>
                             <div class="row">
-                                <div class="col-12"><button id="rules_button" class="btn btn-warning">Rules</button></div>
+                                <div class="col-12"><button id="rules_button" class="btn btn-warning rules_button">Rules</button></div>
                             </div>
                             <br/>
                             <div class="row">
