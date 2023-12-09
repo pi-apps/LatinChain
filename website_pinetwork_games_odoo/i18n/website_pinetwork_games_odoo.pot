@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-09 12:31+0000\n"
-"PO-Revision-Date: 2023-12-09 12:31+0000\n"
+"POT-Creation-Date: 2023-12-09 13:15+0000\n"
+"PO-Revision-Date: 2023-12-09 13:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,11 @@ msgstr ""
 msgid ""
 "(Remember <strong>clear the Pi Browser cache</strong> if it is not working "
 "well)."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "* Chess:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -45,6 +50,16 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "* Rules to be verified:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "* Snake:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "* Sudoku:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -76,7 +91,22 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "1.- Chess has 20 levels."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "1.- Each 10 foods achieved in Score, you will gain the Score/10."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "1.- Each 30 days you should unlock the app paying"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "1.- Sudoku has 4 levels."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -101,6 +131,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "2.- Draw is 1 point."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "2.- For Top 10 zone: Have 20 or more points in Chess, more than 18 points in"
 " Sudoku and more than 20 points in Snake, <strong>and</strong> have more "
@@ -113,6 +148,19 @@ msgid ""
 "2.- In the mainscreen of latin-chain.com (Mainnet) or test.latin-chain.com "
 "(Testnet), depending which version of LatinChain are you using, you can "
 "watch your available days."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"2.- It means if you achieved 10 foods in Score, you will gain 1 point. If "
+"you achieved 20 foods in Score, you will gain 2 points. If you achieved 30 "
+"foods in Score, you will gain 3 points. And so."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "2.- Winning in level 1, you will gain 3 points."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -138,6 +186,19 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
+"3.- The number of the level is the same amount of points. It means, winning "
+"in level 1, you will gain 1 point. Wining in level 2, you will gain 2 "
+"points. Wining in level 20, you will gain 20 points. And so."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "3.- Winning in level 2, you will gain 6 points."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
 "3.- You could gain prizes if you are one of the leaders. Read the Rules "
 "section for more info."
 msgstr ""
@@ -154,7 +215,17 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "4.- Winning in level 3, you will gain 9 points."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "5.- Winning in level 4, you will gain 12 points."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -424,6 +495,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>App Store</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "<strong>Levels</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -837,13 +913,15 @@ msgid "Privacy Policy"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "Read both sections: Membership (why to subscribe) and Rules (norms)."
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Read the blog"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Read the blog"
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"Read three sections: Membership (why to subscribe), Rules (norms) and Levels"
+" (how to obtain points)."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

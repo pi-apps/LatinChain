@@ -29,7 +29,7 @@
                     <body>
                         <div class="container form-group" style="text-align:center">
                             <br/>
-                            <h3>Read both sections: Membership (why to subscribe) and Rules (norms).</h3>
+                            <h3>Read three sections: Membership (why to subscribe), Rules (norms) and Levels (how to obtain points).</h3>
                             <br/>
                             <div class="accordion" id="accordionPanelsStayOpenExample">
                               <div class="accordion-item">
@@ -48,12 +48,12 @@
                                 </div>
                               </div>
                               <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                                     <strong>Rules</strong>
                                   </button>
                                 </h2>
-                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                   <div class="accordion-body">
                                     <br/>
                                     <h1>* Rules to be verified:</h1>
@@ -73,6 +73,31 @@
                                     <h3>2.- Be in the first 10 on the Leaders Board or in the Top 10 Board (Top 10 zone, Top 10 zone Chess, Top 10 zone Snake or Top 10 zone Sudoku). It is filled automatically at 16:00 UTC.</h3>
                                     <h3>3.- All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.</h3>
                                     <h3>4.- On OpenMainnet we will pay the 15th day of each month.<span t-if="pi_users_winners_paid_datetime"> Last payment was on <span t-esc="pi_users_winners_paid_datetime" /> UTC, next payment will be the 15th day of next month.</span></h3>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                    <strong>Levels</strong>
+                                  </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                  <div class="accordion-body">
+                                    <br/>
+                                    <h1>* Chess:</h1>
+                                    <h3>1.- Chess has 20 levels.</h3>
+                                    <h3>2.- Draw is 1 point.</h3>
+                                    <h3>3.- The number of the level is the same amount of points. It means, winning in level 1, you will gain 1 point. Wining in level 2, you will gain 2 points. Wining in level 20, you will gain 20 points. And so.</h3><br/>
+                                    <h1>* Snake:</h1>
+                                    <h3>1.- Each 10 foods achieved in Score, you will gain the Score/10.</h3>
+                                    <h3>2.- It means if you achieved 10 foods in Score, you will gain 1 point. If you achieved 20 foods in Score, you will gain 2 points. If you achieved 30 foods in Score, you will gain 3 points. And so.</h3><br/>
+                                    <h1>* Sudoku:</h1>
+                                    <h3>1.- Sudoku has 4 levels.</h3>
+                                    <h3>2.- Winning in level 1, you will gain 3 points.</h3>
+                                    <h3>3.- Winning in level 2, you will gain 6 points.</h3>
+                                    <h3>4.- Winning in level 3, you will gain 9 points.</h3>
+                                    <h3>5.- Winning in level 4, you will gain 12 points.</h3>
                                   </div>
                                 </div>
                               </div>
