@@ -371,7 +371,9 @@ GameContainer.prototype.onKeydown = function (event) {
         var result = confirm($( "#reset_message" ).text());
         if(result)
         {
+            $('#pause').html($('#pause_text_message').html());
             this.inst.restart();
+            this.started = true;
         }
       break;
     /*case 79 : //o
