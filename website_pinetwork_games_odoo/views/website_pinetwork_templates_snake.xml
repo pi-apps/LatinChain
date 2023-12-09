@@ -186,7 +186,7 @@
                                     console.error(err);
                                 }
                                 try {
-                                    location.reload(true);
+                                    window.location.reload(true);
                                 } catch (err) {
                                     console.error(err);
                                 }
@@ -295,7 +295,7 @@
             <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/vendor/zepto-touch/zepto-touch.js"></script>
 
             <!-- Browserified Build -->
-            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/build/snake.build.js"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/build/snake.build.js?v=1"></script>
 
             <script>
                 //Start Snake Game
