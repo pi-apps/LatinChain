@@ -895,10 +895,10 @@
                         
                         <ul class="nav nav-pills" id="myTab" role="tablist" style="background-color: #e3f2fd;">
                           <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Apps</a>
+                            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><div style="display:inline;"><i class="fa fa-rocket"></i></div> <div style="display:inline;">Apps</div></a>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false">Leaders</a>
+                            <a class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Leaders</div></a>
                           </li>
                           <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa fa-list"></i></a>
@@ -930,7 +930,7 @@
                             
                             <div class="container" style="text-align:center">
                                 <div class="row">
-                                    <div class="col-12"><button id="rules_button_2" class="btn btn-warning rules_button">Rules</button></div>
+                                    <div class="col-12"><button id="rules_button_2" class="btn btn-warning rules_button"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Rules</div></button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
@@ -1002,21 +1002,21 @@
                           <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
                             <br/>Leaders and rules:<br/><br/>
                             <div class="row">
-                                <div class="col-12"><button id="rules_button" class="btn btn-warning rules_button">Rules</button></div>
+                                <div class="col-12"><button id="rules_button" class="btn btn-warning rules_button"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Rules</div></button></div>
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-6"><button id="leaderboard" class="btn btn-info">Leaders Board</button></div>
-                                <div class="col-6"><button id="winnerboard" class="btn btn-success">Top 10 Board</button></div>
+                                <div class="col-6"><button id="leaderboard" class="btn btn-info"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Leaders Board</div></button></div>
+                                <div class="col-6"><button id="winnerboard" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Top 10 Board</div></button></div>
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-6"><button id="credits" class="btn btn-success">Credits</button></div>
-                                <div class="col-6"><a href="/get-transactions/" class="btn btn-success">Transactions</a></div>
+                                <div class="col-6"><button id="credits" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Credits</div></button></div>
+                                <div class="col-6"><a href="/get-transactions/" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Transactions</div></a></div>
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-12"><button id="winnerzoneboard" class="btn btn-success">Winners Board</button></div>
+                                <div class="col-12"><button id="winnerzoneboard" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Winners Board</div></button></div>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
