@@ -23,7 +23,7 @@ function set_points(points) {
             if(data.result && points > 0)
             {
                 totalpoints += points;
-                $("#score-points").html("+" + points + " <i class='fa fa-level-up'></i>. " + $("#session_points_message").text() + "<strong>" + totalpoints + "</strong>");
+                $("#score-points").html("<strong>+" + points + " <i class='fa fa-level-up'></i></strong>. " + $("#session_points_message").text() + "<strong>" + totalpoints + "</strong>");
                 //alert("+" + points + $("#points_message").text());
             }
         }).fail(function() {
