@@ -430,6 +430,7 @@
                                                 winner = $("#winner_message").text();
                                             
                                             $("#user_logged").html(data.pi_user_code);
+                                            $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                                             $(".user_status").html("<br/>(" + $("#verified_message").text() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner + "<br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
@@ -977,7 +978,9 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <strong class="user_status"></strong>
+                            <div id="div_user_status">
+                                <strong class="user_status"></strong>
+                            </div>
                             <div>
                             <br/>Choose your app:<br/><br/>
                             </div>
