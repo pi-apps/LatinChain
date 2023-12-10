@@ -118,15 +118,32 @@
                           }
                         }
                         
-                        window.addEventListener('load', function() {
-                            document.getElementById("loading_ajax_icon").style.display = "none";
-                            if(location.pathname.substring(0, 4) == "/web")
-                            {
-                                document.getElementById("translate_text_latinchain_2").style.display = "none";
-                            }else
-                                document.getElementById("translate_text_latinchain_2").style.display = "";
-                        });
                     </script>
+                    
+                    <t t-if="hide_google_translate">
+                        <script type="text/javascript">
+                            window.addEventListener('load', function() {
+                                document.getElementById("loading_ajax_icon").style.display = "none";
+                                if(location.pathname.substring(0, 4) == "/web")
+                                {
+                                    document.getElementById("translate_text_latinchain_2").style.display = "none";
+                                }
+                            });
+                        </script>
+                    </t>
+                    
+                    <t t-if="not hide_google_translate">
+                        <script type="text/javascript">
+                            window.addEventListener('load', function() {
+                                document.getElementById("loading_ajax_icon").style.display = "none";
+                                if(location.pathname.substring(0, 4) == "/web")
+                                {
+                                    document.getElementById("translate_text_latinchain_2").style.display = "none";
+                                }else
+                                    document.getElementById("translate_text_latinchain_2").style.display = "";
+                            });
+                        </script>
+                    </t>
 
                     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                     
@@ -259,15 +276,32 @@
                       }
                     }
                     
-                    window.addEventListener('load', function() {
-                        document.getElementById("loading_ajax_icon").style.display = "none";
-                        if(location.pathname.substring(0, 4) == "/web")
-                        {
-                            document.getElementById("translate_text_latinchain_2").style.display = "none";
-                        }else
-                            document.getElementById("translate_text_latinchain_2").style.display = "";
-                    });
                 </script>
+                
+                <t t-if="hide_google_translate">
+                    <script type="text/javascript">
+                        window.addEventListener('load', function() {
+                            document.getElementById("loading_ajax_icon").style.display = "none";
+                            if(location.pathname.substring(0, 4) == "/web")
+                            {
+                                document.getElementById("translate_text_latinchain_2").style.display = "none";
+                            }
+                        });
+                    </script>
+                </t>
+                
+                <t t-if="not hide_google_translate">
+                    <script type="text/javascript">
+                        window.addEventListener('load', function() {
+                            document.getElementById("loading_ajax_icon").style.display = "none";
+                            if(location.pathname.substring(0, 4) == "/web")
+                            {
+                                document.getElementById("translate_text_latinchain_2").style.display = "none";
+                            }else
+                                document.getElementById("translate_text_latinchain_2").style.display = "";
+                        });
+                    </script>
+                </t>
 
                 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 
