@@ -431,7 +431,7 @@
                                             
                                             $("#user_logged").html(data.pi_user_code);
                                             $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
-                                            $(".user_status").html("<br/>(" + $("#verified_message").text() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner + "<br/>");
+                                            $(".user_status").html("(" + $("#verified_message").text() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                             $("#user_points_last").html("(Chess: " + data.points_chess_last + ", Snake: " + data.points_snake_last + ", Sudoku: " + data.points_sudoku_last + ")");
@@ -443,7 +443,8 @@
                                             //$("#pi_wallet_address").prop( "disabled", false );
                                         }else{
                                             $("#user_logged").html(data.pi_user_code);
-                                            $(".user_status").html("<br/>" + $("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text() + "<br/>");
+                                            $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
+                                            $(".user_status").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                             $("#user_points_last").html("(Chess: " + data.points_chess_last + ", Snake: " + data.points_snake_last + ", Sudoku: " + data.points_sudoku_last + ")");
