@@ -36,7 +36,7 @@
                         <t t-set="hide_google_translate_text" t-value="'display: none !important;'"/>
                     </t>
                     <div style="text-align:center">
-                        <div id="translate_text_latinchain">
+                        <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
                             <div id="loading_ajax_icon">
                                 <img width="30" height="30" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif" />
                             </div>
@@ -191,12 +191,10 @@
                     <t t-set="hide_google_translate_text" t-value="'display: none !important;'"/>
                 </t>
                 <div style="text-align:center">
-                    <div id="translate_text_latinchain">
+                    <div id="translate_text_latinchain" t-att-style="hide_google_translate_2">
                         <div id="loading_ajax_icon">
                             <img width="30" height="30" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif" />
                         </div>
-                    </div>
-                    <div id="translate_text_latinchain">
                     </div>
                     <div id="translate_text_latinchain_2" t-att-style="hide_google_translate_text">
                         <strong>Translate</strong>
