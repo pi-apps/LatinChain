@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-10 21:39+0000\n"
-"PO-Revision-Date: 2023-12-10 21:39+0000\n"
+"POT-Creation-Date: 2023-12-10 22:11+0000\n"
+"PO-Revision-Date: 2023-12-10 22:11+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -251,6 +251,17 @@ msgstr "4.- Ganando en nivel 3, vas a ganar 9 puntos."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku."
 msgstr "5.- Para el Top 10 zone Sudoku: Tener más de 18 puntos en Sudoku."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"5.- If you are a winner on OpenMainnet, you will gain according to the "
+"income of LatinChain Platform, and not less than the minimum payment to "
+"unlock the games. Current minimum payment is at"
+msgstr ""
+"5.- Si eres un ganador en OpenMainnet, vas a ganar acorde al ingreso de "
+"LatinChain Platform, y no menos que el pago mínimo para desbloquear los "
+"juegos. El pago mínimo actual está en"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -945,6 +956,20 @@ msgstr "Ganadores del Pi Hackathon"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Pi each 30 days:"
 msgstr "Pi cada 30 días:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Pi, or much more, depending on the income."
+msgstr "Pi, ó mucho más, dependiendo del ingreso."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"Pi, so you will gain not less than that. In a good situation we could pay "
+"the triple of minimum payment:"
+msgstr ""
+"Pi, así que vas a ganar no menos que eso. En una buena situación podríamos "
+"pagar el triple del pago mínimo:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
