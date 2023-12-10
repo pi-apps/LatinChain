@@ -116,7 +116,7 @@
                           }
                         }
                         
-                        document.addEventListener("DOMContentLoaded", function(event) {
+                        window.addEventListener('load', function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
                             if(location.pathname.substring(0, 4) == "/web")
                             {
@@ -252,8 +252,8 @@
                             //observer.observe(el4);
                       }
                     }
-                
-                    document.addEventListener("DOMContentLoaded", function(event) {
+                    
+                    window.addEventListener('load', function() {
                         document.getElementById("loading_ajax_icon").style.display = "none";
                         if(location.pathname.substring(0, 4) == "/web")
                         {
