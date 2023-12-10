@@ -653,7 +653,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <button id="show_status" class="btn btn-primary mb-2 o_default_snippet_text show_status"><i class="fa fa-newspaper-o"></i> Status</button>
+                                          <button id="show_status" class="btn btn-primary mb-2 o_default_snippet_text show_status"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">Status</div></button>
                                       </h2>
                                       <br/>
                                     </div>
@@ -665,7 +665,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <button id="cryptonews" class="btn btn-primary mb-2 o_default_snippet_text cryptonews"><i class="fa fa-newspaper-o"></i> Crypto News</button>
+                                          <button id="cryptonews" class="btn btn-primary mb-2 o_default_snippet_text cryptonews"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">Crypto News</div></button>
                                       </h2>
                                       <br/>
                                     </div>
@@ -677,7 +677,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="/website/social/youtube" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><i class="fa fa-youtube"></i> Subscribe Youtube Channel</a>
+                                          <a href="/website/social/youtube" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-youtube"></i></div> <div style="display:inline;">Subscribe Youtube Channel</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -689,7 +689,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="/website/social/twitter" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><i class="fa fa-twitter"></i> Join Twitter</a>
+                                          <a href="/website/social/twitter" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-twitter"></i></div> <div style="display:inline;">Join Twitter</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -701,7 +701,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 20px;" class="o_default_snippet_text">
-                                          <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><i class="fa fa-telegram"></i> Join Telegram Group</a>
+                                          <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-telegram"></i></div> <div style="display:inline;">Join Telegram Group</div></a>
                                       </h2>
                                       <!--<div class="s_hr pt8 pb10" data-snippet="s_hr" data-name="Separator">
                                         <hr class="w-25 mx-auto" style="border-top-width: 1px; border-top-style: solid;"/>
@@ -854,7 +854,7 @@
                             <div class="card-header" id="headingOne">
                               <h5 class="mb-0">
                                 <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  <i class="fa fa-money"></i> Wallet
+                                  <div style="display:inline;"><i class="fa fa-money"></i></div> <div style="display:inline;">Wallet</div>
                                 </button>
                               </h5>
                             </div>
@@ -934,21 +934,21 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="/chess" class="btn btn-success"><i class="fa fa-gamepad"></i> CHESS</a><button id="chessinfo" class="btn btn-info chessinfo"><i class="fa fa-info"></i></button></div>
-                                    <div class="col-6"><a href="/sudoku" class="btn btn-primary"><i class="fa fa-gamepad"></i> SUDOKU</a><button id="sudokuinfo" class="btn btn-info sudokuinfo"><i class="fa fa-info"></i></button></div>
+                                    <div class="col-6"><a href="/chess" class="btn btn-success"><div style="display:inline;"><i class="fa fa-gamepad"></i></div> <div style="display:inline;">CHESS</div></a><button id="chessinfo" class="btn btn-info chessinfo"><i class="fa fa-info"></i></button></div>
+                                    <div class="col-6"><a href="/sudoku" class="btn btn-primary"><div style="display:inline;"><i class="fa fa-gamepad"></i></div> <div style="display:inline;">SUDOKU</div></a><button id="sudokuinfo" class="btn btn-info sudokuinfo"><i class="fa fa-info"></i></button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="/snake" class="btn btn-primary"><i class="fa fa-gamepad"></i> SNAKE</a><button id="snakeinfo" class="btn btn-info snakeinfo"><i class="fa fa-info"></i></button></div>
-                                    <div class="col-6"><a href="/pinetwork" class="btn btn-primary"><i class="fa fa-handshake-o"></i> DONATE</a></div>
+                                    <div class="col-6"><a href="/snake" class="btn btn-primary"><div style="display:inline;"><i class="fa fa-gamepad"></i></div> <div style="display:inline;">SNAKE</div></a><button id="snakeinfo" class="btn btn-info snakeinfo"><i class="fa fa-info"></i></button></div>
+                                    <div class="col-6"><a href="/pinetwork" class="btn btn-primary"><div style="display:inline;"><i class="fa fa-handshake-o"></i></div> <div style="display:inline;">DONATE</div></a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-12"><button id="cryptonews_2" class="btn btn-primary cryptonews"><i class="fa fa-newspaper-o"></i> CRYPTO NEWS</button></div>
+                                    <div class="col-12"><button id="cryptonews_2" class="btn btn-primary cryptonews"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">CRYPTO NEWS</div></button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-12"><button id="clear_cache" class="btn btn-info">Clear Cache</button></div>
+                                    <div class="col-12"><button id="clear_cache" class="btn btn-info"><div style="display:inline;"><i class="fa fa-refresh"></i></div> <div style="display:inline;">Clear Cache</div></button></div>
                                 </div>
                             </div>
                             <br/>
@@ -1006,17 +1006,17 @@
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-6"><button id="leaderboard" class="btn btn-info"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Leaders Board</div></button></div>
-                                <div class="col-6"><button id="winnerboard" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Top 10 Board</div></button></div>
+                                <div class="col-6"><button id="leaderboard" class="btn btn-info"><div style="display:inline;"><i class="fa fa-fire"></i></div> <div style="display:inline;">Leaders Board</div></button></div>
+                                <div class="col-6"><button id="winnerboard" class="btn btn-success"><div style="display:inline;"><i class="fa fa-fire"></i></div> <div style="display:inline;">Top 10 Board</div></button></div>
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-6"><button id="credits" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Credits</div></button></div>
+                                <div class="col-6"><button id="credits" class="btn btn-success"><div style="display:inline;"><i class="fa fa-handshake-o"></i></div> <div style="display:inline;">Credits</div></button></div>
                                 <div class="col-6"><a href="/get-transactions/" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Transactions</div></a></div>
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-12"><button id="winnerzoneboard" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Winners Board</div></button></div>
+                                <div class="col-12"><button id="winnerzoneboard" class="btn btn-success"><div style="display:inline;"><i class="fa fa-fire"></i></div> <div style="display:inline;">Winners Board</div></button></div>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">

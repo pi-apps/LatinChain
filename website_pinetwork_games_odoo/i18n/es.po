@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-09 13:16+0000\n"
-"PO-Revision-Date: 2023-12-09 13:16+0000\n"
+"POT-Creation-Date: 2023-12-10 14:06+0000\n"
+"PO-Revision-Date: 2023-12-10 14:06+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -172,8 +172,8 @@ msgid ""
 "you achieved 20 foods in Score, you will gain 2 points. If you achieved 30 "
 "foods in Score, you will gain 3 points. And so."
 msgstr ""
-"2.- Esto significa, si consigues 10 comidas en Score, vas a ganar 1 punto. Si "
-"consigues 20 comidas en Score, vas a ganar 2 puntos. Si consigues 30 "
+"2.- Esto significa, si consigues 10 comidas en Score, vas a ganar 1 punto. "
+"Si consigues 20 comidas en Score, vas a ganar 2 puntos. Si consigues 30 "
 "comidas en Score, vas a ganar 3 puntos. Y así."
 
 #. module: website_pinetwork_games_odoo
@@ -302,7 +302,7 @@ msgid ""
 msgstr ""
 "<br/>\n"
 "                        <br/>\n"
-"                        Click en Borrar Caché si el botón Donar no se activa.\n"
+"                        Click en Borrar Caché ó <i class=\"fa fa-refresh\"/> si el botón Donar no se activa.\n"
 "                        <br/>\n"
 "                        <br/>"
 
@@ -374,61 +374,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/>Video presentation:<br/><br/>"
 msgstr "<br/>Video presentación:<br/><br/>"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-gamepad\"/> CHESS"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-gamepad\"/> SNAKE"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-gamepad\"/> SUDOKU"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-handshake-o\"/> DONATE"
-msgstr "<i class=\"fa fa-handshake-o\"/> DONAR"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-money\"/> Wallet"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-newspaper-o\"/> CRYPTO NEWS"
-msgstr "<i class=\"fa fa-newspaper-o\"/> CRIPTO NOTICIAS"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-newspaper-o\"/> Crypto News"
-msgstr "<i class=\"fa fa-newspaper-o\"/> Cripto Noticias"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-newspaper-o\"/> Status"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-telegram\"/> Join Telegram Group"
-msgstr "<i class=\"fa fa-telegram\"/> Unirse al Telegram"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-twitter\"/> Join Twitter"
-msgstr "<i class=\"fa fa-twitter\"/> Unirse al Twitter"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<i class=\"fa fa-youtube\"/> Subscribe Youtube Channel"
-msgstr "<i class=\"fa fa-youtube\"/> Suscribirse a Youtube"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -674,6 +619,16 @@ msgid "Black"
 msgstr "Negras"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "CHESS"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "CRYPTO NEWS"
+msgstr "CRIPTO NOTICIAS"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Cancel"
 msgstr "Cancelar"
@@ -714,9 +669,19 @@ msgid "Credits"
 msgstr "Créditos"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Crypto News"
+msgstr "Cripto Noticias"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "Current time:"
 msgstr "Hora actual:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "DONATE"
+msgstr "DONAR"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -836,6 +801,16 @@ msgstr "Importar..."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Join Discord Server"
 msgstr "Unirse al Servidor Discord"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Join Telegram Group"
+msgstr "Unirse al Telegram"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Join Twitter"
+msgstr "Unirse al Twitter"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1046,6 +1021,16 @@ msgid "Rules"
 msgstr "Reglas"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "SNAKE"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "SUDOKU"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Save PGN Notation:"
 msgstr "Salvar Notación PGN:"
@@ -1082,6 +1067,16 @@ msgstr "Muestra Pista"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Start"
 msgstr "Iniciar"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Status"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Subscribe Youtube Channel"
+msgstr "Suscríbirse al Youtube Channel"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -1181,6 +1176,11 @@ msgstr "Desbloquea con"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Very Hard puzzle"
 msgstr "Juego muy difícil"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Wallet"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
