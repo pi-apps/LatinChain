@@ -29,7 +29,7 @@
                     <body>
                         <div class="container form-group" style="text-align:center">
                             <br/>
-                            <h3>Read four sections: Membership (why to subscribe), Rules (norms) and Levels (how to obtain points).</h3>
+                            <h3>Read three sections: Membership (why to subscribe), Rules (norms), Winners Board and Prizes (Prizes), and Levels (how to obtain points).</h3>
                             
                             <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                 <t t-set="mainnet_text" t-value="'latin-chain.com (Mainnet)'"/>
@@ -78,6 +78,18 @@
                                     <h3>3.- For Top 10 zone Chess: Have 20 or more points in Chess.</h3>
                                     <h3>4.- For Top 10 zone Snake: Have more than 20 points in Snake.</h3>
                                     <h3>5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku.</h3><br/>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                    <strong>Winners Board and Prizes</strong>
+                                  </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                  <div class="accordion-body">
+                                    <br/>
                                     <h1>* Rules to be in the Winners Board and win Prizes:</h1>
                                     <h3>1.- Be verified in LatinChain Platform.</h3>
                                     <h3>2.- Be in the first 10 on the Leaders Board or in the Top 10 Board (Top 10 zone, Top 10 zone Chess, Top 10 zone Snake or Top 10 zone Sudoku). It is filled automatically at 16:00 UTC.</h3>
@@ -90,12 +102,12 @@
                                 </div>
                               </div>
                               <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
                                     <strong>Levels</strong>
                                   </button>
                                 </h2>
-                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
                                   <div class="accordion-body">
                                     <br/>
                                     <h1>* Chess: Leaders Boards</h1>
