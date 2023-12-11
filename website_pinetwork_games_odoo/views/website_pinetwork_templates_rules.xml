@@ -29,7 +29,7 @@
                     <body>
                         <div class="container form-group" style="text-align:center">
                             <br/>
-                            <h3>Read three sections: Membership (why to subscribe), Rules (norms), Winners Board and Prizes (Prizes), and Levels (how to obtain points).</h3>
+                            <h3>Read four sections: Membership (why to subscribe), Rules (norms), Winners Board and Prizes (prizes), and Levels (how to obtain points).</h3>
                             
                             <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                 <t t-set="mainnet_text" t-value="'latin-chain.com (Mainnet)'"/>
