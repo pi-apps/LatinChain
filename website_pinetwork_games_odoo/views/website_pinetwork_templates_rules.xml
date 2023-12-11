@@ -38,7 +38,7 @@
                                 <t t-set="mainnet_text" t-value="'test.latin-chain.com (Testnet)'"/>
                             </t>
                             
-                            <h3>All data here as prizes and minimum payment, is referring to <span t-esc="mainnet_text" />. And this info could vary with the time without previous advice.</h3>
+                            <h3>All data here as prizes and minimum payment, is referring to <strong><span t-esc="mainnet_text" /></strong>. And this info could vary with the time without previous advice.</h3>
                             <br/>
                             <div class="accordion" id="accordionPanelsStayOpenExample">
                               <div class="accordion-item">
