@@ -124,6 +124,10 @@
                         <script type="text/javascript">
                             setTimeout(function() {
                                 document.getElementById("loading_ajax_icon").style.display = "none";
+                                if(location.pathname.substring(0, 4) == "/web")
+                                {
+                                    document.getElementById("translate_text_latinchain_2").style.display = "none";
+                                }
                             }, 5000);
                             window.addEventListener('load', function() {
                                 document.getElementById("loading_ajax_icon").style.display = "none";
@@ -139,6 +143,11 @@
                         <script type="text/javascript">
                             setTimeout(function() {
                                 document.getElementById("loading_ajax_icon").style.display = "none";
+                                if(location.pathname.substring(0, 4) == "/web")
+                                {
+                                    document.getElementById("translate_text_latinchain_2").style.display = "none";
+                                }else
+                                    document.getElementById("translate_text_latinchain_2").style.display = "";
                             }, 5000);
                             window.addEventListener('load', function() {
                                 document.getElementById("loading_ajax_icon").style.display = "none";
@@ -286,6 +295,10 @@
                     <script type="text/javascript">
                         setTimeout(function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
+                            if(location.pathname.substring(0, 4) == "/web")
+                            {
+                                document.getElementById("translate_text_latinchain_2").style.display = "none";
+                            }
                         }, 5000);
                         window.addEventListener('load', function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
@@ -301,6 +314,11 @@
                     <script type="text/javascript">
                         setTimeout(function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
+                            if(location.pathname.substring(0, 4) == "/web")
+                            {
+                                document.getElementById("translate_text_latinchain_2").style.display = "none";
+                            }else
+                                document.getElementById("translate_text_latinchain_2").style.display = "";
                         }, 5000);
                         window.addEventListener('load', function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
