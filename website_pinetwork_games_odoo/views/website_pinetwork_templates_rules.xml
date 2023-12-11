@@ -30,6 +30,15 @@
                         <div class="container form-group" style="text-align:center">
                             <br/>
                             <h3>Read three sections: Membership (why to subscribe), Rules (norms) and Levels (how to obtain points).</h3>
+                            
+                            <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                <t t-set="mainnet_text" t-value="'latin-chain.com (Mainnet).'"/>
+                            </t>
+                            <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                <t t-set="mainnet_text" t-value="'test.latin-chain.com (Testnet).'"/>
+                            </t>
+                            
+                            <h3>All data here as prizes and minimum payment, is referring to <span t-esc="mainnet_text" /></h3>
                             <br/>
                             <div class="accordion" id="accordionPanelsStayOpenExample">
                               <div class="accordion-item">
