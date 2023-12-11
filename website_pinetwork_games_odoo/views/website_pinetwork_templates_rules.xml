@@ -32,13 +32,13 @@
                             <h3>Read three sections: Membership (why to subscribe), Rules (norms) and Levels (how to obtain points).</h3>
                             
                             <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                <t t-set="mainnet_text" t-value="'latin-chain.com (Mainnet).'"/>
+                                <t t-set="mainnet_text" t-value="'latin-chain.com (Mainnet)'"/>
                             </t>
                             <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                <t t-set="mainnet_text" t-value="'test.latin-chain.com (Testnet).'"/>
+                                <t t-set="mainnet_text" t-value="'test.latin-chain.com (Testnet)'"/>
                             </t>
                             
-                            <h3>All data here as prizes and minimum payment, is referring to <span t-esc="mainnet_text" /></h3>
+                            <h3>All data here as prizes and minimum payment, is referring to <span t-esc="mainnet_text" />. And this info could vary with the time without previous advice.</h3>
                             <br/>
                             <div class="accordion" id="accordionPanelsStayOpenExample">
                               <div class="accordion-item">

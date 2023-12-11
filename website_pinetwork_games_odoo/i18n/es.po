@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-11 15:47+0000\n"
-"PO-Revision-Date: 2023-12-11 15:47+0000\n"
+"POT-Creation-Date: 2023-12-11 15:54+0000\n"
+"PO-Revision-Date: 2023-12-11 15:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -82,6 +82,11 @@ msgstr "* Usa este código para unirte a Pi Network: rockcesar"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "* Use this link to join Pi Network:"
 msgstr "* Usa este link para unirte a Pi Network:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ". And this info could vary with the time without previous advice."
+msgstr ". Y esta información podría variar con el tiempo sin previo aviso."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
