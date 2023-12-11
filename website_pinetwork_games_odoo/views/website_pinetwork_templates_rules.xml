@@ -29,7 +29,7 @@
                     <body>
                         <div class="container form-group" style="text-align:center">
                             <br/>
-                            <h3>Read three sections: Membership (why to subscribe), Rules (norms) and Levels (how to obtain points).</h3>
+                            <h3>Read four sections: Membership (why to subscribe), Rules (norms) and Levels (how to obtain points).</h3>
                             
                             <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                 <t t-set="mainnet_text" t-value="'latin-chain.com (Mainnet)'"/>
@@ -77,7 +77,7 @@
                                     <h3>3.- For Top 10 zone Chess: Have 20 or more points in Chess.</h3>
                                     <h3>4.- For Top 10 zone Snake: Have more than 20 points in Snake.</h3>
                                     <h3>5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku.</h3><br/>
-                                    <h1>* Rules to be in the Winners Board:</h1>
+                                    <h1>* Rules to be in the Winners Board and win Prizes:</h1>
                                     <h3>1.- Be verified in LatinChain Platform.</h3>
                                     <h3>2.- Be in the first 10 on the Leaders Board or in the Top 10 Board (Top 10 zone, Top 10 zone Chess, Top 10 zone Snake or Top 10 zone Sudoku). It is filled automatically at 16:00 UTC.</h3>
                                     <h3>3.- All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.</h3>
