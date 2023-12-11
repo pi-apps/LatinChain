@@ -122,6 +122,9 @@
                     
                     <t t-if="hide_google_translate">
                         <script type="text/javascript">
+                            setTimeout(function() {
+                                document.getElementById("loading_ajax_icon").style.display = "none";
+                            }, 5000);
                             window.addEventListener('load', function() {
                                 document.getElementById("loading_ajax_icon").style.display = "none";
                                 if(location.pathname.substring(0, 4) == "/web")
@@ -134,6 +137,9 @@
                     
                     <t t-if="not hide_google_translate">
                         <script type="text/javascript">
+                            setTimeout(function() {
+                                document.getElementById("loading_ajax_icon").style.display = "none";
+                            }, 5000);
                             window.addEventListener('load', function() {
                                 document.getElementById("loading_ajax_icon").style.display = "none";
                                 if(location.pathname.substring(0, 4) == "/web")
@@ -278,6 +284,9 @@
                 
                 <t t-if="hide_google_translate">
                     <script type="text/javascript">
+                        setTimeout(function() {
+                            document.getElementById("loading_ajax_icon").style.display = "none";
+                        }, 5000);
                         window.addEventListener('load', function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
                             if(location.pathname.substring(0, 4) == "/web")
@@ -290,6 +299,9 @@
                 
                 <t t-if="not hide_google_translate">
                     <script type="text/javascript">
+                        setTimeout(function() {
+                            document.getElementById("loading_ajax_icon").style.display = "none";
+                        }, 5000);
                         window.addEventListener('load', function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
                             if(location.pathname.substring(0, 4) == "/web")
