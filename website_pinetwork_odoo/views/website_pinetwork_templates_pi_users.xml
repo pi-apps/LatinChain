@@ -60,15 +60,21 @@
                                         {
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
+                                           if($( ".username_code" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                                $( "#user_found" ).show();
+                                           else
+                                                $( "#user_found" ).hide();
                                         }else
                                         {
                                             $( "#text_found" ).hide();
                                             $( "#text_notfound" ).show();
+                                            $( "#user_found" ).hide();
                                         }
                                     }else
                                     {
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
+                                        $( "#user_found" ).hide();
                                     }
                                 }).trigger("input.highlight").focus();
                             });
@@ -81,7 +87,7 @@
                             }
                         </style>
                         
-                        <i class="fa fa-search"></i> <input class="on-page-search"></input> <span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span><br/><br/>
+                        <i class="fa fa-search"></i> <input class="on-page-search"></input> <span id="user_found" style="display:none;"><i class="fa fa-user"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span><br/><br/>
                         
                         <div class="accordion" id="accordionExample">
                           <div class="accordion-item">
@@ -102,7 +108,7 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <table class="table" translate="no">
                                           <thead>
@@ -193,15 +199,21 @@
                                         {
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
+                                           if($( ".username_code" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                                $( "#user_found" ).show();
+                                           else
+                                                $( "#user_found" ).hide();
                                         }else
                                         {
                                             $( "#text_found" ).hide();
                                             $( "#text_notfound" ).show();
+                                            $( "#user_found" ).hide();
                                         }
                                     }else
                                     {
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
+                                        $( "#user_found" ).hide();
                                     }
                                 }).trigger("input.highlight").focus();
                             });
@@ -214,7 +226,7 @@
                             }
                         </style>
                         
-                        <i class="fa fa-search"></i> <input class="on-page-search"></input> <span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span><br/><br/>
+                        <i class="fa fa-search"></i> <input class="on-page-search"></input> <span id="user_found" style="display:none;"><i class="fa fa-user"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span><br/><br/>
                         
                         <div class="accordion" id="accordionPanelsStayOpenExample">
                           <div class="accordion-item">
@@ -235,7 +247,7 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <table class="table" translate="no">
                                           <thead>
@@ -277,7 +289,7 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <table class="table" translate="no">
                                           <thead>
@@ -319,7 +331,7 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <table class="table" translate="no">
                                           <thead>
@@ -361,7 +373,7 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <table class="table" translate="no">
                                           <thead>
@@ -535,15 +547,21 @@
                                         {
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
+                                           if($( ".username_code" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                                $( "#user_found" ).show();
+                                           else
+                                                $( "#user_found" ).hide();
                                         }else
                                         {
                                             $( "#text_found" ).hide();
                                             $( "#text_notfound" ).show();
+                                            $( "#user_found" ).hide();
                                         }
                                     }else
                                     {
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
+                                        $( "#user_found" ).hide();
                                     }
                                 }).trigger("input.highlight").focus();
                             });
@@ -556,7 +574,7 @@
                             }
                         </style>
                         
-                        <i class="fa fa-search"></i> <input class="on-page-search"></input> <span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span><br/><br/>
+                        <i class="fa fa-search"></i> <input class="on-page-search"></input> <span id="user_found" style="display:none;"><i class="fa fa-user"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span><br/><br/>
                         
                         <!--
                         Jackpot to pay to winners: <strong><t t-esc="pi_users_winners_to_pay" /> Pi / <t t-esc="pi_users_winners_count" /></strong><br/><br/>
@@ -578,7 +596,7 @@
                                             <t t-set="i" t-value="1"/>
                                         </t>-->
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <table class="table" translate="no">
                                           <thead>
