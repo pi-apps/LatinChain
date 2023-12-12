@@ -56,6 +56,7 @@
                                     $(".accordion-body").unmark().mark(searchTerm);
                                     if(searchTerm.trim() != "")
                                     {
+                                        $( "#user_question" ).hide();
                                         if($( ".accordion-body" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
                                         {
                                            $( "#text_found" ).show();
@@ -72,6 +73,7 @@
                                         }
                                     }else
                                     {
+                                        $( "#user_question" ).show();
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
                                         $( "#user_found" ).hide();
@@ -93,6 +95,7 @@
                                 <i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>
                             </div>
                             <div class="col-2" style="text-align: left">
+                                <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
                                 <span id="user_found" style="display:none;"><i class="fa fa-user"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
                             </div>
                             <div class="col-2"></div>
@@ -205,6 +208,7 @@
                                     $(".accordion-body").unmark().mark(searchTerm);
                                     if(searchTerm.trim() != "")
                                     {
+                                        $( "#user_question" ).hide();
                                         if($( ".accordion-body" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
                                         {
                                            $( "#text_found" ).show();
@@ -221,6 +225,7 @@
                                         }
                                     }else
                                     {
+                                        $( "#user_question" ).show();
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
                                         $( "#user_found" ).hide();
@@ -242,6 +247,7 @@
                                 <i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>
                             </div>
                             <div class="col-2" style="text-align: left">
+                                <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
                                 <span id="user_found" style="display:none;"><i class="fa fa-user"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
                             </div>
                             <div class="col-2"></div>
@@ -563,6 +569,7 @@
                                     $(".accordion-body").unmark().mark(searchTerm);
                                     if(searchTerm.trim() != "")
                                     {
+                                        $( "#user_question" ).hide();
                                         if($( ".accordion-body" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
                                         {
                                            $( "#text_found" ).show();
@@ -579,6 +586,7 @@
                                         }
                                     }else
                                     {
+                                        $( "#user_question" ).show();
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
                                         $( "#user_found" ).hide();
@@ -600,6 +608,7 @@
                                 <i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>
                             </div>
                             <div class="col-2" style="text-align: left">
+                                <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
                                 <span id="user_found" style="display:none;"><i class="fa fa-user"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
                             </div>
                             <div class="col-2"></div>
