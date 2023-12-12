@@ -450,7 +450,7 @@
                                         passkey=data.passkey;
                                         if(data.unblocked)
                                         {
-                                            $("#verified").html(" (" + $("#verified_message").text() + ", " + data.unblocked_datetime + ")");
+                                            $("#verified").html(" (" + $("#verified_message").html() + ", " + data.unblocked_datetime + ")");
                                             $("#verified").show();
                                             
                                             winner = ""
@@ -459,7 +459,7 @@
                                             
                                             $("#user_logged").html(data.pi_user_code);
                                             $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
-                                            $(".user_status").html("(" + $("#verified_message").text() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
+                                            $(".user_status").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
                                             $("#user_points_last").html("(Chess: " + data.points_chess_last + ", Snake: " + data.points_snake_last + ", Sudoku: " + data.points_sudoku_last + ")");
@@ -709,7 +709,7 @@
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="winner_message" style="display:none;">. You are a winner. Check in Winners Board.</div>
                     <div id="available_days_message" style="display:none;">Days available: </div>
-                    <div id="verified_message" style="display:none;">verified</div>
+                    <div id="verified_message" style="display:none;"><i class="fa fa-check-circle-o"></i></div>
                     <div id="not_verified_1_message" style="display:none;">Not verified. Each 30 days you should unlock the app paying </div>
                     <div id="not_verified_2_message" style="display:none;">Go to one of the games to do it.</div>
                     <div id="share_message" style="display:none;">Hi. Check it out this Pi App: LatinChain Platform (Games from Latin America for Pi). Try it in Pi Browser. #PiNetwork #PiApps</div>
