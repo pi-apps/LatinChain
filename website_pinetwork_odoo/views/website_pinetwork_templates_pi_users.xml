@@ -10,6 +10,9 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
+                    
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
                     
                     <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
@@ -45,6 +48,24 @@
                         <t t-if="pi_users_verified_count >= 0">
                             Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
                         </t>
+                        
+                        <script type='text/javascript'>
+                            $(document).ready(function($) {
+                                $(".on-page-search").on("input.highlight", function() {
+                                    var searchTerm = $(this).val();
+                                    $(".container").unmark().mark(searchTerm);
+                                }).trigger("input.highlight").focus();
+                            });
+                        </script>
+                        
+                        <style>
+                            mark {
+                              background: orange;
+                              color: black;
+                            }
+                        </style>
+                        
+                        <i class="fa fa-search"></i> <input class="on-page-search"></input><br/><br/>
                         
                         <div class="accordion" id="accordionExample">
                           <div class="accordion-item">
@@ -106,6 +127,9 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
+                    
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
                     
                     <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
@@ -141,6 +165,24 @@
                         <t t-if="pi_users_verified_count >= 0">
                             Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
                         </t>
+                        
+                        <script type='text/javascript'>
+                            $(document).ready(function($) {
+                                $(".on-page-search").on("input.highlight", function() {
+                                    var searchTerm = $(this).val();
+                                    $(".container").unmark().mark(searchTerm);
+                                }).trigger("input.highlight").focus();
+                            });
+                        </script>
+                        
+                        <style>
+                            mark {
+                              background: orange;
+                              color: black;
+                            }
+                        </style>
+                        
+                        <i class="fa fa-search"></i> <input class="on-page-search"></input><br/><br/>
                         
                         <div class="accordion" id="accordionPanelsStayOpenExample">
                           <div class="accordion-item">
@@ -392,6 +434,9 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
+                    
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
                     
                     <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
@@ -446,6 +491,25 @@
                         <t t-if="pi_users_verified_count >= 0">
                             Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
                         </t>
+                        
+                        <script type='text/javascript'>
+                            $(document).ready(function($) {
+                                $(".on-page-search").on("input.highlight", function() {
+                                    var searchTerm = $(this).val();
+                                    $(".container").unmark().mark(searchTerm);
+                                }).trigger("input.highlight").focus();
+                            });
+                        </script>
+                        
+                        <style>
+                            mark {
+                              background: orange;
+                              color: black;
+                            }
+                        </style>
+                        
+                        <i class="fa fa-search"></i> <input class="on-page-search"></input><br/><br/>
+                        
                         <!--
                         Jackpot to pay to winners: <strong><t t-esc="pi_users_winners_to_pay" /> Pi / <t t-esc="pi_users_winners_count" /></strong><br/><br/>
                         -->
