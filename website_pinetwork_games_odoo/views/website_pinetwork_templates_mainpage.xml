@@ -461,9 +461,54 @@
                                             $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                                             $(".user_status").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
                                             $("#user_points").html(data.points);
-                                            $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
-                                            $("#user_points_last").html("(Chess: " + data.points_chess_last + ", Snake: " + data.points_snake_last + ", Sudoku: " + data.points_sudoku_last + ")");
-                                            $("#user_points_wins").html("(Chess: " + data.points_chess_wins + ", Snake: " + data.points_snake_wins + ", Sudoku: " + data.points_sudoku_wins + ")");
+                                            $("#user_points_per_game").html('<table class="table" translate="no">' +
+                                                                          '<thead>' +
+                                                                            '<tr>' +
+                                                                              '<td>Chess</td>'+
+                                                                              '<td>Snake</td>'+
+                                                                              '<td>Sudoku</td>'+
+                                                                            '</tr>'+
+                                                                          '</thead>'+
+                                                                          '<tbody>'+
+                                                                            '<tr>' +
+                                                                              '<td>' + data.points_chess + '</td>' +
+                                                                              '<td>' + data.points_snake + '</td>' +
+                                                                              '<td>' + data.points_sudoku + '</td>' +
+                                                                            '</tr>' +
+                                                                          '</tbody>' +
+                                                                        '</table>');
+                                            $("#user_points_last").html('<table class="table" translate="no">' +
+                                                                          '<thead>' +
+                                                                            '<tr>' +
+                                                                              '<td>Chess</td>'+
+                                                                              '<td>Snake</td>'+
+                                                                              '<td>Sudoku</td>'+
+                                                                            '</tr>'+
+                                                                          '</thead>'+
+                                                                          '<tbody>'+
+                                                                            '<tr>' +
+                                                                              '<td>' + data.points_chess_last + '</td>' +
+                                                                              '<td>' + data.points_snake_last + '</td>' +
+                                                                              '<td>' + data.points_sudoku_last + '</td>' +
+                                                                            '</tr>' +
+                                                                          '</tbody>' +
+                                                                        '</table>');
+                                            $("#user_points_wins").html('<table class="table" translate="no">' +
+                                                                          '<thead>' +
+                                                                            '<tr>' +
+                                                                              '<td>Chess</td>'+
+                                                                              '<td>Snake</td>'+
+                                                                              '<td>Sudoku</td>'+
+                                                                            '</tr>'+
+                                                                          '</thead>'+
+                                                                          '<tbody>'+
+                                                                            '<tr>' +
+                                                                              '<td>' + data.points_chess_wins + '</td>' +
+                                                                              '<td>' + data.points_snake_wins + '</td>' +
+                                                                              '<td>' + data.points_sudoku_wins + '</td>' +
+                                                                            '</tr>' +
+                                                                          '</tbody>' +
+                                                                        '</table>');
                                             $("#user_points_datetime").html(data.points_datetime);
                                             //$("#pi_wallet_address").val(data.pi_wallet_address);
                                             
@@ -474,9 +519,54 @@
                                             $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                                             $(".user_status").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
                                             $("#user_points").html(data.points);
-                                            $("#user_points_per_game").html("(Chess: " + data.points_chess + ", Snake: " + data.points_snake + ", Sudoku: " + data.points_sudoku + ")");
-                                            $("#user_points_last").html("(Chess: " + data.points_chess_last + ", Snake: " + data.points_snake_last + ", Sudoku: " + data.points_sudoku_last + ")");
-                                            $("#user_points_wins").html("(Chess: " + data.points_chess_wins + ", Snake: " + data.points_snake_wins + ", Sudoku: " + data.points_sudoku_wins + ")");
+                                            $("#user_points_per_game").html('<table class="table" translate="no">' +
+                                                                          '<thead>' +
+                                                                            '<tr>' +
+                                                                              '<td>Chess</td>'+
+                                                                              '<td>Snake</td>'+
+                                                                              '<td>Sudoku</td>'+
+                                                                            '</tr>'+
+                                                                          '</thead>'+
+                                                                          '<tbody>'+
+                                                                            '<tr>' +
+                                                                              '<td>' + data.points_chess + '</td>' +
+                                                                              '<td>' + data.points_snake + '</td>' +
+                                                                              '<td>' + data.points_sudoku + '</td>' +
+                                                                            '</tr>' +
+                                                                          '</tbody>' +
+                                                                        '</table>');
+                                            $("#user_points_last").html('<table class="table" translate="no">' +
+                                                                          '<thead>' +
+                                                                            '<tr>' +
+                                                                              '<td>Chess</td>'+
+                                                                              '<td>Snake</td>'+
+                                                                              '<td>Sudoku</td>'+
+                                                                            '</tr>'+
+                                                                          '</thead>'+
+                                                                          '<tbody>'+
+                                                                            '<tr>' +
+                                                                              '<td>' + data.points_chess_last + '</td>' +
+                                                                              '<td>' + data.points_snake_last + '</td>' +
+                                                                              '<td>' + data.points_sudoku_last + '</td>' +
+                                                                            '</tr>' +
+                                                                          '</tbody>' +
+                                                                        '</table>');
+                                            $("#user_points_wins").html('<table class="table" translate="no">' +
+                                                                          '<thead>' +
+                                                                            '<tr>' +
+                                                                              '<td>Chess</td>'+
+                                                                              '<td>Snake</td>'+
+                                                                              '<td>Sudoku</td>'+
+                                                                            '</tr>'+
+                                                                          '</thead>'+
+                                                                          '<tbody>'+
+                                                                            '<tr>' +
+                                                                              '<td>' + data.points_chess_wins + '</td>' +
+                                                                              '<td>' + data.points_snake_wins + '</td>' +
+                                                                              '<td>' + data.points_sudoku_wins + '</td>' +
+                                                                            '</tr>' +
+                                                                          '</tbody>' +
+                                                                        '</table>');
                                             $("#user_points_datetime").html(data.points_datetime);
                                             //$("#pi_wallet_address").val(data.pi_wallet_address);
                                             
@@ -1111,9 +1201,9 @@
                                 <br/>Status: <strong class="user_status">Access through Pi Browser.<br/></strong>
                                 <br/>Total points: <strong id="user_points">0</strong><br/>
                                 <br/>At: <strong id="user_points_datetime"></strong><br/>
-                                <br/>Points per game: <strong id="user_points_per_game">0</strong><br/>
-                                <br/>Max points per game: <strong id="user_points_last">0</strong><br/>
-                                <br/># of wins per game: <strong id="user_points_wins">0</strong><br/>
+                                <br/>Points per game: <br/><strong id="user_points_per_game">0</strong><br/>
+                                <br/>Max points per game: <br/><strong id="user_points_last">0</strong><br/>
+                                <br/># of wins per game: <br/><strong id="user_points_wins">0</strong><br/>
                             </div>
                           </div>
                         </div>
