@@ -65,11 +65,15 @@
                                                 $( "#user_found" ).show();
                                            else
                                                 $( "#user_found" ).hide();
+                                            
+                                           $( "#headingOne" ).addClass("text-decoration-underline");
                                         }else
                                         {
                                             $( "#text_found" ).hide();
                                             $( "#text_notfound" ).show();
                                             $( "#user_found" ).hide();
+                                            
+                                            $( "#headingOne" ).removeClass("text-decoration-underline");
                                         }
                                     }else
                                     {
@@ -77,6 +81,8 @@
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
                                         $( "#user_found" ).hide();
+                                        
+                                        $( "#headingOne" ).removeClass("text-decoration-underline");
                                     }
                                 }).trigger("input.highlight").focus();
                             });
@@ -217,11 +223,45 @@
                                                 $( "#user_found" ).show();
                                            else
                                                 $( "#user_found" ).hide();
+                                           
+                                           if($( ".accordion-zone" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           {
+                                                $( "#panelsStayOpen-headingOne" ).addClass("text-decoration-underline");
+                                           }else
+                                           {
+                                                $( "#panelsStayOpen-headingOne" ).removeClass("text-decoration-underline");
+                                           }
+                                           if($( ".accordion-chess" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           {
+                                                $( "#panelsStayOpen-headingTwo" ).addClass("text-decoration-underline");
+                                           }else
+                                           {
+                                                $( "#panelsStayOpen-headingTwo" ).removeClass("text-decoration-underline");
+                                           }
+                                           if($( ".accordion-snake" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           {
+                                                $( "#panelsStayOpen-headingThree" ).addClass("text-decoration-underline");
+                                           }else
+                                           {
+                                                $( "#panelsStayOpen-headingThree" ).removeClass("text-decoration-underline");
+                                           }
+                                           if($( ".accordion-sudoku" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           {
+                                                $( "#panelsStayOpen-headingFour" ).addClass("text-decoration-underline");
+                                           }else
+                                           {
+                                                $( "#panelsStayOpen-headingFour" ).removeClass("text-decoration-underline");
+                                           }
                                         }else
                                         {
                                             $( "#text_found" ).hide();
                                             $( "#text_notfound" ).show();
                                             $( "#user_found" ).hide();
+                                            
+                                            $( "#panelsStayOpen-headingOne" ).removeClass("text-decoration-underline");
+                                            $( "#panelsStayOpen-headingTwo" ).removeClass("text-decoration-underline");
+                                            $( "#panelsStayOpen-headingThree" ).removeClass("text-decoration-underline");
+                                            $( "#panelsStayOpen-headingFour" ).removeClass("text-decoration-underline");
                                         }
                                     }else
                                     {
@@ -229,6 +269,11 @@
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
                                         $( "#user_found" ).hide();
+                                        
+                                        $( "#panelsStayOpen-headingOne" ).removeClass("text-decoration-underline");
+                                        $( "#panelsStayOpen-headingTwo" ).removeClass("text-decoration-underline");
+                                        $( "#panelsStayOpen-headingThree" ).removeClass("text-decoration-underline");
+                                        $( "#panelsStayOpen-headingFour" ).removeClass("text-decoration-underline");
                                     }
                                 }).trigger("input.highlight").focus();
                             });
@@ -262,7 +307,7 @@
                               </button>
                             </h2>
                             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-                              <div class="accordion-body">
+                              <div class="accordion-body accordion-zone">
                                 <ul class="list-group">
                                     <t t-set="i" t-value="1"/>
                                     <t t-foreach="pi_users_list" t-as="pi_user">
@@ -304,7 +349,7 @@
                               </button>
                             </h2>
                             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                              <div class="accordion-body">
+                              <div class="accordion-body accordion-chess">
                                 <ul class="list-group">
                                     <t t-set="i" t-value="1"/>
                                     <t t-foreach="pi_users_list_chess" t-as="pi_user">
@@ -346,7 +391,7 @@
                               </button>
                             </h2>
                             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                              <div class="accordion-body">
+                              <div class="accordion-body accordion-snake">
                                 <ul class="list-group">
                                     <t t-set="i" t-value="1"/>
                                     <t t-foreach="pi_users_list_snake" t-as="pi_user">
@@ -388,7 +433,7 @@
                               </button>
                             </h2>
                             <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
-                              <div class="accordion-body">
+                              <div class="accordion-body accordion-sudoku">
                                 <ul class="list-group">
                                     <t t-set="i" t-value="1"/>
                                     <t t-foreach="pi_users_list_sudoku" t-as="pi_user">
@@ -578,11 +623,15 @@
                                                 $( "#user_found" ).show();
                                            else
                                                 $( "#user_found" ).hide();
+                                           
+                                           $( "#headingOne" ).addClass("text-decoration-underline");
                                         }else
                                         {
                                             $( "#text_found" ).hide();
                                             $( "#text_notfound" ).show();
                                             $( "#user_found" ).hide();
+                                            
+                                            $( "#headingOne" ).removeClass("text-decoration-underline");
                                         }
                                     }else
                                     {
@@ -590,6 +639,8 @@
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
                                         $( "#user_found" ).hide();
+                                        
+                                        $( "#headingOne" ).removeClass("text-decoration-underline");
                                     }
                                 }).trigger("input.highlight").focus();
                             });
