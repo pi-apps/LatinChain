@@ -96,8 +96,8 @@
                                     <h3>3.- All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.</h3>
                                     <h3>4.- On OpenMainnet we will pay the 15th day of each month.<span t-if="pi_users_winners_paid_datetime"> Last payment was on <span t-esc="pi_users_winners_paid_datetime" /> UTC, next payment will be the 15th day of next month.</span></h3>
                                     <t t-set="amount_end" t-value="amount*3"/>
-                                    <h3>5.- If you are a winner on OpenMainnet, you will gain according to the income of LatinChain Platform, and not less than the minimum payment to unlock the games. Current minimum payment is at <span t-esc="amount" /> Pi, so you will gain not less than that. In a good situation we could pay the triple of minimum payment: <span t-esc="amount_end" /> Pi, or much more, depending on the income.</h3>
-                                    <h3>6.- Check in the Rules on latin-chain.com (Mainnet), to know the current minimum payment on our Mainnet server.</h3>
+                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">5.- If you are a winner on OpenMainnet, you will gain according to the income of LatinChain Platform, and not less than the minimum payment to unlock the games. Current minimum payment is at <span t-esc="amount" /> Pi, so you will gain not less than that. In a good situation we could pay the triple of minimum payment: <span t-esc="amount_end" /> Pi, or much more, depending on the income.</h3>
+                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">6.- Check in the Rules on latin-chain.com (Mainnet), to know the current minimum payment on our Mainnet server.</h3>
                                   </div>
                                 </div>
                               </div>
