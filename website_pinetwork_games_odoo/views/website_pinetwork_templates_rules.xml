@@ -14,6 +14,8 @@
                         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
                         
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+                        
                         <!-- ios support -->
                         <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
                         <meta name="theme-color" content="#db4938" />
@@ -66,7 +68,7 @@
                                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                   <div class="accordion-body">
                                     <br/>
-                                    <h1>* Rules to be verified:</h1>
+                                    <h1><div style="display:inline;">* Rules to be verified:</div> <div style="display:inline;">(<i class="fa fa-check-circle-o"></i>)</div></h1>
                                     <h3>1.- Each 30 days you should unlock the app paying <span t-esc="amount" /> Pi. Go to one of the games to do it. Once you pay in any of the games, it won't be refunded. When you Donate it's considered a donation and it won't be refunded either. You can also unblock the games, for 30 days since the payment date, with a donation. Although, all payments to LatinChain are considered donations.</h3>
                                     <h3>2.- In the mainscreen of latin-chain.com (Mainnet) or test.latin-chain.com (Testnet), depending which version of LatinChain are you using, you can watch your available days.</h3><br/>
                                     <h1>* Rules to be in the Leaders Board:</h1>
