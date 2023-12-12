@@ -460,7 +460,7 @@
                                             $("#user_logged").html(data.pi_user_code);
                                             $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                                             $(".user_status").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
-                                            $(".user_status_account").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner + "̣<br/>");
+                                            $(".user_status_account").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner + "̣<br/><br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html('<table class="table text-white" translate="no">' +
                                                                           '<thead>' +
@@ -519,7 +519,7 @@
                                             $("#user_logged").html(data.pi_user_code);
                                             $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                                             $(".user_status").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
-                                            $(".user_status_account").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text() + "̣<br/>");
+                                            $(".user_status_account").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text() + "̣<br/><br/>");
                                             $("#user_points").html(data.points);
                                             $("#user_points_per_game").html('<table class="table text-white" translate="no">' +
                                                                           '<thead>' +
