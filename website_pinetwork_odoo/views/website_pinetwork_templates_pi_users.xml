@@ -53,10 +53,10 @@
                             $(document).ready(function($) {
                                 $(".on-page-search").on("input.highlight", function() {
                                     var searchTerm = $(this).val();
-                                    $(".container").unmark().mark(searchTerm);
+                                    $(".accordion").unmark().mark(searchTerm);
                                     if(searchTerm.trim() != "")
                                     {
-                                        if($( ".container" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                        if($( ".accordion" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
                                         {
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
@@ -186,10 +186,10 @@
                             $(document).ready(function($) {
                                 $(".on-page-search").on("input.highlight", function() {
                                     var searchTerm = $(this).val();
-                                    $(".container").unmark().mark(searchTerm);
+                                    $(".accordion").unmark().mark(searchTerm);
                                     if(searchTerm.trim() != "")
                                     {
-                                        if($( ".container" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                        if($( ".accordion" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
                                         {
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
@@ -528,10 +528,10 @@
                             $(document).ready(function($) {
                                 $(".on-page-search").on("input.highlight", function() {
                                     var searchTerm = $(this).val();
-                                    $(".container").unmark().mark(searchTerm);
+                                    $(".accordion").unmark().mark(searchTerm);
                                     if(searchTerm.trim() != "")
                                     {
-                                        if($( ".container" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                        if($( ".accordion" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
                                         {
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
