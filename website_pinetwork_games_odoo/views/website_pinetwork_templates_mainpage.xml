@@ -461,7 +461,7 @@
                                             $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                                             $(".user_status").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
                                             $("#user_points").html(data.points);
-                                            $("#user_points_per_game").html('<table class="table" translate="no">' +
+                                            $("#user_points_per_game").html('<table class="table text-white" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -477,7 +477,7 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_last").html('<table class="table" translate="no">' +
+                                            $("#user_points_last").html('<table class="table text-white" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -493,7 +493,7 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_wins").html('<table class="table" translate="no">' +
+                                            $("#user_points_wins").html('<table class="table text-white" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -519,7 +519,7 @@
                                             $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                                             $(".user_status").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
                                             $("#user_points").html(data.points);
-                                            $("#user_points_per_game").html('<table class="table" translate="no">' +
+                                            $("#user_points_per_game").html('<table class="table text-white" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -535,7 +535,7 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_last").html('<table class="table" translate="no">' +
+                                            $("#user_points_last").html('<table class="table text-white" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -551,7 +551,7 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_wins").html('<table class="table" translate="no">' +
+                                            $("#user_points_wins").html('<table class="table text-white" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
