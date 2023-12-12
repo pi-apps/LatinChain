@@ -612,9 +612,9 @@ class PiNetworkBaseController(http.Controller):
             verified = ""
             if i.unblocked:
                 if request.env.context.get("lang") == "es_ES":
-                    verified = " (verificado, " + str(i.unblocked_datetime) + " UTC)"
+                    verified = " (<i class='fa fa-check-circle-o'></i>, " + str(i.unblocked_datetime) + " UTC)"
                 else:
-                    verified = " (verified, " + str(i.unblocked_datetime) + " UTC)"
+                    verified = " (<i class='fa fa-check-circle-o'></i>, " + str(i.unblocked_datetime) + " UTC)"
             else:
                 verified = ""
             
