@@ -56,7 +56,7 @@
                                     $(".accordion-body").unmark().mark(searchTerm);
                                     if(searchTerm.trim() != "")
                                     {
-                                        $( "#user_question" ).hide();
+                                        //$( "#user_question" ).hide();
                                         if($( ".accordion-body" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
                                         {
                                            $( "#text_found" ).show();
@@ -77,7 +77,7 @@
                                         }
                                     }else
                                     {
-                                        $( "#user_question" ).show();
+                                        //$( "#user_question" ).show();
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
                                         $( "#user_found" ).hide();
@@ -85,6 +85,10 @@
                                         $( "#headingOne" ).removeClass("text-decoration-underline");
                                     }
                                 }).trigger("input.highlight").focus();
+                                
+                                $("#user_question").click(function() {
+                                    $(".on-page-search").focus();
+                                });
                             });
                         </script>
                         
@@ -214,7 +218,7 @@
                                     $(".accordion-body").unmark().mark(searchTerm);
                                     if(searchTerm.trim() != "")
                                     {
-                                        $( "#user_question" ).hide();
+                                        //$( "#user_question" ).hide();
                                         if($( ".accordion-body" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
                                         {
                                            $( "#text_found" ).show();
@@ -265,7 +269,7 @@
                                         }
                                     }else
                                     {
-                                        $( "#user_question" ).show();
+                                        //$( "#user_question" ).show();
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
                                         $( "#user_found" ).hide();
@@ -276,6 +280,10 @@
                                         $( "#panelsStayOpen-headingFour" ).removeClass("text-decoration-underline");
                                     }
                                 }).trigger("input.highlight").focus();
+                                
+                                $("#user_question").click(function() {
+                                    $(".on-page-search").focus();
+                                });
                             });
                         </script>
                         
@@ -614,7 +622,7 @@
                                     $(".accordion-body").unmark().mark(searchTerm);
                                     if(searchTerm.trim() != "")
                                     {
-                                        $( "#user_question" ).hide();
+                                        //$( "#user_question" ).hide();
                                         if($( ".accordion-body" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
                                         {
                                            $( "#text_found" ).show();
@@ -635,7 +643,7 @@
                                         }
                                     }else
                                     {
-                                        $( "#user_question" ).show();
+                                        //$( "#user_question" ).show();
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
                                         $( "#user_found" ).hide();
@@ -643,6 +651,10 @@
                                         $( "#headingOne" ).removeClass("text-decoration-underline");
                                     }
                                 }).trigger("input.highlight").focus();
+                                
+                                $("#user_question").click(function() {
+                                    $(".on-page-search").focus();
+                                });
                             });
                         </script>
                         
