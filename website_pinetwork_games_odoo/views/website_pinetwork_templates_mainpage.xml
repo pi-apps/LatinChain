@@ -458,7 +458,7 @@
                                                 winner = $("#winner_message").html();
                                             
                                             $("#user_logged").html(data.pi_user_code);
-                                            $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
+                                            $(".div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                                             $(".user_status").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
                                             $(".user_status_account").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
                                             $( "<br/>" ).insertAfter( ".user_status_account" );
@@ -518,7 +518,7 @@
                                             //$("#pi_wallet_address").prop( "disabled", false );
                                         }else{
                                             $("#user_logged").html(data.pi_user_code);
-                                            $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
+                                            $(".div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                                             $(".user_status").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
                                             $(".user_status_account").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
                                             $( "<br/>" ).insertAfter( ".user_status_account" );
@@ -1101,7 +1101,7 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div id="div_user_status">
+                            <div class="div_user_status">
                                 <strong class="user_status"></strong>
                             </div>
                             <div>
@@ -1180,7 +1180,12 @@
                             <iframe id="tiesto" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                           </div>
                           <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
-                            <br/>Leaders and rules:<br/><br/>
+                            <div class="div_user_status">
+                                <strong class="user_status"></strong>
+                            </div>
+                            <div>
+                                <br/>Leaders and rules:<br/><br/>
+                            </div>
                             <div class="row">
                                 <div class="col-12"><button id="rules_button" class="btn btn-warning rules_button"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Rules</div></button></div>
                             </div>
