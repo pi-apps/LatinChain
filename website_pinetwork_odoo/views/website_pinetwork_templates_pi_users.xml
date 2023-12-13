@@ -57,11 +57,11 @@
                                     if(searchTerm.trim() != "")
                                     {
                                         //$( "#user_question" ).hide();
-                                        if($( ".accordion-body" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                        if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                         {
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
-                                           if($( ".username_code" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                                 $( "#user_found" ).show();
                                            else
                                                 $( "#user_found" ).hide();
@@ -219,37 +219,37 @@
                                     if(searchTerm.trim() != "")
                                     {
                                         //$( "#user_question" ).hide();
-                                        if($( ".accordion-body" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                        if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                         {
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
-                                           if($( ".username_code" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                                 $( "#user_found" ).show();
                                            else
                                                 $( "#user_found" ).hide();
                                            
-                                           if($( ".accordion-zone" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           if($( ".accordion-zone" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                            {
                                                 $( "#panelsStayOpen-headingOne" ).addClass("text-decoration-underline");
                                            }else
                                            {
                                                 $( "#panelsStayOpen-headingOne" ).removeClass("text-decoration-underline");
                                            }
-                                           if($( ".accordion-chess" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           if($( ".accordion-chess" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                            {
                                                 $( "#panelsStayOpen-headingTwo" ).addClass("text-decoration-underline");
                                            }else
                                            {
                                                 $( "#panelsStayOpen-headingTwo" ).removeClass("text-decoration-underline");
                                            }
-                                           if($( ".accordion-snake" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           if($( ".accordion-snake" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                            {
                                                 $( "#panelsStayOpen-headingThree" ).addClass("text-decoration-underline");
                                            }else
                                            {
                                                 $( "#panelsStayOpen-headingThree" ).removeClass("text-decoration-underline");
                                            }
-                                           if($( ".accordion-sudoku" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           if($( ".accordion-sudoku" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                            {
                                                 $( "#panelsStayOpen-headingFour" ).addClass("text-decoration-underline");
                                            }else
@@ -623,11 +623,11 @@
                                     if(searchTerm.trim() != "")
                                     {
                                         //$( "#user_question" ).hide();
-                                        if($( ".accordion-body" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                        if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                         {
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
-                                           if($( ".username_code" ).text().toLowerCase().search(searchTerm.toLowerCase()) >= 0)
+                                           if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                                 $( "#user_found" ).show();
                                            else
                                                 $( "#user_found" ).hide();
