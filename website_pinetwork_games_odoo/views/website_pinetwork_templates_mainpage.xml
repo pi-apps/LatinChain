@@ -455,7 +455,7 @@
                                             
                                             winner = ""
                                             if(data.im_winner)
-                                                winner = $("#winner_message").text();
+                                                winner = $("#winner_message").html();
                                             
                                             $("#user_logged").html(data.pi_user_code);
                                             $("#div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
@@ -801,7 +801,7 @@
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
-                    <div id="winner_message" style="display:none;">. You are a winner. Check in Winners Board.</div>
+                    <div id="winner_message" style="display:none;"><div style="display:inline;">. You are a winner. Check in Winners Board.</div> <div style="display:inline;"><i class="fa fa-trophy"></i></div></div>
                     <div id="available_days_message" style="display:none;">Days available: </div>
                     <div id="verified_message" style="display:none;"><i class="fa fa-check-circle-o"></i></div>
                     <div id="not_verified_1_message" style="display:none;">Not verified. Each 30 days you should unlock the app paying </div>
@@ -1196,7 +1196,7 @@
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-12"><button id="winnerzoneboard" class="btn btn-success"><div style="display:inline;"><i class="fa fa-fire"></i></div> <div style="display:inline;">Winners Board</div></button></div>
+                                <div class="col-12"><button id="winnerzoneboard" class="btn btn-success"><div style="display:inline;"><i class="fa fa-trophy"></i></div> <div style="display:inline;">Winners Board</div></button></div>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
