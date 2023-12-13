@@ -593,7 +593,7 @@
                             </table>
                             <t t-foreach="pi_user.admin_apps_winners_ids" t-as="winner_app">
                                 <span t-if="winner_app.app == 'auth_platform'">
-                                    <strong> You are winner, check in this winner list.</strong>
+                                    <div style="display:inline;"><strong> You are winner, check in this winner list.</strong></div> <div style="display:inline;"><i class="fa fa-trophy"></i></div>
                                 </span>
                             </t>
                             <t t-foreach="pi_user.admin_apps_winners_paid_ids" t-as="winner_app">
