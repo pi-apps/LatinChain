@@ -59,16 +59,30 @@
                                         //$( "#user_question" ).hide();
                                         if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                         {
+                                           $('.list-group-item').hide();
+                                           $(".list-group-item").each(function(index) {
+                                                if($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                {
+                                                    $(this).show();
+                                                }
+                                            });
+                                            
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
                                            if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                           {
                                                 $( "#user_found" ).show();
+                                           }
                                            else
+                                           {
                                                 $( "#user_found" ).hide();
+                                           }
                                             
                                            $( "#headingOne" ).addClass("text-decoration-underline");
                                         }else
                                         {
+                                            $('.list-group-item').hide();
+                                            
                                             $( "#text_found" ).hide();
                                             $( "#text_notfound" ).show();
                                             $( "#user_found" ).hide();
@@ -77,6 +91,8 @@
                                         }
                                     }else
                                     {
+                                        $('.list-group-item').show();
+                                        
                                         //$( "#user_question" ).show();
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
@@ -221,6 +237,14 @@
                                         //$( "#user_question" ).hide();
                                         if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                         {
+                                            $('.list-group-item').hide();
+                                           $(".list-group-item").each(function(index) {
+                                                if($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                {
+                                                    $(this).show();
+                                                }
+                                            });
+                                            
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
                                            if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
@@ -258,6 +282,8 @@
                                            }
                                         }else
                                         {
+                                            $('.list-group-item').hide();
+                                            
                                             $( "#text_found" ).hide();
                                             $( "#text_notfound" ).show();
                                             $( "#user_found" ).hide();
@@ -269,6 +295,8 @@
                                         }
                                     }else
                                     {
+                                        $('.list-group-item').show();
+                                        
                                         //$( "#user_question" ).show();
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
@@ -625,6 +653,14 @@
                                         //$( "#user_question" ).hide();
                                         if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
                                         {
+                                            $('.list-group-item').hide();
+                                           $(".list-group-item").each(function(index) {
+                                                if($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                {
+                                                    $(this).show();
+                                                }
+                                            });
+                                            
                                            $( "#text_found" ).show();
                                            $( "#text_notfound" ).hide();
                                            if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
@@ -635,6 +671,8 @@
                                            $( "#headingOne" ).addClass("text-decoration-underline");
                                         }else
                                         {
+                                            $('.list-group-item').hide();
+                                            
                                             $( "#text_found" ).hide();
                                             $( "#text_notfound" ).show();
                                             $( "#user_found" ).hide();
@@ -643,6 +681,8 @@
                                         }
                                     }else
                                     {
+                                        $('.list-group-item').show();
+                                        
                                         //$( "#user_question" ).show();
                                         $( "#text_found" ).hide();
                                         $( "#text_notfound" ).hide();
