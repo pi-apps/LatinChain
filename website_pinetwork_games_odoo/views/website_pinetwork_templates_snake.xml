@@ -162,18 +162,18 @@
                             this.play();
                         }, false);
                         
-                        $('#play').click(function() {
+                        $('#play_button').click(function() {
                             if(!status_audio)
                             {
                                 audioElement.play();
                                 status_audio = true;
-                                $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
+                                $("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
                             }
                             else
                             {
                                 audioElement.pause();
                                 status_audio = false;
-                                $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
+                                $("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
                             }
                         });
                         
@@ -233,7 +233,10 @@
                         <div style="border-style: none; width: 95%; margin-left: 5%">
                             <div id="show_title" style="display: flex;">
                                 <ul style="list-style-type: none;">
-                                  <li><h2><img class="transparent" width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /> 
+                                  <li><h2>
+                                    <div id="play_button">
+                                        <img class="transparent" width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /> 
+                                    </div>
                                     Super Snake<!--<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" style="color: black;">Info</a>--></h2></li>
                                   <li>
                                       <p style="width: 230px;">

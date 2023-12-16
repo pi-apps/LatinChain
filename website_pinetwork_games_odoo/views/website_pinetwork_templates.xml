@@ -78,18 +78,18 @@
                                 this.play();
                             }, false);
                             
-                            $('#play').click(function() {
+                            $('#play_button').click(function() {
                                 if(!status_audio)
                                 {
                                     audioElement.play();
                                     status_audio = true;
-                                    $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
+                                    $("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
                                 }
                                 else
                                 {
                                     audioElement.pause();
                                     status_audio = false;
-                                    $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
+                                    $("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
                                 }
                             });
                         
@@ -185,7 +185,10 @@
                           
                           <li><button style="margin-left:5px" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
                           <li><button style="margin-left:5px" class="back btn btn-info"><i class="fa fa-step-backward"></i></button></li>
-                          <li><img style="display: block; margin-left:5px; border: 1px solid;" width="35" height="95%" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" /></li>
+                          <li><div id="play_button" style="display: block; margin-left:5px; border: 1px solid; padding: 7px; width: 35px; height: 95%">
+                                <img style="display: block;" width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" />
+                              </div>
+                          </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
