@@ -201,10 +201,11 @@
                           
                           <li><button style="margin-left:5px" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
                           <li><button style="margin-left:5px" class="back_radioforus btn btn-info"><i class="fa fa-step-backward"></i></button></li>
+                          <li><img style="display: block; margin-left:5px; border: 1px solid;" width="35" height="95%" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" /></li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
+                                <br/>
                                 <!--<img  width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>-->
                                 <img  width="80" height="80" src="https://radioforus.com/wp-content/uploads/2023/02/Radioforus.png" style="display: block; margin-left: auto; margin-right: auto"/>
                                 
@@ -583,12 +584,13 @@
                               </li>
                               <li><button style="margin-left:5px" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
                               <li><button style="margin-left:5px" class="back_radioforus btn btn-info"><i class="fa fa-step-backward"></i></button></li>
+                              <li><img style="display: block; margin-left:5px; border: 1px solid;" width="35" height="95%" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" /></li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         
                                     <div class="container" style="text-align:center">
-                                        <br/><img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /><br/>
+                                        <br/>
                                         <img width="80" height="80" src="https://radioforus.com/wp-content/uploads/2023/02/Radioforus.png" style="display: block; margin-left: auto; margin-right: auto"/>
                                         <br/>
                                         <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>
