@@ -83,13 +83,17 @@
                                 {
                                     audioElement.play();
                                     status_audio = true;
-                                    $("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
+                                    $("#play").removeClass("fa-volume-off");
+                                    $("#play").addClass("fa-volume-up");
+                                    //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
                                 }
                                 else
                                 {
                                     audioElement.pause();
                                     status_audio = false;
-                                    $("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
+                                    $("#play").removeClass("fa-volume-up");
+                                    $("#play").addClass("fa-volume-off");
+                                    //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
                                 }
                             });
                         
@@ -185,9 +189,9 @@
                           
                           <li><button style="margin-left:5px" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
                           <li><button style="margin-left:5px" class="back btn btn-info"><i class="fa fa-step-backward"></i></button></li>
-                          <li><div id="play_button" style="display: block; margin-left:5px; border: 1px solid; padding: 7px; width: 35px; height: 95%">
-                                <img style="display: block;" width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" />
-                              </div>
+                          <li><button id="play_button" style="margin-left:5px" class="btn btn-info">
+                            <i id="play" class="fa fa-volume-off"></i>
+                          </button>
                           </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">

@@ -640,13 +640,17 @@
                                 {
                                     audioElement.play();
                                     status_audio = true;
-                                    $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
+                                    $(this).removeClass("fa-volume-off");
+                                    $(this).addClass("fa-volume-up");
+                                    //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
                                 }
                                 else
                                 {
                                     audioElement.pause();
                                     status_audio = false;
-                                    $(this).attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
+                                    $(this).removeClass("fa-volume-up");
+                                    $(this).addClass("fa-volume-off");
+                                    //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
                                 }
                             });
                         
@@ -1022,7 +1026,7 @@
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
                         <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
-                            <img width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="margin-left: auto; margin-right: auto" />
+                            <i id="play" class="fa fa-volume-off"></i> 
                             Hi<strong><span id="username" translate="no"></span></strong><span id="verified"></span>. Welcome to LatinChain Platform (Games from Latin America for Pi). Increase your Pi mining power <i class="fa fa-bolt"></i> using this app. If you don't have it yet, download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link text-white"><strong>App Store</strong></a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link text-white"><strong>Play Store</strong></a> to watch it working.<br/>
                         </div>
                         <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><!--<strong t-if="mainnet == 'Testnet ON'">Testnet ON<br/></strong>--><strong t-if="mainnet == 'Mainnet ON'">Mainnet ON. Ready to play.<br/></strong><br/>

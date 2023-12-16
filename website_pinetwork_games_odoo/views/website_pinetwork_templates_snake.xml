@@ -167,13 +167,17 @@
                             {
                                 audioElement.play();
                                 status_audio = true;
-                                $("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
+                                $("#play").removeClass("fa-volume-off");
+                                $("#play").addClass("fa-volume-up");
+                                //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
                             }
                             else
                             {
                                 audioElement.pause();
                                 status_audio = false;
-                                $("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
+                                $("#play").removeClass("fa-volume-up");
+                                $("#play").addClass("fa-volume-off");
+                                //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
                             }
                         });
                         
@@ -235,7 +239,7 @@
                                 <ul style="list-style-type: none;">
                                   <li><h2>
                                     <div id="play_button">
-                                        <img class="transparent" width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /> 
+                                        <i id="play" class="fa fa-volume-off transparent"></i> 
                                     </div>
                                     Super Snake<!--<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" style="color: black;">Info</a>--></h2></li>
                                   <li>
