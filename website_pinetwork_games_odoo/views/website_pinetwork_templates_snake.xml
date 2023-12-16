@@ -208,6 +208,7 @@
                             {
                                 $( "#show" ).html('<i class="fa fa-eye"></i>');
                                 $( "#bottom_controls" ).show();
+                                $( "#show_title" ).show();
                                 //$( "#clear_cache" ).removeClass("transparent");
                                 //$( "#back" ).removeClass("transparent");
                                 //$( ".fps-counter" ).removeClass("transparent");
@@ -215,6 +216,7 @@
                             {
                                 $( "#show" ).html('<i class="fa fa-eye-slash"></i>');
                                 $( "#bottom_controls" ).hide();
+                                $( "#show_title" ).hide();
                                 //$( "#clear_cache" ).addClass("transparent");
                                 //$( "#back" ).addClass("transparent");
                                 //$( ".fps-counter" ).addClass("transparent");
@@ -227,13 +229,17 @@
                 <div class="intro" style="width: 100%; text-align: center">
                     <!--<iframe data-aa="1429940" src="//ad.a-ads.com/1429940?size=120x60" scrolling="no" style="opacity: 0.3; width:120px; height:60px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
                     <br>-->
-                    <div style="margin-right: 10% !important;">
-                        <h2><img class="transparent" width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /> 
-                        Super Snake<!--<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" style="color: black;">Info</a>--></h2>
-                        <p>
-                            <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal transparent" style="display: none;" lang="en-US"/>
-                            <button id="button_click" name="button_click" class="transparent" disabled="true">Unblock with <span t-esc="amount" /> Pi</button>
-                        </p>
+                    <div style="margin-right: 10% !important; height: 150px; width: 90%; text-align: center; border-style: none;">
+                        <div style="border-style: none; width: 85%; margin-left: 15%">
+                            <div id="show_title" style="display: flex;">
+                                <ul style="list-style-type: none;">
+                                  <li><h2><img class="transparent" width="20" height="20" id="play" src="/website_pinetwork_games_odoo/static/src/music/mute.png" alt="Music" style="display: block; margin-left: auto; margin-right: auto" /> 
+                                    Super Snake<!--<a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" style="color: black;">Info</a>--></h2></li>
+                                  <li><input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal transparent" style="display: none;" lang="en-US"/>
+                                    <button id="button_click" name="button_click" class="transparent" disabled="true" style="font-size:20px">Unblock with <span t-esc="amount" /> Pi</button></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div id="controls" style="padding: 10px; max-width: 125px; min-width: 125px; max-height: 120px; min-height: 120px; margin-left: 28% !important;" draggable="true">
                         <!--<div style="min-height: 60px;"></div>-->
