@@ -6,35 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-09 00:31+0000\n"
-"PO-Revision-Date: 2023-12-09 00:31+0000\n"
+"POT-Creation-Date: 2023-12-17 08:53+0000\n"
+"PO-Revision-Date: 2023-12-17 08:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-
-#. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid "(verified,"
-msgstr ""
-
-#. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid ", Snake:"
-msgstr ""
-
-#. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid ", Sudoku:"
-msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
@@ -229,7 +208,10 @@ msgid "Approve"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
 msgid "Are you sure you want to Clear Cache?, it will reloads the page."
 msgstr ""
 
@@ -315,6 +297,13 @@ msgstr ""
 #: model:ir.cron,cron_name:website_pinetwork_odoo.check_users_winners_base_v1
 #: model:ir.cron,name:website_pinetwork_odoo.check_users_winners_base_v1
 msgid "Check Users Winners"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Chess"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -737,6 +726,13 @@ msgid "Send"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Snake"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_snake_last
 msgid "Snake Last Points"
 msgstr ""
@@ -749,6 +745,13 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_snake_wins
 msgid "Snake Wins"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Sudoku"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -820,7 +823,18 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid "UTC (Chess:"
+msgid ""
+"UTC \n"
+"                                        <br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid ""
+"UTC \n"
+"                            <br/>"
 msgstr ""
 
 #. module: website_pinetwork_odoo

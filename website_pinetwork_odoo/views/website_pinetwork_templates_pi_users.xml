@@ -105,6 +105,23 @@
                                 $("#user_question").click(function() {
                                     $(".on-page-search").focus();
                                 });
+                                
+                                $( ".clear_cache" ).click(function() {
+                                    var result = confirm($("#clear_cache_message").text());
+                                    if(result)
+                                    {
+                                        try {
+                                            Cache.delete();
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                        try {
+                                            window.location.reload(true);
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }
+                                });
                             });
                         </script>
                         
@@ -127,7 +144,9 @@
                             <div class="col-1"></div>
                         </div>
                         <br/>
-                        
+                        <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                        <button class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <br/><br/>
                         <div class="accordion" id="accordionExample">
                           <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
@@ -312,6 +331,23 @@
                                 $("#user_question").click(function() {
                                     $(".on-page-search").focus();
                                 });
+                                
+                                $( ".clear_cache" ).click(function() {
+                                    var result = confirm($("#clear_cache_message").text());
+                                    if(result)
+                                    {
+                                        try {
+                                            Cache.delete();
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                        try {
+                                            window.location.reload(true);
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }
+                                });
                             });
                         </script>
                         
@@ -334,7 +370,9 @@
                             <div class="col-1"></div>
                         </div>
                         <br/>
-                        
+                        <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                        <button class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <br/><br/>
                         <div class="accordion" id="accordionPanelsStayOpenExample">
                           <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -695,6 +733,23 @@
                                 $("#user_question").click(function() {
                                     $(".on-page-search").focus();
                                 });
+                                
+                                $( ".clear_cache" ).click(function() {
+                                    var result = confirm($("#clear_cache_message").text());
+                                    if(result)
+                                    {
+                                        try {
+                                            Cache.delete();
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                        try {
+                                            window.location.reload(true);
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }
+                                });
                             });
                         </script>
                         
@@ -717,7 +772,9 @@
                             <div class="col-1"></div>
                         </div>
                         <br/>
-                        
+                        <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                        <button class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <br/><br/>
                         <!--
                         Jackpot to pay to winners: <strong><t t-esc="pi_users_winners_to_pay" /> Pi / <t t-esc="pi_users_winners_count" /></strong><br/><br/>
                         -->
