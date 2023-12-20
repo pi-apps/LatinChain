@@ -114,7 +114,12 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user(false).always(function(){
                         $( "#button_click" ).click(function() {
-                            var max_amount = round(parseFloat(parseFloat($("#amount").val())*3.0), 7);
+                            var max_amount = 0;
+                            
+                            if(parseFloat(parseFloat($("#amount").val())*3.0).toFixed(7).toString().match(/(\.0*)/)[0].length - 1 == 7)
+                                max_amount = parseFloat(parseFloat($("#amount").val())*3.0).toFixed(1);
+                            else
+                                max_amount = round(parseFloat(parseFloat($("#amount").val())*3.0), 7);
                                 
                             if((parseFloat($("#pi_donate").val()) >= parseFloat($("#amount").val())) && 
                                 (parseFloat($("#pi_donate").val()) <= max_amount))
