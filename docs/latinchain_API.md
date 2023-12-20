@@ -26,7 +26,7 @@ Get information about an user.
 POST /api/get-external-user
 
 $.post("https://latin-chain.com/api/get-external-user", data={'pi_user_code': 'rockcesar'}, function(data, status){
-  alert("Data: " + data.result + "\nStatus: " + status);
+  alert("Data: " + data.result + "\nStatus: " + status + "\nData: " + JSON.stringify(data));
 });
 ```
 
@@ -46,7 +46,7 @@ Get information about winners.
 POST /api/get-external-winners
 
 $.post("https://latin-chain.com/api/get-external-winners", function(data, status){
-  alert("Data: " + data.result + "\nStatus: " + status);
+  alert("Data: " + data.result + "\nStatus: " + status + "\nData: " + JSON.stringify(data));
 });
 ```
 
@@ -66,6 +66,12 @@ $.post("https://latin-chain.com/api/get-external-winners", function(data, status
 "points_chess": float, // Total points in chess
 "points_sudoku": float, // Total points in sudoku
 "points_snake": float, // Total points in snake
+"points_chess_max": float, // Max points in chess
+"points_sudoku_max": float, // Max points in sudoku
+"points_snake_max": float, // Max points in snake
+"points_chess_wins": float, // Wins in chess
+"points_sudoku_wins": float, // Wins in sudoku
+"points_snake_wins": float, // Wins in snake
 "points_datetime": string, // Datetime of the last update of points in any game
 "unblocked": boolean, // If the user is verified: True is verified, False is not verified
 "unblocked_datetime": string, // Datetime of user verification
@@ -86,6 +92,12 @@ $.post("https://latin-chain.com/api/get-external-winners", function(data, status
         "points_chess": float, // Total points in chess
         "points_sudoku": float, // Total points in sudoku
         "points_snake": float, // Total points in snake
+        "points_chess_max": float, // Max points in chess
+        "points_sudoku_max": float, // Max points in sudoku
+        "points_snake_max": float, // Max points in snake
+        "points_chess_wins": float, // Wins in chess
+        "points_sudoku_wins": float, // Wins in sudoku
+        "points_snake_wins": float, // Wins in snake
         "points_datetime": string, // Datetime of the last update of points in any game
         "unblocked": boolean, // If the user is verified: True is verified, False is not verified
         "unblocked_datetime": string, // Datetime of user verification
