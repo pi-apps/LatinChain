@@ -115,7 +115,7 @@ $( document ).ready(function() {
                     get_user(false).always(function(){
                         $( "#button_click" ).click(function() {
                             if((parseFloat($("#pi_donate").val()) >= parseFloat($("#amount").val())) && 
-                                (parseFloat($("#pi_donate").val()) <= (parseFloat($("#amount").val())*3)))
+                                (parseFloat($("#pi_donate").val()) <= parseFloat(parseFloat($("#amount").val())*3)))
                             {
                                 $("#button_click").prop( "disabled", true );
                                 /*setTimeout(function ()
@@ -124,7 +124,7 @@ $( document ).ready(function() {
                                 }, 10000);*/
                                 transfer();
                             }else{
-                                alert($("#payment_lessthan_message").text() + $("#amount").val() + " Pi" + $("#payment_morethan_message").text() + (parseFloat($("#amount").val())*3) + " Pi.");
+                                alert($("#payment_lessthan_message").text() + $("#amount").val() + " Pi" + $("#payment_morethan_message").text() + parseFloat(parseFloat($("#amount").val())*3) + " Pi.");
                             }
                         });
                         $("#button_click").prop( "disabled", false );
