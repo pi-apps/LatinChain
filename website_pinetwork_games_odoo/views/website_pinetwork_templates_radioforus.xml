@@ -36,7 +36,7 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.101"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.102"></script>
                     
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
@@ -224,7 +224,7 @@
                                 
                                 <h1 align="center" style="font-weight:600">Donate here</h1>
                                 
-                                <t t-set="amount_end" t-value="amount*3"/>
+                                <t t-set="amount_end" t-value="round(amount*3, 7)"/>
                                 <br/><br/><input id="pi_donate" name="pi_donate" style="font-size: 20px; font-weight: bold; text-align: center; width: 250px" type="number" min="0" step="0.01" lang="en-US" t-att-placeholder="str(amount) + ' Pi - ' + str(amount_end) + ' Pi'"/>
                                 <br/><br/><button id="button_click" name="button_click" class="btn btn-success" disabled="true">Donate to unblock</button>
                                 
