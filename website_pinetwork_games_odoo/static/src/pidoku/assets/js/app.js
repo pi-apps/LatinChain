@@ -355,6 +355,9 @@ var init_controls = function(){
                 
                 set_points(points_values[get_tab()]);
             }
+        }else
+        {
+            solve_puzzle_check(get_tab());
         }
     });
     
@@ -400,6 +403,49 @@ var solve_puzzle = function(puzzle){
                 .html("<strong>Unable to solve!</strong> "
                     + "Check puzzle and try again.");
             $(MESSAGE_SEL).show();
+        }
+    }
+};
+
+var solve_puzzle_check = function(puzzle){
+    /* Solve the specified puzzle and show it
+    */
+    
+    // Solve only if it's a valid puzzle
+    if(typeof boards[puzzle] !== "undefined"){
+        //display_puzzle(boards[puzzle], true);
+        
+        var error = false;
+        try{
+            var solved_board = 
+                sudoku.solve(sudoku.board_grid_to_string(boards[puzzle]));
+        } catch(e) {
+            error = true;
+        }
+        
+        // Display the solved puzzle if solved successfully, display error if
+        // unable to solve.
+        if(solved_board && !error){
+            var i_counter = 0;
+            
+            for(var r = 0; r < 9; ++r){
+                for(var c = 0; c < 9; ++c){
+                    var $square = $(BOARD_SEL + " input#row" + r + "-col" + c);
+                    //alert(solved_board[i_counter]);
+                    if($square.val() != "" && solved_board[i_counter] != $square.val())
+                    {
+                        $square.addClass("red-text");
+                    }else
+                    {
+                        $square.removeClass("red-text");
+                    }
+                    i_counter++;
+                    /*alert($square.val());*/
+                }
+            }
+            //display_puzzle(sudoku.board_string_to_grid(solved_board), true);
+            //$(MESSAGE_SEL).hide();
+        } else {
         }
     }
 };
