@@ -185,7 +185,7 @@ class PiNetworkBaseController(http.Controller):
             _logger.info("accessToken not present")
             return json.dumps({'result': False})
         
-        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
         
         try:
             result = re.json()
@@ -255,7 +255,7 @@ class PiNetworkBaseController(http.Controller):
             _logger.info("accessToken not present")
             return json.dumps({'result': False})
         
-        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
         
         try:
             result = re.json()
@@ -300,9 +300,10 @@ class PiNetworkBaseController(http.Controller):
             _logger.info("accessToken not present")
             return json.dumps({'result': False})
         
-        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
         
         try:
+            _logger.info(re)
             result = re.json()
             
             result_dict = json.loads(str(json.dumps(result)))
@@ -342,7 +343,7 @@ class PiNetworkBaseController(http.Controller):
             _logger.info("accessToken not present")
             return json.dumps({'result': False})
         
-        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
         #_logger.info(kw['accessToken'])
         try:
             result = re.json()
@@ -667,7 +668,7 @@ class PiNetworkBaseController(http.Controller):
         if 'accessToken' not in kw or kw['accessToken'] == "":
             return json.dumps({'draw': int(draw), 'aaData': [], "iTotalRecords": 0, "iTotalDisplayRecords": 0})
         
-        re = requests.get('https://api.minepi.com/v2/me',data={},json={},headers={'Authorization': "Bearer " + kw['accessToken']})
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
         #_logger.info(kw['accessToken'])
         try:
             result = re.json()
