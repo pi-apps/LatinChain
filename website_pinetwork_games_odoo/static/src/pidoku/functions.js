@@ -250,6 +250,8 @@ $( document ).ready(function() {
         var val = $(this).val().replace(/[^\d].+/, "");
         if(val.length > 1)
             val = val.substring(0, 1);
+        if(val == 0)
+            val = "";
         $(this).val(val);
         if ((event.which < 49 || event.which > 57)) {
             event.preventDefault();
