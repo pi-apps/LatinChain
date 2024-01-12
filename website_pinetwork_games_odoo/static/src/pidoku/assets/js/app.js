@@ -436,12 +436,19 @@ var solve_puzzle_check = function(puzzle){
                 for(var c = 0; c < 9; ++c){
                     var $square = $(BOARD_SEL + " input#row" + r + "-col" + c);
                     //alert(solved_board[i_counter]);
-                    if($square.val() != "" && solved_board[i_counter] != $square.val())
+                    
+                    if($square.val() != "")
                     {
-                        $square.addClass("red-text");
-                    }else
-                    {
-                        $square.removeClass("red-text");
+                        var i_square = $square.val();
+                        if(i_square > 9)
+                            i_square = parseInt(i_square/10);
+                        if(solved_board[i_counter] != i_square)
+                        {
+                            $square.addClass("red-text");
+                        }else
+                        {
+                            $square.removeClass("red-text");
+                        }
                     }
                     i_counter++;
                     /*alert($square.val());*/
