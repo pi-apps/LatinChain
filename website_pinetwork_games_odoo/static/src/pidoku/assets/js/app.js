@@ -285,7 +285,7 @@ var init_controls = function(){
         solve_puzzle(get_tab());
     });
     
-    $(".square").on("keyup",function(e){
+    $(".square").on("keyup change",function(e){
         /* Solve the current puzzle
         */
         

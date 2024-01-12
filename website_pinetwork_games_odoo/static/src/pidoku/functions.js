@@ -246,7 +246,7 @@ $( document ).ready(function() {
         }
     });
     
-    $(".numeric").on("keypress keyup blur",function (event) {
+    $(".numeric").on("keypress keyup blur change",function (event) {
         var val = $(this).val().replace(/[^\d].+/, "");
         if(val.length > 1)
             val = val.slice(0,1);
