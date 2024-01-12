@@ -256,6 +256,12 @@ $( document ).ready(function() {
         }
     });
     
+    $(".maxlength_1").on("input", function () {
+        if (this.value.length > 1) {
+            this.value = this.value.slice(0,1); 
+        }
+    });
+    
     $(".sudoku-list").on("keypress keyup blur",function (event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         //$(this).val($(this).val().replace(/[^0-9\.]/g,''));
