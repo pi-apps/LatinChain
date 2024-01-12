@@ -49,9 +49,10 @@ var build_board = function(){
             $square.append(
                 $("<input/>", {
                     id: "row" + r + "-col" + c,
+                    //class: "square numeric maxlenght_1",
                     class: "square numeric maxlength_1",
                     maxlength: "1",
-                    type: "text",
+                    type: "number",
                     min: "1",
                     step: "1",
                     max: "9"
@@ -443,6 +444,11 @@ var solve_puzzle_check = function(puzzle){
                         var i_square = $square.val();
                         if(i_square > 9)
                             i_square = parseInt(i_square/10);
+                        
+                        if(i_square.length > 1) {
+                            i_square = i_square.slice(0,1);
+                        }
+                        
                         if(solved_board[i_counter] != i_square)
                         {
                             $square.addClass("red-text");

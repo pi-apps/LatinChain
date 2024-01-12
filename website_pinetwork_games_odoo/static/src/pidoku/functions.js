@@ -249,20 +249,19 @@ $( document ).ready(function() {
     $(".numeric").on("keypress keyup blur",function (event) {
         var val = $(this).val().replace(/[^\d].+/, "");
         if(val.length > 1)
-            val = val.substring(0, 1);
-        if(val == 0)
-            val = "";
+            val = val.slice(0,1);
         $(this).val(val);
+        
         if ((event.which < 49 || event.which > 57)) {
             event.preventDefault();
         }
     });
     
-    /*$(".maxlength_1").on("input", function () {
+    $(".maxlength_1").on("input", function () {
         if (this.value.length > 1) {
-            this.value = this.value.slice(0,1); 
+            this.value = this.value.slice(0,1);
         }
-    });*/
+    });
     
     $(".sudoku-list").on("keypress keyup blur",function (event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
