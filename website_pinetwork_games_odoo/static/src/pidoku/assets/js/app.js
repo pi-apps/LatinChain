@@ -357,7 +357,11 @@ var init_controls = function(){
             }
         }else
         {
-            solve_puzzle_check(get_tab());
+            var tab_name = get_tab();
+            if(tab_name != "import")
+            {
+                solve_puzzle_check(tab_name);
+            }
         }
     });
     
@@ -445,7 +449,6 @@ var solve_puzzle_check = function(puzzle){
             }
             //display_puzzle(sudoku.board_string_to_grid(solved_board), true);
             //$(MESSAGE_SEL).hide();
-        } else {
         }
     }
 };
