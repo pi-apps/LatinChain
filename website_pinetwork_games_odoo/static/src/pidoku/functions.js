@@ -251,7 +251,7 @@ $( document ).ready(function() {
         if(val.length > 1)
             val = val.substring(0, 1);
         $(this).val(val);
-        if ((event.which < 48 || event.which > 57)) {
+        if ((event.which < 49 || event.which > 57)) {
             event.preventDefault();
         }
     });
