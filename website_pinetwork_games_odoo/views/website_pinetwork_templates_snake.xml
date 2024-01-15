@@ -66,6 +66,19 @@
                     position: absolute;
                     bottom: 40px;
                 }
+                .grabbable:hover {
+                    cursor: move; /* fallback if grab cursor is unsupported */
+                    cursor: grab;
+                    cursor: -moz-grab;
+                    cursor: -webkit-grab;
+                }
+
+                 /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+                .grabbable:active {
+                    cursor: grabbing;
+                    cursor: -moz-grabbing;
+                    cursor: -webkit-grabbing;
+                }
                 </style>
                 
                 <script type="text/javascript">
@@ -130,6 +143,7 @@
                                 
                                 $('#enable_dragging').hide();
                                 $('#disable_dragging').show();
+                                $('#controls').addClass('grabbable');
                             }
                         });
                         
@@ -152,6 +166,7 @@
                                 
                                 $('#disable_dragging').hide();
                                 $('#enable_dragging').show();
+                                $('#controls').removeClass('grabbable');
                             }
                         });
                         
