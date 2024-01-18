@@ -53,6 +53,9 @@ function get_user() {
                     $(".hide_when_unblock").hide();
                     $("#sudoku-tab").show();
                     $("#sudoku-tab").click();
+                    
+                    var tab_name = get_tab();
+                    refresh_board();
                     /*setTimeout(function() {
                       (adsbygoogle = window.adsbygoogle || []).push({});
 					}, 2000);*/

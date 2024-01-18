@@ -49,9 +49,8 @@ var build_board = function(){
             $square.append(
                 $("<input/>", {
                     id: "row" + r + "-col" + c,
-                    //class: "square numeric maxlenght_1",
-                    class: "square numeric maxlength_1",
-                    maxlength: "1",
+                    class: "square numeric",
+                    maxlength: "9",
                     type: "number",
                     min: "1",
                     step: "1",
@@ -285,7 +284,7 @@ var init_controls = function(){
         solve_puzzle(get_tab());
     });
     
-    $(".square").on("keyup change",function(e){
+    $(".square").on("keyup",function(e){
         /* Solve the current puzzle
         */
         
@@ -309,7 +308,6 @@ var init_controls = function(){
             for(var c = 0; c < 9; ++c){
                 var $square = $(BOARD_SEL + " input#row" + r + "-col" + c);
                 $square.removeClass("green-text");
-                $square.removeClass("red-text");
                 if($square.val() == "")
                     s+=".";
                 else
@@ -357,13 +355,6 @@ var init_controls = function(){
                 
                 set_points(points_values[get_tab()]);
             }
-        }else
-        {
-            var tab_name = get_tab();
-            if(tab_name != "import")
-            {
-                solve_puzzle_check(tab_name);
-            }
         }
     });
     
@@ -409,60 +400,6 @@ var solve_puzzle = function(puzzle){
                 .html("<strong>Unable to solve!</strong> "
                     + "Check puzzle and try again.");
             $(MESSAGE_SEL).show();
-        }
-    }
-};
-
-var solve_puzzle_check = function(puzzle){
-    /* Solve the specified puzzle and show it
-    */
-    
-    // Solve only if it's a valid puzzle
-    if(typeof boards[puzzle] !== "undefined"){
-        //display_puzzle(boards[puzzle], true);
-        
-        var error = false;
-        try{
-            var solved_board = 
-                sudoku.solve(sudoku.board_grid_to_string(boards[puzzle]));
-        } catch(e) {
-            error = true;
-        }
-        
-        // Display the solved puzzle if solved successfully, display error if
-        // unable to solve.
-        if(solved_board && !error){
-            var i_counter = 0;
-            
-            for(var r = 0; r < 9; ++r){
-                for(var c = 0; c < 9; ++c){
-                    var $square = $(BOARD_SEL + " input#row" + r + "-col" + c);
-                    //alert(solved_board[i_counter]);
-                    
-                    if($square.val() != "")
-                    {
-                        var i_square = $square.val();
-                        if(i_square > 9)
-                            i_square = parseInt(i_square/10);
-                        
-                        if(i_square.length > 1) {
-                            i_square = i_square.slice(0,1);
-                        }
-                        
-                        if(solved_board[i_counter] != i_square)
-                        {
-                            $square.addClass("red-text");
-                        }else
-                        {
-                            $square.removeClass("red-text");
-                        }
-                    }
-                    i_counter++;
-                    /*alert($square.val());*/
-                }
-            }
-            //display_puzzle(sudoku.board_string_to_grid(solved_board), true);
-            //$(MESSAGE_SEL).hide();
         }
     }
 };
@@ -539,7 +476,6 @@ var clear_puzzle = function(puzzle){
         for(var c = 0; c < 9; ++c){
             var $square = $(BOARD_SEL + " input#row" + r + "-col" + c);
             $square.removeClass("green-text");
-            $square.removeClass("red-text");
             if ($square.attr("disabled") != "disabled" || $square.attr("disabled") == undefined || $square.attr("disabled") == false) {
                 $square.val('');
             }
@@ -558,7 +494,6 @@ var display_puzzle = function(board, highlight){
         for(var c = 0; c < 9; ++c){
             var $square = $(BOARD_SEL + " input#row" + r + "-col" + c);
             $square.removeClass("green-text");
-            $square.removeClass("red-text");
             if(board[r][c] != sudoku.BLANK_CHAR){
                 var board_val = board[r][c];
                 var square_val = $square.val();
