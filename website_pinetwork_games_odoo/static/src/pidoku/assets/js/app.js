@@ -11,6 +11,7 @@ var MESSAGE_SEL = "#message";
 var PUZZLE_CONTROLS_SEL = "#puzzle-controls";
 var IMPORT_CONTROLS_SEL = "#import-controls";
 var SOLVER_CONTROLS_SEL = "#solver-controls";
+var flag_keyup = false;
 
 // Boards
 // TODO: Cache puzzles as strings instead of grids to cut down on conversions?
@@ -195,6 +196,8 @@ var init_controls = function(){
                 show_puzzle(tab_name, true);
                 $("#export-string").val(sudoku.board_grid_to_string(boards[tab_name]));
             }*/
+            $('.timer').countimer('stop');
+            flag_keyup = false;
         }
     });
     
@@ -284,7 +287,7 @@ var init_controls = function(){
         solve_puzzle(get_tab());
     });
     
-    $(".square").on("keyup",function(e){
+    $(".square").on("input",function(e){
         /* Solve the current puzzle
         */
         
@@ -300,6 +303,11 @@ var init_controls = function(){
             for(var i = 0; i < 5; i++){
                 if(tab_name != tabs_names[i])
                     $("#"+tabs_names[i]).parent().hide();
+            }
+            if(!flag_keyup)
+            {
+                $('.timer').countimer('start');
+                flag_keyup = true;
             }
         }
         
@@ -328,6 +336,7 @@ var init_controls = function(){
         if(solved_board == s && !error)
         {
             $('.timer').countimer('stop');
+            flag_keyup = false;
             solve_puzzle(get_tab());
             var tab_name = get_tab();
             var tabs_names = ["hard",

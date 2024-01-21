@@ -37,7 +37,7 @@
                     <script src="/website_pinetwork_games_odoo/static/src/js/moment.js/2.18.1/moment.min.js"></script>
                     <script src="/website_pinetwork_games_odoo/static/src/pidoku/watch/dist/ez.countimer.js"></script>
                     <script src="/website_pinetwork_games_odoo/static/src/pidoku/sudoku.js"></script>
-                    <script src="/website_pinetwork_games_odoo/static/src/pidoku/assets/js/app.js?v=1.0"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/pidoku/assets/js/app.js?v=1.0.1"></script>
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js"></script>
                     
@@ -390,7 +390,8 @@
                                     <h1 align="center" style="font-weight:600">Sudoku</h1><br/>
                                     <div class="cont">
                                     <h1>Time</h1>
-                                    <p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
+                                    <!--<p><button class="btn btn-default" onClick="$('.timer').countimer('start');">Start</button> <button class="btn btn-warning" onClick="$('.timer').countimer('stop');">Pause</button>  <button class="btn btn-success" onClick="$('.timer').countimer('resume');">Resume</button></p>
+                                    -->
                                     <div class="timer well"></div>
                                     </div>
                                     
