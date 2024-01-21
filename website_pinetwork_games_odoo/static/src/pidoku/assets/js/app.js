@@ -50,7 +50,7 @@ var build_board = function(){
             $square.append(
                 $("<input/>", {
                     id: "row" + r + "-col" + c,
-                    class: "square numeric",
+                    class: "square numeric maxlength_1",
                     maxlength: "9",
                     type: "number",
                     min: "1",
