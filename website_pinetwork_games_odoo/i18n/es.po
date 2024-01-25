@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-11 13:57+0000\n"
-"PO-Revision-Date: 2024-01-11 13:57+0000\n"
+"POT-Creation-Date: 2024-01-25 14:10+0000\n"
+"PO-Revision-Date: 2024-01-25 14:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -651,11 +651,6 @@ msgid "CHESS"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "CRYPTO NEWS"
-msgstr "CRIPTO NOTICIAS"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Cancel"
 msgstr "Cancelar"
@@ -694,11 +689,6 @@ msgstr "Cerrar"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Credits"
 msgstr "Créditos"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Crypto News"
-msgstr "Cripto Noticias"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
@@ -763,6 +753,11 @@ msgid "Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
 msgstr ""
 "Introduce un juego de sudoku como cadena de 81 dígitos, 1-9, y '.' como "
 "espacios."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "FIRESIDE"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -926,6 +921,16 @@ msgstr "Más Info"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "NEWS"
+msgstr "NOTICIAS"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "News"
+msgstr "Noticias"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Next"
 msgstr "Siguiente"
 
@@ -946,7 +951,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Pause"
 msgstr "Pausa"
 
@@ -1051,11 +1055,6 @@ msgid "Repository"
 msgstr "Repositorio"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Resume"
-msgstr "Seguir"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Rules"
 msgstr "Reglas"
@@ -1104,7 +1103,6 @@ msgstr "Muestra Pista"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Start"
 msgstr "Iniciar"
 
@@ -1150,7 +1148,7 @@ msgstr "Regresar"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Terms of Service"
+msgid "Terms (ToS)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
