@@ -778,6 +778,10 @@
                                 $.colorbox({href:"https://en.wikipedia.org/wiki/Snake_(video_game_genre)", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
+                            $( ".fireside" ).click(function() {
+                                $.colorbox({href:"https://fireside.pinet.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                            });
+                            
                             
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm($( "#clear_cache_message" ).text());
@@ -1125,6 +1129,11 @@
                                 <div class="row">
                                     <div class="col-6"><a href="/snake" class="btn btn-primary"><div style="display:inline;"><i class="fa fa-gamepad"></i></div> <div style="display:inline;" translate="no">SNAKE</div></a><button id="snakeinfo" class="btn btn-info snakeinfo"><i class="fa fa-info"></i></button></div>
                                     <div class="col-6"><a href="/pinetwork" class="btn btn-primary"><div style="display:inline;"><i class="fa fa-handshake-o"></i></div> <div style="display:inline;">DONATE</div></a></div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-6"><button id="fireside" class="btn btn-primary fireside"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">FIRESIDE</div></button></div>
+                                    <div class="col-6"></div>
                                 </div>
                                 <br/>
                                 <div class="row">
