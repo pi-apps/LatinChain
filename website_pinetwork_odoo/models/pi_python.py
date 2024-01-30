@@ -10,7 +10,7 @@ import stellar_sdk as s_sdk
 import logging
 _logger = logging.getLogger(__name__)
 
-class PiNetwork:    
+class PiNetwork:
      
     api_key = ""
     client = ""
@@ -159,6 +159,7 @@ class PiNetwork:
         url = self.base_url + "/v2/payments/incomplete_server_payments"
         re = requests.get(url,headers=self.get_http_headers())
         res = self.handle_http_response(re)
+        _logger.info(res)
         return res["incomplete_server_payments"]
 
     def get_http_headers(self):
