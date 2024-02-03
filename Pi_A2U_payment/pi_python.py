@@ -157,6 +157,8 @@ class PiNetwork:
         url = self.base_url + "/v2/payments/incomplete_server_payments"
         re = requests.get(url,headers=self.get_http_headers())
         res = self.handle_http_response(re)
+        if not res:
+            res = {"incomplete_server_payments": []}
         return res["incomplete_server_payments"]
 
     def get_http_headers(self):
