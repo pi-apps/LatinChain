@@ -144,7 +144,7 @@
                     <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive -->
                         
-                        <br/>
+                        <!--<br/>
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
@@ -166,7 +166,7 @@
                             placement: 'Mid Article Thumbnails',
                             target_type: 'mix'
                           });
-                        </script>
+                        </script>-->
                     </div>
                     
                     <div style="text-align:center">
@@ -264,8 +264,18 @@
                         </script>
                         <br/>
                         
+                        <div id="taboola-mid-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a-mid',
+                            container: 'taboola-mid-article-thumbnails',
+                            placement: 'Mid Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
                         
-                        <div id="taboola-below-article-thumbnails"></div>
+                        <!--<div id="taboola-below-article-thumbnails"></div>
                         <script type="text/javascript">
                           window._taboola = window._taboola || [];
                           _taboola.push({
@@ -274,7 +284,7 @@
                             placement: 'Below Article Thumbnails',
                             target_type: 'mix'
                           });
-                        </script>                        
+                        </script>-->
                     </div>
                     
                     <button id="myBtn"><a id="myABtn" href="#top" style="color: white" translate="no">Top</a></button>
