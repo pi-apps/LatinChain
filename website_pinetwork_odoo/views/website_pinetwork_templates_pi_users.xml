@@ -984,6 +984,10 @@
                                     { data: 'txid', },
                                 ],
                                 ordering: false,
+                                columnDefs: [{ width: 200, targets: 0 }],
+                                fixedColumns: true,
+                                scrollCollapse: true,
+                                scrollX: true,
                             } );
                             const Pi = window.Pi;
                             
