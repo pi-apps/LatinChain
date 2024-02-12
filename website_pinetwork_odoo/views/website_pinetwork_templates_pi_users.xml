@@ -984,7 +984,7 @@
                                     { data: 'txid', },
                                 ],
                                 ordering: false,
-                                columnDefs: [{ width: 150, targets: 0 }],
+                                columnDefs: [{ width: 100, targets: 0 }],
                                 fixedColumns: true,
                                 scrollCollapse: true,
                                 scrollX: true,
