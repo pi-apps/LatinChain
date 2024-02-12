@@ -449,7 +449,6 @@
                                     { data: 'txid', },
                                 ],
                                 ordering: false,
-                                columnDefs: [{ width: 100, targets: 0 }],
                                 fixedColumns: true,
                                 scrollCollapse: true,
                                 scrollX: true,
