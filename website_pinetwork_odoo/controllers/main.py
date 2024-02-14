@@ -137,8 +137,7 @@ class PiNetworkBaseController(http.Controller):
                 headers = {'Content-Type': 'application/json'}
                 return Response(json.dumps(result.json()), headers=headers)
             elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com" and "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                result = requests.post("https://test.latin-chain.com/api/get-external-user", kw)
-                _logger.info(str(json.dumps(result.json())))
+                result = requests.post("https://latin-chain.com/api/get-external-user", kw)
                 headers = {'Content-Type': 'application/json'}
                 return Response(json.dumps(result.json()), headers=headers)
         
