@@ -133,9 +133,11 @@ class PiNetworkBaseController(http.Controller):
         
         if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
             if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com" and "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                return Response(requests.post("https://test.latin-chain.com/api/get-external-user", kw))
+                result = requests.post("https://test.latin-chain.com/api/get-external-user", kw)
+                return Response(result.json(), result.headers)
             elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com" and "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                return Response(requests.post("https://latin-chain.com/api/get-external-user", kw))
+                result = requests.post("https://latin-chain.com/api/get-external-user", kw)
+                return Response(result.json(), result.headers)
         
         if 'pi_user_code' not in kw:
             headers = {'Content-Type': 'application/json'}
