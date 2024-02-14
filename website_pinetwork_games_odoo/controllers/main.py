@@ -58,9 +58,9 @@ class PiNetworkController(http.Controller):
     def radioforus(self, **kw):
         if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
             if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com" and "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                redirect("https://test.latin-chain.com/radioforus")
+                return redirect("https://test.latin-chain.com/radioforus")
             elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com" and "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                redirect("https://latin-chain.com/radioforus")
+                return redirect("https://latin-chain.com/radioforus")
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
         
@@ -99,9 +99,9 @@ class PiNetworkController(http.Controller):
     def get_transactions_radioforus(self, **kw):
         if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
             if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com" and "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                redirect("https://test.latin-chain.com/get-transactions-radioforus")
+                return redirect("https://test.latin-chain.com/get-transactions-radioforus")
             elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com" and "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                redirect("https://latin-chain.com/get-transactions-radioforus")
+                return redirect("https://latin-chain.com/get-transactions-radioforus")
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         

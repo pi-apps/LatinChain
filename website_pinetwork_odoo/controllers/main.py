@@ -10,6 +10,8 @@ import odoo
 
 import requests
 
+from werkzeug.utils import redirect
+
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -128,6 +130,12 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/api/get-external-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_external_user(self, **kw):
+        
+        if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
+            if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com" and "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                return http.requests.post("https://test.latin-chain.com/api/get-external-user", kw)
+            elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com" and "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                return http.requests.redirect("https://latin-chain.com/api/get-external-user", kw)
         
         if 'pi_user_code' not in kw:
             headers = {'Content-Type': 'application/json'}
