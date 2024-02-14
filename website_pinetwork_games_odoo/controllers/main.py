@@ -6,6 +6,8 @@ import json
 
 import requests
 
+from werkzeug.utils import redirect
+
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -54,6 +56,12 @@ class Website(Website):
 class PiNetworkController(http.Controller):
     @http.route('/radioforus', type='http', auth="public", website=True)
     def radioforus(self, **kw):
+        if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
+            if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com" and "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                redirect("https://test.latin-chain.com/radioforus")
+            elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com" and "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                redirect("https://latin-chain.com/radioforus")
+        
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
         
         if len(admin_app_list) == 0:
@@ -89,6 +97,12 @@ class PiNetworkController(http.Controller):
     
     @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True)
     def get_transactions_radioforus(self, **kw):
+        if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
+            if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com" and "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                redirect("https://test.latin-chain.com/get-transactions-radioforus")
+            elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com" and "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                redirect("https://latin-chain.com/get-transactions-radioforus")
+        
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
         if len(admin_app_list) == 0:
