@@ -979,9 +979,9 @@
                                 serverSide: true,
                                 serverMethod: 'post',
                                 columns: [
-                                    { data: 'memo', width: "80px" },
-                                    { data: 'amount', width: "80px" },
-                                    { data: 'txid', width: "80px" },
+                                    { data: 'memo', width: "75px" },
+                                    { data: 'amount', width: "75px" },
+                                    { data: 'txid', width: "75px" },
                                 ],
                                 ordering: false,
                                 scrollCollapse: true,
