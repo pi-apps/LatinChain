@@ -566,17 +566,6 @@
                         </script>
                         <br/>
                         
-                        <div id="taboola-mid-article-thumbnails"></div>
-                        <script type="text/javascript">
-                          window._taboola = window._taboola || [];
-                          _taboola.push({
-                            mode: 'alternating-thumbnails-a-mid',
-                            container: 'taboola-mid-article-thumbnails',
-                            placement: 'Mid Article Thumbnails',
-                            target_type: 'mix'
-                          });
-                        </script>
-                        <!--
                         <div id="taboola-below-article-thumbnails"></div>
                         <script type="text/javascript">
                           window._taboola = window._taboola || [];
@@ -586,7 +575,7 @@
                             placement: 'Below Article Thumbnails',
                             target_type: 'mix'
                           });
-                        </script>-->
+                        </script>
                     </div>
                     
                     <script type="text/javascript">

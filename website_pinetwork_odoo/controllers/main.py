@@ -662,7 +662,7 @@ class PiNetworkBaseController(http.Controller):
             mainnet = admin_app_list[0].mainnet
             google_adsense = admin_app_list[0].google_adsense
         
-        return http.request.render('website_pinetwork_odoo.list_transactions', {'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
+        return http.request.render('website_pinetwork_odoo.list_transactions', {'no_footer': True, 'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
 
     @http.route('/get-transactions-data/<string:source>', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def get_transactions_data(self, source, **kw):

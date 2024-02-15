@@ -1121,13 +1121,14 @@
                     </script>
                     
                     <br/>
-                    <div id="taboola-mid-article-thumbnails"></div>
+                        
+                    <div id="taboola-below-article-thumbnails"></div>
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({
-                        mode: 'alternating-thumbnails-a-mid',
-                        container: 'taboola-mid-article-thumbnails',
-                        placement: 'Mid Article Thumbnails',
+                        mode: 'alternating-thumbnails-a',
+                        container: 'taboola-below-article-thumbnails',
+                        placement: 'Below Article Thumbnails',
                         target_type: 'mix'
                       });
                     </script>
