@@ -979,13 +979,13 @@
                                 serverSide: true,
                                 serverMethod: 'post',
                                 columns: [
-                                    { data: 'memo', },
-                                    { data: 'amount', },
-                                    { data: 'txid', },
+                                    { data: 'memo', width: "100px" },
+                                    { data: 'amount', width: "100px" },
+                                    { data: 'txid', width: "100px" },
                                 ],
                                 ordering: false,
                                 scrollCollapse: true,
-                                scrollX: true,
+                                scrollX: true
                             } );
                             const Pi = window.Pi;
                             
