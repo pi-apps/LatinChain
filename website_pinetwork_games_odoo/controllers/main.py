@@ -73,6 +73,8 @@ class PiNetworkController(http.Controller):
             elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
                 link_back = "https://mainnet.radioforus.com"
         
+        _logger.info("HELLOOOO " + http.request.httprequest.environ['HTTP_REFERER'])
+        
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
         
         if len(admin_app_list) == 0:
