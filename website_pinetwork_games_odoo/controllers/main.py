@@ -66,6 +66,13 @@ class PiNetworkController(http.Controller):
                 return redirect("https://latin-chain.com/radioforus")
         """
         
+        link_back = "https://mainnet.radioforus.com"
+        if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
+            if "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                link_back = http.request.httprequest.environ['HTTP_REFERER']
+            elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                link_back = http.request.httprequest.environ['HTTP_REFERER']
+        
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
         
         if len(admin_app_list) == 0:
@@ -97,7 +104,7 @@ class PiNetworkController(http.Controller):
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
         
-        return http.request.render('website_pinetwork_games_odoo.radioforus', {'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.radioforus', {'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True)
     def get_transactions_radioforus(self, **kw):
@@ -111,6 +118,13 @@ class PiNetworkController(http.Controller):
                 return redirect("https://latin-chain.com/get-transactions-radioforus")
         """
         
+        link_back = "https://mainnet.radioforus.com"
+        if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
+            if "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                link_back = http.request.httprequest.environ['HTTP_REFERER']
+            elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                link_back = http.request.httprequest.environ['HTTP_REFERER']
+        
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
         if len(admin_app_list) == 0:
@@ -122,7 +136,7 @@ class PiNetworkController(http.Controller):
             mainnet = admin_app_list[0].mainnet
             google_adsense = admin_app_list[0].google_adsense
         
-        return http.request.render('website_pinetwork_games_odoo.list_transactions_radioforus', {'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
+        return http.request.render('website_pinetwork_games_odoo.list_transactions_radioforus', {'link_back': link_back, 'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
     @http.route('/latinchain_x', type='http', auth="public", website=True)
     def latinchain_x(self, **kw):
