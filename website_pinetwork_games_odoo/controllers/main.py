@@ -66,6 +66,8 @@ class PiNetworkController(http.Controller):
                     return redirect("https://" + http.request.httprequest.environ['HTTP_HOST'] + "/radioforus?link_back='https://mainnet.radioforus.com'")
         else:
             link_back = kw['link_back']
+            
+        _logger.info("link_back " + link_back)
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
         
