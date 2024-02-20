@@ -60,10 +60,10 @@ class PiNetworkController(http.Controller):
         link_back = "https://mainnet.radioforus.com"
         if 'link_back' not in kw:
             if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
-                if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com" and "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                if "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
                     return redirect("https://test.latin-chain.com/radioforus?link_back=https://radioforus.com")
-                elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com" and "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                    return redirect("https://latin-chain.com/radioforus?link_back=https://mainnet.radioforus.com")
+                elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                    return redirect("https://test.latin-chain.com/radioforus?link_back=https://mainnet.radioforus.com")
         else:
             link_back = kw['link_back']
         
@@ -118,10 +118,10 @@ class PiNetworkController(http.Controller):
         link_back = "https://mainnet.radioforus.com"
         if 'link_back' not in kw:
             if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
-                if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com" and "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                if "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
                     return redirect("https://test.latin-chain.com/get-transactions-radioforus?link_back='https://radioforus.com'")
-                elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com" and "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                    return redirect("https://latin-chain.com/get-transactions-radioforus?link_back='https://mainnet.radioforus.com'")
+                elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
+                    return redirect("https://test.latin-chain.com/get-transactions-radioforus?link_back='https://mainnet.radioforus.com'")
         else:
             link_back = kw['link_back']
         
