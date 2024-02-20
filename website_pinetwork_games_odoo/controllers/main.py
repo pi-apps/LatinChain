@@ -67,7 +67,7 @@ class PiNetworkController(http.Controller):
         else:
             link_back = kw['link_back']
         
-        _logger.info("link_back " + link_back)
+        _logger.info("HELLOOOO " + link_back)
         
         """
         link_back = "https://mainnet.radioforus.com"
