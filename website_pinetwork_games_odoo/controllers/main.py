@@ -67,8 +67,6 @@ class PiNetworkController(http.Controller):
         else:
             link_back = kw['link_back']
         
-        _logger.info("HELLOOOO " + link_back)
-        
         """
         link_back = "https://mainnet.radioforus.com"
         if 'link_back' not in kw:
@@ -124,8 +122,8 @@ class PiNetworkController(http.Controller):
                     return redirect("https://test.latin-chain.com/get-transactions-radioforus?link_back='https://radioforus.com'")
                 elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
                     return redirect("https://test.latin-chain.com/get-transactions-radioforus?link_back='https://mainnet.radioforus.com'")
-        else:
-            link_back = kw['link_back']
+        
+        link_back = kw['link_back']
         
         """
         link_back = "https://mainnet.radioforus.com"
