@@ -119,9 +119,9 @@ class PiNetworkController(http.Controller):
         if 'link_back' not in kw:
             if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
                 if "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                    return redirect("https://test.latin-chain.com/get-transactions-radioforus?link_back='https://radioforus.com'")
+                    return redirect("https://test.latin-chain.com/get-transactions-radioforus?link_back=https://radioforus.com")
                 elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                    return redirect("https://test.latin-chain.com/get-transactions-radioforus?link_back='https://mainnet.radioforus.com'")
+                    return redirect("https://test.latin-chain.com/get-transactions-radioforus?link_back=https://mainnet.radioforus.com")
         
         link_back = kw['link_back']
         
