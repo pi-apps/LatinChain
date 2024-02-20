@@ -407,7 +407,7 @@
                         const Pi = window.Pi;
                         
                         var leaderboard = "/get-points/";
-                        var winnerboard = "/get-winners/";
+                        var winnerboard = "/get-top10-zone/";
                         var winnerzoneboard = "/get-winners-zone/";
 
                         function set_points(points) {
@@ -683,11 +683,11 @@
                                         $("#username").html(" " + auth.user.username);
                                         
                                         leaderboard = "/get-points/" + auth.user.username;
-                                        winnerboard = "/get-winners/" + auth.user.username;
+                                        winnerboard = "/get-top10-zone/" + auth.user.username;
                                         winnerzoneboard = "/get-winners-zone/" + auth.user.username;
                                         
                                         /*$("#leaderboard").attr("href", "/get-points/" + auth.user.username);
-                                        $("#winnerboard").attr("href", "/get-winners/" + auth.user.username);
+                                        $("#winnerboard").attr("href", "/get-top10-zone/" + auth.user.username);
                                         $("#winnerzoneboard").attr("href", "/get-winners-zone/" + auth.user.username);*/
                                         
                                         //get_user();
