@@ -64,6 +64,11 @@ class PiNetworkController(http.Controller):
                     return redirect("https://test.latin-chain.com/radioforus?link_back=https://radioforus.com")
                 elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
                     return redirect("https://test.latin-chain.com/radioforus?link_back=https://mainnet.radioforus.com")
+            else:
+                if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com":
+                    link_back = "https://mainnet.radioforus.com"
+                elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com":
+                    link_back = "https://radioforus.com"
         else:
             link_back = kw['link_back']
         
@@ -122,7 +127,11 @@ class PiNetworkController(http.Controller):
                     return redirect("https://test.latin-chain.com/get-transactions-radioforus?link_back=https://radioforus.com")
                 elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
                     return redirect("https://test.latin-chain.com/get-transactions-radioforus?link_back=https://mainnet.radioforus.com")
-        
+            else:
+                if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com":
+                    link_back = "https://mainnet.radioforus.com"
+                elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com":
+                    link_back = "https://radioforus.com"
         link_back = kw['link_back']
         
         """
