@@ -463,7 +463,7 @@
                                             $(".user_status_account").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
                                             $( "<br/>" ).insertAfter( ".user_status_account" );
                                             $("#user_points").html(data.points);
-                                            $("#user_points_per_game").html('<table class="table text-white" translate="no">' +
+                                            $("#user_points_per_game").html('<table class="table text-white" style="word-break: break-all;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -479,7 +479,7 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_last").html('<table class="table text-white" translate="no">' +
+                                            $("#user_points_last").html('<table class="table text-white" style="word-break: break-all;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -495,7 +495,7 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_wins").html('<table class="table text-white" translate="no">' +
+                                            $("#user_points_wins").html('<table class="table text-white" style="word-break: break-all;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -523,7 +523,7 @@
                                             $(".user_status_account").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
                                             $( "<br/>" ).insertAfter( ".user_status_account" );
                                             $("#user_points").html(data.points);
-                                            $("#user_points_per_game").html('<table class="table text-white" translate="no">' +
+                                            $("#user_points_per_game").html('<table class="table text-white" style="word-break: break-all;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -539,7 +539,7 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_last").html('<table class="table text-white" translate="no">' +
+                                            $("#user_points_last").html('<table class="table text-white" style="word-break: break-all;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -555,7 +555,7 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_wins").html('<table class="table text-white" translate="no">' +
+                                            $("#user_points_wins").html('<table class="table text-white" style="word-break: break-all;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
