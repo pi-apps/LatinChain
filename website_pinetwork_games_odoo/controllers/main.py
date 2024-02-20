@@ -132,7 +132,8 @@ class PiNetworkController(http.Controller):
                     link_back = "https://mainnet.radioforus.com"
                 elif http.request.httprequest.environ['HTTP_HOST'] == "test.latin-chain.com":
                     link_back = "https://radioforus.com"
-        link_back = kw['link_back']
+        else:
+            link_back = kw['link_back']
         
         """
         link_back = "https://mainnet.radioforus.com"
