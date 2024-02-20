@@ -67,11 +67,11 @@ class PiNetworkController(http.Controller):
         """
         
         link_back = "https://mainnet.radioforus.com"
-        if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
+        if 'HTTP_REFERER' in http.request.httprequest.environ:
             if "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                link_back = http.request.httprequest.environ['HTTP_REFERER']
+                link_back = "https://radioforus.com"
             elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                link_back = http.request.httprequest.environ['HTTP_REFERER']
+                link_back = "https://mainnet.radioforus.com"
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
         
@@ -119,11 +119,11 @@ class PiNetworkController(http.Controller):
         """
         
         link_back = "https://mainnet.radioforus.com"
-        if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
+        if 'HTTP_REFERER' in http.request.httprequest.environ:
             if "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                link_back = http.request.httprequest.environ['HTTP_REFERER']
+                link_back = "https://radioforus.com"
             elif "https://mainnet.radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
-                link_back = http.request.httprequest.environ['HTTP_REFERER']
+                link_back = "https://mainnet.radioforus.com"
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
