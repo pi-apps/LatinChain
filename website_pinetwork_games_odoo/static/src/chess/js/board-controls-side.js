@@ -261,6 +261,14 @@ $('#board-resign-game-area .yes').click(function() {
   $('#game-timer').addClass('hidden');
   $('#board').addClass('locked');
   $('#board-resign-game-area').addClass('hidden');
+  
+  document.getElementById("btn-switch-sides").disabled = true;
+  $('#btn-switch-sides').addClass('disabled');
+
+  document.getElementById("btn-show-hint").disabled = true;
+  $('#btn-show-hint').addClass('disabled');
+
+  $('#game-turn').addClass('hidden');
 });
 
 $('#board-resign-game-area .no').click(function() {
