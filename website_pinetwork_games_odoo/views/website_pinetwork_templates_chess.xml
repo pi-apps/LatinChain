@@ -549,7 +549,7 @@
                                 loadCss('chessboard-css', '/website_pinetwork_games_odoo/static/src/chess/css/caustique-chessboard.css');
 
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/chessboard-caustique-min.js', initGameBoard('mobile'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js?v=0.1', initGameBoard('mobile'));
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js', initGameBoard('mobile'));
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js', initGameBoard('mobile'));
 
@@ -563,7 +563,7 @@
                                 loadCss('chessboard-css', '/website_pinetwork_games_odoo/static/src/chess/css/chessboard.css');
 
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/chessboard.min.js', initGameBoard('desktop'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js?v=0.1', initGameBoard('desktop'));
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js', initGameBoard('desktop'));
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js', initGameBoard('desktop'));
 
