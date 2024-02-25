@@ -169,7 +169,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
-                                        <table class="table" style="word-break: break-all;" translate="no">
+                                        <table class="table table-bordered" style="word-break: break-all;" translate="no">
                                           <thead>
                                             <tr>
                                               <td>Chess</td>
