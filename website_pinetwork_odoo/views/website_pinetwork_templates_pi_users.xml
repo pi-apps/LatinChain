@@ -157,7 +157,7 @@
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                               <div class="accordion-body">
-                                <ul class="list-group">
+                                <div class="list-group">
                                     <t t-set="i" t-value="1"/>
                                     <t t-foreach="pi_users_list" t-as="pi_user">
                                         <t t-if="i &lt;= 10">
@@ -167,9 +167,9 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <div class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
-                                        <table class="table" style="word-break: break-all; display: inline-table" translate="no">
+                                        <table class="table" style="word-break: break-all;" translate="no">
                                           <thead>
                                             <tr>
                                               <td>Chess</td>
@@ -184,10 +184,10 @@
                                               <td><t t-esc="pi_user.points_sudoku" /></td>
                                             </tr>
                                           </tbody>
-                                        </table></li>
+                                        </table></div>
                                         <t t-set="i" t-value="i+1"/>
                                     </t>
-                                </ul>
+                                </div>
                               </div>
                             </div>
                           </div>
