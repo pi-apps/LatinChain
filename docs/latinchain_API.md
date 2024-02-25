@@ -25,9 +25,14 @@ Get information about an user.
 ```
 POST /api/get-external-user
 
-$.post("https://latin-chain.com/api/get-external-user", data={'pi_user_code': 'rockcesar'}, function(data, status){
-  alert("Data: " + data.result + "\nStatus: " + status + "\nData: " + JSON.stringify(data));
-});
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<script>
+  $.post("https://latin-chain.com/api/get-external-user", data={'pi_user_code': 'rockcesar'}, function(data, status){
+    alert("Result: " + data.result + "\nStatus: " + status + "\nData: " + JSON.stringify(data));
+  });
+</script>
 ```
 
 * Response type: [UserDTO](#UserDTO)
@@ -45,9 +50,14 @@ Get information about winners.
 ```
 POST /api/get-external-winners
 
-$.post("https://latin-chain.com/api/get-external-winners", function(data, status){
-  alert("Data: " + data.result + "\nStatus: " + status + "\nData: " + JSON.stringify(data));
-});
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<script>
+  $.post("https://latin-chain.com/api/get-external-winners", function(data, status){
+    alert("Result: " + data.result + "\nStatus: " + status + "\nData: " + JSON.stringify(data));
+  });
+</script>
 ```
 
 * Response type: [WinnerDTO](#WinnerDTO)

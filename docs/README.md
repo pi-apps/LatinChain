@@ -9,9 +9,14 @@ https://latin-chain.com/api/get-external-user
 Sending by POST {pi_user_code}, example:
 
 ```
-$.post("https://latin-chain.com/api/get-external-user", data={'pi_user_code': 'rockcesar'}, function(data, status){
-  alert("Data: " + data.result + "\nStatus: " + status + "\nData: " + JSON.stringify(data));
-});
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<script>
+  $.post("https://latin-chain.com/api/get-external-user", data={'pi_user_code': 'rockcesar'}, function(data, status){
+    alert("Result: " + data.result + "\nStatus: " + status + "\nData: " + JSON.stringify(data));
+  });
+</script>
 ```
 
 Or you can browse at the following, to get the winners:
@@ -19,9 +24,14 @@ Or you can browse at the following, to get the winners:
 https://latin-chain.com/api/get-external-winners
 
 ```
-$.post("https://latin-chain.com/api/get-external-winners", function(data, status){
-  alert("Data: " + data.result + "\nStatus: " + status + "\nData: " + JSON.stringify(data));
-});
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<script>
+  $.post("https://latin-chain.com/api/get-external-winners", function(data, status){
+    alert("Result: " + data.result + "\nStatus: " + status + "\nData: " + JSON.stringify(data));
+  });
+</script>
 ```
 
 ## Usage
