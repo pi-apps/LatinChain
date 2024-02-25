@@ -161,33 +161,26 @@
                                     <t t-set="i" t-value="1"/>
                                     <t t-foreach="pi_users_list" t-as="pi_user">
                                         <t t-if="i &lt;= 10">
-                                            <!--<t t-set="style" t-value="'background-color:#77d7f1'" />-->
-                                            <t t-set="style_text" t-value="'color:#77d7f1'" />
-                                            <t t-set="style" t-value="''" />
+                                            <t t-set="style" t-value="'background-color:#77d7f1'" />
                                         </t>
                                         <t t-else="">
-                                            <t t-set="style_text" t-value="''" />
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code" t-att-style="style_text"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
-                                        <table class="table" style="word-break: break-all;" translate="no">
-                                          <thead>
-                                            <tr>
-                                              <td>Chess</td>
-                                              <td>Snake</td>
-                                              <td>Sudoku</td>
-                                            </tr>
-                                          </thead>
-                                          <tbody>
-                                            <tr>
-                                              <td><t t-esc="pi_user.points_chess" /></td>
-                                              <td><t t-esc="pi_user.points_snake" /></td>
-                                              <td><t t-esc="pi_user.points_sudoku" /></td>
-                                            </tr>
-                                          </tbody>
-                                        </table></li>
+                                        <div class="container" style="word-break: break-all;" translate="no">
+                                            <div class="row table-head">
+                                                <div class="col-4">Chess</div>
+                                                <div class="col-4">Snake</div>
+                                                <div class="col-4">Sudoku</div>
+                                            </div>
+                                            <div class="row striped">
+                                                <div class="col-4"><t t-esc="pi_user.points_chess" /></div>
+                                                <div class="col-4"><t t-esc="pi_user.points_snake" /></div>
+                                                <div class="col-4"><t t-esc="pi_user.points_sudoku" /></div>
+                                            </div>
+                                        </div></li>
                                         <t t-set="i" t-value="i+1"/>
                                     </t>
                                 </ul>
