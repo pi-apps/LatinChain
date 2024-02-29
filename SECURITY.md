@@ -14,7 +14,7 @@ currently being supported with security updates.
 
 How to report a vulnerability?.
 
-Create an Issue in this repository. Describe which version of Python and pip are you using. If you don't know that info, you can tell us the most described possible your issue.
+Create an Issue in this repository. Describe which version of Python and Odoo are you using. If you don't know that info, you can tell us the most described possible your issue.
 
 If you have any question you could write an email at latinchain.info@gmail.com.
 
