@@ -5,10 +5,12 @@
         <field name="customize_show" eval="True"/>
     </record>
     
-    <template id="assets_frontend" name="your_module_name assets" inherit_id="website.assets_frontend">  
+    <template id="assets_frontend" name="games_odoo_website" inherit_id="website.assets_frontend">  
         <xpath expr="link[last()]" position="after">  
             <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/modals/colorbox/example3/colorbox.css" />
             
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
             <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>-->
         </xpath>  
         <xpath expr="script[last()]" position="after"> 
@@ -20,11 +22,15 @@
             
             <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet"/>
             <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-            
         </xpath>
     </template>
     
         <template id="new_header" inherit_id="web.layout">
+            <xpath expr="//head//link[last()]" position="after">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+            </xpath>
            <xpath expr="//body" position="before">
                <span id="website_translation_latin_chain" name="website_translation_latin_chain">
                     <t t-if="hide_google_translate">
@@ -863,7 +869,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="/website/social/youtube" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-youtube"></i></div> <div style="display:inline;">Subscribe Youtube Channel</div></a>
+                                          <a href="/website/social/youtube" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Subscribe Youtube Channel</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -875,7 +881,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="/website/social/twitter" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-twitter"></i></div> <div style="display:inline;">Join Twitter</div></a>
+                                          <a href="/website/social/twitter" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-twitter"></i></div> <div style="display:inline;">Join Twitter</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -887,7 +893,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 20px;" class="o_default_snippet_text">
-                                          <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-telegram"></i></div> <div style="display:inline;">Join Telegram Group</div></a>
+                                          <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-telegram"></i></div> <div style="display:inline;">Join Telegram Group</div></a>
                                       </h2>
                                       <!--<div class="s_hr pt8 pb10" data-snippet="s_hr" data-name="Separator">
                                         <hr class="w-25 mx-auto" style="border-top-width: 1px; border-top-style: solid;"/>
@@ -906,7 +912,7 @@
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text">Join Discord Server</a>
+                                      <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-discord"></i></div> <div style="display:inline;">Join Discord Server</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1081,7 +1087,7 @@
                         
                         <ul class="nav nav-pills" id="myTab" role="tablist" style="background-color: #e3f2fd;" translate="no">
                           <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><div style="display:inline;"><i class="fa fa-rocket"></i></div> <div style="display:inline;" translate="no">Apps</div></a>
+                            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;" translate="no">Apps</div></a>
                           </li>
                           <li class="nav-item" role="presentation">
                             <a class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Leaders</div></a>
@@ -1090,19 +1096,19 @@
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa fa-list"></i></a>
                             <ul class="dropdown-menu" translate="no">
                               <li>
-                                <a class="dropdown-item" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false"><div style="display:inline;"><i class="fa fa-user"></i></div> <div style="display:inline;">User</div></a>
+                                <a class="dropdown-item" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false"><div style="display:inline;"><i class="fas fa-user"></i></div> <div style="display:inline;">User</div></a>
                               </li>
                               <li><hr class="dropdown-divider"/></li>
                               <li>
-                                <a class="dropdown-item" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><div style="display:inline;"><i class="fa fa-laptop"></i></div> <div style="display:inline;">Dev</div></a>
+                                <a class="dropdown-item" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">Dev</div></a>
                               </li>
                               <li><hr class="dropdown-divider"/></li>
                               <li>
-                                <a class="dropdown-item" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false"><div style="display:inline;"><i class="fa fa-info"></i></div> <div style="display:inline;">Info</div></a>
+                                <a class="dropdown-item" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false"><div style="display:inline;"><i class="fas fa-info"></i></div> <div style="display:inline;">Info</div></a>
                               </li>
                               <li><hr class="dropdown-divider"/></li>
                               <li>
-                                <a class="dropdown-item" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false"><div style="display:inline;"><i class="fa fa-youtube-play"></i></div> <div style="display:inline;">Video</div></a>
+                                <a class="dropdown-item" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video</div></a>
                               </li>
                             </ul>
                           </li>
@@ -1122,13 +1128,13 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="/chess" class="btn btn-success"><div style="display:inline;"><i class="fa fa-gamepad"></i></div> <div style="display:inline;" translate="no">CHESS</div></a><button id="chessinfo" class="btn btn-info chessinfo"><i class="fa fa-info"></i></button></div>
-                                    <div class="col-6"><a href="/sudoku" class="btn btn-primary"><div style="display:inline;"><i class="fa fa-gamepad"></i></div> <div style="display:inline;" translate="no">SUDOKU</div></a><button id="sudokuinfo" class="btn btn-info sudokuinfo"><i class="fa fa-info"></i></button></div>
+                                    <div class="col-6"><a href="/chess" class="btn btn-success"><div style="display:inline;"><i class="fa-solid fa-chess-knight"></i></div> <div style="display:inline;" translate="no">CHESS</div></a><button id="chessinfo" class="btn btn-info chessinfo"><i class="fas fa-info"></i></button></div>
+                                    <div class="col-6"><a href="/sudoku" class="btn btn-primary"><div style="display:inline;"><i class="fa-solid fa-puzzle-piece"></i></div> <div style="display:inline;" translate="no">SUDOKU</div></a><button id="sudokuinfo" class="btn btn-info sudokuinfo"><i class="fas fa-info"></i></button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="/snake" class="btn btn-primary"><div style="display:inline;"><i class="fa fa-gamepad"></i></div> <div style="display:inline;" translate="no">SNAKE</div></a><button id="snakeinfo" class="btn btn-info snakeinfo"><i class="fa fa-info"></i></button></div>
-                                    <div class="col-6"><a href="/pinetwork" class="btn btn-primary"><div style="display:inline;"><i class="fa fa-handshake-o"></i></div> <div style="display:inline;">DONATE</div></a></div>
+                                    <div class="col-6"><a href="/snake" class="btn btn-primary"><div style="display:inline;"><i class="fa-solid fa-staff-snake"></i></div> <div style="display:inline;" translate="no">SNAKE</div></a><button id="snakeinfo" class="btn btn-info snakeinfo"><i class="fas fa-info"></i></button></div>
+                                    <div class="col-6"><a href="/pinetwork" class="btn btn-primary"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">DONATE</div></a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
@@ -1156,17 +1162,17 @@
                             <br/>Other developments:<br/><br/>
                             <div class="container" style="text-align:center">
                                 <div class="row">
-                                    <div class="col-6"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-secondary">Odoo App</a></div>
-                                    <div class="col-6"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-secondary">Platform</a></div>
+                                    <div class="col-6"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">Odoo App</div></a></div>
+                                    <div class="col-6"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">Platform</div></a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="/website/social/github" target="_blank" class="btn btn-secondary">Repository</a></div>
-                                    <div class="col-6"><a href="/api-docs" target="_blank" class="btn btn-secondary">LatinChain API</a></div>
+                                    <div class="col-6"><a href="/website/social/github" target="_blank" class="btn btn-secondary"><div style="display:inline;"><i class="fab fa-github"></i></div> <div style="display:inline;">Repository</div></a></div>
+                                    <div class="col-6"><a href="/api-docs" target="_blank" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">LatinChain API</div></a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="btn btn-secondary">LatinChain dSocial</a></div>
+                                    <div class="col-6"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">LatinChain dSocial</div></a></div>
                                     <div class="col-6"></div>
                                 </div>
                             </div>
@@ -1205,7 +1211,7 @@
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-6"><button id="credits" class="btn btn-success"><div style="display:inline;"><i class="fa fa-handshake-o"></i></div> <div style="display:inline;">Credits</div></button></div>
+                                <div class="col-6"><button id="credits" class="btn btn-success"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">Credits</div></button></div>
                                 <div class="col-6"><a href="/get-transactions/" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Transactions</div></a></div>
                             </div>
                             <br/>
@@ -1228,6 +1234,18 @@
                         <br/><br/>
                         <div id="social_div">Share in Social Networks:<br/><br/>
                         <button id="button1" class="btn btn-primary"><i class="fa fa-share-alt"></i></button><br/><br/>
+                        
+                        <div class="container" style="text-align:center">
+                            <div class="row">
+                                <div class="col-12"><a href="/website/social/youtube" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-youtube"></i></div></a>
+                                                    <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-telegram"></i></div></a>
+                                                    <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-discord"></i></div></a>
+                                                    <a href="/website/social/twitter" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-twitter"></i></div></a>
+                                                    <a href="/website/social/github" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-github"></i></div></a>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/>
                         
                         <div class="container" style="text-align:center">
                             <div class="row">
