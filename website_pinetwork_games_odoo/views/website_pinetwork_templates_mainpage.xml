@@ -1113,9 +1113,6 @@
                           <li class="nav-item" role="presentation">
                             <a class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" title="Info"><div style="display:inline;"><i class="fas fa-info"></i></div><!-- <div style="display:inline;">Info</div>--></a>
                           </li>
-                          <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false" title="Video"><div style="display:inline;"><i class="fab fa-youtube"></i></div><!-- <div style="display:inline;">Video</div>--></a>
-                          </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -1187,9 +1184,8 @@
                             <img src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /><br/><br/>
                             <!--<a href="https://weblatin.latin-chain.com" class="btn btn-link">LATINCHAIN</a><br/><br/>-->
                             <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a>
-                          </div>
-                          <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
-                            <br/>Video presentation:<br/><br/>
+                            
+                            <br/><br/><br/>Video presentation:<br/><br/>
                             <iframe id="latin-chain" width="270px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                             <!--<br/><br/>Crypto news:<br/><br/>
                             <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
