@@ -1097,32 +1097,24 @@
                             <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="width: 300px; height: 200px;" />
                         </div>
                         
-                        <ul class="nav nav-pills" id="myTab" role="tablist" style="background-color: #e3f2fd;" translate="no">
+                        <ul class="nav nav-pills justify-content-center nav-justified" id="myTab" role="tablist" style="background-color: #e3f2fd;" translate="no">
                           <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;" translate="no">Apps</div></a>
+                            <a class="nav-link active" id="home-tab" style="padding-left: 10px !important; padding-right: 10px !important;" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" title="Apps"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div><!-- <div style="display:inline;" translate="no">Apps</div>--></a>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Leaders</div></a>
+                            <a class="nav-link" id="rules-tab" style="padding-left: 10px !important; padding-right: 10px !important;" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false" title="Leaders"><div style="display:inline;"><i class="fa fa-list-ol"></i></div><!-- <div style="display:inline;">Leaders</div>--></a>
                           </li>
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa fa-list"></i></a>
-                            <ul class="dropdown-menu" translate="no">
-                              <li>
-                                <a class="dropdown-item" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false"><div style="display:inline;"><i class="fas fa-user"></i></div> <div style="display:inline;">User</div></a>
-                              </li>
-                              <li><hr class="dropdown-divider"/></li>
-                              <li>
-                                <a class="dropdown-item" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">Dev</div></a>
-                              </li>
-                              <li><hr class="dropdown-divider"/></li>
-                              <li>
-                                <a class="dropdown-item" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false"><div style="display:inline;"><i class="fas fa-info"></i></div> <div style="display:inline;">Info</div></a>
-                              </li>
-                              <li><hr class="dropdown-divider"/></li>
-                              <li>
-                                <a class="dropdown-item" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video</div></a>
-                              </li>
-                            </ul>
+                          <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="user-tab" style="padding-left: 10px !important; padding-right: 10px !important;" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false" title="User"><div style="display:inline;"><i class="fas fa-user"></i></div><!-- <div style="display:inline;">User</div>--></a>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="profile-tab" style="padding-left: 10px !important; padding-right: 10px !important;" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" title="Dev"><div style="display:inline;"><i class="fas fa-laptop"></i></div><!-- <div style="display:inline;">Dev</div>--></a>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="contact-tab" style="padding-left: 10px !important; padding-right: 10px !important;" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" title="Info"><div style="display:inline;"><i class="fas fa-info"></i></div><!-- <div style="display:inline;">Info</div>--></a>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="video-tab" style="padding-left: 10px !important; padding-right: 10px !important;" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false" title="Video"><div style="display:inline;"><i class="fab fa-youtube"></i></div><!-- <div style="display:inline;">Video</div>--></a>
                           </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -1140,18 +1132,18 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="/chess" class="btn btn-success"><div style="display:inline;"><i class="fa-solid fa-chess-knight"></i></div> <div style="display:inline;" translate="no">CHESS</div></a><button id="chessinfo" class="btn btn-info chessinfo"><i class="fas fa-info"></i></button></div>
-                                    <div class="col-6"><a href="/sudoku" class="btn btn-primary"><div style="display:inline;"><i class="fa-solid fa-puzzle-piece"></i></div> <div style="display:inline;" translate="no">SUDOKU</div></a><button id="sudokuinfo" class="btn btn-info sudokuinfo"><i class="fas fa-info"></i></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/chess" class="btn btn-success"><div style="display:inline;"><i class="fa-solid fa-chess-knight"></i></div> <div style="display:inline;" translate="no">CHESS</div></a><button id="chessinfo" class="btn btn-info chessinfo"><i class="fas fa-info"></i></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/sudoku" class="btn btn-primary"><div style="display:inline;"><i class="fa-solid fa-puzzle-piece"></i></div> <div style="display:inline;" translate="no">SUDOKU</div></a><button id="sudokuinfo" class="btn btn-info sudokuinfo"><i class="fas fa-info"></i></button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="/snake" class="btn btn-primary"><div style="display:inline;"><i class="fa-solid fa-staff-snake"></i></div> <div style="display:inline;" translate="no">SNAKE</div></a><button id="snakeinfo" class="btn btn-info snakeinfo"><i class="fas fa-info"></i></button></div>
-                                    <div class="col-6"><a href="/pinetwork" class="btn btn-primary"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">DONATE</div></a></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/snake" class="btn btn-primary"><div style="display:inline;"><i class="fa-solid fa-staff-snake"></i></div> <div style="display:inline;" translate="no">SNAKE</div></a><button id="snakeinfo" class="btn btn-info snakeinfo"><i class="fas fa-info"></i></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/pinetwork" class="btn btn-primary"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">DONATE</div></a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><button id="cointelegraph" class="btn btn-primary cointelegraph" translate="no"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">TELEGRAPH</div></button></div>
-                                    <div class="col-6"><button id="cryptonews_2" class="btn btn-primary cryptonews"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">NEWS</div></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="cointelegraph" class="btn btn-primary cointelegraph" translate="no"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">TELEGRAPH</div></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="cryptonews_2" class="btn btn-primary cryptonews"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">NEWS</div></button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
@@ -1174,18 +1166,17 @@
                             <br/>Other developments:<br/><br/>
                             <div class="container" style="text-align:center">
                                 <div class="row">
-                                    <div class="col-6"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">Odoo App</div></a></div>
-                                    <div class="col-6"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">Platform</div></a></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">Odoo App</div></a></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">Platform</div></a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="/website/social/github" target="_blank" class="btn btn-secondary"><div style="display:inline;"><i class="fab fa-github"></i></div> <div style="display:inline;">Repository</div></a></div>
-                                    <div class="col-6"><a href="/api-docs" target="_blank" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">LatinChain API</div></a></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/website/social/github" target="_blank" class="btn btn-secondary"><div style="display:inline;"><i class="fab fa-github"></i></div> <div style="display:inline;">Repository</div></a></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/api-docs" target="_blank" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">LatinChain API</div></a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">LatinChain dSocial</div></a></div>
-                                    <div class="col-6"></div>
+                                    <div class="col-12" style="padding-left: 2px; padding-right: 2px"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="btn btn-secondary"><div style="display:inline;"><i class="fas fa-laptop"></i></div> <div style="display:inline;">LatinChain dSocial</div></a></div>
                                 </div>
                             </div>
                           </div>
@@ -1199,12 +1190,12 @@
                           </div>
                           <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
                             <br/>Video presentation:<br/><br/>
-                            <iframe id="latin-chain" width="300px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                            <iframe id="latin-chain" width="270px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                             <!--<br/><br/>Crypto news:<br/><br/>
                             <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                             -->
                             <br/><br/>Enjoy:<br/><br/>
-                            <iframe id="tiesto" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                            <iframe id="tiesto" width="270px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLAxy1YpvZDdWIRIU03EYPgN6x3Ea6DEhS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                           </div>
                           <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
                             <div class="div_user_status">
@@ -1218,13 +1209,13 @@
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-6"><button id="leaderboard" class="btn btn-info"><div style="display:inline;"><i class="fa fa-fire"></i></div> <div style="display:inline;">Leaders Board</div></button></div>
-                                <div class="col-6"><button id="winnerboard" class="btn btn-success"><div style="display:inline;"><i class="fa fa-fire"></i></div> <div style="display:inline;">Top 10 Board</div></button></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="leaderboard" class="btn btn-info"><div style="display:inline;"><i class="fa fa-fire"></i></div> <div style="display:inline;">Leaders Board</div></button></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="winnerboard" class="btn btn-success"><div style="display:inline;"><i class="fa fa-fire"></i></div> <div style="display:inline;">Top 10 Board</div></button></div>
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-6"><button id="credits" class="btn btn-success"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">Credits</div></button></div>
-                                <div class="col-6"><a href="/get-transactions/" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Transactions</div></a></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="credits" class="btn btn-success"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">Credits</div></button></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/get-transactions/" class="btn btn-success"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Transactions</div></a></div>
                             </div>
                             <br/>
                             <div class="row">
@@ -1261,8 +1252,8 @@
                         
                         <div class="container" style="text-align:center">
                             <div class="row">
-                                <div class="col-6"><a href="/privacy/" class="btn btn-info"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Privacy Policy</div></a></div>
-                                <div class="col-6"><a href="/terms/" class="btn btn-info"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Terms (ToS)</div></a></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/privacy/" class="btn btn-info"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Privacy Policy</div></a></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/terms/" class="btn btn-info"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Terms (ToS)</div></a></div>
                             </div>
                         </div>
                         <br/><br/>
