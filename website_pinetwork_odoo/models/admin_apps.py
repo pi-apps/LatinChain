@@ -1006,7 +1006,6 @@ class pi_users(models.Model):
     def compute_donators(self):
         for i in self:
             i._compute_donator()
-            i.env.cr.commit()
     
     @api.depends("points_chess", "points_sudoku", "points_snake")
     def _total_points(self):
