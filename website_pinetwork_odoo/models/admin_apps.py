@@ -979,7 +979,7 @@ class pi_users(models.Model):
     def _compute_donator(self):
         for i in self:
             i.donator = False
-            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete'), ('action_type', '=', 'receive')], limit=1)
+            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], limit=1)
             
             if len(transaction) == 0:
                 i.donator = False
@@ -988,7 +988,7 @@ class pi_users(models.Model):
             
             total = 0
             
-            transactions_domain = [('id', 'in', i.pi_transactions_ids.ids), ('app_id.app', '=', 'auth_example'), ('action', '=', 'complete'), ('action_type', '=', 'receive')]
+            transactions_domain = [('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')]
             transactions_ids = self.env["pi.transactions"].read_group(transactions_domain, ['amount', 'action_type'], ['action_type'])
             
             if len(transactions_ids) > 0:
