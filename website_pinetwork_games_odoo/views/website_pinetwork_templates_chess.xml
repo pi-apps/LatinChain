@@ -201,9 +201,7 @@
                                     <br />
                                     <div style="text-align:center" class="form-group container">
                                         <div class="row">
-                                            <div class="col-3">
-                                            </div>
-                                            <div class="col-6">
+                                            <div class="col-12">
                                                 <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>
                                                 <button id="back" class="btn btn-info back" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button><br/>
                                                 <div class="hide_when_unblock">
@@ -213,8 +211,6 @@
                                                     <br/>
                                                     <span id="loading_word" style="display: none;">Loading...</span>
                                                 </div>
-                                            </div>
-                                            <div class="col-3">
                                             </div>
                                         </div>
                                     </div>
