@@ -988,22 +988,25 @@ class pi_users(models.Model):
             
             total = 0
             
-            transactions_domain = [('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')]
-            transactions_ids = self.env["pi.transactions"].read_group(transactions_domain, ['amount', 'action_type'], ['action_type'])
-            
-            if len(transactions_ids) > 0:
-                total = transactions_ids[0]['amount']
+            if i.donator:
+                transactions_domain = [('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')]
+                transactions_ids = self.env["pi.transactions"].read_group(transactions_domain, ['amount', 'action_type'], ['action_type'])
                 
-            """
-            for j in i.pi_transactions_ids:
-                if j.action == "complete" and j.action_type == "receive" and j.app_id.app == "auth_example":
-                    total += j.amount
-            """
+                if len(transactions_ids) > 0:
+                    total = transactions_ids[0]['amount']
+                    
+                """
+                for j in i.pi_transactions_ids:
+                    if j.action == "complete" and j.action_type == "receive" and j.app_id.app == "auth_example":
+                        total += j.amount
+                """
             
             i.paid_in_all_donations = total
     
     def compute_donators(self):
-        self._compute_donator()
+        for i in self:
+            i._compute_donator()
+            i.env.cr.commit()
     
     @api.depends("points_chess", "points_sudoku", "points_snake")
     def _total_points(self):
