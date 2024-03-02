@@ -628,9 +628,9 @@ class PiNetworkBaseController(http.Controller):
         #columnSortOrder = kw["order[0][dir]"]
         searchValue = kw["search[value]"]
         
-        if searchValue == "is verified":
+        if searchValue.lower() == "is verified":
             domain_filter = [('donator', '=', True), ('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))]
-        elif searchValue == "not verified":
+        elif searchValue.lower() == "not verified":
             domain_filter = [('donator', '=', True), ('unblocked_datetime', '<', datetime.now() - timedelta(days=30))]
         else:
             domain_filter = [('donator', '=', True), '|', ('pi_user_code', 'ilike', '%' + searchValue + '%'), ('paid_in_all_donations', 'ilike', '%' + searchValue + '%')]
