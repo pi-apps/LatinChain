@@ -1099,19 +1099,19 @@
                         
                         <ul class="nav nav-pills justify-content-center nav-justified" id="myTab" role="tablist" style="background-color: #e3f2fd;" translate="no">
                           <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" title="Apps"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="font-size:55%;" translate="no">Apps</div></a>
+                            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" title="Apps" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="font-size:80%;" translate="no">Apps</div></a>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false" title="Leaders"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:55%;">Leaders</div></a>
+                            <a class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false" title="Leaders" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:80%;">Leaders</div></a>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false" title="User"><div style=""><i class="fas fa-user"></i></div><div style="font-size:55%;">User</div></a>
+                            <a class="nav-link" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false" title="User" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-user"></i></div><div style="font-size:80%;">User</div></a>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" title="Dev"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:55%;">Dev</div></a>
+                            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" title="Dev" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:80%;">Dev</div></a>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" title="Info"><div style=""><i class="fas fa-info"></i></div><div style="font-size:55%;">Info</div></a>
+                            <a class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" title="Info" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-info"></i></div><div style="font-size:80%;">Info</div></a>
                           </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
