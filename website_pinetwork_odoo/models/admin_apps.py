@@ -1004,8 +1004,8 @@ class pi_users(models.Model):
             i.paid_in_all_donations = total
     
     def compute_donators(self):
-        for i in self:
-            i._compute_donator()
+        j = self.search([])
+        j._compute_donator()
     
     @api.depends("points_chess", "points_sudoku", "points_snake")
     def _total_points(self):
