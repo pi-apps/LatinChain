@@ -51,6 +51,9 @@
         <field name="model">pi.users</field>
         <field name="arch" type="xml">
             <tree string="Pi Users">
+                <header>
+                    <button name="compute_donators" type="object" string="Compute donators" class="oe_highlight"/>
+                </header>
                 <field name="id"/>
                 <field name="name"/>
                 <field name="donator"/>
