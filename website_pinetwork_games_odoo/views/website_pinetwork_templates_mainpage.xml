@@ -604,6 +604,13 @@
 
                         $( document ).ready(function() {
                         
+                            window.addEventListener('unhandledrejection', function (e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+                                return false;
+                            });
+                        
                             /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});*/

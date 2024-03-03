@@ -81,6 +81,13 @@
                 
                 <script type="text/javascript">
                     $( document ).ready(function() {
+                        window.addEventListener('unhandledrejection', function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            e.stopImmediatePropagation();
+                            return false;
+                        });
+                    
                         $("#up").draggable({ disabled: true });
                         $("#left").draggable({ disabled: true });
                         $("#down").draggable({ disabled: true });

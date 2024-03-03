@@ -513,6 +513,13 @@
                         var all_was_loaded = false;
                         var all_was_loaded_lib = false;
                         $( document ).ready(function() {
+                            window.addEventListener('unhandledrejection', function (e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+                                return false;
+                            });
+                        
                             /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});*/
