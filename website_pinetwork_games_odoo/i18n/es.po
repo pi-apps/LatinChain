@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-25 15:02+0000\n"
-"PO-Revision-Date: 2024-01-25 15:02+0000\n"
+"POT-Creation-Date: 2024-03-03 19:37+0000\n"
+"PO-Revision-Date: 2024-03-03 19:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -628,7 +628,7 @@ msgstr "Estás seguro(a) que quieres Borrar Caché?, esto recargará la página.
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "Are you sure you want to Reset?, it will restart the game."
 msgstr ""
-"Estás seguro(a) que quieres Reiniciar?, esto reiniciará a un nuevo juego."
+"Estás seguro que quieres Reiniciar?, esto reiniciará a un nuevo juego."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -728,8 +728,8 @@ msgstr "Quiere resignarse?"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-msgid "Donate here"
-msgstr "Dona aquí"
+msgid "Donate Pi cryptocurrency here"
+msgstr "Done la criptomoneda Pi aquí"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -753,11 +753,6 @@ msgid "Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
 msgstr ""
 "Introduce un juego de sudoku como cadena de 81 dígitos, 1-9, y '.' como "
 "espacios."
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "FIRESIDE"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -802,12 +797,12 @@ msgstr ""
 msgid ""
 "Hi<strong><span id=\"username\" translate=\"no\"/></strong><span "
 "id=\"verified\"/>. Welcome to LatinChain Platform (Games from Latin America "
-"for Pi). Increase your Pi mining power <i class=\"fa fa-bolt\"/> using this "
-"app. If you don't have it yet, download Pi Browser on"
+"for Pi). Increase your Pi cryptocurrency mining power <i class=\"fa fa-"
+"bolt\"/> using this app. If you don't have it yet, download Pi Browser on"
 msgstr ""
 "Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. "
 "Bienvenido(a) a LatinChain Platform (Games from Latin America for Pi). "
-"Incrementa tu poder de minería de Pi <i class=\"fa fa-bolt\"/> usando esta "
+"Incrementa tu poder de minería de la criptomoneda Pi <i class=\"fa fa-bolt\"/> usando esta "
 "app. Si no lo tienes aún, descarga Pi Browser en"
 
 #. module: website_pinetwork_games_odoo
@@ -942,7 +937,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Not verified. Each 30 days you should unlock the app paying"
-msgstr "No verificado. Cada 30 días tú debes desbloquear la app pagando"
+msgstr "No verificado. Cada 30 días to debes desbloquear la app pagando"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1012,13 +1007,17 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Play Chess Against the best AI Chess Player (Stockfish)"
-msgstr "Juega Ajedrez contra la mejor AI Chess Player (Stockfish)"
+msgid ""
+"Play Chess against the best AI Chess Player (Stockfish) using Pi "
+"cryptocurrency"
+msgstr ""
+"Juega Ajedrez contra el mejor Jugador Ajedrez con IA (Stockfish) usando la "
+"criptomoneda Pi"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Play Sudoku any time you want"
-msgstr "Juega Sudoku en el momento que quieras"
+msgid "Play Sudoku any time you want using Pi cryptocurrency"
+msgstr "Juega Sudoku en el momento que quieras usando la criptomoneda Pi"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1137,6 +1136,11 @@ msgid "Switch Sides"
 msgstr "Intercambia Lado"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "TELEGRAPH"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "TXID"
 msgstr ""
@@ -1220,11 +1224,6 @@ msgstr "Usuario"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Very Hard puzzle"
 msgstr "Juego muy difícil"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Video"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage

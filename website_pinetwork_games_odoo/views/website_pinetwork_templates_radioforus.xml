@@ -228,7 +228,7 @@
                                 <!--<img  width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>-->
                                 <img  width="80" height="80" src="https://radioforus.com/wp-content/uploads/2023/02/Radioforus.png" style="display: block; margin-left: auto; margin-right: auto"/>
                                 
-                                <h1 align="center" style="font-weight:600">Donate here</h1>
+                                <h1 align="center" style="font-weight:600">Donate Pi cryptocurrency here</h1>
                                 
                                 <t t-set="amount_end" t-value="round(amount*3, 7)"/>
                                 <br/><br/><input id="pi_donate" name="pi_donate" style="font-size: 20px; font-weight: bold; text-align: center; width: 250px" type="number" min="0" step="0.01" lang="en-US" t-att-placeholder="str(amount) + ' Pi - ' + str(amount_end) + ' Pi'"/>
