@@ -233,6 +233,17 @@ $( document ).ready(function() {
                             };
                       return $.post( "/pi-api", data).done(function(data) {
                                     $("#button_click").prop( "disabled", false );
+                                    try{
+                                        data = JSON.parse(data);
+                                        if(data.result && data.approved)
+                                        {
+                                            if(data.complete_found)
+                                            {
+                                                alert($("#payment_message").text());
+                                            }
+                                        }
+                                    } catch (e) {
+                                        }
                                 }).fail(function() {
                                     $("#button_click").prop( "disabled", false );
                                 });

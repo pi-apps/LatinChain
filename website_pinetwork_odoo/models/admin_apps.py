@@ -90,6 +90,7 @@ class pi_transactions(models.Model):
                 _logger.info(str("ERROR TRANSACTIONS"))
     
     def check_transactions_one_user(self):
+        flag_found = False
         for pit in self:
             url = 'https://api.minepi.com/v2/payments/' + pit.payment_id
             
@@ -131,8 +132,13 @@ class pi_transactions(models.Model):
                     elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
                         result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
                         not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
-                        self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
+                        result_found = self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
                                                             'app_client': pit.app, 'paymentId': pit.payment_id})
+                        result_found = json.loads(result_found)
+                        
+                        if 'result' in result_found and 'completed' in result_found:
+                            if result_found['result'] and result_found['completed'] and not flag_found:
+                                flag_found = True
                     elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
                         not result_dict["status"]["transaction_verified"] and \
                         (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']): #11 horas
@@ -141,6 +147,8 @@ class pi_transactions(models.Model):
                     self.env.cr.commit()
             except:
                 _logger.info(str(re))
+                
+        return {'complete_found': flag_found}
 
 class admin_apps(models.Model):
     _name = "admin.apps"
@@ -862,11 +870,11 @@ class admin_apps(models.Model):
                         
                     self.env["pi.transactions"].sudo().create(data_dict)
                     
-                    self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
+                    result_found = self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
                                                                 ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
                     
                 if result_dict["status"]["developer_approved"]:
-                    result = {"result": True, "approved": True}
+                    result = {"result": True, "approved": True, 'complete_found': result_found['complete_found']}
                 else:
                     result = {"result": True, "approved": False}
             elif kw['action'] == "complete":
