@@ -873,10 +873,15 @@ class admin_apps(models.Model):
                     result_found = self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
                                                                 ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
                     
-                if result_dict["status"]["developer_approved"]:
-                    result = {"result": True, "approved": True, 'complete_found': result_found['complete_found']}
+                    if result_dict["status"]["developer_approved"]:
+                        result = {"result": True, "approved": True, 'complete_found': result_found['complete_found']}
+                    else:
+                        result = {"result": True, "approved": False}
                 else:
-                    result = {"result": True, "approved": False}
+                    if result_dict["status"]["developer_approved"]:
+                        result = {"result": True, "approved": True}
+                    else:
+                        result = {"result": True, "approved": False}
             elif kw['action'] == "complete":
                 if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
                     pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
