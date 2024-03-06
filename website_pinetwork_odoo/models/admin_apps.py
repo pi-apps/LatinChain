@@ -118,6 +118,8 @@ class pi_transactions(models.Model):
                                     'amount': result_dict["amount"],
                                     'memo': result_dict["memo"],
                                     'to_address': result_dict["to_address"]})
+                        if not flag_found:
+                            flag_found = True
                         
                     pit.write({'developer_approved': result_dict["status"]["developer_approved"], 
                             'transaction_verified': result_dict["status"]["transaction_verified"], 
