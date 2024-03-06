@@ -5,6 +5,14 @@ var passkey = "";
 const Pi = window.Pi;
 var totalpoints = 0;
 
+function setConfirmUnload(on) {
+     window.onbeforeunload = on ? unloadMessage : null;
+}
+
+function unloadMessage() {
+    return true;
+}
+
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
     {
@@ -18,7 +26,9 @@ function set_points(points) {
             'csrf_token': odoo.csrf_token,
         };
         //$.ajaxSetup({async: false});
+        setConfirmUnload(true);
         return $.post( "/pi-points", data).done(function(data) {
+            setConfirmUnload(false);
             data = JSON.parse(data);
             if(data.result && points > 0)
             {
@@ -27,7 +37,7 @@ function set_points(points) {
                 //alert("+" + points + $("#points_message").text());
             }
         }).fail(function() {
-            
+            setConfirmUnload(false);
         });
     }
 }
@@ -71,7 +81,7 @@ function get_user(pause) {
                     $("#reset").hide();
                     $("#minus").hide();
                     $("#plus").hide();
-                    $("#enable_dragging").hide();
+                    $("#enable_dragging").show();
                     $('#disable_dragging').hide();
                     $("#pi_donate").hide();
                     $("#button_click").show();
@@ -123,8 +133,9 @@ $( document ).ready(function() {
                         'pi_user_id': pi_user_id,
                         'csrf_token': odoo.csrf_token,
                     };
-                
+                setConfirmUnload(true);
                 return $.post( "/pi-api", data).done(function(data) {
+                                    setConfirmUnload(false);
                                     $("#button_click").prop( "disabled", false );
                                     try {
                                         data = JSON.parse(data);
@@ -135,6 +146,7 @@ $( document ).ready(function() {
                                     } catch (e) {
                                     }
                                 }).fail(function() {
+                                    setConfirmUnload(false);
                                     $("#button_click").prop( "disabled", false );
                                 });
             }; // Read more about this in the SDK reference
@@ -164,11 +176,13 @@ $( document ).ready(function() {
                     });
                 });
             }).catch(function(error) {
+                setConfirmUnload(false);
                 //Pi.openShareDialog("Error", error);
                 //alert(err);
                 console.error(error);
             });
         } catch (err) {
+            setConfirmUnload(false);
             //Pi.openShareDialog("Error", err);
             //alert(err);
             console.error(err);
@@ -198,8 +212,9 @@ $( document ).ready(function() {
                                 'pi_user_code': pi_user_code,
                                 'pi_user_id': pi_user_id,
                             };
-                        
+                        setConfirmUnload(true);
                         return $.post( "/pi-api", data).done(function(data) {
+                                    setConfirmUnload(false);
                                     $("#button_click").prop( "disabled", false );
                                     try{
                                         data = JSON.parse(data);
@@ -213,6 +228,7 @@ $( document ).ready(function() {
                                     } catch (e) {
                                         }
                                 }).fail(function() {
+                                    setConfirmUnload(false);
                                     $("#button_click").prop( "disabled", false );
                                 });
                        },
@@ -227,20 +243,27 @@ $( document ).ready(function() {
                                 'pi_user_id': pi_user_id,
                                 'csrf_token': odoo.csrf_token,
                             };
-                        
+                        setConfirmUnload(true);
                         return $.post( "/pi-api", data).done(function(data) {
+                                    setConfirmUnload(false);
                                     $("#button_click").prop( "disabled", false );
                                     data = JSON.parse(data);
                                     if(data.result && data.completed)
                                         get_user(true);
                                 }).fail(function() {
+                                    setConfirmUnload(false);
                                     $("#button_click").prop( "disabled", false );
                                 });
                   },
-                  onCancel: function(paymentId) { $("#button_click").prop( "disabled", false ); /* ... */ },
-                  onError: function(error, payment) { $("#button_click").prop( "disabled", false ); /* ... */ },
+                  onCancel: function(paymentId) { 
+                      setConfirmUnload(false);
+                      $("#button_click").prop( "disabled", false ); /* ... */ },
+                  onError: function(error, payment) { 
+                      setConfirmUnload(false);
+                      $("#button_click").prop( "disabled", false ); /* ... */ },
                 });
         } catch(err) {
+            setConfirmUnload(false);
             //Pi.openShareDialog("Error", err);
             // alert(err);
             $("#button_click").prop( "disabled", false );

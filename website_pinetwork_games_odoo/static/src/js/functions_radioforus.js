@@ -4,6 +4,14 @@ var accessToken = "";
 var passkey = "";
 const Pi = window.Pi;
 
+function setConfirmUnload(on) {
+     window.onbeforeunload = on ? unloadMessage : null;
+}
+
+function unloadMessage() {
+    return true;
+}
+
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
     {
@@ -16,12 +24,14 @@ function set_points(points) {
             'csrf_token': odoo.csrf_token,
         };
         //$.ajaxSetup({async: false});
+        setConfirmUnload(true);
         return $.post( "/pi-points", data).done(function(data) {
+            setConfirmUnload(false);
             data = JSON.parse(data);
             if(data.result && points > 0)
                 alert("+" + points + $("#points_message").text());
         }).fail(function() {
-            
+            setConfirmUnload(false);
         });
     }
 }
@@ -90,7 +100,9 @@ $( document ).ready(function() {
                         'pi_user_code': pi_user_code,
                         'pi_user_id': pi_user_id,
                     };
+                setConfirmUnload(true);
                 return $.post( "/pi-api", data).done(function(data) {
+                    setConfirmUnload(false);
                     $("#button_click").prop( "disabled", false );
                     try {
                         data = JSON.parse(data);
@@ -101,6 +113,7 @@ $( document ).ready(function() {
                     } catch (e) {
                     }
                 }).fail(function() {
+                    setConfirmUnload(false);
                     $("#button_click").prop( "disabled", false );
                 });
             }; // Read more about this in the SDK reference
@@ -141,10 +154,12 @@ $( document ).ready(function() {
               
                 //alert('Hello ' + auth.user.username);
             }).catch(function(error) {
+                setConfirmUnload(false);
               console.error(error);
             });
         } catch (err) {
-            alert(err);
+            setConfirmUnload(false);
+            console.error(err);
             // Not able to fetch the user
         }
     }
@@ -177,7 +192,9 @@ $( document ).ready(function() {
                             'pi_user_code': pi_user_code,
                             'pi_user_id': pi_user_id,
                         };
+                    setConfirmUnload(true);
                   return $.post( "/pi-api", data).done(function(data) {
+                      setConfirmUnload(false);
                         $("#button_click").prop( "disabled", false );
                         try{
                             data = JSON.parse(data);
@@ -191,6 +208,7 @@ $( document ).ready(function() {
                         } catch (e) {
                             }
                     }).fail(function() {
+                        setConfirmUnload(false);
                         $("#button_click").prop( "disabled", false );
                     });
               },
@@ -205,22 +223,30 @@ $( document ).ready(function() {
                         'pi_user_code': pi_user_code,
                         'pi_user_id': pi_user_id,
                     };
+                    setConfirmUnload(true);
                     return $.post( "/pi-api", data).done(function(data) {
+                        setConfirmUnload(false);
                         $("#button_click").prop( "disabled", false );
                         
                         data = JSON.parse(data);
                         if(data.result && data.completed)
                             get_user(true);
                     }).fail(function() {
+                        setConfirmUnload(false);
                         $("#button_click").prop( "disabled", false );
                     });
               },
-              onCancel: function(paymentId) { $("#button_click").prop( "disabled", false ); /* ... */ },
-              onError: function(error, payment) { $("#button_click").prop( "disabled", false ); /* ... */ },
+              onCancel: function(paymentId) { 
+                  setConfirmUnload(false);
+                  $("#button_click").prop( "disabled", false ); /* ... */ },
+              onError: function(error, payment) { 
+                  setConfirmUnload(false);
+                  $("#button_click").prop( "disabled", false ); /* ... */ },
             });
         } catch(err) {
+            setConfirmUnload(false);
             $("#button_click").prop( "disabled", false );
-            alert(err);
+            console.error(err);
             // Technical problem (eg network failure). Please try again
         }
     }
