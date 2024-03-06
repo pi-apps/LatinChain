@@ -442,14 +442,14 @@
                                 serverSide: true,
                                 serverMethod: 'post',
                                 columns: [
-                                    { data: 'memo', width: "75px" },
-                                    { data: 'amount', width: "75px" },
-                                    { data: 'txid', width: "75px" },
+                                    { data: 'memo', width: "40%" },
+                                    { data: 'amount', width: "30%" },
+                                    { data: 'txid', width: "30%" },
                                 ],
                                 ordering: false,
                                 scrollCollapse: true,
                                 scrollX: false,
-                                autoWidth: true
+                                autoWidth: false
                             } );
                             const Pi = window.Pi;
                             
