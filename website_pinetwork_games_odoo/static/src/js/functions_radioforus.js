@@ -7,7 +7,7 @@ const Pi = window.Pi;
 function setConfirmUnload(on) {
     if(on)
     {
-        alert($("#notclose_message").text());
+        //alert($("#notclose_message").text());
     }
      window.onbeforeunload = on ? unloadMessage : null;
 }

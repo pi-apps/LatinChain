@@ -8,7 +8,7 @@ var totalpoints = 0;
 function setConfirmUnload(on) {
     if(on)
     {
-        alert($("#notclose_message").text());
+        //alert($("#notclose_message").text());
     }
      window.onbeforeunload = on ? unloadMessage : null;
 }
