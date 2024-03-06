@@ -34,7 +34,7 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.105"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.106"></script>
                     
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
@@ -164,6 +164,7 @@
                     <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
                     <div id="payment_lessthan_message" style="display:none;">You only can pay from </div>
                     <div id="payment_morethan_message" style="display:none;"> to </div>
+                    <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->

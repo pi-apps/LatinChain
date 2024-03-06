@@ -34,7 +34,7 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
                 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js?v=1.106"></script>
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js?v=1.107"></script>
                 
                 <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
                 
@@ -55,6 +55,7 @@
                 <div id="reset_message" style="display:none;">Are you sure you want to Reset?, it will restart the game.</div>
                 <div id="pause_text_message" style="display:none;"><i class="fa fa-pause"></i></div>
                 <div id="resume_text_message" style="display:none;"><i class="fa fa-play"></i></div>
+                <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
                 
                 <style>
                 .square {color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-03 19:37+0000\n"
-"PO-Revision-Date: 2024-03-03 19:37+0000\n"
+"POT-Creation-Date: 2024-03-06 11:24+0000\n"
+"PO-Revision-Date: 2024-03-06 11:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -590,6 +590,19 @@ msgid "API Docs"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid ""
+"Alert!: In the following process don't close your Browser or you will lose "
+"your payment!"
+msgstr ""
+"Alerta!: En el siguiente proceso no cierres tu navegador ó perderás "
+"tu pago!"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "All data here as prizes and minimum payment, is referring to"
 msgstr "Todos los datos aquí como premios y pago mínimo, se refieren a"
@@ -802,8 +815,8 @@ msgid ""
 msgstr ""
 "Hola<strong><span id=\"username\"/></strong><span id=\"verified\"/>. "
 "Bienvenido(a) a LatinChain Platform (Games from Latin America for Pi). "
-"Incrementa tu poder de minería de la criptomoneda Pi <i class=\"fa fa-bolt\"/> usando esta "
-"app. Si no lo tienes aún, descarga Pi Browser en"
+"Incrementa tu poder de minería de la criptomoneda Pi <i class=\"fa fa-"
+"bolt\"/> usando esta app. Si no lo tienes aún, descarga Pi Browser en"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1011,8 +1024,8 @@ msgid ""
 "Play Chess against the best AI Chess Player (Stockfish) using Pi "
 "cryptocurrency"
 msgstr ""
-"Juega Ajedrez contra el mejor Jugador de Ajedrez con IA (Stockfish) usando la "
-"criptomoneda Pi"
+"Juega Ajedrez contra el mejor Jugador de Ajedrez con IA (Stockfish) usando "
+"la criptomoneda Pi"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku

@@ -6,6 +6,14 @@ const Pi = window.Pi;
 var totalpoints = 0;
 
 function setConfirmUnload(on) {
+    if(on)
+    {
+        alert($("#notclose_message").text());
+    }
+     window.onbeforeunload = on ? unloadMessage : null;
+}
+
+function setConfirmUnloadPoints(on) {
      window.onbeforeunload = on ? unloadMessage : null;
 }
 
@@ -26,9 +34,9 @@ function set_points(points) {
             'csrf_token': odoo.csrf_token,
         };
         //$.ajaxSetup({async: false});
-        setConfirmUnload(true);
+        setConfirmUnloadPoints(true);
         return $.post( "/pi-points", data).done(function(data) {
-            setConfirmUnload(false);
+            setConfirmUnloadPoints(false);
             data = JSON.parse(data);
             if(data.result && points > 0)
             {
@@ -37,7 +45,7 @@ function set_points(points) {
                 //alert("+" + points + $("#points_message").text());
             }
         }).fail(function() {
-            setConfirmUnload(false);
+            setConfirmUnloadPoints(false);
         });
     }
 }

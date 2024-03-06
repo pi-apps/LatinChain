@@ -35,7 +35,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
-                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js?v=1.103"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js?v=1.104"></script>
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -69,6 +69,7 @@
                     <div id="unblocked_message" style="display:none;">Thank you for your donation. You were unblocked.</div>
                     <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
                     <div id="payment_lessthan_message" style="display:none;">You can't pay less than </div>
+                    <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
