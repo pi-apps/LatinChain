@@ -243,6 +243,9 @@ class PiNetworkBaseController(http.Controller):
             unblocked_datetime = ""
         else:
             unblocked_datetime = str(pi_users_list[0].unblocked_datetime) + " UTC"
+        
+        result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
+                                                                ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
             
         request.env.cr.commit()
         
@@ -262,7 +265,8 @@ class PiNetworkBaseController(http.Controller):
                             'days_available': pi_users_list[0].days_available,
                             'amount': apps_list[0].amount,
                             'passkey': passkey,
-                            'im_winner': im_winner, 'pi_wallet_address': pi_users_list[0].pi_wallet_address})
+                            'im_winner': im_winner, 'pi_wallet_address': pi_users_list[0].pi_wallet_address,
+                            'complete_found': result_found['complete_found']})
     
     @http.route('/set-pi-wallet', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def set_pi_wallet(self, **kw):

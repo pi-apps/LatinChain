@@ -63,6 +63,9 @@ function get_user() {
             data = JSON.parse(data);
             if(data.result)
             {
+                if(data.complete_found)
+                    alert($("#payment_message").text());
+                    
                 passkey=data.passkey;
                 if(data.unblocked)
                 {
