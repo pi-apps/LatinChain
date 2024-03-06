@@ -448,7 +448,8 @@
                                 ],
                                 ordering: false,
                                 scrollCollapse: true,
-                                scrollX: true,
+                                scrollX: false,
+                                autoWidth: true
                             } );
                             const Pi = window.Pi;
                             

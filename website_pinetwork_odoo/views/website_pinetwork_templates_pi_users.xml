@@ -977,13 +977,14 @@
                                 serverSide: true,
                                 serverMethod: 'post',
                                 columns: [
-                                    { data: 'memo', width: "75px" },
-                                    { data: 'amount', width: "75px" },
-                                    { data: 'txid', width: "75px" },
+                                    { data: 'memo' },
+                                    { data: 'amount' },
+                                    { data: 'txid' },
                                 ],
                                 ordering: false,
                                 scrollCollapse: true,
-                                scrollX: true
+                                scrollX: false,
+                                autoWidth: true
                             } );
                             const Pi = window.Pi;
                             
