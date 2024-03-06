@@ -127,7 +127,7 @@ class pi_transactions(models.Model):
                             'json_result': str(result_dict)})
                     
                     if pit.action == "cancelled" and pit.action_type == "receive" and \
-                        (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and
+                        (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
                         (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                         pit.unlink()
                     if pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
@@ -142,7 +142,7 @@ class pi_transactions(models.Model):
                                 flag_found = True
                     elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
                         not result_dict["status"]["transaction_verified"] and \
-                        (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and 
+                        (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and \
                         (datetime.now() - pit.create_date).seconds >= 39600: #11 horas
                         pit.unlink()
                     
