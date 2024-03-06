@@ -143,9 +143,9 @@ $( document ).ready(function() {
                         'pi_user_id': pi_user_id,
                         'csrf_token': odoo.csrf_token,
                     };
-                    setConfirmUnload(true);
+                    setConfirmUnloadPoints(true);
                   return $.post( "/pi-api", data).done(function(data) {
-                                    setConfirmUnload(false);
+                                    setConfirmUnloadPoints(false);
                                     $("#button_click").prop( "disabled", false );
                                     try {
                                         data = JSON.parse(data);
@@ -156,7 +156,7 @@ $( document ).ready(function() {
                                     } catch (e) {
                                     }
                                 }).fail(function() {
-                                    setConfirmUnload(false);
+                                    setConfirmUnloadPoints(false);
                                     $("#button_click").prop( "disabled", false );
                                 });
             }; // Read more about this in the SDK reference
