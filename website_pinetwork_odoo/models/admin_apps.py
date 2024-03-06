@@ -870,7 +870,7 @@ class admin_apps(models.Model):
                         
                     self.env["pi.transactions"].sudo().create(data_dict)
                     
-                    result_found = self.env["pi.transactions"].sudo().search([('action', '=', 'approve'), 
+                    result_found = self.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), 
                                                                 ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
                     
                     if result_dict["status"]["developer_approved"]:
