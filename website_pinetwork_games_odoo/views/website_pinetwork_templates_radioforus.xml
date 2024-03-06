@@ -645,7 +645,7 @@
                                                     <th>TXID</th>
                                                 </tr>
                                             </thead>
-                                            <tbody style="word-break: break-all;">
+                                            <tbody style="word-break: break-word;">
                                                 <!--<t t-foreach="pi_users_list" t-as="pi_user">
                                                     <tr>
                                                         <td>

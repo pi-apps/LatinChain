@@ -23,7 +23,7 @@
                         <t t-if="pi_user">
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
-                            <table class="table" style="word-break: break-all;" translate="no">
+                            <table class="table" style="word-break: break-word;" translate="no">
                               <thead>
                                 <tr>
                                   <td>Chess</td>
@@ -167,7 +167,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
-                                        <table class="table" style="word-break: break-all;" translate="no">
+                                        <table class="table" style="word-break: break-word;" translate="no">
                                           <thead>
                                             <tr>
                                               <td>Chess</td>
@@ -219,7 +219,7 @@
                         <t t-if="pi_user">
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
-                            <table class="table" style="word-break: break-all;" translate="no">
+                            <table class="table" style="word-break: break-word;" translate="no">
                               <thead>
                                 <tr>
                                   <td>Chess</td>
@@ -392,7 +392,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
-                                        <table class="table" style="word-break: break-all;" translate="no">
+                                        <table class="table" style="word-break: break-word;" translate="no">
                                           <thead>
                                             <tr>
                                               <td>Chess</td>
@@ -434,7 +434,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
-                                        <table class="table" style="word-break: break-all;" translate="no">
+                                        <table class="table" style="word-break: break-word;" translate="no">
                                           <thead>
                                             <tr>
                                               <td>Chess</td>
@@ -476,7 +476,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
-                                        <table class="table" style="word-break: break-all;" translate="no">
+                                        <table class="table" style="word-break: break-word;" translate="no">
                                           <thead>
                                             <tr>
                                               <td>Chess</td>
@@ -518,7 +518,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
-                                        <table class="table" style="word-break: break-all;" translate="no">
+                                        <table class="table" style="word-break: break-word;" translate="no">
                                           <thead>
                                             <tr>
                                               <td>Chess</td>
@@ -637,7 +637,7 @@
                         <t t-if="pi_user">
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
-                            <table class="table" style="word-break: break-all;" translate="no">
+                            <table class="table" style="word-break: break-word;" translate="no">
                               <thead>
                                 <tr>
                                   <td>Chess</td>
@@ -794,7 +794,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa fa-trophy"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
-                                        <table class="table" style="word-break: break-all;" translate="no">
+                                        <table class="table" style="word-break: break-word;" translate="no">
                                           <thead>
                                             <tr>
                                               <td>Chess</td>
@@ -1095,7 +1095,7 @@
                                     <th>TXID</th>
                                 </tr>
                             </thead>
-                            <tbody style="word-break: break-all;">
+                            <tbody style="word-break: break-word;">
                                 <!--<t t-foreach="pi_users_list" t-as="pi_user">
                                     <tr>
                                         <td>
