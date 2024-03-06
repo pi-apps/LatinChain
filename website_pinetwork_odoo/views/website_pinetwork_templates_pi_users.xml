@@ -1087,7 +1087,7 @@
                         <br/><br/>
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         Pi cryptocurrency Transactions for user <strong><span id="username" /></strong>:<br/><br/>
-                        <table id="transactions" class="display">
+                        <table id="transactions" class="display" style="word-break: break-all;">
                             <thead>
                                 <tr>
                                     <th>Memo</th>
