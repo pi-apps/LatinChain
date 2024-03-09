@@ -304,7 +304,8 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             values = {'pi_wallet_address': kw['pi_wallet_address']}
         
-        pi_users_list[0].sudo().write(values)
+        #Uncomment in case of you want to save wallet address
+        #pi_users_list[0].sudo().write(values)
         
         return json.dumps({'result': True})
         
