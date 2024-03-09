@@ -1136,26 +1136,26 @@
                             
                             <div class="container" style="text-align:center">
                                 <div class="row">
-                                    <div class="col-12"><button id="rules_button_2" class="btn btn-warning rules_button"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:80%;">Rules</div></button></div>
+                                    <div class="col-12"><button id="rules_button_2" class="btn btn-warning rules_button"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div></button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/chess" class="btn btn-success"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:80%;" translate="no">CHESS</div></a><button id="chessinfo" class="btn btn-info chessinfo"><div style=""><i class="fas fa-info"></i></div><div style="font-size:80%;" translate="no">Info</div></button></div>
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/sudoku" class="btn btn-primary"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:80%;" translate="no">SUDOKU</div></a><button id="sudokuinfo" class="btn btn-info sudokuinfo"><div style=""><i class="fas fa-info"></i></div><div style="font-size:80%;" translate="no">Info</div></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/chess" class="btn btn-success"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:100%;" translate="no">CHESS</div></a><button id="chessinfo" class="btn btn-info chessinfo"><div style=""><i class="fas fa-info"></i></div><div style="font-size:100%;" translate="no">Info</div></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/sudoku" class="btn btn-primary"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">SUDOKU</div></a><button id="sudokuinfo" class="btn btn-info sudokuinfo"><div style=""><i class="fas fa-info"></i></div><div style="font-size:100%;" translate="no">Info</div></button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/snake" class="btn btn-primary"><div style=""><i class="fa-solid fa-staff-snake"></i></div><div style="font-size:80%;" translate="no">SNAKE</div></a><button id="snakeinfo" class="btn btn-info snakeinfo"><div style=""><i class="fas fa-info"></i></div><div style="font-size:80%;" translate="no">Info</div></button></div>
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/pinetwork" class="btn btn-primary"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:80%;">DONATE</div></a></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/snake" class="btn btn-primary"><div style=""><i class="fa-solid fa-staff-snake"></i></div><div style="font-size:100%;" translate="no">SNAKE</div></a><button id="snakeinfo" class="btn btn-info snakeinfo"><div style=""><i class="fas fa-info"></i></div><div style="font-size:100%;" translate="no">Info</div></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/pinetwork" class="btn btn-primary"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div></a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="cointelegraph" class="btn btn-primary cointelegraph" translate="no"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:80%;">TELEGRAPH</div></button></div>
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="cryptonews_2" class="btn btn-primary cryptonews"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:80%;">NEWS</div></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="cointelegraph" class="btn btn-primary cointelegraph" translate="no"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">TELEGRAPH</div></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="cryptonews_2" class="btn btn-primary cryptonews"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">NEWS</div></button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-12"><button id="clear_cache" class="btn btn-info"><div style=""><i class="fa fa-refresh"></i></div><div style="font-size:80%;">Clear Cache</div></button></div>
+                                    <div class="col-12"><button id="clear_cache" class="btn btn-info"><div style=""><i class="fa fa-refresh"></i></div><div style="font-size:100%;">Clear Cache</div></button></div>
                                 </div>
                             </div>
                             <br/>
@@ -1174,17 +1174,17 @@
                             <br/>Other developments:<br/><br/>
                             <div class="container" style="text-align:center">
                                 <div class="row">
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" target="_blank" class="btn btn-secondary"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:80%;">Odoo App</div></a></div>
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" target="_blank" class="btn btn-secondary"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:80%;">Platform</div></a></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" target="_blank" class="btn btn-secondary"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Odoo App</div></a></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" target="_blank" class="btn btn-secondary"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Platform</div></a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/website/social/github" target="_blank" class="btn btn-secondary"><div style=""><i class="fab fa-github"></i></div><div style="font-size:80%;">Repository</div></a></div>
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/api-docs" target="_blank" class="btn btn-secondary"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:80%;">LatinChain API</div></a></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/website/social/github" target="_blank" class="btn btn-secondary"><div style=""><i class="fab fa-github"></i></div><div style="font-size:100%;">Repository</div></a></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/api-docs" target="_blank" class="btn btn-secondary"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain API</div></a></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-12" style="padding-left: 2px; padding-right: 2px"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="btn btn-secondary"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:80%;">LatinChain dSocial</div></a></div>
+                                    <div class="col-12" style="padding-left: 2px; padding-right: 2px"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="btn btn-secondary"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain dSocial</div></a></div>
                                 </div>
                             </div>
                           </div>
@@ -1214,21 +1214,21 @@
                                 <br/>Leaders and rules:<br/><br/>
                             </div>
                             <div class="row">
-                                <div class="col-12"><button id="rules_button" class="btn btn-warning rules_button"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:80%;">Rules</div></button></div>
+                                <div class="col-12"><button id="rules_button" class="btn btn-warning rules_button"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div></button></div>
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="leaderboard" class="btn btn-info"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:80%;">Leaders Board</div></button></div>
-                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="winnerboard" class="btn btn-success"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:80%;">Top 10 Board</div></button></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="leaderboard" class="btn btn-info"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:100%;">Leaders Board</div></button></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="winnerboard" class="btn btn-success"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:100%;">Top 10 Board</div></button></div>
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="credits" class="btn btn-success"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:80%;">Credits</div></button></div>
-                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/get-transactions/" class="btn btn-success"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:80%;">Transactions</div></a></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="credits" class="btn btn-success"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">Credits</div></button></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/get-transactions/" class="btn btn-success"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div></a></div>
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-12"><button id="winnerzoneboard" class="btn btn-success"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:80%;">Winners Board</div></button></div>
+                                <div class="col-12"><button id="winnerzoneboard" class="btn btn-success"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;">Winners Board</div></button></div>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
@@ -1261,8 +1261,8 @@
                         
                         <div class="container" style="text-align:center" translate="no">
                             <div class="row">
-                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/privacy/" class="btn btn-info"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:80%;">Privacy Policy</div></a></div>
-                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/terms/" class="btn btn-info"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:80%;">Terms (ToS)</div></a></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/privacy/" class="btn btn-info"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Privacy Policy</div></a></div>
+                                <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/terms/" class="btn btn-info"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Terms (ToS)</div></a></div>
                             </div>
                         </div>
                         <br/><br/>
