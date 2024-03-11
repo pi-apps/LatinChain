@@ -1140,12 +1140,12 @@
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/chess" class="btn btn-success"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:100%;" translate="no">CHESS</div></a><button id="chessinfo" class="btn btn-outline-info chessinfo" style="vertical-align: text-bottom; border-radius: 50%;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/sudoku" class="btn btn-primary"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">SUDOKU</div></a><button id="sudokuinfo" class="btn btn-outline-info sudokuinfo" style="vertical-align: text-bottom; border-radius: 50%;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/chess" class="btn btn-success"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:100%;" translate="no">CHESS</div></a><button id="chessinfo" class="btn btn-sm btn-outline-info chessinfo" style="vertical-align: top; border-radius: 50%;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/sudoku" class="btn btn-primary"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">SUDOKU</div></a><button id="sudokuinfo" class="btn btn-sm btn-outline-info sudokuinfo" style="vertical-align: top; border-radius: 50%;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                 </div>
                                 <br/>
                                 <div class="row">
-                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/snake" class="btn btn-primary"><div style=""><i class="fa-solid fa-staff-snake"></i></div><div style="font-size:100%;" translate="no">SNAKE</div></a><button id="snakeinfo" class="btn btn-outline-info snakeinfo" style="vertical-align: text-bottom; border-radius: 50%;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                    <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/snake" class="btn btn-primary"><div style=""><i class="fa-solid fa-staff-snake"></i></div><div style="font-size:100%;" translate="no">SNAKE</div></a><button id="snakeinfo" class="btn btn-sm btn-outline-info snakeinfo" style="vertical-align: top; border-radius: 50%;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                     <div class="col-6" style="padding-left: 2px; padding-right: 2px"><a href="/pinetwork" class="btn btn-primary"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div></a></div>
                                 </div>
                                 <br/>
@@ -1245,15 +1245,15 @@
                         </div>
                         <br/><br/>
                         <div id="social_div">Share in Social Networks:<br/><br/>
-                        <button id="button1" class="btn btn-primary"><i class="fa fa-share-alt"></i></button><br/><br/>
+                        <button id="button1" class="btn btn-outline-primary" style="border-radius: 50%;"><i class="fa fa-share-alt"></i></button><br/><br/>
                         
                         <div class="container" style="text-align:center">
                             <div class="row">
-                                <div class="col-12"><a href="/website/social/youtube" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-youtube"></i></div></a>
-                                                    <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-telegram"></i></div></a>
-                                                    <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-discord"></i></div></a>
-                                                    <a href="/website/social/twitter" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-twitter"></i></div></a>
-                                                    <a href="/website/social/github" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-github"></i></div></a>
+                                <div class="col-12"><a href="/website/social/youtube" target="_blank" class="btn btn-outline-danger mb-2 o_default_snippet_text" style="border-radius: 50%;"><div style="display:inline;"><i class="fab fa-youtube"></i></div></a>
+                                                    <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-outline-primary mb-2 o_default_snippet_text" style="border-radius: 50%;"><div style="display:inline;"><i class="fab fa-telegram"></i></div></a>
+                                                    <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-outline-primary mb-2 o_default_snippet_text" style="border-radius: 50%;"><div style="display:inline;"><i class="fab fa-discord"></i></div></a>
+                                                    <a href="/website/social/twitter" target="_blank" class="btn btn-outline-primary mb-2 o_default_snippet_text" style="border-radius: 50%;"><div style="display:inline;"><i class="fab fa-twitter"></i></div></a>
+                                                    <a href="/website/social/github" target="_blank" class="btn btn-outline-primary mb-2 o_default_snippet_text" style="border-radius: 50%;"><div style="display:inline;"><i class="fab fa-github"></i></div></a>
                                 </div>
                             </div>
                         </div>
