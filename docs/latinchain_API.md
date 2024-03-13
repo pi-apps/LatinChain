@@ -20,7 +20,7 @@ Base path: `/api/get-external-user`.
 
 #### Get an user:
 
-Get information about an user.
+Get information about an user, sending by POST {pi_user_code}.
 
 ```
 POST /api/get-external-user
