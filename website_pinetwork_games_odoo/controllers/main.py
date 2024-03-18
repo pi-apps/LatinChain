@@ -13,12 +13,17 @@ _logger = logging.getLogger(__name__)
 
 from odoo.addons.website.controllers.main import Website
 
+from datetime import datetime, timedelta
+
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
     def index(self, **kw):
         #super(Website, self).index(**kw)
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        total_transactions_daily_count = request.env["pi.transactions"].sudo().search_count([('create_date', '>=', datetime.now() - timedelta(days=1)), ('action', '=', 'complete')])
+        total_users_daily_count = request.env["pi.users"].sudo().search_count([('last_connection', '>=', datetime.now() - timedelta(days=1))])
         
         if len(admin_app_list) == 0:
             sandbox = False
@@ -51,7 +56,7 @@ class Website(Website):
             mainnet = admin_app_list[0].mainnet
             no_footer = True
         
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
 class PiNetworkController(http.Controller):
     @http.route('/radioforus', type='http', auth="public", website=True)
