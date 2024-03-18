@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-18 23:06+0000\n"
-"PO-Revision-Date: 2024-03-18 23:06+0000\n"
+"POT-Creation-Date: 2024-03-18 23:26+0000\n"
+"PO-Revision-Date: 2024-03-18 23:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -330,15 +330,6 @@ msgstr ""
 "                        Click en Borrar Caché si el botón Donar no se activa.\n"
 "                        <br/>\n"
 "                        <br/>"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"<br/>\n"
-"                            Transactions last 24 hours:"
-msgstr ""
-"<br/>\n"
-"                            Transacciones en 24 horas:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -863,6 +854,15 @@ msgid "Join Twitter"
 msgstr "Unirse al Twitter"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"Last 24 hours: \n"
+"                                <br/>"
+msgstr ""
+"Últimas 24 horas: \n"
+"                                <br/>"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Last payment was on"
 msgstr "El último pago fue a las"
@@ -1245,8 +1245,8 @@ msgstr "Usuario"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Users last 24 hours:"
-msgstr "Usuarios en 24 horas:"
+msgid "Users"
+msgstr "Usuarios"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku

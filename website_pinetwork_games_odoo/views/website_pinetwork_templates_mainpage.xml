@@ -1131,8 +1131,22 @@
                                 <strong class="user_status"></strong>
                             </div>
                             <div class="p-3 mb-2 bg-info bg-gradient text-white rounded">
-                            Users last 24 hours: <span t-esc="total_users_daily_count" /><br/>
-                            Transactions last 24 hours: <span t-esc="total_transactions_daily_count" /><br/>
+                                Last 24 hours: 
+                                <br/>
+                                <table class="table" style="word-break: break-word;">
+                                    <thead>
+                                        <tr>
+                                            <td>Users</td>
+                                            <td>Transactions</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span t-esc="total_users_daily_count" /></td>
+                                            <td><span t-esc="total_transactions_daily_count" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                             <div>
                             <br/>Choose your app:<br/><br/>
