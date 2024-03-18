@@ -1130,7 +1130,6 @@
                             <div class="div_user_status">
                                 <strong class="user_status"></strong>
                             </div>
-                            <br/>
                             <div class="p-3 mb-2 bg-info bg-gradient text-white rounded">
                             Users last 24 hours: <span t-esc="total_users_daily_count" /><br/>
                             Transactions last 24 hours: <span t-esc="total_transactions_daily_count" /><br/>
