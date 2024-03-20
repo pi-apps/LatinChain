@@ -1085,8 +1085,8 @@
                           <div class="card">
                             <div class="card-header" id="headingOne">
                               <h5 class="mb-0">
-                                <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  <div style="display:inline;"><i class="fa-solid fa-wallet"></i></div> <div style="display:inline;">Wallet</div>
+                                <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
                                 </button>
                               </h5>
                             </div>
@@ -1106,7 +1106,7 @@
                                             <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>-->
                                             All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>
                                             Here you can watch your incoming and outcoming transactions:<br/>
-                                            <a href="/get-transactions/" class="btn btn-success">Transactions</a>
+                                            <a href="/get-transactions/" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div></a>
                                         </div>
                                         <div class="col-1">
                                         </div>
