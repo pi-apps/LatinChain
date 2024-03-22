@@ -214,7 +214,7 @@
                             height: 38px !important;
                         }
                         
-                        .nav-pills > .active > a {
+                        .nav-pills > .active > a, .nav-pills > .active > a:hover {
                             background-color: #14A44D;
                         }
                     </style>
