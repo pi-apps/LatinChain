@@ -214,6 +214,9 @@
                             height: 38px !important;
                         }
                         
+                        .nav-pills > .active > a {
+                            background-color: #14A44D;
+                        }
                     </style>
                     <ul class="nav nav-pills sticky" id="myTab" style="background-color: #e3f2fd;" translate="no">
                       <li class="active" role="presentation">
