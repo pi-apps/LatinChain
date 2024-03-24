@@ -831,6 +831,19 @@
                         });
 
                     </script>
+                    
+                    <style>
+                        .btn-outline-info:hover, 
+                        .btn-outline-info:active, 
+                        .btn-outline-primary:hover, 
+                        .btn-outline-primary:active, 
+                        .btn-outline-success:hover, 
+                        .btn-outline-success:active, 
+                        a.btn-outline-success:hover, 
+                        a.btn-outline-success:active {
+                            color: #fff !important;
+                        }
+                    </style>
                 </head>
                 <body>
                     
