@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-18 23:26+0000\n"
-"PO-Revision-Date: 2024-03-18 23:26+0000\n"
+"POT-Creation-Date: 2024-04-05 23:22+0000\n"
+"PO-Revision-Date: 2024-04-05 23:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -225,6 +225,17 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"3.- To unblock the apps, the payments must be done inside our Pi App. If the"
+" payment is made outside our Pi App, like Pi Wallet to Pi Wallet, the app "
+"won't be unblocked."
+msgstr ""
+"3.- Para desbloquear las apps, los pagos deben ser hechos dentro de nuestra Pi App. Si el"
+" pago es hecho fuera de nuestra Pi App, como Pi Wallet a Pi Wallet, la app "
+"no será desbloqueada."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "3.- Winning in level 2, you will gain 6 points."
 msgstr "3.- Ganando en nivel 2, vas a ganar 6 puntos."
 
@@ -370,6 +381,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/>Leaders and rules:<br/><br/>"
 msgstr "<br/>Líderes y reglas:<br/><br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<br/>Odoo Community Member:<br/><br/>"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -857,7 +873,7 @@ msgstr "Unirse al Twitter"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Last 24 hours: \n"
-"                                <br/>"
+"                            <br/>"
 msgstr ""
 "Últimas 24 horas: \n"
 "                                <br/>"
@@ -875,6 +891,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LatinChain API"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LatinChain Odoo Community Member"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
