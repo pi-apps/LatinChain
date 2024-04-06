@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-05 23:22+0000\n"
-"PO-Revision-Date: 2024-04-05 23:22+0000\n"
+"POT-Creation-Date: 2024-04-06 04:05+0000\n"
+"PO-Revision-Date: 2024-04-06 04:05+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -230,9 +230,9 @@ msgid ""
 " payment is made outside our Pi App, like Pi Wallet to Pi Wallet, the app "
 "won't be unblocked."
 msgstr ""
-"3.- Para desbloquear las apps, los pagos deben ser hechos dentro de nuestra Pi App. Si el"
-" pago es hecho fuera de nuestra Pi App, como Pi Wallet a Pi Wallet, la app "
-"no será desbloqueada."
+"3.- Para desbloquear las apps, los pagos deben ser hechos dentro de nuestra "
+"Pi App. Si el pago es hecho fuera de nuestra Pi App, como Pi Wallet a Pi "
+"Wallet, la app no será desbloqueada."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -252,6 +252,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "4.- For Top 10 zone Snake: Have more than 20 points in Snake."
 msgstr "4.- Para el Top 10 zone Snake: Tener más de 20 puntos en Snake."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"4.- If you don't want to renovate your subscription, you just need to wait "
+"the 30 days to finish and not pay Pi again. We will never use automatic "
+"charges over your Pi Wallet. Money won't be refunded."
+msgstr ""
+"4.- Si no deseas renovar tu suscripción, solo debes esperar "
+"los 30 días para que finalice la suscripción y no volver a pagar a Pi. Nunca utilizaremos cargos automáticos "
+"en su Pi Wallet. El dinero no será reembolsado."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
