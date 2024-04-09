@@ -386,6 +386,112 @@
                                 document.getElementById("translate_text_latinchain_2").style.display = "";
                         });
                     </script>
+                    <script src="/website_pinetwork_games_odoo/static/src/js/Darkmode.js-master/lib/darkmode-js.js"></script>
+                    <script>
+                      new Darkmode({
+                        bottom: '10%',
+                        right: '32px',
+                        time: '0.5s',
+                        label: '🌓',
+                        mixColor: '#fff', // default: '#fff'
+                        backgroundColor: '#fff',  // default: '#fff'
+                        buttonColorDark: 'gray',  // default: '#100f2c'
+                        buttonColorLight: '#fff', // default: '#fff'                            
+                      }).showWidget();
+                    </script>
+                    <style>
+                        .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
+                        .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated label {
+                          color: #fff !important;
+                        }
+                        
+                        .darkmode--activated #translate_text_latinchain_2, .tab-content {
+                          color: #fff;
+                        }
+                        
+                        .darkmode--activated .board-table {
+                          filter: contrast(100%);
+                        }
+                        
+                        .darkmode--activated iframe {
+                          filter: contrast(100%);
+                        }
+                        
+                        .darkmode--activated button > span {
+                          color: #fff !important;
+                        }
+                        
+                        .darkmode--activated button {
+                          color: #fff !important;
+                        }
+                        
+                        .darkmode--activated a {
+                          color: #fff !important;
+                        }
+                        
+                        .darkmode--activated .nav-pills > .nav-item > .nav-link {
+                          color: #000 !important;
+                        }
+                        
+                        .darkmode--activated .navbar-nav > .nav-item > .nav-link > span, 
+                        .darkmode--activated .navbar-nav > .nav-item > .nav-link, 
+                        .darkmode--activated .flex-column > .nav-link{
+                          color: gray !important;
+                        }
+                        
+                        .darkmode--activated .navbar-nav > .nav-item > .active > span{
+                          color: black !important;
+                        }
+                        
+                        .darkmode--activated .nav-pills > .nav-item > .active {
+                          color: #fff !important;
+                        }
+                        
+                        .darkmode--activated #social_div {
+                          color: #fff !important;
+                        }
+                        
+                        .darkmode--activated .card-header > h5 > button > div, .darkmode--activated .card-body > .container > .row > div > a > div {
+                          color: #000 !important;
+                        }
+                        
+                        .darkmode--activated span {
+                          color: #fff !important;
+                        }
+                        
+                        .darkmode--activated .odd, .darkmode--activated .even {
+                          color: #000 !important;
+                        }
+                        
+                        .darkmode--activated td > span > .fa-arrow-up {
+                          color: red !important;
+                        }
+                        
+                        .darkmode--activated td > span > .fa-arrow-down {
+                          color: green !important;
+                        }
+                        
+                        .darkmode--activated td > .btn-link {
+                          color: green !important;
+                        }
+                        
+                        .darkmode--activated .container, .darkmode--activated .dataTables_info {
+                          color: #fff !important;
+                        }
+                        
+                        .darkmode--activated .s_mega_menu_multi_menus > .container > .row > div > h4 {
+                          color: #000 !important;
+                        }
+                        
+                        .darkmode--activated input, 
+                        .darkmode--activated select{
+                          color: gray !important;
+                        }
+                        
+                        .darkmode-toggle {
+                            z-index:100;
+                        }
+                    </style>
                 </t>
 
                 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
