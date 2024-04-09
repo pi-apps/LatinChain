@@ -4,6 +4,21 @@ var accessToken = "";
 var passkey = "";
 const Pi = window.Pi;
 var totalpoints = 0;
+var startTime=new Date(), endTime=new Date(), seconds=0;
+
+function start() {
+  startTime = new Date();
+};
+
+function end() {
+  endTime = new Date();
+  var timeDiff = endTime - startTime; //in ms
+  // strip the ms
+  timeDiff /= 1000;
+
+  // get seconds 
+  seconds = Math.round(timeDiff);
+}
 
 function setConfirmUnload(on) {
     if(on)
@@ -24,6 +39,11 @@ function unloadMessage() {
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
     {
+        end();
+        if(seconds < 8)
+            points = 0;
+        start();
+        
         var data = {
             'pi_user_id': pi_user_id,
             'pi_user_code': pi_user_code,
