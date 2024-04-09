@@ -451,7 +451,7 @@
                           color: #fff !important;
                         }
                         
-                        .darkmode--activated .card-header > h5 > button > div, .darkmode--activated .card-body > .container > .row > div > a > div {
+                        .darkmode--activated .card-header > h5 > button > div, .darkmode--activated .card-body > .container > .row > div, .darkmode--activated .card-body > .container > .row > div > a > div {
                           color: #000 !important;
                         }
                         
