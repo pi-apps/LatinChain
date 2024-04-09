@@ -204,6 +204,14 @@
                             }
                             
                             .darkmode--activated span {
+                              color: black !important;
+                            }
+                            
+                            .darkmode--activated .turns-history {
+                              color: gray !important;
+                            }
+                            
+                            .darkmode--activated .turns-history > ol > li > span {
                               color: gray !important;
                             }
                             
@@ -241,7 +249,8 @@
                             
                             .darkmode--activated input, 
                             .darkmode--activated select{
-                              color: gray !important;
+                              color: white !important;
+                              background-color: black !important;
                             }
                             
                             .darkmode-toggle {
