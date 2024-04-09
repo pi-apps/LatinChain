@@ -179,8 +179,12 @@
                         </script>
                         <style>
                             .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
-                            .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4 {
+                            .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated label {
                               color: #000 !important;
+                            }
+                            
+                            .darkmode--activated label {
+                              color: #fff !important;
                             }
                             
                             .darkmode--activated .board-table {
@@ -196,6 +200,43 @@
                             }
                             
                             .darkmode--activated span {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated .accordion-body {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated .odd, .darkmode--activated .even {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated td > span > .fa-arrow-up {
+                              color: red !important;
+                            }
+                            
+                            .darkmode--activated td > span > .fa-arrow-down {
+                              color: green !important;
+                            }
+                            
+                            .darkmode--activated td > .btn-link {
+                              color: green !important;
+                            }
+                            
+                            .darkmode--activated .dataTables_info {
+                              color: #fff !important;
+                            }
+                            
+                            .darkmode--activated .container {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated .s_mega_menu_multi_menus > .container > .row > div > h4 {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated input, 
+                            .darkmode--activated select{
                               color: gray !important;
                             }
                             
