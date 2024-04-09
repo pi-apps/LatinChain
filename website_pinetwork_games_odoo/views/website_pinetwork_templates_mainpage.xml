@@ -187,6 +187,10 @@
                               filter: contrast(100%);
                             }
                             
+                            .darkmode--activated iframe {
+                              filter: contrast(100%);
+                            }
+                            
                             .darkmode--activated button > span {
                               color: #fff !important;
                             }
