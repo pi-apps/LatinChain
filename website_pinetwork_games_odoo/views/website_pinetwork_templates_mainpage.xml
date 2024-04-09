@@ -532,6 +532,17 @@
                         .darkmode-toggle {
                             z-index:100;
                         }
+                        
+                        .darkmode--activated .btn-outline-info:hover, 
+                        .darkmode--activated .btn-outline-info:active, 
+                        .darkmode--activated .btn-outline-primary:hover, 
+                        .darkmode--activated .btn-outline-primary:active, 
+                        .darkmode--activated .btn-outline-success:hover, 
+                        .darkmode--activated .btn-outline-success:active, 
+                        .darkmode--activated a.btn-outline-success:hover, 
+                        .darkmode--activated a.btn-outline-success:active {
+                            color: #fff !important;
+                        }
                     </style>
                 </t>
 
