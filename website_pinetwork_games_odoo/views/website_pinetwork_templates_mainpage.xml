@@ -194,6 +194,10 @@
                             .darkmode--activated span {
                               color: gray !important;
                             }
+                            
+                            .darkmode-toggle {
+                                z-index:100;
+                            }
                         </style>
                     </t>
 
