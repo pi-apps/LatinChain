@@ -178,7 +178,7 @@
                           }).showWidget();
                         </script>
                         <style>
-                            .darkmode--activated {
+                            .darkmode--activated span, .darkmode--activated div, .darkmode--activated p {
                               color: #fff !important;
                             }
                         </style>
