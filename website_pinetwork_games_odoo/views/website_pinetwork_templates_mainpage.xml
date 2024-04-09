@@ -195,6 +195,10 @@
                               filter: contrast(100%);
                             }
                             
+                            .darkmode--activated #game-settings {
+                              filter: contrast(100%);
+                            }
+                            
                             .darkmode--activated button > span {
                               color: #fff !important;
                             }
