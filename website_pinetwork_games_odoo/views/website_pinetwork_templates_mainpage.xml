@@ -204,6 +204,27 @@
                             }
                             
                             .darkmode--activated span {
+                              color: white !important;
+                            }
+                            
+                            .darkmode--activated #translate_text_latinchain_2 {
+                              color: black !important;
+                            }
+                            
+                            .darkmode--activated .apex > * {
+                              color: black !important;
+                            }
+                            
+                            .darkmode--activated #game-difficulty-option > *,
+                            .darkmode--activated .values > *{
+                              color: black !important;
+                            }
+                            
+                            .darkmode--activated .popup > *{
+                              color: black !important;
+                            }
+                            
+                            .darkmode--activated .label-choose-side {
                               color: black !important;
                             }
                             
