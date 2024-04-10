@@ -263,7 +263,8 @@
                             }
                             
                             .darkmode--activated .dataTables_paginate > a.previous,
-                            .darkmode--activated .dataTables_paginate > a.next
+                            .darkmode--activated .dataTables_paginate > a.next,
+                            .darkmode--activated .dataTable > thead > tr > th
                             {
                               color: white !important;
                             }
@@ -568,7 +569,8 @@
                         }
                         
                         .darkmode--activated .dataTables_paginate > a.previous,
-                        .darkmode--activated .dataTables_paginate > a.next
+                        .darkmode--activated .dataTables_paginate > a.next,
+                        .darkmode--activated .dataTable > thead > tr > th
                         {
                           color: white !important;
                         }
