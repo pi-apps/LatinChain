@@ -503,6 +503,14 @@
                           color: #000 !important;
                         }
                         
+                        .nav-pills > .nav-item > .nav-link {
+                          color: #000 !important;
+                        }
+                        
+                        .nav-pills > .nav-item > .active {
+                          color: #fff !important;
+                        }
+                        
                         .darkmode--activated .navbar-nav > .nav-item > .nav-link > span, 
                         .darkmode--activated .navbar-nav > .nav-item > .nav-link, 
                         .darkmode--activated .flex-column > .nav-link{
