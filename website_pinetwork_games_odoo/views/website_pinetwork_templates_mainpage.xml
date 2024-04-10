@@ -253,6 +253,21 @@
                               background-color: black !important;
                             }
                             
+                            .darkmode--activated .dataTables_paginate > span > a.paginate_button,
+                            .darkmode--activated .dataTables_paginate > span > span.ellipsis{
+                              color: white !important;
+                            }
+                            
+                            .darkmode--activated .dataTables_paginate > span > a.current{
+                              color: black !important;
+                            }
+                            
+                            .darkmode--activated .dataTables_paginate > a.previous,
+                            .darkmode--activated .dataTables_paginate > a.next
+                            {
+                              color: white !important;
+                            }
+                            
                             .darkmode-toggle {
                                 z-index:100;
                             }
@@ -540,6 +555,21 @@
                         .darkmode--activated input, 
                         .darkmode--activated select{
                           color: gray !important;
+                        }
+                        
+                        .darkmode--activated .dataTables_paginate > span > a.paginate_button,
+                        .darkmode--activated .dataTables_paginate > span > span.ellipsis{
+                          color: white !important;
+                        }
+                        
+                        .darkmode--activated .dataTables_paginate > span > a.current{
+                          color: black !important;
+                        }
+                        
+                        .darkmode--activated .dataTables_paginate > a.previous,
+                        .darkmode--activated .dataTables_paginate > a.next
+                        {
+                          color: white !important;
                         }
                         
                         .darkmode-toggle {
