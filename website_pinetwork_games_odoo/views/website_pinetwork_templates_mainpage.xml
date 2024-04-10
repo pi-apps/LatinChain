@@ -554,7 +554,8 @@
                         
                         .darkmode--activated input, 
                         .darkmode--activated select{
-                          color: gray !important;
+                          color: white !important;
+                          background-color: black !important;
                         }
                         
                         .darkmode--activated .dataTables_paginate > span > a.paginate_button,
