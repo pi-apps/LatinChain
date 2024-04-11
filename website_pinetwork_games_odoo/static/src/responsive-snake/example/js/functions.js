@@ -40,7 +40,7 @@ function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
     {
         end();
-        if(seconds < 8)
+        if(seconds <= 5)
             points = 0;
         start();
         
