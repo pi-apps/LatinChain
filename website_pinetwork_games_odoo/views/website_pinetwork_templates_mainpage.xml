@@ -561,6 +561,10 @@
                         }
                         
                         .darkmode--activated span {
+                          filter: contrast(100%);
+                        }
+                        
+                        .darkmode--activated #taboola-below-article-thumbnails * {
                           color: #fff !important;
                         }
                         
