@@ -266,6 +266,14 @@
                               color: #000 !important;
                             }
                             
+                            .darkmode--activated .container > div > div > span > i {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated .accordion-item > h2 > button > strong > span {
+                              color: #000 !important;
+                            }
+                            
                             .darkmode--activated .list-group-item,
                             .darkmode--activated .list-group-item > span {
                               color: #000 !important;
