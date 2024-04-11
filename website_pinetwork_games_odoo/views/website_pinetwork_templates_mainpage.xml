@@ -261,7 +261,13 @@
                               color: #fff !important;
                             }
                             
-                            .darkmode--activated .container {
+                            .darkmode--activated .container,
+                            .darkmode--activated .container > span {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated .list-group-item,
+                            .darkmode--activated .list-group-item > span {
                               color: #000 !important;
                             }
                             
