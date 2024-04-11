@@ -655,6 +655,10 @@
                             z-index:100;
                         }
                         
+                        .darkmode--activated .o_colored_level > p > span {
+                          background-color: black !important;
+                        }
+                        
                         .darkmode--activated .btn-outline-info:hover, 
                         .darkmode--activated .btn-outline-info:active, 
                         .darkmode--activated .btn-outline-primary:hover, 
