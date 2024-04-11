@@ -270,6 +270,20 @@
                               color: #000 !important;
                             }
                             
+                            .darkmode--activated .container > h3 * {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated .accordion-body > h1 > span,
+                            .darkmode--activated .accordion-body > h3 > span {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated .accordion-body > h1 > span *,
+                            .darkmode--activated .accordion-body > h3 > span * {
+                              color: #000 !important;
+                            }
+                            
                             .darkmode--activated .accordion-item > h2 > button > strong > span {
                               color: #000 !important;
                             }
