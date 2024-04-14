@@ -170,7 +170,7 @@
                             {
                               new Darkmode({
                                 bottom: '10%',
-                                right: '10%',
+                                left: '10%',
                                 time: '0.5s',
                                 label: '🌓',
                                 mixColor: '#fff', // default: '#fff'
@@ -532,7 +532,7 @@
                         {
                             new Darkmode({
                                 bottom: '10%',
-                                right: '10%',
+                                left: '10%',
                                 time: '0.5s',
                                 label: '🌓',
                                 mixColor: '#fff', // default: '#fff'
@@ -1687,8 +1687,7 @@
                                 position: fixed;
                                 bottom: 10px;
                                 float: right;
-                                right: 90%;
-                                left: 10%;
+                                right: 10%;
                                 bottom: 10%;
                                 max-width: 50px;
                                 max-height: 50px;
