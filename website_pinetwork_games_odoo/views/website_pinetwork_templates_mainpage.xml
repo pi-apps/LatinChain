@@ -166,16 +166,19 @@
                         </script>
                         <script src="/website_pinetwork_games_odoo/static/src/js/Darkmode.js-master/lib/darkmode-js.js"></script>
                         <script>
-                          new Darkmode({
-                            bottom: '10%',
-                            right: '10%',
-                            time: '0.5s',
-                            label: '🌓',
-                            mixColor: '#fff', // default: '#fff'
-                            backgroundColor: '#fff',  // default: '#fff'
-                            buttonColorDark: 'gray',  // default: '#100f2c'
-                            buttonColorLight: '#fff', // default: '#fff'                            
-                          }).showWidget();
+                            if(location.pathname.substring(0, 4) != "/web")
+                            {
+                              new Darkmode({
+                                bottom: '10%',
+                                right: '10%',
+                                time: '0.5s',
+                                label: '🌓',
+                                mixColor: '#fff', // default: '#fff'
+                                backgroundColor: '#fff',  // default: '#fff'
+                                buttonColorDark: 'gray',  // default: '#100f2c'
+                                buttonColorLight: '#fff', // default: '#fff'                            
+                              }).showWidget();
+                            }
                         </script>
                         <style>
                             .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
@@ -334,6 +337,10 @@
                             
                             .darkmode-toggle {
                                 z-index:100;
+                            }
+                            
+                            .darkmode--activated .tbl-next-up-widget-item * {
+                              color: #000 !important;
                             }
                         </style>
                     </t>
@@ -521,16 +528,19 @@
                     </script>
                     <script src="/website_pinetwork_games_odoo/static/src/js/Darkmode.js-master/lib/darkmode-js.js"></script>
                     <script>
-                      new Darkmode({
-                        bottom: '10%',
-                        right: '10%',
-                        time: '0.5s',
-                        label: '🌓',
-                        mixColor: '#fff', // default: '#fff'
-                        backgroundColor: '#fff',  // default: '#fff'
-                        buttonColorDark: 'gray',  // default: '#100f2c'
-                        buttonColorLight: '#fff', // default: '#fff'                            
-                      }).showWidget();
+                        if(location.pathname.substring(0, 4) != "/web")
+                        {
+                            new Darkmode({
+                                bottom: '10%',
+                                right: '10%',
+                                time: '0.5s',
+                                label: '🌓',
+                                mixColor: '#fff', // default: '#fff'
+                                backgroundColor: '#fff',  // default: '#fff'
+                                buttonColorDark: 'gray',  // default: '#100f2c'
+                                buttonColorLight: '#fff', // default: '#fff'                            
+                            }).showWidget();
+                        }
                     </script>
                     <style>
                         .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
@@ -622,6 +632,10 @@
                         
                         .darkmode--activated .container, .darkmode--activated .dataTables_info {
                           color: #fff !important;
+                        }
+                        
+                        .darkmode--activated .s_mega_menu_multi_menus > .container > .row > div > h4 {
+                          color: #000 !important;
                         }
                         
                         .darkmode--activated .s_mega_menu_multi_menus > .container > .row > div > h4 {
