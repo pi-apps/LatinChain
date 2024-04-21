@@ -475,9 +475,9 @@ class PiNetworkBaseController(http.Controller):
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
         
-        pi_users_verified_count = total_users_verified_count
+        pi_users_verified_count = int(total_users_verified_count)
         
-        pi_users_count = total_users_count
+        pi_users_count = int(total_users_count)
         
         pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc")
         
@@ -503,9 +503,9 @@ class PiNetworkBaseController(http.Controller):
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
         
-        pi_users_verified_count = total_users_verified_count
+        pi_users_verified_count = int(total_users_verified_count)
         
-        pi_users_count = total_users_count
+        pi_users_count = int(total_users_count)
         
         pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc")
         
@@ -543,9 +543,9 @@ class PiNetworkBaseController(http.Controller):
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
         
-        pi_users_verified_count = total_users_verified_count
+        pi_users_verified_count = int(total_users_verified_count)
         
-        pi_users_count = total_users_count
+        pi_users_count = int(total_users_count)
         
         pi_users_list = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
         
@@ -573,9 +573,9 @@ class PiNetworkBaseController(http.Controller):
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
         
-        pi_users_verified_count = total_users_verified_count
+        pi_users_verified_count = int(total_users_verified_count)
         
-        pi_users_count = total_users_count
+        pi_users_count = int(total_users_count)
         
         pi_users_list = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
         
@@ -618,9 +618,9 @@ class PiNetworkBaseController(http.Controller):
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
         
-        pi_users_verified_count = total_users_verified_count
+        pi_users_verified_count = int(total_users_verified_count)
         
-        pi_users_count = total_users_count
+        pi_users_count = int(total_users_count)
         
         pi_users_list = user_winners
         
@@ -657,9 +657,9 @@ class PiNetworkBaseController(http.Controller):
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
         
-        pi_users_verified_count = total_users_verified_count
+        pi_users_verified_count = int(total_users_verified_count)
         
-        pi_users_count = total_users_count
+        pi_users_count = int(total_users_count)
         
         pi_users_list = user_winners
         
