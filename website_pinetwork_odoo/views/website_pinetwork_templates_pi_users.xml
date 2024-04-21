@@ -863,11 +863,6 @@
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         
                         <strong>LatinChain give its thanks to all the donators who donate Pi:</strong><br/>
-                        <t t-if="pi_users_count >= 0">
-                            Total donators: <strong><t t-esc="pi_users_count" /></strong><br/>
-                            Total verified donators: <strong><t t-esc="pi_users_count_unblocked" /></strong><br/>
-                        </t>
-                        <br/>
                         <div class="accordion" id="accordionExample">
                           <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
