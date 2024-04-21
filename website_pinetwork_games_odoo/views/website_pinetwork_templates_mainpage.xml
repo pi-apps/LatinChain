@@ -688,6 +688,12 @@
                             color: #fff !important;
                         }
                         
+                        .darkmode--activated a > i.fa-home,
+                        .darkmode--activated a > i.fa-home:hover,
+                        .darkmode--activated a > i.fa-home:active {
+                            color: #000 !important;
+                        }
+                        
                         .darkmode--activated button.dropdown-toggle::after {
                             color: #000 !important;
                         }
