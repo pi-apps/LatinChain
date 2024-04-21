@@ -173,7 +173,7 @@
                                 left: '10%',
                                 time: '0.5s',
                                 label: '🌓',
-                                mixColor: '#fff', // default: '#fff'
+                                mixColor: '#ADD8E6', // default: '#fff'
                                 backgroundColor: '#fff',  // default: '#fff'
                                 buttonColorDark: 'gray',  // default: '#100f2c'
                                 buttonColorLight: '#fff', // default: '#fff'                            
@@ -535,7 +535,7 @@
                                 left: '10%',
                                 time: '0.5s',
                                 label: '🌓',
-                                mixColor: '#fff', // default: '#fff'
+                                mixColor: '#ADD8E6', // default: '#fff'
                                 backgroundColor: '#fff',  // default: '#fff'
                                 buttonColorDark: 'gray',  // default: '#100f2c'
                                 buttonColorLight: '#fff', // default: '#fff'                            
@@ -674,7 +674,7 @@
                         }
                         
                         .darkmode--activated .o_colored_level > p > span {
-                          background-color: black !important;
+                          background-color: #ADD8E6 !important;
                         }
                         
                         .darkmode--activated .btn-outline-info:hover, 
