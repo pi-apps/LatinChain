@@ -207,10 +207,10 @@ class admin_apps(models.Model):
     a_ads_3 = fields.Char('A-Ads.com src 3', required=True, default="Set your A-Ads.com URL", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     a_ads_data_3 = fields.Char('A-Ads.com data 3', required=True, default="Set your A-Ads.com data ID", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     a_ads_style_3 = fields.Char('A-Ads.com style 3', required=True, default="width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    total_transactions_daily_count = fields.Float('Total transactions daily count', compute="_compute_daily", store=True, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    total_users_daily_count = fields.Float('Total users daily count', compute="_compute_daily", store=True, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    total_users_count = fields.Float('Total users count', compute="_compute_daily", store=True, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    total_users_verified_count = fields.Float('Total users verified count', compute="_compute_daily", store=True, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    total_transactions_daily_count = fields.Float('Total transactions daily count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    total_users_daily_count = fields.Float('Total users daily count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    total_users_count = fields.Float('Total users count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    total_users_verified_count = fields.Float('Total users verified count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
 
     def _compute_daily(self):
         for i in self:
