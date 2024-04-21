@@ -603,18 +603,13 @@ class PiNetworkBaseController(http.Controller):
             pi_users_winners_count = 0
             pi_users_winners_datetime = ""
             pi_users_winners_to_pay = 0
+            total_users_count = 0
+            total_users_verified_count = 0
         else:
             user_winners = admin_app_list[0].pi_users_winners_ids
             pi_users_winners_count = admin_app_list[0].pi_users_winners_count
             pi_users_winners_datetime = admin_app_list[0].pi_users_winners_datetime
             pi_users_winners_to_pay = admin_app_list[0].pi_users_winners_to_pay
-        
-        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
-        
-        if len(admin_app_list) == 0:
-            total_users_count = 0
-            total_users_verified_count = 0
-        else:
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
         
@@ -642,18 +637,13 @@ class PiNetworkBaseController(http.Controller):
             pi_users_winners_count = 0
             pi_users_winners_datetime = ""
             pi_users_winners_to_pay = 0
+            total_users_count = 0
+            total_users_verified_count = 0
         else:
             user_winners = admin_app_list[0].pi_users_winners_ids
             pi_users_winners_count = admin_app_list[0].pi_users_winners_count
             pi_users_winners_datetime = admin_app_list[0].pi_users_winners_datetime
             pi_users_winners_to_pay = admin_app_list[0].pi_users_winners_to_pay
-        
-        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
-        
-        if len(admin_app_list) == 0:
-            total_users_count = 0
-            total_users_verified_count = 0
-        else:
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
         
