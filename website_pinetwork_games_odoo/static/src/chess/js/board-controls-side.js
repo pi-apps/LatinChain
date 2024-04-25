@@ -258,7 +258,7 @@ $('#board-resign-game-area .close').click(function() {
 $('#board-resign-game-area .yes').click(function() {
   gameEnd = true;
   stopTimer("stop-both");
-  $('#game-state').text('Game ended.').removeClass('hidden');
+  $('#game-state').text('Game ended. Click in New Game.').removeClass('hidden');
   $('#game-timer').addClass('hidden');
   $('#board').addClass('resign');
   $('#board').addClass('locked');
