@@ -26,6 +26,8 @@ function setDesktopBoard(position = false, sparePieces = false) {
   game = new Chess(position);
 
   var onDragStart = function(source, piece) {
+    if($('#board').hasClass('resign'))
+      return false;
     // do not pick up pieces if the game is over or if it's not that side's turn
     if (game.game_over() === true ||
         (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
@@ -35,7 +37,9 @@ function setDesktopBoard(position = false, sparePieces = false) {
   };
 
   var onDrop = function(source, target, piece, newPos, oldPos, orientation) {
-
+    if($('#board').hasClass('resign'))
+      return false;
+      
     removeGreySquares();
 
     if (!gameStarted) {

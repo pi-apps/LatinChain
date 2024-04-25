@@ -33,6 +33,8 @@ function gameHistoryClear() {
 // Load custom board from FEN string
 
 function loadBoard(fen, fromHistory = false) {
+  if($('#board').hasClass('resign'))
+    return;
 
   var gameValidation = game.validate_fen(fen);
 
@@ -102,6 +104,8 @@ function loadBoard(fen, fromHistory = false) {
 // make opponent turn
 
 function opponentTurn() {
+  if($('#board').hasClass('resign'))
+    return;
 
   console.log('Opponent turn.');
 
@@ -163,6 +167,8 @@ function opponentTurn() {
 // make pawn promotion to queen or whatever
 
 function makePromotion(source, target, promotion) {
+  if($('#board').hasClass('resign'))
+    return;
 
   game.undo();
 
@@ -177,7 +183,9 @@ function makePromotion(source, target, promotion) {
 // check sides and player turn if it was changed manually
 
 function checkTurn() {
-
+  if($('#board').hasClass('resign'))
+    return;
+    
   console.log('player side ' + playerSide);
   console.log('game turn ' + game.turn());
   console.log('first turn ' + firstTurn);
@@ -206,6 +214,9 @@ function checkTurn() {
 function checkPositions(turn) {
 console.log('Checking positions', turn);
 
+  if($('#board').hasClass('resign'))
+    return;
+    
   if (game.in_checkmate()) {
     postEndGame();
     $('#game-state').text('Checkmate').removeClass('hidden');
