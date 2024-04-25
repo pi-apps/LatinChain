@@ -224,6 +224,24 @@
                               color: black !important;
                             }
                             
+                            .darkmode--activated #game-difficulty-option > span.label{
+                              color: black !important;
+                            }
+                            
+                            .darkmode--activated #game-difficulty-option > span.label:hover,
+                            .darkmode--activated #game-difficulty-option > span.label:active {
+                              color: white !important;
+                            }
+                            
+                            .darkmode--activated #game-difficulty-skill-settings > span.close{
+                              background-color: black !important;
+                            }
+                            
+                            .darkmode--activated #game-difficulty-skill-settings > span.close:hover,
+                            .darkmode--activated #game-difficulty-skill-settings > span.close:active{
+                              background-color: white !important;
+                            }
+                            
                             .darkmode--activated .popup > *{
                               color: black !important;
                             }
