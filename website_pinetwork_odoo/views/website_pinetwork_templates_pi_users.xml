@@ -641,7 +641,6 @@
                         </t>
                         <t t-if="pi_user">
                             <t t-if="pi_user.streaming_url">
-                                <br/>
                                 <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><i class="fab fa-youtube"></i> your streaming</button>
                                 <br/>
                             </t>
@@ -806,12 +805,13 @@
                                         <!--<t t-if="i == 11">
                                             <t t-set="i" t-value="1"/>
                                         </t>-->
+                                        
+                                        <li class="list-group-item" t-att-style="style">
                                         <t t-if="pi_user.streaming_url">
-                                            <br/>
                                             <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><i class="fab fa-youtube"></i> watch streaming</button>
                                             <br/>
                                         </t>
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa fa-trophy"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa fa-trophy"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <table class="table" style="word-break: break-word;" translate="no">
                                           <thead>
