@@ -1011,7 +1011,7 @@
                                 var streaming_url = $("#streaming_url").val().trim();
                                 if(streaming_url.length > 150)
                                     alert($("#streaming_url_message").text());
-                                if(!validateYouTubeUrl(streaming_url))
+                                else if(streaming_url.length > 0 &amp;&amp; !validateYouTubeUrl(streaming_url))
                                     alert($("#streaming_url_not_a_video").text());
                                 else if(pi_user_id != "" &amp;&amp; pi_user_code != "")
                                 {
