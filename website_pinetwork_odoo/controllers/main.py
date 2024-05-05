@@ -266,6 +266,7 @@ class PiNetworkBaseController(http.Controller):
                             'amount': apps_list[0].amount,
                             'passkey': passkey,
                             'im_winner': im_winner, 'pi_wallet_address': pi_users_list[0].pi_wallet_address,
+                            'streaming_url': pi_users_list[0].streaming_url,
                             'complete_found': result_found['complete_found']})
     
     @http.route('/set-pi-wallet', type='http', auth="public", website=True, csrf=False, methods=['POST'])
@@ -306,6 +307,47 @@ class PiNetworkBaseController(http.Controller):
         
         #Uncomment in case of you want to save wallet address
         #pi_users_list[0].sudo().write(values)
+        
+        return json.dumps({'result': True})
+    
+    @http.route('/set-streaming-url', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    def set_streaming_url(self, **kw):
+        if 'accessToken' not in kw:
+            _logger.info("accessToken not present")
+            return json.dumps({'result': False})
+        
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                _logger.info("Authorization failed")
+                return json.dumps({'result': False})
+        except:
+            _logger.info("Authorization error")
+            return json.dumps({'result': False})
+        
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+        
+        if len(pi_users_list) == 0:
+            return json.dumps({'result': False})
+        else:
+            """
+            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                _logger.info("not equeals pi_user_id")
+                return json.dumps({'result': False})
+            """
+            
+            if 'streaming_url' not in kw:
+                _logger.info("streaming_url not present")
+                return json.dumps({'result': False})
+            values = {'streaming_url': kw['streaming_url']}
+        
+        #Uncomment in case of you want to save wallet address
+        pi_users_list[0].sudo().write(values)
         
         return json.dumps({'result': True})
         

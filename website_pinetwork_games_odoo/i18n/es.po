@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 04:05+0000\n"
-"PO-Revision-Date: 2024-04-06 04:05+0000\n"
+"POT-Creation-Date: 2024-05-05 18:41+0000\n"
+"PO-Revision-Date: 2024-05-05 18:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -260,9 +260,9 @@ msgid ""
 "the 30 days to finish and not pay Pi again. We will never use automatic "
 "charges over your Pi Wallet. Money won't be refunded."
 msgstr ""
-"4.- Si no deseas renovar tu suscripción, solo debes esperar "
-"los 30 días para que finalice la suscripción y no volver a pagar Pi. Nunca utilizaremos cargos automáticos "
-"en su Pi Wallet. El dinero no será reembolsado."
+"4.- Si no deseas renovar tu suscripción, solo debes esperar los 30 días para"
+" que finalice la suscripción y no volver a pagar Pi. Nunca utilizaremos "
+"cargos automáticos en su Pi Wallet. El dinero no será reembolsado."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -654,6 +654,11 @@ msgid "Apps"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Are you Youtuber?"
+msgstr "Eres Youtuber?"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -815,6 +820,19 @@ msgid "Hard puzzle"
 msgstr "Juego difícil"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"Hello, are you Youtuber or want to become one?. Now you can stream your "
+"videos on LatinChain Platform. <strong>Set your Youtube streaming video here"
+" and click in Save, play, win and then it will be watched on Winners "
+"Board</strong>:"
+msgstr ""
+"Hola, eres Youtuber ó quieres convertirte en uno?. Ahora puedes hacer un stream de tus "
+"videos en LatinChain Platform. <strong>Coloca tu video streaming de Youtube aquí"
+" y click en Guardar, juega, gana y luego esto podrá ser visto en Winners "
+"Board</strong>:"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid ""
 "Hi session Score :\n"
@@ -864,6 +882,11 @@ msgstr "Importar..."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Info"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "It isn't an URL youtube video."
+msgstr "No es una URL de video de youtube."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1124,6 +1147,11 @@ msgid "SUDOKU"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Save"
+msgstr "Guardar"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Save PGN Notation:"
 msgstr "Salvar Notación PGN:"
@@ -1322,6 +1350,11 @@ msgid "Yes"
 msgstr "Sí"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "You can't have more than 150 characters in your URL video."
+msgstr "No puedes tener más de 150 caracteres en tu URL de video."
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -1347,6 +1380,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Your Side:"
 msgstr "Tu Lado:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Your video was saved."
+msgstr "Tu video fue guardado."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Youtube url video"
+msgstr "URL de Youtube"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal

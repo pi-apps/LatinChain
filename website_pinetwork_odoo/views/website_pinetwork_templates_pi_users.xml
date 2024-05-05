@@ -626,6 +626,11 @@
                     
                     <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
                     
+                    <script src="/website_pinetwork_odoo/static/src/js/common_functions.js"></script>
+                    
+                    <link rel="stylesheet" href="/website_pinetwork_odoo/static/src/modals/colorbox/example3/colorbox.css" />
+                    <script src="/website_pinetwork_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
+                    
                     <title>LatinChain Winners Board</title>
                 </head>
                 <body>
@@ -635,6 +640,11 @@
                             Cut at: <span t-esc="pi_users_winners_datetime" /> UTC<br/><br/>
                         </t>
                         <t t-if="pi_user">
+                            <t t-if="pi_user.streaming_url">
+                                <br/>
+                                <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><i class="fab fa-youtube"></i> your streaming</button>
+                                <br/>
+                            </t>
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
                             <table class="table" style="word-break: break-word;" translate="no">
@@ -679,6 +689,11 @@
                         
                         <script type='text/javascript'>
                             $(document).ready(function($) {
+                                $(".open_streaming").click(function(){
+                                    var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
+                                    $.colorbox({width: "80%", height: "60%", maxWidth: "80%", maxHeight: "60%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url[1] + '" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+                                });
+                            
                                 $(".on-page-search").on("input.highlight", function() {
                                     var searchTerm = $(this).val();
                                     $(".accordion-body").unmark().mark(searchTerm);
@@ -791,7 +806,11 @@
                                         <!--<t t-if="i == 11">
                                             <t t-set="i" t-value="1"/>
                                         </t>-->
-                                        
+                                        <t t-if="pi_user.streaming_url">
+                                            <br/>
+                                            <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><i class="fab fa-youtube"></i> watch streaming</button>
+                                            <br/>
+                                        </t>
                                         <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa fa-trophy"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <table class="table" style="word-break: break-word;" translate="no">

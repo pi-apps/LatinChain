@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-03 19:26+0000\n"
-"PO-Revision-Date: 2024-03-03 19:26+0000\n"
+"POT-Creation-Date: 2024-05-05 18:48+0000\n"
+"PO-Revision-Date: 2024-05-05 18:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,15 +19,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
 msgid ". Choose your app:<br/><br/>"
 msgstr ". Escoge tu app:<br/><br/>"
-
-#. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
-msgid ""
-"<br/>\n"
-"                            Total verified donators:"
-msgstr ""
-"<br/>\n"
-"                            Total de donadores verificados:"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
@@ -44,6 +35,16 @@ msgid ""
 "<br/><br/>\n"
 "                        INFO:<br/><br/>"
 msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "<i class=\"fab fa-youtube\"/> watch streaming"
+msgstr "<i class=\"fab fa-youtube\"/> ver streaming"
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "<i class=\"fab fa-youtube\"/> your streaming"
+msgstr "<i class=\"fab fa-youtube\"/> tu streaming"
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
@@ -313,6 +314,13 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__action__complete
 msgid "Complete"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.actions.server,name:website_pinetwork_odoo.compute_daily_latinchain_ir_actions_server
+#: model:ir.cron,cron_name:website_pinetwork_odoo.compute_daily_latinchain
+#: model:ir.cron,name:website_pinetwork_odoo.compute_daily_latinchain
+msgid "Compute Daily Latinchain"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -816,9 +824,19 @@ msgid "Top 10 zone Sudoku ("
 msgstr ""
 
 #. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
-msgid "Total donators:"
-msgstr "Total de donadores:"
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__total_transactions_daily_count
+msgid "Total transactions daily count"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__total_users_count
+msgid "Total users count"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__total_users_daily_count
+msgid "Total users daily count"
+msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
@@ -826,6 +844,11 @@ msgstr "Total de donadores:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
 msgid "Total users in the app:"
 msgstr "Total de usuarios en la app:"
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__total_users_verified_count
+msgid "Total users verified count"
+msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
@@ -1051,6 +1074,11 @@ msgstr "Te enviamos un pago"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
 msgid "Your points:"
 msgstr "Tus puntos:"
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__streaming_url
+msgid "Youtube streaming URL"
+msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
