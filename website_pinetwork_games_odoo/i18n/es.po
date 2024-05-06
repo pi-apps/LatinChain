@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-05 22:56+0000\n"
-"PO-Revision-Date: 2024-05-05 22:56+0000\n"
+"POT-Creation-Date: 2024-05-06 07:46+0000\n"
+"PO-Revision-Date: 2024-05-06 07:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1077,6 +1077,11 @@ msgstr ""
 "donación y no será reembolsado tampoco. También puedes desbloquear los "
 "juegos, por 30 días desde la fecha de pago, con una donación. Aunque, todos "
 "los pagos a LatinChain son considerados donaciones."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Pioneers streaming"
+msgstr "Pioneros streameando"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage

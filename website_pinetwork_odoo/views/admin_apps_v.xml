@@ -45,6 +45,7 @@
                                     <field name="block_points"/>
                             </group>
                             <group string="Winners config">
+                                    <field name="pioneers_streaming" readonly="True"/>
                                     <field name="pi_users_winners_datetime" attrs="{'required': [('pi_users_winners_count', '>', 0)]}"/>
                                     <field name="pi_users_winners_count"/>
                                     <field name="pi_users_winners_ids" widget="many2many_tags"/>
