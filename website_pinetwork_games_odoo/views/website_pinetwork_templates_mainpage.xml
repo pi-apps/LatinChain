@@ -1474,7 +1474,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div id="accordion">
+                        <div id="accordionOne">
                           <div class="card">
                             <div class="card-header" id="headingOne">
                               <h5 class="mb-0">
@@ -1484,7 +1484,7 @@
                               </h5>
                             </div>
 
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionOne">
                               <div class="card-body">
                                 <div style="text-align:center" class="form-group container">
                                     <div class="row">
@@ -1510,7 +1510,7 @@
                           </div>
                         </div>
                         <br/>
-                        <div id="accordion">
+                        <div id="accordionTwo">
                           <div class="card">
                             <div class="card-header" id="headingTwo">
                               <h5 class="mb-0">
@@ -1520,7 +1520,7 @@
                               </h5>
                             </div>
 
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTwo">
                               <div class="card-body">
                                 <div style="text-align:center" class="form-group container">
                                     <div class="row">
