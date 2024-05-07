@@ -1528,7 +1528,7 @@
                                         </div>
                                         <div class="col-10">
                                             Hello, are you Youtuber or want to become one?. Now you can stream your videos on LatinChain Platform. <strong>Set your Youtube streaming video here and click in Save, play, win and then it will be watched on Winners Board</strong>:
-                                            <input id="streaming_url" name="streaming_url" placeholder="Youtube video URL" class="form-control" disabled="true"/>
+                                            <textarea id="streaming_url" name="streaming_url" placeholder="Youtube video URL" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
                                             <br/>
                                             <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
                                             <br/>
