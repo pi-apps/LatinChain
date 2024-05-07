@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-06 07:46+0000\n"
-"PO-Revision-Date: 2024-05-06 07:46+0000\n"
+"POT-Creation-Date: 2024-05-07 00:51+0000\n"
+"PO-Revision-Date: 2024-05-07 00:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -378,6 +378,16 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<br/>A Youtube live video URL looks like this:<br/>"
+msgstr "<br/>La URL de un video en vivo de Youtube se ve así:<br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<br/>A Youtube short video URL looks like this:<br/>"
+msgstr "<br/>La URL de un video short de Youtube se ve así:<br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/>Choose your app:<br/><br/>"
 msgstr "<br/>Escoge tu app:<br/><br/>"
 
@@ -402,6 +412,15 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/>Other developments:<br/><br/>"
 msgstr "<br/>Otros desarrollos:<br/><br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<br/>Place your own Youtube video url in the text box above. You can use Normal video, Live transmission or Short.<br/>\n"
+"                                            <br/>A Youtube video URL looks like this:<br/>"
+msgstr ""
+"<br/>Coloca tu propio url de video de Youtube en la caja de texto de arriba. Puedes usar un Video normal, Transmisión en vivo ó Short.<br/>\n"
+"                                            <br/>La URL de un video de Youtube se ve así:<br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1399,6 +1418,21 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "https://minepi.com/rockcesar"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "https://www.youtube.com/live/AXOtWxSETew?si=3bKFA_mjb0ethVqe"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "https://www.youtube.com/shorts/SZEljmi-wr4"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "https://www.youtube.com/watch?v=9KqcyAoCZzo"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
