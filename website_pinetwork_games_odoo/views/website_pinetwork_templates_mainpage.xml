@@ -1610,9 +1610,11 @@
                                     <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="cointelegraph" class="btn btn-outline-success font-weight-bold text-black border-success cointelegraph" translate="no" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">TELEGRAPH</div></button></div>
                                     <div class="col-6" style="padding-left: 2px; padding-right: 2px"><button id="cryptonews_2" class="btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">NEWS</div></button></div>
                                 </div>
-                                <br/>
-                                <div class="row">
-                                    <div class="col-12"><button id="winnerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;">Winners Board</div></button></div>
+                                <div t-if="pioneers_streaming">
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-12"><button id="streamerzoneboard2" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div></button></div>
+                                    </div>                                
                                 </div>
                                 <br/>
                                 <div class="row">
