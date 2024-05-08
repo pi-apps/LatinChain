@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 01:35+0000\n"
-"PO-Revision-Date: 2024-05-07 01:35+0000\n"
+"POT-Creation-Date: 2024-05-08 20:42+0000\n"
+"PO-Revision-Date: 2024-05-08 20:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -277,11 +277,11 @@ msgstr "4.- Ganando en nivel 3, vas a ganar 9 puntos."
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"4.- You can stream your Youtube videos to the LatinChain community, if you "
-"are in the Winners Board."
+"4.- You can stream your Youtube videos to the LatinChain community, being in"
+" the Top 50 streamers with more points."
 msgstr ""
-"4.- Puedes transmitir tus videos de Youtube a la comunidad de LatinChain, si estás "
-"en el Winners Board."
+"4.- Puedes transmitir tus videos de Youtube a la comunidad LatinChain, "
+"estando en el Top 50 streamers con más puntos."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -852,13 +852,13 @@ msgstr "Juego difícil"
 msgid ""
 "Hello, are you Youtuber or want to become one?. Now you can stream your "
 "videos on LatinChain Platform. <strong>Set your Youtube streaming video here"
-" and click in Save, play, win and then it will be watched on Winners "
-"Board</strong>:"
+" and click in Save, play, win and then it will be watched on Winners Board "
+"and Top 50 streamers</strong>:"
 msgstr ""
 "Hola, eres Youtuber ó quieres convertirte en uno(a)?. Ahora puedes hacer un "
 "stream de tus videos en LatinChain Platform. <strong>Coloca tu video "
 "streaming de Youtube aquí y click en Guardar, juega, gana y luego esto podrá"
-" ser visto en Winners Board</strong>:"
+" ser visto en Winners Board y Top 50 streamers</strong>:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
@@ -1108,11 +1108,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pioneers streaming"
-msgstr "Pioneros streameando"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Platform"
 msgstr ""
 
@@ -1303,6 +1298,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Top 10 Board"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Top 50 streamers"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
