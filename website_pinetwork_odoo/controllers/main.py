@@ -711,7 +711,7 @@ class PiNetworkBaseController(http.Controller):
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
         
-        pi_users_list = request.env["pi.users"].sudo().search([('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+        pi_users_list = request.env["pi.users"].sudo().search([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
         
         pi_users_verified_count = int(total_users_verified_count)
         
@@ -731,7 +731,7 @@ class PiNetworkBaseController(http.Controller):
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
         
-        pi_users_list = request.env["pi.users"].sudo().search([('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+        pi_users_list = request.env["pi.users"].sudo().search([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
         
         pi_users_verified_count = int(total_users_verified_count)
         
