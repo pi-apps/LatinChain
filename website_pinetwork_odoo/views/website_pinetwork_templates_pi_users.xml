@@ -995,7 +995,7 @@
                             </div>
                             <div class="col-4" style="text-align: left">
                                 <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
-                                <span id="user_found" style="display:none;"><i class="fa fa-user"></i><i class="fa fa-trophy"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
+                                <span id="user_found" style="display:none;"><i class="fa fa-user"></i><i class="fa-brands fa-youtube"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
                             </div>
                             <div class="col-1"></div>
                         </div>
@@ -1025,7 +1025,7 @@
                                             <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
                                             <br/>
                                         </t>
-                                        <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa fa-trophy"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa-brands fa-youtube"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <table class="table" style="word-break: break-word;" translate="no">
                                           <thead>
