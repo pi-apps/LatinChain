@@ -211,16 +211,16 @@ class admin_apps(models.Model):
     total_users_daily_count = fields.Float('Total users daily count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     total_users_count = fields.Float('Total users count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     total_users_verified_count = fields.Float('Total users verified count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pioneers_streaming = fields.Boolean('Pioneers streaming', compute="_compute_streaming", store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pioneers_streaming = fields.Boolean('Pioneers streaming', compute="_compute_streaming", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
-    @api.depends("pi_users_winners_ids", "pi_users_winners_ids.streaming_url")
     def _compute_streaming(self):
         for i in self:
-            i.pioneers_streaming = False
-            for j in i.pi_users_winners_ids:
-                if len(j.streaming_url) > 0:
-                    i.pioneers_streaming = True
-                    break
+            pi_users_list = self.env["pi.users"].sudo().search([('streaming_url', '!=', '')], limit=1)
+            
+            if len(pi_users_list) > 0:
+                i.pioneers_streaming = True
+            else:
+                i.pioneers_streaming = False
 
     def _compute_daily(self):
         for i in self:

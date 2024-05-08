@@ -698,6 +698,48 @@ class PiNetworkBaseController(http.Controller):
         pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
         return http.request.render('website_pinetwork_odoo.list_winners_zone', {'pi_users_winners_count': pi_users_winners_count, 'pi_users_winners_to_pay': pi_users_winners_to_pay, 'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_users_winners_datetime': pi_users_winners_datetime, 'pi_user': pi_user})
+    
+    @http.route('/get-streamers-zone/', type='http', auth="public", website=True)
+    def get_streamers_zone(self, **kw):
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            total_users_count = 0
+            total_users_verified_count = 0
+        else:
+            total_users_count = admin_app_list[0].total_users_count
+            total_users_verified_count = admin_app_list[0].total_users_verified_count
+        
+        pi_users_list = request.env["pi.users"].sudo().search([('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+        
+        pi_users_verified_count = int(total_users_verified_count)
+        
+        pi_users_count = int(total_users_count)
+        
+        return http.request.render('website_pinetwork_odoo.list_streamer_zone', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list})
+
+    @http.route('/get-streamers-zone/<string:pi_user_code>', type='http', auth="public", website=True)
+    def get_streamers_zone_user(self, pi_user_code, **kw):
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            total_users_count = 0
+            total_users_verified_count = 0
+        else:
+            total_users_count = admin_app_list[0].total_users_count
+            total_users_verified_count = admin_app_list[0].total_users_verified_count
+        
+        pi_users_list = request.env["pi.users"].sudo().search([('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+        
+        pi_users_verified_count = int(total_users_verified_count)
+        
+        pi_users_count = int(total_users_count)
+        
+        pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
+        
+        return http.request.render('website_pinetwork_odoo.list_streamer_zone', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user})
         
     @http.route('/get-credits/', type='http', auth="public", website=True)
     def get_credits(self, **kw):

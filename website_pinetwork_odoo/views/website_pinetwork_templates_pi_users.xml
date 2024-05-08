@@ -844,6 +844,219 @@
             </t>
 		</template>
         
+        <template id="list_streamer_zone" name="Winners View">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
+                    
+                    <link href="/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.101"></script>
+                    
+                    <link rel="stylesheet" href="/website_pinetwork_odoo/static/src/modals/colorbox/example3/colorbox.css" />
+                    <script src="/website_pinetwork_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
+                    
+                    <title>LatinChain Top 50 streamers</title>
+                </head>
+                <body>
+                    <div class="container" style="text-align:center">
+                        Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
+                        <t t-if="pi_user">
+                            <t t-if="pi_user.streaming_url">
+                                <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
+                                <br/>
+                            </t>
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                            <br/>
+                            <table class="table" style="word-break: break-word;" translate="no">
+                              <thead>
+                                <tr>
+                                  <td>Chess</td>
+                                  <td>Snake</td>
+                                  <td>Sudoku</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><t t-esc="pi_user.points_chess" /></td>
+                                  <td><t t-esc="pi_user.points_snake" /></td>
+                                  <td><t t-esc="pi_user.points_sudoku" /></td>
+                                </tr>
+                              </tbody>
+                            </table><br/><br/>
+                        </t>
+                        <t t-if="pi_users_count >= 0">
+                            Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
+                        </t>
+                        <t t-if="pi_users_verified_count >= 0">
+                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
+                        </t>
+                        
+                        <script type='text/javascript'>
+                            $(document).ready(function($) {
+                                $(".open_streaming").click(function(){
+                                    var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
+                                    streaming_url = streaming_url[1];
+                                    $.colorbox({width: "80%", height: "60%", maxWidth: "80%", maxHeight: "60%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+                                });
+                            
+                                $(".on-page-search").on("input.highlight", function() {
+                                    var searchTerm = $(this).val();
+                                    $(".accordion-body").unmark().mark(searchTerm);
+                                    if(searchTerm.trim() != "")
+                                    {
+                                        //$( "#user_question" ).hide();
+                                        if($( ".accordion-body" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                        {
+                                            $('.list-group-item').hide();
+                                           $(".list-group-item").each(function(index) {
+                                                if($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                {
+                                                    $(this).show();
+                                                }
+                                            });
+                                            
+                                           $( "#text_found" ).show();
+                                           $( "#text_notfound" ).hide();
+                                           if($( ".username_code" ).text().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1)
+                                                $( "#user_found" ).show();
+                                           else
+                                                $( "#user_found" ).hide();
+                                           
+                                           $( "#headingOne" ).addClass("text-decoration-underline");
+                                        }else
+                                        {
+                                            $('.list-group-item').hide();
+                                            
+                                            $( "#text_found" ).hide();
+                                            $( "#text_notfound" ).show();
+                                            $( "#user_found" ).hide();
+                                            
+                                            $( "#headingOne" ).removeClass("text-decoration-underline");
+                                        }
+                                    }else
+                                    {
+                                        $('.list-group-item').show();
+                                        
+                                        //$( "#user_question" ).show();
+                                        $( "#text_found" ).hide();
+                                        $( "#text_notfound" ).hide();
+                                        $( "#user_found" ).hide();
+                                        
+                                        $( "#headingOne" ).removeClass("text-decoration-underline");
+                                    }
+                                }).trigger("input.highlight").focus();
+                                
+                                $("#user_question").click(function() {
+                                    $(".on-page-search").focus();
+                                });
+                                
+                                $( ".clear_cache" ).click(function() {
+                                    var result = confirm($("#clear_cache_message").text());
+                                    if(result)
+                                    {
+                                        try {
+                                            Cache.delete();
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                        try {
+                                            window.location.reload(true);
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+                        
+                        <style>
+                            mark {
+                              background: orange;
+                              color: black;
+                            }
+                        </style>
+                        
+                        <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                        <button class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button>
+                        <br/><br/>
+                        
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-6" style="text-align: right">
+                                <i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>
+                            </div>
+                            <div class="col-4" style="text-align: left">
+                                <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
+                                <span id="user_found" style="display:none;"><i class="fa fa-user"></i><i class="fa fa-trophy"></i></span><span id="text_found" style="display:none;"><i class="fa fa-check"></i></span><span id="text_notfound" style="display:none;"><i class="fa fa-times"></i></span>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                        <br/>
+                        <!--
+                        Jackpot to pay to winners: <strong><t t-esc="pi_users_winners_to_pay" /> Pi / <t t-esc="pi_users_winners_count" /></strong><br/><br/>
+                        -->
+                        <div class="accordion" id="accordionExample">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Top 50 streamers (<t t-esc="len(pi_users_list)"/>) <span style="color:#a0ec97">●</span></strong>
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <ul class="list-group">
+                                    <t t-set="i" t-value="1"/>
+                                    <t t-foreach="pi_users_list" t-as="pi_user">
+                                        <t t-set="style" t-value="'background-color:#a0ec97'" />
+                                        <!--<t t-if="i == 11">
+                                            <t t-set="i" t-value="1"/>
+                                        </t>-->
+                                        
+                                        <li class="list-group-item" t-att-style="style">
+                                        <t t-if="pi_user.streaming_url">
+                                            <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
+                                            <br/>
+                                        </t>
+                                        <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa fa-trophy"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
+                                        <br/>
+                                        <table class="table" style="word-break: break-word;" translate="no">
+                                          <thead>
+                                            <tr>
+                                              <td>Chess</td>
+                                              <td>Snake</td>
+                                              <td>Sudoku</td>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><t t-esc="pi_user.points_chess" /></td>
+                                              <td><t t-esc="pi_user.points_snake" /></td>
+                                              <td><t t-esc="pi_user.points_sudoku" /></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></li>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br/><br/><br/>
+                    </div>
+                </body>
+            </html>
+            </t>
+		</template>
+        
         <template id="list_credits" name="Credits">
             <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
