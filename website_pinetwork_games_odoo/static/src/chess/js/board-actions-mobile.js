@@ -23,6 +23,8 @@ function setMobileBoard(position = false) {
       onPieceSelected: function(notationSquare) {
         if($('#board').hasClass('resign'))
           return;
+        if(gameEnd)
+          return;
         var i, movesNotation, movesPosition = [];
         movesNotation = game.moves({square: notationSquare, verbose: true});
         for (i = 0; i < movesNotation.length; i++) {
@@ -33,6 +35,8 @@ function setMobileBoard(position = false) {
 
       onMove: function(move) {
         if($('#board').hasClass('resign'))
+          return;
+        if(gameEnd)
           return;
         stopTimer(game);
         if (!gameStarted) {

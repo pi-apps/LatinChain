@@ -35,6 +35,8 @@ function gameHistoryClear() {
 function loadBoard(fen, fromHistory = false) {
   if($('#board').hasClass('resign'))
     return;
+  if(gameEnd)
+    return;
 
   var gameValidation = game.validate_fen(fen);
 
@@ -106,6 +108,8 @@ function loadBoard(fen, fromHistory = false) {
 function opponentTurn() {
   if($('#board').hasClass('resign'))
     return;
+  if(gameEnd)
+    return;
 
   console.log('Opponent turn.');
 
@@ -169,6 +173,8 @@ function opponentTurn() {
 function makePromotion(source, target, promotion) {
   if($('#board').hasClass('resign'))
     return;
+  if(gameEnd)
+    return;
 
   game.undo();
 
@@ -184,6 +190,8 @@ function makePromotion(source, target, promotion) {
 
 function checkTurn() {
   if($('#board').hasClass('resign'))
+    return;
+  if(gameEnd)
     return;
     
   console.log('player side ' + playerSide);
@@ -215,6 +223,8 @@ function checkPositions(turn) {
 console.log('Checking positions', turn);
 
   if($('#board').hasClass('resign'))
+    return;
+  if(gameEnd)
     return;
     
   if (game.in_checkmate()) {
