@@ -215,7 +215,7 @@ class admin_apps(models.Model):
     
     def _compute_streaming(self):
         for i in self:
-            pi_users_list = self.env["pi.users"].sudo().search([('streaming_url', '!=', '')], limit=1)
+            pi_users_list = self.env["pi.users"].sudo().search([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('streaming_url', '!=', '')], limit=1)
             
             if len(pi_users_list) > 0:
                 i.pioneers_streaming = True
