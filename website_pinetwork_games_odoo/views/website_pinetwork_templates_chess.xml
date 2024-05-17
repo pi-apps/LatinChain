@@ -118,6 +118,10 @@
                             .nav-pills > .nav-item > .active {
                                 background-color: #198754;
                             }
+                            #game-state {
+                                background-color: blue;
+                                padding: 3px;
+                            }
                         </style>
                         <ul class="nav nav-pills sticky" id="myTab" role="tablist" style="background-color: #e3f2fd;" translate="no">
                           <li class="nav-item" role="presentation">
