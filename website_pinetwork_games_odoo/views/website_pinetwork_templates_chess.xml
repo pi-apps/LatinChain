@@ -119,8 +119,9 @@
                                 background-color: #198754;
                             }
                             #game-state {
-                                background-color: blue;
-                                padding: 3px;
+                                background-color: blue !important;
+                                color: white !important;
+                                padding: 3px !important;
                             }
                         </style>
                         <ul class="nav nav-pills sticky" id="myTab" role="tablist" style="background-color: #e3f2fd;" translate="no">
