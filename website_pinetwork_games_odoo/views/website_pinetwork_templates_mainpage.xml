@@ -1089,37 +1089,7 @@
                                     // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
                                     const scopes = ['username', 'payments', 'wallet_address'];
                                     function onIncompletePaymentFound(payment) {
-                                        try {
-                                            var txid = payment.transaction.txid;
-                                        } catch (e) {
-                                            var txid = "";
-                                        }
                                         
-                                        var data = {
-                                                'action': 'complete',
-                                                'paymentId': payment.identifier,
-                                                'txid': txid,
-                                                'app_client': 'auth_example',
-                                                'csrf_token': odoo.csrf_token,
-                                                'accessToken': accessToken,
-                                                'pi_user_code': pi_user_code,
-                                                'pi_user_id': pi_user_id,
-                                            };
-                                            
-                                        setConfirmUnloadPoints(true);
-                                        return $.post( "/pi-api", data).done(function(data) {
-                                            setConfirmUnloadPoints(false);
-                                            try {
-                                                data = JSON.parse(data);
-                                                if(data.result &amp;&amp; data.completed)
-                                                {
-                                                    alert($("#payment_message").text());
-                                                }
-                                            } catch (e) {
-                                            }
-                                        }).fail(function() {
-                                            setConfirmUnloadPoints(false);
-                                        });
                                     }; // Read more about this in the SDK reference
 
                                     $("#loading_word").show();

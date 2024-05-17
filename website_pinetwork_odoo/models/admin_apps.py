@@ -134,8 +134,10 @@ class pi_transactions(models.Model):
                     if pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
                         result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
                         not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', result_dict["user_uid"])])
+                        
                         result_found = self.env["admin.apps"].pi_api({'action': "complete", 'txid': result_dict["transaction"]["txid"], 
-                                                            'app_client': pit.app, 'paymentId': pit.payment_id})
+                                                            'app_client': pit.app, 'pi_user_code': pi_user[0].pi_user_code, 'paymentId': pit.payment_id})
                         result_found = json.loads(result_found)
                         
                         if 'result' in result_found and 'completed' in result_found:
@@ -866,7 +868,6 @@ class admin_apps(models.Model):
         re = requests.post(url,data=obj,json=obj,headers={'Authorization': "Key " + admin_app_list[0].admin_key})
         
         try:
-            
             result = re.json()
             
             result_dict = json.loads(str(json.dumps(result)))
@@ -910,8 +911,11 @@ class admin_apps(models.Model):
                     else:
                         result = {"result": True, "approved": False}
             elif kw['action'] == "complete":
+                
                 if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
+                    
                     pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+                    
                     data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
                                 'app_id': admin_app_list[0].id,
                                 'action': kw['action'],
@@ -931,6 +935,7 @@ class admin_apps(models.Model):
                                 'user_cancelled': result_dict["status"]["user_cancelled"]}
                     
                     admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+                    
                     if "direction" in result_dict and result_dict["direction"] == "app_to_user":
                         data_dict.update({'action_type': 'send'})
                     elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
@@ -943,7 +948,7 @@ class admin_apps(models.Model):
                         self.env["pi.transactions"].sudo().create(data_dict)
                     else:
                         self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])]).write(data_dict)
-                        
+                    
                     transaction = self.env["pi.transactions"].sudo().search([('payment_id', '=', kw['paymentId'])])
                     
                     result = {"result": True, "completed": False}
@@ -960,7 +965,7 @@ class admin_apps(models.Model):
                             
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 users[0].sudo().write({'unblocked_datetime': datetime.now()})
-                                
+                            
                             result = {"result": True, "completed": True}
                         #elif not result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
                         #    transaction[0].sudo().write({'action': 'approve'})
