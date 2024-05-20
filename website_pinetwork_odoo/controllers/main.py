@@ -419,10 +419,10 @@ class PiNetworkBaseController(http.Controller):
                         "user_uid" in result_dict and result_dict["user_uid"] == pi_users_list[0].pi_user_id:
                             data_dict = {
                                 'payment_id': kw['memo_id'],
-                                'app_id': admin_app_list[0].id,
+                                'app_id': admin_app_list[0].id
                             }
                             request.env["pi.transactions"].sudo().create(data_dict)
-                            request.env["pi.transactions"].sudo().search([('payment_id', '=', kw['memo_id']), ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
+                            request.env["pi.transactions"].sudo().search([('payment_id', '=', kw['memo_id'])]).check_transactions_one_user()
                             
                             pi_transaction = request.env["pi.transactions"].sudo().search([('action', '=', 'complete'), ('action_type', '=', 'receive'), 
                                                             ('payment_id', '=', kw['memo_id']), ('pi_user_id', '=', pi_users_list[0].pi_user_id)])
