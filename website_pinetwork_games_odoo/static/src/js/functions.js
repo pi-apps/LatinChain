@@ -226,7 +226,6 @@ $( document ).ready(function() {
                     });
               },
               onReadyForServerCompletion: function(paymentId, txid) {
-                    txid = "";
                     var data = {
                         'action': 'complete',
                         'paymentId': paymentId,
