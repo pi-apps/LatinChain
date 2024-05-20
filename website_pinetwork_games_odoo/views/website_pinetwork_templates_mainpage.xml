@@ -977,8 +977,8 @@
                                             //$("#pi_wallet_address").prop( "disabled", false );
                                             $("#streaming_url").prop( "disabled", true );
                                             
-                                            $("#button_click_memo").prop( "disabled", true );
-                                            $("#memo_id").prop( "disabled", true );
+                                            $("#button_click_memo").prop( "disabled", false );
+                                            $("#memo_id").prop( "disabled", false );
                                         }
                                     }
                                     
