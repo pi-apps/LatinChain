@@ -26,6 +26,11 @@ class pi_transactions(models.Model):
     _name = "pi.transactions"
     _description = "Pi Transactions"
 
+    _sql_constraints = [
+        # Partial constraint, complemented by a python constraint (see below).
+        ('pi_transactions_unique_key', 'unique (payment_id)', 'You can not have two transactions with the same payment_id!'),
+    ]
+
     name = fields.Char('Name')
     app_id = fields.Many2one('admin.apps', required=True, ondelete='restrict')
     app = fields.Char(related="app_id.app")
@@ -110,11 +115,13 @@ class pi_transactions(models.Model):
                     elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve" and pit.action_type == "receive":
                         pit.write({'action': 'approve'})
                     if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete" and pit.action_type == "receive":
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', result_dict["user_uid"])])
                         pit.write({'name': "complete. PaymentId: " + pit.payment_id,
                                     'action': 'complete',
                                     'payment_id': pit.payment_id,
                                     'txid': result_dict["transaction"]["txid"],
                                     'pi_user_id': result_dict["user_uid"],
+                                    'pi_user': pi_user[0].id,
                                     'amount': result_dict["amount"],
                                     'memo': result_dict["memo"],
                                     'to_address': result_dict["to_address"]})
@@ -924,7 +931,6 @@ class admin_apps(models.Model):
                                 'pi_user_id': result_dict["user_uid"],
                                 'pi_user': pi_user[0].id,
                                 'json_result': str(result_dict),
-                                'pi_user_id': result_dict["user_uid"],
                                 'amount': result_dict["amount"],
                                 'memo': result_dict["memo"],
                                 'to_address': result_dict["to_address"],

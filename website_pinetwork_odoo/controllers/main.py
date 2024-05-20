@@ -350,6 +350,90 @@ class PiNetworkBaseController(http.Controller):
         pi_users_list[0].sudo().write(values)
         
         return json.dumps({'result': True})
+    
+    @http.route('/validate-memo', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    def validate_memo(self, **kw):
+        if 'accessToken' not in kw:
+            _logger.info("accessToken not present")
+            return json.dumps({'result': False})
+        
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                _logger.info("Authorization failed")
+                return json.dumps({'result': False})
+        except:
+            _logger.info("Authorization error")
+            return json.dumps({'result': False})
+        
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+        
+        if len(pi_users_list) == 0:
+            return json.dumps({'result': False})
+        else:
+            """
+            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                _logger.info("not equeals pi_user_id")
+                return json.dumps({'result': False})
+            """
+            
+            if 'memo_id' not in kw:
+                _logger.info("memo_id not present")
+                return json.dumps({'result': False})
+            #values = {'streaming_url': kw['streaming_url']}
+            
+            pi_transaction = request.env["pi.transactions"].sudo().search([('action', '=', 'complete'), ('action_type', '=', 'receive'), 
+                                                        ('payment_id', '=', kw['memo_id'])])
+            if len(pi_transaction) > 0:
+                return json.dumps({'result': False})
+                
+            pi_transaction = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
+                                                        ('payment_id', '=', kw['memo_id'])])
+            
+            if len(pi_transaction) > 0:
+                pi_transaction.check_transactions_one_user()
+                pi_transaction = request.env["pi.transactions"].sudo().search([('action', '=', 'complete'), ('action_type', '=', 'receive'), 
+                                                        ('payment_id', '=', kw['memo_id'])])
+                if len(pi_transaction) > 0:
+                    return json.dumps({'result': True})
+                return json.dumps({'result': False})
+                
+            admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
+                
+            url = 'https://api.minepi.com/v2/payments/' + kw['memo_id']
+            
+            re = requests.get(url,headers={'Authorization': "Key " + admin_app_list[0].admin_key})
+            
+            try:
+                result = re.json()
+                
+                result_dict = json.loads(str(json.dumps(result)))
+                
+                if "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                    if "identifier" in result_dict and result_dict["identifier"] == kw['memo_id'] and \
+                        "user_uid" in result_dict and result_dict["user_uid"] == pi_users_list[0].pi_user_id:
+                            data_dict = {
+                                'payment_id': kw['memo_id'],
+                                'app_id': admin_app_list[0].id,
+                            }
+                            request.env["pi.transactions"].sudo().create(data_dict)
+                            request.env["pi.transactions"].sudo().search([('payment_id', '=', kw['memo_id'])]).check_transactions_one_user()
+                            
+                            pi_transaction = request.env["pi.transactions"].sudo().search([('action', '=', 'complete'), ('action_type', '=', 'receive'), 
+                                                            ('payment_id', '=', kw['memo_id'])])
+                            
+                            if len(pi_transaction) > 0:
+                                return json.dumps({'result': True})
+                        
+            except Exception as e:
+                return json.dumps({"result": False, "error": "SERVER MESSAGE: " + str(re)})
+        
+        return json.dumps({'result': False})
         
     @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def pi_api(self, **kw):

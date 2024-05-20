@@ -911,6 +911,9 @@
                                             $("#button_click").prop( "disabled", false );
                                             //$("#pi_wallet_address").prop( "disabled", false );
                                             $("#streaming_url").prop( "disabled", false );
+                                            
+                                            $("#button_click_memo").prop( "disabled", false );
+                                            $("#memo_id").prop( "disabled", false );
                                         }else{
                                             $("#user_logged").html(data.pi_user_code);
                                             $(".div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
@@ -973,6 +976,9 @@
                                             $("#button_click").prop( "disabled", true );
                                             //$("#pi_wallet_address").prop( "disabled", false );
                                             $("#streaming_url").prop( "disabled", true );
+                                            
+                                            $("#button_click_memo").prop( "disabled", true );
+                                            $("#memo_id").prop( "disabled", true );
                                         }
                                     }
                                     
@@ -1037,6 +1043,41 @@
                                     }).fail(function() {
                                         $("#button_click").prop( "disabled", false );
                                         $("#streaming_url").prop( "disabled", false );
+                                    });
+                                }
+                            });
+                            
+                            $('#button_click_memo').click(function() {
+                                var memo_id = $("#memo_id").val().trim();
+                                if(memo_id.length > 50)
+                                    alert($("#memo_message").text());
+                                else if(memo_id.length &lt; 20)
+                                    alert($("#memo_not_a_memo").text());
+                                else if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                {
+                                    $("#button_click_memo").prop( "disabled", true );
+                                    $("#memo_id").prop( "disabled", true );
+                                    var data = {
+                                        'pi_user_id': pi_user_id,
+                                        'pi_user_code': pi_user_code,
+                                        'memo_id': memo_id,
+                                        'passkey': passkey,
+                                        'accessToken': accessToken,
+                                        'csrf_token': odoo.csrf_token,
+                                    };
+                                    //$.ajaxSetup({async: false});
+                                    $.post( "/validate-memo", data).done(function(data) {
+                                        data = JSON.parse(data);
+                                        if(data.result)
+                                            alert($("#memo_saved").text());
+                                        else
+                                            alert($("#memo_not_saved").text());
+                                        //$("#refresh").click();
+                                        $("#button_click_memo").prop( "disabled", false );
+                                        $("#memo_id").prop( "disabled", false );
+                                    }).fail(function() {
+                                        $("#button_click_memo").prop( "disabled", false );
+                                        $("#memo_id").prop( "disabled", false );
                                     });
                                 }
                             });
@@ -1259,6 +1300,10 @@
                     <div id="streaming_url_message" style="display:none;">You can't have more than 150 characters in your URL video.</div>
                     <div id="streaming_url_not_a_video" style="display:none;">It isn't an URL youtube video.</div>
                     <div id="streaming_url_saved" style="display:none;">Your video was saved.</div>
+                    <div id="memo_message" style="display:none;">You can't have more than 50 characters in your Memo ID or Payment ID.</div>
+                    <div id="memo_not_a_memo" style="display:none;">It isn't a Memo ID or Payment ID.</div>
+                    <div id="memo_saved" style="display:none;">Your Memo ID or Payment ID was saved and completed.</div>
+                    <div id="memo_not_saved" style="display:none;">Your Memo ID or Payment ID was not saved, already completed, it's cancelled or doesn't exists in Pi Platform.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
@@ -1562,6 +1607,43 @@
                                             <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/live/AXOtWxSETew?si=3bKFA_mjb0ethVqe</textarea>
                                             <br/>A Youtube short video URL looks like this:<br/>
                                             <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/shorts/SZEljmi-wr4</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-1">
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br/>
+                        <div id="accordionThree">
+                          <div class="card">
+                            <div class="card-header" id="headingThree">
+                              <h5 class="mb-0">
+                                <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                  <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
+                                </button>
+                              </h5>
+                            </div>
+
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionThree">
+                              <div class="card-body">
+                                <div style="text-align:center" class="form-group container">
+                                    <div class="row">
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col-10">
+                                            Hello, did you lost a transaction?. Now you can register your transaction. <strong>Set your Memo ID or Payment ID here and click in Save. You can find your Memo ID or Payment ID by accessing to TXID link in Pi Blockexplorer</strong>:
+                                            <textarea id="memo_id" name="memo_id" placeholder="Memo ID" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
+                                            <br/>
+                                            <button id="button_click_memo" name="button_click_memo" class="btn btn-success" disabled="true">Save</button>
+                                            <br/>
+                                            <div>
+                                            <br/>Place your Memo ID or Payment ID in the text box above.<br/>
+                                            <br/>A Memo ID or Payment ID looks like this:<br/>
+                                            <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">WVV68I9Nz2VGHoWUV9mH3P5Te8Dn</textarea>
                                             </div>
                                         </div>
                                         <div class="col-1">
