@@ -388,17 +388,17 @@ class PiNetworkBaseController(http.Controller):
             #values = {'streaming_url': kw['streaming_url']}
             
             pi_transaction = request.env["pi.transactions"].sudo().search([('action', '=', 'complete'), ('action_type', '=', 'receive'), 
-                                                        ('payment_id', '=', kw['memo_id'])])
+                                                        ('payment_id', '=', kw['memo_id']), ('pi_user_id', '=', pi_users_list[0].pi_user_id)])
             if len(pi_transaction) > 0:
                 return json.dumps({'result': False})
                 
             pi_transaction = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
-                                                        ('payment_id', '=', kw['memo_id'])])
+                                                        ('payment_id', '=', kw['memo_id']), ('pi_user_id', '=', pi_users_list[0].pi_user_id)])
             
             if len(pi_transaction) > 0:
                 pi_transaction.check_transactions_one_user()
                 pi_transaction = request.env["pi.transactions"].sudo().search([('action', '=', 'complete'), ('action_type', '=', 'receive'), 
-                                                        ('payment_id', '=', kw['memo_id'])])
+                                                        ('payment_id', '=', kw['memo_id']), ('pi_user_id', '=', pi_users_list[0].pi_user_id)])
                 if len(pi_transaction) > 0:
                     return json.dumps({'result': True})
                 return json.dumps({'result': False})
@@ -422,10 +422,10 @@ class PiNetworkBaseController(http.Controller):
                                 'app_id': admin_app_list[0].id,
                             }
                             request.env["pi.transactions"].sudo().create(data_dict)
-                            request.env["pi.transactions"].sudo().search([('payment_id', '=', kw['memo_id'])]).check_transactions_one_user()
+                            request.env["pi.transactions"].sudo().search([('payment_id', '=', kw['memo_id']), ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
                             
                             pi_transaction = request.env["pi.transactions"].sudo().search([('action', '=', 'complete'), ('action_type', '=', 'receive'), 
-                                                            ('payment_id', '=', kw['memo_id'])])
+                                                            ('payment_id', '=', kw['memo_id']), ('pi_user_id', '=', pi_users_list[0].pi_user_id)])
                             
                             if len(pi_transaction) > 0:
                                 return json.dumps({'result': True})
