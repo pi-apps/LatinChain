@@ -220,9 +220,10 @@ class admin_apps(models.Model):
     total_users_daily_count = fields.Float('Total users daily count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     total_users_count = fields.Float('Total users count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     total_users_verified_count = fields.Float('Total users verified count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pioneers_streaming = fields.Boolean('Pioneers streaming', compute="_compute_streaming", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pioneers_streaming = fields.Boolean('Pioneers streaming', compute="_compute_streaming", store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     top_50_streamers_ids = fields.Many2many('pi.users', 'admin_apps_top_50_streamers_rel', string='Top 50 streamers', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
+    @api.depends("top_50_streamers_ids")
     def _compute_streaming(self):
         for i in self:
             pi_users_list = i.top_50_streamers_ids.ids
