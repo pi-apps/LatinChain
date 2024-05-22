@@ -221,10 +221,11 @@ class admin_apps(models.Model):
     total_users_count = fields.Float('Total users count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     total_users_verified_count = fields.Float('Total users verified count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pioneers_streaming = fields.Boolean('Pioneers streaming', compute="_compute_streaming", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    top_50_streamers_ids = fields.Many2many('pi.users', 'admin_apps_top_50_streamers_rel', string='Top 50 streamers', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     def _compute_streaming(self):
         for i in self:
-            pi_users_list = self.env["pi.users"].sudo().search([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('streaming_url', '!=', '')], limit=1)
+            pi_users_list = i.top_50_streamers_ids.ids
             
             if len(pi_users_list) > 0:
                 i.pioneers_streaming = True
@@ -237,6 +238,8 @@ class admin_apps(models.Model):
             i.total_users_daily_count = self.env["pi.users"].sudo().search_count([('last_connection', '>=', datetime.now() - timedelta(days=1))])
             i.total_users_count = self.env["pi.users"].sudo().search_count([])
             i.total_users_verified_count = self.env["pi.users"].sudo().search_count([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))])
+            pi_user_list = self.env["pi.users"].sudo().search([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+            i.top_50_streamers_ids = [(6, 0, pi_user_list.ids)]
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_winners_all_paid(self):

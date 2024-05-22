@@ -45,7 +45,6 @@
                                     <field name="block_points"/>
                             </group>
                             <group string="Winners config">
-                                    <field name="pioneers_streaming" readonly="True"/>
                                     <field name="pi_users_winners_datetime" attrs="{'required': [('pi_users_winners_count', '>', 0)]}"/>
                                     <field name="pi_users_winners_count"/>
                                     <field name="pi_users_winners_ids" widget="many2many_tags"/>
@@ -70,6 +69,10 @@
                                     <field name="pi_users_devs_to_pay_per_user"/>
                                     <field name="pi_users_devs_to_pay_percent"/>
                                     <field name="pi_users_devs_completed_payments"/>
+                            </group>
+                            <group string="Streamers">
+                                    <field name="pioneers_streaming" readonly="True"/>
+                                    <field name="top_50_streamers_ids" readonly="True"/>
                             </group>
                             <group string="Announcements message">
                                     <field name="announcement_html"/>
