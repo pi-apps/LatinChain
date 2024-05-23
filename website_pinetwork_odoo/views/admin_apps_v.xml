@@ -70,9 +70,14 @@
                                     <field name="pi_users_devs_to_pay_percent"/>
                                     <field name="pi_users_devs_completed_payments"/>
                             </group>
-                            <group string="Streamers">
+                            <group string="Leaders">
                                     <field name="pioneers_streaming" readonly="True"/>
                                     <field name="top_50_streamers_ids" readonly="True" widget="many2many_tags"/>
+                                    <field name="pi_users_leaders_zone_ids" readonly="True" widget="many2many_tags"/>
+                                    <field name="pi_users_top10_zone_ids" readonly="True" widget="many2many_tags"/>
+                                    <field name="pi_users_top10_zone_chess_ids" readonly="True" widget="many2many_tags"/>
+                                    <field name="pi_users_top10_zone_sudoku_ids" readonly="True" widget="many2many_tags"/>
+                                    <field name="pi_users_top10_zone_snake_ids" readonly="True" widget="many2many_tags"/>
                             </group>
                             <group string="Announcements message">
                                     <field name="announcement_html"/>
