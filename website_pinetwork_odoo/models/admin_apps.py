@@ -67,10 +67,16 @@ class pi_transactions(models.Model):
     
     def _compute_txid_url(self):
         for pit in self:
-            if pit.txid:
-                pit.txid_url = "https://blockexplorer.minepi.com/tx/" + pit.txid
-            else:
-                pit.txid_url = ""
+            if pit.app_id.mainnet in ['Mainnet ON', 'Mainnet OFF']:
+                if pit.txid:
+                    pit.txid_url = "https://blockexplorer.minepi.com/mainnet/tx/" + pit.txid
+                else:
+                    pit.txid_url = ""
+            elif pit.app_id.mainnet in ['Testnet ON', 'Testnet OFF']:
+                if pit.txid:
+                    pit.txid_url = "https://blockexplorer.minepi.com/testnet/tx/" + pit.txid
+                else:
+                    pit.txid_url = ""
     
     def check_transactions(self):
         for pit in self:
