@@ -867,7 +867,9 @@ class admin_apps(models.Model):
         elif kw['action'] == "complete":
             url = 'https://api.minepi.com/v2/payments/' + kw['paymentId'] + '/complete'
             
-            if kw['txid'] == "":
+            _logger.info("kw['txid'] " + kw['txid'])
+            
+            if kw['txid'] in ["", False, None]:
                 result = {"result": False, "completed": False, "approved": False, "error": "SERVER MESSAGE: " + "Payment failed no TXID."}
                 
                 return json.dumps(result)
