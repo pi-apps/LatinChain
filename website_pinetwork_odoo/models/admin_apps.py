@@ -181,8 +181,8 @@ class admin_apps(models.Model):
     pi_transactions_ids = fields.One2many('pi.transactions', 'app_id')
     pi_users_winners_datetime = fields.Datetime(string='Winners datetime', default="", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_count = fields.Integer(string='Winners count', compute="_compute_pi_users_winners_count", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_winners_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_rel', string='Winners', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
-    pi_users_winners_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+    pi_users_winners_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_rel', string='Winners', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_winners_paid_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_ids_text = fields.Text(string='Winners Text', compute="_compute_pi_winner_text", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_paid_ids_text = fields.Text(string='Winners Paid Text', compute="_compute_pi_winner_text", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_winners_ids_wallets = fields.Text(string='Winners pi wallet addresses', compute="_compute_pi_winner_text", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -221,12 +221,7 @@ class admin_apps(models.Model):
     total_users_count = fields.Float('Total users count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     total_users_verified_count = fields.Float('Total users verified count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pioneers_streaming = fields.Boolean('Pioneers streaming', compute="_compute_streaming", store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    top_50_streamers_ids = fields.Many2many('pi.users', 'admin_apps_top_50_streamers_rel', string='Top 50 streamers', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
-    pi_users_leaders_zone_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_leaders_zone_rel', string='Leaders Zone', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
-    pi_users_top10_zone_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_rel', string='Top10 Zone', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
-    pi_users_top10_zone_chess_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_chess_rel', string='Top10 Zone Chess', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points_chess desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
-    pi_users_top10_zone_sudoku_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_sudoku_rel', string='Top10 Zone Sudoku', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points_sudoku desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
-    pi_users_top10_zone_snake_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_snake_rel', string='Top10 Zone Snake', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points_snake desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
+    top_50_streamers_ids = fields.Many2many('pi.users', 'admin_apps_top_50_streamers_rel', string='Top 50 streamers', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("top_50_streamers_ids")
     def _compute_streaming(self):
@@ -238,41 +233,14 @@ class admin_apps(models.Model):
             else:
                 i.pioneers_streaming = False
 
-    def leaders_domain_def(self):
-        winner_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
-        winner_chess_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20)]
-        winner_sudoku_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_sudoku', '>', 18)]
-        winner_snake_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_snake', '>', 20)]
-        leaders_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))]
-        
-        return {'winner_domain': winner_domain, 'winner_chess_domain': winner_chess_domain, 'winner_sudoku_domain': winner_sudoku_domain, 'winner_snake_domain': winner_snake_domain, 'leaders_domain': leaders_domain}
-
     def _compute_daily(self):
         for i in self:
-            domains_def = self.leaders_domain_def()
-            leaders_domain = domains_def['leaders_domain']
-            winner_domain = domains_def['winner_domain']
-            winner_chess_domain = domains_def['winner_chess_domain']
-            winner_sudoku_domain = domains_def['winner_sudoku_domain']
-            winner_snake_domain = domains_def['winner_snake_domain']
-            
             i.total_transactions_daily_count = self.env["pi.transactions"].sudo().search_count([('create_date', '>=', datetime.now() - timedelta(days=1)), ('action', '=', 'complete')])
             i.total_users_daily_count = self.env["pi.users"].sudo().search_count([('last_connection', '>=', datetime.now() - timedelta(days=1))])
             i.total_users_count = self.env["pi.users"].sudo().search_count([])
             i.total_users_verified_count = self.env["pi.users"].sudo().search_count([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))])
             pi_user_list = self.env["pi.users"].sudo().search([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
             i.top_50_streamers_ids = [(6, 0, pi_user_list.ids)]
-            
-            pi_user_list = self.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
-            i.pi_users_leaders_zone_ids = [(6, 0, pi_user_list.ids)]
-            pi_user_list = self.env["pi.users"].sudo().search(winner_domain, limit=10, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
-            i.pi_users_top10_zone_ids = [(6, 0, pi_user_list.ids)]
-            pi_user_list = self.env["pi.users"].sudo().search(winner_chess_domain, limit=10, order="points_chess desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
-            i.pi_users_top10_zone_chess_ids = [(6, 0, pi_user_list.ids)]
-            pi_user_list = self.env["pi.users"].sudo().search(winner_sudoku_domain, limit=10, order="points_sudoku desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
-            i.pi_users_top10_zone_sudoku_ids = [(6, 0, pi_user_list.ids)]
-            pi_user_list = self.env["pi.users"].sudo().search(winner_snake_domain, limit=10, order="points_snake desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
-            i.pi_users_top10_zone_snake_ids = [(6, 0, pi_user_list.ids)]
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_winners_all_paid(self):
@@ -1025,6 +993,7 @@ class admin_apps(models.Model):
 class pi_users(models.Model):
     _name = "pi.users"
     _description = "Pi Users"
+    _order = "points desc,unblocked_datetime desc,points_datetime asc,id asc"
     
     _sql_constraints = [
         # Partial constraint, complemented by a python constraint (see below).
