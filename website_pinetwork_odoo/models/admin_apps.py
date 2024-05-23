@@ -222,11 +222,11 @@ class admin_apps(models.Model):
     total_users_verified_count = fields.Float('Total users verified count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pioneers_streaming = fields.Boolean('Pioneers streaming', compute="_compute_streaming", store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     top_50_streamers_ids = fields.Many2many('pi.users', 'admin_apps_top_50_streamers_rel', string='Top 50 streamers', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_leaders_zone_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_leaders_zone_rel', string='Leaders Zone', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_top10_zone_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_rel', string='Top10 Zone', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_top10_zone_chess_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_chess_rel', string='Top10 Zone Chess', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_top10_zone_sudoku_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_sudoku_rel', string='Top10 Zone Sudoku', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    pi_users_top10_zone_snake_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_snake_rel', string='Top10 Zone Snake', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_leaders_zone_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_leaders_zone_rel', string='Leaders Zone', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+    pi_users_top10_zone_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_rel', string='Top10 Zone', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+    pi_users_top10_zone_chess_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_chess_rel', string='Top10 Zone Chess', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points_chess desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
+    pi_users_top10_zone_sudoku_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_sudoku_rel', string='Top10 Zone Sudoku', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points_sudoku desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
+    pi_users_top10_zone_snake_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_top10_zone_snake_rel', string='Top10 Zone Snake', groups="website_pinetwork_odoo.group_pi_admin,base.group_system", order="points_snake desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
     
     @api.depends("top_50_streamers_ids")
     def _compute_streaming(self):
@@ -263,7 +263,7 @@ class admin_apps(models.Model):
             pi_user_list = self.env["pi.users"].sudo().search([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
             i.top_50_streamers_ids = [(6, 0, pi_user_list.ids)]
             
-            pi_user_list = self.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc")
+            pi_user_list = self.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
             i.pi_users_leaders_zone_ids = [(6, 0, pi_user_list.ids)]
             pi_user_list = self.env["pi.users"].sudo().search(winner_domain, limit=10, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
             i.pi_users_top10_zone_ids = [(6, 0, pi_user_list.ids)]
