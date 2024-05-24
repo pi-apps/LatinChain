@@ -610,7 +610,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_count = int(total_users_count)
         
-        pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc")
+        pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
         
         pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
@@ -638,7 +638,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_count = int(total_users_count)
         
-        pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc")
+        pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
         
         return http.request.render('website_pinetwork_odoo.list_points', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list})
     
