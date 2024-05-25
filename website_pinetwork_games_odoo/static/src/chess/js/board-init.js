@@ -31,7 +31,7 @@ var
 
 // Init engine
 
-var stockfish = new Worker('/website_pinetwork_games_odoo/static/src/chess/js/stockfish.js');
+var stockfish = new Worker('/website_pinetwork_games_odoo/static/src/chess/js/engine/stockfish-nnue-16-single.js');
 
 function dumpLog(data) {
   if (!data) {
