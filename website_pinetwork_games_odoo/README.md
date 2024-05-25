@@ -33,7 +33,7 @@ sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github
 
 snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License, 2021)
 
-chess (AGPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021, currently AGPLv3)
+chess (AGPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021. Currently it's AGPLv3, 2024)
 
 piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
 piapp-example can be browsable here: https://github.com/rockcesar/LatinChainDevelopments/tree/master/piapp-example
