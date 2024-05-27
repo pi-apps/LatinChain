@@ -169,7 +169,7 @@
                         </p>
                     </div>
                     
-                    <div style="margin: 10px">
+                    <div class="container text-center">
                         
                         <!-- LatinChain Ad responsive -->
                         
@@ -237,7 +237,7 @@
                         
                         <div class="tab-content" id="myTabContent" style="padding:10px">
                           <div class="tab-pane active" id="home">
-                                <div style="text-align:center">
+                                <div style="text-align:center; max-width: 840px">
                                     <!-- LatinChain Ad responsive -->
                                     <!--
                                     <br/>
@@ -364,7 +364,7 @@
                           </div>
                           <div class="tab-pane" id="sudoku" >
                               <!--<span t-if="mainnet != 'Mainnet ON'">-->
-                              <div style="text-align:center;">
+                              <div style="text-align:center; max-width: 840px">
                                   <!--
                                   <br/>
                                     <ins class="adsbygoogle"
@@ -560,7 +560,7 @@
                         </style>
                     </div> <!-- /container -->
                     
-                    <div style="margin: 10px">
+                    <div class="container text-center">
                         <!-- LatinChain Ad responsive 2 -->
                         
                         <ins class="adsbygoogle"

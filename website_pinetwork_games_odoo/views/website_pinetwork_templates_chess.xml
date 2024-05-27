@@ -73,11 +73,10 @@
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
-                    <div class="content">
-                        <div style="margin: 10px">
+                    <div class="content" style="text-align: center">
+                        <div class="container text-center">
                         
                             <!-- LatinChain Ad responsive -->
-                            
                             <br/>
                             <ins class="adsbygoogle"
                                  style="display:block"
@@ -141,7 +140,7 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div align="center" class="container" style="text-align:center">
+                                <div align="center" class="container" style="text-align:center; max-width:840px">
                                     <!-- LatinChain Ad responsive -->
                                     <!--
                                     <br/>
@@ -279,7 +278,7 @@
                             </div>
                               <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab">
                                   <!--<span t-if="mainnet != 'Mainnet ON'">-->
-                                  <div align="center" class="container" style="text-align:center;">
+                                  <div align="center" class="container" style="text-align:center; max-width:840px">
                                       <!--<br/>
 										  <ins class="adsbygoogle"
 											 style="display:block"
@@ -457,7 +456,7 @@
                                       </div>-->
                             </div>
                         </div>
-                        <div style="margin: 10px">
+                        <div class="container text-center">
                         
                             <!-- LatinChain Ad responsive 2 -->
                             
