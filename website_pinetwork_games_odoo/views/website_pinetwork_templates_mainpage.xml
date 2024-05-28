@@ -716,10 +716,8 @@
                             color: #000 !important;
                         }
                         
-                        .darkmode--activated div.videoCube > a > span.video-label-box > *, 
-                        .darkmode--activated div.trc_rbox_header > *,
-                        .darkmode--activated div.trc_rbox_header > div.trc_header_ext > div > a > span {
-                            color: #fff !important;
+                        .darkmode--activated #taboola-mid-article-thumbnails * {
+                          color: #fff !important;
                         }
                         
                     </style>
