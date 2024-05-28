@@ -360,6 +360,14 @@
                             .darkmode--activated .tbl-next-up-widget-item * {
                               color: #000 !important;
                             }
+                            
+                            .darkmode--activated #taboola-below-article-thumbnails * {
+                              color: #fff !important;
+                            }
+                            
+                            .video-cta-button {
+                              color: #000 !important;
+                            }
                         </style>
                     </t>
 
