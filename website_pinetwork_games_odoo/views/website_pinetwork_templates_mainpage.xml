@@ -715,6 +715,13 @@
                         .darkmode--activated button.dropdown-toggle::after {
                             color: #000 !important;
                         }
+                        
+                        .darkmode--activated div.videoCube > a > span.video-label-box > *, 
+                        .darkmode--activated div.trc_rbox_header > *,
+                        .darkmode--activated div.trc_rbox_header > div.trc_header_ext > div > a > span {
+                            color: #fff !important;
+                        }
+                        
                     </style>
                 </t>
 
@@ -1528,6 +1535,9 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div style="margin-bottom:5px">
+                            <a href="#myApps" class="btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="font-size:80%;" translate="no">Apps</div></a>
+                        </div>
                         <div id="accordionOne" style="margin-bottom:5px">
                           <div class="card">
                             <div class="card-header" id="headingOne">
@@ -1672,11 +1682,12 @@
                             </script>
                         </div>
                         
-                        <div style="text-align:center">
+                        <div style="text-align:center; position:relative;">
                             <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="width: 270px; height: 170px;" />
+                            <div id="myApps" style="display:inline; position: absolute; bottom: 0; height: 50px">
+                            </div>
                         </div>
-                        
-                        <ul class="nav nav-pills justify-content-center nav-justified rounded" id="myTab" role="tablist" style="background-color: #e3f2fd;" translate="no">
+                        <ul class="nav nav-pills justify-content-center nav-justified rounded" id="myTabApps" role="tablist" style="background-color: #e3f2fd;" translate="no">
                           <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="font-size:80%;" translate="no">Apps</div></a>
                           </li>
