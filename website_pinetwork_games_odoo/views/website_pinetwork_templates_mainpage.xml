@@ -1290,6 +1290,11 @@
                         a.btn-outline-success:active {
                             color: #fff !important;
                         }
+                        
+                        .myAppsAnchor
+                        {
+                            color: #000 !important;
+                        }
                     </style>
                 </head>
                 <body>
@@ -1647,7 +1652,7 @@
                           </div>
                         </div>
                         <div style="margin-bottom:5px">
-                            <a href="#myApps" class="myAppsAnchor btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="" translate="no">Apps</div></a>
+                            <a href="#myApps" class="myAppsAnchor btn btn-outline-info font-weight-bold border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-rocket"></i></div><div translate="no">Apps</div></a>
                         </div>
                         <!--<div style="text-align:center">
                             <br/>LatinChain TV:<br/><br/>
