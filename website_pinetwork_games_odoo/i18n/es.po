@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-20 19:41+0000\n"
-"PO-Revision-Date: 2024-05-20 19:41+0000\n"
+"POT-Creation-Date: 2024-05-31 22:26+0000\n"
+"PO-Revision-Date: 2024-05-31 22:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -43,6 +43,11 @@ msgstr "* Reglas para estar en el Leaders Board:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "* Rules to be in the Top 10 Board:"
 msgstr "* Reglas para estar en el Top 10 Board:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "* Rules to be in the Top 50 streamers:"
+msgstr "* Reglas para estar en el Top 50 streamers:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -130,6 +135,15 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
+"2.- Add your Youtube video link at <strong>Are you Youtuber?</strong> on "
+"mainscreen."
+msgstr ""
+"2.- Agregar tu link de video de Youtube en <strong>Eres Youtuber?</strong> "
+"en la pantalla principal."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
 "2.- Be in the first 10 on the Leaders Board or in the Top 10 Board (Top 10 "
 "zone, Top 10 zone Chess, Top 10 zone Snake or Top 10 zone Sudoku). It is "
 "filled automatically at 16:00 UTC."
@@ -209,6 +223,15 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"3.- Be one of the first 50 users with more total points, who have added "
+"their Youtube video links."
+msgstr ""
+"3.- Ser uno de los primeros 50 usuarios con más puntos totales, que hayan "
+"agregado sus links de video de Youtube."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "3.- For Top 10 zone Chess: Have 20 or more points in Chess."
 msgstr "3.- Para el Top 10 zone Chess: Tener 20 ó más puntos en Chess."
 
@@ -268,6 +291,15 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "4.- On OpenMainnet we will pay the 15th day of each month."
 msgstr "4.- En OpenMainnet vamos a pagar el día 15 de cada mes."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"4.- This list will be updated each 1 minute, so after you save your Youtube "
+"video link, you should wait 1 minute to be added on the list."
+msgstr ""
+"4.- Esta lista será actualizada cada 1 minuto, así que luego que guardes tu link de "
+"video de Youtube, debe esperar 1 minuto para ser agregado a la lista."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -426,7 +458,7 @@ msgstr "<br/>Otros desarrollos:<br/><br/>"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>Place your Memo ID or Payment ID in the text box above.<br/>\n"
-"                                            <br/>A Memo ID or Payment ID looks like this:<br/>"
+"                                                <br/>A Memo ID or Payment ID looks like this:<br/>"
 msgstr ""
 "<br/>Coloca tu Memo ID ó Payment ID en la caja de texto de arriba.<br/>\n"
 "                                            <br/>Un Memo ID ó Payment ID se ve así:<br/>"
@@ -435,7 +467,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>Place your own Youtube video url in the text box above. You can use Normal video, Live transmission or Short.<br/>\n"
-"                                            <br/>A Youtube video URL looks like this:<br/>"
+"                                                <br/>A Youtube video URL looks like this:<br/>"
 msgstr ""
 "<br/>Coloca tu propia URL de video de Youtube en la caja de texto de arriba. Puedes usar un Video normal, Transmisión en vivo ó Short.<br/>\n"
 "                                            <br/>La URL de un video de Youtube se ve así:<br/>"
@@ -675,7 +707,7 @@ msgstr "Todos los datos aquí como premios y pago mínimo, se refieren a"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>\n"
-"                                            Here you can watch your incoming and outcoming transactions:<br/>"
+"                                                Here you can watch your incoming and outcoming transactions:<br/>"
 msgstr ""
 "Todos los pagos de premios se pagarán automáticamente a su Pi Wallet asociada en su navegador Pi.<br/><br/>\n"
 "                                            Aquí puede ver sus transacciones entrantes y salientes:<br/>"
@@ -730,6 +762,11 @@ msgstr "Negras"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "CHESS"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "COINTELEGRAPH"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -878,8 +915,8 @@ msgid ""
 "Blockexplorer</strong>:"
 msgstr ""
 "Hola, perdiste una transacción?. Ahora puedes registrar tu transacción. "
-"<strong>Coloca tu Memo ID ó Payment ID aquí y click en Guardar. Puedes encontrar "
-"tu Memo ID ó Payment ID accediendo a tu link TXID en Pi "
+"<strong>Coloca tu Memo ID ó Payment ID aquí y click en Guardar. Puedes "
+"encontrar tu Memo ID ó Payment ID accediendo a tu link TXID en Pi "
 "Blockexplorer</strong>:"
 
 #. module: website_pinetwork_games_odoo
@@ -962,7 +999,7 @@ msgstr "Unirse al Twitter"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Last 24 hours: \n"
-"                            <br/>"
+"                                <br/>"
 msgstr ""
 "Últimas 24 horas: \n"
 "                                <br/>"
@@ -1284,11 +1321,6 @@ msgid "Switch Sides"
 msgstr "Intercambia Lado"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "TELEGRAPH"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "TXID"
 msgstr ""
@@ -1462,8 +1494,8 @@ msgid ""
 "Your Memo ID or Payment ID was not saved, already completed, it's cancelled "
 "or doesn't exists in Pi Platform."
 msgstr ""
-"Tu Memo ID ó Payment ID no fue guardada, ya estaba completada, está cancelada "
-"ó no existe en Pi Platform."
+"Tu Memo ID ó Payment ID no fue guardada, ya estaba completada, está "
+"cancelada ó no existe en Pi Platform."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
