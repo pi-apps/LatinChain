@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-31 22:26+0000\n"
-"PO-Revision-Date: 2024-05-31 22:26+0000\n"
+"POT-Creation-Date: 2024-06-03 20:32+0000\n"
+"PO-Revision-Date: 2024-06-03 20:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -298,8 +298,9 @@ msgid ""
 "4.- This list will be updated each 1 minute, so after you save your Youtube "
 "video link, you should wait 1 minute to be added on the list."
 msgstr ""
-"4.- Esta lista será actualizada cada 1 minuto, así que luego que guardes tu link de "
-"video de Youtube, debe esperar 1 minuto para ser agregado a la lista."
+"4.- Esta lista será actualizada cada 1 minuto, así que luego que guardes tu "
+"link de video de Youtube, debe esperar 1 minuto para ser agregado a la "
+"lista."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -853,8 +854,8 @@ msgstr "Done la criptomoneda Pi aquí"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-msgid "Donate to unblock"
-msgstr "Dona para desbloquear"
+msgid "Donate to unblock with"
+msgstr "Dona para desbloquear con"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -1075,6 +1076,11 @@ msgid "Mainnet ON. Ready to play.<br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Mainnet status"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Medium puzzle"
 msgstr "Juego medio"
@@ -1131,6 +1137,8 @@ msgstr "Pausa"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Pi"
@@ -1289,11 +1297,6 @@ msgstr "Muestra Pista"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Start"
 msgstr "Iniciar"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Status"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
