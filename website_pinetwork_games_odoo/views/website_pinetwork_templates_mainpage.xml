@@ -1764,6 +1764,11 @@
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
+                                        <div class="col-12"><button id="leaderboard" class="col-11 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:100%;">Leaders Board</div></button></div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                    <div class="row">
                                         <div class="col-12"><button id="winnerboard" class="col-11 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:100%;">Top 10 Board</div></button></div>
                                     </div>
                                 </li>
