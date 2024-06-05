@@ -714,6 +714,10 @@
                             color: #fff !important;
                         }
                         
+                        .darkmode--activated .list-group-item {
+                            background-color: #484848 !important;
+                        }
+                        
                         .darkmode--activated a > i.fa-home,
                         .darkmode--activated a > i.fa-home:hover,
                         .darkmode--activated a > i.fa-home:active {
