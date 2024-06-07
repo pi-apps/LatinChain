@@ -368,6 +368,13 @@
                             .video-cta-button {
                               color: #000 !important;
                             }
+                            
+                            .darkmode--activated .btn-info, 
+                            .darkmode--activated .btn-primary, 
+                            .darkmode--activated .btn-success, 
+                            .darkmode--activated a.btn-success {
+                              filter: contrast(100%);
+                            }
                         </style>
                     </t>
 
