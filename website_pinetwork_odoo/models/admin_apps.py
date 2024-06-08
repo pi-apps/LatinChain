@@ -1095,8 +1095,9 @@ class admin_apps(models.Model):
                                 users[0].sudo().write({'unblocked_datetime': datetime.now()})
                                 self.env.cr.commit()
                                 try:
-                                    admin_app[0]._pay_referrer(users[0])
-                                    self.env.cr.commit()
+                                    if "LatinChain".upper() in transaction[0].memo.upper():
+                                        admin_app[0]._pay_referrer(users[0])
+                                        self.env.cr.commit()
                                 except Exception as e:
                                     pass
                             
