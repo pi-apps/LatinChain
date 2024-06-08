@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-08 22:43+0000\n"
-"PO-Revision-Date: 2024-05-08 22:43+0000\n"
+"POT-Creation-Date: 2024-06-08 13:37+0000\n"
+"PO-Revision-Date: 2024-06-08 13:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -717,6 +717,21 @@ msgid "Receive"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__pi_user_referrer_id
+msgid "Referrer code"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_referrer_amount
+msgid "Referrers amount"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Referrers config"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__sandbox
 msgid "Sandbox"
 msgstr ""
@@ -747,6 +762,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_snake_wins
 msgid "Snake Wins"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Streamers"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -821,6 +841,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 msgid "Top 10 zone Sudoku ("
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__top_50_streamers_ids
+msgid "Top 50 streamers"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -924,10 +949,10 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
 msgid ""
 "UTC<br/><br/>\n"
-"                        Pi cryptocurrency Transactions for user <strong><span id=\"username\"/></strong>:<br/><br/>"
+"                        Pi cryptocurrency Transactions for user <strong translate=\"no\"><span id=\"username\"/></strong>:<br/><br/>"
 msgstr ""
 "UTC<br/><br/>\n"
-"                        Transacciones de la criptomoneda Pi para el usuario <strong><span id=\"username\"/></strong>:<br/><br/>"
+"                        Transacciones de la criptomoneda Pi para el usuario <strong translate=\"no\"><span id=\"username\"/></strong>:<br/><br/>"
 
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__unblocked
@@ -1067,6 +1092,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.constraint,message:website_pinetwork_odoo.constraint_admin_apps_admin_apps_unique_key
 msgid "You can not have two app with the same App code!"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.constraint,message:website_pinetwork_odoo.constraint_pi_transactions_pi_transactions_unique_key
+msgid "You can not have two transactions with the same payment_id!"
 msgstr ""
 
 #. module: website_pinetwork_odoo

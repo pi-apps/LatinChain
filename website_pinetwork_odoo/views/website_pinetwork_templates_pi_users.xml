@@ -1314,7 +1314,7 @@
                         <button id="back" class="btn btn-info" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                         <br/><br/>
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
-                        Pi cryptocurrency Transactions for user <strong><span id="username" /></strong>:<br/><br/>
+                        Pi cryptocurrency Transactions for user <strong translate="no"><span id="username" /></strong>:<br/><br/>
                         <table id="transactions" class="display" style="">
                             <thead>
                                 <tr>
