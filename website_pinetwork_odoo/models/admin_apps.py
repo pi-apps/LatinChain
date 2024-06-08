@@ -841,7 +841,7 @@ class admin_apps(models.Model):
             for winner in i.pi_users_winners_ids:
                 i.pi_users_winners_ids_wallets += str(winner.pi_wallet_address) + ", "
     
-    def pay_referrer(self, pi_user_id):
+    def _pay_referrer(self, pi_user_id):
         for self_i in self:
             
             """ 
@@ -1095,7 +1095,7 @@ class admin_apps(models.Model):
                                 users[0].sudo().write({'unblocked_datetime': datetime.now()})
                                 self.env.cr.commit()
                                 try:
-                                    admin_app[0].pay_referrer(users[0])
+                                    admin_app[0]._pay_referrer(users[0])
                                     self.env.cr.commit()
                                 except Exception as e:
                                     pass
