@@ -856,21 +856,19 @@ class admin_apps(models.Model):
             
             api_key = admin_app_list.admin_key
             wallet_private_seed = admin_app_list.wallet_private_seed
-            _logger.info("1")
+            
             if admin_app_list.mainnet == "Mainnet ON":
                 network = "Pi Network"
             else:
                 network = "Pi Testnet"
-            _logger.info("2")
+            
             """ Initialization """
             pi = pi_python.PiNetwork()
             pi.initialize(api_key, wallet_private_seed, network)
-            _logger.info("3")
-            _logger.info("34")
+            
             """ Check for incomplete payments """
             incomplete_payments = pi.get_incomplete_server_payments()
-            _logger.info("35")
-            _logger.info("4")
+            
             """ Handle incomplete payments first """
             if len(incomplete_payments) > 0:
                 for i in incomplete_payments:
@@ -905,11 +903,11 @@ class admin_apps(models.Model):
                             self_i.env.cr.commit()
                         else:
                             pi.cancel_payment(i["identifier"])
-            _logger.info("5")
+            
             referrer = pi_user_id.pi_user_referrer_id
-            _logger.info("6")
+            
             for i in referrer:
-                _logger.info("7")
+                
                 """ 
                     Example Data
                     Get the user_uid from the Frontend
@@ -926,7 +924,7 @@ class admin_apps(models.Model):
 
                 """ Create an payment """
                 payment_id = pi.create_payment(payment_data)
-                _logger.info("8")
+                
                 """ 
                     Submit the payment and receive the txid
                     
@@ -934,9 +932,9 @@ class admin_apps(models.Model):
                 """
                 if payment_id and len(payment_id) > 0:
                     txid = pi.submit_payment(payment_id, False)
-                    _logger.info("9")
+                    
                     if txid and len(txid) > 0:
-                        _logger.info("10")
+                        
                         """ Complete the Payment """
                         result = self.pi_api({'paymentId': payment_id,
                                         'app_client': 'auth_platform',
