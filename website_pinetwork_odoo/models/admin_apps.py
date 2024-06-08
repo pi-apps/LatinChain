@@ -842,9 +842,7 @@ class admin_apps(models.Model):
                 i.pi_users_winners_ids_wallets += str(winner.pi_wallet_address) + ", "
     
     def pay_referrer(self, pi_user_id):
-        _logger.info("0")
         for self_i in self:
-            _logger.info("01")
             
             """ 
                 Your SECRET Data 
