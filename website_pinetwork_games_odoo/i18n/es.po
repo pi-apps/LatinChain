@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-08 10:00+0000\n"
-"PO-Revision-Date: 2024-06-08 10:00+0000\n"
+"POT-Creation-Date: 2024-06-08 10:42+0000\n"
+"PO-Revision-Date: 2024-06-08 10:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -315,6 +315,19 @@ msgid ""
 msgstr ""
 "4.- Puedes transmitir tus videos de Youtube a la comunidad LatinChain, "
 "estando en el Top 50 streamers con más puntos."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"5.- Each user that sets your referrer code at LatinChain's mainscreen, will "
+"generates you an income, that will be paid to your Pi wallet each time any "
+"of your referrers pay to unblock LatinChain. If <strong>rockcesar</strong> "
+"sets your referrer code, then each time <strong>rockcesar</strong> pays"
+msgstr ""
+"5.- Cada usuario que coloque tu código de referido en la pantalla principal de LatinChain, va "
+"a generarte un ingreso, esto va a ser pagado a tu P wallet cada vez que alguno "
+"de tus referidos paguen para desbloquear LatinChain. Si <strong>rockcesar</strong> "
+"coloca tu código de referido, entonces cada vez que <strong>rockcesar</strong> pague"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1131,8 +1144,8 @@ msgid ""
 "Now you can set the referrer code of another Pioneer (not yours), to whom we"
 " will pay an amount for being your referrer, and click in Save:"
 msgstr ""
-"Ahora puedes colocar el código de referido de otro Pionero (no el tuyo), a quien vamos"
-" a pagarle un monto por ser tu referido, y click en Guardar:"
+"Ahora puedes colocar el código de referido de otro Pionero (no el tuyo), a "
+"quien vamos a pagarle un monto por ser tu referido, y click en Guardar:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1172,6 +1185,17 @@ msgstr "Pi cada 30 días:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Pi referrer code"
 msgstr "Código Pi de referido"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"Pi, an amount of that payment will go to your Pi wallet. Although, we can't "
+"assure that payment due any Platform issue, we can say that in a normal "
+"situation, it will be paid."
+msgstr ""
+"Pi, un monto de ese pago va a ir a tu Pi wallet. Aunque, no podemos "
+"asegurar ese pago debido a algún problema en la Plataforma, podemos decir que en una situación "
+"normal, va a ser pagado."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
