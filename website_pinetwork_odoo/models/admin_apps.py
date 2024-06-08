@@ -1094,10 +1094,12 @@ class admin_apps(models.Model):
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 users[0].sudo().write({'unblocked_datetime': datetime.now()})
                                 self.env.cr.commit()
+                                
                                 try:
-                                    if "LatinChain".upper() in transaction[0].memo.upper():
-                                        admin_app[0]._pay_referrer(users[0])
-                                        self.env.cr.commit()
+                                    if admin_app[0].mainnet in ["Testnet ON", "Testnet OFF"]:
+                                        if "LatinChain".upper() in transaction[0].memo.upper():
+                                            admin_app[0]._pay_referrer(users[0])
+                                            self.env.cr.commit()
                                 except Exception as e:
                                     pass
                             

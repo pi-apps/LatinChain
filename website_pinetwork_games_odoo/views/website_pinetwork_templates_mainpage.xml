@@ -1663,7 +1663,7 @@
                             <div class="div_user_status">
                                 <strong class="user_status"></strong>
                             </div>
-                            <div id="accordionFirst" style="margin-bottom:5px">
+                            <div id="accordionFirst" style="margin-bottom:5px" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                               <div class="card">
                                 <div class="card-header" id="headingFirst">
                                   <h5 class="mb-0">
