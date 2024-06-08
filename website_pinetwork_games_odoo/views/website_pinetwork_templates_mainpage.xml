@@ -935,10 +935,14 @@
                                             $("#user_points_datetime").html(data.points_datetime);
                                             //$("#pi_wallet_address").val(data.pi_wallet_address);
                                             $("#streaming_url").val(data.streaming_url);
+                                            $("#referrer_code").val(data.referrer_code);
                                             
                                             $("#button_click").prop( "disabled", false );
                                             //$("#pi_wallet_address").prop( "disabled", false );
                                             $("#streaming_url").prop( "disabled", false );
+                                            
+                                            $("#button_click_referrer").prop( "disabled", false );
+                                            $("#referrer_code").prop( "disabled", false );
                                             
                                             $("#button_click_memo").prop( "disabled", false );
                                             $("#memo_id").prop( "disabled", false );
@@ -1000,10 +1004,12 @@
                                             $("#user_points_datetime").html(data.points_datetime);
                                             //$("#pi_wallet_address").val(data.pi_wallet_address);
                                             $("#streaming_url").val(data.streaming_url);
+                                            $("#referrer_code").val(data.referrer_code);
                                             
                                             $("#button_click").prop( "disabled", true );
                                             //$("#pi_wallet_address").prop( "disabled", false );
                                             $("#streaming_url").prop( "disabled", true );
+                                            $("#referrer_code").prop( "disabled", true );
                                             
                                             $("#button_click_memo").prop( "disabled", false );
                                             $("#memo_id").prop( "disabled", false );
@@ -1106,6 +1112,40 @@
                                     }).fail(function() {
                                         $("#button_click_memo").prop( "disabled", false );
                                         $("#memo_id").prop( "disabled", false );
+                                    });
+                                }
+                            });
+                            
+                            $('#button_click_referrer').click(function() {
+                                var referrer_code = $("#referrer_code").val().trim();
+                                if(referrer_code.length > 150)
+                                    alert($("#referrer_code_message").text());
+                                else if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                {
+                                    $("#button_click_refferer").prop( "disabled", true );
+                                    $("#refferer_code").prop( "disabled", true );
+                                    var data = {
+                                        'pi_user_id': pi_user_id,
+                                        'pi_user_code': pi_user_code,
+                                        'referrer_code': referrer_code,
+                                        'passkey': passkey,
+                                        'accessToken': accessToken,
+                                        'csrf_token': odoo.csrf_token,
+                                    };
+                                    //$.ajaxSetup({async: false});
+                                    $.post( "/set-referrer-code", data).done(function(data) {
+                                        data = JSON.parse(data);
+                                        if(data.result)
+                                            alert($("#referrer_code_saved").text());
+                                        else
+                                            $("#referrer_code").val("");
+                                            
+                                        //$("#refresh").click();
+                                        $("#button_click_referrer").prop( "disabled", false );
+                                        $("#referrer_code").prop( "disabled", false );
+                                    }).fail(function() {
+                                        $("#button_click_referrer").prop( "disabled", false );
+                                        $("#referrer_code").prop( "disabled", false );
                                     });
                                 }
                             });
@@ -1337,6 +1377,8 @@
                     <div id="memo_not_a_memo" style="display:none;">It isn't a Memo ID or Payment ID.</div>
                     <div id="memo_saved" style="display:none;">Your Memo ID or Payment ID was saved and completed.</div>
                     <div id="memo_not_saved" style="display:none;">Your Memo ID or Payment ID was not saved, already completed, it's cancelled or doesn't exists in Pi Platform.</div>
+                    <div id="referrer_code_message" style="display:none;">You can't have more than 150 characters in your Referrer code.</div>
+                    <div id="referrer_code_saved" style="display:none;">Your referrer code was saved.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
@@ -1618,7 +1660,36 @@
                             <div class="div_user_status">
                                 <strong class="user_status"></strong>
                             </div>
-                            
+                            <div id="accordionFirst" style="margin-bottom:5px">
+                              <div class="card">
+                                <div class="card-header" id="headingFirst">
+                                  <h5 class="mb-0">
+                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseFirst" aria-expanded="true" aria-controls="collapseFirst">
+                                      <div style=""><i class="fab fa-youtube"></i></div><div style="">Set your Pi referrer code</div>
+                                    </button>
+                                  </h5>
+                                </div>
+
+                                <div id="collapseFirst" class="collapse" aria-labelledby="headingFirst" data-parent="#accordionFirst">
+                                  <div class="card-body">
+                                    <div style="text-align:center" class="form-group container">
+                                        <div class="row">
+                                            <div class="col-1">
+                                            </div>
+                                            <div class="col-10">
+                                                Now you can set the referrer code of another Pioneer (not yours), to whom we will pay an amount for being your referrer, and click in Save:
+                                                <textarea id="referrer_code" name="referrer_code" placeholder="Pi referrer code" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
+                                                <br/>
+                                                <button id="button_click_referrer" name="button_click_referrer" class="btn btn-success" disabled="true">Save</button>
+                                            </div>
+                                            <div class="col-1">
+                                            </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                             <div class="p-3 mb-2 bg-info bg-gradient text-white rounded">
                                 Last 24 hours: 
                                 <br/>

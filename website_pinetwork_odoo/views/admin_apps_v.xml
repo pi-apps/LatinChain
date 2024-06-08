@@ -44,6 +44,9 @@
                                     <field name="a_ads_style_3"/>
                                     <field name="block_points"/>
                             </group>
+                            <group string="Referrers config">
+                                <field name="pi_referrer_amount"/>
+                            </group>
                             <group string="Winners config">
                                     <field name="pi_users_winners_datetime" attrs="{'required': [('pi_users_winners_count', '>', 0)]}"/>
                                     <field name="pi_users_winners_count"/>

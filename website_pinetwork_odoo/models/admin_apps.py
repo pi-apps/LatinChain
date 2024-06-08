@@ -211,6 +211,7 @@ class admin_apps(models.Model):
     pi_users_devs_completed_payments = fields.Integer('Devs To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,7), default=1)
+    pi_referrer_amount = fields.Float('Referrers amount', digits=(50,7), default=0.05)
     google_adsense = fields.Char('Google Adsense src', required=True, default="Set your Google Adsense", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     google_adsense_ads_txt = fields.Text('Google Adsense ads.txt', default="Set your Google Adsense ads.txt", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     a_ads = fields.Char('A-Ads.com src', required=True, default="Set your A-Ads.com URL", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -840,6 +841,121 @@ class admin_apps(models.Model):
             for winner in i.pi_users_winners_ids:
                 i.pi_users_winners_ids_wallets += str(winner.pi_wallet_address) + ", "
     
+    def pay_referrer(self, pi_user_id):
+        _logger.info("0")
+        for self_i in self:
+            _logger.info("01")
+            
+            """ 
+                Your SECRET Data 
+                Visit the Pi Developer Portal to get these data
+                
+                 DO NOT expose these values to public
+            """
+            admin_app_list = self_i
+            
+            api_key = admin_app_list.admin_key
+            wallet_private_seed = admin_app_list.wallet_private_seed
+            _logger.info("1")
+            if admin_app_list.mainnet == "Mainnet ON":
+                network = "Pi Network"
+            else:
+                network = "Pi Testnet"
+            _logger.info("2")
+            """ Initialization """
+            pi = pi_python.PiNetwork()
+            pi.initialize(api_key, wallet_private_seed, network)
+            _logger.info("3")
+            _logger.info("34")
+            """ Check for incomplete payments """
+            incomplete_payments = pi.get_incomplete_server_payments()
+            _logger.info("35")
+            _logger.info("4")
+            """ Handle incomplete payments first """
+            if len(incomplete_payments) > 0:
+                for i in incomplete_payments:
+                    if i["transaction"] == None:
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
+                        if len(pi_user) > 0:
+                            txid = pi.submit_payment(i["identifier"], i)
+                            
+                            if txid:
+                                result = self.pi_api({'paymentId': i["identifier"],
+                                            'app_client': 'auth_platform',
+                                            'action': 'complete',
+                                            'pi_user_code': pi_user[0].pi_user_code,
+                                            'txid': txid})
+                            
+                                result = json.loads(result)
+                                #pi.complete_payment(i["identifier"], txid)
+                                self_i.env.cr.commit()
+                            else:
+                                pi.cancel_payment(i["identifier"])
+                    else:
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
+                        if len(pi_user) > 0:
+                            result = self.pi_api({'paymentId': i["identifier"],
+                                            'app_client': 'auth_platform',
+                                            'action': 'complete',
+                                            'pi_user_code': pi_user[0].pi_user_code,
+                                            'txid': i["transaction"]["txid"]})
+                            
+                            result = json.loads(result)
+                            #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
+                            self_i.env.cr.commit()
+                        else:
+                            pi.cancel_payment(i["identifier"])
+            _logger.info("5")
+            referrer = pi_user_id.pi_user_referrer_id
+            _logger.info("6")
+            for i in referrer:
+                _logger.info("7")
+                """ 
+                    Example Data
+                    Get the user_uid from the Frontend
+                """
+                user_uid = i.pi_user_id #unique for every user
+
+                """ Build your payment """
+                payment_data = {
+                  "amount": float(admin_app_list.pi_referrer_amount),
+                  "memo": "Referrer payment from LatinChain Platform coming from " + pi_user_id.pi_user_code,
+                  "metadata": {"internal_data": "Payment prize from LatinChain Platform"},
+                  "uid": user_uid
+                }
+
+                """ Create an payment """
+                payment_id = pi.create_payment(payment_data)
+                _logger.info("8")
+                """ 
+                    Submit the payment and receive the txid
+                    
+                    Store the txid on your side!
+                """
+                if payment_id and len(payment_id) > 0:
+                    txid = pi.submit_payment(payment_id, False)
+                    _logger.info("9")
+                    if txid and len(txid) > 0:
+                        _logger.info("10")
+                        """ Complete the Payment """
+                        result = self.pi_api({'paymentId': payment_id,
+                                        'app_client': 'auth_platform',
+                                        'action': 'complete',
+                                        'pi_user_code': i.pi_user_code,
+                                        'txid': txid})
+                                        
+                        result = json.loads(result)
+                    
+                        #payment = pi.complete_payment(payment_id, txid)
+                        
+                        #winner_paid_list.append(i.id)
+                        
+                        #self_i.pi_users_winners_paid_ids = [(4, i.id)]
+                        
+                        self_i.env.cr.commit()
+                    else:
+                        pi.cancel_payment(payment_id)
+    
     def pi_api(self, kw):
         
         admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
@@ -981,6 +1097,12 @@ class admin_apps(models.Model):
                             
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 users[0].sudo().write({'unblocked_datetime': datetime.now()})
+                                self.env.cr.commit()
+                                try:
+                                    admin_app[0].pay_referrer(users[0])
+                                    self.env.cr.commit()
+                                except Exception as e:
+                                    pass
                             
                             result = {"result": True, "completed": True}
                         #elif not result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
@@ -1036,6 +1158,7 @@ class pi_users(models.Model):
     admin_apps_winners_paid_ids = fields.Many2many('admin.apps', 'admin_apps_pi_users_winners_paid_rel', string='Winners Paid Apps', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     donator = fields.Boolean('Donator', compute="_compute_donator", store=True)
     paid_in_all_donations = fields.Float('Paid by user in donations', compute="_compute_donator", store=True, digits=(50,7))
+    pi_user_referrer_id = fields.Many2one('pi.users', string='Referrer code', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
     def _compute_donator(self):
