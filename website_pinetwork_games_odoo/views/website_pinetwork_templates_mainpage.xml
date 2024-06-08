@@ -1213,6 +1213,8 @@
                                         accessToken = auth.accessToken;
                                         $("#username").html(" " + auth.user.username);
                                         
+                                        $(".referrer_username").html("<strong>" + auth.user.username + "</strong>");
+                                        
                                         leaderboard = "/get-points/" + auth.user.username;
                                         winnerboard = "/get-top10-zone/" + auth.user.username;
                                         winnerzoneboard = "/get-winners-zone/" + auth.user.username;
@@ -1249,7 +1251,7 @@
                             btn.addEventListener('click', async () => {
                                 const shareData = {
                                     title: 'LatinChain Platform',
-                                    text: $("#share_message").text() + "\n\nMainnet:\nhttps://latin-chain.com/\nTestnet:\nhttps://test.latin-chain.com/\nCrypto news:\nhttps://news.latin-chain.com/",
+                                    text: $("#share_message").text() + "\n\nMainnet:\nhttps://latin-chain.com/\nTestnet:\nhttps://test.latin-chain.com/\nCrypto news:\nhttps://news.latin-chain.com/\n\n" + $("#pi_username_message").text(),
                                     //url: 'https://latin-chain.com/',
                                 }
                                 
@@ -1369,6 +1371,7 @@
                     <div id="not_verified_1_message" style="display:none;">Not verified. Each 30 days you should unlock the app paying </div>
                     <div id="not_verified_2_message" style="display:none;">Go to one of the games to do it.</div>
                     <div id="share_message" style="display:none;">Hi. Check it out this Pi App: LatinChain Platform (Games from Latin America for Pi). Try it in Pi Browser. #PiNetwork #PiApps</div>
+                    <div id="pi_username_message" style="display:none;">Pi username: <span class="referrer_username"></span></div>
                     <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
                     <div id="streaming_url_message" style="display:none;">You can't have more than 150 characters in your URL video.</div>
                     <div id="streaming_url_not_a_video" style="display:none;">It isn't an URL youtube video.</div>
@@ -1681,6 +1684,8 @@
                                                 <textarea id="referrer_code" name="referrer_code" placeholder="Pi referrer code" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
                                                 <br/>
                                                 <button id="button_click_referrer" name="button_click_referrer" class="btn btn-success" disabled="true">Save</button>
+                                                <br/><br/>
+                                                You can share your Pi username, to let others set it as their referrer code. Your Pi username is: <span class="referrer_username"></span>
                                             </div>
                                             <div class="col-1">
                                             </div>
