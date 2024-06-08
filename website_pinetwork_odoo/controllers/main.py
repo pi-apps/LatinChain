@@ -246,6 +246,11 @@ class PiNetworkBaseController(http.Controller):
         
         result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
                                                                 ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
+        
+        if pi_users_list[0].pi_user_referrer_id:
+            referrer_code = pi_users_list[0].pi_user_referrer_id.pi_user_code
+        else:
+            referrer_code = ""
             
         request.env.cr.commit()
         
@@ -267,6 +272,7 @@ class PiNetworkBaseController(http.Controller):
                             'passkey': passkey,
                             'im_winner': im_winner, 'pi_wallet_address': pi_users_list[0].pi_wallet_address,
                             'streaming_url': pi_users_list[0].streaming_url,
+                            'referrer_code': referrer_code,
                             'complete_found': result_found['complete_found']})
     
     @http.route('/set-pi-wallet', type='http', auth="public", website=True, csrf=False, methods=['POST'])
