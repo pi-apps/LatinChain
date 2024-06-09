@@ -1096,7 +1096,7 @@ class admin_apps(models.Model):
                                 
                                 try:
                                     if admin_app[0].mainnet in ["Testnet ON", "Testnet OFF"]:
-                                        if "LatinChain".upper() in transaction[0].memo.upper():
+                                        if "LatinChain".upper() in transaction[0].memo.upper() and users[0].pi_user_referrer_id:
                                             admin_app[0]._pay_referrer(users[0], users[0].pi_user_referrer_id)
                                             admin_app[0]._pay_referrer(users[0], users[0])
                                 except Exception as e:
