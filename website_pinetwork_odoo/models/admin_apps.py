@@ -841,7 +841,7 @@ class admin_apps(models.Model):
             for winner in i.pi_users_winners_ids:
                 i.pi_users_winners_ids_wallets += str(winner.pi_wallet_address) + ", "
     
-    def _pay_referrer(self, pi_user_id):
+    def _pay_referrer(self, pi_user_id, pi_user_referrer_id):
         for self_i in self:
             
             """ 
@@ -902,7 +902,7 @@ class admin_apps(models.Model):
                         else:
                             pi.cancel_payment(i["identifier"])
             
-            referrer = pi_user_id.pi_user_referrer_id
+            referrer = pi_user_referrer_id
             
             for i in referrer:
                 
@@ -1097,7 +1097,8 @@ class admin_apps(models.Model):
                                 try:
                                     if admin_app[0].mainnet in ["Testnet ON", "Testnet OFF"]:
                                         if "LatinChain".upper() in transaction[0].memo.upper():
-                                            admin_app[0]._pay_referrer(users[0])
+                                            admin_app[0]._pay_referrer(users[0], users[0].pi_user_referrer_id)
+                                            admin_app[0]._pay_referrer(users[0], users[0])
                                 except Exception as e:
                                     pass
                             
