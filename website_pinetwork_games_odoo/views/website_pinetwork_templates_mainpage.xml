@@ -1663,7 +1663,7 @@
                             <div class="div_user_status">
                                 <strong class="user_status"></strong>
                             </div>
-                            <div id="accordionFirst" style="margin-bottom:5px" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                            <div id="accordionFirst" style="margin-bottom:5px" t-if="mainnet in [False]">
                               <div class="card">
                                 <div class="card-header" id="headingFirst">
                                   <h5 class="mb-0">
@@ -1680,6 +1680,7 @@
                                             <div class="col-1">
                                             </div>
                                             <div class="col-10">
+                                                <div>Soon available, not yet.<br/></div>
                                                 Now you can set the referrer code of another Pioneer (not yours), to whom we will pay an amount for being your referrer, also you will receive a payback of the same amount of your referrer. Then, click in Save:
                                                 <textarea id="referrer_code" name="referrer_code" placeholder="Pi referrer code" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
                                                 <br/>
