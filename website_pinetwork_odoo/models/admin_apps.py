@@ -951,7 +951,7 @@ class admin_apps(models.Model):
                     else:
                         pi.cancel_payment(payment_id)
     
-    def _pay_onincomplete_a2u(self):
+    def _pay_onincomplete_a2u(self, pi_user_id):
         for self_i in self:
             
             """ 
@@ -981,6 +981,8 @@ class admin_apps(models.Model):
             if len(incomplete_payments) > 0:
                 for i in incomplete_payments:
                     if i["transaction"] == None:
+                        if pi_user_id.pi_user_id != i["user_uid"]:
+                            continue
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
                         if len(pi_user) > 0:
                             txid = pi.submit_payment(i["identifier"], i)
@@ -996,6 +998,8 @@ class admin_apps(models.Model):
                                 #pi.complete_payment(i["identifier"], txid)
                                 self_i.env.cr.commit()
                     else:
+                        if pi_user_id.pi_user_id != i["user_uid"]:
+                            continue
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
                         if len(pi_user) > 0:
                             result = self.pi_api({'paymentId': i["identifier"],
