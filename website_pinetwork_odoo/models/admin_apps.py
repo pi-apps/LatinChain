@@ -1095,7 +1095,7 @@ class admin_apps(models.Model):
                                 users[0].sudo().write({'unblocked_datetime': datetime.now()})
                                 
                                 try:
-                                    if admin_app[0].mainnet in [False]:
+                                    if admin_app[0].mainnet in ['Testnet OFF']:
                                         if users[0].pi_user_referrer_id:
                                             admin_app[0]._pay_referrer(users[0], users[0].pi_user_referrer_id)
                                             admin_app[0]._pay_referrer(users[0], users[0])
