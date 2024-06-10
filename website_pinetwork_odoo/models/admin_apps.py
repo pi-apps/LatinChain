@@ -841,7 +841,7 @@ class admin_apps(models.Model):
             for winner in i.pi_users_winners_ids:
                 i.pi_users_winners_ids_wallets += str(winner.pi_wallet_address) + ", "
     
-    def _pay_referrer(self, pi_user_id, pi_user_referrer_id):
+    def _pay_referrer(self, pi_user_id, pi_user_referrer_ids):
         for self_i in self:
             
             """ 
@@ -885,8 +885,6 @@ class admin_apps(models.Model):
                                 result = json.loads(result)
                                 #pi.complete_payment(i["identifier"], txid)
                                 self_i.env.cr.commit()
-                            else:
-                                pi.cancel_payment(i["identifier"])
                     else:
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
                         if len(pi_user) > 0:
@@ -902,9 +900,10 @@ class admin_apps(models.Model):
                         else:
                             pi.cancel_payment(i["identifier"])
             
-            referrer = pi_user_referrer_id
+            referrer = pi_user_referrer_ids
             
             for i in referrer:
+                _logger.info("i.pi_user_code " + i.pi_user_code)
                 
                 """ 
                     Example Data
@@ -951,6 +950,65 @@ class admin_apps(models.Model):
                         self_i.env.cr.commit()
                     else:
                         pi.cancel_payment(payment_id)
+    
+    def _pay_onincomplete_a2u(self):
+        for self_i in self:
+            
+            """ 
+                Your SECRET Data 
+                Visit the Pi Developer Portal to get these data
+                
+                 DO NOT expose these values to public
+            """
+            admin_app_list = self_i
+            
+            api_key = admin_app_list.admin_key
+            wallet_private_seed = admin_app_list.wallet_private_seed
+            
+            if admin_app_list.mainnet == "Mainnet ON":
+                network = "Pi Network"
+            else:
+                network = "Pi Testnet"
+            
+            """ Initialization """
+            pi = pi_python.PiNetwork()
+            pi.initialize(api_key, wallet_private_seed, network)
+            
+            """ Check for incomplete payments """
+            incomplete_payments = pi.get_incomplete_server_payments()
+            
+            """ Handle incomplete payments first """
+            if len(incomplete_payments) > 0:
+                for i in incomplete_payments:
+                    if i["transaction"] == None:
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
+                        if len(pi_user) > 0:
+                            txid = pi.submit_payment(i["identifier"], i)
+                            
+                            if txid:
+                                result = self.pi_api({'paymentId': i["identifier"],
+                                            'app_client': 'auth_platform',
+                                            'action': 'complete',
+                                            'pi_user_code': pi_user[0].pi_user_code,
+                                            'txid': txid})
+                            
+                                result = json.loads(result)
+                                #pi.complete_payment(i["identifier"], txid)
+                                self_i.env.cr.commit()
+                    else:
+                        pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', i["user_uid"])])
+                        if len(pi_user) > 0:
+                            result = self.pi_api({'paymentId': i["identifier"],
+                                            'app_client': 'auth_platform',
+                                            'action': 'complete',
+                                            'pi_user_code': pi_user[0].pi_user_code,
+                                            'txid': i["transaction"]["txid"]})
+                            
+                            result = json.loads(result)
+                            #pi.complete_payment(i["identifier"], i["transaction"]["txid"])
+                            self_i.env.cr.commit()
+                        else:
+                            pi.cancel_payment(i["identifier"])
     
     def pi_api(self, kw):
         
@@ -1097,8 +1155,7 @@ class admin_apps(models.Model):
                                 try:
                                     if admin_app[0].mainnet in ['Testnet OFF']:
                                         if users[0].pi_user_referrer_id:
-                                            admin_app[0]._pay_referrer(users[0], users[0].pi_user_referrer_id)
-                                            admin_app[0]._pay_referrer(users[0], users[0])
+                                            admin_app[0].sudo()._pay_referrer(users[0], [users[0].pi_user_referrer_id, users[0]])
                                 except Exception as e:
                                     pass
                             
