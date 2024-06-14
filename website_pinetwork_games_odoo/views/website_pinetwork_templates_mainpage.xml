@@ -1636,6 +1636,47 @@
                             </script>-->
                         </div>
                         
+                        <div id="accordionTwo" style="margin-bottom:5px">
+                          <div class="card">
+                            <div class="card-header" id="headingTwo">
+                              <h5 class="mb-0">
+                                <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                  <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
+                                </button>
+                              </h5>
+                            </div>
+
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTwo">
+                              <div class="card-body">
+                                <div style="text-align:center" class="form-group container">
+                                    <div class="row">
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col-10">
+                                            Hello, are you Youtuber or want to become one?. Now you can stream your videos on LatinChain Platform. <strong>Set your Youtube streaming video here and click in Save, play, win and then it will be watched on Winners Board and Top 50 streamers</strong>:
+                                            <textarea id="streaming_url" name="streaming_url" placeholder="Youtube video URL" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
+                                            <br/>
+                                            <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
+                                            <br/>
+                                            <div>
+                                            <br/>Place your own Youtube video url in the text box above. You can use Normal video, Live transmission or Short.<br/>
+                                            <br/>A Youtube video URL looks like this:<br/>
+                                            <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/watch?v=9KqcyAoCZzo</textarea>
+                                            <br/>A Youtube live video URL looks like this:<br/>
+                                            <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/live/AXOtWxSETew?si=3bKFA_mjb0ethVqe</textarea>
+                                            <br/>A Youtube short video URL looks like this:<br/>
+                                            <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/shorts/SZEljmi-wr4</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-1">
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
                         <div style="text-align:center; position:relative;">
                             <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="width: 270px; height: 170px;" />
                             <!--<div id="myApps" style="display:inline; position: absolute; bottom: 0; height: 80px;">
@@ -1904,46 +1945,6 @@
                                                 All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>
                                                 Here you can watch your incoming and outcoming transactions:<br/>
                                                 <a href="/get-transactions/" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div></a>
-                                            </div>
-                                            <div class="col-1">
-                                            </div>
-                                        </div>
-                                      </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div id="accordionTwo" style="margin-bottom:5px">
-                              <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                  <h5 class="mb-0">
-                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                      <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
-                                    </button>
-                                  </h5>
-                                </div>
-
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTwo">
-                                  <div class="card-body">
-                                    <div style="text-align:center" class="form-group container">
-                                        <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
-                                                Hello, are you Youtuber or want to become one?. Now you can stream your videos on LatinChain Platform. <strong>Set your Youtube streaming video here and click in Save, play, win and then it will be watched on Winners Board and Top 50 streamers</strong>:
-                                                <textarea id="streaming_url" name="streaming_url" placeholder="Youtube video URL" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
-                                                <br/>
-                                                <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
-                                                <br/>
-                                                <div>
-                                                <br/>Place your own Youtube video url in the text box above. You can use Normal video, Live transmission or Short.<br/>
-                                                <br/>A Youtube video URL looks like this:<br/>
-                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/watch?v=9KqcyAoCZzo</textarea>
-                                                <br/>A Youtube live video URL looks like this:<br/>
-                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/live/AXOtWxSETew?si=3bKFA_mjb0ethVqe</textarea>
-                                                <br/>A Youtube short video URL looks like this:<br/>
-                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/shorts/SZEljmi-wr4</textarea>
-                                                </div>
                                             </div>
                                             <div class="col-1">
                                             </div>
