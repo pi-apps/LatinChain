@@ -1156,12 +1156,12 @@ class admin_apps(models.Model):
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 users[0].sudo().write({'unblocked_datetime': datetime.now()})
                                 
-                                try:
-                                    if admin_app[0].mainnet in ['Testnet OFF']:
-                                        if users[0].pi_user_referrer_id:
-                                            admin_app[0].sudo()._pay_referrer(users[0], [users[0].pi_user_referrer_id, users[0]])
-                                except Exception as e:
-                                    pass
+                                #try:
+                                #    if admin_app[0].mainnet in ['Testnet OFF']:
+                                #        if users[0].pi_user_referrer_id:
+                                #            admin_app[0].sudo()._pay_referrer(users[0], [users[0].pi_user_referrer_id, users[0]])
+                                #except Exception as e:
+                                #    pass
                             
                             result = {"result": True, "completed": True}
                         #elif not result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:

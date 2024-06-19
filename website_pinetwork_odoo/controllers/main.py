@@ -252,8 +252,8 @@ class PiNetworkBaseController(http.Controller):
         else:
             referrer_code = ""
         
-        if apps_list[0].mainnet in ['Testnet OFF']:
-            apps_list[0].sudo()._pay_onincomplete_a2u(pi_users_list[0])
+        #if apps_list[0].mainnet in ['Testnet OFF']:
+        #    apps_list[0].sudo()._pay_onincomplete_a2u(pi_users_list[0])
             
         request.env.cr.commit()
         
