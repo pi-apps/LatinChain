@@ -2,6 +2,7 @@ var pi_user_id = "";
 var pi_user_code = "";
 var accessToken = "";
 var passkey = "";
+var amount = 0;
 const Pi = window.Pi;
 
 function setConfirmUnload(on) {
@@ -82,6 +83,8 @@ $( document ).ready(function() {
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
 
     //alert(PiNetworkClient);
+    
+    amount = $("#amount").val();
 
     async function auth() {
         $("#loading_word").show();
@@ -141,13 +144,14 @@ $( document ).ready(function() {
                         $( "#button_click" ).click(function() {
                             var max_amount = 0;
                             
-                            if(parseFloat(parseFloat($("#amount").val())*3.0).toFixed(7).toString().match(/(\.0*)/)[0].length - 1 == 7)
-                                max_amount = parseFloat(parseFloat($("#amount").val())*3.0).toFixed(1);
+                            if(parseFloat(parseFloat(amount)*3.0).toFixed(7).toString().match(/(\.0*)/)[0].length - 1 == 7)
+                                max_amount = parseFloat(parseFloat(amount)*3.0).toFixed(1);
                             else
-                                max_amount = round(parseFloat(parseFloat($("#amount").val())*3.0), 7);
+                                max_amount = round(parseFloat(parseFloat(amount)*3.0), 7);
+                            
+                            max_amount = round(parseFloat(amount), 7);
                                 
-                            if((parseFloat($("#pi_donate").val()) >= parseFloat($("#amount").val())) && 
-                                (parseFloat($("#pi_donate").val()) <= max_amount))
+                            if(parseFloat($("#pi_donate").val()) == parseFloat(amount))
                             {
                                 $("#button_click").prop( "disabled", true );
                                 /*setTimeout(function ()
@@ -156,7 +160,7 @@ $( document ).ready(function() {
                                 }, 10000);*/
                                 transfer();
                             }else{
-                                alert($("#payment_lessthan_message").text() + $("#amount").val() + " Pi" + $("#payment_morethan_message").text() + max_amount + " Pi.");
+                                alert($("#payment_lessthan_message").text() + amount + " Pi" + $("#payment_morethan_message").text() + max_amount + " Pi.");
                             }
                         });
                         $("#button_click").prop( "disabled", false );

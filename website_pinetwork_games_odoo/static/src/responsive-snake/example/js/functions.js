@@ -2,6 +2,7 @@ var pi_user_id = "";
 var pi_user_code = "";
 var accessToken = "";
 var passkey = "";
+var amount = 0;
 const Pi = window.Pi;
 var totalpoints = 0;
 var startTime=new Date(), endTime=new Date(), seconds=0;
@@ -132,6 +133,8 @@ $( document ).ready(function() {
     
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     
+    amount = $("#amount").val();
+    
     async function auth() {
         $("#pause").hide();
         $("#reset").hide();
@@ -191,7 +194,7 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user(true).always(function(){
                         $( "#button_click" ).click(function() {
-                            if(parseFloat($("#pi_donate").val()) >= parseFloat($("#amount").val()))
+                            if(parseFloat($("#pi_donate").val()) >= parseFloat(amount))
                             {
                                 $("#button_click").prop( "disabled", true );
                                 /*setTimeout(function ()
@@ -200,7 +203,7 @@ $( document ).ready(function() {
                                 }, 10000);*/
                                 transfer();
                             }else{
-                                alert($("#payment_lessthan_message").text() + $("#amount").val() + " Pi.");
+                                alert($("#payment_lessthan_message").text() + amount + " Pi.");
                             }
                         });
                         $("#button_click").prop( "disabled", false );
