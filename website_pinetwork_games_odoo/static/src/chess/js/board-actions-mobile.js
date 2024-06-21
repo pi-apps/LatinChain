@@ -44,12 +44,27 @@ function setMobileBoard(position = false) {
           $('#btn-choose-white-side, #btn-choose-black-side').addClass('locked');
         }
         var nextPlayer,
-          status,
-          move = game.move({
+          status, move;
+        if(playerSide == game.turn()) {
+            move = game.move({
+              from: move.from,
+              to: move.to,
+              promotion: $('#promote_as :selected').val()
+            });
+        }else{
+            move = game.move({
+              from: move.from,
+              to: move.to,
+              promotion: promotionFigure
+            });
+        }
+
+        /*
+        var move = game.move({
             from: move.from,
             to: move.to,
             promotion: $('#promote_as :selected').val()
-          });
+          });*/
         nextPlayer = 'white';
         if (game.turn() === 'b') {
           nextPlayer = 'black';
