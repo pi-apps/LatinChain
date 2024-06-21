@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-21 09:56+0000\n"
-"PO-Revision-Date: 2024-06-21 09:56+0000\n"
+"POT-Creation-Date: 2024-06-21 10:11+0000\n"
+"PO-Revision-Date: 2024-06-21 10:11+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -507,7 +507,7 @@ msgid ""
 "                                <br/>Max points per game: <br/><strong id=\"user_points_last\">0</strong><br/>\n"
 "                                <br/># of wins per game: <br/><strong id=\"user_points_wins\">0</strong><br/>"
 msgstr ""
-"<br/>Usuario: <strong id=\"user_logged\">--</strong><br/>\n"
+"<br/>Usuario: <strong id=\"user_logged\" translate=\"no\">--</strong><br/>\n"
 "                            <br/>Status: <strong class=\"user_status_account\">Accede a través del Pi Browser.<br/></strong>\n"
 "                            <br/>Puntos totales: <strong id=\"user_points\">0</strong><br/>\n"
 "                            <br/>A las: <strong id=\"user_points_datetime\"/><br/>\n"
@@ -519,23 +519,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/>Video presentation:<br/><br/>"
 msgstr "<br/>Video presentación:<br/><br/>"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid ""
-"<select id=\"promote_as\">\n"
-"                                             <option value=\"q\" selected=\"true\">Queen</option>\n"
-"                                             <option value=\"b\">Bishop</option>\n"
-"                                             <option value=\"n\">Knight</option>\n"
-"                                             <option value=\"r\">Rook</option>\n"
-"                                           </select>"
-msgstr ""
-"<select id=\"promote_as\">\n"
-"                                             <option value=\"q\" selected=\"true\">Dama</option>\n"
-"                                             <option value=\"b\">Alfil</option>\n"
-"                                             <option value=\"n\">Caballo</option>\n"
-"                                             <option value=\"r\">Torre</option>\n"
-"                                           </select>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -783,7 +766,7 @@ msgstr "Estás seguro(a) que quieres Borrar Caché?, esto recargará la página.
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "Are you sure you want to Reset?, it will restart the game."
 msgstr ""
-"Estás seguro que quieres Reiniciar?, esto reiniciará a un nuevo juego."
+"Estás seguro(a) que quieres Reiniciar?, esto reiniciará a un nuevo juego."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -794,6 +777,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Are you sure you want to go back?."
 msgstr "Estás seguro(a) que quieres ir atrás?."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid "Bishop"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1037,6 +1025,11 @@ msgid "Join Twitter"
 msgstr "Unirse al Twitter"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid "Knight"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Last 24 hours: \n"
@@ -1163,7 +1156,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Not verified. Each 30 days you should unlock the app paying"
-msgstr "No verificado. Cada 30 días to debes desbloquear la app pagando"
+msgstr "No verificado. Cada 30 días tú debes desbloquear la app pagando"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1294,6 +1287,11 @@ msgid "Privacy Policy"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid "Queen"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "Read four sections: Membership (why to subscribe), Rules (norms), Winners "
@@ -1316,6 +1314,11 @@ msgstr "Refrescar"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Repository"
 msgstr "Repositorio"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid "Rook"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1480,7 +1483,7 @@ msgid ""
 "                                        Pi cryptocurrency Transactions for user <strong translate=\"no\"><span id=\"username\"/></strong>:<br/><br/>"
 msgstr ""
 "UTC<br/><br/>\n"
-"                                    Pi Transactions para el usuario <strong translate=\"no\"><span id=\"username\"/></strong>:<br/><br/>"
+"                                    Transacciones de la criptomoneda Pi para el usuario <strong translate=\"no\"><span id=\"username\"/></strong>:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
