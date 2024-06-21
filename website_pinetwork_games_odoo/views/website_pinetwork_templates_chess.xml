@@ -305,20 +305,20 @@
                                   <!--</span>-->
                                   <br/>
                                 <h1 align="center" style="font-weight:600">Chess</h1><br/>
-                                <span align="center">
-                                    <div class="container row">
-                                        <div class="cont col-7">
+                                <div style="text-align: center">
+                                    <div class="row">
+                                        <div class="cont col-6">
                                         <h3>White</h3>
                                         <p><button style="display:none;" class="btn btn-default" onClick="$('.timer_white').countimer('start');$('.timer_black').countimer('start');$('.timer_black').countimer('stop');">Start</button> <button style="display:none;" class="btn btn-warning" onClick="$('.timer_white').countimer('stop');$('.timer_black').countimer('resume');">Pause</button> </p>
                                         <div class="timer_white well"></div>
                                         </div>
-                                        <div class="cont col-5">
+                                        <div class="cont col-6">
                                         <h3>Black</h3>
                                         <p><button style="display:none;" class="btn btn-warning" onClick="$('.timer_black').countimer('stop');$('.timer_white').countimer('resume');">Pause</button></p>
                                         <div class="timer_black well"></div>
                                         </div>
                                     </div><br/>
-                                    <div class="container row">
+                                    <div class="row" style="text-align: center">
                                         <div class="cont col-12">
                                         <h3>You want to promote as</h3>
                                         <p><select id="promote_as">
@@ -330,7 +330,7 @@
                                         </p>
                                         </div>
                                     </div><br/>
-                                </span>
+                                </div>
                                     <div class="chess-area">
                                         <div class="board-table">
                                             <div id="board-top-controls" class="top-controls">
