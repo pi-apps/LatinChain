@@ -55,7 +55,7 @@ function setDesktopBoard(position = false, sparePieces = false) {
     var move = game.move({
       from: source,
       to: target,
-      promotion: 'q'
+      promotion: $('#promote_as :selected').val()
     });
 
     // illegal move
@@ -69,12 +69,12 @@ function setDesktopBoard(position = false, sparePieces = false) {
     moveTarget = target;
 
     // promotion move
-    if (move.promotion != undefined) {
+    /*if (move.promotion != undefined) {
       $('#game-promotion').removeClass('hidden');
       $('#board').addClass('locked');
       console.log('Paused for promotion.');
       return;
-    }
+    }*/
 
     dumpLog(false);
     

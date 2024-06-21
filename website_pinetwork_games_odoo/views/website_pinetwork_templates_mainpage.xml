@@ -185,6 +185,10 @@
                             .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated label {
                               color: #000 !important;
                             }
+
+                            .darkmode--activated #game-promotion > span {
+                              color: #000 !important;
+                            }
                             
                             .darkmode--activated label {
                               color: #fff !important;

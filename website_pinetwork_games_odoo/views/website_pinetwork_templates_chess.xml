@@ -318,6 +318,18 @@
                                         <div class="timer_black well"></div>
                                         </div>
                                     </div><br/>
+                                    <div class="container row">
+                                        <div class="cont col-12">
+                                        <h3>You want to promote as</h3>
+                                        <p><select id="promote_as">
+                                             <option value="q" selected="true">Queen</option>
+                                             <option value="b">Bishop</option>
+                                             <option value="n">Knight</option>
+                                             <option value="r">Rook</option>
+                                           </select>
+                                        </p>
+                                        </div>
+                                    </div><br/>
                                 </span>
                                     <div class="chess-area">
                                         <div class="board-table">
@@ -558,28 +570,28 @@
                                 loadCss('chessboard-css', '/website_pinetwork_games_odoo/static/src/chess/css/caustique-chessboard.css');
 
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/chessboard-caustique-min.js', initGameBoard('mobile'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js?v=1.103', initGameBoard('mobile'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js', initGameBoard('mobile'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js?v=1.104', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js?v=1.101', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js?v=1.101', initGameBoard('mobile'));
 
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-time.js', initGameBoard('mobile'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js?v=1.102', initGameBoard('mobile'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-mobile.js?v=1.102', initGameBoard('mobile'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js?v=1.101', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js?v=1.103', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-mobile.js?v=1.103', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js?v=1.102', initGameBoard('mobile'));
 
                             } else {
 
                                 loadCss('chessboard-css', '/website_pinetwork_games_odoo/static/src/chess/css/chessboard.css');
 
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/chessboard.min.js', initGameBoard('desktop'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js?v=1.103', initGameBoard('desktop'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js?v=1.104', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js?v=1.101', initGameBoard('desktop'));
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js', initGameBoard('desktop'));
 
                                 $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-time.js', initGameBoard('desktop'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js?v=1.102', initGameBoard('desktop'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-desktop.js?v=1.102', initGameBoard('desktop'));
-                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js?v=1.101', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js?v=1.103', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-desktop.js?v=1.103', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js?v=1.102', initGameBoard('desktop'));
 
                             }
 

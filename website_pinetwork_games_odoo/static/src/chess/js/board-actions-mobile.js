@@ -48,7 +48,7 @@ function setMobileBoard(position = false) {
           move = game.move({
             from: move.from,
             to: move.to,
-            promotion: 'q'
+            promotion: $('#promote_as :selected').val()
           });
         nextPlayer = 'white';
         if (game.turn() === 'b') {

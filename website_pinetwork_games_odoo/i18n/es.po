@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-09 17:51+0000\n"
-"PO-Revision-Date: 2024-06-09 17:51+0000\n"
+"POT-Creation-Date: 2024-06-21 09:56+0000\n"
+"PO-Revision-Date: 2024-06-21 09:56+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -325,10 +325,10 @@ msgid ""
 "sets your referrer code, then each time <strong>rockcesar</strong> pays"
 msgstr ""
 "5.- Cada usuario que coloque tu código de referido en la pantalla principal "
-"de LatinChain, va a generarte un ingreso, esto va a ser pagado a tu Pi wallet"
-" cada vez que alguno de tus referidos paguen para desbloquear LatinChain. Si"
-" <strong>rockcesar</strong> coloca tu código de referido, entonces cada vez "
-"que <strong>rockcesar</strong> pague"
+"de LatinChain, va a generarte un ingreso, esto va a ser pagado a tu Pi "
+"wallet cada vez que alguno de tus referidos paguen para desbloquear "
+"LatinChain. Si <strong>rockcesar</strong> coloca tu código de referido, "
+"entonces cada vez que <strong>rockcesar</strong> pague"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -491,7 +491,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>Place your own Youtube video url in the text box above. You can use Normal video, Live transmission or Short.<br/>\n"
-"                                                <br/>A Youtube video URL looks like this:<br/>"
+"                                            <br/>A Youtube video URL looks like this:<br/>"
 msgstr ""
 "<br/>Coloca tu propia URL de video de Youtube en la caja de texto de arriba. Puedes usar un Video normal, Transmisión en vivo ó Short.<br/>\n"
 "                                            <br/>La URL de un video de Youtube se ve así:<br/>"
@@ -519,6 +519,23 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/>Video presentation:<br/><br/>"
 msgstr "<br/>Video presentación:<br/><br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid ""
+"<select id=\"promote_as\">\n"
+"                                             <option value=\"q\" selected=\"true\">Queen</option>\n"
+"                                             <option value=\"b\">Bishop</option>\n"
+"                                             <option value=\"n\">Knight</option>\n"
+"                                             <option value=\"r\">Rook</option>\n"
+"                                           </select>"
+msgstr ""
+"<select id=\"promote_as\">\n"
+"                                             <option value=\"q\" selected=\"true\">Dama</option>\n"
+"                                             <option value=\"b\">Alfil</option>\n"
+"                                             <option value=\"n\">Caballo</option>\n"
+"                                             <option value=\"r\">Torre</option>\n"
+"                                           </select>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1155,9 +1172,10 @@ msgid ""
 " will pay an amount for being your referrer, also you will receive a payback"
 " of the same amount of your referrer. Then, click in Save:"
 msgstr ""
-"Ahora puedes colocar un código de referido de otro Pionero (no el tuyo), a quien vamos"
-" a pagar un monto por ser tu referido, igualmente tú vas a recibir un pago de vuelta"
-" del mismo monto de tu referido. Luego, click en Guardar:"
+"Ahora puedes colocar un código de referido de otro Pionero (no el tuyo), a "
+"quien vamos a pagar un monto por ser tu referido, igualmente tú vas a "
+"recibir un pago de vuelta del mismo monto de tu referido. Luego, click en "
+"Guardar:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1212,9 +1230,10 @@ msgid ""
 "can say that in a normal situation, it will be paid."
 msgstr ""
 "Pi, un monto de ese pago va a ir a tu Pi wallet. También "
-"<strong>rockcesar</strong> va a recibir un pago de vuelta del mismo monto que su "
-"referido. Aunque, no podemos asegurar ese pago debido a algún problema en la Plataforma, podemos "
-"decir que en una situación normal, va a ser pagado."
+"<strong>rockcesar</strong> va a recibir un pago de vuelta del mismo monto "
+"que su referido. Aunque, no podemos asegurar ese pago debido a algún "
+"problema en la Plataforma, podemos decir que en una situación normal, va a "
+"ser pagado."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1354,6 +1373,11 @@ msgstr "Compartir en Redes Sociales:<br/><br/>"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Show Hint"
 msgstr "Muestra Pista"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Soon available, not yet.<br/>"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1548,6 +1572,11 @@ msgstr "No puedes pagar menos de"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "You only can pay from"
 msgstr "Sólo puedes pagar desde"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid "You want to promote as"
+msgstr "Quieres coronar como"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
