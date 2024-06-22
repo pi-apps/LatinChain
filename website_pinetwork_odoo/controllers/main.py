@@ -131,7 +131,6 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/api/get-external-user', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def get_external_user(self, **kw):
         
-        """
         # Enable when Mainnet
         if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
             if http.request.httprequest.environ['HTTP_HOST'] == "latin-chain.com" and "https://radioforus.com" in http.request.httprequest.environ['HTTP_REFERER']:
@@ -142,7 +141,6 @@ class PiNetworkBaseController(http.Controller):
                 result = requests.post("https://latin-chain.com/api/get-external-user", kw)
                 headers = {'Content-Type': 'application/json'}
                 return Response(json.dumps(result.json()), headers=headers)
-        """
         
         if 'pi_user_code' not in kw:
             headers = {'Content-Type': 'application/json'}
