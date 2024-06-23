@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-21 10:11+0000\n"
-"PO-Revision-Date: 2024-06-21 10:11+0000\n"
+"POT-Creation-Date: 2024-06-23 23:47+0000\n"
+"PO-Revision-Date: 2024-06-23 23:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -361,6 +361,23 @@ msgstr ""
 " mínimo actual en nuestro servidor de Mainnet."
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"7.- Pi has no price on exchanges currently, until we reach OpenMainnet, so "
+"point 5, above, will stay while Pi has no price on exchanges. Althought, "
+"when Pi starts to has value in exchanges, point 5, above, will change to: "
+"Depending to the price of Pi in exchanges, minimum payment will change "
+"periodically, so we will charge according to price of the moment, and the "
+"prize payment will change according to the price of Pi in exchanges."
+msgstr ""
+"7.- Pi no tiene precio en exchanges actualmente, hasta que lleguemos a OpenMainnet, "
+"así que el punto 5, anterior, va a permanecer mientras Pi no tenga valor en exnchanges. Aunque, "
+"cuando Pi comience a tener valor en exchanges, el punto 5, anterior, va a cambiar a: "
+"Dependiendo el valor de Pi en exchanges, el pago mínimo va a cambiar "
+"periódicamente, así que vamos a cobrar de acuerdo al precio de ese momento, y el "
+"pago de premios va a cambiar de acuerdo al precio de Pi en exchanges."
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid ""
 "<br/>\n"
@@ -507,7 +524,7 @@ msgid ""
 "                                <br/>Max points per game: <br/><strong id=\"user_points_last\">0</strong><br/>\n"
 "                                <br/># of wins per game: <br/><strong id=\"user_points_wins\">0</strong><br/>"
 msgstr ""
-"<br/>Usuario: <strong id=\"user_logged\" translate=\"no\">--</strong><br/>\n"
+"<br/>Usuario: <strong id=\"user_logged\">--</strong><br/>\n"
 "                            <br/>Status: <strong class=\"user_status_account\">Accede a través del Pi Browser.<br/></strong>\n"
 "                            <br/>Puntos totales: <strong id=\"user_points\">0</strong><br/>\n"
 "                            <br/>A las: <strong id=\"user_points_datetime\"/><br/>\n"
@@ -519,6 +536,23 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/>Video presentation:<br/><br/>"
 msgstr "<br/>Video presentación:<br/><br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid ""
+"<select id=\"promote_as\">\n"
+"                                             <option value=\"q\" selected=\"true\">Queen</option>\n"
+"                                             <option value=\"b\">Bishop</option>\n"
+"                                             <option value=\"n\">Knight</option>\n"
+"                                             <option value=\"r\">Rook</option>\n"
+"                                           </select>"
+msgstr ""
+"<select id=\"promote_as\">\n"
+"                                             <option value=\"q\" selected=\"true\">Dama</option>\n"
+"                                             <option value=\"b\">Alfil</option>\n"
+"                                             <option value=\"n\">Caballo</option>\n"
+"                                             <option value=\"r\">Torre</option>\n"
+"                                           </select>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -711,6 +745,11 @@ msgid "API Docs"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Adrian (Technology)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -766,7 +805,7 @@ msgstr "Estás seguro(a) que quieres Borrar Caché?, esto recargará la página.
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "Are you sure you want to Reset?, it will restart the game."
 msgstr ""
-"Estás seguro(a) que quieres Reiniciar?, esto reiniciará a un nuevo juego."
+"Estás seguro que quieres Reiniciar?, esto reiniciará a un nuevo juego."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -779,9 +818,9 @@ msgid "Are you sure you want to go back?."
 msgstr "Estás seguro(a) que quieres ir atrás?."
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Bishop"
-msgstr "Alfil"
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Aurora (Community)"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -802,6 +841,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Cancel"
 msgstr "Cancelar"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Cesar (Technology)"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -896,6 +940,11 @@ msgid "Engine Toggle (On/Off)"
 msgstr "Cambiar PC (On/Off)"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Enrique (Community)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
 msgstr ""
@@ -916,6 +965,11 @@ msgstr "Intercambia Tablero"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Go to one of the games to do it."
 msgstr "Ve a uno de los juegos para hacerlo."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Gunter (Community)"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -996,11 +1050,6 @@ msgstr "Importar..."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Info"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "It isn't a Memo ID or Payment ID."
 msgstr "Esto no es una Memo ID ó Payment ID."
 
@@ -1025,9 +1074,19 @@ msgid "Join Twitter"
 msgstr "Unirse al Twitter"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Knight"
-msgstr "Caballo"
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Jonathan (Community)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Josue (Community)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Julio (Operations)"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1114,6 +1173,11 @@ msgid "Mainnet status"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Marina (Community)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Medium puzzle"
 msgstr "Juego medio"
@@ -1140,6 +1204,11 @@ msgstr "NOTICIAS"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Nelson (Community)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "News"
 msgstr "Noticias"
 
@@ -1156,7 +1225,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Not verified. Each 30 days you should unlock the app paying"
-msgstr "No verificado. Cada 30 días tú debes desbloquear la app pagando"
+msgstr "No verificado. Cada 30 días to debes desbloquear la app pagando"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1287,11 +1356,6 @@ msgid "Privacy Policy"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Queen"
-msgstr "Dama"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "Read four sections: Membership (why to subscribe), Rules (norms), Winners "
@@ -1316,9 +1380,9 @@ msgid "Repository"
 msgstr "Repositorio"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Rook"
-msgstr "Torre"
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Rita (Community Asia)"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1424,6 +1488,16 @@ msgstr "Regresar"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Team"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Team:<br/><br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Terms (ToS)"
 msgstr ""
 
@@ -1483,7 +1557,7 @@ msgid ""
 "                                        Pi cryptocurrency Transactions for user <strong translate=\"no\"><span id=\"username\"/></strong>:<br/><br/>"
 msgstr ""
 "UTC<br/><br/>\n"
-"                                    Transacciones de la criptomoneda Pi para el usuario <strong translate=\"no\"><span id=\"username\"/></strong>:<br/><br/>"
+"                                    Pi Transactions para el usuario <strong translate=\"no\"><span id=\"username\"/></strong>:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1541,6 +1615,16 @@ msgstr "Blancas"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Winners Board"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Xiomary (Community)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Xiomeli (Community)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

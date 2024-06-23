@@ -107,6 +107,7 @@
                                     <t t-set="amount_end" t-value="amount*3"/>
                                     <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">5.- If you are a winner on OpenMainnet, you will gain according to the income of LatinChain Platform, and not less than the minimum payment to unlock the games. Current minimum payment is at <span t-esc="amount" /> Pi, so you will gain not less than that. In a good situation we could pay the triple of minimum payment: <span t-esc="amount_end" /> Pi, or much more, depending on the income.</h3>
                                     <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">6.- Check in the Rules on latin-chain.com (Mainnet), to know the current minimum payment on our Mainnet server.</h3>
+                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">7.- Pi has no price on exchanges currently, until we reach OpenMainnet, so point 5, above, will stay while Pi has no price on exchanges. Althought, when Pi starts to has value in exchanges, point 5, above, will change to: Depending to the price of Pi in exchanges, minimum payment will change periodically, so we will charge according to price of the moment, and the prize payment will change according to the price of Pi in exchanges.</h3>
                                   </div>
                                 </div>
                               </div>
