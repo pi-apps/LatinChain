@@ -77,9 +77,7 @@ function get_user(donation) {
 
 $( document ).ready(function() {
     $(document).ajaxStop(function() {
-                $("#loading_word").prev().hide();
-                $("#loading_word").prev().prev().hide();
-                $("#loading_word").next().hide();
+                $("#loading_section").hide();
                 $("#loading_word").hide();
             });
     
@@ -90,15 +88,11 @@ $( document ).ready(function() {
     amount = $("#amount").val();
 
     async function auth() {
-        $("#loading_word").prev().show();
-        $("#loading_word").prev().prev().show();
-        $("#loading_word").next().show();
+        $("#loading_section").show();
         $("#loading_word").show();
                                 
         setTimeout(function() {
-          $("#loading_word").prev().hide();
-          $("#loading_word").prev().prev().hide();
-          $("#loading_word").next().hide();
+          $("#loading_section").hide();
           $("#loading_word").hide();
         }, 5000);
         
