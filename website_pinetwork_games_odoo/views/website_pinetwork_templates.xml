@@ -213,7 +213,7 @@
                                 <t t-set="amount_end" t-value="round(amount*3, 7)"/>
                                 <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
                                 <br/><br/>
-                                <button id="button_click" name="button_click" class="btn btn-success" disabled="true" style="margin: 5px">Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</button>
+                                <button id="button_click" name="button_click" class="btn btn-success" disabled="true" style="margin: 5px; max-width: 300px">Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</button>
                                 
                                 <br />
                                 <br />
