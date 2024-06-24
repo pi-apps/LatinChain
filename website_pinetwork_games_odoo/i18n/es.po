@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-23 23:56+0000\n"
-"PO-Revision-Date: 2024-06-23 23:56+0000\n"
+"POT-Creation-Date: 2024-06-24 14:30+0000\n"
+"PO-Revision-Date: 2024-06-24 14:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1690,6 +1690,12 @@ msgstr "Tu video fue guardado."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Youtube video URL"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+msgid "for 30 days from today"
+msgstr "por 30 días desde hoy"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
