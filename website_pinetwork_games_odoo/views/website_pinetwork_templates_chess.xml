@@ -306,7 +306,7 @@
                                   <br/>
                                 <h1 align="center" style="font-weight:600">Chess</h1><br/>
                                 <div style="text-align: center">
-                                    <div class="row" style="text-align: center">
+                                    <div class="row" style="width:100%">
                                         <div class="col-12">
                                         <h3>You want to promote as</h3>
                                         <p><select id="promote_as">
@@ -318,7 +318,7 @@
                                         </p>
                                         </div>
                                     </div><br/>
-                                    <div class="row">
+                                    <div class="row" style="width:100%">
                                         <div class="cont col-6">
                                         <h3>White</h3>
                                         <p><button style="display:none;" class="btn btn-default" onClick="$('.timer_white').countimer('start');$('.timer_black').countimer('start');$('.timer_black').countimer('stop');">Start</button> <button style="display:none;" class="btn btn-warning" onClick="$('.timer_white').countimer('stop');$('.timer_black').countimer('resume');">Pause</button> </p>
