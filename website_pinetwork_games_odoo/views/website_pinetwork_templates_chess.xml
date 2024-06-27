@@ -304,168 +304,178 @@
                                   </div>
                                   <!--</span>-->
                                   <br/>
-                                <h1 align="center" style="font-weight:600">Chess</h1><br/>
-                                <div style="text-align: center">
-                                    <div class="row" style="width:100%">
+                                <div class="container">
+                                    <div style="text-align: center">
+                                        <div class="row justify-content-center" style="">
+                                            <div class="col-12">
+                                            <h1 style="font-weight:600;">Chess</h1>
+                                            </div>
+                                        </div><br/>
+                                        <div class="row justify-content-center" style="">
+                                            <div class="col-12">
+                                            <h3>You want to promote as</h3>
+                                            <p><select id="promote_as">
+                                                 <option value="q" selected="true">Queen</option>
+                                                 <option value="b">Bishop</option>
+                                                 <option value="n">Knight</option>
+                                                 <option value="r">Rook</option>
+                                               </select>
+                                            </p>
+                                            </div>
+                                        </div><br/>
+                                        <div class="row justify-content-center" style="">
+                                            <div class="cont col-6">
+                                            <h3>White</h3>
+                                            <p><button style="display:none;" class="btn btn-default" onClick="$('.timer_white').countimer('start');$('.timer_black').countimer('start');$('.timer_black').countimer('stop');">Start</button> <button style="display:none;" class="btn btn-warning" onClick="$('.timer_white').countimer('stop');$('.timer_black').countimer('resume');">Pause</button> </p>
+                                            <div class="timer_white well"></div>
+                                            </div>
+                                            <div class="cont col-6">
+                                            <h3>Black</h3>
+                                            <p><button style="display:none;" class="btn btn-warning" onClick="$('.timer_black').countimer('stop');$('.timer_white').countimer('resume');">Pause</button></p>
+                                            <div class="timer_black well"></div>
+                                            </div>
+                                        </div><br/>
+                                    </div>
+                                    <div class="row justify-content-center" style="">
                                         <div class="col-12">
-                                        <h3>You want to promote as</h3>
-                                        <p><select id="promote_as">
-                                             <option value="q" selected="true">Queen</option>
-                                             <option value="b">Bishop</option>
-                                             <option value="n">Knight</option>
-                                             <option value="r">Rook</option>
-                                           </select>
-                                        </p>
-                                        </div>
-                                    </div><br/>
-                                    <div class="row" style="width:100%">
-                                        <div class="cont col-6">
-                                        <h3>White</h3>
-                                        <p><button style="display:none;" class="btn btn-default" onClick="$('.timer_white').countimer('start');$('.timer_black').countimer('start');$('.timer_black').countimer('stop');">Start</button> <button style="display:none;" class="btn btn-warning" onClick="$('.timer_white').countimer('stop');$('.timer_black').countimer('resume');">Pause</button> </p>
-                                        <div class="timer_white well"></div>
-                                        </div>
-                                        <div class="cont col-6">
-                                        <h3>Black</h3>
-                                        <p><button style="display:none;" class="btn btn-warning" onClick="$('.timer_black').countimer('stop');$('.timer_white').countimer('resume');">Pause</button></p>
-                                        <div class="timer_black well"></div>
-                                        </div>
-                                    </div><br/>
-                                </div>
-                                    <div class="chess-area">
-                                        <div class="board-table">
-                                            <div id="board-top-controls" class="top-controls">
-                                                <div id="game-promotion" class="promotion hidden">
-                                                    <span figure="q">Queen</span>
-                                                    <span figure="b">Bishop</span>
-                                                    <span figure="n">Knight</span>
-                                                    <span figure="r">Rook</span>
+                                            
+                                            <div class="chess-area">
+                                                <div class="board-table">
+                                                    <div id="board-top-controls" class="top-controls">
+                                                        <div id="game-promotion" class="promotion hidden">
+                                                            <span figure="q">Queen</span>
+                                                            <span figure="b">Bishop</span>
+                                                            <span figure="n">Knight</span>
+                                                            <span figure="r">Rook</span>
+                                                        </div>
+                                                        <div id="board-save-pgn-area" class="popup hidden">
+                                                            <span class="close"></span>
+                                                            <label>Save PGN Notation:</label>
+                                                            <textarea readonly="true"></textarea>
+                                                            <button>Close</button>
+                                                        </div>
+                                                        <div id="board-load-fen-area" class="popup hidden">
+                                                            <span class="close"></span>
+                                                            <label>Load FEN Notation:</label>
+                                                            <textarea></textarea>
+                                                            <button>Load</button>
+                                                        </div>
+                                                        <div id="board-load-pgn-area" class="popup large hidden">
+                                                            <span class="close"></span>
+                                                            <label>Load PGN Notation:</label>
+                                                            <textarea></textarea>
+                                                            <button>Load</button>
+                                                        </div>
+                                                        <div id="board-resign-game-area" class="popup hidden">
+                                                            <span class="close"></span>
+                                                            <label>Do you want to resign?</label>
+                                                            <button class="yes">Yes</button>
+                                                            <button class="no">No</button>
+                                                        </div>
+                                                    </div>
+                                                    <div id="board" class="board" translate="no"></div>
+                                                    <div id="board-controls" class="controls">
+                                                        <div class="buttons">
+                                                            <button id="btn-switch-sides" class="" title="Switch Sides"><i class="icon"></i></button>
+                                                            <button id="btn-flip-board" title="Flip Board"><i class="icon"></i></button>
+                                                            <button id="btn-save-pgn" title="Save PNG"><i class="icon"></i></button>
+                                                            <button id="btn-engine-disable" class="disabled hidden" title="Engine Toggle (On/Off)">AI</button>
+                                                            <button id="btn-show-hint" class="disabled hidden" title="Show Hint"><i class="icon"></i></button>
+                                                            <button id="btn-take-back" class="disabled hidden" title="Take Back"><i class="icon"></i></button>
+                                                        </div>
+                                                        <div class="status">
+                                                            <!-- <span id="game-timer" class="hidden">00:00</span> -->
+                                                            <span id="game-turn" style="display: none;">It's your turn!</span>
+                                                            <span id="game-state" class="hidden"></span>
+                                                        </div>
+                                                        <div id="board-messages" class="messages hidden" style="display: none !important;"></div>
+                                                    </div>
                                                 </div>
-                                                <div id="board-save-pgn-area" class="popup hidden">
-                                                    <span class="close"></span>
-                                                    <label>Save PGN Notation:</label>
-                                                    <textarea readonly="true"></textarea>
-                                                    <button>Close</button>
-                                                </div>
-                                                <div id="board-load-fen-area" class="popup hidden">
-                                                    <span class="close"></span>
-                                                    <label>Load FEN Notation:</label>
-                                                    <textarea></textarea>
-                                                    <button>Load</button>
-                                                </div>
-                                                <div id="board-load-pgn-area" class="popup large hidden">
-                                                    <span class="close"></span>
-                                                    <label>Load PGN Notation:</label>
-                                                    <textarea></textarea>
-                                                    <button>Load</button>
-                                                </div>
-                                                <div id="board-resign-game-area" class="popup hidden">
-                                                    <span class="close"></span>
-                                                    <label>Do you want to resign?</label>
-                                                    <button class="yes">Yes</button>
-                                                    <button class="no">No</button>
-                                                </div>
-                                            </div>
-                                            <div id="board" class="board" translate="no"></div>
-                                            <div id="board-controls" class="controls">
-                                                <div class="buttons">
-                                                    <button id="btn-switch-sides" class="" title="Switch Sides"><i class="icon"></i></button>
-                                                    <button id="btn-flip-board" title="Flip Board"><i class="icon"></i></button>
-                                                    <button id="btn-save-pgn" title="Save PNG"><i class="icon"></i></button>
-                                                    <button id="btn-engine-disable" class="disabled hidden" title="Engine Toggle (On/Off)">AI</button>
-                                                    <button id="btn-show-hint" class="disabled hidden" title="Show Hint"><i class="icon"></i></button>
-                                                    <button id="btn-take-back" class="disabled hidden" title="Take Back"><i class="icon"></i></button>
-                                                </div>
-                                                <div class="status">
-                                                    <!-- <span id="game-timer" class="hidden">00:00</span> -->
-                                                    <span id="game-turn" style="display: none;">It's your turn!</span>
-                                                    <span id="game-state" class="hidden"></span>
-                                                </div>
-                                                <div id="board-messages" class="messages hidden" style="display: none !important;"></div>
-                                            </div>
-                                        </div>
-                                        <div class="board-settings">
-                                            <div class="apex">
-                                                <span class="label-history">Game History</span>
-                                                <div class="game-level" id="game-difficulty-option" title="Choose The Engine's Skill Level">
-                                                    <span class="label">Level</span>
-                                                    <span class="value" id="game-difficulty-skill-value">10</span>
-                                                </div>
-                                            </div>
-                                            <div class="game-difficulty hidden" id="game-difficulty-skill-settings">
-                                                <span class="label">Select Engine's Level:</span>
-                                                <span class="close"></span>
-                                                <div class="values">
-                                                    <span class="1">1</span>
-                                                    <span class="2">2</span>
-                                                    <span class="3">3</span>
-                                                    <span class="4">4</span>
-                                                    <span class="5">5</span>
-                                                    <span class="6">6</span>
-                                                    <span class="7">7</span>
-                                                    <span class="8">8</span>
-                                                    <span class="9">9</span>
-                                                    <span class="10 selected">10</span>
-                                                    <span class="11">11</span>
-                                                    <span class="12">12</span>
-                                                    <span class="13">13</span>
-                                                    <span class="14">14</span>
-                                                    <span class="15">15</span>
-                                                    <span class="16">16</span>
-                                                    <span class="17">17</span>
-                                                    <span class="18">18</span>
-                                                    <span class="19">19</span>
-                                                    <span class="20">20</span>
-                                                </div>
-                                            </div>
-                                            <div class="turns-history" id="game-turns-history">
-                                                <ol></ol>
-                                            </div>
-                                            <div class="game-analyze hidden" id="game-analyze-string"></div>
-                                            <div class="game-menu hidden" id="game-settings">
-                                                <span class="label-choose-side">Select Side</span>
-                                                <span class="btn game-white-side selected" id="btn-choose-white-side"></span>
-                                                <span class="btn game-black-side" id="btn-choose-black-side"></span>
-                                            </div>
-                                            <div class="tunes">
-                                                <span id="btn-new-game" title="Start New Game" class="btn-new-game">
-                                    <span class="icon"></span>
-                                                <span class="label">New Game</span>
-                                                </span>
-                                                <span id="btn-settings" title="Choose The Engine's Skill Level" class="btn settings"></span>
-                                                <span id="btn-resign" title="Resign" class="btn resign"></span>
-                                                <!--<span id="btn-analyze" style="display:none;" title="Request Engine Evaluation" class="btn analyze">
-                                    <i class="icon"></i>
-                                  </span>-->
-                                            </div>
-                                            <div class="params">
-                                                <div class="cell side" id="game-player-side" style="display: none;">
-                                                    <label>Your Side:</label>
-                                                    <span class="white active">White</span>
-                                                    <span class="black">Black</span>
-                                                </div>
-                                                <div class="cell first-turn" id="game-first-turn" style="display: none;">
-                                                    <label>First Turn:</label>
-                                                    <span class="player active">Player</span>
-                                                    <span class="computer">Computer</span>
+                                                <div class="board-settings">
+                                                    <div class="apex">
+                                                        <span class="label-history">Game History</span>
+                                                        <div class="game-level" id="game-difficulty-option" title="Choose The Engine's Skill Level">
+                                                            <span class="label">Level</span>
+                                                            <span class="value" id="game-difficulty-skill-value">10</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="game-difficulty hidden" id="game-difficulty-skill-settings">
+                                                        <span class="label">Select Engine's Level:</span>
+                                                        <span class="close"></span>
+                                                        <div class="values">
+                                                            <span class="1">1</span>
+                                                            <span class="2">2</span>
+                                                            <span class="3">3</span>
+                                                            <span class="4">4</span>
+                                                            <span class="5">5</span>
+                                                            <span class="6">6</span>
+                                                            <span class="7">7</span>
+                                                            <span class="8">8</span>
+                                                            <span class="9">9</span>
+                                                            <span class="10 selected">10</span>
+                                                            <span class="11">11</span>
+                                                            <span class="12">12</span>
+                                                            <span class="13">13</span>
+                                                            <span class="14">14</span>
+                                                            <span class="15">15</span>
+                                                            <span class="16">16</span>
+                                                            <span class="17">17</span>
+                                                            <span class="18">18</span>
+                                                            <span class="19">19</span>
+                                                            <span class="20">20</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="turns-history" id="game-turns-history">
+                                                        <ol></ol>
+                                                    </div>
+                                                    <div class="game-analyze hidden" id="game-analyze-string"></div>
+                                                    <div class="game-menu hidden" id="game-settings">
+                                                        <span class="label-choose-side">Select Side</span>
+                                                        <span class="btn game-white-side selected" id="btn-choose-white-side"></span>
+                                                        <span class="btn game-black-side" id="btn-choose-black-side"></span>
+                                                    </div>
+                                                    <div class="tunes">
+                                                        <span id="btn-new-game" title="Start New Game" class="btn-new-game">
+                                            <span class="icon"></span>
+                                                        <span class="label">New Game</span>
+                                                        </span>
+                                                        <span id="btn-settings" title="Choose The Engine's Skill Level" class="btn settings"></span>
+                                                        <span id="btn-resign" title="Resign" class="btn resign"></span>
+                                                        <!--<span id="btn-analyze" style="display:none;" title="Request Engine Evaluation" class="btn analyze">
+                                            <i class="icon"></i>
+                                          </span>-->
+                                                    </div>
+                                                    <div class="params">
+                                                        <div class="cell side" id="game-player-side" style="display: none;">
+                                                            <label>Your Side:</label>
+                                                            <span class="white active">White</span>
+                                                            <span class="black">Black</span>
+                                                        </div>
+                                                        <div class="cell first-turn" id="game-first-turn" style="display: none;">
+                                                            <label>First Turn:</label>
+                                                            <span class="player active">Player</span>
+                                                            <span class="computer">Computer</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="chess-log"></div>
                                         </div>
                                     </div>
-                                    <div class="chess-log"></div>
-                                    
-                                    <br/>
-                                      <!--<div align="center" class="container" style="text-align:center">
-                                           <div id="taboola-below-article-thumbnails-2"></div>
-                                            <script type="text/javascript">
-                                              window._taboola = window._taboola || [];
-                                              _taboola.push({
-                                                mode: 'alternating-thumbnails-a',
-                                                container: 'taboola-below-article-thumbnails-2',
-                                                placement: 'Below Article Thumbnails 2',
-                                                target_type: 'mix'
-                                              });
-                                            </script>
-                                      </div>-->
+                                </div>
+                                <br/>
+                                  <!--<div align="center" class="container" style="text-align:center">
+                                       <div id="taboola-below-article-thumbnails-2"></div>
+                                        <script type="text/javascript">
+                                          window._taboola = window._taboola || [];
+                                          _taboola.push({
+                                            mode: 'alternating-thumbnails-a',
+                                            container: 'taboola-below-article-thumbnails-2',
+                                            placement: 'Below Article Thumbnails 2',
+                                            target_type: 'mix'
+                                          });
+                                        </script>
+                                  </div>-->
                             </div>
                         </div>
                         <div class="container text-center">
