@@ -1603,7 +1603,7 @@
                         <br/>-->
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
-                        <div style="margin-bottom:5px" t-if="pioneers_streaming"><button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div></button></div>
+                        <div style="margin-bottom:5px" t-if="pioneers_streaming"><button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button></div>
                         <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
                             <div style="display: inline"><i id="play" class="fa fa-volume-off"></i></div> 
                             <div style="display: inline">Hi<strong><span id="username" translate="no"></span></strong><span id="verified"></span>. Welcome to LatinChain Platform (Games from Latin America for Pi). Increase your Pi cryptocurrency mining power <i class="fa fa-bolt"></i> using this app. If you don't have it yet, download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link text-white"><strong>App Store</strong></a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link text-white"><strong>Play Store</strong></a> to watch it working.<br/></div>
@@ -1808,14 +1808,14 @@
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row" style="text-align: left;">
                                             <div class="col-1"></div>
-                                            <div class="col-10"><button id="cointelegraph" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cointelegraph" translate="no" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">COINTELEGRAPH</div></button></div>
+                                            <div class="col-10"><button id="cryptonews_2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">NEWS</div><div style="font-size:80%;">Crypto news</div></button></div>
                                             <div class="col-1"></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row" style="text-align: left;">
                                             <div class="col-1"></div>
-                                            <div class="col-10"><button id="cryptonews_2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">NEWS</div></button></div>
+                                            <div class="col-10"><button id="cointelegraph" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cointelegraph" translate="no" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">COINTELEGRAPH</div><div style="font-size:80%;">Crypto news</div></button></div>
                                             <div class="col-1"></div>
                                         </div>
                                     </li>
@@ -1823,7 +1823,7 @@
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-1"></div>
-                                                <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div></button></div>
+                                                <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button></div>
                                                 <div class="col-1"></div>
                                             </div>
                                         </li>
@@ -1964,12 +1964,12 @@
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><button id="credits" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">Credits</div></button></div>
+                                        <div class="col-12"><button id="credits" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">Credits</div><div style="font-size:80%;">Donators list</div></button></div>
                                     </div>
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><a href="/get-transactions/" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div></a></div>
+                                        <div class="col-12"><a href="/get-transactions/" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a></div>
                                     </div>
                                 </li>
                             </ul>
@@ -2000,7 +2000,7 @@
                                                 <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>-->
                                                 All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>
                                                 Here you can watch your incoming and outcoming transactions:<br/>
-                                                <a href="/get-transactions/" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div></a>
+                                                <a href="/get-transactions/" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a>
                                             </div>
                                             <div class="col-1">
                                             </div>

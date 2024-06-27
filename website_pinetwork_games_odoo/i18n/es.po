@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-27 09:50+0000\n"
-"PO-Revision-Date: 2024-06-27 09:50+0000\n"
+"POT-Creation-Date: 2024-06-27 10:20+0000\n"
+"PO-Revision-Date: 2024-06-27 10:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -866,6 +866,11 @@ msgid "Credits"
 msgstr "Créditos"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Crypto news"
+msgstr "Cripto Noticias"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "Current time:"
 msgstr "Hora actual:"
@@ -916,6 +921,11 @@ msgstr "Donar Pi a LatinChain Platform"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "Donate to unblock with"
 msgstr "Dona para desbloquear con"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Donators list"
+msgstr "Lista de donadores"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -1553,6 +1563,11 @@ msgid "Transactions"
 msgstr "Transacciones"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Transactions list"
+msgstr "Lista de transacciones"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "UTC, next payment will be the 15th day of next month."
 msgstr "UTC, el próximo pago será el día 15 del siguiente mes."
@@ -1729,6 +1744,11 @@ msgstr "Tu video fue guardado."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Youtube video URL"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Youtube videos"
+msgstr "Videos de Youtube"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
