@@ -193,12 +193,12 @@
                         </style>
                         <ul class="nav nav-pills sticky" id="myTab" role="tablist" style="background-color: #e3f2fd;" translate="no">
                           <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><i class="fa-solid fa-house"></i></button>
                           </li>
                           
-                          <li><button style="margin-left:5px" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
-                          <li><button style="margin-left:5px" class="back btn btn-info"><i class="fa fa-step-backward"></i></button></li>
-                          <li><button id="play_button" style="margin-left:5px" class="btn btn-info">
+                          <li><button style="margin-left:5px; height:100%" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
+                          <li><button style="margin-left:5px; height:100%" class="back btn btn-info"><i class="fa fa-step-backward"></i></button></li>
+                          <li><button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
                             <i id="play" class="fa fa-volume-off"></i>
                           </button>
                           </li>
