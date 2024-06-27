@@ -218,7 +218,7 @@
                             background-color: #14a44d;
                         }
                     </style>
-                    <ul class="nav nav-pills sticky" id="myTab" style="background-color: #e3f2fd;" translate="no">
+                    <ul class="nav nav-pills sticky" id="myTab" style="background-color: #e3f2fd; display: flex; justify-content: center;" translate="no">
                       <li class="active" role="presentation">
                         <a href="#home" id="home-tab" data-toggle="tab"><i class="fa-solid fa-house"></i></a>
                       </li>
