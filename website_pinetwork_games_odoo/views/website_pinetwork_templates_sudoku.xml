@@ -38,7 +38,7 @@
                     <script src="/website_pinetwork_games_odoo/static/src/pidoku/sudoku.js"></script>
                     <script src="/website_pinetwork_games_odoo/static/src/pidoku/assets/js/app.js?v=1.0.1"></script>
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js?v=1.110"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js?v=1.111"></script>
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -230,6 +230,11 @@
                       <li>
                           <button id="play_button" style="margin-left:5px" class="btn btn-info">
                             <i id="play" class="fa fa-volume-off"></i>
+                          </button>
+                      </li>
+                      <li>
+                          <button id="gained_points" style="margin-left:5px; display:none" class="btn btn-info">
+                            <i class="fa fa-level-up"></i>
                           </button>
                       </li>
                     </ul>

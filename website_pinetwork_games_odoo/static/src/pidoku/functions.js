@@ -60,7 +60,12 @@ function set_points(points) {
             if(data.result && points > 0)
             {
                 end();
-                alert("+" + points + $("#points_message").text());
+                $("#gained_points").show();
+                $("#gained_points").html("<i class='fa fa-level-up'></i> +" + points);
+                setTimeout(function() {
+                    $("#gained_points").hide();
+                }, 15000);
+                //alert("+" + points + $("#points_message").text());
                 start();
                 only_unlock_board();
             }
