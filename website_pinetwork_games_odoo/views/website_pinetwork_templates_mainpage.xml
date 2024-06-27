@@ -1949,12 +1949,17 @@
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><button id="leaderboard" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:100%;">Leaders Board</div></button></div>
+                                        <div class="col-12"><button id="leaderboard" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:100%;">Leaders Board</div><div style="font-size:80%;">General ranking</div></button></div>
                                     </div>
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><button id="winnerboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:100%;">Top 10 Board</div></button></div>
+                                        <div class="col-12"><button id="winnerboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:100%;">Top 10 Board</div><div style="font-size:80%;">Top 10 ranking by game</div></button></div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                    <div class="row">
+                                        <div class="col-12"><button id="winnerzoneboard2" class="col-8 btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;">Winners Board</div><div style="font-size:80%;">Table of all winners</div></button></div>
                                     </div>
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -1965,11 +1970,6 @@
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
                                         <div class="col-12"><a href="/get-transactions/" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div></a></div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                    <div class="row">
-                                        <div class="col-12"><button id="winnerzoneboard2" class="col-8 btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;">Winners Board</div></button></div>
                                     </div>
                                 </li>
                             </ul>
