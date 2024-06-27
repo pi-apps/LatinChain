@@ -61,7 +61,7 @@ function set_points(points) {
             {
                 end();
                 $("#gained_points").show();
-                $("#gained_points").html("+" + points + " <i class='fa fa-level-up'></i>");
+                $("#gained_points").html("+" + points);
                 setTimeout(function() {
                     $("#gained_points").hide();
                 }, 15000);
