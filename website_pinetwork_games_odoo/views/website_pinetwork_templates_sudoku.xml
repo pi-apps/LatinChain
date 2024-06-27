@@ -225,15 +225,15 @@
                       <li class="nav-item" role="presentation">
                         <a href="#sudoku" id="sudoku-tab" style="display: none;" data-toggle="tab"><i class="fa-solid fa-puzzle-piece"></i><span id="counter_span"></span></a>
                       </li>
-                      <li><button style="margin-left:5px; height:100%" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
-                      <li><button style="margin-left:5px; height:100%" class="back btn btn-info"><i class="fa fa-step-backward"></i></button></li>
+                      <li><button style="margin-left:5px; height:34px" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
+                      <li><button style="margin-left:5px; height:34px" class="back btn btn-info"><i class="fa fa-step-backward"></i></button></li>
                       <li>
-                          <button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
+                          <button id="play_button" style="margin-left:5px; height:34px" class="btn btn-info">
                             <i id="play" class="fa fa-volume-off"></i>
                           </button>
                       </li>
                       <li>
-                          <button id="gained_points" style="margin-left:5px; height:100%; display:none" class="btn btn-info">
+                          <button id="gained_points" style="margin-left:5px; height:34px; display:none" class="btn btn-info">
                             <i class="fa fa-level-up"></i>
                           </button>
                       </li>
