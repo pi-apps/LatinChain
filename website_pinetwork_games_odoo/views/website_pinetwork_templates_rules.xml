@@ -57,6 +57,7 @@
                                     </t>
                                     <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                         <h3>Prize payment for <strong t-esc="mainnet_alt_text" /> will be three times its minimum payment. Supposing minimum payment is <span t-esc="amount" /> Pi, then prize payment will be between <span t-esc="amount" /> Pi and <span t-esc="amount_end" /> Pi, depending on the platform income.</h3>
+                                        <h3>Minimum payment for <strong t-esc="mainnet_text" /> is <span t-esc="amount" /> Pi, there isn't prize payment on Testnet, but you can play any time.</h3>
                                     </t>
                                   </div>
                                 </div>
