@@ -29,8 +29,6 @@
                     <body>
                         <div class="container form-group" style="text-align:center">
                             <br/>
-                            <h3>Read four sections: Membership (why to subscribe), Rules (norms), Winners Board and Prizes (prizes), and Levels (how to obtain points).</h3>
-                            
                             <t t-set="amount_end" t-value="amount*3"/>
                             
                             <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
@@ -41,17 +39,28 @@
                                 <t t-set="mainnet_text" t-value="'test.latin-chain.com (Testnet)'"/>
                                 <t t-set="mainnet_alt_text" t-value="'latin-chain.com (Mainnet)'"/>
                             </t>
-                            
-                            <h3>All data here as prizes and minimum payment, is referring to <strong><span t-esc="mainnet_text" /></strong>. And this info could vary with the time without previous advice.</h3>
-                            
-                            <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                <h3>Minimum payment for <strong><span t-esc="mainnet_text" /></strong> is <span t-esc="amount" /> Pi, then prize payment will be between <span t-esc="amount" /> Pi and <span t-esc="amount_end" /> Pi, depending on the platform income.</h3>
-                            </t>
-                            <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                <h3>Prize payment for <strong><span t-esc="mainnet_alt_text" /></strong> will be three times its minimum payment. Supposing minimum payment is <span t-esc="amount" /> Pi, then prize payment will be between <span t-esc="amount" /> Pi and <span t-esc="amount_end" /> Pi, depending on the platform income.</h3>
-                            </t>
-                            <br/>
                             <div class="accordion" id="accordionPanelsStayOpenExample">
+                              <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingA">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseA" aria-expanded="false" aria-controls="panelsStayOpen-collapseA">
+                                    <strong>Introduction and minimum payment</strong><br/>
+                                  </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseA" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingA">
+                                  <div class="accordion-body">
+                                    <h3>Read four sections: Membership (why to subscribe), Rules (norms), Winners Board and Prizes (prizes), and Levels (how to obtain points).</h3>
+                                    
+                                    <h3>All data here as prizes and minimum payment, is referring to <strong t-esc="mainnet_text" />. And this info could vary with the time without previous advice.</h3>
+                                    
+                                    <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <h3>Minimum payment for <strong t-esc="mainnet_text" /> is <span t-esc="amount" /> Pi, then prize payment will be between <span t-esc="amount" /> Pi and <span t-esc="amount_end" /> Pi, depending on the platform income.</h3>
+                                    </t>
+                                    <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                        <h3>Prize payment for <strong t-esc="mainnet_alt_text" /> will be three times its minimum payment. Supposing minimum payment is <span t-esc="amount" /> Pi, then prize payment will be between <span t-esc="amount" /> Pi and <span t-esc="amount_end" /> Pi, depending on the platform income.</h3>
+                                    </t>
+                                  </div>
+                                </div>
+                              </div>
                               <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
