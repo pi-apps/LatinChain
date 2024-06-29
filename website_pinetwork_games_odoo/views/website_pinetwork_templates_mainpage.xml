@@ -1643,7 +1643,46 @@
                               });
                             </script>-->
                         </div>
-                        
+                        <div id="accordionOne" style="margin-bottom:5px">
+                          <div class="card">
+                            <div class="card-header" id="headingOne">
+                              <h5 class="mb-0">
+                                <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
+                                </button>
+                              </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionOne">
+                              <div class="card-body">
+                                <div style="text-align:center" class="form-group container">
+                                    <div class="row">
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col-10">
+                                            <!--A normal Pi wallet address looks like this:<br/>
+                                            <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMNOPQ...</div>
+                                            <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
+                                            <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
+                                            <br/>
+                                            <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>-->
+                                            All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>
+                                            Here you can watch your incoming and outcoming transactions:<br/>
+                                            <a href="/get-transactions/" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a>
+                                            <div>
+                                            <br/>
+                                            Read the Rules to know the prize payment amount:<br/>
+                                            <button id="rules_button_3" class="btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid; color:black !important;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-1">
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <div id="accordionTwo" style="margin-bottom:5px">
                           <div class="card">
                             <div class="card-header" id="headingTwo">
@@ -1975,41 +2014,6 @@
                             </ul>
                           </div>
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
-                            <div id="accordionOne" style="margin-bottom:5px">
-                              <div class="card">
-                                <div class="card-header" id="headingOne">
-                                  <h5 class="mb-0">
-                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                      <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
-                                    </button>
-                                  </h5>
-                                </div>
-
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionOne">
-                                  <div class="card-body">
-                                    <div style="text-align:center" class="form-group container">
-                                        <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
-                                                <!--A normal Pi wallet address looks like this:<br/>
-                                                <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMNOPQ...</div>
-                                                <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
-                                                <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
-                                                <br/>
-                                                <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>-->
-                                                All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>
-                                                Here you can watch your incoming and outcoming transactions:<br/>
-                                                <a href="/get-transactions/" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a>
-                                            </div>
-                                            <div class="col-1">
-                                            </div>
-                                        </div>
-                                      </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
                             <div id="accordionThree" style="margin-bottom:5px">
                               <div class="card">
                                 <div class="card-header" id="headingThree">

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-27 10:20+0000\n"
-"PO-Revision-Date: 2024-06-27 10:20+0000\n"
+"POT-Creation-Date: 2024-06-29 17:47+0000\n"
+"PO-Revision-Date: 2024-06-29 17:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -368,6 +368,15 @@ msgid ""
 msgstr ""
 "<br/>\n"
 "                                                <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<br/>\n"
+"                                            Read the Rules to know the prize payment amount:<br/>"
+msgstr ""
+"<br/>\n"
+"                                            Lee las Reglas para saber el monto del pago de los premios:<br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -753,7 +762,7 @@ msgstr "Todos los datos aquí como premios y pago mínimo, se refieren a"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>\n"
-"                                                Here you can watch your incoming and outcoming transactions:<br/>"
+"                                            Here you can watch your incoming and outcoming transactions:<br/>"
 msgstr ""
 "Todos los pagos de premios se pagarán automáticamente a su Pi Wallet asociada en su navegador Pi.<br/><br/>\n"
 "                                            Aquí puede ver sus transacciones entrantes y salientes:<br/>"
@@ -833,11 +842,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Chess"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Chess<span id=\"counter_span\"/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1038,15 +1042,6 @@ msgstr ""
 "Browser en"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Home"
-msgstr "Inicio"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Import..."
 msgstr "Importar..."
@@ -1196,6 +1191,11 @@ msgid "Memo ID"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Minimum payment for"
+msgstr "Pago mínimo para"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "More Info"
 msgstr "Más Info"
@@ -1271,6 +1271,11 @@ msgstr "Ganadores del Pi Hackathon"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Pi and"
+msgstr "Pi y"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Pi each 30 days:"
 msgstr "Pi cada 30 días:"
 
@@ -1306,6 +1311,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Pi, depending on the platform income."
+msgstr "Pi, dependiendo del ingreso de la plataforma."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Pi, or much more, depending on the income."
 msgstr "Pi, ó mucho más, dependiendo del ingreso."
 
@@ -1317,6 +1327,11 @@ msgid ""
 msgstr ""
 "Pi, así que vas a ganar no menos que eso. En una buena situación podríamos "
 "pagar el triple del pago mínimo:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Pi, then prize payment will be between"
+msgstr "Pi, entonces el pago de los premios va a estar entre"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1361,6 +1376,11 @@ msgstr "Anterior"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Privacy Policy"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Prize payment for"
+msgstr "Pago de los premios para"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1466,11 +1486,6 @@ msgstr "Suscribirse al Youtube Channel"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Sudoku"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Sudoku<span id=\"counter_span\"/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1771,6 +1786,11 @@ msgid "https://www.youtube.com/watch?v=9KqcyAoCZzo"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "is"
+msgstr "es"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "or"
 msgstr "ó"
@@ -1794,3 +1814,8 @@ msgstr "a"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "to watch it working.<br/>"
 msgstr "para verlo funcionando.<br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "will be three times its minimum payment. Supposing minimum payment is"
+msgstr "va a ser tres veces su pago mínimo. Suponiendo que el pago mínimo es"

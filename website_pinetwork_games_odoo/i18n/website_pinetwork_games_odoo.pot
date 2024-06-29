@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-27 10:19+0000\n"
-"PO-Revision-Date: 2024-06-27 10:19+0000\n"
+"POT-Creation-Date: 2024-06-29 17:47+0000\n"
+"PO-Revision-Date: 2024-06-29 17:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -311,6 +311,13 @@ msgstr ""
 msgid ""
 "<br/>\n"
 "                                                    <span id=\"loading_word\" style=\"display: none;\">Loading...</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<br/>\n"
+"                                            Read the Rules to know the prize payment amount:<br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -636,7 +643,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>\n"
-"                                                Here you can watch your incoming and outcoming transactions:<br/>"
+"                                            Here you can watch your incoming and outcoming transactions:<br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -713,11 +720,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Chess"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Chess<span id=\"counter_span\"/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -899,15 +901,6 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Home"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Import..."
 msgstr ""
@@ -1055,6 +1048,11 @@ msgid "Memo ID"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Minimum payment for"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "More Info"
 msgstr ""
@@ -1126,6 +1124,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Pi and"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Pi each 30 days:"
 msgstr ""
 
@@ -1156,6 +1159,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Pi, depending on the platform income."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Pi, or much more, depending on the income."
 msgstr ""
 
@@ -1164,6 +1172,11 @@ msgstr ""
 msgid ""
 "Pi, so you will gain not less than that. In a good situation we could pay "
 "the triple of minimum payment:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Pi, then prize payment will be between"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1201,6 +1214,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Privacy Policy"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Prize payment for"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1305,11 +1323,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Sudoku"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Sudoku<span id=\"counter_span\"/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1606,6 +1619,11 @@ msgid "https://www.youtube.com/watch?v=9KqcyAoCZzo"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "is"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "or"
 msgstr ""
@@ -1628,4 +1646,9 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "to watch it working.<br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "will be three times its minimum payment. Supposing minimum payment is"
 msgstr ""
