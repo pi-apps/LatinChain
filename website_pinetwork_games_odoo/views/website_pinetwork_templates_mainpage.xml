@@ -383,6 +383,10 @@
                             .darkmode--activated a.btn-success {
                               filter: contrast(100%);
                             }
+                            
+                            .darkmode--activated .goog-te-gadget {
+                              color: #000 !important;
+                            }
                         </style>
                     </t>
 
@@ -749,6 +753,10 @@
                         
                         .video-cta-button {
                           color: #000 !important;
+                        }
+                        
+                        .darkmode--activated .goog-te-gadget {
+                          color: #fff !important;
                         }
                         
                     </style>
