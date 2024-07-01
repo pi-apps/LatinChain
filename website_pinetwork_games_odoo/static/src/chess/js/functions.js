@@ -6,6 +6,35 @@ var amount = 0;
 const Pi = window.Pi;
 var startTime=new Date(), endTime=new Date(), seconds=0;
 
+function showConfetti(duration){
+    const end = Date.now() + duration * 1000;
+
+    // go Buckeyes!
+    const colors = ["#bb0000", "#ffffff"];
+
+    (function frame() {
+      confetti({
+        particleCount: 2,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors,
+      });
+
+      confetti({
+        particleCount: 2,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors,
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+}
+
 function start() {
   startTime = new Date();
 };
@@ -62,6 +91,7 @@ function set_points(points) {
                 end();
                 $("#gained_points").show();
                 $("#gained_points").html("+" + points);
+                showConfetti(10);
                 setTimeout(function() {
                     $("#gained_points").hide();
                 }, 15000);
