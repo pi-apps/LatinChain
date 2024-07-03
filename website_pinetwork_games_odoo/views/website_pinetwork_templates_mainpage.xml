@@ -1045,6 +1045,12 @@
                                 e.stopImmediatePropagation();
                                 return false;
                             });
+                            
+                            $(".open_streaming").click(function(){
+                                var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
+                                streaming_url = streaming_url[1];
+                                $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain-daily" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+                            });
                         
                             /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -1611,7 +1617,14 @@
                         <br/>-->
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
-                        <div style="margin-bottom:5px" t-if="pioneers_streaming"><button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button></div>
+                        <div style="margin-bottom:5px" t-if="pioneers_streaming">
+                            <button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
+                        </div>
+                        <t t-if="pi_main_user">
+                            <div style="margin-bottom:5px" t-if="pi_main_user.streaming_url">
+                                <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch daily video</div></button>
+                            </div>
+                        </t>
                         <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
                             <div style="display: inline"><i id="play" class="fa fa-volume-off"></i></div> 
                             <div style="display: inline">Hi<strong><span id="username" translate="no"></span></strong><span id="verified"></span>. Welcome to LatinChain Platform (Games from Latin America for Pi). Increase your Pi cryptocurrency mining power <i class="fa fa-bolt"></i> using this app. If you don't have it yet, download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link text-white"><strong>App Store</strong></a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link text-white"><strong>Play Store</strong></a> to watch it working.<br/></div>
