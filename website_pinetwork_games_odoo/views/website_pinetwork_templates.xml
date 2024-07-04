@@ -34,7 +34,7 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.118"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.119"></script>
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -143,6 +143,7 @@
                     <div id="payment_lessthan_message" style="display:none;">You only can pay from </div>
                     <div id="payment_morethan_message" style="display:none;"> to </div>
                     <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
+                    <div id="donation_message" style="display:none;">You should click on checkbox to accept this is a donation and if you pay, you will receive 30 available days from today, to use this app!</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
@@ -214,7 +215,12 @@
                                 <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
                                 <br/><br/>
                                 <button id="button_click" name="button_click" class="btn btn-success" disabled="true" style="margin: 5px; max-width: 300px">Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</button>
-                                
+                                <div>
+                                  <input class="form-check-input" type="checkbox" value="" id="acceptConditions"/>
+                                  <label class="form-check-label" for="flexCheckChecked">
+                                    I accept this is a donation and if I pay, I will receive 30 available days from today, to use this app!
+                                  </label>
+                                </div>
                                 <br />
                                 <br />
                                 <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>

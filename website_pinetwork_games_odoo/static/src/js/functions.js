@@ -145,6 +145,11 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user(false).always(function(){
                         $( "#button_click" ).click(function() {
+                            if(!$( "#acceptConditions" ).prop("checked"))
+                            {
+                                alert($("#donation_message").text());
+                                return false;
+                            }
                             var max_amount = 0;
                             
                             if(parseFloat(parseFloat(amount)*3.0).toFixed(7).toString().match(/(\.0*)/)[0].length - 1 == 7)
