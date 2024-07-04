@@ -194,16 +194,16 @@
                               color: #fff !important;
                             }
                             
-                            .darkmode--activated .board-table {
-                              filter: contrast(100%);
+                            .board-table {
+                              filter: contrast(100%) !important;
                             }
                             
-                            .darkmode--activated iframe {
-                              filter: contrast(100%);
+                            iframe {
+                              filter: contrast(100%) !important;
                             }
                             
-                            .darkmode--activated #game-settings {
-                              filter: contrast(100%);
+                            #game-settings {
+                              filter: contrast(100%) !important;
                             }
                             
                             .darkmode--activated button > span {
@@ -336,9 +336,9 @@
                               background-color: black !important;
                             }
                             
-                            .darkmode--activated input:disabled, 
-                            .darkmode--activated select:disabled{
-                              filter: contrast(100%);
+                            input:disabled, 
+                            select:disabled{
+                              filter: contrast(100%) !important;
                             }
                             
                             .darkmode--activated .dataTables_paginate > span > a.paginate_button,
@@ -377,11 +377,11 @@
                               color: #000 !important;
                             }
                             
-                            .darkmode--activated .btn-info, 
-                            .darkmode--activated .btn-primary, 
-                            .darkmode--activated .btn-success, 
-                            .darkmode--activated a.btn-success {
-                              filter: contrast(100%);
+                            .btn-info, 
+                            .btn-primary, 
+                            .btn-success, 
+                            a.btn-success {
+                              filter: contrast(100%) !important;
                             }
                             
                             .darkmode--activated .goog-te-gadget {
@@ -597,12 +597,12 @@
                           color: #fff;
                         }
                         
-                        .darkmode--activated .board-table {
-                          filter: contrast(100%);
+                        .board-table {
+                          filter: contrast(100%) !important;
                         }
                         
-                        .darkmode--activated iframe {
-                          filter: contrast(100%);
+                        iframe {
+                          filter: contrast(100%) !important;
                         }
                         
                         .darkmode--activated button > span {
@@ -651,8 +651,8 @@
                           color: #000 !important;
                         }
                         
-                        .darkmode--activated span {
-                          filter: contrast(100%);
+                        span {
+                          filter: contrast(100%) !important;
                         }
                         
                         .darkmode--activated #taboola-below-article-thumbnails * {
@@ -693,9 +693,9 @@
                           background-color: black !important;
                         }
                         
-                        .darkmode--activated input:disabled, 
-                        .darkmode--activated select:disabled{
-                          filter: contrast(100%);
+                        input:disabled, 
+                        select:disabled{
+                          filter: contrast(100%) !important;
                         }
                         
                         .darkmode--activated .dataTables_paginate > span > a.paginate_button,
