@@ -1647,9 +1647,7 @@
                         <t t-if="pi_main_user">
                             <div style="margin-bottom:5px" t-if="pi_main_user.streaming_url">
                                 <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch daily video</div></button>
-                            </div>
-                            <div style="margin-bottom:5px" t-if="pi_main_user.streaming_url">
-                                <button id="share_video" class="btn btn-danger"><div style="display:inline;"><i class="fa fa-share-alt"></i></div> <div style="display:inline;">share daily video</div></button>
+                                <button id="share_video" class="btn btn-outline-danger" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button>
                             </div>
                         </t>
                         <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
