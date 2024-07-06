@@ -1297,7 +1297,7 @@
                             share_video.addEventListener('click', async () => {
                                 const shareData = {
                                     title: 'LatinChain Platform',
-                                    text: $("#share_message").text() + "\n\nVideo:\n" + $(".open_streaming").prop("videourl"),
+                                    text: $("#share_message").text() + "\n\nVideo:\n" + $(".open_streaming").attr("videourl"),
                                     //url: 'https://latin-chain.com/',
                                 }
                                 
