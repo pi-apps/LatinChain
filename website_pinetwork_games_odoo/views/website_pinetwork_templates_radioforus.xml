@@ -286,10 +286,10 @@
                         
                         <div id="mySidenav" class="sidenav">
                           <div style="margin-top:50px"></div>
-                          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="margin-top:50px !important"><i class="fa-solid fa-x"></i></a>
-                          <a href="#"><button style="margin-left:5px; height:100%" class="clear_cache btn btn-info"><div style="display:inline;"><i class="fa fa-refresh"></i></div> <div style="display:inline;">Clear Cache</div></button></a>
-                          <a href="#"><button style="margin-left:5px; height:100%" class="back_radioforus btn btn-info"><div style="display:inline;"><i class="fa fa-step-backward"></i></div> <div style="display:inline;">Back</div></button></a>
-                          <a href="#"><button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
+                          <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" style="margin-top:50px !important"><i class="fa-solid fa-x"></i></a>
+                          <a href="javascript:void(0);"><button style="margin-left:5px; height:100%" class="clear_cache btn btn-info"><div style="display:inline;"><i class="fa fa-refresh"></i></div> <div style="display:inline;">Clear Cache</div></button></a>
+                          <a href="javascript:void(0);"><button style="margin-left:5px; height:100%" class="back_radioforus btn btn-info"><div style="display:inline;"><i class="fa fa-step-backward"></i></div> <div style="display:inline;">Back</div></button></a>
+                          <a href="javascript:void(0);"><button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
                                         <div style="display:inline;"><i id="play" class="fa fa-volume-off"></i></div> <div style="display:inline;">Music</div>
                                       </button>
                           </a>
@@ -770,10 +770,10 @@
                             
                             <div id="mySidenav" class="sidenav">
                               <div style="margin-top:50px"></div>
-                              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="margin-top:50px !important"><i class="fa-solid fa-x"></i></a>
-                              <a href="#"><button style="margin-left:5px; height:100%" class="clear_cache btn btn-info"><div style="display:inline;"><i class="fa fa-refresh"></i></div> <div style="display:inline;">Clear Cache</div></button></a>
-                              <a href="#"><button style="margin-left:5px; height:100%" class="back_radioforus btn btn-info"><div style="display:inline;"><i class="fa fa-step-backward"></i></div> <div style="display:inline;">Back</div></button></a>
-                              <a href="#"><button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
+                              <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" style="margin-top:50px !important"><i class="fa-solid fa-x"></i></a>
+                              <a href="javascript:void(0);"><button style="margin-left:5px; height:100%" class="clear_cache btn btn-info"><div style="display:inline;"><i class="fa fa-refresh"></i></div> <div style="display:inline;">Clear Cache</div></button></a>
+                              <a href="javascript:void(0);"><button style="margin-left:5px; height:100%" class="back_radioforus btn btn-info"><div style="display:inline;"><i class="fa fa-step-backward"></i></div> <div style="display:inline;">Back</div></button></a>
+                              <a href="javascript:void(0);"><button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
                                             <div style="display:inline;"><i id="play" class="fa fa-volume-off"></i></div> <div style="display:inline;">Music</div>
                                           </button>
                               </a>
