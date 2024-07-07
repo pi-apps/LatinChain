@@ -221,6 +221,92 @@
                             background-color: #14a44d;
                         }
                     </style>
+                    
+                    <style>
+                         /* The side navigation menu */
+                        .sidenav {
+                          height: 100%; /* 100% Full-height */
+                          width: 0; /* 0 width - change this with JavaScript */
+                          position: fixed; /* Stay in place */
+                          z-index: 1; /* Stay on top */
+                          top: 0; /* Stay at the top */
+                          left: 0;
+                          background-color: #111; /* Black*/
+                          overflow-x: hidden; /* Disable horizontal scroll */
+                          padding-top: 60px; /* Place content 60px from the top */
+                          transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+                        }
+
+                        /* The navigation menu links */
+                        .sidenav a {
+                          padding: 8px 8px 8px 32px;
+                          text-decoration: none;
+                          font-size: 25px;
+                          color: #818181;
+                          display: block;
+                          transition: 0.3s;
+                        }
+
+                        /* When you mouse over the navigation links, change their color */
+                        .sidenav a:hover {
+                          color: #f1f1f1;
+                        }
+
+                        /* Position and style the close button (top right corner) */
+                        .sidenav .closebtn {
+                          position: absolute;
+                          top: 0;
+                          right: 25px;
+                          font-size: 36px;
+                          margin-left: 50px;
+                        }
+
+                        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+                        .tab-content {
+                          transition: margin-left .5s;
+                          padding: 20px;
+                        }
+
+                        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+                        @media screen and (max-height: 450px) {
+                          .sidenav {padding-top: 15px;}
+                          .sidenav a {font-size: 18px;}
+                        } 
+                    </style>
+                    
+                    <script>
+                        /* Set the width of the side navigation to 250px */
+                        var open_nav = false;
+                        function openNav() {
+                          if(!open_nav)
+                          {
+                              document.getElementById("mySidenav").style.width = "250px";
+                              open_nav = true;
+                          }else
+                          {
+                              document.getElementById("mySidenav").style.width = "0";
+                              open_nav = false;
+                          }
+                        }
+
+                        /* Set the width of the side navigation to 0 */
+                        function closeNav() {
+                          document.getElementById("mySidenav").style.width = "0";
+                          open_nav = false;
+                        } 
+                    </script>
+                    
+                    <div id="mySidenav" class="sidenav">
+                      <div style="margin-top:50px"></div>
+                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="margin-top:50px !important"><i class="fa-solid fa-x"></i></a>
+                      <a href="#"><button style="margin-left:5px; height:100%" class="clear_cache btn btn-info"><div style="display:inline;"><i class="fa fa-refresh"></i></div> <div style="display:inline;">Clear Cache</div></button></a>
+                      <a href="#"><button style="margin-left:5px; height:100%" class="back btn btn-info"><div style="display:inline;"><i class="fa fa-step-backward"></i></div> <div style="display:inline;">Back</div></button></a>
+                      <a href="#"><button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
+                                    <div style="display:inline;"><i id="play" class="fa fa-volume-off"></i></div> <div style="display:inline;">Music</div>
+                                  </button>
+                      </a>
+                    </div>
+                    
                     <ul class="nav nav-pills sticky" id="myTab" style="background-color: #e3f2fd; display: flex; justify-content: center;" translate="no">
                       <li class="active" role="presentation">
                         <a href="#home" id="home-tab" data-toggle="tab"><i class="fa-solid fa-house"></i></a>
@@ -228,13 +314,8 @@
                       <li class="nav-item" role="presentation">
                         <a href="#sudoku" id="sudoku-tab" style="display: none;" data-toggle="tab"><i class="fa-solid fa-puzzle-piece"></i><span id="counter_span"></span></a>
                       </li>
-                      <li><button style="margin-left:5px; height:34px" class="clear_cache btn btn-info"><i class="fa fa-refresh"></i></button></li>
-                      <li><button style="margin-left:5px; height:34px" class="back btn btn-info"><i class="fa fa-step-backward"></i></button></li>
-                      <li>
-                          <button id="play_button" style="margin-left:5px; height:34px" class="btn btn-info">
-                            <i id="play" class="fa fa-volume-off"></i>
-                          </button>
-                      </li>
+                      
+                      <li><button style="margin-left:5px; height:100%" class="btn btn-info" onclick="openNav()"><i class="fa-solid fa-bars"></i></button></li>
                       <li>
                           <button id="gained_points" style="margin-left:5px; height:34px; display:none" class="btn btn-info">
                             <i class="fa fa-level-up"></i>
