@@ -31,6 +31,9 @@ in client JavaScript side, you must set it in server1.php.
 And you need to implement authentication:
 https://github.com/pi-apps/pi-platform-docs/blob/master/authentication.md
 
+Plus, you can implement the Sharing Social Network dialog:
+https://github.com/pi-apps/pi-platform-docs/blob/master/SDK_reference.md#share-dialog
+
 Check here:
 https://dev-rockcesar.blogspot.com/2022/10/how-to-develop-pi-app.html
 
