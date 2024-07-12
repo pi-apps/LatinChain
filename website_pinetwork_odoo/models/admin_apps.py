@@ -606,7 +606,7 @@ class admin_apps(models.Model):
                         payment_data = {
                           "amount": float(admin_app_list.pi_users_devs_to_pay_per_user),
                           "memo": "Dev payment from LatinChain Platform",
-                          "metadata": {"internal_data": "Payment prize from LatinChain Platform"},
+                          "metadata": {"internal_data": "Dev payment from LatinChain Platform"},
                           "uid": user_uid
                         }
 
@@ -730,7 +730,7 @@ class admin_apps(models.Model):
                         payment_data = {
                           "amount": float(admin_app_list.pi_users_account_balance * (admin_app_list.pi_users_devs_to_pay_percent/100)),
                           "memo": "Dev payment from LatinChain Platform",
-                          "metadata": {"internal_data": "Payment prize from LatinChain Platform"},
+                          "metadata": {"internal_data": "Dev payment from LatinChain Platform"},
                           "uid": user_uid
                         }
 
@@ -916,7 +916,7 @@ class admin_apps(models.Model):
                 payment_data = {
                   "amount": float(admin_app_list.pi_referrer_amount),
                   "memo": "Referrer payment from LatinChain Platform coming from " + pi_user_id.pi_user_code,
-                  "metadata": {"internal_data": "Payment prize from LatinChain Platform"},
+                  "metadata": {"internal_data": "Referrer payment from LatinChain Platform from " + pi_user_id.pi_user_code},
                   "uid": user_uid
                 }
 
