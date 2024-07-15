@@ -40,6 +40,7 @@ class Website(Website):
             total_transactions_daily_count = 0
             total_users_daily_count = 0
             pi_main_user = False
+            points_latin_amount = 1
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -59,8 +60,9 @@ class Website(Website):
             total_users_daily_count = int(admin_app_list[0].total_users_daily_count)
             pioneers_streaming = admin_app_list[0].pioneers_streaming
             pi_main_user = admin_app_list[0].pi_main_user
+            points_latin_amount = admin_app_list[0].points_latin_amount
         
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
 class PiNetworkController(http.Controller):
     @http.route('/radioforus', type='http', auth="public", website=True)
@@ -109,6 +111,7 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = ""
             a_ads_style_3 = ""
             mainnet = ""
+            points_latin_amount = 1
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -123,8 +126,9 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = admin_app_list[0].a_ads_data_3
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
+            points_latin_amount = admin_app_list[0].points_latin_amount
         
-        return http.request.render('website_pinetwork_games_odoo.radioforus', {'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.radioforus', {'points_latin_amount': points_latin_amount, 'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True)
     def get_transactions_radioforus(self, **kw):
@@ -224,6 +228,7 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = ""
             a_ads_style_3 = ""
             mainnet = ""
+            points_latin_amount = 1
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -238,8 +243,9 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = admin_app_list[0].a_ads_data_3
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
+            points_latin_amount = admin_app_list[0].points_latin_amount
         
-        return http.request.render('website_pinetwork_games_odoo.pinetwork', {'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.pinetwork', {'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/sudoku', type='http', auth="public", website=True)
     def sudoku(self, **kw):

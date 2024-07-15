@@ -900,7 +900,8 @@
                                             $(".user_status_account").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
                                             $( "<br/>" ).insertAfter( ".user_status_account" );
                                             $("#user_points").html(data.points);
-                                            $("#user_points_per_game").html('<table class="table text-white" style="word-break: break-word;" translate="no">' +
+                                            $("#user_points_per_game").html('<div>Latin points: ' + data.points_latin + '</div>' +
+                                                                          '<br/><table class="table text-white" style="word-break: break-word;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -969,7 +970,8 @@
                                             $(".user_status_account").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
                                             $( "<br/>" ).insertAfter( ".user_status_account" );
                                             $("#user_points").html(data.points);
-                                            $("#user_points_per_game").html('<table class="table text-white" style="word-break: break-word;" translate="no">' +
+                                            $("#user_points_per_game").html('<div>Latin points: ' + data.points_latin + '</div>' +
+                                                                          '<br/><table class="table text-white" style="word-break: break-word;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -985,7 +987,8 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_last").html('<table class="table text-white" style="word-break: break-word;" translate="no">' +
+                                            $("#user_points_last").html('<div>Latin points: ' + data.points_latin + '</div>' +
+                                                                          '<br/><table class="table text-white" style="word-break: break-word;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -1001,7 +1004,8 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_wins").html('<table class="table text-white" style="word-break: break-word;" translate="no">' +
+                                            $("#user_points_wins").html('<div>Latin points: ' + data.points_latin + '</div>' +
+                                                                          '<br/><table class="table text-white" style="word-break: break-word;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -1886,7 +1890,7 @@
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row" style="text-align: left;">
                                             <div class="col-2"></div>
-                                            <div class="col-10"><a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform</div></a></div>
+                                            <div class="col-10"><a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div></a></div>
                                             <div class="col-0"></div>
                                         </div>
                                     </li>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-06 14:52+0000\n"
-"PO-Revision-Date: 2024-07-06 14:52+0000\n"
+"POT-Creation-Date: 2024-07-15 19:35+0000\n"
+"PO-Revision-Date: 2024-07-15 19:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -714,6 +714,15 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Back"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Black"
 msgstr ""
 
@@ -753,7 +762,12 @@ msgid "Clear"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Clear Cache"
 msgstr ""
 
@@ -867,6 +881,20 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Flip Board"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+msgid "Gain Latin points ("
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"Gain Latin points, doing tasks highlighted in the interface, plus the points"
+" of each game (Chess, Snake and Sudoku)."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1093,6 +1121,15 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "More Info"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Music"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1716,11 +1753,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "points."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "share daily video"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

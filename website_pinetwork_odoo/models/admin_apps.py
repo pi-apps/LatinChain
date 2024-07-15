@@ -230,6 +230,7 @@ class admin_apps(models.Model):
     pioneers_streaming = fields.Boolean('Pioneers streaming', compute="_compute_streaming", store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     top_50_streamers_ids = fields.Many2many('pi.users', 'admin_apps_top_50_streamers_rel', string='Top 50 streamers', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_main_user = fields.Many2one('pi.users', string='Main User', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    points_latin_amount = fields.Float('Latin points amount', digits=(50,7), default=1, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("top_50_streamers_ids")
     def _compute_streaming(self):
@@ -1157,6 +1158,9 @@ class admin_apps(models.Model):
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 users[0].sudo().write({'unblocked_datetime': datetime.now()})
                                 
+                                if kw['app_client'] in ['auth_example']:
+                                    users[0].sudo().write({'points_latin': users[0].points_latin + admin_app[0].points_latin_amount})
+                                
                                 #try:
                                 #    if admin_app[0].mainnet in ['Testnet OFF']:
                                 #        if users[0].pi_user_referrer_id:
@@ -1206,6 +1210,7 @@ class pi_users(models.Model):
     points_chess_wins = fields.Float('Chess Wins', required=False, default=0, digits=(50,2))
     points_sudoku_wins = fields.Float('Sudoku Wins', required=False, default=0, digits=(50,2))
     points_snake_wins = fields.Float('Snake Wins', required=False, default=0, digits=(50,2))
+    points_latin = fields.Float('Latin Points', required=True, default=0, digits=(50,7))
     points_datetime = fields.Datetime('Points Datetime', compute="_total_points", store=True, default=datetime.now())
     paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True, digits=(50,7), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -1254,11 +1259,11 @@ class pi_users(models.Model):
         
         return True
     
-    @api.depends("points_chess", "points_sudoku", "points_snake")
+    @api.depends("points_chess", "points_sudoku", "points_snake", "points_latin")
     def _total_points(self):
         for i in self:
             total_points = i.points
-            i.points = i.points_chess + i.points_sudoku + i.points_snake
+            i.points = i.points_chess + i.points_sudoku + i.points_snake + i.points_latin
             if i.points != total_points:
                 i.points_datetime = datetime.now()
                 
