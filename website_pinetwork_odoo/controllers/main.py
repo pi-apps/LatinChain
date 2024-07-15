@@ -419,6 +419,49 @@ class PiNetworkBaseController(http.Controller):
         pi_users_list[0].sudo().write(values)
         
         return json.dumps({'result': True})
+        
+    @http.route('/set-latin-points', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    def set_latin_points(self, **kw):
+        if 'accessToken' not in kw:
+            _logger.info("accessToken not present")
+            return json.dumps({'result': False})
+        
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                _logger.info("Authorization failed")
+                return json.dumps({'result': False})
+        except:
+            _logger.info("Authorization error")
+            return json.dumps({'result': False})
+        
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+        
+        if len(pi_users_list) == 0:
+            return json.dumps({'result': False})
+        else:
+            """
+            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                _logger.info("not equeals pi_user_id")
+                return json.dumps({'result': False})
+            """
+            
+            app = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
+            
+            if len(app) == 0:
+                return json.dumps({'result': False})
+            
+            values = {'points_latin': pi_users_list[0].points_latin + app[0].points_latin_amount}
+        
+        #Uncomment in case of you want to save wallet address
+        pi_users_list[0].sudo().write(values)
+        
+        return json.dumps({'result': True})
     
     @http.route('/validate-memo', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def validate_memo(self, **kw):
