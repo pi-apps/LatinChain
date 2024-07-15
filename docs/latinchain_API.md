@@ -82,6 +82,7 @@ POST /api/get-external-winners
 "points_chess_wins": float, // Wins in chess
 "points_sudoku_wins": float, // Wins in sudoku
 "points_snake_wins": float, // Wins in snake
+"points_latin": float, // Latin points gained
 "points_datetime": string, // Datetime of the last update of points in any game
 "unblocked": boolean, // If the user is verified: True is verified, False is not verified
 "unblocked_datetime": string, // Datetime of user verification
@@ -108,6 +109,7 @@ POST /api/get-external-winners
         "points_chess_wins": float, // Wins in chess
         "points_sudoku_wins": float, // Wins in sudoku
         "points_snake_wins": float, // Wins in snake
+        "points_latin": float, // Latin points gained
         "points_datetime": string, // Datetime of the last update of points in any game
         "unblocked": boolean, // If the user is verified: True is verified, False is not verified
         "unblocked_datetime": string, // Datetime of user verification
