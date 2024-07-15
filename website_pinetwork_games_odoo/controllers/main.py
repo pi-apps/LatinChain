@@ -265,6 +265,7 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = ""
             a_ads_style_3 = ""
             mainnet = ""
+            points_latin_amount = 1
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -279,8 +280,9 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = admin_app_list[0].a_ads_data_3
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
+            points_latin_amount = admin_app_list[0].points_latin_amount
         
-        return http.request.render('website_pinetwork_games_odoo.sudoku', {'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.sudoku', {'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/snake', type='http', auth="public", website=True)
     def snake(self, **kw):
@@ -341,6 +343,7 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = ""
             a_ads_style_3 = ""
             mainnet = ""
+            points_latin_amount = 1
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -355,8 +358,9 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = admin_app_list[0].a_ads_data_3
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
+            points_latin_amount = admin_app_list[0].points_latin_amount
         
-        return http.request.render('website_pinetwork_games_odoo.chess', {'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.chess', {'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
     @http.route('/modal-vote', type='http', auth="public", website=True, csrf=False)
     def modal_vote(self, **kw):
