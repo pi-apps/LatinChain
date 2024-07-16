@@ -451,6 +451,9 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             """
             
+            if pi_users_list[0].unblocked == False:
+                return json.dumps({'result': False})
+            
             app = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
             
             if len(app) == 0:
