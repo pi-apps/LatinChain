@@ -4,6 +4,9 @@ var accessToken = "";
 var passkey = "";
 var amount = 0;
 const Pi = window.Pi;
+var startTime=new Date(), endTime=new Date(), seconds=0;
+var unblocked = false;
+var show_pi_ad_user = true;
 
 function setConfirmUnload(on) {
     if(on)
@@ -19,6 +22,20 @@ function setConfirmUnloadPoints(on) {
 
 function unloadMessage() {
     return true;
+}
+
+function start() {
+  startTime = new Date();
+};
+
+function end() {
+  endTime = new Date();
+  var timeDiff = endTime - startTime; //in ms
+  // strip the ms
+  timeDiff /= 1000;
+
+  // get seconds 
+  seconds = Math.round(timeDiff);
 }
 
 function set_points(points) {
@@ -65,13 +82,61 @@ function get_user(donation) {
                 passkey=data.passkey;
                 if(data.unblocked)
                 {
+                    unblocked = data.unblocked;
                     if(donation)
                         alert($("#unblocked_message").text());
                 }
+                show_pi_ad_user = data.show_pi_ad;
             }
         }).fail(function() {
             
         });
+    }
+}
+
+async function showPiAds(Pi) {
+    try {
+        const nativeFeaturesList = await Pi.nativeFeaturesList();
+        const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+        
+        const ready = await Pi.Ads.isAdReady("interstitial");
+        
+        if (ready === false) {
+            const requestAdResponse = await Pi.Ads.requestAd("interstitial");
+            
+            if (requestAdResponse === "AD_NOT_AVAILABLE") {
+                // display modal to update Pi Browser
+                // showAdsNotSupportedModal()
+                return;
+            }
+        }
+        
+        const showAdResponse = await Pi.Ads.showAd("interstitial");
+        
+        if(showAdResponse.result == "AD_CLOSED")
+        {
+            if(pi_user_id != "" && pi_user_code != "")
+            {
+                var data = {
+                            'pi_user_id': pi_user_id,
+                            'pi_user_code': pi_user_code,
+                            'accessToken': accessToken,
+                            'csrf_token': odoo.csrf_token,
+                        };
+                //$.ajaxSetup({async: false});
+                return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                    data = JSON.parse(data);
+                    if(data.result)
+                    {
+                    }
+                }).fail(function() {
+                    
+                });
+            }
+        }
+    } catch (err) {
+        //alert(err);
+        // Not able to fetch the user
     }
 }
 
@@ -143,6 +208,10 @@ $( document ).ready(function() {
                 //get_user(false);
                 set_points(0).always(function(){
                     get_user(false).always(function(){
+                        
+                        /*if(show_pi_ad_user)
+                            showPiAds(Pi);*/
+                        
                         $( "#button_click" ).click(function() {
                             if(!$( "#acceptConditions" ).prop("checked"))
                             {
@@ -171,6 +240,7 @@ $( document ).ready(function() {
                             }
                         });
                         $("#button_click").prop( "disabled", false );
+                        
                     });
                 });
             

@@ -838,6 +838,8 @@
                         var accessToken = "";
                         var passkey = "";
                         const Pi = window.Pi;
+                        var unblocked = false;
+                        var show_pi_ad_user = true;
                         
                         var leaderboard = "/get-points/";
                         var winnerboard = "/get-top10-zone/";
@@ -884,9 +886,13 @@
                                         if(data.complete_found)
                                             alert($("#payment_message").text());
                                             
+                                        show_pi_ad_user = data.show_pi_ad;
+                                        
                                         passkey=data.passkey;
                                         if(data.unblocked)
                                         {
+                                            unblocked = data.unblocked;
+                                        
                                             $("#verified").html(" (" + $("#verified_message").html() + ", " + data.unblocked_datetime + ")");
                                             $("#verified").show();
                                             
@@ -1038,6 +1044,52 @@
                                     
                                 }).fail(function() {
                                 });
+                            }
+                        }
+                        
+                        async function showPiAds(Pi) {
+                            try {
+                                const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                
+                                const ready = await Pi.Ads.isAdReady("interstitial");
+                                
+                                if (ready === false) {
+                                    const requestAdResponse = await Pi.Ads.requestAd("interstitial");
+                                    
+                                    if (requestAdResponse === "AD_NOT_AVAILABLE") {
+                                        // display modal to update Pi Browser
+                                        // showAdsNotSupportedModal()
+                                        return;
+                                    }
+                                }
+                                
+                                const showAdResponse = await Pi.Ads.showAd("interstitial");
+                                
+                                if(showAdResponse.result == "AD_CLOSED")
+                                {
+                                    if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                    {
+                                        var data = {
+                                                    'pi_user_id': pi_user_id,
+                                                    'pi_user_code': pi_user_code,
+                                                    'accessToken': accessToken,
+                                                    'csrf_token': odoo.csrf_token,
+                                                };
+                                        //$.ajaxSetup({async: false});
+                                        return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                                            data = JSON.parse(data);
+                                            if(data.result)
+                                            {
+                                            }
+                                        }).fail(function() {
+                                            
+                                        });
+                                    }
+                                }
+                            } catch (err) {
+                                //alert(err);
+                                // Not able to fetch the user
                             }
                         }
 
@@ -1252,7 +1304,10 @@
                                         
                                         //get_user();
                                         set_points(0).always(function(){
-                                            get_user();
+                                            get_user().always(function(){
+                                                /*if(show_pi_ad_user)
+                                                    showPiAds(Pi);*/
+                                            });
                                         });
                                     }).catch(function(error) {
                                         //Pi.openShareDialog("Error", error);

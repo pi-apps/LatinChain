@@ -6,6 +6,8 @@ var amount = 0;
 const Pi = window.Pi;
 var totalpoints = 0;
 var startTime=new Date(), endTime=new Date(), seconds=0;
+var unblocked = false;
+var show_pi_ad_user = true;
 
 function start() {
   startTime = new Date();
@@ -88,9 +90,13 @@ function get_user(pause) {
                 if(data.complete_found)
                     alert($("#payment_message").text());
                 
+                show_pi_ad_user = data.show_pi_ad;
+                
                 passkey=data.passkey;
                 if(data.unblocked)
                 {
+                    unblocked = data.unblocked;
+                    
                     $("#reset_pause_controls").show();
                     $("#plus_minus_controls").show();
                     $("#pause").show();
@@ -122,6 +128,52 @@ function get_user(pause) {
         }).fail(function() {
             
         });
+    }
+}
+
+async function showPiAds(Pi) {
+    try {
+        const nativeFeaturesList = await Pi.nativeFeaturesList();
+        const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+        
+        const ready = await Pi.Ads.isAdReady("interstitial");
+        
+        if (ready === false) {
+            const requestAdResponse = await Pi.Ads.requestAd("interstitial");
+            
+            if (requestAdResponse === "AD_NOT_AVAILABLE") {
+                // display modal to update Pi Browser
+                // showAdsNotSupportedModal()
+                return;
+            }
+        }
+        
+        const showAdResponse = await Pi.Ads.showAd("interstitial");
+        
+        if(showAdResponse.result == "AD_CLOSED")
+        {
+            if(pi_user_id != "" && pi_user_code != "")
+            {
+                var data = {
+                            'pi_user_id': pi_user_id,
+                            'pi_user_code': pi_user_code,
+                            'accessToken': accessToken,
+                            'csrf_token': odoo.csrf_token,
+                        };
+                //$.ajaxSetup({async: false});
+                return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                    data = JSON.parse(data);
+                    if(data.result)
+                    {
+                    }
+                }).fail(function() {
+                    
+                });
+            }
+        }
+    } catch (err) {
+        //alert(err);
+        // Not able to fetch the user
     }
 }
 
@@ -193,6 +245,9 @@ $( document ).ready(function() {
                 //get_user(false);
                 set_points(0).always(function(){
                     get_user(true).always(function(){
+                        if(show_pi_ad_user)
+                            showPiAds(Pi);
+                        
                         $( "#button_click" ).click(function() {
                             if(parseFloat($("#pi_donate").val()) >= parseFloat(amount))
                             {
