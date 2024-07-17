@@ -246,13 +246,10 @@ class PiNetworkBaseController(http.Controller):
         
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
-            _logger.info(pi_users_list[0].pi_user_code + " datetime 1")
         elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)):
             show_pi_ad = True
-            _logger.info(pi_users_list[0].pi_user_code + " datetime 2")
         else:
             show_pi_ad = False
-            _logger.info(pi_users_list[0].pi_user_code + " datetime 3")
         
         result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
                                                                 ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
