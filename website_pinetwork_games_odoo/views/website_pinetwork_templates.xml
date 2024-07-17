@@ -36,7 +36,7 @@
                     
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.119"></script>
                     
-                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
@@ -54,7 +54,7 @@
                       'tb_loader_script');
                       if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
                         {window.performance.mark('tbl_ic');}
-                    </script>
+                    </script>-->
                     
                     <script type="text/javascript">
                         $( document ).ready(function() {
@@ -150,7 +150,7 @@
                     <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive -->
                         
-                        <br/>
+                        <!--<br/>
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
@@ -159,7 +159,7 @@
                              data-full-width-responsive="true"></ins>
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+                        </script>-->
                         
                         <!--<br/>
                         
@@ -289,6 +289,8 @@
                                 <t t-set="amount_end" t-value="round(amount*3, 7)"/>
                                 <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
                                 <br/><br/>
+                                <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success" disabled="true" style="margin: 5px; max-width: 300px"><div>Testing feature (watch ad)</div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<t t-esc="points_latin_amount" />)</div></button>
+                                <br/><br/>
                                 <button id="button_click" name="button_click" class="btn btn-success" disabled="true" style="margin: 5px; max-width: 300px"><div>Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<t t-esc="points_latin_amount" />)</div></button>
                                 <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded" style="filter: contrast(100%) !important;">
                                   <input class="form-check-input" type="checkbox" value="" id="acceptConditions"/>
@@ -346,7 +348,7 @@
                     <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive 2 -->
                         
-                        <ins class="adsbygoogle"
+                        <!--<ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
                              data-ad-slot="9525388880"
@@ -366,7 +368,7 @@
                             placement: 'Below Article Thumbnails',
                             target_type: 'mix'
                           });
-                        </script>
+                        </script>-->
                     </div>
                     
                     <button id="myBtn"><a id="myABtn" href="#top" style="color: white" translate="no">Top</a></button>
@@ -397,10 +399,10 @@
                             }
                     </style>
                     
-                    <script type="text/javascript">
+                    <!--<script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
-                    </script>
+                    </script>-->
 
                 </body>
 

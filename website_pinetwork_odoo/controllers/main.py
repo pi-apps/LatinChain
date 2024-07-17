@@ -442,6 +442,11 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
+        app = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
+        
+        if len(app) == 0:
+            return json.dumps({'result': False})
+        
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         else:
@@ -454,17 +459,12 @@ class PiNetworkBaseController(http.Controller):
             if pi_users_list[0].unblocked == False:
                 return json.dumps({'result': False})
             
-            app = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
-            
-            if len(app) == 0:
-                return json.dumps({'result': False})
-            
             values = {'points_latin': pi_users_list[0].points_latin + app[0].points_latin_amount}
         
         #Uncomment in case of you want to save wallet address
         pi_users_list[0].sudo().write(values)
         
-        return json.dumps({'result': True})
+        return json.dumps({'result': True, 'points_latin': app[0].points_latin_amount})
     
     @http.route('/validate-memo', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def validate_memo(self, **kw):
