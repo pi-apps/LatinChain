@@ -244,6 +244,13 @@ class PiNetworkBaseController(http.Controller):
         else:
             unblocked_datetime = str(pi_users_list[0].unblocked_datetime) + " UTC"
         
+        if not pi_users_list[0].pi_ad_datetime:
+            show_pi_ad = True
+        elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)):
+            show_pi_ad = True
+        else:
+            show_pi_ad = False
+        
         result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
                                                                 ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
         
@@ -277,8 +284,47 @@ class PiNetworkBaseController(http.Controller):
                             'im_winner': im_winner, 'pi_wallet_address': pi_users_list[0].pi_wallet_address,
                             'streaming_url': pi_users_list[0].streaming_url,
                             'referrer_code': referrer_code,
-                            'complete_found': result_found['complete_found']})
+                            'complete_found': result_found['complete_found'],
+                            'show_pi_ad': show_pi_ad})
     
+    @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+    def set_pi_ad_datetime(self, **kw):
+        if 'accessToken' not in kw:
+            _logger.info("accessToken not present")
+            return json.dumps({'result': False})
+        
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                _logger.info("Authorization failed")
+                return json.dumps({'result': False})
+        except:
+            _logger.info("Authorization error")
+            return json.dumps({'result': False})
+        
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+        
+        if len(pi_users_list) == 0:
+            return json.dumps({'result': False})
+        else:
+            """
+            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                _logger.info("not equeals pi_user_id")
+                return json.dumps({'result': False})
+            """
+            
+            values = {'pi_ad_datetime': datetime.now()}
+        
+        #Uncomment in case of you want to save wallet address
+        pi_users_list[0].sudo().write(values)
+        
+        return json.dumps({'result': True})
+        
     @http.route('/set-pi-wallet', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def set_pi_wallet(self, **kw):
         if 'accessToken' not in kw:

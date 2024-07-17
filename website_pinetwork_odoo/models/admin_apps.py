@@ -231,6 +231,7 @@ class admin_apps(models.Model):
     top_50_streamers_ids = fields.Many2many('pi.users', 'admin_apps_top_50_streamers_rel', string='Top 50 streamers', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_main_user = fields.Many2one('pi.users', string='Main User', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     points_latin_amount = fields.Float('Latin points amount', digits=(50,7), default=1, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_ad_seconds = fields.Integer('Pi Ad seconds', default=300, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("top_50_streamers_ids")
     def _compute_streaming(self):
@@ -1224,6 +1225,7 @@ class pi_users(models.Model):
     donator = fields.Boolean('Donator', compute="_compute_donator", store=True)
     paid_in_all_donations = fields.Float('Paid by user in donations', compute="_compute_donator", store=True, digits=(50,7))
     pi_user_referrer_id = fields.Many2one('pi.users', string='Referrer code', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_ad_datetime = fields.Datetime('Pi Ad datetime', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
     def _compute_donator(self):

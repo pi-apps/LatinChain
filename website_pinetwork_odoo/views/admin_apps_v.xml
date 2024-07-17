@@ -44,7 +44,10 @@
                                     <field name="a_ads_style_3"/>
                                     <field name="block_points"/>
                                     <field name="pi_main_user"/>
-                                    <field name="points_latin_amount"/>
+                            </group>
+                            <group string="Pi Ad config">
+                                <field name="points_latin_amount"/>
+                                <field name="pi_ad_seconds"/>
                             </group>
                             <group string="Referrers config">
                                 <field name="pi_referrer_amount"/>
