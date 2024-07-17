@@ -189,6 +189,7 @@ $( document ).ready(function() {
                         start();
                         return;
                     }
+                    start();
                     
                     if(pi_user_id != "" && pi_user_code != "")
                     {
