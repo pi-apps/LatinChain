@@ -261,11 +261,12 @@ $( document ).ready(function() {
                                         const showAdResponse = await Pi.Ads.showAd("rewarded");
                                         
                                         if (showAdResponse.result === "AD_REWARDED") {
-                                            if(pi_user_id != "" && pi_user_code != "")
+                                            if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                                             {
                                                 var data = {
                                                     'pi_user_id': pi_user_id,
                                                     'pi_user_code': pi_user_code,
+                                                    'adId': showAdResponse.adId,
                                                     'passkey': passkey,
                                                     'accessToken': accessToken,
                                                     'csrf_token': odoo.csrf_token,

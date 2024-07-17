@@ -440,12 +440,31 @@ class PiNetworkBaseController(http.Controller):
             _logger.info("Authorization error")
             return json.dumps({'result': False})
         
-        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
-        app = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
         
-        if len(app) == 0:
+        if len(admin_app_list) == 0:
             return json.dumps({'result': False})
+        
+        if 'adId' not in kw:
+            _logger.info("adId not present")
+            return json.dumps({'result': False})
+        
+        re = requests.post('https://api.minepi.com/v2/ad_network/status/'+kw['adId'], headers={'Authorization': "Key " + admin_app_list[0].admin_key})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['identifier'] == kw['adId'] and result_dict['mediator_ack_status'] == "granted"):
+                _logger.info("Not granted")
+                return json.dumps({'result': False})
+        except:
+            _logger.info("Ad authorization error")
+            return json.dumps({'result': False})
+        
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
@@ -459,12 +478,12 @@ class PiNetworkBaseController(http.Controller):
             if pi_users_list[0].unblocked == False:
                 return json.dumps({'result': False})
             
-            values = {'points_latin': pi_users_list[0].points_latin + app[0].points_latin_amount}
+            values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount}
         
         #Uncomment in case of you want to save wallet address
         pi_users_list[0].sudo().write(values)
         
-        return json.dumps({'result': True, 'points_latin': app[0].points_latin_amount})
+        return json.dumps({'result': True, 'points_latin': admin_app_list[0].points_latin_amount})
     
     @http.route('/validate-memo', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def validate_memo(self, **kw):
