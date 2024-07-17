@@ -1750,13 +1750,19 @@
                         </div>
                         <div id="accordionOne" style="margin-bottom:5px">
                           <div class="card">
-                            <div class="card-header" id="headingOne">
+                            <!--<div class="card-header" id="headingOne">
                               <h5 class="mb-0">
                                 <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                   <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
                                 </button>
                               </h5>
-                            </div>
+                            </div>-->
+                            
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
+                              </button>
+                            </h2>
 
                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionOne">
                               <div class="card-body">
@@ -1790,13 +1796,19 @@
                         </div>
                         <div id="accordionTwo" style="margin-bottom:5px">
                           <div class="card">
-                            <div class="card-header" id="headingTwo">
+                            <!--<div class="card-header" id="headingTwo">
                               <h5 class="mb-0">
                                 <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                   <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
                                 </button>
                               </h5>
-                            </div>
+                            </div>-->
+                            
+                            <h2 class="accordion-header" id="headingTwo">
+                              <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
+                              </button>
+                            </h2>
 
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTwo">
                               <div class="card-body">
@@ -1858,13 +1870,19 @@
                             </div>
                             <div id="accordionFirst" style="margin-bottom:5px" t-if="mainnet in ['Testnet OFF']">
                               <div class="card">
-                                <div class="card-header" id="headingFirst">
+                                <!--<div class="card-header" id="headingFirst">
                                   <h5 class="mb-0">
                                     <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseFirst" aria-expanded="true" aria-controls="collapseFirst">
                                       <div style=""><i class="fa fa-users"></i></div><div style="">Set your Pi referrer code</div>
                                     </button>
                                   </h5>
-                                </div>
+                                </div>-->
+                                
+                                <h2 class="accordion-header" id="headingFirst">
+                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFirst" aria-expanded="true" aria-controls="collapseFirst">
+                                    <div style=""><i class="fa fa-users"></i></div><div style="">Set your Pi referrer code</div>
+                                  </button>
+                                </h2>
 
                                 <div id="collapseFirst" class="collapse" aria-labelledby="headingFirst" data-parent="#accordionFirst">
                                   <div class="card-body">
@@ -2128,6 +2146,12 @@
                                     </button>
                                   </h5>
                                 </div>
+                                
+                                <h2 class="accordion-header" id="headingFirst">
+                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFirst" aria-expanded="true" aria-controls="collapseFirst">
+                                    <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
+                                  </button>
+                                </h2>
 
                                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionThree">
                                   <div class="card-body">
