@@ -2139,16 +2139,16 @@
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
                             <div id="accordionThree" style="margin-bottom:5px">
                               <div class="card">
-                                <div class="card-header" id="headingThree">
+                                <!--<div class="card-header" id="headingThree">
                                   <h5 class="mb-0">
                                     <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                       <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
                                     </button>
                                   </h5>
-                                </div>
+                                </div>-->
                                 
-                                <h2 class="accordion-header" id="headingFirst">
-                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFirst" aria-expanded="true" aria-controls="collapseFirst">
+                                <h2 class="accordion-header" id="headingThree">
+                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                     <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
                                   </button>
                                 </h2>
