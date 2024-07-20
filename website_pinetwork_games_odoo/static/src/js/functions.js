@@ -244,11 +244,7 @@ $( document ).ready(function() {
                         
                         if(unblocked)
                         {
-                            $("#button_reward_ad").prop( "disabled", true );
-                            setTimeout(function ()
-                            {
-                                $("#button_reward_ad").prop( "disabled", false );
-                            }, 5000);
+                            $("#button_reward_ad").prop( "disabled", false );
                         }
                         
                         $( "#button_reward_ad" ).click(async function() {
