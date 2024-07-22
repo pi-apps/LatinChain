@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 08:41+0000\n"
-"PO-Revision-Date: 2024-07-22 08:41+0000\n"
+"POT-Creation-Date: 2024-07-22 09:23+0000\n"
+"PO-Revision-Date: 2024-07-22 09:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,6 +22,7 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
 msgid ""
 "<br/><br/>\n"
@@ -173,6 +174,7 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
@@ -228,6 +230,7 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
 msgid "Are you sure you want to go back?."
 msgstr ""
@@ -848,6 +851,7 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_transactions
 msgid "Top"
 msgstr ""
@@ -978,6 +982,14 @@ msgid ""
 "UTC<br/><br/>\n"
 "                        Hello <strong translate=\"no\"><span id=\"username\"/></strong><br/><br/>\n"
 "                        Welcome to LatinChain Academy, where you can learn Odoo.<br/><br/>"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
+msgid ""
+"UTC<br/><br/>\n"
+"                        Hello <strong translate=\"no\"><span id=\"username\"/></strong><br/><br/>\n"
+"                        Welcome to LatinChain Sports, where you can watch Soccer results.<br/><br/>"
 msgstr ""
 
 #. module: website_pinetwork_odoo
