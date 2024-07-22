@@ -45,7 +45,7 @@
                     
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript">
+                    <!--<script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
                       !function (e, f, u, i) {
@@ -61,7 +61,7 @@
                       'tb_loader_script');
                       if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
                         {window.performance.mark('tbl_ic');}
-                    </script>
+                    </script>-->
 
                     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
                     <!--[if lt IE 9]>
@@ -655,7 +655,7 @@
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-                        <br/>
+                        <!--<br/>
                         
                         <div id="taboola-below-article-thumbnails"></div>
                         <script type="text/javascript">
@@ -666,13 +666,13 @@
                             placement: 'Below Article Thumbnails',
                             target_type: 'mix'
                           });
-                        </script>
+                        </script>-->
                     </div>
                     
-                    <script type="text/javascript">
+                    <!--<script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
-                    </script>
+                    </script>-->
                 </body>
             </html>
             </t>
