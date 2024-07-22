@@ -18,7 +18,7 @@
                     <title>LatinChain Leaders Board</title>
                 </head>
                 <body>
-                    <div class="container" style="text-align:center">
+                    <div class="container" style="text-align:center; max-width: 840px">
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
@@ -218,7 +218,7 @@
                     <title>LatinChain Top 10 Board</title>
                 </head>
                 <body>
-                    <div class="container" style="text-align:center">
+                    <div class="container" style="text-align:center; max-width: 840px">
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="pi_user.points" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
@@ -648,7 +648,7 @@
                     <title>LatinChain Winners Board</title>
                 </head>
                 <body>
-                    <div class="container" style="text-align:center">
+                    <div class="container" style="text-align:center; max-width: 840px">
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_users_winners_datetime">
                             Cut at: <span t-esc="pi_users_winners_datetime" /> UTC<br/><br/>
@@ -884,7 +884,7 @@
                     <title>LatinChain Top 50 streamers</title>
                 </head>
                 <body>
-                    <div class="container" style="text-align:center">
+                    <div class="container" style="text-align:center; max-width: 840px">
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
                             <t t-if="pi_user.streaming_url">
@@ -1114,7 +1114,7 @@
                     <title>Credits</title>
                 </head>
                 <body>
-                    <div class="container" style="text-align:center">
+                    <div class="container" style="text-align:center; max-width: 840px">
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         
                         <strong>LatinChain give its thanks to all the donators who donate Pi:</strong><br/>
@@ -1417,7 +1417,7 @@
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
                     
-                    <div class="container" style="text-align:center">
+                    <div class="container" style="text-align:center; max-width: 840px">
                         <!-- LatinChain Ad responsive -->
                         
                         <!--<br/>
@@ -1760,7 +1760,7 @@
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
                     
-                    <div class="container" style="text-align:center">
+                    <div class="container" style="text-align:center; max-width: 840px">
                         <!-- LatinChain Ad responsive -->
                         
                         <!--<br/>
@@ -2088,7 +2088,7 @@
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
                     
-                    <div class="container" style="text-align:center">
+                    <div class="container" style="text-align:center; max-width: 840px">
                         <!-- LatinChain Ad responsive -->
                         
                         <!--<br/>
