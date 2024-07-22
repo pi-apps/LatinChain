@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-15 19:35+0000\n"
-"PO-Revision-Date: 2024-07-15 19:35+0000\n"
+"POT-Creation-Date: 2024-07-22 08:43+0000\n"
+"PO-Revision-Date: 2024-07-22 08:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -92,6 +92,11 @@ msgstr "* Usa este link para unirte a Pi Network:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ". And this info could vary with the time without previous advice."
 msgstr ". Y esta información podría variar con el tiempo sin previo aviso."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid ". OpenMainnet)"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1020,8 +1025,8 @@ msgid ""
 "Gain Latin points, doing tasks highlighted in the interface, plus the points"
 " of each game (Chess, Snake and Sudoku)."
 msgstr ""
-"Gana Latin points, haciendo tareas resaltadas en la interfaz, además de los puntos"
-" de cada juego (Chess, Snake y Sudoku)."
+"Gana Latin points, haciendo tareas resaltadas en la interfaz, además de los "
+"puntos de cada juego (Chess, Snake y Sudoku)."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1158,6 +1163,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LATINCHAIN ACADEMY"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Last 24 hours: \n"
 "                                <br/>"
@@ -1199,6 +1209,11 @@ msgstr "Líderes"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Leaders Board"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Learn Odoo with LatinChain"
+msgstr "Aprende Odoo con LatinChain"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1642,6 +1657,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Terms (ToS)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid "Testing feature (watch ad)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

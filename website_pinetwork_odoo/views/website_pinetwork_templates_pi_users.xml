@@ -1544,6 +1544,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
+                    <!--
                     <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
                     <script type="text/javascript">
@@ -1562,7 +1563,7 @@
                       'tb_loader_script');
                       if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
                         {window.performance.mark('tbl_ic');}
-                    </script>
+                    </script>-->
                     
                     <script type="text/javascript">
                         function copyToClipboard(text) {
@@ -1585,9 +1586,113 @@
                             
                             var pi_user_id = "", pi_user_code = "", accessToken = "";
                             
+                            var passkey = "";
+                            var unblocked = false;
+                            var show_pi_ad_user = true;
+                            
                             const Pi = window.Pi;
                             
                             Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                            
+                            function set_points(points) {
+                                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                {
+                                    var data = {
+                                        'pi_user_id': pi_user_id,
+                                        'pi_user_code': pi_user_code,
+                                        'points': points,
+                                        'passkey': passkey,
+                                        'accessToken': accessToken,
+                                        'csrf_token': odoo.csrf_token,
+                                    };
+                                    //$.ajaxSetup({async: false});
+                                    return $.post( "/pi-points", data).done(function(data) {
+                                        data = JSON.parse(data);
+                                        //if(data.result)
+                                        //    alert("You won " + points + " points");
+                                        //$("#refresh").click();
+
+                                    }).fail(function() {
+                                    });
+                                }
+                            }
+                            
+                            function get_user() {
+                                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                {
+                                    var data = {
+                                                'pi_user_id': pi_user_id,
+                                                'pi_user_code': pi_user_code,
+                                                'accessToken': accessToken,
+                                                'csrf_token': odoo.csrf_token,
+                                            };
+                                    //$.ajaxSetup({async: false});
+                                    return $.post( "/get-user", data).done(function(data) {
+                                        data = JSON.parse(data);
+                                        if(data.result)
+                                        {
+                                            if(data.complete_found)
+                                                alert($("#payment_message").text());
+                                                
+                                            show_pi_ad_user = data.show_pi_ad;
+                                            
+                                            passkey=data.passkey;
+                                            if(data.unblocked)
+                                            {
+                                                unblocked = data.unblocked;
+                                            }
+                                        }
+                                        
+                                    }).fail(function() {
+                                    });
+                                }
+                            }
+                            
+                            async function showPiAds(Pi) {
+                                try {
+                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                    
+                                    const ready = await Pi.Ads.isAdReady("interstitial");
+                                    
+                                    if (ready === false) {
+                                        const requestAdResponse = await Pi.Ads.requestAd("interstitial");
+                                        
+                                        if (requestAdResponse === "AD_NOT_AVAILABLE") {
+                                            // display modal to update Pi Browser
+                                            // showAdsNotSupportedModal()
+                                            return;
+                                        }
+                                    }
+                                    
+                                    const showAdResponse = await Pi.Ads.showAd("interstitial");
+                                    
+                                    if(showAdResponse.result == "AD_CLOSED")
+                                    {
+                                        if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                        {
+                                            var data = {
+                                                        'pi_user_id': pi_user_id,
+                                                        'pi_user_code': pi_user_code,
+                                                        'accessToken': accessToken,
+                                                        'csrf_token': odoo.csrf_token,
+                                                    };
+                                            //$.ajaxSetup({async: false});
+                                            return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                                                data = JSON.parse(data);
+                                                if(data.result)
+                                                {
+                                                }
+                                            }).fail(function() {
+                                                
+                                            });
+                                        }
+                                    }
+                                } catch (err) {
+                                    //alert(err);
+                                    // Not able to fetch the user
+                                }
+                            }
                             
                             async function auth() {
                                 try {
@@ -1604,10 +1709,12 @@
                                         
                                         $('#username').html(" " + auth.user.username);
                                         
-                                        myData.pi_user_code = pi_user_code;
-                                        myData.pi_user_id = pi_user_id;
-                                        myData.accessToken = accessToken;
-                                        table.ajax.reload();
+                                        set_points(0).always(function(){
+                                            get_user().always(function(){
+                                                if(show_pi_ad_user)
+                                                    showPiAds(Pi);
+                                            });
+                                        });
                                     }).catch(function(error) {
                                         console.error(error);
                                     });
@@ -1646,7 +1753,7 @@
                         } );
                     </script>
                     
-                    <title>Transactions</title>
+                    <title>LatinChain Academy</title>
                 </head>
                 <body>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
@@ -1656,7 +1763,7 @@
                     <div class="container" style="text-align:center">
                         <!-- LatinChain Ad responsive -->
                         
-                        <br/>
+                        <!--<br/>
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
@@ -1665,7 +1772,7 @@
                              data-full-width-responsive="true"></ins>
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+                        </script>-->
                         
                         
                         <!--<br/>
@@ -1685,30 +1792,15 @@
                         <button id="back" class="btn btn-info" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                         <br/><br/>
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
-                        Pi cryptocurrency Transactions for user <strong translate="no"><span id="username" /></strong>:<br/><br/>
-                        <table id="transactions" class="display" style="">
-                            <thead>
-                                <tr>
-                                    <th>Memo</th>
-                                    <th>Amount</th>
-                                    <th>TXID</th>
-                                </tr>
-                            </thead>
-                            <tbody style="word-break: break-word;">
-                                <!--<t t-foreach="pi_users_list" t-as="pi_user">
-                                    <tr>
-                                        <td>
-                                            <strong><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>)</t>
-                                        </td>
-                                    </tr>
-                                </t>-->
-                            </tbody>
-                        </table>
+                        Hello <strong translate="no"><span id="username" /></strong><br/><br/>
+                        Welcome to LatinChain Academy, where you can learn Odoo.<br/><br/>
+                        
+                        <iframe src="https://drive.google.com/embeddedfolderview?id=1jhETR4rv-YCA1QDApX2lhTMvo8PMQnVR#list" style="width:100%; height:600px; border:0;"></iframe>
                         <br/>
                         
                         <!-- LatinChain Ad responsive 2 -->
-                        <br/>    
-                        <ins class="adsbygoogle"
+                        <br/>
+                        <!--<ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
                              data-ad-slot="9525388880"
@@ -1729,7 +1821,7 @@
                             placement: 'Below Article Thumbnails',
                             target_type: 'mix'
                           });
-                        </script>
+                        </script>-->
                     </div>
                     
                     <button id="myBtn"><a id="myABtn" href="#top" style="color: white" translate="no">Top</a></button>
@@ -1760,10 +1852,10 @@
                             }
                     </style>
                     
-                    <script type="text/javascript">
+                    <!--<script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
-                    </script>
+                    </script>-->
                 </body>
             </html>
             </t>
