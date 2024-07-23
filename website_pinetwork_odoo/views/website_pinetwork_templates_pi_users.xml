@@ -1640,8 +1640,8 @@
                                             if(data.unblocked)
                                             {
                                                 unblocked = data.unblocked;
-                                                $("#show_button").show();
-                                                //$("#show_content").show();
+                                                
+                                                $("#show_content").show();
                                             }else
                                             {
                                                 $("#show_button").show();
@@ -1978,8 +1978,8 @@
                                             if(data.unblocked)
                                             {
                                                 unblocked = data.unblocked;
-                                                $("#show_button").show();
-                                                //$("#show_content").show();
+                                                
+                                                $("#show_content").show();
                                             }else
                                             {
                                                 $("#show_button").show();
