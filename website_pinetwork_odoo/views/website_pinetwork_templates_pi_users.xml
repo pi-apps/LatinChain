@@ -1640,6 +1640,11 @@
                                             if(data.unblocked)
                                             {
                                                 unblocked = data.unblocked;
+                                                $("#show_button").show();
+                                                //$("#show_content").show();
+                                            }else
+                                            {
+                                                $("#show_button").show();
                                             }
                                         }
                                         
@@ -1795,7 +1800,12 @@
                         Hello <strong translate="no"><span id="username" /></strong><br/><br/>
                         Welcome to LatinChain Academy, where you can learn Odoo.<br/><br/>
                         
-                        <iframe src="https://drive.google.com/embeddedfolderview?id=1jhETR4rv-YCA1QDApX2lhTMvo8PMQnVR#list" style="width:100%; height:600px; border:0;"></iframe>
+                        <div id="show_content" style="display: none">
+                            <iframe src="https://drive.google.com/embeddedfolderview?id=1jhETR4rv-YCA1QDApX2lhTMvo8PMQnVR#list" style="width:100%; height:600px; border:0;"></iframe>
+                        </div>
+                        <div id="show_button" style="display: none">
+                            <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Academy</div><div style="font-size:80%;">Gain Latin points</div></a>
+                        </div>
                         <br/>
                         
                         <!-- LatinChain Ad responsive 2 -->
@@ -1968,6 +1978,11 @@
                                             if(data.unblocked)
                                             {
                                                 unblocked = data.unblocked;
+                                                $("#show_button").show();
+                                                //$("#show_content").show();
+                                            }else
+                                            {
+                                                $("#show_button").show();
                                             }
                                         }
                                         
@@ -2123,13 +2138,18 @@
                         Hello <strong translate="no"><span id="username" /></strong><br/><br/>
                         Welcome to LatinChain Sports, where you can watch Soccer results.<br/><br/>
                         
-                        <iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="600" height="760" allowfullscreen="true" allow='autoplay; fullscreen' style="width:100%;height:760px;overflow:hidden;display:block;" class="_scorebatEmbeddedPlayer_"></iframe><script>(function(d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0];
-                            if (d.getElementById(id)) return;
-                            js = d.createElement(s); js.id = id;
-                            js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv';
-                            fjs.parentNode.insertBefore(js, fjs);
-                          }(document, 'script', 'scorebat-jssdk'));</script>
+                        <div id="show_content" style="display: none">
+                            <iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="600" height="760" allowfullscreen="true" allow='autoplay; fullscreen' style="width:100%;height:760px;overflow:hidden;display:block;" class="_scorebatEmbeddedPlayer_"></iframe><script>(function(d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s); js.id = id;
+                                js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv';
+                                fjs.parentNode.insertBefore(js, fjs);
+                              }(document, 'script', 'scorebat-jssdk'));</script>
+                        </div>
+                        <div id="show_button" style="display: none">
+                            <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Sports</div><div style="font-size:80%;">Gain Latin points</div></a>
+                        </div>
                         <br/>
                         
                         <!-- LatinChain Ad responsive 2 -->

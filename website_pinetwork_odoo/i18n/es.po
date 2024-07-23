@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 09:24+0000\n"
-"PO-Revision-Date: 2024-07-22 09:24+0000\n"
+"POT-Creation-Date: 2024-07-23 01:10+0000\n"
+"PO-Revision-Date: 2024-07-23 01:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -370,6 +370,12 @@ msgid "Cut at:"
 msgstr "Corte a las:"
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
+msgid "DONATE"
+msgstr "DONAR"
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__days_available
 msgid "Days available"
 msgstr ""
@@ -432,6 +438,16 @@ msgid "Display Name"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+msgid "Donate Pi to unblock LatinChain Academy"
+msgstr "Donar Pi para desbloquear LatinChain Academy"
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
+msgid "Donate Pi to unblock LatinChain Sports"
+msgstr "Donar Pi para desbloquear LatinChain Sports"
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__donator
 msgid "Donator"
 msgstr ""
@@ -455,6 +471,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__from_address
 msgid "From address"
 msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
+msgid "Gain Latin points"
+msgstr "Gana Latin points"
 
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__google_adsense_ads_txt
