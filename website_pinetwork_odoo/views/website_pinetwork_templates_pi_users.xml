@@ -1639,6 +1639,8 @@
                                             show_pi_ad_user = data.show_pi_ad;
                                             
                                             passkey=data.passkey;
+                                            
+                                            $("#show_pibrowser").hide();
                                             if(data.unblocked)
                                             {
                                                 unblocked = data.unblocked;
@@ -1803,6 +1805,9 @@
                         Hello <strong translate="no"><span id="username" /></strong><br/><br/>
                         Welcome to LatinChain Academy, where you can learn Odoo.<br/><br/>
                         
+                        <div id="show_pibrowser" style="">
+                            Access throught Pi Browser (Pi Network).
+                        </div>
                         <div id="show_content" style="display: none; background-color: white">
                         </div>
                         <div id="show_button" style="display: none">
@@ -1979,6 +1984,8 @@
                                             show_pi_ad_user = data.show_pi_ad;
                                             
                                             passkey=data.passkey;
+                                            
+                                            $("#show_pibrowser").hide();
                                             if(data.unblocked)
                                             {
                                                 unblocked = data.unblocked;
@@ -2143,6 +2150,9 @@
                         Hello <strong translate="no"><span id="username" /></strong><br/><br/>
                         Welcome to LatinChain Sports, where you can watch Soccer results.<br/><br/>
                         
+                        <div id="show_pibrowser" style="">
+                            Access throught Pi Browser (Pi Network).
+                        </div>
                         <div id="show_content" style="display: none">
                         </div>
                         <div id="show_button" style="display: none">
