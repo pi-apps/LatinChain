@@ -241,6 +241,8 @@ $( document ).ready(function() {
                             }
                         });
                         
+                        $("#button_click").prop( "disabled", false );
+                        
                         $("#button_reward_ad").prop( "disabled", true );
                         setTimeout(function ()
                         {
