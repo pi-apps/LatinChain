@@ -1735,6 +1735,12 @@
                         
                             auth();
                             
+                            setTimeout(function ()
+                            {
+                                if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                    $("#show_pibrowser").show();
+                            }, 5000);
+                            
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm($( "#clear_cache_message" ).text());
                                 if(result)
@@ -1805,7 +1811,7 @@
                         Hello <strong translate="no"><span id="username" /></strong><br/><br/>
                         Welcome to LatinChain Academy, where you can learn Odoo.<br/><br/>
                         
-                        <div id="show_pibrowser" style="">
+                        <div id="show_pibrowser" style="display: none">
                             Access throught Pi Browser (Pi Network).
                         </div>
                         <div id="show_content" style="display: none; background-color: white">
@@ -2080,6 +2086,12 @@
                         
                             auth();
                             
+                            setTimeout(function ()
+                            {
+                                if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                    $("#show_pibrowser").show();
+                            }, 5000);
+                            
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm($( "#clear_cache_message" ).text());
                                 if(result)
@@ -2150,7 +2162,7 @@
                         Hello <strong translate="no"><span id="username" /></strong><br/><br/>
                         Welcome to LatinChain Sports, where you can watch Soccer results.<br/><br/>
                         
-                        <div id="show_pibrowser" style="">
+                        <div id="show_pibrowser" style="display: none">
                             Access throught Pi Browser (Pi Network).
                         </div>
                         <div id="show_content" style="display: none">
