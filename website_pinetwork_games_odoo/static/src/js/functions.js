@@ -240,84 +240,77 @@ $( document ).ready(function() {
                                 alert($("#payment_lessthan_message").text() + amount + " Pi" + $("#payment_morethan_message").text() + max_amount + " Pi.");
                             }
                         });
-                        $("#button_click").prop( "disabled", false );
                         
-                        if(unblocked)
+                        $("#button_reward_ad").prop( "disabled", true );
+                        setTimeout(function ()
                         {
-                            $("#button_reward_ad").prop( "disabled", true );
-                            setTimeout(function ()
-                            {
-                                $("#button_reward_ad").prop( "disabled", false );
-                            }, 5000);
-                        }
+                            $("#button_reward_ad").prop( "disabled", false );
+                        }, 5000);
                         
                         $( "#button_reward_ad" ).click(async function() {
-                            if(unblocked)
+                            end();
+                            if(seconds <= 5)
                             {
-                                end();
-                                if(seconds <= 5)
-                                {
-                                    start();
-                                    $("#button_reward_ad").prop( "disabled", true );
-                                    setTimeout(function ()
-                                    {
-                                        $("#button_reward_ad").prop( "disabled", false );
-                                    }, 5000);
-                                    return;
-                                }
                                 start();
-                                
-                                if(pi_user_id != "" && pi_user_code != "")
+                                $("#button_reward_ad").prop( "disabled", true );
+                                setTimeout(function ()
                                 {
-                                    try {
-                                        const ready = await Pi.Ads.isAdReady("rewarded");
-                                        if (ready === false) {
-                                            const requestAdResponse = await Pi.Ads.requestAd("rewarded");
-                                            if (requestAdResponse === "ADS_NOT_SUPPORTED") {
-                                                // display modal to update Pi Browser
-                                                // showAdsNotSupportedModal()
-                                                return;
-                                            }
-                                            if (requestAdResponse !== "AD_LOADED") {
-                                                // display modal ads are temporarily unavailable and user should try again later
-                                                // showAdUnavailableModal()
-                                                return;
-                                            }
+                                    $("#button_reward_ad").prop( "disabled", false );
+                                }, 5000);
+                                return;
+                            }
+                            start();
+                            
+                            if(pi_user_id != "" && pi_user_code != "")
+                            {
+                                try {
+                                    const ready = await Pi.Ads.isAdReady("rewarded");
+                                    if (ready === false) {
+                                        const requestAdResponse = await Pi.Ads.requestAd("rewarded");
+                                        if (requestAdResponse === "ADS_NOT_SUPPORTED") {
+                                            // display modal to update Pi Browser
+                                            // showAdsNotSupportedModal()
+                                            return;
                                         }
-                                        const showAdResponse = await Pi.Ads.showAd("rewarded");
-                                        
-                                        if (showAdResponse.result === "AD_REWARDED") {
-                                            if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
-                                            {
-                                                var data = {
-                                                    'pi_user_id': pi_user_id,
-                                                    'pi_user_code': pi_user_code,
-                                                    'adId': showAdResponse.adId,
-                                                    'passkey': passkey,
-                                                    'accessToken': accessToken,
-                                                    'csrf_token': odoo.csrf_token,
-                                                };
-                                                //$.ajaxSetup({async: false});
-                                                setConfirmUnloadPoints(true);
-                                                return $.post( "/set-latin-points", data).done(function(data) {
-                                                    end();
-                                                    setConfirmUnloadPoints(false);
-                                                    data = JSON.parse(data);
-                                                    if(data.result && data.points_latin > 0)
-                                                        alert("+" + data.points_latin + " Latin points.");
-                                                    start();
-                                                }).fail(function() {
-                                                    setConfirmUnloadPoints(false);
-                                                });
-                                            }
-                                        } else {
-                                            // fallback logic
-                                            // showAdErrorModal()
+                                        if (requestAdResponse !== "AD_LOADED") {
+                                            // display modal ads are temporarily unavailable and user should try again later
+                                            // showAdUnavailableModal()
+                                            return;
                                         }
-                                        
-                                    } catch (err) {
-                                        // good practice to handle any potential errors
                                     }
+                                    const showAdResponse = await Pi.Ads.showAd("rewarded");
+                                    
+                                    if (showAdResponse.result === "AD_REWARDED") {
+                                        if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
+                                        {
+                                            var data = {
+                                                'pi_user_id': pi_user_id,
+                                                'pi_user_code': pi_user_code,
+                                                'adId': showAdResponse.adId,
+                                                'passkey': passkey,
+                                                'accessToken': accessToken,
+                                                'csrf_token': odoo.csrf_token,
+                                            };
+                                            //$.ajaxSetup({async: false});
+                                            setConfirmUnloadPoints(true);
+                                            return $.post( "/set-latin-points", data).done(function(data) {
+                                                end();
+                                                setConfirmUnloadPoints(false);
+                                                data = JSON.parse(data);
+                                                if(data.result && data.points_latin > 0)
+                                                    alert("+" + data.points_latin + " Latin points.");
+                                                start();
+                                            }).fail(function() {
+                                                setConfirmUnloadPoints(false);
+                                            });
+                                        }
+                                    } else {
+                                        // fallback logic
+                                        // showAdErrorModal()
+                                    }
+                                    
+                                } catch (err) {
+                                    // good practice to handle any potential errors
                                 }
                             }
                         });

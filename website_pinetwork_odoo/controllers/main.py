@@ -521,9 +521,6 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             """
             
-            if pi_users_list[0].unblocked == False:
-                return json.dumps({'result': False})
-            
             values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount}
         
         #Uncomment in case of you want to save wallet address
