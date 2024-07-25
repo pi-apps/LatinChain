@@ -1160,7 +1160,7 @@ class admin_apps(models.Model):
                                 users[0].sudo().write({'unblocked_datetime': datetime.now()})
                                 
                                 if admin_app[0].mainnet in ['Mainnet OFF', 'Mainnet ON'] and kw['app_client'] in ['auth_example']:
-                                    users[0].sudo().write({'points_latin': users[0].points_latin + admin_app[0].points_latin_amount})
+                                    users[0].sudo().write({'points_latin': users[0].points_latin + admin_app[0].amount})
                                 
                                 #try:
                                 #    if admin_app[0].mainnet in ['Testnet OFF']:
