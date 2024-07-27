@@ -823,7 +823,7 @@
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                    <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
                       !function (e, f, u, i) {
@@ -2246,7 +2246,7 @@
                         
                     </div>
                     
-                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                    <div class="container" style="text-align:center;">
                         <!-- LatinChain Ad responsive 2 -->
                         
                         <!--
@@ -2302,7 +2302,7 @@
                             }
                     </style>
                     
-                    <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                    <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
                     </script>
