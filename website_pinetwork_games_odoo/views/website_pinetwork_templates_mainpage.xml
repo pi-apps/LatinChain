@@ -5,7 +5,7 @@
         <field name="customize_show" eval="True"/>
     </record>
     
-    <template id="assets_frontend" name="games_odoo_website" inherit_id="website.assets_frontend">  
+    <template id="assets_frontend_2" name="games_odoo_website" inherit_id="website.assets_frontend">  
         <xpath expr="link[last()]" position="after">  
             <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/modals/colorbox/example3/colorbox.css" />
             
