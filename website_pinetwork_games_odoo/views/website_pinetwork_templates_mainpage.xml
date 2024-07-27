@@ -1436,20 +1436,27 @@
                             
                             
                             $( "#clear_cache" ).click(function() {
+                                alert("123");
                                 var result = confirm($( "#clear_cache_message" ).text());
+                                alert("1234");
                                 if(result)
                                 {
+                                    alert("12345");
                                     try {
+                                        alert("123456");
                                         Cache.delete();
                                     } catch (err) {
                                         console.error(err);
                                     }
                                     try {
+                                        alert("1234567");
                                         window.location.reload(true);
                                     } catch (err) {
                                         console.error(err);
                                     }
+                                    alert("12345678");
                                 }
+                                alert("123456789");
                             });
                             
                         });
