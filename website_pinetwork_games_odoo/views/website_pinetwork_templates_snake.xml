@@ -45,6 +45,7 @@
             <body>
                 <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                 <input type="hidden" id="amount" t-att-value="amount"/>
+                <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                 <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                 <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
                 <div id="points_message" style="display:none;"> points.</div>
