@@ -5,7 +5,7 @@
         <field name="customize_show" eval="True"/>
     </record>
     
-    <template id="assets_frontend_2" name="games_odoo_website" inherit_id="website.assets_frontend">  
+    <template id="assets_frontend" name="games_odoo_website" inherit_id="website.assets_frontend">  
         <xpath expr="link[last()]" position="after">  
             <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/modals/colorbox/example3/colorbox.css" />
             
@@ -1361,26 +1361,29 @@
                             const share_video = document.querySelector('#share_video');
                             //const resultPara = document.querySelector('.result');
                             
-                            // Must be triggered some kind of "user activation"
-                            share_video.addEventListener('click', async () => {
-                                const shareData = {
-                                    title: 'LatinChain Platform',
-                                    text: $("#share_message").text() + "\n\nVideo:\n" + $(".open_streaming").attr("videourl") + "\nMainnet:\nhttps://latin-chain.com/\nTestnet:\nhttps://test.latin-chain.com/\nCrypto news:\nhttps://news.latin-chain.com/",
-                                    //url: 'https://latin-chain.com/',
-                                }
-                                
-                                if (!navigator.share) {
-                                    Pi.openShareDialog(shareData.title, shareData.text);
-                                }else
-                                {
-                                  try {
-                                    await navigator.share(shareData);
-                                    //resultPara.textContent = 'MDN shared successfully'
-                                  } catch(err) {
-                                    //alert('Error: ' + err);
-                                  }
-                                }
-                            });
+                            if(share_video)
+                            {
+                                // Must be triggered some kind of "user activation"
+                                share_video.addEventListener('click', async () => {
+                                    const shareData = {
+                                        title: 'LatinChain Platform',
+                                        text: $("#share_message").text() + "\n\nVideo:\n" + $(".open_streaming").attr("videourl") + "\nMainnet:\nhttps://latin-chain.com/\nTestnet:\nhttps://test.latin-chain.com/\nCrypto news:\nhttps://news.latin-chain.com/",
+                                        //url: 'https://latin-chain.com/',
+                                    }
+                                    
+                                    if (!navigator.share) {
+                                        Pi.openShareDialog(shareData.title, shareData.text);
+                                    }else
+                                    {
+                                      try {
+                                        await navigator.share(shareData);
+                                        //resultPara.textContent = 'MDN shared successfully'
+                                      } catch(err) {
+                                        //alert('Error: ' + err);
+                                      }
+                                    }
+                                });
+                            }
                             
                             $( "#vote" ).click(function() {
                                 $.colorbox({href:"/modal-vote", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
