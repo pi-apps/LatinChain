@@ -283,6 +283,12 @@ button:hover {
 
 @media (max-width: 350px) {
     #wrapper {
-        transform: scale(0.33);
+        transform: scale(0.35);
+    }
+}
+
+@media (max-width: 320px) {
+    #wrapper {
+        transform: scale(0.32);
     }
 }
