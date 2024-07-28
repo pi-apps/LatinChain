@@ -72,7 +72,10 @@
                 
                 <style>
                     .darkmode-toggle {
-                        display: none;
+                        display: none !important;
+                    }
+                    .darkmode-layer {
+                        display: none !important;
                     }
                 </style>
 

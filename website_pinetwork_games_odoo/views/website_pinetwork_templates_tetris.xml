@@ -108,13 +108,16 @@
                             
                             <style>
                                 .btn::before {
-                                    content: none;
+                                    content: none !important;
                                 }
                                 .btn::after {
-                                    content: none;
+                                    content: none !important;
                                 }
                                 .darkmode-toggle {
-                                    display: none;
+                                    display: none !important;
+                                }
+                                .darkmode-layer {
+                                    display: none !important;
                                 }
                             </style>
                         </div>
