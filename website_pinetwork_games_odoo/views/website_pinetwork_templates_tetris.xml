@@ -90,6 +90,8 @@
                                 {
                                     var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
                                     jQuery( "body" ).trigger( e );
+                                    var e = jQuery.Event( "keyup", { which: key, keyCode: key } );
+                                    jQuery( "body" ).trigger( e );
                                 }
                                 
                                 $( ".left" ).mousedown(function() {
