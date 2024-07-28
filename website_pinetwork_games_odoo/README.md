@@ -38,4 +38,8 @@ chess (AGPLv3) is the Chess. It's a modification of https://github.com/Labinator
 piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
 piapp-example can be browsable here: https://github.com/rockcesar/LatinChainDevelopments/tree/master/piapp-example
 
+mahjong (MIT License) is the Mahjong. It's a modification of https://github.com/ScriptRaccoon/mahjong-solitaire (MIT License, 2021)
+
+tetris (MIT License) is the Tetris. It's a modification of https://github.com/Aerolab/blockrain.js (MIT License, 2021)
+
 More Info: https://github.com/rockcesar/LatinChainDevelopments
