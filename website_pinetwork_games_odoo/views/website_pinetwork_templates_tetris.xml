@@ -76,10 +76,10 @@
                             <br/>
                             <div class="game" style="width:250px; height:400px;"></div>
                             <div class="keyboard" style="width:250px; text-align:center;">
-                              <button class="key key-up up">&#8593;</button>&#160;&#160;&#160;
-                              <button class="key key-left left">&#8592;</button>&#160;&#160;&#160;
-                              <button class="key key-right right">&#8594;</button>&#160;&#160;&#160;
-                              <button class="key key-down down">&#8595;</button>
+                              <button class="key key-up up btn btn-dark no-before" style="margin: 5px !important">&#8593;</button>
+                              <button class="key key-left left btn btn-dark" style="margin:5px !important">&#8592;</button>
+                              <button class="key key-right right btn btn-dark" style="margin: 5px !important">&#8594;</button>
+                              <button class="key key-down down btn btn-dark" style="margin: 5px !important">&#8595;</button>
                             </div>
                             <script>
                                 $('.game').blockrain();
@@ -105,9 +105,21 @@
                                     press(39);
                                 });
                             </script>
+                            
+                            <style>
+                                .btn::before {
+                                    content: none;
+                                }
+                                .btn::after {
+                                    content: none;
+                                }
+                                .darkmode-toggle {
+                                    display: none;
+                                }
+                            </style>
                         </div>
                         
-                        <br/><br/><br/><br/><br/>
+                        <br/><br/><br/>
                     </div>
                 </body>
 
