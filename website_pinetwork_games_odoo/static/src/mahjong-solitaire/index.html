@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mahjong Solitaire</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+        <link rel="manifest" href="./favicon/site.webmanifest">
+        <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="./favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="./favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <meta property="og:image" content="./img/screenshot.png">
+        <meta property="og:title" content = "Mahjong Solitaire">
+        <meta property="og:description" content="Play the classic game Mahjong Solitaire directly in your browser.">
+        <meta property="og:type" content="Website">
+        <meta property="og:url" content="https://mahjong-solitaire.netlify.app/">
+        <meta property="og:site_name" content="Mahjong Solitaire">
+    </head>
+    <body>
+            <header>Mahjong solitaire</header>
+
+            <div id="wrapper">
+                <main>
+                    <section id="infoText">               
+                        <p>
+                            Select two identical tiles to remove them. Once all tiles are
+                            removed, the game is won.
+                        </p>
+                        <p>
+                            Only open tiles can be selected, meaning that they are on top and
+                            at least on one of their sides (left, right) there is no tile.
+                        </p>
+                        <p>
+                            It may happen that you make a wrong move after which the game
+                            cannot be won anymore.
+                        </p>
+                        <p>
+                            Check out
+                            <a
+                                href="https://en.wikipedia.org/wiki/Mahjong_tiles"
+                                target="_blank"
+                                >Wikipedia</a
+                            >
+                            for a description of all the 144 tiles. They fall into 7
+                            categories (dots, bamboos, characters, winds, dragons, seasons,
+                            flowers). Every tile appears exactly 4 times, except for the 4
+                            seasons
+                        </p>
+                        <p>
+                            <img src="./img/season1.png" />
+                            <img src="./img/season2.png" />
+                            <img src="./img/season3.png" />
+                            <img src="./img/season4.png" />
+                        </p>
+                        <p>
+                            and the 4 flowers
+                        </p>
+                        <p>
+                            <img src="./img/flower1.png" />
+                            <img src="./img/flower2.png" />
+                            <img src="./img/flower3.png" />
+                            <img src="./img/flower4.png" />
+                        </p>
+                        <p>
+                            which each appear only once. For this reason every pair of seasons
+                            (or flowers) can be removed as well, even if they are not
+                            identical.
+                        </p>
+                        <p>
+                            You can find the code of this game on
+                            <a
+                                target="_blank"
+                                href="https://github.com/ScriptRaccoon/mahjong-solitaire"
+                                >GitHub</a
+                            >.
+                        </p>                               
+                    </section>
+
+                    <section id="game"></section>     
+                </main>
+        
+                <footer>
+                    <span id="statusText"></span>
+                    <span id="controls">
+                        <button id="hintButton">Hint</button>
+                        <button id="restartButton">Restart</button>
+                        <button id="infoButton">Info</button>
+                    </span>
+                </footer> 
+            </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="main.js" type="module"></script>
+    </body>
+</html>

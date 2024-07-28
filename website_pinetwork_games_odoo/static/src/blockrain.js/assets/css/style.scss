@@ -1,0 +1,22 @@
+html, body {
+  background: #3b3d3b;
+  padding: 0;
+  margin: 0;
+  font-family: "Play", "Helvetica Neue", "Arial", sans-serif;
+  font-weight: normal;
+  line-height: 160%;
+  font-size: 16px;
+  color: #fff;
+}
+
+@import "vars";
+@import "normalize";
+@import "base";
+
+@import "hero";
+@import "features";
+@import "examples";
+@import "versus";
+@import "footer";
+
+@import "responsive";

@@ -173,6 +173,38 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.list_transactions_radioforus', {'link_back': link_back, 'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
+    @http.route('/tetris/', type='http', auth="public", website=True)
+    def tetris(self, **kw):
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+            mainnet = ""
+            google_adsense = ""
+        else:
+            sandbox = admin_app_list[0].sandbox
+            mainnet = admin_app_list[0].mainnet
+            google_adsense = admin_app_list[0].google_adsense
+        
+        return http.request.render('website_pinetwork_games_odoo.tetris', {'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
+    
+    @http.route('/mahjong/', type='http', auth="public", website=True)
+    def mahjong(self, **kw):
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+            mainnet = ""
+            google_adsense = ""
+        else:
+            sandbox = admin_app_list[0].sandbox
+            mainnet = admin_app_list[0].mainnet
+            google_adsense = admin_app_list[0].google_adsense
+        
+        return http.request.render('website_pinetwork_games_odoo.mahjong', {'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
+    
     @http.route('/latinchain_x', type='http', auth="public", website=True)
     def latinchain_x(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])

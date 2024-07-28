@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="mahjong" name="Mahjong">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+
+                <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+                <head>
+                    <meta charset="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+                    <title>Mahjong</title>
+                    <meta name="description" content="Mahjong" />
+
+                    <meta property="og:url" content="/mahjong"/>
+                    <meta property="og:type" content="website"/>
+                    <meta property="og:title" content="Mahjong"/>
+                    <meta property="og:description" content="Mahjong"/>
+
+                    <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/mahjong-solitaire/style.css" />
+                    
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <!--<script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({article:'auto'});
+                      !function (e, f, u, i) {
+                        if (!document.getElementById(i)){
+                          e.async = 1;
+                          e.src = u;
+                          e.id = i;
+                          f.parentNode.insertBefore(e, f);
+                        }
+                      }(document.createElement('script'),
+                      document.getElementsByTagName('script')[0],
+                      '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+                      'tb_loader_script');
+                      if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
+                        {window.performance.mark('tbl_ic');}
+                    </script>-->
+
+                </head>
+
+                <body bgcolor="#ffffff" style="text-align: center; max-height: 120% !important;">
+                    <header>Mahjong solitaire</header>
+
+                    <div id="wrapper">
+                        <main>
+                            <section id="game"></section>
+                        </main>
+                
+                        <footer>
+                            <span style="filter: contrast(100%) !important; background-color: blue; color: white" id="statusText"></span>
+                            <span id="controls">
+                                <button style="filter: contrast(100%) !important;" id="hintButton">Hint</button>
+                                <button style="filter: contrast(100%) !important;" id="restartButton">Restart</button>
+                            </span>
+                        </footer>
+                        
+                        <br/><br/><br/><br/><br/><br/>
+                    </div>
+                     
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/mahjong-solitaire/main.js" type="module"></script>
+                </body>
+
+                </html>
+                </t>
+		</template>
+
+</odoo>

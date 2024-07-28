@@ -6,14 +6,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 09:24+0000\n"
-"PO-Revision-Date: 2024-07-22 09:24+0000\n"
+"POT-Creation-Date: 2024-07-28 01:07+0000\n"
+"PO-Revision-Date: 2024-07-28 01:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: website_pinetwork_games_odoo
+#. openerp-web
+#: code:addons/website_pinetwork_games_odoo/static/src/mahjong-solitaire/favicon/browserconfig.xml:0
+#, python-format
+msgid "#da532c"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
@@ -87,11 +94,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ". And this info could vary with the time without previous advice."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-msgid ". OpenMainnet)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -353,19 +355,19 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid ""
 "<br/>\n"
-"                                <br/>\n"
-"                                <span id=\"loading_word\" style=\"display: none;\">Loading...</span>\n"
-"                                <br/>"
+"                                    <br/>\n"
+"                                    <span id=\"loading_word\" style=\"display: none;\">Loading...</span>\n"
+"                                    <br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid ""
 "<br/>\n"
-"                                <br/>\n"
-"                                Click in Clear Cache or <i class=\"fa fa-refresh\"/> if button Donate doesn't activate.\n"
-"                                <br/>\n"
-"                                <br/>"
+"                                    <br/>\n"
+"                                    Click in Clear Cache or <i class=\"fa fa-refresh\"/> if button Donate doesn't activate.\n"
+"                                    <br/>\n"
+"                                    <br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -630,6 +632,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid "A payment was registered. Reload the page to view the changes."
 msgstr ""
 
@@ -654,6 +657,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid ""
 "Alert!: In the following process don't close your Browser or you will lose "
 "your payment!"
@@ -694,6 +698,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid "Are you sure you want to Clear Cache?, it will reloads the page."
 msgstr ""
 
@@ -709,6 +714,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid "Are you sure you want to go back?."
 msgstr ""
 
@@ -904,6 +910,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Gain points"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "General ranking"
 msgstr ""
 
@@ -961,6 +972,11 @@ msgid ""
 "id=\"verified\"/>. Welcome to LatinChain Platform (Games from Latin America "
 "for Pi). Increase your Pi cryptocurrency mining power <i class=\"fa fa-"
 "bolt\"/> using this app. If you don't have it yet, download Pi Browser on"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+msgid "Hint"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1100,7 +1116,17 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "MAHJONG"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "MORE INFO"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+msgid "Mahjong solitaire"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1131,6 +1157,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Memo ID"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Minigame (you won't gain points from it, just for passing the time)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1349,6 +1380,11 @@ msgid "Repository"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+msgid "Restart"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Rita"
 msgstr ""
@@ -1466,6 +1502,11 @@ msgid "Switch Sides"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "TETRIS"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "TXID"
 msgstr ""
@@ -1511,6 +1552,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid "Thank you for your donation. You were unblocked."
 msgstr ""
 
@@ -1678,6 +1720,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid "You can't pay less than"
 msgstr ""
 
@@ -1782,6 +1825,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid "points."
 msgstr ""
 

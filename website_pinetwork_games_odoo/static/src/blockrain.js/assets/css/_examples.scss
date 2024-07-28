@@ -1,0 +1,161 @@
+#examples {
+  padding-top: 0px;
+  .buttons {
+    .btn {
+      display: block;
+      width: 35px;
+      height: 63px;
+      padding: 0;
+      position: absolute;
+      background: url(../images/slider-nav.png) no-repeat;
+      background-size: auto 100%;
+      border: none;
+      top: 50%;
+      margin-top: -30px;
+      overflow: hidden;
+      text-indent: -9999px;
+    }
+    .btn-prev {
+      right: 100%;
+      margin-right: 70px;
+    }
+    .btn-next {
+      left: 100%;
+      margin-left: 70px;
+      background-position: right;
+    }
+  }
+}
+#example-slider {
+  background: #000;
+  width: 590px;
+  height: 420px;
+  border-radius: 50%/5%;
+  position: relative;
+
+  &:before {
+    content: "";
+    background: #000;
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    left: -5%;
+    right: -5%;
+    border-radius: 5%/50%;
+  }
+}
+
+.example {
+  padding: 50px 0 0 0;
+  color: #c2ffad;
+  position: relative;
+  .game {
+    display: inline-block;
+    margin: 0px 20px;
+    width: 200px;
+    height: 330px;
+    position: static;
+    .blockrain-score-holder {
+      left: 100%;
+      top: -10px;
+      right: auto;
+      text-align: left;
+      margin-left: 55px;
+      font-size: 14px;
+      color: #c2ffad;
+      line-height: 20px;
+
+      .blockrain-score-num {
+        font-size: 24px;
+        font-weight: normal;
+      }
+    }
+    .blockrain-start, .blockrain-game-over {
+      top: auto;
+      transform: none;
+      height: 100%;
+    }
+    .blockrain-start-msg, .blockrain-game-over-msg {
+      color: #c2ffad;
+      font-size: 14px;
+      position: absolute;
+      top: -16px;
+      width: 100%;
+    }
+    .blockrain-game-over-msg {
+      top: 50%;
+      font-size: 24px;
+      margin-top: -24px;
+    }
+    .blockrain-start-btn, .blockrain-game-over-btn {
+      position: absolute;
+      left: 100%;
+      bottom: 3px;
+      border: none;
+      background: #c2ffad;
+      color: #000;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-left: 55px;
+      width: 120px;
+      padding: 13px 0;
+      font-size: 16px;
+      &:before, &:after { display: none; }
+    }
+  }
+  .theme {
+    position: absolute;
+    top: 36px;
+    left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    strong {
+      display: block;
+      font-size: 24px;
+      font-weight: normal;
+    }
+  }
+  .instructions {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    overflow: hidden;
+    font-size: 14px;
+
+    .key {
+      border: 1px solid #c2ffad;
+      display: block;
+      width: 38px;
+      height: 38px;
+      float: left;
+      position: relative;
+      &:before {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -7px 0 0 -7px;
+        background: url(../images/icon-sprite.png) no-repeat;
+        background-position: -84px 0;
+        background-size: auto 100%;
+      }
+      &.key-up {
+        float: none;
+        margin-left: 39px;
+        border-bottom: none;
+        margin-top: 20px;
+        &:before { background-position: -42px 0; }
+      }
+      &.key-left:before { background-position: -56px 0; }
+      &.key-down {
+        border-left: none;
+        border-right: none;
+        &:before { background-position: -70px 0; }
+      }
+    }
+  }
+}

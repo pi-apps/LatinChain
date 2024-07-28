@@ -1417,6 +1417,14 @@
                                 $.colorbox({href:"https://news.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
+                            $( ".tetris" ).click(function() {
+                                $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                            });
+                            
+                            $( ".mahjong" ).click(function() {
+                                $.colorbox({href:"/mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                            });
+                            
                             $( ".show_status" ).click(function() {
                                 $.colorbox({href:"/latinchain_x", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
@@ -1431,6 +1439,14 @@
                             
                             $( ".snakeinfo" ).click(function() {
                                 $.colorbox({href:"https://en.wikipedia.org/wiki/Snake_(video_game_genre)", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                            });
+                            
+                            $( ".tetrisinfo" ).click(function() {
+                                $.colorbox({href:"https://en.wikipedia.org/wiki/Tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                            });
+                            
+                            $( ".mahjonginfo" ).click(function() {
+                                $.colorbox({href:"https://en.wikipedia.org/wiki/Mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
                             $( ".cointelegraph" ).click(function() {
@@ -1957,21 +1973,21 @@
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row" style="text-align: left;">
                                             <div class="col-2"></div>
-                                            <div class="col-10"><a href="/chess" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:100%;" translate="no">CHESS</div><div style="font-size:80%;">Worldwide Chess Championship</div></a><button id="chessinfo" class="col-auto btn btn-sm btn-outline-info chessinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                            <div class="col-10"><a href="/chess" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:100%;" translate="no">CHESS</div><div style="font-size:80%;">Worldwide Chess Championship</div><div style="font-size:80%;">Gain points</div></a><button id="chessinfo" class="col-auto btn btn-sm btn-outline-info chessinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             <div class="col-0"></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row" style="text-align: left;">
                                             <div class="col-2"></div>
-                                            <div class="col-10"><a href="/sudoku" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">SUDOKU</div><div style="font-size:80%;">Worldwide Sudoku Championship</div></a><button id="sudokuinfo" class="col-auto btn btn-sm btn-outline-info sudokuinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                            <div class="col-10"><a href="/sudoku" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">SUDOKU</div><div style="font-size:80%;">Worldwide Sudoku Championship</div><div style="font-size:80%;">Gain points</div></a><button id="sudokuinfo" class="col-auto btn btn-sm btn-outline-info sudokuinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             <div class="col-0"></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row" style="text-align: left;">
                                             <div class="col-2"></div>
-                                            <div class="col-10"><a href="/snake" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-staff-snake"></i></div><div style="font-size:100%;" translate="no">SNAKE</div><div style="font-size:80%;">Worldwide Snake Championship</div></a><button id="snakeinfo" class="col-auto btn btn-sm btn-outline-info snakeinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                            <div class="col-10"><a href="/snake" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-staff-snake"></i></div><div style="font-size:100%;" translate="no">SNAKE</div><div style="font-size:80%;">Worldwide Snake Championship</div><div style="font-size:80%;">Gain points</div></a><button id="snakeinfo" class="col-auto btn btn-sm btn-outline-info snakeinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             <div class="col-0"></div>
                                         </div>
                                     </li>
@@ -1993,6 +2009,20 @@
                                         <div class="row" style="text-align: left;">
                                             <div class="col-2"></div>
                                             <div class="col-10"><a href="/latinchain-sports" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN SPORTS</div><div style="font-size:80%;">Sport results</div></a></div>
+                                            <div class="col-0"></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <div class="row" style="text-align: left;">
+                                            <div class="col-2"></div>
+                                            <div class="col-10"><button id="tetris" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tetris" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">TETRIS</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="tetrisinfo" class="col-auto btn btn-sm btn-outline-info tetrisinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                            <div class="col-0"></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <div class="row" style="text-align: left;">
+                                            <div class="col-2"></div>
+                                            <div class="col-10"><button id="mahjong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mahjong" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">MAHJONG</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="mahjonginfo" class="col-auto btn btn-sm btn-outline-info mahjonginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             <div class="col-0"></div>
                                         </div>
                                     </li>
