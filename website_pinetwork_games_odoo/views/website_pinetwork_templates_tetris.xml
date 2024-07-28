@@ -74,14 +74,12 @@
                         <div align="center" class="container justify-content-center text-center" style="text-align:center; max-width:280px">
 
                             <br/>
-                            <div class="game" style="width:250px; height:300px;"></div>
+                            <div class="game" style="width:250px; height:400px;"></div>
                             <div class="keyboard" style="width:250px; text-align:center;">
-                              &#160;&#160;<div class="key key-up up btn btn-dark border-dark">&#8593;</div>
-                              <br/>
-                              <div class="key key-left left btn btn-dark border-dark">&#8592;</div>
-                              &#160;&#160;&#160;&#160;&#160;&#160;<div class="key key-right right btn btn-dark border-dark">&#8594;</div>
-                              <br/>
-                              <div class="key key-down down btn btn-dark border-dark">&#8595;</div>
+                              <button class="key key-up up">&#8593;</button>&#160;&#160;&#160;
+                              <button class="key key-left left">&#8592;</button>&#160;&#160;&#160;
+                              <button class="key key-right right">&#8594;</button>&#160;&#160;&#160;
+                              <button class="key key-down down">&#8595;</button>
                             </div>
                             <script>
                                 $('.game').blockrain();
@@ -109,7 +107,7 @@
                             </script>
                         </div>
                         
-                        <br/><br/><br/>
+                        <br/><br/><br/><br/><br/>
                     </div>
                 </body>
 
