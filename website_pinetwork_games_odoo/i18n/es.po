@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-28 01:07+0000\n"
-"PO-Revision-Date: 2024-07-28 01:07+0000\n"
+"POT-Creation-Date: 2024-07-28 08:15+0000\n"
+"PO-Revision-Date: 2024-07-28 08:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1207,6 +1207,17 @@ msgid "LatinChain API"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"LatinChain Academy: to learn Odoo. LatinChain Sports: to watch Soccer "
+"results. Tetris and Mahjong minigames: where you can play for free by "
+"accessing throught Pi Browser."
+msgstr ""
+"LatinChain Academy: para aprender Odoo. LatinChain Sports: para ver resultados "
+"del fútbol. Tetris y Mahjong minijuegos: donde puedes jugar gratis accediendo "
+"a través Pi Browser."
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LatinChain Odoo Community Member"
 msgstr ""
@@ -1304,7 +1315,9 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Minigame (you won't gain points from it, just for passing the time)"
-msgstr "Minijuego (no vas a ganar puntos de este minijuego, es sólo para pasar el rato)"
+msgstr ""
+"Minijuego (no vas a ganar puntos de este minijuego, es sólo para pasar el "
+"rato)"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
