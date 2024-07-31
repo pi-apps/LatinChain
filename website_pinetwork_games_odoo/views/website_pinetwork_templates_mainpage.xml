@@ -821,7 +821,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.101"></script>
                     
-                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    <script t-if="mainnet in ['Mainnet ON', 'Mainnet OFF', 'Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
@@ -1665,7 +1665,7 @@
                           </div>
                         </section>
                     </div>
-                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                    <div class="container" style="text-align:center;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF', 'Testnet ON', 'Testnet OFF']">
                         
                         <!-- LatinChain Ad responsive -->
                         
@@ -2282,10 +2282,9 @@
                         
                     </div>
                     
-                    <div class="container" style="text-align:center;">
+                    <div class="container" style="text-align:center;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF', 'Testnet ON', 'Testnet OFF']">
                         <!-- LatinChain Ad responsive 2 -->
                         
-                        <!--
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
@@ -2295,7 +2294,7 @@
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-                        <br/><br/><br/>-->
+                        <!--<br/><br/><br/>-->
                         <br/>
                         
                         <div id="taboola-below-article-thumbnails"></div>
