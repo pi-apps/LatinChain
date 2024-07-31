@@ -1317,8 +1317,8 @@
                                         //get_user();
                                         set_points(0).always(function(){
                                             get_user().always(function(){
-                                                if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                                    showPiAds(Pi);
+                                                //if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                //    showPiAds(Pi);
                                             });
                                         });
                                     }).catch(function(error) {
