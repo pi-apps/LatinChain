@@ -823,7 +823,7 @@
                     
                     <script t-if="mainnet in ['Mainnet ON', 'Mainnet OFF', 'Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript">
+                    <!--<script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
                       !function (e, f, u, i) {
@@ -839,7 +839,7 @@
                       'tb_loader_script');
                       if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
                         {window.performance.mark('tbl_ic');}
-                    </script>
+                    </script>-->
 
                     <script type="text/javascript">
                         var pi_user_id = "";
@@ -2283,19 +2283,18 @@
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF', 'Testnet ON', 'Testnet OFF']">
-                        <!-- LatinChain Ad responsive 2 -->
+                        <!-- LatinChain Ad multi responsive -->
                         
                         <ins class="adsbygoogle"
                              style="display:block"
+                             data-ad-format="autorelaxed"
                              data-ad-client="ca-pub-2334449220276386"
-                             data-ad-slot="9525388880"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
+                             data-ad-slot="1794208680"></ins>
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-                        <!--<br/><br/><br/>-->
-                        <br/>
+                        <br/><br/><br/>
+                        <!--<br/>
                         
                         <div id="taboola-below-article-thumbnails"></div>
                         <script type="text/javascript">
@@ -2306,7 +2305,7 @@
                             placement: 'Below Article Thumbnails',
                             target_type: 'mix'
                           });
-                        </script>
+                        </script>-->
                     </div>
                     
                     <button id="myBtn"><a id="myABtn" href="#top" style="color: white" translate="no">Top</a></button>
@@ -2337,10 +2336,10 @@
                             }
                     </style>
                     
-                    <script type="text/javascript">
+                    <!--<script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
-                    </script>
+                    </script>-->
                     
                     
                 </body>
