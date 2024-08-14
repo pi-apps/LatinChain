@@ -55,10 +55,7 @@ class Website(Website):
             a_ads_data_3 = admin_app_list[0].a_ads_data_3
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
-            if mainnet in ['Mainnet ON', 'Mainnet OFF']:
-                no_footer = False
-            else:
-                no_footer = True
+            no_footer = True
             total_transactions_daily_count = int(admin_app_list[0].total_transactions_daily_count)
             total_users_daily_count = int(admin_app_list[0].total_users_daily_count)
             pioneers_streaming = admin_app_list[0].pioneers_streaming
