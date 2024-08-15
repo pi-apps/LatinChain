@@ -285,7 +285,7 @@ $( document ).ready(function() {
                                     if (showAdResponse.result === "AD_REWARDED") {
                                         if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                                         {
-                                            alert($("#ready_reward_message").text());
+                                            //alert($("#ready_reward_message").text());
                                             var data = {
                                                 'pi_user_id': pi_user_id,
                                                 'pi_user_code': pi_user_code,
