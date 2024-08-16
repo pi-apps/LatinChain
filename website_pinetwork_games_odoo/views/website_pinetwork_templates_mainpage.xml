@@ -1743,7 +1743,7 @@
                         
                         <div style="margin-bottom:5px; border:1px solid; padding:5px; width: 100%" class="rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
-                                <h3><strong>Magazine</strong></h3>
+                                <h3 translate="no"><strong>#magazine</strong></h3>
                             </div>
                             <div style="margin-bottom:5px" t-if="pioneers_streaming">
                                 <button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
