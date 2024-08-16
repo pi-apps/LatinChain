@@ -244,21 +244,12 @@ $( document ).ready(function() {
                         $("#button_click").prop( "disabled", false );
                         
                         $("#button_reward_ad").prop( "disabled", true );
-                        setTimeout(function ()
-                        {
-                            $("#button_reward_ad").prop( "disabled", false );
-                        }, 5000);
                         
                         $( "#button_reward_ad" ).click(async function() {
                             end();
                             if(seconds <= 5)
                             {
                                 start();
-                                $("#button_reward_ad").prop( "disabled", true );
-                                setTimeout(function ()
-                                {
-                                    $("#button_reward_ad").prop( "disabled", false );
-                                }, 5000);
                                 return;
                             }
                             start();
@@ -301,7 +292,14 @@ $( document ).ready(function() {
                                                 setConfirmUnloadPoints(false);
                                                 data = JSON.parse(data);
                                                 if(data.result && data.points_latin > 0)
+                                                {
+                                                    $("#button_reward_ad").prop( "disabled", true );
+                                                    setTimeout(function ()
+                                                    {
+                                                        $("#button_reward_ad").prop( "disabled", false );
+                                                    }, 5000);
                                                     alert("+" + data.points_latin + " Latin points.");
+                                                }
                                                 start();
                                             }).fail(function() {
                                                 setConfirmUnloadPoints(false);
