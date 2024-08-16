@@ -243,7 +243,7 @@ $( document ).ready(function() {
                         
                         $("#button_click").prop( "disabled", false );
                         
-                        $("#button_reward_ad").prop( "disabled", true );
+                        $("#button_reward_ad").prop( "disabled", false );
                         
                         $( "#button_reward_ad" ).click(async function() {
                             end();
