@@ -276,7 +276,6 @@ $( document ).ready(function() {
                                     if (showAdResponse.result === "AD_REWARDED") {
                                         if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                                         {
-                                            alert("Testing ad initialized.");
                                             //alert($("#ready_reward_message").text());
                                             var data = {
                                                 'pi_user_id': pi_user_id,
@@ -301,7 +300,7 @@ $( document ).ready(function() {
                                                     }, 5000);
                                                     alert("+" + data.points_latin + " Latin points.");
                                                 }
-                                                alert("Testing ad finalized.");
+                                                alert("Ad finalized.");
                                                 start();
                                             }).fail(function() {
                                                 setConfirmUnloadPoints(false);
