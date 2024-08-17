@@ -1764,120 +1764,126 @@
                                 <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3Hdsb83uuU-pzn8JCN9PNq" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top 10 cryptos</div></button>
                             </div>
                         </div>
-                        <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
-                            <div style="display: inline"><i id="play" class="fa fa-volume-off"></i></div> 
-                            <div style="display: inline">Hi<strong><span id="username" translate="no"></span></strong><span id="verified"></span>. Welcome to LatinChain Platform (Games from Latin America for Pi). Increase your Pi cryptocurrency mining power <i class="fa fa-bolt"></i> using this app. If you don't have it yet, download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link text-white"><strong>App Store</strong></a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link text-white"><strong>Play Store</strong></a> to watch it working.<br/></div>
-                        </div>
-                        <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><!--<strong t-if="mainnet == 'Testnet ON'">Testnet ON<br/></strong>--><strong t-if="mainnet == 'Mainnet ON'">Mainnet ON. Ready to play.<br/></strong><br/>
+                        <div style="margin-bottom:5px; border:1px solid; padding:5px; width: 100%" class="rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong>#LatinChain #Introduction</strong></h5>
+                            </div>
                         
-                        <!--<div style="margin-bottom:5px">
-                            <a href="#myApps" class="myAppsAnchor btn btn-outline-info font-weight-bold border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-rocket"></i></div><div translate="no">Apps</div></a>
-                        </div>-->
-                        <!--<div style="text-align:center">
-                            <br/>LatinChain TV:<br/><br/>
-                            <iframe id="latinchain-tv" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
-                        </div>-->
-                        
-                        <div class="text-center" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                            <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
+                                <div style="display: inline"><i id="play" class="fa fa-volume-off"></i></div> 
+                                <div style="display: inline">Hi<strong><span id="username" translate="no"></span></strong><span id="verified"></span>. Welcome to LatinChain Platform (Games from Latin America for Pi). Increase your Pi cryptocurrency mining power <i class="fa fa-bolt"></i> using this app. If you don't have it yet, download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link text-white"><strong>App Store</strong></a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link text-white"><strong>Play Store</strong></a> to watch it working.<br/></div>
+                            </div>
+                            <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><!--<strong t-if="mainnet == 'Testnet ON'">Testnet ON<br/></strong>--><strong t-if="mainnet == 'Mainnet ON'">Mainnet ON. Ready to play.<br/></strong><br/>
                             
-                        </div>
-                        <div id="accordionOne" style="margin-bottom:5px">
-                          <div class="card">
-                            <!--<div class="card-header" id="headingOne">
-                              <h5 class="mb-0">
-                                <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
-                                </button>
-                              </h5>
+                            <!--<div style="margin-bottom:5px">
+                                <a href="#myApps" class="myAppsAnchor btn btn-outline-info font-weight-bold border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-rocket"></i></div><div translate="no">Apps</div></a>
+                            </div>-->
+                            <!--<div style="text-align:center">
+                                <br/>LatinChain TV:<br/><br/>
+                                <iframe id="latinchain-tv" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
                             </div>-->
                             
-                            <h2 class="accordion-header" id="headingOne">
-                              <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
-                              </button>
-                            </h2>
+                            <div class="text-center" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                
+                            </div>
+                            <div id="accordionOne" style="margin-bottom:5px">
+                              <div class="card">
+                                <!--<div class="card-header" id="headingOne">
+                                  <h5 class="mb-0">
+                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                      <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
+                                    </button>
+                                  </h5>
+                                </div>-->
+                                
+                                <h2 class="accordion-header" id="headingOne">
+                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
+                                  </button>
+                                </h2>
 
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionOne">
-                              <div class="card-body">
-                                <div style="text-align:center" class="form-group container">
-                                    <div class="row">
-                                        <div class="col-1">
-                                        </div>
-                                        <div class="col-10">
-                                            <!--A normal Pi wallet address looks like this:<br/>
-                                            <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMNOPQ...</div>
-                                            <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
-                                            <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
-                                            <br/>
-                                            <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>-->
-                                            All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>
-                                            Here you can watch your incoming and outcoming transactions:<br/>
-                                            <a href="/get-transactions/" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a>
-                                            <div>
-                                            <br/>
-                                            Read the Rules to know the prize payment amount:<br/>
-                                            <button id="rules_button_3" class="btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid; color:black !important;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionOne">
+                                  <div class="card-body">
+                                    <div style="text-align:center" class="form-group container">
+                                        <div class="row">
+                                            <div class="col-1">
+                                            </div>
+                                            <div class="col-10">
+                                                <!--A normal Pi wallet address looks like this:<br/>
+                                                <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMNOPQ...</div>
+                                                <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
+                                                <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
+                                                <br/>
+                                                <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>-->
+                                                All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>
+                                                Here you can watch your incoming and outcoming transactions:<br/>
+                                                <a href="/get-transactions/" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a>
+                                                <div>
+                                                <br/>
+                                                Read the Rules to know the prize payment amount:<br/>
+                                                <button id="rules_button_3" class="btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid; color:black !important;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
                                             </div>
                                         </div>
-                                        <div class="col-1">
-                                        </div>
-                                    </div>
+                                      </div>
                                   </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                        <div id="accordionTwo" style="margin-bottom:5px">
-                          <div class="card">
-                            <!--<div class="card-header" id="headingTwo">
-                              <h5 class="mb-0">
-                                <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                  <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
-                                </button>
-                              </h5>
-                            </div>-->
-                            
-                            <h2 class="accordion-header" id="headingTwo">
-                              <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
-                              </button>
-                            </h2>
+                            <div id="accordionTwo" style="margin-bottom:5px">
+                              <div class="card">
+                                <!--<div class="card-header" id="headingTwo">
+                                  <h5 class="mb-0">
+                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                      <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
+                                    </button>
+                                  </h5>
+                                </div>-->
+                                
+                                <h2 class="accordion-header" id="headingTwo">
+                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
+                                  </button>
+                                </h2>
 
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTwo">
-                              <div class="card-body">
-                                <div style="text-align:center" class="form-group container">
-                                    <div class="row">
-                                        <div class="col-1">
-                                        </div>
-                                        <div class="col-10">
-                                            Hello, are you Youtuber or want to become one?. Now you can stream your videos on LatinChain Platform. <strong>Set your Youtube streaming video here and click in Save, play, win and then it will be watched on Winners Board and Top 50 streamers</strong>:
-                                            <textarea id="streaming_url" name="streaming_url" placeholder="Youtube video URL" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
-                                            <br/>
-                                            <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
-                                            <br/>
-                                            <div>
-                                            <br/>Place your own Youtube video url in the text box above. You can use Normal video, Live transmission or Short.<br/>
-                                            <br/>A Youtube video URL looks like this:<br/>
-                                            <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/watch?v=9KqcyAoCZzo</textarea>
-                                            <br/>A Youtube live video URL looks like this:<br/>
-                                            <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/live/AXOtWxSETew?si=3bKFA_mjb0ethVqe</textarea>
-                                            <br/>A Youtube short video URL looks like this:<br/>
-                                            <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/shorts/SZEljmi-wr4</textarea>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTwo">
+                                  <div class="card-body">
+                                    <div style="text-align:center" class="form-group container">
+                                        <div class="row">
+                                            <div class="col-1">
+                                            </div>
+                                            <div class="col-10">
+                                                Hello, are you Youtuber or want to become one?. Now you can stream your videos on LatinChain Platform. <strong>Set your Youtube streaming video here and click in Save, play, win and then it will be watched on Winners Board and Top 50 streamers</strong>:
+                                                <textarea id="streaming_url" name="streaming_url" placeholder="Youtube video URL" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
+                                                <br/>
+                                                <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
+                                                <br/>
+                                                <div>
+                                                <br/>Place your own Youtube video url in the text box above. You can use Normal video, Live transmission or Short.<br/>
+                                                <br/>A Youtube video URL looks like this:<br/>
+                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/watch?v=9KqcyAoCZzo</textarea>
+                                                <br/>A Youtube live video URL looks like this:<br/>
+                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/live/AXOtWxSETew?si=3bKFA_mjb0ethVqe</textarea>
+                                                <br/>A Youtube short video URL looks like this:<br/>
+                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/shorts/SZEljmi-wr4</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
                                             </div>
                                         </div>
-                                        <div class="col-1">
-                                        </div>
-                                    </div>
+                                      </div>
                                   </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                        
-                        <div style="text-align:center; position:relative;">
-                            <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="width: 270px; height: 170px;" />
-                            <!--<div id="myApps" style="display:inline; position: absolute; bottom: 0; height: 80px;">
-                            </div>-->
+                            
+                            <div style="text-align:center; position:relative;">
+                                <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="width: 270px; height: 170px;" />
+                                <!--<div id="myApps" style="display:inline; position: absolute; bottom: 0; height: 80px;">
+                                </div>-->
+                            </div>
                         </div>
                         
                         <style>
@@ -1912,351 +1918,380 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        
-                            <div class="div_user_status">
-                                <strong class="user_status"></strong>
-                            </div>
-                            <!--<div id="accordionFirst" style="margin-bottom:5px" t-if="mainnet in ['Testnet OFF']">
-                              <div class="card">
-                                
-                                <h2 class="accordion-header" id="headingFirst">
-                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFirst" aria-expanded="true" aria-controls="collapseFirst">
-                                    <div style=""><i class="fa fa-users"></i></div><div style="">Set your Pi referrer code</div>
-                                  </button>
-                                </h2>
-
-                                <div id="collapseFirst" class="collapse" aria-labelledby="headingFirst" data-parent="#accordionFirst">
-                                  <div class="card-body">
-                                    <div style="text-align:center" class="form-group container">
-                                        <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
-                                                <div>Soon available, not yet.<br/></div>
-                                                Now you can set the referrer code of another Pioneer (not yours), to whom we will pay an amount for being your referrer, also you will receive a payback of the same amount of your referrer. Then, click in Save:
-                                                <textarea id="referrer_code" name="referrer_code" placeholder="Pi referrer code" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
-                                                <br/>
-                                                <button id="button_click_referrer" name="button_click_referrer" class="btn btn-success" disabled="true">Save</button>
-                                                <br/><br/>
-                                                You can share your Pi username, to let others set it as their referrer code. Your Pi username is: <span translate="no" class="referrer_username"></span>
-                                            </div>
-                                            <div class="col-1">
-                                            </div>
-                                        </div>
-                                      </div>
-                                  </div>
+                            <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
+                                <div style="margin-bottom:5px" class="border rounded">
+                                    <h5 translate="no"><strong>#LatinChain #Apps</strong></h5>
                                 </div>
-                              </div>
-                            </div>-->
-                            <div class="p-3 mb-2 bg-info bg-gradient text-white rounded">
-                                Last 24 hours: 
-                                <br/>
-                                <table class="table text-white" style="word-break: break-word;">
-                                    <thead>
-                                        <tr>
-                                            <td>Users</td>
-                                            <td>Transactions</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><span t-esc="total_users_daily_count" /></td>
-                                            <td><span t-esc="total_transactions_daily_count" /></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            
-                            <div>
-                            <br/>Choose your app:<br/><br/>
-                            </div>
-                            
-                            <div class="container" style="text-align:center">
-                                <ul class="list-group">
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><button id="rules_button_2" class="col-10 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><a href="/chess" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:100%;" translate="no">CHESS</div><div style="font-size:80%;">Worldwide Chess Championship</div><div style="font-size:80%;">Gain points</div></a><button id="chessinfo" class="col-auto btn btn-sm btn-outline-info chessinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><a href="/sudoku" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">SUDOKU</div><div style="font-size:80%;">Worldwide Sudoku Championship</div><div style="font-size:80%;">Gain points</div></a><button id="sudokuinfo" class="col-auto btn btn-sm btn-outline-info sudokuinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><a href="/snake" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-staff-snake"></i></div><div style="font-size:100%;" translate="no">SNAKE</div><div style="font-size:80%;">Worldwide Snake Championship</div><div style="font-size:80%;">Gain points</div></a><button id="snakeinfo" class="col-auto btn btn-sm btn-outline-info snakeinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform</div><div style="font-size:80%;">Gain Latin points (<i class="fa-solid fa-heart"></i>)</div></a></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><a href="/latinchain-academy" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN ACADEMY</div><div style="font-size:80%;">Learn Odoo with LatinChain</div></a></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><a href="/latinchain-sports" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN SPORTS</div><div style="font-size:80%;">Sport results</div></a></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tetris" style="display:none">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><button id="tetris" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tetris" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes"></i></div><div style="font-size:100%;">BLOCKRAIN</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="tetrisinfo" class="col-auto btn btn-sm btn-outline-info tetrisinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-mahjong" style="display:none">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><button id="mahjong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mahjong" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;">MAHJONG</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="mahjonginfo" class="col-auto btn btn-sm btn-outline-info mahjonginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><button id="cryptonews_2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">NEWS</div><div style="font-size:80%;">Crypto news</div></button></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row" style="text-align: left;">
-                                            <div class="col-2"></div>
-                                            <div class="col-10"><button id="cointelegraph" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cointelegraph" translate="no" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">COINTELEGRAPH</div><div style="font-size:80%;">Crypto news</div></button></div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </li>
-                                    <t t-if="pioneers_streaming">
+                                
+                                <div class="div_user_status">
+                                    <strong class="user_status"></strong>
+                                </div>
+                                <!--<div id="accordionFirst" style="margin-bottom:5px" t-if="mainnet in ['Testnet OFF']">
+                                  <div class="card">
+                                    
+                                    <h2 class="accordion-header" id="headingFirst">
+                                      <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFirst" aria-expanded="true" aria-controls="collapseFirst">
+                                        <div style=""><i class="fa fa-users"></i></div><div style="">Set your Pi referrer code</div>
+                                      </button>
+                                    </h2>
+
+                                    <div id="collapseFirst" class="collapse" aria-labelledby="headingFirst" data-parent="#accordionFirst">
+                                      <div class="card-body">
+                                        <div style="text-align:center" class="form-group container">
+                                            <div class="row">
+                                                <div class="col-1">
+                                                </div>
+                                                <div class="col-10">
+                                                    <div>Soon available, not yet.<br/></div>
+                                                    Now you can set the referrer code of another Pioneer (not yours), to whom we will pay an amount for being your referrer, also you will receive a payback of the same amount of your referrer. Then, click in Save:
+                                                    <textarea id="referrer_code" name="referrer_code" placeholder="Pi referrer code" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
+                                                    <br/>
+                                                    <button id="button_click_referrer" name="button_click_referrer" class="btn btn-success" disabled="true">Save</button>
+                                                    <br/><br/>
+                                                    You can share your Pi username, to let others set it as their referrer code. Your Pi username is: <span translate="no" class="referrer_username"></span>
+                                                </div>
+                                                <div class="col-1">
+                                                </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>-->
+                                <div class="p-3 mb-2 bg-info bg-gradient text-white rounded">
+                                    Last 24 hours: 
+                                    <br/>
+                                    <table class="table text-white" style="word-break: break-word;">
+                                        <thead>
+                                            <tr>
+                                                <td>Users</td>
+                                                <td>Transactions</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span t-esc="total_users_daily_count" /></td>
+                                                <td><span t-esc="total_transactions_daily_count" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div>
+                                <br/>Choose your app:<br/><br/>
+                                </div>
+                                
+                                <div class="container" style="text-align:center">
+                                    <ul class="list-group">
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button></div>
+                                                <div class="col-10"><button id="rules_button_2" class="col-10 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                    </t>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row">
-                                            <div class="col-12"><button id="clear_cache" class="btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa fa-refresh"></i></div><div style="font-size:100%;">Clear Cache</div></button></div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a href="/chess" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:100%;" translate="no">CHESS</div><div style="font-size:80%;">Worldwide Chess Championship</div><div style="font-size:80%;">Gain points</div></a><button id="chessinfo" class="col-auto btn btn-sm btn-outline-info chessinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a href="/sudoku" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">SUDOKU</div><div style="font-size:80%;">Worldwide Sudoku Championship</div><div style="font-size:80%;">Gain points</div></a><button id="sudokuinfo" class="col-auto btn btn-sm btn-outline-info sudokuinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a href="/snake" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-staff-snake"></i></div><div style="font-size:100%;" translate="no">SNAKE</div><div style="font-size:80%;">Worldwide Snake Championship</div><div style="font-size:80%;">Gain points</div></a><button id="snakeinfo" class="col-auto btn btn-sm btn-outline-info snakeinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform</div><div style="font-size:80%;">Gain Latin points (<i class="fa-solid fa-heart"></i>)</div></a></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a href="/latinchain-academy" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN ACADEMY</div><div style="font-size:80%;">Learn Odoo with LatinChain</div></a></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a href="/latinchain-sports" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN SPORTS</div><div style="font-size:80%;">Sport results</div></a></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tetris" style="display:none">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><button id="tetris" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tetris" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes"></i></div><div style="font-size:100%;">BLOCKRAIN</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="tetrisinfo" class="col-auto btn btn-sm btn-outline-info tetrisinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-mahjong" style="display:none">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><button id="mahjong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mahjong" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;">MAHJONG</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="mahjonginfo" class="col-auto btn btn-sm btn-outline-info mahjonginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><button id="cryptonews_2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">NEWS</div><div style="font-size:80%;">Crypto news</div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><button id="cointelegraph" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cointelegraph" translate="no" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">COINTELEGRAPH</div><div style="font-size:80%;">Crypto news</div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <t t-if="pioneers_streaming">
+                                            <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                                <div class="row" style="text-align: left;">
+                                                    <div class="col-2"></div>
+                                                    <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button></div>
+                                                    <div class="col-0"></div>
+                                                </div>
+                                            </li>
+                                        </t>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12"><button id="clear_cache" class="btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa fa-refresh"></i></div><div style="font-size:100%;">Clear Cache</div></button></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br/>
+                                <!--<ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-format="fluid"
+                                     data-ad-layout-key="-gc+4r+1p-d0+h0"
+                                     data-ad-client="ca-pub-2334449220276386"
+                                     data-ad-slot="6758976353"></ins>-->
+                                
+                                
+                                <!--<br/>
+                                <iframe id="a-ads_3" t-att-data-aa='a_ads_data_3' src="" t-att-style='a_ads_style_3'></iframe>-->
                             </div>
-                            <br/>
-                            <!--<ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-format="fluid"
-                                 data-ad-layout-key="-gc+4r+1p-d0+h0"
-                                 data-ad-client="ca-pub-2334449220276386"
-                                 data-ad-slot="6758976353"></ins>-->
-                            
-                            
-                            <!--<br/>
-                            <iframe id="a-ads_3" t-att-data-aa='a_ads_data_3' src="" t-att-style='a_ads_style_3'></iframe>-->
                           </div>
                           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <br/>Other developments:<br/><br/>
-                            <div class="container" style="text-align: center">
-                                <ul class="list-group">
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row">
-                                            <div class="col-12"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Odoo App</div></a></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row">
-                                            <div class="col-12"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Platform</div></a></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row">
-                                            <div class="col-12"><a href="/website/social/github" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fab fa-github"></i></div><div style="font-size:100%;">Repository</div></a></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row">
-                                            <div class="col-12"><a href="/api-docs" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain API</div></a></div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                        <div class="row">
-                                            <div class="col-12"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain dSocial</div></a></div>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
+                                <div style="margin-bottom:5px" class="border rounded">
+                                    <h5 translate="no"><strong>#LatinChain #Dev</strong></h5>
+                                </div>
+                            
+                                <br/>Other developments:<br/><br/>
+                                <div class="container" style="text-align: center">
+                                    <ul class="list-group">
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Odoo App</div></a></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12"><a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Platform</div></a></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12"><a href="/website/social/github" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fab fa-github"></i></div><div style="font-size:100%;">Repository</div></a></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12"><a href="/api-docs" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain API</div></a></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain dSocial</div></a></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            <br/>INFO:<br/><br/>
-                            Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.<br/><br/>
-                        
-                            <img src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /><br/><br/>
-                            <!--<a href="https://weblatin.latin-chain.com" class="btn btn-link">LATINCHAIN</a><br/><br/>-->
-                            <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a>
+                            <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
+                                <div style="margin-bottom:5px" class="border rounded">
+                                    <h5 translate="no"><strong>#LatinChain #Team</strong></h5>
+                                </div>
+                                
+                                <br/>INFO:<br/><br/>
+                                Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.<br/><br/>
                             
-                            <div style="min-height: 15px"></div>
-                            
-                            Team:<br/><br/>
-                            <div class="row">
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Cesar</div><div style="font-size:80%;" translate="no">Technology</div><div style="font-size:80%;" translate="no"><a href="https://x.com/rockcesar85" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Adrian</div><div style="font-size:80%;" translate="no">Technology</div><div style="font-size:80%;" translate="no"><a href="https://x.com/shinobiran" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/woman.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Marina</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/JossitaMole" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                <img src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid" style="width: 100px; height: 100px;" /><br/><br/>
+                                <!--<a href="https://weblatin.latin-chain.com" class="btn btn-link">LATINCHAIN</a><br/><br/>-->
+                                <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" class="btn btn-link" >MORE INFO</a>
+                                
+                                <div style="min-height: 15px"></div>
+                                
+                                Team:<br/><br/>
+                                <div class="row">
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Cesar</div><div style="font-size:80%;" translate="no">Technology</div><div style="font-size:80%;" translate="no"><a href="https://x.com/rockcesar85" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Adrian</div><div style="font-size:80%;" translate="no">Technology</div><div style="font-size:80%;" translate="no"><a href="https://x.com/shinobiran" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/woman.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Marina</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/JossitaMole" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Josue</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/PierceAntuan" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/woman.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Xiomeli</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/xiomelic" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/woman.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Xiomary</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/PiRadioForUs" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Gunter</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/Elguarorojo" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Julio</div><div style="font-size:80%;" translate="no">Operations</div><div style="font-size:80%;" translate="no"><a href="https://x.com/eljc123" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Enrique</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/enriquekr" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Jonathan</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/RedScorpion983" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Nelson</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/nelsongome77401" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/woman.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Rita</div><div style="font-size:80%;" translate="no">Community Asia</div><div style="font-size:80%;" translate="no"><a href="https://x.com/JolieJolie8888" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/woman.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Aurora</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/AshleyDancet16" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                    <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Lyam</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/vilryam" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
+                                    <div class="col-4"></div>
+                                </div>
+                                
+                                <div style="min-height: 15px"></div>
+                                
+                                <div style="text-align:center">
+                                    <br/>Odoo Community Member:<br/><br/>
+                                    <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" target="_blank"><img src="/website_pinetwork_games_odoo/static/src/img/odoo_community_member_rgb.jpg" alt="LatinChain Odoo Community Member" class="img-fluid" style="width: 270px; height: 170px;" /></a>
+                                </div>
+                                
+                                <br/>Video presentation:<br/><br/>
+                                <iframe id="latin-chain" width="270px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                                <!--<br/><br/>Crypto news:<br/><br/>
+                                <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                                -->
+                                <br/><br/>Enjoy:<br/><br/>
+                                <iframe id="tiesto" width="270px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PL3j2zQVTx177bEObKAs_l__bZsxBcqei3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                             </div>
-                            <br/>
-                            <div class="row">
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Josue</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/PierceAntuan" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/woman.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Xiomeli</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/xiomelic" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/woman.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Xiomary</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/PiRadioForUs" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                            </div>
-                            <br/>
-                            <div class="row">
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Gunter</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/Elguarorojo" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Julio</div><div style="font-size:80%;" translate="no">Operations</div><div style="font-size:80%;" translate="no"><a href="https://x.com/eljc123" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Enrique</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/enriquekr" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                            </div>
-                            <br/>
-                            <div class="row">
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Jonathan</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/RedScorpion983" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Nelson</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/nelsongome77401" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/woman.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Rita</div><div style="font-size:80%;" translate="no">Community Asia</div><div style="font-size:80%;" translate="no"><a href="https://x.com/JolieJolie8888" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                            </div>
-                            <br/>
-                            <div class="row">
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/woman.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Aurora</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/AshleyDancet16" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                                <div class="col-4 border rounded"><div style=""><img src="/website_pinetwork_games_odoo/static/src/img/avatars/man.png" alt="" class="img-fluid" style="width: 70px; height: 70px;" /></div><div style="font-size:80%;" translate="no">Lyam</div><div style="font-size:80%;" translate="no">Community</div><div style="font-size:80%;" translate="no"><a href="https://x.com/vilryam" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a></div></div>
-                                <div class="col-4"></div>
-                            </div>
-                            
-                            <div style="min-height: 15px"></div>
-                            
-                            <div style="text-align:center">
-                                <br/>Odoo Community Member:<br/><br/>
-                                <a href="https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/" target="_blank"><img src="/website_pinetwork_games_odoo/static/src/img/odoo_community_member_rgb.jpg" alt="LatinChain Odoo Community Member" class="img-fluid" style="width: 270px; height: 170px;" /></a>
-                            </div>
-                            
-                            <br/>Video presentation:<br/><br/>
-                            <iframe id="latin-chain" width="270px" height="170px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
-                            <!--<br/><br/>Crypto news:<br/><br/>
-                            <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
-                            -->
-                            <br/><br/>Enjoy:<br/><br/>
-                            <iframe id="tiesto" width="270px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PL3j2zQVTx177bEObKAs_l__bZsxBcqei3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                           </div>
                           <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
-                            <div class="div_user_status">
-                                <strong class="user_status"></strong>
+                            <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
+                                <div style="margin-bottom:5px" class="border rounded">
+                                    <h5 translate="no"><strong>#LatinChain #Leaders</strong></h5>
+                                </div>
+                            
+                                <div class="div_user_status">
+                                    <strong class="user_status"></strong>
+                                </div>
+                                <div>
+                                    <br/>Leaders and rules:<br/><br/>
+                                </div>
+                                <ul class="list-group">
+                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <div class="row">
+                                            <div class="col-12"><button id="rules_button" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <div class="row">
+                                            <div class="col-12"><button id="leaderboard" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Leaders Board</div><div style="font-size:80%;">General ranking</div></button></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <div class="row">
+                                            <div class="col-12"><button id="winnerboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Top 10 Board</div><div style="font-size:80%;">Top 10 ranking by game</div></button></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <div class="row">
+                                            <div class="col-12"><button id="winnerzoneboard2" class="col-8 btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;">Winners Board</div><div style="font-size:80%;">Table of all winners</div></button></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <div class="row">
+                                            <div class="col-12"><button id="credits" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">Credits</div><div style="font-size:80%;">Donators list</div></button></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <div class="row">
+                                            <div class="col-12"><a href="/get-transactions/" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a></div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                            <div>
-                                <br/>Leaders and rules:<br/><br/>
-                            </div>
-                            <ul class="list-group">
-                                <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                    <div class="row">
-                                        <div class="col-12"><button id="rules_button" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                    <div class="row">
-                                        <div class="col-12"><button id="leaderboard" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Leaders Board</div><div style="font-size:80%;">General ranking</div></button></div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                    <div class="row">
-                                        <div class="col-12"><button id="winnerboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Top 10 Board</div><div style="font-size:80%;">Top 10 ranking by game</div></button></div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                    <div class="row">
-                                        <div class="col-12"><button id="winnerzoneboard2" class="col-8 btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;">Winners Board</div><div style="font-size:80%;">Table of all winners</div></button></div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                    <div class="row">
-                                        <div class="col-12"><button id="credits" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">Credits</div><div style="font-size:80%;">Donators list</div></button></div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                    <div class="row">
-                                        <div class="col-12"><a href="/get-transactions/" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a></div>
-                                    </div>
-                                </li>
-                            </ul>
                           </div>
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
-                            <div id="accordionThree" style="margin-bottom:5px">
-                              <div class="card">
-                                <!--<div class="card-header" id="headingThree">
-                                  <h5 class="mb-0">
-                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                      <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
-                                    </button>
-                                  </h5>
-                                </div>-->
-                                
-                                <h2 class="accordion-header" id="headingThree">
-                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                    <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
-                                  </button>
-                                </h2>
+                            <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
+                                <div style="margin-bottom:5px" class="border rounded">
+                                    <h5 translate="no"><strong>#LatinChain #User</strong></h5>
+                                </div>
+                                <div id="accordionThree" style="margin-bottom:5px">
+                              
+                                  <div class="card">
+                                    <!--<div class="card-header" id="headingThree">
+                                      <h5 class="mb-0">
+                                        <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                          <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
+                                        </button>
+                                      </h5>
+                                    </div>-->
+                                    
+                                    <h2 class="accordion-header" id="headingThree">
+                                      <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                        <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
+                                      </button>
+                                    </h2>
 
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionThree">
-                                  <div class="card-body">
-                                    <div style="text-align:center" class="form-group container">
-                                        <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
-                                                Hello, did you lost a transaction?. Now you can register your transaction. <strong>Set your Memo ID or Payment ID here and click in Save. You can find your Memo ID or Payment ID by accessing to TXID link in Pi Blockexplorer</strong>:
-                                                <textarea id="memo_id" name="memo_id" placeholder="Memo ID" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
-                                                <br/>
-                                                <button id="button_click_memo" name="button_click_memo" class="btn btn-success" disabled="true">Save</button>
-                                                <br/>
-                                                <div>
-                                                <br/>Place your Memo ID or Payment ID in the text box above.<br/>
-                                                <br/>A Memo ID or Payment ID looks like this:<br/>
-                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">WVV68I9Nz2VGHoWUV9mH3P5Te8Dn</textarea>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionThree">
+                                      <div class="card-body">
+                                        <div style="text-align:center" class="form-group container">
+                                            <div class="row">
+                                                <div class="col-1">
+                                                </div>
+                                                <div class="col-10">
+                                                    Hello, did you lost a transaction?. Now you can register your transaction. <strong>Set your Memo ID or Payment ID here and click in Save. You can find your Memo ID or Payment ID by accessing to TXID link in Pi Blockexplorer</strong>:
+                                                    <textarea id="memo_id" name="memo_id" placeholder="Memo ID" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
+                                                    <br/>
+                                                    <button id="button_click_memo" name="button_click_memo" class="btn btn-success" disabled="true">Save</button>
+                                                    <br/>
+                                                    <div>
+                                                    <br/>Place your Memo ID or Payment ID in the text box above.<br/>
+                                                    <br/>A Memo ID or Payment ID looks like this:<br/>
+                                                    <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">WVV68I9Nz2VGHoWUV9mH3P5Te8Dn</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-1">
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-                                            </div>
-                                        </div>
+                                          </div>
                                       </div>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            </div>
-                            <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
-                                <br/>User: <strong id="user_logged" translate="no">--</strong><br/>
-                                <br/>Status: <strong class="user_status_account">Access through Pi Browser.<br/></strong>
-                                <br/>Total points: <strong id="user_points">0</strong><br/>
-                                <br/>At: <strong id="user_points_datetime"></strong><br/>
-                                <br/>Points per game: <br/><strong id="user_points_per_game">0</strong><br/>
-                                <br/>Max points per game: <br/><strong id="user_points_last">0</strong><br/>
-                                <br/># of wins per game: <br/><strong id="user_points_wins">0</strong><br/>
+                                <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
+                                    <br/>User: <strong id="user_logged" translate="no">--</strong><br/>
+                                    <br/>Status: <strong class="user_status_account">Access through Pi Browser.<br/></strong>
+                                    <br/>Total points: <strong id="user_points">0</strong><br/>
+                                    <br/>At: <strong id="user_points_datetime"></strong><br/>
+                                    <br/>Points per game: <br/><strong id="user_points_per_game">0</strong><br/>
+                                    <br/>Max points per game: <br/><strong id="user_points_last">0</strong><br/>
+                                    <br/># of wins per game: <br/><strong id="user_points_wins">0</strong><br/>
+                                </div>
                             </div>
                           </div>
                         </div>
