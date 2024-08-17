@@ -1689,6 +1689,197 @@
                     
                     <div class="container" style="text-align:center; max-width: 810px;">
 
+                        
+
+                        <!--<br/>
+                        
+                        <div id="taboola-mid-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a-mid',
+                            container: 'taboola-mid-article-thumbnails',
+                            placement: 'Mid Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>-->
+                        
+                        
+                        <div align="center" style="text-align:center">
+                            <!--<br/>
+                            <script type="text/javascript">
+                                atOptions = {
+                                    'key' : 'b3626277f6615b27c340298a132b7897',
+                                    'format' : 'iframe',
+                                    'height' : 250,
+                                    'width' : 300,
+                                    'params' : {}
+                                };
+                            </script>
+                            <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>-->
+                            <!--<iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>-->
+                        </div>
+                        <!--<script type="text/javascript">
+                            atOptions = {
+                                'key' : 'b3626277f6615b27c340298a132b7897',
+                                'format' : 'iframe',
+                                'height' : 250,
+                                'width' : 300,
+                                'params' : {}
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
+                        <br/>
+                        <script type="text/javascript">
+                            atOptions = {
+                                'key' : '1771e7291ef3d0a686ff7e2bb191f557',
+                                'format' : 'iframe',
+                                'height' : 50,
+                                'width' : 320,
+                                'params' : {}
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/1771e7291ef3d0a686ff7e2bb191f557/invoke.js"></script>
+                        <br/>-->
+                        <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
+                        <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
+                        
+                        <div style="margin-bottom:5px; border:1px solid; padding:5px; width: 100%" class="rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong>#LatinChain #Magazine</strong></h5>
+                            </div>
+                            <div style="margin-bottom:5px" t-if="pioneers_streaming">
+                                <button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
+                            </div>
+                            <t t-if="pi_main_user">
+                                <div style="margin-bottom:5px" t-if="pi_main_user.streaming_url">
+                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch daily video</div></button>
+                                    <button id="share_video" class="btn btn-outline-danger" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button>
+                                </div>
+                            </t>
+                            <div style="margin-bottom:5px">
+                                <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3kSbPCMp3dd9jYbyLSCD0i" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top world gamers</div></button>
+                            </div>
+                            <div style="">
+                                <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3Hdsb83uuU-pzn8JCN9PNq" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top 10 cryptos</div></button>
+                            </div>
+                        </div>
+                        <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
+                            <div style="display: inline"><i id="play" class="fa fa-volume-off"></i></div> 
+                            <div style="display: inline">Hi<strong><span id="username" translate="no"></span></strong><span id="verified"></span>. Welcome to LatinChain Platform (Games from Latin America for Pi). Increase your Pi cryptocurrency mining power <i class="fa fa-bolt"></i> using this app. If you don't have it yet, download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link text-white"><strong>App Store</strong></a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link text-white"><strong>Play Store</strong></a> to watch it working.<br/></div>
+                        </div>
+                        <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><!--<strong t-if="mainnet == 'Testnet ON'">Testnet ON<br/></strong>--><strong t-if="mainnet == 'Mainnet ON'">Mainnet ON. Ready to play.<br/></strong><br/>
+                        
+                        <!--<div style="margin-bottom:5px">
+                            <a href="#myApps" class="myAppsAnchor btn btn-outline-info font-weight-bold border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-rocket"></i></div><div translate="no">Apps</div></a>
+                        </div>-->
+                        <!--<div style="text-align:center">
+                            <br/>LatinChain TV:<br/><br/>
+                            <iframe id="latinchain-tv" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
+                        </div>-->
+                        
+                        <div class="text-center" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                            
+                        </div>
+                        <div id="accordionOne" style="margin-bottom:5px">
+                          <div class="card">
+                            <!--<div class="card-header" id="headingOne">
+                              <h5 class="mb-0">
+                                <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
+                                </button>
+                              </h5>
+                            </div>-->
+                            
+                            <h2 class="accordion-header" id="headingOne">
+                              <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
+                              </button>
+                            </h2>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionOne">
+                              <div class="card-body">
+                                <div style="text-align:center" class="form-group container">
+                                    <div class="row">
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col-10">
+                                            <!--A normal Pi wallet address looks like this:<br/>
+                                            <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMNOPQ...</div>
+                                            <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
+                                            <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
+                                            <br/>
+                                            <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>-->
+                                            All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>
+                                            Here you can watch your incoming and outcoming transactions:<br/>
+                                            <a href="/get-transactions/" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a>
+                                            <div>
+                                            <br/>
+                                            Read the Rules to know the prize payment amount:<br/>
+                                            <button id="rules_button_3" class="btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid; color:black !important;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-1">
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="accordionTwo" style="margin-bottom:5px">
+                          <div class="card">
+                            <!--<div class="card-header" id="headingTwo">
+                              <h5 class="mb-0">
+                                <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                  <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
+                                </button>
+                              </h5>
+                            </div>-->
+                            
+                            <h2 class="accordion-header" id="headingTwo">
+                              <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
+                              </button>
+                            </h2>
+
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTwo">
+                              <div class="card-body">
+                                <div style="text-align:center" class="form-group container">
+                                    <div class="row">
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col-10">
+                                            Hello, are you Youtuber or want to become one?. Now you can stream your videos on LatinChain Platform. <strong>Set your Youtube streaming video here and click in Save, play, win and then it will be watched on Winners Board and Top 50 streamers</strong>:
+                                            <textarea id="streaming_url" name="streaming_url" placeholder="Youtube video URL" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
+                                            <br/>
+                                            <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
+                                            <br/>
+                                            <div>
+                                            <br/>Place your own Youtube video url in the text box above. You can use Normal video, Live transmission or Short.<br/>
+                                            <br/>A Youtube video URL looks like this:<br/>
+                                            <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/watch?v=9KqcyAoCZzo</textarea>
+                                            <br/>A Youtube live video URL looks like this:<br/>
+                                            <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/live/AXOtWxSETew?si=3bKFA_mjb0ethVqe</textarea>
+                                            <br/>A Youtube short video URL looks like this:<br/>
+                                            <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/shorts/SZEljmi-wr4</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-1">
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div style="text-align:center; position:relative;">
+                            <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="width: 270px; height: 170px;" />
+                            <!--<div id="myApps" style="display:inline; position: absolute; bottom: 0; height: 80px;">
+                            </div>-->
+                        </div>
+                        
                         <style>
                             .sticky {
                               position: fixed;
@@ -1721,195 +1912,6 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-                            <!--<br/>
-                            
-                            <div id="taboola-mid-article-thumbnails"></div>
-                            <script type="text/javascript">
-                              window._taboola = window._taboola || [];
-                              _taboola.push({
-                                mode: 'alternating-thumbnails-a-mid',
-                                container: 'taboola-mid-article-thumbnails',
-                                placement: 'Mid Article Thumbnails',
-                                target_type: 'mix'
-                              });
-                            </script>-->
-                            
-                            
-                            <div align="center" style="text-align:center">
-                                <!--<br/>
-                                <script type="text/javascript">
-                                    atOptions = {
-                                        'key' : 'b3626277f6615b27c340298a132b7897',
-                                        'format' : 'iframe',
-                                        'height' : 250,
-                                        'width' : 300,
-                                        'params' : {}
-                                    };
-                                </script>
-                                <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>-->
-                                <!--<iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>-->
-                            </div>
-                            <!--<script type="text/javascript">
-                                atOptions = {
-                                    'key' : 'b3626277f6615b27c340298a132b7897',
-                                    'format' : 'iframe',
-                                    'height' : 250,
-                                    'width' : 300,
-                                    'params' : {}
-                                };
-                            </script>
-                            <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
-                            <br/>
-                            <script type="text/javascript">
-                                atOptions = {
-                                    'key' : '1771e7291ef3d0a686ff7e2bb191f557',
-                                    'format' : 'iframe',
-                                    'height' : 50,
-                                    'width' : 320,
-                                    'params' : {}
-                                };
-                            </script>
-                            <script type="text/javascript" src="https://www.effectivecreativeformat.com/1771e7291ef3d0a686ff7e2bb191f557/invoke.js"></script>
-                            <br/>-->
-                            <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
-                            <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
-                            
-                            <div style="margin-bottom:5px; border:1px solid; padding:5px; width: 100%" class="rounded">
-                                <div style="margin-bottom:5px" class="border-bottom">
-                                    <h5 translate="no"><strong>#LatinChain #Magazine</strong></h5>
-                                </div>
-                                <div style="margin-bottom:5px" t-if="pioneers_streaming">
-                                    <button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
-                                </div>
-                                <t t-if="pi_main_user">
-                                    <div style="margin-bottom:5px" t-if="pi_main_user.streaming_url">
-                                        <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch daily video</div></button>
-                                        <button id="share_video" class="btn btn-outline-danger" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button>
-                                    </div>
-                                </t>
-                                <div style="margin-bottom:5px">
-                                    <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3kSbPCMp3dd9jYbyLSCD0i" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top world gamers</div></button>
-                                </div>
-                                <div style="">
-                                    <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3Hdsb83uuU-pzn8JCN9PNq" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top 10 cryptos</div></button>
-                                </div>
-                            </div>
-                            <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
-                                <div style="display: inline"><i id="play" class="fa fa-volume-off"></i></div> 
-                                <div style="display: inline">Hi<strong><span id="username" translate="no"></span></strong><span id="verified"></span>. Welcome to LatinChain Platform (Games from Latin America for Pi). Increase your Pi cryptocurrency mining power <i class="fa fa-bolt"></i> using this app. If you don't have it yet, download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link text-white"><strong>App Store</strong></a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link text-white"><strong>Play Store</strong></a> to watch it working.<br/></div>
-                            </div>
-                            <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><!--<strong t-if="mainnet == 'Testnet ON'">Testnet ON<br/></strong>--><strong t-if="mainnet == 'Mainnet ON'">Mainnet ON. Ready to play.<br/></strong><br/>
-                            
-                            <!--<div style="margin-bottom:5px">
-                                <a href="#myApps" class="myAppsAnchor btn btn-outline-info font-weight-bold border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-rocket"></i></div><div translate="no">Apps</div></a>
-                            </div>-->
-                            <!--<div style="text-align:center">
-                                <br/>LatinChain TV:<br/><br/>
-                                <iframe id="latinchain-tv" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
-                            </div>-->
-                            
-                            <div class="text-center" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                
-                            </div>
-                            <div id="accordionOne" style="margin-bottom:5px">
-                              <div class="card">
-                                <!--<div class="card-header" id="headingOne">
-                                  <h5 class="mb-0">
-                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                      <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
-                                    </button>
-                                  </h5>
-                                </div>-->
-                                
-                                <h2 class="accordion-header" id="headingOne">
-                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <div style=""><i class="fa-solid fa-wallet"></i></div><div style="">Wallet</div>
-                                  </button>
-                                </h2>
-
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionOne">
-                                  <div class="card-body">
-                                    <div style="text-align:center" class="form-group container">
-                                        <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
-                                                <!--A normal Pi wallet address looks like this:<br/>
-                                                <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMNOPQ...</div>
-                                                <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
-                                                <input id="pi_wallet_address" name="pi_wallet_address" placeholder="Set your Pi wallet address" class="form-control" disabled="true"/>
-                                                <br/>
-                                                <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>-->
-                                                All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>
-                                                Here you can watch your incoming and outcoming transactions:<br/>
-                                                <a href="/get-transactions/" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a>
-                                                <div>
-                                                <br/>
-                                                Read the Rules to know the prize payment amount:<br/>
-                                                <button id="rules_button_3" class="btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid; color:black !important;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
-                                                </div>
-                                            </div>
-                                            <div class="col-1">
-                                            </div>
-                                        </div>
-                                      </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div id="accordionTwo" style="margin-bottom:5px">
-                              <div class="card">
-                                <!--<div class="card-header" id="headingTwo">
-                                  <h5 class="mb-0">
-                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                      <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
-                                    </button>
-                                  </h5>
-                                </div>-->
-                                
-                                <h2 class="accordion-header" id="headingTwo">
-                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                    <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
-                                  </button>
-                                </h2>
-
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTwo">
-                                  <div class="card-body">
-                                    <div style="text-align:center" class="form-group container">
-                                        <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
-                                                Hello, are you Youtuber or want to become one?. Now you can stream your videos on LatinChain Platform. <strong>Set your Youtube streaming video here and click in Save, play, win and then it will be watched on Winners Board and Top 50 streamers</strong>:
-                                                <textarea id="streaming_url" name="streaming_url" placeholder="Youtube video URL" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
-                                                <br/>
-                                                <button id="button_click" name="button_click" class="btn btn-success" disabled="true">Save</button>
-                                                <br/>
-                                                <div>
-                                                <br/>Place your own Youtube video url in the text box above. You can use Normal video, Live transmission or Short.<br/>
-                                                <br/>A Youtube video URL looks like this:<br/>
-                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/watch?v=9KqcyAoCZzo</textarea>
-                                                <br/>A Youtube live video URL looks like this:<br/>
-                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/live/AXOtWxSETew?si=3bKFA_mjb0ethVqe</textarea>
-                                                <br/>A Youtube short video URL looks like this:<br/>
-                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/shorts/SZEljmi-wr4</textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-1">
-                                            </div>
-                                        </div>
-                                      </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            <div style="text-align:center; position:relative;">
-                                <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="width: 270px; height: 170px;" />
-                                <!--<div id="myApps" style="display:inline; position: absolute; bottom: 0; height: 80px;">
-                                </div>-->
-                            </div>
                         
                             <div class="div_user_status">
                                 <strong class="user_status"></strong>
