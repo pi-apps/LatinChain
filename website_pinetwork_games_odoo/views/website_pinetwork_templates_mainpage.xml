@@ -1879,7 +1879,7 @@
                               </div>
                             </div>
                             
-                            <div style="text-align:center; position:relative;">
+                            <div style="text-align:center; position:relative;" id="pay_with">
                                 <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="width: 270px; height: 170px;" />
                                 <!--<div id="myApps" style="display:inline; position: absolute; bottom: 0; height: 80px;">
                                 </div>-->
@@ -1900,26 +1900,26 @@
                         </style>
 
                         <ul class="nav nav-pills justify-content-center nav-justified rounded sticky" id="myTabApps" role="tablist" style="background-color: #e3f2fd;" translate="no">
-                          <li class="nav-item" role="presentation">
+                          <li class="nav-item" role="presentation" onclick="location.href='#pay_with'">
                             <a class="nav-link active link_height" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="font-size:80%;" translate="no">Apps</div></a>
                           </li>
-                          <li class="nav-item" role="presentation">
+                          <li class="nav-item" role="presentation" onclick="location.href='#pay_with'" >
                             <a class="nav-link link_height" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:80%;">Leaders</div></a>
                           </li>
-                          <li class="nav-item" role="presentation">
+                          <li class="nav-item" role="presentation" onclick="location.href='#pay_with'">
                             <a class="nav-link link_height" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-user"></i></div><div style="font-size:80%;">User</div></a>
                           </li>
-                          <li class="nav-item" role="presentation">
+                          <li class="nav-item" role="presentation" onclick="location.href='#pay_with'">
                             <a class="nav-link link_height" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:80%;">Dev</div></a>
                           </li>
-                          <li class="nav-item" role="presentation">
+                          <li class="nav-item" role="presentation" onclick="location.href='#pay_with'">
                             <a class="nav-link link_height" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-info"></i></div><div style="font-size:80%;">Team</div></a>
                           </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
-                                <div style="margin-bottom:5px" class="border rounded">
+                                <div style="margin-bottom:5px" class="border rounded" id="apps">
                                     <h5 translate="no"><strong>#LatinChain #Apps</strong></h5>
                                 </div>
                                 
