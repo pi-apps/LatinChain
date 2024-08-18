@@ -6,14 +6,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-16 11:44+0000\n"
-"PO-Revision-Date: 2024-08-16 11:44+0000\n"
+"POT-Creation-Date: 2024-08-18 14:08+0000\n"
+"PO-Revision-Date: 2024-08-18 14:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "#Mainnet"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "#Testnet"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #. openerp-web
@@ -395,7 +405,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>\n"
-"                                            Read the Rules to know the prize payment amount:<br/>"
+"                                                Read the Rules to know the prize payment amount:<br/>"
 msgstr ""
 "<br/>\n"
 "                                            Lee las Reglas para saber el monto del pago de los premios:<br/>"
@@ -434,15 +444,6 @@ msgid ""
 "                                    <br/>\n"
 "                                    <br/>"
 msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"<br/><br/>\n"
-"                                                You can share your Pi username, to let others set it as their referrer code. Your Pi username is: <span translate=\"no\" class=\"referrer_username\"/>"
-msgstr ""
-"<br/><br/>\n"
-"                                                Puedes compartir tú nombre de usuario Pi, para permitir a otros colocarlo como su código de referido. Tu nombre de usuario Pi es: <span translate=\"no\" class=\"referrer_username\"/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -486,7 +487,7 @@ msgstr "<br/>Escoge tu app:<br/><br/>"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>INFO:<br/><br/>\n"
-"                            Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.<br/><br/>"
+"                                Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.<br/><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -508,7 +509,7 @@ msgstr "<br/>Otros desarrollos:<br/><br/>"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>Place your Memo ID or Payment ID in the text box above.<br/>\n"
-"                                                <br/>A Memo ID or Payment ID looks like this:<br/>"
+"                                                    <br/>A Memo ID or Payment ID looks like this:<br/>"
 msgstr ""
 "<br/>Coloca tu Memo ID ó Payment ID en la caja de texto de arriba.<br/>\n"
 "                                            <br/>Un Memo ID ó Payment ID se ve así:<br/>"
@@ -517,7 +518,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>Place your own Youtube video url in the text box above. You can use Normal video, Live transmission or Short.<br/>\n"
-"                                            <br/>A Youtube video URL looks like this:<br/>"
+"                                                <br/>A Youtube video URL looks like this:<br/>"
 msgstr ""
 "<br/>Coloca tu propia URL de video de Youtube en la caja de texto de arriba. Puedes usar un Video normal, Transmisión en vivo ó Short.<br/>\n"
 "                                            <br/>La URL de un video de Youtube se ve así:<br/>"
@@ -526,12 +527,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>User: <strong id=\"user_logged\" translate=\"no\">--</strong><br/>\n"
-"                                <br/>Status: <strong class=\"user_status_account\">Access through Pi Browser.<br/></strong>\n"
-"                                <br/>Total points: <strong id=\"user_points\">0</strong><br/>\n"
-"                                <br/>At: <strong id=\"user_points_datetime\"/><br/>\n"
-"                                <br/>Points per game: <br/><strong id=\"user_points_per_game\">0</strong><br/>\n"
-"                                <br/>Max points per game: <br/><strong id=\"user_points_last\">0</strong><br/>\n"
-"                                <br/># of wins per game: <br/><strong id=\"user_points_wins\">0</strong><br/>"
+"                                    <br/>Status: <strong class=\"user_status_account\">Access through Pi Browser.<br/></strong>\n"
+"                                    <br/>Total points: <strong id=\"user_points\">0</strong><br/>\n"
+"                                    <br/>At: <strong id=\"user_points_datetime\"/><br/>\n"
+"                                    <br/>Points per game: <br/><strong id=\"user_points_per_game\">0</strong><br/>\n"
+"                                    <br/>Max points per game: <br/><strong id=\"user_points_last\">0</strong><br/>\n"
+"                                    <br/># of wins per game: <br/><strong id=\"user_points_wins\">0</strong><br/>"
 msgstr ""
 "<br/>Usuario: <strong id=\"user_logged\">--</strong><br/>\n"
 "                            <br/>Status: <strong class=\"user_status_account\">Accede a través del Pi Browser.<br/></strong>\n"
@@ -699,7 +700,37 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>#LatinChain #Apps</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>#LatinChain #Dev</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>#LatinChain #Introduction</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>#LatinChain #Leaders</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>#LatinChain #Magazine</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>#LatinChain #Team</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>#LatinChain #User</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -791,7 +822,7 @@ msgstr "Todos los datos aquí como premios y pago mínimo, se refieren a"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>\n"
-"                                            Here you can watch your incoming and outcoming transactions:<br/>"
+"                                                Here you can watch your incoming and outcoming transactions:<br/>"
 msgstr ""
 "Todos los pagos de premios se pagarán automáticamente a su Pi Wallet asociada en su navegador Pi.<br/><br/>\n"
 "                                            Aquí puede ver sus transacciones entrantes y salientes:<br/>"
@@ -1024,15 +1055,11 @@ msgid "Flip Board"
 msgstr "Intercambia Tablero"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "Gain Latin points ("
 msgstr "Gana Latin points ("
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Gain Latin points (<i class=\"fa-solid fa-heart\"/>)"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1200,7 +1227,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Last 24 hours: \n"
-"                                <br/>"
+"                                    <br/>"
 msgstr ""
 "Últimas 24 horas: \n"
 "                                <br/>"
@@ -1303,6 +1330,11 @@ msgstr "Mahjong solitario"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Mainnet"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Mainnet ON. Ready to play.<br/>"
 msgstr ""
 
@@ -1389,18 +1421,6 @@ msgstr "No verificado. Cada 30 días to debes desbloquear la app pagando"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"Now you can set the referrer code of another Pioneer (not yours), to whom we"
-" will pay an amount for being your referrer, also you will receive a payback"
-" of the same amount of your referrer. Then, click in Save:"
-msgstr ""
-"Ahora puedes colocar un código de referido de otro Pionero (no el tuyo), a "
-"quien vamos a pagar un monto por ser tu referido, igualmente tú vas a "
-"recibir un pago de vuelta del mismo monto de tu referido. Luego, click en "
-"Guardar:"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Odoo App"
 msgstr ""
 
@@ -1446,11 +1466,6 @@ msgstr "Pi cada 30 días:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "Pi for 30 days from today"
 msgstr "Pi por 30 días desde hoy"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pi referrer code"
-msgstr "Código Pi de referido"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1654,11 +1669,6 @@ msgstr "Sesión:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Set your Pi referrer code"
-msgstr "Coloca tu código Pi de referido"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Share in Social Networks:<br/><br/>"
 msgstr "Compartir en Redes Sociales:<br/><br/>"
 
@@ -1666,11 +1676,6 @@ msgstr "Compartir en Redes Sociales:<br/><br/>"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Show Hint"
 msgstr "Muestra Pista"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Soon available, not yet.<br/>"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1741,6 +1746,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Testing feature"
 msgstr "Función de prueba"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Testnet"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1903,6 +1913,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Yes"
 msgstr "Sí"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "You are at"
+msgstr "Estás en"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
