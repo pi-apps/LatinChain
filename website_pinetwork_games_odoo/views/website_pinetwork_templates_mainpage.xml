@@ -1746,7 +1746,7 @@
                         
                         <div style="margin-bottom:5px; border:1px solid; padding:5px; width: 100%" class="rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet</div></strong></h5>
+                                <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
                                 <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://test.latin-chain.com" target="_blank" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Testnet</div></a>
@@ -1755,7 +1755,7 @@
                         </div>
                         <div style="margin-bottom:5px; border:1px solid; padding:5px; width: 100%" class="rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong>#LatinChain #Magazine</strong></h5>
+                                <h5 translate="no"><strong>#LatinChain #Magazine &#127909;</strong></h5>
                             </div>
                             <div style="margin-bottom:5px" t-if="pioneers_streaming">
                                 <button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
@@ -1775,7 +1775,7 @@
                         </div>
                         <div style="margin-bottom:5px; border:1px solid; padding:5px; width: 100%" class="rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong>#LatinChain #Introduction</strong></h5>
+                                <h5 translate="no"><strong>#LatinChain #Introduction &#128220;</strong></h5>
                             </div>
                         
                             <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
@@ -1929,7 +1929,7 @@
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
                                 <div style="margin-bottom:5px" class="border rounded" id="apps">
-                                    <h5 translate="no"><strong>#LatinChain #Apps</strong></h5>
+                                    <h5 translate="no"><strong>#LatinChain #Apps &#x1F680;</strong></h5>
                                 </div>
                                 
                                 <div class="div_user_status">
@@ -2101,7 +2101,7 @@
                           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
                                 <div style="margin-bottom:5px" class="border rounded">
-                                    <h5 translate="no"><strong>#LatinChain #Dev</strong></h5>
+                                    <h5 translate="no"><strong>#LatinChain #Dev &#128187;</strong></h5>
                                 </div>
                             
                                 <br/>Other developments:<br/><br/>
@@ -2139,7 +2139,7 @@
                           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
                                 <div style="margin-bottom:5px" class="border rounded">
-                                    <h5 translate="no"><strong>#LatinChain #Team</strong></h5>
+                                    <h5 translate="no"><strong>#LatinChain #Team &#128101;</strong></h5>
                                 </div>
                                 
                                 <br/>INFO:<br/><br/>
@@ -2201,7 +2201,7 @@
                           <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
                             <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
                                 <div style="margin-bottom:5px" class="border rounded">
-                                    <h5 translate="no"><strong>#LatinChain #Leaders</strong></h5>
+                                    <h5 translate="no"><strong>#LatinChain #Leaders &#127941;</strong></h5>
                                 </div>
                             
                                 <div class="div_user_status">
@@ -2247,7 +2247,7 @@
                           <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
                             <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
                                 <div style="margin-bottom:5px" class="border rounded">
-                                    <h5 translate="no"><strong>#LatinChain #User</strong></h5>
+                                    <h5 translate="no"><strong>#LatinChain #User &#128526;</strong></h5>
                                 </div>
                                 <div id="accordionThree" style="margin-bottom:5px">
                               
