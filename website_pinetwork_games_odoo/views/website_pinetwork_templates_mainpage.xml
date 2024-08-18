@@ -1319,14 +1319,12 @@
                                         $("#winnerboard").attr("href", "/get-top10-zone/" + auth.user.username);
                                         $("#winnerzoneboard").attr("href", "/get-winners-zone/" + auth.user.username);*/
 
-                                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                            showPiAds(Pi);
                                         //get_user();
                                         set_points(0).always(function(){
                                             get_user().always(function(){
                                                 //if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                                //if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                                    //showPiAds(Pi);
+                                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                    showPiAds(Pi);
                                             });
                                         });
                                     }).catch(function(error) {
