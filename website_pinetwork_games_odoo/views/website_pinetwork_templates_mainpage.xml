@@ -1749,8 +1749,8 @@
                                 <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://test.latin-chain.com" target="_blank" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Testnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latin-chain.com" target="_blank" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Mainnet</div></a>
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://test.latin-chain.com" target="_blank" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Testnet</div><div style="font-size:80%;">Go to Testnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latin-chain.com" target="_blank" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Mainnet</div><div style="font-size:80%;">Go to Mainnet</div></a>
                             </div>
                         </div>
                         <div style="margin-bottom:5px; border:1px solid; padding:5px; width: 100%" class="rounded">
