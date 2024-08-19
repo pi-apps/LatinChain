@@ -245,14 +245,19 @@ $( document ).ready(function() {
                         
                         $("#button_reward_ad").prop( "disabled", false );
                         
+                        var start_flag = false;
+                        
                         $( "#button_reward_ad" ).click(async function() {
                             end();
-                            if(seconds <= 5)
+                            if(seconds <= 5 && start_flag)
                             {
                                 start();
                                 return;
                             }
                             start();
+                            
+                            if(!start_flag)
+                                start_flag = true;
                             
                             if(pi_user_id != "" && pi_user_code != "")
                             {
