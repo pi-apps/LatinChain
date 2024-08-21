@@ -249,7 +249,7 @@ class admin_apps(models.Model):
             i.total_users_daily_count = self.env["pi.users"].sudo().search_count([('last_connection', '>=', datetime.now() - timedelta(days=1))])
             i.total_users_count = self.env["pi.users"].sudo().search_count([])
             i.total_users_verified_count = self.env["pi.users"].sudo().search_count([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))])
-            pi_user_list = self.env["pi.users"].sudo().search([('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+            pi_user_list = self.env["pi.users"].sudo().search([('streaming_url', '!=', '')], limit=50, order="unblocked_datetime desc,points desc,points_datetime asc,id asc")
             i.top_50_streamers_ids = [(6, 0, pi_user_list.ids)]
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
