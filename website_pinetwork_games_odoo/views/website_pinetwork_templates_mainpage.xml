@@ -900,6 +900,9 @@
                                         $(".show-tetris").show();
                                         $(".show-mahjong").show();
                                         
+                                        $("#streaming_url").val(data.streaming_url);
+                                        $("#streaming_url").prop( "disabled", false );
+                                        
                                         passkey=data.passkey;
                                         if(data.unblocked)
                                         {
@@ -969,12 +972,12 @@
                                                                         '</table>');
                                             $("#user_points_datetime").html(data.points_datetime);
                                             //$("#pi_wallet_address").val(data.pi_wallet_address);
-                                            $("#streaming_url").val(data.streaming_url);
+                                            //$("#streaming_url").val(data.streaming_url);
                                             $("#referrer_code").val(data.referrer_code);
                                             
                                             $("#button_click").prop( "disabled", false );
                                             //$("#pi_wallet_address").prop( "disabled", false );
-                                            $("#streaming_url").prop( "disabled", false );
+                                            //$("#streaming_url").prop( "disabled", false );
                                             
                                             $("#button_click_referrer").prop( "disabled", false );
                                             $("#referrer_code").prop( "disabled", false );
@@ -1041,12 +1044,12 @@
                                                                         '</table>');
                                             $("#user_points_datetime").html(data.points_datetime);
                                             //$("#pi_wallet_address").val(data.pi_wallet_address);
-                                            $("#streaming_url").val(data.streaming_url);
+                                            //$("#streaming_url").val(data.streaming_url);
                                             $("#referrer_code").val(data.referrer_code);
                                             
                                             $("#button_click").prop( "disabled", true );
                                             //$("#pi_wallet_address").prop( "disabled", false );
-                                            $("#streaming_url").prop( "disabled", true );
+                                            //$("#streaming_url").prop( "disabled", true );
                                             $("#referrer_code").prop( "disabled", true );
                                             
                                             $("#button_click_memo").prop( "disabled", false );
