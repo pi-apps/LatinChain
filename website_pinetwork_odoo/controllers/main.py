@@ -495,11 +495,13 @@ class PiNetworkBaseController(http.Controller):
         if 'adId' not in kw:
             _logger.info("adId not present")
             return json.dumps({'result': False})
+            
+        url_result = 'https://api.minepi.com/v2/ads_network/status/'+kw['adId']
         
-        re = requests.post('https://api.minepi.com/v2/ads_network/status/'+kw['adId'], headers={'Authorization': "Key " + admin_app_list[0].admin_key})
+        re = requests.post(url_result, headers={'Authorization': "Key " + admin_app_list[0].admin_key})
         
         _logger.info("Identifier1 " + str(re))
-        _logger.info("Identifier2 " + str(kw['adId']))
+        _logger.info("Identifier2 " + str(url_result))
         _logger.info("Identifier3 " + str(admin_app_list[0].admin_key))
         
         try:
