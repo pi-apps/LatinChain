@@ -305,7 +305,6 @@ $( document ).ready(function() {
                                                     }, 5000);
                                                     alert("+" + data.points_latin + " Latin points.");
                                                 }
-                                                alert("Ad finalized.");
                                                 start();
                                             }).fail(function() {
                                                 setConfirmUnloadPoints(false);

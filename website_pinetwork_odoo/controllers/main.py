@@ -500,16 +500,10 @@ class PiNetworkBaseController(http.Controller):
         
         re = requests.get(url_result, headers={'Authorization': "Key " + admin_app_list[0].admin_key})
         
-        _logger.info("Identifier1 " + str(re))
-        _logger.info("Identifier2 " + str(url_result))
-        _logger.info("Identifier3 " + str(admin_app_list[0].admin_key))
-        
         try:
             result = re.json()
             
             result_dict = json.loads(str(json.dumps(result)))
-            
-            _logger.info("Identifier " + str(result_dict))
             
             if not (result_dict['identifier'] == kw['adId'] and result_dict['mediator_ack_status'] == "granted"):
                 _logger.info("Not granted")
