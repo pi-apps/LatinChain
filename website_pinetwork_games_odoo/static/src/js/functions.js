@@ -299,11 +299,11 @@ $( document ).ready(function() {
                                                 if(data.result && data.points_latin > 0)
                                                 {
                                                     $("#button_reward_ad").prop( "disabled", true );
-                                                    var btnvalue = $("#button_reward_ad").prop("value");
-                                                    $("#button_reward_ad").prop("value", "+" + data.points_latin + " Latin points.");
+                                                    var btnvalue = $("#button_reward_ad").html();
+                                                    $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
                                                     setTimeout(function ()
                                                     {
-                                                        $("#button_reward_ad").prop("value", btnvalue);
+                                                        $("#button_reward_ad").html(btnvalue);
                                                         $("#button_reward_ad").prop( "disabled", false );
                                                     }, 5000);
                                                     //alert("+" + data.points_latin + " Latin points.");
