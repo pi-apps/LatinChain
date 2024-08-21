@@ -279,6 +279,7 @@ $( document ).ready(function() {
                                     const showAdResponse = await Pi.Ads.showAd("rewarded");
                                     
                                     if (showAdResponse.result === "AD_REWARDED") {
+                                        alert("ID: " + showAdResponse.adId);
                                         if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                                         {
                                             //alert($("#ready_reward_message").text());
