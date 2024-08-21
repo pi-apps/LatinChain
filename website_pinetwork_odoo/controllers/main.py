@@ -498,7 +498,7 @@ class PiNetworkBaseController(http.Controller):
             
         url_result = 'https://api.minepi.com/v2/ads_network/status/'+kw['adId']
         
-        re = requests.post(url_result, headers={'Authorization': "Key " + admin_app_list[0].admin_key})
+        re = requests.get(url_result, headers={'Authorization': "Key " + admin_app_list[0].admin_key})
         
         _logger.info("Identifier1 " + str(re))
         _logger.info("Identifier2 " + str(url_result))
