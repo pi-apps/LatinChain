@@ -397,8 +397,8 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             """
             
-            #if pi_users_list[0].unblocked == False:
-            #    return json.dumps({'result': False})
+            if pi_users_list[0].unblocked == False:
+                return json.dumps({'result': False})
             
             if 'streaming_url' not in kw:
                 _logger.info("streaming_url not present")
