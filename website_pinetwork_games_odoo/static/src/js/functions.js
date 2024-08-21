@@ -299,11 +299,14 @@ $( document ).ready(function() {
                                                 if(data.result && data.points_latin > 0)
                                                 {
                                                     $("#button_reward_ad").prop( "disabled", true );
+                                                    var btnvalue = $("#button_reward_ad").val();
+                                                    $("#button_reward_ad").val("+" + data.points_latin + " Latin points.");
                                                     setTimeout(function ()
                                                     {
+                                                        $("#button_reward_ad").val(btnvalue);
                                                         $("#button_reward_ad").prop( "disabled", false );
                                                     }, 5000);
-                                                    alert("+" + data.points_latin + " Latin points.");
+                                                    //alert("+" + data.points_latin + " Latin points.");
                                                 }
                                                 start();
                                             }).fail(function() {
