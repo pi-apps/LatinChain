@@ -21,6 +21,7 @@
                                 <field name="streaming_url" readonly="True"/>
                                 <field name="pi_user_role" />
                                 <field name="points" readonly="True"/>
+                                <field name="points_latin" readonly="True"/>
                                 <field name="points_chess" readonly="True"/>
                                 <field name="points_sudoku" readonly="True"/>
                                 <field name="points_snake" readonly="True"/>
@@ -65,6 +66,7 @@
                 <field name="pi_user_code"/>
                 <field name="pi_user_role"/>
                 <field name="points"/>
+                <field name="points_latin"/>
                 <field name="points_chess"/>
                 <field name="points_sudoku"/>
                 <field name="points_snake"/>
