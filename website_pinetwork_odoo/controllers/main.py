@@ -503,6 +503,8 @@ class PiNetworkBaseController(http.Controller):
             
             result_dict = json.loads(str(json.dumps(result)))
             
+            _logger.info("Identifier " + str(result_dict))
+            
             if not (result_dict['identifier'] == kw['adId'] and result_dict['mediator_ack_status'] == "granted"):
                 _logger.info("Not granted")
                 return json.dumps({'result': False})
