@@ -766,7 +766,7 @@ class PiNetworkBaseController(http.Controller):
         return json.dumps({'result': True})
     
     @http.route('/get-general-ranking/<string:pi_user_code>', type='http', auth="public", website=True)
-    def get_general_ranking(self, pi_user_code, **kw):
+    def get_general_ranking_user(self, pi_user_code, **kw):
         domains_def = self.leaders_domain_def()
         leaders_domain = domains_def['leaders_domain']
         winner_domain = domains_def['winner_domain']
