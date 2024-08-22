@@ -793,7 +793,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
-        return http.request.render('website_pinetwork_odoo.list_points', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user})
+        return http.request.render('website_pinetwork_odoo.general_ranking', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user})
         
     @http.route('/get-general-ranking/', type='http', auth="public", website=True)
     def get_general_ranking(self, **kw):
