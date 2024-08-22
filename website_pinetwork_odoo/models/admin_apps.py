@@ -229,6 +229,7 @@ class admin_apps(models.Model):
     total_users_verified_count = fields.Float('Total users verified count', compute="_compute_daily", store=True, size=50, digits=(50,0), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pioneers_streaming = fields.Boolean('Pioneers streaming', compute="_compute_streaming", store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     top_50_streamers_ids = fields.Many2many('pi.users', 'admin_apps_top_50_streamers_rel', string='Top 50 streamers', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_general_ranking_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_general_ranking_rel', string='General Ranking', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_main_user = fields.Many2one('pi.users', string='Main User', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     points_latin_amount = fields.Float('Latin points amount', digits=(50,7), default=1, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_seconds = fields.Integer('Pi Ad seconds', default=300, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -251,6 +252,8 @@ class admin_apps(models.Model):
             i.total_users_verified_count = self.env["pi.users"].sudo().search_count([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))])
             pi_user_list = self.env["pi.users"].sudo().search([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
             i.top_50_streamers_ids = [(6, 0, pi_user_list.ids)]
+            pi_user_list = self.env["pi.users"].sudo().search([], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+            i.pi_users_general_ranking_ids = [(6, 0, pi_user_list.ids)]
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_winners_all_paid(self):

@@ -764,6 +764,64 @@ class PiNetworkBaseController(http.Controller):
         request.env.cr.commit()
         
         return json.dumps({'result': True})
+    
+    @http.route('/get-general-ranking/<string:pi_user_code>', type='http', auth="public", website=True)
+    def get_general_ranking(self, pi_user_code, **kw):
+        domains_def = self.leaders_domain_def()
+        leaders_domain = domains_def['leaders_domain']
+        winner_domain = domains_def['winner_domain']
+        winner_chess_domain = domains_def['winner_chess_domain']
+        winner_sudoku_domain = domains_def['winner_sudoku_domain']
+        winner_snake_domain = domains_def['winner_snake_domain']
+
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            general_ranking = []
+            total_users_count = 0
+            total_users_verified_count = 0
+        else:
+            general_ranking = admin_app_list[0].pi_users_general_ranking_ids
+            total_users_count = admin_app_list[0].total_users_count
+            total_users_verified_count = admin_app_list[0].total_users_verified_count
+        
+        pi_users_verified_count = int(total_users_verified_count)
+        
+        pi_users_count = int(total_users_count)
+        
+        pi_users_list = general_ranking
+        
+        pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
+        
+        return http.request.render('website_pinetwork_odoo.list_points', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user})
+        
+    @http.route('/get-general-ranking/', type='http', auth="public", website=True)
+    def get_general_ranking(self, **kw):
+        domains_def = self.leaders_domain_def()
+        leaders_domain = domains_def['leaders_domain']
+        winner_domain = domains_def['winner_domain']
+        winner_chess_domain = domains_def['winner_chess_domain']
+        winner_sudoku_domain = domains_def['winner_sudoku_domain']
+        winner_snake_domain = domains_def['winner_snake_domain']
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            general_ranking = []
+            total_users_count = 0
+            total_users_verified_count = 0
+        else:
+            general_ranking = admin_app_list[0].pi_users_general_ranking_ids
+            total_users_count = admin_app_list[0].total_users_count
+            total_users_verified_count = admin_app_list[0].total_users_verified_count
+        
+        pi_users_verified_count = int(total_users_verified_count)
+        
+        pi_users_count = int(total_users_count)
+        
+        pi_users_list = general_ranking
+        
+        return http.request.render('website_pinetwork_odoo.general_ranking', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list})
         
     @http.route('/get-points/<string:pi_user_code>', type='http', auth="public", website=True)
     def get_points_user(self, pi_user_code, **kw):

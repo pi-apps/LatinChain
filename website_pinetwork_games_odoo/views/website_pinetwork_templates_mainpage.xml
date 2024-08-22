@@ -854,6 +854,7 @@
                         var winnerboard = "/get-top10-zone/";
                         var winnerzoneboard = "/get-winners-zone/";
                         var streamerzoneboard = "/get-streamers-zone/";
+                        var generalranking = "/get-general-ranking/";
 
                         function set_points(points) {
                             if(pi_user_id != "" &amp;&amp; pi_user_code != "")
@@ -1314,6 +1315,7 @@
                                         winnerboard = "/get-top10-zone/" + auth.user.username;
                                         winnerzoneboard = "/get-winners-zone/" + auth.user.username;
                                         streamerzoneboard = "/get-streamers-zone/" + auth.user.username;
+                                        generalranking = "/get-general-ranking/" + auth.user.username;
                                         
                                         /*$("#leaderboard").attr("href", "/get-points/" + auth.user.username);
                                         $("#winnerboard").attr("href", "/get-top10-zone/" + auth.user.username);
@@ -1404,6 +1406,10 @@
                             
                             $( "#leaderboard" ).click(function() {
                                 $.colorbox({href:leaderboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                            });
+                            
+                            $( "#generalranking" ).click(function() {
+                                $.colorbox({href:generalranking, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
                             $( "#winnerboard" ).click(function() {
@@ -2221,22 +2227,27 @@
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="leaderboard" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Leaders Board</div><div style="font-size:80%;">General ranking</div></button></div>
+                                            <div class="col-12"><button id="generalranking" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">General Ranking</div><div style="font-size:80%;">List of users (verified and not verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="winnerboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Top 10 Board</div><div style="font-size:80%;">Top 10 ranking by game</div></button></div>
+                                            <div class="col-12"><button id="leaderboard" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Leaders Board</div><div style="font-size:80%;">General ranking (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="winnerzoneboard2" class="col-8 btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;">Winners Board</div><div style="font-size:80%;">Table of all winners</div></button></div>
+                                            <div class="col-12"><button id="winnerboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Top 10 Board</div><div style="font-size:80%;">Top 10 ranking by game (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="credits" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">Credits</div><div style="font-size:80%;">Donators list</div></button></div>
+                                            <div class="col-12"><button id="winnerzoneboard2" class="col-8 btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;">Winners Board</div><div style="font-size:80%;">Table of all winners (verified)</div></button></div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <div class="row">
+                                            <div class="col-12"><button id="credits" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">Credits</div><div style="font-size:80%;">Donators list (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">

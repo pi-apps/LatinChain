@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-22 07:20+0000\n"
-"PO-Revision-Date: 2024-08-22 07:20+0000\n"
+"POT-Creation-Date: 2024-08-22 08:31+0000\n"
+"PO-Revision-Date: 2024-08-22 08:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1019,8 +1019,8 @@ msgstr "Dona para desbloquear con"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Donators list"
-msgstr "Lista de donadores"
+msgid "Donators list (verified)"
+msgstr "Lista de donadores (verificados)"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -1077,8 +1077,13 @@ msgstr "Gana puntos"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "General ranking"
+msgid "General Ranking"
 msgstr "Ranking general"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "General ranking (verified)"
+msgstr "Ranking general (verificados)"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1292,6 +1297,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Learn Odoo with LatinChain"
 msgstr "Aprende Odoo con LatinChain"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "List of users (verified and not verified)"
+msgstr "Lista de usuarios (verificados y no verificados)"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1719,8 +1729,8 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Table of all winners"
-msgstr "Tabla de todos los ganadores"
+msgid "Table of all winners (verified)"
+msgstr "Tabla de todos los ganadores (verificados)"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1789,8 +1799,8 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Top 10 ranking by game"
-msgstr "Ranking del Top 10 por juego"
+msgid "Top 10 ranking by game (verified)"
+msgstr "Ranking Top 10 por juego (verificados)"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage

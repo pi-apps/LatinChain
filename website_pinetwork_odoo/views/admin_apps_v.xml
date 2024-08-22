@@ -82,6 +82,9 @@
                                     <field name="pioneers_streaming" readonly="True"/>
                                     <field name="top_50_streamers_ids" readonly="True" widget="many2many_tags"/>
                             </group>
+                            <group string="General Ranking">
+                                    <field name="pi_users_general_ranking_ids" readonly="True" widget="many2many_tags"/>
+                            </group>
                             <group string="Announcements message">
                                     <field name="announcement_html"/>
                             </group>
