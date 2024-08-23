@@ -1101,7 +1101,7 @@
                                     }
                                 }
                             } catch (err) {
-                                //alert(err);
+                                alert(err);
                                 // Not able to fetch the user
                             }
                         }
