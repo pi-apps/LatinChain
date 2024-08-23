@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-22 08:31+0000\n"
-"PO-Revision-Date: 2024-08-22 08:31+0000\n"
+"POT-Creation-Date: 2024-08-23 23:37+0000\n"
+"PO-Revision-Date: 2024-08-23 23:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,6 +30,11 @@ msgstr ""
 #: code:addons/website_pinetwork_games_odoo/static/src/mahjong-solitaire/favicon/browserconfig.xml:0
 #, python-format
 msgid "#da532c"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid "(Go to LatinChain Mainnet)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -104,6 +109,15 @@ msgstr "* Usa este código para unirte a Pi Network: rockcesar"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "* Use this link to join Pi Network:"
 msgstr "* Usa este link para unirte a Pi Network:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid ""
+".\n"
+"                            <br/>\n"
+"                            <br/>\n"
+"                            Else,"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -443,6 +457,16 @@ msgid ""
 "                                    Click in Clear Cache or <i class=\"fa fa-refresh\"/> if button Donate doesn't activate.\n"
 "                                    <br/>\n"
 "                                    <br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid ""
+"<br/>\n"
+"                            We are testing LatinChain Mainnet version. Do you want to visit LatinChain Mainnet version?.\n"
+"                            <br/>\n"
+"                            <br/>\n"
+"                            If so,"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -941,6 +965,11 @@ msgid "Clear Cache"
 msgstr "Borrar Caché"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid "Click here"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Close"
 msgstr "Cerrar"
@@ -1077,13 +1106,13 @@ msgstr "Gana puntos"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "General Ranking"
-msgstr "Ranking general"
+msgid "General ranking (verified)"
+msgstr "Ranking general (verificados)"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "General ranking (verified)"
-msgstr "Ranking general (verificados)"
+msgid "Global Ranking"
+msgstr "Ranking Global"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1880,6 +1909,13 @@ msgid "Watch the Pi Core Team tweet"
 msgstr "Ver el tweet del Pi Core Team"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"We are testing LatinChain Mainnet version. Do you want to visit LatinChain "
+"Mainnet version?."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "We won an Honorable mention!!!:"
 msgstr "Ganamos una Mención honorífica!!!:"
@@ -2024,7 +2060,7 @@ msgstr "Videos de Youtube"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "and watch ads"
-msgstr "y ver anuncios"
+msgstr "y ve anuncios"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
@@ -2065,6 +2101,11 @@ msgstr "ó"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid "points."
 msgstr "puntos."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid "return to LatinChain Testnet"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork

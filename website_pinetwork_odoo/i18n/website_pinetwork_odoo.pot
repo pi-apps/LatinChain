@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-24 20:29+0000\n"
-"PO-Revision-Date: 2024-07-24 20:29+0000\n"
+"POT-Creation-Date: 2024-08-23 23:37+0000\n"
+"PO-Revision-Date: 2024-08-23 23:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -179,6 +179,7 @@ msgid "Approve"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
@@ -276,6 +277,7 @@ msgid "Check Users Winners"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -360,6 +362,7 @@ msgid "Created on"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
@@ -483,6 +486,17 @@ msgid "Gain Latin points"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__pi_users_general_ranking_ids
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "General Ranking"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
+msgid "Global ranking ("
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__google_adsense_ads_txt
 msgid "Google Adsense ads.txt"
 msgstr ""
@@ -541,11 +555,17 @@ msgid "Latin points amount"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
 msgid "Latin points:"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+msgid "LatinChain Academy"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -801,6 +821,7 @@ msgid "Send"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -829,6 +850,7 @@ msgid "Streamers"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -930,6 +952,7 @@ msgid "Total users daily count"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -943,6 +966,7 @@ msgid "Total users verified count"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -956,6 +980,7 @@ msgid "Transactions"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -966,6 +991,7 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -976,6 +1002,7 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -989,6 +1016,7 @@ msgid "UTC,"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -1183,6 +1211,7 @@ msgid "You have been paid"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -1221,6 +1250,7 @@ msgid "developer_completed"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
@@ -1229,6 +1259,7 @@ msgid "has"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
