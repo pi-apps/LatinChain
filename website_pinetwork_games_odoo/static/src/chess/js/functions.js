@@ -201,19 +201,26 @@ async function showPiAds(Pi) {
         const ready = await Pi.Ads.isAdReady("interstitial");
         
         if (ready === false) {
+            alert("123");
             const requestAdResponse = await Pi.Ads.requestAd("interstitial");
             
             if (requestAdResponse === "AD_NOT_AVAILABLE") {
+                alert("321");
                 // display modal to update Pi Browser
                 // showAdsNotSupportedModal()
                 return;
             }
         }
         
+        alert("12345");
+        
         const showAdResponse = await Pi.Ads.showAd("interstitial");
+        
+        alert("123456");
         
         if(showAdResponse.result == "AD_CLOSED")
         {
+            alert("1234");
             if(pi_user_id != "" && pi_user_code != "")
             {
                 var data = {
