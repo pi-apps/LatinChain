@@ -1328,7 +1328,7 @@
                                                 {
                                                     if (confirm($("#mainnet_version_message").text())) {
                                                         //alert($("#gotomainnet").html());
-                                                        window.open("https://latin-chain.com", '_blank');
+                                                        open("https://latin-chain.com", "_blank");
                                                     } else {
                                                         // Do nothing!
                                                     }
