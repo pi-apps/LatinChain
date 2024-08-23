@@ -315,7 +315,7 @@ $( document ).ready(function() {
                 //get_user();
                 set_points(0).always(function(){
                     get_user().always(function(){
-                        
+                        alert(show_pi_ad_user + " " + $("#mainnet").val());
                         if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             showPiAds(Pi);
                         
