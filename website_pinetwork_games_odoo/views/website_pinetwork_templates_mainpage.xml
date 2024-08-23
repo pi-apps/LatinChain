@@ -1006,8 +1006,7 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_last").html('<div>Latin points: ' + data.points_latin + '</div>' +
-                                                                          '<br/><table class="table text-white" style="word-break: break-word;" translate="no">' +
+                                            $("#user_points_last").html('<table class="table text-white" style="word-break: break-word;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
@@ -1023,8 +1022,7 @@
                                                                             '</tr>' +
                                                                           '</tbody>' +
                                                                         '</table>');
-                                            $("#user_points_wins").html('<div>Latin points: ' + data.points_latin + '</div>' +
-                                                                          '<br/><table class="table text-white" style="word-break: break-word;" translate="no">' +
+                                            $("#user_points_wins").html('<table class="table text-white" style="word-break: break-word;" translate="no">' +
                                                                           '<thead>' +
                                                                             '<tr>' +
                                                                               '<td>Chess</td>'+
