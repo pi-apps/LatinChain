@@ -1327,7 +1327,11 @@
                                                 if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     if (confirm($("#mainnet_version_message").text())) {
-                                                        window.open("/mainnet");
+                                                        Object.assign(document.createElement('a'), {
+                                                            target: '_blank',
+                                                            rel: 'noopener noreferrer',
+                                                            href: '/mainnet',
+                                                        }).click();
                                                     } else {
                                                         // Do nothing!
                                                     }
