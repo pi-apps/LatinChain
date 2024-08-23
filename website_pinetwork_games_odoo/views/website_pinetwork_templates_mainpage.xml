@@ -1115,6 +1115,15 @@
                                 return false;
                             });
                             
+                            if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                            {
+                                if (confirm($("mainnet_version_message").text())) {
+                                    $("gotomainnet").click();
+                                } else {
+                                    // Do nothing!
+                                }
+                            }
+                            
                             $(".open_streaming").click(function(){
                                 var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
                                 streaming_url = streaming_url[1];
@@ -1531,6 +1540,7 @@
                     <div id="memo_not_saved" style="display:none;">Your Memo ID or Payment ID was not saved, already completed, it's cancelled or doesn't exists in Pi Platform.</div>
                     <div id="referrer_code_message" style="display:none;">You can't have more than 150 characters in your Referrer code.</div>
                     <div id="referrer_code_saved" style="display:none;">Your referrer code was saved.</div>
+                    <div id="mainnet_version_message" style="display:none;">We are testing LatinChain Mainnet version. Do you want to visit LatinChain Mainnet version?.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
@@ -1755,8 +1765,8 @@
                                 <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://test.latin-chain.com" target="_blank" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latin-chain.com" target="_blank" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://test.latin-chain.com" target="_blank" class="gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latin-chain.com" target="_blank" class="gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
                         <div style="margin-bottom:5px; border:1px solid; padding:5px; width: 100%" class="rounded">
