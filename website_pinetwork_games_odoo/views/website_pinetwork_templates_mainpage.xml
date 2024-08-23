@@ -1115,15 +1115,6 @@
                                 return false;
                             });
                             
-                            if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
-                            {
-                                if (confirm($("mainnet_version_message").text())) {
-                                    $("gotomainnet").click();
-                                } else {
-                                    // Do nothing!
-                                }
-                            }
-                            
                             $(".open_streaming").click(function(){
                                 var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
                                 streaming_url = streaming_url[1];
@@ -1333,8 +1324,16 @@
                                         //get_user();
                                         set_points(0).always(function(){
                                             get_user().always(function(){
-                                                //if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                                                {
+                                                    if (confirm($("mainnet_version_message").text())) {
+                                                        $("gotomainnet").click();
+                                                    } else {
+                                                        // Do nothing!
+                                                    }
+                                                }
+                                                //else if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                else if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                     showPiAds(Pi);
                                             });
                                         });
