@@ -1327,11 +1327,10 @@
                                                 if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     if (confirm($("#mainnet_version_message").text())) {
-                                                        //alert($("#gotomainnet").prop("href"));
-                                                        window.open($("#gotomainnet").prop("href"), "newWindow");
-                                                        //document.getElementById('gotomainnet').click();
-                                                        //$("#gotomainnet")[0].click();
-                                                        //open($("#gotomainnet").prop("href"), "_blank");
+                                                        const url = "https://latin-chain.com";
+                                                        const newTab = window.open(url, "_blank");
+                                                        // Optional: Focus the new tab
+                                                        newTab.focus();
                                                     } else {
                                                         // Do nothing!
                                                     }
