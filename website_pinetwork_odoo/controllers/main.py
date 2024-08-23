@@ -74,6 +74,14 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/api-docs/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def api_external_docs(self, **kw):
         return http.request.redirect('https://github.com/pi-apps/LatinChain/tree/main/docs')
+    
+    @http.route('/mainnet/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
+    def latinchain_mainnet(self, **kw):
+        return http.request.redirect('https://latin-chain.com')
+    
+    @http.route('/testnet/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
+    def latinchain_testnet(self, **kw):
+        return http.request.redirect('https://test.latin-chain.com')
         
     @http.route('/terms/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def latinchain_terms(self, **kw):
