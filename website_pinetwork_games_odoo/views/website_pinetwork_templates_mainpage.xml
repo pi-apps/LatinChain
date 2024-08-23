@@ -1327,7 +1327,7 @@
                                                 if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     if (confirm($("#mainnet_version_message").text())) {
-                                                        var win = window.open('/mainnet/', '_blank');
+                                                        var win = window.open('/mainnet/', '_blank', "width=600px,height=600px");
                                                         alert(win);
                                                     } else {
                                                         // Do nothing!
