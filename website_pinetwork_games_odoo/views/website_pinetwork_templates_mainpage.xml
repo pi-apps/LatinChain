@@ -1326,8 +1326,8 @@
                                             get_user().always(function(){
                                                 if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                                                 {
-                                                    if (confirm($("mainnet_version_message").text())) {
-                                                        $("gotomainnet").click();
+                                                    if (confirm($("#mainnet_version_message").text())) {
+                                                        $(".gotomainnet").click();
                                                     } else {
                                                         // Do nothing!
                                                     }
