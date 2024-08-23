@@ -1328,9 +1328,10 @@
                                                 {
                                                     if (confirm($("#mainnet_version_message").text())) {
                                                         const url = "https://latin-chain.com";
-                                                        const newTab = window.open(url, "_blank");
-                                                        // Optional: Focus the new tab
-                                                        newTab.focus();
+                                                        const link = document.createElement("a");
+                                                        link.href = url;
+                                                        link.target = "_blank";
+                                                        link.click();
                                                     } else {
                                                         // Do nothing!
                                                     }
