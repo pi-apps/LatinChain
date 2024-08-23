@@ -1326,12 +1326,7 @@
                                             get_user().always(function(){
                                                 if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                                                 {
-                                                    if (confirm($("#mainnet_version_message").text())) {
-                                                        var win = window.open('/mainnet/', '_blank', "width=600px,height=600px");
-                                                        alert(win);
-                                                    } else {
-                                                        // Do nothing!
-                                                    }
+                                                    $.colorbox({href:"/latinchain-mainnet-redirect", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                                                 }
                                                 //else if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                 else if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
