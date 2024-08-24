@@ -14,7 +14,7 @@
         <xpath expr="script[last()]" position="after"> 
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                     
-            <script src="/website_pinetwork_games_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
+            <script id="colorbox-lib" src="/website_pinetwork_games_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
             
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
             
@@ -855,6 +855,20 @@
                         var winnerzoneboard = "/get-winners-zone/";
                         var streamerzoneboard = "/get-streamers-zone/";
                         var generalranking = "/get-general-ranking/";
+                        
+                        async function colorboxLoaded()
+                        {
+                            if($.colorbox &amp;&amp; $.fn.jquery &amp;&amp; ["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                            {
+                                $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
+                            }else{
+                                setTimeout(function() {
+                                  colorboxLoaded();
+                                }, 100);
+                            }
+                        }
+                        
+                        colorboxLoaded();
 
                         function set_points(points) {
                             if(pi_user_id != "" &amp;&amp; pi_user_code != "")
@@ -1106,7 +1120,6 @@
                         }
 
                         $( document ).ready(function() {
-                        
                             window.addEventListener('unhandledrejection', function (e) {
                                 e.preventDefault();
                                 e.stopPropagation();
@@ -1323,12 +1336,8 @@
                                         //get_user();
                                         set_points(0).always(function(){
                                             get_user().always(function(){
-                                                if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
-                                                {
-                                                    $.colorbox({href:"/latinchain-mainnet-redirect", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-                                                }
-                                                //else if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                                else if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                //if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                     showPiAds(Pi);
                                             });
                                         });
