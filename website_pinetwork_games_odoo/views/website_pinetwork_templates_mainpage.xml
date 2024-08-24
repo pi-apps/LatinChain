@@ -858,7 +858,7 @@
                         
                         async function colorboxLoaded()
                         {
-                            if($.colorbox &amp;&amp; $.fn.jquery &amp;&amp; ["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                            if($.colorbox &amp;&amp; ["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                             {
                                 $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%"});
                             }else{
