@@ -172,6 +172,7 @@ async function showPiAds(Pi) {
             if (requestAdResponse === "AD_NOT_AVAILABLE") {
                 // display modal to update Pi Browser
                 // showAdsNotSupportedModal()
+                alert("Update Pi Browser, please!.");
                 return;
             }
         }
