@@ -112,13 +112,13 @@
                     <body>
                         <div class="container form-group" style="text-align:center">
                             <br/>
-                            We are testing LatinChain Mainnet version on Pi Network cryptocurrency ecosystem. Do you want to visit LatinChain Mainnet version?.
+                            We are testing LatinChain Mainnet version on Pi Network cryptocurrency ecosystem. Get double utlity usage bonus, by using both Mainnet and Testnet.
                             <br/>
                             <br/>
-                            If so, <a href="/mainnet" target="_blank" class="btn btn-success mb-2 o_default_snippet_text"><div>Click here</div><div>(Go to LatinChain Mainnet)</div></a>.
+                            <a href="/mainnet" target="_blank" class="btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>
                             <br/>
                             <br/>
-                            Else, <a href="javascript:void(0);" onclick="parent.jQuery.colorbox.close()">return to LatinChain Testnet</a>.
+                            <a href="javascript:void(0);" onclick="parent.jQuery.colorbox.close()">Return to LatinChain Testnet</a>
                             <br/>
                             <br/>
                             <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
