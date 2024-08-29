@@ -1447,8 +1447,6 @@
                             const Pi = window.Pi;
                             
                             Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-                            const nativeFeaturesList = await Pi.nativeFeaturesList();
-                            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
                             
                             function set_points(points) {
                                 if(pi_user_id != "" &amp;&amp; pi_user_code != "")
@@ -1543,6 +1541,9 @@
                             
                             async function auth() {
                                 try {
+                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                    
                                     // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
                                     const scopes = ['username', 'payments', 'wallet_address'];
                                     function onIncompletePaymentFound(payment) {
@@ -1790,8 +1791,6 @@
                             const Pi = window.Pi;
                             
                             Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-                            const nativeFeaturesList = await Pi.nativeFeaturesList();
-                            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
                             
                             function set_points(points) {
                                 if(pi_user_id != "" &amp;&amp; pi_user_code != "")
@@ -1894,6 +1893,9 @@
                             
                             async function auth() {
                                 try {
+                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                    
                                     // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
                                     const scopes = ['username', 'payments', 'wallet_address'];
                                     function onIncompletePaymentFound(payment) {
@@ -2142,8 +2144,6 @@
                             const Pi = window.Pi;
                             
                             Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-                            const nativeFeaturesList = await Pi.nativeFeaturesList();
-                            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
                             
                             function set_points(points) {
                                 if(pi_user_id != "" &amp;&amp; pi_user_code != "")
@@ -2246,6 +2246,9 @@
                             
                             async function auth() {
                                 try {
+                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                    
                                     // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
                                     const scopes = ['username', 'payments', 'wallet_address'];
                                     function onIncompletePaymentFound(payment) {

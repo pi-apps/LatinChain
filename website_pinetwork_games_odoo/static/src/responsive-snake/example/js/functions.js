@@ -175,8 +175,6 @@ $( document ).ready(function() {
             });
     
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-    const nativeFeaturesList = await Pi.nativeFeaturesList();
-    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
     
     amount = $("#amount").val();
     
@@ -193,6 +191,9 @@ $( document ).ready(function() {
         }, 5000);
         
         try {
+            const nativeFeaturesList = await Pi.nativeFeaturesList();
+            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+            
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments', 'wallet_address'];
             function onIncompletePaymentFound(payment) {
