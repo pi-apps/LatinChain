@@ -1119,9 +1119,12 @@
                                             
                                         });
                                     }
+                                }else
+                                {
+                                    alert(showAdResponse.result);
                                 }
                             } catch (err) {
-                                //alert(err);
+                                alert("Error: " + err);
                                 // Not able to fetch the user
                             }
                         }
