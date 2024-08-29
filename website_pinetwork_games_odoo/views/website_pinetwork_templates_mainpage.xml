@@ -1093,7 +1093,7 @@
                                         return;
                                     }else
                                     {
-                                        alert(requestAdResponse);
+                                        alert("Request response: " + requestAdResponse);
                                     }
                                 }
                                 
@@ -1121,7 +1121,7 @@
                                     }
                                 }else
                                 {
-                                    alert(showAdResponse.result);
+                                    alert("show Ad response: "showAdResponse.result);
                                 }
                             } catch (err) {
                                 alert("Error: " + err);
