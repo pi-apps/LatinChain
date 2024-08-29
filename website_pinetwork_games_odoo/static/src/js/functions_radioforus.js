@@ -96,20 +96,10 @@ function get_user(donation) {
 
 async function showPiAds(Pi) {
     try {
-        const nativeFeaturesList = await Pi.nativeFeaturesList();
-        const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-        
         const ready = await Pi.Ads.isAdReady("interstitial");
         
         if (ready === false) {
-            const requestAdResponse = await Pi.Ads.requestAd("interstitial");
-            
-            if (requestAdResponse === "AD_NOT_AVAILABLE") {
-                // display modal to update Pi Browser
-                // showAdsNotSupportedModal()
-                alert("Update Pi Browser, please!.");
-                return;
-            }
+            await Pi.Ads.requestAd("interstitial");
         }
         
         const showAdResponse = await Pi.Ads.showAd("interstitial");
@@ -148,7 +138,9 @@ $( document ).ready(function() {
             });
     
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-
+    const nativeFeaturesList = await Pi.nativeFeaturesList();
+    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+    
     //alert(PiNetworkClient);
     
     amount = $("#amount").val();
