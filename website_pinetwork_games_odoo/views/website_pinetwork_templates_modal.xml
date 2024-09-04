@@ -107,10 +107,28 @@
                         
                         <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                         
+                        <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({article:'auto'});
+                          !function (e, f, u, i) {
+                            if (!document.getElementById(i)){
+                              e.async = 1;
+                              e.src = u;
+                              e.id = i;
+                              f.parentNode.insertBefore(e, f);
+                            }
+                          }(document.createElement('script'),
+                          document.getElementsByTagName('script')[0],
+                          '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+                          'tb_loader_script');
+                          if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
+                            {window.performance.mark('tbl_ic');}
+                        </script>
+                        
                     </head>
 
                     <body>
-                        <div class="container form-group" style="text-align:center">
+                        <div class="container form-group" style="text-align:center; max-width: 810px">
                             <br/>
                             We are testing LatinChain Mainnet version on Pi Network cryptocurrency ecosystem. Get double utility usage bonus <i class="fa-solid fa-bolt"></i> by using both Mainnet and Testnet.
                             <br/>
@@ -133,10 +151,27 @@
                                 <script>
                                      (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
+                                
+                                <br/>
+                                
+                                <div id="taboola-mid-article-thumbnails"></div>
+                                <script type="text/javascript">
+                                  window._taboola = window._taboola || [];
+                                  _taboola.push({
+                                    mode: 'alternating-thumbnails-a-mid',
+                                    container: 'taboola-mid-article-thumbnails',
+                                    placement: 'Mid Article Thumbnails',
+                                    target_type: 'mix'
+                                  });
+                                </script>
                             </div>
-                            <br/><br/><br/><br/><br/>
                         </div>
-                        <br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/>
+                        
+                        <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({flush: true});
+                        </script>
                     </body>
                 </html>
             </t>
