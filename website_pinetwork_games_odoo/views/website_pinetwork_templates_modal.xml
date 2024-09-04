@@ -156,19 +156,47 @@
                                 
                                 <br/>
                                 
-                                <div id="taboola-mid-article-thumbnails"></div>
+                                <div id="taboola-below-article-thumbnails"></div>
                                 <script type="text/javascript">
                                   window._taboola = window._taboola || [];
                                   _taboola.push({
-                                    mode: 'alternating-thumbnails-a-mid',
-                                    container: 'taboola-mid-article-thumbnails',
-                                    placement: 'Mid Article Thumbnails',
+                                    mode: 'alternating-thumbnails-a',
+                                    container: 'taboola-below-article-thumbnails',
+                                    placement: 'Below Article Thumbnails',
                                     target_type: 'mix'
                                   });
                                 </script>
                             </div>
                         </div>
                         <br/><br/><br/><br/><br/>
+                        
+                        <button id="myBtn"><a id="myABtn" href="#top" style="color: white" translate="no">Top</a></button>
+                    
+                        <style>
+                            /*Floating Back-To-Top Button*/
+                                #myBtn {
+                                    position: fixed;
+                                    bottom: 10px;
+                                    float: right;
+                                    right: 10%;
+                                    bottom: 10%;
+                                    max-width: 50px;
+                                    max-height: 50px;
+                                    width: 100%;
+                                    height: 100%;
+                                    font-size: 18px;
+                                    border-color: rgba(85, 85, 85, 0.2);
+                                    background-color: rgb(100,100,100);
+                                    /*padding: 10px;*/
+                                    border-radius: 4px;
+                                    opacity: 0.5;
+                                    z-index:100;
+                                }
+                            /*On Hover Color Change*/
+                                #myBtn:hover {
+                                    background-color: #7dbbf1;
+                                }
+                        </style>
                         
                         <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                           window._taboola = window._taboola || [];
