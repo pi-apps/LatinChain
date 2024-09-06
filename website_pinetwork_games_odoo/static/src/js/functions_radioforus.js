@@ -156,7 +156,7 @@ $( document ).ready(function() {
             const adNetworkSupported = nativeFeaturesList.includes("ad_network");
             
             if(!adNetworkSupported)
-                alert("Update Pi Browser, please!.");
+                alert("Update Pi Browser version, please!.");
             
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments', 'wallet_address'];
