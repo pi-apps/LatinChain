@@ -38,7 +38,7 @@
                             <h3>(Remember <strong>clear the Pi Browser cache</strong> if it is not working well).</h3>
                             <h3>Thank you very much!.</h3>
                         </div>
-                        <br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/>
                     </body>
                 </html>
             </t>
@@ -75,7 +75,7 @@
                             <br/>
                             <span t-raw="announcement_html" />
                         </div>
-                        <br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/>
                     </body>
                 </html>
             </t>
@@ -202,6 +202,49 @@
                           window._taboola = window._taboola || [];
                           _taboola.push({flush: true});
                         </script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="reading_club" name="Modal View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>Reading Club</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="Reading Club"/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                        
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center">
+                            <br/>
+                            <h3>Welcome to the reading club: Literary, Sci-Fi and other genres books to read.</h3>
+                            <br/>
+                            <h5>1. Humanity Book (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.iberlibro.com/servlet/SearchResults?kn=humanity%25book%25Cesar%25Cordero">Where to buy</a></h5>
+                            <h5>2. La voz de los pensamientos (<div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.iberlibro.com/servlet/SearchResults?kn=La%25voz%25de%25los%25pensamientos%25Cesar%25Cordero">Where to buy</a></h5>
+                            <h5>3. Telepathic Treatises (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.iberlibro.com/servlet/SearchResults?kn=Tratados%25Telep%E1ticos%25Cesar%25Cordero">Where to buy</a></h5>
+                            <h5>4. God doesn't exists anymore (as a God) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.amazon.com/Dios-existe-como-Comprobaci%C3%B3n-cient%C3%ADfica-ebook/dp/B0DGD6G7TX/">Where to buy</a></h5>
+                            <h5>5. Decentralized Universe (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.amazon.com/Universo-Descentralizado-Decentralized-Blockchain-Computaci%C3%B3n-ebook/dp/B0DGHN945X/">Where to buy</a></h5>
+                        </div>
+                        <br/><br/><br/><br/><br/>
                     </body>
                 </html>
             </t>

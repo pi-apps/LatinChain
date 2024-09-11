@@ -448,3 +448,15 @@ class PiNetworkController(http.Controller):
             mainnet = admin_app_list[0].mainnet
         
         return http.request.render('website_pinetwork_games_odoo.rules', {'mainnet': mainnet, 'amount': amount, 'pi_users_winners_paid_datetime': pi_users_winners_paid_datetime})
+
+
+    @http.route('/reading-club', type='http', auth="public", website=True, csrf=False)
+    def reading_club(self, **kw):
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            mainnet = ""
+        else:
+            mainnet = admin_app_list[0].mainnet
+        
+        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet})

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-23 23:37+0000\n"
-"PO-Revision-Date: 2024-08-23 23:37+0000\n"
+"POT-Creation-Date: 2024-09-11 07:36+0000\n"
+"PO-Revision-Date: 2024-09-11 07:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -107,15 +107,6 @@ msgid "* Use this link to join Pi Network:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
-msgid ""
-".\n"
-"                            <br/>\n"
-"                            <br/>\n"
-"                            Else,"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ". And this info could vary with the time without previous advice."
 msgstr ""
@@ -123,6 +114,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ". You are a winner. Check in Winners Board."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "1. Humanity Book ("
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -155,6 +151,11 @@ msgstr ""
 msgid ""
 "1.- You'll have access to many games, as Chess, Sudoku and Snake, with "
 "multilanguage interface."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "2. La voz de los pensamientos ("
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -220,6 +221,11 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "3. Telepathic Treatises ("
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "3.- All prize payments will be paid automatically to your Pi Wallet "
@@ -272,6 +278,11 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "4. God doesn't exists anymore (as a God) ("
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "4.- For Top 10 zone Snake: Have more than 20 points in Snake."
 msgstr ""
@@ -311,6 +322,11 @@ msgstr ""
 msgid ""
 "4.- You can stream your Youtube videos to the LatinChain community, being in"
 " the Top 50 streamers with more points."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "5. Decentralized Universe ("
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -392,16 +408,6 @@ msgid ""
 "                                    Click in Clear Cache or <i class=\"fa fa-refresh\"/> if button Donate doesn't activate.\n"
 "                                    <br/>\n"
 "                                    <br/>"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
-msgid ""
-"<br/>\n"
-"                            We are testing LatinChain Mainnet version. Do you want to visit LatinChain Mainnet version?.\n"
-"                            <br/>\n"
-"                            <br/>\n"
-"                            If so,"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -947,6 +953,11 @@ msgid "Engine Toggle (On/Off)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "English"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Enrique"
 msgstr ""
@@ -1482,6 +1493,11 @@ msgid "Restart"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid "Return to LatinChain Testnet"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Rita"
 msgstr ""
@@ -1556,6 +1572,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Show Hint"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "Spanish"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1650,6 +1671,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -1744,6 +1766,14 @@ msgid "Watch the Pi Core Team tweet"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid ""
+"We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem. Get double utility usage bonus <i class=\"fa-solid fa-bolt\"/> by using both Mainnet and Testnet.\n"
+"                                <br/>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "We are testing LatinChain Mainnet version. Do you want to visit LatinChain "
@@ -1753,6 +1783,18 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "We won an Honorable mention!!!:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid ""
+"Welcome to the reading club: Literary, Sci-Fi and other genres books to "
+"read."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "Where to buy"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1889,6 +1931,11 @@ msgid "Youtube videos"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "and"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "and watch ads"
 msgstr ""
@@ -1934,8 +1981,8 @@ msgid "points."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
-msgid "return to LatinChain Testnet"
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "reading club"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
