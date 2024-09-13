@@ -768,6 +768,18 @@
                           color: black !important;
                         }
                         
+                        .darkmode--activated .border-gradient-rounded {
+                          /* Border */
+                          border: 4px solid transparent;
+                          border-radius: 20px;
+                          background: 
+                            linear-gradient(to right, #161D6F, #161D6F), 
+                            linear-gradient(to right, red , blue); 
+                          background-clip: padding-box, border-box;
+                          background-origin: padding-box, border-box;
+                          color: white !important;
+                        }
+                        
                     </style>
                 </t>
 
@@ -1528,11 +1540,11 @@
                           border: 4px solid transparent;
                           border-radius: 20px;
                           background: 
-                            linear-gradient(to right, #161D6F, #161D6F), 
+                            linear-gradient(to right, white, white), 
                             linear-gradient(to right, red , blue); 
                           background-clip: padding-box, border-box;
                           background-origin: padding-box, border-box;
-                          color: white !important;
+                          color: black !important;
                         }
                     </style>
                 </head>
@@ -1784,8 +1796,8 @@
                                 <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="/testnet" target="_blank" class="gototestnet btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="/mainnet" target="_blank" class="gotomainnet btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="/testnet" target="_blank" class="gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="/mainnet" target="_blank" class="gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
@@ -1793,7 +1805,7 @@
                                 <h5 translate="no"><strong>#LatinChain #Magazine &#127909;</strong></h5>
                             </div>
                             <div style="margin-bottom:5px" t-if="pioneers_streaming">
-                                <button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-white border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
+                                <button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
                             </div>
                             <t t-if="pi_main_user">
                                 <div style="margin-bottom:5px" t-if="pi_main_user.streaming_url">
@@ -1811,7 +1823,7 @@
                                 <button class="btn btn-info readingclub" ><div style="display:inline;"><i class="fa-solid fa-book-open-reader"></i></div> <div style="display:inline;">reading club</div></button>
                             </div>
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-top:5px">
-                                <a href="/pinetwork" class="btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
+                                <a href="/pinetwork" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
                             </div>
                         </div>
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
