@@ -1522,6 +1522,18 @@
                         {
                             color: #000 !important;
                         }
+                        
+                        .border-gradient-rounded {
+                          /* Border */
+                          border: 4px solid transparent;
+                          border-radius: 20px;
+                          background: 
+                            linear-gradient(to right, white, white), 
+                            linear-gradient(to right, red , blue); 
+                          background-clip: padding-box, border-box;
+                          background-origin: padding-box, border-box;
+                          
+                        }
                     </style>
                 </head>
                 <body>
@@ -1767,7 +1779,7 @@
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
-                        <div style="margin-bottom:5px; border:0.5em solid; padding:5px; width: 100%; border-image: linear-gradient(to top, red 0%, blue 100%); border-image-slice: 1;" class="rounded">
+                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
                             </div>
@@ -1776,7 +1788,7 @@
                                 <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="/mainnet" target="_blank" class="gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
-                        <div style="margin-bottom:5px; border:0.5em solid; padding:5px; width: 100%; border-image: linear-gradient(to top, red 0%, blue 100%); border-image-slice: 1;" class="rounded">
+                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#LatinChain #Magazine &#127909;</strong></h5>
                             </div>
@@ -1802,7 +1814,7 @@
                                 <a href="/pinetwork" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
                             </div>
                         </div>
-                        <div style="margin-bottom:5px; border:0.5em solid; padding:5px; width: 100%; border-image: linear-gradient(to top, red 0%, blue 100%); border-image-slice: 1;" class="rounded">
+                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#Introduction &#128220;</strong></h5>
                             </div>
