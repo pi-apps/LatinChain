@@ -1342,7 +1342,7 @@
                                         generalranking = "/get-general-ranking/" + auth.user.username;
                                         
                                         $( ".certification" ).click(function() {
-                                            $.colorbox({href:"/certification/" + auth.user.username, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                                            $.colorbox({href:"/latinchain-certification/" + auth.user.username, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                                         });
                                         
                                         $( ".div-certification" ).show();
