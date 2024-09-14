@@ -44,7 +44,7 @@
             </t>
 		</template>
         
-        <template id="latinchain_x" name="Modal View">
+        <template id="latinchain_x" name="LatinchainX View">
             <t t-call="web.layout">
                 &lt;!DOCTYPE html&gt;
                 <html>
@@ -81,7 +81,7 @@
             </t>
 		</template>
         
-        <template id="latinchain_mainnet_redirect" name="Modal View">
+        <template id="latinchain_mainnet_redirect" name="Mainnet redirect View">
             <t t-call="web.layout">
                 &lt;!DOCTYPE html&gt;
                 <html>
@@ -207,7 +207,7 @@
             </t>
 		</template>
         
-        <template id="reading_club" name="Modal View">
+        <template id="reading_club" name="Reading club View">
             <t t-call="web.layout">
                 &lt;!DOCTYPE html&gt;
                 <html>
@@ -238,12 +238,59 @@
                             <br/>
                             <h3>Welcome to the reading club: Literary, Sci-Fi and other genres books to read.</h3>
                             <br/>
-                            <h5 style="border:1px solid; padding:5px;" class="rounded"><strong>Decentralized Universe</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.amazon.com/dp/B0DGHN945X/">Read more</a></h5>
-                            <h5 style="border:1px solid; padding:5px;" class="rounded"><strong>God doesn't exists anymore (as a God)</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.amazon.com/dp/B0DGD6G7TX/">Read more</a></h5>
-                            <h5 style="border:1px solid; padding:5px;" class="rounded"><strong>What time is it?</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.amazon.com/dp/B0DGRZCC5F/">Read more</a></h5>
-                            <h5 style="border:1px solid; padding:5px;" class="rounded"><strong>Humanity Book</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.morebooks.shop/shop-ui/shop/product/9786200110008">Read more</a></h5>
-                            <h5 style="border:1px solid; padding:5px;" class="rounded"><strong>La voz de los pensamientos</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.morebooks.shop/shop-ui/shop/product/9786206744399">Read more</a></h5>
-                            <h5 style="border:1px solid; padding:5px;" class="rounded"><strong>Telepathic Treatises</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.morebooks.shop/shop-ui/shop/product/9786206744450">Read more</a></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Decentralized Universe</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.amazon.com/dp/B0DGHN945X/">Read more</a></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>God doesn't exists anymore (as a God)</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.amazon.com/dp/B0DGD6G7TX/">Read more</a></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>What time is it?</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.amazon.com/dp/B0DGRZCC5F/">Read more</a></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Humanity Book</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.morebooks.shop/shop-ui/shop/product/9786200110008">Read more</a></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>La voz de los pensamientos</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.morebooks.shop/shop-ui/shop/product/9786206744399">Read more</a></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Telepathic Treatises</strong> (<div style="display:inline;">Sci-Fi</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.morebooks.shop/shop-ui/shop/product/9786206744450">Read more</a></h5>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="certification" name="Certification View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>Certification</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="Reading Club"/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                        
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center">
+                            <br/>
+                            <h3>The following certifies that the Pioneer <strong><span t-esc="username"></span></strong> is training and has availability to train skills at LatinChain Platform, as:</h3>
+                            <br/>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Chess</strong></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Sudoku</strong></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Snake</strong></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Odoo Programming</strong></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Blockrain (kind of tetris)</strong></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Mahjong</strong></h5>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Can watch Worldwide Sports Results</strong></h5>
+                            <br/>
+                            <h5 style="border:3px solid; padding:5px;" class="rounded">You can consult this certification at:<br/><br/>Mainnet: https://latin-chain.com/latinchain-certification/<span t-esc="username"></span><br/><br/>Testnet: https://test.latin-chain.com/latinchain-certification/<span t-esc="username"></span></h5>
                         </div>
                         <br/><br/><br/><br/><br/>
                     </body>

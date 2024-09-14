@@ -1341,6 +1341,12 @@
                                         streamerzoneboard = "/get-streamers-zone/" + auth.user.username;
                                         generalranking = "/get-general-ranking/" + auth.user.username;
                                         
+                                        $( ".certification" ).click(function() {
+                                            $.colorbox({href:"/certification/" + auth.user.username, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                                        });
+                                        
+                                        $( ".div-certification" ).show();
+                                        
                                         /*$("#leaderboard").attr("href", "/get-points/" + auth.user.username);
                                         $("#winnerboard").attr("href", "/get-top10-zone/" + auth.user.username);
                                         $("#winnerzoneboard").attr("href", "/get-winners-zone/" + auth.user.username);*/
@@ -1819,8 +1825,11 @@
                             <div style="margin-bottom:5px">
                                 <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3Hdsb83uuU-pzn8JCN9PNq" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top 10 cryptos</div></button>
                             </div>
-                            <div style="">
+                            <div style="margin-bottom:5px">
                                 <button class="btn btn-info readingclub" ><div style="display:inline;"><i class="fa-solid fa-book-open-reader"></i></div> <div style="display:inline;">reading club</div></button>
+                            </div>
+                            <div class="div-certifiation" style="display: none">
+                                <button class="btn btn-info certification" ><div style="display:inline;"><i class="fa-solid fa-certificate"></i></div> <div style="display:inline;">certification</div></button>
                             </div>
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-top:5px">
                                 <a href="/pinetwork" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
