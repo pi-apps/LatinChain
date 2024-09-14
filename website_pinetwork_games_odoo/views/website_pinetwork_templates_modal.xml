@@ -284,6 +284,7 @@
                                 <h3>User has to be verified in LatinChain Platform to show the certification. Not verified yet.</h3>
                             </div>
                             <div t-if="unblocked">
+                                <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
                                 <h3>The following certifies that the Pioneer <strong><div style="display:inline;" t-esc="username" translate="no"></div></strong> is training and has availability to train skills at LatinChain Platform, as:</h3>
                                 <br/>
                                 <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Chess</strong></h5>
