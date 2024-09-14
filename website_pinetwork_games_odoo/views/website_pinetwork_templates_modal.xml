@@ -284,7 +284,7 @@
                                 <h3>User has to be verified in LatinChain Platform to show the certification. Not verified yet.</h3>
                             </div>
                             <div t-if="unblocked">
-                                <h3>The following certifies that the Pioneer <strong><span t-esc="username"></span></strong> is training and has availability to train skills at LatinChain Platform, as:</h3>
+                                <h3>The following certifies that the Pioneer <strong><div style="display:inline;" t-esc="username" translate="no"></div></strong> is training and has availability to train skills at LatinChain Platform, as:</h3>
                                 <br/>
                                 <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Chess</strong></h5>
                                 <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Sudoku</strong></h5>
@@ -294,7 +294,7 @@
                                 <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Mahjong</strong></h5>
                                 <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Can watch Worldwide Sports Results</strong></h5>
                                 <br/>
-                                <h5 style="border:3px solid; padding:5px;" class="rounded">You can consult this certification at:<br/><br/>Mainnet: https://latin-chain.com/latinchain-certification/<span t-esc="username"></span><br/><br/>Testnet: https://test.latin-chain.com/latinchain-certification/<span t-esc="username"></span></h5>
+                                <h5 style="border:3px solid; padding:5px;" class="rounded">You can consult this certification at:<br/><br/>Mainnet: https://latin-chain.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div><br/><br/>Testnet: https://test.latin-chain.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></h5>
                             </div>
                         </div>
                         <br/><br/><br/><br/><br/>
