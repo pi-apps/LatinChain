@@ -234,7 +234,7 @@
                     </head>
 
                     <body>
-                        <div class="container form-group" style="text-align:center">
+                        <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <br/>
                             <h3>Welcome to the reading club: Literary, Sci-Fi and other genres books to read.</h3>
                             <br/>
@@ -278,7 +278,7 @@
                     </head>
 
                     <body>
-                        <div class="container form-group" style="text-align:center">
+                        <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <br/>
                             <div t-if="not unblocked">
                                 <h3>User has to be verified in LatinChain Platform to show the certification. Not verified yet.</h3>
