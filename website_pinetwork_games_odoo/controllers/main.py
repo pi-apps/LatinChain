@@ -465,9 +465,18 @@ class PiNetworkController(http.Controller):
     def certification(self, pi_user_code, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
+        pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
+        
+        if len(pi_user) == 0:
+            username = "--"
+            unblocked = False
+        else:
+            username = pi_user.pi_user_code
+            unblocked = pi_user.unblocked
+        
         if len(admin_app_list) == 0:
             mainnet = ""
         else:
             mainnet = admin_app_list[0].mainnet
         
-        return http.request.render('website_pinetwork_games_odoo.certification', {'mainnet': mainnet, 'username': pi_user_code})
+        return http.request.render('website_pinetwork_games_odoo.certification', {'mainnet': mainnet, 'username': username, 'unblocked': unblocked})
