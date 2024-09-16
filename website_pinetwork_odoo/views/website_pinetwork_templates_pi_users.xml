@@ -1861,6 +1861,7 @@
                                 try {
                                     const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
                                 
+                                    alert(isAdReadyResponse.ready);
                                     if (isAdReadyResponse.ready === false) {
                                         await Pi.Ads.requestAd("interstitial");
                                     }
