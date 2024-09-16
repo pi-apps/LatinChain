@@ -1742,8 +1742,6 @@
                     
                     <div class="container" style="text-align:center; max-width: 810px;">
 
-                        
-
                         <!--<br/>
                         
                         <div id="taboola-mid-article-thumbnails"></div>
@@ -1813,17 +1811,14 @@
                             <div style="margin-bottom:5px" t-if="pioneers_streaming">
                                 <button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
                             </div>
-                            <t t-if="pi_main_user">
+                            <!--<t t-if="pi_main_user">
                                 <div style="margin-bottom:5px" t-if="pi_main_user.streaming_url">
                                     <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch daily video</div></button>
                                     <button id="share_video" class="btn btn-outline-danger" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button>
                                 </div>
-                            </t>
+                            </t>-->
                             <div style="margin-bottom:5px">
-                                <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3kSbPCMp3dd9jYbyLSCD0i" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top world gamers</div></button>
-                            </div>
-                            <div style="margin-bottom:5px">
-                                <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3Hdsb83uuU-pzn8JCN9PNq" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top 10 cryptos</div></button>
+                                <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3o2Tbr75z-5oDg1AFNZ1u8" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top videos</div></button>
                             </div>
                             <div style="margin-bottom:5px">
                                 <button class="btn btn-info readingclub" ><div style="display:inline;"><i class="fa-solid fa-book-open-reader"></i></div> <div style="display:inline;">reading club</div></button>
