@@ -258,22 +258,24 @@ $( document ).ready(function() {
                             if(pi_user_id != "" && pi_user_code != "")
                             {
                                 try {
-                                    const ready = await Pi.Ads.isAdReady("rewarded");
-                                    if (ready === false) {
+                                    const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
+                                    if (isAdReadyResponse.ready === false) {
+                                        
                                         const requestAdResponse = await Pi.Ads.requestAd("rewarded");
-                                        if (requestAdResponse === "ADS_NOT_SUPPORTED") {
+                                        if (requestAdResponse.result === "ADS_NOT_SUPPORTED") {
                                             // display modal to update Pi Browser
                                             // showAdsNotSupportedModal()
                                             alert("Update Pi Browser version, please!.");
                                             return;
                                         }
-                                        if (requestAdResponse !== "AD_LOADED") {
+                                        if (requestAdResponse.result !== "AD_LOADED") {
                                             // display modal ads are temporarily unavailable and user should try again later
                                             // showAdUnavailableModal()
                                             alert("Ads are temporarily unavailable, try again later!.");
                                             return;
                                         }
                                     }
+                                    
                                     const showAdResponse = await Pi.Ads.showAd("rewarded");
                                     
                                     if (showAdResponse.result === "AD_REWARDED") {
