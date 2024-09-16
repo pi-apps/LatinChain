@@ -1858,7 +1858,6 @@
                             }
                             
                             async function showPiAds(Pi) {
-                                alert("12345");
                                 try {
                                     const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
                                 
@@ -1919,8 +1918,6 @@
                                         
                                         set_points(0).always(function(){
                                             get_user().always(function(){
-                                                alert(show_pi_ad_user);
-                                                alert($("#mainnet").val());
                                                 if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                     showPiAds(Pi);
                                             });
