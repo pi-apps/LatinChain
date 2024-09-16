@@ -133,9 +133,9 @@ function get_user(pause) {
 
 async function showPiAds(Pi) {
     try {
-        const ready = await Pi.Ads.isAdReady("interstitial");
-        
-        if (ready === false) {
+        const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
+                                
+        if (isAdReadyResponse.ready === false) {
             await Pi.Ads.requestAd("interstitial");
         }
         
