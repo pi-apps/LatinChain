@@ -1745,9 +1745,9 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.100"></script>
                     
-                    <!--
-                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
+                    <!--
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
@@ -1917,7 +1917,7 @@
                                         
                                         set_points(0).always(function(){
                                             get_user().always(function(){
-                                                if(show_pi_ad_user)
+                                                if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                     showPiAds(Pi);
                                             });
                                         });
@@ -1977,10 +1977,10 @@
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
                     
-                    <div class="container" style="text-align:center; max-width: 840px">
+                    <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="container">
                         <!-- LatinChain Ad responsive -->
                         
-                        <!--<br/>
+                        <br/>
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
@@ -1989,8 +1989,10 @@
                              data-full-width-responsive="true"></ins>
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>-->
-                        
+                        </script>
+                    </div>
+                    
+                    <div class="container" style="text-align:center; max-width: 840px">
                         
                         <!--<br/>
                         <div id="taboola-mid-article-thumbnails"></div>
@@ -2088,7 +2090,7 @@
             </t>
 		</template>
         
-        <template id="latinchain_sports" name="LatinChain Academy">
+        <template id="latinchain_sports" name="LatinChain Sports">
             <t t-call="website.layout">
             &lt;!DOCTYPE html&gt;
             <html>
@@ -2101,8 +2103,9 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.100"></script>
                     
+                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    
                     <!--
-                    <script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
@@ -2273,7 +2276,7 @@
                                         
                                         set_points(0).always(function(){
                                             get_user().always(function(){
-                                                if(show_pi_ad_user)
+                                                if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                     showPiAds(Pi);
                                             });
                                         });
@@ -2328,10 +2331,10 @@
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
                     
-                    <div class="container" style="text-align:center; max-width: 840px">
+                    <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="container">
                         <!-- LatinChain Ad responsive -->
                         
-                        <!--<br/>
+                        <br/>
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
@@ -2340,7 +2343,10 @@
                              data-full-width-responsive="true"></ins>
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>-->
+                        </script>
+                    </div>
+                    
+                    <div class="container" style="text-align:center; max-width: 840px">
                         
                         
                         <!--<br/>
