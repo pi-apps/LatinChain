@@ -1858,10 +1858,11 @@
                             }
                             
                             async function showPiAds(Pi) {
+                                alert("12345");
                                 try {
                                     const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
                                 
-                                    alert(isAdReadyResponse);
+                                    alert(isAdReadyResponse.ready);
                                     if (isAdReadyResponse.ready === false) {
                                         await Pi.Ads.requestAd("interstitial");
                                     }
