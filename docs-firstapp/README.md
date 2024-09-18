@@ -37,6 +37,17 @@ https://github.com/pi-apps/pi-platform-docs/blob/master/SDK_reference.md#share-d
 Check here:
 https://dev-rockcesar.blogspot.com/2022/10/how-to-develop-pi-app.html
 
+# PiAds interstitial example
+
+This is for client side (HTML, JavaScript):
+https://github.com/rockcesar/PiNetworkDevelopments/tree/master/piapp-example/piads.html
+
+# For functional PiAds rewarded example, check the following file
+
+Find the code: $( "#button_reward_ad" ).click(async function() {
+
+https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/static/src/js/functions.js
+
 # App2User payment made by Core Team
 
 Ruby: https://github.com/pi-apps/pi-ruby
