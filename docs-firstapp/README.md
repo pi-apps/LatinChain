@@ -37,6 +37,10 @@ https://github.com/pi-apps/pi-platform-docs/blob/master/SDK_reference.md#share-d
 Check here:
 https://dev-rockcesar.blogspot.com/2022/10/how-to-develop-pi-app.html
 
+# Official PiAds docs
+
+https://github.com/pi-apps/pi-platform-docs/blob/master/ads.md
+
 # PiAds interstitial example
 
 This is for client side (HTML, JavaScript):
