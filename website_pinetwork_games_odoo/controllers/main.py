@@ -462,7 +462,7 @@ class PiNetworkController(http.Controller):
         return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet})
         
     @http.route('/askanexpert', type='http', auth="public", website=True, csrf=False)
-    def reading_club(self, **kw):
+    def askanexpert(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
         if len(admin_app_list) == 0:
