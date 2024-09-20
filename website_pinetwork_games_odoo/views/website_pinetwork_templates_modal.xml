@@ -337,7 +337,7 @@
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <br/>
                             <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
-                            <h3>Now you can consult an Expert:</h3>
+                            <h3>Now you can consult an Expert if you need their services:</h3>
                             <br/>
                             <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Computists</strong><br/>
                                 <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>César</strong> (<div style="display:inline;">Software Engineer</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.linkedin.com/in/c%C3%A9sar-cordero-rodr%C3%ADguez-34556186/">Contact</a></h5>
@@ -347,6 +347,12 @@
                             </h3>
                             <br/>
                             <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Journalists</strong>
+                            </h3>
+                            <br/>
+                            <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Engineers</strong>
+                            </h3>
+                            <br/>
+                            <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Social positions</strong>
                             </h3>
                             <br/>
                             <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Community Managers</strong>
