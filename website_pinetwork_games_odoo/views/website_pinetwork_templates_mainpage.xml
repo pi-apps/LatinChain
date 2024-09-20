@@ -1143,6 +1143,10 @@
                                 var streaming_url = $(this).attr("videourl");
                                 $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="' + streaming_url + '&amp;autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
                             });
+                            
+                            $( ".askanexpert" ).click(function() {
+                                $.colorbox({href:"/askanexpert/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                            });
                         
                             /*(adsbygoogle = window.adsbygoogle || []).push({});
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -1822,6 +1826,9 @@
                             </div>
                             <div style="margin-bottom:5px">
                                 <button class="btn btn-info readingclub" ><div style="display:inline;"><i class="fa-solid fa-book-open-reader"></i></div> <div style="display:inline;">reading club</div></button>
+                            </div>
+                            <div style="margin-bottom:5px">
+                                <button class="btn btn-info askanexpert" ><div style="display:inline;"><i class="fa-solid fa-question"></i></div> <div style="display:inline;">ask an expert</div></button>
                             </div>
                             <div class="div-certification" style="display: none">
                                 <button class="btn btn-info certification" ><div style="display:inline;"><i class="fa-solid fa-certificate"></i></div> <div style="display:inline;">certification</div></button>
