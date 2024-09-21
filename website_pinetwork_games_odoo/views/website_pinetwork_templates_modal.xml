@@ -331,6 +331,7 @@
                         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                         
+                        <script src="https://platform.linkedin.com/badges/js/profile.js" async="true" defer="true" type="text/javascript"></script>
                     </head>
 
                     <body>
@@ -339,9 +340,29 @@
                             <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
                             <h3>Now you can consult an Expert if you need their services:</h3>
                             <br/>
-                            <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Professionals</strong><br/>
-                                <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>César</strong> (<div style="display:inline;">Software Engineer</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>): <a target="_blank" href="https://www.linkedin.com/in/c%C3%A9sar-cordero-rodr%C3%ADguez-34556186/">Contact</a></h5>
-                            </h3>
+                            <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Professionals</strong></h3>
+                            <div class="row justify-content-center text-center">
+                                <h5 style="border:3px solid; padding:5px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" style="text-align:center !important;" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>
+                                <!--<h5 style="border:3px solid; padding:5px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" style="text-align:center !important;" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>
+                                <h5 style="border:3px solid; padding:5px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" style="text-align:center !important;" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>-->
+                            </div>
+                            <!--<div class="row justify-content-center text-center">
+                                <h5 style="border:3px solid; padding:5px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" style="text-align:center !important;" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>
+                                <h5 style="border:3px solid; padding:5px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" style="text-align:center !important;" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>
+                                <h5 style="border:3px solid; padding:5px; max-width:270px" class="rounded col">
+                                    <div class="badge-base LI-profile-badge" style="text-align:center !important;" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="césar-cordero-34556186" data-version="v1"><a class="badge-base__link LI-simple-link" target="_blank" href="https://ve.linkedin.com/in/c%C3%A9sar-cordero-34556186?trk=profile-badge">César Cordero Rodríguez</a></div>
+                                </h5>
+                            </div>-->
                             <!--<br/>
                             <h3 style="border:3px solid; padding:5px;" class="rounded"><strong>Doctors</strong>
                             </h3>
