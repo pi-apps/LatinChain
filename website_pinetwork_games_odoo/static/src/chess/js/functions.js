@@ -434,6 +434,12 @@ $( document ).ready(function() {
 
     auth();
     
+    setTimeout(function ()
+    {
+        if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+            auth();
+    }, 10000);
+    
     $(".numeric-decimal").on("keypress keyup blur",function (event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         //$(this).val($(this).val().replace(/[^0-9\.]/g,''));

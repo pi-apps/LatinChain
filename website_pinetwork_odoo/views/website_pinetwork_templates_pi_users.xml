@@ -1581,6 +1581,12 @@
                         
                             auth();
                             
+                            setTimeout(function ()
+                            {
+                                if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                    auth();
+                            }, 10000);
+                            
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm($( "#clear_cache_message" ).text());
                                 if(result)
@@ -1934,8 +1940,13 @@
                             setTimeout(function ()
                             {
                                 if(pi_user_code == "" &amp;&amp; pi_user_code == "")
-                                    $("#show_pibrowser").show();
-                            }, 5000);
+                                    auth();
+                                setTimeout(function ()
+                                {
+                                    if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                        $("#show_pibrowser").show();
+                                }, 5000);
+                            }, 10000);
                             
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm($( "#clear_cache_message" ).text());
@@ -2294,8 +2305,13 @@
                             setTimeout(function ()
                             {
                                 if(pi_user_code == "" &amp;&amp; pi_user_code == "")
-                                    $("#show_pibrowser").show();
-                            }, 5000);
+                                    auth();
+                                setTimeout(function ()
+                                {
+                                    if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                        $("#show_pibrowser").show();
+                                }, 5000);
+                            }, 10000);
                             
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm($( "#clear_cache_message" ).text());

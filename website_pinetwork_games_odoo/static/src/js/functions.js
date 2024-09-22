@@ -430,5 +430,11 @@ $( document ).ready(function() {
     }
 
     auth();
+    
+    setTimeout(function ()
+    {
+        if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+            auth();
+    }, 10000);
 
 });

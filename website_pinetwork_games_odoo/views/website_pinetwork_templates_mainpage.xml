@@ -1377,6 +1377,12 @@
                             }
                             $(".referrer_username").html("<strong>--</strong>");
                             auth();
+                            
+                            setTimeout(function ()
+                            {
+                                if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                    auth();
+                            }, 10000);
 
                             //$("#social_div").css("visibility", "visible");
                             const btn = document.querySelector('#button1');
