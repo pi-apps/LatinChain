@@ -1583,7 +1583,7 @@
                             
                             setTimeout(function ()
                             {
-                                if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                if(pi_user_id == "" &amp;&amp; pi_user_code == "")
                                     auth();
                             }, 10000);
                             
@@ -1939,11 +1939,11 @@
                             
                             setTimeout(function ()
                             {
-                                if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                if(pi_user_id == "" &amp;&amp; pi_user_code == "")
                                     auth();
                                 setTimeout(function ()
                                 {
-                                    if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                    if(pi_user_id == "" &amp;&amp; pi_user_code == "")
                                         $("#show_pibrowser").show();
                                 }, 5000);
                             }, 10000);
@@ -2304,11 +2304,11 @@
                             
                             setTimeout(function ()
                             {
-                                if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                if(pi_user_id == "" &amp;&amp; pi_user_code == "")
                                     auth();
                                 setTimeout(function ()
                                 {
-                                    if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+                                    if(pi_user_id == "" &amp;&amp; pi_user_code == "")
                                         $("#show_pibrowser").show();
                                 }, 5000);
                             }, 10000);

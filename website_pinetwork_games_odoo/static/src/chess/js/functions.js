@@ -436,7 +436,7 @@ $( document ).ready(function() {
     
     setTimeout(function ()
     {
-        if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+        if(pi_user_id == "" &amp;&amp; pi_user_code == "")
             auth();
     }, 10000);
     
