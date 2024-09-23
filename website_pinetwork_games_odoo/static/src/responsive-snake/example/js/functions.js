@@ -242,7 +242,7 @@ $( document ).ready(function() {
                 //get_user(false);
                 set_points(0).always(function(){
                     get_user(true).always(function(){
-                        if(show_pi_ad_user)
+                        if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             showPiAds(Pi);
                         
                         $( "#button_click" ).click(function() {
