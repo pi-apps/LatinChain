@@ -284,18 +284,47 @@
                             <div t-if="not unblocked">
                                 <h3>User has to be verified in LatinChain Platform to show the certification. Not verified yet.</h3>
                             </div>
+                            <style>
+                                .border-gradient-rounded {
+                                  /* Border */
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, white, white), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: black !important;
+                                }
+                            </style>
                             <div t-if="unblocked">
                                 <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
                                 <h3><div style="display:inline;">This info refers to:</div> <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;" translate="no">Mainnet (https://latin-chain.com)</div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline;" translate="no">Testnet (https://test.latin-chain.com)</div></h3>
                                 <h3>The following certifies that the Pioneer <strong><div style="display:inline;" t-esc="username" translate="no"></div></strong> is training and has availability to train skills at LatinChain Platform, as:</h3>
                                 <br/>
-                                <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Chess</strong></h5>
-                                <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Sudoku</strong></h5>
-                                <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Snake</strong></h5>
-                                <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Odoo Programming</strong></h5>
-                                <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Blockrain (kind of tetris)</strong></h5>
-                                <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Mahjong</strong></h5>
-                                <h5 style="border:3px solid; padding:5px;" class="rounded"><strong>Can watch Worldwide Sport Results</strong></h5>
+                                <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
+                                    <div style="margin-bottom:5px" class="border-bottom">
+                                        <h5 translate="no"><strong>Chess</strong></h5>
+                                    </div>
+                                    <div style="margin-bottom:5px" class="border-bottom">
+                                        <h5 translate="no"><strong>Sudoku</strong></h5>
+                                    </div>
+                                    <div style="margin-bottom:5px" class="border-bottom">
+                                        <h5 translate="no"><strong>Snake</strong></h5>
+                                    </div>
+                                    <div style="margin-bottom:5px" class="border-bottom">
+                                        <h5 translate="no"><strong>Odoo Programming</strong></h5>
+                                    </div>
+                                    <div style="margin-bottom:5px" class="border-bottom">
+                                        <h5 translate="no"><strong>Blockrain (kind of tetris)</strong></h5>
+                                    </div>
+                                    <div style="margin-bottom:5px" class="border-bottom">
+                                        <h5 translate="no"><strong>Mahjong</strong></h5>
+                                    </div>
+                                    <div style="margin-bottom:5px" class="border-bottom">
+                                        <h5 translate="no"><strong>Can watch Worldwide Sport Results</strong></h5>
+                                    </div>
+                                </div>
                                 <br/>
                                 <h5 style="border:3px solid; padding:5px;" class="rounded">You can consult this certification at:<br/><br/><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;" translate="no">https://latin-chain.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline;" translate="no">https://test.latin-chain.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
                                 <br/><br/><button class="btn btn-success" onclick="window.print();">Print</button>

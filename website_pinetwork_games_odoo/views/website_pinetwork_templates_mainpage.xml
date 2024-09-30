@@ -388,6 +388,19 @@
                               color: #000 !important;
                             }
                             
+                            .darkmode--activated .border-gradient-rounded {
+                              /* Border */
+                              border: 4px solid transparent;
+                              border-radius: 20px;
+                              background: 
+                                linear-gradient(to right, #021526, #021526), 
+                                linear-gradient(to right, red , blue); 
+                              background-clip: padding-box, border-box;
+                              background-origin: padding-box, border-box;
+                              color: white !important;
+                              filter: contrast(100%) !important;
+                            }
+                            
                         </style>
                     </t>
 
