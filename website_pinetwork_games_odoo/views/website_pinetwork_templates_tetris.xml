@@ -74,7 +74,18 @@
                         <div align="center" class="container justify-content-center text-center" style="text-align:center; max-width:810px; max-height:100%">
 
                             <br/>
-                            <div class="game" style="width:100%; height:400px;"></div>
+                            <strong translate="no">Theme: </strong>
+                            <select translate="no" id="themes">
+                                <option value="candy" selected="true">Candy</option>
+                                <option value="modern">Modern</option>
+                                <option value="retro">Retro</option>
+                                <option value="vim">VIM</option>
+                                <option value="monochrome">Monochrome</option>
+                                <option value="gameboy">Gameboy</option>
+                                <option value="aerolab">aerolab</option>
+                            </select>
+                            <br/>
+                            <div class="game" style="width:100%; height:380px;"></div>
                             <div class="keyboard" style="width:100%; text-align:center;">
                               <button class="key key-up up btn btn-dark no-before" style="margin: 5px !important">&#8593;</button>
                               <button class="key key-left left btn btn-dark" style="margin:5px !important">&#8592;</button>
@@ -82,7 +93,9 @@
                               <button class="key key-down down btn btn-dark" style="margin: 5px !important">&#8595;</button>
                             </div>
                             <script>
-                                $('.game').blockrain({autoBlockWidth: true, difficulty: 'nice', speed: 20});
+                                $('.game').blockrain({autoBlockWidth: true, difficulty: 'normal', speed: 20});
+                                
+                                $('.game').blockrain('theme', 'candy');
                                 
                                 function press(key)
                                 {
@@ -103,6 +116,10 @@
                                 });
                                 $( ".right" ).mousedown(function() {
                                     press(39);
+                                });
+                                
+                                $( "#themes" ).change(function() {
+                                    $('.game').blockrain('theme', $("#themes").find(":selected").val());
                                 });
                             </script>
                             
