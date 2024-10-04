@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-22 22:34+0000\n"
-"PO-Revision-Date: 2024-09-22 22:34+0000\n"
+"POT-Creation-Date: 2024-10-04 01:08+0000\n"
+"PO-Revision-Date: 2024-10-04 01:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -386,6 +386,23 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
+msgid ""
+"<br/>\n"
+"                            <strong translate=\"no\">Theme: </strong>\n"
+"                            <select translate=\"no\" id=\"themes\">\n"
+"                                <option value=\"candy\" selected=\"true\">Candy</option>\n"
+"                                <option value=\"modern\">Modern</option>\n"
+"                                <option value=\"retro\">Retro</option>\n"
+"                                <option value=\"vim\">VIM</option>\n"
+"                                <option value=\"monochrome\">Monochrome</option>\n"
+"                                <option value=\"gameboy\">Gameboy</option>\n"
+"                                <option value=\"aerolab\">Aerolab</option>\n"
+"                            </select>\n"
+"                            <br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -625,6 +642,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>#LatinChain #User 😎</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "<strong>13 habits to be successful in Karate-Do</strong> ("
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1318,6 +1340,11 @@ msgid "Marina"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "Martial Arts"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Medium puzzle"
 msgstr ""
@@ -1555,6 +1582,11 @@ msgid "Refresh"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.iframetester
+msgid "Render iFrame"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Repository"
 msgstr ""
@@ -1647,6 +1679,16 @@ msgid "Session:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.iframetester
+msgid "Set an URL to test."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.iframetester
+msgid "Set your URL"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Share in Social Networks:<br/><br/>"
 msgstr ""
@@ -1727,6 +1769,11 @@ msgid "Terms (ToS)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Test your URLs"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Testing feature"
 msgstr ""
@@ -1759,6 +1806,14 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "This info refers to:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.iframetester
+msgid ""
+"This webpage is to test if an URL you provide can be viewed embeded in an "
+"iFrame. Using X-Frame-Options in your headers, you can allow or deny that "
+"your webpage can be viewed in an iFrame."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2088,6 +2143,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "https://www.youtube.com/watch?v=9KqcyAoCZzo"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "iFrame Tester"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
