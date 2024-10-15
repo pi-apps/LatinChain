@@ -48,9 +48,13 @@ https://github.com/rockcesar/PiNetworkDevelopments/tree/master/piapp-example/pia
 
 # For functional PiAds rewarded example, check the following file
 
-Find the code: $( "#button_reward_ad" ).click(async function() {
+For the frontend, find the code: $( "#button_reward_ad" ).click(async function() {
 
 https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/static/src/js/functions.js
+
+Then, in the Backend, find the code: @http.route('/set-latin-points', type='http', auth="public", website=True, csrf=False, methods=['POST'])
+
+https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_odoo/controllers/main.py
 
 # App2User payment made by Core Team
 
