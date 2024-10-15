@@ -48,7 +48,7 @@ https://github.com/rockcesar/PiNetworkDevelopments/tree/master/piapp-example/pia
 
 # For functional PiAds rewarded example, check the following file
 
-For the frontend, find the code: $( "#button_reward_ad" ).click(async function() {
+For the Frontend, find the code: $( "#button_reward_ad" ).click(async function() {
 
 https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/static/src/js/functions.js
 
