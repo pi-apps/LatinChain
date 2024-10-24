@@ -1622,6 +1622,7 @@
                               <li data-target="#myCarousel1647794696348" data-slide-to="6"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="7"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="8"/>
+                              <li data-target="#myCarousel1647794696348" data-slide-to="9"/>
                             </ol>
                             <div class="carousel-inner">
                               <t t-set="background" t-value="'background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;'"/>
@@ -1655,6 +1656,18 @@
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
                                           <a href="/website/social/youtube" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Subscribe Youtube Channel</div></a>
+                                      </h2>
+                                      <br/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" t-att-style="background" data-name="Slide">
+                                <div class="container">
+                                  <div class="row content">
+                                    <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
+                                      <h2 style="font-size: 30px;" class="o_default_snippet_text">
+                                          <a href="https://tiktok.com/@rockcesar" target="_blank" class="btn btn-dark mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa-brands fa-tiktok"></i></div> <div style="display:inline;"><div style="display:inline;">Subscribe Tiktok Channel</div></div></a>
                                       </h2>
                                       <br/>
                                     </div>
