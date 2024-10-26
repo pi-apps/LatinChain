@@ -301,6 +301,8 @@ $( document ).ready(function() {
                                                     $("#button_reward_ad").prop( "disabled", true );
                                                     var btnvalue = $("#button_reward_ad").html();
                                                     $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
+                                                    $(".modal-body").html($("#modal_reward_message").text() + data.points_latin + " Latin points.");
+                                                    $("#open_modal").click();
                                                     setTimeout(function ()
                                                     {
                                                         $("#button_reward_ad").html(btnvalue);
