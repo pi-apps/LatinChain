@@ -35,7 +35,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 msgid "(Go to LatinChain Mainnet)"
-msgstr ""
+msgstr "(Ir a LatinChain Mainnet)"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
@@ -466,6 +466,18 @@ msgid ""
 "                            </select>\n"
 "                            <br/>"
 msgstr ""
+"<br/>\n"
+"                            <strong translate=\"no\">Tema: </strong>\n"
+"                            <select translate=\"no\" id=\"themes\">\n"
+"                                <option value=\"candy\" selected=\"true\">Caramelo</option>\n"
+"                                <option value=\"modern\">Moderno</option>\n"
+"                                <option value=\"retro\">Retro</option>\n"
+"                                <option value=\"vim\">VIM</option>\n"
+"                                <option value=\"monochrome\">Monocromático</option>\n"
+"                                <option value=\"gameboy\">Gameboy</option>\n"
+"                                <option value=\"aerolab\">Aerolab</option>\n"
+"                            </select>\n"
+"                            <br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1020,7 +1032,7 @@ msgstr "Borrar Caché"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 msgid "Click here"
-msgstr ""
+msgstr "Click aquí"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1753,7 +1765,7 @@ msgstr "Reiniciar"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 msgid "Return to LatinChain Testnet"
-msgstr ""
+msgstr "Volver a LatinChain Testnet"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2103,6 +2115,9 @@ msgid ""
 "                                <br/>\n"
 "                                <br/>"
 msgstr ""
+"Estamos probando LatinChain Mainnet en el ecosistema de criptomonedas de Pi Network. Obtenga el doble de utility usage bonus <i class=\"fa-solid fa-bolt\"/> utilizando tanto Mainnet como Testnet.\n"
+"                                <br/>\n"
+"                                <br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
