@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-29 19:55+0000\n"
-"PO-Revision-Date: 2024-10-29 19:55+0000\n"
+"POT-Creation-Date: 2024-10-29 20:03+0000\n"
+"PO-Revision-Date: 2024-10-29 20:03+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -456,35 +456,6 @@ msgstr ""
 "                                    <br/>"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
-msgid ""
-"<br/>\n"
-"                            <strong>Theme: </strong>\n"
-"                            <select id=\"themes\">\n"
-"                                <option value=\"candy\" selected=\"true\">Candy</option>\n"
-"                                <option value=\"modern\">Modern</option>\n"
-"                                <option value=\"retro\">Retro</option>\n"
-"                                <option value=\"vim\">VIM</option>\n"
-"                                <option value=\"monochrome\">Monochrome</option>\n"
-"                                <option value=\"gameboy\">Gameboy</option>\n"
-"                                <option value=\"aerolab\">Aerolab</option>\n"
-"                            </select>\n"
-"                            <br/>"
-msgstr ""
-"<br/>\n"
-"                            <strong>Tema: </strong>\n"
-"                            <select id=\"themes\">\n"
-"                                <option value=\"candy\" selected=\"true\">Caramelo</option>\n"
-"                                <option value=\"modern\">Moderno</option>\n"
-"                                <option value=\"retro\">Retro</option>\n"
-"                                <option value=\"vim\">VIM</option>\n"
-"                                <option value=\"monochrome\">Monocromático</option>\n"
-"                                <option value=\"gameboy\">Gameboy</option>\n"
-"                                <option value=\"aerolab\">Aerolab</option>\n"
-"                            </select>\n"
-"                            <br/>"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -602,6 +573,29 @@ msgstr ""
 "                                             <option value=\"n\">Caballo</option>\n"
 "                                             <option value=\"r\">Torre</option>\n"
 "                                           </select>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
+msgid ""
+"<select id=\"themes\">\n"
+"                                <option value=\"candy\" selected=\"true\">Candy</option>\n"
+"                                <option value=\"modern\">Modern</option>\n"
+"                                <option value=\"retro\">Retro</option>\n"
+"                                <option value=\"vim\">VIM</option>\n"
+"                                <option value=\"monochrome\">Monochrome</option>\n"
+"                                <option value=\"gameboy\">Gameboy</option>\n"
+"                                <option value=\"aerolab\">Aerolab</option>\n"
+"                            </select>"
+msgstr ""
+"<select id=\"themes\">\n"
+"                                <option value=\"candy\" selected=\"true\">Caramelo</option>\n"
+"                                <option value=\"modern\">Moderno</option>\n"
+"                                <option value=\"retro\">Retro</option>\n"
+"                                <option value=\"vim\">VIM</option>\n"
+"                                <option value=\"monochrome\">Monocromático</option>\n"
+"                                <option value=\"gameboy\">Gameboy</option>\n"
+"                                <option value=\"aerolab\">Aerolab</option>\n"
+"                            </select>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -856,6 +850,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
 msgid "<strong>Telepathic Treatises</strong> ("
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
+msgid "<strong>Theme: </strong>"
+msgstr "<strong>Tema: </strong>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.new_header

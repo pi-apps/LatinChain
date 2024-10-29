@@ -74,7 +74,8 @@
                         <div align="center" class="container justify-content-center text-center" style="text-align:center; max-width:810px; max-height:100%">
 
                             <br/>
-                            <strong>Theme: </strong>
+                            <div><strong>Theme: </strong></div>
+                            <div>
                             <select id="themes">
                                 <option value="candy" selected="true">Candy</option>
                                 <option value="modern">Modern</option>
@@ -84,6 +85,7 @@
                                 <option value="gameboy">Gameboy</option>
                                 <option value="aerolab">Aerolab</option>
                             </select>
+                            </div>
                             <br/>
                             <div class="game" style="width:100%; height:380px;"></div>
                             <div class="keyboard" style="width:100%; text-align:center;">
