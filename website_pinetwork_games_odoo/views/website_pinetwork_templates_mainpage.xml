@@ -943,6 +943,9 @@
                                         
                                         $(".show-tetris").show();
                                         $(".show-mahjong").show();
+                                        $(".show-tvonline").show();
+                                        $(".show-cointelegraph").show();
+                                        $(".show-streamerzoneboard").show();
                                         $(".show-iframetester").show();
                                         
                                         passkey=data.passkey;
@@ -1853,7 +1856,7 @@
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#LatinChain #Magazine &#127909;</strong></h5>
                             </div>
-                            <div style="margin-bottom:5px" t-if="pioneers_streaming">
+                            <div class="show-streamerzoneboard" style="margin-bottom:5px; display:none" t-if="pioneers_streaming">
                                 <button id="streamerzoneboard" class="btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
                             </div>
                             <!--<t t-if="pi_main_user">
@@ -2160,7 +2163,7 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tvonline" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><button id="tvonline" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tvonline" translate="no" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">TV ONLINE</div><div style="font-size:80%;">TV streaming</div></button></div>
@@ -2174,7 +2177,7 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-cointelegraph" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><button id="cointelegraph" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cointelegraph" translate="no" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">COINTELEGRAPH</div><div style="font-size:80%;">Crypto news</div></button></div>
@@ -2189,7 +2192,7 @@
                                             </div>
                                         </li>
                                         <t t-if="pioneers_streaming">
-                                            <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-streamerzoneboard" style="display:none">
                                                 <div class="row" style="text-align: left;">
                                                     <div class="col-2"></div>
                                                     <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button></div>
