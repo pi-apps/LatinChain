@@ -85,6 +85,7 @@
                     <script type="text/javascript">
                         var duplicate_google_translate_counter = 0;
                         function googleTranslateElementInit() {
+                          alert(duplicate_google_translate_counter);
                           if(duplicate_google_translate_counter == 0)
                           {
                               if(location.pathname.substring(0, 4) != "/web")
