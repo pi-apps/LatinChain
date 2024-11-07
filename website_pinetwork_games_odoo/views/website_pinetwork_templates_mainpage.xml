@@ -84,6 +84,7 @@
 
                     <script type="text/javascript">
                         var duplicate_google_translate_counter = 0;
+                        alert("123456");
                         function googleTranslateElementInit() {
                           if(duplicate_google_translate_counter == 0)
                           {
@@ -509,6 +510,7 @@
 
                 <script type="text/javascript">
                     var duplicate_google_translate_counter = 0;
+                    alert("12345");
                     function googleTranslateElementInit() {
                       alert("1234");
                       alert(duplicate_google_translate_counter);
