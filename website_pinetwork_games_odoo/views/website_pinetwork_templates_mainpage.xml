@@ -1890,7 +1890,27 @@
                                 <div style="display: inline"><i id="play" class="fa fa-volume-off"></i></div> 
                                 <div style="display: inline">Hi<strong><span id="username" translate="no"></span></strong><span id="verified"></span>. Welcome to LatinChain Platform (Games from Latin America for Pi). Increase your Pi cryptocurrency mining power <i class="fa fa-bolt"></i> using this app. If you don't have it yet, download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link text-white"><strong>App Store</strong></a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link text-white"><strong>Play Store</strong></a> to watch it working.<br/></div>
                             </div>
+                            
                             <button id="vote" class="btn btn-info">Pi Hackathon winners</button><br/><!--<strong t-if="mainnet == 'Testnet ON'">Testnet ON<br/></strong>--><strong t-if="mainnet == 'Mainnet ON'">Mainnet ON. Ready to play.<br/></strong><br/>
+                            
+                            <div class="p-3 mb-2 bg-info bg-gradient text-white rounded">
+                                Last 24 hours: 
+                                <br/>
+                                <table class="table text-white" style="word-break: break-word;">
+                                    <thead>
+                                        <tr>
+                                            <td>Users</td>
+                                            <td>Transactions</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span t-esc="total_users_daily_count" /></td>
+                                            <td><span t-esc="total_transactions_daily_count" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             
                             <!--<div style="margin-bottom:5px">
                                 <a href="#myApps" class="myAppsAnchor btn btn-outline-info font-weight-bold border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-rocket"></i></div><div translate="no">Apps</div></a>
@@ -2075,24 +2095,6 @@
                                     </div>
                                   </div>
                                 </div>-->
-                                <div class="p-3 mb-2 bg-info bg-gradient text-white rounded">
-                                    Last 24 hours: 
-                                    <br/>
-                                    <table class="table text-white" style="word-break: break-word;">
-                                        <thead>
-                                            <tr>
-                                                <td>Users</td>
-                                                <td>Transactions</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><span t-esc="total_users_daily_count" /></td>
-                                                <td><span t-esc="total_transactions_daily_count" /></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                                 
                                 <div>
                                 <br/>Choose your app:<br/><br/>
