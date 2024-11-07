@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-29 20:29+0000\n"
-"PO-Revision-Date: 2024-10-29 20:29+0000\n"
+"POT-Creation-Date: 2024-11-07 21:58+0000\n"
+"PO-Revision-Date: 2024-11-07 21:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -55,6 +55,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "* LatinChain Platform (Games from Latin America for Pi)."
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "* Rules to be in the Global Ranking:"
+msgstr "* Reglas para estar en el Ranking Global:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -119,6 +124,11 @@ msgstr ". Y esta información podría variar con el tiempo sin previo aviso."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ". You are a winner. Check in Winners Board."
 msgstr ". Eres un ganador. Chequea en el Winners Board."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "1.- All users, verified and not verified, in LatinChain Platform."
+msgstr "1.- Todos los usuarios, verificados y no verificados, en LatinChain Platform."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -261,6 +271,11 @@ msgstr "3.- Para el Top 10 zone Chess: Tener 20 ó más puntos en Chess."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "3.- How to play Snake:"
 msgstr "3.- Cómo jugar Snake:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "3.- None prize is related to this specific list of users."
+msgstr "3.- Ningún premio está relacionado a esta lista específica de usuarios."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1898,6 +1913,21 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Switch Sides"
 msgstr "Intercambia Lado"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "TV ONLINE"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "TV Online: TV streaming."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "TV streaming"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
