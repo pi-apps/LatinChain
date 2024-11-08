@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-07 22:13+0000\n"
-"PO-Revision-Date: 2024-11-07 22:13+0000\n"
+"POT-Creation-Date: 2024-11-08 05:45+0000\n"
+"PO-Revision-Date: 2024-11-08 05:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -400,6 +400,17 @@ msgstr ""
 "5.- Si eres un ganador en OpenMainnet, vas a ganar acorde al ingreso de "
 "LatinChain Platform, y no menos que el pago mínimo para desbloquear los "
 "juegos. El pago mínimo actual está en"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"5.- If you are in this specific list of users and want to gain prizes, you "
+"have to verify your user in LatinChain Platform, to appear in Leaders Board "
+"and Winners Board."
+msgstr ""
+"5.- Si estás en esta lista específica de usuarios and quieres ganar premios, "
+"tienes que verificar tu usuario en LatinChain Platform, para aparecer en Leaders Board "
+"y Winners Board."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1372,7 +1383,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Last 24 hours: \n"
-"                                    <br/>"
+"                                <br/>"
 msgstr ""
 "Últimas 24 horas: \n"
 "                                <br/>"

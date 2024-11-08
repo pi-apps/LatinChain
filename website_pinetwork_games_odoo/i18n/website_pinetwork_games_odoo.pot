@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-07 22:13+0000\n"
-"PO-Revision-Date: 2024-11-07 22:13+0000\n"
+"POT-Creation-Date: 2024-11-08 05:45+0000\n"
+"PO-Revision-Date: 2024-11-08 05:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -344,6 +344,14 @@ msgid ""
 "5.- If you are a winner on OpenMainnet, you will gain according to the "
 "income of LatinChain Platform, and not less than the minimum payment to "
 "unlock the games. Current minimum payment is at"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"5.- If you are in this specific list of users and want to gain prizes, you "
+"have to verify your user in LatinChain Platform, to appear in Leaders Board "
+"and Winners Board."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1226,7 +1234,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Last 24 hours: \n"
-"                                    <br/>"
+"                                <br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
