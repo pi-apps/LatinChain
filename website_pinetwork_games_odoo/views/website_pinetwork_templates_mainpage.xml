@@ -1878,7 +1878,7 @@
                                 <button class="btn btn-info certification" ><div style="display:inline;"><i class="fa-solid fa-certificate"></i></div> <div style="display:inline;">certification</div></button>
                             </div>
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-top:5px">
-                                <a href="/pinetwork" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
+                                <a href="/pinetwork" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
                             </div>
                         </div>
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
@@ -2105,7 +2105,7 @@
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><button id="rules_button_2" class="col-10 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
+                                                <div class="col-10"><button id="rules_button_2" class="col-10 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
@@ -2133,7 +2133,7 @@
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a></div>
+                                                <div class="col-10"><a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
@@ -2154,42 +2154,42 @@
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tetris" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><button id="tetris" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tetris" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes"></i></div><div style="font-size:100%;">BLOCKRAIN</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="tetrisinfo" class="col-auto btn btn-sm btn-outline-info tetrisinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-10"><button id="tetris" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tetris" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes"></i></div><div style="font-size:100%;" translate="no">BLOCKRAIN</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="tetrisinfo" class="col-auto btn btn-sm btn-outline-info tetrisinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-mahjong" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><button id="mahjong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mahjong" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;">MAHJONG</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="mahjonginfo" class="col-auto btn btn-sm btn-outline-info mahjonginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-10"><button id="mahjong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mahjong" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">MAHJONG</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="mahjonginfo" class="col-auto btn btn-sm btn-outline-info mahjonginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tvonline" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><button id="tvonline" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tvonline" translate="no" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;">TV ONLINE</div><div style="font-size:80%;">TV streaming</div></button></div>
+                                                <div class="col-10"><button id="tvonline" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">TV ONLINE</div><div style="font-size:80%;">TV streaming</div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><button id="cryptonews_2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">NEWS</div><div style="font-size:80%;">Crypto news</div></button></div>
+                                                <div class="col-10"><button id="cryptonews_2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-cointelegraph" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><button id="cointelegraph" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cointelegraph" translate="no" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;">COINTELEGRAPH</div><div style="font-size:80%;">Crypto news</div></button></div>
+                                                <div class="col-10"><button id="cointelegraph" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cointelegraph" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">COINTELEGRAPH</div><div style="font-size:80%;">Crypto news</div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-iframetester" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><button id="iframetester" class="col-10 btn btn-outline-success font-weight-bold text-black border-success iframetester" translate="no" style="border: 2px solid;"><div style=""><i class="fa-solid fa-flask-vial"></i></div><div style="font-size:100%;">iFrame Tester</div><div style="font-size:80%;">Test your URLs</div></button></div>
+                                                <div class="col-10"><button id="iframetester" class="col-10 btn btn-outline-success font-weight-bold text-black border-success iframetester" style="border: 2px solid;"><div style=""><i class="fa-solid fa-flask-vial"></i></div><div style="font-size:100%;" translate="no">iFrame Tester</div><div style="font-size:80%;">Test your URLs</div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
@@ -2197,7 +2197,7 @@
                                             <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-streamerzoneboard" style="display:none">
                                                 <div class="row" style="text-align: left;">
                                                     <div class="col-2"></div>
-                                                    <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button></div>
+                                                    <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;" translate="no">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button></div>
                                                     <div class="col-0"></div>
                                                 </div>
                                             </li>
@@ -2337,37 +2337,37 @@
                                 <ul class="list-group">
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="rules_button" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
+                                            <div class="col-12"><button id="rules_button" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="generalranking" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Global Ranking</div><div style="font-size:80%;">List of users (verified and not verified)</div></button></div>
+                                            <div class="col-12"><button id="generalranking" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;" translate="no">Global Ranking</div><div style="font-size:80%;">List of users (verified and not verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="leaderboard" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Leaders Board</div><div style="font-size:80%;">General ranking (verified)</div></button></div>
+                                            <div class="col-12"><button id="leaderboard" class="col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;" translate="no">Leaders Board</div><div style="font-size:80%;">General ranking (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="winnerboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;">Top 10 Board</div><div style="font-size:80%;">Top 10 ranking by game (verified)</div></button></div>
+                                            <div class="col-12"><button id="winnerboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;" translate="no">Top 10 Board</div><div style="font-size:80%;">Top 10 ranking by game (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="winnerzoneboard2" class="col-8 btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;">Winners Board</div><div style="font-size:80%;">Table of all winners (verified)</div></button></div>
+                                            <div class="col-12"><button id="winnerzoneboard2" class="col-8 btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;" translate="no">Winners Board</div><div style="font-size:80%;">Table of all winners (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="credits" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">Credits</div><div style="font-size:80%;">Donators list (verified)</div></button></div>
+                                            <div class="col-12"><button id="credits" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">Credits</div><div style="font-size:80%;">Donators list (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><a href="/get-transactions/" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Transactions</div><div style="font-size:80%;">Transactions list</div></a></div>
+                                            <div class="col-12"><a href="/get-transactions/" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Transactions</div><div style="font-size:80%;">Transactions list</div></a></div>
                                         </div>
                                     </li>
                                 </ul>
