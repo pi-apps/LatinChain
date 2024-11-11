@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-08 05:45+0000\n"
-"PO-Revision-Date: 2024-11-08 05:45+0000\n"
+"POT-Creation-Date: 2024-11-11 23:13+0000\n"
+"PO-Revision-Date: 2024-11-11 23:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -409,8 +409,8 @@ msgid ""
 "and Winners Board."
 msgstr ""
 "5.- Si estás en esta lista específica de usuarios y quieres ganar premios, "
-"tienes que verificar tu usuario en LatinChain Platform, para aparecer en Leaders Board "
-"y Winners Board."
+"tienes que verificar tu usuario en LatinChain Platform, para aparecer en "
+"Leaders Board y Winners Board."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -2256,6 +2256,11 @@ msgstr "No puedes tener más de 50 caracteres en tu Memo ID ó Payment ID."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid "You can't pay less than"
 msgstr "No puedes pagar menos de"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid "You have now"
+msgstr "Tienes ahora"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork

@@ -78,13 +78,16 @@ function get_user(donation) {
             {
                 if(data.complete_found)
                     alert($("#payment_message").text());
-                    
+                
                 passkey=data.passkey;
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
                     if(donation)
-                        alert($("#unblocked_message").text());
+                    {
+                        $(".modal-body").html($("#unblocked_message").text() + "<br/>" + $("#modal_total_latinpoints_message").text() + data.points_latin + " Latin points.");
+                        $("#open_modal").click();
+                    }
                 }
                 show_pi_ad_user = data.show_pi_ad;
             }
