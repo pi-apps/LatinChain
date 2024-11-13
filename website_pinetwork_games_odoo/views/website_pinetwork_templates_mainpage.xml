@@ -1143,6 +1143,7 @@
                         }
 
                         $( document ).ready(function() {
+                        
                             window.addEventListener('unhandledrejection', function (e) {
                                 e.preventDefault();
                                 e.stopPropagation();
@@ -1376,8 +1377,113 @@
                                         set_points(0).always(function(){
                                             get_user().always(function(){
                                                 if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                                //if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                {
+                                                    //if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                     showPiAds(Pi);
+                                                    
+                                                    var startTime=new Date(), endTime=new Date(), seconds=0;
+
+                                                    function start() {
+                                                      startTime = new Date();
+                                                    };
+
+                                                    function end() {
+                                                      endTime = new Date();
+                                                      var timeDiff = endTime - startTime; //in ms
+                                                      // strip the ms
+                                                      timeDiff /= 1000;
+
+                                                      // get seconds 
+                                                      seconds = Math.round(timeDiff);
+                                                    }
+                                                    
+                                                    $("#button_reward_ad").prop( "disabled", false );
+                        
+                                                    var start_flag = false;
+                                                    
+                                                    $( "#button_reward_ad" ).click(async function() {
+                                                        end();
+                                                        if(seconds &lt; 5 &amp;&amp; start_flag)
+                                                        {
+                                                            start();
+                                                            return;
+                                                        }
+                                                        start();
+                                                        
+                                                        if(!start_flag)
+                                                            start_flag = true;
+                                                        
+                                                        if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                                        {
+                                                            try {
+                                                                const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
+                                                                if (isAdReadyResponse.ready === false) {
+                                                                    
+                                                                    const requestAdResponse = await Pi.Ads.requestAd("rewarded");
+                                                                    if (requestAdResponse.result === "ADS_NOT_SUPPORTED") {
+                                                                        // display modal to update Pi Browser
+                                                                        // showAdsNotSupportedModal()
+                                                                        alert("Update Pi Browser version, please!.");
+                                                                        return;
+                                                                    }
+                                                                    if (requestAdResponse.result !== "AD_LOADED") {
+                                                                        // display modal ads are temporarily unavailable and user should try again later
+                                                                        // showAdUnavailableModal()
+                                                                        alert("Ads are temporarily unavailable, try again later!.");
+                                                                        return;
+                                                                    }
+                                                                }
+                                                                
+                                                                const showAdResponse = await Pi.Ads.showAd("rewarded");
+                                                                
+                                                                if (showAdResponse.result === "AD_REWARDED") {
+                                                                    if(pi_user_id != "" &amp;&amp; pi_user_code != "" &amp;&amp; showAdResponse.adId)
+                                                                    {
+                                                                        //alert($("#ready_reward_message").text());
+                                                                        var data = {
+                                                                            'pi_user_id': pi_user_id,
+                                                                            'pi_user_code': pi_user_code,
+                                                                            'adId': showAdResponse.adId,
+                                                                            'passkey': passkey,
+                                                                            'accessToken': accessToken,
+                                                                            'csrf_token': odoo.csrf_token,
+                                                                        };
+                                                                        //$.ajaxSetup({async: false});
+                                                                        setConfirmUnloadPoints(true);
+                                                                        return $.post( "/set-latin-points", data).done(function(data) {
+                                                                            end();
+                                                                            setConfirmUnloadPoints(false);
+                                                                            data = JSON.parse(data);
+                                                                            if(data.result &amp;&amp; data.points_latin > 0)
+                                                                            {
+                                                                                $("#button_reward_ad").prop( "disabled", true );
+                                                                                var btnvalue = $("#button_reward_ad").html();
+                                                                                $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
+                                                                                $(".modal-body").html($("#modal_reward_message").text() + data.points_latin + " Latin points.");
+                                                                                $("#open_modal").click();
+                                                                                setTimeout(function ()
+                                                                                {
+                                                                                    $("#button_reward_ad").html(btnvalue);
+                                                                                    $("#button_reward_ad").prop( "disabled", false );
+                                                                                }, 5000);
+                                                                                //alert("+" + data.points_latin + " Latin points.");
+                                                                            }
+                                                                            start();
+                                                                        }).fail(function() {
+                                                                            setConfirmUnloadPoints(false);
+                                                                        });
+                                                                    }
+                                                                } else {
+                                                                    // fallback logic
+                                                                    // showAdErrorModal()
+                                                                }
+                                                                
+                                                            } catch (err) {
+                                                                // good practice to handle any potential errors
+                                                            }
+                                                        }
+                                                    });
+                                                }
                                             });
                                         });
                                     }).catch(function(error) {
@@ -1865,6 +1971,9 @@
                                     <button id="share_video" class="btn btn-outline-danger" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button>
                                 </div>
                             </t>-->
+                            <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px">
+                                <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success" disabled="true" style="max-width: 300px"><div>Watch ad</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%; display: none">Testing feature</div></button>
+                            </div>
                             <div style="margin-bottom:5px">
                                 <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3o2Tbr75z-5oDg1AFNZ1u8" class="btn btn-danger open_streaming_playlist" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top videos</div></button>
                             </div>
@@ -2524,6 +2633,30 @@
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
                     </script>
+                    
+                    <!-- Button trigger modal -->
+                    <button id="open_modal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" style="display: none;">
+                      Open Modal
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Message</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     
                     
                 </body>
