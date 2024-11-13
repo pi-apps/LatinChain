@@ -1466,6 +1466,7 @@
                                                                                     $("#button_reward_ad").html(btnvalue);
                                                                                     $("#button_reward_ad").prop( "disabled", false );
                                                                                 }, 5000);
+                                                                                get_user();
                                                                                 //alert("+" + data.points_latin + " Latin points.");
                                                                             }
                                                                             start();
