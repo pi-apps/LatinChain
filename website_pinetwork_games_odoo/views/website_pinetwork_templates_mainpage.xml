@@ -1510,7 +1510,9 @@
                                                 {
                                                     //if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                     showPiAds(Pi);
-                                                    
+                                                }
+                                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                {    
                                                     var startTime=new Date(), endTime=new Date(), seconds=0;
 
                                                     function start() {
