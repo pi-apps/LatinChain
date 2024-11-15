@@ -2096,7 +2096,7 @@
                                 <h5 translate="no"><strong>#LatinChain #Magazine &#127909;</strong></h5>
                             </div>
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px">
-                                <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success font-weight-bold" disabled="true" style="max-width: 300px"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch ad</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%; display: none">Testing feature</div></button>
+                                <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success font-weight-bold" disabled="true" style="max-width: 300px"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%; display: none">Testing feature</div></button>
                             </div>
                             
                             <div class="show-streamerzoneboard" style="margin-bottom:5px; display:none" t-if="pioneers_streaming">
