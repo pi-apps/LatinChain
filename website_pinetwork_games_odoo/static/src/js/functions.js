@@ -318,6 +318,25 @@ $( document ).ready(function() {
                                                         $("#button_reward_ad").prop( "disabled", false );
                                                     }, 5000);
                                                     //alert("+" + data.points_latin + " Latin points.");
+                                                    
+                                                    if(pi_user_id != "" && pi_user_code != "")
+                                                    {
+                                                        var data = {
+                                                            'pi_user_id': pi_user_id,
+                                                            'pi_user_code': pi_user_code,
+                                                            'accessToken': accessToken,
+                                                            'csrf_token': odoo.csrf_token,
+                                                        };
+                                                        //$.ajaxSetup({async: false});
+                                                        return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                                                            data = JSON.parse(data);
+                                                            if(data.result)
+                                                            {
+                                                            }
+                                                        }).fail(function() {
+                
+                                                        });
+                                                    }
                                                 }
                                                 start();
                                             }).fail(function() {
