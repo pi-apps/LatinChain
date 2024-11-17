@@ -1506,6 +1506,8 @@
                                         //get_user();
                                         set_points(0).always(function(){
                                             get_user().always(function(){
+			                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+			                            $("#button_reward_ad").prop( "disabled", false );
                                                 if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     //if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
@@ -1528,8 +1530,6 @@
                                                       // get seconds 
                                                       seconds = Math.round(timeDiff);
                                                     }
-                                                    
-                                                    $("#button_reward_ad").prop( "disabled", false );
                         
                                                     var start_flag = false;
                                                     
