@@ -1509,10 +1509,10 @@
                                                 if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     //if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                                    showPiAds(Pi);
-                                                }
-                                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                                {    
+                                                    //showPiAds(Pi);
+                                                //}
+                                                //if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                //{    
                                                     var startTime=new Date(), endTime=new Date(), seconds=0;
 
                                                     function start() {
@@ -1601,6 +1601,24 @@
                                                                                 
                                                                                 get_user_rewarded();
                                                                                 //alert("+" + data.points_latin + " Latin points.");
+			                                                        if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                                                                {
+                                                                                    var data = {
+                                                                                        'pi_user_id': pi_user_id,
+                                                                                        'pi_user_code': pi_user_code,
+                                                                                        'accessToken': accessToken,
+                                                                                        'csrf_token': odoo.csrf_token,
+                                                                                    };
+                                                                                    //$.ajaxSetup({async: false});
+                                                                                    return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                                                                                        data = JSON.parse(data);
+                                                                                        if(data.result)
+                                                                                        {
+                                                                                        }
+                                                                                    }).fail(function() {
+                                            
+                                                                                    });
+                                                                                }
                                                                             }
                                                                             start();
                                                                         }).fail(function() {
