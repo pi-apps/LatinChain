@@ -1507,9 +1507,10 @@
                                         set_points(0).always(function(){
                                             get_user().always(function(){
 			                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+			                        {
 			                            $("#button_reward_ad").prop( "disabled", false );
-                                                if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                                {
+                                                //if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                                //{
                                                     //if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                     //showPiAds(Pi);
                                                 //}
@@ -1635,7 +1636,8 @@
                                                             }
                                                         }
                                                     });
-			                            $( "#button_reward_ad" ).click();
+			                            if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+			                                $( "#button_reward_ad" ).click();
                                                 }
                                             });
                                         });
