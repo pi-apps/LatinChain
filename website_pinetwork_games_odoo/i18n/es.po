@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 07:36+0000\n"
-"PO-Revision-Date: 2024-11-15 07:36+0000\n"
+"POT-Creation-Date: 2024-11-19 05:24+0000\n"
+"PO-Revision-Date: 2024-11-19 05:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -568,6 +568,11 @@ msgstr ""
 "                                            <br/>La URL de un video de Youtube se ve así:<br/>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "<br/>Testnet:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>User: <strong id=\"user_logged\" translate=\"no\">--</strong><br/>\n"
@@ -1100,6 +1105,7 @@ msgstr "Cripto Noticias"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.askanexpert
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid "Current time:"
 msgstr "Hora actual:"
 
@@ -1427,6 +1433,11 @@ msgid "LatinChain dSocial"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "LatinChain<br/>Mainnet:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Leaders"
 msgstr "Líderes"
@@ -1610,6 +1621,14 @@ msgid "Operations"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid ""
+"Partners list. To be on this list, contact to this email: "
+"latinchain.info@gmail.com"
+msgstr "Lista de socios. Para estar en esta lista, contacta a este email: "
+"latinchain.info@gmail.com"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Pause"
 msgstr "Pausa"
@@ -1630,6 +1649,11 @@ msgstr "Anuncio de Pi Hackathon"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Pi Hackathon winners"
 msgstr "Ganadores del Pi Hackathon"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "Pi Network:"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1750,6 +1774,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Prize payment for"
 msgstr "Pago de los premios para"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "RadioForUs<br/>Mainnet:"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1896,6 +1925,11 @@ msgstr "Compartir en Redes Sociales:<br/><br/>"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Show Hint"
 msgstr "Muestra Pista"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "SilkRoad for Pi<br/>Mainnet:"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
@@ -2088,6 +2122,7 @@ msgstr "UTC, el próximo pago será el día 15 del siguiente mes."
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.askanexpert
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid "UTC."
 msgstr ""
 
@@ -2358,13 +2393,44 @@ msgid "certification"
 msgstr "certificación"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "https://latin-chain.com"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "https://latin-chain.com/latinchain-certification/"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "https://mainnet.pisilkroad.com"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "https://mainnet.radioforus.com"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid "https://minepi.com/rockcesar"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "https://pisilkroad.com"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "https://radioforus.com"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "https://test.latin-chain.com"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2409,6 +2475,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "or"
 msgstr "ó"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "partners"
+msgstr "socios"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club

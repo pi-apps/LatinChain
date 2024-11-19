@@ -512,5 +512,71 @@
                 </html>
             </t>
 		</template>
+        
+        <template id="partners" name="Partners View">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                        <title>Partners</title>
+                        <meta name="apple-mobile-web-app-capable" content="yes" />
+                        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+                        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                        
+                        <!-- ios support -->
+                        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+                        <meta name="theme-color" content="#db4938" />
+                        
+                        <meta name="application-name" content="Partners"/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                        
+                    </head>
+
+                    <body>
+                        <div class="container form-group" style="text-align:center; max-width: 810px;">
+                            <br/>
+                            <style>
+                                .border-gradient-rounded {
+                                  /* Border */
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, white, white), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: black !important;
+                                }
+                            </style>
+                            <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
+                            <h3>Partners list. To be on this list, contact to this email: latinchain.info@gmail.com</h3>
+                            <br/>
+                            <div style="border:3px solid; margin-bottom:5px; padding:5px; width: 100%;" class="rounded">
+                                <div style="margin-bottom:5px" class="border-bottom border-5">
+                                    <h5 translate="no"><strong>LatinChain<br/>Mainnet: <a href="https://latin-chain.com" target="_blank">https://latin-chain.com</a><br/>Testnet: <a href="https://test.latin-chain.com" target="_blank">https://test.latin-chain.com</a></strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px" class="border-bottom border-5">
+                                    <h5 translate="no"><strong>Pi Network: <a href="https://minepi.com/rockcesar" target="_blank">https://minepi.com/rockcesar</a></strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px" class="border-bottom border-5">
+                                    <h5 translate="no"><strong>RadioForUs<br/>Mainnet: <a href="https://mainnet.radioforus.com" target="_blank">https://mainnet.radioforus.com</a><br/>Testnet: <a href="https://radioforus.com" target="_blank">https://radioforus.com</a></strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px" class="border-bottom border-5">
+                                    <h5 translate="no"><strong>SilkRoad for Pi<br/>Mainnet: <a href="https://mainnet.pisilkroad.com" target="_blank">https://mainnet.pisilkroad.com</a><br/>Testnet: <a href="https://pisilkroad.com" target="_blank">https://pisilkroad.com</a></strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/><br/><br/><br/>
+                    </body>
+                </html>
+            </t>
+		</template>
 
 </odoo>
