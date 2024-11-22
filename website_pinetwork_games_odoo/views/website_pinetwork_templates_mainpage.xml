@@ -1890,6 +1890,8 @@
                               <li data-target="#myCarousel1647794696348" data-slide-to="7"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="8"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="9"/>
+                              <li data-target="#myCarousel1647794696348" data-slide-to="10"/>
+                              <li data-target="#myCarousel1647794696348" data-slide-to="11"/>
                             </ol>
                             <div class="carousel-inner">
                               <t t-set="background" t-value="'background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;'"/>
@@ -1922,7 +1924,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="/website/social/youtube" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Subscribe Youtube Channel</div></a>
+                                          <a href="/website/social/youtube" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Youtube</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1934,7 +1936,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="https://tiktok.com/@rockcesar85" target="_blank" class="btn btn-dark mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa-brands fa-tiktok"></i></div> <div style="display:inline;"><div style="display:inline;">Subscribe Tiktok Channel</div></div></a>
+                                          <a href="https://tiktok.com/@rockcesar85" target="_blank" class="btn btn-dark mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa-brands fa-tiktok"></i></div> <div style="display:inline;"><div style="display:inline;">Tiktok</div></div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1946,7 +1948,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="/website/social/twitter" target="_blank" class="btn btn-dark mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div> <div style="display:inline;"><div style="display:inline;">Join Twitter</div><div style="display:inline;">(X)</div></div></a>
+                                          <a href="/website/social/twitter" target="_blank" class="btn btn-dark mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div> <div style="display:inline;"><div style="display:inline;">Twitter</div><div style="display:inline;">(X)</div></div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1958,7 +1960,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <h2 style="font-size: 20px;" class="o_default_snippet_text">
-                                          <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-info mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-telegram"></i></div> <div style="display:inline;">Join Telegram Group</div></a>
+                                          <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-info mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-telegram"></i></div> <div style="display:inline;">Telegram</div></a>
                                       </h2>
                                       <!--<div class="s_hr pt8 pb10" data-snippet="s_hr" data-name="Separator">
                                         <hr class="w-25 mx-auto" style="border-top-width: 1px; border-top-style: solid;"/>
@@ -1977,7 +1979,33 @@
                                     <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
                                       <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-discord"></i></div> <div style="display:inline;">Join Discord Server</div></a>
+                                      <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-discord"></i></div> <div style="display:inline;">Discord</div></a>
+                                      </h2>
+                                      <br/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" t-att-style="background" data-name="Slide">
+                                <div class="container">
+                                  <div class="row content">
+                                    <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
+                                      <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
+                                      <h2 style="font-size: 30px;" class="o_default_snippet_text">
+                                      <a href="https://www.facebook.com/groups/365500906588396" target="_blank" class="btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-facebook"></i></div> <div style="display:inline;">Facebook</div></a>
+                                      </h2>
+                                      <br/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level" t-att-style="background" data-name="Slide">
+                                <div class="container">
+                                  <div class="row content">
+                                    <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt8 pb4 o_colored_level">
+                                      <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
+                                      <h2 style="font-size: 30px;" class="o_default_snippet_text">
+                                      <a href="https://www.instagram.com/rockcesar85/" target="_blank" class="btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-instagram"></i></div> <div style="display:inline;">Instagram</div></a>
                                       </h2>
                                       <br/>
                                     </div>
