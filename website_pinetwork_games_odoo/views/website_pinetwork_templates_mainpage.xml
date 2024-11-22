@@ -885,21 +885,24 @@
                         var colorbox_opened = false;
                         async function colorboxLoaded()
                         {
-                            if($.colorbox &amp;&amp; !colorbox_opened &amp;&amp; ["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                            if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                             {
-                                $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:true, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-                                colorbox_opened = true;
-                            }else{
-                                if(colorbox_count &gt; 900)
-                                    return false;
-                                setTimeout(function() {
-                                  colorbox_count += 1;
-                                  colorboxLoaded();
-                                }, 100);
+                                if($.colorbox &amp;&amp; !colorbox_opened)
+                                {
+                                    $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:true, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                                    colorbox_opened = true;
+                                }else{
+                                    if(colorbox_opened)
+                                        return false;
+                                    if(colorbox_count &gt; 900)
+                                        return false;
+                                    setTimeout(function() {
+                                      colorbox_count += 1;
+                                      colorboxLoaded();
+                                    }, 100);
+                                }
                             }
                         }
-                        
-                        colorboxLoaded();
 
                         function set_points(points) {
                             if(pi_user_id != "" &amp;&amp; pi_user_code != "")
@@ -1275,6 +1278,7 @@
                         }
 
                         $( document ).ready(function() {
+                            colorboxLoaded();
                         
                             window.addEventListener('unhandledrejection', function (e) {
                                 e.preventDefault();
