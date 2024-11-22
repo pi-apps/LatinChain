@@ -844,7 +844,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
-                    <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.101"></script>
+                    <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.102"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1465,11 +1465,14 @@
                             
                             async function auth() {
                                 try {
-                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
-                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-                                    
-                                    if(!adNetworkSupported)
-                                        alert("Update Pi Browser version, please!.");
+                                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                    {
+                                        const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                        const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                        
+                                        if(!adNetworkSupported)
+                                            alert("Update Pi Browser version, please!.");
+                                    }
                                     
                                     // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
                                     const scopes = ['username', 'payments', 'wallet_address'];
