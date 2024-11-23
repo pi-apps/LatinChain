@@ -909,7 +909,7 @@
                                 $(".open_streaming").click(function(){
                                     var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
                                     streaming_url = streaming_url[1];
-                                    jQuery.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '?autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+                                    $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '?autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
                                 });
                             
                                 $(".on-page-search").on("input.highlight", function() {
@@ -1126,7 +1126,7 @@
                                 $(".open_streaming").click(function(){
                                     var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
                                     streaming_url = streaming_url[1];
-                                    jQuery.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '?autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+                                    $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '?autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
                                 });
                             
                                 $(".on-page-search").on("input.highlight", function() {
@@ -1983,7 +1983,7 @@
                             
                             $(".open_streaming").click(function(){
                                 var streaming_url = $(this).attr("videourl");
-                                jQuery.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="' + streaming_url + '&amp;autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+                                $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="' + streaming_url + '&amp;autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
                             });
                         } );
                     </script>
