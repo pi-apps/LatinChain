@@ -127,14 +127,9 @@
                         
                         <script type="text/javascript">
                             $( document ).ready(function() {
-                                function press(key)
-                                {
-                                    var e = parent.jQuery.Event( "keydown", { which: key, keyCode: key } );
-                                    parent.jQuery( "body" ).trigger( e );
-                                }
-                                
                                 $(".return").click(function(){
-                                    press(27);
+                                    $(".modal-body").html($("#close_message").text());
+                                    $("#open_modal").click();
                                 });
                             });
                         </script>
@@ -143,6 +138,9 @@
 
                     <body>
                         <div class="container form-group" style="text-align:center; max-width: 810px">
+                            <div id="close_message">
+                                Click in the X button, right upside of the screen.
+                            </div>
                             <br/>
                             <div style="font-size: 95%">
                                 We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem. Get double utility usage bonus <i class="fa-solid fa-bolt"></i> by using both Mainnet and Testnet.
@@ -216,6 +214,30 @@
                           window._taboola = window._taboola || [];
                           _taboola.push({flush: true});
                         </script>
+                        
+                        <!-- Button trigger modal -->
+                        <button id="open_modal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" style="display: none;">
+                          Open Modal
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="ModalLabel">Message</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                     </body>
                 </html>
             </t>
