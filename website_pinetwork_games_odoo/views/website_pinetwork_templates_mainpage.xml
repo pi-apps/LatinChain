@@ -891,6 +891,9 @@
                                 {
                                     $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                                     colorbox_opened = true;
+                                    setTimeout(function(){
+                                        $.colorbox.close();
+                                    }, 20000);
                                 }else{
                                     if(colorbox_opened)
                                         return false;
