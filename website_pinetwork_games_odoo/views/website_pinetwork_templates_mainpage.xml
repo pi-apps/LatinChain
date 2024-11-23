@@ -887,8 +887,7 @@
                         {
                             if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                             {
-                                $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:true, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-                                /*if($.colorbox &amp;&amp; !colorbox_opened)
+                                if($.colorbox &amp;&amp; !colorbox_opened)
                                 {
                                     $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:true, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                                     colorbox_opened = true;
@@ -901,7 +900,7 @@
                                       colorbox_count += 1;
                                       colorboxLoaded();
                                     }, 100);
-                                }*/
+                                }
                             }
                         }
 
@@ -1279,7 +1278,8 @@
                         }
 
                         $( document ).ready(function() {
-                        
+                            colorboxLoaded();
+                            
                             window.addEventListener('unhandledrejection', function (e) {
                                 e.preventDefault();
                                 e.stopPropagation();
@@ -1520,7 +1520,7 @@
                                         //get_user();
                                         set_points(0).always(function(){
                                             get_user().always(function(){
-                                                //colorboxLoaded();
+                                                
                                                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     $("#button_reward_ad").prop( "disabled", false );
