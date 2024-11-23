@@ -128,7 +128,7 @@
                         <script type="text/javascript">
                             $( document ).ready(function() {
                                 $(".return").click(function(){
-                                    parent.$("#button-inicio").colorbox.remove();
+                                    parent.$("#button-inicio").colorbox.close();
                                 });
                             });
                         </script>
