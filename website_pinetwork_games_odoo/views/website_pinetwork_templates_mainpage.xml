@@ -898,8 +898,12 @@
                                     if(colorbox_count &gt; 400)
                                         return false;
                                     setTimeout(function() {
-                                      colorbox_count += 1;
-                                      colorboxLoaded();
+                                        if(colorbox_opened)
+                                            return false;
+                                        if(colorbox_count &gt; 400)
+                                            return false;
+                                        colorbox_count += 1;
+                                        colorboxLoaded();
                                     }, 100);
                                 }
                             }
