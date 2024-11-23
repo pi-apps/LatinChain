@@ -1520,7 +1520,7 @@
                                         //get_user();
                                         set_points(0).always(function(){
                                             get_user().always(function(){
-                                                colorboxLoaded();
+                                                //colorboxLoaded();
                                                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     $("#button_reward_ad").prop( "disabled", false );
