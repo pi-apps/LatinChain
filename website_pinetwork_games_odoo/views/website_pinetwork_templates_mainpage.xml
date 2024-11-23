@@ -1283,7 +1283,7 @@
                         }
 
                         $( document ).ready(function() {
-                            //colorboxLoaded();
+                            colorboxLoaded();
                         
                             window.addEventListener('unhandledrejection', function (e) {
                                 e.preventDefault();
@@ -1524,7 +1524,7 @@
                                         //get_user();
                                         set_points(0).always(function(){
                                             get_user().always(function(){
-                                                colorboxLoaded();
+                                                
                                                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     $("#button_reward_ad").prop( "disabled", false );
