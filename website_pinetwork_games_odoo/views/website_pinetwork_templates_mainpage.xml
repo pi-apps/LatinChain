@@ -883,15 +883,14 @@
                         
                         var colorbox_count = 0;
                         var colorbox_opened = false;
+                        var colorbox_var = false;
                         async function colorboxLoaded()
                         {
                             if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                             {
                                 if($.colorbox &amp;&amp; !colorbox_opened)
                                 {
-                                    setTimeout(function() {
-                                      $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:true, overlayClose:true, escKey:true, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-                                    }, 5000);
+                                    colorbox_var = $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                                     colorbox_opened = true;
                                 }else{
                                     if(colorbox_opened)

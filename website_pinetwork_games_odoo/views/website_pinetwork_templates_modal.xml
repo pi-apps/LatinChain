@@ -128,8 +128,11 @@
                         <script type="text/javascript">
                             $( document ).ready(function() {
                                 $(".return").click(function(){
-                                    $(".modal-body").html($("#close_message").text());
+                                    $(".modal-body").html("It will close in 5 seconds.");
                                     $("#open_modal").click();
+                                    setTimeout(function() {
+                                      parent.jQuery.colorbox.close();
+                                    }, 5000);
                                 });
                             });
                         </script>
