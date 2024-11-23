@@ -125,6 +125,20 @@
                             {window.performance.mark('tbl_ic');}
                         </script>
                         
+                        <script type="text/javascript">
+                            $( document ).ready(function() {
+                                function press(key)
+                                {
+                                    var e = parent.jQuery.Event( "keydown", { which: key, keyCode: key } );
+                                    parent.jQuery( "body" ).trigger( e );
+                                }
+                                
+                                $(".return").click(function(){
+                                    press(27);
+                                });
+                            });
+                        </script>
+                        
                     </head>
 
                     <body>
@@ -138,7 +152,7 @@
                             <a href="/mainnet" target="_blank" class="btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>
                             <br/>
                             <br/>
-                            <a href="javascript:void(0);" onclick="parent.$.colorbox.close();">Return to LatinChain Testnet</a>
+                            <a href="javascript:void(0);" class="return">Return to LatinChain Testnet</a>
                             <br/>
                             <br/>
                             <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
