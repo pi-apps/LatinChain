@@ -885,15 +885,13 @@
                         var colorbox_opened = false;
                         async function colorboxLoaded()
                         {
+                            /*
                             if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                             {
                                 if($.colorbox &amp;&amp; !colorbox_opened)
                                 {
                                     $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                                     colorbox_opened = true;
-                                    setTimeout(function(){
-                                        $.colorbox.close();
-                                    }, 20000);
                                 }else{
                                     if(colorbox_opened)
                                         return false;
@@ -905,6 +903,7 @@
                                     }, 100);
                                 }
                             }
+                            */
                         }
 
                         function set_points(points) {
