@@ -889,7 +889,9 @@
                             {
                                 if($.colorbox &amp;&amp; !colorbox_opened)
                                 {
-                                    $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:true, overlayClose:true, escKey:true, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                                    setTimeout(function(){
+                                        $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:true, overlayClose:true, escKey:true, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                                    }, 10000);
                                     colorbox_opened = true;
                                 }else{
                                     if(colorbox_opened)
