@@ -889,7 +889,7 @@
                             {
                                 if($.colorbox &amp;&amp; !colorbox_opened)
                                 {
-                                    $.colorbox({width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%", html:'<iframe id="latin-chain" width="100%" height="100%" src="/latinchain-mainnet-redirect"></iframe>'});
+                                    $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:true, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                                     colorbox_opened = true;
                                 }else{
                                     if(colorbox_opened)
@@ -1279,7 +1279,7 @@
 
                         $( document ).ready(function() {
                             colorboxLoaded();
-                            
+                        
                             window.addEventListener('unhandledrejection', function (e) {
                                 e.preventDefault();
                                 e.stopPropagation();
@@ -1493,7 +1493,6 @@
                                     }, 5000);
 
                                     Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                                        
                                         pi_user_id = auth.user.uid;
                                         pi_user_code = auth.user.username;
                                         accessToken = auth.accessToken;
@@ -1520,7 +1519,6 @@
                                         //get_user();
                                         set_points(0).always(function(){
                                             get_user().always(function(){
-                                                
                                                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                 {
                                                     $("#button_reward_ad").prop( "disabled", false );
