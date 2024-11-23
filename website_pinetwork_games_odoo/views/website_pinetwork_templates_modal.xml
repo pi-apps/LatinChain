@@ -128,11 +128,7 @@
                         <script type="text/javascript">
                             $( document ).ready(function() {
                                 $(".return").click(function(){
-                                    $(".modal-body").html("It will close in 5 seconds.");
-                                    $("#open_modal").click();
-                                    setTimeout(function() {
-                                      parent.$('#cboxClose').click();
-                                    }, 5000);
+                                    parent.jQuery.colorbox.remove();
                                 });
                             });
                         </script>
