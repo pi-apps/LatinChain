@@ -138,7 +138,7 @@
                             <a href="/mainnet" target="_blank" class="btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>
                             <br/>
                             <br/>
-                            <button class="btn btn-link" onclick="parent.jQuery.colorbox.close();">Return to LatinChain Testnet</button>
+                            <button onClick="window.parent.location.href='/?nopopup=true'" class="btn btn-link">Return to LatinChain Testnet</button>
                             <br/>
                             <br/>
                             <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">

@@ -885,7 +885,7 @@
                         var colorbox_opened = false;
                         async function colorboxLoaded()
                         {
-                            if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                            if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) &amp;&amp; $("#nopopup").val() == false)
                             {
                                 if($.colorbox &amp;&amp; !colorbox_opened)
                                 {
@@ -1864,7 +1864,8 @@
                     </style>
                 </head>
                 <body>
-                    
+
+		    <input type="hidden" id="nopopup" t-att-value="nopopup"/>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
                     <input type="hidden" id="mainnet" t-att-value="mainnet"/>
