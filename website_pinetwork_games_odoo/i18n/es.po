@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-23 07:11+0000\n"
-"PO-Revision-Date: 2024-11-23 07:11+0000\n"
+"POT-Creation-Date: 2024-11-24 22:49+0000\n"
+"PO-Revision-Date: 2024-11-24 22:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -929,6 +929,11 @@ msgid "Adrian"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.askanexpert
+msgid "Adrian Latorre"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -1074,13 +1079,7 @@ msgid "Click here"
 msgstr "Click aquí"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
-msgid "Click in the X button, right upside of the screen."
-msgstr "Haga clic en el botón X, justo en la parte superior de la pantalla."
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Close"
@@ -1379,6 +1378,11 @@ msgid "Jonathan"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.askanexpert
+msgid "Jonathan Garcia Barroso"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Josue"
 msgstr ""
@@ -1539,6 +1543,11 @@ msgid "Marina"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.askanexpert
+msgid "Marina Molechino"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Medium puzzle"
 msgstr "Juego medio"
@@ -1554,7 +1563,6 @@ msgid "Memo ID"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Message"
@@ -1627,7 +1635,6 @@ msgid "Odoo App"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Open Modal"
@@ -2080,6 +2087,17 @@ msgstr "Lo siguiente certifica que el Pionero"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "This info refers to:"
 msgstr "Esta info se refiere a:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.askanexpert
+msgid ""
+"This is a list of LatinChain Platform (latin-chain.com) experts, among of "
+"them there are Social Networks experts, Computer Scientists and other "
+"interesting professions, from around the World. Check it out!."
+msgstr ""
+"Esta es una lista de expertos(as) en LatinChain Platform (latin-chain.com), entre ellos(as) "
+"hay expertos(as) en Redes Sociales, Informáticos(as) y otras interesantes "
+"profesiones, de todo el Mundo. ¡Échale un vistazo!."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.iframetester
