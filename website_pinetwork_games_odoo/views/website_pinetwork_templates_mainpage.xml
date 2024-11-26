@@ -1086,7 +1086,6 @@
                                         $(".show-tvonline").show();
                                         $(".show-cointelegraph").show();
                                         $(".show-streamerzoneboard").show();
-                                        $(".show-iframetester").show();
                                         
                                         passkey=data.passkey;
                                         if(data.unblocked)
@@ -1807,10 +1806,6 @@
                                 $.colorbox({href:"https://pluto.tv/latam/live-tv/6320d80a66666000086712d7?lang=en", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
-                            $( ".iframetester" ).click(function() {
-                                $.colorbox({href:"/iframetester", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-                            });
-                            
                             
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm($( "#clear_cache_message" ).text());
@@ -2501,13 +2496,6 @@
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><button id="cointelegraph" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cointelegraph" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">COINTELEGRAPH</div><div style="font-size:80%;">Crypto news</div></button></div>
-                                                <div class="col-0"></div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-iframetester" style="display:none">
-                                            <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="iframetester" class="col-10 btn btn-outline-success font-weight-bold text-black border-success iframetester" style="border: 2px solid;"><div style=""><i class="fa-solid fa-flask-vial"></i></div><div style="font-size:100%;" translate="no">iFrame Tester</div><div style="font-size:80%;">Test your URLs</div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>

@@ -507,6 +507,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.partners', {'mainnet': mainnet})
     
+    """
     @http.route('/iframetester', type='http', auth="public", website=True, csrf=False)
     def iframetester(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
@@ -517,3 +518,4 @@ class PiNetworkController(http.Controller):
             mainnet = admin_app_list[0].mainnet
         
         return http.request.render('website_pinetwork_games_odoo.iframetester', {'mainnet': mainnet})
+    """
