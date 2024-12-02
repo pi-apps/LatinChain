@@ -89,7 +89,7 @@
                         <meta charset="UTF-8"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-                        <title>LatinChain X.</title>
+                        <title>LatinChain Redirect.</title>
                         <meta name="apple-mobile-web-app-capable" content="yes" />
                         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
                         <meta name="viewport" content="width=device-width, user-scalable=yes"/>
@@ -505,21 +505,30 @@
                             <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
                             <h3>Partners list. To be on this list, contact to this email: latinchain.info@gmail.com</h3>
                             <br/>
-                            <div style="border:3px solid; margin-bottom:5px; padding:5px; width: 100%;" class="rounded">
-                                <div style="margin-bottom:5px" class="border-bottom border-5">
+                            <div style="border:3px solid; margin-bottom:5px; padding:5px; width: 100%; background-color: white !important; filter: contrast(100%) !important;" class="rounded">
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
                                     <h5 translate="no"><img width="50" height="50" src="https://latin-chain.com/web/image/website/1/logo/LatinChain?unique=8b8d8a1" /><br/><strong>LatinChain.<br/>Mainnet: <a href="https://latin-chain.com" target="_blank">Link</a>.<br/>Testnet: <a href="https://test.latin-chain.com" target="_blank">Link</a>.</strong></h5>
                                 </div>
-                                <div style="margin-bottom:5px" class="border-bottom border-5">
-                                    <h5 translate="no"><img width="200" height="50" src="https://cdn-ilcbnhb.nitrocdn.com/eyWebYtfntWmnihDSZRZvIqipddxdlOp/assets/images/optimized/rev-354e8c8/minepi.com/wp-content/uploads/2022/06/Pi-Network.png" /><br/><strong>Pi Network: <a href="https://minepi.com/rockcesar" target="_blank">Link</a>.</strong></h5>
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
+                                    <h5 translate="no"><img width="200" height="50" src="https://cdn-ilcbnhb.nitrocdn.com/eyWebYtfntWmnihDSZRZvIqipddxdlOp/assets/images/optimized/rev-354e8c8/minepi.com/wp-content/uploads/2022/06/Pi-Network.png" /><br/><strong>Pi Network | Pi Ads (LatinChain Mainnet): <a href="https://minepi.com/rockcesar" target="_blank">Link</a>.</strong></h5>
                                 </div>
-                                <div style="margin-bottom:5px" class="border-bottom border-5">
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
                                     <h5 translate="no"><img width="50" height="50" src="https://piketplace.com/img/logo.png" /><br/><strong>Piketplace.<br/>Mainnet: <a href="https://mainnet.piketplace.com" target="_blank">Link</a>.</strong></h5>
                                 </div>
-                                <div style="margin-bottom:5px" class="border-bottom border-5">
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
                                     <h5 translate="no"><img width="50" height="50" src="https://radioforus.com/wp-content/uploads/2023/02/cropped-Radioforus-86x86.png" /><br/><strong>RadioForUs.<br/>Mainnet: <a href="https://mainnet.radioforus.com" target="_blank">Link</a>.<br/>Testnet: <a href="https://radioforus.com" target="_blank">Link</a>.</strong></h5>
                                 </div>
-                                <div style="margin-bottom:5px" class="border-bottom border-5">
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
                                     <h5 translate="no"><img width="200" height="50" src="https://mainnet.pisilkroad.com/logo.png" /><br/><strong>SilkRoad for Pi.<br/>Mainnet: <a href="https://mainnet.pisilkroad.com" target="_blank">Link</a>.<br/>Testnet: <a href="https://pisilkroad.com" target="_blank">Link</a>.</strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
+                                    <h5 translate="no"><img width="200" height="50" src="https://upload.wikimedia.org/wikipedia/commons/9/97/Google_Adsense_logo.png" /><br/><strong>Google Adsense (LatinChain Testnet): <a href="https://adsense.google.com/intl/es-419/start/" target="_blank">Link</a>.</strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
+                                    <h5 translate="no"><img width="200" height="50" src="https://upload.wikimedia.org/wikipedia/commons/0/06/Taboola_logo.svg" /><br/><strong>Taboola (LatinChain Testnet): <a href="https://www.taboola.com/es/" target="_blank">Link</a>.</strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px;" class="border-bottom border-5">
+                                    <h5 translate="no"><img width="200" height="50" src="/website_pinetwork_games_odoo/static/src/img/amazon_logo.png?v=1.101" /><br/><strong>Amazon Associate (LatinChain Testnet): <a href="https://affiliate-program.amazon.com" target="_blank">Link</a>.</strong></h5>
                                 </div>
                             </div>
                         </div>
