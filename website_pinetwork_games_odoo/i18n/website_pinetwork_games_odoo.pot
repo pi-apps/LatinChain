@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-02 10:36+0000\n"
-"PO-Revision-Date: 2024-12-02 10:36+0000\n"
+"POT-Creation-Date: 2024-12-02 21:56+0000\n"
+"PO-Revision-Date: 2024-12-02 21:56+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -849,6 +849,11 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "Amazon Associates (LatinChain Testnet):"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "Amount"
 msgstr ""
@@ -908,6 +913,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Back"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Best Amazon products list. Updated frequently."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1150,6 +1161,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Go to one of the games to do it."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "Google Adsense (LatinChain Testnet):"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1533,7 +1549,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
-msgid "Pi Network:"
+msgid "Pi Network | Pi Ads (LatinChain Mainnet):"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1605,7 +1621,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
-msgid "Piketplace.<br/>Mainnet:"
+msgid "Piketplace:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1765,12 +1781,6 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "See our recommended Amazon products"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "Session:"
 msgstr ""
@@ -1843,6 +1853,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Table of all winners (verified)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
+msgid "Taboola (LatinChain Testnet):"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
