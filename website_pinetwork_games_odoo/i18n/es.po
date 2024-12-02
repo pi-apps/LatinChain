@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-24 22:49+0000\n"
-"PO-Revision-Date: 2024-11-24 22:49+0000\n"
+"POT-Creation-Date: 2024-12-02 05:41+0000\n"
+"PO-Revision-Date: 2024-12-02 05:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "#Amazon"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -498,6 +503,14 @@ msgstr ""
 "                                    Click en Borrar Cache ó <i class=\"fa fa-refresh\"/> si el botón Donar no se activa.\n"
 "                                    <br/>\n"
 "                                    <br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<br/><br/>\n"
+"                            \n"
+"                            Fan pages:<br/><br/>"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1077,6 +1090,12 @@ msgstr "Borrar Caché"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 msgid "Click here"
 msgstr "Click aquí"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Click here to see Amazon products"
+msgstr "Click aquí para ver productos de Amazon"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1841,11 +1860,6 @@ msgid "Refresh"
 msgstr "Refrescar"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.iframetester
-msgid "Render iFrame"
-msgstr "Muestra iFrame"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Repository"
 msgstr "Repositorio"
@@ -1936,16 +1950,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "Session:"
 msgstr "Sesión:"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.iframetester
-msgid "Set an URL to test."
-msgstr "Coloca un URL a probar."
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.iframetester
-msgid "Set your URL"
-msgstr "Coloca tu URL"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2049,11 +2053,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Test your URLs"
-msgstr "Prueba tus URLs"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Testing feature"
 msgstr "Función de prueba"
@@ -2095,20 +2094,9 @@ msgid ""
 "them there are Social Networks experts, Computer Scientists and other "
 "interesting professions, from around the World. Check it out!."
 msgstr ""
-"Esta es una lista de expertos(as) en LatinChain Platform (latin-chain.com), entre ellos(as) "
-"hay expertos(as) en Redes Sociales, Informáticos(as) y otras interesantes "
-"profesiones, de todo el Mundo. ¡Échale un vistazo!."
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.iframetester
-msgid ""
-"This webpage is to test if an URL you provide can be viewed embeded in an "
-"iFrame. Using X-Frame-Options in your headers, you can allow or deny that "
-"your webpage can be viewed in an iFrame."
-msgstr ""
-"Esta webpage es para probar si una URL que proveas puede ser vista embebida "
-"en un iFrame. Usando X-Frame-Options en tus headers, puedes permitir ó "
-"denegar que tu webpage pueda ser vista desde un iFrame."
+"Esta es una lista de expertos(as) en LatinChain Platform (latin-chain.com), "
+"entre ellos(as) hay expertos(as) en Redes Sociales, Informáticos(as) y otras"
+" interesantes profesiones, de todo el Mundo. ¡Échale un vistazo!."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2472,11 +2460,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "https://www.youtube.com/watch?v=9KqcyAoCZzo"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "iFrame Tester"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
