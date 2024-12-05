@@ -2222,11 +2222,17 @@
                                             {
                                                 unblocked = data.unblocked;
                                                 
-                                                startLatinChainSports("#show_content");
-                                                $("#show_content").show();
+                                                if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                                                {
+                                                    startLatinChainSports("#show_content");
+                                                    $("#show_content").show();
+                                                }
                                             }else
                                             {
-                                                $("#show_button").show();
+                                                if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                                                {
+                                                    $("#show_button").show();
+                                                }
                                             }
                                         }
                                         
@@ -2400,9 +2406,9 @@
                         <div id="show_pibrowser" style="display: none">
                             Access throught Pi Browser (Pi Network).
                         </div>
-                        <div id="show_content" style="display: none">
+                        <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="show_content" style="display: none">
                         </div>
-                        <div id="show_button" style="display: none">
+                        <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="show_button" style="display: none">
                             <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Sports</div><div style="font-size:80%;">Gain Latin points</div></a>
                         </div>
                         <br/>
