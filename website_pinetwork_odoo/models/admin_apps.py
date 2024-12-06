@@ -1162,8 +1162,8 @@ class admin_apps(models.Model):
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 data_write = {'unblocked_datetime': datetime.now()}
                                 
-                                if admin_app[0].mainnet in ['Mainnet OFF', 'Mainnet ON'] and kw['app_client'] in ['auth_example']:
-                                    data_write.update({'points_latin': users[0].points_latin + admin_app[0].amount})
+                                if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON'] and kw['app_client'] in ['auth_example']:
+                                    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount})
                                 
                                 users[0].sudo().write(data_write)
                                 
