@@ -1084,6 +1084,7 @@
                                         $(".show-tetris").show();
                                         $(".show-mahjong").show();
                                         $(".show-tvonline").show();
+                                        $(".show-sport-results").show();
                                         $(".show-cointelegraph").show();
                                         $(".show-streamerzoneboard").show();
                                         
@@ -1768,6 +1769,10 @@
                             
                             $( ".tetris" ).click(function() {
                                 $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                            });
+                            
+                            $( ".sport-results" ).click(function() {
+                                $.colorbox({href:"/latinchain-sports", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                             });
                             
                             $( ".mahjong" ).click(function() {
@@ -2486,10 +2491,10 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-sport-results" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><a href="/latinchain-sports" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN SPORTS</div><div style="font-size:80%;">Sport results</div></a></div>
+                                                <div class="col-10"><button id="sport-results" class="col-10 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN SPORTS</div><div style="font-size:80%;">Sport results</div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
