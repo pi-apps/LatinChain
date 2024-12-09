@@ -84,7 +84,16 @@ function get_user(donation) {
                 {
                     unblocked = data.unblocked;
                     if(donation)
-                        alert($("#unblocked_message").text());
+                    {
+                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                        {
+                            $(".modal-body").html($("#unblocked_message").text() + "<br/>" + $("#modal_total_latinpoints_message").text() + data.points_latin + " Latin points.");
+                            $("#open_modal").click();
+                        }else{
+                            $(".modal-body").html($("#unblocked_message").text());
+                            $("#open_modal").click();
+                        }
+                    }
                 }
                 show_pi_ad_user = data.show_pi_ad;
             }
