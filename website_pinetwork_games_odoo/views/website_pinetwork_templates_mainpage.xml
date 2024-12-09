@@ -2156,7 +2156,7 @@
                             </div>
                         </div>
                         
-                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
+                        <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#Amazon #Links</div></strong></h5>
                             </div>
