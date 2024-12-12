@@ -29,17 +29,17 @@ Main page: /
 Based on the following softwares
 -----------------
 
-sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License, 2021)
+sudoku (MIT License) is the Sudoku Solver. It's a modification of https://github.com/robatron/sudoku.js (MIT License, 2014)
 
-snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License, 2021)
+snake (MIT License) is the Super Snake. It's a modification of https://github.com/iamchrismiller/responsive-snake (MIT License, 2014)
 
 chess (AGPLv3) is the Chess. It's a modification of https://github.com/LabinatorSolutions/stockfish-chess-web-gui (GPLv3, 2021. Currently it's AGPLv3, 2024)
 
 piapp-example (PiOS License) is a test and example of how to use Pi Apps API in a Webpage.
 piapp-example can be browsable here: https://github.com/rockcesar/LatinChainDevelopments/tree/master/piapp-example
 
-mahjong-solitaire (MIT License) is the Mahjong. It's a modification of https://github.com/ScriptRaccoon/mahjong-solitaire (MIT License, 2021)
+mahjong-solitaire (MIT License) is the Mahjong. It's a modification of https://github.com/ScriptRaccoon/mahjong-solitaire (MIT License, 2024)
 
-blockrain.js (MIT License) is the Tetris. It's a modification of https://github.com/Aerolab/blockrain.js (MIT License, 2021)
+blockrain.js (MIT License) is the Tetris. It's a modification of https://github.com/Aerolab/blockrain.js (MIT License, 2015)
 
 More Info: https://github.com/rockcesar/LatinChainDevelopments
