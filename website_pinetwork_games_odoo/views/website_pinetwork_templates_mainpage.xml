@@ -2201,7 +2201,7 @@
                             </div>
                             
                             <div class="show-streamerzoneboard" style="margin-bottom:5px; display:none" t-if="pioneers_streaming">
-                                <button id="streamerzoneboard" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
+                                <button id="streamerzoneboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
                             </div>
                             <!--<t t-if="pi_main_user">
                                 <div style="margin-bottom:5px" t-if="pi_main_user.streaming_url">
@@ -2211,22 +2211,22 @@
                             </t>-->
                             
                             <div style="margin-bottom:5px">
-                                <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3o2Tbr75z-5oDg1AFNZ1u8" class="col-10 btn btn-danger open_streaming_playlist font-weight-bold" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top videos</div></button>
+                                <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3o2Tbr75z-5oDg1AFNZ1u8" class="col-8 btn btn-danger open_streaming_playlist font-weight-bold" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top videos</div></button>
                             </div>
                             <div style="margin-bottom:5px">
-                                <button class="col-10 btn btn-info readingclub font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-book-open-reader"></i></div> <div style="display:inline;">reading club</div></button>
+                                <button class="col-8 btn btn-info readingclub font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-book-open-reader"></i></div> <div style="display:inline;">reading club</div></button>
                             </div>
                             <div style="margin-bottom:5px">
-                                <button class="col-10 btn btn-info askanexpert font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-question"></i></div> <div style="display:inline;">ask an expert</div></button>
+                                <button class="col-8 btn btn-info askanexpert font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-question"></i></div> <div style="display:inline;">ask an expert</div></button>
                             </div>
                             <div style="margin-bottom:5px">
-                                <button class="col-10 btn btn-info partners font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-handshake"></i></div> <div style="display:inline;">partners</div></button>
+                                <button class="col-8 btn btn-info partners font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-handshake"></i></div> <div style="display:inline;">partners</div></button>
                             </div>
                             <div class="div-certification" style="display: none">
-                                <button class="col-10 btn btn-info certification font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-certificate"></i></div> <div style="display:inline;">certification</div></button>
+                                <button class="col-8 btn btn-info certification font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-certificate"></i></div> <div style="display:inline;">certification</div></button>
                             </div>
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-top:5px">
-                                <a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
+                                <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
                             </div>
                         </div>
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
