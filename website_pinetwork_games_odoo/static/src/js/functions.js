@@ -250,8 +250,9 @@ $( document ).ready(function() {
                         });
                         
                         $("#button_click").prop( "disabled", false );
-                        
-                        $("#button_reward_ad").prop( "disabled", false );
+
+                        if(show_pi_ad_user)
+                            $("#button_reward_ad").prop( "disabled", false );
                         
                         var start_flag = false;
                         
