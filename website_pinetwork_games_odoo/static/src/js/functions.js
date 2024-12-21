@@ -357,6 +357,9 @@ $( document ).ready(function() {
                                 }
                             }
                         });
+                        
+                        if(show_pi_ad_user)
+                            $( "#button_reward_ad" ).click();
                     });
                 });
             
