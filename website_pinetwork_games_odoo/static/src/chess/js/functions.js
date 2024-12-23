@@ -209,7 +209,7 @@ async function showPiAds(Pi) {
         {
             if(pi_user_id != "" && pi_user_code != "")
             {
-                var data = {
+                /*var data = {
                             'pi_user_id': pi_user_id,
                             'pi_user_code': pi_user_code,
                             'accessToken': accessToken,
@@ -223,7 +223,7 @@ async function showPiAds(Pi) {
                     }
                 }).fail(function() {
                     
-                });
+                });*/
             }
         }
     } catch (err) {
