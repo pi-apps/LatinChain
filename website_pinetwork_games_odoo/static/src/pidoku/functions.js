@@ -96,8 +96,8 @@ function set_points(points) {
                 showConfetti(10);
                 setTimeout(function() {
                     $("#gained_points").hide();
-                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                        showPiAds(Pi);
+                    /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                        showPiAds(Pi);*/
                 }, 15000);
                 //alert("+" + points + $("#points_message").text());
                 start();
