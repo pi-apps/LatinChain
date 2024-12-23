@@ -7,6 +7,7 @@ const Pi = window.Pi;
 var startTime=new Date(), endTime=new Date(), seconds=0;
 var unblocked = false;
 var show_pi_ad_user = true;
+var show_pi_ad_user_time = 0;
 
 function setConfirmUnload(on) {
     if(on)
@@ -96,6 +97,7 @@ function get_user(donation) {
                     }
                 }
                 show_pi_ad_user = data.show_pi_ad;
+                show_pi_ad_user_time = data.show_pi_ad_time;
             }
         }).fail(function() {
             
@@ -314,7 +316,7 @@ $( document ).ready(function() {
                                                     $("#button_reward_ad").prop( "disabled", true );
                                                     var btnvalue = $("#button_reward_ad").html();
                                                     $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
-                                                    $(".modal-body").html($("#modal_reward_message").text() + data.points_latin + " Latin points.");
+                                                    $(".modal-body").html($("#modal_reward_message").text() + data.points_latin + " Latin points.<br/>" + $("#modal_reward_nextpiad").text() + show_pi_ad_user_time + $("#modal_reward_nextpiad_time").text());
                                                     $("#open_modal").click();
                                                     setTimeout(function ()
                                                     {

@@ -874,6 +874,7 @@
                         const Pi = window.Pi;
                         var unblocked = false;
                         var show_pi_ad_user = true;
+                        var show_pi_ad_user_time = 0;
                         
                         var leaderboard = "/get-points/";
                         var winnerboard = "/get-top10-zone/";
@@ -1080,6 +1081,7 @@
                                             alert($("#payment_message").text());
                                             
                                         show_pi_ad_user = data.show_pi_ad;
+                                        show_pi_ad_user_time = data.show_pi_ad_time;
                                         
                                         $(".show-tetris").show();
                                         $(".show-mahjong").show();
@@ -1284,7 +1286,7 @@
 
                         $( document ).ready(function() {
                             colorboxLoaded();
-                        
+                            
                             window.addEventListener('unhandledrejection', function (e) {
                                 e.preventDefault();
                                 e.stopPropagation();
@@ -1605,7 +1607,7 @@
                                                                                 $("#button_reward_ad").prop( "disabled", true );
                                                                                 var btnvalue = $("#button_reward_ad").html();
                                                                                 $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
-                                                                                $(".modal-body").html($("#modal_reward_message").text() + data.points_latin + " Latin points.");
+                                                                                $(".modal-body").html($("#modal_reward_message").text() + data.points_latin + " Latin points.<br/>" + $("#modal_reward_nextpiad").text() + show_pi_ad_user_time + $("#modal_reward_nextpiad_time").text());
                                                                                 $("#open_modal").click();
                                                                                 setTimeout(function ()
                                                                                 {
@@ -1894,6 +1896,8 @@
                     <div id="referrer_code_saved" style="display:none;">Your referrer code was saved.</div>
                     <div id="mainnet_version_message" style="display:none;">We are testing LatinChain Mainnet version. Do you want to visit LatinChain Mainnet version?.</div>
                     <div id="modal_reward_message" style="display:none;">Congrats, you won </div>
+                    <div id="modal_reward_nextpiad" style="display:none;">Next Pi Ad in </div>
+                    <div id="modal_reward_nextpiad_time" style="display:none;"> hours.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
@@ -2897,7 +2901,7 @@
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="text-align:center">
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="modal-header">

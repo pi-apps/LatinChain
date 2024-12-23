@@ -254,10 +254,13 @@ class PiNetworkBaseController(http.Controller):
         
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
+            show_pi_ad_time = apps_list[0].pi_ad_seconds/3600
         elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)):
             show_pi_ad = True
+            show_pi_ad_time = apps_list[0].pi_ad_seconds/3600
         else:
             show_pi_ad = False
+            show_pi_ad_time = 0
         
         result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
                                                                 ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
@@ -293,7 +296,8 @@ class PiNetworkBaseController(http.Controller):
                             'streaming_url': pi_users_list[0].streaming_url,
                             'referrer_code': referrer_code,
                             'complete_found': result_found['complete_found'],
-                            'show_pi_ad': show_pi_ad})
+                            'show_pi_ad': show_pi_ad,
+                            'show_pi_ad_time': show_pi_ad_time})
     
     @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def set_pi_ad_datetime(self, **kw):
