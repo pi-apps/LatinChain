@@ -341,6 +341,8 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             """
             
+            app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+            
             values = {'pi_ad_datetime': datetime.now()}
             
             if not pi_users_list[0].pi_ad_datetime:
