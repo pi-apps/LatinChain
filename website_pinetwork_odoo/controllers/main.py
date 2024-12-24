@@ -255,20 +255,26 @@ class PiNetworkBaseController(http.Controller):
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
             show_pi_ad_time = apps_list[0].pi_ad_seconds/3600
+        elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)):
+            show_pi_ad = True
+            show_pi_ad_time = apps_list[0].pi_ad_seconds/3600
+        else:
+            show_pi_ad = False
+            show_pi_ad_time = 0
+            
+        if not pi_users_list[0].pi_ad_datetime:
             if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
                 pi_ad_new = False
             else:
                 pi_ad_new = True
-        elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)):
-            show_pi_ad = True
-            show_pi_ad_time = apps_list[0].pi_ad_seconds/3600
+        elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)) and \
+            pi_users_list[0].pi_ad_datetime <= datetime.now():
             if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
                 pi_ad_new = False
             else:
                 pi_ad_new = True
         else:
-            show_pi_ad = False
-            show_pi_ad_time = 0
+            values.update({'pi_ad_counter': 0})
             pi_ad_new = True
         
         result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
@@ -351,7 +357,8 @@ class PiNetworkBaseController(http.Controller):
                 else:
                     values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
                     pi_ad_new = True
-            elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)):
+            elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)) and \
+                pi_users_list[0].pi_ad_datetime <= datetime.now():
                 if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
                     pi_ad_new = False
                 else:
