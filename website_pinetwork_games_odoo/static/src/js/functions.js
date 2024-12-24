@@ -298,6 +298,7 @@ $( document ).ready(function() {
                                     if (showAdResponse.result === "AD_REWARDED") {
                                         if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                                         {
+                                            $("#button_reward_ad").prop( "disabled", true );
                                             //alert($("#ready_reward_message").text());
                                             var data = {
                                                 'pi_user_id': pi_user_id,
