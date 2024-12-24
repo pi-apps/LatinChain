@@ -321,8 +321,8 @@ $( document ).ready(function() {
                 //get_user();
                 set_points(0).always(function(){
                     get_user().always(function(){
-                        if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                            showPiAds(Pi);
+                        //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                        //    showPiAds(Pi);
                         
                         $( "#button_click" ).click(function() {
                             if(parseFloat($("#pi_donate").val()) >= parseFloat(amount))
