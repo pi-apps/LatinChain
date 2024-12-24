@@ -306,7 +306,8 @@ class PiNetworkBaseController(http.Controller):
                             'referrer_code': referrer_code,
                             'complete_found': result_found['complete_found'],
                             'show_pi_ad': show_pi_ad,
-                            'show_pi_ad_time': show_pi_ad_time})
+                            'show_pi_ad_time': show_pi_ad_time,
+                            'pi_ad_new': pi_ad_new})
     
     @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def set_pi_ad_datetime(self, **kw):
