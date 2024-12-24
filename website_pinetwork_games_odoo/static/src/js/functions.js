@@ -299,6 +299,8 @@ $( document ).ready(function() {
                                         if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                                         {
                                             $("#button_reward_ad").prop( "disabled", true );
+                                            var btnvalue = $("#button_reward_ad").html();
+                                            $("#button_reward_ad").html("Verifying...");
                                             //alert($("#ready_reward_message").text());
                                             var data = {
                                                 'pi_user_id': pi_user_id,
@@ -317,7 +319,6 @@ $( document ).ready(function() {
                                                 if(data.result && data.points_latin > 0)
                                                 {
                                                     $("#button_reward_ad").prop( "disabled", true );
-                                                    var btnvalue = $("#button_reward_ad").html();
                                                     $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
                                                     $(".modal-body").html($("#modal_reward_message").text() + data.points_latin + " Latin points.");
                                                     $("#open_modal").click();
