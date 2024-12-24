@@ -93,12 +93,12 @@ function set_points(points) {
                 end();
                 $("#gained_points").show();
                 $("#gained_points").html("+" + points);
-                showConfetti(10);
+                showConfetti(2);
                 setTimeout(function() {
                     $("#gained_points").hide();
-                    /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                        showPiAds(Pi);*/
-                }, 15000);
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                        showPiAdsNotTiming(Pi);
+                }, 7000);
                 //alert("+" + points + $("#points_message").text());
                 start();
                 only_unlock_board();
@@ -162,6 +162,43 @@ function get_user() {
 }
 
 async function showPiAds(Pi) {
+    try {
+        const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
+                                
+        if (isAdReadyResponse.ready === false) {
+            await Pi.Ads.requestAd("interstitial");
+        }
+        
+        const showAdResponse = await Pi.Ads.showAd("interstitial");
+        
+        if(showAdResponse.result == "AD_CLOSED")
+        {
+            if(pi_user_id != "" && pi_user_code != "")
+            {
+                var data = {
+                            'pi_user_id': pi_user_id,
+                            'pi_user_code': pi_user_code,
+                            'accessToken': accessToken,
+                            'csrf_token': odoo.csrf_token,
+                        };
+                //$.ajaxSetup({async: false});
+                return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                    data = JSON.parse(data);
+                    if(data.result)
+                    {
+                    }
+                }).fail(function() {
+                    
+                });
+            }
+        }
+    } catch (err) {
+        //alert(err);
+        // Not able to fetch the user
+    }
+}
+
+async function showPiAdsNotTiming(Pi) {
     try {
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
                                 
@@ -284,8 +321,8 @@ $( document ).ready(function() {
                 //get_user();
                 set_points(0).always(function(){
                     get_user().always(function(){
-                        //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                        //    showPiAds(Pi);
+                        if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            showPiAds(Pi);
                         
                         $( "#button_click" ).click(function() {
                             if(parseFloat($("#pi_donate").val()) >= parseFloat(amount))
