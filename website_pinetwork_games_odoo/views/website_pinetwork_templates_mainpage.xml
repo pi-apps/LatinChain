@@ -1531,7 +1531,6 @@
                                                 
                                                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                 {
-                                                    alert(pi_ad_new);
                                                     if(pi_ad_new)
                                                         $("#button_reward_ad").prop( "disabled", false );
                                                             
