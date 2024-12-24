@@ -85,7 +85,6 @@ function get_user(donation) {
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
-                    pi_ad_new = data.pi_ad_new;
                     if(donation)
                     {
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
@@ -100,6 +99,7 @@ function get_user(donation) {
                 }
                 show_pi_ad_user = data.show_pi_ad;
                 show_pi_ad_user_time = data.show_pi_ad_time;
+                pi_ad_new = data.pi_ad_new;
             }
         }).fail(function() {
             
@@ -254,9 +254,7 @@ $( document ).ready(function() {
                         });
                         
                         $("#button_click").prop( "disabled", false );
-
-                        alert(show_pi_ad_user);
-                        alert(pi_ad_new);
+                        
                         if(show_pi_ad_user || pi_ad_new)
                             $("#button_reward_ad").prop( "disabled", false );
                         
