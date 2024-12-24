@@ -255,7 +255,7 @@ $( document ).ready(function() {
                         
                         $("#button_click").prop( "disabled", false );
 
-                        if(show_pi_ad_user && pi_ad_new)
+                        if(pi_ad_new)
                             $("#button_reward_ad").prop( "disabled", false );
                         
                         var start_flag = false;

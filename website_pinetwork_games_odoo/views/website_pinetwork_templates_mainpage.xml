@@ -1531,7 +1531,7 @@
                                                 
                                                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                 {
-                                                    if(show_pi_ad_user &amp;&amp; pi_ad_new)
+                                                    if(pi_ad_new)
                                                         $("#button_reward_ad").prop( "disabled", false );
                                                             
                                                     var startTime=new Date(), endTime=new Date(), seconds=0;
