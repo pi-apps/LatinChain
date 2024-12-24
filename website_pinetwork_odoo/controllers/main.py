@@ -263,13 +263,13 @@ class PiNetworkBaseController(http.Controller):
             show_pi_ad_time = 0
             
         if not pi_users_list[0].pi_ad_datetime:
-            if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
+            if pi_users_list[0].pi_ad_counter >= apps_list[0].pi_ad_max:
                 pi_ad_new = False
             else:
                 pi_ad_new = True
         elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)) and \
             pi_users_list[0].pi_ad_datetime <= datetime.now():
-            if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
+            if pi_users_list[0].pi_ad_counter >= apps_list[0].pi_ad_max:
                 pi_ad_new = False
             else:
                 pi_ad_new = True
