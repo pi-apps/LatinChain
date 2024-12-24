@@ -361,9 +361,24 @@ $( document ).ready(function() {
                 
                                                         });
                                                     }
+                                                }else{
+                                                    $("#button_reward_ad").html("Error, try again...");
+                                                    
+                                                    setTimeout(function ()
+                                                    {
+                                                        $("#button_reward_ad").html(btnvalue);
+                                                        $("#button_reward_ad").prop( "disabled", false );
+                                                    }, 5000);
                                                 }
                                                 start();
                                             }).fail(function() {
+                                                $("#button_reward_ad").html("Fail, try again...");
+                                                    
+                                                setTimeout(function ()
+                                                {
+                                                    $("#button_reward_ad").html(btnvalue);
+                                                    $("#button_reward_ad").prop( "disabled", false );
+                                                }, 5000);
                                                 setConfirmUnloadPoints(false);
                                             });
                                         }
