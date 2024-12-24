@@ -255,12 +255,21 @@ class PiNetworkBaseController(http.Controller):
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
             show_pi_ad_time = apps_list[0].pi_ad_seconds/3600
+            if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
+                pi_ad_new = False
+            else:
+                pi_ad_new = True
         elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)):
             show_pi_ad = True
             show_pi_ad_time = apps_list[0].pi_ad_seconds/3600
+            if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
+                pi_ad_new = False
+            else:
+                pi_ad_new = True
         else:
             show_pi_ad = False
             show_pi_ad_time = 0
+            pi_ad_new = True
         
         result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
                                                                 ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
