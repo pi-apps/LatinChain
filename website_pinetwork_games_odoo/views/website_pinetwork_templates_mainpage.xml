@@ -1633,7 +1633,6 @@
                                                                                         data = JSON.parse(data);
                                                                                         if(data.result)
                                                                                         {
-                                                                                            alert(data.pi_ad_new);
                                                                                             if(data.pi_ad_new)
                                                                                             {
                                                                                                 setTimeout(function ()
