@@ -274,7 +274,6 @@ class PiNetworkBaseController(http.Controller):
             else:
                 pi_ad_new = True
         else:
-            values.update({'pi_ad_counter': 0})
             pi_ad_new = True
         
         result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
