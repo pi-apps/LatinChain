@@ -8,6 +8,7 @@ var startTime=new Date(), endTime=new Date(), seconds=0;
 var unblocked = false;
 var show_pi_ad_user = true;
 var show_pi_ad_user_time = 0;
+var pi_ad_new = false;
 
 function setConfirmUnload(on) {
     if(on)
@@ -84,6 +85,7 @@ function get_user(donation) {
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
+                    pi_ad_new = data.pi_ad_new;
                     if(donation)
                     {
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
@@ -253,7 +255,7 @@ $( document ).ready(function() {
                         
                         $("#button_click").prop( "disabled", false );
 
-                        if(show_pi_ad_user)
+                        if(show_pi_ad_user && pi_ad_new)
                             $("#button_reward_ad").prop( "disabled", false );
                         
                         var start_flag = false;
@@ -318,11 +320,11 @@ $( document ).ready(function() {
                                                     $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
                                                     $(".modal-body").html($("#modal_reward_message").text() + data.points_latin + " Latin points.<br/>" + $("#modal_reward_nextpiad").text() + show_pi_ad_user_time + $("#modal_reward_nextpiad_time").text());
                                                     $("#open_modal").click();
-                                                    setTimeout(function ()
+                                                    /*setTimeout(function ()
                                                     {
                                                         $("#button_reward_ad").html(btnvalue);
                                                         $("#button_reward_ad").prop( "disabled", false );
-                                                    }, 5000);
+                                                    }, 5000);*/
                                                     //alert("+" + data.points_latin + " Latin points.");
                                                     
                                                     if(pi_user_id != "" && pi_user_code != "")
@@ -338,6 +340,20 @@ $( document ).ready(function() {
                                                             data = JSON.parse(data);
                                                             if(data.result)
                                                             {
+                                                                if(data.pi_ad_new)
+                                                                {
+                                                                    setTimeout(function ()
+                                                                    {
+                                                                        $("#button_reward_ad").html(btnvalue);
+                                                                        $("#button_reward_ad").prop( "disabled", false );
+                                                                    }, 5000);
+                                                                }else
+                                                                {
+                                                                    setTimeout(function ()
+                                                                    {
+                                                                        $("#button_reward_ad").html(btnvalue);
+                                                                    }, 5000);
+                                                                }
                                                             }
                                                         }).fail(function() {
                 

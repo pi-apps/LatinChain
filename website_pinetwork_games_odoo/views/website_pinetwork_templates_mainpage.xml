@@ -875,6 +875,7 @@
                         var unblocked = false;
                         var show_pi_ad_user = true;
                         var show_pi_ad_user_time = 0;
+                        var pi_ad_new = false;
                         
                         var leaderboard = "/get-points/";
                         var winnerboard = "/get-top10-zone/";
@@ -1082,6 +1083,7 @@
                                             
                                         show_pi_ad_user = data.show_pi_ad;
                                         show_pi_ad_user_time = data.show_pi_ad_time;
+                                        pi_ad_new = data.pi_ad_new;
                                         
                                         $(".show-tetris").show();
                                         $(".show-mahjong").show();
@@ -1529,7 +1531,8 @@
                                                 
                                                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                                 {
-                                                    $("#button_reward_ad").prop( "disabled", false );
+                                                    if(show_pi_ad_user &amp;&amp; pi_ad_new)
+                                                        $("#button_reward_ad").prop( "disabled", false );
                                                             
                                                     var startTime=new Date(), endTime=new Date(), seconds=0;
 
@@ -1609,32 +1612,47 @@
                                                                                 $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
                                                                                 $(".modal-body").html($("#modal_reward_message").text() + data.points_latin + " Latin points.<br/>" + $("#modal_reward_nextpiad").text() + show_pi_ad_user_time + $("#modal_reward_nextpiad_time").text());
                                                                                 $("#open_modal").click();
-                                                                                setTimeout(function ()
+                                                                                /*setTimeout(function ()
                                                                                 {
                                                                                     $("#button_reward_ad").html(btnvalue);
                                                                                     $("#button_reward_ad").prop( "disabled", false );
-                                                                                }, 5000);
+                                                                                }, 5000);*/
                                                                                 
-                                                                                get_user_rewarded();
-                                                                                //alert("+" + data.points_latin + " Latin points.");
-                                                                                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
-                                                                                {
-                                                                                    var data = {
-                                                                                        'pi_user_id': pi_user_id,
-                                                                                        'pi_user_code': pi_user_code,
-                                                                                        'accessToken': accessToken,
-                                                                                        'csrf_token': odoo.csrf_token,
-                                                                                    };
-                                                                                    //$.ajaxSetup({async: false});
-                                                                                    return $.post( "/set-pi-ad-datetime", data).done(function(data) {
-                                                                                        data = JSON.parse(data);
-                                                                                        if(data.result)
-                                                                                        {
-                                                                                        }
-                                                                                    }).fail(function() {
-                                            
-                                                                                    });
-                                                                                }
+                                                                                return get_user_rewarded().always(function(){
+                                                                                    //alert("+" + data.points_latin + " Latin points.");
+                                                                                    if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                                                                    {
+                                                                                        var data = {
+                                                                                            'pi_user_id': pi_user_id,
+                                                                                            'pi_user_code': pi_user_code,
+                                                                                            'accessToken': accessToken,
+                                                                                            'csrf_token': odoo.csrf_token,
+                                                                                        };
+                                                                                        //$.ajaxSetup({async: false});
+                                                                                        return $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                                                                                            data = JSON.parse(data);
+                                                                                            if(data.result)
+                                                                                            {
+                                                                                                if(data.pi_ad_new)
+                                                                                                {
+                                                                                                    setTimeout(function ()
+                                                                                                    {
+                                                                                                        $("#button_reward_ad").html(btnvalue);
+                                                                                                        $("#button_reward_ad").prop( "disabled", false );
+                                                                                                    }, 5000);
+                                                                                                }else
+                                                                                                {
+                                                                                                    setTimeout(function ()
+                                                                                                    {
+                                                                                                        $("#button_reward_ad").html(btnvalue);
+                                                                                                    }, 5000);
+                                                                                                }
+                                                                                            }
+                                                                                        }).fail(function() {
+                                                
+                                                                                        });
+                                                                                    }
+                                                                                });
                                                                             }
                                                                             start();
                                                                         }).fail(function() {
@@ -2156,12 +2174,12 @@
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
-                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:5px; width: 100%; display: none;" class="border-gradient-rounded">
+                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#PiAds</div></strong></h5>
                             </div>
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px">
-                                <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success font-weight-bold" disabled="true" style="max-width: 300px"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%; display: none">Testing feature</div></button>
+                                <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success font-weight-bold" disabled="true" style="max-width: 300px"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />) (5 ads/<t t-esc="pi_ad_hours" />h)</div><div style="font-size:80%; display: none">Testing feature</div></button>
                             </div>
                         </div>
                         

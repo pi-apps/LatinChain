@@ -321,6 +321,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
+        pi_ad_new = False
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         else:
@@ -331,11 +332,27 @@ class PiNetworkBaseController(http.Controller):
             """
             
             values = {'pi_ad_datetime': datetime.now()}
+            
+            if not pi_users_list[0].pi_ad_datetime:
+                if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
+                    pi_ad_new = False
+                else:
+                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
+                    pi_ad_new = True
+            elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)):
+                if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
+                    pi_ad_new = False
+                else:
+                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
+                    pi_ad_new = True
+            else:
+                values.update({'pi_ad_counter': 0})
+                pi_ad_new = True
         
         #Uncomment in case of you want to save wallet address
         pi_users_list[0].sudo().write(values)
         
-        return json.dumps({'result': True})
+        return json.dumps({'result': True, 'pi_ad_new': pi_ad_new})
         
     @http.route('/set-pi-wallet', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def set_pi_wallet(self, **kw):
