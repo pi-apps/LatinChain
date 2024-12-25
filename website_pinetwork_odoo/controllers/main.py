@@ -314,7 +314,6 @@ class PiNetworkBaseController(http.Controller):
                             'show_pi_ad_time': show_pi_ad_time,
                             'pi_ad_new': pi_ad_new})
     
-    ### LEGACY
     @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def set_pi_ad_datetime(self, **kw):
         if 'accessToken' not in kw:
@@ -342,27 +341,7 @@ class PiNetworkBaseController(http.Controller):
             return json.dumps({'result': False})
         else:
             
-            apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
-            
             values = {'pi_ad_datetime': datetime.now()}
-            
-            if not pi_users_list[0].pi_ad_datetime:
-                if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
-                    pi_ad_new = False
-                else:
-                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
-                    pi_ad_new = True
-            elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)) and \
-                pi_users_list[0].pi_ad_datetime <= datetime.now():
-                if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
-                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
-                    pi_ad_new = False
-                else:
-                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
-                    pi_ad_new = True
-            else:
-                values.update({'pi_ad_counter': 0})
-                pi_ad_new = True
         
         #Uncomment in case of you want to save wallet address
         pi_users_list[0].sudo().write(values)
