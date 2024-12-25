@@ -18,9 +18,9 @@ var colorbox_count = 0;
 var colorbox_opened = false;
 async function colorboxLoaded()
 {
-    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) &amp;&amp; $("#nopopup").val() == false)
+    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
-        if($.colorbox &amp;&amp; !colorbox_opened)
+        if($.colorbox && !colorbox_opened)
         {
             $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
@@ -28,12 +28,12 @@ async function colorboxLoaded()
         }else{
             if(colorbox_opened)
                 return false;
-            if(colorbox_count &gt; 400)
+            if(colorbox_count > 400)
                 return false;
             setTimeout(function() {
                 if(colorbox_opened)
                     return false;
-                if(colorbox_count &gt; 400)
+                if(colorbox_count > 400)
                     return false;
                 colorbox_count += 1;
                 colorboxLoaded();
@@ -43,7 +43,7 @@ async function colorboxLoaded()
 }
 
 function set_points(points) {
-    if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+    if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
             'pi_user_id': pi_user_id,
@@ -66,7 +66,7 @@ function set_points(points) {
 }
 
 function get_user_rewarded() {
-    if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+    if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
                     'pi_user_id': pi_user_id,
@@ -196,7 +196,7 @@ function get_user_rewarded() {
 }
 
 function get_user() {
-    if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+    if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {
                     'pi_user_id': pi_user_id,
@@ -392,7 +392,7 @@ async function showPiAds(Pi) {
         
         if(showAdResponse.result == "AD_CLOSED")
         {
-            if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+            if(pi_user_id != "" && pi_user_code != "")
             {
                 var data = {
                             'pi_user_id': pi_user_id,
@@ -468,9 +468,9 @@ $( document ).ready(function() {
         var streaming_url = $("#streaming_url").val().trim();
         if(streaming_url.length > 150)
             alert($("#streaming_url_message").text());
-        else if(streaming_url.length > 0 &amp;&amp; !validateYouTubeUrl(streaming_url))
+        else if(streaming_url.length > 0 && !validateYouTubeUrl(streaming_url))
             alert($("#streaming_url_not_a_video").text());
-        else if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+        else if(pi_user_id != "" && pi_user_code != "")
         {
             $("#button_click").prop( "disabled", true );
             $("#streaming_url").prop( "disabled", true );
@@ -501,9 +501,9 @@ $( document ).ready(function() {
         var memo_id = $("#memo_id").val().trim();
         if(memo_id.length > 50)
             alert($("#memo_message").text());
-        else if(memo_id.length &lt; 20)
+        else if(memo_id.length < 20)
             alert($("#memo_not_a_memo").text());
-        else if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+        else if(pi_user_id != "" && pi_user_code != "")
         {
             $("#button_click_memo").prop( "disabled", true );
             $("#memo_id").prop( "disabled", true );
@@ -536,7 +536,7 @@ $( document ).ready(function() {
         var referrer_code = $("#referrer_code").val().trim();
         if(referrer_code.length > 150)
             alert($("#referrer_code_message").text());
-        else if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+        else if(pi_user_id != "" && pi_user_code != "")
         {
             $("#button_click_refferer").prop( "disabled", true );
             $("#refferer_code").prop( "disabled", true );
@@ -685,7 +685,7 @@ $( document ).ready(function() {
                             
                             $( "#button_reward_ad" ).click(async function() {
                                 end();
-                                if(seconds &lt; 5 &amp;&amp; start_flag)
+                                if(seconds < 5 && start_flag)
                                 {
                                     start();
                                     return;
@@ -695,7 +695,7 @@ $( document ).ready(function() {
                                 if(!start_flag)
                                     start_flag = true;
                                 
-                                if(pi_user_id != "" &amp;&amp; pi_user_code != "" &amp;&amp; pi_ad_new)
+                                if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
                                 {
                                     try {
                                         $("#button_reward_ad").prop( "disabled", true );
@@ -723,7 +723,7 @@ $( document ).ready(function() {
                                         const showAdResponse = await Pi.Ads.showAd("rewarded");
                                         
                                         if (showAdResponse.result === "AD_REWARDED") {
-                                            if(pi_user_id != "" &amp;&amp; pi_user_code != "" &amp;&amp; showAdResponse.adId)
+                                            if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                                             {
                                                 $("#button_reward_ad").prop( "disabled", true );
                                                 var btnvalue = $("#button_reward_ad").html();
@@ -743,7 +743,7 @@ $( document ).ready(function() {
                                                     end();
                                                     setConfirmUnloadPoints(false);
                                                     data = JSON.parse(data);
-                                                    if(data.result &amp;&amp; data.points_latin > 0)
+                                                    if(data.result && data.points_latin > 0)
                                                     {
                                                         $("#button_reward_ad").prop( "disabled", true );
                                                         $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
@@ -805,7 +805,7 @@ $( document ).ready(function() {
                                     }
                                 }
                             });
-                            if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 $( "#button_reward_ad" ).click();
                         }
                     });
@@ -827,7 +827,7 @@ $( document ).ready(function() {
     
     setTimeout(function ()
     {
-        if(pi_user_code == "" &amp;&amp; pi_user_code == "")
+        if(pi_user_code == "" && pi_user_code == "")
             auth();
     }, 10000);
 
