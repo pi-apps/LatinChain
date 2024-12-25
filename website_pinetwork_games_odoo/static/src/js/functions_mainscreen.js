@@ -662,13 +662,17 @@ $( document ).ready(function() {
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
+                            alert(show_pi_ad_user);
+                            alert(pi_ad_new);
                             if(show_pi_ad_user || pi_ad_new)
                             {
+                                alert("123");
                                 $("#button_reward_ad").show();
                                 $("#piad_not_available").hide();
                                 $("#button_reward_ad").prop( "disabled", false );
                             }else
                             {
+                                alert("1234");
                                 $("#button_reward_ad").hide();
                                 $("#piad_not_available").show();
                             }
