@@ -547,8 +547,7 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             """
             
-            values = {}
-            points_latin = 0
+            values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount, 'pi_ad_datetime': datetime.now()}
             
             apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
             
@@ -556,24 +555,18 @@ class PiNetworkBaseController(http.Controller):
                 if pi_users_list[0].pi_ad_counter+1 > apps_list[0].pi_ad_max:
                     pi_ad_new = False
                 elif pi_users_list[0].pi_ad_counter+1 == apps_list[0].pi_ad_max:
-                    values.update({'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount, 'pi_ad_datetime': datetime.now()})
                     values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
                     pi_ad_new = False
-                    points_latin = admin_app_list[0].points_latin_amount
                 else:
-                    values.update({'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount, 'pi_ad_datetime': datetime.now()})
                     values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
                     pi_ad_new = True
-                    points_latin = admin_app_list[0].points_latin_amount
             elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)) and \
                 pi_users_list[0].pi_ad_datetime <= datetime.now():
                 if pi_users_list[0].pi_ad_counter+1 > apps_list[0].pi_ad_max:
                     pi_ad_new = False
                 elif pi_users_list[0].pi_ad_counter+1 == apps_list[0].pi_ad_max:
-                    values.update({'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount, 'pi_ad_datetime': datetime.now()})
                     values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
                     pi_ad_new = False
-                    points_latin = admin_app_list[0].points_latin_amount
                 else:
                     values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
                     pi_ad_new = True
@@ -584,7 +577,7 @@ class PiNetworkBaseController(http.Controller):
         #Uncomment in case of you want to save wallet address
         pi_users_list[0].sudo().write(values)
         
-        return json.dumps({'result': True, 'points_latin': points_latin, 'pi_ad_new': pi_ad_new})
+        return json.dumps({'result': True, 'points_latin': admin_app_list[0].points_latin_amount, 'pi_ad_new': pi_ad_new})
     
     @http.route('/validate-memo', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def validate_memo(self, **kw):
