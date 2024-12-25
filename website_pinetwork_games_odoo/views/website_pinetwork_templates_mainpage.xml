@@ -1190,7 +1190,7 @@
                             </div>
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px">
                                 <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success font-weight-bold" disabled="true" style="max-width: 300px; display:none"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />) (5 ads/<t t-esc="pi_ad_hours" />h)</div><div style="font-size:80%; display: none">Testing feature</div></button>
-                                <div id="piad_not_available" style="max-width: 300px; display:none; text-align: center">
+                                <div id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
                                     Pi ads not available (5 ads each <t t-esc="pi_ad_hours" /> hours).
                                 </div>
                             </div>
