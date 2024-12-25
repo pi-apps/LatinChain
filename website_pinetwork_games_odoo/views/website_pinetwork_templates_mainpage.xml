@@ -1635,7 +1635,7 @@
                                                                                     }, 5000);
                                                                                 }
                                                                                 
-                                                                                return get_user_rewarded();
+                                                                                get_user_rewarded();
                                                                             }else{
                                                                                 $("#button_reward_ad").html("Error, try again...");
                                                     
