@@ -260,6 +260,10 @@ $( document ).ready(function() {
                             $("#button_reward_ad").show();
                             $("#piad_not_available").hide();
                             $("#button_reward_ad").prop( "disabled", false );
+                        }else
+                        {
+                            $("#button_reward_ad").hide();
+                            $("#piad_not_available").show();
                         }
                         
                         var start_flag = false;
