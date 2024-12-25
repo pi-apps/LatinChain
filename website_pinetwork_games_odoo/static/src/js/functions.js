@@ -272,7 +272,7 @@ $( document ).ready(function() {
                             if(!start_flag)
                                 start_flag = true;
                             
-                            if(pi_user_id != "" && pi_user_code != "")
+                            if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
                             {
                                 try {
                                     $("#button_reward_ad").prop( "disabled", true );
@@ -332,6 +332,7 @@ $( document ).ready(function() {
                                                     }, 5000);*/
                                                     //alert("+" + data.points_latin + " Latin points.");
                                                     
+                                                    pi_ad_new = data.pi_ad_new;
                                                     if(data.pi_ad_new)
                                                     {
                                                         setTimeout(function ()
