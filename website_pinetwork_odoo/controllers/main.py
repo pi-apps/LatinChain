@@ -314,6 +314,7 @@ class PiNetworkBaseController(http.Controller):
                             'show_pi_ad_time': show_pi_ad_time,
                             'pi_ad_new': pi_ad_new})
     
+    ### LEGACY
     @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def set_pi_ad_datetime(self, **kw):
         if 'accessToken' not in kw:
@@ -340,11 +341,6 @@ class PiNetworkBaseController(http.Controller):
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         else:
-            """
-            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
-                _logger.info("not equeals pi_user_id")
-                return json.dumps({'result': False})
-            """
             
             apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
             
@@ -562,6 +558,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
+        pi_ad_new = False
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         else:
@@ -571,12 +568,32 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             """
             
-            values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount}
+            values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount, 'pi_ad_datetime': datetime.now()}
+            
+            apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+            
+            if not pi_users_list[0].pi_ad_datetime:
+                if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
+                    pi_ad_new = False
+                else:
+                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
+                    pi_ad_new = True
+            elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)) and \
+                pi_users_list[0].pi_ad_datetime <= datetime.now():
+                if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
+                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
+                    pi_ad_new = False
+                else:
+                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
+                    pi_ad_new = True
+            else:
+                values.update({'pi_ad_counter': 0})
+                pi_ad_new = True
         
         #Uncomment in case of you want to save wallet address
         pi_users_list[0].sudo().write(values)
         
-        return json.dumps({'result': True, 'points_latin': admin_app_list[0].points_latin_amount})
+        return json.dumps({'result': True, 'points_latin': admin_app_list[0].points_latin_amount, 'pi_ad_new': pi_ad_new})
     
     @http.route('/validate-memo', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def validate_memo(self, **kw):

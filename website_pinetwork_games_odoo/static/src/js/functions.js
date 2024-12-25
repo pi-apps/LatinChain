@@ -329,37 +329,19 @@ $( document ).ready(function() {
                                                     }, 5000);*/
                                                     //alert("+" + data.points_latin + " Latin points.");
                                                     
-                                                    if(pi_user_id != "" && pi_user_code != "")
+                                                    if(data.pi_ad_new)
                                                     {
-                                                        var data = {
-                                                            'pi_user_id': pi_user_id,
-                                                            'pi_user_code': pi_user_code,
-                                                            'accessToken': accessToken,
-                                                            'csrf_token': odoo.csrf_token,
-                                                        };
-                                                        //$.ajaxSetup({async: false});
-                                                        return $.post( "/set-pi-ad-datetime", data).done(function(data) {
-                                                            data = JSON.parse(data);
-                                                            if(data.result)
-                                                            {
-                                                                if(data.pi_ad_new)
-                                                                {
-                                                                    setTimeout(function ()
-                                                                    {
-                                                                        $("#button_reward_ad").html(btnvalue);
-                                                                        $("#button_reward_ad").prop( "disabled", false );
-                                                                    }, 5000);
-                                                                }else
-                                                                {
-                                                                    setTimeout(function ()
-                                                                    {
-                                                                        $("#button_reward_ad").html(btnvalue);
-                                                                    }, 5000);
-                                                                }
-                                                            }
-                                                        }).fail(function() {
-                
-                                                        });
+                                                        setTimeout(function ()
+                                                        {
+                                                            $("#button_reward_ad").html(btnvalue);
+                                                            $("#button_reward_ad").prop( "disabled", false );
+                                                        }, 5000);
+                                                    }else
+                                                    {
+                                                        setTimeout(function ()
+                                                        {
+                                                            $("#button_reward_ad").html(btnvalue);
+                                                        }, 5000);
                                                     }
                                                 }else{
                                                     $("#button_reward_ad").html("Error, try again...");
