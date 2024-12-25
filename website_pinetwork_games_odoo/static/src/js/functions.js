@@ -256,7 +256,11 @@ $( document ).ready(function() {
                         $("#button_click").prop( "disabled", false );
                         
                         if(show_pi_ad_user || pi_ad_new)
+                        {
+                            $("#button_reward_ad").show();
+                            $("#piad_not_available").hide();
                             $("#button_reward_ad").prop( "disabled", false );
+                        }
                         
                         var start_flag = false;
                         
@@ -335,6 +339,8 @@ $( document ).ready(function() {
                                                     pi_ad_new = data.pi_ad_new;
                                                     if(data.pi_ad_new)
                                                     {
+                                                        $("#button_reward_ad").show();
+                                                        $("#piad_not_available").hide();
                                                         setTimeout(function ()
                                                         {
                                                             $("#button_reward_ad").html(btnvalue);
@@ -342,6 +348,8 @@ $( document ).ready(function() {
                                                         }, 5000);
                                                     }else
                                                     {
+                                                        $("#button_reward_ad").hide();
+                                                        $("#piad_not_available").show();
                                                         setTimeout(function ()
                                                         {
                                                             $("#button_reward_ad").html(btnvalue);

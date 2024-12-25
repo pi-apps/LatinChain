@@ -34,7 +34,7 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.175"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.176"></script>
                     
                     <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -296,8 +296,11 @@
                                     <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
                                     <br/><br/>
                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success fw-bold" disabled="true" style="margin: 5px; max-width: 300px"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />) (5 ads/<t t-esc="pi_ad_hours" />h)</div><div style="font-size:80%; display: none">Testing feature</div></button>
-                                    <br/>
+                                        <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success fw-bold" disabled="true" style="margin: 5px; max-width: 300px; display:none"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />) (5 ads/<t t-esc="pi_ad_hours" />h)</div><div style="font-size:80%; display: none">Testing feature</div></button>
+                                        <div id="piad_not_available" style="max-width: 300px; display:none">
+                                            Not available (5 ads/<t t-esc="pi_ad_hours" />h).
+                                        </div>
+                                        <br/>
                                     </div>
                                     <button id="button_click" name="button_click" class="btn btn-success fw-bold" disabled="true" style="margin: 5px; max-width: 300px"><div>Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<t t-esc="amount" />)</div></button>
                                     <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded" style="filter: contrast(100%) !important;">

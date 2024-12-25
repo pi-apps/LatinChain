@@ -663,7 +663,11 @@ $( document ).ready(function() {
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
                             if(show_pi_ad_user || pi_ad_new)
+                            {
+                                $("#button_reward_ad").show();
+                                $("#piad_not_available").hide();
                                 $("#button_reward_ad").prop( "disabled", false );
+                            }
                                     
                             var startTime=new Date(), endTime=new Date(), seconds=0;
 
@@ -758,6 +762,8 @@ $( document ).ready(function() {
                                                         pi_ad_new = data.pi_ad_new;
                                                         if(data.pi_ad_new)
                                                         {
+                                                            $("#button_reward_ad").show();
+                                                            $("#piad_not_available").hide();
                                                             setTimeout(function ()
                                                             {
                                                                 $("#button_reward_ad").html(btnvalue);
@@ -765,6 +771,8 @@ $( document ).ready(function() {
                                                             }, 5000);
                                                         }else
                                                         {
+                                                            $("#button_reward_ad").hide();
+                                                            $("#piad_not_available").show();
                                                             setTimeout(function ()
                                                             {
                                                                 $("#button_reward_ad").html(btnvalue);
