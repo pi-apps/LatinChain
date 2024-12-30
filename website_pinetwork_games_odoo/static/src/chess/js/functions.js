@@ -93,12 +93,12 @@ function set_points(points) {
                 end();
                 $("#gained_points").show();
                 $("#gained_points").html("+" + points);
-                showConfetti(2);
+                showConfetti(5);
                 setTimeout(function() {
                     $("#gained_points").hide();
-                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                        showPiAdsNotTiming(Pi);
-                }, 7000);
+                    /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                        showPiAdsNotTiming(Pi);*/
+                }, 15000);
                 //alert("+" + points + $("#points_message").text());
                 start();
             }
