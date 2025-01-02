@@ -548,11 +548,12 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             """
             
-            values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount, 'pi_ad_datetime': datetime.now()}
+            values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount}
             
             apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
             
             if not pi_users_list[0].pi_ad_datetime:
+                values.update({'pi_ad_datetime': datetime.now()})
                 if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
                     values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
                     pi_ad_new = False
@@ -568,6 +569,7 @@ class PiNetworkBaseController(http.Controller):
                     values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
                     pi_ad_new = True
             else:
+                values.update({'pi_ad_datetime': datetime.now()})
                 values.update({'pi_ad_counter': 0})
                 pi_ad_new = True
         
