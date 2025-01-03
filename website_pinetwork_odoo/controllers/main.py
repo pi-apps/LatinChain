@@ -1284,9 +1284,9 @@ class PiNetworkBaseController(http.Controller):
             validation_key = ""
         else:
             if admin_app_list[0].mainnet in ["Mainnet ON", "Mainnet OFF"]:
-                validation_key = "y7sKhIQZDC1r3C6Tt4nSexcafCZzPr0m"
+                validation_key = "HIxYDFeM8j4zC4A7BT_oZWNJLKUS9HI9"
             else:
-                validation_key = "NiFura6ej0P_vczsXAsIKbW6RSzDXxEY"
+                validation_key = "hh4KuEUkRhMTGItK2peuIYI4wlp1yHbN"
 
         return validation_key
         
