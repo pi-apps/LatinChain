@@ -932,8 +932,8 @@
                     <div id="wrap">
                         <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
                           <div id="myCarousel1647794696348" class="s_carousel s_carousel_default carousel slide" data-interval="10000" data-ride="carousel">
-                            <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" t-set="background_indicators" t-value="'padding-top: 3px;'"/>
-                            <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']" t-set="background_indicators" t-value="'padding-top: 3px;'"/>
+                            <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" t-set="background_indicators" t-value="''"/>
+                            <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']" t-set="background_indicators" t-value="''"/>
                             <ol class="carousel-indicators o_we_no_overlay" t-att-style="background_indicators">
                               <li data-target="#myCarousel1647794696348" data-slide-to="0" class="active"/>
                               <li data-target="#myCarousel1647794696348" data-slide-to="1"/>
