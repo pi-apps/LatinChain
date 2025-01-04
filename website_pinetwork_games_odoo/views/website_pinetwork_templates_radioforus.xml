@@ -833,8 +833,8 @@
                                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                                         Pi cryptocurrency Transactions for user <strong translate="no"><span id="username" /></strong>:<br/><br/>
                                         <div>
-                                            Company Tax ID: <span t-esc="company_latinchain_id.vat" /><br/>
-                                            Company: <span t-esc="company_latinchain_id.name" />
+                                            Company Tax ID: <t t-esc="company_latinchain_id.vat" /><br/>
+                                            Company: <t t-esc="company_latinchain_id.name" />
                                         </div>
                                         <br/><br/>
                                         <table id="transactions" class="display" style="">
