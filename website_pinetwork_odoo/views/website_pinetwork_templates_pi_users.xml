@@ -1661,7 +1661,8 @@
                         Pi cryptocurrency Transactions for user <strong translate="no"><span id="username" /></strong>:<br/><br/>
                         <div>
                             Company Tax ID: <t t-esc="company_latinchain_id.vat" /><br/>
-                            Company: <t t-esc="company_latinchain_id.name" />
+                            Company: <t t-esc="company_latinchain_id.name" /><br/>
+                            Company address: <t t-esc="company_latinchain_id.country_id.name" />
                         </div>
                         <br/><br/>
                         <table id="transactions" class="display" style="">
