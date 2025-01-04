@@ -179,7 +179,7 @@ class PiNetworkController(http.Controller):
             mainnet = admin_app_list[0].mainnet
             google_adsense = admin_app_list[0].google_adsense
         
-        return http.request.render('website_pinetwork_games_odoo.list_transactions_radioforus', {'link_back': link_back, 'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
+        return http.request.render('website_pinetwork_games_odoo.list_transactions_radioforus', {'company_latinchain_id': request.env['res.company']._company_default_get(), 'link_back': link_back, 'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
     @http.route('/tetris/', type='http', auth="public", website=True)
     def tetris(self, **kw):
