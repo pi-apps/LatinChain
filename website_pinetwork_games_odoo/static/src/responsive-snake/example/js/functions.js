@@ -110,6 +110,22 @@ function get_user(pause) {
                     
                     if(pause)
                         $("#pause").click();
+                }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+                {
+                    alert("You can use Snake, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
+                    $("#reset_pause_controls").show();
+                    $("#plus_minus_controls").show();
+                    $("#pause").show();
+                    $("#reset").show();
+                    $("#minus").show();
+                    $("#plus").show();
+                    $("#enable_dragging").show();
+                    $('#disable_dragging').hide();
+                    $("#pi_donate").hide();
+                    $("#button_click").hide();
+                    
+                    if(pause)
+                        $("#pause").click();
                 }
                 else
                 {

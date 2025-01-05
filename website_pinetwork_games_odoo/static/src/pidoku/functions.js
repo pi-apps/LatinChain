@@ -145,6 +145,17 @@ function get_user() {
                     /*setTimeout(function() {
                       (adsbygoogle = window.adsbygoogle || []).push({});
 					}, 2000);*/
+                }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+                {
+                    alert("You can use Sudoku, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
+                    $("#pi_donate").hide();
+                    $("#button_click").hide();
+                    $(".hide_when_unblock").hide();
+                    $("#sudoku-tab").show();
+                    $("#sudoku-tab").click();
+                    
+                    var tab_name = get_tab();
+                    refresh_board();
                 }
                 else
                 {
