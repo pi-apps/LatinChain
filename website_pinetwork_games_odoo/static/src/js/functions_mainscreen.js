@@ -455,6 +455,8 @@ $( document ).ready(function() {
     $("#latin-chain").prop('src', 'https://www.youtube.com/embed/9KqcyAoCZzo');
     //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
     $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PL3j2zQVTx177bEObKAs_l__bZsxBcqei3');
+    $("#latinchain-tv").prop('src', 'https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG');
+    
     //$("#latinchain-tv").prop('src', 'https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG');
 
     var status_audio = false;

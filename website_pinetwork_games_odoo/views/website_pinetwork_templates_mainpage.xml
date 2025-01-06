@@ -846,7 +846,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.105"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.104"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.105"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1236,6 +1236,15 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline;">#LatinChainTV &#128250;</div></strong></h5>
+                            </div>
+                            <div style="margin-bottom:5px">
+                                <iframe id="latinchain-tv" width="270px" height="170px" src="https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
                             </div>
                         </div>
                         
