@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-08 11:59+0000\n"
-"PO-Revision-Date: 2025-01-08 11:59+0000\n"
+"POT-Creation-Date: 2025-01-08 19:12+0000\n"
+"PO-Revision-Date: 2025-01-08 19:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2083,7 +2083,10 @@ msgid "Start"
 msgstr "Iniciar"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Subscribe here:"
 msgstr "Suscríbete aquí:"
 
