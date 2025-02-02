@@ -222,6 +222,7 @@ function get_user() {
                 $(".show-sport-results").show();
                 $(".show-cointelegraph").show();
                 $(".show-streamerzoneboard").show();
+                $(".show-stellarium").show();
                 
                 passkey=data.passkey;
                 if(data.unblocked)
@@ -939,6 +940,10 @@ $( document ).ready(function() {
     
     $( ".tetris" ).click(function() {
         $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".stellarium" ).click(function() {
+        $.colorbox({href:"https://stellarium-web.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".sport-results" ).click(function() {
