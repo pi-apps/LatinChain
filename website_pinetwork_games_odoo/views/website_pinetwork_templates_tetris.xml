@@ -110,18 +110,6 @@
                                     jQuery( "body" ).trigger( e );
                                 }
                                 
-                                function touch_start(key)
-                                {
-                                    var e = jQuery.Event( "touchstart", { which: key, keyCode: key } );
-                                    jQuery( "body" ).trigger( e );
-                                }
-                                
-                                function touch_end(key)
-                                {
-                                    var e = jQuery.Event( "touchend", { which: key, keyCode: key } );
-                                    jQuery( "body" ).trigger( e );
-                                }
-                                
                                 $( ".left" ).mousedown(function() {
                                     press_down(37);
                                 });
@@ -146,32 +134,6 @@
                                 });
                                 $( ".right" ).mouseup(function() {
                                     press_up(39);
-                                });
-                                
-                                $( ".left" ).touchstart(function(press_d) {
-                                    touch_start(press_d);
-                                });
-                                $( ".up" ).touchstart(function(press_d) {
-                                    touch_start(press_d);
-                                });
-                                $( ".down" ).touchstart(function(press_d) {
-                                    touch_start(press_d);
-                                });
-                                $( ".right" ).touchstart(function(press_d) {
-                                    touch_start(press_d);
-                                });
-                                
-                                $( ".left" ).touchstop(function(press_d) {
-                                    touch_stop(press_d);
-                                });
-                                $( ".up" ).touchstop(function(press_d) {
-                                    touch_stop(press_d);
-                                });
-                                $( ".down" ).touchstop(function(press_d) {
-                                    touch_stop(press_d);
-                                });
-                                $( ".right" ).touchstop(function(press_d) {
-                                    touch_stop(press_d);
                                 });
                                 
                                 $( "#themes" ).change(function() {
