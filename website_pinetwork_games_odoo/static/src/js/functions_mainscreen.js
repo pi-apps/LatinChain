@@ -948,7 +948,7 @@ $( document ).ready(function() {
     });
     
     $( ".latin-search" ).click(function() {
-        $.colorbox({href:"https://www.ask.com/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({href:"https://www.dogpile.com/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".sport-results" ).click(function() {
