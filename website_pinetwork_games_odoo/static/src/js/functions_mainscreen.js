@@ -223,6 +223,7 @@ function get_user() {
                 $(".show-cointelegraph").show();
                 $(".show-streamerzoneboard").show();
                 $(".show-stellarium").show();
+                $(".show-latin-search").show();
                 
                 passkey=data.passkey;
                 if(data.unblocked)
@@ -944,6 +945,10 @@ $( document ).ready(function() {
     
     $( ".stellarium" ).click(function() {
         $.colorbox({href:"https://stellarium-web.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".latin-search" ).click(function() {
+        $.colorbox({href:"https://www.ask.com/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".sport-results" ).click(function() {
