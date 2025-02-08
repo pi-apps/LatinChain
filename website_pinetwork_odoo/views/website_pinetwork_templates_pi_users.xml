@@ -1861,6 +1861,12 @@
                                                 
                                                 startLatinChainAcademy("#show_content");
                                                 $("#show_content").show();
+                                            }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+                                            {
+                                                alert("You can use LatinChain Academy, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
+                                                
+                                                startLatinChainAcademy("#show_content");
+                                                $("#show_content").show();
                                             }else
                                             {
                                                 $("#show_button").show();
