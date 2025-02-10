@@ -384,6 +384,15 @@
                                     <div style="margin-bottom:5px" class="border-bottom">
                                         <h5 translate="no"><div style="display:inline;"><strong>Can watch Worldwide Sport Results</strong></div></h5>
                                     </div>
+                                    <div style="margin-bottom:5px" class="border-bottom">
+                                        <h5 translate="no"><div style="display:inline;"><strong>Can watch Simulation of visible Cosmos</strong></div></h5>
+                                    </div>
+                                    <div style="margin-bottom:5px" class="border-bottom">
+                                        <h5 translate="no"><div style="display:inline;"><strong>Can make searches in the Web</strong></div></h5>
+                                    </div>
+                                    <div style="margin-bottom:5px" class="border-bottom">
+                                        <h5 translate="no"><div style="display:inline;"><strong>Can watch Crypto News</strong></div></h5>
+                                    </div>
                                 </div>
                                 <br/>
                                 <h5 style="border:3px solid; padding:5px;" class="rounded">You can consult this certification at:<br/><br/><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchain7588.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
