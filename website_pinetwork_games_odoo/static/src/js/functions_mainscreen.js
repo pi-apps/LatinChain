@@ -225,6 +225,7 @@ function get_user() {
                 $(".show-stellarium").show();
                 $(".show-latin-search").show();
                 $(".show-latin-dictionary").show();
+                $(".show-latin-university").show();
                 
                 passkey=data.passkey;
                 if(data.unblocked)
@@ -954,6 +955,10 @@ $( document ).ready(function() {
     
     $( ".latin-dictionary" ).click(function() {
         $.colorbox({href:"https://www.wiktionary.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".latin-university" ).click(function() {
+        $.colorbox({href:"https://www.wikiversity.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".sport-results" ).click(function() {
