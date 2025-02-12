@@ -224,6 +224,7 @@ function get_user() {
                 $(".show-streamerzoneboard").show();
                 $(".show-stellarium").show();
                 $(".show-latin-search").show();
+                $(".show-latin-dictionary").show();
                 
                 passkey=data.passkey;
                 if(data.unblocked)
@@ -949,6 +950,10 @@ $( document ).ready(function() {
     
     $( ".latin-search" ).click(function() {
         $.colorbox({href:"https://www.metacrawler.com/serp?q=LatinChain+Platform&sc=iLjHiOa0KXCr10", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".latin-dictionary" ).click(function() {
+        $.colorbox({href:"https://www.wiktionary.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".sport-results" ).click(function() {
