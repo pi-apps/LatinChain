@@ -21,7 +21,7 @@
                     <div class="container" style="text-align:center; max-width: 840px">
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
-                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
                             <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                             <br/>
@@ -169,7 +169,7 @@
                                         
                                         <t t-set="style" t-value="'background-color:#E5E4E2'" />
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                                         <br/>
@@ -223,7 +223,7 @@
                     <div class="container" style="text-align:center; max-width: 840px">
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
-                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
                             <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                             <br/>
@@ -369,7 +369,7 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                                         <br/>
@@ -423,7 +423,7 @@
                     <div class="container" style="text-align:center; max-width: 840px">
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
-                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
                             <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                             <br/>
@@ -598,7 +598,7 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                                         <br/>
@@ -642,7 +642,7 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                                         <br/>
@@ -686,7 +686,7 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                                         <br/>
@@ -730,7 +730,7 @@
                                             <t t-set="style" t-value="''" />
                                         </t>
                                         
-                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                                        <li class="list-group-item" t-att-style="style"><span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                                         <br/>
@@ -860,7 +860,7 @@
                                 <button style="filter: contrast(100%) !important;" t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
                                 <br/>
                             </t>
-                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
                             <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                             <br/>
@@ -1030,7 +1030,7 @@
                                             <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
                                             <br/>
                                         </t>
-                                        <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa fa-trophy"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                                        <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa fa-trophy"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                                         <br/>
@@ -1093,7 +1093,7 @@
                                 <button style="filter: contrast(100%) !important;" t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
                                 <br/>
                             </t>
-                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                            Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
                             <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                             <br/>
@@ -1247,7 +1247,7 @@
                                             <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
                                             <br/>
                                         </t>
-                                        <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa-brands fa-youtube"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="'{:,}'.format(pi_user.points_datetime)" /> UTC 
+                                        <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa-brands fa-youtube"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
                                         <div>Latin points: <t t-esc="'{:,}'.format(pi_user.points_latin)" /></div>
                                         <br/>
