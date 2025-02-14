@@ -43,10 +43,10 @@
                             </table><br/><br/>
                         </t>
                         <t t-if="pi_users_count >= 0">
-                            Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
+                            Total users in the app: <strong><t t-esc="'{:,}'.format(pi_users_count)" /></strong><br/>
                         </t>
                         <t t-if="pi_users_verified_count >= 0">
-                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
+                            Total verified users in the app: <strong><t t-esc="'{:,}'.format(pi_users_verified_count)" /></strong><br/><br/>
                         </t>
                         
                         <script type='text/javascript'>
@@ -245,10 +245,10 @@
                             </table><br/><br/>
                         </t>
                         <t t-if="pi_users_count >= 0">
-                            Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
+                            Total users in the app: <strong><t t-esc="'{:,}'.format(pi_users_count)" /></strong><br/>
                         </t>
                         <t t-if="pi_users_verified_count >= 0">
-                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
+                            Total verified users in the app: <strong><t t-esc="'{:,}'.format(pi_users_verified_count)" /></strong><br/><br/>
                         </t>
                         
                         <script type='text/javascript'>
@@ -445,10 +445,10 @@
                             </table><br/><br/>
                         </t>
                         <t t-if="pi_users_count >= 0">
-                            Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
+                            Total users in the app: <strong><t t-esc="'{:,}'.format(pi_users_count)" /></strong><br/>
                         </t>
                         <t t-if="pi_users_verified_count >= 0">
-                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
+                            Total verified users in the app: <strong><t t-esc="'{:,}'.format(pi_users_verified_count)" /></strong><br/><br/>
                         </t>
                         
                         <script type='text/javascript'>
@@ -898,10 +898,10 @@
                             </t><br/><br/>
                         </t>
                         <t t-if="pi_users_count >= 0">
-                            Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
+                            Total users in the app: <strong><t t-esc="'{:,}'.format(pi_users_count)" /></strong><br/>
                         </t>
                         <t t-if="pi_users_verified_count >= 0">
-                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
+                            Total verified users in the app: <strong><t t-esc="'{:,}'.format(pi_users_verified_count)" /></strong><br/><br/>
                         </t>
                         
                         <script type='text/javascript'>
@@ -1115,10 +1115,10 @@
                             </table><br/><br/>
                         </t>
                         <t t-if="pi_users_count >= 0">
-                            Total users in the app: <strong><t t-esc="pi_users_count" /></strong><br/>
+                            Total users in the app: <strong><t t-esc="'{:,}'.format(pi_users_count)" /></strong><br/>
                         </t>
                         <t t-if="pi_users_verified_count >= 0">
-                            Total verified users in the app: <strong><t t-esc="pi_users_verified_count" /></strong><br/><br/>
+                            Total verified users in the app: <strong><t t-esc="'{:,}'.format(pi_users_verified_count)" /></strong><br/><br/>
                         </t>
                         
                         <script type='text/javascript'>
