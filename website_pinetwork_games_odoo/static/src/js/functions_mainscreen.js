@@ -949,7 +949,7 @@ $( document ).ready(function() {
         {
             if(confirm($("#modal_unlock_use_anytime").text()))
             {
-                $(".donation").click();
+                location.href = "/pinetwork";
             }
         }
     });
@@ -967,7 +967,7 @@ $( document ).ready(function() {
         {
             if(confirm($("#modal_unlock_use_anytime").text()))
             {
-                $(".donation").click();
+                location.href = "/pinetwork";
             }
         }
     });
@@ -984,7 +984,7 @@ $( document ).ready(function() {
         {
             if(confirm($("#modal_unlock_use_anytime").text()))
             {
-                $(".donation").click();
+                location.href = "/pinetwork";
             }
         }
     });
@@ -1001,7 +1001,7 @@ $( document ).ready(function() {
         {
             if(confirm($("#modal_unlock_use_anytime").text()))
             {
-                $(".donation").click();
+                location.href = "/pinetwork";
             }
         }
     });
@@ -1018,7 +1018,7 @@ $( document ).ready(function() {
         {
             if(confirm($("#modal_unlock_use_anytime").text()))
             {
-                $(".donation").click();
+                location.href = "/pinetwork";
             }
         }
     });
@@ -1035,7 +1035,7 @@ $( document ).ready(function() {
         {
             if(confirm($("#modal_unlock_use_anytime").text()))
             {
-                $(".donation").click();
+                location.href = "/pinetwork";
             }
         }
     });
@@ -1052,7 +1052,7 @@ $( document ).ready(function() {
         {
             if(confirm($("#modal_unlock_use_anytime").text()))
             {
-                $(".donation").click();
+                location.href = "/pinetwork";
             }
         }
     });
@@ -1069,7 +1069,7 @@ $( document ).ready(function() {
         {
             if(confirm($("#modal_unlock_use_anytime").text()))
             {
-                $(".donation").click();
+                location.href = "/pinetwork";
             }
         }
     });
@@ -1110,7 +1110,7 @@ $( document ).ready(function() {
         {
             if(confirm($("#modal_unlock_use_anytime").text()))
             {
-                $(".donation").click();
+                location.href = "/pinetwork";
             }
         }
     });
@@ -1127,7 +1127,7 @@ $( document ).ready(function() {
         {
             if(confirm($("#modal_unlock_use_anytime").text()))
             {
-                $(".donation").click();
+                location.href = "/pinetwork";
             }
         }
     });
