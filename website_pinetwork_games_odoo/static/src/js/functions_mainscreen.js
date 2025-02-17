@@ -942,31 +942,102 @@ $( document ).ready(function() {
     });
     
     $( ".tetris" ).click(function() {
-        $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        if(unblocked)
+        {
+            $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            
+            alert($("modal_use_anytime").text());
+            $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else
+        {
+            alert($("modal_unlock_use_anytime").text());
+        }
     });
     
     $( ".stellarium" ).click(function() {
-        $.colorbox({href:"https://stellarium-web.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        if(unblocked)
+        {
+            $.colorbox({href:"https://stellarium-web.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            alert($("modal_use_anytime").text());
+            $.colorbox({href:"https://stellarium-web.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else
+        {
+            alert($("modal_unlock_use_anytime").text());
+        }
     });
     
     $( ".latin-search" ).click(function() {
-        $.colorbox({href:"https://www.metacrawler.com/serp?q=LatinChain+Platform&sc=iLjHiOa0KXCr10", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        if(unblocked)
+        {
+            $.colorbox({href:"https://www.metacrawler.com/serp?q=LatinChain+Platform&sc=iLjHiOa0KXCr10", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            alert($("modal_use_anytime").text());
+            $.colorbox({href:"https://www.metacrawler.com/serp?q=LatinChain+Platform&sc=iLjHiOa0KXCr10", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else
+        {
+            alert($("modal_unlock_use_anytime").text());
+        }
     });
     
     $( ".latin-dictionary" ).click(function() {
-        $.colorbox({href:"https://www.wiktionary.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        if(unblocked) 
+        {
+            $.colorbox({href:"https://www.wiktionary.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            alert($("modal_use_anytime").text());
+            $.colorbox({href:"https://www.wiktionary.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else
+        {
+            alert($("modal_unlock_use_anytime").text());
+        }
     });
     
     $( ".latin-university" ).click(function() {
-        $.colorbox({href:"https://www.wikiversity.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        if(unblocked) 
+        {
+            $.colorbox({href:"https://www.wikiversity.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            alert($("modal_use_anytime").text());
+            $.colorbox({href:"https://www.wikiversity.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else
+        {
+            alert($("modal_unlock_use_anytime").text());
+        }
     });
     
     $( ".sport-results" ).click(function() {
-        $.colorbox({href:"https://sports.latin-chain.com/?v=1.103", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        if(unblocked) 
+        {
+            $.colorbox({href:"https://sports.latin-chain.com/?v=1.103", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            alert($("modal_use_anytime").text());
+            $.colorbox({href:"https://sports.latin-chain.com/?v=1.103", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else
+        {
+            alert($("modal_unlock_use_anytime").text());
+        }
     });
     
     $( ".mahjong" ).click(function() {
-        $.colorbox({href:"/mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        if(unblocked) 
+        {
+            $.colorbox({href:"/mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            alert($("modal_use_anytime").text());
+            $.colorbox({href:"/mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else
+        {
+            alert($("modal_unlock_use_anytime").text());
+        }
     });
     
     $( ".show_status" ).click(function() {
@@ -994,11 +1065,31 @@ $( document ).ready(function() {
     });
     
     $( ".cointelegraph" ).click(function() {
-        $.colorbox({href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        if(unblocked) 
+        {
+            $.colorbox({href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            alert($("modal_use_anytime").text());
+            $.colorbox({href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else
+        {
+            alert($("modal_unlock_use_anytime").text());
+        }
     });
     
     $( ".tvonline" ).click(function() {
-        $.colorbox({href:"https://pluto.tv/latam/live-tv/6320d80a66666000086712d7?lang=en", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        if(unblocked) 
+        {
+            $.colorbox({href:"https://pluto.tv/latam/live-tv/6320d80a66666000086712d7?lang=en", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            alert($("modal_use_anytime").text());
+            $.colorbox({href:"https://pluto.tv/latam/live-tv/6320d80a66666000086712d7?lang=en", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else
+        {
+            alert($("modal_unlock_use_anytime").text());
+        }
     });
     
     
