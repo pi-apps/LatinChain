@@ -947,7 +947,10 @@ $( document ).ready(function() {
             $.colorbox({href:"https://news.latin-chain.com/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
         }else
         {
-            alert($("#modal_unlock_use_anytime").text());
+            if(prompt($("#modal_unlock_use_anytime").text()))
+            {
+                $(".donation").click();
+            }
         }
     });
     
@@ -962,7 +965,10 @@ $( document ).ready(function() {
             $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
         }else
         {
-            alert($("#modal_unlock_use_anytime").text());
+            if(prompt($("#modal_unlock_use_anytime").text()))
+            {
+                $(".donation").click();
+            }
         }
     });
     
@@ -976,7 +982,10 @@ $( document ).ready(function() {
             $.colorbox({href:"https://stellarium-web.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
         }else
         {
-            alert($("#modal_unlock_use_anytime").text());
+            if(prompt($("#modal_unlock_use_anytime").text()))
+            {
+                $(".donation").click();
+            }
         }
     });
     
@@ -990,7 +999,10 @@ $( document ).ready(function() {
             $.colorbox({href:"https://www.metacrawler.com/serp?q=LatinChain+Platform&sc=iLjHiOa0KXCr10", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
         }else
         {
-            alert($("#modal_unlock_use_anytime").text());
+            if(prompt($("#modal_unlock_use_anytime").text()))
+            {
+                $(".donation").click();
+            }
         }
     });
     
@@ -1004,7 +1016,10 @@ $( document ).ready(function() {
             $.colorbox({href:"https://www.wiktionary.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
         }else
         {
-            alert($("#modal_unlock_use_anytime").text());
+            if(prompt($("#modal_unlock_use_anytime").text()))
+            {
+                $(".donation").click();
+            }
         }
     });
     
@@ -1018,7 +1033,10 @@ $( document ).ready(function() {
             $.colorbox({href:"https://www.wikiversity.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
         }else
         {
-            alert($("#modal_unlock_use_anytime").text());
+            if(prompt($("#modal_unlock_use_anytime").text()))
+            {
+                $(".donation").click();
+            }
         }
     });
     
@@ -1032,7 +1050,10 @@ $( document ).ready(function() {
             $.colorbox({href:"https://sports.latin-chain.com/?v=1.103", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
         }else
         {
-            alert($("#modal_unlock_use_anytime").text());
+            if(prompt($("#modal_unlock_use_anytime").text()))
+            {
+                $(".donation").click();
+            }
         }
     });
     
@@ -1046,7 +1067,10 @@ $( document ).ready(function() {
             $.colorbox({href:"/mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
         }else
         {
-            alert($("#modal_unlock_use_anytime").text());
+            if(prompt($("#modal_unlock_use_anytime").text()))
+            {
+                $(".donation").click();
+            }
         }
     });
     
@@ -1084,7 +1108,10 @@ $( document ).ready(function() {
             $.colorbox({href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
         }else
         {
-            alert($("#modal_unlock_use_anytime").text());
+            if(prompt($("#modal_unlock_use_anytime").text()))
+            {
+                $(".donation").click();
+            }
         }
     });
     
@@ -1098,7 +1125,10 @@ $( document ).ready(function() {
             $.colorbox({href:"https://pluto.tv/latam/live-tv/6320d80a66666000086712d7?lang=en", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
         }else
         {
-            alert($("#modal_unlock_use_anytime").text());
+            if(prompt($("#modal_unlock_use_anytime").text()))
+            {
+                $(".donation").click();
+            }
         }
     });
     
