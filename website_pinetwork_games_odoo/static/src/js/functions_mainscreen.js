@@ -938,7 +938,17 @@ $( document ).ready(function() {
     });
     
     $( ".cryptonews" ).click(function() {
-        $.colorbox({href:"https://news.latin-chain.com/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        if(unblocked)
+        {
+            $.colorbox({href:"https://news.latin-chain.com/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            alert($("modal_use_anytime").text());
+            $.colorbox({href:"https://news.latin-chain.com/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        }else
+        {
+            alert($("modal_unlock_use_anytime").text());
+        }
     });
     
     $( ".tetris" ).click(function() {
