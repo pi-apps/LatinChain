@@ -1431,6 +1431,41 @@
                               </div>
                             </div>
                             
+                            <div id="accordionPrice" style="margin-bottom:5px">
+                              <div class="card">
+                                <!--<div class="card-header" id="headingTwo">
+                                  <h5 class="mb-0">
+                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapsePrice">
+                                      <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
+                                    </button>
+                                  </h5>
+                                </div>-->
+                                
+                                <h2 class="accordion-header" id="headingPrice">
+                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrice" aria-expanded="true" aria-controls="collapsePrice">
+                                    <div style=""><i class="fa-solid fa-money-bill-trend-up"></i></div><div style="">Price</div>
+                                  </button>
+                                </h2>
+
+                                <div id="collapsePrice" class="collapse" aria-labelledby="headingPrice" data-parent="#accordionPrice">
+                                  <div class="card-body">
+                                    <div style="text-align:center" class="form-group container">
+                                        <div class="row">
+                                            <div class="col-1">
+                                            </div>
+                                            <div class="col-10">
+                                                <script src="https://widgets.coingecko.com/gecko-coin-ticker-widget.js"></script>
+                                                <gecko-coin-ticker-widget locale="es" outlined="true" coin-id="pi-network" initial-currency="usd"></gecko-coin-ticker-widget>
+                                            </div>
+                                            <div class="col-1">
+                                            </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
                             <div style="text-align:center; position:relative;" id="pay_with">
                                 <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="max-width: 350px" width="100%" height="170px" />
                                 <!--<div id="myApps" style="display:inline; position: absolute; bottom: 0; height: 80px;">
