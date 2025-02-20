@@ -1451,13 +1451,9 @@
                                   <div class="card-body">
                                     <div style="text-align:center" class="form-group container">
                                         <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
+                                            <div class="col-12">
                                                 <script src="https://widgets.coingecko.com/gecko-coin-ticker-widget.js"></script>
                                                 <gecko-coin-ticker-widget locale="es" outlined="true" coin-id="pi-network" initial-currency="usd"></gecko-coin-ticker-widget>
-                                            </div>
-                                            <div class="col-1">
                                             </div>
                                         </div>
                                       </div>
