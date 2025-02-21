@@ -401,6 +401,10 @@
                               filter: contrast(100%) !important;
                             }
                             
+                            .darkmode--activated #piad_not_available {
+                              color: black !important;
+                            }
+                            
                         </style>
                     </t>
 
