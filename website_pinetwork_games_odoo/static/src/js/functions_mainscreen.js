@@ -994,37 +994,11 @@ $( document ).ready(function() {
     });
     
     $( ".cointelegraph" ).click(function() {
-        if(unblocked) 
-        {
-            $.colorbox({href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
-        {
-            alert($("#modal_use_anytime").text());
-            $.colorbox({href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-        }else
-        {
-            if(confirm($("#modal_unlock_use_anytime").text()))
-            {
-                location.href = "/pinetwork";
-            }
-        }
+        $.colorbox({href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".tvonline" ).click(function() {
-        if(unblocked) 
-        {
-            $.colorbox({href:"https://pluto.tv/latam/live-tv/6320d80a66666000086712d7?lang=en", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-        }else if(["Mainnet OFF"].includes($("#mainnet").val()))
-        {
-            alert($("#modal_use_anytime").text());
-            $.colorbox({href:"https://pluto.tv/latam/live-tv/6320d80a66666000086712d7?lang=en", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-        }else
-        {
-            if(confirm($("#modal_unlock_use_anytime").text()))
-            {
-                location.href = "/pinetwork";
-            }
-        }
+        $.colorbox({href:"https://pluto.tv/latam/live-tv/6320d80a66666000086712d7?lang=en", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     
