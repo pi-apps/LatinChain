@@ -850,7 +850,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.120"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.122"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1566,6 +1566,23 @@
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
+                                                <div class="col-12" style="text-align: center"><h3>NEXT IS TO PAY PI</h3></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-12" style="text-align: center"><h3>NEXT ARE PAID APPS</h3></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a href="/chess" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:100%;" translate="no">CHESS</div><div style="font-size:80%;">Worldwide Chess Championship</div><div style="font-size:80%;">Gain points</div></a><button id="chessinfo" class="col-auto btn btn-sm btn-outline-info chessinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
@@ -1588,15 +1605,13 @@
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a></div>
+                                                <div class="col-10"><a href="/latinchain-academy" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN ACADEMY</div><div style="font-size:80%;">Learn Odoo with LatinChain</div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a href="/latinchain-academy" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN ACADEMY</div><div style="font-size:80%;">Learn Odoo with LatinChain</div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12" style="text-align: center"><h3>NEXT ARE FREE APPS</h3></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-latin-university" style="display:none">
