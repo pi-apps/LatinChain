@@ -1457,7 +1457,8 @@
                                     <div style="text-align:center" class="form-group container">
                                         <div class="row">
                                             <div class="col-12">
-                                                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currencyid="35697" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                                                <script src="https://widgets.coingecko.com/gecko-coin-ticker-widget.js"></script>
+                                                <gecko-coin-ticker-widget locale="es" outlined="true" coin-id="pi-network" initial-currency="usd"></gecko-coin-ticker-widget>
                                             </div>
                                         </div>
                                       </div>
