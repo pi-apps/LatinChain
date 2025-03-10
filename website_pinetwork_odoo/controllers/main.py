@@ -251,13 +251,18 @@ class PiNetworkBaseController(http.Controller):
             unblocked_datetime = ""
         else:
             unblocked_datetime = str(pi_users_list[0].unblocked_datetime) + " UTC"
+            
+        pi_ad_seconds = apps_list[0].pi_ad_seconds
+        
+        if pi_users_list[0].unblocked:
+            pi_ad_seconds = apps_list[0].pi_ad_seconds*8
         
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
-            show_pi_ad_time = apps_list[0].pi_ad_seconds/3600
-        elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)):
+            show_pi_ad_time = pi_ad_seconds/3600
+        elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=pi_ad_seconds)):
             show_pi_ad = True
-            show_pi_ad_time = apps_list[0].pi_ad_seconds/3600
+            show_pi_ad_time = pi_ad_seconds/3600
         else:
             show_pi_ad = False
             show_pi_ad_time = 0
@@ -267,7 +272,7 @@ class PiNetworkBaseController(http.Controller):
                 pi_ad_new = False
             else:
                 pi_ad_new = True
-        elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)) and \
+        elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=pi_ad_seconds)) and \
             pi_users_list[0].pi_ad_datetime <= datetime.now():
             if pi_users_list[0].pi_ad_counter >= apps_list[0].pi_ad_max:
                 pi_ad_new = False
@@ -552,6 +557,11 @@ class PiNetworkBaseController(http.Controller):
             
             apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
             
+            pi_ad_seconds = apps_list[0].pi_ad_seconds
+            
+            if pi_users_list[0].unblocked:
+                pi_ad_seconds = apps_list[0].pi_ad_seconds*8
+            
             if not pi_users_list[0].pi_ad_datetime:
                 values.update({'pi_ad_datetime': datetime.now()})
                 if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
@@ -560,7 +570,7 @@ class PiNetworkBaseController(http.Controller):
                 else:
                     values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
                     pi_ad_new = True
-            elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=apps_list[0].pi_ad_seconds)) and \
+            elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=pi_ad_seconds)) and \
                 pi_users_list[0].pi_ad_datetime <= datetime.now():
                 if pi_users_list[0].pi_ad_counter+1 >= apps_list[0].pi_ad_max:
                     values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
