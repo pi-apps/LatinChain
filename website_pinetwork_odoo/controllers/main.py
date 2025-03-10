@@ -265,7 +265,7 @@ class PiNetworkBaseController(http.Controller):
             show_pi_ad_time = pi_ad_seconds/3600
         else:
             show_pi_ad = False
-            show_pi_ad_time = 0
+            show_pi_ad_time = pi_ad_seconds/3600
             
         if not pi_users_list[0].pi_ad_datetime:
             if pi_users_list[0].pi_ad_counter >= apps_list[0].pi_ad_max:
