@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 17:45+0000\n"
-"PO-Revision-Date: 2025-02-22 17:45+0000\n"
+"POT-Creation-Date: 2025-03-11 22:39+0000\n"
+"PO-Revision-Date: 2025-03-11 22:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,6 +38,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "#Testnet 📱"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "#Udemy #Links 🏪"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -346,16 +351,14 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"5.- Each user that sets your referrer code at LatinChain's mainscreen, will "
-"generates you an income, that will be paid to your Pi wallet each time any "
-"of your referrers pay to unblock LatinChain. If <strong>rockcesar</strong> "
-"sets your referrer code, then each time <strong>rockcesar</strong> pays"
+msgid "5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "5.- For Top 10 zone Sudoku: Have more than 18 points in Sudoku."
+msgid ""
+"5.- For an unverified user, Pi Ads will be displayed 1 ad each 1 hour. For a"
+" verified user, Pi Ads will be displayed 1 ad each 8 hours."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -725,6 +728,13 @@ msgid "<strong>App Store</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<strong>Best book deals in Amazon. Challenge: buy a weekly book and bring "
+"one for you.</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "<strong>Blockrain (kind of tetris)</strong>"
 msgstr ""
@@ -821,6 +831,11 @@ msgid "<strong>Translate</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>Udemy courses with certificate.</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "<strong>Winners Board and Prizes</strong>"
 msgstr ""
@@ -844,11 +859,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "API Docs"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
-msgid "Accepted Science"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -883,26 +893,6 @@ msgstr ""
 msgid ""
 "All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>\n"
 "                                                Here you can watch your incoming and outcoming transactions:<br/>"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
-msgid "Amazon Associates:"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Amazon Best Sellers"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Amazon Charts"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Amazon winners"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -968,13 +958,6 @@ msgid "Back"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"Best book deals in Amazon. Challenge: buy a weekly book and bring one for "
-"you."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Black"
 msgstr ""
@@ -1007,11 +990,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Book 6"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Book 7"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1091,6 +1069,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Congrats, you won"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Course 1"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Course 2"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1186,11 +1174,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Easy puzzle"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Editors' Picks"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1383,17 +1366,22 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LATIN BOOKS"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LATIN DICTIONARY"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "LATIN UNIVERSITY"
+msgid "LATIN SEARCH"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "LATIN-SEARCH"
+msgid "LATIN UNIVERSITY"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1415,17 +1403,22 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Latin Books: Wikibooks Online."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Latin Dictionary: Wiktionary Online."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "Latin University: Wikiversity Online."
+msgid "Latin Search: Metacrawler Search Site."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "Latin-Search: Metacrawler Search Site."
+msgid "Latin University: Wikiversity Online."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1629,11 +1622,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "NYT Best Sellers"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Nelson"
 msgstr ""
 
@@ -1748,15 +1736,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"Pi, an amount of that payment will go to your Pi wallet. Also "
-"<strong>rockcesar</strong> will receive a payback of the same amount of his "
-"referrer. Although, we can't assure that payment due any Platform issue, we "
-"can say that in a normal situation, it will be paid."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Pi, depending on the platform income."
 msgstr ""
 
@@ -1837,11 +1816,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Prize payment for"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Promotions"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1959,6 +1933,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Save PNG"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "Sci-Fi"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2296,6 +2275,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "White"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Wikibooks Online"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
