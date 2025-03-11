@@ -854,7 +854,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.126"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.127"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1215,7 +1215,7 @@
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px">
                                 <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success font-weight-bold" disabled="true" style="max-width: 300px;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%; display: none">Testing feature</div></button>
                                 <span id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
-                                    Pi ads not available (<t t-esc="pi_ad_max" /> ads each <div id="pi_ad_hours" style="display:inline;"></div> hours).
+                                    Pi ads not available (<div id="pi_ad_max" style="display:inline;"></div> ads each <div id="pi_ad_hours" style="display:inline;"></div> hours).
                                 </span>
                             </div>
                         </div>

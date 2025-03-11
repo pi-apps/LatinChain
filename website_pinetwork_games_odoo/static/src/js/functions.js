@@ -100,8 +100,10 @@ function get_user(donation) {
                 show_pi_ad_user = data.show_pi_ad;
                 show_pi_ad_user_time = data.show_pi_ad_time;
                 pi_ad_new = data.pi_ad_new;
+                pi_ad_max = data.pi_ad_max
                 
                 $("#pi_ad_hours").html(show_pi_ad_user_time);
+                $("#pi_ad_max").html(pi_ad_max);
             }
         }).fail(function() {
             
