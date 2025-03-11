@@ -255,7 +255,7 @@ class PiNetworkBaseController(http.Controller):
         pi_ad_seconds = apps_list[0].pi_ad_seconds
         
         if pi_users_list[0].unblocked:
-            pi_ad_seconds = apps_list[0].pi_ad_seconds*8
+            pi_ad_seconds = apps_list[0].pi_ad_seconds
         
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
@@ -560,7 +560,7 @@ class PiNetworkBaseController(http.Controller):
             pi_ad_seconds = apps_list[0].pi_ad_seconds
             
             if pi_users_list[0].unblocked:
-                pi_ad_seconds = apps_list[0].pi_ad_seconds*8
+                pi_ad_seconds = apps_list[0].pi_ad_seconds
             
             if not pi_users_list[0].pi_ad_datetime:
                 values.update({'pi_ad_datetime': datetime.now()})
