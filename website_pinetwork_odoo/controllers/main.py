@@ -83,6 +83,14 @@ class PiNetworkBaseController(http.Controller):
     def latinchain_testnet(self, **kw):
         return http.request.redirect('https://latinchaintest9869.pinet.com')
         
+    @http.route('/odoo-tech-course/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
+    def odoo_technical_course(self, **kw):
+        return http.request.redirect('https://www.udemy.com/course/odoo-14-technical-training-en-espanol/?referralCode=1229BD4F262C09869DB2')
+    
+    @http.route('/piapps-course/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
+    def piapps_course(self, **kw):
+        return http.request.redirect('https://www.udemy.com/course/learn-how-to-develop-a-pi-app-on-the-pi-network/?referralCode=ADD5DE357007E267B364')
+        
     @http.route('/terms/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def latinchain_terms(self, **kw):
         return http.request.redirect('/blog/latinchain-blog-1/terms-of-service-6')
