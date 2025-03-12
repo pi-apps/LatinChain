@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-11 22:39+0000\n"
-"PO-Revision-Date: 2025-03-11 22:39+0000\n"
+"POT-Creation-Date: 2025-03-12 15:20+0000\n"
+"PO-Revision-Date: 2025-03-12 15:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -407,8 +407,9 @@ msgid ""
 "5.- For an unverified user, Pi Ads will be displayed 1 ad each 1 hour. For a"
 " verified user, Pi Ads will be displayed 1 ad each 8 hours."
 msgstr ""
-"5.- Para un usuario no verificado, las Pi Ads serán mostradas 1 ad cada 1 hora. Para un "
-"usuario verificado, las Pi Ads serán mostradas 1 ad cada 8 horas."
+"5.- Para un usuario no verificado, las Pi Ads serán mostradas 1 ad cada 1 "
+"hora. Para un usuario verificado, las Pi Ads serán mostradas 1 ad cada 8 "
+"horas."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -843,14 +844,12 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<strong>App Store</strong>"
+msgid "<strong>Amazon books.</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"<strong>Best book deals in Amazon. Challenge: buy a weekly book and bring "
-"one for you.</strong>"
+msgid "<strong>App Store</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1097,26 +1096,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Book 3"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Book 4"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Book 5"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Book 6"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "CHESS"
 msgstr ""
 
@@ -1239,11 +1218,6 @@ msgstr "Días disponibles:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Deals"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Decentralized Universe"
 msgstr "Universo Descentralizado"
 
@@ -1325,6 +1299,15 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Facebook"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"First Rule: Once you paid a monthly subscription, you'll have 30 days to "
+"enjoy LatinChain Platform and it won't be refunds."
+msgstr ""
+"Primera regla: Una vez que hayas pagado una suscripción mensual, tendrás 30 días para "
+"disfrutar de LatinChain Platform y no habrá reembolsos."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
