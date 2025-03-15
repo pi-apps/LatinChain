@@ -226,7 +226,7 @@ function get_user() {
                 $(".show-sport-results").show();
                 $(".show-cointelegraph").show();
                 $(".show-streamerzoneboard").show();
-                $(".show-stellarium").show();
+                //$(".show-stellarium").show();
                 $(".show-latin-search").show();
                 $(".show-latin-dictionary").show();
                 $(".show-latin-university").show();
@@ -934,9 +934,9 @@ $( document ).ready(function() {
         $.colorbox({href:streamerzoneboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
-    $( ".readingclub" ).click(function() {
+    /*$( ".readingclub" ).click(function() {
         $.colorbox({href:"/reading-club", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
+    });*/
     
     $( "#credits" ).click(function() {
         $.colorbox({href:"/get-credits", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
@@ -950,9 +950,9 @@ $( document ).ready(function() {
         $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
-    $( ".stellarium" ).click(function() {
+    /*$( ".stellarium" ).click(function() {
         $.colorbox({href:"https://stellarium-web.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
+    });*/
     
     $( ".latin-search" ).click(function() {
         $.colorbox({href:"https://www.metacrawler.com/serp?q=LatinChain+Platform&sc=iLjHiOa0KXCr10", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
