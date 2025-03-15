@@ -1225,20 +1225,20 @@
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinChainTV &#128250;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <div>Subscribe here:</div>
+                                <!--<div>Subscribe here:</div>
                                 <div style="filter: contrast(100%) !important;">
                                 &#128073;
                                 <a href="https://www.youtube.com/@rockcesar85" target="_blank">
                                     <img src="/website_pinetwork_games_odoo/static/src/img/youtube.png" alt="Youtube" class="img-fluid" style="max-width: 130px" width="100%" height="50px" />
                                 </a>
                                 &#128072;
-                                </div>
+                                </div>-->
                                 <iframe id="latinchain-tv" style="max-width: 350px" width="100%" height="200px" src="https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
                             </div>
                         </div>
                         
                         <!--<div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">-->
-                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
+                        <!--<div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#Udemy #Links &#127978;</div></strong></h5>
                             </div>
@@ -1261,10 +1261,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         
                         <!--<div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">-->
-                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
+                        <!--<div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#Amazon #Links &#127978;</div></strong></h5>
                             </div>
@@ -1286,7 +1286,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
@@ -1306,9 +1306,11 @@
                             <div style="margin-bottom:5px">
                                 <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3o2Tbr75z-5oDg1AFNZ1u8" class="col-8 btn btn-danger open_streaming_playlist font-weight-bold" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top videos</div></button>
                             </div>
+                            <!--
                             <div style="margin-bottom:5px">
                                 <button class="col-8 btn btn-info readingclub font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-book-open-reader"></i></div> <div style="display:inline;">reading club</div></button>
                             </div>
+                            -->
                             <div style="margin-bottom:5px">
                                 <button class="col-8 btn btn-info askanexpert font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-question"></i></div> <div style="display:inline;">ask an expert</div></button>
                             </div>
