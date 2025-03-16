@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-16 18:25+0000\n"
-"PO-Revision-Date: 2025-03-16 18:25+0000\n"
+"POT-Creation-Date: 2025-03-16 18:36+0000\n"
+"PO-Revision-Date: 2025-03-16 18:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -55,6 +55,11 @@ msgid ""
 msgstr ""
 "(Recuerda <strong>borrar la caché del navegador Pi</strong> si no funciona "
 "bien)."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "* Additionally:"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1918,6 +1923,11 @@ msgid "Prize payment for"
 msgstr "Pago de los premios para"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "RadioForUs"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid "RadioForUs.<br/>Mainnet:"
 msgstr ""
@@ -2554,6 +2564,11 @@ msgid "Youtube videos"
 msgstr "Videos de Youtube"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "a.- You will can use"
+msgstr "a.- Podrás usar"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "ads each"
@@ -2563,6 +2578,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
 msgid "and"
 msgstr "y"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "and LatinChain with the same subscription of 30 days."
+msgstr "y LatinChain con la misma suscripción de 30 días."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
