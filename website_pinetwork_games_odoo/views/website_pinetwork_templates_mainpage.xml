@@ -854,7 +854,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.128"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.129"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1313,9 +1313,9 @@
                                 <button class="col-8 btn btn-info readingclub font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-book-open-reader"></i></div> <div style="display:inline;">reading club</div></button>
                             </div>
                             -->
-                            <div style="margin-bottom:5px">
+                            <!--<div style="margin-bottom:5px">
                                 <button class="col-8 btn btn-info askanexpert font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-question"></i></div> <div style="display:inline;">ask an expert</div></button>
-                            </div>
+                            </div>-->
                             <div style="margin-bottom:5px">
                                 <button class="col-8 btn btn-info partners font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-handshake"></i></div> <div style="display:inline;">partners</div></button>
                             </div>
