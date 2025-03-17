@@ -91,6 +91,10 @@ class PiNetworkBaseController(http.Controller):
     def piapps_course(self, **kw):
         return http.request.redirect('https://www.udemy.com/course/learn-how-to-develop-a-pi-app-on-the-pi-network/?referralCode=ADD5DE357007E267B364')
         
+    @http.route('/english-course/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
+    def english_course(self, **kw):
+        return http.request.redirect('https://www.udemy.com/course/aprende-ingles-practico-hoy-mismo-con-ia/?referralCode=D67C6EEEA0A577E2C2CF')
+        
     @http.route('/odoo-tech-book/', type='http', auth="public", website=True, csrf=False, methods=['GET'])
     def odoo_technical_book(self, **kw):
         return http.request.redirect('https://www.amazon.com/dp/B0DJVY51LS')
