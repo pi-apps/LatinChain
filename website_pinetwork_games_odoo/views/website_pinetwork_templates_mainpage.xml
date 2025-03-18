@@ -1292,6 +1292,15 @@
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong>#LatinChain #PayPi &#128177;</strong></h5>
+                            </div>
+                            <div style="margin-top:5px">
+                                <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#LatinChain #Magazine &#127909;</strong></h5>
                             </div>
                             
@@ -1321,9 +1330,6 @@
                             </div>
                             <div class="div-certification" style="display: none">
                                 <button class="col-8 btn btn-info certification font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-certificate"></i></div> <div style="display:inline;">certification</div></button>
-                            </div>
-                            <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-top:5px">
-                                <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
                             </div>
                         </div>
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
