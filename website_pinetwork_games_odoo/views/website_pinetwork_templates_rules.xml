@@ -96,7 +96,7 @@
                                     <h3>2.- Your playing records will be saved in our servers, you can consult them anytime. After finish the subscription, your records would be hidden, but when you start the subscription again, your records will be shown again.</h3>
                                     <h3>3.- You could gain prizes if you are one of the leaders. Read the Rules section for more info.</h3>
                                     <h3>4.- You can stream your Youtube videos to the LatinChain community, being in the Top 50 streamers with more points.</h3>
-                                    <h3 t-if="mainnet in ['Mainnet OFF', 'Mainnet ON']">5.- For an unverified user, Pi Ads will be displayed 1 ad each 1 hour. For a verified user, Pi Ads will be displayed 1 ad each 8 hours.</h3>
+                                    <h3 t-if="mainnet in ['Mainnet OFF', 'Mainnet ON']">5.- For an unverified user, Pi Ads will be displayed 1 ad each 1 hour. For a verified user, Pi Ads only will be displayed if you do click on the Watch Pi Ads button.</h3>
                                     <h1>* Additionally:</h1>
                                     <h3 t-if="mainnet in ['Mainnet OFF', 'Mainnet ON']">a.- You will can use <a href="https://mainnet.radioforus.com" target="_blank">RadioForUs</a> and LatinChain with the same subscription of 30 days.</h3>
                                     <h3 t-if="mainnet in ['Testnet OFF', 'Testnet ON']">a.- You will can use <a href="https://radioforus.com" target="_blank">RadioForUs</a> and LatinChain with the same subscription of 30 days.</h3>

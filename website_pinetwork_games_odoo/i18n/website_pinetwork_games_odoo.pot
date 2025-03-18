@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-17 12:59+0000\n"
-"PO-Revision-Date: 2025-03-17 12:59+0000\n"
+"POT-Creation-Date: 2025-03-18 20:01+0000\n"
+"PO-Revision-Date: 2025-03-18 20:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -62,6 +62,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "* Chess: Leaders Boards"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "* Latin points:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -353,7 +358,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "5.- For an unverified user, Pi Ads will be displayed 1 ad each 1 hour. For a"
-" verified user, Pi Ads will be displayed 1 ad each 8 hours."
+" verified user, Pi Ads only will be displayed if you do click on the Watch "
+"Pi Ads button."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -710,6 +716,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>#LatinChain #Magazine 🎥</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>#LatinChain #PayPi 💱</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1193,11 +1204,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Go to one of the games to do it."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
-msgid "Google Adsense (LatinChain Testnet):"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1967,11 +1973,6 @@ msgid "Table of all winners (verified)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
-msgid "Taboola (LatinChain Testnet):"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Take Back"
 msgstr ""
@@ -2407,11 +2408,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "and watch ads"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "ask an expert"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

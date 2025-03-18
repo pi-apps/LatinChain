@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-17 13:00+0000\n"
-"PO-Revision-Date: 2025-03-17 13:00+0000\n"
+"POT-Creation-Date: 2025-03-18 20:01+0000\n"
+"PO-Revision-Date: 2025-03-18 20:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -64,6 +64,11 @@ msgstr "* Adicionalmente:"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "* Chess: Leaders Boards"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "* Latin points:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -400,11 +405,12 @@ msgstr "5.- Para el Top 10 zone Sudoku: Tener más de 18 puntos en Sudoku."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "5.- For an unverified user, Pi Ads will be displayed 1 ad each 1 hour. For a"
-" verified user, Pi Ads will be displayed 1 ad each 8 hours."
+" verified user, Pi Ads only will be displayed if you do click on the Watch "
+"Pi Ads button."
 msgstr ""
-"5.- Para un usuario no verificado, las Pi Ads serán mostradas 1 ad cada 1 "
-"hora. Para un usuario verificado, las Pi Ads serán mostradas 1 ad cada 8 "
-"horas."
+"5.- Para un usuario no verificado, Pi Ads se mostrarán 1 ad cada 1 hora. Para un"
+" usuario verificado, Pi Ads sólo serán mostradas si haces click en el botón Ver "
+"Pi Ads."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -830,6 +836,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>#LatinChain #Magazine 🎥</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>#LatinChain #PayPi 💱</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1326,11 +1337,6 @@ msgid "Go to one of the games to do it."
 msgstr "Ve a uno de los juegos para hacerlo."
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
-msgid "Google Adsense (LatinChain Testnet):"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Gunter"
 msgstr ""
@@ -1520,10 +1526,11 @@ msgid ""
 " more about Leaders Board and Winners Board, read about it in Rules section,"
 " and Winners Board and Prizes section, in this page)."
 msgstr ""
-"Latin points son parte del total de puntos para estar en Leaders Board. Si estás en "
-"Leaders Board, entonces podrías estar en Winners Board para ganar premios Pi (Para saber"
-" más acerca de Leaders Board y Winners Board, lee sobre esto en la sección Reglas,"
-" y en la sección Winners Board y Premios, en esta página)."
+"Latin points son parte del total de puntos para estar en Leaders Board. Si "
+"estás en Leaders Board, entonces podrías estar en Winners Board para ganar "
+"premios Pi (Para saber más acerca de Leaders Board y Winners Board, lee "
+"sobre esto en la sección Reglas, y en la sección Winners Board y Premios, en"
+" esta página)."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2142,11 +2149,6 @@ msgid "Table of all winners (verified)"
 msgstr "Tabla de todos los ganadores (verificados)"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
-msgid "Taboola (LatinChain Testnet):"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Take Back"
 msgstr "Regresar"
@@ -2601,11 +2603,6 @@ msgstr "y LatinChain con la misma suscripción de 30 días."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "and watch ads"
 msgstr "y ve anuncios"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "ask an expert"
-msgstr "pregunta a expertos"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
