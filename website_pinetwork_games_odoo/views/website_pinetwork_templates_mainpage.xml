@@ -1294,6 +1294,9 @@
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#LatinChain #PayPi &#128177;</strong></h5>
                             </div>
+                            <div class="div_user_status" style="margin-bottom:5px">
+                                    <strong class="user_status"></strong>
+                                </div>
                             <div style="margin-top:5px">
                                 <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
                             </div>
@@ -1502,9 +1505,7 @@
                             </div>
                             
                             <div style="text-align:center; position:relative;" id="pay_with">
-                                <a href="/pinetwork">
-                                    <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="max-width: 350px" width="100%" height="170px" />
-                                </a>
+                                <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="max-width: 350px" width="100%" height="170px" />
                                 <!--<div id="myApps" style="display:inline; position: absolute; bottom: 0; height: 80px;">
                                 </div>-->
                             </div>
