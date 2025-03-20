@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-18 20:01+0000\n"
-"PO-Revision-Date: 2025-03-18 20:01+0000\n"
+"POT-Creation-Date: 2025-03-20 23:05+0000\n"
+"PO-Revision-Date: 2025-03-20 23:05+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -408,9 +408,9 @@ msgid ""
 " verified user, Pi Ads only will be displayed if you do click on the Watch "
 "Pi Ads button."
 msgstr ""
-"5.- Para un usuario no verificado, Pi Ads se mostrarán 1 ad cada 1 hora. Para un"
-" usuario verificado, Pi Ads sólo serán mostradas si haces click en el botón Ver "
-"Pi Ads."
+"5.- Para un usuario no verificado, Pi Ads se mostrarán 1 ad cada 1 hora. "
+"Para un usuario verificado, Pi Ads sólo serán mostradas si haces click en el"
+" botón Ver Pi Ads."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -907,11 +907,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "<strong>Membership</strong><br/>"
 msgstr "<strong>Membresía</strong><br/>"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
-msgid "<strong>Odoo Programming</strong>"
-msgstr "<strong>Programación en Odoo</strong>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1481,11 +1476,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "LATINCHAIN ACADEMY"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Last 24 hours: \n"
 "                                <br/>"
@@ -1543,17 +1533,6 @@ msgid "LatinChain API"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"LatinChain Academy: to learn Odoo. Sports: to watch Soccer results. Tetris "
-"and Mahjong minigames: where you can play for free by accessing throught Pi "
-"Browser."
-msgstr ""
-"LatinChain Academy: para aprender Odoo. Sports: para ver resultados del "
-"fútbol. Tetris y Mahjong minijuegos: donde puedes jugar gratis accediendo a "
-"través del Pi Browser."
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LatinChain Odoo Community Member"
 msgstr ""
@@ -1577,11 +1556,6 @@ msgstr "Líderes"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Leaders Board"
 msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Learn Odoo with LatinChain"
-msgstr "Aprende Odoo con LatinChain"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
@@ -2104,6 +2078,15 @@ msgid "Sport results"
 msgstr "Resultados deportivos"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"Sports: to watch Soccer results. Tetris and Mahjong minigames: where you can"
+" play for free by accessing throught Pi Browser."
+msgstr ""
+"Sports: para ver resultados de Fútbol. Minijuegos de Tetris y Mahjong: donde puedes"
+" jugar gratis accediendo a través del Pi Browser."
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Start"
 msgstr "Iniciar"
@@ -2377,11 +2360,6 @@ msgid ""
 "We are testing LatinChain Mainnet version. Do you want to visit LatinChain "
 "Mainnet version?."
 msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "We send you this invitation!."
-msgstr "¡Te enviamos esta invitación!."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
