@@ -1300,7 +1300,7 @@
                             <div style="margin-top:5px">
                                 <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
                             </div>
-                            <div style="margin-top:5px">
+                            <div style="margin-top:5px; margin-bottom: 5px">
                                 <button id="rules_button_4" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
                             </div>
                         </div>
@@ -1507,7 +1507,7 @@
                               </div>
                             </div>
                             
-                            <div style="text-align:center; position:relative;" id="pay_with">
+                            <div style="text-align:center; position:relative; margin-bottom: 5px" id="pay_with">
                                 <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid" style="max-width: 350px" width="100%" height="170px" />
                                 <!--<div id="myApps" style="display:inline; position: absolute; bottom: 0; height: 80px;">
                                 </div>-->
