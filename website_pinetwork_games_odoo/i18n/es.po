@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-20 23:05+0000\n"
-"PO-Revision-Date: 2025-03-20 23:05+0000\n"
+"POT-Creation-Date: 2025-03-21 19:27+0000\n"
+"PO-Revision-Date: 2025-03-21 19:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2083,13 +2083,21 @@ msgid ""
 "Sports: to watch Soccer results. Tetris and Mahjong minigames: where you can"
 " play for free by accessing throught Pi Browser."
 msgstr ""
-"Sports: para ver resultados de Fútbol. Minijuegos de Tetris y Mahjong: donde puedes"
-" jugar gratis accediendo a través del Pi Browser."
+"Sports: para ver resultados de Fútbol. Minijuegos de Tetris y Mahjong: donde"
+" puedes jugar gratis accediendo a través del Pi Browser."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Start"
 msgstr "Iniciar"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Subscribe here:"
+msgstr "Suscríbete aquí:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -2334,11 +2342,6 @@ msgid "Watch code"
 msgstr "Ver código"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Watch good content daily"
-msgstr "Ve buen contenido a diario"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "Watch the Pi Core Team tweet"
 msgstr "Ver el tweet del Pi Core Team"
@@ -2542,7 +2545,10 @@ msgid "Your video was saved."
 msgstr "Tu video fue guardado."
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Youtube"
 msgstr ""
 
