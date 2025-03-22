@@ -618,21 +618,6 @@ $( document ).ready(function() {
         return true;
     }
     
-    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
-    {
-        $(".show-tetris").show();
-        $(".show-mahjong").show();
-        $(".show-tvonline").show();
-        $(".show-sport-results").show();
-        $(".show-cointelegraph").show();
-        $(".show-streamerzoneboard").show();
-        //$(".show-stellarium").show();
-        $(".show-latin-search").show();
-        $(".show-latin-dictionary").show();
-        $(".show-latin-university").show();
-        $(".show-latin-books").show();
-    }
-    
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     
     async function auth() {
