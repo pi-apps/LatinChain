@@ -854,7 +854,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.130"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.131"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1657,6 +1657,20 @@
                                                 <div class="col-12" style="text-align: center"><div style="display:inline;">&#128071;</div> <div class="next-pi" style="display:inline; font-size: 18px">NEXT ARE FREE APPS</div></div>
                                             </div>
                                         </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tetris" style="display:none">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><button id="tetris" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tetris" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes"></i></div><div style="font-size:100%;" translate="no">BLOCKRAIN</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="tetrisinfo" class="col-auto btn btn-sm btn-outline-info tetrisinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-mahjong" style="display:none">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><button id="mahjong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mahjong" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">MAHJONG</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="mahjonginfo" class="col-auto btn btn-sm btn-outline-info mahjonginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-latin-university" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
@@ -1696,20 +1710,6 @@
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><button id="latin-search" class="col-10 btn btn-outline-success font-weight-bold text-black border-success latin-search" style="border: 2px solid;"><div style=""><i class="fa-solid fa-magnifying-glass-dollar"></i></div><div style="font-size:100%;" translate="no">LATIN SEARCH</div><div style="font-size:80%;">Metacrawler Search Site</div></button></div>
-                                                <div class="col-0"></div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tetris" style="display:none">
-                                            <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="tetris" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tetris" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes"></i></div><div style="font-size:100%;" translate="no">BLOCKRAIN</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="tetrisinfo" class="col-auto btn btn-sm btn-outline-info tetrisinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-mahjong" style="display:none">
-                                            <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="mahjong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mahjong" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">MAHJONG</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="mahjonginfo" class="col-auto btn btn-sm btn-outline-info mahjonginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
