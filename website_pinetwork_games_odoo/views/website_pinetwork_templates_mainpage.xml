@@ -854,9 +854,9 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.133"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.134"></script>
                     
-                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF', 'Mainnet ON', 'Mainnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
                     <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                       window._taboola = window._taboola || [];
@@ -1127,7 +1127,7 @@
                           </div>
                         </section>
                     </div>
-                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF', 'Mainnet ON', 'Mainnet OFF']">
+                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                         
                         <!-- LatinChain Ad responsive -->
                         
@@ -2020,7 +2020,7 @@
                         
                     </div>
                     
-                    <div class="container" style="text-align:center;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                    <div class="container" style="text-align:center;" t-if="mainnet in [False]">
                         
                         <!-- LatinChain Ad responsive -->
                         
