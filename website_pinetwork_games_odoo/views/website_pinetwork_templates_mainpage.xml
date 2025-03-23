@@ -854,9 +854,9 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.132"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.133"></script>
                     
-                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF', 'Mainnet ON', 'Mainnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
                     <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                       window._taboola = window._taboola || [];
@@ -1127,7 +1127,7 @@
                           </div>
                         </section>
                     </div>
-                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF', 'Mainnet ON', 'Mainnet OFF']">
                         
                         <!-- LatinChain Ad responsive -->
                         
@@ -2018,6 +2018,21 @@
                         
                         </div>
                         
+                    </div>
+                    
+                    <div class="container" style="text-align:center;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                        
+                        <!-- LatinChain Ad responsive -->
+                        
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-2334449220276386"
+                             data-ad-slot="6625994850"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
