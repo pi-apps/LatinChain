@@ -1315,6 +1315,10 @@
                             <div class="show-streamerzoneboard" style="margin-bottom:5px; display:none" t-if="pioneers_streaming">
                                 <button id="streamerzoneboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
                             </div>
+                            
+                            <div style="margin-bottom:5px">
+                                <button id="cryptonews_3" class="col-8 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div></button>
+                            </div>
                             <!--<t t-if="pi_main_user">
                                 <div style="margin-bottom:5px" t-if="pi_main_user.streaming_url">
                                     <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch daily video</div></button>
