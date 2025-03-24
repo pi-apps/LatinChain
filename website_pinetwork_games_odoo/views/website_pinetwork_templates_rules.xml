@@ -39,7 +39,6 @@
                                 <t t-set="mainnet_text" t-value="'test.latin-chain.com (Testnet)'"/>
                                 <t t-set="mainnet_alt_text" t-value="'latin-chain.com (Mainnet)'"/>
                             </t>
-                            <h3>First Rule: Once you paid a monthly subscription, you'll have 30 days to enjoy LatinChain Platform and it won't be refunds.</h3>
                             <div class="accordion" id="accordionPanelsStayOpenExample">
                               <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingA">
@@ -49,6 +48,8 @@
                                 </h2>
                                 <div id="panelsStayOpen-collapseA" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingA">
                                   <div class="accordion-body">
+                                    <h3>First Rule: Once you paid a monthly subscription, you'll have 30 days to enjoy LatinChain Platform and it won't be refunds.</h3>
+                                    
                                     <h3>Read four sections: Membership (why to subscribe), Rules (norms), Winners Board and Prizes (prizes), and Levels (how to obtain points).</h3>
                                     
                                     <h3>All data here as prizes and minimum payment, is referring to <strong t-esc="mainnet_text" />. And this info could vary with the time without previous advice.</h3>
@@ -94,6 +95,7 @@
                                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
                                   <div class="accordion-body">
                                     <br/>
+                                    <h3>First Rule: Once you paid a monthly subscription, you'll have 30 days to enjoy LatinChain Platform and it won't be refunds.</h3>
                                     <h1>* These are the reasons why you should subscribe to LatinChain Platform by paying <span t-esc="amount" /> Pi each 30 days:</h1>
                                     <h3>1.- You'll have access to many games, as Chess, Sudoku and Snake, with multilanguage interface.</h3>
                                     <h3>2.- Your playing records will be saved in our servers, you can consult them anytime. After finish the subscription, your records would be hidden, but when you start the subscription again, your records will be shown again.</h3>
@@ -115,6 +117,7 @@
                                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                   <div class="accordion-body">
                                     <br/>
+                                    <h3>First Rule: Once you paid a monthly subscription, you'll have 30 days to enjoy LatinChain Platform and it won't be refunds.</h3>
                                     <h1><div style="display:inline;">* Rules to be verified:</div> <div style="display:inline;">(<i class="fa fa-check-circle-o"></i>)</div></h1>
                                     <h3>1.- Each 30 days you should unlock the app paying <span t-esc="amount" /> Pi. Go to one of the games to do it. Once you pay in any of the games, it won't be refunded. When you Donate it's considered a donation and it won't be refunded either. You can also unblock the games, for 30 days since the payment date, with a donation. Although, all payments to LatinChain are considered donations.</h3>
                                     <h3>2.- In the mainscreen of latin-chain.com (Mainnet) or test.latin-chain.com (Testnet), depending which version of LatinChain are you using, you can watch your available days.</h3>
@@ -154,6 +157,7 @@
                                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                                   <div class="accordion-body">
                                     <br/>
+                                    <h3>First Rule: Once you paid a monthly subscription, you'll have 30 days to enjoy LatinChain Platform and it won't be refunds.</h3>
                                     <h1>* Rules to be in the Winners Board and win Prizes:</h1>
                                     <h3>1.- Be verified in LatinChain Platform.</h3>
                                     <h3>2.- Be in the first 10 on the Leaders Board or in the Top 10 Board (Top 10 zone, Top 10 zone Chess, Top 10 zone Snake or Top 10 zone Sudoku). It is filled automatically at 16:00 UTC.</h3>
