@@ -96,7 +96,13 @@ function get_user(donation) {
                             $("#open_modal").click();
                         }
                     }
+                    
+                    $(".show-verified-user").show();
+                }else
+                {
+                    $(".show-verified-user").hide();
                 }
+                
                 show_pi_ad_user = data.show_pi_ad;
                 show_pi_ad_user_time = data.show_pi_ad_time;
                 pi_ad_new = data.pi_ad_new;
