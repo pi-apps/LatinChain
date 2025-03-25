@@ -227,7 +227,7 @@ function get_user() {
                 $(".show-cointelegraph").show();
                 $(".show-streamerzoneboard").show();
                 //$(".show-stellarium").show();
-                $(".show-latin-search").show();
+                //$(".show-latin-search").show();
                 $(".show-latin-dictionary").show();
                 $(".show-latin-university").show();
                 $(".show-latin-books").show();

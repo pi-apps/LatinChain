@@ -854,7 +854,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.134"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.135"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1708,13 +1708,13 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>-->
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-latin-search" style="display:none">
+                                        <!--<li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-latin-search" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><button id="latin-search" class="col-10 btn btn-outline-success font-weight-bold text-black border-success latin-search" style="border: 2px solid;"><div style=""><i class="fa-solid fa-magnifying-glass-dollar"></i></div><div style="font-size:100%;" translate="no">LATIN SEARCH</div><div style="font-size:80%;">Metacrawler Search Site</div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
-                                        </li>
+                                        </li>-->
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tvonline" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
