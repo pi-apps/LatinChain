@@ -102,11 +102,17 @@
                                 {
                                     var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
                                     jQuery( "body" ).trigger( e );
+                                    
+                                    var e = jQuery.Event( "touchstart");
+                                    jQuery( "body" ).trigger( e );
                                 }
                                 
                                 function press_up(key)
                                 {
                                     var e = jQuery.Event( "keyup", { which: key, keyCode: key } );
+                                    jQuery( "body" ).trigger( e );
+                                    
+                                    var e = jQuery.Event( "touchend");
                                     jQuery( "body" ).trigger( e );
                                 }
                                 
@@ -133,32 +139,6 @@
                                     press_up(40);
                                 });
                                 $( ".right" ).mouseup(function() {
-                                    press_up(39);
-                                });
-                                
-                                $( ".left" ).on('touchstart', function() {
-                                    press_down(37);
-                                });
-                                $( ".up" ).on('touchstart', function() {
-                                    press_down(38);
-                                });
-                                $( ".down" ).on('touchstart', function() {
-                                    press_down(40);
-                                });
-                                $( ".right" ).on('touchstart', function() {
-                                    press_down(39);
-                                });
-                                
-                                $( ".left" ).on('touchend', (function() {
-                                    press_up(37);
-                                });
-                                $( ".up" ).on('touchend', function() {
-                                    press_up(38);
-                                });
-                                $( ".down" ).on('touchend', function() {
-                                    press_up(40);
-                                });
-                                $( ".right" ).on('touchend', function() {
                                     press_up(39);
                                 });
                                 
