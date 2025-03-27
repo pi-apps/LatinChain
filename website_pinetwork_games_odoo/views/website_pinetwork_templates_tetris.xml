@@ -136,6 +136,32 @@
                                     press_up(39);
                                 });
                                 
+                                $( ".left" ).touchstart(function() {
+                                    press_down(37);
+                                });
+                                $( ".up" ).touchstart(function() {
+                                    press_down(38);
+                                });
+                                $( ".down" ).touchstart(function() {
+                                    press_down(40);
+                                });
+                                $( ".right" ).touchstart(function() {
+                                    press_down(39);
+                                });
+                                
+                                $( ".left" ).touchend(function() {
+                                    press_up(37);
+                                });
+                                $( ".up" ).touchend(function() {
+                                    press_up(38);
+                                });
+                                $( ".down" ).touchend(function() {
+                                    press_up(40);
+                                });
+                                $( ".right" ).touchend(function() {
+                                    press_up(39);
+                                });
+                                
                                 $( "#themes" ).change(function() {
                                     $('.game').blockrain('theme', $("#themes").find(":selected").val());
                                 });
