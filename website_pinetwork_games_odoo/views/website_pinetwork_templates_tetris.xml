@@ -101,17 +101,20 @@
                                 function press_down(key)
                                 {
                                     var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
-                                    $(document).trigger( e );
+                                    jQuery( "body" ).trigger( e );
                                 }
                                 
                                 function press_up(key)
                                 {
                                     var e = jQuery.Event( "keyup", { which: key, keyCode: key } );
-                                    $(document).trigger( e );
+                                    jQuery( "body" ).trigger( e );
                                 }
                                 
                                 $( ".left" ).mousedown(function() {
                                     press_down(37);
+                                    
+                                    var e = jQuery.Event( "mousedown" );
+                                    jQuery( ".blockrain-touch-left" ).trigger( e );
                                 });
                                 $( ".up" ).mousedown(function() {
                                     press_down(38);
@@ -121,10 +124,16 @@
                                 });
                                 $( ".right" ).mousedown(function() {
                                     press_down(39);
+                                    
+                                    var e = jQuery.Event( "mousedown" );
+                                    jQuery( ".blockrain-touch-right" ).trigger( e );
                                 });
                                 
                                 $( ".left" ).mouseup(function() {
                                     press_up(37);
+                                    
+                                    var e = jQuery.Event( "mouseup" );
+                                    jQuery( ".blockrain-touch-left" ).trigger( e );
                                 });
                                 $( ".up" ).mouseup(function() {
                                     press_up(38);
@@ -134,6 +143,9 @@
                                 });
                                 $( ".right" ).mouseup(function() {
                                     press_up(39);
+                                    
+                                    var e = jQuery.Event( "mouseup" );
+                                    jQuery( ".blockrain-touch-right" ).trigger( e );
                                 });
                                 
                                 $( "#themes" ).change(function() {
