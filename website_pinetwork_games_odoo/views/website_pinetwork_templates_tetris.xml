@@ -101,30 +101,26 @@
                                 function press_down(key)
                                 {
                                     var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
-                                    jQuery( "body" ).trigger( e );
+                                    $(document).trigger( e );
                                 }
                                 
                                 function press_up(key)
                                 {
                                     var e = jQuery.Event( "keyup", { which: key, keyCode: key } );
-                                    jQuery( "body" ).trigger( e );
+                                    $(document).trigger( e );
                                 }
                                 
                                 $( ".left" ).mousedown(function() {
                                     press_down(37);
-                                    $( ".blockrain-touch-left" ).trigger("touchstart");
                                 });
                                 $( ".up" ).mousedown(function() {
                                     press_down(38);
-                                    $( ".blockrain-touch-rotate-right" ).trigger("touchstart");
                                 });
                                 $( ".down" ).mousedown(function() {
                                     press_down(40);
-                                    $( ".blockrain-touch-drop" ).trigger("touchstart");
                                 });
                                 $( ".right" ).mousedown(function() {
                                     press_down(39);
-                                    $( ".blockrain-touch-right" ).trigger("touchstart");
                                 });
                                 
                                 $( ".left" ).mouseup(function() {
