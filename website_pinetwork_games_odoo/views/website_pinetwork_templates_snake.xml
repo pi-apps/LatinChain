@@ -101,18 +101,72 @@
                             jQuery( "body" ).trigger( e );
                         }
                         
-                        $( "#left" ).mousedown(function() {
-                            press(37);
-                        });
-                        $( "#up" ).mousedown(function() {
-                            press(38);
-                        });
-                        $( "#down" ).mousedown(function() {
-                            press(40);
-                        });
-                        $( "#right" ).mousedown(function() {
-                            press(39);
-                        });
+                        function release(key)
+                        {
+                            var e = jQuery.Event( "keyup", { which: key, keyCode: key } );
+                            jQuery( "body" ).trigger( e );
+                        }
+                        
+                        function isTouchDevice() {
+                          return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+                        }
+                        
+                        if(!isTouchDevice())
+                        {
+                            $( "#left" ).mousedown(function() {
+                                press(37);
+                            });
+                            $( "#up" ).mousedown(function() {
+                                press(38);
+                            });
+                            $( "#down" ).mousedown(function() {
+                                press(40);
+                            });
+                            $( "#right" ).mousedown(function() {
+                                press(39);
+                            });
+                            
+                            $( "#left" ).mouseup(function() {
+                                release(37);
+                            });
+                            $( "#up" ).mouseup(function() {
+                                release(38);
+                            });
+                            $( "#down" ).mouseup(function() {
+                                release(40);
+                            });
+                            $( "#right" ).mouseup(function() {
+                                release(39);
+                            });
+                        }else
+                        {
+                            $( "#left" ).on('touchstart', function() {
+                                press(37);
+                            });
+                            $( "#up" ).on('touchstart', function() {
+                                press(38);
+                            });
+                            $( "#down" ).on('touchstart', function() {
+                                press(40);
+                            });
+                            $( "#right" ).on('touchstart', function() {
+                                press(39);
+                            });
+                            
+                            $( "#left" ).on('touchend', function() {
+                                release(37);
+                            });
+                            $( "#up" ).on('touchend', function() {
+                                release(38);
+                            });
+                            $( "#down" ).on('touchend', function() {
+                                release(40);
+                            });
+                            $( "#right" ).on('touchend', function() {
+                                release(39);
+                            });
+                        }
+                        
                         $( "#reset" ).click(function() {
                             press(82);
                         });
