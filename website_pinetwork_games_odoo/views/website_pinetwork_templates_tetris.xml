@@ -159,16 +159,16 @@
                                         press_down(39);
                                     });
                                     
-                                    $( ".left" ).touchstop(function() {
+                                    $( ".left" ).touchend(function() {
                                         press_up(37);
                                     });
-                                    $( ".up" ).touchstop(function() {
+                                    $( ".up" ).touchend(function() {
                                         press_up(38);
                                     });
-                                    $( ".down" ).touchstop(function() {
+                                    $( ".down" ).touchend(function() {
                                         press_up(40);
                                     });
-                                    $( ".right" ).touchstop(function() {
+                                    $( ".right" ).touchend(function() {
                                         press_up(39);
                                     });
                                 }
