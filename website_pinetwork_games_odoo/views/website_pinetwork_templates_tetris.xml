@@ -149,7 +149,6 @@
                                 {
                                         
                                     $( ".left" ).on('touchstart', function() {
-                                        alert("hello");
                                         press_down(37);
                                     });
                                     $( ".up" ).on('touchstart', function() {
