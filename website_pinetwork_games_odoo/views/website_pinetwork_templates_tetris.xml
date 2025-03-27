@@ -112,31 +112,70 @@
                                     jQuery( "body" ).trigger( e );
                                 }
                                 
-                                $( ".left" ).mousedown(function() {
-                                    press_down(37);
-                                });
-                                $( ".up" ).mousedown(function() {
-                                    press_down(38);
-                                });
-                                $( ".down" ).mousedown(function() {
-                                    press_down(40);
-                                });
-                                $( ".right" ).mousedown(function() {
-                                    press_down(39);
-                                });
+                                function isTouchDevice() {
+                                  return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+                                }
                                 
-                                $( ".left" ).mouseup(function() {
-                                    press_up(37);
-                                });
-                                $( ".up" ).mouseup(function() {
-                                    press_up(38);
-                                });
-                                $( ".down" ).mouseup(function() {
-                                    press_up(40);
-                                });
-                                $( ".right" ).mouseup(function() {
-                                    press_up(39);
-                                });
+                                if(!isTouchDevice())
+                                {
+                                
+                                    $( ".left" ).mousedown(function() {
+                                        press_down(37);
+                                    });
+                                    $( ".up" ).mousedown(function() {
+                                        press_down(38);
+                                    });
+                                    $( ".down" ).mousedown(function() {
+                                        press_down(40);
+                                    });
+                                    $( ".right" ).mousedown(function() {
+                                        press_down(39);
+                                    });
+                                    
+                                    $( ".left" ).mouseup(function() {
+                                        press_up(37);
+                                    });
+                                    $( ".up" ).mouseup(function() {
+                                        press_up(38);
+                                    });
+                                    $( ".down" ).mouseup(function() {
+                                        press_up(40);
+                                    });
+                                    $( ".right" ).mouseup(function() {
+                                        press_up(39);
+                                    });
+                                    
+                                }else
+                                {
+                                        
+                                    $( ".left" ).on('touchstart', function() {
+                                        alert("hello");
+                                        press_down(37);
+                                    });
+                                    $( ".up" ).on('touchstart', function() {
+                                        press_down(38);
+                                    });
+                                    $( ".down" ).on('touchstart', function() {
+                                        press_down(40);
+                                    });
+                                    $( ".right" ).on('touchstart', function() {
+                                        press_down(39);
+                                    });
+                                    
+                                    $( ".left" ).on('touchend', function() {
+                                        press_up(37);
+                                    });
+                                    $( ".up" ).on('touchend', function() {
+                                        press_up(38);
+                                    });
+                                    $( ".down" ).on('touchend', function() {
+                                        press_up(40);
+                                    });
+                                    $( ".right" ).on('touchend', function() {
+                                        press_up(39);
+                                    });
+                                
+                                }
                                 
                                 $( "#themes" ).change(function() {
                                     $('.game').blockrain('theme', $("#themes").find(":selected").val());

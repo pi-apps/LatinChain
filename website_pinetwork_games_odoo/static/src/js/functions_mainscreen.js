@@ -926,8 +926,7 @@ $( document ).ready(function() {
         $.colorbox({href:winnerboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
-    $( ".winnerzoneboard" ).on("touchstart", function() {
-        alert("hello");
+    $( ".winnerzoneboard" ).click(function() {
         $.colorbox({href:winnerzoneboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
