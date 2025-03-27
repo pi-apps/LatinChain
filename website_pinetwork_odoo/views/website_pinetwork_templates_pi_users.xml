@@ -889,11 +889,14 @@
                             </table>
                             
                             <span>
-                                <div><strong>Prizes will be paid the 15th of each month.</strong></div>
+                                <div style="display:inline;">
+                                    <strong>Prizes will be paid the 15th of each month.</strong>
+                                </div>
                             </span>
                             
                             <t t-foreach="pi_user.admin_apps_winners_ids" t-as="winner_app">
                                 <span t-if="winner_app.app == 'auth_platform'">
+                                    <br/>
                                     <div style="display:inline;"><strong> You are winner, check in this winner list.</strong></div> <div style="display:inline;"><i class="fa fa-trophy"></i></div>
                                 </span>
                             </t>
