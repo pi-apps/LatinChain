@@ -305,6 +305,9 @@ class PiNetworkBaseController(http.Controller):
         else:
             pi_ad_new = True
         
+        if pi_users_list[0].unblocked:
+            show_pi_ad = False
+        
         result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
                                                                 ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
         

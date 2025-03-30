@@ -403,7 +403,7 @@ $( document ).ready(function() {
                             }
                         });
                         
-                        if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && !unblocked)
+                        if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             $( "#button_reward_ad" ).click();
                     });
                 });
