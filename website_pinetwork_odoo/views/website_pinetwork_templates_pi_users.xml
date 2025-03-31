@@ -1673,7 +1673,7 @@
                         <button id="back" class="btn btn-info" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                         <br/><br/>
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
-                        Pi cryptocurrency Transactions for user <strong translate="no"><span id="username" /></strong>:<br/><br/>
+                        Pi cryptocurrency transactions for user <strong translate="no"><span id="username" /></strong>:<br/><br/>
                         <div>
                             Company Tax ID: <t t-esc="company_latinchain_id.vat" /><br/>
                             Company address: <t t-esc="company_latinchain_id.country_id.name" />
