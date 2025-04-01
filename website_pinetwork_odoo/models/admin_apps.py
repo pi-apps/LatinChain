@@ -1233,6 +1233,7 @@ class pi_users(models.Model):
     pi_user_referrer_id = fields.Many2one('pi.users', string='Referrer code', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_datetime = fields.Datetime('Pi Ad datetime', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_counter = fields.Integer('Pi Ad counter', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_ad_automatic = fields.Boolean('Pi Ad automatic', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
     def _compute_donator(self):

@@ -936,7 +936,8 @@
                     <div id="modal_reward_nextpiad_time" style="display:none;"> hours.</div>
                     <div id="modal_use_anytime" style="display:none;">You can use this app anytime, for testing purposes, until Pi OpenMainnet.</div>
                     <div id="modal_unlock_use_anytime" style="display:none;">You have to pay Pi, to unlock all the LatinChain apps.</div>
-                    
+                    <div id="modal_pi_ad_automatic_enabled" style="display:none;">Automatic Pi Ads are enabled. Pi Ads will be shown automatically each 1 hour.</div>
+                    <div id="modal_pi_ad_automatic_disabled" style="display:none;">Automatic Pi Ads are disabled. Pi Ads won't be shown automatically.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
@@ -1218,6 +1219,14 @@
                                 <span id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
                                     Pi ads not available (<div id="pi_ad_max" style="display:inline;"></div> ads each <div id="pi_ad_hours" style="display:inline;"></div> hours).
                                 </span>
+                            </div>
+                            <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; display: none;">
+                              <input class="form-check-input" type="checkbox" id="pi_ad_automatic" disabled="true" />
+                              <label class="form-check-label" for="pi_ad_automatic">
+                                <div>
+                                    Activate automatic Pi Ads.
+                                </div>
+                              </label>
                             </div>
                         </div>
                         

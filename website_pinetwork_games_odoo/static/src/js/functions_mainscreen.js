@@ -215,7 +215,7 @@ function get_user() {
                 show_pi_ad_user = data.show_pi_ad;
                 show_pi_ad_user_time = data.show_pi_ad_time;
                 pi_ad_new = data.pi_ad_new;
-                pi_ad_max = data.pi_ad_max
+                pi_ad_max = data.pi_ad_max;
                 
                 $("#pi_ad_hours").html(show_pi_ad_user_time);
                 $("#pi_ad_max").html(pi_ad_max);
@@ -236,6 +236,13 @@ function get_user() {
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
+                    
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    {
+                        $(".show_pi_ad_automatic").show();
+                        $("#pi_ad_automatic").prop("disabled", false);
+                        $("#pi_ad_automatic").prop("checked", data.pi_ad_automatic);
+                    }
                 
                     $("#verified").html(" (" + $("#verified_message").html() + ", " + data.unblocked_datetime + ")");
                     $("#verified").show();
@@ -539,6 +546,44 @@ $( document ).ready(function() {
             }).fail(function() {
                 $("#button_click_memo").prop( "disabled", false );
                 $("#memo_id").prop( "disabled", false );
+            });
+        }
+    });
+    
+    $('#pi_ad_automatic').change(function() {
+        var pi_ad_automatic = $("#pi_ad_automatic").is(":checked");
+        
+        if(pi_user_id != "" && pi_user_code != "")
+        {
+            $("#pi_ad_automatic").prop( "disabled", true );
+            var data = {
+                'pi_user_id': pi_user_id,
+                'pi_user_code': pi_user_code,
+                'pi_ad_automatic': pi_ad_automatic,
+                'passkey': passkey,
+                'accessToken': accessToken,
+                'csrf_token': odoo.csrf_token,
+            };
+            //$.ajaxSetup({async: false});
+            $.post( "/pi-ad-automatic", data).done(function(data) {
+                data = JSON.parse(data);
+                if(data.result)
+                {
+                    if(pi_ad_automatic)
+                    {
+                        $(".modal-body").html($("#modal_pi_ad_automatic_enabled").text());
+                        $("#open_modal").click();
+                    }else
+                    {
+                        $(".modal-body").html($("#modal_pi_ad_automatic_disabled").text());
+                        $("#open_modal").click();
+                    }
+                }
+                
+                //$("#refresh").click();
+                $("#pi_ad_automatic").prop( "disabled", false );
+            }).fail(function() {
+                $("#pi_ad_automatic").prop( "disabled", false );
             });
         }
     });
