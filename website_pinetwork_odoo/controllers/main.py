@@ -310,10 +310,12 @@ class PiNetworkBaseController(http.Controller):
                 show_pi_ad = False
             else:
                 show_pi_ad = True
-        
-        pi_ad_automatic = False
-        if not pi_users_list[0].pi_ad_automatic:
+                
             pi_ad_automatic = False
+            if not pi_users_list[0].pi_ad_automatic:
+                pi_ad_automatic = False
+            else:
+                pi_ad_automatic = True
         else:
             pi_ad_automatic = True
         
@@ -666,6 +668,9 @@ class PiNetworkBaseController(http.Controller):
                 _logger.info("not equeals pi_user_id")
                 return json.dumps({'result': False})
             """
+            
+            if not pi_users_list[0].unblocked:
+                return json.dumps({'result': False})
             
             if 'pi_ad_automatic' not in kw:
                 _logger.info("pi_ad_automatic not present")
