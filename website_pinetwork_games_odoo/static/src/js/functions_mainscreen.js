@@ -581,7 +581,10 @@ $( document ).ready(function() {
                 }
                 
                 //$("#refresh").click();
-                $("#pi_ad_automatic").prop( "disabled", false );
+                setTimeout(function() {
+                  $("#pi_ad_automatic").prop( "disabled", false );
+                }, 3000);
+                
             }).fail(function() {
                 $("#pi_ad_automatic").prop( "disabled", false );
             });
