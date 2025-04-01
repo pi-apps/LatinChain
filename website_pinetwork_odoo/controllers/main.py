@@ -308,8 +308,6 @@ class PiNetworkBaseController(http.Controller):
         if pi_users_list[0].unblocked:
             if not pi_users_list[0].pi_ad_automatic:
                 show_pi_ad = False
-            else:
-                show_pi_ad = True
                 
             pi_ad_automatic = False
             if not pi_users_list[0].pi_ad_automatic:
