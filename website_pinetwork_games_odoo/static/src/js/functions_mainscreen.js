@@ -232,17 +232,17 @@ function get_user() {
                 $(".show-latin-university").show();
                 $(".show-latin-books").show();
                 
+                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                {
+                    $(".show_pi_ad_automatic").show();
+                    $("#pi_ad_automatic").prop("disabled", false);
+                    $("#pi_ad_automatic").prop("checked", data.pi_ad_automatic);
+                }
+                
                 passkey=data.passkey;
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
-                    
-                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                    {
-                        $(".show_pi_ad_automatic").show();
-                        $("#pi_ad_automatic").prop("disabled", false);
-                        $("#pi_ad_automatic").prop("checked", data.pi_ad_automatic);
-                    }
                 
                     $("#verified").html(" (" + $("#verified_message").html() + ", " + data.unblocked_datetime + ")");
                     $("#verified").show();
