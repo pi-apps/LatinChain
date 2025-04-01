@@ -553,7 +553,7 @@ $( document ).ready(function() {
     $('#pi_ad_automatic').change(function() {
         var pi_ad_automatic = $("#pi_ad_automatic").is(":checked");
         
-        if(pi_user_id != "" && pi_user_code != "")
+        if(pi_user_id != "" && pi_user_code != "" && unblocked)
         {
             $("#pi_ad_automatic").prop( "disabled", true );
             var data = {
