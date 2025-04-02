@@ -573,7 +573,7 @@ $( document ).ready(function() {
                 data = JSON.parse(data);
                 if(data.result)
                 {
-                    if(pi_ad_automatic)
+                    if(data.pi_ad_automatic)
                     {
                         $(".modal-body").html($("#modal_pi_ad_automatic_enabled").text());
                         $("#open_modal").click();

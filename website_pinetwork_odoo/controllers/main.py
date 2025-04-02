@@ -678,7 +678,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list[0].sudo().write(values)
         
-        return json.dumps({'result': True})
+        return json.dumps({'result': True, 'pi_ad_automatic': pi_users_list[0].pi_ad_automatic})
     
     @http.route('/validate-memo', type='http', auth="public", website=True, csrf=False, methods=['POST'])
     def validate_memo(self, **kw):
