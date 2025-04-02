@@ -1220,8 +1220,10 @@
                                     Pi Ads not available (<div id="pi_ad_max" style="display:inline;"></div> ads each <div id="pi_ad_hours" style="display:inline;"></div> hours).
                                 </span>
                             </div>
+                            
                             <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important;">
                               <input class="form-check-input" type="checkbox" id="pi_ad_automatic" disabled="true" />
+                              <br/>
                               <label class="form-check-label" for="pi_ad_automatic">
                                 <div class="text-white">
                                     Activate automatic Pi Ads.
