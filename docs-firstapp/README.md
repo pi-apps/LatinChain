@@ -1,8 +1,10 @@
 # Check these resources
 
-Udemy Course: https://latin-chain.com/piapps-course
+Udemy Course:
+https://latin-chain.com/piapps-course
 
-Amazon Book: https://latin-chain.com/piapps-book
+Amazon Book:
+https://latin-chain.com/piapps-book
 
 # How to develop a First Pi Network App
 
