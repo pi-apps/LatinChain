@@ -747,7 +747,11 @@
                         .darkmode--activated .btn-outline-success:hover, 
                         .darkmode--activated .btn-outline-success:active, 
                         .darkmode--activated a.btn-outline-success:hover, 
-                        .darkmode--activated a.btn-outline-success:active {
+                        .darkmode--activated a.btn-outline-success:active,
+                        .darkmode--activated .btn-outline-info:disabled:hover, 
+                        .darkmode--activated .btn-outline-primary:disabled:hover, 
+                        .darkmode--activated .btn-outline-success:disabled:hover,
+                        .darkmode--activated .a.btn-outline-success:disabled:hover {
                             color: #fff !important;
                         }
                         
@@ -799,6 +803,13 @@
                         
                         .darkmode--activated .next-pi {
                             color: white !important;
+                        }
+                        
+                        .btn-outline-info:disabled:hover, 
+                        .btn-outline-primary:disabled:hover, 
+                        .btn-outline-success:disabled:hover,
+                        .a.btn-outline-success:disabled:hover{
+                            color: #000 !important;
                         }
                         
                     </style>
@@ -1205,12 +1216,12 @@
                             </div>
                             <div t-if="mainnet == 'Mainnet ON'" style="margin-bottom:5px">
                                 <div>
-                                    <a href="/pinetwork" class="gototestnet btn btn-success font-weight-bold"><strong><i class="fa-solid fa-money-bill-transfer"></i><br/>Mainnet ON. Ready to play.<br/>We are accepting payments.</strong></a>
+                                    <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><strong><i class="fa-solid fa-money-bill-transfer"></i><br/>Mainnet ON. Ready to play.<br/>We are accepting payments.</strong></a>
                                 </div>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="gototestnet btn btn-success font-weight-bold"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain7588.pinet.com" target="_blank" class="gotomainnet btn btn-success font-weight-bold"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="col-8 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain7588.pinet.com" target="_blank" class="col-8 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
                         
@@ -1219,7 +1230,7 @@
                                 <h5 translate="no"><strong><div style="display:inline;">#PiAds &#128240;</div></strong></h5>
                             </div>
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px">
-                                <button id="button_reward_ad" name="button_reward_ad" class="btn btn-success font-weight-bold" disabled="true" style="max-width: 300px;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%; display: none">Testing feature</div></button>
+                                <button id="button_reward_ad" name="button_reward_ad" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" disabled="true" style="border: 2px solid;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%; display: none">Testing feature</div></button>
                                 <span id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
                                     Pi Ads not available (<div id="pi_ad_max" style="display:inline;"></div> ads each <div id="pi_ad_hours" style="display:inline;"></div> hours).
                                 </span>
