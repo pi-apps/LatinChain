@@ -1199,21 +1199,6 @@
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
-                        <div t-if="mainnet == 'Mainnet ON'" style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no">
-                                    <strong>
-                                        <div style="display:inline;">#MainnetON &#128241;</div>
-                                    </strong>
-                                </h5>
-                            </div>
-                            <div style="margin-bottom:5px">
-                                <div t-if="mainnet == 'Mainnet ON'">
-                                    <a href="/pinetwork" class="gototestnet btn btn-success font-weight-bold"><strong><i class="fa-solid fa-money-bill-transfer"></i><br/>Mainnet ON. Ready to play.<br/>We are accepting payments.</strong></a>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
@@ -1221,6 +1206,11 @@
                             <div style="margin-bottom:5px">
                                 <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="gototestnet btn btn-success font-weight-bold"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
                                 <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain7588.pinet.com" target="_blank" class="gotomainnet btn btn-success font-weight-bold"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
+                            </div>
+                            <div t-if="mainnet == 'Mainnet ON'" style="margin-bottom:5px">
+                                <div>
+                                    <a href="/pinetwork" class="gototestnet btn btn-success font-weight-bold"><strong><i class="fa-solid fa-money-bill-transfer"></i><br/>Mainnet ON. Ready to play.<br/>We are accepting payments.</strong></a>
+                                </div>
                             </div>
                         </div>
                         
