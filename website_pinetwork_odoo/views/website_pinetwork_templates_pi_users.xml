@@ -857,6 +857,12 @@
                         </t>
                         <t t-if="not pi_user">
                             <span>
+                                <div>
+                                    <strong>App to user payments (it means, prizes) not working yet.</strong>
+                                </div>
+                            </span>
+                            <br/>
+                            <span>
                                 <div><strong>Prizes will be paid the 15th of each month.</strong></div>
                             </span>
                             <br/>
@@ -888,6 +894,12 @@
                               </tbody>
                             </table>
                             
+                            <span>
+                                <div>
+                                    <strong>App to user payments not working yet.</strong>
+                                </div>
+                            </span>
+                            <br/>
                             <span>
                                 <div style="display:inline;">
                                     <strong>Prizes will be paid the 15th of each month.</strong>
