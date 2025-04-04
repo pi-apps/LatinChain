@@ -1216,7 +1216,7 @@
                             </div>
                             <div t-if="mainnet == 'Mainnet ON'" style="margin-bottom:5px">
                                 <div>
-                                    <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><strong><i class="fa-solid fa-money-bill-transfer"></i><br/>Mainnet ON. Ready to play. We are accepting payments.</strong></a>
+                                    <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><strong><div><i class="fa-solid fa-money-bill-transfer"></i></div><div>Mainnet ON</div><div style="font-size:80%;">Accepting payments</div></strong></a>
                                 </div>
                             </div>
                             <div style="margin-bottom:5px">
