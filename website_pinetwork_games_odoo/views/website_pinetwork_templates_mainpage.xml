@@ -1197,7 +1197,7 @@
                         <script type="text/javascript" src="https://www.effectivecreativeformat.com/1771e7291ef3d0a686ff7e2bb191f557/invoke.js"></script>
                         <br/>-->
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
-                        <div><a href="/pinetwork"><strong t-if="mainnet == 'Mainnet ON'"><br/>Mainnet ON. Ready to play.<br/>We are accepting payments.</strong></a></div>
+                        <div t-if="mainnet == 'Mainnet ON'"><br/><a href="/pinetwork" class="gototestnet btn btn-success font-weight-bold"><strong><i class="fa-solid fa-money-bill-transfer"></i><br/>Mainnet ON. Ready to play.<br/>We are accepting payments.</strong></a></div>
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
