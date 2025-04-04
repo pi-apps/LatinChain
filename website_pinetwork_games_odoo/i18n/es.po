@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-02 22:15+0000\n"
-"PO-Revision-Date: 2025-04-02 22:15+0000\n"
+"POT-Creation-Date: 2025-04-04 21:34+0000\n"
+"PO-Revision-Date: 2025-04-04 21:34+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -602,11 +602,6 @@ msgstr "<br/>Líderes y reglas:<br/><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "<br/>Mainnet ON. Ready to play.<br/>We are receiving payments."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<br/>Odoo Community Member:<br/><br/>"
 msgstr ""
 
@@ -976,6 +971,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Accepting payments"
+msgstr "Aceptando pagos"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Activate automatic Pi Ads."
 msgstr "Activar Pi Ads automáticas."
 
@@ -1020,6 +1020,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "Amount"
 msgstr "Monto"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "App to user payments (it means, prizes) not working yet."
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1642,6 +1647,11 @@ msgstr "Mahjong solitario"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "Mainnet (https://latinchain7588.pinet.com)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Mainnet ON"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
