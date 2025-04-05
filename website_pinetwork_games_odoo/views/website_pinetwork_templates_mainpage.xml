@@ -1210,18 +1210,13 @@
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
+                        <div class="justify-content-center text-center p-3 mb-2 bg-info bg-info text-white rounded" t-if="mainnet in ['Mainnet ON']">
+                          <a class="text-white" href="/pinetwork"><div style="display:inline;">Mainnet ON.</div> <div style="display:inline;">Accepting payments</div>.</a>
+                        </div>
+                        
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
-                            </div>
-                            <div class="div_user_status" style="margin-bottom:5px">
-                                <strong class="user_status"></strong>
-                            </div>
-                            <div style="margin-top:5px">
-                                <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
-                            </div>
-                            <div style="margin-top:5px; margin-bottom: 5px">
-                                <button id="rules_button_4" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
                             </div>
                             <div style="margin-bottom:5px">
                                 <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="col-8 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
@@ -1320,7 +1315,7 @@
                             </div>
                         </div>-->
                         
-                        <!--<div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#LatinChain #PayPi &#128177;</strong></h5>
                             </div>
@@ -1333,7 +1328,7 @@
                             <div style="margin-top:5px; margin-bottom: 5px">
                                 <button id="rules_button_4" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
                             </div>
-                        </div>-->
+                        </div>
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
