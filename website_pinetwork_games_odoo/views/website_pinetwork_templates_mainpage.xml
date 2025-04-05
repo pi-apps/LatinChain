@@ -1211,7 +1211,7 @@
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
                         <div class="justify-content-center text-center p-3 mb-2 bg-info bg-info text-white rounded" t-if="mainnet in ['Mainnet ON']">
-                          <a class="text-white" href="/pinetwork"><div style="display:inline;">Mainnet ON.</div> <div style="display:inline;">Accepting payments</div>.</a>
+                          <a class="text-white" href="/pinetwork"><div style="display:inline;">Accepting payments</div> <div style="display:inline;">(<t t-esc="amount" /> Pi)</div>.</a>
                         </div>
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
