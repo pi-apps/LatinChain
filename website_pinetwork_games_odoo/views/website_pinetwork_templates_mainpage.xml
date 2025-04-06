@@ -405,6 +405,33 @@
                               color: black !important;
                             }
                             
+                            .darkmode--activated .btn-outline-info:hover, 
+                            .darkmode--activated .btn-outline-info:active, 
+                            .darkmode--activated .btn-outline-primary:hover, 
+                            .darkmode--activated .btn-outline-primary:active, 
+                            .darkmode--activated .btn-outline-success:hover, 
+                            .darkmode--activated .btn-outline-success:active, 
+                            .darkmode--activated a.btn-outline-success:hover, 
+                            .darkmode--activated a.btn-outline-success:active,
+                            .darkmode--activated .btn-outline-info:disabled:hover, 
+                            .darkmode--activated .btn-outline-primary:disabled:hover, 
+                            .darkmode--activated .btn-outline-success:disabled:hover,
+                            .darkmode--activated .a.btn-outline-success:disabled:hover {
+                                color: #fff !important;
+                            }
+                            
+                            .border-gradient-rounded {
+                              /* Border */
+                              border: 4px solid transparent;
+                              border-radius: 20px;
+                              background: 
+                                linear-gradient(to right, white, white), 
+                                linear-gradient(to right, red , blue); 
+                              background-clip: padding-box, border-box;
+                              background-origin: padding-box, border-box;
+                              color: black !important;
+                            }
+                            
                         </style>
                     </t>
 
@@ -812,6 +839,18 @@
                             color: #000 !important;
                         }
                         
+                        .border-gradient-rounded {
+                          /* Border */
+                          border: 4px solid transparent;
+                          border-radius: 20px;
+                          background: 
+                            linear-gradient(to right, white, white), 
+                            linear-gradient(to right, red , blue); 
+                          background-clip: padding-box, border-box;
+                          background-origin: padding-box, border-box;
+                          color: black !important;
+                        }
+                        
                     </style>
                 </t>
 
@@ -902,18 +941,6 @@
                         .myAppsAnchor
                         {
                             color: #000 !important;
-                        }
-                        
-                        .border-gradient-rounded {
-                          /* Border */
-                          border: 4px solid transparent;
-                          border-radius: 20px;
-                          background: 
-                            linear-gradient(to right, white, white), 
-                            linear-gradient(to right, red , blue); 
-                          background-clip: padding-box, border-box;
-                          background-origin: padding-box, border-box;
-                          color: black !important;
                         }
                     </style>
                 </head>
