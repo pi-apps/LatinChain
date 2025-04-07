@@ -1233,9 +1233,9 @@
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
-                        <div class="justify-content-center text-center p-3 mb-2 bg-info bg-info text-white rounded getverified" t-if="mainnet in ['Mainnet ON']">
+                        <div class="justify-content-center text-center p-3 mb-2 bg-info bg-info text-white rounded" t-if="mainnet in ['Mainnet ON']">
                           <a class="text-white" href="/pinetwork"><div style="display:inline;">Accepting payments</div> <div style="display:inline;">(<t t-esc="amount" /> Pi)</div>.
-                            <div>Get verified: No ads, verified badge (<i class="fa fa-check-circle-o"></i>), all features by 30 days.</div>
+                            <div class="getverified" style="display: none;">Get verified: No ads, verified badge (<i class="fa fa-check-circle-o"></i>), all features by 30 days.</div>
                           </a>
                         </div>
                         
