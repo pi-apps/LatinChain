@@ -246,6 +246,7 @@ function get_user() {
                     if(["Mainnet ON"].includes($("#mainnet").val()))
                     {
                         $(".getverified").hide();
+                        $(".isverified").show();
                     }
                     
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
@@ -333,6 +334,7 @@ function get_user() {
                     if(["Mainnet ON"].includes($("#mainnet").val()))
                     {
                         $(".getverified").show();
+                        $(".isverified").hide();
                     }
                     
                     $("#user_logged").html(data.pi_user_code);
