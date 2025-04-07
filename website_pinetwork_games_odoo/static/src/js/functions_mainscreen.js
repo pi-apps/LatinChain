@@ -83,6 +83,9 @@ function get_user_rewarded() {
                 {
                     unblocked = data.unblocked;
                     
+                    if(["Mainnet ON"].includes($("#mainnet").val()))
+                        $(".getverified").hide();
+                    
                     $("#user_points").html(data.points);
                     $("#user_points_per_game").html('<div>Latin points: ' + data.points_latin + '</div>' +
                                                   '<br/><table class="table text-white table-hover table-dark" style="word-break: break-word;" translate="no">' +
@@ -135,6 +138,9 @@ function get_user_rewarded() {
                                                 '</table>');
                     $("#user_points_datetime").html(data.points_datetime);
                 }else{
+                    
+                    if(["Mainnet ON"].includes($("#mainnet").val()))
+                        $(".getverified").show();
                 
                     $("#user_points").html(data.points);
                     $("#user_points_per_game").html('<div>Latin points: ' + data.points_latin + '</div>' +
