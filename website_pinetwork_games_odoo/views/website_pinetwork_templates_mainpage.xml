@@ -900,7 +900,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.143"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.144"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1235,7 +1235,7 @@
                         
                         <div class="justify-content-center text-center p-3 mb-2 bg-info bg-info text-white rounded" t-if="mainnet in ['Mainnet ON']">
                           <a class="text-white" href="/pinetwork"><div style="display:inline;">Accepting payments</div> <div style="display:inline;">(<t t-esc="amount" /> Pi)</div>.
-                            <div class="getverified">Get verified: No ads, verified badge (<i class="fa fa-check-circle-o"></i>), all features by 30 days.</div>
+                            <div class="getverified">Get verified: No ads, verified badge <i class="fa fa-check-circle-o"></i>, all features by 30 days.</div>
                           </a>
                         </div>
                         

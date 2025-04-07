@@ -83,9 +83,6 @@ function get_user_rewarded() {
                 {
                     unblocked = data.unblocked;
                     
-                    if(["Mainnet ON"].includes($("#mainnet").val()))
-                        $(".getverified").hide();
-                    
                     $("#user_points").html(data.points);
                     $("#user_points_per_game").html('<div>Latin points: ' + data.points_latin + '</div>' +
                                                   '<br/><table class="table text-white table-hover table-dark" style="word-break: break-word;" translate="no">' +
@@ -138,9 +135,6 @@ function get_user_rewarded() {
                                                 '</table>');
                     $("#user_points_datetime").html(data.points_datetime);
                 }else{
-                    
-                    if(["Mainnet ON"].includes($("#mainnet").val()))
-                        $(".getverified").show();
                 
                     $("#user_points").html(data.points);
                     $("#user_points_per_game").html('<div>Latin points: ' + data.points_latin + '</div>' +
@@ -249,6 +243,11 @@ function get_user() {
                 {
                     unblocked = data.unblocked;
                     
+                    if(["Mainnet ON"].includes($("#mainnet").val()))
+                    {
+                        $(".getverified").hide();
+                    }
+                    
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
                         $("#pi_ad_automatic").prop("disabled", false);
@@ -331,6 +330,11 @@ function get_user() {
                     $("#button_click_memo").prop( "disabled", false );
                     $("#memo_id").prop( "disabled", false );
                 }else{
+                    if(["Mainnet ON"].includes($("#mainnet").val()))
+                    {
+                        $(".getverified").show();
+                    }
+                    
                     $("#user_logged").html(data.pi_user_code);
                     $(".div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                     $(".user_status").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
