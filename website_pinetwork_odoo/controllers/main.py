@@ -879,7 +879,13 @@ class PiNetworkBaseController(http.Controller):
                                 'last_connection': datetime.now(),
                             }
             
-            if pi_users_list[0].unblocked:
+            admin_app_list = []
+            if 'app_client' in kw:
+                admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
+                if len(admin_app_list) == 0:
+                    return json.dumps({'result': False})
+            
+            if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ["Mainnet ON"] and pi_users_list[0].unblocked:
                 #if int(kw['points']) > 0:
                 #    pi_users_winnners_count = request.env["pi.users"].sudo().search_count(winner_domain)
                 #    

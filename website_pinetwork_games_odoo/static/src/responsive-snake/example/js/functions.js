@@ -93,7 +93,23 @@ function get_user(pause) {
                 show_pi_ad_user = data.show_pi_ad;
                 
                 passkey=data.passkey;
-                if(data.unblocked)
+                if(data.unblocked && ["Testnet OFF", "Testnet ON"].includes($("#mainnet").val()))
+                {
+                    alert("You can use Snake, for testing purposes. No points will be shared for this game by now. To get points, use it on Mainnet: https://latin-chain.com");
+                    $("#reset_pause_controls").show();
+                    $("#plus_minus_controls").show();
+                    $("#pause").show();
+                    $("#reset").show();
+                    $("#minus").show();
+                    $("#plus").show();
+                    $("#enable_dragging").show();
+                    $('#disable_dragging').hide();
+                    $("#pi_donate").hide();
+                    $("#button_click").hide();
+                    
+                    if(pause)
+                        $("#pause").click();
+                }else if(data.unblocked)
                 {
                     unblocked = data.unblocked;
                     
@@ -110,7 +126,8 @@ function get_user(pause) {
                     
                     if(pause)
                         $("#pause").click();
-                }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+                }
+                else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Snake, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
                     $("#reset_pause_controls").show();

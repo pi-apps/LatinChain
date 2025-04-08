@@ -157,7 +157,28 @@ function get_user() {
                 show_pi_ad_user = data.show_pi_ad;
                 
                 passkey=data.passkey;
-                if(data.unblocked)
+                if(data.unblocked && ["Testnet OFF", "Testnet ON"].includes($("#mainnet").val()))
+                {
+                    alert("You can use Chess, for testing purposes. No points will be shared for this game by now. To get points, use it on Mainnet: https://latin-chain.com");
+                    $("#pi_donate").hide();
+                    $("#button_click").hide();
+                    $(".hide_when_unblock").hide();
+                    $("#loading_word").hide();
+                    $('#chess-tab').show();
+                    $("#home-tab").prop( "disabled", true );
+                    $('#chess-tab').click();
+                    /*setTimeout(function() {
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+					}, 1000);*/
+                    
+                    setTimeout(function() {
+                      load_all_boards();
+                      setTimeout(function() {
+                        $("#home-tab").prop( "disabled", false );
+                      }, 2000);
+					}, 1000);
+                }
+                else if(data.unblocked)
                 {
                     unblocked = data.unblocked;
                     
@@ -178,7 +199,8 @@ function get_user() {
                         $("#home-tab").prop( "disabled", false );
                       }, 2000);
 					}, 1000);
-                }else if(["Mainnet OFF"].includes($("#mainnet").val()))
+                }
+                else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Chess, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
                     $("#pi_donate").hide();
