@@ -111,7 +111,7 @@ class PiNetworkBaseController(http.Controller):
     def latinchain_privacy(self, **kw):
         return http.request.redirect('/blog/latinchain-blog-1/privacy-policy-5')
     
-    @http.route('/api/get-external-winners', type='http', auth="none", methods=['POST'], csrf=False)
+    @http.route('/api/get-external-winners', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def get_external_winners(self, **kw):
 
         """
@@ -157,7 +157,7 @@ class PiNetworkBaseController(http.Controller):
         headers = {'Content-Type': 'application/json'}
         return Response(json.dumps({'result': True, 'pi_winner_list': pi_winner_list}), headers=headers)
     
-    @http.route('/api/get-external-user', type='http', auth="none", methods=['POST'], csrf=False)
+    @http.route('/api/get-external-user', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def get_external_user(self, **kw):
         
         # Enable when Mainnet
