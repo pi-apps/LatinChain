@@ -408,13 +408,13 @@
                                         <div class="row justify-content-center" style="">
                                             <div class="col-12">
                                             <h3>You want to promote as</h3>
-                                            <p><select id="promote_as">
+                                            <div class="row justify-content-center text-center"><select id="promote_as" class="form-select form-select-lg mb-3" style="max-width: 200px">
                                                  <option value="q" selected="true">Queen</option>
                                                  <option value="b">Bishop</option>
                                                  <option value="n">Knight</option>
                                                  <option value="r">Rook</option>
                                                </select>
-                                            </p>
+                                            </div>
                                             </div>
                                         </div><br/>
                                         <div class="row justify-content-center" style="">
