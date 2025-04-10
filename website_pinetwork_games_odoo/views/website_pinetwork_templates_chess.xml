@@ -37,7 +37,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
-                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js?v=1.143"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js?v=1.144"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -408,13 +408,13 @@
                                         <div class="row justify-content-center" style="">
                                             <div class="col-12">
                                             <h3>You want to promote as</h3>
-                                            <div class="row justify-content-center text-center"><select id="promote_as" class="form-select" style="max-width: 200px">
-                                                 <option value="q">Queen</option>
+                                            <p><select id="promote_as">
+                                                 <option value="q" selected="true">Queen</option>
                                                  <option value="b">Bishop</option>
                                                  <option value="n">Knight</option>
                                                  <option value="r">Rook</option>
                                                </select>
-                                            </div>
+                                            </p>
                                             </div>
                                         </div><br/>
                                         <div class="row justify-content-center" style="">

@@ -302,8 +302,6 @@ $( document ).ready(function() {
                 $("#loading_word").hide();
             });
             
-    $("#promote_as option[id='q']").attr("selected", "selected");
-            
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     amount = $("#amount").val();
     
