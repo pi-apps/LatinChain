@@ -73,7 +73,7 @@ class Website(Website):
         return http.request.render('website_pinetwork_games_odoo.mainpage', {'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': int(pi_ad_hours), 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
 class PiNetworkController(http.Controller):
-    @http.route('/radioforus', type='http', auth="public", website=True, csrf=False, save_session=False)
+    @http.route('/radioforus', type='http', auth="none", csrf=False, save_session=False)
     def radioforus(self, **kw):
         
         link_back = "https://mainnet.radioforus.com"
@@ -138,7 +138,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.radioforus', {'points_latin_amount': points_latin_amount, 'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
-    @http.route('/get-transactions-radioforus/', type='http', auth="none", csrf=False, save_session=False)
+    @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_transactions_radioforus(self, **kw):
         
         link_back = "https://mainnet.radioforus.com"
