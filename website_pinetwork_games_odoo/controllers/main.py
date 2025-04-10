@@ -16,7 +16,7 @@ from odoo.addons.website.controllers.main import Website
 from datetime import datetime, timedelta
 
 class Website(Website):
-    @http.route('/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def index(self, **kw):
         #super(Website, self).index(**kw)
         
@@ -73,7 +73,7 @@ class Website(Website):
         return http.request.render('website_pinetwork_games_odoo.mainpage', {'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': int(pi_ad_hours), 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
 class PiNetworkController(http.Controller):
-    @http.route('/radioforus', type='http', auth="public", website=True, save_session=False)
+    @http.route('/radioforus', type='http', auth="public", website=True, csrf=False, save_session=False)
     def radioforus(self, **kw):
         
         link_back = "https://mainnet.radioforus.com"
@@ -138,7 +138,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.radioforus', {'points_latin_amount': points_latin_amount, 'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
-    @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_transactions_radioforus(self, **kw):
         
         link_back = "https://mainnet.radioforus.com"
@@ -181,7 +181,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.list_transactions_radioforus', {'company_latinchain_id': request.env['res.company']._company_default_get(), 'link_back': link_back, 'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
-    @http.route('/tetris/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/tetris/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def tetris(self, **kw):
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
@@ -213,7 +213,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.mahjong', {'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
-    @http.route('/latinchain-mainnet-redirect', type='http', auth="public", website=True, save_session=False)
+    @http.route('/latinchain-mainnet-redirect', type='http', auth="public", website=True, csrf=False, save_session=False)
     def latinchain_mainnet_redirect(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
@@ -248,7 +248,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.latinchain_mainnet_redirect', {'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
-    @http.route('/latinchain_x', type='http', auth="public", website=True, save_session=False)
+    @http.route('/latinchain_x', type='http', auth="public", website=True, csrf=False, save_session=False)
     def latinchain_x(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
@@ -285,7 +285,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.latinchain_x', {'announcement_html': announcement_html, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
-    @http.route('/pinetwork', type='http', auth="public", website=True, save_session=False)
+    @http.route('/pinetwork', type='http', auth="public", website=True, csrf=False, save_session=False)
     def index(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
         
@@ -326,7 +326,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.pinetwork', {'pi_ad_max': pi_ad_max, 'pi_ad_hours': int(pi_ad_hours), 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
-    @http.route('/sudoku', type='http', auth="public", website=True, save_session=False)
+    @http.route('/sudoku', type='http', auth="public", website=True, csrf=False, save_session=False)
     def sudoku(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_pidoku')])
         
@@ -363,7 +363,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.sudoku', {'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
-    @http.route('/snake', type='http', auth="public", website=True, save_session=False)
+    @http.route('/snake', type='http', auth="public", website=True, csrf=False, save_session=False)
     def snake(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_snake')])
         
@@ -404,7 +404,7 @@ class PiNetworkController(http.Controller):
                                                                         'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 
                                                                         'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
         
-    @http.route('/chess', type='http', auth="public", website=True, save_session=False)
+    @http.route('/chess', type='http', auth="public", website=True, csrf=False, save_session=False)
     def chess(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         

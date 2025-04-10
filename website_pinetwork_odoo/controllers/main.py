@@ -40,7 +40,7 @@ leaders_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=3
 """
 
 class CustomerPortalInherit(CustomerPortal):
-    @http.route('/my/security', type='http', auth='user', website=True, methods=['GET', 'POST'], save_session=False)
+    @http.route('/my/security', type='http', auth='user', website=True, methods=['GET', 'POST'], csrf=False, save_session=False)
     def security(self, **post):
         return request.redirect('/')
 
@@ -55,12 +55,12 @@ class PiNetworkBaseController(http.Controller):
         
         return {'winner_domain': winner_domain, 'winner_chess_domain': winner_chess_domain, 'winner_sudoku_domain': winner_sudoku_domain, 'winner_snake_domain': winner_snake_domain, 'leaders_domain': leaders_domain}
     
-    @http.route('/mainpage', type='http', auth="public", website=True, save_session=False)
+    @http.route('/mainpage', type='http', auth="public", website=True, csrf=False, save_session=False)
     def index(self, **kw):
                     
         return http.request.render('website_pinetwork_odoo.mainpage')
     
-    @http.route('/example', type='http', auth="public", website=True, save_session=False)
+    @http.route('/example', type='http', auth="public", website=True, csrf=False, save_session=False)
     def example(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_first_app')])
         
@@ -71,47 +71,47 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
         
-    @http.route('/api-docs/', type='http', auth="public", website=True, csrf=False, methods=['GET'], save_session=False)
+    @http.route('/api-docs/', type='http', auth="public", website=True, methods=['GET'], csrf=False, save_session=False)
     def api_external_docs(self, **kw):
         return http.request.redirect('https://github.com/pi-apps/LatinChain/tree/main/docs')
     
-    @http.route('/mainnet/', type='http', auth="public", website=True, csrf=False, methods=['GET'], save_session=False)
+    @http.route('/mainnet/', type='http', auth="public", website=True, methods=['GET'], csrf=False, save_session=False)
     def latinchain_mainnet(self, **kw):
         return http.request.redirect('https://latinchain7588.pinet.com')
     
-    @http.route('/testnet/', type='http', auth="public", website=True, csrf=False, methods=['GET'], save_session=False)
+    @http.route('/testnet/', type='http', auth="public", website=True, methods=['GET'], csrf=False, save_session=False)
     def latinchain_testnet(self, **kw):
         return http.request.redirect('https://latinchaintest9869.pinet.com')
         
-    @http.route('/odoo-tech-course/', type='http', auth="public", website=True, csrf=False, methods=['GET'], save_session=False)
+    @http.route('/odoo-tech-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False, save_session=False)
     def odoo_technical_course(self, **kw):
         return http.request.redirect('https://www.udemy.com/course/odoo-14-technical-training-en-espanol/?referralCode=1229BD4F262C09869DB2')
     
-    @http.route('/piapps-course/', type='http', auth="public", website=True, csrf=False, methods=['GET'], save_session=False)
+    @http.route('/piapps-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False, save_session=False)
     def piapps_course(self, **kw):
         return http.request.redirect('https://www.udemy.com/course/learn-how-to-develop-a-pi-app-on-the-pi-network/?referralCode=ADD5DE357007E267B364')
         
-    @http.route('/english-course/', type='http', auth="public", website=True, csrf=False, methods=['GET'], save_session=False)
+    @http.route('/english-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False, save_session=False)
     def english_course(self, **kw):
         return http.request.redirect('https://www.udemy.com/course/aprende-ingles-practico-hoy-mismo-con-ia/?referralCode=D67C6EEEA0A577E2C2CF')
         
-    @http.route('/odoo-tech-book/', type='http', auth="public", website=True, csrf=False, methods=['GET'], save_session=False)
+    @http.route('/odoo-tech-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False, save_session=False)
     def odoo_technical_book(self, **kw):
         return http.request.redirect('https://www.amazon.com/dp/B0DJVY51LS')
     
-    @http.route('/piapps-book/', type='http', auth="public", website=True, csrf=False, methods=['GET'], save_session=False)
+    @http.route('/piapps-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False, save_session=False)
     def piapps_book(self, **kw):
         return http.request.redirect('https://www.amazon.com/dp/B0DK3NJ23V')
         
-    @http.route('/terms/', type='http', auth="public", website=True, csrf=False, methods=['GET'], save_session=False)
+    @http.route('/terms/', type='http', auth="public", website=True, methods=['GET'], csrf=False, save_session=False)
     def latinchain_terms(self, **kw):
         return http.request.redirect('/blog/latinchain-blog-1/terms-of-service-6')
         
-    @http.route('/privacy/', type='http', auth="public", website=True, csrf=False, methods=['GET'], save_session=False)
+    @http.route('/privacy/', type='http', auth="public", website=True, methods=['GET'], csrf=False, save_session=False)
     def latinchain_privacy(self, **kw):
         return http.request.redirect('/blog/latinchain-blog-1/privacy-policy-5')
     
-    @http.route('/api/get-external-winners', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/api/get-external-winners', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def get_external_winners(self, **kw):
 
         """
@@ -157,7 +157,7 @@ class PiNetworkBaseController(http.Controller):
         headers = {'Content-Type': 'application/json'}
         return Response(json.dumps({'result': True, 'pi_winner_list': pi_winner_list}), headers=headers)
     
-    @http.route('/api/get-external-user', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/api/get-external-user', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def get_external_user(self, **kw):
         
         # Enable when Mainnet
@@ -221,7 +221,7 @@ class PiNetworkBaseController(http.Controller):
                             'days_available': pi_users_list[0].days_available,
                             'is_winner': is_winner}), headers=headers)
     
-    @http.route('/get-user', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/get-user', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def get_user(self, **kw):
         
         if 'accessToken' not in kw:
@@ -357,7 +357,7 @@ class PiNetworkBaseController(http.Controller):
                             'pi_ad_max': pi_ad_max,
                             'pi_ad_automatic': pi_ad_automatic})
     
-    @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def set_pi_ad_datetime(self, **kw):
         if 'accessToken' not in kw:
             _logger.info("accessToken not present")
@@ -391,7 +391,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'result': True, 'pi_ad_new': pi_ad_new})
         
-    @http.route('/set-pi-wallet', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/set-pi-wallet', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def set_pi_wallet(self, **kw):
         if 'accessToken' not in kw:
             _logger.info("accessToken not present")
@@ -432,7 +432,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'result': True})
     
-    @http.route('/set-streaming-url', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/set-streaming-url', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def set_streaming_url(self, **kw):
         if 'accessToken' not in kw:
             _logger.info("accessToken not present")
@@ -476,7 +476,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'result': True})
     
-    @http.route('/set-referrer-code', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/set-referrer-code', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def set_referrer_code(self, **kw):
         if 'accessToken' not in kw:
             _logger.info("accessToken not present")
@@ -532,7 +532,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'result': True})
         
-    @http.route('/set-latin-points', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/set-latin-points', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def set_latin_points(self, **kw):
         
         if 'accessToken' not in kw:
@@ -629,7 +629,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'result': True, 'points_latin': admin_app_list[0].points_latin_amount, 'pi_ad_new': pi_ad_new})
     
-    @http.route('/pi-ad-automatic', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/pi-ad-automatic', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def pi_ad_automatic(self, **kw):
         
         if 'accessToken' not in kw:
@@ -680,7 +680,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'result': True, 'pi_ad_automatic': pi_users_list[0].pi_ad_automatic})
     
-    @http.route('/validate-memo', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/validate-memo', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def validate_memo(self, **kw):
         if 'accessToken' not in kw:
             _logger.info("accessToken not present")
@@ -766,7 +766,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'result': False})
         
-    @http.route('/pi-api', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/pi-api', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def pi_api(self, **kw):
         admin_apps_block_list = request.env["admin.apps"].sudo().search([('app', '=', "auth_platform"), ('block_points', '=', True)])
         
@@ -806,7 +806,7 @@ class PiNetworkBaseController(http.Controller):
         
         return request.env["admin.apps"].pi_api(kw)
         
-    @http.route('/pi-points', type='http', auth="public", website=True, csrf=False, methods=['POST'], save_session=False)
+    @http.route('/pi-points', type='http', auth="public", website=True, methods=['POST'], csrf=False, save_session=False)
     def pi_points(self, **kw):
         """
         admin_apps_block_list = request.env["admin.apps"].sudo().search([('app', '=', "auth_platform"), ('block_points', '=', True)])
@@ -915,7 +915,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'result': True})
     
-    @http.route('/get-general-ranking/<string:pi_user_code>', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-general-ranking/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_general_ranking_user(self, pi_user_code, **kw):
         domains_def = self.leaders_domain_def()
         leaders_domain = domains_def['leaders_domain']
@@ -945,7 +945,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.general_ranking', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user})
         
-    @http.route('/get-general-ranking/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-general-ranking/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_general_ranking(self, **kw):
         domains_def = self.leaders_domain_def()
         leaders_domain = domains_def['leaders_domain']
@@ -973,7 +973,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.general_ranking', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list})
         
-    @http.route('/get-points/<string:pi_user_code>', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-points/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_points_user(self, pi_user_code, **kw):
         domains_def = self.leaders_domain_def()
         leaders_domain = domains_def['leaders_domain']
@@ -1001,7 +1001,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.list_points', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user})
         
-    @http.route('/get-points/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-points/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_points(self, **kw):
         domains_def = self.leaders_domain_def()
         leaders_domain = domains_def['leaders_domain']
@@ -1041,7 +1041,7 @@ class PiNetworkBaseController(http.Controller):
         return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user})
     """
         
-    @http.route('/get-top10-zone/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-top10-zone/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_top10_zone(self, **kw):
         domains_def = self.leaders_domain_def()
         leaders_domain = domains_def['leaders_domain']
@@ -1071,7 +1071,7 @@ class PiNetworkBaseController(http.Controller):
 
         return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_users_list_chess': pi_users_list_chess, 'pi_users_list_snake': pi_users_list_snake, 'pi_users_list_sudoku': pi_users_list_sudoku})
     
-    @http.route('/get-top10-zone/<string:pi_user_code>', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-top10-zone/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_top10_zone_user(self, pi_user_code, **kw):
         domains_def = self.leaders_domain_def()
         leaders_domain = domains_def['leaders_domain']
@@ -1103,7 +1103,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user, 'pi_users_list_chess': pi_users_list_chess, 'pi_users_list_snake': pi_users_list_snake, 'pi_users_list_sudoku': pi_users_list_sudoku})
         
-    @http.route('/get-winners-zone/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-winners-zone/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_winners_zone(self, **kw):
         domains_def = self.leaders_domain_def()
         leaders_domain = domains_def['leaders_domain']
@@ -1137,7 +1137,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.list_winners_zone', {'pi_users_winners_count': pi_users_winners_count, 'pi_users_winners_to_pay': pi_users_winners_to_pay, 'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_users_winners_datetime': pi_users_winners_datetime})
 
-    @http.route('/get-winners-zone/<string:pi_user_code>', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-winners-zone/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_winners_zone_user(self, pi_user_code, **kw):
         domains_def = self.leaders_domain_def()
         leaders_domain = domains_def['leaders_domain']
@@ -1173,7 +1173,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.list_winners_zone', {'pi_users_winners_count': pi_users_winners_count, 'pi_users_winners_to_pay': pi_users_winners_to_pay, 'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_users_winners_datetime': pi_users_winners_datetime, 'pi_user': pi_user})
     
-    @http.route('/get-streamers-zone/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-streamers-zone/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_streamers_zone(self, **kw):
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
@@ -1195,7 +1195,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.list_streamer_zone', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list})
 
-    @http.route('/get-streamers-zone/<string:pi_user_code>', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-streamers-zone/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_streamers_zone_user(self, pi_user_code, **kw):
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
@@ -1219,7 +1219,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.list_streamer_zone', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_user': pi_user})
         
-    @http.route('/get-credits/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-credits/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_credits(self, **kw):
         return http.request.render('website_pinetwork_odoo.list_credits')
 
@@ -1267,7 +1267,7 @@ class PiNetworkBaseController(http.Controller):
         
         return json.dumps({'draw': int(draw), 'aaData': data, "iTotalRecords": pi_users_count, "iTotalDisplayRecords": pi_users_count_filter})
     
-    @http.route('/latinchain-academy/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/latinchain-academy/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def latinchain_academy(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
@@ -1282,7 +1282,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.latinchain_academy', {'no_footer': False, 'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
-    @http.route('/latinchain-sports/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/latinchain-sports/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def latinchain_sports(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
@@ -1297,7 +1297,7 @@ class PiNetworkBaseController(http.Controller):
         
         return http.request.render('website_pinetwork_odoo.latinchain_sports', {'no_footer': False, 'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
-    @http.route('/get-transactions/', type='http', auth="public", website=True, save_session=False)
+    @http.route('/get-transactions/', type='http', auth="public", website=True, csrf=False, save_session=False)
     def get_transactions(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
