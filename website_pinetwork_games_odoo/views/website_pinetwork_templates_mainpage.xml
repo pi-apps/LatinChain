@@ -778,6 +778,11 @@
                             color: #fff !important;
                         }
                         
+                        .darkmode--activated .btn-outline-warning:hover, 
+                        .darkmode--activated .btn-outline-warning:active {
+                            color: #000 !important;
+                        }
+                        
                         .darkmode--activated .list-group-item {
                             background-color: #484848 !important;
                         }
