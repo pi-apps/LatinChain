@@ -301,6 +301,11 @@ $( document ).ready(function() {
     $(document).ajaxStop(function() {
                 $("#loading_word").hide();
             });
+    
+    if(location.pathname.substring(0, 3) == "/es")
+    {
+        $("#promote_as option[id='q']").text("Dama");
+    }
             
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     amount = $("#amount").val();
