@@ -175,10 +175,6 @@ function get_user() {
                     setTimeout(function() {
                       load_all_boards();
                       setTimeout(function() {
-                        if(location.pathname.substring(0, 3) == "/es")
-                        {
-                            $("#promote_as option[value='q']").text("Dama");
-                        }
                         $("#home-tab").prop( "disabled", false );
                       }, 2000);
 					}, 1000);
@@ -308,6 +304,11 @@ $( document ).ready(function() {
             
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     amount = $("#amount").val();
+    
+    if(location.pathname.substring(0, 3) == "/es")
+    {
+        $("#promote_as option[value='q']").text("Dama");
+    }
     
     async function auth() {
         $("#pi_donate").hide();
