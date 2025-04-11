@@ -177,7 +177,7 @@ function get_user() {
                       setTimeout(function() {
                         if(location.pathname.substring(0, 3) == "/es")
                         {
-                            $("#promote_as option[id='q']").text("Dama");
+                            $("#promote_as option[value='q']").text("Dama");
                         }
                         $("#home-tab").prop( "disabled", false );
                       }, 2000);
