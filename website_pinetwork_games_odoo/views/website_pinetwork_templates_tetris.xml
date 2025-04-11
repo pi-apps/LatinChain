@@ -75,7 +75,7 @@
 
                             <br/>
                             <h3><strong>Theme: </strong></h3>
-                            <p><select id="themes">
+                            <p><select id="themes" class="form-select" style="max-width: 200px">
                                 <option value="candy" selected="true">Candy</option>
                                 <option value="modern">Modern</option>
                                 <option value="retro">Retro</option>
