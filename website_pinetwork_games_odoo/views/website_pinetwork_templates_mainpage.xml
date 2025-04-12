@@ -1275,7 +1275,7 @@
                                     Activate automatic Pi Ads.
                                 </div>
 				<div class="text-white">
-                                    (+<t t-esc="points_latin_amount" /> Latin points)
+                                    (+<t t-esc="points_latin_amount" /> Latin points / <t t-esc="pi_ad_hours" />h)
                                 </div>
                               </label>
                             </div>
