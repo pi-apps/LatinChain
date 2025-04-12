@@ -1274,6 +1274,9 @@
                                 <div class="text-white">
                                     Activate automatic Pi Ads.
                                 </div>
+				<div class="text-white">
+                                    (+<t t-esc="points_latin_amount" /> Latin points)
+                                </div>
                               </label>
                             </div>
                         </div>
