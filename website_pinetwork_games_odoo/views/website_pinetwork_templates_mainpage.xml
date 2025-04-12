@@ -1167,6 +1167,14 @@
                           </div>
                         </section>
                     </div>
+                    
+                    <div class="justify-content-center text-center p-3 mb-2 bg-info bg-info text-white rounded" t-if="mainnet in ['Mainnet ON']">
+                      <a class="text-white" href="/pinetwork"><div style="display:inline;">Accepting payments</div> <div style="display:inline;">(<t t-esc="amount" /> Pi)</div>.
+                        <div class="getverified">Get verified: No ads, verified badge <i class="fa fa-check-circle-o"></i>, access to Chess, Sudoku and Snake.</div>
+                        <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
+                      </a>
+                    </div>
+                    
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                         
                         <!-- LatinChain Ad responsive -->
@@ -1237,13 +1245,6 @@
                         <br/>-->
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
-                        
-                        <div class="justify-content-center text-center p-3 mb-2 bg-info bg-info text-white rounded" t-if="mainnet in ['Mainnet ON']">
-                          <a class="text-white" href="/pinetwork"><div style="display:inline;">Accepting payments</div> <div style="display:inline;">(<t t-esc="amount" /> Pi)</div>.
-                            <div class="getverified">Get verified: No ads, verified badge <i class="fa fa-check-circle-o"></i>, all features by 30 days.</div>
-                            <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
-                          </a>
-                        </div>
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
