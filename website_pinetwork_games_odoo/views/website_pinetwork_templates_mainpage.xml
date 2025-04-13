@@ -1421,17 +1421,17 @@
                             <div class="p-3 mb-2 bg-info bg-gradient text-white rounded">
                                 Last 24 hours: 
                                 <br/>
-                                <table class="table text-white" style="word-break: break-word;">
+                                <table class="table text-white table-hover table-dark" style="word-break: break-word;">
                                     <thead>
                                         <tr>
                                             <td>Users</td>
-                                            <td>Transactions</td>
+                                            <!--<td>Transactions</td>-->
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td><span t-esc="'{:,}'.format(total_users_daily_count)" /></td>
-                                            <td><span t-esc="'{:,}'.format(total_transactions_daily_count)" /></td>
+                                            <!--<td><span t-esc="'{:,}'.format(total_transactions_daily_count)" /></td>-->
                                         </tr>
                                     </tbody>
                                 </table>
