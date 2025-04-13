@@ -289,7 +289,7 @@
                             <div class="tab-pane fade show active container" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="container" style="text-align:center; max-width: 840px">
                                     <br/>
-                                    <img  width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
+                                    <img class="rounded" width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
                                     <h1 align="center" style="font-weight:600">Donate Pi cryptocurrency here</h1>
                                     
                                     <t t-set="amount_end" t-value="round(amount*3, 7)"/>
