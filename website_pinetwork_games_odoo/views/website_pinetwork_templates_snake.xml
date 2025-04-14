@@ -331,13 +331,13 @@
                     <div id="controls" style="padding: 10px; max-width: 125px; min-width: 125px; max-height: 120px; min-height: 120px; margin-left: 28% !important;" draggable="true">
                         <!--<div style="min-height: 60px;"></div>-->
                         <div class="square-borderless"></div>
-                        <div class="square" id="up">&#8593;</div>
+                        <div class="square" id="up"><i class="fa-solid fa-arrow-up"></i></div>
                         <br/><br/>
-                        <div class="square" id="left">&#8592;</div>
+                        <div class="square" id="left"><i class="fa-solid fa-arrow-left"></i></div>
                         <div class="square-borderless"></div>
-                        <div class="square" id="right">&#8594;</div>
+                        <div class="square" id="right"><i class="fa-solid fa-arrow-right"></i></div>
                         <br/><br/><div class="square-borderless"></div>
-                        <div class="square" id="down">&#8595;</div>
+                        <div class="square" id="down"><i class="fa-solid fa-arrow-down"></i></div>
                     </div>
                     <!--<p>* <a href="https://github.com/iamchrismiller/responsive-snake">Check out the source code</a> *</p>-->
                 </div>
