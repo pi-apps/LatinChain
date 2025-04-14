@@ -59,7 +59,7 @@
                 <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
                 
                 <style>
-                .square {color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
+                .square {border-radius: 25px; color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
                 .square-borderless {color: black; font-weight: bold; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center;}
                 .transparent {opacity: 0.5;}
                 .bottom {
@@ -328,7 +328,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="controls" style="padding: 10px; max-width: 125px; min-width: 125px; max-height: 120px; min-height: 120px; margin-left: 28% !important;" draggable="true">
+                    <div id="controls" style="border-radius: 25px; padding: 10px; max-width: 125px; min-width: 125px; max-height: 120px; min-height: 120px; margin-left: 28% !important;" draggable="true">
                         <!--<div style="min-height: 60px;"></div>-->
                         <div class="square-borderless"></div>
                         <div class="square" id="up"><i class="fa-solid fa-arrow-up"></i></div>
