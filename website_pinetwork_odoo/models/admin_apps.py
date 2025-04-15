@@ -1246,7 +1246,7 @@ class pi_users(models.Model):
                 ('doge_female', 'Female Dog'), ('doge_male', 'Male Dog'),
                 ('dragon_female', 'Female Dragon'), ('dragon_male', 'Male Dragon'),
                 ('eagle_female', 'Female Eagle'), ('eagle_male', 'Male Eagle'),
-                ('macaw_female', 'Female Macaw'), ('macaw_female', 'Male Macaw'),
+                ('macaw_female', 'Female Macaw'), ('macaw_male', 'Male Macaw'),
                 ('tiger_female', 'Female Tiger'), ('tiger_male', 'Male Tiger')]
 
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
