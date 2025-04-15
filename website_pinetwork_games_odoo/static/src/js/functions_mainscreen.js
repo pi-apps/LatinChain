@@ -592,9 +592,6 @@ $( document ).ready(function() {
         {
             $("#avatar_user").prop( "disabled", true );
             
-            $("#avatar_user_img_div").html('<img src="/website_pinetwork_games_odoo/static/src/img/avatars_users/' + avatar_user + '.jpeg" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
-            $("#avatar_user_img_div").show();
-            
             var data = {
                 'pi_user_id': pi_user_id,
                 'pi_user_code': pi_user_code,
@@ -610,6 +607,9 @@ $( document ).ready(function() {
                 {
                     $(".modal-body").html($("#modal_latinchain_avatar_saved").text());
                     $("#open_modal").click();
+                    
+                    $("#avatar_user_img_div").html('<img src="/website_pinetwork_games_odoo/static/src/img/avatars_users/' + avatar_user + '.jpeg" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
+                    $("#avatar_user_img_div").show();
                 }
                 
                 //$("#refresh").click();
