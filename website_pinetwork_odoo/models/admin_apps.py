@@ -1256,6 +1256,7 @@ class pi_users(models.Model):
                 ('math_girl', 'Math Girl'), ('math_guy', 'Math Guy'),
                 ('pawn_female', 'Female Pawn'), ('pawn_male', 'Male Pawn'),
                 ('penguin_female', 'Female Penguin'), ('penguin_male', 'Male Penguin'),
+                ('programmer_female', 'Female Programmer'), ('programmer_male', 'Male Programmer'),
                 ('tiger_female', 'Female Tiger'), ('tiger_male', 'Male Tiger'),
                 ('tower', 'Tower')]
 
