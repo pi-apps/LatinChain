@@ -1239,7 +1239,7 @@ class pi_users(models.Model):
     def _get_dynamic_options(self):
         # Logic to fetch options dynamically
         return [('select_one', 'Select one'), 
-                ('disco_solar_maya', 'Mayan Solar Disc'), ('serpiente_emplumada', 'Feathered Serpent'), 
+                ('disco_solar_maya', 'Mayan Solar Disk'), ('serpiente_emplumada', 'Feathered Serpent'), 
                 ('bear_female', 'Female Bear'), ('bear_male', 'Male Bear'),
                 ('capybara_female', 'Female Capybara'), ('capybara_male', 'Male Capybara'),
                 ('cat_female', 'Female Cat'), ('cat_male', 'Male Cat'),
