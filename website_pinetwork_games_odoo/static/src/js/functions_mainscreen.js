@@ -252,6 +252,7 @@ function get_user() {
                 });
                 
                 $("#avatar_user_img_div").html('<img src="/website_pinetwork_games_odoo/static/src/img/avatars_users/' + $("#avatar_user :selected").val() + '.jpeg?v=1.102" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
+                $("#avatar_user").show();
                 $("#avatar_user_img_div").show();
                 
                 passkey=data.passkey;

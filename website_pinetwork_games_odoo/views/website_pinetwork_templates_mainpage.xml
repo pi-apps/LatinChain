@@ -905,7 +905,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.162"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.163"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1292,7 +1292,7 @@
                                     Only verified users que change their Avatar.
                                 </div>
                                 <div class="row justify-content-center">
-                                    <select id="avatar_user" class="form-select" disabled="true" style="max-width: 250px">
+                                    <select id="avatar_user" class="form-select" disabled="true" style="max-width: 250px; display: none">
                                     </select>
                                 </div>
                                 <div class="row justify-content-center" id="avatar_user_img_div" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
