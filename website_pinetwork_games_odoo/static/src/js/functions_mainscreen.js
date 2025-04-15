@@ -272,6 +272,8 @@ function get_user() {
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
                         $("#pi_ad_automatic").prop("disabled", false);
+                        
+                        $("#avatar_user").prop("disabled", false);
                     }
                 
                     $("#verified").html(" (" + $("#verified_message").html() + ", " + data.unblocked_datetime + ")");
