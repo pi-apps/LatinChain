@@ -906,7 +906,7 @@
                                 <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                             </div>
                             <t t-if="pi_user.streaming_url">
-                                <button style="filter: contrast(100%) !important;" t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
+                                <button style="filter: contrast(100%) !important; margin-top: 5px" t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
                                 <br/>
                             </t>
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
@@ -1093,7 +1093,7 @@
                                             <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                                         </div>
                                         <t t-if="pi_user.streaming_url">
-                                            <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
+                                            <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" style="margin-top: 5px" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
                                             <br/>
                                         </t>
                                         <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa fa-trophy"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
@@ -1159,7 +1159,7 @@
                                 <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                             </div>
                             <t t-if="pi_user.streaming_url">
-                                <button style="filter: contrast(100%) !important;" t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
+                                <button style="filter: contrast(100%) !important; margin-top: 5px" t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
                                 <br/>
                             </t>
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
@@ -1316,7 +1316,7 @@
                                             <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                                         </div>
                                         <t t-if="pi_user.streaming_url">
-                                            <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
+                                            <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" style="margin-top: 5px" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
                                             <br/>
                                         </t>
                                         <span t-esc="i"/>. <strong translate="no"><span class="username_code"><t t-esc="pi_user.pi_user_code" /></span> <i class="fa-brands fa-youtube"></i></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
