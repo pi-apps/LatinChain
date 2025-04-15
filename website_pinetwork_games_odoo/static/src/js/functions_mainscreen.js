@@ -948,6 +948,9 @@ $( document ).ready(function() {
                                         $("#button_reward_ad").prop( "disabled", false );
                                         // good practice to handle any potential errors
                                     }
+                                }else
+                                {
+                                    $("#button_reward_ad").prop( "disabled", false );
                                 }
                             });
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
