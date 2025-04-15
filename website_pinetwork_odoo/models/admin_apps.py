@@ -1241,13 +1241,22 @@ class pi_users(models.Model):
         return [('select_one', 'Select one'), 
                 ('disco_solar_maya', 'Mayan Solar Disk'), ('serpiente_emplumada', 'Feathered Serpent'), 
                 ('bear_female', 'Female Bear'), ('bear_male', 'Male Bear'),
+                ('bishop_female', 'Female Bishop'), ('bishop_male', 'Male Bishop'),
                 ('capybara_female', 'Female Capybara'), ('capybara_male', 'Male Capybara'),
                 ('cat_female', 'Female Cat'), ('cat_male', 'Male Cat'),
                 ('doge_female', 'Female Dog'), ('doge_male', 'Male Dog'),
                 ('dragon_female', 'Female Dragon'), ('dragon_male', 'Male Dragon'),
                 ('eagle_female', 'Female Eagle'), ('eagle_male', 'Male Eagle'),
+                ('gnu_female', 'Female GNU'), ('gnu_male', 'Male GNU'),
+                ('horse_female', 'Female Horse'), ('horse_male', 'Male Horse'),
+                ('queen_female', 'Female Queen'), ('king_male', 'Male King'),
+                ('lion_female', 'Female Lion'), ('lion_male', 'Male Lion'),
                 ('macaw_female', 'Female Macaw'), ('macaw_male', 'Male Macaw'),
-                ('tiger_female', 'Female Tiger'), ('tiger_male', 'Male Tiger')]
+                ('math_girl', 'Math Girl'), ('math_guy', 'Math Guy'),
+                ('pawn_female', 'Female Pawn'), ('pawn_male', 'Male Pawn'),
+                ('penguin_female', 'Female Penguin'), ('penguin_male', 'Male Penguin'),
+                ('tiger_female', 'Female Tiger'), ('tiger_male', 'Male Tiger'),
+                ('tower', 'Tower')]
 
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
     def _compute_donator(self):
