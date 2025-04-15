@@ -238,6 +238,26 @@ function get_user() {
                     $("#pi_ad_automatic").prop("checked", data.pi_ad_automatic);
                 }
                 
+                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                {
+                    var options = $("#avatar_user");
+                    //don't forget error handling!
+                    var was_selected = false;
+                    $.each(data.avatar_user_options, function(index, item) {
+                        if(data.avatar_user == index)
+                        {
+                            var was_selected = true;
+                            options.append($("<option selected='true' />").val(index).text(item));
+                        }
+                        else
+                            options.append($("<option />").val(index).text(item));
+                    });
+                    
+                    $("#avatar_user_img_div").html('<img src="/website_pinetwork_games_odoo/static/src/img/avatars_users/' + $("#avatar_user :selected").val() + '.jpeg" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
+                    $("#avatar_user_img_div").show();
+                    
+                }
+                
                 passkey=data.passkey;
                 if(data.unblocked)
                 {
@@ -247,26 +267,6 @@ function get_user() {
                     {
                         $(".getverified").hide();
                         $(".isverified").show();
-                    }
-                    
-                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                    {
-                        var options = $("#avatar_user");
-                        //don't forget error handling!
-                        var was_selected = false;
-                        $.each(data.avatar_user_options, function(index, item) {
-                            if(data.avatar_user == index)
-                            {
-                                var was_selected = true;
-                                options.append($("<option selected='true' />").val(index).text(item));
-                            }
-                            else
-                                options.append($("<option />").val(index).text(item));
-                        });
-                        
-                        $("#avatar_user_img_div").html('<img src="/website_pinetwork_games_odoo/static/src/img/avatars_users/' + $("#avatar_user :selected").val() + '.jpeg" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
-                        $("#avatar_user_img_div").show();
-                        
                     }
                     
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
