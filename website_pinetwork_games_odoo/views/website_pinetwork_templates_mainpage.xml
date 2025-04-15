@@ -1284,7 +1284,7 @@
                         
                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:5px; width: 100%; text-align: center" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">#Avatar &#128240;</div></strong></h5>
+                                <h5 translate="no"><strong><div style="display:inline;">#Avatar &#128526;</div></strong></h5>
                             </div>
                             
                             <div class="text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
@@ -1295,7 +1295,7 @@
                                     <select id="avatar_user" class="form-select" style="max-width: 200px">
                                     </select>
                                 </div>
-                                <div class="row justify-content-center" id="avatar_user_img_div" style="margin-top: 5px">
+                                <div class="row justify-content-center" id="avatar_user_img_div" style="margin-top: 5px; margin-left: 2px; margin-right: 2px">
                                 </div>
                             </div>
                         </div>
