@@ -357,7 +357,8 @@ class PiNetworkBaseController(http.Controller):
                             'pi_ad_max': pi_ad_max,
                             'pi_ad_automatic': pi_ad_automatic,
                             'avatar_user': pi_users_list[0].avatar_user,
-                            'avatar_user_options': dict(pi_users_list[0]._get_dynamic_options())
+                            'avatar_user_options': dict(pi_users_list[0]._get_dynamic_options()),
+                            'avatar_user_url': pi_users_list[0].avatar_user_url
                             })
     
     @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, methods=['POST'], csrf=False)
@@ -732,7 +733,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list[0].sudo().write(values)
         
-        return json.dumps({'result': True, 'avatar_user': pi_users_list[0].avatar_user})
+        return json.dumps({'result': True, 'avatar_user': pi_users_list[0].avatar_user, 'avatar_user_url': pi_users_list[0].avatar_user_url})
     
     @http.route('/validate-memo', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def validate_memo(self, **kw):

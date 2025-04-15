@@ -22,7 +22,7 @@
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
                             <div>
-                                <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                             </div>
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
@@ -174,7 +174,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style">
                                         <div>
-                                            <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                                         </div>
                                         <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
@@ -231,7 +231,7 @@
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
                             <div>
-                                <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                             </div>
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
@@ -381,7 +381,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style">
                                         <div>
-                                            <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                                         </div>
                                         <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
@@ -438,7 +438,7 @@
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
                             <div>
-                                <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                             </div>
                             Your points: <strong translate="no"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                             <br/>
@@ -617,7 +617,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style">
                                         <div>
-                                            <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                                         </div>
                                         <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
@@ -665,7 +665,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style">
                                         <div>
-                                            <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                                         </div>
                                         <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
@@ -713,7 +713,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style">
                                         <div>
-                                            <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                                         </div>
                                         <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
@@ -761,7 +761,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style">
                                         <div>
-                                            <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                                         </div>
                                         <span t-esc="i"/>. <strong translate="no" class="username_code"><t t-esc="pi_user.pi_user_code" /></strong><t t-if="pi_user.unblocked"> (<i class="fa fa-check-circle-o"></i>, <t t-esc="pi_user.unblocked_datetime" /> UTC)</t> has <t t-esc="'{:,}'.format(pi_user.points)" /> points at <t t-esc="pi_user.points_datetime" /> UTC 
                                         <br/>
@@ -903,7 +903,7 @@
                         
                         <t t-if="pi_user">
                             <div>
-                                <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                             </div>
                             <t t-if="pi_user.streaming_url">
                                 <button style="filter: contrast(100%) !important; margin-top: 5px" t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
@@ -1090,7 +1090,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style">
                                         <div>
-                                            <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                                         </div>
                                         <t t-if="pi_user.streaming_url">
                                             <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" style="margin-top: 5px" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
@@ -1156,7 +1156,7 @@
                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                         <t t-if="pi_user">
                             <div>
-                                <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                             </div>
                             <t t-if="pi_user.streaming_url">
                                 <button style="filter: contrast(100%) !important; margin-top: 5px" t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">your streaming</div></button>
@@ -1313,7 +1313,7 @@
                                         
                                         <li class="list-group-item" t-att-style="style">
                                         <div>
-                                            <img t-att-src="'/website_pinetwork_games_odoo/static/src/img/avatars_users/' + pi_user.avatar_user + '.jpeg?v=1.103'" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
+                                            <img t-att-src="pi_user.avatar_user_url" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />
                                         </div>
                                         <t t-if="pi_user.streaming_url">
                                             <button t-att-videourl="pi_user.streaming_url" class="btn btn-danger open_streaming" style="margin-top: 5px" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">watch streaming</div></button>
