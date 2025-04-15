@@ -355,7 +355,10 @@ class PiNetworkBaseController(http.Controller):
                             'show_pi_ad_time': show_pi_ad_time,
                             'pi_ad_new': pi_ad_new,
                             'pi_ad_max': pi_ad_max,
-                            'pi_ad_automatic': pi_ad_automatic})
+                            'pi_ad_automatic': pi_ad_automatic,
+                            'avatar_user': pi_users_list[0].avatar_user,
+                            'avatar_user_options': dict(pi_users_list[0]._get_dynamic_options())
+                            })
     
     @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def set_pi_ad_datetime(self, **kw):
@@ -679,6 +682,57 @@ class PiNetworkBaseController(http.Controller):
         pi_users_list[0].sudo().write(values)
         
         return json.dumps({'result': True, 'pi_ad_automatic': pi_users_list[0].pi_ad_automatic})
+    
+    @http.route('/avatar-user', type='http', auth="public", website=True, methods=['POST'], csrf=False)
+    def avatar_user(self, **kw):
+        
+        if 'accessToken' not in kw:
+            _logger.info("accessToken not present")
+            return json.dumps({'result': False})
+        
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                _logger.info("Authorization failed")
+                return json.dumps({'result': False})
+        except:
+            _logger.info("Authorization error")
+            return json.dumps({'result': False})
+        
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])
+        
+        if len(admin_app_list) == 0:
+            return json.dumps({'result': False})
+        
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+        
+        if len(pi_users_list) == 0:
+            return json.dumps({'result': False})
+        else:
+            """
+            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                _logger.info("not equeals pi_user_id")
+                return json.dumps({'result': False})
+            """
+            
+            if not pi_users_list[0].unblocked:
+                return json.dumps({'result': False})
+            
+            if 'avatar_user' not in kw:
+                _logger.info("pi_ad_automatic not present")
+                return json.dumps({'result': False})
+            
+            values = {'avatar_user': kw['avatar_user']}
+        
+        pi_users_list[0].sudo().write(values)
+        
+        return json.dumps({'result': True, 'avatar_user': pi_users_list[0].avatar_user})
     
     @http.route('/validate-memo', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def validate_memo(self, **kw):

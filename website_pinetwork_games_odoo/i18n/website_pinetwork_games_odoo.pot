@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-14 15:51+0000\n"
-"PO-Revision-Date: 2025-04-14 15:51+0000\n"
+"POT-Creation-Date: 2025-04-15 01:00+0000\n"
+"PO-Revision-Date: 2025-04-15 01:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "#Avatar 📰"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -712,6 +717,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>#LatinChain #DonatePi 💱</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>#LatinChain #Leaders 🏅</strong>"
 msgstr ""
 
@@ -721,7 +731,6 @@ msgid "<strong>#LatinChain #Magazine 🎥</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "<strong>#LatinChain #PayPi 💱</strong>"
 msgstr ""
@@ -960,6 +969,11 @@ msgstr ""
 msgid ""
 "Automatic Pi Ads are enabled. Pi Ads will be shown automatically every so "
 "often. It means you will gain Latin points."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Avatar was saved."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1305,15 +1319,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Import..."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-msgid ""
-"In case of you don't have available days (a new user or your 30 days "
-"finished): If today is November 15th, then your new period after donate, "
-"will be from November 15th to December 15th (30 days from today)."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2257,17 +2262,6 @@ msgstr ""
 msgid ""
 "Welcome to the reading club: Literary, Sci-Fi and other genres books to "
 "read."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-msgid ""
-"What means 30 available days from today?: Your current available days, will "
-"be overlapped by the new 30 days. If today is November 15th, and your "
-"current available days is from November 1st to November 30th, then your new "
-"period after donate, will be from November 15th to December 15th (30 days "
-"from today)."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

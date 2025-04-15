@@ -1234,7 +1234,21 @@ class pi_users(models.Model):
     pi_ad_datetime = fields.Datetime('Pi Ad datetime', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_counter = fields.Integer('Pi Ad counter', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_automatic = fields.Boolean('Pi Ad automatic', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    avatar_user = fields.Selection(selection='_get_dynamic_options', string='User Avatar', default='select_one', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
+    def _get_dynamic_options(self):
+        # Logic to fetch options dynamically
+        return [('select_one', 'Select one'), 
+                ('disco_solar_maya', 'Mayan Solar Disc'), ('serpiente_emplumada', 'Feathered Serpent'), 
+                ('bear_female', 'Female Bear'), ('bear_male', 'Male Bear'),
+                ('capybara_female', 'Female Capybara'), ('capybara_male', 'Male Capybara'),
+                ('cat_female', 'Female Cat'), ('cat_male', 'Male Cat'),
+                ('doge_female', 'Female Dog'), ('doge_male', 'Male Dog'),
+                ('dragon_female', 'Female Dragon'), ('dragon_male', 'Male Dragon'),
+                ('eagle_female', 'Female Eagle'), ('eagle_male', 'Male Eagle'),
+                ('macaw_female', 'Female Macaw'), ('macaw_female', 'Male Macaw'),
+                ('tiger_female', 'Female Tiger'), ('tiger_male', 'Male Tiger')]
+
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action", "pi_transactions_ids.app_id", "pi_transactions_ids.app_id.app")
     def _compute_donator(self):
         for i in self:
