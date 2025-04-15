@@ -1242,6 +1242,7 @@ class pi_users(models.Model):
                 ('disco_solar_maya', 'Mayan Solar Disk'), ('serpiente_emplumada', 'Feathered Serpent'), 
                 ('bear_female', 'Female Bear'), ('bear_male', 'Male Bear'),
                 ('bishop_female', 'Female Bishop'), ('bishop_male', 'Male Bishop'),
+                ('cacique_female', 'Female Cacique'), ('cacique_male', 'Male Cacique'),
                 ('capybara_female', 'Female Capybara'), ('capybara_male', 'Male Capybara'),
                 ('cat_female', 'Female Cat'), ('cat_male', 'Male Cat'),
                 ('doge_female', 'Female Dog'), ('doge_male', 'Male Dog'),
