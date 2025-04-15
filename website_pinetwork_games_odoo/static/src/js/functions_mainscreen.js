@@ -251,7 +251,7 @@ function get_user() {
                         options.append($("<option />").val(index).text(item));
                 });
                 
-                $("#avatar_user_img_div").html('<img src="/website_pinetwork_games_odoo/static/src/img/avatars_users/' + $("#avatar_user :selected").val() + '.jpeg?v=1.101" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
+                $("#avatar_user_img_div").html('<img src="/website_pinetwork_games_odoo/static/src/img/avatars_users/' + $("#avatar_user :selected").val() + '.jpeg?v=1.102" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
                 $("#avatar_user_img_div").show();
                 
                 passkey=data.passkey;
@@ -608,7 +608,7 @@ $( document ).ready(function() {
                     $(".modal-body").html($("#modal_latinchain_avatar_saved").text());
                     $("#open_modal").click();
                     
-                    $("#avatar_user_img_div").html('<img src="/website_pinetwork_games_odoo/static/src/img/avatars_users/' + avatar_user + '.jpeg?v=1.101" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
+                    $("#avatar_user_img_div").html('<img src="/website_pinetwork_games_odoo/static/src/img/avatars_users/' + avatar_user + '.jpeg?v=1.102" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
                     $("#avatar_user_img_div").show();
                 }
                 
