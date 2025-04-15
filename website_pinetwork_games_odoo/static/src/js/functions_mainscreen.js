@@ -238,7 +238,7 @@ function get_user() {
                     $("#pi_ad_automatic").prop("checked", data.pi_ad_automatic);
                 }
                 
-                var options = $("#avatar_user");
+                /*var options = $("#avatar_user");
                 //don't forget error handling!
                 var was_selected = false;
                 $.each(data.avatar_user_options, function(index, item) {
@@ -249,7 +249,9 @@ function get_user() {
                     }
                     else
                         options.append($("<option />").val(index).text(item));
-                });
+                });*/
+                
+                $("#avatar_user option[value="+ data.avatar_user +"]").prop("selected",true);
                 
                 $("#avatar_user_img_div").html('<img src="' + data.avatar_user_url + '" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
                 $("#avatar_user").show();

@@ -65,12 +65,14 @@ class Website(Website):
             points_latin_amount = admin_app_list[0].points_latin_amount
             pi_ad_hours = admin_app_list[0].pi_ad_seconds/3600
             pi_ad_max = admin_app_list[0].pi_ad_max
+        
+        avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
 
         nopopup = False
         if "nopopup" in kw:
             nopopup = kw["nopopup"]
         
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': int(pi_ad_hours), 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': int(pi_ad_hours), 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
 class PiNetworkController(http.Controller):
     @http.route('/radioforus', type='http', auth="public", website=True, csrf=False)
