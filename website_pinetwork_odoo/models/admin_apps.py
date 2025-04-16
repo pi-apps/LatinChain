@@ -1235,12 +1235,12 @@ class pi_users(models.Model):
     pi_ad_counter = fields.Integer('Pi Ad counter', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_automatic = fields.Boolean('Pi Ad automatic', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     avatar_user = fields.Selection(selection='_get_dynamic_avatar_options', string='User Avatar', default='select_one', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    avatar_user_url = fields.Char('Avatar user URL', compute="_compute_avatar_user_url", store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    avatar_user_url = fields.Char('Avatar user URL', compute="_compute_avatar_user_url", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("avatar_user")
     def _compute_avatar_user_url(self):
         for i in self:
-            i.avatar_user_url = "/website_pinetwork_games_odoo/static/src/img/avatars_users/" + i.avatar_user + ".jpeg?v=1.103"
+            i.avatar_user_url = "/website_pinetwork_games_odoo/static/src/img/avatars_users/" + i.avatar_user + ".jpeg?v=1.104"
     
     def _get_dynamic_avatar_options(self):
         # Logic to fetch options dynamically
