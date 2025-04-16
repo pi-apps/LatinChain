@@ -721,10 +721,8 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             """
             
-            """
             if not pi_users_list[0].unblocked:
                 return json.dumps({'result': False})
-            """
             
             if 'avatar_user' not in kw:
                 _logger.info("pi_ad_automatic not present")
