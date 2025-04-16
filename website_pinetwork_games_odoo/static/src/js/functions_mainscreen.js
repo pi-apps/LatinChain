@@ -256,6 +256,7 @@ function get_user() {
                 $("#avatar_user_img_div").html('<img src="' + data.avatar_user_url + '" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
                 $("#avatar_user").show();
                 $("#avatar_user_img_div").show();
+                $("#avatar_user").prop("disabled", false);
                 
                 passkey=data.passkey;
                 if(data.unblocked)
@@ -272,8 +273,6 @@ function get_user() {
                     {
                         $("#pi_ad_automatic").prop("disabled", false);
                     }
-                    
-                    $("#avatar_user").prop("disabled", false);
                 
                     $("#verified").html(" (" + $("#verified_message").html() + ", " + data.unblocked_datetime + ")");
                     $("#verified").show();
@@ -591,7 +590,7 @@ $( document ).ready(function() {
         
         var avatar_user = $('#avatar_user :selected').val();
         
-        if(pi_user_id != "" && pi_user_code != "" && unblocked)
+        if(pi_user_id != "" && pi_user_code != "")
         {
             $("#avatar_user").prop( "disabled", true );
             
