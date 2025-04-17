@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-17 01:57+0000\n"
-"PO-Revision-Date: 2025-04-17 01:57+0000\n"
+"POT-Creation-Date: 2025-04-17 10:08+0000\n"
+"PO-Revision-Date: 2025-04-17 10:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1372,8 +1372,8 @@ msgid ""
 "Get verified: Auto ads switch, verified badge <i class=\"fa fa-check-"
 "circle-o\"/>, access to Chess, Sudoku and Snake."
 msgstr ""
-"Verifícate: Switch de auto ads, marca de verificación <i class=\"fa fa-check-"
-"circle-o\"/>, acceso a Chess, Sudoku y Snake."
+"Verifícate: Switch de auto ads, marca de verificación <i class=\"fa fa-"
+"check-circle-o\"/>, acceso a Chess, Sudoku y Snake."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2667,6 +2667,10 @@ msgstr "a.- Podrás usar"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "ads /"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "ads each"
 msgstr "ads cada"
@@ -2692,7 +2696,6 @@ msgid "certification"
 msgstr "certificación"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "hours)."
 msgstr "horas)."
