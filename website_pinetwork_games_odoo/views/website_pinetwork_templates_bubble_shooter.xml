@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="bubble_shooter" name="Bubble Shooter">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+
+                <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+                <head>
+                    <meta charset="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+                    <title>Bubble Shooter</title>
+                    <meta name="description" content="Bubble Shooter" />
+
+                    <meta property="og:url" content="/buubble-shooter"/>
+                    <meta property="og:type" content="website"/>
+                    <meta property="og:title" content="Bubble Shooter"/>
+                    <meta property="og:description" content="Bubble Shooter"/>
+
+                    <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/bubble-shooter/bubble-shooter-example.js?v=1.102"></script>
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    
+                    <!--<script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({article:'auto'});
+                      !function (e, f, u, i) {
+                        if (!document.getElementById(i)){
+                          e.async = 1;
+                          e.src = u;
+                          e.id = i;
+                          f.parentNode.insertBefore(e, f);
+                        }
+                      }(document.createElement('script'),
+                      document.getElementsByTagName('script')[0],
+                      '//cdn.taboola.com/libtrc/latinchain-publisher/loader.js',
+                      'tb_loader_script');
+                      if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
+                        {window.performance.mark('tbl_ic');}
+                    </script>-->
+
+                </head>
+
+                <body bgcolor="#ffffff" style="text-align: center">
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="amount" t-att-value="amount"/>
+                    <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
+                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                    <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                    <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
+                    <div id="points_message" style="display:none;"> points.</div>
+                    <div id="unblocked_message" style="display:none;">Thank you for your donation. You were unblocked.</div>
+                    <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
+                    <div id="payment_lessthan_message" style="display:none;">You can't pay less than </div>
+                    <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
+                    
+                    <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
+                    <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
+                    <div class="content" style="text-align: center; height:100%;">
+
+                        <div align="center" class="container justify-content-center text-center" style="text-align:center; max-width:810px; max-height:100%">
+
+                            <br/>
+                            <canvas id="viewport" width="628" height="628" style="text-align:center; max-width:95%; max-height:380px"></canvas>
+                        </div>
+                        
+                        <style>
+                            .darkmode-toggle {
+                                display: none !important;
+                            }
+                            .darkmode-layer {
+                                display: none !important;
+                            }
+                        </style>
+                        
+                        <br/><br/><br/>
+                    </div>
+                </body>
+
+                </html>
+                </t>
+		</template>
+
+</odoo>

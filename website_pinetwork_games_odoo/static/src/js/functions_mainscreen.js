@@ -222,6 +222,7 @@ function get_user() {
                 
                 $(".show-tetris").show();
                 $(".show-mahjong").show();
+                $(".show-bubble-shooter").show();
                 $(".show-tvonline").show();
                 $(".show-sport-results").show();
                 $(".show-cointelegraph").show();
@@ -1112,6 +1113,10 @@ $( document ).ready(function() {
         $.colorbox({href:"/mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".bubble-shooter" ).click(function() {
+        $.colorbox({href:"/bubble-shooter", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".show_status" ).click(function() {
         $.colorbox({href:"/latinchain_x", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
@@ -1134,6 +1139,10 @@ $( document ).ready(function() {
     
     $( ".mahjonginfo" ).click(function() {
         $.colorbox({href:"https://en.wikipedia.org/wiki/Mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".bubble-shooterinfo" ).click(function() {
+        $.colorbox({href:"https://en.wikipedia.org/wiki/Bubble_Shooter", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".cointelegraph" ).click(function() {
