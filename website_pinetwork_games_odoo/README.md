@@ -42,4 +42,6 @@ mahjong-solitaire (MIT License) is the Mahjong. It's a modification of https://g
 
 blockrain.js (MIT License) is the Tetris. It's a modification of https://github.com/Aerolab/blockrain.js (MIT License, 2015)
 
+bubble-shooter (MIT License) is the Bubble Shooter. It's a modification of https://github.com/rembound/Bubble-Shooter-HTML5 (MIT License, 2015)
+
 More Info: https://github.com/rockcesar/LatinChainDevelopments
