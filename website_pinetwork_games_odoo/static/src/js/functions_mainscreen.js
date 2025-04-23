@@ -963,8 +963,9 @@ $( document ).ready(function() {
                                     }
                                 }
                             });
-                            if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                $( "#button_reward_ad" ).click();
+                            
+                            //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            //    $( "#button_reward_ad" ).click();
                         }
                     });
                 });
