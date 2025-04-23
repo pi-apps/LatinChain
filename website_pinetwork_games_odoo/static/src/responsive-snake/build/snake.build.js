@@ -389,9 +389,13 @@ GameContainer.prototype.onKeydown = function (event) {
             this.play();
         }
       }
+      break;
     case 80 : //p
       if (!this.disabled) {
-        this.play();
+        if (!this.started) {
+            $('#pause').html($('#pause_text_message').html());
+            this.play();
+        }
       }
       break;
   }
