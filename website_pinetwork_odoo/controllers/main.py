@@ -315,7 +315,7 @@ class PiNetworkBaseController(http.Controller):
             else:
                 pi_ad_automatic = True
         else:
-            pi_ad_automatic = False
+            pi_ad_automatic = True
         
         result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
                                                                 ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
