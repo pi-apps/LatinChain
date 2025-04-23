@@ -39,6 +39,23 @@ function unloadMessage() {
     return true;
 }
 
+
+function press(key)
+{
+    var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
+    jQuery( "body" ).trigger( e );
+}
+
+function release(key)
+{
+    var e = jQuery.Event( "keyup", { which: key, keyCode: key } );
+    jQuery( "body" ).trigger( e );
+}
+
+function isTouchDevice() {
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+}
+
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
     {
@@ -109,7 +126,7 @@ function get_user(pause) {
                     $("#button_click").hide();
                     
                     if(pause)
-                        $("#pause").click();
+                        press(80);
                         
                     $("#test_game").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
@@ -127,7 +144,7 @@ function get_user(pause) {
                     $("#button_click").hide();
                     
                     if(pause)
-                        $("#pause").click();
+                        press(80);
                     
                     $("#test_game").hide();
                 }
@@ -159,7 +176,7 @@ function get_user(pause) {
                         $("#button_click").show();
                         
                         if(pause)
-                            $("#pause").click();
+                            press(80);
                         $("#test_game").hide();
                     });
                 }

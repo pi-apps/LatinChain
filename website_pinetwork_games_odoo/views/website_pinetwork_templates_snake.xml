@@ -34,7 +34,7 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
                 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js?v=1.137"></script>
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js?v=1.141"></script>
                 
                 <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
                 
@@ -94,22 +94,6 @@
                         $("#left").draggable({ disabled: true });
                         $("#down").draggable({ disabled: true });
                         $("#right").draggable({ disabled: true });
-                    
-                        function press(key)
-                        {
-                            var e = jQuery.Event( "keydown", { which: key, keyCode: key } );
-                            jQuery( "body" ).trigger( e );
-                        }
-                        
-                        function release(key)
-                        {
-                            var e = jQuery.Event( "keyup", { which: key, keyCode: key } );
-                            jQuery( "body" ).trigger( e );
-                        }
-                        
-                        function isTouchDevice() {
-                          return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
-                        }
                         
                         if(!isTouchDevice())
                         {
@@ -395,7 +379,7 @@
             <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/vendor/zepto-touch/zepto-touch.js"></script>
 
             <!-- Browserified Build -->
-            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/build/snake.build.js?v=1.2"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/responsive-snake/build/snake.build.js?v=1.201"></script>
 
             <script>
                 //Start Snake Game
