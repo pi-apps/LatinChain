@@ -145,6 +145,9 @@ function get_user() {
                     /*setTimeout(function() {
                       (adsbygoogle = window.adsbygoogle || []).push({});
 					}, 2000);*/
+                    
+                    $("#test_game").hide();
+                    $(".show_test_game").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Sudoku, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -156,6 +159,9 @@ function get_user() {
                     
                     var tab_name = get_tab();
                     refresh_board();
+                    
+                    $("#test_game").hide();
+                    $(".show_test_game").hide();
                 }
                 else
                 {
@@ -164,6 +170,21 @@ function get_user() {
                     $("#button_click").show();
                     $("#sudoku-tab").hide();
                     $("#home-tab").click();
+                    
+                    $("#test_game").prop( "disabled", false );
+                    $("#test_game").click(function(){
+                        alert("You can use Sudoku, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
+                        $("#pi_donate").hide();
+                        $("#button_click").show();
+                        $(".hide_when_unblock").show();
+                        $("#sudoku-tab").show();
+                        $("#sudoku-tab").click();
+                        
+                        var tab_name = get_tab();
+                        refresh_board();
+                        $("#test_game").hide();
+                        $(".show_test_game").hide();
+                    });
                 }
             }
         }).fail(function() {

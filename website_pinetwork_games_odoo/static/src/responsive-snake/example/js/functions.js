@@ -110,6 +110,8 @@ function get_user(pause) {
                     
                     if(pause)
                         $("#pause").click();
+                        
+                    $("#test_game").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Snake, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -126,6 +128,8 @@ function get_user(pause) {
                     
                     if(pause)
                         $("#pause").click();
+                    
+                    $("#test_game").hide();
                 }
                 else
                 {
@@ -139,6 +143,25 @@ function get_user(pause) {
                     $('#disable_dragging').hide();
                     $("#pi_donate").hide();
                     $("#button_click").show();
+                    
+                    $("#test_game").prop( "disabled", false );
+                    $("#test_game").click(function(){
+                        alert("You can use Snake, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
+                        $("#reset_pause_controls").show();
+                        $("#plus_minus_controls").show();
+                        $("#pause").show();
+                        $("#reset").show();
+                        $("#minus").show();
+                        $("#plus").show();
+                        $("#enable_dragging").show();
+                        $('#disable_dragging').hide();
+                        $("#pi_donate").hide();
+                        $("#button_click").show();
+                        
+                        if(pause)
+                            $("#pause").click();
+                        $("#test_game").hide();
+                    });
                 }
             }
         }).fail(function() {

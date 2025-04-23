@@ -178,6 +178,9 @@ function get_user() {
                         $("#home-tab").prop( "disabled", false );
                       }, 2000);
 					}, 1000);
+                    
+                    $("#test_game").hide();
+                    $(".show_test_game").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Chess, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -198,6 +201,9 @@ function get_user() {
                         $("#home-tab").prop( "disabled", false );
                       }, 2000);
 					}, 1000);
+                    
+                    $("#test_game").hide();
+                    $(".show_test_game").hide();
                 }
                 else
                 {
@@ -207,6 +213,30 @@ function get_user() {
                     $("#button_click").show();
                     $('#chess-tab').hide();
                     $("#home-tab").click();
+                    
+                    $("#test_game").prop( "disabled", false );
+                    $("#test_game").click(function(){
+                        alert("You can use Chess, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
+                        $("#pi_donate").hide();
+                        $("#button_click").show();
+                        $(".hide_when_unblock").show();
+                        $("#loading_word").hide();
+                        $('#chess-tab').show();
+                        $("#home-tab").prop( "disabled", true );
+                        $('#chess-tab').click();
+                        /*setTimeout(function() {
+                          (adsbygoogle = window.adsbygoogle || []).push({});
+                        }, 1000);*/
+                        
+                        setTimeout(function() {
+                          load_all_boards();
+                          setTimeout(function() {
+                            $("#home-tab").prop( "disabled", false );
+                          }, 2000);
+                        }, 1000);
+                        $("#test_game").hide();
+                        $(".show_test_game").hide();
+                    });
                 }
             }
         }).fail(function() {
