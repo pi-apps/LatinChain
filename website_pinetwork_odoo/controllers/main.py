@@ -971,7 +971,7 @@ class PiNetworkBaseController(http.Controller):
                             values.update({'points_snake_wins': pi_users_list[0].points_snake_wins + 1 })
                             if points > pi_users_list[0].points_snake_last:
                                 values.update({'points_snake_last': points})
-                            if points == 6 && pi_users_list[0].x2_game:
+                            if points == 6 and pi_users_list[0].x2_game:
                                 values.update({'x2_game': False})
             elif not pi_users_list[0].unblocked and int(points) > 0:
                 return json.dumps({'result': False})
