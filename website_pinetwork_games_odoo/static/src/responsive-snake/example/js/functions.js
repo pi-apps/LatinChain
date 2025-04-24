@@ -88,7 +88,7 @@ function set_points(points) {
                     $("#x2_game").hide();
                 }
                 totalpoints += data.points;
-                $("#score-points").html("<strong>+" + points + " <i class='fa fa-level-up'></i></strong>. " + $("#session_points_message").text() + "<strong>" + totalpoints + "</strong>");
+                $("#score-points").html("<strong>+" + data.points + " <i class='fa fa-level-up'></i></strong>. " + $("#session_points_message").text() + "<strong>" + totalpoints + "</strong>");
                 //alert("+" + points + $("#points_message").text());
             }
         }).fail(function() {
