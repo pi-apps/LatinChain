@@ -357,7 +357,8 @@ class PiNetworkBaseController(http.Controller):
                             'pi_ad_max': pi_ad_max,
                             'pi_ad_automatic': pi_ad_automatic,
                             'avatar_user': pi_users_list[0].avatar_user,
-                            'avatar_user_url': pi_users_list[0].avatar_user_url
+                            'avatar_user_url': pi_users_list[0].avatar_user_url,
+                            'x2_game': pi_users_list[0].x2_game
                             })
     
     @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, methods=['POST'], csrf=False)
@@ -596,6 +597,9 @@ class PiNetworkBaseController(http.Controller):
             
             values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount}
             
+            if pi_users_list[0].unblocked:
+                values.update({'x2_game': True})
+            
             apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
             
             pi_ad_seconds = apps_list[0].pi_ad_seconds
@@ -630,7 +634,7 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list[0].sudo().write(values)
         
-        return json.dumps({'result': True, 'points_latin': admin_app_list[0].points_latin_amount, 'pi_ad_new': pi_ad_new})
+        return json.dumps({'result': True, 'points_latin': admin_app_list[0].points_latin_amount, 'pi_ad_new': pi_ad_new, 'x2_game': pi_users_list[0].x2_game})
     
     @http.route('/pi-ad-automatic', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def pi_ad_automatic(self, **kw):
@@ -933,6 +937,8 @@ class PiNetworkBaseController(http.Controller):
                                 'last_connection': datetime.now(),
                             }
             
+            points = float(kw['points'])
+            
             if pi_users_list[0].unblocked:
                 #if int(kw['points']) > 0:
                 #    pi_users_winnners_count = request.env["pi.users"].sudo().search_count(winner_domain)
@@ -942,32 +948,38 @@ class PiNetworkBaseController(http.Controller):
                 
                 #if pi_users_list[0].pi_user_id != '':
                 if 'app_client' in kw:
+                    
+                    if pi_users_list[0].x2_game:
+                        points = points*2
+                    
                     if kw['app_client'] == "auth_platform":
-                        if float(kw['points']) > 0:
-                            values.update({'points_chess': pi_users_list[0].points_chess + float(kw['points'])})
+                        if points > 0:
+                            values.update({'points_chess': pi_users_list[0].points_chess + points})
                             values.update({'points_chess_wins': pi_users_list[0].points_chess_wins + 1 })
-                            if float(kw['points']) > pi_users_list[0].points_chess_last:
-                                values.update({'points_chess_last': float(kw['points'])})
+                            if points > pi_users_list[0].points_chess_last:
+                                values.update({'points_chess_last': points})
+                            values.update({'x2_game': False})
                     elif kw['app_client'] == "auth_pidoku":
-                        if float(kw['points']) > 0:
-                            values.update({'points_sudoku': pi_users_list[0].points_sudoku + float(kw['points'])})
+                        if points > 0:
+                            values.update({'points_sudoku': pi_users_list[0].points_sudoku + points})
                             values.update({'points_sudoku_wins': pi_users_list[0].points_sudoku_wins + 1 })
-                            if float(kw['points']) > pi_users_list[0].points_sudoku_last:
-                                values.update({'points_sudoku_last': float(kw['points'])})
+                            if points > pi_users_list[0].points_sudoku_last:
+                                values.update({'points_sudoku_last': points})
+                            values.update({'x2_game': False})
                     elif kw['app_client'] == "auth_snake":
-                        if float(kw['points']) > 0:
-                            values.update({'points_snake': pi_users_list[0].points_snake + float(kw['points'])})
+                        if points > 0:
+                            values.update({'points_snake': pi_users_list[0].points_snake + points})
                             values.update({'points_snake_wins': pi_users_list[0].points_snake_wins + 1 })
-                            if float(kw['points']) > pi_users_list[0].points_snake_last:
-                                values.update({'points_snake_last': float(kw['points'])})
-            elif not pi_users_list[0].unblocked and int(kw['points']) > 0:
+                            if points > pi_users_list[0].points_snake_last:
+                                values.update({'points_snake_last': points})
+            elif not pi_users_list[0].unblocked and int(points) > 0:
                 return json.dumps({'result': False})
             
             pi_users_list[0].sudo().write(values)
             
         request.env.cr.commit()
         
-        return json.dumps({'result': True})
+        return json.dumps({'result': True, 'x2_game': pi_users_list[0].x2_game, 'points': points})
     
     @http.route('/get-general-ranking/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False)
     def get_general_ranking_user(self, pi_user_code, **kw):

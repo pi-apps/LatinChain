@@ -342,6 +342,10 @@ $( document ).ready(function() {
                                                     $("#button_reward_ad").prop( "disabled", true );
                                                     $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
                                                     $(".modal-body").html($("#modal_reward_message").text() + data.points_latin + " Latin points.");
+                                                    
+                                                    if(data.x2_game)
+                                                        $(".modal-body").html($(".modal-body").text() + "\n" + $("#modal_x2_game_message").text());
+                                                    
                                                     $("#open_modal").click();
                                                     /*setTimeout(function ()
                                                     {

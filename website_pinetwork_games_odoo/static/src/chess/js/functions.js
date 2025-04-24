@@ -88,11 +88,19 @@ function set_points(points) {
         return $.post( "/pi-points", data).done(function(data) {
             setConfirmUnloadPoints(false);
             data = JSON.parse(data);
-            if(data.result && points > 0)
+            if(data.result && data.points > 0)
             {
                 end();
+                if(data.x2_game)
+                {
+                    $("#x2_game").show();
+                }else
+                {
+                    $("#x2_game").hide();
+                }
+                
                 $("#gained_points").show();
-                $("#gained_points").html("+" + points);
+                $("#gained_points").html("+" + data.points);
                 showConfetti(5);
                 setTimeout(function() {
                     $("#gained_points").hide();
@@ -100,6 +108,7 @@ function set_points(points) {
                         showPiAdsNotTiming(Pi);*/
                 }, 15000);
                 //alert("+" + points + $("#points_message").text());
+                
                 start();
             }
         }).fail(function() {
@@ -181,6 +190,14 @@ function get_user() {
                     
                     $("#test_game").hide();
                     $(".show_test_game").hide();
+                    
+                    if(data.x2_game)
+                    {
+                        $("#x2_game").show();
+                    }else
+                    {
+                        $("#x2_game").hide();
+                    }
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Chess, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -339,6 +356,10 @@ $( document ).ready(function() {
     {
         $("#promote_as option[value='q']").text("Dama");
     }
+    
+    $("#x2_game").click(function(){
+        alert($("#modal_x2_game_message").text());
+    });
     
     async function auth() {
         $("#pi_donate").hide();

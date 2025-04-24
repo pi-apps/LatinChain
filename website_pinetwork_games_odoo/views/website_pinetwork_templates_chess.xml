@@ -37,7 +37,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
-                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js?v=1.151"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js?v=1.153"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -73,6 +73,7 @@
                     <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
                     <div id="payment_lessthan_message" style="display:none;">You can't pay less than </div>
                     <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
+                    <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
@@ -219,6 +220,11 @@
                           <li>
                               <button id="gained_points" style="margin-left:5px; height:100%; display:none" class="btn btn-info">
                                 <i class="fa fa-level-up"></i>
+                              </button>
+                          </li>
+                          <li>
+                              <button id="x2_game" style="margin-left:5px; height:100%; display:none" class="btn btn-info">
+                                <i class="fa-solid fa-plug-circle-bolt"></i>x2
                               </button>
                           </li>
                         </ul>

@@ -41,7 +41,7 @@
                     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js?v=1.141"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js?v=1.143"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -164,6 +164,7 @@
                     <div id="clear_board_message" style="display:none;">Do you want to clear?, it will clear the puzzle, to its initial state.</div>
                     <div id="cancel_board_message" style="display:none;">Do you want to cancel?, it will reload the puzzle.</div>
                     <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
+                    <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
@@ -314,6 +315,11 @@
                       <li>
                           <button id="gained_points" style="margin-left:5px; height:34px; display:none" class="btn btn-info">
                             <i class="fa fa-level-up"></i>
+                          </button>
+                      </li>
+                      <li>
+                          <button id="x2_game" style="margin-left:5px; height:100%; display:none" class="btn btn-info">
+                            <i class="fa-solid fa-plug-circle-bolt"></i>x2
                           </button>
                       </li>
                     </ul>

@@ -78,9 +78,16 @@ function set_points(points) {
         return $.post( "/pi-points", data).done(function(data) {
             setConfirmUnloadPoints(false);
             data = JSON.parse(data);
-            if(data.result && points > 0)
+            if(data.result && data.points > 0)
             {
-                totalpoints += points;
+                if(data.x2_game)
+                {
+                    $("#x2_game").show();
+                }else
+                {
+                    $("#x2_game").hide();
+                }
+                totalpoints += data.points;
                 $("#score-points").html("<strong>+" + points + " <i class='fa fa-level-up'></i></strong>. " + $("#session_points_message").text() + "<strong>" + totalpoints + "</strong>");
                 //alert("+" + points + $("#points_message").text());
             }
@@ -129,6 +136,14 @@ function get_user(pause) {
                         press(80);
                         
                     $("#test_game").hide();
+                    
+                    if(data.x2_game)
+                    {
+                        $("#x2_game").show();
+                    }else
+                    {
+                        $("#x2_game").hide();
+                    }
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Snake, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -233,6 +248,10 @@ $( document ).ready(function() {
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     
     amount = $("#amount").val();
+    
+    $("#x2_game").click(function(){
+        alert($("#modal_x2_game_message").text());
+    });
     
     async function auth() {
         $("#pause").hide();

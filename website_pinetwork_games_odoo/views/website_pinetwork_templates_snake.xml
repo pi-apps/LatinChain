@@ -34,7 +34,7 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
                 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js?v=1.141"></script>
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js?v=1.143"></script>
                 
                 <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
                 
@@ -57,6 +57,7 @@
                 <div id="pause_text_message" style="display:none;"><i class="fa fa-pause"></i></div>
                 <div id="resume_text_message" style="display:none;"><i class="fa fa-play"></i></div>
                 <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
+                <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game.</div>
                 
                 <style>
                 .square {border-radius: 25px; color: black; font-weight: bold; border: solid; padding: 3px; margin: 3px; min-width: 25px; float: left; text-align: center; cursor: pointer;}
@@ -344,6 +345,7 @@
                                 <div class="square transparent" id="enable_dragging" ><i class="fa fa-hand-paper-o"></i></div><div class="square transparent" id="disable_dragging" style="display: none;"><i class="fa fa-hand-rock-o"></i></div>
                                 <div class="square transparent" id="clear_cache" style=""><i class="fa fa-refresh"></i></div><div class="square transparent" id="back" style=""><i class="fa fa-step-backward"></i></div>
                                 <div class="square transparent" id="test_game" style=""><i class="fa-solid fa-flask-vial"></i></div>
+                                <div class="square transparent" id="x2_game" style="display:none"><i class="fa-solid fa-plug-circle-bolt"></i>x2</div>
                                 <!--<div class="square" id="bot">Bot</div>-->
                                 <br/><br/>
                             </div>
