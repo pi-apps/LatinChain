@@ -34,7 +34,7 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.190"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.191"></script>
                     
                     <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -302,7 +302,7 @@
                                         
                                         <div style="margin-top:5px">
                                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-12">
-                                                <button id="button_reward_ad" name="button_reward_ad" class="col-10 btn btn-success fw-bold text-white border-success" disabled="true" style="border: 2px solid; margin: 5px; max-width: 300px;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%; display: none">Testing feature</div></button>
+                                                <button id="button_reward_ad" name="button_reward_ad" class="col-10 btn btn-success fw-bold text-white border-success" disabled="true" style="border: 2px solid; margin: 5px; max-width: 300px;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%;">(<i class="fa-solid fa-plug-circle-bolt"></i>x2 points)</div><div style="font-size:80%; display: none">Testing feature</div></button>
                                                 <span id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
                                                     Pi Ads not available (<div id="pi_ad_max" style="display:inline;"></div> ads / <div id="pi_ad_hours" style="display:inline;"></div>h).
                                                 </span>
