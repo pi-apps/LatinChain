@@ -597,8 +597,7 @@ class PiNetworkBaseController(http.Controller):
             
             values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount}
             
-            if pi_users_list[0].unblocked:
-                values.update({'x2_game': True})
+            values.update({'x2_game': True})
             
             apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
             

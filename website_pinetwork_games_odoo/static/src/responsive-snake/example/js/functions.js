@@ -117,6 +117,15 @@ function get_user(pause) {
                 show_pi_ad_user = data.show_pi_ad;
                 
                 passkey=data.passkey;
+                
+                if(data.x2_game)
+                {
+                    $("#x2_game").show();
+                }else
+                {
+                    $("#x2_game").hide();
+                }
+                
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
@@ -136,14 +145,6 @@ function get_user(pause) {
                         press(80);
                         
                     $("#test_game").hide();
-                    
-                    if(data.x2_game)
-                    {
-                        $("#x2_game").show();
-                    }else
-                    {
-                        $("#x2_game").hide();
-                    }
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Snake, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
