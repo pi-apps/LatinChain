@@ -1,0 +1,175 @@
+
+@media only screen and (max-width: 480px){
+    .container {
+        width: 200px;
+        margin: 50px auto 0;
+        padding: 30px;
+    }
+
+    #game {
+        height: 200px;
+    }
+    
+    .field-easy{
+        width: 66.6px;
+        height: 66.6px;
+    }
+
+    .field-normal{
+        width: 50px;
+        height: 50px;
+    }
+
+    .field-hard{
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn {
+        margin: 15px auto;
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 630px){
+    .container {
+        width: 300px;
+        margin: 50px auto 0;
+        padding: 30px;
+    }
+
+    #game {
+        height: 300px;
+    }
+    
+    .field-easy{
+        width: 100px;
+        height: 100px;
+    }
+
+    .field-normal{
+        width: 75px;
+        height: 75px;
+    }
+
+    .field-hard{
+        width: 60px;
+        height: 60px;
+    }
+
+    .btn {
+        margin: 25px auto;
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 631px) and (max-width: 1500px) {
+    .container {
+        width: 400px;
+        margin: 75px auto 0;
+        padding: 40px;
+    }
+
+    #game {
+        height: 400px;
+    }
+    
+    .field-easy{
+        width: 133.3px;
+        height: 133.3px;
+    }
+    .field-normal{
+        width: 100px;
+        height: 100px;
+    }
+
+    .field-hard{
+        width: 80px;
+        height: 80px;
+    }
+    
+    .btn {
+        margin: 35px auto;
+        padding: 15px;
+    }
+}
+
+@media only screen and (min-width: 1501px) {
+    .container {
+        width: 500px;
+        margin: 100px auto 0;
+        padding: 50px;
+    }
+
+    #game {
+        height: 500px;
+    }
+    
+    .field-easy{
+        width: 166.6px;
+        height: 166.6px;
+    }
+    .field-normal{
+        width: 125px;
+        height: 125px;
+    }
+
+    .field-hard{
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn {
+        margin: 35px auto;
+        padding: 15px;
+    }
+}
+
+.container{
+    background-color: #737373;
+    border: #cccccc solid 2px;
+    border-radius: 35px 0;
+}
+
+body{
+    background-color: #f7f7f7;
+}
+
+.btn:hover{
+    background-color: #56ccde;
+}
+
+.field-easy, .field-normal, .field-hard{
+    float: left;
+}
+
+.btn{
+    display: block;
+    color: rgb(246, 245, 244);;
+    background-color: #5bc0de;
+    border: #267374 solid 1px;
+    border-radius: 15px 0;
+    font-size: larger;
+    font-style: oblique;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+}
+
+.field{
+    color: #ffce75;
+    background-color: #5bc0de;
+    border: #267374 solid 2px;
+    border-radius: 15px 0;
+    margin: 5%;
+    width: 90%;
+    height: 90%;
+    cursor: not-allowed;
+}
+
+.stop {
+    cursor: not-allowed !important;
+}
+
+#game {
+    display: none;
+}

@@ -1,0 +1,390 @@
+* {
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+.container {
+    background-color: #737373;
+    border: #cccccc solid 2px;
+    border-radius: 35px 0;
+}
+
+.btn {
+    display: block;
+    color: rgb(246, 245, 244);
+    background-color: #5bc0de;
+    border: #267374 solid 1px;
+    border-radius: 15px 0;
+    font-style: oblique;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:hover {
+    background-color: #56ccde;
+}
+
+#time {
+    color: #737373;
+    font-weight: bold;
+}
+
+.current, #end-menu {
+    float: left;
+}
+
+.best, #end-try {
+    float: right;
+}
+
+#game-container, #time, #end-buttons {
+    display: none;
+}
+
+
+/* MODAL DIALOG */
+
+#modal-background {
+    display: none;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.20);
+    z-index: 10000;
+}
+
+#modal-container {
+    background-color: #f7f7f7;
+    border: #cccccc solid 2px;
+    border-radius: 35px 0;
+    text-align: center;
+}
+
+#modal-text {
+    color: #737373;
+    font-weight: bold;
+}
+
+#modal-button {
+    margin-bottom: 0px !important;
+}
+
+
+/* FIELDS */
+
+.field-easy, .field-normal, .field-hard {
+    float: left;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.field {
+    background-color: #5bc0de;
+    border: #267374 solid 2px;
+    border-radius: 15px 0;
+    margin: 5%;
+    width: 90%;
+    height: 90%;
+    cursor: not-allowed;
+}
+
+.allowed {
+    cursor: pointer;
+}
+
+.allowed:hover {
+    background-color: #56ccde;
+}
+
+.shine {
+    background-color: #ffce75;
+}
+
+
+/* TRANSITIONS */
+
+.field-easy .start  {
+    -webkit-transition: all 1.3s ease-in-out;
+    -moz-transition: all 1.3s ease-in-out;
+    -o-transition: all 1.3s ease-in-out;
+    -ms-transition: all 1.3s ease-in-out;
+    transition: all 1.3s ease-in-out;
+}
+
+.field-normal .start {
+    -webkit-transition: all 1.8s ease-in-out;
+    -moz-transition: all 1.8s ease-in-out;
+    -o-transition: all 1.8s ease-in-out;
+    -ms-transition: all 1.8s ease-in-out;
+    transition: all 1.8s ease-in-out;
+}
+
+.field-hard .start {
+    -webkit-transition: all 2.3s ease-in-out;
+    -moz-transition: all 2.3s ease-in-out;
+    -o-transition: all 2.3s ease-in-out;
+    -ms-transition: all 2.3s ease-in-out;
+    transition: all 2.3s ease-in-out;
+}
+
+.allowed {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    -ms-transition: none;
+    transition: none;
+}
+
+.correct-transition {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffce75;
+}
+
+.wrong-transition {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    background-color: #ff5c81;
+}
+
+.miss-transition {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    background-color: #ffffc2;
+}
+
+
+/* RESPONSIVENESS */
+
+@media only screen and (max-width: 480px){
+    .container {
+        padding: 30px;
+    }
+
+    #game-container {
+        height: 200px;
+    }
+
+    .btn {
+        padding: 10px;
+    }
+
+    #time {
+        height: 15px;
+    }
+
+    #modal-container {
+        padding: 15px;
+        margin-top: 100px;
+    }
+
+    .container, #end-buttons, #time, #modal-container {
+        width: 200px;
+        margin: 50px auto 0;
+    }
+
+    #game-container, #end-buttons, #time {
+        margin-top: 25px;
+    }
+
+    #menu .btn, #modal-container .btn {
+        margin: 15px auto;
+    }
+
+    .btn, #time, #modal-text {
+        font-size: 15px;
+    }
+
+    .field-easy {
+        width: 66.6px;
+        height: 66.6px;
+    }
+
+    .field-normal {
+        width: 50px;
+        height: 50px;
+    }
+
+    .field-hard{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 630px){
+    .container {
+        padding: 30px;
+    }
+
+    #game-container {
+        height: 300px;
+    }
+
+    .btn {
+        padding: 10px;
+    }
+
+    #time {
+        height: 18px;
+    }
+
+    #modal-container {
+        padding: 15px;
+        margin-top: 110px;
+    }
+
+    .container, #end-buttons, #time, #modal-container {
+        width: 300px;
+        margin: 50px auto 0;
+    }
+
+    #game-container, #end-buttons, #time {
+        margin-top: 25px;
+    }
+
+    #menu .btn, #modal-container .btn {
+        margin: 25px auto;
+    }
+
+    .btn, #time, #modal-text {
+        font-size: 18px;
+    }
+
+    .field-easy {
+        width: 100px;
+        height: 100px;
+    }
+
+    .field-normal {
+        width: 75px;
+        height: 75px;
+    }
+
+    .field-hard {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media only screen and (min-width: 631px) and (max-width: 1500px) {
+    .container {
+        padding: 40px;
+    }
+
+    #game-container {
+        height: 400px;
+    }
+
+    .btn {
+        padding: 15px;
+    }
+
+    #time {
+        height: 21px;
+    }
+
+    #modal-container {
+        padding: 20px;
+        margin-top: 125px;
+    }
+
+    .container, #end-buttons, #time, #modal-container {
+        width: 400px;
+        margin: 75px auto 0;
+    }
+
+    #game-container, #end-buttons, #time {
+        margin-top: 30px;
+    }
+
+    #menu .btn, #modal-container .btn {
+        margin: 35px auto;
+    }
+
+    .btn, #time, #modal-text {
+        font-size: 21px;
+    }
+
+    .field-easy {
+        width: 133.3px;
+        height: 133.3px;
+    }
+    .field-normal {
+        width: 100px;
+        height: 100px;
+    }
+
+    .field-hard {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media only screen and (min-width: 1501px) {
+    .container {
+        padding: 50px;
+    }
+
+    #game-container {
+        height: 500px;
+    }
+
+    .btn {
+        padding: 15px;
+    }
+
+    #time {
+        height: 24px;
+    }
+
+    #modal-container {
+        padding: 25px;
+        margin-top: 140px;
+    }
+
+    .container, #end-buttons, #time, #modal-container {
+        width: 500px;
+        margin: 100px auto 0;
+    }
+
+    #game-container, #end-buttons, #time {
+        margin-top: 40px;
+    }
+
+    #menu .btn, #modal-container .btn {
+        margin: 35px auto;
+    }
+
+    .btn, #time, #modal-text {
+        font-size: 24px;
+    }
+
+    .field-easy {
+        width: 166.6px;
+        height: 166.6px;
+    }
+    .field-normal {
+        width: 125px;
+        height: 125px;
+    }
+
+    .field-hard {
+        width: 100px;
+        height: 100px;
+    }
+}

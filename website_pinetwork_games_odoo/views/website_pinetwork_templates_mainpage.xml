@@ -906,7 +906,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.178"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.179"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1765,6 +1765,13 @@
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><button id="bubble-shooter" class="col-10 btn btn-outline-success font-weight-bold text-black border-success bubble-shooter" style="border: 2px solid;"><div style=""><i class="fa-solid fa-soap"></i></div><div style="font-size:100%;" translate="no">BUBBLE SHOOTER</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="bubble-shooterinfo" class="col-auto btn btn-sm btn-outline-info bubble-shooterinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-test-your-brain" style="display:none">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><button id="test-your-brain" class="col-10 btn btn-outline-success font-weight-bold text-black border-success test-your-brain" style="border: 2px solid;"><div style=""><i class="fa-solid fa-braille"></i></div><div style="font-size:100%;" translate="no">TEST YOUR BRAIN</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="test-your-braininfo" class="col-auto btn btn-sm btn-outline-info test-your-braininfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>

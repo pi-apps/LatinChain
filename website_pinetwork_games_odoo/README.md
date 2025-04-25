@@ -44,4 +44,6 @@ blockrain.js (MIT License) is the Tetris. It's a modification of https://github.
 
 bubble-shooter (MIT License) is the Bubble Shooter. It's a modification of https://github.com/rembound/Bubble-Shooter-HTML5 (MIT License, 2015)
 
+memory-game (MIT License) is the Test Your Brain. It's a modification of https://github.com/MTrajK/memory-game (MIT License, 2014)
+
 More Info: https://github.com/rockcesar/LatinChainDevelopments

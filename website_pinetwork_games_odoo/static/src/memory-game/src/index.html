@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <title>Memory Game</title>
+
+    <meta property="og:image" content="https://mtrajk.github.io/memory-game/img/memory_game.png">
+    <meta property="og:image:width" content="534">
+    <meta property="og:image:height" content="540">
+    <meta property="og:url" content="https://mtrajk.github.io/memory-game/">
+    <meta property="og:description" content="A simple responsive and mobile-friendly browser game made using plain JS and CSS">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Memory game">
+    <meta name="twitter:image" content="https://mtrajk.github.io/memory-game/img/memory_game.png" />
+    <meta name="twitter:url" content="https://mtrajk.github.io/memory-game/" />
+    <meta name="twitter:description" content="A simple responsive and mobile-friendly browser game made using plain JS and CSS" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Memory game" />
+
+    <meta name="author" content="Meto Trajkovski">
+    <meta name="description" content="A simple responsive and mobile-friendly browser game made using plain JS and CSS">
+    <meta name="keywords" content="memory, game">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icon32.png">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="container" id="menu">
+        <button class="btn" id="easy">Easy</button>
+        <button class="btn" id="normal">Normal</button>
+        <button class="btn" id="hard">Hard</button>
+    </div>
+
+    <div id="time">
+        <div class="current">
+            <span>Time: </span>
+            <span id="time-current"></span>
+        </div>
+        <div class="best">
+            <span>Best: </span>
+            <span id="time-best"></span>
+        </div>
+    </div>
+
+    <div class="container" id="game-container"> </div>
+
+    <div id="end-buttons">
+        <button class="btn" id="end-menu">Menu</button>
+        <button class="btn" id="end-try">Try again</button>
+    </div>
+
+    <div id="modal-background">
+        <div id="modal-container">
+            <p id="modal-text"></p>
+            <button class="btn" id="modal-button">Close</button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
