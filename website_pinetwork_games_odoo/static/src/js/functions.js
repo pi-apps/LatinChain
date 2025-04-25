@@ -98,9 +98,11 @@ function get_user(donation) {
                     }
                     
                     $(".show-verified-user").show();
+                    $(".show-not-verified-user").hide();
                 }else
                 {
                     $(".show-verified-user").hide();
+                    $(".show-not-verified-user").show();
                 }
                 
                 show_pi_ad_user = data.show_pi_ad;

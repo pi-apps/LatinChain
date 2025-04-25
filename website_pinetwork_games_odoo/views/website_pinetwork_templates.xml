@@ -34,7 +34,7 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.191"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.192"></script>
                     
                     <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -323,6 +323,18 @@
                                                     You are already a <strong>verified</strong> user, you don't need to donate, but if you want to do it, thank you very much.
                                                 </div>
                                                 <div class="show-verified-user" style="display: none">
+                                                    <br/>
+                                                </div>
+                                                <div class="show-not-verified-user" style="display: none">
+                                                    Benefits:
+                                                </div>
+                                                <div class="show-not-verified-user" style="display: none">
+                                                    <br/>
+                                                </div>
+                                                <div class="show-not-verified-user" style="display: none">
+                                                    Get verified: Auto ads switch, Avatar, Pi Ads <i class="fa-solid fa-plug-circle-bolt"></i>x2 points, access to Chess, Sudoku and Snake.
+                                                </div>
+                                                <div class="show-not-verified-user" style="display: none">
                                                     <br/>
                                                 </div>
                                                 <!--<div>
