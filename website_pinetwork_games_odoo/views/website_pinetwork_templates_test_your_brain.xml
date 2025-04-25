@@ -24,7 +24,7 @@
                     
                     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                     
-                    <link rel="stylesheet" type="text/css" href="/website_pinetwork_games_odoo/static/src/memory-game/src/css/styles.css?v=1.102" />
+                    <link rel="stylesheet" type="text/css" href="/website_pinetwork_games_odoo/static/src/memory-game/src/css/styles.css?v=1.103" />
                     
                     <!--<script type="text/javascript">
                       window._taboola = window._taboola || [];
@@ -86,7 +86,7 @@
 
                             <div class="container" id="game-container"> </div>
 
-                            <div id="end-buttons">
+                            <div id="end-buttons" translate="no">
                                 <button class="btn" id="end-menu">Menu</button>
                                 <button class="btn" id="end-try">Try again</button>
                             </div>

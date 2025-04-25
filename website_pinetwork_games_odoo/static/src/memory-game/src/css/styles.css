@@ -226,7 +226,9 @@ body {
     }
 }
 
-@media only screen and (min-width: 481px) and (max-width: 630px){
+/*@media only screen and (min-width: 481px) and (max-width: 630px){*/
+
+@media only screen and (min-width: 481px){
     .container {
         padding: 30px;
     }
@@ -281,6 +283,7 @@ body {
     }
 }
 
+/*
 @media only screen and (min-width: 631px) and (max-width: 1500px) {
     .container {
         padding: 40px;
@@ -388,3 +391,4 @@ body {
         height: 100px;
     }
 }
+*/
