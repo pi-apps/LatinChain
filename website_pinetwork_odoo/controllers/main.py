@@ -1288,10 +1288,30 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/get-credits/', type='http', auth="public", website=True, csrf=False)
     def get_credits(self, **kw):
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            mainnet = ""
+        else:
+            mainnet = admin_app_list[0].mainnet
+            
+        if mainnet in ['Mainnet OFF', 'Mainnet ON']:
+            return False
+        
         return http.request.render('website_pinetwork_odoo.list_credits')
 
     @http.route('/get-credits-data/', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def get_credits_data(self, **kw):
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            mainnet = ""
+        else:
+            mainnet = admin_app_list[0].mainnet
+            
+        if mainnet in ['Mainnet OFF', 'Mainnet ON']:
+            return False
+        
         #_logger.info(str(kw))
         
         draw = kw['draw'];
