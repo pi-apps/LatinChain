@@ -395,7 +395,9 @@ $( document ).ready(function() {
                                                 }, 5000);
                                                 setConfirmUnloadPoints(false);
                                             });
-                                        }
+                                        }else{
+                                                $("#button_reward_ad").prop( "disabled", false );
+                                            }
                                     } else {
                                         $("#button_reward_ad").prop( "disabled", false );
                                         // fallback logic
