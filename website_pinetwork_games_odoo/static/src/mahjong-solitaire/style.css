@@ -75,7 +75,7 @@ footer {
 
 /* buttons */
 
-button {
+button.mahjong_button {
     border: none;
     outline: none;
     font-family: inherit;
@@ -88,7 +88,7 @@ button {
     transition: background-color 100ms linear;
 }
 
-button:hover {
+button.mahjong_button:hover {
     cursor: pointer;
     background-color: var(--button-hover-color);
 }

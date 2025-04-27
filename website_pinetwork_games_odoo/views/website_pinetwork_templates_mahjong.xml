@@ -22,7 +22,7 @@
 
                     <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
                     
-                    <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/mahjong-solitaire/style.css?v=1.101" />
+                    <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/mahjong-solitaire/style.css?v=1.102" />
                     
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -58,8 +58,8 @@
                         <footer>
                             <span style="filter: contrast(100%) !important; background-color: blue; color: white" id="statusText"></span>
                             <span id="controls">
-                                <button style="filter: contrast(100%) !important;" id="hintButton">Hint</button>
-                                <button style="filter: contrast(100%) !important;" id="restartButton">Restart</button>
+                                <button style="filter: contrast(100%) !important;" class="mahjong_button" id="hintButton">Hint</button>
+                                <button style="filter: contrast(100%) !important;" class="mahjong_button" id="restartButton">Restart</button>
                             </span>
                         </footer>
                     </div>
