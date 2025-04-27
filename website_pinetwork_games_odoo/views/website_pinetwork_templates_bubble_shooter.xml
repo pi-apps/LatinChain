@@ -82,6 +82,10 @@
                             .darkmode--activated #viewport {
                               filter: contrast(100%) !important;
                             }
+                            
+                            #viewport {
+                              filter: contrast(100%) !important;
+                            }
                         </style>
                     </div>
                 </body>
