@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-25 19:36+0000\n"
-"PO-Revision-Date: 2025-04-25 19:36+0000\n"
+"POT-Creation-Date: 2025-04-27 15:37+0000\n"
+"PO-Revision-Date: 2025-04-27 15:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -476,11 +476,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"7.- The prizes will be paid only if we reach, as minimum, 500 verified users"
-" last 30 days before the payment."
+"7.- Prizes will only be paid out if we reach at least 500 verified users "
+"before the prize is paid out."
 msgstr ""
-"7.- Los premios se pagarán solo si alcanzamos, como mínimo, 500 usuarios "
-"verificados en los últimos 30 días antes del pago."
+"7.- Los premios solo se entregarán si alcanzamos al menos 500 usuarios "
+"verificados antes de que se entregue el premio."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -2102,6 +2102,15 @@ msgstr "Pago de los premios para"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"Prizes will only be paid out if we reach at least 500 verified users before "
+"the prize is paid out."
+msgstr ""
+"Los premios solo se entregarán si alcanzamos al menos 500 usuarios verificados "
+"antes de que se entregue el premio."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "RadioForUs"
 msgstr ""
 
@@ -2388,13 +2397,6 @@ msgstr "Muchas gracias!."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "The following certifies that the Pioneer"
 msgstr "Lo siguiente certifica que el Pionero"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"The prizes will be paid only if we reach, as minimum, 500 verified users "
-"last 30 days before the payment."
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification

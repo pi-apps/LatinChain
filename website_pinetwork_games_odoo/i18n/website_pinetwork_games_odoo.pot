@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-25 19:36+0000\n"
-"PO-Revision-Date: 2025-04-25 19:36+0000\n"
+"POT-Creation-Date: 2025-04-27 15:37+0000\n"
+"PO-Revision-Date: 2025-04-27 15:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -416,8 +416,8 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"7.- The prizes will be paid only if we reach, as minimum, 500 verified users"
-" last 30 days before the payment."
+"7.- Prizes will only be paid out if we reach at least 500 verified users "
+"before the prize is paid out."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1921,6 +1921,13 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"Prizes will only be paid out if we reach at least 500 verified users before "
+"the prize is paid out."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "RadioForUs"
 msgstr ""
 
@@ -2202,13 +2209,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "The following certifies that the Pioneer"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"The prizes will be paid only if we reach, as minimum, 500 verified users "
-"last 30 days before the payment."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
