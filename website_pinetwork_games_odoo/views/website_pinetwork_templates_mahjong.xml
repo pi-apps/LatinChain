@@ -62,20 +62,26 @@
                                 <button style="filter: contrast(100%) !important;" id="restartButton">Restart</button>
                             </span>
                         </footer>
-                        
-                        <br/><br/><br/>
                     </div>
                      
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
                     <script src="/website_pinetwork_games_odoo/static/src/mahjong-solitaire/main.js" type="module"></script>
                 </body>
                 
+                <div>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                </div>
+                
                 <style>
-                    .darkmode-toggle {
+                    /*.darkmode-toggle {
                         display: none !important;
                     }
                     .darkmode-layer {
                         display: none !important;
+                    }*/
+                    
+                    .darkmode--activated #game {
+                        filter: contrast(100%) !important;
                     }
                 </style>
 

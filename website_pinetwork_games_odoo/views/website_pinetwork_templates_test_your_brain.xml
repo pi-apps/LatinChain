@@ -104,17 +104,27 @@
                         </div>
                         
                         <style>
-                            .darkmode-toggle {
+                            /*.darkmode-toggle {
                                 display: none !important;
                             }
                             .darkmode-layer {
                                 display: none !important;
+                            }*/
+                            
+                            .darkmode--activated #game-container {
+                                filter: contrast(100%) !important;
+                            }
+                            .darkmode--activated .containter {
+                                filter: contrast(100%) !important;
                             }
                         </style>
                         
-                        <br/><br/><br/>
                     </div>
                 </body>
+                
+                <div>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                </div>
 
                 </html>
                 </t>
