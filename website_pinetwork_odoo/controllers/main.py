@@ -102,7 +102,11 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/piapps-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def piapps_book(self, **kw):
         return http.request.redirect('https://www.amazon.com/dp/B0DK3NJ23V')
-        
+    
+    @http.route('/english-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def english_book(self, **kw):
+        return http.request.redirect('https://www.amazon.com/dp/B0F7792QFW/')
+    
     @http.route('/terms/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def latinchain_terms(self, **kw):
         return http.request.redirect('/blog/latinchain-blog-1/terms-of-service-6')
