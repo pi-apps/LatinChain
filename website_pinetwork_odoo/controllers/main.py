@@ -105,7 +105,11 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/english-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0F7792QFW/')
+        return http.request.redirect('https://www.amazon.com/dp/B0F7792QFW')
+        
+    @http.route('/books-collection/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def books_collection(self, **kw):
+        return http.request.redirect('https://www.amazon.com/dp/B0F771VKRF')
     
     @http.route('/terms/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def latinchain_terms(self, **kw):
