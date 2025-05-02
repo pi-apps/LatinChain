@@ -94,6 +94,10 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/english-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_course(self, **kw):
         return http.request.redirect('https://www.udemy.com/course/aprende-ingles-practico-hoy-mismo-con-ia/?referralCode=D67C6EEEA0A577E2C2CF')
+    
+    @http.route('/brand-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def brand_course(self, **kw):
+        return http.request.redirect('https://www.udemy.com/course/como-crear-tu-marca-personal-by-cesar-opensource-expert')
         
     @http.route('/odoo-tech-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def odoo_technical_book(self, **kw):
@@ -106,6 +110,10 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/english-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_book(self, **kw):
         return http.request.redirect('https://www.amazon.com/dp/B0F7792QFW')
+    
+    @http.route('/brand-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def brand_book(self, **kw):
+        return http.request.redirect('https://www.amazon.com/dp/B0F79N2ZWQ')
         
     @http.route('/books-collection/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def books_collection(self, **kw):
