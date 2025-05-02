@@ -292,6 +292,8 @@ $( document ).ready(function() {
                             if(!start_flag)
                                 start_flag = true;
                             
+                            var btnvalue = $("#button_reward_ad").html();
+                            
                             if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
                             {
                                 try {
@@ -322,7 +324,6 @@ $( document ).ready(function() {
                                         if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                                         {
                                             $("#button_reward_ad").prop( "disabled", true );
-                                            var btnvalue = $("#button_reward_ad").html();
                                             $("#button_reward_ad").html("Verifying...");
                                             //alert($("#ready_reward_message").text());
                                             var data = {
