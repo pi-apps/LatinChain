@@ -233,6 +233,7 @@ function get_user() {
                 $(".show-latin-dictionary").show();
                 $(".show-latin-university").show();
                 $(".show-latin-books").show();
+                $(".show-latin-academy").show();
                 
                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                 {
@@ -1111,6 +1112,10 @@ $( document ).ready(function() {
     
     $( ".latin-university" ).click(function() {
         $.colorbox({href:"https://www.wikiversity.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".latin-academy" ).click(function() {
+        $.colorbox({href:"https://www.cybrosys.com/slides/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".sport-results" ).click(function() {
