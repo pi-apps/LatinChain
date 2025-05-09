@@ -1115,7 +1115,7 @@ $( document ).ready(function() {
     });
     
     $( ".latin-academy" ).click(function() {
-        $.colorbox({href:"https://www.cybrosys.com/slides/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({href:"https://www.odoo.com/slides", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".sport-results" ).click(function() {
