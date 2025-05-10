@@ -377,7 +377,7 @@ $( document ).ready(function() {
                                                         }, 5000);
                                                     }
                                                 }else{
-                                                    $("#button_reward_ad").html("Error, try again...");
+                                                    //$("#button_reward_ad").html("Error, try again...");
                                                     
                                                     setTimeout(function ()
                                                     {

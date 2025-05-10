@@ -938,7 +938,7 @@ $( document ).ready(function() {
                                                         
                                                         get_user_rewarded();
                                                     }else{
-                                                        $("#button_reward_ad").html("Error, try again...");
+                                                        //$("#button_reward_ad").html("Error, try again...");
                             
                                                         setTimeout(function ()
                                                         {
