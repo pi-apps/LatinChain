@@ -224,6 +224,7 @@ function get_user() {
                 $(".show-mahjong").show();
                 $(".show-bubble-shooter").show();
                 $(".show-test-your-brain").show();
+                $(".show-15-puzzle").show();
                 $(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 $(".show-cointelegraph").show();
@@ -1134,6 +1135,10 @@ $( document ).ready(function() {
         $.colorbox({href:"/test-your-brain", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".15-puzzle" ).click(function() {
+        $.colorbox({href:"/fifteen-puzzle", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".show_status" ).click(function() {
         $.colorbox({href:"/latinchain_x", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
@@ -1164,6 +1169,10 @@ $( document ).ready(function() {
     
     $( ".test-your-braininfo" ).click(function() {
         $.colorbox({href:"https://en.wikipedia.org/wiki/Concentration_(card_game)", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".15-puzzleinfo" ).click(function() {
+        $.colorbox({href:"https://en.wikipedia.org/wiki/15_puzzle", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".cointelegraph" ).click(function() {

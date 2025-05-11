@@ -1,0 +1,146 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+html,
+body {
+    font-family: 'FreeSans', sans-serif;
+    font-size: 100%;
+    color: #774936;
+}
+#game-area {
+    position: fixed;
+}
+#footer {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 16px;
+    font-size: 0.65rem;
+    margin-left: -70px;
+    text-align: center;
+}
+#repo-stars {
+    display: flex;
+    position: absolute;
+    margin: 1rem auto;
+    z-index: 2;
+    right: 10px;
+}
+
+.shake {
+    animation: tease 1.5s 1s;
+}
+
+@keyframes tease {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-3deg) scale(1.1) translate(0px, -5px);
+    }
+    50% {
+        transform: rotate(3deg) scale(1.1) translate(0px, -5px);
+    }
+    80% {
+        transform: rotate(-3deg) scale(1.1) translate(0px, -5px);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+#how-play {
+    font-family: 'FreeSans', sans-serif;
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 48px;
+    right: 16px;
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    border: 0px;
+    background: #0081a7;
+    color: #fff;
+}
+#how-play:hover {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.35);
+}
+#how-play:active {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+}
+#how-play:focus {
+    outline: none;
+}
+
+.info {
+    display: none;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.info-header {
+    padding: 16px;
+    text-align: center;
+}
+
+.info-body {
+    padding: 16px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.info-footer {
+    padding: 16px;
+    text-align: center;
+}
+
+.info-content {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #ffffee;
+    border-radius: 10px;
+    width: fit-content;
+    animation: falldown 0.4s 0s;
+}
+
+@keyframes falldown {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+#donate {
+    width: 30px;
+    height: 30px;
+    margin: auto 5px;
+}
+#donate:focus {
+    outline: none;
+}
+

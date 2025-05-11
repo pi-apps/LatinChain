@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="fifteen_puzzle" name="Bubble Shooter">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+
+                <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+                <head>
+                    <meta charset="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+                    <title>Fifteen Puzzle Game</title>
+                    <meta name="description" content="Fifteen Puzzle Game" />
+
+                    <meta property="og:url" content="/fifteen-puzzle"/>
+                    <meta property="og:type" content="website"/>
+                    <meta property="og:title" content="Fifteen Puzzle Game"/>
+                    <meta property="og:description" content="Fifteen Puzzle Game"/>
+
+                    <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                    
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    
+                    <link href="/website_pinetwork_games_odoo/static/src/js-15-puzzle/c76b8926bfd4ad77c114.css" rel="stylesheet" />
+
+                </head>
+
+                <body style="text-align: center; background-color: #fff !important;">
+                    
+                    <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
+                    <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
+                    
+                    <div class="container" style="text-align: center;">
+
+                        <div id="game-area"></div>
+                        <button id="how-play" class="shake">
+                            <strong>?</strong>
+                        </button>
+                        <div id="info-panel" class="info">
+                            <div class="info-content">
+                                <div class="info-header">
+                                    <span class="close" style="color:black !important">X</span>
+                                    <h2>How To Play</h2>
+                                </div>
+                                <div class="info-body">
+                                    <p>Move tiles in grid to order them from <b>1</b> to <b>15</b>.</p><p>To move a tile you should click on it.</p>
+                                </div>
+                                <div class="info-footer">
+                                    <h4></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <footer id="footer">
+                            <p></p>
+                        </footer>
+                        <script src="/website_pinetwork_games_odoo/static/src/js-15-puzzle/main-952a6195066148dc0188.bundle.min.js?v=1.105"></script>
+                        
+                        <style>
+                            .darkmode-toggle {
+                                display: none !important;
+                            }
+                            /*.darkmode-layer {
+                                display: none !important;
+                            }*/
+                            
+                            .darkmode--activated #game-area {
+                                filter: contrast(100%) !important;
+                            }
+                            .darkmode--activated .containter {
+                                filter: contrast(100%) !important;
+                            }
+                            
+                            #game-area {
+                                filter: contrast(100%) !important;
+                            }
+                            .containter {
+                                filter: contrast(100%) !important;
+                            }
+                        </style>
+                        
+                    </div>
+                </body>
+                
+                <div>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                </div>
+
+                </html>
+                </t>
+		</template>
+
+</odoo>
