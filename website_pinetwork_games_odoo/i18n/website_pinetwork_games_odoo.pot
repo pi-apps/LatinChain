@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-09 23:22+0000\n"
-"PO-Revision-Date: 2025-05-09 23:22+0000\n"
+"POT-Creation-Date: 2025-05-11 20:28+0000\n"
+"PO-Revision-Date: 2025-05-11 20:28+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -192,6 +192,11 @@ msgstr ""
 msgid ""
 "1.- You'll have access to many games, as Chess, Sudoku and Snake, with "
 "multilanguage interface."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "15 PUZZLE GAME"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -836,6 +841,11 @@ msgid "<strong>Membership</strong><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+msgid "<strong>Odoo Learning</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>Play Store</strong>"
 msgstr ""
@@ -1389,6 +1399,11 @@ msgid "Hint"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+msgid "How To Play"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid ""
@@ -1647,6 +1662,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "More Info"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+msgid "Move tiles in grid to order them from <b>1</b> to <b>15</b>."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2238,6 +2258,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Time"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+msgid "To move a tile you should click on it."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
