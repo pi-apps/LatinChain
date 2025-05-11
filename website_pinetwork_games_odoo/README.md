@@ -46,4 +46,6 @@ bubble-shooter (MIT License) is the Bubble Shooter. It's a modification of https
 
 memory-game (MIT License) is the Test Your Brain. It's a modification of https://github.com/MTrajK/memory-game (MIT License, 2014)
 
+js-15-puzzle (MIT License) is the 15 Puzzle Game. It's a modification of https://github.com/richterich/js-15-puzzle (MIT License, 2020)
+
 More Info: https://github.com/rockcesar/LatinChainDevelopments
