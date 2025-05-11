@@ -744,7 +744,7 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             
             if 'avatar_user' not in kw:
-                _logger.info("pi_ad_automatic not present")
+                _logger.info("avatar_user not present")
                 return json.dumps({'result': False})
             
             values = {'avatar_user': kw['avatar_user']}
