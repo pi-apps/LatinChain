@@ -423,7 +423,6 @@ $( document ).ready(function() {
             }; // Read more about this in the SDK reference
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                localStorage.setItem("loggedIn", true);
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
                 accessToken = auth.accessToken;
@@ -564,6 +563,7 @@ $( document ).ready(function() {
     }else if(confirm("¿Do you want to login?"))
     {
         auth();
+        localStorage.setItem("loggedIn", true);
     
         setTimeout(function ()
         {
