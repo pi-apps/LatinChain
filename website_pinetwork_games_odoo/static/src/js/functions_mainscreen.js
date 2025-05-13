@@ -276,11 +276,14 @@ function get_user() {
                 {
                     unblocked = data.unblocked;
                     
-                    if(["Mainnet ON"].includes($("#mainnet").val()))
+                    /*if(["Mainnet ON"].includes($("#mainnet").val()))
                     {
                         $(".getverified").hide();
                         $(".isverified").show();
-                    }
+                    }*/
+                    
+                    $(".getverified").hide();
+                    $(".isverified").show();
                     
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
