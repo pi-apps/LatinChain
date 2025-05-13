@@ -1001,20 +1001,7 @@ $( document ).ready(function() {
             if(pi_user_id == "" && pi_user_code == "")
                 auth();
         }, 10000);
-        
-        $("#logout_latinchain").click(function(){
-            localStorage.setItem("loggedIn", false);
-            try {
-                Cache.delete();
-            } catch (err) {
-                console.error(err);
-            }
-            try {
-                window.location.reload(true);
-            } catch (err) {
-                console.error(err);
-            }
-        });
+        $(".loggedin").show();
     }else if(confirm("¿Do you want to login?"))
     {
         auth();
@@ -1025,7 +1012,22 @@ $( document ).ready(function() {
             if(pi_user_id == "" && pi_user_code == "")
                 auth();
         }, 10000);
+        $(".loggedin").show();
     }
+    
+    $("#logout_latinchain").click(function(){
+        localStorage.removeItem("loggedIn");
+        try {
+            Cache.delete();
+        } catch (err) {
+            console.error(err);
+        }
+        try {
+            window.location.reload(true);
+        } catch (err) {
+            console.error(err);
+        }
+    });
     
     /*
     if(localStorage.getItem("loggedIn"))

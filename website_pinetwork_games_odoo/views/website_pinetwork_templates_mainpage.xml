@@ -906,7 +906,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.192"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.196"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1176,7 +1176,8 @@
                       <a class="text-white getverified" href="/pinetwork"><div style="display:inline;">Accepting payments</div> <div style="display:inline;">(<t t-esc="amount" /> Pi)</div>.
                         <div>Get verified: Auto ads switch, Avatar, Pi Ads <i class="fa-solid fa-plug-circle-bolt"></i>x2 points, access to Chess, Sudoku and Snake.</div>
                       </a>
-                      <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>. <button id="logout_latinchain" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" disabled="true" style="border: 2px solid;"><div>logout</div></button></div>
+                      <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
+                      <div class="loggedin" style="display: none; text-align:center"><button id="logout_latinchain" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid; max-width: 100px"><div>logout</div></button></div>
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
