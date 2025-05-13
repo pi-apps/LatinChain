@@ -1172,9 +1172,10 @@
                         </section>
                     </div>
                     
-                    <div class="justify-content-center text-center p-3 mb-2 bg-info text-white" t-if="mainnet in ['Mainnet ON']">
+                    <div class="justify-content-center text-center p-3 mb-2 bg-info text-white">
                       <a class="text-white getverified" href="/pinetwork"><div style="display:inline;">Accepting payments</div> <div style="display:inline;">(<t t-esc="amount" /> Pi)</div>.
-                        <div>Get verified: Auto ads switch, Avatar, Pi Ads <i class="fa-solid fa-plug-circle-bolt"></i>x2 points, access to Chess, Sudoku and Snake.</div>
+                        <div t-if="mainnet in ['Mainnet ON']">Get verified: Auto ads switch, Avatar, Pi Ads <i class="fa-solid fa-plug-circle-bolt"></i>x2 points, access to Chess, Sudoku and Snake.</div>
+                        <div t-if="mainnet in ['Testnet ON']">Get verified: Avatar, access to Chess, Sudoku and Snake.</div>
                       </a>
                       <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
                       <div class="loggedin" style="display: none; text-align:center"><button id="logout_latinchain" class="col-8 btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; max-width: 100px"><div>logout</div></button></div>

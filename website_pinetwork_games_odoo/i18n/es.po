@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 15:03+0000\n"
-"PO-Revision-Date: 2025-05-13 15:03+0000\n"
+"POT-Creation-Date: 2025-05-13 18:36+0000\n"
+"PO-Revision-Date: 2025-05-13 18:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1326,7 +1326,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Do you want to Login or Just Browse the app?."
-msgstr "¿Quieres hacer Login ó Sólo Navegar por la aplicación?."
+msgstr "Quieres hacer Login ó Sólo Navegar por la aplicación?."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -1456,6 +1456,11 @@ msgid ""
 msgstr ""
 "Verifícate: Switch de auto ads, Avatar, Pi Ads <i class=\"fa-solid fa-plug-"
 "circle-bolt\"/>x2 points, acceso a Chess, Sudoku and Snake."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Get verified: Avatar, access to Chess, Sudoku and Snake."
+msgstr "Verifícate: Avatar, acceso a Chess, Sudoku y Snake."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2490,17 +2495,6 @@ msgid "To move a tile you should click on it."
 msgstr "Para mover fichas debes hacer clic sobre ellas."
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Top"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Top 10 Board"
 msgstr ""
@@ -2928,6 +2922,11 @@ msgid ""
 msgstr ""
 "está entrenando y tiene la disponibilidad para entrenar habilidades en "
 "LatinChain Platform, como:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "logout"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
