@@ -906,7 +906,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.197"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.198"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1179,6 +1179,7 @@
                       </a>
                       <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
                       <div class="loggedin" style="display: none; text-align:center"><button id="logout_latinchain" class="col-8 btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; max-width: 100px"><div>logout</div></button></div>
+                      <div class="loggedout" style="display: none; text-align:center"><button id="login_latinchain" class="col-8 btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; max-width: 100px"><div>login</div></button></div>
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">

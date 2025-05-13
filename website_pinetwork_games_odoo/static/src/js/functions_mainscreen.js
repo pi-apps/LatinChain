@@ -1016,6 +1016,9 @@ $( document ).ready(function() {
                 auth();
         }, 10000);
         $(".loggedin").show();
+    }else
+    {
+        $(".loggedout").show();
     }
     
     $("#logout_latinchain").click(function(){
@@ -1030,6 +1033,19 @@ $( document ).ready(function() {
         } catch (err) {
             console.error(err);
         }
+    });
+    
+    $("#login_latinchain").click(function(){
+        auth();
+        localStorage.setItem("loggedIn", true);
+    
+        setTimeout(function ()
+        {
+            if(pi_user_id == "" && pi_user_code == "")
+                auth();
+        }, 10000);
+        $(".loggedin").show();
+        $(".loggedout").hide();
     });
     
     /*
