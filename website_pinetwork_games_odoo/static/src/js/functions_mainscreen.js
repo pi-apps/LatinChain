@@ -997,6 +997,27 @@ $( document ).ready(function() {
     if(localStorage.getItem("loggedIn"))
     {
         auth();
+        
+        setTimeout(function ()
+        {
+            if(pi_user_id == "" && pi_user_code == "")
+                auth();
+        }, 10000);
+    }else if(confirm("¿Do you want to login?"))
+    {
+        auth();
+    
+        setTimeout(function ()
+        {
+            if(pi_user_id == "" && pi_user_code == "")
+                auth();
+        }, 10000);
+    }
+    
+    /*
+    if(localStorage.getItem("loggedIn"))
+    {
+        auth();
     
         setTimeout(function ()
         {
@@ -1017,7 +1038,7 @@ $( document ).ready(function() {
         
         $(".modal-body-login").html($("#modal_login_latinchain_message").text());
         $("#open_modal_login").click();
-    }
+    }*/
 
     //$("#social_div").css("visibility", "visible");
     const btn = document.querySelector('#button1');
