@@ -1022,16 +1022,19 @@ $( document ).ready(function() {
     }
     
     $("#logout_latinchain").click(function(){
-        localStorage.removeItem("loggedIn");
-        try {
-            Cache.delete();
-        } catch (err) {
-            console.error(err);
-        }
-        try {
-            window.location.reload(true);
-        } catch (err) {
-            console.error(err);
+        if(confirm("¿Are you sure you want to logout?"))
+        {
+            localStorage.removeItem("loggedIn");
+            try {
+                Cache.delete();
+            } catch (err) {
+                console.error(err);
+            }
+            try {
+                window.location.reload(true);
+            } catch (err) {
+                console.error(err);
+            }
         }
     });
     
