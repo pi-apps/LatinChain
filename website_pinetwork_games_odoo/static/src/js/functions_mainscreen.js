@@ -782,6 +782,8 @@ $( document ).ready(function() {
             }, 5000);
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                localStorage.setItem("loggedIn", true);
+                
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
                 accessToken = auth.accessToken;
@@ -992,7 +994,8 @@ $( document ).ready(function() {
     }
     $(".referrer_username").html("<strong>--</strong>");
     
-    $("#login_latinchain").click(function(){
+    if(localStorage.getItem("loggedIn"))
+    {
         auth();
     
         setTimeout(function ()
@@ -1000,10 +1003,21 @@ $( document ).ready(function() {
             if(pi_user_code == "" && pi_user_code == "")
                 auth();
         }, 10000);
-    });
-    
-    $(".modal-body-login").html($("#modal_login_latinchain_message").text());
-    $("#open_modal_login").click();
+    }else
+    {
+        $("#login_latinchain").click(function(){
+            auth();
+        
+            setTimeout(function ()
+            {
+                if(pi_user_code == "" && pi_user_code == "")
+                    auth();
+            }, 10000);
+        });
+        
+        $(".modal-body-login").html($("#modal_login_latinchain_message").text());
+        $("#open_modal_login").click();
+    }
 
     //$("#social_div").css("visibility", "visible");
     const btn = document.querySelector('#button1');
