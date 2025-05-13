@@ -906,7 +906,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.186"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.188"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -980,6 +980,7 @@
                     <div id="modal_pi_ad_automatic_enabled" style="display:none;">Automatic Pi Ads are enabled. Pi Ads will be shown automatically every so often. It means you will gain Latin points.</div>
                     <div id="modal_pi_ad_automatic_disabled" style="display:none;">Automatic Pi Ads are disabled. Pi Ads won't be shown automatically.</div>
                     <div id="modal_latinchain_avatar_saved" style="display:none;">Avatar was saved.</div>
+                    <div id="modal_login_latinchain_message" style="display:none;">Do you want to Login or Just Browse the app?.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
@@ -2259,6 +2260,31 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Button trigger modal -->
+                    <button id="open_modal_login" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLogin" style="display: none;">
+                      Open Modal Login
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="ModalLogin" tabindex="-1" aria-labelledby="ModalLabelLogin" aria-hidden="true" style="text-align:center">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabelLogin">Login Message</h5>
+                            <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>-->
+                          </div>
+                          <div class="modal-body-login">
+                            
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id="login_latinchain" data-bs-dismiss="modal">Login</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Just Browse</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>
                         </div>

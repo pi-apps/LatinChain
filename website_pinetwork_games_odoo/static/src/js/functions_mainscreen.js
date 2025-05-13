@@ -991,13 +991,19 @@ $( document ).ready(function() {
         }
     }
     $(".referrer_username").html("<strong>--</strong>");
-    auth();
     
-    setTimeout(function ()
-    {
-        if(pi_user_code == "" && pi_user_code == "")
-            auth();
-    }, 10000);
+    $("#login_latinchain").click(function(){
+        auth();
+    
+        setTimeout(function ()
+        {
+            if(pi_user_code == "" && pi_user_code == "")
+                auth();
+        }, 10000);
+    });
+    
+    $(".modal-body-login").html($("#modal_login_latinchain_message").text());
+    $("#open_modal_login").click();
 
     //$("#social_div").css("visibility", "visible");
     const btn = document.querySelector('#button1');
