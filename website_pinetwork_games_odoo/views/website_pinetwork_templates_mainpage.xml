@@ -906,7 +906,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.199"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.201"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -2286,7 +2286,7 @@
                             
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" id="login_latinchain" data-bs-dismiss="modal">Login</button>
+                            <button type="button" class="btn btn-secondary" id="login_latinchain_on_message" data-bs-dismiss="modal">Login</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Just Browse</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>

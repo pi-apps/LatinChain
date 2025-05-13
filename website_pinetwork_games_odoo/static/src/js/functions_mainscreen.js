@@ -1005,19 +1005,26 @@ $( document ).ready(function() {
                 auth();
         }, 10000);
         $(".loggedin").show();
-    }else if(confirm("¿Do you want to login?"))
-    {
-        auth();
-        localStorage.setItem("loggedIn", true);
-    
-        setTimeout(function ()
-        {
-            if(pi_user_id == "" && pi_user_code == "")
-                auth();
-        }, 10000);
-        $(".loggedin").show();
     }else
     {
+        $("#login_latinchain_on_message").click(function(){
+            localStorage.setItem("loggedIn", true);
+            
+            try {
+                Cache.delete();
+            } catch (err) {
+                console.error(err);
+            }
+            try {
+                window.location.reload(true);
+            } catch (err) {
+                console.error(err);
+            }
+        });
+        
+        $(".modal-body-login").html($("#modal_login_latinchain_message").text());
+        $("#open_modal_login").click();
+        
         $(".loggedout").show();
     }
     
