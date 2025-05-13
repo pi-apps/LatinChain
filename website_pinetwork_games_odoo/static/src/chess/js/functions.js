@@ -560,7 +560,7 @@ $( document ).ready(function() {
             if(pi_user_id == "" && pi_user_code == "")
                 auth();
         }, 10000);
-    }else if(confirm("¿Do you want to login?"))
+    }else if(confirm("¿Do you want to login on LatinChain Platform?"))
     {
         auth();
         localStorage.setItem("loggedIn", true);

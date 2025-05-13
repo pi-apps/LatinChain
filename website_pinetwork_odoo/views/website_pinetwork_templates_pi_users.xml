@@ -1663,7 +1663,7 @@
                                     if(pi_user_id == "" &amp;&amp; pi_user_code == "")
                                         auth();
                                 }, 10000);
-                            }else if(confirm("¿Do you want to login?"))
+                            }else if(confirm("¿Do you want to login on LatinChain Platform?"))
                             {
                                 auth();
                                 localStorage.setItem("loggedIn", true);
@@ -2052,7 +2052,7 @@
                                             $("#show_pibrowser").show();
                                     }, 5000);
                                 }, 10000);
-                            }else if(confirm("¿Do you want to login?"))
+                            }else if(confirm("¿Do you want to login on LatinChain Platform?"))
                             {
                                 auth();
                                 localStorage.setItem("loggedIn", true);
@@ -2444,7 +2444,7 @@
                                             $("#show_pibrowser").show();
                                     }, 5000);
                                 }, 10000);
-                            }else if(confirm("¿Do you want to login?"))
+                            }else if(confirm("¿Do you want to login on LatinChain Platform?"))
                             {
                                 auth();
                                 localStorage.setItem("loggedIn", true);
