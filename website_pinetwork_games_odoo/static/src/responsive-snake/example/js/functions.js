@@ -314,6 +314,7 @@ $( document ).ready(function() {
             }; // Read more about this in the SDK reference
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                localStorage.setItem("loggedIn", true);
                 pi_user_id = auth.user.uid;
                 pi_user_code = auth.user.username;
                 accessToken = auth.accessToken;
@@ -437,13 +438,25 @@ $( document ).ready(function() {
         }
     }
 
-    auth();
-    
-    setTimeout(function ()
+    if(localStorage.getItem("loggedIn"))
     {
-        if(pi_user_id == "" && pi_user_code == "")
-            auth();
-    }, 10000);
+        auth();
+        
+        setTimeout(function ()
+        {
+            if(pi_user_id == "" && pi_user_code == "")
+                auth();
+        }, 10000);
+    }else if(confirm("¿Do you want to login?"))
+    {
+        auth();
+    
+        setTimeout(function ()
+        {
+            if(pi_user_id == "" && pi_user_code == "")
+                auth();
+        }, 10000);
+    }
     
     $(".numeric-decimal").on("keypress keyup blur",function (event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
