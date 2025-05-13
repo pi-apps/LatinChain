@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 20:29+0000\n"
-"PO-Revision-Date: 2025-05-11 20:29+0000\n"
+"POT-Creation-Date: 2025-05-13 01:28+0000\n"
+"PO-Revision-Date: 2025-05-13 01:28+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1835,7 +1835,8 @@ msgstr "Más Info"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
 msgid "Move tiles in grid to order them from <b>1</b> to <b>15</b>."
-msgstr "Mueve fichas en la cuadrícula para ordenarlas del <b>1</b> al <b>15</b>."
+msgstr ""
+"Mueve fichas en la cuadrícula para ordenarlas del <b>1</b> al <b>15</b>."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -1933,9 +1934,17 @@ msgid "Now you can consult an Expert if you need their services:"
 msgstr "Ahora puedes consultar un Experto si necesitas de sus servicios:"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid ""
+"Now you have x2 points in your next game (Chess, Sudoku and Snake). Only if "
+"you are verified."
+msgstr ""
+"Ahora tienes x2 puntos en tu próximo juego (Chess, Sudoku y Snake). Sólo si "
+"estás verificado."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Now you have x2 points in your next game. Only if you are verified."
