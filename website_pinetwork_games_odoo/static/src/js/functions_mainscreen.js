@@ -739,6 +739,7 @@ $( document ).ready(function() {
 
     $(document).ajaxStop(function() {
         $("#loading_word").hide();
+        $("#loading_word_under").hide();
     });
 
     $("#verified").hide();
@@ -779,9 +780,11 @@ $( document ).ready(function() {
             }; // Read more about this in the SDK reference
 
             $("#loading_word").show();
+            $("#loading_word_under").show();
             
             setTimeout(function() {
               $("#loading_word").hide();
+              $("#loading_word_under").hide();
             }, 5000);
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {

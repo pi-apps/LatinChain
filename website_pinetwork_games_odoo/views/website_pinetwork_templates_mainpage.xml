@@ -956,7 +956,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.204"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.205"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1308,7 +1308,9 @@
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
-                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-top:10px; padding:5px; width: 100%; text-align: center" class="border-gradient-rounded">
+                        <div id="loading_word_under" style="margin-top:10px; width: 100%; display: none;"></div>
+                        
+                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="padding:5px; width: 100%; text-align: center" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#PiAds &#128240;</div></strong></h5>
                             </div>
@@ -1332,8 +1334,6 @@
                               </label>
                             </div>
                         </div>
-                        
-                        <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="margin-top:10px; width: 100%;"></div>
                         
                         <div style="margin-bottom:5px; margin-top:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
