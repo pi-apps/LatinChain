@@ -371,7 +371,7 @@
                             
                             .darkmode--activated #loading_word {
                               padding: 5px;
-                              margin: 5px;
+                              margin-bottom: 10px;
                               border: 4px solid transparent;
                               border-radius: 20px;
                               background: 
@@ -385,16 +385,15 @@
                             
                             #loading_word {
                               padding: 5px;
-                              margin: 5px;
+                              margin-bottom: 10px;
                               border: 4px solid transparent;
                               border-radius: 20px;
                               background: 
-                                linear-gradient(to right, #021526, #021526), 
+                                linear-gradient(to right, white, white), 
                                 linear-gradient(to right, red , blue); 
                               background-clip: padding-box, border-box;
                               background-origin: padding-box, border-box;
-                              color: white !important;
-                              filter: contrast(100%) !important;
+                              color: black !important;
                             }
                             
                             .video-cta-button {
@@ -715,7 +714,7 @@
                         
                         .darkmode--activated #loading_word {
                           padding: 5px;
-                          margin: 5px;
+                          margin-bottom: 10px;
                           border: 4px solid transparent;
                           border-radius: 20px;
                           background: 
@@ -729,16 +728,15 @@
                         
                         #loading_word {
                           padding: 5px;
-                          margin: 5px;
+                          margin-bottom: 10px;
                           border: 4px solid transparent;
                           border-radius: 20px;
                           background: 
-                            linear-gradient(to right, #021526, #021526), 
+                            linear-gradient(to right, white, white), 
                             linear-gradient(to right, red , blue); 
                           background-clip: padding-box, border-box;
                           background-origin: padding-box, border-box;
-                          color: white !important;
-                          filter: contrast(100%) !important;
+                          color: black !important;
                         }
                         
                         .darkmode--activated .card-header > h5 > button > div, .darkmode--activated .card-body > .container > .row > div, .darkmode--activated .card-body > .container > .row > div > a > div {
