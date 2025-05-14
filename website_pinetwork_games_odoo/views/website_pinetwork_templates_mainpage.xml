@@ -370,7 +370,25 @@
                             }
                             
                             .darkmode--activated #loading_word {
-                              color: #000 !important;
+                              padding: 3px;
+                              background: 
+                                linear-gradient(to right, #021526, #021526), 
+                                linear-gradient(to right, red , blue); 
+                              background-clip: padding-box, border-box;
+                              background-origin: padding-box, border-box;
+                              color: white !important;
+                              filter: contrast(100%) !important;
+                            }
+                            
+                            #loading_word {
+                              padding: 3px;
+                              background: 
+                                linear-gradient(to right, #021526, #021526), 
+                                linear-gradient(to right, red , blue); 
+                              background-clip: padding-box, border-box;
+                              background-origin: padding-box, border-box;
+                              color: white !important;
+                              filter: contrast(100%) !important;
                             }
                             
                             .video-cta-button {
@@ -687,6 +705,28 @@
                         
                         .darkmode--activated #social_div {
                           color: #fff !important;
+                        }
+                        
+                        .darkmode--activated #loading_word {
+                          padding: 3px;
+                          background: 
+                            linear-gradient(to right, #021526, #021526), 
+                            linear-gradient(to right, red , blue); 
+                          background-clip: padding-box, border-box;
+                          background-origin: padding-box, border-box;
+                          color: white !important;
+                          filter: contrast(100%) !important;
+                        }
+                        
+                        #loading_word {
+                          padding: 3px;
+                          background: 
+                            linear-gradient(to right, #021526, #021526), 
+                            linear-gradient(to right, red , blue); 
+                          background-clip: padding-box, border-box;
+                          background-origin: padding-box, border-box;
+                          color: white !important;
+                          filter: contrast(100%) !important;
                         }
                         
                         .darkmode--activated .card-header > h5 > button > div, .darkmode--activated .card-body > .container > .row > div, .darkmode--activated .card-body > .container > .row > div > a > div {
