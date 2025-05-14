@@ -370,7 +370,9 @@
                             }
                             
                             .darkmode--activated #loading_word {
-                              padding: 3px;
+                              padding: 5px;
+                              border: 4px solid transparent;
+                              border-radius: 20px;
                               background: 
                                 linear-gradient(to right, #021526, #021526), 
                                 linear-gradient(to right, red , blue); 
@@ -381,7 +383,9 @@
                             }
                             
                             #loading_word {
-                              padding: 3px;
+                              padding: 5px;
+                              border: 4px solid transparent;
+                              border-radius: 20px;
                               background: 
                                 linear-gradient(to right, #021526, #021526), 
                                 linear-gradient(to right, red , blue); 
@@ -708,7 +712,9 @@
                         }
                         
                         .darkmode--activated #loading_word {
-                          padding: 3px;
+                          padding: 5px;
+                          border: 4px solid transparent;
+                          border-radius: 20px;
                           background: 
                             linear-gradient(to right, #021526, #021526), 
                             linear-gradient(to right, red , blue); 
@@ -719,7 +725,9 @@
                         }
                         
                         #loading_word {
-                          padding: 3px;
+                          padding: 5px;
+                          border: 4px solid transparent;
+                          border-radius: 20px;
                           background: 
                             linear-gradient(to right, #021526, #021526), 
                             linear-gradient(to right, red , blue); 
