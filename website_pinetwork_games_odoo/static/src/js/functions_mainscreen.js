@@ -1005,7 +1005,7 @@ $( document ).ready(function() {
                 auth();
         }, 10000);
         $(".loggedin").show();
-    }else if(confirm("¿Do you want to login on LatinChain Platform?"))
+    }else if(confirm($("#modal_login_latinchain_v2_message").text()))
     {
         auth();
         localStorage.setItem("loggedIn", true);
@@ -1022,7 +1022,7 @@ $( document ).ready(function() {
     }
     
     $("#logout_latinchain").click(function(){
-        if(confirm("¿Are you sure you want to logout?"))
+        if(confirm($("#modal_logout_latinchain_v2_message").text()))
         {
             localStorage.removeItem("loggedIn");
             try {

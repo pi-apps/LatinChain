@@ -37,7 +37,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
-                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js?v=1.157"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js?v=1.158"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -74,6 +74,7 @@
                     <div id="payment_lessthan_message" style="display:none;">You can't pay less than </div>
                     <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
                     <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game. Only if you are verified.</div>
+                    <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->

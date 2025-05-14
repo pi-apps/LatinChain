@@ -906,7 +906,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.203"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.204"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -981,6 +981,8 @@
                     <div id="modal_pi_ad_automatic_disabled" style="display:none;">Automatic Pi Ads are disabled. Pi Ads won't be shown automatically.</div>
                     <div id="modal_latinchain_avatar_saved" style="display:none;">Avatar was saved.</div>
                     <div id="modal_login_latinchain_message" style="display:none;">Do you want to Login or Just Browse the app?.</div>
+                    <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
+                    <div id="modal_logout_latinchain_v2_message" style="display:none;">¿Are you sure you want to Logout?</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->

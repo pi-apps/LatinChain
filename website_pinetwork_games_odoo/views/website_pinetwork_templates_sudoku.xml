@@ -41,7 +41,7 @@
                     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js?v=1.147"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js?v=1.148"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -165,6 +165,7 @@
                     <div id="cancel_board_message" style="display:none;">Do you want to cancel?, it will reload the puzzle.</div>
                     <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
                     <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game. Only if you are verified.</div>
+                    <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->

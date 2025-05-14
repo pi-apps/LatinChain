@@ -1663,7 +1663,7 @@
                                     if(pi_user_id == "" &amp;&amp; pi_user_code == "")
                                         auth();
                                 }, 10000);
-                            }else if(confirm("¿Do you want to login on LatinChain Platform?"))
+                            }else if(confirm($("#modal_login_latinchain_v2_message").text()))
                             {
                                 auth();
                                 localStorage.setItem("loggedIn", true);
@@ -1710,6 +1710,7 @@
                     <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
+                    <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
                     
                     <div class="container" style="text-align:center; max-width: 840px">
                         <!-- LatinChain Ad responsive -->
@@ -2052,7 +2053,7 @@
                                             $("#show_pibrowser").show();
                                     }, 5000);
                                 }, 10000);
-                            }else if(confirm("¿Do you want to login on LatinChain Platform?"))
+                            }else if(confirm($("#modal_login_latinchain_v2_message").text()))
                             {
                                 auth();
                                 localStorage.setItem("loggedIn", true);
@@ -2109,6 +2110,7 @@
                     <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
+                    <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
                     
                     <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="container">
                         <!-- LatinChain Ad responsive -->
@@ -2444,7 +2446,7 @@
                                             $("#show_pibrowser").show();
                                     }, 5000);
                                 }, 10000);
-                            }else if(confirm("¿Do you want to login on LatinChain Platform?"))
+                            }else if(confirm($("#modal_login_latinchain_v2_message").text()))
                             {
                                 auth();
                                 localStorage.setItem("loggedIn", true);
@@ -2496,6 +2498,7 @@
                     <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
+                    <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
                     
                     <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="container">
                         <!-- LatinChain Ad responsive -->
