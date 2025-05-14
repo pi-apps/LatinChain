@@ -906,7 +906,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.202"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.203"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1178,8 +1178,11 @@
                         <div t-if="mainnet in ['Testnet ON']">Get verified: Avatar, access to Chess, Sudoku and Snake.</div>
                       </a>
                       <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
-                      <div class="loggedin" style="display: none; text-align:center"><button id="logout_latinchain" class="col-8 btn btn-outline-danger font-weight-bold text-white border-white" style="border: 2px solid; max-width: 100px"><div>Logout</div></button></div>
-                      <div class="loggedout" style="display: none; text-align:center"><button id="login_latinchain" class="col-8 btn btn-outline-success font-weight-bold text-white border-white" style="border: 2px solid; max-width: 100px"><div>Login</div></button></div>
+                      <div style="text-align:center">
+                          <button id="logout_latinchain" class="col-8 btn btn-outline-danger font-weight-bold text-white border-white loggedin" style="display: none; border: 2px solid; max-width: 100px"><div>Logout</div></button>
+                          <button id="login_latinchain" class="col-8 btn btn-outline-success font-weight-bold text-white border-white loggedout" style="display: none; border: 2px solid; max-width: 100px"><div>Login</div></button>
+                          <button class="btn btn-outline-info font-weight-bold text-white border-white clear_cache" style="border-radius: 50%; border: 2px solid;"><div style=""><i class="fa fa-refresh"></i></div></button>
+                      </div>
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
@@ -1867,7 +1870,7 @@
                                         </t>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row">
-                                                <div class="col-12"><button id="clear_cache" class="btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa fa-refresh"></i></div><div style="font-size:100%;">Clear Cache</div></button></div>
+                                                <div class="col-12"><button class="btn btn-outline-info font-weight-bold text-black border-info clear_cache" style="border: 2px solid;"><div style=""><i class="fa fa-refresh"></i></div><div style="font-size:100%;">Clear Cache</div></button></div>
                                             </div>
                                         </li>
                                     </ul>

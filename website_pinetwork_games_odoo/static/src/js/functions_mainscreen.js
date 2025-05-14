@@ -1262,7 +1262,7 @@ $( document ).ready(function() {
     });
     
     
-    $( "#clear_cache" ).click(function() {
+    $( ".clear_cache" ).click(function() {
         var result = confirm($( "#clear_cache_message" ).text());
         if(result)
         {
