@@ -227,7 +227,7 @@ function get_user() {
                 $(".show-15-puzzle").show();
                 $(".show-tvonline").show();
                 //$(".show-sport-results").show();
-                //$(".show-cointelegraph").show();
+                $(".show-cointelegraph").show();
                 $(".show-streamerzoneboard").show();
                 //$(".show-stellarium").show();
                 //$(".show-latin-search").show();
