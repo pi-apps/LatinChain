@@ -49,3 +49,23 @@ memory-game (MIT License) is the Test Your Brain. It's a modification of https:/
 js-15-puzzle (MIT License) is the 15 Puzzle Game. It's a modification of https://github.com/richterich/js-15-puzzle (MIT License, 2020)
 
 More Info: https://github.com/rockcesar/LatinChainDevelopments
+
+Apps published
+-----------------
+
+LatinChain Platform:
+https://latin-chain.com
+
+Pidoku, Snake, Chess, App Example for Pi
+
+LatinChain Platform (First App in Odoo for Pi):
+https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/
+
+LatinChain Platform (Games Engine and Platform in Odoo for Pi):
+https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/
+
+Link for info:
+https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
+
+Final Presentation of the Apps:
+https://www.youtube.com/watch?v=9KqcyAoCZzo

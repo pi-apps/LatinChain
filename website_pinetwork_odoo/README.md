@@ -25,3 +25,23 @@ Check our apps published: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-pub
 To test, you have to use Pi Browser.
 
 Main page: /mainpage
+
+Apps published
+-----------------
+
+LatinChain Platform:
+https://latin-chain.com
+
+Pidoku, Snake, Chess, App Example for Pi
+
+LatinChain Platform (First App in Odoo for Pi):
+https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/
+
+LatinChain Platform (Games Engine and Platform in Odoo for Pi):
+https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/
+
+Link for info:
+https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
+
+Final Presentation of the Apps:
+https://www.youtube.com/watch?v=9KqcyAoCZzo
