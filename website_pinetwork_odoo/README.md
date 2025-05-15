@@ -26,7 +26,7 @@ To test, you have to use Pi Browser.
 
 Main page: /mainpage
 
-Apps published
+Apps published by LatinChain
 -----------------
 
 LatinChain Platform:

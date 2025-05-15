@@ -50,7 +50,7 @@ js-15-puzzle (MIT License) is the 15 Puzzle Game. It's a modification of https:/
 
 More Info: https://github.com/rockcesar/LatinChainDevelopments
 
-Apps published
+Apps published by LatinChain
 -----------------
 
 LatinChain Platform:
