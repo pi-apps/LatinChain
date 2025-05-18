@@ -2312,8 +2312,8 @@
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="text-align:center; z-index: 1000000;">
-                      <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="text-align:center">
+                      <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
                             <h5 class="modal-title" id="ModalLabel">Message</h5>
@@ -2337,7 +2337,7 @@
 
                     <!-- Modal -->
                     <div class="modal fade" id="ModalLogin" tabindex="-1" aria-labelledby="ModalLabelLogin" aria-hidden="true" style="text-align:center">
-                      <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
                             <h5 class="modal-title" id="ModalLabelLogin">Login Message</h5>
