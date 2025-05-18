@@ -1511,3 +1511,16 @@ class PiNetworkBaseController(http.Controller):
     def coinzilla_txt(self, **kw):
 
         return "c31e6c84fe776276bd8ee62aa064f70c"
+    
+    @http.route('/gemini-native-image.png', type='http', auth='public')
+    def serve_image(self, filename, **kwargs):
+        img_path = "/root/img/gemini-native-image.png"
+        try:
+            with open(img_path, 'rb') as f:
+                image_data = f.read()
+            return request.make_response(
+                image_data,
+                headers=[('Content-Type', 'image/png')]  # Adjust content type if needed
+            )
+        except FileNotFoundError:
+            return request.not_found()
