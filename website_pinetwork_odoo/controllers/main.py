@@ -21,7 +21,11 @@ from odoo.addons.portal.controllers.portal import CustomerPortal
 
 from random import choice
 
+import random
+
 from datetime import datetime, timedelta
+
+import os
 
 """
 class Website(Website):
@@ -1513,14 +1517,27 @@ class PiNetworkBaseController(http.Controller):
         return "c31e6c84fe776276bd8ee62aa064f70c"
     
     @http.route('/gemini-native-image.png', type='http', auth='public')
-    def serve_image(self, **kwargs):
-        img_path = "/root/img/gemini-native-image.png"
-        try:
-            with open(img_path, 'rb') as f:
-                image_data = f.read()
-            return request.make_response(
-                image_data,
-                headers=[('Content-Type', 'image/png')]  # Adjust content type if needed
-            )
-        except FileNotFoundError:
-            return request.not_found()
+    def gemini_image(self, **kwargs):
+        file_folder = os.path.dirname(os.path.realpath(__file__))
+        
+        img_array = [file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Buenos_Aires.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Caracas.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Los_Angeles.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Mexico_City.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Seoul.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Shanghai.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Tokyo.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Vietnam.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Honduras.png"]
+        
+        random_integer = random.randint(0, 8)
+        
+        #try:
+        with open(img_array[random_integer], 'rb') as f:
+            image_data = f.read()
+        return request.make_response(
+            image_data,
+            headers=[('Content-Type', 'image/png')]  # Adjust content type if needed
+        )
+        #except FileNotFoundError:
+        #    return request.not_found()
