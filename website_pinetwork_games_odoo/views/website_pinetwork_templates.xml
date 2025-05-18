@@ -472,7 +472,7 @@
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="text-align:center">
+                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="text-align:center; z-index: 10000;">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
