@@ -1513,7 +1513,7 @@ class PiNetworkBaseController(http.Controller):
         return "c31e6c84fe776276bd8ee62aa064f70c"
     
     @http.route('/gemini-native-image.png', type='http', auth='public')
-    def serve_image(self, filename, **kwargs):
+    def serve_image(self, **kwargs):
         img_path = "/root/img/gemini-native-image.png"
         try:
             with open(img_path, 'rb') as f:
