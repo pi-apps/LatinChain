@@ -1698,7 +1698,7 @@
                             <a class="nav-link link_height" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-user"></i></div><div style="font-size:80%;">User</div></a>
                           </li>
                           <li class="nav-item item-color" role="presentation" onclick="window.location.href='#pay_with'">
-                            <a class="nav-link link_height" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:80%;">Dev</div></a>
+                            <a class="nav-link link_height" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa-solid fa-coins"></i></div><div style="font-size:80%;">PayPi</div></a>
                           </li>
                           <li class="nav-item item-color" role="presentation" onclick="window.location.href='#pay_with'">
                             <a class="nav-link link_height" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-info"></i></div><div style="font-size:80%;">Team</div></a>
@@ -1949,13 +1949,38 @@
                           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
                                 <div style="margin-bottom:5px; padding-top:5px;" class="border rounded">
-                                    <h5 translate="no"><strong>#LatinChain #Dev &#128187;</strong></h5>
+                                    <h5 translate="no"><strong>#LatinChain #PayPi &#128177;</strong></h5>
                                 </div>
                             
-                                <br/>Other developments:<br/><br/>
+                                <!--<br/>Other developments:<br/><br/>-->
                                 <div class="container" style="text-align: center">
                                     <ul class="list-group">
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12"><button id="rules_button_5" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12" style="text-align: center"><div style="display:inline;">&#128071;</div> <div class="next-pi" style="display:inline; font-size: 18px">NEXT IS TO PAY PI</div></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12"><a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12" style="text-align: center"><div style="display:inline;">&#128071;</div> <div class="next-pi" style="display:inline; font-size: 18px">NEXT ARE TRANSACTIONS</div></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row">
+                                                <div class="col-12"><a href="/get-transactions/" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Transactions</div><div style="font-size:80%;">Transactions list</div></a></div>
+                                            </div>
+                                        </li>
+                                        <!--<li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row">
                                                 <div class="col-12"><a href="https://github.com/pi-apps/LatinChain/tree/main/website_pinetwork_odoo/" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Odoo App</div></a></div>
                                             </div>
@@ -1979,7 +2004,7 @@
                                             <div class="row">
                                                 <div class="col-12"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="col-8 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain dSocial</div></a></div>
                                             </div>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </div>
                             </div>
