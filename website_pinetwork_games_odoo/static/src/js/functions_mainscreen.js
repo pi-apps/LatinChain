@@ -1204,6 +1204,10 @@ $( document ).ready(function() {
         $.colorbox({href:"https://sports.latin-chain.com/?v=1.103", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".youtube-trends" ).click(function() {
+        $.colorbox({href:"https://trends.latin-chain.com/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".mahjong" ).click(function() {
         $.colorbox({href:"/mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
