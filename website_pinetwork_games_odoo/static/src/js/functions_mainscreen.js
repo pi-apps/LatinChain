@@ -225,6 +225,7 @@ function get_user() {
                 $(".show-bubble-shooter").show();
                 $(".show-test-your-brain").show();
                 $(".show-15-puzzle").show();
+                $(".show-pingpong").show();
                 $(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
