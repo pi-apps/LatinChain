@@ -92,6 +92,7 @@ https://www.youtube.com/watch?v=9KqcyAoCZzo
         'views/website_pinetwork_templates_15_puzzle.xml',
         'views/website_pinetwork_templates_pingpong.xml',
         'views/website_pinetwork_templates_checkers.xml',
+        'views/website_pinetwork_templates_domino.xml',
         'views/website_pinetwork_templates_mainpage.xml',
         'views/website_debranding_templates.xml',
         'views/website_pinetwork_templates_modal.xml',

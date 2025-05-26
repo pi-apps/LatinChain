@@ -227,6 +227,7 @@ function get_user() {
                 $(".show-15-puzzle").show();
                 $(".show-pingpong").show();
                 $(".show-checkers").show();
+                $(".show-domino").show();
                 $(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
@@ -1234,6 +1235,10 @@ $( document ).ready(function() {
         $.colorbox({href:"/checkers", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".domino" ).click(function() {
+        $.colorbox({href:"/domino", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".show_status" ).click(function() {
         $.colorbox({href:"/latinchain_x", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
@@ -1276,6 +1281,10 @@ $( document ).ready(function() {
     
     $( ".checkersinfo" ).click(function() {
         $.colorbox({href:"https://en.m.wikipedia.org/wiki/Checkers", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".dominoinfo" ).click(function() {
+        $.colorbox({href:"https://en.wikipedia.org/wiki/Dominoes", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".cointelegraph" ).click(function() {
