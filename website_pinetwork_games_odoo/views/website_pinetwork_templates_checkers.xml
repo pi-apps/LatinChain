@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="checkers" name="Checkers">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+
+                <head>
+                    <meta charset="UTF-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                    <title>Checkers Game</title>
+                    <script src="https://cdn.tailwindcss.com"></script>
+                    <style>
+                        body {
+                            font-family: 'Inter', sans-serif;
+                            touch-action: manipulation; /* Disable double-tap zoom on mobile */
+                        }
+                        .board {
+                            display: grid;
+                            grid-template-columns: repeat(8, minmax(0, 1fr));
+                            grid-template-rows: repeat(8, minmax(0, 1fr));
+                            width: 90vw;
+                            height: 90vw;
+                            max-width: 480px;
+                            max-height: 480px;
+                            border: 2px solid #374151; /* gray-700 */
+                            border-radius: 0.5rem; /* rounded-lg */
+                            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+                            aspect-ratio: 1 / 1;
+                            margin: auto;
+                        }
+                        .square {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            height: 100%;
+                            font-size: clamp(1.5rem, 5vw, 2.5rem);
+                            user-select: none;
+                        }
+                        .light {
+                            background-color: #f3f4f6; /* gray-100 */
+                        }
+                        .dark {
+                            background-color: #6b7280; /* gray-500 */
+                        }
+                        .piece {
+                            width: 70%;
+                            height: 70%;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                            box-shadow: inset 0 0 5px rgba(0,0,0,0.3), 0 2px 3px rgba(0,0,0,0.3);
+                        }
+                        .red {
+                            background-color: #ef4444; /* red-500 */
+                            color: white;
+                        }
+                        .black {
+                            background-color: #1f2937; /* gray-800 */
+                            color: white;
+                        }
+                        .king::after {
+                            content: '👑';
+                            font-size: clamp(0.8rem, 3vw, 1.5rem);
+                            position: absolute;
+                        }
+                        .selected {
+                            outline: 3px solid #3b82f6; /* blue-500 */
+                            outline-offset: 2px;
+                        }
+                        .possible-move {
+                            background-color: rgba(167, 243, 208, 0.7); /* emerald-200 with transparency */
+                            border-radius: 0.25rem;
+                        }
+                        .possible-capture {
+                            background-color: rgba(252, 165, 165, 0.7); /* red-300 with transparency */
+                            border-radius: 0.25rem;
+                        }
+
+                        .modal {
+                            display: none; /* Hidden by default */
+                            position: fixed;
+                            z-index: 1000;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            overflow: auto;
+                            background-color: rgba(0,0,0,0.6);
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        .modal-content {
+                            background-color: #fefefe;
+                            padding: 20px;
+                            border: 1px solid #888;
+                            width: 80%;
+                            max-width: 400px;
+                            border-radius: 0.5rem;
+                            text-align: center;
+                        }
+                        .modal-button {
+                            padding: 10px 20px;
+                            margin: 10px;
+                            border-radius: 0.375rem;
+                            cursor: pointer;
+                            font-weight: bold;
+                        }
+                    </style>
+                </head>
+                <body class="bg-gray-200 flex flex-col items-center justify-center min-h-screen p-4">
+
+                    <div id="side-selection-modal" class="modal" style="display: flex;">
+                        <div class="modal-content bg-white p-8 rounded-lg shadow-xl text-center">
+                            <h2 class="text-2xl font-bold mb-6">Choose Your Side</h2>
+                            <button id="play-red" class="modal-button bg-red-500 hover:bg-red-700 text-white text-lg">Play as Red</button>
+                            <button id="play-black" class="modal-button bg-gray-800 hover:bg-gray-900 text-white text-lg">Play as Black</button>
+                        </div>
+                    </div>
+
+                    <div id="game-container" class="w-full max-w-md mx-auto" style="display: none;">
+                        <h1 class="text-3xl font-bold text-center text-gray-700 mb-4">Checkers Game</h1>
+
+                        <div id="turn-indicator" class="text-xl font-semibold text-center mb-3 p-2 rounded-md bg-white shadow">
+                            Turn: <span id="current-player-text">Red</span>
+                        </div>
+
+                        <div id="message-area" class="text-center text-red-600 font-medium mb-3 h-6"></div>
+
+                        <div class="board">
+                            </div>
+
+                        <div class="mt-6 text-center">
+                            <button id="restart-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg shadow transition duration-150 ease-in-out">
+                                Restart Game
+                            </button>
+                        </div>
+
+                        <div class="mt-4 text-center text-sm text-gray-600">
+                            <p>Red: <span id="red-score">12</span> | Black: <span id="black-score">12</span></p>
+                        </div>
+                    </div>
+
+                    <div id="win-modal" class="modal">
+                        <div class="modal-content bg-white p-6 rounded-lg shadow-xl">
+                            <h2 id="modal-title" class="text-2xl font-bold mb-4"></h2>
+                            <p id="modal-message" class="text-lg mb-6"></p>
+                            <button id="modal-close-button" class="modal-button bg-blue-500 hover:bg-blue-600 text-white">Play Again</button>
+                        </div>
+                    </div>
+
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/checkers_functions.js?v=1.101"></script>
+                </body>
+
+                </html>
+                </t>
+		</template>
+
+</odoo>

@@ -226,6 +226,7 @@ function get_user() {
                 $(".show-test-your-brain").show();
                 $(".show-15-puzzle").show();
                 $(".show-pingpong").show();
+                $(".show-checkers").show();
                 $(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
@@ -1229,6 +1230,10 @@ $( document ).ready(function() {
         $.colorbox({href:"/pingpong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".checkers" ).click(function() {
+        $.colorbox({href:"/checkers", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".show_status" ).click(function() {
         $.colorbox({href:"/latinchain_x", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
@@ -1267,6 +1272,10 @@ $( document ).ready(function() {
     
     $( ".pingponginfo" ).click(function() {
         $.colorbox({href:"https://en.m.wikipedia.org/wiki/Table_tennis", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".checkersinfo" ).click(function() {
+        $.colorbox({href:"https://en.m.wikipedia.org/wiki/Checkers", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".cointelegraph" ).click(function() {
