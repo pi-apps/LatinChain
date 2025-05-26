@@ -202,7 +202,6 @@
                             min-height: 44px; padding: 10px 12px; border-radius: 6px;
                             background-color: #fffbeb; border: 1px solid #fef3c7; 
                             color: #b45309; font-size: 0.95em; line-height: 1.4;
-                            /* margin-top: 16px; This will be handled by its new container */
                         }
                         .game-controls { margin-top: 16px; } 
 
@@ -264,9 +263,12 @@
                             .pip { width: 2.5px; height: 2.5px; } 
                             .domino-separator-line { width: 1px; margin: 0;}
                             #game-board { min-height: 60px; } 
-                            #player-hand { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 8px;} /* Keep as nowrap for small screens if preferred, or remove nowrap for 4+3 */
-                            /* If #player-hand should also wrap on smallest screens: */
-                            /* #player-hand { flex-wrap: wrap; justify-content: center; } */
+                            #player-hand { 
+                                flex-wrap: wrap; /* Ensure wrapping for 4+3 layout */
+                                justify-content: center; /* Center the rows of tiles */
+                                padding-bottom: 8px;
+                                /* overflow-x: auto; Removed as wrapping is now primary */
+                            }
                             .player-hand .domino-tile { flex-shrink: 0; } 
                             h1 { font-size: 1.25rem; } 
                             h2 { font-size: 1rem; } 
@@ -312,7 +314,7 @@
                         </div>
                     </div>
 
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/domino_functions.js?v=1.103"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/domino_functions.js?v=1.104"></script>
                 </body>
 
                 </html>

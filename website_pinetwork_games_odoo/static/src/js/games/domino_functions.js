@@ -125,11 +125,10 @@ function renderPlayerHand() {
             }
             playerHandDiv.appendChild(tileDiv);
 
-            // Add a break after the 4th tile if there are more tiles to show
             if (index === 3 && humanPlayer.hand.length > 4) {
                 const breakDiv = document.createElement('div');
-                breakDiv.style.flexBasis = '100%'; // Force next items to new line
-                breakDiv.style.height = '0'; // No visual height
+                breakDiv.style.flexBasis = '100%'; 
+                breakDiv.style.height = '0'; 
                 playerHandDiv.appendChild(breakDiv);
             }
         });
