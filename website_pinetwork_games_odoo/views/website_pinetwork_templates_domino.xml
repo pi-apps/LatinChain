@@ -9,7 +9,7 @@
                 <head>
                     <meta charset="UTF-8"/>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                    <title>Domino Game - Professional with Pips</title>
+                    <title>Domino Game</title>
                     <script src="https://cdn.tailwindcss.com"></script>
                     <link type="text/css" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700" rel="stylesheet" />
                     <link type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700" rel="stylesheet" />
@@ -264,7 +264,9 @@
                             .pip { width: 2.5px; height: 2.5px; } 
                             .domino-separator-line { width: 1px; margin: 0;}
                             #game-board { min-height: 60px; } 
-                            #player-hand { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 8px;}
+                            #player-hand { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 8px;} /* Keep as nowrap for small screens if preferred, or remove nowrap for 4+3 */
+                            /* If #player-hand should also wrap on smallest screens: */
+                            /* #player-hand { flex-wrap: wrap; justify-content: center; } */
                             .player-hand .domino-tile { flex-shrink: 0; } 
                             h1 { font-size: 1.25rem; } 
                             h2 { font-size: 1rem; } 
@@ -304,13 +306,13 @@
                             </div>
                         </div>
                             
-                        <div class="game-controls flex items-center justify-center space-x-4 mt-4">
+                        <div class="game-controls flex items-center justify-center space-x-4 mt-4"> 
                             <button id="pass-button" class="btn btn-secondary">Pass</button>
                             <button id="start-game-btn" class="btn btn-primary">Start New Game</button>
                         </div>
                     </div>
 
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/domino_functions.js?v=1.102"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/domino_functions.js?v=1.103"></script>
                 </body>
 
                 </html>
