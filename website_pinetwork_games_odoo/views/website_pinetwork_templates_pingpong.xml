@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="pingpong" name="Bubble Shooter">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+
+                <head>
+                    <meta charset="UTF-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+                    <title>Ping Pong: Player vs AI</title>
+                    <style>
+                        
+                        body {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100vh;
+                            margin: 0;
+                            background-color: #1a1a2e; 
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            color: #e0e0e0; 
+                            overflow: hidden;
+                            touch-action: none;
+                        }
+                        #gameContainer {
+                            border: 3px solid #f0f0f0; 
+                            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 220, 255, 0.7) inset; 
+                            border-radius: 10px;
+                            background-color: #0f0f1a; 
+                            position: relative;
+                        }
+                        canvas {
+                            display: block;
+                            border-radius: 8px;
+                        }
+                        #scoreBoard {
+                            font-size: clamp(1.3em, 4.5vw, 2.2em);
+                            margin-bottom: 15px;
+                            color: #00ddff; 
+                            text-shadow: 0 0 8px #00ddff, 0 0 12px #00ddff;
+                        }
+                        .controls-info {
+                            margin-top: 15px;
+                            font-size: clamp(0.75em, 2.8vw, 0.95em);
+                            color: #bbbbbb;
+                            text-align: center;
+                        }
+                        .controls-info p {
+                            margin: 5px 0;
+                        }
+                        button, .selection-button {
+                            background: linear-gradient(145deg, #00ddff, #00aacc);
+                            color: #1a1a2e;
+                            border: none;
+                            padding: 12px 25px;
+                            font-size: clamp(0.9em, 3.2vw, 1.1em);
+                            font-weight: bold;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            margin-top: 10px;
+                            margin-left: 5px;
+                            margin-right: 5px;
+                            transition: all 0.3s ease;
+                            box-shadow: 0 4px 10px rgba(0, 220, 255, 0.3);
+                        }
+                        button:hover, .selection-button:hover {
+                            background: linear-gradient(145deg, #00efff, #00bbdd);
+                            box-shadow: 0 6px 15px rgba(0, 220, 255, 0.5);
+                            transform: translateY(-2px);
+                        }
+                        #messageBox {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            background-color: rgba(15, 15, 26, 0.92);
+                            color: #00ddff;
+                            padding: 25px 35px;
+                            border-radius: 12px;
+                            font-size: clamp(1.1em, 4.2vw, 1.6em);
+                            text-align: center;
+                            z-index: 10;
+                            border: 2px solid #00ddff;
+                            box-shadow: 0 0 15px #00ddff;
+                            width: 85%;
+                            max-width: 450px;
+                        }
+                        .selection-button-container {
+                            margin-top: 15px;
+                            display: flex;
+                            justify-content: center;
+                            gap: 10px; 
+                        }
+                    </style>
+                </head>
+                <body translate="no">
+                    <div id="scoreBoard">
+                        PLAYER: <span id="player1Score">0</span> | AI: <span id="player2Score">0</span>
+                    </div>
+                    <div id="gameContainer">
+                        <canvas id="pingPongCanvas"></canvas>
+                        <div id="messageBox" style="display: none;">
+                            <div id="messageText"></div>
+                            <div id="playerSelectionContainer" class="selection-button-container">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls-info" id="controlsInfoDisplay">
+                        <p>Select your player to start.</p>
+                    </div>
+                    <button id="resetButton">Reset Game</button>
+
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/pingpong_functions.js?v=1.101"></script>
+                </body>
+
+                </html>
+                </t>
+		</template>
+
+</odoo>

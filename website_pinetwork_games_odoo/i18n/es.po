@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-23 18:15+0000\n"
-"PO-Revision-Date: 2025-05-23 18:15+0000\n"
+"POT-Creation-Date: 2025-05-26 02:19+0000\n"
+"PO-Revision-Date: 2025-05-26 02:19+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1998,6 +1998,15 @@ msgid "Operations"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
+msgid ""
+"PLAYER: <span id=\"player1Score\">0</span> | AI: <span "
+"id=\"player2Score\">0</span>"
+msgstr ""
+"JUGADOR: <span id=\"player1Score\">0</span> | IA: <span "
+"id=\"player2Score\">0</span>"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid ""
 "Partners list. To be on this list, contact to this email: "
@@ -2219,6 +2228,11 @@ msgid "Repository"
 msgstr "Repositorio"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
+msgid "Reset Game"
+msgstr "Reiniciar Juego"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 msgid "Restart"
 msgstr "Reiniciar"
@@ -2304,6 +2318,11 @@ msgid ""
 "Score :\n"
 "                            <span>0</span>"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
+msgid "Select your player to start."
+msgstr "Selecciona tu jugador para empezar."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
@@ -2974,6 +2993,11 @@ msgstr "para verlo funcionando.<br/>"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "top videos"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "trends"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
