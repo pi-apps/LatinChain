@@ -9,10 +9,13 @@ const controlsInfoDisplay = document.getElementById('controlsInfoDisplay');
 let player1ScoreDisplay = document.getElementById('player1Score'); 
 let player2ScoreDisplay = document.getElementById('player2Score'); 
 
+const player1ExternalControl = document.getElementById('player1ExternalControl');
+const player2ExternalControl = document.getElementById('player2ExternalControl');
+
 let paddleWidth, paddleHeight, ballRadius, basePaddleSpeed, ballSpeedX, ballSpeedY;
 const winningScore = 5;
 
-let ball, paddle1, paddle2;
+let ball, paddle1, paddle2; // Declared here, initialized in setGameDimensions
 let player1Score = 0;
 let player2Score = 0;
 let gameRunning = false;
@@ -22,19 +25,31 @@ let humanPlayer = null;
 let aiControlledPlayer = null;
 const aiReactionFactor = 0.1; 
 
-function setGameDimensions() {
-    const aspectRatio = 16 / 9;
-    let newCanvasWidth = window.innerWidth * 0.9;
-    let newCanvasHeight = window.innerHeight * 0.55;
+let p1Dragging = false;
+let p2Dragging = false;
 
-    if (newCanvasWidth / newCanvasHeight > aspectRatio) {
-        newCanvasWidth = newCanvasHeight * aspectRatio;
-    } else {
+
+function setGameDimensions() {
+    const aspectRatio = 16 / 9; // Common aspect ratio for games
+    
+    const uiElementsHeight = 120; 
+    let availableHeightForGame = window.innerHeight - uiElementsHeight;
+    availableHeightForGame = Math.max(200, availableHeightForGame); 
+
+    let newCanvasHeight = Math.min(availableHeightForGame, 450); 
+
+    const externalControlTotalWidth = (35 * 2) + (8 * 2); 
+    let availableWidthForGame = window.innerWidth * 0.95 - externalControlTotalWidth; 
+    availableWidthForGame = Math.max(250, availableWidthForGame); 
+
+    let newCanvasWidth = newCanvasHeight * aspectRatio;
+
+    if (newCanvasWidth > availableWidthForGame) {
+        newCanvasWidth = availableWidthForGame;
         newCanvasHeight = newCanvasWidth / aspectRatio;
     }
-    
-    newCanvasWidth = Math.min(newCanvasWidth, 800);
-    newCanvasHeight = Math.min(newCanvasHeight, 450);
+    newCanvasHeight = Math.min(newCanvasHeight, availableHeightForGame);
+
 
     canvas.width = newCanvasWidth;
     canvas.height = newCanvasHeight;
@@ -42,26 +57,21 @@ function setGameDimensions() {
     gameContainer.style.width = canvas.width + 'px';
     gameContainer.style.height = canvas.height + 'px';
 
-    paddleWidth = canvas.width / 75;
-    paddleHeight = canvas.height / 5.5;
-    ballRadius = Math.min(canvas.width / 95, canvas.height / 58);
-    basePaddleSpeed = canvas.height / 70;
+    player1ExternalControl.style.height = canvas.height + 'px';
+    player2ExternalControl.style.height = canvas.height + 'px';
 
-    const baseBallSpeed = canvas.width / 170;
+    paddleWidth = canvas.width / 70; 
+    paddleHeight = canvas.height / 5; 
+    ballRadius = Math.min(canvas.width / 90, canvas.height / 55); 
+    basePaddleSpeed = canvas.height / 65; 
+
+    const baseBallSpeed = canvas.width / 160; 
     ballSpeedX = baseBallSpeed * (Math.random() > 0.5 ? 1 : -1);
     ballSpeedY = baseBallSpeed * (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 0.5 + 0.5);
 
-    ball = {
-        x: canvas.width / 2,
-        y: canvas.height / 2,
-        radius: ballRadius,
-        dx: ballSpeedX,
-        dy: ballSpeedY,
-        speedMultiplier: 1.035
-    };
-
+    // Initialize paddles here, as they are now guaranteed to be used after this function
     paddle1 = {
-        x: paddleWidth * 1.8,
+        x: paddleWidth * 1.5, 
         y: canvas.height / 2 - paddleHeight / 2,
         width: paddleWidth,
         height: paddleHeight,
@@ -70,12 +80,21 @@ function setGameDimensions() {
     };
 
     paddle2 = {
-        x: canvas.width - paddleWidth * 2.8,
+        x: canvas.width - paddleWidth * 2.5, 
         y: canvas.height / 2 - paddleHeight / 2,
         width: paddleWidth,
         height: paddleHeight,
         dy: 0,
         speed: basePaddleSpeed
+    };
+    
+    ball = { // Ball initialization moved after paddles, though not strictly necessary for this bug
+        x: canvas.width / 2,
+        y: canvas.height / 2,
+        radius: ballRadius,
+        dx: ballSpeedX,
+        dy: ballSpeedY,
+        speedMultiplier: 1.035
     };
     updateScoreDisplay();
 }
@@ -114,14 +133,25 @@ function drawAll() {
     drawNet();
     const humanColor = '#33ff99'; 
     const aiColor = '#ff6666';   
+    const defaultP1Color = '#00ddff'; 
+    const defaultP2Color = '#ff00ff'; 
 
-    drawRect(paddle1.x, paddle1.y, paddle1.width, paddle1.height, humanPlayer === 1 ? humanColor : (aiControlledPlayer === 1 ? aiColor : '#00ddff'));
-    drawRect(paddle2.x, paddle2.y, paddle2.width, paddle2.height, humanPlayer === 2 ? humanColor : (aiControlledPlayer === 2 ? aiColor : '#ff00ff'));
-    
-    drawCircle(ball.x, ball.y, ball.radius, '#ffff66');
+    // Ensure paddles are defined before trying to draw them
+    if (paddle1) {
+        drawRect(paddle1.x, paddle1.y, paddle1.width, paddle1.height, 
+                 humanPlayer === 1 ? humanColor : (aiControlledPlayer === 1 ? aiColor : defaultP1Color));
+    }
+    if (paddle2) {
+        drawRect(paddle2.x, paddle2.y, paddle2.width, paddle2.height, 
+                 humanPlayer === 2 ? humanColor : (aiControlledPlayer === 2 ? aiColor : defaultP2Color));
+    }
+    if (ball) { // Ensure ball is defined
+         drawCircle(ball.x, ball.y, ball.radius, '#ffff66');
+    }
 }
 
 function updateAIPaddle(aiPaddleObject, ballObject) {
+    if (!aiPaddleObject || !ballObject) return; // Guard against undefined objects
     const targetCenterY = ballObject.y;
     const currentCenterY = aiPaddleObject.y + aiPaddleObject.height / 2;
     const diff = targetCenterY - currentCenterY;
@@ -136,12 +166,17 @@ function updateAIPaddle(aiPaddleObject, ballObject) {
 }
 
 function updatePaddle(paddle) {
-    paddle.y += paddle.dy;
+    if (!paddle) return; // Guard against undefined paddle
+    if (paddle.dy !== 0 && ((paddle === paddle1 && !p1Dragging) || (paddle === paddle2 && !p2Dragging))) {
+         paddle.y += paddle.dy;
+    }
     if (paddle.y < 0) paddle.y = 0;
     if (paddle.y + paddle.height > canvas.height) paddle.y = canvas.height - paddle.height;
 }
 
 function updateBall() {
+    if (!ball || !paddle1 || !paddle2) return; // Guard against undefined objects
+
     ball.x += ball.dx;
     ball.y += ball.dy;
 
@@ -193,6 +228,7 @@ function updateBall() {
 }
 
 function resetBall(direction = 0) {
+    if (!ball) return; // Guard
     ball.x = canvas.width / 2;
     ball.y = canvas.height / 2;
     const baseBallSpeed = canvas.width / 170;
@@ -227,18 +263,18 @@ function showCustomMessage(text, showButtons = false, duration = 3000) {
 
 function updateControlsInfo() {
     if (!humanPlayer) {
-        controlsInfoDisplay.innerHTML = "<p>Select your player to start.</p>"; // Translated
+        controlsInfoDisplay.innerHTML = "<p>Select your player to start.</p>";
         return;
     }
-    let info = "<p><b>You control: </b>"; // Translated
+    let info = "<p><b>You control: </b>";
     if (humanPlayer === 1) {
-        info += "Player 1 (LEFT)</p>"; // Translated
-        info += "<p><b>Desktop:</b> Keys 'W' (up) and 'S' (down)</p>"; // Translated
-        info += "<p><b>Mobile:</b> Tap and drag the left side</p>"; // Translated
+        info += "Player 1 (LEFT PADDLE)</p>";
+        info += "<p><b>External Control:</b> Drag the left bar up/down.</p>";
+        info += "<p><b>Keyboard:</b> 'W' (up) / 'S' (down)</p>";
     } else { 
-        info += "Player 2 (RIGHT)</p>"; // Translated
-        info += "<p><b>Desktop:</b> Arrow Up and Arrow Down keys</p>"; // Translated
-        info += "<p><b>Mobile:</b> Tap and drag the right side</p>"; // Translated
+        info += "Player 2 (RIGHT PADDLE)</p>";
+        info += "<p><b>External Control:</b> Drag the right bar up/down.</p>";
+        info += "<p><b>Keyboard:</b> Arrow Up / Arrow Down</p>";
     }
     controlsInfoDisplay.innerHTML = info;
 }
@@ -249,15 +285,15 @@ function checkWin() {
 
     let winnerMessage = "";
     if (player1Score >= winningScore) {
-         if(humanPlayer === 1) winnerMessage = "You Win (P1)!"; // Translated
-         else if (aiControlledPlayer === 1) winnerMessage = "AI (P1) Wins!"; // Translated
+         if(humanPlayer === 1) winnerMessage = "You Win (P1)!";
+         else if (aiControlledPlayer === 1) winnerMessage = "AI (P1) Wins!";
     } else if (player2Score >= winningScore) {
-         if(humanPlayer === 2) winnerMessage = "You Win (P2)!"; // Translated
-         else if (aiControlledPlayer === 2) winnerMessage = "AI (P2) Wins!"; // Translated
+         if(humanPlayer === 2) winnerMessage = "You Win (P2)!";
+         else if (aiControlledPlayer === 2) winnerMessage = "AI (P2) Wins!";
     }
 
     if (winnerMessage) {
-        showCustomMessage(winnerMessage + "<br>Click Reset to play again.", false, 0); // Translated
+        showCustomMessage(winnerMessage + "<br>Click Reset to play again.", false, 0);
         gameRunning = false;
     }
 }
@@ -266,11 +302,14 @@ function selectPlayer(playerChoice) {
     humanPlayer = playerChoice;
     aiControlledPlayer = (playerChoice === 1) ? 2 : 1;
     
+    player1ExternalControl.classList.toggle('active', humanPlayer === 1);
+    player2ExternalControl.classList.toggle('active', humanPlayer === 2);
+
     const scoreBoardElement = document.querySelector('#scoreBoard');
     if (humanPlayer === 1) {
-        scoreBoardElement.innerHTML = `PLAYER: <span id="player1Score">0</span> | AI: <span id="player2Score">0</span>`; // Translated
+        scoreBoardElement.innerHTML = `PLAYER: <span id="player1Score">0</span> | AI: <span id="player2Score">0</span>`;
     } else {
-        scoreBoardElement.innerHTML = `AI: <span id="player1Score">0</span> | PLAYER: <span id="player2Score">0</span>`; // Translated
+        scoreBoardElement.innerHTML = `AI: <span id="player1Score">0</span> | PLAYER: <span id="player2Score">0</span>`;
     }
     player1ScoreDisplay = document.getElementById('player1Score'); 
     player2ScoreDisplay = document.getElementById('player2Score');
@@ -303,9 +342,11 @@ function showPlayerSelection() {
     humanPlayer = null;
     aiControlledPlayer = null;
     
+    player1ExternalControl.classList.remove('active');
+    player2ExternalControl.classList.remove('active');
+
     const scoreBoardElement = document.querySelector('#scoreBoard');
-    // Default to PLAYER | AI before selection for clarity
-    scoreBoardElement.innerHTML = `PLAYER: <span id="player1Score">0</span> | AI: <span id="player2Score">0</span>`; // Translated
+    scoreBoardElement.innerHTML = `PLAYER: <span id="player1Score">0</span> | AI: <span id="player2Score">0</span>`;
     player1ScoreDisplay = document.getElementById('player1Score');
     player2ScoreDisplay = document.getElementById('player2Score');
     player1Score = 0; player2Score = 0; 
@@ -314,18 +355,18 @@ function showPlayerSelection() {
     playerSelectionContainer.innerHTML = ''; 
     
     const btnP1 = document.createElement('button');
-    btnP1.textContent = 'Be Player 1'; // Translated
+    btnP1.textContent = 'Be Player 1';
     btnP1.className = 'selection-button';
     btnP1.onclick = () => selectPlayer(1);
     playerSelectionContainer.appendChild(btnP1);
 
     const btnP2 = document.createElement('button');
-    btnP2.textContent = 'Be Player 2'; // Translated
+    btnP2.textContent = 'Be Player 2';
     btnP2.className = 'selection-button';
     btnP2.onclick = () => selectPlayer(2);
     playerSelectionContainer.appendChild(btnP2);
     
-    showCustomMessage("Choose your destiny:", true, 0); // Translated
+    showCustomMessage("Choose your destiny:", true, 0);
     updateControlsInfo();
     if (canvas.width > 0 && canvas.height > 0) { 
          drawAll(); 
@@ -340,13 +381,20 @@ function fullResetGame() {
 }
 
 const keysPressed = {};
-window.addEventListener('keydown', (e) => { keysPressed[e.key.toLowerCase()] = true; });
-window.addEventListener('keyup', (e) => { keysPressed[e.key.toLowerCase()] = false; });
+window.addEventListener('keydown', (e) => { 
+    if (!gameRunning || !humanPlayer) return;
+    keysPressed[e.key.toLowerCase()] = true; 
+});
+window.addEventListener('keyup', (e) => { 
+    if (!gameRunning || !humanPlayer) return;
+    keysPressed[e.key.toLowerCase()] = false; 
+});
+
 
 function handleKeyboardInput() {
     if (!humanPlayer || !gameRunning) return;
 
-    if (humanPlayer === 1) {
+    if (humanPlayer === 1) { 
         if (keysPressed['w']) paddle1.dy = -paddle1.speed;
         else if (keysPressed['s']) paddle1.dy = paddle1.speed;
         else paddle1.dy = 0;
@@ -357,29 +405,79 @@ function handleKeyboardInput() {
     }
 }
 
-function handleTouch(event) {
-    if (!humanPlayer || !gameRunning) return;
-    event.preventDefault();
-    
-    for (let i = 0; i < event.touches.length; i++) {
-        const touch = event.touches[i];
-        const rect = canvas.getBoundingClientRect();
-        const touchX = touch.clientX - rect.left;
-        const touchY = touch.clientY - rect.top;
-        const targetPaddleY = touchY - paddleHeight / 2;
-
-        if (humanPlayer === 1 && touchX < canvas.width / 2) {
-            paddle1.y = targetPaddleY;
-            paddle1.dy = 0;
-        } else if (humanPlayer === 2 && touchX >= canvas.width / 2) {
-            paddle2.y = targetPaddleY;
-            paddle2.dy = 0;
-        }
+function movePaddleWithExternalControl(event, paddle, controlElement) {
+    if (!paddle || !controlElement) return; // Guard against undefined elements
+    const rect = controlElement.getBoundingClientRect();
+    let clientY = event.clientY;
+    if (event.touches) { 
+        clientY = event.touches[0].clientY;
     }
+
+    let posYInControl = clientY - rect.top;
+    let targetPaddleCenterY = (posYInControl / controlElement.clientHeight) * canvas.height;
+    paddle.y = targetPaddleCenterY - paddle.height / 2;
+
+    if (paddle.y < 0) paddle.y = 0;
+    if (paddle.y + paddle.height > canvas.height) paddle.y = canvas.height - paddle.height;
+    
+    paddle.dy = 0; 
 }
 
-canvas.addEventListener('touchstart', handleTouch, { passive: false });
-canvas.addEventListener('touchmove', handleTouch, { passive: false });
+function addDragListeners(controlElement, paddleRefName, isPlayer1) {
+    // paddleRefName is a string 'paddle1' or 'paddle2'
+    // We get the actual paddle object dynamically inside the event listener
+    // This ensures we always use the latest paddle object if it's redefined (e.g. on resize)
+    
+    controlElement.addEventListener('mousedown', (e) => {
+        const currentPaddle = isPlayer1 ? paddle1 : paddle2;
+        if (!gameRunning || !currentPaddle || humanPlayer !== (isPlayer1 ? 1 : 2)) return;
+        if (isPlayer1) p1Dragging = true; else p2Dragging = true;
+        movePaddleWithExternalControl(e, currentPaddle, controlElement); 
+        e.preventDefault();
+    });
+    controlElement.addEventListener('touchstart', (e) => {
+        const currentPaddle = isPlayer1 ? paddle1 : paddle2;
+        if (!gameRunning || !currentPaddle || humanPlayer !== (isPlayer1 ? 1 : 2)) return;
+        if (isPlayer1) p1Dragging = true; else p2Dragging = true;
+        movePaddleWithExternalControl(e, currentPaddle, controlElement); 
+        e.preventDefault();
+    }, { passive: false });
+}
+
+// Global mouse/touch move and up/end listeners
+window.addEventListener('mousemove', (e) => {
+    if (!gameRunning) return;
+    if (p1Dragging && humanPlayer === 1 && paddle1) { // Check paddle1 exists
+        movePaddleWithExternalControl(e, paddle1, player1ExternalControl);
+    }
+    if (p2Dragging && humanPlayer === 2 && paddle2) { // Check paddle2 exists
+        movePaddleWithExternalControl(e, paddle2, player2ExternalControl);
+    }
+});
+window.addEventListener('touchmove', (e) => {
+    if (!gameRunning) return;
+    if (p1Dragging && humanPlayer === 1 && paddle1) { // Check paddle1 exists
+        movePaddleWithExternalControl(e, paddle1, player1ExternalControl);
+    }
+    if (p2Dragging && humanPlayer === 2 && paddle2) { // Check paddle2 exists
+        movePaddleWithExternalControl(e, paddle2, player2ExternalControl);
+    }
+    e.preventDefault(); 
+}, { passive: false });
+
+window.addEventListener('mouseup', () => {
+    p1Dragging = false;
+    p2Dragging = false;
+});
+window.addEventListener('touchend', () => {
+    p1Dragging = false;
+    p2Dragging = false;
+});
+window.addEventListener('touchcancel', () => {
+    p1Dragging = false;
+    p2Dragging = false;
+});
+
 
 function gameLoop() {
     if (!gameRunning) {
@@ -387,13 +485,14 @@ function gameLoop() {
         return;
     }
 
-    handleKeyboardInput();
+    if (humanPlayer === 1 && !p1Dragging) handleKeyboardInput();
+    else if (humanPlayer === 2 && !p2Dragging) handleKeyboardInput();
     
     if (aiControlledPlayer === 1) updateAIPaddle(paddle1, ball);
     else if (aiControlledPlayer === 2) updateAIPaddle(paddle2, ball);
     
-    updatePaddle(paddle1);
-    updatePaddle(paddle2);
+    updatePaddle(paddle1); 
+    updatePaddle(paddle2); 
     updateBall(); 
     drawAll();
 
@@ -415,18 +514,21 @@ window.addEventListener('resize', () => {
     }
     
     initialResizeTimeout = setTimeout(() => {
-        setGameDimensions(); 
+        setGameDimensions(); // This re-initializes paddle1 and paddle2
         player1Score = currentP1Score; 
         player2Score = currentP2Score;
         
         if (currentHumanPlayer) {
             humanPlayer = currentHumanPlayer;
             aiControlledPlayer = (humanPlayer === 1) ? 2 : 1;
+            player1ExternalControl.classList.toggle('active', humanPlayer === 1);
+            player2ExternalControl.classList.toggle('active', humanPlayer === 2);
+
             const scoreBoardElement = document.querySelector('#scoreBoard');
             if (humanPlayer === 1) {
-                scoreBoardElement.innerHTML = `PLAYER: <span id="player1Score">${player1Score}</span> | AI: <span id="player2Score">${player2Score}</span>`; // Translated
+                scoreBoardElement.innerHTML = `PLAYER: <span id="player1Score">${player1Score}</span> | AI: <span id="player2Score">${player2Score}</span>`;
             } else {
-                scoreBoardElement.innerHTML = `AI: <span id="player1Score">${player1Score}</span> | PLAYER: <span id="player2Score">${player2Score}</span>`; // Translated
+                scoreBoardElement.innerHTML = `AI: <span id="player1Score">${player1Score}</span> | PLAYER: <span id="player2Score">${player2Score}</span>`;
             }
             player1ScoreDisplay = document.getElementById('player1Score');
             player2ScoreDisplay = document.getElementById('player2Score');
@@ -449,5 +551,11 @@ window.addEventListener('resize', () => {
 
 resetButton.addEventListener('click', fullResetGame);
 
-setGameDimensions(); 
-showPlayerSelection();
+// Initial setup:
+setGameDimensions(); // Initialize game elements, including paddle1 and paddle2
+
+// Add drag listeners AFTER paddle1 and paddle2 are defined by setGameDimensions()
+addDragListeners(player1ExternalControl, 'paddle1', true); // Pass name for dynamic lookup
+addDragListeners(player2ExternalControl, 'paddle2', false); // Pass name for dynamic lookup
+
+showPlayerSelection(); // Show player selection screen

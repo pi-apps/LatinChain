@@ -11,7 +11,6 @@
                     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
                     <title>Ping Pong: Player vs AI</title>
                     <style>
-                        
                         body {
                             display: flex;
                             flex-direction: column;
@@ -23,44 +22,100 @@
                             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                             color: #e0e0e0; 
                             overflow: hidden;
-                            touch-action: none;
                         }
+
+                        #mainGameWrapper {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            width: 100%; /* Ensure wrapper takes full width for centering */
+                        }
+
+                        #mainGameArea {
+                            display: flex;
+                            align-items: center; 
+                            justify-content: center;
+                            margin-bottom: 10px; /* Slightly reduced */
+                            width: 100%; /* Allow flex items to distribute space */
+                        }
+
+                        .external-control {
+                            width: 35px; /* Made thinner */
+                            height: 300px; 
+                            background-color: #2a2a3e;
+                            border: 2px solid #44445e;
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: ns-resize; 
+                            user-select: none; 
+                            touch-action: none; 
+                            opacity: 0.5; 
+                            transition: opacity 0.3s, background-color 0.3s, border-color 0.3s;
+                            flex-shrink: 0; /* Prevent controls from shrinking */
+                        }
+
+                        .external-control.active {
+                            opacity: 1;
+                            background-color: #3a3a4e;
+                            border-color: #00ddff;
+                        }
+                        
+                        .external-control .drag-indicator {
+                            width: 50%; /* Adjusted for thinner control */
+                            height: 8px; /* Slightly thinner indicator */
+                            background-color: #556677;
+                            border-radius: 4px;
+                        }
+                        .external-control.active .drag-indicator {
+                            background-color: #00ddff;
+                        }
+
                         #gameContainer {
                             border: 3px solid #f0f0f0; 
                             box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 220, 255, 0.7) inset; 
                             border-radius: 10px;
                             background-color: #0f0f1a; 
                             position: relative;
+                            margin: 0 8px; /* Slightly reduced margin */
+                            flex-grow: 1; /* Allow canvas container to take available space */
+                            display: flex; /* For centering canvas if it's smaller than container */
+                            justify-content: center;
+                            align-items: center;
                         }
                         canvas {
                             display: block;
                             border-radius: 8px;
+                            max-width: 100%; /* Ensure canvas doesn't overflow its container */
+                            max-height: 100%;
                         }
                         #scoreBoard {
-                            font-size: clamp(1.3em, 4.5vw, 2.2em);
-                            margin-bottom: 15px;
+                            font-size: clamp(1.2em, 4vw, 2em); /* Slightly smaller for more game space */
+                            margin-bottom: 8px; 
                             color: #00ddff; 
                             text-shadow: 0 0 8px #00ddff, 0 0 12px #00ddff;
                         }
                         .controls-info {
-                            margin-top: 15px;
-                            font-size: clamp(0.75em, 2.8vw, 0.95em);
+                            margin-top: 8px; 
+                            font-size: clamp(0.65em, 2.3vw, 0.85em); 
                             color: #bbbbbb;
                             text-align: center;
+                            max-width: 95vw;
                         }
                         .controls-info p {
-                            margin: 5px 0;
+                            margin: 2px 0; 
                         }
                         button, .selection-button {
                             background: linear-gradient(145deg, #00ddff, #00aacc);
                             color: #1a1a2e;
                             border: none;
-                            padding: 12px 25px;
-                            font-size: clamp(0.9em, 3.2vw, 1.1em);
+                            padding: 8px 18px; 
+                            font-size: clamp(0.8em, 2.8vw, 0.95em); 
                             font-weight: bold;
                             border-radius: 8px;
                             cursor: pointer;
-                            margin-top: 10px;
+                            margin-top: 8px;
                             margin-left: 5px;
                             margin-right: 5px;
                             transition: all 0.3s ease;
@@ -78,42 +133,51 @@
                             transform: translate(-50%, -50%);
                             background-color: rgba(15, 15, 26, 0.92);
                             color: #00ddff;
-                            padding: 25px 35px;
+                            padding: 18px 25px; 
                             border-radius: 12px;
-                            font-size: clamp(1.1em, 4.2vw, 1.6em);
+                            font-size: clamp(0.9em, 3.8vw, 1.4em); 
                             text-align: center;
                             z-index: 10;
                             border: 2px solid #00ddff;
                             box-shadow: 0 0 15px #00ddff;
-                            width: 85%;
-                            max-width: 450px;
+                            width: 80%; 
+                            max-width: 380px; 
                         }
                         .selection-button-container {
-                            margin-top: 15px;
+                            margin-top: 12px;
                             display: flex;
                             justify-content: center;
-                            gap: 10px; 
+                            gap: 8px; 
                         }
                     </style>
                 </head>
-                <body translate="no">
-                    <div id="scoreBoard">
-                        PLAYER: <span id="player1Score">0</span> | AI: <span id="player2Score">0</span>
-                    </div>
-                    <div id="gameContainer">
-                        <canvas id="pingPongCanvas"></canvas>
-                        <div id="messageBox" style="display: none;">
-                            <div id="messageText"></div>
-                            <div id="playerSelectionContainer" class="selection-button-container">
+                <body>
+                    <div id="mainGameWrapper">
+                        <div id="scoreBoard">
+                            PLAYER: <span id="player1Score">0</span> | AI: <span id="player2Score">0</span>
+                        </div>
+                        <div id="mainGameArea">
+                            <div id="player1ExternalControl" class="external-control">
+                                <div class="drag-indicator"></div>
+                            </div>
+                            <div id="gameContainer">
+                                <canvas id="pingPongCanvas"></canvas>
+                                <div id="messageBox" style="display: none;">
+                                    <div id="messageText"></div>
+                                    <div id="playerSelectionContainer" class="selection-button-container"></div>
+                                </div>
+                            </div>
+                            <div id="player2ExternalControl" class="external-control">
+                                <div class="drag-indicator"></div>
                             </div>
                         </div>
+                        <div class="controls-info" id="controlsInfoDisplay">
+                            <p>Select your player to start.</p>
+                        </div>
+                        <button id="resetButton">Reset Game</button>
                     </div>
-                    <div class="controls-info" id="controlsInfoDisplay">
-                        <p>Select your player to start.</p>
-                    </div>
-                    <button id="resetButton">Reset Game</button>
 
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/pingpong_functions.js?v=1.101"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/pingpong_functions.js?v=1.102"></script>
                 </body>
 
                 </html>
