@@ -5,11 +5,6 @@ const gameMessagesDiv = document.getElementById('game-messages');
 const startGameBtn = document.getElementById('start-game-btn');
 const passButton = document.getElementById('pass-button');
 
-// playerInfoDivs mapping:
-// players[0] is Human
-// players[1] is AI Player 2 -> maps to player-info-1 (now in top row)
-// players[2] is AI Player 3 -> maps to player-info-2 (now in top row)
-// players[3] is AI Player 4 -> maps to player-info-3 (now in top row)
 const playerInfoDivs = [
     null, 
     document.getElementById('player-info-1'), 
@@ -105,7 +100,8 @@ function renderPlayerHand() {
         const humanPlayer = players[0];
         const isHumanTurn = currentPlayerIndex === 0 && !checkGameOverCondition();
         humanPlayer.hand.sort((a,b) => (a.val1+a.val2) - (b.val1+b.val2)); 
-        humanPlayer.hand.forEach(tile => {
+        
+        humanPlayer.hand.forEach((tile, index) => {
             let isPlayableForThisTile = false;
             if(isHumanTurn) {
                 if (boardChain.length === 0) isPlayableForThisTile = true;
@@ -119,6 +115,7 @@ function renderPlayerHand() {
                 isSelected: selectedTileFromHand === tile, 
                 isPlayable: isPlayableForThisTile 
             });
+
             if (isHumanTurn && isPlayableForThisTile) {
                 tileDiv.addEventListener('click', () => handleTileClick(tile, tileDiv));
             } else if (isHumanTurn && !isPlayableForThisTile) {
@@ -127,6 +124,14 @@ function renderPlayerHand() {
                 tileDiv.classList.remove('playable'); 
             }
             playerHandDiv.appendChild(tileDiv);
+
+            // Add a break after the 4th tile if there are more tiles to show
+            if (index === 3 && humanPlayer.hand.length > 4) {
+                const breakDiv = document.createElement('div');
+                breakDiv.style.flexBasis = '100%'; // Force next items to new line
+                breakDiv.style.height = '0'; // No visual height
+                playerHandDiv.appendChild(breakDiv);
+            }
         });
     }
 }

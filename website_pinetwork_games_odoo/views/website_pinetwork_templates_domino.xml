@@ -9,7 +9,7 @@
                 <head>
                     <meta charset="UTF-8"/>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                    <title>Domino Game</title>
+                    <title>Domino Game - Professional with Pips</title>
                     <script src="https://cdn.tailwindcss.com"></script>
                     <link type="text/css" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700" rel="stylesheet" />
                     <link type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700" rel="stylesheet" />
@@ -63,7 +63,6 @@
                             gap: 10px; /* Gap between AI player info blocks */
                             padding: 8px; /* Padding for the top zone itself */
                         }
-                        /* Removed .player-left and .player-right specific styles */
                         
                         .player-bottom { grid-area: player-bottom; width: 100%; }
                         
@@ -186,16 +185,16 @@
                              border-radius: 8px;
                         }
 
-                        .ai-player-info { /* Styles for individual AI player info blocks */
+                        .ai-player-info { 
                             font-size: 0.875em; 
                             color: #374151;
                             padding: 6px 10px;
                             text-align: center;
-                            border: 1px solid #e5e7eb; /* Lighter border for AI blocks */
-                            background-color: #f9fafb; /* Slightly different bg for AI blocks */
+                            border: 1px solid #e5e7eb; 
+                            background-color: #f9fafb; 
                             border-radius: 6px;
-                            flex-basis: 150px; /* Base width for AI player blocks */
-                            flex-grow: 1; /* Allow them to grow */
+                            flex-basis: 150px; 
+                            flex-grow: 1; 
                         }
                         
                         .current-player-indicator { font-weight: 600; color: #d32f2f; }
@@ -203,7 +202,7 @@
                             min-height: 44px; padding: 10px 12px; border-radius: 6px;
                             background-color: #fffbeb; border: 1px solid #fef3c7; 
                             color: #b45309; font-size: 0.95em; line-height: 1.4;
-                            margin-top: 16px; 
+                            /* margin-top: 16px; This will be handled by its new container */
                         }
                         .game-controls { margin-top: 16px; } 
 
@@ -226,11 +225,10 @@
                                 gap: 8px;
                             }
                             .player-top {
-                                /* Flex wrap is already on .player-top, justify-content can be center for wrapped items */
                                 justify-content: center;
                             }
                             .ai-player-info {
-                                flex-basis: 120px; /* Adjust basis for medium screens */
+                                flex-basis: 120px; 
                             }
 
                             .domino-tile { width: 56px; height: 28px; margin: 2px; padding: 1px;} 
@@ -248,18 +246,18 @@
                                 grid-template-areas: 
                                     "player-top"
                                     "game-board"
-                                    "player-bottom"; /* Removed side players from grid areas here too */
+                                    "player-bottom"; 
                                 grid-template-columns: 1fr; 
                                 grid-template-rows: auto; 
                             }
                             .player-top {
-                                flex-direction: column; /* Stack AI players vertically */
-                                align-items: center; /* Center them when stacked */
+                                flex-direction: column; 
+                                align-items: center; 
                             }
                             .ai-player-info {
-                                width: 80%; /* Make AI player blocks take more width when stacked */
-                                margin-bottom: 5px; /* Add some margin when stacked */
-                                flex-basis: auto; /* Reset flex-basis when stacked */
+                                width: 80%; 
+                                margin-bottom: 5px; 
+                                flex-basis: auto; 
                             }
                             .domino-tile { width: 44px; height: 22px; margin: 1px; padding: 1px;} 
                             .pip-half { width: 19px; padding: 1px;}
@@ -283,7 +281,10 @@
 
                         <div class="game-table-layout">
                             <div class="player-zone player-top">
-                                <div id="player-info-1" class="ai-player-info"></div> <div id="player-info-2" class="ai-player-info"></div> <div id="player-info-3" class="ai-player-info"></div> </div>
+                                <div id="player-info-1" class="ai-player-info"></div> 
+                                <div id="player-info-2" class="ai-player-info"></div> 
+                                <div id="player-info-3" class="ai-player-info"></div> 
+                            </div>
                             
                             <div class="game-board-area">
                                 <h2 class="text-lg sm:text-xl font-semibold mb-2 text-green-700">Game Board</h2>
@@ -294,6 +295,7 @@
                             </div>
 
                             <div class="player-zone player-bottom">
+                                <div id="game-messages" class="game-message text-center mb-3">Press "Start New Game".</div> 
                                 <div id="human-player-area">
                                     <h2 class="text-lg sm:text-xl font-semibold mb-2 text-indigo-700 text-center">Your Hand (Player 1) <span id="human-player-indicator" class="current-player-indicator"></span></h2>
                                     <div id="player-hand" class="flex flex-wrap justify-center min-h-[70px] pb-1">
@@ -302,14 +304,13 @@
                             </div>
                         </div>
                             
-                        <div class="game-controls flex items-center justify-center space-x-4">
+                        <div class="game-controls flex items-center justify-center space-x-4 mt-4"> {/* Added mt-4 to game-controls for spacing */}
                             <button id="pass-button" class="btn btn-secondary">Pass</button>
                             <button id="start-game-btn" class="btn btn-primary">Start New Game</button>
                         </div>
-                        <div id="game-messages" class="game-message text-center">Press "Start New Game".</div>
                     </div>
 
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/domino_functions.js?v=1.101"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/domino_functions.js?v=1.102"></script>
                 </body>
 
                 </html>
