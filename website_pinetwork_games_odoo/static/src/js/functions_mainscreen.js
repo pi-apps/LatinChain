@@ -1225,6 +1225,10 @@ $( document ).ready(function() {
         $.colorbox({href:"/fifteen-puzzle", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".pingpong" ).click(function() {
+        $.colorbox({href:"/pingpong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".show_status" ).click(function() {
         $.colorbox({href:"/latinchain_x", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
@@ -1259,6 +1263,10 @@ $( document ).ready(function() {
     
     $( ".15-puzzleinfo" ).click(function() {
         $.colorbox({href:"https://en.wikipedia.org/wiki/15_puzzle", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".pingponginfo" ).click(function() {
+        $.colorbox({href:"https://en.m.wikipedia.org/wiki/Table_tennis", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".cointelegraph" ).click(function() {
