@@ -141,7 +141,7 @@ function handlePieceClick(event, visualRow, visualCol, pieceElement) {
     if (mustCapture && availableCapturesForPlayer.length > 0) {
         const canThisPieceCapture = getPossibleCaptures(actualRow, actualCol, pieceData.player, pieceData.isKing).length > 0;
         if (!canThisPieceCapture) {
-            showMessage("You must make a mandatory capture with another piece.");
+            showMessage("You must make a mandatory capture.");
             return;
         }
     }
@@ -456,11 +456,11 @@ function checkWinCondition() {
     if (!gameActive) return false;
 
     if (redPieces === 0) {
-        showWinModal(BLACK, "Black wins! All red pieces captured.");
+        showWinModal(BLACK, "Black wins!.");
         return true;
     }
     if (blackPieces === 0) {
-        showWinModal(RED, "Red wins! All black pieces captured.");
+        showWinModal(RED, "Red wins!.");
         return true;
     }
 
