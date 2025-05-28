@@ -1024,7 +1024,7 @@ $( document ).ready(function() {
         $(".loggedin").show();
     }else
     {
-        $(".loggedout").show();
+        //$(".loggedout").show();
     }
     
     $("#logout_latinchain").click(function(){
