@@ -311,6 +311,22 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.domino', {'sandbox': sandbox, 'hide_google_translate': True, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
+    @http.route('/latincrush/', type='http', auth="public", website=True, csrf=False)
+    def latincrush(self, **kw):
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+            mainnet = ""
+            google_adsense = ""
+        else:
+            sandbox = admin_app_list[0].sandbox
+            mainnet = admin_app_list[0].mainnet
+            google_adsense = admin_app_list[0].google_adsense
+        
+        return http.request.render('website_pinetwork_games_odoo.latincrush', {'sandbox': sandbox, 'hide_google_translate': True, 'mainnet': mainnet, 'google_adsense': google_adsense})
+    
     @http.route('/latinchain-mainnet-redirect', type='http', auth="public", website=True, csrf=False)
     def latinchain_mainnet_redirect(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="latincrush" name="Latin Crush">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+            <head>
+                <meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>Latin Crush Game</title>
+                <script src="https://cdn.tailwindcss.com"></script>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700" rel="stylesheet"/>
+                <style>
+                    body {
+                        font-family: 'Inter', sans-serif;
+                        touch-action: none; /* Disable browser handling of touch events like pinch-zoom, scroll */
+                        overscroll-behavior: none; /* Prevents pull-to-refresh or other overscroll actions */
+                    }
+                    canvas {
+                        display: block;
+                        margin: 0 auto;
+                        background-color: #f0f0f0;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                        cursor: pointer; 
+                    }
+                    .game-container {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        min-height: 100vh;
+                        background-color: #e0f2fe; /* Light blue background */
+                        padding: 16px;
+                        overflow: hidden; /* Prevent scrollbars on the container itself */
+                    }
+                    .controls button {
+                        transition: all 0.2s ease-in-out;
+                    }
+                    .controls button:hover {
+                        transform: translateY(-2px);
+                    }
+                    .modal {
+                        display: none; /* Hidden by default */
+                        position: fixed; /* Stay in place */
+                        z-index: 100; /* Sit on top */
+                        left: 0;
+                        top: 0;
+                        width: 100%; /* Full width */
+                        height: 100%; /* Full height */
+                        overflow: auto; /* Enable scroll if needed */
+                        background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .modal-content {
+                        background-color: #fff;
+                        margin: auto;
+                        padding: 24px;
+                        border-radius: 8px;
+                        text-align: center;
+                        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                        width: 90%;
+                        max-width: 400px;
+                    }
+                </style>
+            </head>
+            <body class="bg-sky-100">
+                <div class="game-container">
+                    <h1 class="text-4xl font-bold text-sky-700 mb-6 text-center">Latin Crush</h1>
+                    
+                    <div class="controls bg-white p-4 rounded-lg shadow-md mb-4 flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4">
+                        <div class="text-lg">
+                            <span class="font-semibold text-sky-600">Score:</span>
+                            <span id="score" class="font-bold text-xl text-pink-500">0</span>
+                        </div>
+                        <button id="resetButton" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-pink-400">
+                            Reset Game
+                        </button>
+                    </div>
+
+                    <canvas id="gameCanvas"></canvas>
+
+                    <div id="gameOverModal" class="modal">
+                        <div class="modal-content">
+                            <h2 class="text-2xl font-bold text-sky-700 mb-4">Game Over!</h2>
+                            <p class="text-lg mb-2">Your final score is: <span id="finalScore" class="font-bold text-pink-500">0</span></p>
+                            <p class="text-md mb-4 text-gray-600">No more possible moves.</p>
+                            <button id="restartGameButton" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-6 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-sky-400">
+                                Play Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/latincrush_functions.js?v=1.102"></script>
+            </body>
+            </html>
+                </t>
+		</template>
+
+</odoo>

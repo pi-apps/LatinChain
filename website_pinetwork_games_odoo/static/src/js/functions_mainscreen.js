@@ -228,6 +228,7 @@ function get_user() {
                 $(".show-pingpong").show();
                 $(".show-checkers").show();
                 $(".show-domino").show();
+                $(".show-latincrush").show();
                 $(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
@@ -1239,6 +1240,10 @@ $( document ).ready(function() {
         $.colorbox({href:"/domino", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".latincrush" ).click(function() {
+        $.colorbox({href:"/latincrush", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".show_status" ).click(function() {
         $.colorbox({href:"/latinchain_x", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
@@ -1285,6 +1290,10 @@ $( document ).ready(function() {
     
     $( ".dominoinfo" ).click(function() {
         $.colorbox({href:"https://en.wikipedia.org/wiki/Dominoes", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".latincrushinfo" ).click(function() {
+        $.colorbox({href:"https://en.wikipedia.org/wiki/Candy_Crush_Saga", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".cointelegraph" ).click(function() {
