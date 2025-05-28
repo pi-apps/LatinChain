@@ -10,7 +10,7 @@ const restartGameButton = document.getElementById('restartGameButton');
 // Game configuration
 const GRID_SIZE = 8; // 8x8 grid
 // Updated CANDY_TYPES: Replaced grape with cherry for better compatibility
-const CANDY_TYPES = ['🍎', '🍊', '🍋', '🍒', '🍓', '⭐']; // Emoji for candies 
+const CANDY_TYPES = ['🍎', '🍊', '🍋', '🍒', '🍓', '💎']; // Emoji for candies 
 let cellSize; // Calculated based on canvas size
 let board = []; // Represents the game board
 let score = 0;
