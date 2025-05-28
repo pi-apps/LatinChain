@@ -120,9 +120,9 @@ function getCandyBackgroundColor(type) {
         case '🍎': return 'rgba(255, 200, 200, 0.7)'; 
         case '🍊': return 'rgba(255, 224, 180, 0.7)'; 
         case '🍋': return 'rgba(255, 250, 200, 0.7)'; 
-        case '🍒': return 'rgba(255, 180, 180, 0.7)'; // Color for Cherry
+        case '🍒': return 'rgba(255, 180, 180, 0.7)';
         case '🍓': return 'rgba(255, 200, 220, 0.7)'; 
-        case '⭐': return 'rgba(255, 255, 180, 0.7)'; // Light yellow for star
+        case '💎': return 'rgba(200, 240, 255, 0.7)';
         default: return 'rgba(230, 230, 230, 0.7)'; 
     }
 }
