@@ -299,18 +299,17 @@
                             </div>
 
                             <div class="player-zone player-bottom">
-                                <div id="game-messages" class="game-message text-center mb-3">Press "Start New Game".</div> 
+                                <div id="game-messages" class="game-message text-center mb-3">Press "Start New Game".</div>
+                                <div class="game-controls flex items-center justify-center text-center mb-3"> 
+                                    <button id="pass-button" class="btn btn-secondary">Pass</button>
+                                    <button id="start-game-btn" class="btn btn-primary">Start New Game</button>
+                                </div> 
                                 <div id="human-player-area">
                                     <h2 class="text-lg sm:text-xl font-semibold mb-2 text-indigo-700 text-center">Your Hand (Player 1) <span id="human-player-indicator" class="current-player-indicator"></span></h2>
                                     <div id="player-hand" class="flex flex-wrap justify-center min-h-[70px] pb-1">
                                         </div>
                                 </div>
                             </div>
-                        </div>
-                            
-                        <div class="game-controls flex items-center justify-center space-x-4 mt-4"> 
-                            <button id="pass-button" class="btn btn-secondary">Pass</button>
-                            <button id="start-game-btn" class="btn btn-primary">Start New Game</button>
                         </div>
                     </div>
 
