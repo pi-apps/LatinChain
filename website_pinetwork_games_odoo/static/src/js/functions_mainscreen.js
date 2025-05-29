@@ -140,7 +140,16 @@ function set_points_exchange(value_client) {
                     if(data.exchanged_latin && data.points > 0)
                     {
                         get_user_rewarded();
-                        alert("Success: You paid " + latin_points + " Latin points, and received " + data.points + " " + app_client_message);
+                        var x2_game = "";
+                        if(data.x2_game)
+                        {
+                            x2_game = "x2 points was activated.";
+                        }else
+                        {
+                            x2_game = "";
+                        }
+                        
+                        alert("Success: You paid " + latin_points + " Latin points, and received " + data.points + " " + app_client_message + " " + x2_game);
                         $('#button_exchange').prop( "disabled", false );
                         $('#exchange_latin').prop( "disabled", false );
                     }
