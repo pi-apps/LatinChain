@@ -1650,7 +1650,7 @@
                                 
                                 <h2 class="accordion-header" id="headingExchange">
                                   <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExchange" aria-expanded="true" aria-controls="collapseExchange">
-                                    <div style=""><i class="fab fa-youtube"></i></div><div style="">Exchange Latin points</div>
+                                    <div style=""><i class="fa-solid fa-right-left"></i></div><div style="">Exchange Latin points</div>
                                   </button>
                                 </h2>
 
@@ -1671,7 +1671,7 @@
                                                     <option value="Snake100x10">Pay 100 Latin points, earn 10 Snake points</option>
                                                 </select>
                                                 <br/>
-                                                <div id="show_exchange_value">Pay 10 Latin points, earn 1 Chess</div>
+                                                <div id="show_exchange_value">Pay 10 Latin points, earn 1 Chess points</div>
                                                 <button id="button_exchange" name="button_exchange" class="btn btn-success" disabled="true">Exchange</button>
                                                 <br/>
                                             </div>
