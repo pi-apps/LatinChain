@@ -366,6 +366,7 @@ class PiNetworkBaseController(http.Controller):
                             'unblocked_datetime': str(unblocked_datetime),
                             'days_available': pi_users_list[0].days_available,
                             'amount': apps_list[0].amount,
+                            'amount_latin_pay': apps_list[0].amount_latin_pay,
                             'passkey': passkey,
                             'im_winner': im_winner, 'pi_wallet_address': pi_users_list[0].pi_wallet_address,
                             'streaming_url': pi_users_list[0].streaming_url,

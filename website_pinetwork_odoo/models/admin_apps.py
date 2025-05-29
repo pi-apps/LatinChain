@@ -234,6 +234,11 @@ class admin_apps(models.Model):
     points_latin_amount = fields.Float('Latin points amount', digits=(50,7), default=1, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_seconds = fields.Integer('Pi Ad seconds', default=300, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_max = fields.Integer('Pi Ad max', default=5, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    amount_latin_pay = fields.Float('Amount Latin Pay', digits=(50,7), compute="_compute_amount_latin_pay", store=False)
+    
+    def _compute_amount_latin_pay(self):
+        for i in self:
+            i.amount_latin_pay = i.amount * 100
     
     @api.depends("top_50_streamers_ids")
     def _compute_streaming(self):
@@ -1164,7 +1169,7 @@ class admin_apps(models.Model):
                                 data_write = {'unblocked_datetime': datetime.now()}
                                 
                                 if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON'] and kw['app_client'] in ['auth_example']:
-                                    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount})
+                                    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
                                 users[0].sudo().write(data_write)
                                 
