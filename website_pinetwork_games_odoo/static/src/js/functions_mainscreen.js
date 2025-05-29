@@ -140,7 +140,7 @@ function set_points_exchange(value_client) {
                     if(data.exchanged_latin && data.points > 0)
                     {
                         get_user_rewarded();
-                        alert("Success: " + latin_points + " Latin points x " + data.points + " " + app_client_message);
+                        alert("Success: You paid " + latin_points + " Latin points, and received " + data.points + " " + app_client_message);
                         $('#button_exchange').prop( "disabled", false );
                         $('#exchange_latin').prop( "disabled", false );
                     }
