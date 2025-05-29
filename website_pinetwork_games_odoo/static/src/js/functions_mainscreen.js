@@ -658,7 +658,7 @@ $( document ).ready(function() {
         this.play();
     }, false);
     
-    $('#exchange_latin').click(function() {
+    $('#exchange_latin').change(function() {
         var exchange_latin = $('#exchange_latin :selected').val();
         if(pi_user_id != "" && pi_user_code != "")
         {
