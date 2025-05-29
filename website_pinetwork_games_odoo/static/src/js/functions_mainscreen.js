@@ -141,7 +141,6 @@ function set_points_exchange(value_client) {
                     {
                         get_user_rewarded();
                         var x2_game = "";
-                        alert(data.previous_x2_game);
                         if(data.previous_x2_game)
                         {
                             x2_game = "x2 points was activated.";
