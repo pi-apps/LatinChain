@@ -913,6 +913,10 @@ class PiNetworkBaseController(http.Controller):
         
         pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         
+        points = 0            
+        exchanged_latin = False
+        previous_x2_game = False
+        
         if len(pi_users_list) == 0:
             request.env["pi.users"].sudo().create({'name': kw['pi_user_code'],
                                                     'pi_user_id': kw['pi_user_id'],
@@ -960,6 +964,7 @@ class PiNetworkBaseController(http.Controller):
             points = float(kw['points'])
             
             exchanged_latin = False
+            previous_x2_game = False
             
             if pi_users_list[0].unblocked:
                 #if int(kw['points']) > 0:
@@ -1032,9 +1037,9 @@ class PiNetworkBaseController(http.Controller):
             elif not pi_users_list[0].unblocked and int(points) > 0:
                 return json.dumps({'result': False})
             
+            previous_x2_game = pi_users_list[0].x2_game
+            
             pi_users_list[0].sudo().write(values)
-        
-        previous_x2_game = pi_users_list[0].x2_game
         
         request.env.cr.commit()
         
