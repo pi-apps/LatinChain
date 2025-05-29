@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-27 14:17+0000\n"
-"PO-Revision-Date: 2025-05-27 14:17+0000\n"
+"POT-Creation-Date: 2025-05-29 20:01+0000\n"
+"PO-Revision-Date: 2025-05-29 20:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -759,6 +759,13 @@ msgstr ""
 "                              <span class=\"sr-only o_default_snippet_text\">Anterior</span>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+msgid ""
+"<span class=\"font-semibold text-sky-600\">Score:</span>\n"
+"                            <span id=\"score\" class=\"font-bold text-xl text-pink-500\">0</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid ""
 "<span class=\"label\">Level</span>\n"
@@ -1370,8 +1377,10 @@ msgid "Donate Pi to LatinChain Platform"
 msgstr "Donar Pi a LatinChain Platform"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Donate to unblock with"
 msgstr "Dona para desbloquear con"
 
@@ -1414,6 +1423,31 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Exchange"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Exchange Latin points"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"Exchange Latin points (You need to be verified):<br/>\n"
+"                                                <select id=\"exchange_latin\" class=\"form-control\" disabled=\"true\" style=\"filter: contrast(100%) !important;\">\n"
+"                                                    <option value=\"Chess10x1\" selected=\"true\">Pay 10 Latin points, earn 1 Chess points</option>\n"
+"                                                    <option value=\"Sudoku10x3\">Pay 10 Latin points, earn 3 Sudoku points</option>\n"
+"                                                    <option value=\"Snake10x1\">Pay 10 Latin points, earn 1 Snake points</option>\n"
+"                                                    <option value=\"Chess100x10\">Pay 100 Latin points, earn 10 Chess points</option>\n"
+"                                                    <option value=\"Sudoku100x12\">Pay 100 Latin points, earn 12 Sudoku points</option>\n"
+"                                                    <option value=\"Snake100x10\">Pay 100 Latin points, earn 10 Snake points</option>\n"
+"                                                </select>\n"
+"                                                <br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Facebook"
 msgstr ""
 
@@ -1437,9 +1471,11 @@ msgid "Flip Board"
 msgstr "Intercambia Tablero"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Gain Latin points ("
 msgstr "Gana Latin points ("
 
@@ -1460,6 +1496,11 @@ msgstr "Gana puntos"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 msgid "Game Board"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+msgid "Game Over!"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1652,6 +1693,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LATIN CRUSH"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LATIN DICTIONARY"
 msgstr ""
 
@@ -1682,6 +1728,11 @@ msgstr "El último pago fue a las"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Latin Books: Wikibooks Online."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+msgid "Latin Crush"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1969,6 +2020,11 @@ msgid "No"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+msgid "No more possible moves."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 msgid "Normal"
 msgstr ""
@@ -2062,13 +2118,16 @@ msgstr "Pausa"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Pay 10 Latin points, earn 1 Chess points"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "PayPi"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Pi"
 msgstr ""
 
@@ -2104,8 +2163,10 @@ msgid "Pi each 30 days:"
 msgstr "Pi cada 30 días:"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Pi for 30 days from today"
 msgstr "Pi por 30 días desde hoy"
 
@@ -2177,6 +2238,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 msgid "Play Again"
 msgstr ""
 
@@ -2295,6 +2357,7 @@ msgid "Repository"
 msgstr "Repositorio"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 msgid "Reset Game"
 msgstr "Reiniciar Juego"
@@ -2663,9 +2726,7 @@ msgid "Unblock LatinChain going to Donate button."
 msgstr "Desbloquea LatinChain yendo al botón Donar."
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Unblock with"
 msgstr "Desbloquea con"
 
@@ -2936,6 +2997,13 @@ msgstr "Tu Memo ID ó Payment ID fue guardada y completada."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Your Side:"
 msgstr "Tu Lado:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+msgid ""
+"Your final score is: <span id=\"finalScore\" class=\"font-bold text-"
+"pink-500\">0</span>"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
