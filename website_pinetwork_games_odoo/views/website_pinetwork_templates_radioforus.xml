@@ -323,7 +323,7 @@
                                         
                                         <div style="margin-top:5px" class="justify-content-center">
                                             <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
-                                            <button id="button_click" name="button_click" class="col-10 btn btn-success fw-bold text-black border-success" disabled="true" style="border: 2px solid; margin: 5px; max-width: 400px"><div><i class="fa-solid fa-money-bill-transfer"></i></div><div>Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<t t-esc="amount" />)</div></button>
+                                            <button id="button_click" name="button_click" class="col-10 btn btn-success fw-bold text-black border-success" disabled="true" style="border: 2px solid; margin: 5px; max-width: 400px"><div><i class="fa-solid fa-money-bill-transfer"></i></div><div>Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<t t-esc="amount_latin_pay" />)</div></button>
                                             <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded col-12" style="filter: contrast(100%) !important;">
                                               <input class="form-check-input" type="checkbox" value="" id="acceptConditions"/>
                                               <label class="form-check-label" for="acceptConditions">
