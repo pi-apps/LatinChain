@@ -68,29 +68,52 @@ function set_points(points) {
 function set_points_exchange(value_client) {
     if(pi_user_id != "" && pi_user_code != "")
     {
-        if(value_client == "Chess100x1" || value_client == "Sudoku100x3" || value_client == "Snake100x1")
+        if(value_client == "Chess10x1" || value_client == "Sudoku10x3" || value_client == "Snake10x1" ||
+            value_client == "Chess100x10" || value_client == "Sudoku100x12" || value_client == "Snake100x10")
         {
             var app_client = "";
             var points = 0;
             var latin_points = 0;
             var app_client_message = "";
-            if(value_client == "Chess100x1")
+            
+            if(value_client == "Chess10x1")
             {
                 points = 1;
+                app_client = "auth_platform";
+                latin_points = 10;
+                app_client_message = "Chess points.";
+            }
+            else if(value_client == "Sudoku10x3")
+            {
+                points = 3;
+                app_client = "auth_pidoku";
+                latin_points = 10;
+                app_client_message = "Sudoku points.";
+            }
+            else if(value_client == "Snake10x1")
+            {
+                points = 1;
+                app_client = "auth_snake";
+                latin_points = 10;
+                app_client_message = "Snake points.";
+            }
+            else if(value_client == "Chess100x10")
+            {
+                points = 10;
                 app_client = "auth_platform";
                 latin_points = 100;
                 app_client_message = "Chess points.";
             }
-            else if(value_client == "Sudoku100x3")
+            else if(value_client == "Sudoku100x12")
             {
-                points = 3;
+                points = 12;
                 app_client = "auth_pidoku";
                 latin_points = 100;
                 app_client_message = "Sudoku points.";
             }
-            else if(value_client == "Snake100x1")
+            else if(value_client == "Snake100x10")
             {
-                points = 1;
+                points = 10;
                 app_client = "auth_snake";
                 latin_points = 100;
                 app_client_message = "Snake points.";
@@ -108,6 +131,8 @@ function set_points_exchange(value_client) {
                 'csrf_token': odoo.csrf_token,
             };
             //$.ajaxSetup({async: false});
+            $('#button_exchange').prop( "disabled", true );
+            $('#exchange_latin').prop( "disabled", true );
             return $.post( "/pi-points", data).done(function(data) {
                 data = JSON.parse(data);
                 if(data.result)
@@ -116,18 +141,40 @@ function set_points_exchange(value_client) {
                     {
                         get_user_rewarded();
                         alert("Success: " + latin_points + " Latin points x " + data.points + " " + app_client_message);
+                        $('#button_exchange').prop( "disabled", false );
+                        $('#exchange_latin').prop( "disabled", false );
                     }
                     else if(!data.exchanged_latin && data.reason)
                     {
                         if(data.reason == 'not_enough_latin_points')
                             alert("Not exchanged. Not enough latin points.");
+                        $('#button_exchange').prop( "disabled", false );
+                        $('#exchange_latin').prop( "disabled", false );
+                    }else
+                    {
+                        $('#button_exchange').prop( "disabled", false );
+                        $('#exchange_latin').prop( "disabled", false );
                     }
+                }else
+                {
+                    $('#button_exchange').prop( "disabled", false );
+                    $('#exchange_latin').prop( "disabled", false );
                 }
                 //$("#refresh").click();
 
             }).fail(function() {
+                $('#button_exchange').prop( "disabled", false );
+                $('#exchange_latin').prop( "disabled", false );
             });
+        }else
+        {
+            $('#button_exchange').prop( "disabled", false );
+            $('#exchange_latin').prop( "disabled", false );
         }
+    }else
+    {
+        $('#button_exchange').prop( "disabled", false );
+        $('#exchange_latin').prop( "disabled", false );
     }
 }
 
