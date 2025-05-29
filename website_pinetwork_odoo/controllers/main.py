@@ -1033,10 +1033,12 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             
             pi_users_list[0].sudo().write(values)
-            
+        
+        previous_x2_game = pi_users_list[0].x2_game
+        
         request.env.cr.commit()
         
-        return json.dumps({'result': True, 'x2_game': pi_users_list[0].x2_game, 'points': points, 'exchanged_latin': exchanged_latin})
+        return json.dumps({'result': True, 'x2_game': pi_users_list[0].x2_game, 'previous_x2_game': previous_x2_game, 'points': points, 'exchanged_latin': exchanged_latin})
     
     @http.route('/get-general-ranking/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False)
     def get_general_ranking_user(self, pi_user_code, **kw):
