@@ -960,7 +960,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.222"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.224"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1638,16 +1638,51 @@
                               </div>
                             </div>
                             
-                            <div id="accordionPrice" style="margin-bottom:5px">
+                            <div id="accordionExchange" style="margin-bottom:5px">
                               <div class="card">
-                                <!--<div class="card-header" id="headingTwo">
+                                <!--<div class="card-header" id="headingExchange">
                                   <h5 class="mb-0">
-                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapsePrice">
+                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseExchange" aria-expanded="true" aria-controls="collapseExchange">
                                       <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
                                     </button>
                                   </h5>
                                 </div>-->
                                 
+                                <h2 class="accordion-header" id="headingExchange">
+                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExchange" aria-expanded="true" aria-controls="collapseExchange">
+                                    <div style=""><i class="fab fa-youtube"></i></div><div style="">Exchange Latin points</div>
+                                  </button>
+                                </h2>
+
+                                <div id="collapseExchange" class="collapse" aria-labelledby="headingExchange" data-parent="#accordionExchange">
+                                  <div class="card-body">
+                                    <div style="text-align:center" class="form-group container justify-content-center">
+                                        <div class="row">
+                                            <div class="col-1">
+                                            </div>
+                                            <div class="col-10">
+                                                Exchange Latin points (You need to be verified):<br/>
+                                                <select id="exchange_latin" class="form-control" disabled="true" style="filter: contrast(100%) !important;">
+                                                    <option value="Chess100x1" selected="true">100 Latin points x 1 Chess</option>
+                                                    <option value="Sudoku100x3">100 Latin points x 3 Sudoku</option>
+                                                    <option value="Snake100x1">100 Latin points x 1 Snake</option>
+                                                </select>
+                                                <br/>
+                                                <div id="show_exchange_value"></div>
+                                                <button id="button_exchange" name="button_exchange" class="btn btn-success" disabled="true">Exchange</button>
+                                                <br/>
+                                            </div>
+                                            <div class="col-1">
+                                            </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div id="accordionPrice" style="margin-bottom:5px">
+                              <div class="card">
                                 <h2 class="accordion-header" id="headingPrice">
                                   <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrice" aria-expanded="true" aria-controls="collapsePrice">
                                     <div style=""><i class="fa-solid fa-money-bill-trend-up"></i></div><div style="">Price</div>

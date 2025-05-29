@@ -959,6 +959,8 @@ class PiNetworkBaseController(http.Controller):
             
             points = float(kw['points'])
             
+            exchanged_latin = False
+            
             if pi_users_list[0].unblocked:
                 #if int(kw['points']) > 0:
                 #    pi_users_winnners_count = request.env["pi.users"].sudo().search_count(winner_domain)
@@ -979,6 +981,17 @@ class PiNetworkBaseController(http.Controller):
                             if points > pi_users_list[0].points_chess_last:
                                 values.update({'points_chess_last': points})
                             values.update({'x2_game': False})
+                            
+                            if 'action' in kw:
+                                if kw['action'] == "exchange":
+                                    if 'latin_points' in kw:
+                                        if pi_users_list[0].points_latin - float(kw['latin_points']) < 0:
+                                            return json.dumps({'result': True, 
+                                                'exchanged_latin': False, 
+                                                'reason': 'not_enough_latin_points'})
+                                        else:
+                                            values.update({'points_latin': pi_users_list[0].points_latin - float(kw['latin_points'])})
+                                            exchanged_latin = True
                     elif kw['app_client'] == "auth_pidoku":
                         if points > 0:
                             values.update({'points_sudoku': pi_users_list[0].points_sudoku + points})
@@ -986,6 +999,17 @@ class PiNetworkBaseController(http.Controller):
                             if points > pi_users_list[0].points_sudoku_last:
                                 values.update({'points_sudoku_last': points})
                             values.update({'x2_game': False})
+                            
+                            if 'action' in kw:
+                                if kw['action'] == "exchange":
+                                    if 'latin_points' in kw:
+                                        if pi_users_list[0].points_latin - float(kw['latin_points']) < 0:
+                                            return json.dumps({'result': True, 
+                                                'exchanged_latin': False, 
+                                                'reason': 'not_enough_latin_points'})
+                                        else:
+                                            values.update({'points_latin': pi_users_list[0].points_latin - float(kw['latin_points'])})
+                                            exchanged_latin = True
                     elif kw['app_client'] == "auth_snake":
                         if points > 0:
                             values.update({'points_snake': pi_users_list[0].points_snake + points})
@@ -994,6 +1018,17 @@ class PiNetworkBaseController(http.Controller):
                                 values.update({'points_snake_last': points})
                             if points == 4 and pi_users_list[0].x2_game:
                                 values.update({'x2_game': False})
+                            
+                            if 'action' in kw:
+                                if kw['action'] == "exchange":
+                                    if 'latin_points' in kw:
+                                        if pi_users_list[0].points_latin - float(kw['latin_points']) < 0:
+                                            return json.dumps({'result': True, 
+                                                'exchanged_latin': False, 
+                                                'reason': 'not_enough_latin_points'})
+                                        else:
+                                            values.update({'points_latin': pi_users_list[0].points_latin - float(kw['latin_points'])})
+                                            exchanged_latin = True
             elif not pi_users_list[0].unblocked and int(points) > 0:
                 return json.dumps({'result': False})
             
@@ -1001,7 +1036,7 @@ class PiNetworkBaseController(http.Controller):
             
         request.env.cr.commit()
         
-        return json.dumps({'result': True, 'x2_game': pi_users_list[0].x2_game, 'points': points})
+        return json.dumps({'result': True, 'x2_game': pi_users_list[0].x2_game, 'points': points, 'exchanged_latin': exchanged_latin})
     
     @http.route('/get-general-ranking/<string:pi_user_code>', type='http', auth="public", website=True, csrf=False)
     def get_general_ranking_user(self, pi_user_code, **kw):
