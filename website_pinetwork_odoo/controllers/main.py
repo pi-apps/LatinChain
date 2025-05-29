@@ -1556,15 +1556,15 @@ class PiNetworkBaseController(http.Controller):
     def gemini_image(self, **kwargs):
         file_folder = os.path.dirname(os.path.realpath(__file__))
         
-        img_array = [file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Buenos_Aires.png?1.101",
-                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Caracas.png?1.101",
-                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Los_Angeles.png?1.101",
-                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Mexico_City.png?1.101",
-                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Seoul.png?1.101",
-                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Shanghai.png?1.101",
-                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Tokyo.png?1.101",
-                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Vietnam.png?1.101",
-                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Honduras.png?1.101"]
+        img_array = [file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Buenos_Aires.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Caracas.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Los_Angeles.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Mexico_City.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Seoul.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Shanghai.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Tokyo.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Vietnam.png",
+                    file_folder + "/" + "../static/src/ai-images/Gemini_Generated_Image_Honduras.png"]
         
         random_integer = random.randint(0, 8)
         
