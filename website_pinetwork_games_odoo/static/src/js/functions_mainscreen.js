@@ -143,20 +143,20 @@ function set_points_exchange(value_client) {
                         var x2_game = "";
                         if(data.previous_x2_game)
                         {
-                            x2_game = "x2 points was activated.";
+                            x2_game = $("#modal_exchange_message_3").text();
                         }else
                         {
                             x2_game = "";
                         }
                         
-                        alert("Success: You paid " + latin_points + " Latin points, and received " + data.points + " " + app_client_message + " " + x2_game);
+                        alert($("#modal_exchange_message_1").text() + latin_points + " Latin points" + $("#modal_exchange_message_2").text() + data.points + " " + app_client_message + " " + x2_game);
                         $('#button_exchange').prop( "disabled", false );
                         $('#exchange_latin').prop( "disabled", false );
                     }
                     else if(!data.exchanged_latin && data.reason)
                     {
                         if(data.reason == 'not_enough_latin_points')
-                            alert("Not exchanged. Not enough latin points.");
+                            alert($("#modal_exchange_message_4").text() + " Latin points.");
                         $('#button_exchange').prop( "disabled", false );
                         $('#exchange_latin').prop( "disabled", false );
                     }else

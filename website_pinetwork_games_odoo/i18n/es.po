@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-29 20:01+0000\n"
-"PO-Revision-Date: 2025-05-29 20:01+0000\n"
+"POT-Creation-Date: 2025-05-30 22:49+0000\n"
+"PO-Revision-Date: 2025-05-30 22:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -145,6 +145,11 @@ msgstr "* Usa este código para unirte a Pi Network: rockcesar"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "* Use this link to join Pi Network:"
 msgstr "* Usa este link para unirte a Pi Network:"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ", and received"
+msgstr ", y recibiste"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1424,12 +1429,12 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Exchange"
-msgstr ""
+msgstr "Intercambiar"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Exchange Latin points"
-msgstr ""
+msgstr "Intercambia Latin points"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1445,6 +1450,16 @@ msgid ""
 "                                                </select>\n"
 "                                                <br/>"
 msgstr ""
+"Intercambia Latin points (Necesitas estar verificado(a)):<br/>\n"
+"                                                <select id=\"exchange_latin\" class=\"form-control\" disabled=\"true\" style=\"filter: contrast(100%) !important;\">\n"
+"                                                    <option value=\"Chess10x1\" selected=\"true\">Paga 10 Latin points, gana 1 Chess points</option>\n"
+"                                                    <option value=\"Sudoku10x3\">Paga 10 Latin points, gana 3 Sudoku points</option>\n"
+"                                                    <option value=\"Snake10x1\">Paga 10 Latin points, gana 1 Snake points</option>\n"
+"                                                    <option value=\"Chess100x10\">Paga 100 Latin points, gana 10 Chess points</option>\n"
+"                                                    <option value=\"Sudoku100x12\">Paga 100 Latin points, gana 12 Sudoku points</option>\n"
+"                                                    <option value=\"Snake100x10\">Paga 100 Latin points, gana 10 Snake points</option>\n"
+"                                                </select>\n"
+"                                                <br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1663,6 +1678,11 @@ msgstr "No es una URL de video de youtube."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "JOIN MEXC"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Jonathan"
 msgstr ""
 
@@ -1685,6 +1705,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Just Browse"
 msgstr "Sólo Navegar"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "KYB ready"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2031,6 +2056,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Not exchanged. Not enough"
+msgstr "Falló el intercambio. No hay suficiente"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Not verified. Each 30 days you should unlock the app paying"
 msgstr "No verificado. Cada 30 días to debes desbloquear la app pagando"
 
@@ -2059,6 +2089,11 @@ msgstr "Ahora tienes x2 puntos en tu próximo juego. Sólo si estás verificado.
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Odoo App"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "On MEXC"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2119,7 +2154,7 @@ msgstr "Pausa"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Pay 10 Latin points, earn 1 Chess points"
-msgstr ""
+msgstr "Paga 10 Latin points, gana 1 Chess points"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2509,6 +2544,11 @@ msgid "Start New Game"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Success: You paid"
+msgstr "Exito: Pagaste"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Sudoku"
 msgstr ""
@@ -2526,6 +2566,11 @@ msgstr "Intercambia Lado"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "TEST YOUR BRAIN"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "TRADE PI"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3167,6 +3212,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "will be three times its minimum payment. Supposing minimum payment is"
 msgstr "va a ser tres veces su pago mínimo. Suponiendo que el pago mínimo es"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "x2 points was activated."
+msgstr "x2 puntos estaba activado."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
