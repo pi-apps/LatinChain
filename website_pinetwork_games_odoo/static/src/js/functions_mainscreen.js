@@ -1377,7 +1377,7 @@ $( document ).ready(function() {
     });
     
     $( ".15-puzzle" ).click(function() {
-        $.colorbox({href:"/fifteen-puzzle", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({href:"https://latin-chain.com/fifteen-puzzle", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".pingpong" ).click(function() {
