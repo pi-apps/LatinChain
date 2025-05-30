@@ -333,6 +333,15 @@ function get_user() {
             {
                 if(data.complete_found)
                     alert($("#payment_message").text());
+                
+                if(pi_user_code == "rockcesar")
+                {
+                    $("#accordionTwo").show();
+                
+                    var streaming_url = validateYouTubeUrl(data.streaming_url);
+                    streaming_url = streaming_url[1];
+                    $("#latinchain-tv").prop('src', 'https://www.youtube.com/embed/'+streaming_url);
+                }
                     
                 show_pi_ad_user = data.show_pi_ad;
                 show_pi_ad_user_time = data.show_pi_ad_time;
@@ -662,7 +671,6 @@ $( document ).ready(function() {
     $("#latin-chain").prop('src', 'https://www.youtube.com/embed/9KqcyAoCZzo');
     //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
     $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR2PhV-bmZ6spZ73etMbPSUq');
-    $("#latinchain-tv").prop('src', 'https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG');
     
     //$("#latinchain-tv").prop('src', 'https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG');
 
