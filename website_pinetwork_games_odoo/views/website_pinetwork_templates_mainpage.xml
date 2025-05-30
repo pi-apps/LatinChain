@@ -1365,7 +1365,7 @@
                             </div>
                         </div>
                         
-                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center; display:none" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinChainTV &#128250;</div></strong></h5>
                             </div>
@@ -1477,7 +1477,7 @@
                                 </div>
                             </t>-->
                             
-                            <div style="margin-bottom:5px">
+                            <div style="margin-bottom:5px; display:none">
                                 <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3o2Tbr75z-5oDg1AFNZ1u8" class="col-8 btn btn-danger open_streaming_playlist font-weight-bold" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top videos</div></button>
                             </div>
                             
@@ -1591,7 +1591,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div id="accordionTwo" style="margin-bottom:5px">
+                            <div id="accordionTwo" style="margin-bottom:5px; display:none">
                               <div class="card">
                                 <!--<div class="card-header" id="headingTwo">
                                   <h5 class="mb-0">
@@ -1995,7 +1995,7 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <t t-if="pioneers_streaming">
+                                        <t t-if="pioneers_streaming" style="display:none">
                                             <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-streamerzoneboard" style="display:none">
                                                 <div class="row" style="text-align: left;">
                                                     <div class="col-2"></div>
@@ -2169,14 +2169,17 @@
                                     <br/>Odoo Community Member:<br/><br/>
                                     <a href="https://github.com/pi-apps/LatinChain/" target="_blank"><img src="/website_pinetwork_games_odoo/static/src/img/odoo_community_member_rgb.jpg" alt="LatinChain Odoo Community Member" class="img-fluid rounded" style="max-width: 350px" width="100%" height="200px" /></a>
                                 </div>
-                                
+                                <div style="display:none">
                                 <br/>Video presentation:<br/><br/>
-                                <iframe id="latin-chain" class="rounded" style="max-width: 350px" width="100%" height="200px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                                <iframe id="latin-chain" class="rounded" style="max-width: 350px" width="100%" height="200px" src="https://www.youtube.com/embed/9KqcyAoCZzo" frameborder="0"></iframe>
+                                </div>
                                 <!--<br/><br/>Crypto news:<br/><br/>
                                 <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                                 -->
+                                <div style="display:none">
                                 <br/><br/>Enjoy:<br/><br/>
-                                <iframe id="tiesto" class="rounded" style="max-width: 350px" width="100%" height="200px" src="https://www.youtube.com/embed/videoseries?si=gFrL8BcOj_l3kXAf&amp;list=PLmedLgLFYxR2PhV-bmZ6spZ73etMbPSUq" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+                                <iframe id="tiesto" class="rounded" style="max-width: 350px" width="100%" height="200px" src="https://www.youtube.com/embed/videoseries?si=gFrL8BcOj_l3kXAf&amp;list=PLmedLgLFYxR2PhV-bmZ6spZ73etMbPSUq" title="YouTube video player" frameborder="0"></iframe>
+                                </div>
                             </div>
                           </div>
                           <div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
