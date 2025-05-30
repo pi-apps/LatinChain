@@ -334,7 +334,7 @@ function get_user() {
                 if(data.complete_found)
                     alert($("#payment_message").text());
                 
-                if(data.pi_user_code == "rockcesar")
+                if(data.pi_user_code && data.pi_user_code == $("#pi_main_user").val())
                 {
                     $("#accordionTwo").show();
                 }
