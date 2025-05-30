@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-30 23:01+0000\n"
-"PO-Revision-Date: 2025-05-30 23:01+0000\n"
+"POT-Creation-Date: 2025-05-30 23:17+0000\n"
+"PO-Revision-Date: 2025-05-30 23:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -596,6 +596,19 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "<i class=\"fa-solid fa-plug-circle-bolt\"/>x2"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<select id=\"exchange_latin\" class=\"form-control\" disabled=\"true\" style=\"filter: contrast(100%) !important;\">\n"
+"                                                        <option value=\"Chess10x1\" selected=\"true\">Pay 10 Latin points, earn 1 Chess points</option>\n"
+"                                                        <option value=\"Sudoku10x3\">Pay 10 Latin points, earn 3 Sudoku points</option>\n"
+"                                                        <option value=\"Snake10x1\">Pay 10 Latin points, earn 1 Snake points</option>\n"
+"                                                        <option value=\"Chess100x10\">Pay 100 Latin points, earn 10 Chess points</option>\n"
+"                                                        <option value=\"Sudoku100x12\">Pay 100 Latin points, earn 12 Sudoku points</option>\n"
+"                                                        <option value=\"Snake100x10\">Pay 100 Latin points, earn 10 Snake points</option>\n"
+"                                                    </select>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1311,17 +1324,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"Exchange Latin points (You need to be verified):<br/>\n"
-"                                                <select id=\"exchange_latin\" class=\"form-control\" disabled=\"true\" style=\"filter: contrast(100%) !important;\">\n"
-"                                                    <option value=\"Chess10x1\" selected=\"true\">Pay 10 Latin points, earn 1 Chess points</option>\n"
-"                                                    <option value=\"Sudoku10x3\">Pay 10 Latin points, earn 3 Sudoku points</option>\n"
-"                                                    <option value=\"Snake10x1\">Pay 10 Latin points, earn 1 Snake points</option>\n"
-"                                                    <option value=\"Chess100x10\">Pay 100 Latin points, earn 10 Chess points</option>\n"
-"                                                    <option value=\"Sudoku100x12\">Pay 100 Latin points, earn 12 Sudoku points</option>\n"
-"                                                    <option value=\"Snake100x10\">Pay 100 Latin points, earn 10 Snake points</option>\n"
-"                                                </select>\n"
-"                                                <br/>"
+msgid "Exchange Latin points (You need to be verified):"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
