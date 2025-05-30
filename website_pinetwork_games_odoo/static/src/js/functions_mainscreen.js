@@ -690,10 +690,10 @@ $( document ).ready(function() {
     });
     
     $('#button_exchange').click(function() {
-        var exchange_latin = $('#exchange_latin :selected').val();        
+        var exchange_latin = $('#exchange_latin :selected').val();
         if(pi_user_id != "" && pi_user_code != "")
         {
-            if(confirm("Are you sure you want to exchange the Latin points?. This action is irreversible."))
+            if(confirm($('#modal_exchange_message_5').text()))
             {
                 set_points_exchange(exchange_latin);
             }

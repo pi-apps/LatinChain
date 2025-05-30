@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-30 22:49+0000\n"
-"PO-Revision-Date: 2025-05-30 22:49+0000\n"
+"POT-Creation-Date: 2025-05-30 23:01+0000\n"
+"PO-Revision-Date: 2025-05-30 23:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1133,6 +1133,15 @@ msgstr "Estás seguro(a) que quieres Borrar Caché?, esto recargará la página.
 msgid "Are you sure you want to Reset?, it will restart the game."
 msgstr ""
 "Estás seguro que quieres Reiniciar?, esto reiniciará a un nuevo juego."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"Are you sure you want to exchange the Latin points?. This action is "
+"irreversible."
+msgstr ""
+"¿Estás seguro(a) de que quieres intercambiar los Latin points?. Esta acción es "
+"irreversible."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter

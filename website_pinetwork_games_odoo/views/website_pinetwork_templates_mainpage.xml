@@ -960,7 +960,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.239"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.240"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1046,6 +1046,7 @@
                     <div id="modal_exchange_message_2" style="display:none;">, and received </div>
                     <div id="modal_exchange_message_3" style="display:none;">x2 points was activated.</div>
                     <div id="modal_exchange_message_4" style="display:none;">Not exchanged. Not enough</div>
+                    <div id="modal_exchange_message_5" style="display:none;">Are you sure you want to exchange the Latin points?. This action is irreversible.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
