@@ -1467,7 +1467,7 @@
                                 <h5 translate="no"><strong>#LatinChain #Magazine &#127909;</strong></h5>
                             </div>
                             
-                            <div class="" style="margin-bottom:5px; display:none" t-if="pioneers_streaming">
+                            <div class="" style="margin-bottom:5px;" t-if="pioneers_streaming">
                                 <button id="streamerzoneboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button>
                             </div>
                             
@@ -2000,7 +2000,7 @@
                                             </div>
                                         </li>
                                         <t t-if="pioneers_streaming">
-                                            <li class="list-group-item border-left-0 border-bottom border-right-0 border-top" style="display:none">
+                                            <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                                 <div class="row" style="text-align: left;">
                                                     <div class="col-2"></div>
                                                     <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;" translate="no">Top 50 streamers</div><div style="font-size:80%;">Youtube videos</div></button></div>
