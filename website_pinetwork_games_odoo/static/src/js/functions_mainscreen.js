@@ -668,7 +668,7 @@ $( document ).ready(function() {
     //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
     $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR2PhV-bmZ6spZ73etMbPSUq');
 
-    var streaming_url = validateYouTubeUrl($("#pi_main_user_streaming_url").text());
+    var streaming_url = validateYouTubeUrl($("#pi_main_user_streaming_url").val());
     streaming_url = streaming_url[1];
     $("#latinchain-tv").prop('src', 'https://www.youtube.com/embed/'+streaming_url);
     
