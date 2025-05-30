@@ -633,6 +633,38 @@ $( document ).ready(function() {
         return false;
     });
     
+    $("#exchange_latin > option").each(function() {
+        if(location.pathname.substring(0, 3) == "/es")
+        {
+            var value = $(this).val();
+            if(value == "Chess10x1")
+            {
+                $(this).text("Paga 10 Latin points, gana 1 Chess points");
+            }
+            else if(value == "Sudoku10x3")
+            {
+                $(this).text("Paga 10 Latin points, gana 3 Sudoku points");
+            }
+            else if(value == "Snake10x1")
+            {
+                $(this).text("Paga 10 Latin points, gana 1 Snake points");
+            }
+            else if(value == "Chess100x10")
+            {
+                $(this).text("Paga 10 Latin points, gana 1 Chess points");
+            }
+            else if(value == "Sudoku100x12")
+            {
+                $(this).text("Paga 10 Latin points, gana 12 Sudoku points");
+            }
+            else if(value == "Snake100x10")
+            {
+                $(this).text("Paga 10 Latin points, gana 10 Snake points");
+            }
+        }
+    });
+    
+    
     $(".open_streaming").click(function(){
         var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
         streaming_url = streaming_url[1];
