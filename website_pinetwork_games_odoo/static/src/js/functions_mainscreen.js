@@ -334,10 +334,10 @@ function get_user() {
                 if(data.complete_found)
                     alert($("#payment_message").text());
                 
-                if(data.pi_user_code && data.pi_user_code == $("#pi_main_user").val())
+                /*if(data.pi_user_code && data.pi_user_code == $("#pi_main_user").val())
                 {
                     $("#accordionTwo").show();
-                }
+                }*/
                     
                 show_pi_ad_user = data.show_pi_ad;
                 show_pi_ad_user_time = data.show_pi_ad_time;
