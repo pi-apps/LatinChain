@@ -1883,7 +1883,7 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-15-puzzle" style="display:none" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-15-puzzle" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><button id="15-puzzle" class="col-10 btn btn-outline-success font-weight-bold text-black border-success 15-puzzle" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">15 PUZZLE GAME</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></button><button id="15-puzzleinfo" class="col-auto btn btn-sm btn-outline-info 15-puzzleinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
