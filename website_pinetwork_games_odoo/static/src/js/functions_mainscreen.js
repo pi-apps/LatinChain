@@ -651,7 +651,7 @@ $( document ).ready(function() {
             }
             else if(value == "Chess100x10")
             {
-                $(this).text("Paga 10 Latin points, gana 1 Chess points");
+                $(this).text("Paga 10 Latin points, gana 10 Chess points");
             }
             else if(value == "Sudoku100x12")
             {
