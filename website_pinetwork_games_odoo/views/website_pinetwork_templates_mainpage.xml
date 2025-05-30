@@ -960,7 +960,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.235"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.236"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1006,6 +1006,10 @@
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
                     <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                    <t t-if="pi_main_user">
+                        <input type="hidden" id="pi_main_user" t-att-value="pi_main_user.pi_user_code"/>
+                        <input type="hidden" id="pi_main_user_streaming_url" t-att-value="pi_main_user.streaming_url"/>
+                    </t>
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="winner_message" style="display:none;"><div style="display:inline;">. You are a winner. Check in Winners Board.</div> <div style="display:inline;"><i class="fa fa-trophy"></i></div></div>
                     <div id="available_days_message" style="display:none;">Days available: </div>
