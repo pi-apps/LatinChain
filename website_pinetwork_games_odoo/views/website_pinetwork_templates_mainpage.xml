@@ -1342,6 +1342,52 @@
                                 </div>
                               </label>
                             </div>
+                            
+                            <div id="accordionExchange" style="margin-bottom:5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                              <div class="card">
+                                <!--<div class="card-header" id="headingExchange">
+                                  <h5 class="mb-0">
+                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseExchange" aria-expanded="true" aria-controls="collapseExchange">
+                                      <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
+                                    </button>
+                                  </h5>
+                                </div>-->
+                                
+                                <h2 class="accordion-header" id="headingExchange">
+                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExchange" aria-expanded="true" aria-controls="collapseExchange">
+                                    <div style=""><i class="fa-solid fa-right-left"></i></div><div style="">Exchange Latin points</div>
+                                  </button>
+                                </h2>
+
+                                <div id="collapseExchange" class="collapse" aria-labelledby="headingExchange" data-parent="#accordionExchange">
+                                  <div class="card-body">
+                                    <div style="text-align:center" class="form-group container justify-content-center">
+                                        <div class="row">
+                                            <div class="col-1">
+                                            </div>
+                                            <div class="col-10">
+                                                Exchange Latin points (You need to be verified):<br/>
+                                                <select id="exchange_latin" class="form-control" disabled="true" style="filter: contrast(100%) !important;">
+                                                    <option value="Chess10x1" selected="true">Pay 10 Latin points, earn 1 Chess points</option>
+                                                    <option value="Sudoku10x3">Pay 10 Latin points, earn 3 Sudoku points</option>
+                                                    <option value="Snake10x1">Pay 10 Latin points, earn 1 Snake points</option>
+                                                    <option value="Chess100x10">Pay 100 Latin points, earn 10 Chess points</option>
+                                                    <option value="Sudoku100x12">Pay 100 Latin points, earn 12 Sudoku points</option>
+                                                    <option value="Snake100x10">Pay 100 Latin points, earn 10 Snake points</option>
+                                                </select>
+                                                <br/>
+                                                <div id="show_exchange_value">Pay 10 Latin points, earn 1 Chess points</div>
+                                                <button id="button_exchange" name="button_exchange" class="btn btn-success" disabled="true">Exchange</button>
+                                                <br/>
+                                            </div>
+                                            <div class="col-1">
+                                            </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
@@ -1640,52 +1686,6 @@
                                                 <br/>A Youtube short video URL looks like this:<br/>
                                                 <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/shorts/SZEljmi-wr4</textarea>
                                                 </div>
-                                            </div>
-                                            <div class="col-1">
-                                            </div>
-                                        </div>
-                                      </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            <div id="accordionExchange" style="margin-bottom:5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                              <div class="card">
-                                <!--<div class="card-header" id="headingExchange">
-                                  <h5 class="mb-0">
-                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseExchange" aria-expanded="true" aria-controls="collapseExchange">
-                                      <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
-                                    </button>
-                                  </h5>
-                                </div>-->
-                                
-                                <h2 class="accordion-header" id="headingExchange">
-                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExchange" aria-expanded="true" aria-controls="collapseExchange">
-                                    <div style=""><i class="fa-solid fa-right-left"></i></div><div style="">Exchange Latin points</div>
-                                  </button>
-                                </h2>
-
-                                <div id="collapseExchange" class="collapse" aria-labelledby="headingExchange" data-parent="#accordionExchange">
-                                  <div class="card-body">
-                                    <div style="text-align:center" class="form-group container justify-content-center">
-                                        <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
-                                                Exchange Latin points (You need to be verified):<br/>
-                                                <select id="exchange_latin" class="form-control" disabled="true" style="filter: contrast(100%) !important;">
-                                                    <option value="Chess10x1" selected="true">Pay 10 Latin points, earn 1 Chess points</option>
-                                                    <option value="Sudoku10x3">Pay 10 Latin points, earn 3 Sudoku points</option>
-                                                    <option value="Snake10x1">Pay 10 Latin points, earn 1 Snake points</option>
-                                                    <option value="Chess100x10">Pay 100 Latin points, earn 10 Chess points</option>
-                                                    <option value="Sudoku100x12">Pay 100 Latin points, earn 12 Sudoku points</option>
-                                                    <option value="Snake100x10">Pay 100 Latin points, earn 10 Snake points</option>
-                                                </select>
-                                                <br/>
-                                                <div id="show_exchange_value">Pay 10 Latin points, earn 1 Chess points</div>
-                                                <button id="button_exchange" name="button_exchange" class="btn btn-success" disabled="true">Exchange</button>
-                                                <br/>
                                             </div>
                                             <div class="col-1">
                                             </div>
