@@ -653,15 +653,15 @@ $( document ).ready(function() {
                 }
                 else if(value == "Chess100x10")
                 {
-                    $(this).text("Paga 10 Latin points, gana 10 Chess points");
+                    $(this).text("Paga 100 Latin points, gana 10 Chess points");
                 }
                 else if(value == "Sudoku100x12")
                 {
-                    $(this).text("Paga 10 Latin points, gana 12 Sudoku points");
+                    $(this).text("Paga 100 Latin points, gana 12 Sudoku points");
                 }
                 else if(value == "Snake100x10")
                 {
-                    $(this).text("Paga 10 Latin points, gana 10 Snake points");
+                    $(this).text("Paga 100 Latin points, gana 10 Snake points");
                 }
             }
         });
