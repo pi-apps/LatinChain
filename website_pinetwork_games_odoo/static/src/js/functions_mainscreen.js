@@ -667,6 +667,11 @@ $( document ).ready(function() {
         });
     }
     
+    $(".go-to-user-tab").click(function(){
+        $('#user-tab').tab('show');
+        $("#user-tab").click();
+    });
+    
     $(".open_streaming").click(function(){
         var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
         streaming_url = streaming_url[1];

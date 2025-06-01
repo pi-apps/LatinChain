@@ -960,7 +960,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.245"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.249"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1386,7 +1386,13 @@
                                                 </div>
                                                 <br/>
                                                 <div id="show_exchange_value">Pay 10 Latin points, earn 1 Chess points</div>
+                                                <div>
                                                 <button id="button_exchange" name="button_exchange" class="btn btn-success" disabled="true">Exchange</button>
+                                                </div>
+                                                <br/>
+                                                <div>
+                                                <button id="go-to-user-tab" name="go-to-user-tab" class="btn btn-info go-to-user-tab">Watch user</button>
+                                                </div>
                                                 <br/>
                                             </div>
                                             <div class="col-1">
@@ -1752,19 +1758,19 @@
                         </style>
 
                         <ul class="nav nav-pills justify-content-center nav-justified rounded sticky" id="myTabApps" role="tablist" style="background-color: #e3f2fd;" translate="no">
-                          <li class="nav-item item-color" role="presentation" onclick="window.location.href='#pay_with'">
+                          <li class="nav-item item-color home-tab-li" role="presentation" onclick="window.location.href='#pay_with'">
                             <a class="nav-link active link_height" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="font-size:80%;" translate="no">Apps</div></a>
                           </li>
-                          <li class="nav-item item-color" role="presentation" onclick="window.location.href='#pay_with'" >
+                          <li class="nav-item item-color rules-tab-li" role="presentation" onclick="window.location.href='#pay_with'" >
                             <a class="nav-link link_height" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:80%;">Leaders</div></a>
                           </li>
-                          <li class="nav-item item-color" role="presentation" onclick="window.location.href='#pay_with'">
+                          <li class="nav-item item-color user-tab-li" role="presentation" onclick="window.location.href='#pay_with'">
                             <a class="nav-link link_height" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-user"></i></div><div style="font-size:80%;">User</div></a>
                           </li>
-                          <li class="nav-item item-color" role="presentation" onclick="window.location.href='#pay_with'">
+                          <li class="nav-item item-color profile-tab-li" role="presentation" onclick="window.location.href='#pay_with'">
                             <a class="nav-link link_height" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa-solid fa-coins"></i></div><div style="font-size:80%;">PayPi</div></a>
                           </li>
-                          <li class="nav-item item-color" role="presentation" onclick="window.location.href='#pay_with'">
+                          <li class="nav-item item-color contact-tab-li" role="presentation" onclick="window.location.href='#pay_with'">
                             <a class="nav-link link_height" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-info"></i></div><div style="font-size:80%;">Team</div></a>
                           </li>
                         </ul>
