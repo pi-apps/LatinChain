@@ -670,6 +670,7 @@ $( document ).ready(function() {
     $(".go-to-user-tab").click(function(){
         //$('#user-tab').tab('show');
         $('.nav-pills a[href="#user-tab"]').tab('show');
+        $('.nav-pills a[href="#user-tab"]').click();
         window.location.href="#pay_with";
     });
     
