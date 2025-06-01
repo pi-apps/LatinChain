@@ -668,7 +668,8 @@ $( document ).ready(function() {
     }
     
     $(".go-to-user-tab").click(function(){
-        $('#user-tab').tab('show');
+        //$('#user-tab').tab('show');
+        $('a[href="#user-tab-anchor"]').tab('show');
         $("#user-tab").click();
     });
     

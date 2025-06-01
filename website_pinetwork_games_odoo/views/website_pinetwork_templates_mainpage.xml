@@ -960,7 +960,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.250"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.251"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1765,7 +1765,7 @@
                             <a class="nav-link link_height" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:80%;">Leaders</div></a>
                           </li>
                           <li class="nav-item item-color user-tab-li" role="presentation" onclick="window.location.href='#pay_with'">
-                            <a class="nav-link link_height" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-user"></i></div><div style="font-size:80%;">User</div></a>
+                            <a href="#user-tab-anchor" class="nav-link link_height" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fas fa-user"></i></div><div style="font-size:80%;">User</div></a>
                           </li>
                           <li class="nav-item item-color profile-tab-li" role="presentation" onclick="window.location.href='#pay_with'">
                             <a class="nav-link link_height" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa-solid fa-coins"></i></div><div style="font-size:80%;">PayPi</div></a>
