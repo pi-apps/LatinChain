@@ -669,7 +669,7 @@ $( document ).ready(function() {
     
     $(".go-to-user-tab").click(function(){
         //$('#user-tab').tab('show');
-        $('.nav-pills a[href="#user-tab-anchor"]').tab('show');
+        $('.nav-pills a[href="#user-tab"]').tab('show');
         window.location.href="#pay_with";
     });
     
