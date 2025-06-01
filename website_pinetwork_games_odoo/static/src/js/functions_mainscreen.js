@@ -673,6 +673,9 @@ $( document ).ready(function() {
     $('#go-to-user-tab').on('click', function (e) {
         e.preventDefault();
         $('#user-tab').tab('show');
+        //$('.nav-pills a[href="#user-tab"]').tab('show');
+        //$('.nav-tab a[href="#user-tab"]').tab('show');
+        //$('.nav-pills a[href="#user-tab"]').click();
         window.location.href="#pay_with";
     });
     

@@ -946,7 +946,7 @@
                     <title>LatinChain Platform</title>
                     <meta name="apple-mobile-web-app-capable" content="yes" />
                     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-                    <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
                     
                     <!-- ios support -->
                     <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
@@ -960,7 +960,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.263"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.266"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
