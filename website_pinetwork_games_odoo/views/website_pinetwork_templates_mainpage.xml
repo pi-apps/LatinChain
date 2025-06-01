@@ -1389,9 +1389,9 @@
                                                 <div>
                                                 <button id="button_exchange" name="button_exchange" class="btn btn-success" disabled="true">Exchange</button>
                                                 </div>
-                                                <br/>
-                                                <div>
-                                                <button id="go-to-user-tab" name="go-to-user-tab" class="btn btn-info go-to-user-tab">Watch user</button>
+                                                <div style="display: none">
+                                                    <br/>
+                                                    <button id="go-to-user-tab" name="go-to-user-tab" class="btn btn-info go-to-user-tab">Watch user</button>
                                                 </div>
                                                 <br/>
                                             </div>
