@@ -960,7 +960,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.262"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.263"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1389,7 +1389,7 @@
                                                 <div>
                                                 <button id="button_exchange" name="button_exchange" class="btn btn-success" disabled="true">Exchange</button>
                                                 </div>
-                                                <div style="display: none">
+                                                <div style="">
                                                     <br/>
                                                     <button id="go-to-user-tab" name="go-to-user-tab" class="btn btn-info go-to-user-tab">Watch user</button>
                                                 </div>

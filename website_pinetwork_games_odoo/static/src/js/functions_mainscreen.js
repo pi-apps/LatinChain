@@ -667,12 +667,23 @@ $( document ).ready(function() {
         });
     }
     
+    //$('#profile-tab').tab('show');
+
+    // Or, if you want to show it via a button click, for example:
+    $('#go-to-user-tab').on('click', function (e) {
+        e.preventDefault();
+        $('#user-tab').tab('show');
+        window.location.href="#pay_with";
+    });
+    
+    /*
     $(".go-to-user-tab").click(function(){
         //$('#user-tab').tab('show');
         $('.nav-pills a[href="#user-tab"]').tab('show');
         $('.nav-pills a[href="#user-tab"]').click();
         window.location.href="#pay_with";
     });
+    */
     
     $(".open_streaming").click(function(){
         var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
