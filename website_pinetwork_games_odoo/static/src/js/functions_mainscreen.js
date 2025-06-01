@@ -668,12 +668,16 @@ $( document ).ready(function() {
     }
     
     //$('#profile-tab').tab('show');
+    
+    const contactTabTrigger = document.getElementById('user-tab');
+    const tab = new bootstrap.Tab(contactTabTrigger);
 
     // Or, if you want to show it via a button click, for example:
     $('#go-to-user-tab').on('click', function (e) {
-        e.preventDefault();
-        $('#user-tab').tab('show');
-        $('.nav-pills a[href="#user-tab"]').tab('show');
+        tab.show();
+        //e.preventDefault();
+        //$('#user-tab').tab('show');
+        //$('#user-tab').click();
         //alert($('.nav-pills a[href="#user-tab"]').html());
         //$('.nav-tab a[href="#user-tab"]').tab('show');
         //$('.nav-pills a[href="#user-tab"]').click();
