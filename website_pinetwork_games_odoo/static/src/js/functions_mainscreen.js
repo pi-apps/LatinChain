@@ -670,7 +670,7 @@ $( document ).ready(function() {
     $(".go-to-user-tab").click(function(){
         //$('#user-tab').tab('show');
         $('a[href="#user-tab-anchor"]').tab('show');
-        $("#user-tab").click();
+        $('a[href="#user-tab-anchor"]').click();
     });
     
     $(".open_streaming").click(function(){
