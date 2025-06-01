@@ -669,8 +669,8 @@ $( document ).ready(function() {
     
     $(".go-to-user-tab").click(function(){
         //$('#user-tab').tab('show');
-        $('a[href="#user-tab-anchor"]').tab('show');
-        $('a[href="#user-tab-anchor"]').click();
+        $('.nav-pills a[href="#user-tab-anchor"]').tab('show');
+        window.location.href="#pay_with";
     });
     
     $(".open_streaming").click(function(){
