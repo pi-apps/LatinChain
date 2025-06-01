@@ -671,8 +671,6 @@ $( document ).ready(function() {
         //$('#user-tab').tab('show');
         $('a[href="#user-tab-anchor"]').tab('show');
         $('a[href="#user-tab-anchor"]').click();
-        $('#user-tab').tab('show');
-        $('#user-tab').click();
     });
     
     $(".open_streaming").click(function(){
