@@ -149,26 +149,27 @@ function set_points_exchange(value_client) {
                             x2_game = "";
                         }
                         
-                        alert($("#modal_exchange_message_1").text() + latin_points + " Latin points" + $("#modal_exchange_message_2").text() + data.points + " " + app_client_message + " " + x2_game);
-                        $('#button_exchange').prop( "disabled", false );
-                        $('#exchange_latin').prop( "disabled", false );
+                        $(".modal-body").html($("#modal_exchange_message_1").text() + latin_points + " Latin points" + $("#modal_exchange_message_2").text() + data.points + " " + app_client_message + " " + x2_game);
+                        $("#open_modal").click();
+                        
+                        //alert($("#modal_exchange_message_1").text() + latin_points + " Latin points" + $("#modal_exchange_message_2").text() + data.points + " " + app_client_message + " " + x2_game);
                     }
                     else if(!data.exchanged_latin && data.reason)
                     {
                         if(data.reason == 'not_enough_latin_points')
-                            alert($("#modal_exchange_message_4").text() + " Latin points.");
-                        $('#button_exchange').prop( "disabled", false );
-                        $('#exchange_latin').prop( "disabled", false );
-                    }else
-                    {
-                        $('#button_exchange').prop( "disabled", false );
-                        $('#exchange_latin').prop( "disabled", false );
+                        {
+                            $(".modal-body").html($("#modal_exchange_message_4").text() + " Latin points.");
+                            $("#open_modal").click();
+                        }
+                        
+                        //alert($("#modal_exchange_message_4").text() + " Latin points.");
                     }
-                }else
-                {
+                }
+                
+                setTimeout(function() {
                     $('#button_exchange').prop( "disabled", false );
                     $('#exchange_latin').prop( "disabled", false );
-                }
+                }, 3000);
                 //$("#refresh").click();
 
             }).fail(function() {
