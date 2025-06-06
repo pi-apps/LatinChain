@@ -195,7 +195,7 @@
                                     <h3>3.- Winning in level 2, you will gain 6 points.</h3>
                                     <h3>4.- Winning in level 3, you will gain 9 points.</h3>
                                     <h3>5.- Winning in level 4, you will gain 12 points.</h3>
-                                    <h3>6.- How to play Sudoku: <a href="https://en.wikipedia.org/wiki/Sudoku">Rules of Sudoku</a>.</h3>
+                                    <h3>6.- How to play Sudoku: <a href="https://en.wikipedia.org/wiki/Sudoku">Rules of Sudoku</a>.</h3><br/>
                                     <h1 t-if="mainnet in ['Mainnet OFF', 'Mainnet ON']">* Latin points</h1>
                                     <h3 t-if="mainnet in ['Mainnet OFF', 'Mainnet ON']">1.- Earn Latin points from Pi Ads and also paying Pi.</h3>
                                     <h3 t-if="mainnet in ['Mainnet OFF', 'Mainnet ON']">2.- You can exchange Latin points by Chess, Sudoku or Snake points, in mainscreen.</h3>
