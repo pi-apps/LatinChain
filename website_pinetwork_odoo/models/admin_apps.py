@@ -1331,10 +1331,12 @@ class pi_users(models.Model):
             else:
                 i.unblocked = True
                 
-                admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+                #if(i.unblocked_datetime > (datetime.now() - i.unblocked_datetime).days)
                 
-                if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
-                    i.points_latin = i.points_latin + admin_app_list[0].amount_latin_pay
+                #admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+                
+                #if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
+                #    i.points_latin += admin_app_list[0].amount_latin_pay
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
     def _total_paid_transactions(self):
