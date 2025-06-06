@@ -1223,7 +1223,7 @@ class pi_users(models.Model):
     points_chess_wins = fields.Float('Chess Wins', required=False, default=0, digits=(50,2))
     points_sudoku_wins = fields.Float('Sudoku Wins', required=False, default=0, digits=(50,2))
     points_snake_wins = fields.Float('Snake Wins', required=False, default=0, digits=(50,2))
-    points_latin = fields.Float('Latin Points', required=True, default=0, digits=(50,7))
+    points_latin = fields.Float('Latin Points', required=True, default=0, digits=(50,7), store=True)
     points_datetime = fields.Datetime('Points Datetime', compute="_total_points", store=True, default=datetime.now())
     paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True, digits=(50,7), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
