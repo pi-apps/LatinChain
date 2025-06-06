@@ -1032,7 +1032,7 @@ class PiNetworkBaseController(http.Controller):
                                                 'exchanged_latin': False, 
                                                 'reason': 'not_enough_latin_points'})
                                         else:
-                                            values.update({'points_latin': pi_users_list[0].points_latin - float(kw['latin_points'])})
+                                            values.update({'points_latin': pi_users_list[0].points_latin - float(kw['latin_points']), 'x2_game': False})
                                             exchanged_latin = True
             elif not pi_users_list[0].unblocked and int(points) > 0:
                 return json.dumps({'result': False})
