@@ -1169,8 +1169,8 @@ class admin_apps(models.Model):
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 data_write = {'unblocked_datetime': datetime.now()}
                                 
-                                if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
-                                    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
+                                #if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
+                                #    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
                                 users[0].sudo().write(data_write)
                                 
@@ -1223,7 +1223,7 @@ class pi_users(models.Model):
     points_chess_wins = fields.Float('Chess Wins', required=False, default=0, digits=(50,2))
     points_sudoku_wins = fields.Float('Sudoku Wins', required=False, default=0, digits=(50,2))
     points_snake_wins = fields.Float('Snake Wins', required=False, default=0, digits=(50,2))
-    points_latin = fields.Float('Latin Points', required=True, default=0, digits=(50,7), store=True)
+    points_latin = fields.Float('Latin Points', required=True, default=0, digits=(50,7), compute="_total_paid_transactions", store=True)
     points_datetime = fields.Datetime('Points Datetime', compute="_total_points", store=True, default=datetime.now())
     paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True, digits=(50,7), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -1342,6 +1342,8 @@ class pi_users(models.Model):
             if len(transactions_ids) > 0:
                 total = transactions_ids[0]['amount']
             
+            paid_in_transactions = i.paid_in_transactions
+            
             i.paid_in_transactions = total
                 
             transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
@@ -1350,6 +1352,12 @@ class pi_users(models.Model):
                 i.unblocked_datetime = False
             else:
                 i.unblocked_datetime = transaction[0].create_date
+            
+                admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', transaction[0].app)])
+                
+                if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
+                    if i.paid_in_transactions > paid_in_transactions:
+                        i.points_latin = i.points_latin + admin_app_list[0].amount_latin_pay
                 
                 """
                 if i.paid_in_transactions >= transaction[0].app_id.amount:
