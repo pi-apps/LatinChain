@@ -1136,10 +1136,11 @@ $( document ).ready(function() {
                                                     {
                                                         $("#button_reward_ad").prop( "disabled", true );
                                                         $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
-                                                        $(".modal-body").html("<img src='/gemini-native-image.png?v=1.101' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_reward_message").text() + data.points_latin + " Latin points.");
+                                                        var gemini_image = getGeminiImage();
+                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_reward_message").text() + data.points_latin + " Latin points.");
                                                         
                                                         if(data.x2_game)
-                                                            $(".modal-body").html("<img src='/gemini-native-image.png?v=1.101' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
                                                         
                                                         $("#open_modal").click();
                                                         /*setTimeout(function ()
