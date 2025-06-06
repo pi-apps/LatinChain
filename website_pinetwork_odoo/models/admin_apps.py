@@ -1169,8 +1169,8 @@ class admin_apps(models.Model):
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 data_write = {'unblocked_datetime': datetime.now()}
                                 
-                                #if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
-                                #    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
+                                if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
+                                    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
                                 users[0].sudo().write(data_write)
                                 
@@ -1223,7 +1223,7 @@ class pi_users(models.Model):
     points_chess_wins = fields.Float('Chess Wins', required=False, default=0, digits=(50,2))
     points_sudoku_wins = fields.Float('Sudoku Wins', required=False, default=0, digits=(50,2))
     points_snake_wins = fields.Float('Snake Wins', required=False, default=0, digits=(50,2))
-    points_latin = fields.Float('Latin Points', required=True, default=0, digits=(50,7), compute="_compute_points_latin_unblock", store=True)
+    points_latin = fields.Float('Latin Points', required=True, default=0, digits=(50,7))
     points_datetime = fields.Datetime('Points Datetime', compute="_total_points", store=True, default=datetime.now())
     paid_in_transactions = fields.Float('Paid by user in transactions', compute="_total_paid_transactions", store=True, digits=(50,7), groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_transactions_ids = fields.One2many('pi.transactions', 'pi_user', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -1330,19 +1330,6 @@ class pi_users(models.Model):
                 i.unblocked = False
             else:
                 i.unblocked = True
-    
-    @api.depends("unblocked_datetime")
-    def _compute_points_latin_unblock(self):
-        for i in self:
-            senconds_available = 1200
-            if i.unblocked_datetime:
-                seconds_available = (datetime.now() - i.unblocked_datetime).seconds
-            
-            if seconds_available >= 0 and seconds_available < 120:
-                admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
-                
-                if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
-                    i.points_latin = i.points_latin + admin_app_list[0].amount_latin_pay
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
     def _total_paid_transactions(self):
