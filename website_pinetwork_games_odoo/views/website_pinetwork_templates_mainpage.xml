@@ -960,7 +960,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.106"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.272"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.273"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1411,7 +1411,7 @@
                             </div>
                             <div style="margin-bottom:5px">
                                 <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="col-8 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain7588.pinet.com" target="_blank" class="col-8 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" target="_blank" class="col-8 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
                         

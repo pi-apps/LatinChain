@@ -1313,7 +1313,7 @@ $( document ).ready(function() {
     btn.addEventListener('click', async () => {
         const shareData = {
             title: 'LatinChain Platform',
-            text: $("#share_message").text() + "\n\nMainnet:\nhttps://latinchain7588.pinet.com/\nTestnet:\nhttps://latinchaintest9869.pinet.com/\nCrypto news:\nhttps://news.latin-chain.com/",
+            text: $("#share_message").text() + "\n\nMainnet:\nhttps://latinchain.pinet.com/\nTestnet:\nhttps://latinchaintest9869.pinet.com/\nCrypto news:\nhttps://news.latin-chain.com/",
             //url: 'https://latin-chain.com/',
         }
         
@@ -1339,7 +1339,7 @@ $( document ).ready(function() {
         share_video.addEventListener('click', async () => {
             const shareData = {
                 title: 'LatinChain Platform',
-                text: $("#share_message").text() + "\n\nVideo:\n" + $(".open_streaming").attr("videourl") + "\nMainnet:\nhttps://latinchain7588.pinet.com/\nTestnet:\nhttps://latinchaintest9869.pinet.com/",
+                text: $("#share_message").text() + "\n\nVideo:\n" + $(".open_streaming").attr("videourl") + "\nMainnet:\nhttps://latinchain.pinet.com/\nTestnet:\nhttps://latinchaintest9869.pinet.com/",
                 //url: 'https://latin-chain.com/',
             }
             

@@ -81,7 +81,7 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/mainnet/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def latinchain_mainnet(self, **kw):
-        return http.request.redirect('https://latinchain7588.pinet.com')
+        return http.request.redirect('https://latinchain.pinet.com')
     
     @http.route('/testnet/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def latinchain_testnet(self, **kw):
