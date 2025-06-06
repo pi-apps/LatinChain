@@ -1351,15 +1351,15 @@ class pi_users(models.Model):
             else:
                 i.unblocked_datetime = transaction[0].create_date
             
-            senconds_available = 1200
-            if i.unblocked_datetime:
-                seconds_available = (datetime.now() - i.unblocked_datetime).seconds
-            
-                if seconds_available >= 0 and seconds_available < 120:
-                    admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
-                    
-                    if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
-                        i.points_latin = i.points_latin + admin_app_list[0].amount_latin_pay
+                senconds_available = 1200
+                if i.unblocked_datetime:
+                    seconds_available = (datetime.now() - i.unblocked_datetime).seconds
+                
+                    if seconds_available >= 0 and seconds_available < 120:
+                        admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+                        
+                        if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
+                            i.points_latin = i.points_latin + admin_app_list[0].amount_latin_pay
                 
                 """
                 if i.paid_in_transactions >= transaction[0].app_id.amount:
