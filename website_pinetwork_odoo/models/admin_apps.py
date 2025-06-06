@@ -1169,8 +1169,8 @@ class admin_apps(models.Model):
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 data_write = {'unblocked_datetime': datetime.now()}
                                 
-                                if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
-                                    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
+                                #if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
+                                #    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
                                 users[0].sudo().write(data_write)
                                 
@@ -1330,6 +1330,11 @@ class pi_users(models.Model):
                 i.unblocked = False
             else:
                 i.unblocked = True
+                
+                admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+                
+                if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
+                    i.points_latin = i.points_latin + admin_app_list[0].amount_latin_pay
     
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
     def _total_paid_transactions(self):
