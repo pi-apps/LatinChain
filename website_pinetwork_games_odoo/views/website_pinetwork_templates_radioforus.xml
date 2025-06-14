@@ -34,7 +34,7 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.135"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.136"></script>
                     
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
@@ -331,19 +331,6 @@
                                                     I accept this is a donation and if I pay, I will receive 30 available days from today, to use this app!
                                                 </div>
                                                 <br/>
-                                                <div class="show-verified-user" style="display: none">
-                                                    You are already a <strong>verified</strong> user, you don't need to donate, but if you want to do it, thank you very much.
-                                                </div>
-                                                <div class="show-verified-user" style="display: none">
-                                                    <br/>
-                                                </div>
-                                                <!--<div>
-                                                    What means 30 available days from today?: Your current available days, will be overlapped by the new 30 days. If today is November 15th, and your current available days is from November 1st to November 30th, then your new period after donate, will be from November 15th to December 15th (30 days from today).
-                                                </div>
-                                                <br/>
-                                                <div>
-                                                    In case of you don't have available days (a new user or your 30 days finished): If today is November 15th, then your new period after donate, will be from November 15th to December 15th (30 days from today).
-                                                </div>-->
                                               </label>
                                             </div>
                                         </div>

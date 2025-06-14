@@ -94,10 +94,10 @@ function get_user(donation) {
                             $("#open_modal").click();
                         }
                     }
-                    $(".show-verified-user").show();
+                    //$(".show-verified-user").show();
                 }else
                 {
-                    $(".show-verified-user").hide();
+                    //$(".show-verified-user").hide();
                 }
                 show_pi_ad_user = data.show_pi_ad;
             }
