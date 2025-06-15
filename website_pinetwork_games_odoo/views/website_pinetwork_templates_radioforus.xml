@@ -867,11 +867,11 @@
                             -->
                                         Current time: <span t-esc="datetime.datetime.now()" /> UTC<br/><br/>
                                         Pi cryptocurrency transactions for user <strong translate="no"><span id="username" /></strong>:<br/><br/>
-                                        <div>
+                                        <!--<div>
                                             Company Tax ID: <t t-esc="company_latinchain_id.vat" /><br/>
                                             Company address: <t t-esc="company_latinchain_id.country_id.name" />
                                         </div>
-                                        <br/><br/>
+                                        <br/><br/>-->
                                         <table id="transactions" class="display" style="">
                                             <thead>
                                                 <tr>
