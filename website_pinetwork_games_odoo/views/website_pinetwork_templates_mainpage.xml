@@ -960,7 +960,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.275"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.277"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1443,9 +1443,11 @@
                                 </a>
                                 &#128072;
                                 </div>-->
+                                <!--
                                 <div style="margin-bottom:5px" translate="no">
                                     <button style="max-width: 130px" class="col-8 btn btn-danger font-weight-bold youtube-social" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">channel</div></button>
                                 </div>
+                                -->
                                 <div>Watch good content daily</div>
                                 <iframe id="latinchain-tv" class="rounded" style="max-width: 380px" width="100%" height="200px" src="" title="YouTube video player" frameborder="0" allowfullscreen="true"></iframe>
                             </div>
@@ -1557,13 +1559,17 @@
                                 <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3o2Tbr75z-5oDg1AFNZ1u8" class="col-8 btn btn-danger open_streaming_playlist font-weight-bold" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top videos</div></button>
                             </div>
                             
+                            <!--
                             <div style="margin-bottom:5px" translate="no">
                                 <button class="col-8 btn btn-danger font-weight-bold youtube-trends" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">trends</div></button>
                             </div>
+                            -->
                             
+                            <!--
                             <div style="margin-bottom:5px" translate="no">
                                 <button class="col-8 btn btn-danger font-weight-bold youtube-social" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">channel</div></button>
                             </div>
+                            -->
                             
                             <!--
                             <div style="margin-bottom:5px">
@@ -1960,6 +1966,7 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
+                                        <!--
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
@@ -1967,6 +1974,8 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
+                                        -->
+                                        <!--
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
@@ -1974,6 +1983,7 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
+                                        -->
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-latin-academy" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
