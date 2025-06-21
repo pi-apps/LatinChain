@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-13 22:08+0000\n"
-"PO-Revision-Date: 2025-06-13 22:08+0000\n"
+"POT-Creation-Date: 2025-06-21 01:49+0000\n"
+"PO-Revision-Date: 2025-06-21 01:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -109,8 +109,8 @@ msgstr "* Reglas para estar en el Top 10 Board:"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "* Rules to be in the Top 50 streamers:"
-msgstr "* Reglas para estar en el Top 50 streamers:"
+msgid "* Rules to be in the Top 50 streamers (LatinChain dSocial):"
+msgstr "* Reglas para estar en el Top 50 streamers (LatinChain dSocial):"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -225,11 +225,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"2.- Add your Youtube video link at <strong>Are you Youtuber?</strong> on "
-"mainscreen."
+"2.- Add your Youtube video link at <strong>LatinChain dSocial "
+"(conf)</strong> on mainscreen."
 msgstr ""
-"2.- Agregar tu link de video de Youtube en <strong>¿Eres Youtuber?</strong> "
-"en la pantalla principal."
+"2.- Agrega tu link de video de Youtube en <strong>LatinChain dSocial "
+"(conf)</strong> en la pantalla principal."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -528,13 +528,6 @@ msgid ""
 msgstr ""
 "<br/>\n"
 "                                            Lee las Reglas para saber el monto del pago de los premios:<br/>"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
-msgid ""
-"<br/>\n"
-"                                            Company address:"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -1140,11 +1133,6 @@ msgid "Apps"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Are you Youtuber?"
-msgstr "¿Eres Youtuber?"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
@@ -1243,6 +1231,11 @@ msgstr "Negras"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "CHANNEL"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "CHECKERS"
 msgstr ""
 
@@ -1333,11 +1326,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Community Asia"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
-msgid "Company Tax ID:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1826,6 +1814,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LatinChain dSocial"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LatinChain dSocial (conf)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2948,16 +2941,6 @@ msgid "Yes"
 msgstr "Sí"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-msgid ""
-"You are already a <strong>verified</strong> user, you don't need to donate, "
-"but if you want to do it, thank you very much."
-msgstr ""
-"Ya eres un usuario <strong>verificado</strong>, no necesitas donar, pero si "
-"quieres hacerlo, muchas gracias."
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "You are at"
 msgstr "Estás en"
@@ -3091,6 +3074,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Youtube Social"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Youtube Trends"
 msgstr "Tendencias de Youtube"
 
@@ -3098,11 +3086,6 @@ msgstr "Tendencias de Youtube"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Youtube video URL"
 msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Youtube videos"
-msgstr "Videos de Youtube"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -3134,6 +3117,11 @@ msgstr "y ve anuncios"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "certification"
 msgstr "certificación"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "channel"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
