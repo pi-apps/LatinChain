@@ -1499,7 +1499,7 @@ $( document ).ready(function() {
     });
     
     $( ".bubble-shooterinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Bubble_Shooter", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({href:"https://en.wikipedia.org/wiki/Puzzle_Bobble", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".test-your-braininfo" ).click(function() {
