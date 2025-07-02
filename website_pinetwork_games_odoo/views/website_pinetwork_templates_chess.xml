@@ -296,7 +296,7 @@
                                     <img class="rounded" width="80" height="80" src="/website_pinetwork_games_odoo/static/src/chess/img/icons/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
                                     <h1 align="center" style="font-weight:600">Chess</h1>
                                     
-                                    <div style="margin-bottom:5px; padding:5px; padding-top:10px; width: 100%;" class="border-gradient-rounded">
+                                    <div style="margin-bottom:5px; padding:5px; padding-top:10px; padding-bottom:10px; width: 100%;" class="border-gradient-rounded">
                                     
                                         <div class="p-3 mb-2 bg-info bg-gradient text-black rounded border border-1 border-white" style="filter: contrast(100%) !important;">
                                           <h2 align="center" style="color:#000000 !important;">Play Chess against the best AI Chess Player (Stockfish) using Pi cryptocurrency</h2>
@@ -317,15 +317,15 @@
                                                             <br/>
                                                             <button id="test_game" name="test_game" class="btn btn-success fw-bold" disabled="true"><div><i class="fa-solid fa-flask-vial"></i></div><div>Test game</div></button>
                                                         </div>
-                                                        <br/>
-                                                        <span id="loading_word" style="display: none;">Loading...</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <br/>
                                     </div>
-                                    
+                                    <div class="hide_when_unblock">
+                                        <br/>
+                                        <span id="loading_word" style="display: none;">Loading...</span>
+                                    </div>
                                     <br/>
                                     <!--<ins class="adsbygoogle"
                                          style="display:block"

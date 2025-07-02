@@ -394,7 +394,7 @@
                                     <img class="img-rounded" width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
                                     <h1 align="center" style="font-weight:600">Sudoku</h1>
                                     
-                                    <div style="margin-bottom:5px; padding:5px; padding-top:10px; width: 96%;" class="border-gradient-rounded">
+                                    <div style="margin-bottom:5px; padding:5px; padding-top:10px; padding-bottom:10px; width: 96%;" class="border-gradient-rounded">
                                         
                                         <div class="well well-large label-info label-gradient text-white" style="filter: contrast(100%) !important;">
                                           <h3 align="center" style="color:#ffffff !important;">Play Sudoku any time you want using Pi cryptocurrency</h3>
@@ -411,12 +411,14 @@
                                                 <br/>
                                                 <button id="test_game" name="test_game" class="btn btn-success" disabled="true" style="font-weight: bold;"><div><i class="fa-solid fa-flask-vial"></i></div><div>Test game</div></button>
                                             </div>
-                                            <br/>
-                                            <span id="loading_word" style="display: none;">Loading...</span>
-                                            <br/>
                                         </div>
-                                        <br/>
                                         
+                                    </div>
+                                    
+                                    <div class="hide_when_unblock">
+                                        <br/>
+                                        <span id="loading_word" style="display: none;">Loading...</span>
+                                        <br/>
                                     </div>
                                     
                                     <!--<ins class="adsbygoogle"
