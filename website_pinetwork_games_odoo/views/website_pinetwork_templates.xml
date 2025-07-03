@@ -291,7 +291,7 @@
                           <li><button style="margin-left:5px; height:100%" class="btn btn-info" onclick="openNav()"><i class="fa-solid fa-bars"></i></button></li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active container" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="container" style="text-align:center; max-width: 840px">
                                     <br/>
                                     <img class="rounded" width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
