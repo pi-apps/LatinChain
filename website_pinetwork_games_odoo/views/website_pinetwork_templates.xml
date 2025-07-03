@@ -304,6 +304,11 @@
                                             <h5 translate="no"><strong>#LatinChain #PayPi &#128177;</strong></h5>
                                         </div>
                                         
+                                        <div style="margin-top:5px; margin-bottom: 10px">
+                                            <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>
+                                            <button id="back" class="btn btn-info back" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
+                                        </div>                                        
+                                        
                                         <div style="margin-top:5px">
                                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-12">
                                                 <button id="button_reward_ad" name="button_reward_ad" class="col-10 btn btn-success fw-bold text-white border-success" disabled="true" style="border: 2px solid; margin: 5px; max-width: 300px;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%;">(<i class="fa-solid fa-plug-circle-bolt"></i>x2 points)</div><div style="font-size:80%; display: none">Testing feature</div></button>
@@ -345,12 +350,8 @@
                                               </label>
                                             </div>
                                         </div>
+                                        
                                     </div>
-                                    
-                                    <br />
-                                    <br />
-                                    <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>
-                                    <button id="back" class="btn btn-info back" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                                     
                                     <!--<ins class="adsbygoogle"
                                          style="display:block"
