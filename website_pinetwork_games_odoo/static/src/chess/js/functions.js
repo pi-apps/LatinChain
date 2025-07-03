@@ -183,6 +183,7 @@ function get_user() {
                     $("#button_click").hide();
                     $(".hide_when_unblock").hide();
                     $("#loading_word").hide();
+                    $(".loading_section").hide();
                     $('#chess-tab').show();
                     $("#home-tab").prop( "disabled", true );
                     $('#chess-tab').click();
@@ -206,6 +207,7 @@ function get_user() {
                     $("#button_click").hide();
                     $(".hide_when_unblock").hide();
                     $("#loading_word").hide();
+                    $(".loading_section").hide();
                     $('#chess-tab').show();
                     $("#home-tab").prop( "disabled", true );
                     $('#chess-tab').click();
@@ -227,6 +229,7 @@ function get_user() {
                 {
                     $(".hide_when_unblock").show();
                     $("#loading_word").hide();
+                    $(".loading_section").hide();
                     $("#pi_donate").hide();
                     $("#button_click").show();
                     $('#chess-tab').hide();
@@ -239,6 +242,7 @@ function get_user() {
                         $("#button_click").show();
                         $(".hide_when_unblock").show();
                         $("#loading_word").hide();
+                        $(".loading_section").hide();
                         $('#chess-tab').show();
                         $("#home-tab").prop( "disabled", true );
                         $('#chess-tab').click();
@@ -348,6 +352,7 @@ $( document ).ready(function() {
     
     $(document).ajaxStop(function() {
                 $("#loading_word").hide();
+                $(".loading_section").hide();
             });
             
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
@@ -369,9 +374,11 @@ $( document ).ready(function() {
         $("#home-tab").click();
         
         $("#loading_word").show();
+        $(".loading_section").hide();
                                 
         setTimeout(function() {
           $("#loading_word").hide();
+          $(".loading_section").hide();
         }, 5000);
         
         try {

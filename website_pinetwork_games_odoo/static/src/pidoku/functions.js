@@ -298,6 +298,7 @@ $( document ).ready(function() {
     
     $(document).ajaxStop(function() {
                 $("#loading_word").hide();
+                $(".loading_section").hide();
             });
     
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
@@ -314,9 +315,11 @@ $( document ).ready(function() {
         $("#home-tab").click();
         
         $("#loading_word").show();
+        $(".loading_section").hide();
                                 
         setTimeout(function() {
           $("#loading_word").hide();
+          $(".loading_section").hide();
         }, 5000);
         
         try {
