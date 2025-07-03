@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-29 17:52+0000\n"
-"PO-Revision-Date: 2025-06-29 17:52+0000\n"
+"POT-Creation-Date: 2025-07-03 10:33+0000\n"
+"PO-Revision-Date: 2025-07-03 10:33+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -512,15 +512,6 @@ msgstr ""
 "verificados antes de que se entregue el premio."
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid ""
-"<br/>\n"
-"                                                    <span id=\"loading_word\" style=\"display: none;\">Loading...</span>"
-msgstr ""
-"<br/>\n"
-"                                                <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>\n"
@@ -530,6 +521,16 @@ msgstr ""
 "                                            Lee las Reglas para saber el monto del pago de los premios:<br/>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid ""
+"<br/>\n"
+"                                            <span id=\"loading_word\" style=\"display: none;\">Loading...</span>"
+msgstr ""
+"<br/>\n"
+"                                                <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid ""
 "<br/>\n"
@@ -541,7 +542,6 @@ msgstr ""
 "                                    <br/>"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid ""
 "<br/>\n"
