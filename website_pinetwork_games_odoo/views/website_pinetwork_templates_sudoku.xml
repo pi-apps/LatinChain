@@ -41,7 +41,7 @@
                     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js?v=1.149"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js?v=1.150"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -394,7 +394,7 @@
                                     <img class="img-rounded" width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
                                     <h1 align="center" style="font-weight:600">Sudoku</h1>
                                     
-                                    <div class="loading_section">
+                                    <div class="loading_section" style="margin-bottom:10px;">
                                         <br/>
                                         <span id="loading_word" style="display: none;">Loading...</span>
                                         <br/>

@@ -315,7 +315,7 @@ $( document ).ready(function() {
         $("#home-tab").click();
         
         $("#loading_word").show();
-        $(".loading_section").hide();
+        $(".loading_section").show();
                                 
         setTimeout(function() {
           $("#loading_word").hide();
