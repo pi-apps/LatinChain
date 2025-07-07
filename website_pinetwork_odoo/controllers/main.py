@@ -303,13 +303,16 @@ class PiNetworkBaseController(http.Controller):
         
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
-            show_pi_ad_time = round(((pi_ad_seconds/3600)*60)/100,2)
+            show_pi_ad_time = str(timedelta(seconds=pi_ad_seconds))
+            #round(((pi_ad_seconds/3600)*60)/100,4)
         elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=pi_ad_seconds)):
             show_pi_ad = True
-            show_pi_ad_time = round(((pi_ad_seconds/3600)*60)/100,2)
+            show_pi_ad_time = str(timedelta(seconds=pi_ad_seconds))
+            #round(((pi_ad_seconds/3600)*60)/100,4)
         else:
             show_pi_ad = False
-            show_pi_ad_time = round(((pi_ad_seconds/3600)*60)/100,2)
+            show_pi_ad_time = str(timedelta(seconds=pi_ad_seconds))
+            #round(((pi_ad_seconds/3600)*60)/100,4)
             
         if not pi_users_list[0].pi_ad_datetime:
             if pi_users_list[0].pi_ad_counter >= pi_ad_max:

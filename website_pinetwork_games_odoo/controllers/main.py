@@ -63,7 +63,8 @@ class Website(Website):
             pioneers_streaming = admin_app_list[0].pioneers_streaming
             pi_main_user = admin_app_list[0].pi_main_user
             points_latin_amount = admin_app_list[0].points_latin_amount
-            pi_ad_hours = round(((admin_app_list[0].pi_ad_seconds/3600)*60)/100,2)
+            pi_ad_hours = str(timedelta(seconds=admin_app_list[0].pi_ad_seconds))
+            #round(((admin_app_list[0].pi_ad_seconds/3600)*60)/100,4)
             pi_ad_max = admin_app_list[0].pi_ad_max
         
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
@@ -439,7 +440,8 @@ class PiNetworkController(http.Controller):
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
             points_latin_amount = admin_app_list[0].points_latin_amount
-            pi_ad_hours = round(((admin_app_list[0].pi_ad_seconds/3600)*60)/100,2)
+            pi_ad_hours = str(timedelta(seconds=admin_app_list[0].pi_ad_seconds))
+            #round(((admin_app_list[0].pi_ad_seconds/3600)*60)/100,4)
             pi_ad_max = admin_app_list[0].pi_ad_max
         
         return http.request.render('website_pinetwork_games_odoo.pinetwork', {'amount_latin_pay': amount_latin_pay, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
