@@ -353,7 +353,7 @@
                             </style>
                             
                             <style media="print">
-                                .darkmode-toggle, .darkmode-layer {
+                                .darkmode-toggle, .darkmode-layer, .hide-when-print {
                                   display: none;
                                 }
                             </style>
@@ -408,7 +408,9 @@
                                 </h5>
                             </div>
                         </div>
-                        <br/><br/><br/><br/><br/>
+                        <div class="hide-when-print">
+                            <br/><br/><br/><br/><br/>
+                        </div>
                     </body>
                 </html>
             </t>
