@@ -164,296 +164,298 @@
                                     document.getElementById("translate_text_latinchain_2").style.display = "";
                             });
                         </script>
-                        <script src="/website_pinetwork_games_odoo/static/src/js/Darkmode.js-master/lib/darkmode-js.js"></script>
-                        <script>
-                            if(location.pathname.substring(0, 4) != "/web")
-                            {
-                              new Darkmode({
-                                bottom: '10%',
-                                left: '10%',
-                                time: '0.5s',
-                                label: '🌓',
-                                mixColor: '#d3d3d3', // default: '#fff'
-                                backgroundColor: '#fff',  // default: '#fff'
-                                buttonColorDark: 'gray',  // default: '#100f2c'
-                                buttonColorLight: '#fff', // default: '#fff'                            
-                              }).showWidget();
-                            }
-                        </script>
-                        <style>
-                            .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
-                            .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated label {
-                              color: #000 !important;
-                            }
+                        <t t-if="not hide_darkmode">
+                            <script src="/website_pinetwork_games_odoo/static/src/js/Darkmode.js-master/lib/darkmode-js.js"></script>
+                            <script>
+                                if(location.pathname.substring(0, 4) != "/web")
+                                {
+                                  new Darkmode({
+                                    bottom: '10%',
+                                    left: '10%',
+                                    time: '0.5s',
+                                    label: '🌓',
+                                    mixColor: '#d3d3d3', // default: '#fff'
+                                    backgroundColor: '#fff',  // default: '#fff'
+                                    buttonColorDark: 'gray',  // default: '#100f2c'
+                                    buttonColorLight: '#fff', // default: '#fff'                            
+                                  }).showWidget();
+                                }
+                            </script>
+                            <style>
+                                .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
+                                .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated label {
+                                  color: #000 !important;
+                                }
 
-                            .darkmode--activated #game-promotion > span {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated label {
-                              color: #fff !important;
-                            }
-                            
-                            .board-table {
-                              filter: contrast(100%) !important;
-                            }
-                            
-                            iframe {
-                              filter: contrast(100%) !important;
-                            }
-                            
-                            #game-settings {
-                              filter: contrast(100%) !important;
-                            }
-                            
-                            .darkmode--activated button > span {
-                              color: #fff !important;
-                            }
-                            
-                            .darkmode--activated span {
-                              color: white !important;
-                            }
-                            
-                            .darkmode--activated #translate_text_latinchain_2 {
-                              color: black !important;
-                            }
-                            
-                            .darkmode--activated .apex > * {
-                              color: black !important;
-                            }
-                            
-                            .darkmode--activated #game-difficulty-option > *,
-                            .darkmode--activated #game-difficulty-skill-settings > *,
-                            .darkmode--activated .values > *{
-                              color: black !important;
-                            }
-                            
-                            .darkmode--activated #game-difficulty-option > span.label{
-                              color: black !important;
-                            }
-                            
-                            .darkmode--activated #game-difficulty-option > span.label:hover,
-                            .darkmode--activated #game-difficulty-option > span.label:active {
-                              color: white !important;
-                            }
-                            
-                            .darkmode--activated #game-difficulty-skill-settings > span.close{
-                              background-color: black !important;
-                            }
-                            
-                            .darkmode--activated #game-difficulty-skill-settings > span.close:hover,
-                            .darkmode--activated #game-difficulty-skill-settings > span.close:active{
-                              background-color: white !important;
-                            }
-                            
-                            .darkmode--activated .popup > *{
-                              color: black !important;
-                            }
-                            
-                            .darkmode--activated .label-choose-side {
-                              color: black !important;
-                            }
-                            
-                            .darkmode--activated .turns-history {
-                              color: gray !important;
-                            }
-                            
-                            .darkmode--activated .turns-history > ol > li > span {
-                              color: gray !important;
-                            }
-                            
-                            .darkmode--activated .accordion-body {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .odd, .darkmode--activated .even {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated td > span > .fa-arrow-up {
-                              color: red !important;
-                            }
-                            
-                            .darkmode--activated td > span > .fa-arrow-down {
-                              color: green !important;
-                            }
-                            
-                            .darkmode--activated td > .btn-link {
-                              color: green !important;
-                            }
-                            
-                            .darkmode--activated .dataTables_info {
-                              color: #fff !important;
-                            }
-                            
-                            .darkmode--activated .container,
-                            .darkmode--activated .container > span {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .container > span > p * {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .container > div > div > span > i {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .container > h3 * {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .accordion-body > h1 > span,
-                            .darkmode--activated .accordion-body > h3 > span {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .accordion-body > h1 > span *,
-                            .darkmode--activated .accordion-body > h3 > span * {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .accordion-item > h2 > button > strong > span {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .username_code, .darkmode--activated #username {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .list-group-item,
-                            .darkmode--activated .list-group-item > span {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .s_mega_menu_multi_menus > .container > .row > div > h4 {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated input, 
-                            .darkmode--activated select{
-                              color: white !important;
-                              background-color: black !important;
-                            }
-                            
-                            input:disabled, 
-                            select:disabled{
-                              filter: contrast(100%) !important;
-                            }
-                            
-                            .darkmode--activated .dataTables_paginate > span > a.paginate_button,
-                            .darkmode--activated .dataTables_paginate > span > span.ellipsis{
-                              color: white !important;
-                            }
-                            
-                            .darkmode--activated .dataTables_paginate > span > a.current{
-                              color: black !important;
-                            }
-                            
-                            .darkmode--activated .dataTables_paginate > a.previous,
-                            .darkmode--activated .dataTables_paginate > a.next,
-                            .darkmode--activated .dataTable > thead > tr > th
-                            {
-                              color: white !important;
-                            }
-                            
-                            .darkmode-toggle {
-                                z-index:100;
-                            }
-                            
-                            .darkmode--activated .tbl-next-up-widget-item * {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated #taboola-below-article-thumbnails * {
-                              color: #fff !important;
-                            }
-                            
-                            .darkmode--activated #loading_word {
-                              padding: 5px !important;
-                              margin: 20px !important;
-                              border: 4px solid transparent;
-                              border-radius: 20px;
-                              background: 
-                                linear-gradient(to right, #021526, #021526), 
-                                linear-gradient(to right, red , blue); 
-                              background-clip: padding-box, border-box;
-                              background-origin: padding-box, border-box;
-                              color: white !important;
-                              filter: contrast(100%) !important;
-                            }
-                            
-                            #loading_word {
-                              padding: 5px !important;
-                              margin: 20px !important;
-                              border: 4px solid transparent;
-                              border-radius: 20px;
-                              background: 
-                                linear-gradient(to right, white, white), 
-                                linear-gradient(to right, red , blue); 
-                              background-clip: padding-box, border-box;
-                              background-origin: padding-box, border-box;
-                              color: black !important;
-                              filter: contrast(100%) !important;
-                            }
-                            
-                            .video-cta-button {
-                              color: #000 !important;
-                            }
-                            
-                            .btn-info, 
-                            .btn-primary, 
-                            .btn-success, 
-                            a.btn-success {
-                              filter: contrast(100%) !important;
-                            }
-                            
-                            .darkmode--activated .goog-te-gadget {
-                              color: #000 !important;
-                            }
-                            
-                            .darkmode--activated .border-gradient-rounded {
-                              /* Border */
-                              border: 4px solid transparent;
-                              border-radius: 20px;
-                              background: 
-                                linear-gradient(to right, #021526, #021526), 
-                                linear-gradient(to right, red , blue); 
-                              background-clip: padding-box, border-box;
-                              background-origin: padding-box, border-box;
-                              color: white !important;
-                              filter: contrast(100%) !important;
-                            }
-                            
-                            .darkmode--activated .btn-outline-info:hover, 
-                            .darkmode--activated .btn-outline-info:active, 
-                            .darkmode--activated .btn-outline-primary:hover, 
-                            .darkmode--activated .btn-outline-primary:active, 
-                            .darkmode--activated .btn-outline-success:hover, 
-                            .darkmode--activated .btn-outline-success:active, 
-                            .darkmode--activated a.btn-outline-success:hover, 
-                            .darkmode--activated a.btn-outline-success:active,
-                            .darkmode--activated .btn-outline-info:disabled:hover, 
-                            .darkmode--activated .btn-outline-primary:disabled:hover, 
-                            .darkmode--activated .btn-outline-success:disabled:hover,
-                            .darkmode--activated .a.btn-outline-success:disabled:hover {
-                                color: #fff !important;
-                            }
-                            
-                            .border-gradient-rounded {
-                              /* Border */
-                              border: 4px solid transparent;
-                              border-radius: 20px;
-                              background: 
-                                linear-gradient(to right, white, white), 
-                                linear-gradient(to right, red , blue); 
-                              background-clip: padding-box, border-box;
-                              background-origin: padding-box, border-box;
-                              color: black !important;
-                              filter: contrast(100%) !important;
-                            }
-                            
-                        </style>
+                                .darkmode--activated #game-promotion > span {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated label {
+                                  color: #fff !important;
+                                }
+                                
+                                .board-table {
+                                  filter: contrast(100%) !important;
+                                }
+                                
+                                iframe {
+                                  filter: contrast(100%) !important;
+                                }
+                                
+                                #game-settings {
+                                  filter: contrast(100%) !important;
+                                }
+                                
+                                .darkmode--activated button > span {
+                                  color: #fff !important;
+                                }
+                                
+                                .darkmode--activated span {
+                                  color: white !important;
+                                }
+                                
+                                .darkmode--activated #translate_text_latinchain_2 {
+                                  color: black !important;
+                                }
+                                
+                                .darkmode--activated .apex > * {
+                                  color: black !important;
+                                }
+                                
+                                .darkmode--activated #game-difficulty-option > *,
+                                .darkmode--activated #game-difficulty-skill-settings > *,
+                                .darkmode--activated .values > *{
+                                  color: black !important;
+                                }
+                                
+                                .darkmode--activated #game-difficulty-option > span.label{
+                                  color: black !important;
+                                }
+                                
+                                .darkmode--activated #game-difficulty-option > span.label:hover,
+                                .darkmode--activated #game-difficulty-option > span.label:active {
+                                  color: white !important;
+                                }
+                                
+                                .darkmode--activated #game-difficulty-skill-settings > span.close{
+                                  background-color: black !important;
+                                }
+                                
+                                .darkmode--activated #game-difficulty-skill-settings > span.close:hover,
+                                .darkmode--activated #game-difficulty-skill-settings > span.close:active{
+                                  background-color: white !important;
+                                }
+                                
+                                .darkmode--activated .popup > *{
+                                  color: black !important;
+                                }
+                                
+                                .darkmode--activated .label-choose-side {
+                                  color: black !important;
+                                }
+                                
+                                .darkmode--activated .turns-history {
+                                  color: gray !important;
+                                }
+                                
+                                .darkmode--activated .turns-history > ol > li > span {
+                                  color: gray !important;
+                                }
+                                
+                                .darkmode--activated .accordion-body {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .odd, .darkmode--activated .even {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated td > span > .fa-arrow-up {
+                                  color: red !important;
+                                }
+                                
+                                .darkmode--activated td > span > .fa-arrow-down {
+                                  color: green !important;
+                                }
+                                
+                                .darkmode--activated td > .btn-link {
+                                  color: green !important;
+                                }
+                                
+                                .darkmode--activated .dataTables_info {
+                                  color: #fff !important;
+                                }
+                                
+                                .darkmode--activated .container,
+                                .darkmode--activated .container > span {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .container > span > p * {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .container > div > div > span > i {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .container > h3 * {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .accordion-body > h1 > span,
+                                .darkmode--activated .accordion-body > h3 > span {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .accordion-body > h1 > span *,
+                                .darkmode--activated .accordion-body > h3 > span * {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .accordion-item > h2 > button > strong > span {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .username_code, .darkmode--activated #username {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .list-group-item,
+                                .darkmode--activated .list-group-item > span {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .s_mega_menu_multi_menus > .container > .row > div > h4 {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated input, 
+                                .darkmode--activated select{
+                                  color: white !important;
+                                  background-color: black !important;
+                                }
+                                
+                                input:disabled, 
+                                select:disabled{
+                                  filter: contrast(100%) !important;
+                                }
+                                
+                                .darkmode--activated .dataTables_paginate > span > a.paginate_button,
+                                .darkmode--activated .dataTables_paginate > span > span.ellipsis{
+                                  color: white !important;
+                                }
+                                
+                                .darkmode--activated .dataTables_paginate > span > a.current{
+                                  color: black !important;
+                                }
+                                
+                                .darkmode--activated .dataTables_paginate > a.previous,
+                                .darkmode--activated .dataTables_paginate > a.next,
+                                .darkmode--activated .dataTable > thead > tr > th
+                                {
+                                  color: white !important;
+                                }
+                                
+                                .darkmode-toggle {
+                                    z-index:100;
+                                }
+                                
+                                .darkmode--activated .tbl-next-up-widget-item * {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated #taboola-below-article-thumbnails * {
+                                  color: #fff !important;
+                                }
+                                
+                                .darkmode--activated #loading_word {
+                                  padding: 5px !important;
+                                  margin: 20px !important;
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, #021526, #021526), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: white !important;
+                                  filter: contrast(100%) !important;
+                                }
+                                
+                                #loading_word {
+                                  padding: 5px !important;
+                                  margin: 20px !important;
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, white, white), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: black !important;
+                                  filter: contrast(100%) !important;
+                                }
+                                
+                                .video-cta-button {
+                                  color: #000 !important;
+                                }
+                                
+                                .btn-info, 
+                                .btn-primary, 
+                                .btn-success, 
+                                a.btn-success {
+                                  filter: contrast(100%) !important;
+                                }
+                                
+                                .darkmode--activated .goog-te-gadget {
+                                  color: #000 !important;
+                                }
+                                
+                                .darkmode--activated .border-gradient-rounded {
+                                  /* Border */
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, #021526, #021526), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: white !important;
+                                  filter: contrast(100%) !important;
+                                }
+                                
+                                .darkmode--activated .btn-outline-info:hover, 
+                                .darkmode--activated .btn-outline-info:active, 
+                                .darkmode--activated .btn-outline-primary:hover, 
+                                .darkmode--activated .btn-outline-primary:active, 
+                                .darkmode--activated .btn-outline-success:hover, 
+                                .darkmode--activated .btn-outline-success:active, 
+                                .darkmode--activated a.btn-outline-success:hover, 
+                                .darkmode--activated a.btn-outline-success:active,
+                                .darkmode--activated .btn-outline-info:disabled:hover, 
+                                .darkmode--activated .btn-outline-primary:disabled:hover, 
+                                .darkmode--activated .btn-outline-success:disabled:hover,
+                                .darkmode--activated .a.btn-outline-success:disabled:hover {
+                                    color: #fff !important;
+                                }
+                                
+                                .border-gradient-rounded {
+                                  /* Border */
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, white, white), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: black !important;
+                                  filter: contrast(100%) !important;
+                                }
+                                
+                            </style>
+                        </t>
                     </t>
 
                     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -637,277 +639,279 @@
                                 document.getElementById("translate_text_latinchain_2").style.display = "";
                         });
                     </script>
-                    <script src="/website_pinetwork_games_odoo/static/src/js/Darkmode.js-master/lib/darkmode-js.js"></script>
-                    <script>
-                        if(location.pathname.substring(0, 4) != "/web")
-                        {
-                            new Darkmode({
-                                bottom: '10%',
-                                left: '10%',
-                                time: '0.5s',
-                                label: '🌓',
-                                mixColor: '#d3d3d3', // default: '#fff'
-                                backgroundColor: '#fff',  // default: '#fff'
-                                buttonColorDark: 'gray',  // default: '#100f2c'
-                                buttonColorLight: '#fff', // default: '#fff'                            
-                            }).showWidget();
-                        }
-                    </script>
-                    <style>
-                        .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
-                        .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated label {
-                          color: #fff !important;
-                        }
-                        
-                        .darkmode--activated #translate_text_latinchain_2, .darkmode--activated .tab-content {
-                          color: #fff;
-                        }
-                        
-                        .board-table {
-                          filter: contrast(100%) !important;
-                        }
-                        
-                        iframe {
-                          filter: contrast(100%) !important;
-                        }
-                        
-                        .darkmode--activated button > span {
-                          color: #fff !important;
-                        }
-                        
-                        .darkmode--activated button {
-                          color: #fff !important;
-                        }
-                        
-                        .darkmode--activated a {
-                          color: #fff !important;
-                        }
-                        
-                        .darkmode--activated .nav-pills > .nav-item > .nav-link {
-                          color: #000 !important;
-                        }
-                        
-                        .nav-pills > .nav-item > .nav-link {
-                          color: #000 !important;
-                        }
-                        
-                        .nav-pills > .nav-item > .active {
-                          color: #fff !important;
-                        }
-                        
-                        .darkmode--activated .navbar-nav > .nav-item > .nav-link > span, 
-                        .darkmode--activated .navbar-nav > .nav-item > .nav-link, 
-                        .darkmode--activated .flex-column > .nav-link{
-                          color: gray !important;
-                        }
-                        
-                        .darkmode--activated .navbar-nav > .nav-item > .active > span{
-                          color: black !important;
-                        }
-                        
-                        .darkmode--activated .nav-pills > .nav-item > .active {
-                          color: #fff !important;
-                        }
-                        
-                        .darkmode--activated #social_div {
-                          color: #fff !important;
-                        }
-                        
-                        .darkmode--activated #loading_word {
-                          padding: 5px !important;
-                          margin: 20px !important;
-                          border: 4px solid transparent;
-                          border-radius: 20px;
-                          background: 
-                            linear-gradient(to right, #021526, #021526), 
-                            linear-gradient(to right, red , blue); 
-                          background-clip: padding-box, border-box;
-                          background-origin: padding-box, border-box;
-                          color: white !important;
-                          filter: contrast(100%) !important;
-                        }
-                        
-                        #loading_word {
-                          padding: 5px !important;
-                          margin: 20px !important;
-                          border: 4px solid transparent;
-                          border-radius: 20px;
-                          background: 
-                            linear-gradient(to right, white, white), 
-                            linear-gradient(to right, red , blue); 
-                          background-clip: padding-box, border-box;
-                          background-origin: padding-box, border-box;
-                          color: black !important;
-                          filter: contrast(100%) !important;
-                        }
-                        
-                        .darkmode--activated .card-header > h5 > button > div, .darkmode--activated .card-body > .container > .row > div, .darkmode--activated .card-body > .container > .row > div > a > div {
-                          color: #000 !important;
-                        }
-                        
-                        span {
-                          filter: contrast(100%) !important;
-                        }
-                        
-                        .darkmode--activated #taboola-below-article-thumbnails * {
-                          color: #fff !important;
-                        }
-                        
-                        .darkmode--activated .odd, .darkmode--activated .even {
-                          color: #000 !important;
-                        }
-                        
-                        .darkmode--activated td > span > .fa-arrow-up {
-                          color: red !important;
-                        }
-                        
-                        .darkmode--activated td > span > .fa-arrow-down {
-                          color: green !important;
-                        }
-                        
-                        .darkmode--activated td > .btn-link {
-                          color: green !important;
-                        }
-                        
-                        .darkmode--activated .container, .darkmode--activated .dataTables_info {
-                          color: #fff !important;
-                        }
-                        
-                        .darkmode--activated .s_mega_menu_multi_menus > .container > .row > div > h4 {
-                          color: #000 !important;
-                        }
-                        
-                        .darkmode--activated .s_mega_menu_multi_menus > .container > .row > div > h4 {
-                          color: #000 !important;
-                        }
-                        
-                        .darkmode--activated input, 
-                        .darkmode--activated select{
-                          color: white !important;
-                          background-color: black !important;
-                        }
-                        
-                        input:disabled, 
-                        select:disabled{
-                          filter: contrast(100%) !important;
-                        }
-                        
-                        .darkmode--activated .dataTables_paginate > span > a.paginate_button,
-                        .darkmode--activated .dataTables_paginate > span > span.ellipsis{
-                          color: white !important;
-                        }
-                        
-                        .darkmode--activated .dataTables_paginate > span > a.current{
-                          color: black !important;
-                        }
-                        
-                        .darkmode--activated .dataTables_paginate > a.previous,
-                        .darkmode--activated .dataTables_paginate > a.next,
-                        .darkmode--activated .dataTable > thead > tr > th
-                        {
-                          color: white !important;
-                        }
-                        
-                        .darkmode-toggle {
-                            z-index:100;
-                        }
-                        
-                        .darkmode--activated .o_colored_level > p > span {
-                          background-color: #2C2C2C !important;
-                        }
-                        
-                        .darkmode--activated .btn-outline-info:hover, 
-                        .darkmode--activated .btn-outline-info:active, 
-                        .darkmode--activated .btn-outline-primary:hover, 
-                        .darkmode--activated .btn-outline-primary:active, 
-                        .darkmode--activated .btn-outline-success:hover, 
-                        .darkmode--activated .btn-outline-success:active, 
-                        .darkmode--activated a.btn-outline-success:hover, 
-                        .darkmode--activated a.btn-outline-success:active,
-                        .darkmode--activated .btn-outline-info:disabled:hover, 
-                        .darkmode--activated .btn-outline-primary:disabled:hover, 
-                        .darkmode--activated .btn-outline-success:disabled:hover,
-                        .darkmode--activated .a.btn-outline-success:disabled:hover {
-                            color: #fff !important;
-                        }
-                        
-                        .darkmode--activated .btn-outline-warning:hover, 
-                        .darkmode--activated .btn-outline-warning:active {
-                            color: #000 !important;
-                        }
-                        
-                        .darkmode--activated .list-group-item {
-                            background-color: #484848 !important;
-                        }
-                        
-                        .darkmode--activated a > i.fa-home,
-                        .darkmode--activated a > i.fa-home:hover,
-                        .darkmode--activated a > i.fa-home:active {
-                            color: #000 !important;
-                        }
-                        
-                        .darkmode--activated button.dropdown-toggle::after {
-                            color: #000 !important;
-                        }
-                        
-                        .darkmode--activated #taboola-mid-article-thumbnails * {
-                          color: #fff !important;
-                        }
-                        
-                        .video-cta-button {
-                          color: #000 !important;
-                        }
-                        
-                        .darkmode--activated .goog-te-gadget {
-                          color: #fff !important;
-                        }
-                                                
-                        .darkmode--activated .accordion-button:hover {
-                          color: white !important;
-                        }
-                        
-                        .darkmode--activated .accordion-button {
-                          color: black !important;
-                        }
-                        
-                        .darkmode--activated .border-gradient-rounded {
-                          /* Border */
-                          border: 4px solid transparent;
-                          border-radius: 20px;
-                          background: 
-                            linear-gradient(to right, #021526, #021526), 
-                            linear-gradient(to right, red , blue); 
-                          background-clip: padding-box, border-box;
-                          background-origin: padding-box, border-box;
-                          color: white !important;
-                          filter: contrast(100%) !important;
-                        }
-                        
-                        .darkmode--activated .next-pi {
-                            color: white !important;
-                        }
-                        
-                        .btn-outline-info:disabled:hover, 
-                        .btn-outline-primary:disabled:hover, 
-                        .btn-outline-success:disabled:hover,
-                        .a.btn-outline-success:disabled:hover{
-                            color: #000 !important;
-                        }
-                        
-                        .border-gradient-rounded {
-                          /* Border */
-                          border: 4px solid transparent;
-                          border-radius: 20px;
-                          background: 
-                            linear-gradient(to right, white, white), 
-                            linear-gradient(to right, red , blue); 
-                          background-clip: padding-box, border-box;
-                          background-origin: padding-box, border-box;
-                          color: black !important;
-                          filter: contrast(100%) !important;
-                        }
-                        
-                    </style>
+                    <t t-if="not hide_darkmode">
+                        <script src="/website_pinetwork_games_odoo/static/src/js/Darkmode.js-master/lib/darkmode-js.js"></script>
+                        <script>
+                            if(location.pathname.substring(0, 4) != "/web")
+                            {
+                                new Darkmode({
+                                    bottom: '10%',
+                                    left: '10%',
+                                    time: '0.5s',
+                                    label: '🌓',
+                                    mixColor: '#d3d3d3', // default: '#fff'
+                                    backgroundColor: '#fff',  // default: '#fff'
+                                    buttonColorDark: 'gray',  // default: '#100f2c'
+                                    buttonColorLight: '#fff', // default: '#fff'                            
+                                }).showWidget();
+                            }
+                        </script>
+                        <style>
+                            .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
+                            .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated label {
+                              color: #fff !important;
+                            }
+                            
+                            .darkmode--activated #translate_text_latinchain_2, .darkmode--activated .tab-content {
+                              color: #fff;
+                            }
+                            
+                            .board-table {
+                              filter: contrast(100%) !important;
+                            }
+                            
+                            iframe {
+                              filter: contrast(100%) !important;
+                            }
+                            
+                            .darkmode--activated button > span {
+                              color: #fff !important;
+                            }
+                            
+                            .darkmode--activated button {
+                              color: #fff !important;
+                            }
+                            
+                            .darkmode--activated a {
+                              color: #fff !important;
+                            }
+                            
+                            .darkmode--activated .nav-pills > .nav-item > .nav-link {
+                              color: #000 !important;
+                            }
+                            
+                            .nav-pills > .nav-item > .nav-link {
+                              color: #000 !important;
+                            }
+                            
+                            .nav-pills > .nav-item > .active {
+                              color: #fff !important;
+                            }
+                            
+                            .darkmode--activated .navbar-nav > .nav-item > .nav-link > span, 
+                            .darkmode--activated .navbar-nav > .nav-item > .nav-link, 
+                            .darkmode--activated .flex-column > .nav-link{
+                              color: gray !important;
+                            }
+                            
+                            .darkmode--activated .navbar-nav > .nav-item > .active > span{
+                              color: black !important;
+                            }
+                            
+                            .darkmode--activated .nav-pills > .nav-item > .active {
+                              color: #fff !important;
+                            }
+                            
+                            .darkmode--activated #social_div {
+                              color: #fff !important;
+                            }
+                            
+                            .darkmode--activated #loading_word {
+                              padding: 5px !important;
+                              margin: 20px !important;
+                              border: 4px solid transparent;
+                              border-radius: 20px;
+                              background: 
+                                linear-gradient(to right, #021526, #021526), 
+                                linear-gradient(to right, red , blue); 
+                              background-clip: padding-box, border-box;
+                              background-origin: padding-box, border-box;
+                              color: white !important;
+                              filter: contrast(100%) !important;
+                            }
+                            
+                            #loading_word {
+                              padding: 5px !important;
+                              margin: 20px !important;
+                              border: 4px solid transparent;
+                              border-radius: 20px;
+                              background: 
+                                linear-gradient(to right, white, white), 
+                                linear-gradient(to right, red , blue); 
+                              background-clip: padding-box, border-box;
+                              background-origin: padding-box, border-box;
+                              color: black !important;
+                              filter: contrast(100%) !important;
+                            }
+                            
+                            .darkmode--activated .card-header > h5 > button > div, .darkmode--activated .card-body > .container > .row > div, .darkmode--activated .card-body > .container > .row > div > a > div {
+                              color: #000 !important;
+                            }
+                            
+                            span {
+                              filter: contrast(100%) !important;
+                            }
+                            
+                            .darkmode--activated #taboola-below-article-thumbnails * {
+                              color: #fff !important;
+                            }
+                            
+                            .darkmode--activated .odd, .darkmode--activated .even {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated td > span > .fa-arrow-up {
+                              color: red !important;
+                            }
+                            
+                            .darkmode--activated td > span > .fa-arrow-down {
+                              color: green !important;
+                            }
+                            
+                            .darkmode--activated td > .btn-link {
+                              color: green !important;
+                            }
+                            
+                            .darkmode--activated .container, .darkmode--activated .dataTables_info {
+                              color: #fff !important;
+                            }
+                            
+                            .darkmode--activated .s_mega_menu_multi_menus > .container > .row > div > h4 {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated .s_mega_menu_multi_menus > .container > .row > div > h4 {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated input, 
+                            .darkmode--activated select{
+                              color: white !important;
+                              background-color: black !important;
+                            }
+                            
+                            input:disabled, 
+                            select:disabled{
+                              filter: contrast(100%) !important;
+                            }
+                            
+                            .darkmode--activated .dataTables_paginate > span > a.paginate_button,
+                            .darkmode--activated .dataTables_paginate > span > span.ellipsis{
+                              color: white !important;
+                            }
+                            
+                            .darkmode--activated .dataTables_paginate > span > a.current{
+                              color: black !important;
+                            }
+                            
+                            .darkmode--activated .dataTables_paginate > a.previous,
+                            .darkmode--activated .dataTables_paginate > a.next,
+                            .darkmode--activated .dataTable > thead > tr > th
+                            {
+                              color: white !important;
+                            }
+                            
+                            .darkmode-toggle {
+                                z-index:100;
+                            }
+                            
+                            .darkmode--activated .o_colored_level > p > span {
+                              background-color: #2C2C2C !important;
+                            }
+                            
+                            .darkmode--activated .btn-outline-info:hover, 
+                            .darkmode--activated .btn-outline-info:active, 
+                            .darkmode--activated .btn-outline-primary:hover, 
+                            .darkmode--activated .btn-outline-primary:active, 
+                            .darkmode--activated .btn-outline-success:hover, 
+                            .darkmode--activated .btn-outline-success:active, 
+                            .darkmode--activated a.btn-outline-success:hover, 
+                            .darkmode--activated a.btn-outline-success:active,
+                            .darkmode--activated .btn-outline-info:disabled:hover, 
+                            .darkmode--activated .btn-outline-primary:disabled:hover, 
+                            .darkmode--activated .btn-outline-success:disabled:hover,
+                            .darkmode--activated .a.btn-outline-success:disabled:hover {
+                                color: #fff !important;
+                            }
+                            
+                            .darkmode--activated .btn-outline-warning:hover, 
+                            .darkmode--activated .btn-outline-warning:active {
+                                color: #000 !important;
+                            }
+                            
+                            .darkmode--activated .list-group-item {
+                                background-color: #484848 !important;
+                            }
+                            
+                            .darkmode--activated a > i.fa-home,
+                            .darkmode--activated a > i.fa-home:hover,
+                            .darkmode--activated a > i.fa-home:active {
+                                color: #000 !important;
+                            }
+                            
+                            .darkmode--activated button.dropdown-toggle::after {
+                                color: #000 !important;
+                            }
+                            
+                            .darkmode--activated #taboola-mid-article-thumbnails * {
+                              color: #fff !important;
+                            }
+                            
+                            .video-cta-button {
+                              color: #000 !important;
+                            }
+                            
+                            .darkmode--activated .goog-te-gadget {
+                              color: #fff !important;
+                            }
+                                                    
+                            .darkmode--activated .accordion-button:hover {
+                              color: white !important;
+                            }
+                            
+                            .darkmode--activated .accordion-button {
+                              color: black !important;
+                            }
+                            
+                            .darkmode--activated .border-gradient-rounded {
+                              /* Border */
+                              border: 4px solid transparent;
+                              border-radius: 20px;
+                              background: 
+                                linear-gradient(to right, #021526, #021526), 
+                                linear-gradient(to right, red , blue); 
+                              background-clip: padding-box, border-box;
+                              background-origin: padding-box, border-box;
+                              color: white !important;
+                              filter: contrast(100%) !important;
+                            }
+                            
+                            .darkmode--activated .next-pi {
+                                color: white !important;
+                            }
+                            
+                            .btn-outline-info:disabled:hover, 
+                            .btn-outline-primary:disabled:hover, 
+                            .btn-outline-success:disabled:hover,
+                            .a.btn-outline-success:disabled:hover{
+                                color: #000 !important;
+                            }
+                            
+                            .border-gradient-rounded {
+                              /* Border */
+                              border: 4px solid transparent;
+                              border-radius: 20px;
+                              background: 
+                                linear-gradient(to right, white, white), 
+                                linear-gradient(to right, red , blue); 
+                              background-clip: padding-box, border-box;
+                              background-origin: padding-box, border-box;
+                              color: black !important;
+                              filter: contrast(100%) !important;
+                            }
+                            
+                        </style>
+                    </t>
                 </t>
 
                 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
