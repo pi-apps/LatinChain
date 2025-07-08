@@ -379,7 +379,8 @@
                             </style>
                             
                             <style media="print">
-                                .darkmode-toggle, .darkmode-layer, .hide-when-print, .print-button {
+                                .darkmode-toggle, .darkmode-layer, .hide-when-print, 
+                                .print-button, #website_translation_latin_chain {
                                   display: none;
                                 }
                                 
