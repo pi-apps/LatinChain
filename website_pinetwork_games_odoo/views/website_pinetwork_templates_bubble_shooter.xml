@@ -55,6 +55,12 @@
                             var pi_user_id = "";
                             async function auth() {
                                 try {
+                                    // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                    const scopes = ['username', 'payments', 'wallet_address'];
+                                    function onIncompletePaymentFound(payment) {
+                                        
+                                    }; // Read more about this in the SDK reference
+                                    
                                     Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                                         pi_user_id = auth.user.uid;
                                     }).catch(function(error) {
