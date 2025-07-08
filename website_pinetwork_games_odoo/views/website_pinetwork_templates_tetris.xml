@@ -76,6 +76,16 @@
                                 }
                             }
                             
+                            auth();
+                            
+                            setTimeout(function ()
+                            {
+                                if(pi_user_id == "")
+                                {
+                                    auth();
+                                }
+                            }, 10000);
+                            
                             setTimeout(function ()
                             {
                                 if(pi_user_id == "")
@@ -86,9 +96,9 @@
                                         window.location.href = window.location.origin;
                                     }
                                     else if(window.location.hostname == "test.latin-chain.com")
-                                        $("#latinchaintest").click();
+                                        $("a#latinchaintest")[0].click();
                                     else
-                                        $("#latinchain").click();
+                                        $("a#latinchain")[0].click();
                                 }
                             }, 20000);
                         });
