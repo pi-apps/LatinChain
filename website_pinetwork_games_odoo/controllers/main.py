@@ -628,7 +628,7 @@ class PiNetworkController(http.Controller):
         else:
             mainnet = admin_app_list[0].mainnet
         
-        return http.request.render('website_pinetwork_games_odoo.certification', {'mainnet': mainnet, 'hide_darkmode': True, 'username': username, 'unblocked': unblocked})
+        return http.request.render('website_pinetwork_games_odoo.certification', {'mainnet': mainnet, 'username': username, 'unblocked': unblocked})
 
     @http.route('/latinchain-partners', type='http', auth="public", website=True, csrf=False)
     def partners(self, **kw):
