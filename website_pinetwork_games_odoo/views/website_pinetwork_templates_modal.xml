@@ -392,6 +392,8 @@
                                   border-radius: 20px;
                                   border-color: black;
                                   filter: contrast(100%) !important;
+                                  
+                                  color: black !important;
                                 }
                                 
                                 .darkmode--activated .border-gradient-rounded {
@@ -402,10 +404,13 @@
                                   border-radius: 20px;
                                   border-color: black;
                                   filter: contrast(100%) !important;
+                                  
+                                  color: black !important;
                                 }
                                 
                                 h5, h3, div {
-                                    color: black;
+                                    color: black !important;
+                                    filter: contrast(100%) !important;
                                 }
                             </style>
                             
