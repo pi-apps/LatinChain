@@ -1397,10 +1397,10 @@ $( document ).ready(function() {
     $( ".cryptonews" ).click(function() {
         $.colorbox({href:"https://news.latin-chain.com/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
-    
+    /*
     $( ".tetris" ).click(function() {
         $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
+    });*/
     
     /*$( ".stellarium" ).click(function() {
         $.colorbox({href:"https://stellarium-web.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
@@ -1441,38 +1441,38 @@ $( document ).ready(function() {
         $.colorbox({href:"https://trends.latin-chain.com/latinchain-dsocial.html", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     */
-    
+    /*
     $( ".mahjong" ).click(function() {
         $.colorbox({href:"/mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
+    });*/
+    /*
     $( ".bubble-shooter" ).click(function() {
         $.colorbox({href:"/bubble-shooter", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
+    });*/
+    /*
     $( ".test-your-brain" ).click(function() {
         $.colorbox({href:"/test-your-brain", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
+    });*/
+    /*
     $( ".15-puzzle" ).click(function() {
-        $.colorbox({href:"https://latin-chain.com/fifteen-puzzle", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
+        $.colorbox({href:"/fifteen-puzzle", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });*/
+    /*
     $( ".pingpong" ).click(function() {
         $.colorbox({href:"/pingpong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
+    });*/
+    /*
     $( ".checkers" ).click(function() {
         $.colorbox({href:"/checkers", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
+    });*/
+    /*
     $( ".domino" ).click(function() {
         $.colorbox({href:"/domino", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
+    });*/
+    /*
     $( ".latincrush" ).click(function() {
         $.colorbox({href:"/latincrush", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
+    });*/
     
     $( ".show_status" ).click(function() {
         $.colorbox({href:"/latinchain_x", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});

@@ -1,94 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <template id="fifteen_puzzle" name="Bubble Shooter">
+        <template id="fifteen_puzzle" name="Fifteen Puzzle">
             <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
             <html>
+            <head>
+                <meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>15 Puzzle Game</title>
+                <!-- Tailwind CSS CDN -->
+                <script src="https://cdn.tailwindcss.com"></script>
+                <style>
+                    /* Custom CSS for the puzzle board and tiles */
+                    body {
+                        font-family: 'Inter', sans-serif; /* Using Inter font as requested */
+                        background-color: #f0f4f8; /* Light gray background */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 100vh;
+                        margin: 0;
+                        padding: 20px;
+                        box-sizing: border-box;
+                    }
 
-                <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+                    .puzzle-container {
+                        background-color: #ffffff;
+                        border-radius: 16px; /* More rounded corners */
+                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                        padding: 24px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        max-width: 90%; /* Responsive width: takes up to 90% of parent width */
+                        width: 400px; /* Max width for desktop, allows shrinking on smaller screens */
+                    }
 
-                <head>
-                    <meta charset="UTF-8" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    .puzzle-board {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+                        grid-template-rows: repeat(4, 1fr); /* 4 equal rows */
+                        gap: 8px; /* Gap between tiles */
+                        width: 100%; /* Takes full width of its container */
+                        padding: 10px;
+                        background-color: #cbd5e1; /* Gray-200 */
+                        border-radius: 12px;
+                        aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+                        max-width: 380px; /* Max width for the board itself */
+                    }
 
-                    <title>Fifteen Puzzle Game</title>
-                    <meta name="description" content="Fifteen Puzzle Game" />
+                    .puzzle-tile {
+                        width: 100%;
+                        height: 100%;
+                        background-color: #4f46e5; /* Indigo-600 */
+                        color: #ffffff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 2.25rem; /* text-4xl */
+                        font-weight: bold;
+                        border-radius: 8px; /* Rounded corners for tiles */
+                        cursor: pointer;
+                        transition: background-color 0.2s ease, transform 0.1s ease;
+                        user-select: none; /* Prevent text selection */
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }
 
-                    <meta property="og:url" content="/fifteen-puzzle"/>
-                    <meta property="og:type" content="website"/>
-                    <meta property="og:title" content="Fifteen Puzzle Game"/>
-                    <meta property="og:description" content="Fifteen Puzzle Game"/>
+                    .puzzle-tile:hover {
+                        background-color: #4338ca; /* Indigo-700 on hover */
+                        transform: translateY(-2px);
+                    }
 
-                    <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
-                    
-                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                    
-                    <link href="/website_pinetwork_games_odoo/static/src/js-15-puzzle/c76b8926bfd4ad77c114.css" rel="stylesheet" />
+                    .puzzle-tile.empty {
+                        background-color: #e2e8f0; /* Gray-200 for empty space */
+                        cursor: default;
+                        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+                    }
 
-                </head>
+                    .puzzle-tile.empty:hover {
+                        background-color: #e2e8f0; /* No change on hover for empty */
+                        transform: none;
+                    }
 
-                <body style="text-align: center; background-color: #fff !important;">
-                    
-                    <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
-                    <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
-                    
-                    <div class="container" style="text-align: center;">
+                    .message-box {
+                        background-color: #fefcbf; /* Yellow-100 */
+                        color: #92400e; /* Yellow-800 */
+                        padding: 12px 20px;
+                        border-radius: 8px;
+                        margin-top: 20px;
+                        font-weight: 600;
+                        text-align: center;
+                        width: 100%;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                    }
 
-                        <div id="game-area"></div>
-                        <button id="how-play" class="shake">
-                            <strong>?</strong>
-                        </button>
-                        <div id="info-panel" class="info">
-                            <div class="info-content">
-                                <div class="info-header">
-                                    <span class="close" style="color:black !important">X</span>
-                                    <h2>How To Play</h2>
-                                </div>
-                                <div class="info-body">
-                                    <p>Move tiles in grid to order them from <b>1</b> to <b>15</b>.</p><p>To move a tile you should click on it.</p>
-                                </div>
-                                <div class="info-footer">
-                                    <h4></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <footer id="footer">
-                            <p></p>
-                        </footer>
-                        <script src="/website_pinetwork_games_odoo/static/src/js-15-puzzle/main-952a6195066148dc0188.bundle.min.js?v=1.106"></script>
-                        
-                        <style>
-                            .darkmode-toggle {
-                                display: none !important;
-                            }
-                            /*.darkmode-layer {
-                                display: none !important;
-                            }*/
-                            
-                            .darkmode--activated #game-area {
-                                filter: contrast(100%) !important;
-                            }
-                            .darkmode--activated .containter {
-                                filter: contrast(100%) !important;
-                            }
-                            
-                            #game-area {
-                                filter: contrast(100%) !important;
-                            }
-                            .containter {
-                                filter: contrast(100%) !important;
-                            }
-                        </style>
-                        
+                    .button {
+                        padding: 10px 20px;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .button-primary {
+                        background-color: #22c55e; /* Green-500 */
+                        color: #ffffff;
+                    }
+
+                    .button-primary:hover {
+                        background-color: #16a34a; /* Green-600 */
+                        transform: translateY(-1px);
+                        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .button-secondary {
+                        background-color: #64748b; /* Slate-500 */
+                        color: #ffffff;
+                    }
+
+                    .button-secondary:hover {
+                        background-color: #475569; /* Slate-600 */
+                        transform: translateY(-1px);
+                        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+                    }
+
+                    /* Responsive adjustments for smaller screens (e.g., mobile) */
+                    @media (max-width: 640px) {
+                        body {
+                            padding: 10px; /* Reduce overall padding on small screens */
+                        }
+                        .puzzle-container {
+                            padding: 16px; /* Reduce container padding */
+                            max-width: 100%; /* Allow container to take full width */
+                        }
+                        .puzzle-board {
+                            gap: 6px; /* Smaller gap between tiles */
+                            padding: 8px; /* Reduce board padding */
+                        }
+                        .puzzle-tile {
+                            font-size: 1.75rem; /* text-3xl for smaller screens */
+                        }
+                        .message-box {
+                            font-size: 0.9rem; /* Smaller font for messages */
+                            padding: 10px 15px;
+                        }
+                        .button {
+                            font-size: 0.9rem;
+                            padding: 8px 16px;
+                        }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="puzzle-container">
+                    <h1 class="text-3xl font-extrabold text-gray-800 mb-6">15 Puzzle Game</h1>
+
+                    <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                    <div id="puzzle-board" class="puzzle-board">
+                        <!-- Puzzle tiles will be dynamically generated here -->
                     </div>
-                </body>
-                
-                <div>
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                </div>
 
-                </html>
+                    <div class="flex flex-col items-center mt-6 w-full">
+                        <p id="moves-count" class="text-xl font-semibold text-gray-700 mb-4">Moves: 0</p>
+                        <div id="message-area" class="message-box hidden"></div>
+                        <div class="flex space-x-4 mt-4">
+                            <button id="new-game-button" class="button button-primary">New Game</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <script type="module" src="/website_pinetwork_games_odoo/static/src/js/games/fifteenpuzzle_functions.js?v=1.101"></script>
+                
+            </body>
+            </html>
                 </t>
 		</template>
 

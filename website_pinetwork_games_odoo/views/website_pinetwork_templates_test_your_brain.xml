@@ -68,6 +68,7 @@
                             <br/>
                             
                             <div class="container" id="menu">
+                                <a class="btn btn-info back" style="margin-bottom:15px; max-width: 30px" href="/"><i class="fa fa-step-backward"></i></a>
                                 <button class="btn" id="easy">Easy</button>
                                 <button class="btn" id="normal">Normal</button>
                                 <button class="btn" id="hard">Hard</button>

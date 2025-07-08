@@ -106,7 +106,7 @@
                         .controls-info p {
                             margin: 2px 0; 
                         }
-                        button, .selection-button {
+                        button, .selection-button, .btn {
                             background: linear-gradient(145deg, #00ddff, #00aacc);
                             color: #1a1a2e;
                             border: none;
@@ -121,7 +121,7 @@
                             transition: all 0.3s ease;
                             box-shadow: 0 4px 10px rgba(0, 220, 255, 0.3);
                         }
-                        button:hover, .selection-button:hover {
+                        button:hover, .selection-button:hover, .btn:hover {
                             background: linear-gradient(145deg, #00efff, #00bbdd);
                             box-shadow: 0 6px 15px rgba(0, 220, 255, 0.5);
                             transform: translateY(-2px);
@@ -149,6 +149,7 @@
                             justify-content: center;
                             gap: 8px; 
                         }
+
                     </style>
                 </head>
                 <body>
@@ -175,6 +176,7 @@
                             <p>Select your player to start.</p>
                         </div>
                         <button id="resetButton">Reset Game</button>
+                        <a id="back" class="btn back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
                     </div>
 
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/pingpong_functions.js?v=1.102"></script>

@@ -282,7 +282,9 @@
                         <header class="mb-4 sm:mb-6 text-center">
                             <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800" style="font-family: 'Roboto Slab', serif;">Classic Dominoes</h1>
                         </header>
-
+                        <div style="text-align:center; margin-bottom:15px;">
+                            <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                        </div>
                         <div class="game-table-layout">
                             <div class="player-zone player-top">
                                 <div id="player-info-1" class="ai-player-info"></div> 

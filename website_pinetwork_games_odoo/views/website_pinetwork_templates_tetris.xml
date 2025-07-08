@@ -85,7 +85,7 @@
                                 <option value="aerolab">Aerolab</option>
                             </select>
                             </p>
-                            <br/>
+                            <a id="back" class="btn btn-info back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
                             <div class="game" style="width:100%; height:380px;"></div>
                             <div class="keyboard" style="width:100%; text-align:center;">
                               <button class="key key-up up btn btn-dark no-before" style="margin: 5px !important"><i class="fa-solid fa-arrow-up"></i></button>

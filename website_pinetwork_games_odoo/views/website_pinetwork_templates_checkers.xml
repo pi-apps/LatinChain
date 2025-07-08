@@ -117,6 +117,7 @@
                     <div id="side-selection-modal" class="modal" style="display: flex;">
                         <div class="modal-content bg-white p-8 rounded-lg shadow-xl text-center">
                             <h2 class="text-2xl font-bold mb-6">Choose Your Side</h2>
+                            <a id="back" class="modal-button bg-blue-500 hover:bg-blue-700 text-white text-lg back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a><br/><br/>
                             <button id="play-red" class="modal-button bg-red-500 hover:bg-red-700 text-white text-lg">Play as Red</button>
                             <button id="play-black" class="modal-button bg-gray-800 hover:bg-gray-900 text-white text-lg">Play as Black</button>
                         </div>

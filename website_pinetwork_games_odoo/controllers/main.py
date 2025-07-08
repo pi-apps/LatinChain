@@ -264,7 +264,7 @@ class PiNetworkController(http.Controller):
             mainnet = admin_app_list[0].mainnet
             google_adsense = admin_app_list[0].google_adsense
         
-        return http.request.render('website_pinetwork_games_odoo.fifteen_puzzle', {'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
+        return http.request.render('website_pinetwork_games_odoo.fifteen_puzzle', {'sandbox': sandbox, 'hide_google_translate': True, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
     @http.route('/pingpong/', type='http', auth="public", website=True, csrf=False)
     def pingpong(self, **kw):

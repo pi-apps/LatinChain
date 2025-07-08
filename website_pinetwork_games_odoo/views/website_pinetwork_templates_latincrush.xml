@@ -69,7 +69,9 @@
             <body class="bg-sky-100">
                 <div class="game-container">
                     <h1 class="text-4xl font-bold text-sky-700 mb-6 text-center">Latin Crush</h1>
-                    
+                    <div style="text-align:center; margin-bottom:15px;">
+                        <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                    </div>
                     <div class="controls bg-white p-4 rounded-lg shadow-md mb-4 flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4">
                         <div class="text-lg">
                             <span class="font-semibold text-sky-600">Score:</span>
