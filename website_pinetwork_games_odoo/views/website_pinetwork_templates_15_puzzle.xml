@@ -156,62 +156,68 @@
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                 
                 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                
-                <script type="text/javascript">
-                    const Pi = window.Pi;
-                    $( document ).ready(function() {
-                        Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-                        var pi_user_id = "";
-                        async function auth() {
-                            try {
-                                Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                                    pi_user_id = auth.user.uid;
-                                }).catch(function(error) {
-                                    //Pi.openShareDialog("Error", error);
+                    
+                    <script type="text/javascript">
+                        const Pi = window.Pi;
+                        $( document ).ready(function() {
+                            Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                            var pi_user_id = "";
+                            async function auth() {
+                                try {
+                                    Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                        pi_user_id = auth.user.uid;
+                                    }).catch(function(error) {
+                                        //Pi.openShareDialog("Error", error);
+                                        //alert(err);
+                                        console.error(error);
+                                    });
+                                } catch (err) {
+                                    //Pi.openShareDialog("Error", err);
                                     //alert(err);
-                                    console.error(error);
-                                });
-                            } catch (err) {
-                                //Pi.openShareDialog("Error", err);
-                                //alert(err);
-                                console.error(err);
-                                // Not able to fetch the user
-                            }
-                        }
-                        
-                        auth();
-                        
-                        setTimeout(function ()
-                        {
-                            if(pi_user_id == "")
-                            {
-                                auth();
-                            }
-                        }, 10000);
-                        
-                        setTimeout(function ()
-                        {
-                            if(pi_user_id == "")
-                            {
-                                alert($("#pi_prowser_message").text());
-                                if(window.location.hostname == "localhost")
-                                {
-                                    window.location.href = window.location.origin;
+                                    console.error(err);
+                                    // Not able to fetch the user
                                 }
-                                else if(window.location.hostname == "test.latin-chain.com")
-                                    $("a#latinchaintest")[0].click();
-                                else
-                                    $("a#latinchain")[0].click();
                             }
-                        }, 20000);
-                    });
-                </script>
-                
-                <input type="hidden" id="sandbox" t-att-value="sandbox"/>
-                <input type="hidden" id="mainnet" t-att-value="mainnet"/>
-                <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
-                <a id="latinchain" href="https://latinchain.pinet.com" target="_blank" style="display:none;">https://latinchain.pinet.com</a>
-                <a id="latinchaintest" href="https://latinchaintest9869.pinet.com" target="_blank" style="display:none;">https://latinchaintest9869.pinet.com</a>
+                            
+                            auth();
+                            
+                            setTimeout(function ()
+                            {
+                                if(pi_user_id == "")
+                                {
+                                    auth();
+                                }
+                            }, 10000);
+                            
+                            setTimeout(function ()
+                            {
+                                if(pi_user_id == "")
+                                {
+                                    alert($("#pi_prowser_message").text());
+                                    document.getElementById('blockingOverlay').style.display = 'block';
+                                    if(window.location.hostname == "localhost")
+                                    {
+                                        window.location.href = window.location.origin;
+                                    }
+                                    else if(window.location.hostname == "test.latin-chain.com")
+                                    {
+                                        $("a#latinchaintest")[0].click();
+                                    }
+                                    else
+                                    {
+                                        $("a#latinchain")[0].click();
+                                    }
+                                }
+                            }, 20000);
+                        });
+                    </script>
+                    
+                    <div id="blockingOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999; display: none;"></div>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                    <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                    <a id="latinchain" href="https://latinchain.pinet.com" target="_blank" style="display:none;">https://latinchain.pinet.com</a>
+                    <a id="latinchaintest" href="https://latinchaintest9869.pinet.com" target="_blank" style="display:none;">https://latinchaintest9869.pinet.com</a>
             </head>
             <body>
                 <div class="puzzle-container">

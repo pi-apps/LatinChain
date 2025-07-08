@@ -193,19 +193,25 @@
                                 if(pi_user_id == "")
                                 {
                                     alert($("#pi_prowser_message").text());
+                                    document.getElementById('blockingOverlay').style.display = 'block';
                                     if(window.location.hostname == "localhost")
                                     {
                                         window.location.href = window.location.origin;
                                     }
                                     else if(window.location.hostname == "test.latin-chain.com")
+                                    {
                                         $("a#latinchaintest")[0].click();
+                                    }
                                     else
+                                    {
                                         $("a#latinchain")[0].click();
+                                    }
                                 }
                             }, 20000);
                         });
                     </script>
                     
+                    <div id="blockingOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999; display: none;"></div>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                     <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
