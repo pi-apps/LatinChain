@@ -342,19 +342,6 @@
                             <div t-if="not unblocked">
                                 <h3>User has to be verified in LatinChain Platform to show the certification. Not verified yet.</h3>
                             </div>
-                            <style>
-                                .border-gradient-rounded {
-                                  /* Border */
-                                  border: 4px solid transparent;
-                                  border-radius: 20px;
-                                  background: 
-                                    linear-gradient(to right, white, white), 
-                                    linear-gradient(to right, red , blue); 
-                                  background-clip: padding-box, border-box;
-                                  background-origin: padding-box, border-box;
-                                  color: black !important;
-                                }
-                            </style>
                             <div t-if="unblocked">
                                 <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
                                 <h3><div style="display:inline;">This info refers to:</div> <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">Mainnet (https://latinchain.pinet.com)</div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">Testnet (https://latinchaintest9869.pinet.com)</div></h3>
