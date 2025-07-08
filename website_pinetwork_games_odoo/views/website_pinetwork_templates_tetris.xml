@@ -63,6 +63,7 @@
                                 try {
                                     Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                                         pi_user_id = auth.user.uid;
+                                        alert(auth.user.username);
                                     }).catch(function(error) {
                                         //Pi.openShareDialog("Error", error);
                                         //alert(err);
