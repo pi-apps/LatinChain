@@ -403,6 +403,10 @@
                                   border-color: black;
                                   filter: contrast(100%) !important;
                                 }
+                                
+                                h5, h3, div {
+                                    color: black;
+                                }
                             </style>
                             
                             <div t-if="unblocked">
