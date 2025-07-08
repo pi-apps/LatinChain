@@ -1,19 +1,3 @@
-// Global variables for Firebase (will be provided by the Canvas environment)
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-
-// Firebase imports (these will be available in the Canvas environment)
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-// Initialize Firebase (if config is available)
-let app;
-let db;
-let auth;
-let userId;
-
 // Puzzle game state variables
 let board = [];
 let moves = 0;
@@ -25,30 +9,8 @@ const movesCountElement = document.getElementById('moves-count');
 const messageAreaElement = document.getElementById('message-area');
 const newGameButton = document.getElementById('new-game-button');
 
-// Function to initialize Firebase
-async function initializeFirebase() {
-    try {
-        if (Object.keys(firebaseConfig).length > 0) {
-            app = initializeApp(firebaseConfig);
-            auth = getAuth(app);
-            db = getFirestore(app);
-
-            if (initialAuthToken) {
-                await signInWithCustomToken(auth, initialAuthToken);
-            } else {
-                await signInAnonymously(auth);
-            }
-            userId = auth.currentUser?.uid || crypto.randomUUID();
-            console.log("Firebase initialized. User ID:", userId);
-        } else {
-            console.warn("Firebase config not provided. Running without persistence.");
-            userId = crypto.randomUUID(); // Fallback for userId if Firebase not configured
-        }
-    } catch (error) {
-        console.error("Error initializing Firebase:", error);
-        userId = crypto.randomUUID(); // Ensure userId is set even on error
-    }
-}
+// Key for storing game state in localStorage
+const LOCAL_STORAGE_KEY = '15PuzzleGameState';
 
 /**
  * Initializes the puzzle board with numbers 1-15 and a blank space.
@@ -109,6 +71,7 @@ function shuffleBoard() {
     gameSolved = false;
     hideMessage();
     renderBoard();
+    saveGameState(); // Save the new shuffled state
 }
 
 /**
@@ -148,9 +111,12 @@ function handleTileClick(event) {
         moves++;
         movesCountElement.textContent = `Moves: ${moves}`;
         renderBoard();
+        saveGameState(); // Save state after each valid move
         if (checkWin()) {
             gameSolved = true;
             showMessage('Congratulations! You solved the puzzle!');
+            // Optionally, clear saved state on win
+            localStorage.removeItem(LOCAL_STORAGE_KEY);
         }
     }
 }
@@ -215,19 +181,73 @@ function hideMessage() {
 }
 
 /**
+ * Saves the current game state (board and moves) to localStorage.
+ */
+function saveGameState() {
+    const gameState = {
+        board: board,
+        moves: moves,
+        gameSolved: gameSolved
+    };
+    try {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(gameState));
+        console.log('Game state saved to localStorage.');
+    } catch (e) {
+        console.error('Error saving game state to localStorage:', e);
+    }
+}
+
+/**
+ * Loads the game state from localStorage.
+ * @returns {boolean} True if state was loaded successfully, false otherwise.
+ */
+function loadGameState() {
+    try {
+        const savedState = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (savedState) {
+            const gameState = JSON.parse(savedState);
+            board = gameState.board;
+            moves = gameState.moves;
+            gameSolved = gameState.gameSolved;
+            movesCountElement.textContent = `Moves: ${moves}`;
+            if (gameSolved) {
+                showMessage('You had previously solved this puzzle! Click "New Game" to play again.');
+            } else {
+                hideMessage();
+            }
+            renderBoard();
+            console.log('Game state loaded from localStorage.');
+            return true;
+        }
+    } catch (e) {
+        console.error('Error loading game state from localStorage:', e);
+        // If there's an error, clear the corrupted state
+        localStorage.removeItem(LOCAL_STORAGE_KEY);
+    }
+    return false;
+}
+
+/**
  * Starts a new game: initializes, shuffles, and renders the board.
  */
 function startNewGame() {
     initializeBoard();
-    shuffleBoard();
+    shuffleBoard(); // Shuffle also saves the initial state
     renderBoard();
 }
 
 // Event listener for the New Game button
 newGameButton.addEventListener('click', startNewGame);
 
-// Initialize Firebase and then start the game
-window.onload = async function() {
-    await initializeFirebase();
-    startNewGame();
-};
+// On window load, try to load saved game state, otherwise start a new game.
+/*window.onload = function() {
+    if (!loadGameState()) {
+        startNewGame();
+    }
+};*/
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    if (!loadGameState()) {
+        startNewGame();
+    }
+});
