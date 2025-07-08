@@ -201,11 +201,13 @@
                                 }
                                 else if(window.location.hostname == "test.latin-chain.com")
                                 {
-                                    $("a#latinchaintest")[0].click();
+                                    window.open("https://latinchaintest9869.pinet.com", "_blank");
+                                    //$("a#latinchaintest")[0].click();
                                 }
                                 else
                                 {
-                                    $("a#latinchain")[0].click();
+                                    window.open("https://latinchain.pinet.com", "_blank");
+                                    //$("a#latinchain")[0].click();
                                 }
                             }
                         }, 20000);
