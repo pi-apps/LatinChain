@@ -202,12 +202,10 @@
                                 else if(window.location.hostname == "test.latin-chain.com")
                                 {
                                     window.open("https://latinchaintest9869.pinet.com", "_blank");
-                                    //$("a#latinchaintest")[0].click();
                                 }
                                 else
                                 {
                                     window.open("https://latinchain.pinet.com", "_blank");
-                                    //$("a#latinchain")[0].click();
                                 }
                             }
                         }, 20000);
@@ -222,8 +220,6 @@
                 <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                 <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                 <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
-                <a id="latinchain" href="https://latinchain.pinet.com" target="_blank" style="display:none;">https://latinchain.pinet.com</a>
-                <a id="latinchaintest" href="https://latinchaintest9869.pinet.com" target="_blank" style="display:none;">https://latinchaintest9869.pinet.com</a>
             </head>
             <body>
                 <div class="puzzle-container">
