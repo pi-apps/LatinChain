@@ -324,12 +324,10 @@
                                     else if(window.location.hostname == "test.latin-chain.com")
                                     {
                                         $("a#latinchaintest")[0].click();
-                                        window.open(location, '_self').close();
                                     }
                                     else
                                     {
                                         $("a#latinchain")[0].click();
-                                        window.open(location, '_self').close();
                                     }
                                 }
                             }, 20000);
