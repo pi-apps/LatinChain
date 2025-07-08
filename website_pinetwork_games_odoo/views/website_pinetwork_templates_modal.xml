@@ -352,6 +352,12 @@
                                 }
                             </style>
                             
+                            <style media="print">
+                                .darkmode-toggle, .darkmode-layer {
+                                  display: none;
+                                }
+                            </style>
+                            
                             <div t-if="unblocked">
                                 <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
                                 <h3><div style="display:inline;">This info refers to:</div> <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">Mainnet (https://latinchain.pinet.com)</div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">Testnet (https://latinchaintest9869.pinet.com)</div></h3>
