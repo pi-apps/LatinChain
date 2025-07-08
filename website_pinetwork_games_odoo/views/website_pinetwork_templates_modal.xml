@@ -389,6 +389,7 @@
                                   padding:5px;
                                   width: 100%;
                                   border-radius: 20px;
+                                  filter: contrast(100%) !important;
                                 }
                                 
                                 .darkmode--activated .border-gradient-rounded {
@@ -397,6 +398,7 @@
                                   padding:5px;
                                   width: 100%;
                                   border-radius: 20px;
+                                  filter: contrast(100%) !important;
                                 }
                             </style>
                             
