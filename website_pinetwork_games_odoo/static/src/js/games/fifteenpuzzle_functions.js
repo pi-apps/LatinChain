@@ -246,7 +246,7 @@ newGameButton.addEventListener('click', startNewGame);
     }
 };*/
 
-document.addEventListener("DOMContentLoaded", function(event) {
+$( document ).ready(function() {
     if (!loadGameState()) {
         startNewGame();
     }

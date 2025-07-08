@@ -152,6 +152,56 @@
                         }
                     }
                 </style>
+                
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                
+                <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                
+                <script type="text/javascript">
+                    const Pi = window.Pi;
+                    $( document ).ready(function() {
+                        Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                        var pi_user_id = "";
+                        async function auth() {
+                            try {
+                                Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                    pi_user_id = auth.user.uid;
+                                }).catch(function(error) {
+                                    //Pi.openShareDialog("Error", error);
+                                    //alert(err);
+                                    console.error(error);
+                                });
+                            } catch (err) {
+                                //Pi.openShareDialog("Error", err);
+                                //alert(err);
+                                console.error(err);
+                                // Not able to fetch the user
+                            }
+                        }
+                        
+                        setTimeout(function ()
+                        {
+                            if(pi_user_id == "")
+                            {
+                                alert($("#pi_prowser_message").text());
+                                if(window.location.hostname == "localhost")
+                                {
+                                    window.location.href = window.location.origin;
+                                }
+                                else if(window.location.hostname == "test.latin-chain.com")
+                                    $("#latinchaintest").click();
+                                else
+                                    $("#latinchain").click();
+                            }
+                        }, 20000);
+                    });
+                </script>
+                
+                <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                <a id="latinchain" href="https://latinchain.pinet.com" target="_blank" style="display:none;">https://latinchain.pinet.com</a>
+                <a id="latinchaintest" href="https://latinchaintest9869.pinet.com" target="_blank" style="display:none;">https://latinchaintest9869.pinet.com</a>
             </head>
             <body>
                 <div class="puzzle-container">
@@ -171,7 +221,7 @@
                     </div>
                 </div>
                 
-                <script type="module" src="/website_pinetwork_games_odoo/static/src/js/games/fifteenpuzzle_functions.js?v=1.104"></script>
+                <script type="module" src="/website_pinetwork_games_odoo/static/src/js/games/fifteenpuzzle_functions.js?v=1.105"></script>
                 
             </body>
             </html>
