@@ -322,9 +322,15 @@
                                         window.location.href = window.location.origin;
                                     }
                                     else if(window.location.hostname == "test.latin-chain.com")
+                                    {
                                         $("a#latinchaintest")[0].click();
+                                        window.close();
+                                    }
                                     else
+                                    {
                                         $("a#latinchain")[0].click();
+                                        window.close();
+                                    }
                                 }
                             }, 20000);
                         });
