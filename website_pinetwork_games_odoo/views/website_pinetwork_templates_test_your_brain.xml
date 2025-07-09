@@ -61,6 +61,8 @@
                                     
                                     Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                                         pi_user_id = auth.user.uid;
+                                        
+                                        document.getElementById('blockingOverlay').style.display = 'none';
                                     }).catch(function(error) {
                                         //Pi.openShareDialog("Error", error);
                                         //alert(err);
@@ -88,6 +90,8 @@
                                         {
                                             alert($("#pi_prowser_message").text());
                                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                            document.getElementById('blocking-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                             if(window.location.hostname == "localhost")
                                             {
                                                 window.location.href = window.location.origin;
@@ -107,9 +111,14 @@
                         });
                     </script>
                     
-                    <div id="blockingOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; display: none; justify-content: center; align-items: center;">
+                    <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
                         <div style="background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
-                            Go to Pi Browser
+                            <div id="blocking-message" style="display: none;">
+                                Go to Pi Browser
+                            </div>
+                            <div id="loading-message" style="display: flex;">
+                                Loading...
+                            </div>
                         </div>
                     </div>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
