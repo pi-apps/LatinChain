@@ -423,7 +423,7 @@
                             
                             <div t-if="unblocked">
                                 <h3><div style="display:inline;">Current time:</div> <div style="display:inline;" translate="no" t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/> <div style="display:inline;">UTC.</div></h3>
-                                <h3><div style="display:inline;">This info refers to:</div> <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 100%; word-break: break-word;" translate="no">Mainnet (https://latinchain.pinet.com)</div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 100%; word-break: break-word;" translate="no">Testnet (https://latinchaintest9869.pinet.com)</div></h3>
+                                <h3><div style="display:inline;">This info refers to:</div> <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">Mainnet (https://latinchain.pinet.com)</div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">Testnet (https://latinchaintest9869.pinet.com)</div></h3>
                                 <h3>The following certifies that the Pioneer <strong><div style="display:inline;" t-esc="username" translate="no"></div></strong> is training and has availability to train skills at LatinChain Platform, as:</h3>
                                 <br/>
                                 
@@ -474,7 +474,7 @@
                                     </div>
                                 </div>
                                 <br/>
-                                <h5 class="border-gradient-rounded"><div>You can consult this certification at:<br/><br/></div><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 100%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 100%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
+                                <h5 class="border-gradient-rounded"><div>You can consult this certification at:<br/><br/></div><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
                                 <br/><br/><div><button class="btn btn-success print-button" onclick="window.print();">Print</button></div>
                                 </h5>
                                 
@@ -525,7 +525,7 @@
                                     </div>
                                 </div>
                                 <br/>
-                                <h5 class="border-rounded-print"><div>You can consult this certification at:<br/><br/></div><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 100%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 100%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
+                                <h5 class="border-rounded-print"><div>You can consult this certification at:<br/><br/></div><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
                                 <br/><br/><div><button class="btn btn-success print-button" onclick="window.print();">Print</button></div>
                                 </h5>
                             </div>
