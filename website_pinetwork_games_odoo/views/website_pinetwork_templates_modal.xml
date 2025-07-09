@@ -385,6 +385,10 @@
                                 }
                                 
                                 .border-gradient-rounded {
+                                  background: unset;
+                                  background-clip: unset;
+                                  background-origin: unset;
+                                  
                                   border:3px solid;
                                   margin-bottom:5px;
                                   padding:10px;
@@ -397,6 +401,10 @@
                                 }
                                 
                                 .darkmode--activated .border-gradient-rounded {
+                                  background: unset;
+                                  background-clip: unset;
+                                  background-origin: unset;
+                                  
                                   border:3px solid;
                                   margin-bottom:5px;
                                   padding:10px;
