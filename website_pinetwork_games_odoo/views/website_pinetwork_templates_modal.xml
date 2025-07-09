@@ -437,10 +437,6 @@
                                     top: 0px;
                                     left: 0px;
                                 }
-                                
-                                @page { 
-                                    size: landscape;
-                                }
                             </style>
                             
                             <div t-if="unblocked">
