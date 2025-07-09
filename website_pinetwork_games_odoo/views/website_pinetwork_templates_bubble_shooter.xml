@@ -106,7 +106,7 @@
                                                 if(is_touch_device())
                                                 {
                                                     $("a.latinchaintest-click")[0].trigger("touchstart");
-                                                    $("a.latinchaintest-click")[0].trigger("touchend");
+                                                    
                                                 }else{
                                                     $("a.latinchaintest-click")[0].click();
                                                 }
