@@ -192,29 +192,29 @@
                             if(pi_user_id == "")
                             {
                                 auth();
+                                
+                                setTimeout(function ()
+                                {
+                                    if(pi_user_id == "")
+                                    {
+                                        alert($("#pi_prowser_message").text());
+                                        document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                        if(window.location.hostname == "localhost")
+                                        {
+                                            window.location.href = window.location.origin;
+                                        }
+                                        else if(window.location.hostname == "test.latin-chain.com")
+                                        {
+                                            window.open("https://latinchaintest9869.pinet.com", "_blank");
+                                        }
+                                        else
+                                        {
+                                            window.open("https://latinchain.pinet.com", "_blank");
+                                        }
+                                    }
+                                }, 10000);
                             }
-                        }, 10000);
-                        
-                        setTimeout(function ()
-                        {
-                            if(pi_user_id == "")
-                            {
-                                alert($("#pi_prowser_message").text());
-                                document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
-                                if(window.location.hostname == "localhost")
-                                {
-                                    window.location.href = window.location.origin;
-                                }
-                                else if(window.location.hostname == "test.latin-chain.com")
-                                {
-                                    window.open("https://latinchaintest9869.pinet.com", "_blank");
-                                }
-                                else
-                                {
-                                    window.open("https://latinchain.pinet.com", "_blank");
-                                }
-                            }
-                        }, 20000);
+                        }, 10000);                        
                     });
                 </script>
                 
