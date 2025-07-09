@@ -391,7 +391,6 @@
                                   width: 100%;
                                   border-radius: 20px;
                                   border-color: black;
-                                  filter: contrast(100%) !important;
                                   
                                   color: black !important;
                                 }
@@ -403,19 +402,12 @@
                                   width: 100%;
                                   border-radius: 20px;
                                   border-color: black;
-                                  filter: contrast(100%) !important;
                                   
                                   color: black !important;
                                 }
                                 
                                 h5, h3, div {
                                     color: black !important;
-                                    filter: contrast(100%) !important;
-                                }
-                                
-                                .border-bottom {
-                                    border-bottom-color: black !important;
-                                    filter: contrast(100%) !important;
                                 }
                             </style>
                             
