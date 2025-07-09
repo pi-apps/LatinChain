@@ -209,11 +209,11 @@
                                         }
                                         else if(window.location.hostname == "test.latin-chain.com")
                                         {
-                                            window.open("https://latinchaintest9869.pinet.com", "_top");
+                                            window.open("https://latinchaintest9869.pinet.com", "_parent");
                                         }
                                         else
                                         {
-                                            window.open("https://latinchain.pinet.com", "_top");
+                                            window.open("https://latinchain.pinet.com", "_parent");
                                         }
                                     }
                                 }, 10000);
