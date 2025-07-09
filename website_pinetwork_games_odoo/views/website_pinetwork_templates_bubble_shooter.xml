@@ -90,9 +90,6 @@
                                     {
                                         if(pi_user_id == "")
                                         {
-                                            function is_touch_device() {
-                                                return 'ontouchstart' in window || navigator.maxTouchPoints;
-                                            };
                                             alert($("#pi_prowser_message").text());
                                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                                             document.getElementById('blocking-message').style.display = 'flex'; // Use 'flex' instead of 'block'
@@ -103,27 +100,12 @@
                                             }
                                             else if(window.location.hostname == "test.latin-chain.com")
                                             {
-                                                if(is_touch_device())
-                                                {
-                                                    $("a.latinchaintest-click").touchstart();
-                                                    //$("a.latinchaintest-click").trigger("touchstart");
-                                                    
-                                                }else{
-                                                    $("a.latinchaintest-click")[0].click();
-                                                }
+                                                $("a.latinchaintest-click").trigger("click");
                                                 //window.open("https://latinchaintest9869.pinet.com", "_blank");
                                             }
                                             else
                                             {
-                                                if(is_touch_device())
-                                                {
-                                                    $("a.latinchain-click")[0].touchstart();
-                                                    //$("a.latinchain-click").trigger("touchstart");
-                                                    //$("a.latinchain-click").trigger("touchend");
-                                                }else{
-                                                    $("a.latinchain-click")[0].click();
-                                                }
-                                                
+                                                $("a.latinchain-click")[0].trigger("click");
                                                 //window.open("https://latinchain.pinet.com", "_blank");
                                             }
                                         }
