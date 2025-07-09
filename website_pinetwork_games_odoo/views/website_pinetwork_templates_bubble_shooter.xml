@@ -90,19 +90,9 @@
                                     {
                                         if(pi_user_id == "")
                                         {
-                                            var a;
-                                            var e;
-                                            function createEvent()
-                                            {
-                                                e = document.createEvent('MouseEvents');
-                                                e.initEvent( 'click', true, true );
-                                            }
-                                            function makeClick(selector)
-                                            {
-                                                a = $(selector)[0];
-                                                a.dispatchEvent(e);
-                                            }
-                                            
+                                            function is_touch_device() {
+                                                return 'ontouchstart' in window || navigator.maxTouchPoints;
+                                            };
                                             alert($("#pi_prowser_message").text());
                                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                                             document.getElementById('blocking-message').style.display = 'flex'; // Use 'flex' instead of 'block'
@@ -113,16 +103,25 @@
                                             }
                                             else if(window.location.hostname == "test.latin-chain.com")
                                             {
-                                                createEvent();
-                                                makeClick("a.latinchaintest-click");
-                                                //$("a.latinchaintest-click")[0].click();
+                                                if(is_touch_device())
+                                                {
+                                                    $("a.latinchaintest-click")[0].trigger("touchstart");
+                                                    $("a.latinchaintest-click")[0].trigger("touchend");
+                                                }else{
+                                                    $("a.latinchaintest-click")[0].click();
+                                                }
                                                 //window.open("https://latinchaintest9869.pinet.com", "_blank");
                                             }
                                             else
                                             {
-                                                createEvent();
-                                                makeClick("a.latinchain-click");
-                                                //$("a.latinchain-click")[0].click();
+                                                if(is_touch_device())
+                                                {
+                                                    $("a.latinchain-click")[0].trigger("touchstart");
+                                                    $("a.latinchain-click")[0].trigger("touchend");
+                                                }else{
+                                                    $("a.latinchain-click")[0].click();
+                                                }
+                                                
                                                 //window.open("https://latinchain.pinet.com", "_blank");
                                             }
                                         }
