@@ -381,6 +381,11 @@
                                     color: black !important;
                                     filter: contrast(100%) !important;
                                 }
+                                
+                                .darkmode--activated hr {
+                                    color: white !important;
+                                    filter: contrast(100%) !important;
+                                }
 
                             </style>
                             
@@ -431,7 +436,7 @@
                                 <h3>The following certifies that the Pioneer <strong><div style="display:inline;" t-esc="username" translate="no"></div></strong> is training and has availability to train skills at LatinChain Platform, as:</h3>
                                 <br/>
                                 <div class="border-gradient-rounded">
-                                    <div style="margin-bottom:5px; padding-bottom:5px;">
+                                    <div style="padding-bottom:5px;">
                                         <h5 translate="no" style="display:inline;"><strong>Chess</strong></h5>
                                         <div style="display:inline;"> | </div>
                                         <h5 translate="no" style="display:inline;"><strong>Sudoku</strong></h5>
@@ -457,7 +462,7 @@
                                         <h5 translate="no" style="display:inline;"><strong>Latin Crush</strong></h5>
                                     </div>
                                     <hr/>
-                                    <div style="margin-bottom:5px">
+                                    <div style="">
                                         <h5 translate="no"><div style="display:inline;"><strong>Can watch Worldwide Sport Results</strong></div></h5>
                                     </div>
                                     <hr/>
@@ -467,11 +472,11 @@
                                     <!--<div style="margin-bottom:5px" class="border-bottom">
                                         <h5 translate="no"><div style="display:inline;"><strong>Can make searches in the Web</strong></div></h5>
                                     </div>-->
-                                    <div style="margin-bottom:5px">
+                                    <div style="">
                                         <h5 translate="no"><div style="display:inline;"><strong>Can watch Crypto News</strong></div></h5>
                                     </div>
                                     <hr/>
-                                    <div style="margin-bottom:5px">
+                                    <div style="">
                                         <h5 translate="no"><div style="display:inline;"><strong>Can do video streaming in LatinChain dSocial</strong></div></h5>
                                     </div>
                                     <hr/>
