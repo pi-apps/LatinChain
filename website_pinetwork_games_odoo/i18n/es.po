@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 13:08+0000\n"
-"PO-Revision-Date: 2025-07-09 13:08+0000\n"
+"POT-Creation-Date: 2025-07-09 20:27+0000\n"
+"PO-Revision-Date: 2025-07-09 20:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -981,6 +981,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+msgid "<strong>Can do video streaming in LatinChain dSocial</strong>"
+msgstr "<strong>Puede hacer video streaming en LatinChain dSocial</strong>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "<strong>Can watch Crypto News</strong>"
 msgstr "<strong>Puede ver Noticias Crypto</strong>"
 
@@ -1773,11 +1778,6 @@ msgstr "Sólo Navegar"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "KYB ready"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LATIN BOOKS"
 msgstr ""
 
@@ -2278,6 +2278,11 @@ msgstr "Anuncio de Pi Hackathon"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Pi Hackathon winners"
 msgstr "Ganadores del Pi Hackathon"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Pi KYB ready"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
