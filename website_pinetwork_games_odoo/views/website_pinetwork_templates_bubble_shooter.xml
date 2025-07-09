@@ -105,7 +105,9 @@
                                             {
                                                 if(is_touch_device())
                                                 {
-                                                    $("a.latinchaintest-click")[0].trigger("touchstart");
+                                                    $hiddenAnchor = $("a.latinchaintest-click");
+                                                    $hiddenAnchor.trigger('touchstart');
+                                                    //$("a.latinchaintest-click").trigger("touchstart");
                                                     
                                                 }else{
                                                     $("a.latinchaintest-click")[0].click();
@@ -116,8 +118,10 @@
                                             {
                                                 if(is_touch_device())
                                                 {
-                                                    $("a.latinchain-click")[0].trigger("touchstart");
-                                                    $("a.latinchain-click")[0].trigger("touchend");
+                                                    $hiddenAnchor = $("a.latinchaintest-click")[0];
+                                                    $hiddenAnchor.trigger('touchstart');
+                                                    //$("a.latinchain-click").trigger("touchstart");
+                                                    //$("a.latinchain-click").trigger("touchend");
                                                 }else{
                                                     $("a.latinchain-click")[0].click();
                                                 }
