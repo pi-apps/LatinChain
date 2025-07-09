@@ -92,14 +92,14 @@
                                         {
                                             var a;
                                             var e;
-                                            function createEvent(selector)
+                                            function createEvent()
                                             {
-                                                a = $(selector)[0];
                                                 e = document.createEvent('MouseEvents');
                                                 e.initEvent( 'click', true, true );
                                             }
                                             function makeClick(selector)
                                             {
+                                                a = $(selector)[0];
                                                 a.dispatchEvent(e);
                                             }
                                             
@@ -113,14 +113,14 @@
                                             }
                                             else if(window.location.hostname == "test.latin-chain.com")
                                             {
-                                                createEvent("a.latinchaintest-click");
+                                                createEvent();
                                                 makeClick("a.latinchaintest-click");
                                                 //$("a.latinchaintest-click")[0].click();
                                                 //window.open("https://latinchaintest9869.pinet.com", "_blank");
                                             }
                                             else
                                             {
-                                                createEvent("a.latinchain-click");
+                                                createEvent();
                                                 makeClick("a.latinchain-click");
                                                 //$("a.latinchain-click")[0].click();
                                                 //window.open("https://latinchain.pinet.com", "_blank");
