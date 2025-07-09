@@ -105,8 +105,7 @@
                                             {
                                                 if(is_touch_device())
                                                 {
-                                                    $hiddenAnchor = $("a.latinchaintest-click");
-                                                    $hiddenAnchor.trigger('touchstart');
+                                                    $("a.latinchaintest-click").touchstart();
                                                     //$("a.latinchaintest-click").trigger("touchstart");
                                                     
                                                 }else{
@@ -118,8 +117,7 @@
                                             {
                                                 if(is_touch_device())
                                                 {
-                                                    $hiddenAnchor = $("a.latinchaintest-click")[0];
-                                                    $hiddenAnchor.trigger('touchstart');
+                                                    $("a.latinchain-click")[0].touchstart();
                                                     //$("a.latinchain-click").trigger("touchstart");
                                                     //$("a.latinchain-click").trigger("touchend");
                                                 }else{
