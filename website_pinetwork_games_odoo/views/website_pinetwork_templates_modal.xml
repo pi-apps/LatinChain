@@ -376,6 +376,21 @@
                                   padding:10px;
                                   width: 100%;
                                 }
+
+                                hr {
+                                    color: black !important;
+                                    background-color: black !important;
+                                    border-color: black !important;
+                                    filter: contrast(100%) !important;
+                                }
+                                
+                                .darkmode--activated hr {
+                                    color: white !important;
+                                    background-color: white !important;
+                                    border-color: white !important;
+                                    filter: contrast(100%) !important;
+                                }
+
                             </style>
                             
                             <style media="print">
@@ -412,6 +427,13 @@
                                     color: black !important;
                                     filter: contrast(100%) !important;
                                 }
+                                
+                                hr {
+                                    color: black !important;
+                                    background-color: black !important;
+                                    border-color: black !important;
+                                    filter: contrast(100%) !important;
+                                }
                             </style>
                             
                             <div t-if="unblocked">
@@ -420,7 +442,7 @@
                                 <h3>The following certifies that the Pioneer <strong><div style="display:inline;" t-esc="username" translate="no"></div></strong> is training and has availability to train skills at LatinChain Platform, as:</h3>
                                 <br/>
                                 <div class="border-gradient-rounded">
-                                    <div style="margin-bottom:5px; padding-bottom:5px;" class="border-bottom">
+                                    <div>
                                         <h5 translate="no" style="display:inline;"><strong>Chess</strong></h5>
                                         <div style="display:inline;"> | </div>
                                         <h5 translate="no" style="display:inline;"><strong>Sudoku</strong></h5>
@@ -445,21 +467,25 @@
                                         <div style="display:inline;"> | </div>
                                         <h5 translate="no" style="display:inline;"><strong>Latin Crush</strong></h5>
                                     </div>
-                                    <div style="margin-bottom:5px" class="border-bottom">
+                                    <hr/>
+                                    <div>
                                         <h5 translate="no"><div style="display:inline;"><strong>Can watch Worldwide Sport Results</strong></div></h5>
                                     </div>
+                                    <hr/>
                                     <!--<div style="margin-bottom:5px" class="border-bottom">
                                         <h5 translate="no"><div style="display:inline;"><strong>Can watch Simulation of visible Cosmos</strong></div></h5>
                                     </div>-->
                                     <!--<div style="margin-bottom:5px" class="border-bottom">
                                         <h5 translate="no"><div style="display:inline;"><strong>Can make searches in the Web</strong></div></h5>
                                     </div>-->
-                                    <div style="margin-bottom:5px" class="border-bottom">
+                                    <div>
                                         <h5 translate="no"><div style="display:inline;"><strong>Can watch Crypto News</strong></div></h5>
                                     </div>
-                                    <div style="margin-bottom:5px" class="border-bottom">
+                                    <hr/>
+                                    <div>
                                         <h5 translate="no"><div style="display:inline;"><strong>Can do video streaming in LatinChain dSocial</strong></div></h5>
                                     </div>
+                                    <hr/>
                                 </div>
                                 <br/>
                                 <h5 class="border-gradient-rounded">You can consult this certification at:<br/><br/><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
