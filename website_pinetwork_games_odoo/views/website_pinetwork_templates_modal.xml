@@ -344,23 +344,37 @@
                             </div>
                             <style>
                                 .border-gradient {
-                                  border:3px solid;
+                                  /* Border */
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, white, white), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: black !important;
+                                  filter: contrast(100%) !important;
+                                  
                                   margin-bottom:5px;
                                   padding:10px;
                                   width: 100%;
-                                  border-radius: 20px;
-                                  border-color: black;
-                                  color: black !important;
                                 }
                                 
                                 .darkmode--activated .border-gradient {
-                                  border:3px solid;
+                                  /* Border */
+                                  border: 4px solid transparent;
+                                  border-radius: 20px;
+                                  background: 
+                                    linear-gradient(to right, #021526, #021526), 
+                                    linear-gradient(to right, red , blue); 
+                                  background-clip: padding-box, border-box;
+                                  background-origin: padding-box, border-box;
+                                  color: white !important;
+                                  filter: contrast(100%) !important;
+                                  
                                   margin-bottom:5px;
                                   padding:10px;
                                   width: 100%;
-                                  border-radius: 20px;
-                                  border-color: black;
-                                  color: white !important;
                                 }
                             </style>
                             
