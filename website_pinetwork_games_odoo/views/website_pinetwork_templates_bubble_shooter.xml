@@ -100,12 +100,12 @@
                                             }
                                             else if(window.location.hostname == "test.latin-chain.com")
                                             {
-                                                $("#latinchaintest-click")[0].click();
+                                                $("a.latinchaintest-click")[0].click();
                                                 //window.open("https://latinchaintest9869.pinet.com", "_blank");
                                             }
                                             else
                                             {
-                                                $("#latinchain-click")[0].click();
+                                                $("a.latinchain-click")[0].click();
                                                 //window.open("https://latinchain.pinet.com", "_blank");
                                             }
                                         }
@@ -128,8 +128,8 @@
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                     <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
-                    <a id="latinchain-click" href="https://latinchain.pinet.com" target="_blank" style="display:none;">https://latinchain.pinet.com</a>
-                    <a id="latinchaintest-click" href="https://latinchaintest9869.pinet.com" target="_blank" style="display:none;">https://latinchaintest9869.pinet.com</a>
+                    <a class="latinchain-click" href="https://latinchain.pinet.com" target="_blank" style="display:none;">https://latinchain.pinet.com</a>
+                    <a class="latinchaintest-click" href="https://latinchaintest9869.pinet.com" target="_blank" style="display:none;">https://latinchaintest9869.pinet.com</a>
 
                 </head>
 
