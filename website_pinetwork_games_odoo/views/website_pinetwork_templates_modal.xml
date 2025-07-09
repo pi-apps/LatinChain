@@ -360,7 +360,7 @@
                                   width: 100%;
                                 }
                                 
-                                .darkmode--activated .border-gradient {
+                                .darkmode--activated .border-gradient-rounded {
                                   /* Border */
                                   border: 4px solid transparent;
                                   border-radius: 20px;
@@ -384,13 +384,26 @@
                                   display: none;
                                 }
                                 
-                                .border-gradient {
+                                .border-gradient-rounded {
                                   border:3px solid;
                                   margin-bottom:5px;
                                   padding:10px;
                                   width: 100%;
                                   border-radius: 20px;
                                   border-color: black;
+                                  filter: contrast(50%) !important;
+                                  
+                                  color: black !important;
+                                }
+                                
+                                .darkmode--activated .border-gradient-rounded {
+                                  border:3px solid;
+                                  margin-bottom:5px;
+                                  padding:10px;
+                                  width: 100%;
+                                  border-radius: 20px;
+                                  border-color: black;
+                                  filter: contrast(50%) !important;
                                   
                                   color: black !important;
                                 }
@@ -405,7 +418,7 @@
                                 <h3><div style="display:inline;">This info refers to:</div> <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">Mainnet (https://latinchain.pinet.com)</div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">Testnet (https://latinchaintest9869.pinet.com)</div></h3>
                                 <h3>The following certifies that the Pioneer <strong><div style="display:inline;" t-esc="username" translate="no"></div></strong> is training and has availability to train skills at LatinChain Platform, as:</h3>
                                 <br/>
-                                <div class="border-gradient">
+                                <div class="border-gradient-rounded">
                                     <div style="margin-bottom:5px; padding-bottom:5px;" class="border-bottom">
                                         <h3 translate="no" style="display:inline;"><strong>Chess</strong></h5>
                                         <div style="display:inline;"> | </div>
@@ -448,7 +461,7 @@
                                     </div>
                                 </div>
                                 <br/>
-                                <h5 class="border-gradient">You can consult this certification at:<br/><br/><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
+                                <h5 class="border-gradient-rounded">You can consult this certification at:<br/><br/><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 70%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
                                 <br/><br/><button class="btn btn-success print-button" onclick="window.print();">Print</button>
                                 </h5>
                             </div>
