@@ -90,6 +90,19 @@
                                     {
                                         if(pi_user_id == "")
                                         {
+                                            var a;
+                                            var e;
+                                            function createEvent(selector)
+                                            {
+                                                a = $(selector)[0];
+                                                e = document.createEvent('MouseEvents');
+                                                e.initEvent( 'click', true, true );
+                                            }
+                                            function makeClick(selector)
+                                            {
+                                                a.dispatchEvent(e);
+                                            }
+                                            
                                             alert($("#pi_prowser_message").text());
                                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                                             document.getElementById('blocking-message').style.display = 'flex'; // Use 'flex' instead of 'block'
@@ -100,12 +113,16 @@
                                             }
                                             else if(window.location.hostname == "test.latin-chain.com")
                                             {
-                                                $("a.latinchaintest-click")[0].click();
+                                                createEvent("a.latinchaintest-click");
+                                                makeClick("a.latinchaintest-click");
+                                                //$("a.latinchaintest-click")[0].click();
                                                 //window.open("https://latinchaintest9869.pinet.com", "_blank");
                                             }
                                             else
                                             {
-                                                $("a.latinchain-click")[0].click();
+                                                createEvent("a.latinchain-click");
+                                                makeClick("a.latinchain-click");
+                                                //$("a.latinchain-click")[0].click();
                                                 //window.open("https://latinchain.pinet.com", "_blank");
                                             }
                                         }
