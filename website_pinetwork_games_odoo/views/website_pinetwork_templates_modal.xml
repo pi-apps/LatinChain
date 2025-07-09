@@ -396,8 +396,6 @@
                                   width: 100%;
                                   border-radius: 20px;
                                   border-color: black;
-                                  /*filter: contrast(50%) !important;
-                                  */
                                   color: black !important;
                                 }
                                 
@@ -413,14 +411,17 @@
                                   width: 100%;
                                   border-radius: 20px;
                                   border-color: black;
-                                  /*filter: contrast(50%) !important;
-                                  */
                                   color: black !important;
                                 }
                                 
                                 h5, h3, div, strong {
                                     color: black !important;
                                 }
+                                
+                                h3 {
+                                    font-size: 16px;
+                                }
+                                
                             </style>
                             
                             <div t-if="unblocked">
