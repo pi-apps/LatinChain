@@ -1453,7 +1453,7 @@
                                 </div>
                                 -->
                                 <div style="margin-bottom:5px" translate="no">
-                                    <button class="btn btn-danger font-weight-bold streamerzoneboard" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">LatinChain dSocial</div></button>
+                                    <button class="btn btn-danger font-weight-bold streamerzoneboard" ><div style="display:inline;"><i class="fa-solid fa-tv"></i></div> <div style="display:inline;">LatinChain dSocial</div></button>
                                 </div>
                                 <div>Watch good content daily</div>
                                 <iframe id="latinchain-tv" class="rounded" style="max-width: 380px" width="100%" height="200px" src="" title="YouTube video player" frameborder="0" allowfullscreen="true"></iframe>
@@ -1541,7 +1541,7 @@
                             </div>
                             
                             <div class="" style="margin-bottom:5px;" t-if="pioneers_streaming">
-                                <button id="streamerzoneboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div></button>
+                                <button id="streamerzoneboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div></button>
                             </div>
                             
                             <div style="margin-bottom:5px">
@@ -1699,7 +1699,7 @@
                                 
                                 <h2 class="accordion-header" id="headingTwo">
                                   <button translate="no" class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                    <div style=""><i class="fab fa-youtube"></i></div><div style="">LatinChain dSocial (conf)</div>
+                                    <div style=""><i class="fa-solid fa-tv"></i></div><div style="">LatinChain dSocial (conf)</div>
                                   </button>
                                 </h2>
 
@@ -2067,7 +2067,7 @@
                                             <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                                 <div class="row" style="text-align: left;">
                                                     <div class="col-2"></div>
-                                                    <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fab fa-youtube"></i></div><div style="font-size:100%;" translate="no">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div></button></div>
+                                                    <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div></button></div>
                                                     <div class="col-0"></div>
                                                 </div>
                                             </li>
