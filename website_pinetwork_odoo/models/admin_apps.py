@@ -1169,6 +1169,10 @@ class admin_apps(models.Model):
                             if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                                 data_write = {'unblocked_datetime': datetime.now()}
                                 
+                                unblocked_previous = users[0]._get_unblocked_one_user()
+                                if not unblocked_previous:
+                                    data_write.update({'pi_ad_automatic': False})
+                                
                                 #if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
                                 #    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
@@ -1331,6 +1335,24 @@ class pi_users(models.Model):
             else:
                 i.unblocked = True
     
+    def _get_unblocked_one_user(self):
+        for i in self:
+            if i.unblocked_datetime:
+                days_available = 30 - (datetime.now() - i.unblocked_datetime).days
+            else:
+                days_available = 0
+            
+            if days_available < 0:
+                days_available = 0
+            
+            unblocked = False
+            if days_available == 0:
+                unblocked = False
+            else:
+                unblocked = True
+            
+            return unblocked
+    
     @api.depends("pi_transactions_ids", "pi_transactions_ids.action")
     def _total_paid_transactions(self):
         for i in self:
@@ -1351,6 +1373,8 @@ class pi_users(models.Model):
             if len(transaction) == 0:
                 i.unblocked_datetime = False
             else:
+                unblocked_previous = i._get_unblocked_one_user()
+                
                 i.unblocked_datetime = transaction[0].create_date
             
                 admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', transaction[0].app)])
@@ -1358,6 +1382,8 @@ class pi_users(models.Model):
                 if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
                     if i.paid_in_transactions > paid_in_transactions:
                         i.points_latin = i.points_latin + admin_app_list[0].amount_latin_pay
+                        if not unblocked_previous:
+                            i.pi_ad_automatic = False
                 
                 """
                 if i.paid_in_transactions >= transaction[0].app_id.amount:
