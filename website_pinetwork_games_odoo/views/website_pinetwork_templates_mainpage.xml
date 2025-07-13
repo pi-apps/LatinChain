@@ -964,7 +964,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.280"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.281"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1965,6 +1965,13 @@
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="latincrush" href="/latincrush" class="col-10 btn btn-outline-success font-weight-bold text-black border-success latincrush" style="border: 2px solid;"><div style=""><i class="fa-solid fa-candy-cane"></i></div><div style="font-size:100%;" translate="no">LATIN CRUSH</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="latincrushinfo" class="col-auto btn btn-sm btn-outline-info latincrushinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-odoolearning" style="display:none">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a id="odoolearning" href="/odoolearning" class="col-10 btn btn-outline-success font-weight-bold text-black border-success odoolearning" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">ODOO LEARNING</div><div style="font-size:80%;">Learn Odoo Development</div><div style="font-size:80%;">Developed with Gemini AI</div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>

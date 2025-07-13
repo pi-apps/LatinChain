@@ -357,6 +357,7 @@ function get_user() {
                 $(".show-checkers").show();
                 $(".show-domino").show();
                 $(".show-latincrush").show();
+                $(".show-odoolearning").show();
                 //$(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
