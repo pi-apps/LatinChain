@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-10 12:46+0000\n"
-"PO-Revision-Date: 2025-07-10 12:46+0000\n"
+"POT-Creation-Date: 2025-07-13 20:41+0000\n"
+"PO-Revision-Date: 2025-07-13 20:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -169,6 +169,12 @@ msgstr ". Eres un ganador. Chequea en el Winners Board."
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid ".<br/>Testnet:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+msgid "0% Complete (0/0 Lessons)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1017,6 +1023,11 @@ msgstr "<strong>Introducción y pago mínimo</strong><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+msgid "<strong>Languages (English, Spanish)</strong>"
+msgstr "<strong>Idiomas (Inglés, Español)</strong>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "<strong>Latin Crush</strong>"
 msgstr ""
 
@@ -1034,6 +1045,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "<strong>Membership</strong><br/>"
 msgstr "<strong>Membresía</strong><br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+msgid "<strong>Odoo Development</strong>"
+msgstr "<strong>Desarrollo en Odoo</strong>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
@@ -1301,6 +1317,8 @@ msgid "COINTELEGRAPH"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Cancel"
 msgstr "Cancelar"
@@ -1366,9 +1384,11 @@ msgstr "Borrar Caché"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
@@ -1392,6 +1412,12 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Community Asia"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+msgid "Confirm"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1646,8 +1672,10 @@ msgstr "Ir a Mainnet"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
@@ -1759,6 +1787,11 @@ msgid "Import..."
 msgstr "Importar..."
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "Inglés para Hispano Hablantes"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Instagram"
 msgstr ""
@@ -1802,6 +1835,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Just Browse"
 msgstr "Sólo Navegar"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LANGUAGE LEARNING"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1890,7 +1928,8 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "LatinChain Pal: AI to help you to learn about LatinChain Platform."
-msgstr "LatinChain Pal: IA para ayudarte a aprender sobre LatinChain Platform."
+msgstr ""
+"LatinChain Pal: IA para ayudarte a aprender sobre LatinChain Platform."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1932,6 +1971,16 @@ msgid "Leaders Board"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Learn Languages (Spanish, English)"
+msgstr "Aprende Idiomas (Español, Inglés)"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Learn Odoo Development"
+msgstr "Aprende Desarrollo en Odoo"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid "Link"
 msgstr ""
@@ -1961,8 +2010,10 @@ msgstr "Cargar Notación PGN:"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
@@ -2218,7 +2269,17 @@ msgstr "Ahora tienes x2 puntos en tu próximo juego. Sólo si estás verificado.
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "ODOO LEARNING"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Odoo App"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+msgid "Odoo Learning Path"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2543,6 +2604,12 @@ msgid "Reset Game"
 msgstr "Reiniciar Juego"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+msgid "Reset Progress"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 msgid "Restart"
 msgstr "Reiniciar"
@@ -2668,6 +2735,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
 msgid "Spanish"
 msgstr "Español"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "Spanish Learning Path"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "Spanish for English Speakers"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -3124,8 +3201,10 @@ msgstr "Debes pagar Pi, para desbloquear todas las apps en LatinChain."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
@@ -3193,6 +3272,16 @@ msgstr "Tu Lado:"
 msgid ""
 "Your final score is: <span id=\"finalScore\" class=\"font-bold text-"
 "pink-500\">0</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+msgid "Your journey from beginner to Odoo expert!"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "Your journey from beginner to Spanish expert!"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
