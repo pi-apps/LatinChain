@@ -1,5 +1,5 @@
-// Array of Spanish learning lessons, categorized by level
-const lessonsData = [
+// --- Lesson Data for Spanish for English Speakers ---
+const spanishLessonsData = [
     // Beginner Level
     {
         id: 's1',
@@ -584,10 +584,600 @@ const lessonsData = [
     }
 ];
 
-// Object to store the completion status of each lesson
+// --- Lesson Data for English for Spanish Speakers ---
+const englishLessonsData = [
+    // Beginner Level
+    {
+        id: 'ees1',
+        title: 'Saludos y Presentaciones Básicas',
+        description: 'Aprende saludos fundamentales en inglés, despedidas y cómo presentarte.',
+        level: 'Beginner',
+        content: `
+            <p>Empezar con los saludos es esencial para cualquier idioma. En inglés, los saludos comunes incluyen:</p>
+            <ul>
+                <li><strong>Hello:</strong> Hola (el más común)</li>
+                <li><strong>Good morning:</strong> Buenos días</li>
+                <li><strong>Good afternoon:</strong> Buenas tardes</li>
+                <li><strong>Good evening:</strong> Buenas noches (al llegar)</li>
+                <li><strong>Good night:</strong> Buenas noches (al despedirse o ir a dormir)</li>
+            </ul>
+            <h3>Presentarse:</h3>
+            <p>Para decir "Me llamo..." puedes usar:</p>
+            <p class="example-text"><strong>My name is [Tu Nombre].</strong></p>
+            <p>O más informalmente:</p>
+            <p class="example-text"><strong>I'm [Tu Nombre].</strong></p>
+            <p>Para preguntar el nombre de alguien:</p>
+            <p class="example-text"><strong>What's your name?</strong></p>
+            <h3>Despedidas:</h3>
+            <ul>
+                <li><strong>Goodbye:</strong> Adiós</li>
+                <li><strong>See you later:</strong> Hasta luego</li>
+                <li><strong>Bye:</strong> Adiós (informal)</li>
+            </ul>
+        `
+    },
+    {
+        id: 'ees2',
+        title: 'Números 1-10 y Preguntas Simples',
+        description: 'Domina el conteo del uno al diez y haz preguntas sencillas como "¿Cuántos?".',
+        level: 'Beginner',
+        content: `
+            <p>Los números son fundamentales para las interacciones diarias. Aprendamos del 1 al 10:</p>
+            <ol>
+                <li><strong>One</strong></li>
+                <li><strong>Two</strong></li>
+                <li><strong>Three</strong></li>
+                <li><strong>Four</strong></li>
+                <li><strong>Five</strong></li>
+                <li><strong>Six</strong></li>
+                <li><strong>Seven</strong></li>
+                <li><strong>Eight</strong></li>
+                <li><strong>Nine</strong></li>
+                <li><strong>Ten</strong></li>
+            </ol>
+            <h3>Preguntas Básicas:</h3>
+            <p>Para preguntar "¿Cuántos/Cuántas?":</p>
+            <p class="example-text"><strong>How many?</strong></p>
+            <p>Ejemplos:</p>
+            <p class="example-text"><strong>How many books do you have?</strong> (¿Cuántos libros tienes?)</p>
+            <p class="example-text"><strong>How many apples do you want?</strong> (¿Cuántas manzanas quieres?)</p>
+            <p>Otras preguntas útiles:</p>
+            <ul>
+                <li><strong>What?</strong> (¿Qué?)</li>
+                <li><strong>Who?</strong> (¿Quién?)</li>
+                <li><strong>Where?</strong> (¿Dónde?)</li>
+            </ul>
+        `
+    },
+    {
+        id: 'ees3',
+        title: 'Sustantivos Comunes y Artículos (A/An, The)',
+        description: 'Aprende sustantivos cotidianos y cómo usar los artículos (un/una, el/la) correctamente.',
+        level: 'Beginner',
+        content: `
+            <p>En inglés, los sustantivos no tienen género gramatical como en español, pero sí número (singular o plural). Los artículos son importantes.</p>
+            <h3>Artículos Indefinidos (A/An - Un/Una):</h3>
+            <ul>
+                <li><strong>A:</strong> Se usa antes de sustantivos que empiezan con sonido de consonante. E.g., <em>a book</em> (un libro), <em>a car</em> (un coche).</li>
+                <li><strong>An:</strong> Se usa antes de sustantivos que empiezan con sonido de vocal. E.g., <em>an apple</em> (una manzana), <em>an hour</em> (una hora - la 'h' es muda).</li>
+            </ul>
+            <h3>Artículo Definido (The - El/La/Los/Las):</h3>
+            <ul>
+                <li><strong>The:</strong> Se usa para referirse a algo específico, sin importar el género o número. E.g., <em>the dog</em> (el perro), <em>the dogs</em> (los perros), <em>the house</em> (la casa), <em>the houses</em> (las casas).</li>
+            </ul>
+            <h3>Sustantivos Comunes:</h3>
+            <ul>
+                <li><strong>Man:</strong> hombre</li>
+                <li><strong>Woman:</strong> mujer</li>
+                <li><strong>Boy/Girl:</strong> niño/niña</li>
+                <li><strong>Water:</strong> agua</li>
+                <li><strong>Food:</strong> comida</li>
+            </ul>
+        `
+    },
+    {
+        id: 'ees4',
+        title: 'Verbos Básicos: To Be (Ser y Estar)',
+        description: 'Comprende el uso del verbo "to be" en inglés, que equivale a "ser" y "estar" en español.',
+        level: 'Beginner',
+        content: `
+            <p>A diferencia del español, el inglés solo tiene un verbo para "ser" y "estar": <strong>to be</strong>. Su conjugación cambia según el pronombre.</p>
+            <h3>Conjugación de "To Be" en Presente:</h3>
+            <ul>
+                <li><strong>I am:</strong> Yo soy/estoy</li>
+                <li><strong>You are:</strong> Tú eres/estás (o Usted es/está, Ustedes son/están)</li>
+                <li><strong>He/She/It is:</strong> Él/Ella/Ello es/está</li>
+                <li><strong>We are:</strong> Nosotros/as somos/estamos</li>
+                <li><strong>They are:</strong> Ellos/Ellas son/están</li>
+            </ul>
+            <h3>Ejemplos:</h3>
+            <ul>
+                <li><strong>Identity:</strong> <em>I am a student.</em> (Soy estudiante.)</li>
+                <li><strong>Location:</strong> <em>She is at home.</em> (Ella está en casa.)</li>
+                <li><strong>Feelings:</strong> <em>We are happy.</em> (Estamos felices.)</li>
+                <li><strong>Characteristics:</strong> <em>He is tall.</em> (Él es alto.)</li>
+            </ul>
+            <p>El contexto te ayudará a saber si significa "ser" o "estar".</p>
+        `
+    },
+    {
+        id: 'ees5',
+        title: 'Presente Simple (Verbos Regulares)',
+        description: 'Aprende a conjugar verbos regulares en presente simple para acciones cotidianas.',
+        level: 'Beginner',
+        content: `
+            <p>El presente simple se usa para acciones habituales, verdades generales y horarios.</p>
+            <h3>Formación:</h3>
+            <ul>
+                <li>Para <strong>I, You, We, They</strong>: el verbo en su forma base. E.g., <em>I speak</em>, <em>You eat</em>, <em>We live</em>.</li>
+                <li>Para <strong>He, She, It</strong>: se añade <strong>-s</strong> al final del verbo. E.g., <em>He speak<strong>s</strong></em>, <em>She eat<strong>s</strong></em>, <em>It live<strong>s</strong></em>.</li>
+            </ul>
+            <h3>Ejemplos:</h3>
+            <ul>
+                <li><em>I <strong>work</strong> every day.</em> (Trabajo todos los días.)</li>
+                <li><em>She <strong>studies</strong> English.</em> (Ella estudia inglés.)</li>
+                <li><em>They <strong>play</strong> soccer.</em> (Ellos juegan fútbol.)</li>
+            </ul>
+            <h3>Negación e Interrogación:</h3>
+            <p>Se usa el auxiliar <strong>do/does</strong> (para He/She/It) + not para negar, y <strong>Do/Does</strong> al principio para preguntar.</p>
+            <p class="example-text"><em>I <strong>do not</strong> work.</em> (No trabajo.)</p>
+            <p class="example-text"><em><strong>Does</strong> she study English?</em> (¿Ella estudia inglés?)</p>
+        `
+    },
+    {
+        id: 'ees6',
+        title: 'Adjetivos Básicos y Concordancia',
+        description: 'Usa palabras descriptivas y asegúrate de que concuerden con los sustantivos.',
+        level: 'Beginner',
+        content: `
+            <p>Los adjetivos describen sustantivos. En inglés, a diferencia del español, los adjetivos NO cambian por género o número.</p>
+            <h3>Concordancia de Género y Número (¡No Cambian!):</h3>
+            <ul>
+                <li><strong>Red:</strong> rojo/roja/rojos/rojas. E.g., <em>a red book</em> (un libro rojo), <em>red houses</em> (casas rojas).</li>
+                <li><strong>Big:</strong> grande/grandes. E.g., <em>a big car</em> (un coche grande), <em>big cities</em> (ciudades grandes).</li>
+            </ul>
+            <h3>Posición:</h3>
+            <p>Los adjetivos en inglés casi siempre van ANTES del sustantivo que describen.</p>
+            <p class="example-text"><em>I have a <strong>new car</strong>.</em> (Tengo un coche nuevo.)</p>
+            <p>Algunos adjetivos comunes:</p>
+            <ul>
+                <li><strong>Happy:</strong> feliz</li>
+                <li><strong>Sad:</strong> triste</li>
+                <li><strong>Tall:</strong> alto</li>
+                <li><strong>Short:</strong> bajo</li>
+                <li><strong>Beautiful:</strong> hermoso/a</li>
+            </ul>
+        `
+    },
+    {
+        id: 'ees7',
+        title: 'Preguntar Direcciones y Lugares',
+        description: 'Aprende frases para preguntar y dar direcciones, e identificar lugares comunes.',
+        level: 'Beginner',
+        content: `
+            <p>Navegar en un país de habla inglesa requiere vocabulario específico:</p>
+            <h3>Preguntar Direcciones:</h3>
+            <ul>
+                <li><strong>Where is [place]?</strong> (¿Dónde está [lugar]?)</li>
+                <li><strong>How do I get to [place]?</strong> (¿Cómo llego a [lugar]?)</li>
+                <li><strong>Is it far/near?</strong> (¿Está lejos/cerca?)</li>
+            </ul>
+            <h3>Dar Direcciones:</h3>
+            <ul>
+                <li><strong>Turn right/left:</strong> Gira a la derecha/izquierda</li>
+                <li><strong>Go straight:</strong> Sigue recto</li>
+                <li><strong>It's next to:</strong> Está al lado de</li>
+                <li><strong>It's in front of:</strong> Está enfrente de</li>
+            </ul>
+            <h3>Lugares Comunes:</h3>
+            <ul>
+                <li><strong>Bank:</strong> banco</li>
+                <li><strong>Restaurant:</strong> restaurante</li>
+                <li><strong>Hotel:</strong> hotel</li>
+                <li><strong>Store:</strong> tienda</li>
+                <li><strong>Market:</strong> mercado</li>
+            </ul>
+        `
+    },
+    {
+        id: 'ees8',
+        title: 'Vocabulario de Comida y Bebida',
+        description: 'Amplía tu vocabulario para pedir comida y bebidas en inglés.',
+        level: 'Beginner',
+        content: `
+            <p>Comer y beber son centrales en la cultura. Aquí hay vocabulario esencial:</p>
+            <h3>Comida:</h3>
+            <ul>
+                <li><strong>Breakfast:</strong> desayuno</li>
+                <li><strong>Lunch:</strong> almuerzo</li>
+                <li><strong>Dinner:</strong> cena</li>
+                <li><strong>Water:</strong> agua</li>
+                <li><strong>Coffee:</strong> café</li>
+                <li><strong>Bread:</strong> pan</li>
+                <li><strong>Meat:</strong> carne</li>
+                <li><strong>Chicken:</strong> pollo</li>
+                <li><strong>Fish:</strong> pescado</li>
+                <li><strong>Vegetables:</strong> verduras</li>
+                <li><strong>Fruits:</strong> frutas</li>
+            </ul>
+            <h3>Ordenar:</h3>
+            <p class="example-text"><strong>I would like [item], please.</strong> (Quisiera [item], por favor.)</p>
+            <p class="example-text"><strong>Can I have [item]?</strong> (¿Me trae [item]?)</p>
+            <p class="example-text"><strong>The bill, please.</strong> (La cuenta, por favor.)</p>
+        `
+    },
+
+    // Intermediate Level
+    {
+        id: 'eesi1',
+        title: 'Pasado Simple vs. Pasado Continuo',
+        description: 'Domina los dos tiempos pasados para acciones completadas vs. acciones en progreso en el pasado.',
+        level: 'Intermediate',
+        content: `
+            <p>Comprender la diferencia entre el pasado simple (Simple Past) y el pasado continuo (Past Continuous) es crucial para describir eventos pasados.</p>
+            <h3>Pasado Simple (Simple Past):</h3>
+            <ul>
+                <li>Se usa para acciones completadas en el pasado.</li>
+                <li>A menudo responde a "¿qué pasó?".</li>
+                <li>Verbos regulares: se añade <strong>-ed</strong> (e.g., <em>walked, played</em>).</li>
+                <li>Verbos irregulares: cambian su forma (e.g., <em>ate, went, saw</em>).</li>
+            </ul>
+            <p class="example-text"><em>Yesterday I <strong>ate</strong> paella.</em> (Ayer comí paella. - acción completada)</p>
+            <h3>Pasado Continuo (Past Continuous):</h3>
+            <ul>
+                <li>Se usa para acciones que estaban en progreso en un momento específico del pasado.</li>
+                <li>Formación: <strong>was/were + verbo-ing</strong>.</li>
+                <li>Describe "lo que estaba pasando".</li>
+            </ul>
+            <p class="example-text"><em>While I <strong>was reading</strong>, the phone rang.</em> (Mientras leía, sonó el teléfono. - acción en progreso)</p>
+            <p class="example-text"><em>At 8 PM, I <strong>was watching</strong> TV.</em> (A las 8 PM, estaba viendo la televisión.)</p>
+        `
+    },
+    {
+        id: 'eesi2',
+        title: 'Pronombres de Objeto Directo e Indirecto',
+        description: 'Aprende a usar pronombres como "me, him, her, them" para simplificar oraciones.',
+        level: 'Intermediate',
+        content: `
+            <p>Los pronombres de objeto reemplazan a los sustantivos para evitar repeticiones.</p>
+            <h3>Pronombres de Objeto Directo (responden "¿qué?" o "¿a quién?"):</h3>
+            <ul>
+                <li><strong>Me:</strong> me</li>
+                <li><strong>You:</strong> te/le/les (a ti/usted/ustedes)</li>
+                <li><strong>Him:</strong> le (a él)</li>
+                <li><strong>Her:</strong> le (a ella)</li>
+                <li><strong>It:</strong> lo/la (a ello)</li>
+                <li><strong>Us:</strong> nos</li>
+                <li><strong>Them:</strong> los/las (a ellos/ellas)</li>
+            </ul>
+            <p class="example-text"><em>I bought the book. -> I bought <strong>it</strong>.</em> (Compré el libro. -> Lo compré.)</p>
+            <h3>Pronombres de Objeto Indirecto (responden "¿a quién?" o "¿para quién?"):</h3>
+            <p>Los pronombres de objeto indirecto en inglés son los mismos que los directos, y generalmente van ANTES del objeto directo si no hay preposición.</p>
+            <p class="example-text"><em>I gave the gift to Maria. -> I gave <strong>her</strong> the gift.</em> (Di el regalo a María. -> Le di el regalo a ella.)</p>
+            <p class="example-text"><em>I gave <strong>it to her</strong>.</em> (Se lo di.)</p>
+        `
+    },
+    {
+        id: 'eesi3',
+        title: 'Verbos Modales (Can, Could, Should, Must)',
+        description: 'Comprende y aplica verbos modales para expresar habilidad, posibilidad, obligación y consejo.',
+        level: 'Intermediate',
+        content: `
+            <p>Los verbos modales (modal verbs) se usan para expresar habilidad, posibilidad, permiso, obligación, consejo, etc. Siempre van seguidos de un verbo en su forma base (infinitivo sin "to").</p>
+            <h3>Modales Comunes:</h3>
+            <ul>
+                <li><strong>Can:</strong> habilidad, posibilidad, permiso. <p class="example-text"><em>I <strong>can</strong> speak English.</em> (Puedo hablar inglés.)</p></li>
+                <li><strong>Could:</strong> habilidad en el pasado, posibilidad, sugerencia. <p class="example-text"><em>I <strong>could</strong> swim when I was five.</em> (Podía nadar cuando tenía cinco años.)</p></li>
+                <li><strong>Should:</strong> consejo, recomendación. <p class="example-text"><em>You <strong>should</strong> study more.</em> (Deberías estudiar más.)</p></li>
+                <li><strong>Must:</strong> obligación fuerte, deducción lógica. <p class="example-text"><em>You <strong>must</strong> finish your homework.</em> (Debes terminar tu tarea.)</p></li>
+                <li><strong>May/Might:</strong> posibilidad, permiso. <p class="example-text"><em>It <strong>may</strong> rain tomorrow.</em> (Puede que llueva mañana.)</p></li>
+            </ul>
+            <p>Los modales no cambian con el sujeto (no se añade -s para he/she/it).</p>
+        `
+    },
+    {
+        id: 'eesi4',
+        title: 'Futuro Simple y "Going To"',
+        description: 'Aprende a hablar sobre eventos futuros utilizando "will" y "be going to".',
+        level: 'Intermediate',
+        content: `
+            <p>El inglés tiene varias formas de expresar el futuro. Las más comunes son "will" y "be going to".</p>
+            <h3>Future Simple (Will):</h3>
+            <ul>
+                <li>Se usa para decisiones espontáneas, predicciones generales, promesas y ofertas.</li>
+                <li>Formación: <strong>will + verbo en forma base</strong>.</li>
+            </ul>
+            <p class="example-text"><em>I <strong>will talk</strong> to him tomorrow.</em> (Hablaré con él mañana. - Decisión espontánea)</p>
+            <p class="example-text"><em>It <strong>will rain</strong> soon.</em> (Lloverá pronto. - Predicción)</p>
+            <h3>"Be Going To":</h3>
+            <ul>
+                <li>Se usa para planes o intenciones ya decididas, y predicciones basadas en evidencia presente.</li>
+                <li>Formación: <strong>am/is/are + going to + verbo en forma base</strong>.</li>
+            </ul>
+            <p class="example-text"><em>I <strong>am going to eat</strong> dinner.</em> (Voy a cenar. - Plan)</p>
+            <p class="example-text"><em>Look at those clouds! It's <strong>going to rain</strong>.</em> (¡Mira esas nubes! Va a llover. - Evidencia)</p>
+        `
+    },
+    {
+        id: 'eesi5',
+        title: 'Verbos Frasales Comunes',
+        description: 'Comprende y utiliza verbos frasales (verb + preposition/adverb) para un inglés más natural.',
+        level: 'Intermediate',
+        content: `
+            <p>Los verbos frasales (phrasal verbs) son combinaciones de un verbo y una o más preposiciones o adverbios que cambian el significado del verbo original. Son muy comunes en el inglés hablado y escrito.</p>
+            <h3>Ejemplos Comunes:</h3>
+            <ul>
+                <li><strong>Look up:</strong> buscar (en un diccionario, internet). <p class="example-text"><em>I need to <strong>look up</strong> this word.</em> (Necesito buscar esta palabra.)</p></li>
+                <li><strong>Give up:</strong> rendirse, dejar de hacer algo. <p class="example-text"><em>Don't <strong>give up</strong>!</em> (¡No te rindas!)</p></li>
+                <li><strong>Take off:</strong> despegar (avión), quitarse (ropa). <p class="example-text"><em>The plane <strong>took off</strong> at 7 AM.</em> (El avión despegó a las 7 AM.)</p></li>
+                <li><strong>Turn on/off:</strong> encender/apagar. <p class="example-text"><em>Please <strong>turn on</strong> the light.</em> (Por favor, enciende la luz.)</p></li>
+                <li><strong>Get up:</strong> levantarse. <p class="example-text"><em>I <strong>get up</strong> at 6 AM.</em> (Me levanto a las 6 AM.)</p></li>
+            </ul>
+            <p>El significado de los phrasal verbs a menudo no es literal, por lo que es importante aprenderlos y practicarlos.</p>
+        `
+    },
+    {
+        id: 'eesi6',
+        title: 'Preposiciones de Lugar y Tiempo',
+        description: 'Usa "in, on, at" y otras preposiciones para indicar ubicación y momento.',
+        level: 'Intermediate',
+        content: `
+            <p>Las preposiciones son pequeñas palabras que indican la relación entre elementos en una oración, especialmente de lugar y tiempo.</p>
+            <h3>Preposiciones de Lugar:</h3>
+            <ul>
+                <li><strong>In:</strong> dentro de (espacios cerrados, ciudades, países). <p class="example-text"><em><strong>In</strong> the box, <strong>in</strong> London, <strong>in</strong> Spain.</em></p></li>
+                <li><strong>On:</strong> sobre (superficies, calles, días de la semana). <p class="example-text"><em><strong>On</strong> the table, <strong>on</strong> Oxford Street, <strong>on</strong> Monday.</em></p></li>
+                <li><strong>At:</strong> en (puntos específicos, direcciones, eventos). <p class="example-text"><em><strong>At</strong> the bus stop, <strong>at</strong> 23 Main Street, <strong>at</strong> the party.</em></p></li>
+                <li><strong>Next to:</strong> al lado de</li>
+                <li><strong>Between:</strong> entre (dos cosas)</li>
+                <li><strong>Among:</strong> entre (varias cosas)</li>
+            </ul>
+            <h3>Preposiciones de Tiempo:</h3>
+            <ul>
+                <li><strong>In:</strong> meses, años, estaciones, partes del día (excepto "at night"). <p class="example-text"><em><strong>In</strong> July, <strong>in</strong> 2025, <strong>in</strong> the morning.</em></p></li>
+                <li><strong>On:</strong> días específicos, fechas. <p class="example-text"><em><strong>On</strong> Sunday, <strong>on</strong> July 14th.</em></p></li>
+                <li><strong>At:</strong> horas, momentos específicos. <p class="example-text"><em><strong>At</strong> 3 PM, <strong>at</strong> night, <strong>at</strong> midnight.</em></p></li>
+            </ul>
+        `
+    },
+    {
+        id: 'eesi7',
+        title: 'Comparativos y Superlativos',
+        description: 'Compara elementos usando "más/menos que" y describe "el más/el menos" de algo.',
+        level: 'Intermediate',
+        content: `
+            <p>Los comparativos y superlativos se usan para comparar sustantivos y describir sus cualidades.</p>
+            <h3>Comparativos (Más/Menos Que):</h3>
+            <ul>
+                <li><strong>Adjetivos cortos (1 sílaba o 2 terminadas en -y):</strong> Adjetivo<strong>-er + than</strong>. E.g., <em>tall<strong>er than</strong></em> (más alto que), <em>happi<strong>er than</strong></em> (más feliz que).</li>
+                <li><strong>Adjetivos largos (2+ sílabas):</strong> <strong>More/Less + adjetivo + than</strong>. E.g., <em><strong>more intelligent than</strong></em> (más inteligente que), <em><strong>less expensive than</strong></em> (menos caro que).</li>
+            </ul>
+            <p class="example-text"><em>She is <strong>smarter than</strong> him.</em> (Ella es más inteligente que él.)</p>
+            <h3>Superlativos (El Más/El Menos):</h3>
+            <ul>
+                <li><strong>Adjetivos cortos:</strong> <strong>The + adjetivo-est</strong>. E.g., <em><strong>the tallest</strong></em> (el más alto), <em><strong>the happiest</strong></em> (el más feliz).</li>
+                <li><strong>Adjetivos largos:</strong> <strong>The most/least + adjetivo</strong>. E.g., <em><strong>the most beautiful</strong></em> (el más hermoso), <em><strong>the least interesting</strong></em> (el menos interesante).</li>
+            </ul>
+            <p class="example-text"><em>It's <strong>the most beautiful city in</strong> the world.</em> (Es la ciudad más bonita del mundo.)</p>
+        `
+    },
+    {
+        id: 'eesi8',
+        title: 'Voz Pasiva',
+        description: 'Construye oraciones donde el sujeto recibe la acción, en lugar de realizarla.',
+        level: 'Intermediate',
+        content: `
+            <p>La voz pasiva se usa cuando el enfoque está en la acción que se recibe, no en quién la realizó.</p>
+            <h3>Estructura:</h3>
+            <p><strong>Sujeto + To Be (conjugado) + Participio Pasado (verbo en 3ª columna) + by + Agente (opcional)</strong></p>
+            <ul>
+                <li>El participio pasado es la tercera forma del verbo (e.g., <em>eaten, built, seen</em>).</li>
+            </ul>
+            <p class="example-text"><em>The house <strong>was built</strong> by my grandfather.</em> (La casa fue construida por mi abuelo.)</p>
+            <p class="example-text"><em>The books <strong>are read</strong> by many students.</em> (Los libros son leídos por muchos estudiantes.)</p>
+            <h3>Usos Comunes:</h3>
+            <ul>
+                <li>Cuando el agente es desconocido o no importante.</li>
+                <li>En contextos formales o científicos.</li>
+            </ul>
+        `
+    },
+
+    // Expert Level
+    {
+        id: 'eese1',
+        title: 'Tiempos Perfectos (Presente, Pasado, Futuro Perfecto)',
+        description: 'Domina los tiempos compuestos usando "have/had/will have" para acciones completadas en relación con otro momento.',
+        level: 'Expert',
+        content: `
+            <p>Los tiempos perfectos usan el auxiliar <strong>have</strong> (o sus formas <em>has, had, will have</em>) seguido de un participio pasado.</p>
+            <h3>Presente Perfecto (Present Perfect):</h3>
+            <ul>
+                <li><strong>Have/Has + participio pasado</strong></li>
+                <li>Se usa para acciones completadas recientemente o con relevancia para el presente.</li>
+            </ul>
+            <p class="example-text"><em>I <strong>have eaten</strong>.</em> (He comido.)</p>
+            <p class="example-text"><em>She <strong>has finished</strong> her homework.</em> (Ella ha terminado su tarea.)</p>
+            <h3>Pasado Perfecto (Past Perfect):</h3>
+            <ul>
+                <li><strong>Had + participio pasado</strong></li>
+                <li>Se usa para acciones completadas antes de otra acción pasada.</li>
+            </ul>
+            <p class="example-text"><em>When I arrived, she <strong>had already left</strong>.</em> (Cuando llegué, ella ya se había ido.)</p>
+            <h3>Futuro Perfecto (Future Perfect):</h3>
+            <ul>
+                <li><strong>Will have + participio pasado</strong></li>
+                <li>Se usa para acciones que estarán completadas en un momento determinado en el futuro.</li>
+            </ul>
+            <p class="example-text"><em>By tomorrow, I <strong>will have finished</strong> the project.</em> (Para mañana, habré terminado el proyecto.)</p>
+        `
+    },
+    {
+        id: 'eese2',
+        title: 'Oraciones Condicionales (If Clauses)',
+        description: 'Construye oraciones complejas "si... entonces" usando varios tiempos y modos.',
+        level: 'Expert',
+        content: `
+            <p>Las oraciones condicionales expresan situaciones hipotéticas y sus consecuencias.</p>
+            <h3>Tipo 0: Verdades Generales (If + Present Simple, then + Present Simple)</h3>
+            <p class="example-text"><em>If you <strong>heat</strong> water, it <strong>boils</strong>.</em> (Si calientas agua, hierve.)</p>
+            <h3>Tipo 1: Condiciones Reales/Posibles (If + Present Simple, then + Future Simple)</h3>
+            <p class="example-text"><em>If you <strong>study</strong>, you <strong>will learn</strong> a lot.</em> (Si estudias, aprenderás mucho.)</p>
+            <h3>Tipo 2: Condiciones Irreales/Hipotéticas (If + Past Simple, then + Conditional Simple)</h3>
+            <p class="example-text"><em>If I <strong>had</strong> money, I <strong>would buy</strong> a car.</em> (Si tuviera dinero, compraría un coche.)</p>
+            <h3>Tipo 3: Condiciones Imposibles en el Pasado (If + Past Perfect, then + Conditional Perfect)</h3>
+            <p class="example-text"><em>If you <strong>had studied</strong>, you <strong>would have passed</strong> the exam.</em> (Si hubieras estudiado, habrías aprobado el examen.)</p>
+        `
+    },
+    {
+        id: 'eese3',
+        title: 'Reportar Discurso (Reported Speech)',
+        description: 'Transforma el discurso directo en discurso indirecto, prestando atención a los cambios de tiempo y pronombres.',
+        level: 'Expert',
+        content: `
+            <p>El discurso reportado (Reported Speech o Indirect Speech) se usa para contar lo que alguien dijo sin citar sus palabras exactas.</p>
+            <h3>Cambios Comunes:</h3>
+            <ul>
+                <li><strong>Cambio de tiempo verbal:</strong> El tiempo verbal en la oración reportada suele "retroceder" un paso en el pasado.
+                    <ul>
+                        <li>Present Simple -> Past Simple</li>
+                        <li>Present Continuous -> Past Continuous</li>
+                        <li>Past Simple -> Past Perfect</li>
+                        <li>Future Simple (will) -> Conditional (would)</li>
+                    </ul>
+                </li>
+                <li><strong>Cambio de pronombres:</strong> Ajustar pronombres según el contexto.</li>
+                <li><strong>Cambio de expresiones de tiempo y lugar:</strong>
+                    <ul>
+                        <li>Now -> then</li>
+                        <li>Today -> that day</li>
+                        <li>Here -> there</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Ejemplos:</h3>
+            <p class="example-text">Direct: <em>He said, "I am happy."</em></p>
+            <p class="example-text">Reported: <em>He said that he <strong>was</strong> happy.</em></p>
+            <p class="example-text">Direct: <em>She asked, "Where is the bank?"</em></p>
+            <p class="example-text">Reported: <em>She asked where the bank <strong>was</strong>.</em></p>
+        `
+    },
+    {
+        id: 'eese4',
+        title: 'Usos Avanzados de Artículos y Cuantificadores',
+        description: 'Profundiza en el uso de "a/an, the, no article" y cuantificadores como "much, many, few, little".',
+        level: 'Expert',
+        content: `
+            <p>El uso de artículos y cuantificadores en inglés puede ser complejo.</p>
+            <h3>Artículos (A/An, The, No Article):</h3>
+            <ul>
+                <li><strong>A/An:</strong> Para sustantivos contables singulares no específicos.</li>
+                <li><strong>The:</strong> Para sustantivos específicos (contables o incontables, singulares o plurales).</li>
+                <li><strong>No Article:</strong> Para sustantivos plurales o incontables en general, o para nombres propios.</li>
+            </ul>
+            <p class="example-text"><em>I like <strong>music</strong>.</em> (Me gusta la música - en general)</p>
+            <p class="example-text"><em>I like <strong>the music</strong> in this restaurant.</em> (Me gusta la música en este restaurante - específica)</p>
+            <h3>Cuantificadores:</h3>
+            <ul>
+                <li><strong>Much:</strong> con sustantivos incontables (e.g., <em>much water</em>).</li>
+                <li><strong>Many:</strong> con sustantivos contables plurales (e.g., <em>many books</em>).</li>
+                <li><strong>A lot of/Lots of:</strong> con ambos (e.g., <em>a lot of money, a lot of friends</em>).</li>
+                <li><strong>Few/A few:</strong> con contables (pocos/unos pocos).</li>
+                <li><strong>Little/A little:</strong> con incontables (poco/un poco).</li>
+            </ul>
+        `
+    },
+    {
+        id: 'eese5',
+        title: 'Modismos y Expresiones Idiomáticas',
+        description: 'Aprende y utiliza modismos populares en inglés para sonar más natural y fluido.',
+        level: 'Expert',
+        content: `
+            <p>Los modismos (idioms) son frases cuyo significado no es obvio a partir de las palabras individuales. Son clave para sonar como un hablante nativo.</p>
+            <h3>Ejemplos:</h3>
+            <ul>
+                <li><strong>It's raining cats and dogs:</strong> Llueve a cántaros.</li>
+                <li><strong>Break a leg:</strong> ¡Mucha suerte! (literalmente: rómpete una pierna)</li>
+                <li><strong>Bite the bullet:</strong> Afrontar una situación difícil con valentía.</li>
+                <li><strong>Hit the road:</strong> Ponerse en marcha, irse.</li>
+                <li><strong>Piece of cake:</strong> Pan comido, algo muy fácil.</li>
+            </ul>
+            <p>La mejor manera de aprender modismos es encontrarlos en contexto y practicarlos.</p>
+        `
+    },
+    {
+        id: 'eese6',
+        title: 'Diferencias entre Inglés Británico y Americano',
+        description: 'Explora las variaciones en vocabulario, pronunciación y gramática entre el inglés británico y americano.',
+        level: 'Expert',
+        content: `
+            <p>Aunque mutuamente inteligibles, el inglés británico (BrE) y el americano (AmE) tienen diferencias notables.</p>
+            <h3>Vocabulario:</h3>
+            <ul>
+                <li><strong>BrE:</strong> lift, flat, lorry, rubbish, pavement</li>
+                <li><strong>AmE:</strong> elevator, apartment, truck, garbage, sidewalk</li>
+            </ul>
+            <h3>Pronunciación:</h3>
+            <ul>
+                <li>La 'r' al final de la palabra se pronuncia en AmE (e.g., car), pero no en BrE (e.g., car suena como "ca").</li>
+                <li>La 't' entre vocales en AmE a menudo suena como 'd' suave (e.g., water), mientras que en BrE es una 't' clara.</li>
+            </ul>
+            <h3>Gramática:</h3>
+            <ul>
+                <li><strong>Present Perfect:</strong> BrE lo usa más para acciones recientes. AmE a menudo usa Past Simple. <p class="example-text">BrE: <em>I've just eaten.</em> AmE: <em>I just ate.</em></p></li>
+                <li><strong>Got/Gotten:</strong> BrE usa "got" como participio pasado de "get". AmE usa "gotten".</li>
+            </ul>
+            <p>Elegir un dialecto para enfocarse puede ayudar, pero entender las diferencias es beneficioso.</p>
+        `
+    },
+    {
+        id: 'eese7',
+        title: 'Pronunciación Avanzada y Entonación',
+        description: 'Mejora tu pronunciación y entonación para sonar más natural y comprensible.',
+        level: 'Expert',
+        content: `
+            <p>La pronunciación y la entonación son clave para la fluidez y la comprensión.</p>
+            <h3>Aspectos Clave:</h3>
+            <ul>
+                <li><strong>Sonidos vocálicos:</strong> El inglés tiene más sonidos vocálicos que el español, incluyendo diptongos y vocales reducidas (schwa).</li>
+                <li><strong>Sonidos consonánticos:</strong> Diferencias en la 'r', 'th', 'w', 'v'.</li>
+                <li><strong>Estrés de la palabra:</strong> La sílaba tónica en inglés es muy importante y puede cambiar el significado (e.g., 'present' - regalo vs. presentar).</li>
+                <li><strong>Estrés de la oración y ritmo:</strong> Algunas palabras en una oración se enfatizan más que otras. El inglés es un idioma con "estrés de sílaba" (stress-timed language).</li>
+                <li><strong>Entonación:</strong> El patrón de subida y bajada del tono de voz. Es crucial para expresar preguntas, afirmaciones, emociones.</li>
+            </ul>
+            <p>Practicar con hablantes nativos y usar recursos de audio es fundamental.</p>
+        `
+    },
+    {
+        id: 'eese8',
+        title: 'Cultura y Etiqueta Anglosajona',
+        description: 'Obtén información sobre las normas culturales, costumbres sociales y etiqueta en países de habla inglesa.',
+        level: 'Expert',
+        content: `
+            <p>Aprender un idioma va de la mano con comprender su cultura.</p>
+            <h3>Aspectos Culturales Clave:</h3>
+            <ul>
+                <li><strong>Saludos:</strong> Un apretón de manos es común en la mayoría de las situaciones. Los abrazos y besos son más reservados para amigos cercanos y familiares.</li>
+                <li><strong>Puntualidad:</strong> La puntualidad es generalmente muy valorada, especialmente en entornos profesionales.</li>
+                <li><strong>Espacio Personal:</strong> La gente tiende a mantener una mayor distancia física en las conversaciones que en muchas culturas hispanas.</li>
+                <li><strong>Horarios de Comidas:</strong> Las comidas suelen ser más tempranas que en España o América Latina (e.g., almuerzo al mediodía, cena a partir de las 6-7 PM).</li>
+                <li><strong>Conversación:</strong> Evitar temas muy personales al principio. El humor y las bromas son comunes.</li>
+                <li><strong>Propina (Tipping):</strong> Es una práctica común y esperada en muchos servicios (restaurantes, taxis).</li>
+            </ul>
+            <p>Ser consciente de estas costumbres te ayudará a integrarte y comunicarte de manera más efectiva.</p>
+        `
+    }
+];
+
+// Global variables for the app
+let currentCourse = 'spanish'; // 'spanish' or 'english'
+let lessonsData = spanishLessonsData; // Initially set to Spanish lessons
 let progress = {};
 
 // Get references to DOM elements
+const appTitle = document.getElementById('appTitle');
+const mainTitle = document.getElementById('mainTitle');
+const mainSubtitle = document.getElementById('mainSubtitle');
 const learningContent = document.getElementById('learningContent');
 const progressText = document.getElementById('progressText');
 const progressBar = document.getElementById('progressBar');
@@ -597,6 +1187,10 @@ const messageText = document.getElementById('messageText');
 const confirmButton = document.getElementById('confirmButton');
 const cancelButton = document.getElementById('cancelButton');
 const overlay = document.getElementById('overlay');
+
+// Course selector buttons
+const spanishCourseBtn = document.getElementById('spanishCourseBtn');
+const englishCourseBtn = document.getElementById('englishCourseBtn');
 
 // Lightbox elements
 const lightbox = document.getElementById('lightbox');
@@ -637,12 +1231,13 @@ function showConfirmation(message) {
 }
 
 /**
- * Loads the user's progress from LocalStorage.
+ * Loads the user's progress from LocalStorage based on the current course.
  * If no progress is found, initializes an empty object.
  */
 function loadProgress() {
     try {
-        const storedProgress = localStorage.getItem('spanishLearningProgress'); // Changed key
+        const storageKey = `${currentCourse}LearningProgress`;
+        const storedProgress = localStorage.getItem(storageKey);
         if (storedProgress) {
             progress = JSON.parse(storedProgress);
         } else {
@@ -655,11 +1250,12 @@ function loadProgress() {
 }
 
 /**
- * Saves the current progress object to LocalStorage.
+ * Saves the current progress object to LocalStorage based on the current course.
  */
 function saveProgress() {
     try {
-        localStorage.setItem('spanishLearningProgress', JSON.stringify(progress)); // Changed key
+        const storageKey = `${currentCourse}LearningProgress`;
+        localStorage.setItem(storageKey, JSON.stringify(progress));
     } catch (e) {
         console.error("Failed to save progress to LocalStorage:", e);
     }
@@ -789,17 +1385,51 @@ function renderLessons() {
 }
 
 /**
- * Resets all progress by clearing LocalStorage and re-rendering.
+ * Resets all progress for the current course.
  */
 async function resetProgress() {
-    const confirmed = await showConfirmation('Are you sure you want to reset all your progress? This action cannot be undone.');
+    const confirmed = await showConfirmation(`Are you sure you want to reset all your progress for the ${currentCourse === 'spanish' ? 'Spanish' : 'English'} course? This action cannot be undone.`);
     if (confirmed) {
-        localStorage.removeItem('spanishLearningProgress'); // Changed key
+        const storageKey = `${currentCourse}LearningProgress`;
+        localStorage.removeItem(storageKey);
         progress = {}; // Reset the progress object
         renderLessons(); // Re-render to reflect reset
         updateProgressDisplay(); // Update progress display
     }
 }
+
+/**
+ * Switches the active learning course.
+ * @param {string} courseName - 'spanish' or 'english'.
+ */
+function switchCourse(courseName) {
+    if (currentCourse === courseName) return; // No change needed
+
+    currentCourse = courseName;
+
+    // Update main titles and subtitles
+    if (currentCourse === 'spanish') {
+        lessonsData = spanishLessonsData;
+        mainTitle.textContent = 'Spanish Learning Path';
+        mainSubtitle.textContent = 'Your journey from beginner to Spanish expert!';
+        spanishCourseBtn.classList.add('active');
+        englishCourseBtn.classList.remove('active');
+    } else {
+        lessonsData = englishLessonsData;
+        mainTitle.textContent = 'English Learning Path';
+        mainSubtitle.textContent = 'Your journey from beginner to English expert!';
+        spanishCourseBtn.classList.remove('active');
+        englishCourseBtn.classList.add('active');
+    }
+
+    loadProgress(); // Load progress for the new course
+    renderLessons(); // Render lessons for the new course
+    updateProgressDisplay(); // Update progress display for the new course
+}
+
+// Event listeners for course selector buttons
+spanishCourseBtn.addEventListener('click', () => switchCourse('spanish'));
+englishCourseBtn.addEventListener('click', () => switchCourse('english'));
 
 // Event listener for the reset button
 resetProgressBtn.addEventListener('click', resetProgress);
@@ -810,7 +1440,15 @@ overlay.addEventListener('click', closeLightbox); // Close lightbox when clickin
 
 // Initialize the app when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    loadProgress(); // Load saved progress
-    renderLessons(); // Render lessons based on loaded progress
-    updateProgressDisplay(); // Update the progress display
+    // Determine initial course based on previous state or default to Spanish
+    const lastCourse = localStorage.getItem('lastActiveCourse');
+    if (lastCourse === 'english') {
+        switchCourse('english');
+    } else {
+        switchCourse('spanish'); // Default to Spanish
+    }
+    // Save the last active course when the page is closed or reloaded
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('lastActiveCourse', currentCourse);
+    });
 });
