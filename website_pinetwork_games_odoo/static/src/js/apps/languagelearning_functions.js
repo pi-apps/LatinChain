@@ -1169,269 +1169,271 @@ const englishLessonsData = [
     }
 ];
 
-// Global variables for the app
-let currentCourse = 'spanish'; // 'spanish' or 'english'
-let lessonsData = spanishLessonsData; // Initially set to Spanish lessons
-let progress = {};
-
-// Get references to DOM elements
-const appTitle = document.getElementById('appTitle');
-const mainTitle = document.getElementById('mainTitle');
-const mainSubtitle = document.getElementById('mainSubtitle');
-const learningContent = document.getElementById('learningContent');
-const progressText = document.getElementById('progressText');
-const progressBar = document.getElementById('progressBar');
-const resetProgressBtn = document.getElementById('resetProgressBtn');
-const messageBox = document.getElementById('messageBox');
-const messageText = document.getElementById('messageText');
-const confirmButton = document.getElementById('confirmButton');
-const cancelButton = document.getElementById('cancelButton');
-const overlay = document.getElementById('overlay');
-
-// Course selector buttons
-const spanishCourseBtn = document.getElementById('spanishCourseBtn');
-const englishCourseBtn = document.getElementById('englishCourseBtn');
-
-// Lightbox elements
-const lightbox = document.getElementById('lightbox');
-const lightboxTitle = document.getElementById('lightboxTitle');
-const lightboxContent = document.getElementById('lightboxContent');
-const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
-
-/**
- * Shows a custom confirmation dialog.
- * @param {string} message - The message to display.
- * @returns {Promise<boolean>} - A promise that resolves to true if confirmed, false if canceled.
- */
-function showConfirmation(message) {
-    return new Promise((resolve) => {
-        messageText.textContent = message;
-        messageBox.style.display = 'block';
-        overlay.style.display = 'block';
-
-        const onConfirm = () => {
-            messageBox.style.display = 'none';
-            overlay.style.display = 'none';
-            confirmButton.removeEventListener('click', onConfirm);
-            cancelButton.removeEventListener('click', onCancel);
-            resolve(true);
-        };
-
-        const onCancel = () => {
-            messageBox.style.display = 'none';
-            overlay.style.display = 'none';
-            confirmButton.removeEventListener('click', onConfirm);
-            cancelButton.removeEventListener('click', onCancel);
-            resolve(false);
-        };
-
-        confirmButton.addEventListener('click', onConfirm);
-        cancelButton.addEventListener('click', onCancel);
-    });
-}
-
-/**
- * Loads the user's progress from LocalStorage based on the current course.
- * If no progress is found, initializes an empty object.
- */
-function loadProgress() {
-    try {
-        const storageKey = `${currentCourse}LearningProgress`;
-        const storedProgress = localStorage.getItem(storageKey);
-        if (storedProgress) {
-            progress = JSON.parse(storedProgress);
-        } else {
-            progress = {}; // Initialize empty if nothing found
-        }
-    } catch (e) {
-        console.error("Failed to load progress from LocalStorage:", e);
-        progress = {}; // Fallback to empty progress on error
-    }
-}
-
-/**
- * Saves the current progress object to LocalStorage based on the current course.
- */
-function saveProgress() {
-    try {
-        const storageKey = `${currentCourse}LearningProgress`;
-        localStorage.setItem(storageKey, JSON.stringify(progress));
-    } catch (e) {
-        console.error("Failed to save progress to LocalStorage:", e);
-    }
-}
-
-/**
- * Updates the progress display (text and progress bar).
- */
-function updateProgressDisplay() {
-    const completedLessons = Object.values(progress).filter(status => status).length;
-    const totalLessons = lessonsData.length;
-    const percentage = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
-
-    progressText.textContent = `${percentage}% Complete (${completedLessons}/${totalLessons} Lessons)`;
-    progressBar.style.width = `${percentage}%`;
-}
-
-/**
- * Toggles the completion status of a lesson.
- * @param {string} lessonId - The ID of the lesson to toggle.
- */
-function toggleLessonCompletion(lessonId) {
-    // Toggle the status
-    progress[lessonId] = !progress[lessonId];
-    saveProgress(); // Save updated progress
-    renderLessons(); // Re-render to update UI
-    updateProgressDisplay(); // Update progress text and bar
-}
-
-/**
- * Opens the lightbox with specific lesson content.
- * @param {object} lesson - The lesson object containing title and content.
- */
-function openLightbox(lesson) {
-    lightboxTitle.textContent = lesson.title;
-    lightboxContent.innerHTML = lesson.content; // Use innerHTML for rich content
-    lightbox.style.display = 'block';
-    overlay.style.display = 'block';
-}
-
-/**
- * Closes the lightbox.
- */
-function closeLightbox() {
-    lightbox.style.display = 'none';
-    overlay.style.display = 'none';
-}
-
-/**
- * Renders all lessons dynamically into the HTML.
- * Groups lessons by their level.
- */
-function renderLessons() {
-    learningContent.innerHTML = ''; // Clear existing content
-
-    // Group lessons by level
-    const groupedLessons = lessonsData.reduce((acc, lesson) => {
-        if (!acc[lesson.level]) {
-            acc[lesson.level] = [];
-        }
-        acc[lesson.level].push(lesson);
-        return acc;
-    }, {});
-
-    // Iterate over each level and create its section
-    for (const level in groupedLessons) {
-        const levelSection = document.createElement('section');
-        levelSection.className = 'mb-8'; // Margin below each level section
-
-        const levelTitle = document.createElement('h2');
-        levelTitle.className = 'level-title';
-        levelTitle.textContent = `${level} Level`;
-        levelSection.appendChild(levelTitle);
-
-        // Create a grid for lessons within each level for better responsiveness
-        const lessonsGrid = document.createElement('div');
-        lessonsGrid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'; // Responsive grid
-
-        groupedLessons[level].forEach(lesson => {
-            const lessonCard = document.createElement('div');
-            lessonCard.className = 'card'; // Apply card styling
-            lessonCard.setAttribute('data-lesson-id', lesson.id); // Store lesson ID for easy lookup
-
-            // Add click listener to the card itself to open the lightbox
-            lessonCard.addEventListener('click', (event) => {
-                // Prevent click on the button from also opening the lightbox
-                if (!event.target.classList.contains('complete-button')) {
-                    openLightbox(lesson);
-                }
-            });
-
-            const lessonTitle = document.createElement('h3');
-            lessonTitle.className = 'lesson-title';
-            lessonTitle.textContent = lesson.title;
-            lessonCard.appendChild(lessonTitle);
-
-            const lessonDescription = document.createElement('p');
-            lessonDescription.className = 'lesson-description';
-            lessonDescription.textContent = lesson.description;
-            lessonCard.appendChild(lessonDescription);
-
-            const completeButton = document.createElement('button');
-            completeButton.id = `btn-${lesson.id}`;
-            completeButton.className = 'complete-button w-full'; // Full width button
-
-            // Check if the lesson is completed and set button text/class accordingly
-            if (progress[lesson.id]) {
-                completeButton.textContent = 'Mark as Incomplete';
-                completeButton.classList.add('completed');
-            } else {
-                completeButton.textContent = 'Mark as Complete';
-                completeButton.classList.remove('completed');
-            }
-
-            // Add event listener to toggle completion status
-            completeButton.addEventListener('click', (event) => {
-                event.stopPropagation(); // Prevent card's click event from firing
-                toggleLessonCompletion(lesson.id);
-            });
-            lessonCard.appendChild(completeButton);
-
-            lessonsGrid.appendChild(lessonCard);
-        });
-        levelSection.appendChild(lessonsGrid);
-        learningContent.appendChild(levelSection);
-    }
-}
-
-/**
- * Resets all progress for the current course.
- */
-async function resetProgress() {
-    const confirmed = await showConfirmation(`Are you sure you want to reset all your progress for the ${currentCourse === 'spanish' ? 'Spanish' : 'English'} course? This action cannot be undone.`);
-    if (confirmed) {
-        const storageKey = `${currentCourse}LearningProgress`;
-        localStorage.removeItem(storageKey);
-        progress = {}; // Reset the progress object
-        renderLessons(); // Re-render to reflect reset
-        updateProgressDisplay(); // Update progress display
-    }
-}
-
-/**
- * Switches the active learning course.
- * @param {string} courseName - 'spanish' or 'english'.
- */
-function switchCourse(courseName) {
-    
-    //if (currentCourse === courseName) return; // No change needed
-
-    currentCourse = courseName;
-
-    // Update main titles and subtitles
-    if (currentCourse === 'spanish') {
-        lessonsData = spanishLessonsData;
-        mainTitle.textContent = 'Spanish Learning Path';
-        mainSubtitle.textContent = 'Your journey from beginner to Spanish expert!';
-        spanishCourseBtn.classList.add('active');
-        englishCourseBtn.classList.remove('active');
-    } else {
-        lessonsData = englishLessonsData;
-        mainTitle.textContent = 'English Learning Path';
-        mainSubtitle.textContent = 'Your journey from beginner to English expert!';
-        spanishCourseBtn.classList.remove('active');
-        englishCourseBtn.classList.add('active');
-    }
-
-    loadProgress(); // Load progress for the new course
-    renderLessons(); // Render lessons for the new course
-    updateProgressDisplay(); // Update progress display for the new course
-    
-    localStorage.setItem('lastActiveCourse', currentCourse);
-}
-
 // Initialize the app when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Global variables for the app
+    let currentCourse = 'spanish'; // 'spanish' or 'english'
+    let lessonsData = spanishLessonsData; // Initially set to Spanish lessons
+    let progress = {};
+
+    // Get references to DOM elements
+    const appTitle = document.getElementById('appTitle');
+    const mainTitle = document.getElementById('mainTitle');
+    const mainSubtitle = document.getElementById('mainSubtitle');
+    const learningContent = document.getElementById('learningContent');
+    const progressText = document.getElementById('progressText');
+    const progressBar = document.getElementById('progressBar');
+    const resetProgressBtn = document.getElementById('resetProgressBtn');
+    const messageBox = document.getElementById('messageBox');
+    const messageText = document.getElementById('messageText');
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    const overlay = document.getElementById('overlay');
+
+    // Course selector buttons
+    const spanishCourseBtn = document.getElementById('spanishCourseBtn');
+    const englishCourseBtn = document.getElementById('englishCourseBtn');
+
+    // Lightbox elements
+    const lightbox = document.getElementById('lightbox');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxContent = document.getElementById('lightboxContent');
+    const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+
+    /**
+     * Shows a custom confirmation dialog.
+     * @param {string} message - The message to display.
+     * @returns {Promise<boolean>} - A promise that resolves to true if confirmed, false if canceled.
+     */
+    function showConfirmation(message) {
+        return new Promise((resolve) => {
+            messageText.textContent = message;
+            messageBox.style.display = 'block';
+            overlay.style.display = 'block';
+
+            const onConfirm = () => {
+                messageBox.style.display = 'none';
+                overlay.style.display = 'none';
+                confirmButton.removeEventListener('click', onConfirm);
+                cancelButton.removeEventListener('click', onCancel);
+                resolve(true);
+            };
+
+            const onCancel = () => {
+                messageBox.style.display = 'none';
+                overlay.style.display = 'none';
+                confirmButton.removeEventListener('click', onConfirm);
+                cancelButton.removeEventListener('click', onCancel);
+                resolve(false);
+            };
+
+            confirmButton.addEventListener('click', onConfirm);
+            cancelButton.addEventListener('click', onCancel);
+        });
+    }
+
+    /**
+     * Loads the user's progress from LocalStorage based on the current course.
+     * If no progress is found, initializes an empty object.
+     */
+    function loadProgress() {
+        try {
+            const storageKey = `${currentCourse}LearningProgress`;
+            const storedProgress = localStorage.getItem(storageKey);
+            if (storedProgress) {
+                progress = JSON.parse(storedProgress);
+            } else {
+                progress = {}; // Initialize empty if nothing found
+            }
+        } catch (e) {
+            console.error("Failed to load progress from LocalStorage:", e);
+            progress = {}; // Fallback to empty progress on error
+        }
+    }
+
+    /**
+     * Saves the current progress object to LocalStorage based on the current course.
+     */
+    function saveProgress() {
+        try {
+            const storageKey = `${currentCourse}LearningProgress`;
+            localStorage.setItem(storageKey, JSON.stringify(progress));
+        } catch (e) {
+            console.error("Failed to save progress to LocalStorage:", e);
+        }
+    }
+
+    /**
+     * Updates the progress display (text and progress bar).
+     */
+    function updateProgressDisplay() {
+        const completedLessons = Object.values(progress).filter(status => status).length;
+        const totalLessons = lessonsData.length;
+        const percentage = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
+
+        progressText.textContent = `${percentage}% Complete (${completedLessons}/${totalLessons} Lessons)`;
+        progressBar.style.width = `${percentage}%`;
+    }
+
+    /**
+     * Toggles the completion status of a lesson.
+     * @param {string} lessonId - The ID of the lesson to toggle.
+     */
+    function toggleLessonCompletion(lessonId) {
+        // Toggle the status
+        progress[lessonId] = !progress[lessonId];
+        saveProgress(); // Save updated progress
+        renderLessons(); // Re-render to update UI
+        updateProgressDisplay(); // Update progress text and bar
+    }
+
+    /**
+     * Opens the lightbox with specific lesson content.
+     * @param {object} lesson - The lesson object containing title and content.
+     */
+    function openLightbox(lesson) {
+        lightboxTitle.textContent = lesson.title;
+        lightboxContent.innerHTML = lesson.content; // Use innerHTML for rich content
+        lightbox.style.display = 'block';
+        overlay.style.display = 'block';
+    }
+
+    /**
+     * Closes the lightbox.
+     */
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+        overlay.style.display = 'none';
+    }
+
+    /**
+     * Renders all lessons dynamically into the HTML.
+     * Groups lessons by their level.
+     */
+    function renderLessons() {
+        learningContent.innerHTML = ''; // Clear existing content
+
+        // Group lessons by level
+        const groupedLessons = lessonsData.reduce((acc, lesson) => {
+            if (!acc[lesson.level]) {
+                acc[lesson.level] = [];
+            }
+            acc[lesson.level].push(lesson);
+            return acc;
+        }, {});
+
+        // Iterate over each level and create its section
+        for (const level in groupedLessons) {
+            const levelSection = document.createElement('section');
+            levelSection.className = 'mb-8'; // Margin below each level section
+
+            const levelTitle = document.createElement('h2');
+            levelTitle.className = 'level-title';
+            levelTitle.textContent = `${level} Level`;
+            levelSection.appendChild(levelTitle);
+
+            // Create a grid for lessons within each level for better responsiveness
+            const lessonsGrid = document.createElement('div');
+            lessonsGrid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'; // Responsive grid
+
+            groupedLessons[level].forEach(lesson => {
+                const lessonCard = document.createElement('div');
+                lessonCard.className = 'card'; // Apply card styling
+                lessonCard.setAttribute('data-lesson-id', lesson.id); // Store lesson ID for easy lookup
+
+                // Add click listener to the card itself to open the lightbox
+                lessonCard.addEventListener('click', (event) => {
+                    // Prevent click on the button from also opening the lightbox
+                    if (!event.target.classList.contains('complete-button')) {
+                        openLightbox(lesson);
+                    }
+                });
+
+                const lessonTitle = document.createElement('h3');
+                lessonTitle.className = 'lesson-title';
+                lessonTitle.textContent = lesson.title;
+                lessonCard.appendChild(lessonTitle);
+
+                const lessonDescription = document.createElement('p');
+                lessonDescription.className = 'lesson-description';
+                lessonDescription.textContent = lesson.description;
+                lessonCard.appendChild(lessonDescription);
+
+                const completeButton = document.createElement('button');
+                completeButton.id = `btn-${lesson.id}`;
+                completeButton.className = 'complete-button w-full'; // Full width button
+
+                // Check if the lesson is completed and set button text/class accordingly
+                if (progress[lesson.id]) {
+                    completeButton.textContent = 'Mark as Incomplete';
+                    completeButton.classList.add('completed');
+                } else {
+                    completeButton.textContent = 'Mark as Complete';
+                    completeButton.classList.remove('completed');
+                }
+
+                // Add event listener to toggle completion status
+                completeButton.addEventListener('click', (event) => {
+                    event.stopPropagation(); // Prevent card's click event from firing
+                    toggleLessonCompletion(lesson.id);
+                });
+                lessonCard.appendChild(completeButton);
+
+                lessonsGrid.appendChild(lessonCard);
+            });
+            levelSection.appendChild(lessonsGrid);
+            learningContent.appendChild(levelSection);
+        }
+    }
+
+    /**
+     * Resets all progress for the current course.
+     */
+    async function resetProgress() {
+        const confirmed = await showConfirmation(`Are you sure you want to reset all your progress for the ${currentCourse === 'spanish' ? 'Spanish' : 'English'} course? This action cannot be undone.`);
+        if (confirmed) {
+            const storageKey = `${currentCourse}LearningProgress`;
+            localStorage.removeItem(storageKey);
+            progress = {}; // Reset the progress object
+            renderLessons(); // Re-render to reflect reset
+            updateProgressDisplay(); // Update progress display
+        }
+    }
+
+    /**
+     * Switches the active learning course.
+     * @param {string} courseName - 'spanish' or 'english'.
+     */
+    function switchCourse(courseName) {
+        
+        //if (currentCourse === courseName) return; // No change needed
+
+        currentCourse = courseName;
+
+        // Update main titles and subtitles
+        if (currentCourse === 'spanish') {
+            lessonsData = spanishLessonsData;
+            mainTitle.textContent = 'Spanish Learning Path';
+            mainSubtitle.textContent = 'Your journey from beginner to Spanish expert!';
+            spanishCourseBtn.classList.add('active');
+            englishCourseBtn.classList.remove('active');
+        } else {
+            lessonsData = englishLessonsData;
+            mainTitle.textContent = 'English Learning Path';
+            mainSubtitle.textContent = 'Your journey from beginner to English expert!';
+            spanishCourseBtn.classList.remove('active');
+            englishCourseBtn.classList.add('active');
+        }
+
+        loadProgress(); // Load progress for the new course
+        renderLessons(); // Render lessons for the new course
+        updateProgressDisplay(); // Update progress display for the new course
+        
+        localStorage.setItem('lastActiveCourse', currentCourse);
+    }
+
+
     // Event listeners for course selector buttons
     spanishCourseBtn.addEventListener('click', () => switchCourse('spanish'));
     englishCourseBtn.addEventListener('click', () => switchCourse('english'));
