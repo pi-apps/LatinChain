@@ -1403,7 +1403,8 @@ async function resetProgress() {
  * @param {string} courseName - 'spanish' or 'english'.
  */
 function switchCourse(courseName) {
-    if (currentCourse === courseName) return; // No change needed
+    
+    //if (currentCourse === courseName) return; // No change needed
 
     currentCourse = courseName;
 
@@ -1427,19 +1428,19 @@ function switchCourse(courseName) {
     updateProgressDisplay(); // Update progress display for the new course
 }
 
-// Event listeners for course selector buttons
-spanishCourseBtn.addEventListener('click', () => switchCourse('spanish'));
-englishCourseBtn.addEventListener('click', () => switchCourse('english'));
-
-// Event listener for the reset button
-resetProgressBtn.addEventListener('click', resetProgress);
-
-// Event listeners for lightbox close button and overlay
-lightboxCloseBtn.addEventListener('click', closeLightbox);
-overlay.addEventListener('click', closeLightbox); // Close lightbox when clicking outside
-
 // Initialize the app when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Event listeners for course selector buttons
+    spanishCourseBtn.addEventListener('click', () => switchCourse('spanish'));
+    englishCourseBtn.addEventListener('click', () => switchCourse('english'));
+
+    // Event listener for the reset button
+    resetProgressBtn.addEventListener('click', resetProgress);
+
+    // Event listeners for lightbox close button and overlay
+    lightboxCloseBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', closeLightbox); // Close lightbox when clicking outside
+    
     // Determine initial course based on previous state or default to Spanish
     const lastCourse = localStorage.getItem('lastActiveCourse');
     if (lastCourse === 'english') {
