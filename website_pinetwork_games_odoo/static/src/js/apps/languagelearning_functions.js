@@ -1426,6 +1426,8 @@ function switchCourse(courseName) {
     loadProgress(); // Load progress for the new course
     renderLessons(); // Render lessons for the new course
     updateProgressDisplay(); // Update progress display for the new course
+    
+    localStorage.setItem('lastActiveCourse', currentCourse);
 }
 
 // Initialize the app when the DOM is fully loaded
