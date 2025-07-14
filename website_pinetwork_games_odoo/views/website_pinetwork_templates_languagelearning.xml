@@ -210,8 +210,12 @@
                         border-radius: 0.5rem;
                         font-weight: 600;
                         transition: background-color 0.2s ease-in-out;
-                        margin: 0 0.5rem;
+                        margin: 0 0.25rem; /* Reduced margin for more buttons */
+                        margin-top: 0.25em; /* Reduced margin for more buttons */
                         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        flex-grow: 1; /* Allow buttons to grow and fill space */
+                        white-space: nowrap; /* Prevent text wrapping */
+                        font-size: 0.875rem; /* Slightly smaller font for more buttons */
                     }
                     .course-selector-button:hover {
                         background-color: #94a3b8; /* Darker gray on hover */
@@ -222,6 +226,13 @@
                     }
                     .course-selector-button.active:hover {
                         background-color: #2563eb; /* Darker blue on hover */
+                    }
+                    .course-selector-buttons-container {
+                        display: flex;
+                        flex-wrap: wrap; /* Allow buttons to wrap to next line on small screens */
+                        justify-content: center;
+                        gap: 0.5rem; /* Space between wrapped buttons */
+                        margin-bottom: 1.5rem;
                     }
                 </style>
                 
@@ -323,12 +334,22 @@
                         <div style="text-align:center; margin-bottom:15px;">
                             <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
                         </div>
-                        <h1 class="text-4xl font-bold text-gray-800 mb-4" id="mainTitle">Spanish Learning Path</h1>
-                        <p class="text-lg text-gray-600" id="mainSubtitle">Your journey from beginner to Spanish expert!</p>
+                        <h1 class="text-4xl font-bold text-gray-800 mb-4" id="mainTitle">Language Learning Path</h1>
+                        <p class="text-lg text-gray-600">Made with Gemini AI</p>
+                        <p class="text-lg text-gray-600" id="mainSubtitle">Choose your language journey!</p>
 
-                        <div class="flex justify-center mb-6">
-                            <button id="spanishCourseBtn" class="course-selector-button active">Spanish for English Speakers</button>
-                            <button id="englishCourseBtn" class="course-selector-button">Inglés para Hispano Hablantes</button>
+                        <p class="text-lg text-gray-600"><strong>Cursos para Hispanos Hablantes</strong></p>
+                        <div class="course-buttons-grid mb-6">
+                            <button id="englishCourseBtn" class="course-selector-button">Inglés</button>
+                        </div>
+                        
+                        <p class="text-lg text-gray-600"><strong>Courses for English Speakers</strong></p>
+                        <div class="course-buttons-grid mb-6">
+                            <button id="spanishCourseBtn" class="course-selector-button">Spanish</button>
+                            <button id="koreanCourseBtn" class="course-selector-button">Korean</button>
+                            <button id="mandarinCourseBtn" class="course-selector-button">Chinese Mandarin</button>
+                            <button id="japaneseCourseBtn" class="course-selector-button">Japanese</button>
+                            <button id="vietnameseCourseBtn" class="course-selector-button">Vietnamese</button>
                         </div>
 
                         <div class="progress-bar-container">
@@ -363,7 +384,7 @@
 
                 <div id="overlay" class="overlay"></div>
 
-                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/languagelearning_functions.js?v=1.107"></script>
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/languagelearning_functions.js?v=1.108"></script>
             </body>
             </html>
                 </t>

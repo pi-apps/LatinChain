@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-13 20:41+0000\n"
-"PO-Revision-Date: 2025-07-13 20:41+0000\n"
+"POT-Creation-Date: 2025-07-13 23:58+0000\n"
+"PO-Revision-Date: 2025-07-13 23:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1012,6 +1012,16 @@ msgid "<strong>Chess</strong>"
 msgstr "<strong>Ajedrez</strong>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "<strong>Courses for English Speakers</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "<strong>Cursos para Hispanos Hablantes</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "<strong>Domino</strong>"
 msgstr ""
@@ -1023,13 +1033,17 @@ msgstr "<strong>Introducción y pago mínimo</strong><br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
-msgid "<strong>Languages (English, Spanish)</strong>"
-msgstr "<strong>Idiomas (Inglés, Español)</strong>"
+msgid "<strong>Latin Crush</strong>"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
-msgid "<strong>Latin Crush</strong>"
+msgid ""
+"<strong>Learn: Spanish, English, Korean, Chinese Mandarin, Japanese, "
+"Vietnamese</strong>"
 msgstr ""
+"<strong>Aprende: Español, Inglés, Koreano, Chino Mandarín, Japonés, "
+"Vietnamita</strong>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -1350,6 +1364,11 @@ msgid "Chess"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "Chinese Mandarin"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Choose The Engine's Skill Level"
 msgstr "Escoge el nivel de la PC"
@@ -1357,6 +1376,11 @@ msgstr "Escoge el nivel de la PC"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 msgid "Choose Your Side"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "Choose your language journey!"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1788,7 +1812,7 @@ msgstr "Importar..."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
-msgid "Inglés para Hispano Hablantes"
+msgid "Inglés"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1809,6 +1833,11 @@ msgstr "No es una URL de video de youtube."
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "JOIN MEXC"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "Japanese"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1835,6 +1864,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Just Browse"
 msgstr "Sólo Navegar"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "Korean"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1869,6 +1903,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LATINCHAIN PAL"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "Language Learning Path"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1972,11 +2011,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Learn Languages (Spanish, English)"
-msgstr "Aprende Idiomas (Español, Inglés)"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Learn Odoo Development"
 msgstr "Aprende Desarrollo en Odoo"
 
@@ -2055,6 +2089,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "MORE INFO"
 msgstr "MÁS INFO"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+msgid "Made with Gemini AI"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -2732,19 +2772,15 @@ msgid "Snake"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
 msgid "Spanish"
 msgstr "Español"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
-msgid "Spanish Learning Path"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
-msgid "Spanish for English Speakers"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Spanish, English, Korean, Chinese Mandarin, Japanese, Vietnamese"
+msgstr "Español, Inglés, Koreano, Chino Mandarín, Japonés, Vietnamita"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -3019,6 +3055,11 @@ msgid "Very Hard puzzle"
 msgstr "Juego muy difícil"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+msgid "Vietnamese"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "WVV68I9Nz2VGHoWUV9mH3P5Te8Dn"
 msgstr ""
@@ -3277,11 +3318,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 msgid "Your journey from beginner to Odoo expert!"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
-msgid "Your journey from beginner to Spanish expert!"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
