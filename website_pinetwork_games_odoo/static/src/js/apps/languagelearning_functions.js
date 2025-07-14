@@ -125,7 +125,163 @@ const mandarinLessonsData = [
 // --- Lesson Data for Japanese for English Speakers ---
 const japaneseLessonsData = [
     // Beginner Level (8 lessons)
-    { id: 'j1', title: 'Hiragana and Katakana', description: 'Learn the two phonetic Japanese syllabaries: Hiragana and Katakana.', level: 'Beginner', content: `<p>Japanese uses three writing systems: Hiragana, Katakana, and Kanji. Hiragana and Katakana are phonetic syllabaries, meaning each character represents a syllable.</p><h3>Hiragana:</h3><ul><li>Used for native Japanese words, grammatical particles, and verb endings.</li><li>Consists of 46 basic characters.</li></ul><p class="example-text"><strong>あ (a), い (i), う (u), え (e), お (o)</strong></p><p class="example-text"><strong>か (ka), き (ki), く (ku), け (ke), こ (ko)</strong></p><h3>Katakana:</h3><ul><li>Used for foreign words, loanwords, onomatopoeia, and emphasis.</li><li>Consists of 46 basic characters, corresponding to Hiragana sounds.</li></ul><p class="example-text"><strong>ア (a), イ (i), ウ (u), エ (e), オ (o)</strong></p><p class="example-text"><strong>カ (ka), キ (ki), ク (ku), ケ (ke), コ (ko)</strong></p><p>Mastering these two syllabaries is the first step to reading Japanese.</p>` },
+    { id: 'j1', title: 'Hiragana and Katakana', description: 'Learn the two phonetic Japanese syllabaries: Hiragana and Katakana.', level: 'Beginner', content: `<p>Japanese uses three writing systems: Hiragana, Katakana, and Kanji. Hiragana and Katakana are phonetic syllabaries, meaning each character represents a syllable.</p><h3>Hiragana:</h3><ul><li>Used for native Japanese words, grammatical particles, and verb endings.</li><li>Consists of 46 basic characters.</li></ul><div class="character-grid">
+  <div class="character-row">
+    <strong>あ</strong> (a)
+    <strong>い</strong> (i)
+    <strong>う</strong> (u)
+    <strong>え</strong> (e)
+    <strong>お</strong> (o)
+  </div>
+  <div class="character-row">
+    <strong>か</strong> (ka)
+    <strong>き</strong> (ki)
+    <strong>く</strong> (ku)
+    <strong>け</strong> (ke)
+    <strong>こ</strong> (ko)
+  </div>
+  <div class="character-row">
+    <strong>さ</strong> (sa)
+    <strong>し</strong> (shi)
+    <strong>す</strong> (su)
+    <strong>せ</strong> (se)
+    <strong>そ</strong> (so)
+  </div>
+  <div class="character-row">
+    <strong>た</strong> (ta)
+    <strong>ち</strong> (chi)
+    <strong>つ</strong> (tsu)
+    <strong>て</strong> (te)
+    <strong>と</strong> (to)
+  </div>
+  <div class="character-row">
+    <strong>な</strong> (na)
+    <strong>に</strong> (ni)
+    <strong>ぬ</strong> (nu)
+    <strong>ね</strong> (ne)
+    <strong>の</strong> (no)
+  </div>
+  <div class="character-row">
+    <strong>は</strong> (ha)
+    <strong>ひ</strong> (hi)
+    <strong>ふ</strong> (fu)
+    <strong>へ</strong> (he)
+    <strong>ほ</strong> (ho)
+  </div>
+  <div class="character-row">
+    <strong>ま</strong> (ma)
+    <strong>み</strong> (mi)
+    <strong>む</strong> (mu)
+    <strong>め</strong> (me)
+    <strong>も</strong> (mo)
+  </div>
+  <div class="character-row">
+    <strong>や</strong> (ya)
+    <strong></strong>
+    <strong>ゆ</strong> (yu)
+    <strong></strong>
+    <strong>よ</strong> (yo)
+  </div>
+  <div class="character-row">
+    <strong>ら</strong> (ra)
+    <strong>り</strong> (ri)
+    <strong>る</strong> (ru)
+    <strong>れ</strong> (re)
+    <strong>ろ</strong> (ro)
+  </div>
+  <div class="character-row">
+    <strong>わ</strong> (wa)
+    <strong></strong>
+    <strong></strong>
+    <strong></strong>
+    <strong>を</strong> (wo)
+  </div>
+  <div class="character-row">
+    <strong>ん</strong> (n)
+    <strong></strong>
+    <strong></strong>
+    <strong></strong>
+    <strong></strong>
+  </div>
+</div><h3>Katakana:</h3><ul><li>Used for foreign words, loanwords, onomatopoeia, and emphasis.</li><li>Consists of 46 basic characters, corresponding to Hiragana sounds.</li></ul><div class="character-grid">
+  <div class="character-row">
+    <strong>ア</strong> (a)
+    <strong>イ</strong> (i)
+    <strong>ウ</strong> (u)
+    <strong>エ</strong> (e)
+    <strong>オ</strong> (o)
+  </div>
+  <div class="character-row">
+    <strong>カ</strong> (ka)
+    <strong>キ</strong> (ki)
+    <strong>ク</strong> (ku)
+    <strong>ケ</strong> (ke)
+    <strong>コ</strong> (ko)
+  </div>
+  <div class="character-row">
+    <strong>サ</strong> (sa)
+    <strong>シ</strong> (shi)
+    <strong>ス</strong> (su)
+    <strong>セ</strong> (se)
+    <strong>ソ</strong> (so)
+  </div>
+  <div class="character-row">
+    <strong>タ</strong> (ta)
+    <strong>チ</strong> (chi)
+    <strong>ツ</strong> (tsu)
+    <strong>テ</strong> (te)
+    <strong>ト</strong> (to)
+  </div>
+  <div class="character-row">
+    <strong>ナ</strong> (na)
+    <strong>ニ</strong> (ni)
+    <strong>ヌ</strong> (nu)
+    <strong>ネ</strong> (ne)
+    <strong>ノ</strong> (no)
+  </div>
+  <div class="character-row">
+    <strong>ハ</strong> (ha)
+    <strong>ヒ</strong> (hi)
+    <strong>フ</strong> (fu)
+    <strong>ヘ</strong> (he)
+    <strong>ホ</strong> (ho)
+  </div>
+  <div class="character-row">
+    <strong>マ</strong> (ma)
+    <strong>ミ</strong> (mi)
+    <strong>ム</strong> (mu)
+    <strong>メ</strong> (me)
+    <strong>モ</strong> (mo)
+  </div>
+  <div class="character-row">
+    <strong>ヤ</strong> (ya)
+    <strong></strong>
+    <strong>ユ</strong> (yu)
+    <strong></strong>
+    <strong>ヨ</strong> (yo)
+  </div>
+  <div class="character-row">
+    <strong>ラ</strong> (ra)
+    <strong>リ</strong> (ri)
+    <strong>ル</strong> (ru)
+    <strong>レ</strong> (re)
+    <strong>ロ</strong> (ro)
+  </div>
+  <div class="character-row">
+    <strong>ワ</strong> (wa)
+    <strong></strong>
+    <strong></strong>
+    <strong></strong>
+    <strong>ヲ</strong> (wo)
+  </div>
+  <div class="character-row">
+    <strong>ン</strong> (n)
+    <strong></strong>
+    <strong></strong>
+    <strong></strong>
+    <strong></strong>
+  </div>
+</div><p>Mastering these two syllabaries is the first step to reading Japanese.</p>` },
     { id: 'j2', title: 'Basic Greetings and Self-Introduction', description: 'Essential phrases for saying hello, goodbye, and introducing yourself in Japanese.', level: 'Beginner', content: `<p>Starting with greetings is fundamental for Japanese communication.</p><h3>Greetings:</h3><ul><li><strong>こんにちは (Konnichiwa):</strong> Hello (daytime)</li><li><strong>おはようございます (Ohayō gozaimasu):</strong> Good morning (polite)</li><li><strong>こんばんは (Konbanwa):</strong> Good evening</li><li><strong>さようなら (Sayounara):</strong> Goodbye (more formal/final)</li><li><strong>ありがとうございます (Arigatō gozaimasu):</strong> Thank you (polite)</li><li><strong>どういたしまして (Dō itashimashite):</strong> You're welcome</li></ul><h3>Self-Introduction:</h3><p>To say "My name is...":</p><p class="example-text"><strong>私は [Your Name]です。 (Watashi wa [Your Name] desu.)</strong> (I am [Your Name].)</p><p>To ask "What is your name?":</p><p class="example-text"><strong>お名前は何ですか？ (O-namae wa nan desu ka?)</strong></p><p>Practice these phrases with correct pronunciation and politeness levels.</p>` },
     { id: 'j3', title: 'Numbers 1-10 and Basic Questions', description: 'Master counting from one to ten and asking simple questions.', level: 'Beginner', content: `<p>Japanese has multiple ways to count, but let's start with basic numbers.</p><h3>Numbers 1-10:</h3><ol><li>一 (ichi)</li><li>二 (ni)</li><li>三 (san)</li><li>四 (yon/shi)</li><li>五 (go)</li><li>六 (roku)</li><li>七 (nana/shichi)</li><li>八 (hachi)</li><li>九 (kyū/ku)</li><li>十 (jū)</li></ol><h3>Basic Questions:</h3><p>Japanese questions are often formed by adding the particle か (ka) at the end of a sentence.</p><ul><li><strong>何 (nan/nani):</strong> what <p class="example-text"><strong>これは何ですか？ (Kore wa nan desu ka?)</strong> (What is this?)</p></li><li><strong>誰 (dare):</strong> who <p class="example-text"><strong>彼は誰ですか？ (Kare wa dare desu ka?)</strong> (Who is he?)</p></li><li><strong>どこ (doko):</strong> where <p class="example-text"><strong>駅はどこですか？ (Eki wa doko desu ka?)</strong> (Where is the station?)</p></li></ul>` },
     { id: 'j4', title: 'Basic Sentence Structure (SOV) and です (desu)', description: 'Understand the Subject-Object-Verb order and the polite copula です (desu).', level: 'Beginner', content: `<p>Japanese generally follows a Subject-Object-Verb (SOV) sentence structure, which is different from English.</p><h3>SOV Structure:</h3><p class="example-text"><strong>私 (watashi - I) は (wa - topic particle) 寿司 (sushi - sushi) を (o - object particle) 食べます (tabemasu - eat).</strong> (I eat sushi.)</p><h3>です (desu - polite copula):</h3><p>です (desu) is a polite copula (like "is/am/are") used to link nouns/pronouns and adjectives. It makes sentences polite.</p><ul><li><strong>Identity:</strong> <p class="example-text"><strong>私は学生です。 (Watashi wa gakusei desu.)</strong> (I am a student.)</p></li><li><strong>Description (with Na-adjectives):</strong> <p class="example-text"><strong>彼は親切です。 (Kare wa shinsetsu desu.)</strong> (He is kind.)</p></li></ul><p>です (desu) is not used with verbs, but verb endings indicate politeness.</p>` },
@@ -138,7 +294,7 @@ const japaneseLessonsData = [
     { id: 'ji2', title: 'Past Tense (た形)', description: 'Form the past tense of verbs and adjectives.', level: 'Intermediate', content: `<p>The past tense (た形 - ta-form) for verbs is closely related to the Te-form.</p><h3>Verb Past Tense:</h3><ul><li>For verbs, simply replace the て of the Te-form with た (ta). <p class="example-text"><strong>食べる (taberu) -> 食べて (tabete) -> 食べた (tabeta - ate)</strong></p><p class="example-text"><strong>行く (iku) -> 行って (itte) -> 行った (itta - went)</strong></p></li></ul><h3>Adjective Past Tense:</h3><ul><li><strong>I-Adjectives:</strong> Replace the final い with かった (katta). <p class="example-text"><strong>高い (takai) -> 高かった (takakatta - was expensive/tall)</strong></p></li><li><strong>Na-Adjectives:</strong> Add でした (deshita) after the adjective. <p class="example-text"><strong>静か (shizuka) -> 静かでした (shizuka deshita - was quiet)</strong></p></li></ul><p>The past tense is essential for narrating past events.</p>` },
     { id: 'ji3', title: 'Transitive and Intransitive Verbs', description: 'Understand the difference between verbs that take direct objects and those that do not.', level: 'Intermediate', content: `<p>Japanese verbs can be transitive (requiring a direct object, marked by を) or intransitive (not taking a direct object). Many verbs come in pairs.</p><h3>Transitive Verbs (他動詞 - tadōshi):</h3><ul><li>The action affects an external object. Often uses the particle を (o).</li></ul><p class="example-text"><strong>ドアを開けます。 (Doa o akemasu.)</strong> (I open the door.) - 開ける (akeru - to open something)</p><h3>Intransitive Verbs (自動詞 - jidōshi):</h3><ul><li>The action happens by itself or affects the subject. Often uses the particle が (ga).</li></ul><p class="example-text"><strong>ドアが開きます。 (Doa ga akimasu.)</strong> (The door opens.) - 開く (aku - for something to open)</p><p>Other common pairs: 閉める (shimeru - to close something) / 閉まる (shimaru - for something to close); 入れる (ireru - to put in) / 入る (hairu - to enter).</p>` },
     { id: 'ji4', title: 'Giving and Receiving Verbs (あげる, くれる, もらう)', description: 'Learn to express giving and receiving actions correctly.', level: 'Intermediate', content: `<p>Japanese has specific verbs for giving and receiving, depending on the direction of the action relative to the speaker or listener.</p><h3>あげる (ageru - to give):</h3><ul><li>Used when the giver is you or someone else, and the receiver is someone else (away from you/your group).</li></ul><p class="example-text"><strong>私は友達に本をあげます。 (Watashi wa tomodachi ni hon o agemasu.)</strong> (I give a book to my friend.)</p><h3>くれる (kureru - to give):</h3><ul><li>Used when the giver is someone else, and the receiver is you or someone in your group.</li></ul><p class="example-text"><strong>友達が私に本をくれました。 (Tomodachi ga watashi ni hon o kuremashita.)</strong> (My friend gave a book to me.)</p><h3>もらう (morau - to receive):</h3><ul><li>Used when you or someone in your group receives something from someone else.</li></ul><p class="example-text"><strong>私は友達に本をもらいました。 (Watashi wa tomodachi ni hon o moraimashita.)</strong> (I received a book from my friend.)</p>` },
-    { id: 'ji5', title: 'Potential Form (〜ことができる)', description: 'Express ability or possibility ("can do something").', level: 'Intermediate', content: `<p>The potential form expresses ability or possibility, meaning "can do something" or "be able to do something."</p><h3>Formation:</h3><ul><li><strong>Group 1 (U-verbs):</strong> Change the final 'u' sound to 'eru' (e.g., <strong>話す (hanasu) -> 話せる (hanaseru)</strong> - can speak)</li><li><strong>Group 2 (Ru-verbs):</strong> Replace る with られる (rareru). <p class="example-text"><strong>食べる (taberu) -> 食べられる (taberareru)</strong> - can eat</p></li><li><strong>Irregular Verbs:</strong> 来る (kuru) -> 来られる (korareru); する (suru) -> できる (dekiru - can do).</li></ul><h3>Usage:</h3><ul><li>Often used with the particle が (ga) for the object.</li></ul><p class="example-text"><strong>日本語が話せます。 (Nihongo ga hanasemasu.)</strong> (I can speak Japanese.)</p><p class="example-text"><strong>この本は読めますか？ (Kono hon wa yomemasu ka?)</strong> (Can you read this book?)</p>` },
+    { id: 'ji5', title: 'Potential Form (〜ることができる)', description: 'Express ability or possibility ("can do something").', level: 'Intermediate', content: `<p>The potential form expresses ability or possibility, meaning "can do something" or "be able to do something."</p><h3>Formation:</h3><ul><li><strong>Group 1 (U-verbs):</strong> Change the final 'u' sound to 'eru' (e.g., <strong>話す (hanasu) -> 話せる (hanaseru)</strong> - can speak)</li><li><strong>Group 2 (Ru-verbs):</strong> Replace る with られる (rareru). <p class="example-text"><strong>食べる (taberu) -> 食べられる (taberareru)</strong> - can eat</p></li><li><strong>Irregular Verbs:</strong> 来る (kuru) -> 来られる (korareru); する (suru) -> できる (dekiru - can do).</li></ul><h3>Usage:</h3><ul><li>Often used with the particle が (ga) for the object.</li></ul><p class="example-text"><strong>日本語が話せます。 (Nihongo ga hanasemasu.)</strong> (I can speak Japanese.)</p><p class="example-text"><strong>この本は読めますか？ (Kono hon wa yomemasu ka?)</strong> (Can you read this book?)</p>` },
     { id: 'ji6', title: 'Conditional Forms (ば, たら, なら)', description: 'Learn different ways to express "if...then" in Japanese.', level: 'Intermediate', content: `<p>Japanese has several conditional forms, each with slightly different nuances and uses.</p><h3>ば (ba-form):</h3><ul><li>Often used for general truths or when the condition and result are closely linked.</li></ul><p class="example-text"><strong>雨が降れば、傘をさします。 (Ame ga fureba, kasa o sashimasu.)</strong> (If it rains, I will open my umbrella.)</p><h3>たら (tara-form):</h3><ul><li>Indicates a condition that, once met, leads to a result. Often used for specific, one-time events.</li></ul><p class="example-text"><strong>家に帰ったら、ご飯を食べます。 (Ie ni kaettara, gohan o tabemasu.)</strong> (When I get home, I will eat.)</p><h3>なら (nara):</h3><ul><li>Used to state a condition based on something the speaker has heard or assumes. Often implies "if that's the case..."</li></ul><p class="example-text"><strong>日本に行くなら、寿司を食べたいです。 (Nihon ni iku nara, sushi o tabetai desu.)</strong> (If you're going to Japan, I want to eat sushi.)</p><p>Choosing the correct conditional form depends on the context and nuance you want to convey.</p>` },
     { id: 'ji7', title: 'Giving and Asking for Permission (〜てもいいです)', description: 'Express permission or ask if something is allowed.', level: 'Intermediate', content: `<p>To express permission ("may do," "can do") or ask for it, the Te-form is combined with もいいです (mo ii desu).</p><h3>Formation:</h3><p><strong>Te-form + もいいです (mo ii desu)</strong></p><ul><li>This means "It is okay to do [verb]" or "You may do [verb]".</li></ul><p class="example-text"><strong>ここで写真を撮ってもいいですか？ (Koko de shashin o totte mo ii desu ka?)</strong> (May I take a photo here?)</p><p class="example-text"><strong>はい、撮ってもいいです。 (Hai, totte mo ii desu.)</strong> (Yes, you may take a photo.)</p><h3>Prohibition (〜てはいけません):</h3><p>To express prohibition ("must not do," "may not do"), use Te-form + はいけません (wa ikemasen).</p><p class="example-text"><strong>ここでタバコを吸ってはいけません。 (Koko de tabako o sutte wa ikemasen.)</strong> (You must not smoke here.)</p>` },
     { id: 'ji8', title: 'Passive Voice (受身形 - Ukemi-kei)', description: 'Form sentences where the subject receives the action.', level: 'Intermediate', content: `<p>The passive voice in Japanese indicates that the subject is the recipient of an action, often implying that the action was done to them by someone else, sometimes with an adverse feeling.</p><h3>Formation:</h3><ul><li><strong>Group 1 (U-verbs):</strong> Change the final 'u' sound to 'a' and add れる (reru). <p class="example-text"><strong>読む (yomu) -> 読まれる (yomareru - to be read)</strong></p></li><li><strong>Group 2 (Ru-verbs):</strong> Replace る with られる (rareru). <p class="example-text"><strong>食べる (taberu) -> 食べられる (taberareru - to be eaten)</strong></p></li><li><strong>Irregular Verbs:</strong> する (suru) -> される (sareru); 来る (kuru) -> 来られる (korareru).</li></ul><h3>Usage:</h3><ul><li>The agent (doer of the action) is marked with に (ni).</li></ul><p class="example-text"><strong>私は先生に褒められました。 (Watashi wa sensei ni homeraremashita.)</strong> (I was praised by the teacher.)</p><p class="example-text"><strong>財布を盗まれました。 (Saifu o nusumaremashita.)</strong> (My wallet was stolen.)</p>` },
@@ -150,12 +306,12 @@ const japaneseLessonsData = [
     { id: 'je5', title: 'Idioms and Onomatopoeia', description: 'Learn common Japanese idioms and expressive onomatopoeic words.', level: 'Expert', content: `<p>Japanese is rich in idioms (慣用句 - kan\'yōku) and onomatopoeia (擬音語 - giongo, 擬態語 - gitaigo), which add color and naturalness to speech.</p><h3>Idioms:</h3><ul><li><strong>猫の手も借りたい (neko no te mo karitai):</strong> Want to borrow even a cat's paw (meaning: extremely busy, desperate for help)</li><li><strong>蛙の子は蛙 (kaeru no ko wa kaeru):</strong> A frog's child is a frog (meaning: like father, like son, the apple doesn't fall far from the tree)</li><li><strong>石の上にも三年 (ishi no ue nimo san nen):</strong> Three years on a stone (meaning: perseverance will eventually pay off)</li></ul><h3>Onomatopoeia:</h3><ul><li><strong>わくわく (wakuwaku):</strong> excited, thrilled</li><li><strong>きらきら (kirakira):</strong> sparkling, glittering</li><li><strong>ごろごろ (gorogoro):</strong> rumbling (stomach), lounging around</li><li><strong>ぺらぺら (perapera):</strong> fluently (speaking a foreign language)</li></ul>` },
     { id: 'je6', title: 'Formal vs. Informal Speech (Advanced)', description: 'Refine your understanding of when and how to use various speech styles.', level: 'Expert', content: `<p>Beyond です/ます form, Japanese has a plain form (普通形 - futsūkei) used in casual settings and for internal thoughts, and various levels of Keigo.</p><h3>Plain Form (Futsūkei):</h3><ul><li>Used with family, close friends, or when talking to oneself.</li><li>Also used in subordinate clauses, direct quotes, and for reporting speech (as seen in indirect speech).</li></ul><p class="example-text"><strong>食べる (taberu):</strong> plain form of 食べます (tabemasu)</p><p class="example-text"><strong>高い (takai):</strong> plain form of 高いです (takai desu)</p><h3>Contextual Usage:</h3><ul><li>Understanding when to switch between polite and plain forms is a key aspect of natural Japanese.</li><li>It depends on the listener's age, status, relationship, and the situation.</li></ul>` },
     { id: 'je7', title: 'Regional Dialects and Accents', description: 'Explore the diversity of Japanese dialects, especially Kansai-ben vs. Standard Japanese.', level: 'Expert', content: `<p>While Standard Japanese (標準語 - Hyōjungo), based on the Tokyo dialect, is taught, Japan has numerous regional dialects (方言 - hōgen).</p><h3>Kansai-ben (関西弁):</h3><ul><li>Spoken in the Kansai region (Osaka, Kyoto, Kobe). It's one of the most well-known and distinct dialects.</li><li><strong>Key differences:</strong>
-                    <ul>
-                        <li>Different verb conjugations (e.g., <strong>〜はる (~haru)</strong> instead of <strong>〜ます (~masu)</strong> for politeness).</li>
-                        <li>Different particles (e.g., <strong>〜やん (~yan)</strong> instead of <strong>〜じゃない (~ja nai)</strong>).</li>
-                        <li>Distinct vocabulary (e.g., <strong>おおきに (ōkini)</strong> for thank you).</li>
-                    </ul>
-                </li></ul><h3>Other Dialects:</h3><ul><li>Tohoku-ben, Kyushu-ben, Okinawa-ben, etc., each with unique characteristics.</li></ul><p>Exposure to different dialects helps improve listening comprehension and cultural understanding.</p>` },
+                  <ul>
+                      <li>Different verb conjugations (e.g., <strong>〜はる (~haru)</strong> instead of <strong>〜ます (~masu)</strong> for politeness).</li>
+                      <li>Different particles (e.g., <strong>〜やん (~yan)</strong> instead of <strong>〜じゃない (~ja nai)</strong>).</li>
+                      <li>Distinct vocabulary (e.g., <strong>おおきに (ōkini)</strong> for thank you).</li>
+                  </ul>
+              </li></ul><h3>Other Dialects:</h3><ul><li>Tohoku-ben, Kyushu-ben, Okinawa-ben, etc., each with unique characteristics.</li></ul><p>Exposure to different dialects helps improve listening comprehension and cultural understanding.</p>` },
     { id: 'je8', title: 'Japanese Culture and Etiquette', description: 'Gain insights into Japanese social customs, traditions, and communication styles.', level: 'Expert', content: `<p>Understanding Japanese culture is paramount for effective communication and navigating social situations.</p><h3>Key Aspects:</h3><ul><li><strong>Hierarchy and Respect:</strong> Age, seniority, and social status heavily influence interactions and language use (Keigo).</li><li><strong>Group Harmony (和 - Wa):</strong> Emphasis on maintaining harmony and avoiding direct confrontation.</li><li><strong>Indirect Communication:</strong> Often prefer indirectness to avoid causing discomfort or offense. Reading between the lines (察する - sassuru) is important.</li><li><strong>Bowing (お辞儀 - ojigi):</strong> A fundamental form of greeting and showing respect. Depth and duration vary by situation.</li><li><strong>Gift Giving:</strong> Common practice, often involving beautifully wrapped items. Reciprocity is important.</li><li><strong>Table Manners:</strong> Slurping noodles is acceptable, don't stick chopsticks upright in rice, don't pass food from chopstick to chopstick.</li><li><strong>"Uchi-Soto" (内-外):</strong> The distinction between "in-group" (uchi) and "out-group" (soto) affects behavior and language.</li></ul><p>Observing and adapting to these customs is key to successful interactions in Japan.</p>` }
 ];
 
