@@ -56,6 +56,10 @@ Domino (PiOS License). Developed with Gemini AI (Google).
 
 Latin Crush (PiOS License). Developed with Gemini AI (Google).
 
+Odoo Learning (PiOS License). Developed with Gemini AI (Google).
+
+Language Learning (PiOS License). Developed with Gemini AI (Google).
+
 More Info: https://github.com/rockcesar/LatinChainDevelopments
 
 Apps published by LatinChain
