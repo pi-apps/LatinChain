@@ -291,9 +291,17 @@ class PiNetworkBaseController(http.Controller):
             unblocked_datetime = ""
         else:
             unblocked_datetime = str(pi_users_list[0].unblocked_datetime) + " UTC"
+        
+        if 'app_client' in kw:
+            apps_list_temp = request.env["admin.apps"].sudo().search([('app', '=', kw['app_client'])])
+            
+            if len(apps_list_temp) > 0:
+                apps_list = apps_list_temp
             
         pi_ad_seconds = apps_list[0].pi_ad_seconds
         pi_ad_max = apps_list[0].pi_ad_max
+        pi_amount = apps_list[0].amount
+        pi_amount_latin_pay = apps_list[0].amount_latin_pay
         
         """
         if pi_users_list[0].unblocked:
@@ -368,8 +376,8 @@ class PiNetworkBaseController(http.Controller):
                             'unblocked': pi_users_list[0].unblocked,
                             'unblocked_datetime': str(unblocked_datetime),
                             'days_available': pi_users_list[0].days_available,
-                            'amount': apps_list[0].amount,
-                            'amount_latin_pay': apps_list[0].amount_latin_pay,
+                            'amount': pi_amount,
+                            'amount_latin_pay': pi_amount_latin_pay,
                             'passkey': passkey,
                             'im_winner': im_winner, 'pi_wallet_address': pi_users_list[0].pi_wallet_address,
                             'streaming_url': pi_users_list[0].streaming_url,

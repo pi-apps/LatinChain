@@ -70,6 +70,7 @@ function get_user(donation) {
         var data = {
                     'pi_user_id': pi_user_id,
                     'pi_user_code': pi_user_code,
+                    'app_client': 'auth_example',
                     'accessToken': accessToken,
                     'csrf_token': odoo.csrf_token,
                 };
