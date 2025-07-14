@@ -122,10 +122,9 @@ const mandarinLessonsData = [
   { id: 'me8', title: 'Chinese Culture and Etiquette', description: 'Gain insights into Chinese social customs, traditions, and communication styles.', level: 'Expert', content: `<p>Understanding Chinese culture is crucial for effective communication and building relationships.</p><h3>Key Aspects:</h3><ul><li><strong>"Guanxi" (关系):</strong> The concept of relationships and networks, vital for business and social interactions.</li><li><strong>Face (面子 - miànzi):</strong> Reputation, dignity, or prestige. Giving face (respecting others) and avoiding losing face are very important.</li><li><strong>Collectivism:</strong> Emphasis on group harmony and family over individual needs.</li><li><strong>Modesty:</strong> Often downplaying one's achievements.</li><li><strong>Table Manners:</strong> Elders eat first, don't stick chopsticks upright in rice, offer food to others, don't finish everything on your plate.</li><li><strong>Gift Giving:</strong> Often done in private, avoiding certain numbers (4) or colors (white for funerals).</li></ul><p>Being aware of these customs will greatly enhance your interactions in Chinese-speaking environments.</p>` }
 ];
 
-// --- Lesson Data for Japanese for English Speakers ---
 const japaneseLessonsData = [
   // Beginner Level (8 lessons)
-  { id: 'j1', title: 'Hiragana and Katakana', description: 'Learn the two phonetic Japanese syllabaries: Hiragana and Katakana.', level: 'Beginner', content: `<p>Japanese uses three writing systems: Hiragana, Katakana, and Kanji. Hiragana and Katakana are phonetic syllabaries, meaning each character represents a syllable.</p><h3>Hiragana:</h3><ul><li>Used for native Japanese words, grammatical particles, and verb endings.</li><li>Consists of 46 basic characters and additional characters with diacritical marks.</li></ul><div class="character-grid">
+  { id: 'j1', title: 'Hiragana, Katakana, and an Introduction to Kanji', description: 'Learn the two phonetic Japanese syllabaries and get an introduction to the logographic Kanji characters.', level: 'Beginner', content: `<p>Japanese uses three writing systems: Hiragana, Katakana, and Kanji. Hiragana and Katakana are phonetic syllabaries, while Kanji are logographic characters adopted from Chinese.</p><h3>Hiragana:</h3><ul><li>Used for native Japanese words, grammatical particles, and verb endings.</li><li>Consists of 46 basic characters and additional characters with diacritical marks.</li></ul><div class="character-grid">
   <div class="character-row">
     <strong>あ</strong> (a)
     <strong>い</strong> (i)
@@ -453,7 +452,43 @@ const japaneseLessonsData = [
     <strong>ピュ</strong> (pyu)
     <strong>ピョ</strong> (pyo)
   </div>
-</div><p>Mastering these two syllabaries is the first step to reading Japanese.</p>` },
+</div>
+<h3>Kanji:</h3>
+<p>Kanji (漢字) are Chinese characters adopted into the Japanese writing system. Each Kanji character represents a whole word or idea, and they are essential for understanding written Japanese. The government-approved list of everyday-use Kanji is called the <strong>Jōyō Kanji</strong> (常用漢字), which contains 2,136 characters.</p>
+<p>Here are a few of the most common and fundamental Kanji to get you started:</p>
+<div class="character-grid">
+    <div class="character-row">
+      <strong>人</strong> (hito): person
+    </div>
+    <div class="character-row">
+      <strong>日</strong> (hi/nichi): day, sun
+    </div>
+    <div class="character-row">
+      <strong>本</strong> (hon): book, origin
+    </div>
+    <div class="character-row">
+      <strong>大</strong> (ō): big, large
+    </div>
+    <div class="character-row">
+      <strong>学</strong> (gaku): study, learn
+    </div>
+    <div class="character-row">
+      <strong>語</strong> (go): language
+    </div>
+    <div class="character-row">
+      <strong>国</strong> (kuni): country
+    </div>
+    <div class="character-row">
+      <strong>出</strong> (de): exit, leave
+    </div>
+    <div class="character-row">
+      <strong>入</strong> (iri): enter
+    </div>
+    <div class="character-row">
+      <strong>中</strong> (naka): middle, inside
+    </div>
+</div>
+<p>Learning Kanji is a lifelong journey. You will build on these fundamentals as you progress in your studies.</p>` },
   { id: 'j2', title: 'Basic Greetings and Self-Introduction', description: 'Essential phrases for saying hello, goodbye, and introducing yourself in Japanese.', level: 'Beginner', content: `<p>Starting with greetings is fundamental for Japanese communication.</p><h3>Greetings:</h3><ul><li><strong>こんにちは (Konnichiwa):</strong> Hello (daytime)</li><li><strong>おはようございます (Ohayō gozaimasu):</strong> Good morning (polite)</li><li><strong>こんばんは (Konbanwa):</strong> Good evening</li><li><strong>さようなら (Sayounara):</strong> Goodbye (more formal/final)</li><li><strong>ありがとうございます (Arigatō gozaimasu):</strong> Thank you (polite)</li><li><strong>どういたしまして (Dō itashimashite):</strong> You're welcome</li></ul><h3>Self-Introduction:</h3><p>To say "My name is...":</p><p class="example-text"><strong>私は [Your Name]です。 (Watashi wa [Your Name] desu.)</strong> (I am [Your Name].)</p><p>To ask "What is your name?":</p><p class="example-text"><strong>お名前は何ですか？ (O-namae wa nan desu ka?)</strong></p><p>Practice these phrases with correct pronunciation and politeness levels.</p>` },
   { id: 'j3', title: 'Numbers and Counting', description: 'Master Japanese numbers, from basic counting to tens, hundreds, and thousands.', level: 'Beginner', content: `<p>Japanese has a straightforward system for numbers. Learning the base numbers and how to combine them will help you count to any amount.</p><h3>Numbers 1-10:</h3><p>Let's start with the basics. Some numbers have two common pronunciations; both are correct depending on the context.</p><ol><li><strong>一</strong> (ichi)</li><li><strong>二</strong> (ni)</li><li><strong>三</strong> (san)</li><li><strong>四</strong> (yon/shi)</li><li><strong>五</strong> (go)</li><li><strong>六</strong> (roku)</li><li><strong>七</strong> (nana/shichi)</li><li><strong>八</strong> (hachi)</li><li><strong>九</strong> (kyū/ku)</li><li><strong>十</strong> (jū)</li></ol><h3>Tens, Hundreds, and Thousands:</h3><p>Japanese uses a base-10 system similar to English. Just combine the characters!</p><ul><li><strong>11:</strong> 十一 (jū-ichi) - 10 + 1</li><li><strong>20:</strong> 二十 (ni-jū) - 2 x 10</li><li><strong>99:</strong> 九十九 (kyū-jū-kyū) - 9 x 10 + 9</li></ul><p>Larger numbers use specific characters for powers of 10:</p><ul><li><strong>100:</strong> 百 (hyaku)</li><li><strong>200:</strong> 二百 (ni-hyaku)</li><li><strong>300:</strong> 三百 (san-byaku) <span class="note">(Note: Pronunciation changes for easier flow)</span></li><li><strong>1,000:</strong> 千 (sen)</li><li><strong>10,000:</strong> 一万 (ichi-man)</li><li><strong>100,000:</strong> 十万 (jū-man)</li></ul><p class="example-text"><strong>234:</strong> 二百三十四 (ni-hyaku-san-jū-yon)</p><p class="example-text"><strong>1,200:</strong> 千二百 (sen-ni-hyaku)</p><p class="example-text"><strong>35,000:</strong> 三万五千 (san-man-go-sen)</p><p>Notice that Japanese counts in groups of four digits (thousands, ten thousands, hundred thousands, etc.), which is different from the English system that uses groups of three digits (thousands, millions, billions).</p>` },
   { id: 'j4', title: 'Basic Sentence Structure (SOV) and です (desu)', description: 'Understand the Subject-Object-Verb order and the polite copula です (desu).', level: 'Beginner', content: `<p>Japanese generally follows a Subject-Object-Verb (SOV) sentence structure, which is different from English.</p><h3>SOV Structure:</h3><p class="example-text"><strong>私 (watashi - I) は (wa - topic particle) 寿司 (sushi - sushi) を (o - object particle) 食べます (tabemasu - eat).</strong> (I eat sushi.)</p><h3>です (desu - polite copula):</h3><p>です (desu) is a polite copula (like "is/am/are") used to link nouns/pronouns and adjectives. It makes sentences polite.</p><ul><li><strong>Identity:</strong> <p class="example-text"><strong>私は学生です。 (Watashi wa gakusei desu.)</strong> (I am a student.)</p></li><li><strong>Description (with Na-adjectives):</strong> <p class="example-text"><strong>彼は親切です。 (Kare wa shinsetsu desu.)</strong> (He is kind.)</p></li></ul><p>です (desu) is not used with verbs, but verb endings indicate politeness.</p>` },
