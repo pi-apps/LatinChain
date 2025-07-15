@@ -601,7 +601,7 @@ async function showPiAds(Pi) {
         
         if(showAdResponse.result == "AD_CLOSED")
         {
-            if(pi_user_id != "" && pi_user_code != "")
+            /*if(pi_user_id != "" && pi_user_code != "")
             {
                 var data = {
                             'pi_user_id': pi_user_id,
@@ -618,7 +618,7 @@ async function showPiAds(Pi) {
                 }).fail(function() {
                     
                 });
-            }
+            }*/
         }
     } catch (err) {
         //alert("Error: " + err);
@@ -989,16 +989,17 @@ $( document ).ready(function() {
     
     Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
     
+    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+    {
+        const nativeFeaturesList = await Pi.nativeFeaturesList();
+        const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+        
+        if(!adNetworkSupported)
+            alert("Update Pi Browser version, please!.");
+    }
+    
     async function auth() {
         try {
-            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-            {
-                const nativeFeaturesList = await Pi.nativeFeaturesList();
-                const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-                
-                if(!adNetworkSupported)
-                    alert("Update Pi Browser version, please!.");
-            }
             
             // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
             const scopes = ['username', 'payments', 'wallet_address'];
@@ -1250,6 +1251,8 @@ $( document ).ready(function() {
     }else
     {
         $(".loggedout").show();
+        
+        showPiAds();
     }
     
     $("#logout_latinchain").click(function(){
