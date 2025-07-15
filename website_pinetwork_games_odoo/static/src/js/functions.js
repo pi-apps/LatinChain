@@ -163,19 +163,6 @@ $( document ).ready(function() {
                 $("#loading_word").hide();
             });
     
-    // you usually would check the ads support ahead of time and store the information
-    (async () => {
-        await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-        {
-            const nativeFeaturesList = await Pi.nativeFeaturesList();
-            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-            
-            if(!adNetworkSupported)
-                alert("Update Pi Browser version, please!.");
-        }
-      // store adNetworkSupported for later use
-    })();
     //alert(PiNetworkClient);
     
     amount = $("#amount").val();
@@ -529,25 +516,40 @@ $( document ).ready(function() {
         }
     }
     
-    if(localStorage.getItem("loggedIn"))
-    {
-        auth();
+    // you usually would check the ads support ahead of time and store the information
+    (async () => {
+        await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            const nativeFeaturesList = await Pi.nativeFeaturesList();
+            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+            
+            if(!adNetworkSupported)
+                alert("Update Pi Browser version, please!.");
+        }
         
-        setTimeout(function ()
+        if(localStorage.getItem("loggedIn"))
         {
-            if(pi_user_id == "" && pi_user_code == "")
-                auth();
-        }, 10000);
-    }else if(confirm($("#modal_login_latinchain_v2_message").text()))
-    {
-        auth();
-        localStorage.setItem("loggedIn", true);
+            auth();
+            
+            setTimeout(function ()
+            {
+                if(pi_user_id == "" && pi_user_code == "")
+                    auth();
+            }, 10000);
+        }else if(confirm($("#modal_login_latinchain_v2_message").text()))
+        {
+            auth();
+            localStorage.setItem("loggedIn", true);
+        
+            setTimeout(function ()
+            {
+                if(pi_user_id == "" && pi_user_code == "")
+                    auth();
+            }, 10000);
+        }
     
-        setTimeout(function ()
-        {
-            if(pi_user_id == "" && pi_user_code == "")
-                auth();
-        }, 10000);
-    }
+    // store adNetworkSupported for later use
+    })();
 
 });

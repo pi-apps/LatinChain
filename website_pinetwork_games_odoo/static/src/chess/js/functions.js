@@ -354,20 +354,7 @@ $( document ).ready(function() {
                 $("#loading_word").hide();
                 $(".loading_section").hide();
             });
-            
-    // you usually would check the ads support ahead of time and store the information
-    (async () => {
-        await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-        {
-            const nativeFeaturesList = await Pi.nativeFeaturesList();
-            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-            
-            if(!adNetworkSupported)
-                alert("Update Pi Browser version, please!.");
-        }
-      // store adNetworkSupported for later use
-    })();
+    
     amount = $("#amount").val();
     
     if(location.pathname.substring(0, 3) == "/es")
@@ -561,27 +548,42 @@ $( document ).ready(function() {
             // Technical problem (eg network failure). Please try again
         }
     }
-
-    if(localStorage.getItem("loggedIn"))
-    {
-        auth();
-        
-        setTimeout(function ()
-        {
-            if(pi_user_id == "" && pi_user_code == "")
-                auth();
-        }, 10000);
-    }else if(confirm($("#modal_login_latinchain_v2_message").text()))
-    {
-        auth();
-        localStorage.setItem("loggedIn", true);
     
-        setTimeout(function ()
+    // you usually would check the ads support ahead of time and store the information
+    (async () => {
+        await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
         {
-            if(pi_user_id == "" && pi_user_code == "")
-                auth();
-        }, 10000);
-    }
+            const nativeFeaturesList = await Pi.nativeFeaturesList();
+            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+            
+            if(!adNetworkSupported)
+                alert("Update Pi Browser version, please!.");
+        }
+      // store adNetworkSupported for later use
+
+        if(localStorage.getItem("loggedIn"))
+        {
+            auth();
+            
+            setTimeout(function ()
+            {
+                if(pi_user_id == "" && pi_user_code == "")
+                    auth();
+            }, 10000);
+        }else if(confirm($("#modal_login_latinchain_v2_message").text()))
+        {
+            auth();
+            localStorage.setItem("loggedIn", true);
+        
+            setTimeout(function ()
+            {
+                if(pi_user_id == "" && pi_user_code == "")
+                    auth();
+            }, 10000);
+        }
+    
+    })();
     
     $(".numeric-decimal").on("keypress keyup blur",function (event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');

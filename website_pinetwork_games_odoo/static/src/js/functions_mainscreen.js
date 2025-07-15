@@ -988,20 +988,6 @@ $( document ).ready(function() {
         return true;
     }
     
-    // you usually would check the ads support ahead of time and store the information
-    (async () => {
-        await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-        {
-            const nativeFeaturesList = await Pi.nativeFeaturesList();
-            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-            
-            if(!adNetworkSupported)
-                alert("Update Pi Browser version, please!.");
-        }
-      // store adNetworkSupported for later use
-    })();
-    
     async function auth() {
         try {
             
@@ -1231,36 +1217,51 @@ $( document ).ready(function() {
     }
     $(".referrer_username").html("<strong>--</strong>");
     
-    if(localStorage.getItem("loggedIn"))
-    {
-        auth();
-        
-        setTimeout(function ()
-        {
-            if(pi_user_id == "" && pi_user_code == "")
-                auth();
-        }, 10000);
-        $(".loggedin").show();
-    }else if(confirm($("#modal_login_latinchain_v2_message").text()))
-    {
-        auth();
-        localStorage.setItem("loggedIn", true);
-    
-        setTimeout(function ()
-        {
-            if(pi_user_id == "" && pi_user_code == "")
-                auth();
-        }, 10000);
-        $(".loggedin").show();
-    }else
-    {
-        $(".loggedout").show();
-        
+    // you usually would check the ads support ahead of time and store the information
+    (async () => {
+        await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
         {
-            showPiAds(Pi);
+            const nativeFeaturesList = await Pi.nativeFeaturesList();
+            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+            
+            if(!adNetworkSupported)
+                alert("Update Pi Browser version, please!.");
         }
-    }
+      // store adNetworkSupported for later use    
+    
+        if(localStorage.getItem("loggedIn"))
+        {
+            auth();
+            
+            setTimeout(function ()
+            {
+                if(pi_user_id == "" && pi_user_code == "")
+                    auth();
+            }, 10000);
+            $(".loggedin").show();
+        }else if(confirm($("#modal_login_latinchain_v2_message").text()))
+        {
+            auth();
+            localStorage.setItem("loggedIn", true);
+        
+            setTimeout(function ()
+            {
+                if(pi_user_id == "" && pi_user_code == "")
+                    auth();
+            }, 10000);
+            $(".loggedin").show();
+        }else
+        {
+            $(".loggedout").show();
+            
+            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+            {
+                showPiAds(Pi);
+            }
+        }
+    
+    })();
     
     $("#logout_latinchain").click(function(){
         if(confirm($("#modal_logout_latinchain_v2_message").text()))

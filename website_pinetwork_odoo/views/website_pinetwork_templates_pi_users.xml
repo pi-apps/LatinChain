@@ -1518,20 +1518,6 @@
                             } );
                             const Pi = window.Pi;
                             
-                            // you usually would check the ads support ahead of time and store the information
-                            (async () => {
-                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                {
-                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
-                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-                                    
-                                    if(!adNetworkSupported)
-                                        alert("Update Pi Browser version, please!.");
-                                }
-                              // store adNetworkSupported for later use
-                            })();
-                            
                             function set_points(points) {
                                 if(pi_user_id != "" &amp;&amp; pi_user_code != "")
                                 {
@@ -1658,26 +1644,41 @@
                                 }
                             }
                             
-                            if(localStorage.getItem("loggedIn"))
-                            {
-                                auth();
                             
-                                setTimeout(function ()
+                            // you usually would check the ads support ahead of time and store the information
+                            (async () => {
+                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 {
-                                    if(pi_user_id == "" &amp;&amp; pi_user_code == "")
-                                        auth();
-                                }, 10000);
-                            }else if(confirm($("#modal_login_latinchain_v2_message").text()))
-                            {
-                                auth();
-                                localStorage.setItem("loggedIn", true);
+                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                    
+                                    if(!adNetworkSupported)
+                                        alert("Update Pi Browser version, please!.");
+                                }
+                              // store adNetworkSupported for later use
                             
-                                setTimeout(function ()
+                                if(localStorage.getItem("loggedIn"))
                                 {
-                                    if(pi_user_id == "" &amp;&amp; pi_user_code == "")
-                                        auth();
-                                }, 10000);
-                            }
+                                    auth();
+                                
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                            auth();
+                                    }, 10000);
+                                }else if(confirm($("#modal_login_latinchain_v2_message").text()))
+                                {
+                                    auth();
+                                    localStorage.setItem("loggedIn", true);
+                                
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                            auth();
+                                    }, 10000);
+                                }
+                            })();
                             
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm($( "#clear_cache_message" ).text());
@@ -1898,20 +1899,6 @@
                             
                             const Pi = window.Pi;
                             
-                            // you usually would check the ads support ahead of time and store the information
-                            (async () => {
-                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                {
-                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
-                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-                                    
-                                    if(!adNetworkSupported)
-                                        alert("Update Pi Browser version, please!.");
-                                }
-                              // store adNetworkSupported for later use
-                            })();
-                            
                             function set_points(points) {
                                 if(pi_user_id != "" &amp;&amp; pi_user_code != "")
                                 {
@@ -2047,36 +2034,51 @@
                                 }
                             }
                             
-                            if(localStorage.getItem("loggedIn"))
-                            {
-                                auth();
                             
-                                setTimeout(function ()
+                            // you usually would check the ads support ahead of time and store the information
+                            (async () => {
+                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 {
-                                    if(pi_user_id == "" &amp;&amp; pi_user_code == "")
-                                        auth();
+                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                    
+                                    if(!adNetworkSupported)
+                                        alert("Update Pi Browser version, please!.");
+                                }
+                              // store adNetworkSupported for later use
+                            
+                                if(localStorage.getItem("loggedIn"))
+                                {
+                                    auth();
+                                
                                     setTimeout(function ()
                                     {
                                         if(pi_user_id == "" &amp;&amp; pi_user_code == "")
-                                            $("#show_pibrowser").show();
-                                    }, 5000);
-                                }, 10000);
-                            }else if(confirm($("#modal_login_latinchain_v2_message").text()))
-                            {
-                                auth();
-                                localStorage.setItem("loggedIn", true);
-                            
-                                setTimeout(function ()
+                                            auth();
+                                        setTimeout(function ()
+                                        {
+                                            if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                                $("#show_pibrowser").show();
+                                        }, 5000);
+                                    }, 10000);
+                                }else if(confirm($("#modal_login_latinchain_v2_message").text()))
                                 {
-                                    if(pi_user_id == "" &amp;&amp; pi_user_code == "")
-                                        auth();
+                                    auth();
+                                    localStorage.setItem("loggedIn", true);
+                                
                                     setTimeout(function ()
                                     {
                                         if(pi_user_id == "" &amp;&amp; pi_user_code == "")
-                                            $("#show_pibrowser").show();
-                                    }, 5000);
-                                }, 10000);
-                            }
+                                            auth();
+                                        setTimeout(function ()
+                                        {
+                                            if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                                $("#show_pibrowser").show();
+                                        }, 5000);
+                                    }, 10000);
+                                }
+                            })();
                             
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm($( "#clear_cache_message" ).text());
@@ -2295,20 +2297,6 @@
                             
                             const Pi = window.Pi;
                             
-                            // you usually would check the ads support ahead of time and store the information
-                            (async () => {
-                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                {
-                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
-                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-                                    
-                                    if(!adNetworkSupported)
-                                        alert("Update Pi Browser version, please!.");
-                                }
-                              // store adNetworkSupported for later use
-                            })();
-                            
                             function set_points(points) {
                                 if(pi_user_id != "" &amp;&amp; pi_user_code != "")
                                 {
@@ -2443,37 +2431,52 @@
                                     console.error(err);
                                 }
                             }
-                        
-                            if(localStorage.getItem("loggedIn"))
-                            {
-                                auth();
                             
-                                setTimeout(function ()
+                            // you usually would check the ads support ahead of time and store the information
+                            (async () => {
+                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 {
-                                    if(pi_user_id == "" &amp;&amp; pi_user_code == "")
-                                        auth();
+                                    const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                    const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                    
+                                    if(!adNetworkSupported)
+                                        alert("Update Pi Browser version, please!.");
+                                }
+                              // store adNetworkSupported for later use
+                            
+                                if(localStorage.getItem("loggedIn"))
+                                {
+                                    auth();
+                                
                                     setTimeout(function ()
                                     {
                                         if(pi_user_id == "" &amp;&amp; pi_user_code == "")
-                                            $("#show_pibrowser").show();
-                                    }, 5000);
-                                }, 10000);
-                            }else if(confirm($("#modal_login_latinchain_v2_message").text()))
-                            {
-                                auth();
-                                localStorage.setItem("loggedIn", true);
-                            
-                                setTimeout(function ()
+                                            auth();
+                                        setTimeout(function ()
+                                        {
+                                            if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                                $("#show_pibrowser").show();
+                                        }, 5000);
+                                    }, 10000);
+                                }else if(confirm($("#modal_login_latinchain_v2_message").text()))
                                 {
-                                    if(pi_user_id == "" &amp;&amp; pi_user_code == "")
-                                        auth();
+                                    auth();
+                                    localStorage.setItem("loggedIn", true);
+                                
                                     setTimeout(function ()
                                     {
                                         if(pi_user_id == "" &amp;&amp; pi_user_code == "")
-                                            $("#show_pibrowser").show();
-                                    }, 5000);
-                                }, 10000);
-                            }
+                                            auth();
+                                        setTimeout(function ()
+                                        {
+                                            if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                                                $("#show_pibrowser").show();
+                                        }, 5000);
+                                    }, 10000);
+                                }
+                            
+                            })();
                             
                             $( "#clear_cache" ).click(function() {
                                 var result = confirm($( "#clear_cache_message" ).text());
