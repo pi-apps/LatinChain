@@ -1256,7 +1256,10 @@ $( document ).ready(function() {
     {
         $(".loggedout").show();
         
-        showPiAds(Pi);
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            showPiAds(Pi);
+        }
     }
     
     $("#logout_latinchain").click(function(){
