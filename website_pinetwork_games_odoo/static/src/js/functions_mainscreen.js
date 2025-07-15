@@ -591,14 +591,6 @@ function get_user() {
 
 async function showPiAds(Pi) {
     try {
-        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-        {
-            const nativeFeaturesList = await Pi.nativeFeaturesList();
-            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-            
-            if(!adNetworkSupported)
-                alert("Update Pi Browser version, please!.");
-        }
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
         
@@ -996,19 +988,22 @@ $( document ).ready(function() {
         return true;
     }
     
-    Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+    // you usually would check the ads support ahead of time and store the information
+    (async () => {
+        await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            const nativeFeaturesList = await Pi.nativeFeaturesList();
+            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+            
+            if(!adNetworkSupported)
+                alert("Update Pi Browser version, please!.");
+        }
+      // store adNetworkSupported for later use
+    })();
     
     async function auth() {
         try {
-            
-            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-            {
-                const nativeFeaturesList = await Pi.nativeFeaturesList();
-                const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-                
-                if(!adNetworkSupported)
-                    alert("Update Pi Browser version, please!.");
-            }
             
             // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
             const scopes = ['username', 'payments', 'wallet_address'];
