@@ -1252,7 +1252,7 @@ $( document ).ready(function() {
     {
         $(".loggedout").show();
         
-        showPiAds();
+        showPiAds(Pi);
     }
     
     $("#logout_latinchain").click(function(){
