@@ -355,7 +355,19 @@ $( document ).ready(function() {
                 $(".loading_section").hide();
             });
             
-    Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+    // you usually would check the ads support ahead of time and store the information
+    (async () => {
+        await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            const nativeFeaturesList = await Pi.nativeFeaturesList();
+            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+            
+            if(!adNetworkSupported)
+                alert("Update Pi Browser version, please!.");
+        }
+      // store adNetworkSupported for later use
+    })();
     amount = $("#amount").val();
     
     if(location.pathname.substring(0, 3) == "/es")
@@ -382,14 +394,6 @@ $( document ).ready(function() {
         }, 5000);
         
         try {
-            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-            {
-                const nativeFeaturesList = await Pi.nativeFeaturesList();
-                const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-                
-                if(!adNetworkSupported)
-                    alert("Update Pi Browser version, please!.");
-            }
             
             // Identify the user with their username / unique network-wide ID, and get permission to request payments from them.
             const scopes = ['username', 'payments', 'wallet_address'];
