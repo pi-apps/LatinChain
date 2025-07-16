@@ -1220,15 +1220,17 @@ $( document ).ready(function() {
     // you usually would check the ads support ahead of time and store the information
     (async () => {
         await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-        {
-            const nativeFeaturesList = await Pi.nativeFeaturesList();
-            const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-            
-            if(!adNetworkSupported)
-                alert("Update Pi Browser version, please!.");
-        }
-      // store adNetworkSupported for later use    
+        (async () => {
+            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+            {
+                const nativeFeaturesList = await Pi.nativeFeaturesList();
+                const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                
+                if(!adNetworkSupported)
+                    alert("Update Pi Browser version, please!.");
+            }
+          // store adNetworkSupported for later use
+        })();
     
         if(localStorage.getItem("loggedIn"))
         {
