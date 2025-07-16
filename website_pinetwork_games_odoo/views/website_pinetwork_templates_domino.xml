@@ -283,7 +283,7 @@
                     <script type="text/javascript">
                         const Pi = window.Pi;
                         $( document ).ready(function() {
-                            Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                            
                             var pi_user_id = "";
                             async function auth() {
                                 try {
@@ -310,40 +310,43 @@
                                 }
                             }
                             
-                            auth();
-                            
-                            setTimeout(function ()
-                            {
-                                if(pi_user_id == "")
+                            (async () => {
+                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                auth();
+                                
+                                setTimeout(function ()
                                 {
-                                    auth();
-                                    
-                                    setTimeout(function ()
+                                    if(pi_user_id == "")
                                     {
-                                        if(pi_user_id == "")
+                                        auth();
+                                        
+                                        setTimeout(function ()
                                         {
-                                            //alert($("#pi_prowser_message").text());
-                                            
-                                            if(window.location.hostname == "localhost")
+                                            if(pi_user_id == "")
                                             {
-                                                $("a.anchor-click").attr('href', window.location.origin);
+                                                //alert($("#pi_prowser_message").text());
+                                                
+                                                if(window.location.hostname == "localhost")
+                                                {
+                                                    $("a.anchor-click").attr('href', window.location.origin);
+                                                }
+                                                else if(window.location.hostname == "test.latin-chain.com")
+                                                {
+                                                    $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                }
+                                                else
+                                                {
+                                                    $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                }
+                                                
+                                                document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                             }
-                                            else if(window.location.hostname == "test.latin-chain.com")
-                                            {
-                                                $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
-                                            }
-                                            else
-                                            {
-                                                $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
-                                            }
-                                            
-                                            document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
-                                            document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
-                                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                        }
-                                    }, 10000);
-                                }
-                            }, 10000);                        
+                                        }, 10000);
+                                    }
+                                }, 10000);
+                            });
                         });
                     </script>
                     
