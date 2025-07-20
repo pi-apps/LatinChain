@@ -151,5 +151,16 @@ function addTorrent(torrentId) {
     client.on('error', err => {
         showMessage(`WebTorrent Error: ${err.message}`, 'error');
         console.error('WebTorrent Error:', err);
+        
+        try {
+            Cache.delete();
+        } catch (err) {
+            console.error(err);
+        }
+        try {
+            window.location.reload(true);
+        } catch (err) {
+            console.error(err);
+        }
     });
 }
