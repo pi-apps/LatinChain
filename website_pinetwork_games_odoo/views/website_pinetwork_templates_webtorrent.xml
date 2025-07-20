@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="webtorrent" name="WebTorrent Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>WebTorrent Player</title>
+                        <!-- Tailwind CSS CDN for styling -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <!-- Google Fonts - Inter for a clean look -->
+                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700" rel="stylesheet"/>
+                        <!--<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>-->
+                        <style>
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #1a202c; /* Dark background */
+                                color: #e2e8f0; /* Light text */
+                            }
+                            /* Styles for video/audio player */
+                            video, audio {
+                                width: 100%;
+                                max-width: 900px; /* Max width for player */
+                                height: auto;
+                                min-height: 200px;
+                                background-color: #000;
+                                border-radius: 0.5rem; /* Rounded corners */
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                            }
+                            /* Styles for peer indicator */
+                            .peer-indicator {
+                                width: 12px;
+                                height: 12px;
+                                background-color: #38a169; /* Green for connected peers */
+                                border-radius: 50%;
+                                display: inline-block;
+                                margin: 2px;
+                                animation: pulse 1s infinite alternate; /* Simple pulse animation */
+                            }
+                            .peer-indicator.disconnected {
+                                background-color: #e53e3e; /* Red for disconnected/no peers */
+                            }
+                            @keyframes pulse {
+                                from { transform: scale(0.8); opacity: 0.7; }
+                                to { transform: scale(1.1); opacity: 1; }
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            const Pi = window.Pi;
+                            $( document ).ready(function() {
+                            
+                                var pi_user_id = "";
+                                async function auth() {
+                                    try {
+                                        // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                        const scopes = ['username', 'payments', 'wallet_address'];
+                                        function onIncompletePaymentFound(payment) {
+                                            
+                                        }; // Read more about this in the SDK reference
+                                        
+                                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                            pi_user_id = auth.user.uid;
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'none';
+                                        }).catch(function(error) {
+                                            //Pi.openShareDialog("Error", error);
+                                            //alert(err);
+                                            console.error(error);
+                                        });
+                                    } catch (err) {
+                                        //Pi.openShareDialog("Error", err);
+                                        //alert(err);
+                                        console.error(err);
+                                        // Not able to fetch the user
+                                    }
+                                }
+                                
+                                (async () => {
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            auth();
+                                            
+                                            setTimeout(function ()
+                                            {
+                                                if(pi_user_id == "")
+                                                {
+                                                    //alert($("#pi_prowser_message").text());
+                                                    
+                                                    if(window.location.hostname == "localhost")
+                                                    {
+                                                        $("a.anchor-click").attr('href', window.location.origin);
+                                                    }
+                                                    else if(window.location.hostname == "test.latin-chain.com")
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                    }
+                                                    
+                                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                }
+                                            }, 10000);
+                                        }
+                                    }, 10000);
+                                })();
+                            });
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="flex flex-col items-center justify-center min-h-screen p-4">
+                        <div class="bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-2xl">
+                            <h1 class="text-4xl font-bold text-center mb-6 text-indigo-400">WebTorrent Player</h1>
+                            
+                            <!-- Player container -->
+                            <div id="player-container" class="mt-8 flex justify-center">
+                                <!-- Video/audio player will be inserted here -->
+                            </div>
+                            
+                            <!-- Message and status area -->
+                            <div id="message-area" class="mt-6 p-4 bg-gray-700 rounded-lg text-center text-sm hidden">
+                                <p id="status-message" class="text-gray-300"></p>
+                                <div id="progress-bar-container" class="w-full bg-gray-600 rounded-full h-2.5 mt-2 hidden">
+                                    <div id="progress-bar" class="bg-indigo-500 h-2.5 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <!-- Peer display area -->
+                                <div id="peer-display" class="mt-4 text-gray-400 text-xs">
+                                    Peers: <span id="peer-count">0</span>
+                                    <div id="peer-indicators" class="flex flex-wrap justify-center mt-2"></div>
+                                </div>
+                            </div>
+
+                            <!-- Magnet link input section -->
+                            <div class="mb-6">
+                                <label for="magnet-link" class="block text-lg font-medium mb-2">Magnet Link:</label>
+                                <input type="text" id="magnet-link" placeholder="Paste your magnet link here..."
+                                       class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"/>
+                            </div>
+
+                            <!-- Torrent file upload section -->
+                            <div class="mb-6">
+                                <label for="torrent-file" class="block text-lg font-medium mb-2">Or upload a .torrent file:</label>
+                                <input type="file" id="torrent-file" accept=".torrent"
+                                       class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-500 file:text-white hover:file:bg-indigo-600"/>
+                            </div>
+
+                            <!-- Load Torrent button -->
+                            <button id="load-torrent-btn"
+                                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                                Load Torrent
+                            </button>
+
+                        </div>
+
+                        <!-- WebTorrent CDN -->
+                        <script src="https://cdn.jsdelivr.net/npm/webtorrent@1.0.0/webtorrent.min.js"></script>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webtorrent_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>

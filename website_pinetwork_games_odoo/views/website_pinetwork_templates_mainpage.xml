@@ -964,7 +964,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.307"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.308"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -2023,6 +2023,13 @@
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="languagelearning" href="/languagelearning" class="col-10 btn btn-outline-success font-weight-bold text-black border-success languagelearning" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LANGUAGE LEARNING</div><div style="font-size:80%;">Spanish, English, Korean, Chinese Mandarin, Japanese, Vietnamese</div><div style="font-size:80%;">Developed with Gemini AI</div></a></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-webtorrent" style="display:none">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a id="webtorrent" href="/webtorrent" class="col-10 btn btn-outline-success font-weight-bold text-black border-success webtorrent" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tornado"></i></div><div style="font-size:100%;" translate="no">WEBTORRENT</div><div style="font-size:80%;">WebTorrent Player</div><div style="font-size:80%;">Developed with Gemini AI</div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>

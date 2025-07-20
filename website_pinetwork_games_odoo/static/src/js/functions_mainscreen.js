@@ -359,6 +359,7 @@ function get_user() {
                 $(".show-latincrush").show();
                 $(".show-odoolearning").show();
                 $(".show-languagelearning").show();
+                $(".show-webtorrent").show();
                 //$(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
