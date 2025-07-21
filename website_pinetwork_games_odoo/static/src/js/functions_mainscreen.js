@@ -1542,6 +1542,10 @@ $( document ).ready(function() {
         $.colorbox({href:"https://en.wikipedia.org/wiki/Candy_Crush_Saga", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".webtorrentinfo" ).click(function() {
+        $.colorbox({href:"https://en.wikipedia.org/wiki/WebTorrent", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".cointelegraph" ).click(function() {
         $.colorbox({href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
