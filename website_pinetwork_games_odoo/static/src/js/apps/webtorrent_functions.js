@@ -5,6 +5,7 @@ const client = new WebTorrent();
 const magnetLinkInput = document.getElementById('magnet-link');
 const torrentFileInput = document.getElementById('torrent-file');
 const loadTorrentBtn = document.getElementById('load-torrent-btn');
+const cancelTorrentBtn = document.getElementById('cancel-torrent-btn');
 const messageArea = document.getElementById('message-area');
 const statusMessage = document.getElementById('status-message');
 const progressBarContainer = document.getElementById('progress-bar-container');
@@ -77,6 +78,20 @@ loadTorrentBtn.addEventListener('click', () => {
         addTorrent(torrentFile);
     } else {
         showMessage('Please enter a magnet link or upload a .torrent file.', 'error');
+    }
+});
+
+// Event listener for "Cancel Torrent" button click
+cancelTorrentBtn.addEventListener('click', () => {
+    try {
+        Cache.delete();
+    } catch (err) {
+        console.error(err);
+    }
+    try {
+        window.location.reload(true);
+    } catch (err) {
+        console.error(err);
     }
 });
 

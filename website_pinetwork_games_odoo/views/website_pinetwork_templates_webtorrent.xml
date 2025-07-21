@@ -169,7 +169,7 @@
                             </div>
 
                             <!-- Magnet link input section -->
-                            <div class="mb-6">
+                            <div class="mb-6" style="margin-top:10px">
                                 <label for="magnet-link" class="block text-lg font-medium mb-2">Magnet Link:</label>
                                 <input type="text" id="magnet-link" placeholder="Paste your magnet link here..."
                                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"/>
@@ -187,13 +187,20 @@
                                     class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
                                 Load Torrent
                             </button>
+                            
+                            <!-- Cancel Player button -->
+                            <button id="cancel-torrent-btn"
+                                    class="w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg 
+                                           transition duration-300 ease-in-out transform hover:scale-105 shadow-md mt-4">
+                                Cancel Player
+                            </button>
 
                         </div>
 
                         <!-- WebTorrent CDN -->
                         <script src="https://cdn.jsdelivr.net/npm/webtorrent@1.0.0/webtorrent.min.js"></script>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webtorrent_functions.js?v=1.103"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webtorrent_functions.js?v=1.104"></script>
                     </body>
                 </html>
             </t>
