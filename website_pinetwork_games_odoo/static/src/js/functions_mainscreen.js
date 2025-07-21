@@ -22,12 +22,9 @@ async function colorboxLoaded()
     {
         if($.colorbox && !colorbox_opened)
         {
-            setTimeout(function() {
-                $.colorbox.close();
-                $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-                colorbox_opened = true;
-                return true;
-            }, 5000);
+            $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            colorbox_opened = true;
+            return false;
         }else{
             if(colorbox_opened)
                 return false;
@@ -632,7 +629,7 @@ async function showPiAds(Pi) {
 }
 
 $( document ).ready(function() {
-    //colorboxLoaded();
+    colorboxLoaded();
     
     window.addEventListener('unhandledrejection', function (e) {
         e.preventDefault();
