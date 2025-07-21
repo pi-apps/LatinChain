@@ -1413,6 +1413,11 @@ $( document ).ready(function() {
     $( ".cryptonews" ).click(function() {
         $.colorbox({href:"https://news.latin-chain.com/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
+    
+    $( ".musicplayer" ).click(function() {
+        $.colorbox({href:"https://mp3.latin-chain.com/player/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     /*
     $( ".tetris" ).click(function() {
         $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
