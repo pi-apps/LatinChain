@@ -148,7 +148,9 @@
                             <div style="text-align:center; margin-bottom:15px;">
                                 <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
                             </div>
-                            <h1 class="text-4xl font-bold text-center mb-6 text-indigo-400">WebTorrent P2P Player (only WebRTC peers)</h1>
+                            <h1 class="text-4xl font-bold text-center mb-6 text-indigo-400">WebTorrent P2P Player</h1>
+                            
+                            <h3 class="text-1xl font-bold text-center mb-6 text-indigo-200">Only WebRTC peers, like a (but not limited to) PeerTube torrent</h3>
                             
                             <!-- Player container -->
                             <div id="player-container" class="mt-8 flex justify-center">
