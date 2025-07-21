@@ -23,6 +23,7 @@ async function colorboxLoaded()
         if($.colorbox && !colorbox_opened)
         {
             setTimeout(function() {
+                $.colorbox.close();
                 $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                 colorbox_opened = true;
                 return true;
@@ -699,15 +700,6 @@ $( document ).ready(function() {
         window.location.href="#pay_with";
     });
     */
-    
-    $(".open_mainnet_redirect").click(function(){
-        colorboxLoaded();
-    });
-    
-    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-    {
-        $(".open_mainnet_redirect").click();
-    }
     
     $(".open_streaming").click(function(){
         var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
