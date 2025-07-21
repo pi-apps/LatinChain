@@ -60,6 +60,11 @@ function updatePeerDisplay(torrent) {
 
 // Event listener for "Load Torrent" button click
 loadTorrentBtn.addEventListener('click', () => {
+    // Stop all active torrents
+    client.torrents.forEach(torrent => {
+        torrent.destroy();
+    });
+    
     const magnetURI = magnetLinkInput.value.trim();
     const torrentFile = torrentFileInput.files[0];
 
@@ -167,7 +172,7 @@ function addTorrent(torrentId) {
         showMessage(`WebTorrent Error: ${err.message}`, 'error');
         console.error('WebTorrent Error:', err);
         
-        setTimeout(function() {
+        /*setTimeout(function() {
             try {
                 Cache.delete();
             } catch (err) {
@@ -178,7 +183,7 @@ function addTorrent(torrentId) {
             } catch (err) {
                 console.error(err);
             }
-        }, 2000);
+        }, 2000);*/
         
     });
 }
