@@ -156,7 +156,7 @@
                             </div>
                             
                             <!-- Message and status area -->
-                            <div id="message-area" class="mt-6 p-4 bg-gray-700 rounded-lg text-center text-sm hidden">
+                            <div id="message-area" class="mt-6 p-4 bg-gray-700 rounded-lg text-center text-sm hidden" style="word-break: break-word;">
                                 <p id="status-message" class="text-gray-300"></p>
                                 <div id="progress-bar-container" class="w-full bg-gray-600 rounded-full h-2.5 mt-2 hidden">
                                     <div id="progress-bar" class="bg-indigo-500 h-2.5 rounded-full" style="width: 0%"></div>
@@ -169,7 +169,7 @@
                             </div>
 
                             <!-- Magnet link input section -->
-                            <div class="mb-6" style="margin-top:10px">
+                            <div class="mb-6" style="margin-top:10px; word-break: break-word;">
                                 <label for="magnet-link" class="block text-lg font-medium mb-2">Magnet Link:</label>
                                 <input type="text" id="magnet-link" placeholder="Paste your magnet link here..."
                                        class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"/>
