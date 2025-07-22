@@ -360,6 +360,8 @@ function get_user() {
                 $(".show-odoolearning").show();
                 $(".show-languagelearning").show();
                 $(".show-webtorrent").show();
+                $(".show-musicplayer").show();
+                $(".show-videoplayer").show();
                 //$(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
@@ -1412,14 +1414,6 @@ $( document ).ready(function() {
     
     $( ".cryptonews" ).click(function() {
         $.colorbox({href:"https://news.latin-chain.com/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
-    $( ".musicplayer" ).click(function() {
-        $.colorbox({href:"https://mp3.latin-chain.com/player/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
-    $( ".videoplayer" ).click(function() {
-        $.colorbox({href:"https://mp3.latin-chain.com/video-player/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     /*

@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="musicplayer" name="Music Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Advanced Music Player</title>
+                        <!-- Tailwind CSS CDN -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <style>
+                            /* Custom styles for the player */
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #1a202c; /* Dark background */
+                                color: #e2e8f0; /* Light text */
+                                display: flex;
+                                flex-direction: column; /* Allow content to stack vertically */
+                                justify-content: center;
+                                align-items: center;
+                                min-height: 100vh;
+                                padding: 20px;
+                                box-sizing: border-box;
+                            }
+
+                            /* Custom scrollbar for playlist */
+                            .playlist-container::-webkit-scrollbar {
+                                width: 8px;
+                            }
+
+                            .playlist-container::-webkit-scrollbar-track {
+                                background: #2d3748; /* Darker track */
+                                border-radius: 10px;
+                            }
+
+                            .playlist-container::-webkit-scrollbar-thumb {
+                                background: #4a5568; /* Thumb color */
+                                border-radius: 10px;
+                            }
+
+                            .playlist-container::-webkit-scrollbar-thumb:hover {
+                                background: #6a768e; /* Darker thumb on hover */
+                            }
+
+                            /* Custom styling for range inputs (progress and volume bars) */
+                            input[type="range"]::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 16px;
+                                height: 16px;
+                                background: #60a5fa; /* Blue-400 */
+                                border-radius: 50%;
+                                cursor: pointer;
+                                box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.4); /* Focus ring effect */
+                                transition: background 0.2s ease-in-out;
+                            }
+
+                            input[type="range"]::-moz-range-thumb {
+                                width: 16px;
+                                height: 16px;
+                                background: #60a5fa; /* Blue-400 */
+                                border-radius: 50%;
+                                cursor: pointer;
+                                box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.4);
+                                transition: background 0.2s ease-in-out;
+                            }
+
+                            input[type="range"]::-webkit-slider-thumb:hover {
+                                background: #3b82f6; /* Blue-500 */
+                            }
+
+                            input[type="range"]::-moz-range-thumb:hover {
+                                background: #3b82f6; /* Blue-500 */
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            const Pi = window.Pi;
+                            $( document ).ready(function() {
+                            
+                                var pi_user_id = "";
+                                async function auth() {
+                                    try {
+                                        // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                        const scopes = ['username', 'payments', 'wallet_address'];
+                                        function onIncompletePaymentFound(payment) {
+                                            
+                                        }; // Read more about this in the SDK reference
+                                        
+                                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                            pi_user_id = auth.user.uid;
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'none';
+                                        }).catch(function(error) {
+                                            //Pi.openShareDialog("Error", error);
+                                            //alert(err);
+                                            console.error(error);
+                                        });
+                                    } catch (err) {
+                                        //Pi.openShareDialog("Error", err);
+                                        //alert(err);
+                                        console.error(err);
+                                        // Not able to fetch the user
+                                    }
+                                }
+                                
+                                (async () => {
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            auth();
+                                            
+                                            setTimeout(function ()
+                                            {
+                                                if(pi_user_id == "")
+                                                {
+                                                    //alert($("#pi_prowser_message").text());
+                                                    
+                                                    if(window.location.hostname == "localhost")
+                                                    {
+                                                        $("a.anchor-click").attr('href', window.location.origin);
+                                                    }
+                                                    else if(window.location.hostname == "test.latin-chain.com")
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                    }
+                                                    
+                                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                }
+                                            }, 10000);
+                                        }
+                                    }, 10000);
+                                })();
+                            });
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="bg-gray-900 text-gray-100 flex items-center justify-center min-h-screen p-4">
+
+                        <div class="bg-gray-800 rounded-xl shadow-2xl p-6 w-full max-w-2xl flex flex-col gap-6">
+
+                            <!-- Music Player Section -->
+                            <div class="flex-1 flex flex-col items-center justify-center space-y-6">
+                                <h1 class="text-3xl font-bold text-blue-400 mb-4">Music Player</h1>
+                               
+                                <h3 class="text-1xl font-bold text-blue-400 mb-4">
+                                    Contact: latinchain.info@gmail.com<br/>
+                                    mp3.latin-chain.com/player<br/>
+                                    Made with help of Google Gemini AI
+                                </h3>
+
+                                <!-- Current Song Info -->
+                                <div class="text-center w-full">
+                                    <p id="current-song-title" class="text-xl font-semibold text-gray-200 truncate">No song loaded</p>
+                                    <p id="current-song-time" class="text-sm text-gray-400 mt-1">0:00 / 0:00</p>
+                                </div>
+
+                                <!-- Album Art Placeholder -->
+                                <div class="w-48 h-48 bg-gray-700 rounded-lg flex items-center justify-center overflow-hidden shadow-lg">
+                                    <img id="album-art" src="https://latin-chain.com/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" alt="Album Art" class="w-full h-full object-cover" />
+                                </div>
+
+                                <!-- Progress Bar -->
+                                <input type="range" id="progress-bar" value="0" min="0" max="100" class="w-full h-2 bg-blue-600 rounded-lg appearance-none cursor-pointer accent-blue-400" />
+
+                                <!-- Controls -->
+                                <div class="flex items-center justify-center space-x-4 w-full">
+                                    <button id="shuffle-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Shuffle playlist">
+                                        <!-- Shuffle Icon (Updated to standard criss-cross) -->
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 16L12 21L17 16M12 21V3M17 8L12 3L7 8M12 3V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                    <button id="prev-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Previous song">
+                                        <!-- Previous Icon -->
+                                        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <button id="play-pause-btn" class="p-4 rounded-full bg-blue-600 hover:bg-blue-700 transition duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Play or pause">
+                                        <!-- Play Icon -->
+                                        <svg id="play-icon" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 5v14l11-7z"></path>
+                                        </svg>
+                                        <!-- Pause Icon -->
+                                        <svg id="pause-icon" class="w-8 h-8 text-white hidden" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                                        </svg>
+                                    </button>
+                                    <button id="next-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Next song">
+                                        <!-- Next Icon -->
+                                        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </button>
+                                    <button id="repeat-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Repeat mode">
+                                        <!-- Repeat Icon (Updated to standard repeat-one) -->
+                                        <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z"/>
+                                            <!-- Small '1' for repeat one mode -->
+                                            <path id="repeat-one-indicator" class="hidden" d="M12 15a3 3 0 100-6 3 3 0 000 6z" fill="white"/>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Volume Control -->
+                                <div class="flex items-center space-x-2 w-full">
+                                    <!-- Volume Icons (Dynamic) -->
+                                    <svg id="volume-icon-low" class="w-6 h-6 text-gray-400 hidden" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5z"/>
+                                    </svg>
+                                    <svg id="volume-icon-medium" class="w-6 h-6 text-gray-400 hidden" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5zM19 12c0 .94-.28 1.81-.76 2.53l1.45 1.45C20.42 15.08 21 13.63 21 12c0-2.39-1.29-4.51-3.22-5.68l-1.45 1.45c1.16.71 1.97 1.97 1.97 3.23z"/>
+                                    </svg>
+                                    <svg id="volume-icon-high" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.81 5 3.54 5 6.71s-2.11 5.9-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                    <input type="range" id="volume-bar" value="100" min="0" max="100" class="flex-1 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-blue-400" aria-label="Volume control" />
+                                </div>
+
+                                <!-- File/Directory Input -->
+                                <div class="flex flex-col sm:flex-row gap-3 w-full justify-center mt-4">
+                                    <input type="file" id="file-input" accept="audio/*" class="hidden" aria-label="Select audio file"/>
+                                    <button id="select-file-btn" class="flex-1 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Load single audio file">
+                                        Load File
+                                    </button>
+
+                                    <input type="file" id="folder-input" multiple="multiple" class="hidden" aria-label="Select folder with audio files" />
+                                    <button id="select-folder-btn" class="flex-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500" aria-label="Load audio files from folder">
+                                        Load multiple files
+                                    </button>
+                                    <button id="clear-playlist-btn" class="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Clear playlist">
+                                        Clear Playlist
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Playlist Section -->
+                            <div class="flex-1 bg-gray-700 rounded-lg p-4 shadow-inner flex flex-col">
+                                <h2 class="text-2xl font-bold text-gray-200 mb-4 text-center">Playlist</h2>
+                                <ul id="playlist" class="flex-1 overflow-y-auto space-y-2 playlist-container">
+                                    <!-- Playlist items will be added here by JavaScript -->
+                                    <li class="text-gray-400 text-center py-4">Load files or folders to start.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Audio element (hidden) -->
+                            <audio id="audio-player" class="hidden"></audio>
+                            
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/musicplayer_functions.js?v=1.105"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="videoplayer" name="Video Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Professional Video Player</title>
+                        <!-- Tailwind CSS CDN -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <style>
+                            /* Base styles (Mobile First) */
+                            body {
+                                font-family: "Inter", sans-serif;
+                                background-color: #f0f2f5;
+                                display: flex;
+                                justify-content: center;
+                                align-items: flex-start; /* Align items to start for content flow */
+                                min-height: 100vh;
+                                margin: 0;
+                                padding: 1rem; /* Smaller padding for mobile */
+                                box-sizing: border-box;
+                            }
+                            .main-container {
+                                background-color: #ffffff;
+                                border-radius: 1.5rem;
+                                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Lighter shadow for mobile */
+                                padding: 1.5rem; /* Smaller padding for mobile */
+                                max-width: 100%; /* Full width on mobile */
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1.5rem; /* Smaller gap for mobile */
+                            }
+
+                            /* Layout for video and playlist - Mobile default is column */
+                            .player-and-playlist-wrapper {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1.5rem; /* Smaller gap for mobile */
+                            }
+
+                            .video-player-section {
+                                flex: 1; /* Takes full space on mobile */
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1rem;
+                            }
+                            .playlist-section {
+                                flex: 1; /* Takes full space on mobile */
+                                background-color: #f8fafc;
+                                border-radius: 1rem;
+                                padding: 1rem; /* Smaller padding for mobile */
+                                border: 1px solid #e2e8f0;
+                            }
+
+                            video {
+                                width: 100%;
+                                min-height: 200px;
+                                max-height: auto; /* Adjusted max height for mobile */
+                                background-color: #000;
+                                border-radius: 1rem;
+                                object-fit: contain;
+                            }
+
+                            /* Custom Controls Styling */
+                            .controls {
+                                background-color: #1e293b;
+                                border-radius: 0.75rem;
+                                padding: 0.5rem; /* Smaller padding for mobile */
+                                display: flex;
+                                flex-wrap: wrap;
+                                align-items: center;
+                                justify-content: space-around; /* Distribute items on mobile */
+                                gap: 0.75rem; /* Smaller gap for mobile */
+                                color: white;
+                            }
+                            .controls button {
+                                background: none;
+                                border: none;
+                                color: white;
+                                font-size: 1.25rem; /* Slightly smaller icons for mobile */
+                                cursor: pointer;
+                                padding: 0.4rem; /* Smaller padding for touch targets */
+                                border-radius: 0.5rem;
+                                transition: background-color 0.2s ease-in-out;
+                            }
+                            .controls button:hover:not(:disabled) {
+                                background-color: #334155;
+                            }
+                            .controls button:disabled {
+                                opacity: 0.5;
+                                cursor: not-allowed;
+                            }
+
+                            .progress-bar-wrapper {
+                                flex-grow: 1;
+                                height: 0.4rem; /* Thinner progress bar for mobile */
+                                background-color: #475569;
+                                border-radius: 0.25rem;
+                                cursor: pointer;
+                                position: relative;
+                                margin: 0 0.5rem; /* Add some horizontal margin */
+                            }
+                            .progress-bar {
+                                height: 100%;
+                                width: 0%;
+                                background-color: #3b82f6;
+                                border-radius: 0.25rem;
+                            }
+                            .time-display {
+                                font-size: 0.8rem; /* Smaller font size for mobile */
+                                white-space: nowrap;
+                            }
+
+                            .volume-control, .speed-control {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.25rem; /* Smaller gap for mobile */
+                            }
+                            .volume-control input[type="range"],
+                            .speed-control select {
+                                background-color: #475569;
+                                border-radius: 0.25rem;
+                                height: 0.4rem; /* Thinner slider for mobile */
+                                cursor: pointer;
+                            }
+                            .volume-control input[type="range"]::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 14px; /* Smaller thumb for mobile */
+                                height: 14px;
+                                border-radius: 50%;
+                                background: #3b82f6;
+                                cursor: pointer;
+                                margin-top: -5px;
+                                box-shadow: 0 0 2px rgba(0,0,0,0.5);
+                            }
+                            .speed-control select {
+                                padding: 0.15rem 0.4rem; /* Smaller padding for mobile */
+                                border: none;
+                                background-color: #334155;
+                                color: white;
+                                border-radius: 0.5rem;
+                                cursor: pointer;
+                                font-size: 0.8rem; /* Smaller font for mobile */
+                                min-width: 3.5rem; /* Added min-width for better visibility */
+                                text-align: center; /* Center text */
+                                text-align-last: center; /* For Firefox compatibility */
+                                height: 18px; /* Set height to 18px as requested */
+                                line-height: 18px; /* Adjust line-height to match height */
+                                -webkit-appearance: none; /* Remove default select styling for better control */
+                                -moz-appearance: none;
+                                appearance: none;
+                            }
+
+                            /* File Input and General Buttons */
+                            .file-input-wrapper {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1rem; /* Smaller gap for mobile */
+                                margin-top: 0.5rem;
+                            }
+
+                            /* Custom styling for file input buttons */
+                            .custom-file-input-label {
+                                position: relative;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 0.6rem 1rem; /* Mobile padding */
+                                border-radius: 0.75rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.2s ease-in-out;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                                background-color: #3b82f6; /* bg-blue-500 */
+                                color: white;
+                                border: none;
+                                font-size: 0.9rem; /* Mobile font size */
+                                gap: 0.5rem;
+                                overflow: hidden; /* Hide overflow for input */
+                            }
+                            .custom-file-input-label:hover {
+                                background-color: #2563eb; /* bg-blue-600 */
+                            }
+                            .custom-file-input-label i {
+                                font-size: 1rem; /* Mobile icon size */
+                            }
+
+                            .custom-file-input-label input[type="file"] {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                opacity: 0;
+                                cursor: pointer;
+                                z-index: 1; /* Ensure it's above the label text */
+                            }
+
+                            .btn {
+                                padding: 0.6rem 1.2rem; /* Smaller padding for mobile */
+                                border-radius: 0.6rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.2s ease-in-out;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow for mobile */
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 0.4rem; /* Smaller gap for icons */
+                                font-size: 0.9rem; /* Smaller font for mobile */
+                            }
+                            .btn i {
+                                font-size: 1rem; /* Adjust icon size */
+                            }
+                            .btn-primary {
+                                background-color: #3b82f6; /* bg-blue-500 */
+                                color: white;
+                                border: none;
+                            }
+                            .btn-primary:hover {
+                                background-color: #2563eb; /* bg-blue-600 */
+                            }
+                            .btn-secondary {
+                                background-color: #e2e8f0; /* bg-slate-200 */
+                                color: #333;
+                                border: none;
+                            }
+                            .btn-secondary:hover {
+                                background-color: #cbd5e1; /* bg-slate-300 */
+                            }
+                            .btn-danger {
+                                background-color: #ef4444; /* bg-red-500 */
+                                color: white;
+                                border: none;
+                            }
+                            .btn-danger:hover {
+                                background-color: #dc2626; /* bg-red-600 */
+                            }
+
+                            .video-info {
+                                text-align: center;
+                                font-size: 1rem; /* Adjusted font size */
+                                font-weight: 500;
+                                color: #475569;
+                            }
+                            /* Error message is now hidden by default and only logs to console */
+                            .error-message {
+                                display: none; /* Hide error messages from UI */
+                            }
+
+                            /* Playlist Specific Styles */
+                            .playlist-list {
+                                list-style: none;
+                                padding: 0;
+                                margin: 0;
+                                max-height: 300px; /* Smaller max height for mobile */
+                                overflow-y: auto;
+                            }
+                            .playlist-item {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                background-color: #ffffff;
+                                border: 1px solid #e2e8f0;
+                                border-radius: 0.6rem;
+                                padding: 0.6rem 0.8rem; /* Smaller padding for mobile */
+                                margin-bottom: 0.6rem;
+                                cursor: grab;
+                                transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                                font-size: 0.9rem; /* Smaller font for mobile */
+                            }
+                            .playlist-item-name {
+                                flex-grow: 1;
+                                margin-right: 0.75rem;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                color: #333;
+                            }
+                            .playlist-item-remove {
+                                font-size: 1.1rem; /* Adjusted icon size */
+                                padding: 0.2rem;
+                            }
+
+                            /* Drag and Drop styles */
+                            .playlist-item.dragging {
+                                opacity: 0.5;
+                                border: 2px dashed #3b82f6;
+                            }
+                            .playlist-item.insert-before {
+                                border-top: 2px solid #3b82f6;
+                            }
+                            .playlist-item.insert-after {
+                                border-bottom: 2px solid #3b82f6;
+                            }
+                            .playlist-item.active {
+                                background-color: #e0f2fe; /* Light blue for active item */
+                                border-color: #3b82f6; /* Blue border for active item */
+                                box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Blue glow */
+                            }
+
+                            /* Fullscreen mode */
+                            .video-player-section.fullscreen {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100vw;
+                                height: 100vh;
+                                z-index: 9999;
+                                background-color: black;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            .video-player-section.fullscreen video {
+                                width: 100%;
+                                height: 100%;
+                                max-height: none;
+                                object-fit: contain;
+                                border-radius: 0;
+                            }
+                            .video-player-section.fullscreen .controls {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                border-radius: 0;
+                                background-color: rgba(0, 0, 0, 0.7);
+                            }
+                            /* No media queries for desktop/tablet views, keeping mobile-first styles for all sizes */
+                        </style>
+                        <!-- Font Awesome for icons -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            const Pi = window.Pi;
+                            $( document ).ready(function() {
+                            
+                                var pi_user_id = "";
+                                async function auth() {
+                                    try {
+                                        // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                        const scopes = ['username', 'payments', 'wallet_address'];
+                                        function onIncompletePaymentFound(payment) {
+                                            
+                                        }; // Read more about this in the SDK reference
+                                        
+                                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                            pi_user_id = auth.user.uid;
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'none';
+                                        }).catch(function(error) {
+                                            //Pi.openShareDialog("Error", error);
+                                            //alert(err);
+                                            console.error(error);
+                                        });
+                                    } catch (err) {
+                                        //Pi.openShareDialog("Error", err);
+                                        //alert(err);
+                                        console.error(err);
+                                        // Not able to fetch the user
+                                    }
+                                }
+                                
+                                (async () => {
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            auth();
+                                            
+                                            setTimeout(function ()
+                                            {
+                                                if(pi_user_id == "")
+                                                {
+                                                    //alert($("#pi_prowser_message").text());
+                                                    
+                                                    if(window.location.hostname == "localhost")
+                                                    {
+                                                        $("a.anchor-click").attr('href', window.location.origin);
+                                                    }
+                                                    else if(window.location.hostname == "test.latin-chain.com")
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                    }
+                                                    
+                                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                }
+                                            }, 10000);
+                                        }
+                                    }, 10000);
+                                })();
+                            });
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body>
+                        <div class="main-container">
+                            
+                            <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-4 md:mb-6">Professional Video Player</h1>
+                            
+                            <h3 class="text-1xl md:text-1xl font-extrabold text-center text-gray-900 mb-4 md:mb-6">
+                                <strong>Contact: latinchain.info@gmail.com</strong>
+                                <br/>
+                                <strong>mp3.latin-chain.com/video-player</strong>
+                                <br/>
+                                <strong>Made with help of Google Gemini AI</strong>
+                            </h3>
+
+                            <div class="player-and-playlist-wrapper">
+                                <div id="videoPlayerSection" class="video-player-section">
+                                    <video id="videoPlayer" controls="controls">
+                                        Your browser does not support the video tag.
+                                    </video>
+
+                                    <div class="controls">
+                                        <button id="playPauseBtn" title="Play/Pause"><i class="fas fa-play"></i></button>
+                                        <div class="time-display"><span id="currentTime">00:00</span> / <span id="duration">00:00</span></div>
+                                        <div id="progressBarWrapper" class="progress-bar-wrapper">
+                                            <div id="progressBar" class="progress-bar"></div>
+                                        </div>
+                                        <div class="volume-control">
+                                            <button id="muteBtn" title="Mute/Unmute"><i class="fas fa-volume-up"></i></button>
+                                            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" />
+                                        </div>
+                                        <div class="speed-control">
+                                            <select id="playbackSpeed">
+                                                <option value="0.5">0.5x</option>
+                                                <option value="0.75">0.75x</option>
+                                                <option value="1" selected="selected">1x</option>
+                                                <option value="1.25">1.25x</option>
+                                                <option value="1.5">1.5x</option>
+                                                <option value="2">2x</option>
+                                            </select>
+                                        </div>
+                                        <button id="fullscreenBtn" title="Fullscreen"><i class="fas fa-expand"></i></button>
+                                    </div>
+
+                                    <div id="videoInfo" class="video-info">No video loaded</div>
+                                    <div id="errorMessage" class="error-message hidden"></div>
+                                </div>
+
+                                <div class="playlist-section">
+                                    <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Playlist</h2>
+                                    <div class="file-input-wrapper mb-4 md:mb-6">
+                                        <label for="singleVideoInput" class="custom-file-input-label">
+                                            <i class="fas fa-file-video"></i>
+                                            <span>Add a video</span>
+                                            <input type="file" id="singleVideoInput" accept="video/*" />
+                                        </label>
+
+                                        <label for="multiVideoInput" class="custom-file-input-label">
+                                            <i class="fas fa-folder-plus"></i>
+                                            <span>Add multiple videos</span>
+                                            <input type="file" id="multiVideoInput" accept="video/*" multiple="multiple" />
+                                        </label>
+
+                                        <button id="clearPlaylistBtn" class="btn btn-danger" disabled="disabled"><i class="fas fa-trash-alt mr-1 md:mr-2"></i>Clear Playlist</button>
+                                    </div>
+
+                                    <ul id="playlist" class="playlist-list">
+                                        <!-- Playlist items will be added here -->
+                                        <li class="text-slate-500 text-center py-3 md:py-4">Playlist is empty.</li>
+                                    </ul>
+
+                                    <div class="button-group flex justify-center gap-3 md:gap-4 mt-4 md:mt-6">
+                                        <button id="prevBtn" class="btn btn-secondary" disabled="disabled"><i class="fas fa-backward mr-1 md:mr-2"></i>Previous</button>
+                                        <button id="nextBtn" class="btn btn-primary" disabled="disabled">Next<i class="fas fa-forward ml-1 md:ml-2"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/videoplayer_functions.js?v=1.105"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>
