@@ -1558,6 +1558,32 @@ $( document ).ready(function() {
     });
     
     
+    $( ".search-apps" ).keyup(function() {
+        var search_apps_val = $( ".search-apps" ).val().trim();
+
+        if(search_apps_val == "")
+        {
+            $(".search-apps-li").show();
+        }
+        else
+        {
+            $(".search-apps-li").hide();
+            $(".search-apps-li").each(function() {
+                // 'this' refers to the current DOM element in the loop
+                // You can wrap 'this' in $() to use jQuery methods on it
+
+                if($(this).text().trim().toLowerCase().includes(search_apps_val.toLowerCase()))
+                {
+                    $(this).show(); // Example: hide each element
+                }else
+                {
+                    $(this).hide();
+                }
+                //console.log($(this).text()); // Example: log the text content of each element
+            });
+        }
+    });
+    
     $( ".clear_cache" ).click(function() {
         var result = confirm($( "#clear_cache_message" ).text());
         if(result)
