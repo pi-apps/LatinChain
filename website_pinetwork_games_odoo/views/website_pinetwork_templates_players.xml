@@ -738,6 +738,11 @@
                                     <video id="videoPlayer" controls="controls">
                                         Your browser does not support the video tag.
                                     </video>
+                                    
+                                    <div class="button-group flex justify-center gap-3 md:gap-4 mt-4 md:mt-6">
+                                        <button id="prevBtn" class="btn btn-secondary" disabled="disabled"><i class="fas fa-backward mr-1 md:mr-2"></i>Previous</button>
+                                        <button id="nextBtn" class="btn btn-primary" disabled="disabled">Next<i class="fas fa-forward ml-1 md:ml-2"></i></button>
+                                    </div>
 
                                     <div class="controls">
                                         <button id="playPauseBtn" title="Play/Pause"><i class="fas fa-play"></i></button>
@@ -800,11 +805,6 @@
                                         <!-- Playlist items will be added here -->
                                         <li class="text-slate-500 text-center py-3 md:py-4">Playlist is empty.</li>
                                     </ul>
-
-                                    <div class="button-group flex justify-center gap-3 md:gap-4 mt-4 md:mt-6">
-                                        <button id="prevBtn" class="btn btn-secondary" disabled="disabled"><i class="fas fa-backward mr-1 md:mr-2"></i>Previous</button>
-                                        <button id="nextBtn" class="btn btn-primary" disabled="disabled">Next<i class="fas fa-forward ml-1 md:ml-2"></i></button>
-                                    </div>
                                 </div>
                             </div>
                            
