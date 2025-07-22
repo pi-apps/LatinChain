@@ -227,8 +227,11 @@
                                     </button>
                                     <button id="repeat-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Repeat mode">
                                         <!-- Repeat Icon (Updated to standard repeat-one) -->
-                                        <i class="fa-solid fa-repeat"></i>
-                                        <i id="repeat-one-indicator" class="hidden" class="fa-solid fa-1"></i>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <!-- Small '1' for repeat one mode -->
+                                            <path id="repeat-one-indicator" class="hidden" d="M12 15a3 3 0 100-6 3 3 0 000 6z" fill="white"/>
+                                        </svg>
                                     </button>
                                 </div>
 
