@@ -782,7 +782,7 @@
                                         </label>
 
                                         <!-- Search Input and Clear Search Button -->
-                                        <div class="relative flex items-center">
+                                        <div class="relative flex items-center" style="max-width: 100%">
                                             <input type="text" id="playlistSearchInput" placeholder="Search playlist..."
                                                 class="flex-grow p-2 pl-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
                                                 style="background-color: #ffffff;"/>
