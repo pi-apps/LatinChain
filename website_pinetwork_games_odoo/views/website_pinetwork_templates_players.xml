@@ -177,6 +177,10 @@
 
                             <!-- Music Player Section -->
                             <div class="flex-1 flex flex-col items-center justify-center space-y-6">
+                                <div style="text-align:center; margin-bottom:15px;">
+                                    <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                                </div>
+                                
                                 <h1 class="text-3xl font-bold text-blue-400 mb-4">Music Player</h1>
 
                                 <!-- Current Song Info -->
@@ -719,6 +723,9 @@
                     </head>
                     <body>
                         <div class="main-container">
+                            <div style="text-align:center; margin-bottom:15px;">
+                                <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                            </div>
                             
                             <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-4 md:mb-6">Professional Video Player</h1>
 
