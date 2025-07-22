@@ -20,6 +20,8 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const playlistElement = document.getElementById('playlist');
 const clearPlaylistBtn = document.getElementById('clearPlaylistBtn');
+const playlistSearchInput = document.getElementById('playlistSearchInput'); // New search input
+const clearSearchBtn = document.getElementById('clearSearchBtn'); // New clear search button
 
 let playlist = []; // Stores File objects for the playlist
 let currentVideoIndex = -1;
@@ -94,21 +96,28 @@ function clearPlaylist() {
     clearError(); // Clear any existing errors
 }
 
-function renderPlaylist() {
+// Modified renderPlaylist to accept a filtered list
+function renderPlaylist(filteredList = playlist) {
     playlistElement.innerHTML = ''; // Clear existing list
-    if (playlist.length === 0) {
-        playlistElement.innerHTML = '<li class="text-slate-500 text-center py-3 md:py-4">Playlist is empty.</li>';
-        clearPlaylistBtn.disabled = true; // Disable clear button if playlist is empty
+    if (filteredList.length === 0) {
+        playlistElement.innerHTML = '<li class="text-slate-500 text-center py-3 md:py-4">No videos found.</li>';
+        // If the original playlist is also empty, disable clear button
+        if (playlist.length === 0) {
+            clearPlaylistBtn.disabled = true;
+        }
         return;
     }
+    clearPlaylistBtn.disabled = false; // Enable clear button if playlist has items
 
-    playlist.forEach((file, index) => {
+    filteredList.forEach((file, index) => {
         const listItem = document.createElement('li');
         listItem.classList.add('playlist-item');
-        if (index === currentVideoIndex) {
+        // Find the original index of the file in the main playlist array
+        const originalIndex = playlist.indexOf(file);
+        if (originalIndex === currentVideoIndex) {
             listItem.classList.add('active');
         }
-        listItem.dataset.index = index;
+        listItem.dataset.index = originalIndex; // Use original index for drag/drop and playback
         listItem.draggable = true; // Make items draggable
 
         const itemName = document.createElement('span');
@@ -122,13 +131,13 @@ function renderPlaylist() {
         removeBtn.title = 'Remove from playlist';
         removeBtn.addEventListener('click', (e) => {
             e.stopPropagation(); // Prevent playing video when removing
-            removeVideoFromPlaylist(index);
+            removeVideoFromPlaylist(originalIndex); // Remove using original index
         });
         listItem.appendChild(removeBtn);
 
         listItem.addEventListener('click', () => {
             if (!isDragging) { // Only play if not currently dragging
-                currentVideoIndex = index;
+                currentVideoIndex = originalIndex; // Play using original index
                 loadVideo(playlist[currentVideoIndex]);
                 renderPlaylist(); // Re-render to update active class
                 updateNavigationButtons();
@@ -140,7 +149,7 @@ function renderPlaylist() {
             isDragging = true;
             draggedItem = listItem;
             e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/plain', index); // Store index for reordering
+            e.dataTransfer.setData('text/plain', originalIndex); // Store original index for reordering
             setTimeout(() => listItem.classList.add('dragging'), 0); // Add class after drag starts
         });
 
@@ -181,7 +190,7 @@ function renderPlaylist() {
                     currentVideoIndex++;
                 }
 
-                renderPlaylist();
+                renderPlaylist(); // Re-render the full playlist after reordering
                 updateNavigationButtons();
             }
         });
@@ -198,7 +207,6 @@ function renderPlaylist() {
 
         playlistElement.appendChild(listItem);
     });
-    clearPlaylistBtn.disabled = false; // Enable clear button if playlist has items
 }
 
 // --- Video Player Core Logic ---
@@ -426,6 +434,26 @@ videoPlayer.addEventListener('ended', () => {
     }
     updateNavigationButtons();
 });
+
+// --- Search Functionality ---
+playlistSearchInput.addEventListener('input', () => {
+    const searchTerm = playlistSearchInput.value.toLowerCase();
+    if (searchTerm) {
+        const filtered = playlist.filter(file => file.name.toLowerCase().includes(searchTerm));
+        renderPlaylist(filtered);
+        clearSearchBtn.classList.remove('hidden');
+    } else {
+        renderPlaylist(playlist); // Show full playlist if search term is empty
+        clearSearchBtn.classList.add('hidden');
+    }
+});
+
+clearSearchBtn.addEventListener('click', () => {
+    playlistSearchInput.value = '';
+    renderPlaylist(playlist);
+    clearSearchBtn.classList.add('hidden');
+});
+
 
 // Initial render and button state
 renderPlaylist();

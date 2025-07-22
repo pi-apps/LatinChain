@@ -18,6 +18,7 @@ const folderInput = document.getElementById('folder-input');
 const selectFileBtn = document.getElementById('select-file-btn');
 const selectFolderBtn = document.getElementById('select-folder-btn');
 const clearPlaylistBtn = document.getElementById('clear-playlist-btn');
+const playlistSearchInput = document.getElementById('playlist-search-input'); // New search input
 
 // Volume icons
 const volumeIconLow = document.getElementById('volume-icon-low');
@@ -453,6 +454,26 @@ function addFilesToPlaylist(files) {
 
     console.log(`Added ${files.length} files to playlist. Total songs: ${playlist.length}`);
 }
+
+// --- Playlist Search Functionality ---
+/**
+ * Filters the playlist displayed based on the search input.
+ */
+function filterPlaylist() {
+    const searchTerm = playlistSearchInput.value.toLowerCase();
+    Array.from(playlistElement.children).forEach(listItem => {
+        const songName = listItem.querySelector('span').textContent.toLowerCase();
+        if (songName.includes(searchTerm)) {
+            listItem.style.display = 'flex'; // Show the item
+        } else {
+            listItem.style.display = 'none'; // Hide the item
+        }
+    });
+}
+
+// Event listener for playlist search input
+playlistSearchInput.addEventListener('input', filterPlaylist);
+
 
 // --- Drag and Drop functionality ---
 const dropArea = document.body; // Or a specific div if you prefer

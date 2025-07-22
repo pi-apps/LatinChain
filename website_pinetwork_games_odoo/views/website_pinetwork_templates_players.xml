@@ -11,6 +11,8 @@
                         <title>Advanced Music Player</title>
                         <!-- Tailwind CSS CDN -->
                         <script src="https://cdn.tailwindcss.com"></script>
+                        <!-- Font Awesome for icons -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
                         <style>
                             /* Custom styles for the player */
                             body {
@@ -270,6 +272,10 @@
                             <!-- Playlist Section -->
                             <div class="flex-1 bg-gray-700 rounded-lg p-4 shadow-inner flex flex-col">
                                 <h2 class="text-2xl font-bold text-gray-200 mb-4 text-center">Playlist</h2>
+                                <!-- Search Input for Playlist -->
+                                <div class="mb-4">
+                                    <input type="text" id="playlist-search-input" placeholder="Search playlist..." class="w-full p-2 rounded-md bg-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Search playlist" />
+                                </div>
                                 <ul id="playlist" class="flex-1 overflow-y-auto space-y-2 playlist-container">
                                     <!-- Playlist items will be added here by JavaScript -->
                                     <li class="text-gray-400 text-center py-4">Load files or folders to start.</li>
@@ -281,7 +287,7 @@
                             
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/musicplayer_functions.js?v=1.113"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/musicplayer_functions.js?v=1.114"></script>
                     </body>
                 </html>
             </t>
@@ -724,7 +730,7 @@
                             <div style="text-align:center; margin-bottom:15px;">
                                 <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
                             </div>
-                            
+                           
                             <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-4 md:mb-6">Professional Video Player</h1>
 
                             <div class="player-and-playlist-wrapper">
@@ -775,6 +781,18 @@
                                             <input type="file" id="multiVideoInput" accept="video/*" multiple="multiple" />
                                         </label>
 
+                                        <!-- Search Input and Clear Search Button -->
+                                        <div class="relative flex items-center">
+                                            <input type="text" id="playlistSearchInput" placeholder="Search playlist..."
+                                                class="flex-grow p-2 pl-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
+                                                style="background-color: #ffffff;"/>
+                                            <i class="fas fa-search absolute left-3 text-gray-400"></i>
+                                            <button id="clearSearchBtn" class="absolute right-2 text-gray-500 hover:text-gray-700 focus:outline-none hidden">
+                                                <i class="fas fa-times-circle"></i>
+                                            </button>
+                                        </div>
+                                        <!-- End Search Input and Clear Search Button -->
+
                                         <button id="clearPlaylistBtn" class="btn btn-danger" disabled="disabled"><i class="fas fa-trash-alt mr-1 md:mr-2"></i>Clear Playlist</button>
                                     </div>
 
@@ -789,10 +807,10 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                           
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/videoplayer_functions.js?v=1.105"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/videoplayer_functions.js?v=1.106"></script>
                     </body>
                 </html>
             </t>
