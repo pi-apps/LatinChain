@@ -1418,6 +1418,10 @@ $( document ).ready(function() {
         $.colorbox({href:"https://mp3.latin-chain.com/player/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".videoplayer" ).click(function() {
+        $.colorbox({href:"https://mp3.latin-chain.com/video-player/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     /*
     $( ".tetris" ).click(function() {
         $.colorbox({href:"/tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
