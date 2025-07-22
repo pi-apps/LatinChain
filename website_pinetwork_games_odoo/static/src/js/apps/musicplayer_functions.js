@@ -443,13 +443,13 @@ function addFilesToPlaylist(files) {
     });
 
     // If no song is currently loaded, load the first one from the new additions
-    if (currentSongIndex === -1 && playlist.length > 0) {
+    /*if (currentSongIndex === -1 && playlist.length > 0) {
         if(loadSong(0))
         {
             isPlaying = true; // Indicate intent to play
             updatePlayPauseIcon();
         }
-    }
+    }*/
 
     console.log(`Added ${files.length} files to playlist. Total songs: ${playlist.length}`);
 }
