@@ -84,6 +84,11 @@ function clearPlaylist() {
     if (playlist.length === 0) {
         return; // Do nothing if already empty
     }
+    
+    currentTimeDisplay.textContent = "00:00";
+    durationDisplay.textContent = "00:00";
+    const progress = 0;
+    progressBar.style.width = `${progress}%`;
 
     playlist = []; // Empty the playlist array
     currentVideoIndex = -1; // Reset current video index
