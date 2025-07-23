@@ -1581,6 +1581,24 @@ $( document ).ready(function() {
                 }
                 //console.log($(this).text()); // Example: log the text content of each element
             });
+            
+            if(pi_user_id != "" && pi_user_code != "")
+            {
+                $(".search-apps-li-pibrowser").hide();
+                $(".search-apps-li-pibrowser").each(function() {
+                    // 'this' refers to the current DOM element in the loop
+                    // You can wrap 'this' in $() to use jQuery methods on it
+
+                    if($(this).text().trim().toLowerCase().includes(search_apps_val.toLowerCase()))
+                    {
+                        $(this).show(); // Example: hide each element
+                    }else
+                    {
+                        $(this).hide();
+                    }
+                    //console.log($(this).text()); // Example: log the text content of each element
+                });
+            }
         }
     });
     

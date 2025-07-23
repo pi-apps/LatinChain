@@ -964,7 +964,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.321"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.322"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1969,63 +1969,63 @@
                                                 <div class="col-12" style="text-align: center"><div class="next-pi" style="display:inline;"><i class="fa-solid fa-gamepad"></i></div> <div class="next-pi" style="display:inline; font-size: 18px">GAMES</div></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-tetris" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-tetris" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="tetris" href="/tetris" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tetris" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes"></i></div><div style="font-size:100%;" translate="no">BLOCKRAIN</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></a><button id="tetrisinfo" class="col-auto btn btn-sm btn-outline-info tetrisinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-mahjong" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-mahjong" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="mahjong" href="/mahjong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mahjong" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">MAHJONG</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></a><button id="mahjonginfo" class="col-auto btn btn-sm btn-outline-info mahjonginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-bubble-shooter" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-bubble-shooter" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="bubble-shooter" href="/bubble-shooter" class="col-10 btn btn-outline-success font-weight-bold text-black border-success bubble-shooter" style="border: 2px solid;"><div style=""><i class="fa-solid fa-soap"></i></div><div style="font-size:100%;" translate="no">BUBBLE SHOOTER</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></a><button id="bubble-shooterinfo" class="col-auto btn btn-sm btn-outline-info bubble-shooterinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-test-your-brain" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-test-your-brain" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="test-your-brain" href="/test-your-brain" class="col-10 btn btn-outline-success font-weight-bold text-black border-success test-your-brain" style="border: 2px solid;"><div style=""><i class="fa-solid fa-braille"></i></div><div style="font-size:100%;" translate="no">TEST YOUR BRAIN</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div></a><button id="test-your-braininfo" class="col-auto btn btn-sm btn-outline-info test-your-braininfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-15-puzzle" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-15-puzzle" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="15-puzzle" href="/fifteen-puzzle" class="col-10 btn btn-outline-success font-weight-bold text-black border-success 15-puzzle" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">15 PUZZLE GAME</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="15-puzzleinfo" class="col-auto btn btn-sm btn-outline-info 15-puzzleinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-pingpong" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-pingpong" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="pingpong" href="/pingpong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success pingpong" style="border: 2px solid;"><div style=""><i class="fa-solid fa-table-tennis-paddle-ball"></i></div><div style="font-size:100%;" translate="no">PINGPONG</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="pingponginfo" class="col-auto btn btn-sm btn-outline-info pingponginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-checkers" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-checkers" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="checkers" href="/checkers" class="col-10 btn btn-outline-success font-weight-bold text-black border-success checkers" style="border: 2px solid;"><div style=""><i class="fa-solid fa-chess-board"></i></div><div style="font-size:100%;" translate="no">CHECKERS</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="checkersinfo" class="col-auto btn btn-sm btn-outline-info checkersinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-domino" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-domino" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="domino" href="/domino" class="col-10 btn btn-outline-success font-weight-bold text-black border-success domino" style="border: 2px solid;"><div style=""><i class="fa-solid fa-lines-leaning"></i></div><div style="font-size:100%;" translate="no">DOMINO</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="dominoinfo" class="col-auto btn btn-sm btn-outline-info dominoinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-latincrush" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-latincrush" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="latincrush" href="/latincrush" class="col-10 btn btn-outline-success font-weight-bold text-black border-success latincrush" style="border: 2px solid;"><div style=""><i class="fa-solid fa-candy-cane"></i></div><div style="font-size:100%;" translate="no">LATIN CRUSH</div><div style="font-size:80%;">Minigame (you won't gain points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="latincrushinfo" class="col-auto btn btn-sm btn-outline-info latincrushinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
@@ -2037,35 +2037,35 @@
                                                 <div class="col-12" style="text-align: center"><div class="next-pi" style="display:inline;"><i class="fa-solid fa-building"></i></div> <div class="next-pi" style="display:inline; font-size: 18px">UTILITIES</div></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-webtorrent" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-webtorrent" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="webtorrent" href="/webtorrent" class="col-10 btn btn-outline-success font-weight-bold text-black border-success webtorrent" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tornado"></i></div><div style="font-size:100%;" translate="no">WEBTORRENT</div><div style="font-size:80%;">WebTorrent P2P Player (we don't provide torrent files)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="latincrushinfo" class="col-auto btn btn-sm btn-outline-info webtorrentinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-odoolearning" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-odoolearning" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="odoolearning" href="/odoolearning" class="col-10 btn btn-outline-success font-weight-bold text-black border-success odoolearning" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">ODOO LEARNING</div><div style="font-size:80%;">Learn Odoo Development</div><div style="font-size:80%;">Developed with Gemini AI</div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-languagelearning" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-languagelearning" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="languagelearning" href="/languagelearning" class="col-10 btn btn-outline-success font-weight-bold text-black border-success languagelearning" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LANGUAGE LEARNING</div><div style="font-size:80%;">Spanish, English, Korean, Chinese Mandarin, Japanese, Vietnamese</div><div style="font-size:80%;">Developed with Gemini AI</div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-musicplayer" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-musicplayer" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="musicplayer" href="/musicplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success musicplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-headphones"></i></div><div style="font-size:100%;" translate="no">MUSIC PLAYER</div><div style="font-size:80%;">Music player</div><div style="font-size:80%;">Developed with Gemini AI</div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-videoplayer" style="display:none">
+                                        <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-videoplayer" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="videoplayer" href="/videoplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success videoplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-video"></i></div><div style="font-size:100%;" translate="no">VIDEO PLAYER</div><div style="font-size:80%;">Video player</div><div style="font-size:80%;">Developed with Gemini AI</div></a></div>
