@@ -452,8 +452,61 @@
                                 
                                 <div class="hide-when-print">
                                     <div class="border-gradient-rounded">
-                                        <div style="margin-bottom:5px; padding-bottom:5px;" class="border-bottom">
+                                        <div style="margin-bottom:5px;">
                                             <h5 translate="no" style="display:inline;">
+                                                <div translate="no" style="display:inline;"><strong>Chess</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Sudoku</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Snake</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Blockrain (kind of tetris)</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Mahjong</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Bubble Shooter</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Test Your Brain</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>15 Puzzle Game</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>PingPong</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Checkers</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Domino</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Latin Crush</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Odoo Development</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Learn: Spanish, English, Korean, Chinese Mandarin, Japanese, Vietnamese</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>WebTorrent</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Music Player</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Video Player</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Can watch Worldwide Sport Results</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Can watch Crypto News</strong></div>
+                                                <div style="display:inline;"> | </div>
+                                                <div translate="no" style="display:inline;"><strong>Can do video streaming in LatinChain dSocial</strong></div>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <h5 class="border-gradient-rounded"><div>You can consult this certification at:<br/><br/></div><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 80%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 80%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
+                                    <br/><br/><div><button class="btn btn-success print-button" onclick="window.print();">Print</button></div>
+                                    </h5>
+                                </div>
+                                
+                                <!-- Certification Print Section -->
+                                
+                                <div class="border-rounded-print">
+                                    <div style="margin-bottom:5px;">
+                                        <h5 translate="no" style="display:inline;">
                                             <div translate="no" style="display:inline;"><strong>Chess</strong></div>
                                             <div style="display:inline;"> | </div>
                                             <div translate="no" style="display:inline;"><strong>Sudoku</strong></div>
@@ -481,78 +534,19 @@
                                             <div translate="no" style="display:inline;"><strong>Odoo Development</strong></div>
                                             <div style="display:inline;"> | </div>
                                             <div translate="no" style="display:inline;"><strong>Learn: Spanish, English, Korean, Chinese Mandarin, Japanese, Vietnamese</strong></div>
-                                            </h5>
-                                        </div>
-                                        <div style="margin-bottom:5px" class="border-bottom">
-                                            <h5 translate="no"><div style="display:inline;"><strong>Can watch Worldwide Sport Results</strong></div></h5>
-                                        </div>
-                                        <!--<div style="margin-bottom:5px" class="border-bottom">
-                                            <h5 translate="no"><div style="display:inline;"><strong>Can watch Simulation of visible Cosmos</strong></div></h5>
-                                        </div>-->
-                                        <!--<div style="margin-bottom:5px" class="border-bottom">
-                                            <h5 translate="no"><div style="display:inline;"><strong>Can make searches in the Web</strong></div></h5>
-                                        </div>-->
-                                        <div style="margin-bottom:5px" class="border-bottom">
-                                            <h5 translate="no"><div style="display:inline;"><strong>Can watch Crypto News</strong></div></h5>
-                                        </div>
-                                        <div style="margin-bottom:5px" class="border-bottom">
-                                            <h5 translate="no"><div style="display:inline;"><strong>Can do video streaming in LatinChain dSocial</strong></div></h5>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <h5 class="border-gradient-rounded"><div>You can consult this certification at:<br/><br/></div><div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline; font-size: 80%; word-break: break-word;" translate="no">https://latinchain.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div><div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" style="display:inline; font-size: 80%; word-break: break-word;" translate="no">https://latinchaintest9869.pinet.com/latinchain-certification/<div style="display:inline;" t-esc="username" translate="no"></div></div>
-                                    <br/><br/><div><button class="btn btn-success print-button" onclick="window.print();">Print</button></div>
-                                    </h5>
-                                </div>
-                                
-                                <!-- Certification Print Section -->
-                                
-                                <div class="border-rounded-print">
-                                    <div style="margin-bottom:5px; padding-bottom:5px;" class="border-bottom">
-                                        <h5 translate="no" style="display:inline;">
-                                        <div translate="no" style="display:inline;"><strong>Chess</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Sudoku</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Snake</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Blockrain (kind of tetris)</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Mahjong</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Bubble Shooter</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Test Your Brain</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>15 Puzzle Game</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>PingPong</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Checkers</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Domino</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Latin Crush</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Odoo Development</strong></div>
-                                        <div style="display:inline;"> | </div>
-                                        <div translate="no" style="display:inline;"><strong>Learn: Spanish, English, Korean, Chinese Mandarin, Japanese, Vietnamese</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>WebTorrent</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Music Player</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Video Player</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Can watch Worldwide Sport Results</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Can watch Crypto News</strong></div>
+                                            <div style="display:inline;"> | </div>
+                                            <div translate="no" style="display:inline;"><strong>Can do video streaming in LatinChain dSocial</strong></div>
                                         </h5>
-                                    </div>
-                                    <div style="margin-bottom:5px" class="border-bottom">
-                                        <h5 translate="no"><div style="display:inline;"><strong>Can watch Worldwide Sport Results</strong></div></h5>
-                                    </div>
-                                    <!--<div style="margin-bottom:5px" class="border-bottom">
-                                        <h5 translate="no"><div style="display:inline;"><strong>Can watch Simulation of visible Cosmos</strong></div></h5>
-                                    </div>-->
-                                    <!--<div style="margin-bottom:5px" class="border-bottom">
-                                        <h5 translate="no"><div style="display:inline;"><strong>Can make searches in the Web</strong></div></h5>
-                                    </div>-->
-                                    <div style="margin-bottom:5px" class="border-bottom">
-                                        <h5 translate="no"><div style="display:inline;"><strong>Can watch Crypto News</strong></div></h5>
-                                    </div>
-                                    <div style="margin-bottom:5px" class="border-bottom">
-                                        <h5 translate="no"><div style="display:inline;"><strong>Can do video streaming in LatinChain dSocial</strong></div></h5>
                                     </div>
                                 </div>
                                 <br/>
