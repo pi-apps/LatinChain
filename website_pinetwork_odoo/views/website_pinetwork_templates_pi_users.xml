@@ -142,7 +142,11 @@
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-6" style="text-align: right">
-                                <i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>
+                                <div class="input-group mb-3">
+                                  <span style="color:black !important;" class="input-group-text" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                  <input type="text" class="on-page-search form-control" aria-label="Input" aria-describedby="inputGroup-sizing-default"/>
+                                </div>
+                                <!--<i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>-->
                             </div>
                             <div class="col-4" style="text-align: left">
                                 <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
@@ -351,7 +355,11 @@
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-6" style="text-align: right">
-                                <i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>
+                                <div class="input-group mb-3">
+                                  <span style="color:black !important;" class="input-group-text" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                  <input type="text" class="on-page-search form-control" aria-label="Input" aria-describedby="inputGroup-sizing-default"/>
+                                </div>
+                                <!--<i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>-->
                             </div>
                             <div class="col-4" style="text-align: left">
                                 <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
@@ -587,7 +595,11 @@
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-6" style="text-align: right">
-                                <i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>
+                                <div class="input-group mb-3">
+                                  <span style="color:black !important;" class="input-group-text" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                  <input type="text" class="on-page-search form-control" aria-label="Input" aria-describedby="inputGroup-sizing-default"/>
+                                </div>
+                                <!--<i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>-->
                             </div>
                             <div class="col-4" style="text-align: left">
                                 <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
@@ -1059,7 +1071,11 @@
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-6" style="text-align: right">
-                                <i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>
+                                <div class="input-group mb-3">
+                                  <span style="color:black !important;" class="input-group-text" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                  <input type="text" class="on-page-search form-control" aria-label="Input" aria-describedby="inputGroup-sizing-default"/>
+                                </div>
+                                <!--<i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>-->
                             </div>
                             <div class="col-4" style="text-align: left">
                                 <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
@@ -1282,7 +1298,11 @@
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-6" style="text-align: right">
-                                <i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>
+                                <div class="input-group mb-3">
+                                  <span style="color:black !important;" class="input-group-text" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                  <input type="text" class="on-page-search form-control" aria-label="Input" aria-describedby="inputGroup-sizing-default"/>
+                                </div>
+                                <!--<i class="fa fa-search"></i> <input class="on-page-search" style="width: 80%"></input>-->
                             </div>
                             <div class="col-4" style="text-align: left">
                                 <span id="user_question" ><i class="fa fa-keyboard-o"></i></span>
