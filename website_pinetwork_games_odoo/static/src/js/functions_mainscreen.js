@@ -1564,6 +1564,10 @@ $( document ).ready(function() {
         if(search_apps_val == "")
         {
             $(".search-apps-li").show();
+            if(pi_user_id != "" && pi_user_code != "")
+            {
+                $(".search-apps-li-pibrowser").show();
+            }
         }
         else
         {
