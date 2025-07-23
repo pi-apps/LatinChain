@@ -1067,7 +1067,8 @@ $( document ).ready(function() {
 
                             var start_flag = false;
                             
-                            $( "#button_reward_ad" ).click(async function() {
+                            async function showRewardedPiAd()
+                            {
                                 end();
                                 if(seconds < 5 && start_flag)
                                 {
@@ -1200,9 +1201,14 @@ $( document ).ready(function() {
                                         // good practice to handle any potential errors
                                     }
                                 }
+                            }
+                            
+                            $( "#button_reward_ad" ).click(async function() {
+                                showRewardedPiAd();
                             });
+                            
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                $( "#button_reward_ad" ).click();
+                                showRewardedPiAd();
                         }
                     });
                 });
