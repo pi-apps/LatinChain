@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 22:46+0000\n"
-"PO-Revision-Date: 2025-07-23 22:46+0000\n"
+"POT-Creation-Date: 2025-07-24 01:10+0000\n"
+"PO-Revision-Date: 2025-07-24 01:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -461,13 +461,15 @@ msgstr "5.- Para el Top 10 zone Sudoku: Tener más de 18 puntos en Sudoku."
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"5.- For an unverified user, Pi Ads will be displayed 1 ad each 1 hour. For a"
-" verified user, Pi Ads only will be displayed if you do click on the Watch "
-"Pi Ads button."
+"5.- For an unverified user, Pi Ads will be displayed 1 ad each certain time "
+"(in the mainscreen will appears the specific time). For a verified user, Pi "
+"Ads only will be displayed if you do click on the Watch Pi Ads button, or "
+"activating automatic Pi Ads checkbox."
 msgstr ""
-"5.- Para un usuario no verificado, Pi Ads se mostrarán 1 ad cada 1 hora. "
-"Para un usuario verificado, Pi Ads sólo serán mostradas si haces click en el"
-" botón Ver Pi Ads."
+"5.- Para usuarios no verificados, las Pi Ads se mostrarán cada cierto "
+"tiempo (la hora específica aparecerá en la pantalla principal). Para "
+"usuarios verificados, las Pi Ads sólo se mostrarán si hace clic en el " 
+"botón Ver Pi Ads ó si activa la casilla Pi Ads automáticas."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -2014,6 +2016,11 @@ msgid "Language Learning Path"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Language: Language Learning."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Large"
 msgstr ""
@@ -2346,6 +2353,11 @@ msgid "Music player"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Music: Music player."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
 msgid "Mute/Unmute"
 msgstr ""
@@ -2506,6 +2518,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 msgid "Odoo Learning Path"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Odoo: Odoo Learning."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3353,6 +3370,11 @@ msgid "Video player"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Video: Video player."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 msgid "Vietnamese"
 msgstr ""
@@ -3435,6 +3457,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "WebTorrent P2P Player (we don't provide torrent files)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "WebTorrent: Video torrent streaming."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
