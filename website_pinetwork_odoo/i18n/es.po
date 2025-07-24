@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-18 12:15+0000\n"
-"PO-Revision-Date: 2025-07-18 12:15+0000\n"
+"POT-Creation-Date: 2025-07-24 12:15+0000\n"
+"PO-Revision-Date: 2025-07-24 12:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -548,6 +548,15 @@ msgid "ID"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Input"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__json_result
 msgid "JSON Result"
 msgstr ""
@@ -867,6 +876,15 @@ msgstr ""
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__sandbox
 msgid "Sandbox"
 msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
+msgid "Search users"
+msgstr "Buscar usuarios"
 
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__action_type__send
