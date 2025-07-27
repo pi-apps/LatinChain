@@ -171,20 +171,18 @@
                             </div>
 
                             <!-- Magnet link input section -->
-                            <div class="mb-6 px-4" style="margin-top:10px;">
-                                <label for="magnet-link" class="block text-base font-medium mb-2 sm:text-lg">Magnet Link:</label>
+                            <div class="mb-6" style="margin-top:10px; word-break: break-word;">
+                                <label for="magnet-link" class="block text-lg font-medium mb-2">Magnet Link:</label>
                                 <input type="text" id="magnet-link" placeholder="Paste your magnet link here..."
-                                    class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white text-base sm:text-lg"/>
+                                       class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"/>
                             </div>
 
                             <!-- Torrent file upload section -->
-                            <div class="mb-6 px-4">
-                                <label for="torrent-file" class="block text-base font-medium mb-2 sm:text-lg">Or upload a .torrent file:</label>
+                            <div class="mb-6">
+                                <label for="torrent-file" class="block text-lg font-medium mb-2">Or upload a .torrent file:</label>
                                 <input type="file" id="torrent-file" accept=".torrent"
-                                     class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white
-                                            file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold
-                                            file:bg-indigo-500 file:text-white hover:file:bg-indigo-600
-                                            sm:file:text-base"/>
+                                       class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-500 file:text-white hover:file:bg-indigo-600"/>
+                                <p id="file-name-display" class="mt-2 text-sm text-gray-400"></p>
                             </div>
 
                             <!-- Load Torrent button -->
@@ -205,7 +203,7 @@
                         <!-- WebTorrent CDN -->
                         <script src="https://cdn.jsdelivr.net/npm/webtorrent@1.0.0/webtorrent.min.js"></script>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webtorrent_functions.js?v=1.105"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webtorrent_functions.js?v=1.106"></script>
                     </body>
                 </html>
             </t>

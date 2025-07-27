@@ -14,6 +14,18 @@ const playerContainer = document.getElementById('player-container');
 const peerCountSpan = document.getElementById('peer-count');
 const peerIndicatorsDiv = document.getElementById('peer-indicators');
 
+const fileNameDisplay = document.getElementById('file-name-display');
+
+document.addEventListener('DOMContentLoaded', function() {
+    torrentFileInput.addEventListener('change', function() {
+        if (torrentFileInput.files.length > 0) {
+            fileNameDisplay.textContent = `Selected file: ${torrentFileInput.files[0].name}`;
+        } else {
+            fileNameDisplay.textContent = ''; // Clear the text if no file is selected
+        }
+    });
+});
+
 // Function to display status messages
 function showMessage(msg, type = 'info') {
     messageArea.classList.remove('hidden');
