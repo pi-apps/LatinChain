@@ -815,5 +815,326 @@
                 </html>
             </t>
 		</template>
+        
+        <template id="imgplayer" name="Photo Viewer">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Photo Viewer</title>
+                        <!-- Include Tailwind CSS from CDN -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <style>
+                            /* Custom styles for font and body */
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #f0f2f5; /* A light gray background */
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                min-height: 100vh; /* Ensures it takes full viewport height */
+                                margin: 0;
+                                padding: 1rem; /* General padding */
+                                box-sizing: border-box; /* Include padding in total size */
+                            }
+                            /* Styles to ensure the image fits and has rounded corners */
+                            #photo-display {
+                                width: 100%;
+                                height: auto;
+                                max-height: 70vh; /* Limits image height for small screens */
+                                object-fit: contain; /* Ensures the image fits without cropping */
+                                border-radius: 1rem; /* Rounded corners */
+                                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+                                cursor: zoom-in; /* Indicates the image is clickable for zoom */
+                            }
+                            /* Styles for navigation buttons */
+                            .nav-button {
+                                background-color: #4f46e5; /* Tailwind purple color */
+                                color: white;
+                                padding: 0.75rem 1.5rem;
+                                border-radius: 9999px; /* Fully rounded buttons */
+                                font-weight: bold;
+                                transition: background-color 0.3s ease, transform 0.2s ease;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 0.5rem;
+                            }
+                            .nav-button:hover {
+                                background-color: #4338ca; /* Darker purple on hover */
+                                transform: translateY(-2px); /* Small lift effect */
+                            }
+                            .nav-button:active {
+                                transform: translateY(0); /* Returns to normal position on click */
+                            }
+                            /* Style for the main application container */
+                            .app-container {
+                                background-color: white;
+                                border-radius: 1.5rem; /* More rounded corners for the container */
+                                padding: 1.5rem;
+                                box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                gap: 1.5rem; /* Spacing between elements */
+                                /* Adjustment for constant mobile view */
+                                max-width: 375px; /* Typical mobile max width */
+                                width: 100%; /* Ensures it takes 100% of max-width */
+                            }
+
+                            /* Styles for the upload photo button */
+                            .upload-button {
+                                background-color: #10b981; /* Tailwind green color */
+                                color: white;
+                                padding: 0.75rem 1.5rem;
+                                border-radius: 9999px;
+                                font-weight: bold;
+                                transition: background-color 0.3s ease, transform 0.2s ease;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 0.5rem;
+                                cursor: pointer; /* Indicates it's clickable */
+                            }
+                            .upload-button:hover {
+                                background-color: #059669; /* Darker green on hover */
+                                transform: translateY(-2px);
+                            }
+                            .upload-button:active {
+                                transform: translateY(0);
+                            }
+
+                            /* Styles for the clear photos button */
+                            .clear-button {
+                                background-color: #ef4444; /* Tailwind red color */
+                                color: white;
+                                padding: 0.75rem 1.5rem;
+                                border-radius: 9999px;
+                                font-weight: bold;
+                                transition: background-color 0.3s ease, transform 0.2s ease;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 0.5rem;
+                                cursor: pointer;
+                            }
+                            .clear-button:hover {
+                                background-color: #dc2626; /* Darker red on hover */
+                                transform: translateY(-2px);
+                            }
+                            .clear-button:active {
+                                transform: translateY(0);
+                            }
+
+                            /* Styles for the zoom modal */
+                            .zoom-modal {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                z-index: 1000; /* Ensures it's above other elements */
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: opacity 0.3s ease, visibility 0.3s ease;
+                            }
+
+                            .zoom-modal.active {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+
+                            .zoom-modal-content {
+                                max-width: 90%;
+                                max-height: 90%;
+                                object-fit: contain;
+                                border-radius: 0.5rem;
+                                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                            }
+
+                            .zoom-close-button {
+                                position: absolute;
+                                top: 1rem;
+                                right: 1rem;
+                                background-color: rgba(255, 255, 255, 0.2);
+                                color: white;
+                                border: none;
+                                border-radius: 50%;
+                                width: 2.5rem;
+                                height: 2.5rem;
+                                font-size: 1.5rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                            }
+
+                            .zoom-close-button:hover {
+                                background-color: rgba(255, 255, 255, 0.4);
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            const Pi = window.Pi;
+                            $( document ).ready(function() {
+                            
+                                var pi_user_id = "";
+                                async function auth() {
+                                    try {
+                                        // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                        const scopes = ['username', 'payments', 'wallet_address'];
+                                        function onIncompletePaymentFound(payment) {
+                                            
+                                        }; // Read more about this in the SDK reference
+                                        
+                                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                            pi_user_id = auth.user.uid;
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'none';
+                                        }).catch(function(error) {
+                                            //Pi.openShareDialog("Error", error);
+                                            //alert(err);
+                                            console.error(error);
+                                        });
+                                    } catch (err) {
+                                        //Pi.openShareDialog("Error", err);
+                                        //alert(err);
+                                        console.error(err);
+                                        // Not able to fetch the user
+                                    }
+                                }
+                                
+                                (async () => {
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            auth();
+                                            
+                                            setTimeout(function ()
+                                            {
+                                                if(pi_user_id == "")
+                                                {
+                                                    //alert($("#pi_prowser_message").text());
+                                                    
+                                                    if(window.location.hostname == "localhost")
+                                                    {
+                                                        $("a.anchor-click").attr('href', window.location.origin);
+                                                    }
+                                                    else if(window.location.hostname == "test.latin-chain.com")
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                    }
+                                                    
+                                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                }
+                                            }, 10000);
+                                        }
+                                    }, 10000);
+                                })();
+                            });
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body>
+                        <div class="app-container">
+                            <h1 class="text-3xl font-extrabold text-gray-800 mb-4 text-center">My Photo Viewer</h1>
+
+                            <!-- Image Container -->
+                            <div class="w-full flex justify-center items-center bg-gray-100 rounded-xl p-2" style="min-height: 300px !important; max-height: 300px !important; height: 300px !important;">
+                                <img id="photo-display" src="" alt="Current photo" class="rounded-xl shadow-md" />
+                                <p id="no-photo-message" class="text-gray-500 text-center hidden">Upload your photos to get started.</p>
+                            </div>
+
+                            <!-- Photo Title/Description -->
+                            <p id="photo-title" style="word-break: break-word;" class="text-lg text-gray-700 font-semibold text-center mt-2"></p>
+
+                            <!-- Navigation Controls -->
+                            <div class="flex justify-between w-full mt-4">
+                                <button id="prev-btn" class="nav-button" disabled="disabled">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <button id="next-btn" class="nav-button" disabled="disabled">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Action Buttons: Upload and Clear -->
+                            <div class="flex flex-col flex-row justify-center gap-4 w-full mt-4">
+                                <input type="file" id="upload-input" accept="image/*" multiple="multiple" class="hidden" />
+                                <label for="upload-input" class="upload-button inline-flex items-center cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                    Upload Photos
+                                </label>
+                                <button id="clear-btn" class="clear-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zm3 7a1 1 0 10-2 0v6a1 1 0 102 0V9zm-4 0a1 1 0 10-2 0v6a1 1 0 102 0V9z" clip-rule="evenodd" />
+                                    </svg>
+                                    Clear Photos
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Image Zoom Modal -->
+                        <div id="zoom-modal" class="zoom-modal">
+                            <img id="zoomed-image" src="" alt="Zoomed image" class="zoom-modal-content" />
+                            <button id="zoom-close-button" class="zoom-close-button">
+                                x
+                            </button>
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/imgplayer_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
 
 </odoo>

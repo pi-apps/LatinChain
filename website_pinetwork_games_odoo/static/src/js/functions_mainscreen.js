@@ -362,6 +362,7 @@ function get_user() {
                 $(".show-webtorrent").show();
                 $(".show-musicplayer").show();
                 $(".show-videoplayer").show();
+                $(".show-imgplayer").show();
                 //$(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
