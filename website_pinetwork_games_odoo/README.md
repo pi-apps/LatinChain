@@ -66,6 +66,8 @@ Music Player (PiOS License). Developed with Gemini AI (Google).
 
 Video Player (PiOS License). Developed with Gemini AI (Google).
 
+Photo Viewer (PiOS License). Developed with Gemini AI (Google).
+
 More Info: https://github.com/rockcesar/LatinChainDevelopments
 
 Apps published by LatinChain
