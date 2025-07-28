@@ -985,7 +985,7 @@
                         </style>
                         
                         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                        
+                        <!--
                         <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                         
                         <script type="text/javascript">
@@ -1076,7 +1076,7 @@
                         <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                         <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                         <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
-                        
+                        -->
                     </head>
                     <body>
                         <div class="app-container">
