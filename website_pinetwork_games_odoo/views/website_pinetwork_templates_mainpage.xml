@@ -1243,7 +1243,7 @@
                         </section>
                     </div>
                     
-                    <div class="justify-content-center text-center p-3 mb-2 bg-info text-white">
+                    <div class="justify-content-center text-center p-3 mb-2" style="color: #ffffff !important; background-color: #1f2434 !important">
                       <a class="text-white getverified" href="/pinetwork"><div style="display:inline;">Accepting payments</div> <div style="display:inline;">(<t t-esc="amount" /> Pi)</div>.
                         <div t-if="mainnet in ['Mainnet ON']">Get verified: Auto ads switch, Avatar, Pi Ads <i class="fa-solid fa-plug-circle-bolt"></i>x2 points, access to Chess, Sudoku and Snake.</div>
                         <div t-if="mainnet in ['Testnet ON']">Get verified: Avatar, access to Chess, Sudoku and Snake.</div>
