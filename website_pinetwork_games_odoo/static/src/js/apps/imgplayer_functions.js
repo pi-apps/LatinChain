@@ -85,7 +85,7 @@ function handleImageUpload(event) {
         let loadedCount = 0; // Counter for photos loaded in this session
 
         var files_length = files.length;
-        for (let i = 0; i < files.length; i++) {
+        for (let i = 0; i < files_length; i++) {
             const file = files[i];
             if (file.type.startsWith('image/')) {
                 const reader = new FileReader();
@@ -101,7 +101,7 @@ function handleImageUpload(event) {
                     alert("loadedCount " + loadedCount + " files.length " + files_length);
 
                     // If all photos from this upload have finished processing
-                    if (loadedCount === files.length) {
+                    if (loadedCount === files_length) {
                         alert("01234567");
                         // If there were no photos before, or it's the first upload, show the first of the new ones
                         if (initialPhotosCount === 0) {
