@@ -964,7 +964,7 @@
                     
                     <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.327"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.328"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1248,6 +1248,7 @@
                           <div style="text-align:left" class="col-6">
                               <a class="text-white getverified" href="/pinetwork">Welcome!. Get verified.</a>
                               <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
+                              <div class="isverified-username font-weight-bold" style="display: none;"></div>
                           </div>
                           <div style="text-align:right" class="col-6">
                               <button id="logout_latinchain" class="btn btn-outline-danger font-weight-bold text-white border-white loggedin" style="display: none; border: 2px solid; max-width: 100px; font-size: 90% !important"><div>Logout</div></button>
