@@ -33,8 +33,8 @@ function updateNavigationButtons() {
  */
 function displayPhoto() {
     if (photos.length === 0) {
-        photoDisplay.classList.add('hidden'); // Hide image
         photoDisplay.src = ""; // Clear image
+        photoDisplay.classList.add('hidden'); // Hide image
         noPhotoMessage.classList.remove('hidden'); // Show message
         photoTitle.textContent = "Upload your photos to get started.";
     } else {
@@ -132,6 +132,7 @@ function clearPhotos() {
 function openZoomModal() {
     if (photos.length === 0) return; // Don't open if no photos
     zoomedImage.src = photoDisplay.src; // Set the image source in the modal
+    zoomedImage.classList.remove('hidden'); // Hide image
     zoomModal.classList.add('active'); // Show the modal
 }
 
@@ -140,6 +141,7 @@ function openZoomModal() {
  */
 function closeZoomModal() {
     zoomModal.classList.remove('active'); // Hide the modal
+    zoomedImage.classList.add('hidden'); // Hide image
     zoomedImage.src = ""; // Clear the image source from the modal
 }
 
