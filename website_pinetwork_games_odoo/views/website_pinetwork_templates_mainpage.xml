@@ -1254,6 +1254,9 @@
                           <button id="login_latinchain" class="col-8 btn btn-outline-success font-weight-bold text-white border-white loggedout" style="display: none; border: 2px solid; max-width: 100px"><div>Login</div></button>
                           <button class="btn btn-outline-info font-weight-bold text-white border-white clear_cache" style="border-radius: 50%; border: 2px solid;"><div style=""><i class="fa fa-refresh"></i></div></button>
                       </div>
+                      <div style="text-align:center" class="row">
+                          <script defer="defer" src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-6" lcw-coin="_______PI" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#1f2434" lcw-border-w="1" ></div>
+                      </div>
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
@@ -1779,7 +1782,7 @@
                               </div>
                             </div>
                             
-                            <div id="accordionPrice" style="margin-bottom:5px">
+                            <!--<div id="accordionPrice" style="margin-bottom:5px">
                               <div class="card">
                                 <h2 class="accordion-header" id="headingPrice">
                                   <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrice" aria-expanded="true" aria-controls="collapsePrice">
@@ -1800,7 +1803,7 @@
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                            </div>-->
                             
                             <div style="text-align:center; position:relative; margin-bottom: 5px" id="pay_with">
                                 <img src="/website_pinetwork_games_odoo/static/src/img/pay_with_pi.jpg" alt="LatinChain" class="img-fluid rounded" style="max-width: 350px" width="100%" height="170px" />
