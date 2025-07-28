@@ -89,17 +89,14 @@ function handleImageUpload(event) {
             if (file.type.startsWith('image/')) {
                 const reader = new FileReader();
 
-                alert("0123");
                 reader.onload = (e) => {
-                    alert("01234");
                     photos.push({
                         url: e.target.result,
                         title: `Uploaded Photo (${file.name})`
                     });
-                    alert("012345");
                     loadedCount++;
                     
-                    alert("0123456");
+                    alert("loadedCount " + loadedCount + " files.length " + files.length);
 
                     // If all photos from this upload have finished processing
                     if (loadedCount === files.length) {
