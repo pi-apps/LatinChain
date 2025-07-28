@@ -84,7 +84,7 @@ function handleImageUpload(event) {
         const initialPhotosCount = photos.length; // Number of photos before upload
         let loadedCount = 0; // Counter for photos loaded in this session
 
-        var files-length = files.length;
+        var files_length = files.length;
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
             if (file.type.startsWith('image/')) {
@@ -97,7 +97,8 @@ function handleImageUpload(event) {
                     });
                     loadedCount++;
                     
-                    alert("loadedCount " + loadedCount + " files.length " + files-length);
+                    alert("loadedCount " + loadedCount);
+                    alert("loadedCount " + loadedCount + " files.length " + files_length);
 
                     // If all photos from this upload have finished processing
                     if (loadedCount === files.length) {
