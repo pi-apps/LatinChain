@@ -89,19 +89,27 @@ function handleImageUpload(event) {
             if (file.type.startsWith('image/')) {
                 const reader = new FileReader();
 
+                alert("0123");
                 reader.onload = (e) => {
+                    alert("01234");
                     photos.push({
                         url: e.target.result,
                         title: `Uploaded Photo (${file.name})`
                     });
+                    alert("012345");
                     loadedCount++;
+                    
+                    alert("0123456");
 
                     // If all photos from this upload have finished processing
                     if (loadedCount === files.length) {
+                        alert("01234567");
                         // If there were no photos before, or it's the first upload, show the first of the new ones
                         if (initialPhotosCount === 0) {
+                            alert("012301");
                             currentPhotoIndex = 0;
                         } else {
+                            alert("012300");
                             // If there were already photos, show the first of the newly added ones
                             currentPhotoIndex = initialPhotosCount;
                         }
