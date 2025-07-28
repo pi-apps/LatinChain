@@ -32,6 +32,7 @@ function updateNavigationButtons() {
  * Displays the current photo in the viewer or a message if no photos.
  */
 function displayPhoto() {
+    alert("12345");
     if (photos.length === 0) {
         photoDisplay.src = ""; // Clear image
         photoDisplay.classList.add('hidden'); // Hide image
@@ -84,9 +85,7 @@ function handleImageUpload(event) {
 
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
-            alert("123");
             if (file.type.startsWith('image/')) {
-                alert("1234");
                 const reader = new FileReader();
 
                 reader.onload = (e) => {
