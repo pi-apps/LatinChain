@@ -33,13 +33,11 @@ function updateNavigationButtons() {
  */
 function displayPhoto() {
     if (photos.length === 0) {
-        alert("12345");
         photoDisplay.src = ""; // Clear image
         photoDisplay.classList.add('hidden'); // Hide image
         noPhotoMessage.classList.remove('hidden'); // Show message
         photoTitle.textContent = "Upload your photos to get started.";
     } else {
-        alert("123456");
         photoDisplay.classList.remove('hidden'); // Show image
         noPhotoMessage.classList.add('hidden'); // Hide message
         photoDisplay.src = photos[currentPhotoIndex].url;
@@ -96,19 +94,13 @@ function handleImageUpload(event) {
                         title: `Uploaded Photo (${file.name})`
                     });
                     loadedCount++;
-                    
-                    alert("loadedCount " + loadedCount);
-                    alert("loadedCount " + loadedCount + " files.length " + files_length);
 
                     // If all photos from this upload have finished processing
                     if (loadedCount === files_length) {
-                        alert("01234567");
                         // If there were no photos before, or it's the first upload, show the first of the new ones
                         if (initialPhotosCount === 0) {
-                            alert("012301");
                             currentPhotoIndex = 0;
                         } else {
-                            alert("012300");
                             // If there were already photos, show the first of the newly added ones
                             currentPhotoIndex = initialPhotosCount;
                         }
