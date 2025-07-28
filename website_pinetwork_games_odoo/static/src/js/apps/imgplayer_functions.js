@@ -33,8 +33,8 @@ function updateNavigationButtons() {
  */
 function displayPhoto() {
     if (photos.length === 0) {
-        photoDisplay.src = ""; // Clear image
         photoDisplay.classList.add('hidden'); // Hide image
+        photoDisplay.src = ""; // Clear image
         noPhotoMessage.classList.remove('hidden'); // Show message
         photoTitle.textContent = "Upload your photos to get started.";
     } else {
