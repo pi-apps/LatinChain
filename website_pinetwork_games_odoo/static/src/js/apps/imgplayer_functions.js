@@ -84,7 +84,9 @@ function handleImageUpload(event) {
 
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
+            alert("123");
             if (file.type.startsWith('image/')) {
+                alert("1234");
                 const reader = new FileReader();
 
                 reader.onload = (e) => {
