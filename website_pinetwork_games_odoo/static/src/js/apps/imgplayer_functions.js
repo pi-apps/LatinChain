@@ -32,13 +32,14 @@ function updateNavigationButtons() {
  * Displays the current photo in the viewer or a message if no photos.
  */
 function displayPhoto() {
-    alert("12345");
     if (photos.length === 0) {
+        alert("12345");
         photoDisplay.src = ""; // Clear image
         photoDisplay.classList.add('hidden'); // Hide image
         noPhotoMessage.classList.remove('hidden'); // Show message
         photoTitle.textContent = "Upload your photos to get started.";
     } else {
+        alert("123456");
         photoDisplay.classList.remove('hidden'); // Show image
         noPhotoMessage.classList.add('hidden'); // Hide message
         photoDisplay.src = photos[currentPhotoIndex].url;
