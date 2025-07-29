@@ -331,6 +331,9 @@
                 <body>
                     <div class="container">
                         <header class="text-center py-8">
+                            <div style="text-align:center; margin-bottom:15px;">
+                                <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                            </div>
                             <h1 class="text-4xl font-bold text-gray-800 mb-4" id="mainTitle">Game Learning Path</h1>
                             <p class="text-lg text-gray-600" id="mainSubtitle">Choose your game to learn!</p>
 
