@@ -1271,10 +1271,10 @@ $( document ).ready(function() {
         {
             $(".loggedout").show();
             
-            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+            /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
                 showPiAds(Pi);
-            }
+            }*/
         }
     
     })();
