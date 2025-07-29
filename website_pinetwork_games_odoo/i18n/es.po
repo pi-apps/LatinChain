@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-28 19:59+0000\n"
-"PO-Revision-Date: 2025-07-28 19:59+0000\n"
+"POT-Creation-Date: 2025-07-29 01:16+0000\n"
+"PO-Revision-Date: 2025-07-29 01:16+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -172,6 +172,7 @@ msgid ".<br/>Testnet:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 msgid "0% Complete (0/0 Lessons)"
@@ -1090,6 +1091,11 @@ msgid "<strong>Domino</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+msgid "<strong>Games learning: Chess, Sudoku, Snake</strong>"
+msgstr "<strong>Aprendizaje de juegos: Chess, Sudoku, Snake</strong>"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "<strong>Introduction and minimum payment</strong><br/>"
 msgstr "<strong>Introducción y pago mínimo</strong><br/>"
@@ -1414,6 +1420,7 @@ msgid "COINTELEGRAPH"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -1447,6 +1454,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Chess"
 msgstr ""
@@ -1464,6 +1472,11 @@ msgstr "Escoge el nivel de la PC"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 msgid "Choose Your Side"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
+msgid "Choose your game to learn!"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1506,6 +1519,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
@@ -1541,6 +1555,7 @@ msgid "Community Asia"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 msgid "Confirm"
@@ -1741,6 +1756,11 @@ msgid "GAMES"
 msgstr "JUEGOS"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "GAMES LEARNING"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -1774,9 +1794,19 @@ msgid "Game Board"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
+msgid "Game Learning Path"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 msgid "Game Over!"
 msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Games learning: Chess, Sudoku, Snake."
+msgstr "Aprendizaje de juegos: Chess, Sudoku, Snake."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1812,6 +1842,7 @@ msgstr "Ir a Mainnet"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
@@ -2145,6 +2176,11 @@ msgid "Learn Odoo Development"
 msgstr "Aprende Desarrollo en Odoo"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Learn: Chess, Sudoku, Snake"
+msgstr "Aprende: Chess, Sudoku, Snake"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid "Link"
 msgstr ""
@@ -2204,6 +2240,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
@@ -2936,6 +2973,7 @@ msgid "Reset Game"
 msgstr "Reiniciar Juego"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 msgid "Reset Progress"
@@ -3090,6 +3128,7 @@ msgid "SilkRoad for Pi.<br/>Mainnet:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Snake"
 msgstr ""
@@ -3131,6 +3170,7 @@ msgid "Success: You paid"
 msgstr "Exito: Pagaste"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Sudoku"
@@ -3625,6 +3665,7 @@ msgstr "Debes pagar Pi, para desbloquear todas las apps en LatinChain."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
