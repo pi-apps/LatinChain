@@ -10,9 +10,9 @@ https://latin-chain.com/piapps-book
 
 I used Odoo to develop this Pi App:
 
-Mainnet: https://latin-chain.com
+Mainnet: https://latinchain.pinet.com
 
-Testnet: https://test.latin-chain.com
+Testnet: https://latinchaintest9869.pinet.com
 
 You maybe could use your Framework election.
 
