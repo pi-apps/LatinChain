@@ -357,6 +357,7 @@ function get_user() {
                 $(".show-checkers").show();
                 $(".show-domino").show();
                 $(".show-latincrush").show();
+                $(".show-gameslearning").show();
                 $(".show-odoolearning").show();
                 $(".show-languagelearning").show();
                 $(".show-webtorrent").show();

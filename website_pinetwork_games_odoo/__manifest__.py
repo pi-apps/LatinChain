@@ -94,6 +94,7 @@ https://www.youtube.com/watch?v=9KqcyAoCZzo
         'views/website_pinetwork_templates_checkers.xml',
         'views/website_pinetwork_templates_domino.xml',
         'views/website_pinetwork_templates_latincrush.xml',
+        'views/website_pinetwork_templates_gameslearning.xml',
         'views/website_pinetwork_templates_odoolearning.xml',
         'views/website_pinetwork_templates_languagelearning.xml',
         'views/website_pinetwork_templates_webtorrent.xml',
