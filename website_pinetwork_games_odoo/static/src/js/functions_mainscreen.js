@@ -610,7 +610,7 @@ async function showPiAds(Pi) {
         
         if(showAdResponse.result == "AD_CLOSED")
         {
-            /*if(pi_user_id != "" && pi_user_code != "")
+            if(pi_user_id != "" && pi_user_code != "")
             {
                 var data = {
                             'pi_user_id': pi_user_id,
@@ -623,11 +623,30 @@ async function showPiAds(Pi) {
                     data = JSON.parse(data);
                     if(data.result)
                     {
+                        pi_ad_new = data.pi_ad_new;
+                        if(data.pi_ad_new)
+                        {
+                            $("#button_reward_ad").show();
+                            $("#piad_not_available").hide();
+                            setTimeout(function ()
+                            {
+                                $("#button_reward_ad").html(btnvalue);
+                                $("#button_reward_ad").prop( "disabled", false );
+                            }, 5000);
+                        }else
+                        {
+                            $("#button_reward_ad").hide();
+                            $("#piad_not_available").show();
+                            setTimeout(function ()
+                            {
+                                $("#button_reward_ad").html(btnvalue);
+                            }, 5000);
+                        }
                     }
                 }).fail(function() {
                     
                 });
-            }*/
+            }
         }
     } catch (err) {
         //alert("Error: " + err);
@@ -1212,8 +1231,13 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
+                            /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                showRewardedPiAd();*/
+                            
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                showRewardedPiAd();
+                            {
+                                showPiAds(Pi);
+                            }
                         }
                     });
                 });

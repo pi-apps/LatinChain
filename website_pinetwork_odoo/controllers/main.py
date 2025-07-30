@@ -421,6 +421,38 @@ class PiNetworkBaseController(http.Controller):
         else:
             
             values = {'pi_ad_datetime': datetime.now()}
+            
+            apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+            
+            pi_ad_seconds = apps_list[0].pi_ad_seconds
+            pi_ad_max = apps_list[0].pi_ad_max
+            
+            """
+            if pi_users_list[0].unblocked:
+                pi_ad_seconds = pi_ad_seconds*8
+                pi_ad_max = (pi_ad_max+1)*8
+            """
+            
+            if not pi_users_list[0].pi_ad_datetime:
+                values.update({'pi_ad_datetime': datetime.now()})
+                if pi_users_list[0].pi_ad_counter+1 >= pi_ad_max:
+                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
+                    pi_ad_new = False
+                else:
+                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
+                    pi_ad_new = True
+            elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=pi_ad_seconds)) and \
+                pi_users_list[0].pi_ad_datetime <= datetime.now():
+                if pi_users_list[0].pi_ad_counter+1 >= pi_ad_max:
+                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
+                    pi_ad_new = False
+                else:
+                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
+                    pi_ad_new = True
+            else:
+                values.update({'pi_ad_datetime': datetime.now()})
+                values.update({'pi_ad_counter': 0})
+                pi_ad_new = True
         
         #Uncomment in case of you want to save wallet address
         pi_users_list[0].sudo().write(values)
