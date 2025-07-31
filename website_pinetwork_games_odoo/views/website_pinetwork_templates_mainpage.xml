@@ -1034,7 +1034,7 @@
                     <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game (Chess, Sudoku and Snake). Only if you are verified.</div>
                     <div id="modal_use_anytime" style="display:none;">You can use this app anytime, for testing purposes, until Pi OpenMainnet.</div>
                     <div id="modal_unlock_use_anytime" style="display:none;">You have to pay Pi, to unlock all the LatinChain apps.</div>
-                    <div id="modal_pi_ad_automatic_enabled" style="display:none;">Automatic Pi Ads are enabled. Pi Ads will be shown automatically every so often. It means you will gain Latin points.</div>
+                    <div id="modal_pi_ad_automatic_enabled" style="display:none;">Automatic Pi Ads are enabled. Pi Ads will be shown automatically every so often. It means you will earn Latin points.</div>
                     <div id="modal_pi_ad_automatic_disabled" style="display:none;">Automatic Pi Ads are disabled. Pi Ads won't be shown automatically.</div>
                     <div id="modal_latinchain_avatar_saved" style="display:none;">Avatar was saved.</div>
                     <div id="modal_login_latinchain_message" style="display:none;">Do you want to Login or Just Browse the app?.</div>
@@ -1333,7 +1333,7 @@
                                 <h5 translate="no"><strong><div style="display:inline;">#PiAds #EarnPoints &#128240;</div></strong></h5>
                             </div>
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px">
-                                <button id="button_reward_ad" name="button_reward_ad" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" disabled="true" style="border: 2px solid;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Rewarded Ads</div><div style="font-size:80%;">Gain Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%;">(<i class="fa-solid fa-plug-circle-bolt"></i>x2 points)</div><div style="font-size:80%; display: none">Testing feature</div></button>
+                                <button id="button_reward_ad" name="button_reward_ad" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" disabled="true" style="border: 2px solid;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Rewarded Ads</div><div style="font-size:80%;">Earn Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%;">(<i class="fa-solid fa-plug-circle-bolt"></i>x2 points)</div><div style="font-size:80%; display: none">Testing feature</div></button>
                                 <span id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
                                     Pi Rewarded Ads not available (<div id="pi_ad_max" style="display:inline;"></div> ads / <div id="pi_ad_hours" style="display:inline;"></div>h).
                                 </span>
@@ -1427,7 +1427,7 @@
                                 <strong class="user_status"></strong>
                             </div>
                             <div style="margin-top:5px">
-                                <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a>
+                                <a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a>
                             </div>
                             <div style="margin-top:5px; margin-bottom: 5px">
                                 <button id="rules_button_4" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
@@ -1914,7 +1914,7 @@
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a></div>
+                                                <div class="col-10"><a href="/pinetwork" class="col-10 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
@@ -2236,7 +2236,7 @@
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row">
-                                                <div class="col-12"><a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Gain Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a></div>
+                                                <div class="col-12"><a href="/pinetwork" class="col-8 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to LatinChain Platform <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:inline;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">

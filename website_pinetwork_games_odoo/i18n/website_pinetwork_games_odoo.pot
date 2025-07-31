@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-31 20:13+0000\n"
-"PO-Revision-Date: 2025-07-31 20:13+0000\n"
+"POT-Creation-Date: 2025-07-31 23:13+0000\n"
+"PO-Revision-Date: 2025-07-31 23:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -631,6 +631,13 @@ msgid "<br/>Video presentation:<br/><br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
+msgid ""
+"<i class=\"fa-solid fa-language\"/>\n"
+"                                    Text Recognition"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -686,6 +693,132 @@ msgid ""
 "                                                        <option value=\"Sudoku100x12\">Pay 100 Latin points, earn 12 Sudoku points</option>\n"
 "                                                        <option value=\"Snake100x10\">Pay 100 Latin points, earn 10 Snake points</option>\n"
 "                                                    </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
+msgid ""
+"<select id=\"language-select\" multiple=\"multiple\" size=\"10\" class=\"w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all duration-200\">\n"
+"                                  <option value=\"eng\" selected=\"selected\">English</option>\n"
+"                                  <option value=\"spa\" selected=\"selected\">Spanish</option>\n"
+"                                  <option value=\"afr\">Afrikaans</option>\n"
+"                                  <option value=\"amh\">Amharic</option>\n"
+"                                  <option value=\"ara\">Arabic</option>\n"
+"                                  <option value=\"asm\">Assamese</option>\n"
+"                                  <option value=\"aze\">Azerbaijani</option>\n"
+"                                  <option value=\"aze_cyrl\">Azerbaijani (Cyrillic)</option>\n"
+"                                  <option value=\"bel\">Belarusian</option>\n"
+"                                  <option value=\"ben\">Bengali</option>\n"
+"                                  <option value=\"bod\">Tibetan</option>\n"
+"                                  <option value=\"bos\">Bosnian</option>\n"
+"                                  <option value=\"bre\">Breton</option>\n"
+"                                  <option value=\"bul\">Bulgarian</option>\n"
+"                                  <option value=\"cat\">Catalan</option>\n"
+"                                  <option value=\"ceb\">Cebuano</option>\n"
+"                                  <option value=\"ces\">Czech</option>\n"
+"                                  <option value=\"chi_sim\">Chinese (Simplified)</option>\n"
+"                                  <option value=\"chi_sim_vert\">Chinese (Simplified Vertical)</option>\n"
+"                                  <option value=\"chi_tra\">Chinese (Traditional)</option>\n"
+"                                  <option value=\"chi_tra_vert\">Chinese (Traditional Vertical)</option>\n"
+"                                  <option value=\"chr\">Cherokee</option>\n"
+"                                  <option value=\"cos\">Corsican</option>\n"
+"                                  <option value=\"cym\">Welsh</option>\n"
+"                                  <option value=\"dan\">Danish</option>\n"
+"                                  <option value=\"deu\">German</option>\n"
+"                                  <option value=\"div\">Divehi</option>\n"
+"                                  <option value=\"dzo\">Dzongkha</option>\n"
+"                                  <option value=\"ell\">Greek</option>\n"
+"                                  <option value=\"enm\">English (Middle)</option>\n"
+"                                  <option value=\"epo\">Esperanto</option>\n"
+"                                  <option value=\"est\">Estonian</option>\n"
+"                                  <option value=\"eus\">Basque</option>\n"
+"                                  <option value=\"fao\">Faroese</option>\n"
+"                                  <option value=\"fas\">Persian</option>\n"
+"                                  <option value=\"fil\">Filipino</option>\n"
+"                                  <option value=\"fin\">Finnish</option>\n"
+"                                  <option value=\"fra\">French</option>\n"
+"                                  <option value=\"frk\">Frankish</option>\n"
+"                                  <option value=\"frm\">French (Middle)</option>\n"
+"                                  <option value=\"fry\">Frisian</option>\n"
+"                                  <option value=\"gla\">Scottish Gaelic</option>\n"
+"                                  <option value=\"gle\">Irish</option>\n"
+"                                  <option value=\"glg\">Galician</option>\n"
+"                                  <option value=\"grc\">Greek (Ancient)</option>\n"
+"                                  <option value=\"guj\">Gujarati</option>\n"
+"                                  <option value=\"hat\">Haitian Creole</option>\n"
+"                                  <option value=\"heb\">Hebrew</option>\n"
+"                                  <option value=\"hin\">Hindi</option>\n"
+"                                  <option value=\"hrv\">Croatian</option>\n"
+"                                  <option value=\"hun\">Hungarian</option>\n"
+"                                  <option value=\"hye\">Armenian</option>\n"
+"                                  <option value=\"iku\">Inuktitut</option>\n"
+"                                  <option value=\"ind\">Indonesian</option>\n"
+"                                  <option value=\"isl\">Icelandic</option>\n"
+"                                  <option value=\"ita\">Italian</option>\n"
+"                                  <option value=\"ita_old\">Italian (Old)</option>\n"
+"                                  <option value=\"jav\">Javanese</option>\n"
+"                                  <option value=\"jpn\">Japanese</option>\n"
+"                                  <option value=\"jpn_vert\">Japanese (Vertical)</option>\n"
+"                                  <option value=\"kan\">Kannada</option>\n"
+"                                  <option value=\"kat\">Georgian</option>\n"
+"                                  <option value=\"kat_old\">Georgian (Old)</option>\n"
+"                                  <option value=\"kaz\">Kazakh</option>\n"
+"                                  <option value=\"khm\">Khmer</option>\n"
+"                                  <option value=\"kir\">Kyrgyz</option>\n"
+"                                  <option value=\"kmr\">Kurmanji</option>\n"
+"                                  <option value=\"kor\">Korean</option>\n"
+"                                  <option value=\"kor_vert\">Korean (Vertical)</option>\n"
+"                                  <option value=\"lao\">Lao</option>\n"
+"                                  <option value=\"lat\">Latin</option>\n"
+"                                  <option value=\"lav\">Latvian</option>\n"
+"                                  <option value=\"lit\">Lithuanian</option>\n"
+"                                  <option value=\"ltz\">Luxembourgish</option>\n"
+"                                  <option value=\"mal\">Malayalam</option>\n"
+"                                  <option value=\"mar\">Marathi</option>\n"
+"                                  <option value=\"msa\">Malay</option>\n"
+"                                  <option value=\"mlt\">Maltese</option>\n"
+"                                  <option value=\"mon\">Mongolian</option>\n"
+"                                  <option value=\"mri\">Māori</option>\n"
+"                                  <option value=\"mya\">Burmese</option>\n"
+"                                  <option value=\"nep\">Nepali</option>\n"
+"                                  <option value=\"nld\">Dutch</option>\n"
+"                                  <option value=\"nor\">Norwegian</option>\n"
+"                                  <option value=\"osd\">Orientation and script detection</option>\n"
+"                                  <option value=\"pan\">Punjabi</option>\n"
+"                                  <option value=\"pol\">Polish</option>\n"
+"                                  <option value=\"por\">Portuguese</option>\n"
+"                                  <option value=\"pus\">Pashto</option>\n"
+"                                  <option value=\"que\">Quechua</option>\n"
+"                                  <option value=\"ron\">Romanian</option>\n"
+"                                  <option value=\"rus\">Russian</option>\n"
+"                                  <option value=\"san\">Sanskrit</option>\n"
+"                                  <option value=\"sin\">Sinhala</option>\n"
+"                                  <option value=\"slk\">Slovak</option>\n"
+"                                  <option value=\"slv\">Slovenian</option>\n"
+"                                  <option value=\"snd\">Sindhi</option>\n"
+"                                  <option value=\"spa_old\">Spanish (Old)</option>\n"
+"                                  <option value=\"sqi\">Albanian</option>\n"
+"                                  <option value=\"srp\">Serbian</option>\n"
+"                                  <option value=\"srp_latn\">Serbian (Latin)</option>\n"
+"                                  <option value=\"swa\">Swahili</option>\n"
+"                                  <option value=\"swe\">Swedish</option>\n"
+"                                  <option value=\"syr\">Syriac</option>\n"
+"                                  <option value=\"tam\">Tamil</option>\n"
+"                                  <option value=\"tat\">Tatar</option>\n"
+"                                  <option value=\"tel\">Telugu</option>\n"
+"                                  <option value=\"tha\">Thai</option>\n"
+"                                  <option value=\"tir\">Tigrinya</option>\n"
+"                                  <option value=\"ton\">Tongan</option>\n"
+"                                  <option value=\"tur\">Turkish</option>\n"
+"                                  <option value=\"uig\">Uighur</option>\n"
+"                                  <option value=\"ukr\">Ukrainian</option>\n"
+"                                  <option value=\"urd\">Urdu</option>\n"
+"                                  <option value=\"uzb\">Uzbek</option>\n"
+"                                  <option value=\"uzb_cyrl\">Uzbek (Cyrillic)</option>\n"
+"                                  <option value=\"vie\">Vietnamese</option>\n"
+"                                  <option value=\"yid\">Yiddish</option>\n"
+"                                  <option value=\"yor\">Yoruba</option>\n"
+"                                </select>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1220,7 +1353,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "Automatic Pi Ads are enabled. Pi Ads will be shown automatically every so "
-"often. It means you will gain Latin points."
+"often. It means you will earn Latin points."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1533,6 +1666,22 @@ msgid "Donators list (verified)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Earn Latin points ("
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"Earn Latin points, doing tasks highlighted in the interface, plus the points"
+" of each game (Chess, Snake and Sudoku)."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 msgid "Easy"
 msgstr ""
@@ -1617,22 +1766,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "GAMES LEARNING"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Gain Latin points ("
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"Gain Latin points, doing tasks highlighted in the interface, plus the points"
-" of each game (Chess, Snake and Sudoku)."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2885,6 +3018,11 @@ msgid "Search playlist..."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
+msgid "Select Languages to Recognize"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 msgid "Select audio file"
 msgstr ""
@@ -2897,6 +3035,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 msgid "Select your player to start."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
+msgid "Selected Language Codes:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
