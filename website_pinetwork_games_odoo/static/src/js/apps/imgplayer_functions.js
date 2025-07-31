@@ -63,8 +63,8 @@ async function recognizeText() {
         // Update the UI with the recognized text
         recognizedTextElement.textContent = text.trim() || "No text found.";
     } catch (error) {
-        console.error("Tesseract.js OCR failed:", error);
-        recognizedTextElement.textContent = "Error recognizing text.";
+        //console.error("Tesseract.js OCR failed:", error);
+        //recognizedTextElement.textContent = "Error recognizing text.";
     } finally {
         // Hide loading state and show the result
         ocrLoadingElement.classList.add('hidden');
@@ -109,9 +109,9 @@ function displayPhoto() {
         // Handle image loading errors
         photoDisplay.onerror = () => {
              // In case of an image loading error, we'll display a placeholder
-            photoDisplay.src = `https://placehold.co/600x400/CCCCCC/666666?text=Error+loading+image`;
-            photoTitle.textContent = "Error loading image.";
-            recognizedTextElement.textContent = "Text recognition skipped due to image loading error.";
+            photoDisplay.src = `https://placehold.co/600x400/CCCCCC/666666?text=Waiting+to+load+image`;
+            photoTitle.textContent = "Waiting to load image.";
+            recognizedTextElement.textContent = "Text recognition skipped.";
             recognizedTextElement.classList.remove('hidden');
             ocrLoadingElement.classList.add('hidden');
         };
