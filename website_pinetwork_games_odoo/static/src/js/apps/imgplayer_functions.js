@@ -63,8 +63,8 @@ async function recognizeText() {
         // Update the UI with the recognized text
         recognizedTextElement.textContent = text.trim() || "No text found.";
     } catch (error) {
-        //console.error("Tesseract.js OCR failed:", error);
-        //recognizedTextElement.textContent = "Error recognizing text.";
+        console.error("Tesseract.js OCR failed:", error);
+        recognizedTextElement.textContent = "Waiting for image.";
     } finally {
         // Hide loading state and show the result
         ocrLoadingElement.classList.add('hidden');
