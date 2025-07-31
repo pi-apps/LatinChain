@@ -22,6 +22,10 @@ const zoomModal = document.getElementById('zoom-modal');
 const zoomedImage = document.getElementById('zoomed-image');
 const zoomCloseButton = document.getElementById('zoom-close-button');
 
+const selectElement = document.getElementById('language-select');
+const outputDiv = document.getElementById('output');
+const codesParagraph = document.getElementById('language-codes');
+        
 /**
  * Initializes the Tesseract.js worker once.
  */
@@ -61,11 +65,8 @@ async function recognizeText() {
         // Make sure the Tesseract worker is initialized
         //await initializeTesseractWorker();
         
-        const selectElement = document.getElementById('language-select');
         const selectedOptions = Array.from(selectElement.selectedOptions);
         const languageCodes = selectedOptions.map(option => option.value);
-        const outputDiv = document.getElementById('output');
-        const codesParagraph = document.getElementById('language-codes');
         
         if (languageCodes.length > 0) {
             // Create a comma-separated string of language codes
@@ -108,6 +109,18 @@ async function recognizeText() {
     }
 }
 
+
+async function detectLanguages() {
+    // Create a comma-separated string of language codes
+    const selectedOptions = Array.from(selectElement.selectedOptions);
+    const languageCodes = selectedOptions.map(option => option.value);
+    
+    if (languageCodes.length > 0) {
+        const languageString = languageCodes.join('+');
+        codesParagraph.textContent = languageString;
+        outputDiv.classList.remove('hidden');
+    }
+}
 
 /**
  * Updates the state of navigation buttons (enabled/disabled).
@@ -254,6 +267,7 @@ prevBtn.addEventListener('click', prevPhoto);
 uploadInput.addEventListener('change', handleImageUpload);
 clearBtn.addEventListener('click', clearPhotos);
 textrecognitionBtn.addEventListener('click', recognizeText);
+selectElement.addEventListener('change', detectLanguages);
 
 // New: Assign click event to the main image to open zoom
 photoDisplay.addEventListener('click', openZoomModal);
@@ -271,3 +285,5 @@ zoomModal.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', displayPhoto);
 // Also initialize the Tesseract worker on page load
 //document.addEventListener('DOMContentLoaded', initializeTesseractWorker);
+
+document.addEventListener('DOMContentLoaded', detectLanguages);
