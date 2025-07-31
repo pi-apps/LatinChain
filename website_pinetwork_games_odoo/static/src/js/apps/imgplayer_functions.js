@@ -35,6 +35,9 @@ async function initializeTesseractWorker() {
         // Use a worker path to ensure compatibility and correct loading
         workerPath: 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/worker.min.js'
     });
+    
+    await ocrWorker.loadLanguage('afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+deu_frak+div+dzo+ell+eng+enm+epo+equ+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+kur+lao+lat+lav+lit+ltz+mal+mar+msa+msa_old+mlb+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slk_frak+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tgl+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor');
+    await ocrWorker.initialize('afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+deu_frak+div+dzo+ell+eng+enm+epo+equ+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+kur+lao+lat+lav+lit+ltz+mal+mar+msa+msa_old+mlb+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slk_frak+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tgl+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor');
 }
 
 /**
