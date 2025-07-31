@@ -10,6 +10,7 @@ const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const uploadInput = document.getElementById('upload-input');
 const clearBtn = document.getElementById('clear-btn');
+const textrecognitionBtn = document.getElementById('textrecognition-btn');
 const noPhotoMessage = document.getElementById('no-photo-message');
 
 // References to text recognition elements
@@ -24,10 +25,13 @@ const zoomCloseButton = document.getElementById('zoom-close-button');
 /**
  * Initializes the Tesseract.js worker once.
  */
-async function initializeTesseractWorker() {
+/*async function initializeTesseractWorker() {
     if (ocrWorker) return; // If worker already exists, do nothing
 
-    ocrWorker = await Tesseract.createWorker('eng', 1, {
+    ocrWorker = await Tesseract.createWorker('afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+div+dzo+ell+eng+enm+epo+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+lao+lat+lav+lit+ltz+mal+mar+msa+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor',
+        //'eng+spa+afr+kor+chi_sim+jpn+fra+ita+chi_tra+vie+ara', 
+        1, 
+        {
         logger: m => {
             // Optional: Log Tesseract.js progress
             // console.log(m);
@@ -35,10 +39,10 @@ async function initializeTesseractWorker() {
         // Use a worker path to ensure compatibility and correct loading
         workerPath: 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/worker.min.js'
     });
-    
-    await ocrWorker.loadLanguage('afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+deu_frak+div+dzo+ell+eng+enm+epo+equ+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+kur+lao+lat+lav+lit+ltz+mal+mar+msa+msa_old+mlb+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slk_frak+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tgl+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor');
-    await ocrWorker.initialize('afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+deu_frak+div+dzo+ell+eng+enm+epo+equ+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+kur+lao+lat+lav+lit+ltz+mal+mar+msa+msa_old+mlb+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slk_frak+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tgl+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor');
-}
+        
+    //await ocrWorker.loadLanguage('afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+div+dzo+ell+eng+enm+epo+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+lao+lat+lav+lit+ltz+mal+mar+msa+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor');
+    //await ocrWorker.initialize('afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+div+dzo+ell+eng+enm+epo+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+lao+lat+lav+lit+ltz+mal+mar+msa+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor');
+}*/
 
 /**
  * Recognizes text from the current image and updates the UI.
@@ -55,13 +59,45 @@ async function recognizeText() {
 
     try {
         // Make sure the Tesseract worker is initialized
-        await initializeTesseractWorker();
-
-        // Recognize text from the current photo's URL
-        const { data: { text } } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
+        //await initializeTesseractWorker();
         
-        // Update the UI with the recognized text
-        recognizedTextElement.textContent = text.trim() || "No text found.";
+        const selectElement = document.getElementById('language-select');
+        const selectedOptions = Array.from(selectElement.selectedOptions);
+        const languageCodes = selectedOptions.map(option => option.value);
+        const outputDiv = document.getElementById('output');
+        const codesParagraph = document.getElementById('language-codes');
+        
+        if (languageCodes.length > 0) {
+            // Create a comma-separated string of language codes
+            const languageString = languageCodes.join('+');
+            codesParagraph.textContent = languageString;
+            outputDiv.classList.remove('hidden');
+
+            // You would typically use this string to create your worker:
+            // await Tesseract.createWorker({ lang: languageString });
+            // alert(`Worker would be created with languages: ${languageString}`);
+        
+            const ocrWorker = await Tesseract.createWorker(languageString,
+                //'afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+div+dzo+ell+eng+enm+epo+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+lao+lat+lav+lit+ltz+mal+mar+msa+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor',
+                //'eng+spa+afr+kor+chi_sim+jpn+fra+ita+chi_tra+vie+ara', 
+                1, 
+                {
+                logger: m => {
+                    // Optional: Log Tesseract.js progress
+                    // console.log(m);
+                },
+                // Use a worker path to ensure compatibility and correct loading
+                workerPath: 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/worker.min.js'
+            });
+
+            // Recognize text from the current photo's URL
+            const { data: { text } } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
+            
+            // Update the UI with the recognized text
+            recognizedTextElement.textContent = text.trim() || "No text found.";
+            
+            await ocrWorker.terminate();
+        }
     } catch (error) {
         console.error("Tesseract.js OCR failed:", error);
         recognizedTextElement.textContent = "Waiting for image.";
@@ -217,6 +253,7 @@ nextBtn.addEventListener('click', nextPhoto);
 prevBtn.addEventListener('click', prevPhoto);
 uploadInput.addEventListener('change', handleImageUpload);
 clearBtn.addEventListener('click', clearPhotos);
+textrecognitionBtn.addEventListener('click', recognizeText);
 
 // New: Assign click event to the main image to open zoom
 photoDisplay.addEventListener('click', openZoomModal);
@@ -233,4 +270,4 @@ zoomModal.addEventListener('click', (e) => {
 // Display initial state on page load (no photos)
 document.addEventListener('DOMContentLoaded', displayPhoto);
 // Also initialize the Tesseract worker on page load
-document.addEventListener('DOMContentLoaded', initializeTesseractWorker);
+//document.addEventListener('DOMContentLoaded', initializeTesseractWorker);
