@@ -623,24 +623,25 @@ async function showPiAds(Pi) {
                     data = JSON.parse(data);
                     if(data.result)
                     {
+                        //var btnvalue = $("#button_reward_ad").html();
                         pi_ad_new = data.pi_ad_new;
                         if(data.pi_ad_new)
                         {
-                            $("#button_reward_ad").show();
+                            //$("#button_reward_ad").show();
                             $("#piad_not_available").hide();
-                            setTimeout(function ()
+                            /*setTimeout(function ()
                             {
-                                $("#button_reward_ad").html(btnvalue);
-                                $("#button_reward_ad").prop( "disabled", false );
-                            }, 5000);
+                                //$("#button_reward_ad").html(btnvalue);
+                                //$("#button_reward_ad").prop( "disabled", false );
+                            }, 5000);*/
                         }else
                         {
-                            $("#button_reward_ad").hide();
+                            //$("#button_reward_ad").hide();
                             $("#piad_not_available").show();
-                            setTimeout(function ()
+                            /*setTimeout(function ()
                             {
                                 $("#button_reward_ad").html(btnvalue);
-                            }, 5000);
+                            }, 5000);*/
                         }
                     }
                 }).fail(function() {
