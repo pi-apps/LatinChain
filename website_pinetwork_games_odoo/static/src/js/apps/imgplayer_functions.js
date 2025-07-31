@@ -1,6 +1,7 @@
 // Array of photo objects (initially empty)
 let photos = [];
 let currentPhotoIndex = 0; // Current photo index
+let ocrWorker = null; // Tesseract.js worker instance
 
 // Get DOM element references
 const photoDisplay = document.getElementById('photo-display');
@@ -11,10 +12,63 @@ const uploadInput = document.getElementById('upload-input');
 const clearBtn = document.getElementById('clear-btn');
 const noPhotoMessage = document.getElementById('no-photo-message');
 
+// References to text recognition elements
+const recognizedTextElement = document.getElementById('recognized-text');
+const ocrLoadingElement = document.getElementById('ocr-loading');
+
 // References to zoom modal elements
 const zoomModal = document.getElementById('zoom-modal');
 const zoomedImage = document.getElementById('zoomed-image');
 const zoomCloseButton = document.getElementById('zoom-close-button');
+
+/**
+ * Initializes the Tesseract.js worker once.
+ */
+async function initializeTesseractWorker() {
+    if (ocrWorker) return; // If worker already exists, do nothing
+
+    ocrWorker = await Tesseract.createWorker('eng', 1, {
+        logger: m => {
+            // Optional: Log Tesseract.js progress
+            // console.log(m);
+        },
+        // Use a worker path to ensure compatibility and correct loading
+        workerPath: 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/worker.min.js'
+    });
+}
+
+/**
+ * Recognizes text from the current image and updates the UI.
+ */
+async function recognizeText() {
+    if (photos.length === 0) {
+        recognizedTextElement.textContent = '';
+        return;
+    }
+
+    // Show loading state
+    recognizedTextElement.classList.add('hidden');
+    ocrLoadingElement.classList.remove('hidden');
+
+    try {
+        // Make sure the Tesseract worker is initialized
+        await initializeTesseractWorker();
+
+        // Recognize text from the current photo's URL
+        const { data: { text } } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
+        
+        // Update the UI with the recognized text
+        recognizedTextElement.textContent = text.trim() || "No text found.";
+    } catch (error) {
+        console.error("Tesseract.js OCR failed:", error);
+        recognizedTextElement.textContent = "Error recognizing text.";
+    } finally {
+        // Hide loading state and show the result
+        ocrLoadingElement.classList.add('hidden');
+        recognizedTextElement.classList.remove('hidden');
+    }
+}
+
 
 /**
  * Updates the state of navigation buttons (enabled/disabled).
@@ -37,16 +91,26 @@ function displayPhoto() {
         photoDisplay.classList.add('hidden'); // Hide image
         noPhotoMessage.classList.remove('hidden'); // Show message
         photoTitle.textContent = "Upload your photos to get started.";
+        recognizedTextElement.textContent = "";
+        recognizedTextElement.classList.remove('hidden');
+        ocrLoadingElement.classList.add('hidden');
     } else {
         photoDisplay.classList.remove('hidden'); // Show image
         noPhotoMessage.classList.add('hidden'); // Hide message
         photoDisplay.src = photos[currentPhotoIndex].url;
         photoTitle.textContent = photos[currentPhotoIndex].title;
 
+        // Immediately start text recognition for the new photo
+        recognizeText();
+
         // Handle image loading errors
         photoDisplay.onerror = () => {
-            /*photoDisplay.src = "https://placehold.co/600x400/CCCCCC/666666?text=Error+loading+image";
-            photoTitle.textContent = "Error loading image.";*/
+             // In case of an image loading error, we'll display a placeholder
+            photoDisplay.src = `https://placehold.co/600x400/CCCCCC/666666?text=Error+loading+image`;
+            photoTitle.textContent = "Error loading image.";
+            recognizedTextElement.textContent = "Text recognition skipped due to image loading error.";
+            recognizedTextElement.classList.remove('hidden');
+            ocrLoadingElement.classList.add('hidden');
         };
     }
     updateNavigationButtons(); // Update button state
@@ -165,3 +229,5 @@ zoomModal.addEventListener('click', (e) => {
 
 // Display initial state on page load (no photos)
 document.addEventListener('DOMContentLoaded', displayPhoto);
+// Also initialize the Tesseract worker on page load
+document.addEventListener('DOMContentLoaded', initializeTesseractWorker);

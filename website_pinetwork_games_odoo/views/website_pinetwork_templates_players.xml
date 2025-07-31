@@ -826,6 +826,8 @@
                         <title>Photo Viewer</title>
                         <!-- Include Tailwind CSS from CDN -->
                         <script src="https://cdn.tailwindcss.com"></script>
+                        <!-- Include Tesseract.js from CDN for text recognition -->
+                        <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
                         <style>
                             /* Custom styles for font and body */
                             body {
@@ -998,12 +1000,12 @@
                                         // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
                                         const scopes = ['username', 'payments', 'wallet_address'];
                                         function onIncompletePaymentFound(payment) {
-                                            
+                                         
                                         }; // Read more about this in the SDK reference
-                                        
+                                     
                                         Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                                             pi_user_id = auth.user.uid;
-                                            
+                                         
                                             document.getElementById('blockingOverlay').style.display = 'none';
                                         }).catch(function(error) {
                                             //Pi.openShareDialog("Error", error);
@@ -1017,23 +1019,23 @@
                                         // Not able to fetch the user
                                     }
                                 }
-                                
+                             
                                 (async () => {
                                     await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
                                     auth();
-                                    
+                                 
                                     setTimeout(function ()
                                     {
                                         if(pi_user_id == "")
                                         {
                                             auth();
-                                            
+                                         
                                             setTimeout(function ()
                                             {
                                                 if(pi_user_id == "")
                                                 {
                                                     //alert($("#pi_prowser_message").text());
-                                                    
+                                                 
                                                     if(window.location.hostname == "localhost")
                                                     {
                                                         $("a.anchor-click").attr('href', window.location.origin);
@@ -1046,7 +1048,7 @@
                                                     {
                                                         $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
                                                     }
-                                                    
+                                                 
                                                     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                                                     document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
                                                     document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1108,6 +1110,14 @@
 
                             <!-- Photo Title/Description -->
                             <p id="photo-title" style="word-break: break-word;" class="text-lg text-gray-700 font-semibold text-center mt-2"></p>
+                            
+                            <!-- Recognized Text Display -->
+                            <div id="text-recognition-container" class="w-full mt-4 p-4 bg-gray-50 rounded-lg shadow-inner">
+                                <p id="recognized-text" class="text-sm text-gray-600 text-center italic"></p>
+                                <div id="ocr-loading" class="hidden text-center text-sm text-gray-500">
+                                    <span class="animate-pulse">Recognizing text...</span>
+                                </div>
+                            </div>
 
                             <!-- Action Buttons: Upload and Clear -->
                             <div class="flex flex-col flex-row justify-center gap-4 w-full mt-4">
@@ -1131,7 +1141,7 @@
                             </button>
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/imgplayer_functions.js?v=1.113"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/imgplayer_functions.js?v=1.114"></script>
                     </body>
                 </html>
             </t>
