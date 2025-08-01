@@ -598,8 +598,12 @@ function get_user() {
 }
 
 async function showPiAds(Pi) {
+    
+    var  = $("#button_reward_ad").html();
+    $("#button_reward_ad").prop( "disabled", true );
+    $("#button_reward_ad").html("Showing Pi interstitial ad...");
+    
     try {
-        $("#button_reward_ad").prop( "disabled", true );
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
         
@@ -620,6 +624,7 @@ async function showPiAds(Pi) {
                             'csrf_token': odoo.csrf_token,
                         };
                 //$.ajaxSetup({async: false});
+                
                 return $.post( "/set-pi-ad-datetime", data).done(function(data) {
                     data = JSON.parse(data);
                     if(data.result)
@@ -632,33 +637,38 @@ async function showPiAds(Pi) {
                             $("#piad_not_available").hide();
                             setTimeout(function ()
                             {
-                                //$("#button_reward_ad").html(btnvalue);
+                                $("#button_reward_ad").html(btnvalue);
                                 $("#button_reward_ad").prop( "disabled", false );
                             }, 5000);
                         }else
                         {
                             $("#button_reward_ad").hide();
                             $("#piad_not_available").show();
-                            /*setTimeout(function ()
+                            setTimeout(function ()
                             {
-                                //$("#button_reward_ad").html(btnvalue);
-                            }, 5000);*/
+                                $("#button_reward_ad").html(btnvalue);
+                            }, 5000);
                         }
                     }else
                     {
+                        $("#button_reward_ad").html(btnvalue);
                         $("#button_reward_ad").prop( "disabled", false );
                     }
                 }).fail(function() {
+                    $("#button_reward_ad").html(btnvalue);
                     $("#button_reward_ad").prop( "disabled", false );
                 });
             }else
             {
+                $("#button_reward_ad").html(btnvalue);
                 $("#button_reward_ad").prop( "disabled", false );
             }
         }else{
+            $("#button_reward_ad").html(btnvalue);
             $("#button_reward_ad").prop( "disabled", false );
         }
     } catch (err) {
+        $("#button_reward_ad").html(btnvalue);
         $("#button_reward_ad").prop( "disabled", false );
         //alert("Error: " + err);
         // Not able to fetch the user
