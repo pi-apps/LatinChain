@@ -599,7 +599,7 @@ function get_user() {
 
 async function showPiAds(Pi) {
     
-    var  = $("#button_reward_ad").html();
+    var btnvalue = $("#button_reward_ad").html();
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi interstitial ad...");
     
