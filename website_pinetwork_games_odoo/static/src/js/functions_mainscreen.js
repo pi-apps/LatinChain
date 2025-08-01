@@ -599,6 +599,7 @@ function get_user() {
 
 async function showPiAds(Pi) {
     try {
+        $("#button_reward_ad").prop( "disabled", true );
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
         
@@ -627,29 +628,38 @@ async function showPiAds(Pi) {
                         pi_ad_new = data.pi_ad_new;
                         if(data.pi_ad_new)
                         {
-                            //$("#button_reward_ad").show();
+                            $("#button_reward_ad").show();
                             $("#piad_not_available").hide();
-                            /*setTimeout(function ()
+                            setTimeout(function ()
                             {
                                 //$("#button_reward_ad").html(btnvalue);
-                                //$("#button_reward_ad").prop( "disabled", false );
-                            }, 5000);*/
+                                $("#button_reward_ad").prop( "disabled", false );
+                            }, 5000);
                         }else
                         {
-                            //$("#button_reward_ad").hide();
+                            $("#button_reward_ad").hide();
                             $("#piad_not_available").show();
                             /*setTimeout(function ()
                             {
-                                $("#button_reward_ad").html(btnvalue);
+                                //$("#button_reward_ad").html(btnvalue);
                             }, 5000);*/
                         }
+                    }else
+                    {
+                        $("#button_reward_ad").prop( "disabled", false );
                     }
                 }).fail(function() {
-                    
+                    $("#button_reward_ad").prop( "disabled", false );
                 });
+            }else
+            {
+                $("#button_reward_ad").prop( "disabled", false );
             }
+        }else{
+            $("#button_reward_ad").prop( "disabled", false );
         }
     } catch (err) {
+        $("#button_reward_ad").prop( "disabled", false );
         //alert("Error: " + err);
         // Not able to fetch the user
     }
