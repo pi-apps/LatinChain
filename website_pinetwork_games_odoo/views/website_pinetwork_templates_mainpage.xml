@@ -31,6 +31,12 @@
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
                 </div>
             </xpath>
+            <xpath expr="//head//script[last()]" position="after">
+                <div id="common-js-div">
+                    <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.200"></script>
+                </div>
+            </xpath>
+            
            <xpath expr="//body" position="before">
                <span id="website_translation_latin_chain" name="website_translation_latin_chain">
                     <t t-if="hide_google_translate">
@@ -956,7 +962,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
-                    <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>
+                    <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.334"></script>
                     
