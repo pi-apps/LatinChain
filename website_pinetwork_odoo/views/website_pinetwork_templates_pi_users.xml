@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+        <template id="new_header_common_latinchain" inherit_id="web.layout">
+            <xpath expr="//head//script[last()]" position="after">
+                <div id="common-js-div">
+                    <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.200"></script>
+                </div>
+            </xpath>
+        </template>
+
         <template id="general_ranking" name="General Ranking View">
             <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
