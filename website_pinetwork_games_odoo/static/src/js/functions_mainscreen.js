@@ -149,7 +149,7 @@ function set_points_exchange(value_client) {
                             x2_game = "";
                         }
                         
-                        $(".modal-body").html($("#modal_exchange_message_1").text() + latin_points + " Latin points" + $("#modal_exchange_message_2").text() + data.points + " " + app_client_message + " " + x2_game);
+                        $(".modal-body").html($("#modal_exchange_message_1").text() + latin_points + " Latin points" + $("#modal_exchange_message_2").text() + new Intl.NumberFormat('en-US').format(data.points) + " " + app_client_message + " " + x2_game);
                         $("#open_modal").click();
                         
                         //alert($("#modal_exchange_message_1").text() + latin_points + " Latin points" + $("#modal_exchange_message_2").text() + data.points + " " + app_client_message + " " + x2_game);
@@ -206,8 +206,14 @@ function get_user_rewarded() {
                 {
                     unblocked = data.unblocked;
                     
-                    $("#user_points").html(data.points);
-                    $("#user_points_per_game").html('<div>Latin points: ' + data.points_latin + '</div>' +
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    {
+                        $(".total_points_latin").html(new Intl.NumberFormat('en-US').format(data.points_latin));
+                        $(".total-points-latin-div").show();
+                    }
+                    
+                    $("#user_points").html(new Intl.NumberFormat('en-US').format(data.points));
+                    $("#user_points_per_game").html('<div>Latin points: ' + new Intl.NumberFormat('en-US').format(data.points_latin) + '</div>' +
                                                   '<br/><table class="table text-white table-hover table-dark" style="word-break: break-word;" translate="no">' +
                                                   '<thead>' +
                                                     '<tr>' +
@@ -218,9 +224,9 @@ function get_user_rewarded() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess + '</td>' +
-                                                      '<td>' + data.points_snake + '</td>' +
-                                                      '<td>' + data.points_sudoku + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -234,9 +240,9 @@ function get_user_rewarded() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess_last + '</td>' +
-                                                      '<td>' + data.points_snake_last + '</td>' +
-                                                      '<td>' + data.points_sudoku_last + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess_last) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake_last) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku_last) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -250,17 +256,23 @@ function get_user_rewarded() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess_wins + '</td>' +
-                                                      '<td>' + data.points_snake_wins + '</td>' +
-                                                      '<td>' + data.points_sudoku_wins + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess_wins) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake_wins) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku_wins) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
                     $("#user_points_datetime").html(data.points_datetime);
                 }else{
                 
-                    $("#user_points").html(data.points);
-                    $("#user_points_per_game").html('<div>Latin points: ' + data.points_latin + '</div>' +
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    {
+                        $(".total_points_latin").html(new Intl.NumberFormat('en-US').format(data.points_latin));
+                        $(".total-points-latin-div").show();
+                    }
+                    
+                    $("#user_points").html(new Intl.NumberFormat('en-US').format(data.points));
+                    $("#user_points_per_game").html('<div>Latin points: ' + new Intl.NumberFormat('en-US').format(data.points_latin) + '</div>' +
                                                   '<br/><table class="table text-white table-hover table-dark" style="word-break: break-word;" translate="no">' +
                                                   '<thead>' +
                                                     '<tr>' +
@@ -271,9 +283,9 @@ function get_user_rewarded() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess + '</td>' +
-                                                      '<td>' + data.points_snake + '</td>' +
-                                                      '<td>' + data.points_sudoku + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -287,9 +299,9 @@ function get_user_rewarded() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess_last + '</td>' +
-                                                      '<td>' + data.points_snake_last + '</td>' +
-                                                      '<td>' + data.points_sudoku_last + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess_last) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake_last) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku_last) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -303,9 +315,9 @@ function get_user_rewarded() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess_wins + '</td>' +
-                                                      '<td>' + data.points_snake_wins + '</td>' +
-                                                      '<td>' + data.points_sudoku_wins + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess_wins) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake_wins) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku_wins) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -421,6 +433,12 @@ function get_user() {
                         $(".isverified").show();
                     }*/
                     
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    {
+                        $(".total_points_latin").html(new Intl.NumberFormat('en-US').format(data.points_latin));
+                        $(".total-points-latin-div").show();
+                    }
+                    
                     $(".getverified").hide();
                     $(".isverified").show();
                     $(".isverified-username").html(data.pi_user_code);
@@ -445,8 +463,8 @@ function get_user() {
                     $(".user_status").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
                     $(".user_status_account").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
                     $( "<br/>" ).insertAfter( ".user_status_account" );
-                    $("#user_points").html(data.points);
-                    $("#user_points_per_game").html('<div>Latin points: ' + data.points_latin + '</div>' +
+                    $("#user_points").html(new Intl.NumberFormat('en-US').format(data.points));
+                    $("#user_points_per_game").html('<div>Latin points: ' + new Intl.NumberFormat('en-US').format(data.points_latin) + '</div>' +
                                                   '<br/><table class="table text-white table-hover table-dark" style="word-break: break-word;" translate="no">' +
                                                   '<thead>' +
                                                     '<tr>' +
@@ -457,9 +475,9 @@ function get_user() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess + '</td>' +
-                                                      '<td>' + data.points_snake + '</td>' +
-                                                      '<td>' + data.points_sudoku + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -473,9 +491,9 @@ function get_user() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess_last + '</td>' +
-                                                      '<td>' + data.points_snake_last + '</td>' +
-                                                      '<td>' + data.points_sudoku_last + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess_last) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake_last) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku_last) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -489,9 +507,9 @@ function get_user() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess_wins + '</td>' +
-                                                      '<td>' + data.points_snake_wins + '</td>' +
-                                                      '<td>' + data.points_sudoku_wins + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess_wins) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake_wins) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku_wins) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -520,13 +538,19 @@ function get_user() {
                         $(".isverified-username").hide();
                     }
                     
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    {
+                        $(".total_points_latin").html(new Intl.NumberFormat('en-US').format(data.points_latin));
+                        $(".total-points-latin-div").show();
+                    }
+                    
                     $("#user_logged").html(data.pi_user_code);
                     $(".div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                     $(".user_status").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
                     $(".user_status_account").html($("#not_verified_1_message").text() + data.amount + " Pi. " + $("#not_verified_2_message").text());
                     $( "<br/>" ).insertAfter( ".user_status_account" );
-                    $("#user_points").html(data.points);
-                    $("#user_points_per_game").html('<div>Latin points: ' + data.points_latin + '</div>' +
+                    $("#user_points").html(new Intl.NumberFormat('en-US').format(data.points));
+                    $("#user_points_per_game").html('<div>Latin points: ' + new Intl.NumberFormat('en-US').format(data.points_latin) + '</div>' +
                                                   '<br/><table class="table text-white table-hover table-dark" style="word-break: break-word;" translate="no">' +
                                                   '<thead>' +
                                                     '<tr>' +
@@ -537,9 +561,9 @@ function get_user() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess + '</td>' +
-                                                      '<td>' + data.points_snake + '</td>' +
-                                                      '<td>' + data.points_sudoku + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -553,9 +577,9 @@ function get_user() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess_last + '</td>' +
-                                                      '<td>' + data.points_snake_last + '</td>' +
-                                                      '<td>' + data.points_sudoku_last + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess_last) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake_last) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku_last) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -569,9 +593,9 @@ function get_user() {
                                                   '</thead>'+
                                                   '<tbody>'+
                                                     '<tr>' +
-                                                      '<td>' + data.points_chess_wins + '</td>' +
-                                                      '<td>' + data.points_snake_wins + '</td>' +
-                                                      '<td>' + data.points_sudoku_wins + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_chess_wins) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_snake_wins) + '</td>' +
+                                                      '<td>' + new Intl.NumberFormat('en-US').format(data.points_sudoku_wins) + '</td>' +
                                                     '</tr>' +
                                                   '</tbody>' +
                                                 '</table>');
@@ -1177,9 +1201,9 @@ $( document ).ready(function() {
                                                     if(data.result && data.points_latin > 0)
                                                     {
                                                         $("#button_reward_ad").prop( "disabled", true );
-                                                        $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
+                                                        $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                                                         var gemini_image = getGeminiImage();
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_reward_message").text() + data.points_latin + " Latin points.");
+                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                                                         
                                                         if(data.x2_game)
                                                             $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
