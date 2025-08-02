@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-31 23:13+0000\n"
-"PO-Revision-Date: 2025-07-31 23:13+0000\n"
+"POT-Creation-Date: 2025-08-02 00:37+0000\n"
+"PO-Revision-Date: 2025-08-02 00:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -50,12 +50,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "(1 Pi Ad /"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-msgid "(<i class=\"fa-solid fa-plug-circle-bolt\"/>x2 points)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -642,6 +636,14 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "<i class=\"fa-solid fa-plug-circle-bolt\"/>x2"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid ""
+"<i class=\"fa-solid fa-plug-circle-bolt\"/>x2 points <i class=\"fa-solid fa-"
+"arrow-right\"/> (Chess, Sudoku, Snake)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1346,14 +1348,16 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Automatic Pi Ads are disabled. Pi Ads won't be shown automatically."
+msgid ""
+"Automatic Pi Interstitial Ads are disabled. Pi Interstitial Ads won't be "
+"shown automatically."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
-"Automatic Pi Ads are enabled. Pi Ads will be shown automatically every so "
-"often. It means you will earn Latin points."
+"Automatic Pi Interstitial Ads are enabled. Pi Interstitial Ads will be shown"
+" automatically every so often."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

@@ -940,11 +940,11 @@ $( document ).ready(function() {
                 {
                     if(data.pi_ad_automatic)
                     {
-                        $(".modal-body").html($("#modal_pi_ad_automatic_enabled").text());
+                        $(".modal-body").html("<i class='fa-solid fa-square-check'></i> " + $("#modal_pi_ad_automatic_enabled").text());
                         $("#open_modal").click();
                     }else
                     {
-                        $(".modal-body").html($("#modal_pi_ad_automatic_disabled").text());
+                        $(".modal-body").html("<i class='fa-solid fa-square-xmark'></i> " + $("#modal_pi_ad_automatic_disabled").text());
                         $("#open_modal").click();
                     }
                 }
