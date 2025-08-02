@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-02 00:38+0000\n"
-"PO-Revision-Date: 2025-08-02 00:38+0000\n"
+"POT-Creation-Date: 2025-08-02 09:45+0000\n"
+"PO-Revision-Date: 2025-08-02 09:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -201,7 +201,7 @@ msgstr "1.- Chess tiene 20 niveles."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "1.- Each 10 foods achieved in Score, you will gain the Score/10."
+msgid "1.- Each 10 foods achieved in Score, you will earn the Score/10."
 msgstr "1.- Cada 10 comidas conseguidas en Score, vas a ganar el Score/10."
 
 #. module: website_pinetwork_games_odoo
@@ -294,9 +294,9 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"2.- It means if you achieved 10 foods in Score, you will gain 1 point. If "
-"you achieved 20 foods in Score, you will gain 2 points. If you achieved 30 "
-"foods in Score, you will gain 3 points. And so."
+"2.- It means if you achieved 10 foods in Score, you will earn 1 point. If "
+"you achieved 20 foods in Score, you will earn 2 points. If you achieved 30 "
+"foods in Score, you will earn 3 points. And so."
 msgstr ""
 "2.- Esto significa, si consigues 10 comidas en Score, vas a ganar 1 punto. "
 "Si consigues 20 comidas en Score, vas a ganar 2 puntos. Si consigues 30 "
@@ -304,7 +304,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "2.- Winning in level 1, you will gain 3 points."
+msgid "2.- Winning in level 1, you will earn 3 points."
 msgstr "2.- Ganando en nivel 1, vas a ganar 3 puntos."
 
 #. module: website_pinetwork_games_odoo
@@ -366,8 +366,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "3.- The number of the level is the same amount of points. It means, winning "
-"in level 1, you will gain 1 point. Winning in level 2, you will gain 2 "
-"points. Winning in level 20, you will gain 20 points. And so."
+"in level 1, you will earn 1 point. Winning in level 2, you will earn 2 "
+"points. Winning in level 20, you will earn 20 points. And so."
 msgstr ""
 "3.- El número del nivel es el mismo monto de puntos. Esto significa, que "
 "ganando en nivel 1, vas a ganar 1 punto. Ganando en nivel 2, vas a ganar 2 "
@@ -386,13 +386,13 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "3.- Winning in level 2, you will gain 6 points."
+msgid "3.- Winning in level 2, you will earn 6 points."
 msgstr "3.- Ganando en nivel 2, vas a ganar 6 puntos."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"3.- You could gain prizes if you are one of the leaders. Read the Rules "
+"3.- You could earn prizes if you are one of the leaders. Read the Rules "
 "section for more info."
 msgstr ""
 "3.- Podrías ganar premios si eres uno de los líderes. Lee la sección Reglas "
@@ -441,7 +441,7 @@ msgstr "4.- Esta lista específica de usuarios es meramente informativa."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "4.- Winning in level 3, you will gain 9 points."
+msgid "4.- Winning in level 3, you will earn 9 points."
 msgstr "4.- Ganando en nivel 3, vas a ganar 9 puntos."
 
 #. module: website_pinetwork_games_odoo
@@ -474,7 +474,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"5.- If you are a winner on OpenMainnet, you will gain according to the "
+"5.- If you are a winner on OpenMainnet, you will earn according to the "
 "income of LatinChain Platform, and not less than the minimum payment to "
 "unlock the games. Current minimum payment is at"
 msgstr ""
@@ -485,7 +485,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"5.- If you are in this specific list of users and want to gain prizes, you "
+"5.- If you are in this specific list of users and want to earn prizes, you "
 "have to verify your user in LatinChain Platform, to appear in Leaders Board "
 "and Winners Board."
 msgstr ""
@@ -495,7 +495,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "5.- Winning in level 4, you will gain 12 points."
+msgid "5.- Winning in level 4, you will earn 12 points."
 msgstr "5.- Ganando en nivel 4, vas a ganar 12 puntos."
 
 #. module: website_pinetwork_games_odoo
@@ -1495,8 +1495,8 @@ msgid ""
 "Automatic Pi Interstitial Ads are disabled. Pi Interstitial Ads won't be "
 "shown automatically."
 msgstr ""
-"Pi Interstitial Ads automáticas están deshabilitadas. Pi Interstitial Ads no van "
-"a ser mostradas automáticamente."
+"Pi Interstitial Ads automáticas están deshabilitadas. Pi Interstitial Ads no"
+" van a ser mostradas automáticamente."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1504,8 +1504,8 @@ msgid ""
 "Automatic Pi Interstitial Ads are enabled. Pi Interstitial Ads will be shown"
 " automatically every so often."
 msgstr ""
-"Pi Interstitial Ads automáticas están habilitadas. Pi Interstitial Ads van a ser mostradas"
-" automáticamente con cierta frecuencia."
+"Pi Interstitial Ads automáticas están habilitadas. Pi Interstitial Ads van a"
+" ser mostradas automáticamente con cierta frecuencia."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1835,6 +1835,11 @@ msgstr ""
 "puntos de cada juego (Chess, Snake y Sudoku)."
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Earn points"
+msgstr "Gana puntos"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 msgid "Easy"
 msgstr ""
@@ -1924,11 +1929,6 @@ msgstr "JUEGOS"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "GAMES LEARNING"
 msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Gain points"
-msgstr "Gana puntos"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2508,7 +2508,7 @@ msgstr "Mensaje"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Minigame (you won't gain points from it, just for passing the time)"
+msgid "Minigame (you won't earn points from it, just for passing the time)"
 msgstr ""
 "Minijuego (no vas a ganar puntos de este minijuego, es sólo para pasar el "
 "rato)"
@@ -2909,7 +2909,7 @@ msgstr "Pi, ó mucho más, dependiendo del ingreso."
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"Pi, so you will gain not less than that. In a good situation we could pay "
+"Pi, so you will earn not less than that. In a good situation we could pay "
 "the triple of minimum payment:"
 msgstr ""
 "Pi, así que vas a ganar no menos que eso. En una buena situación podríamos "
