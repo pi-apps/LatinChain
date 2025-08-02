@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-02 21:58+0000\n"
-"PO-Revision-Date: 2025-08-02 21:58+0000\n"
+"POT-Creation-Date: 2025-08-02 23:46+0000\n"
+"PO-Revision-Date: 2025-08-02 23:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "#EarnPoints"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1348,16 +1353,14 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"Automatic Pi Interstitial Ads are disabled. Pi Interstitial Ads won't be "
-"shown automatically."
+msgid "Automatic Pi Ads are disabled. Pi Ads won't be shown automatically."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
-"Automatic Pi Interstitial Ads are enabled. Pi Interstitial Ads will be shown"
-" automatically every so often."
+"Automatic Pi Ads are enabled. Pi Ads will be shown automatically every so "
+"often."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

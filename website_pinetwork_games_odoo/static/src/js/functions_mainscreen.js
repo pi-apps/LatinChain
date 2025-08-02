@@ -1276,13 +1276,13 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
-                            /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                showRewardedPiAd();*/
-                            
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                showRewardedPiAd();
+                            
+                            /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 showPiAds(Pi);
-                            }
+                            }*/
                         }
                     });
                 });
