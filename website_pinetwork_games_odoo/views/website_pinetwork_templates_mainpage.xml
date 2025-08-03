@@ -1240,20 +1240,20 @@
                     
                     <div translate="no" class="justify-content-left text-left p-3 mb-2" style="color: #ffffff !important; background-color: #1f2434 !important">
                         <div class="row">
-                          <div style="text-align:left" class="col-6">
-                              <a class="text-white getverified" href="/pinetwork">Welcome!. Get verified.</a>
-                              <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
-                              <div class="isverified-username font-weight-bold" style="display: none;"></div>
-                          </div>
-                          <div style="text-align:right; padding-left: 0px" class="col-6">
-                              <button id="logout_latinchain" class="btn btn-outline-danger font-weight-bold text-white border-white loggedin" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div>Logout</div></button>
-                              <button id="login_latinchain" class="btn btn-outline-success font-weight-bold text-white border-white loggedout" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div>Login</div></button>
-                              <button class="btn btn-outline-info font-weight-bold text-white border-white clear_cache" style="border-radius: 50%; border: 2px solid; font-size: 100% !important"><div style=""><i class="fa fa-refresh"></i></div></button>
-                          </div>
-                      </div>
-                      <div>
-                          <script defer="defer" src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-6" lcw-coin="_______PI" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#1f2434" lcw-border-w="0" ></div>
-                      </div>
+                            <div style="text-align:left; word-break: break-word;" class="col-6">
+                                <a class="text-white getverified" href="/pinetwork">Welcome!. Get verified.</a>
+                                <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
+                                <div class="isverified-username font-weight-bold" style="display: none;"></div>
+                            </div>
+                            <div style="text-align:right; padding-left: 0px" class="col-6">
+                                <button id="logout_latinchain" class="btn btn-outline-danger font-weight-bold text-white border-white loggedin" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div>Logout</div></button>
+                                <button id="login_latinchain" class="btn btn-outline-success font-weight-bold text-white border-white loggedout" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div>Login</div></button>
+                                <button class="btn btn-outline-info font-weight-bold text-white border-white clear_cache" style="border-radius: 50%; border: 2px solid; font-size: 100% !important"><div style=""><i class="fa fa-refresh"></i></div></button>
+                            </div>
+                        </div>
+                        <div>
+                            <script defer="defer" src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-6" lcw-coin="_______PI" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#1f2434" lcw-border-w="0" ></div>
+                        </div>
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
