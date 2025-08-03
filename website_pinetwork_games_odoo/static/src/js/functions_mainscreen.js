@@ -1153,6 +1153,7 @@ $( document ).ready(function() {
                                 
                                 var btnvalue = $("#button_reward_ad").html();
                                 $("#button_reward_ad").prop( "disabled", true );
+                                $("#button_reward_ad").html("Showing Pi Rewarded Ad...");
                                 
                                 if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
                                 {
