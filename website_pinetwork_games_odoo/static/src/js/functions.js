@@ -283,14 +283,16 @@ $( document ).ready(function() {
                             start();
                             
                             if(!start_flag)
+                            {
                                 start_flag = true;
+                            }
                             
                             var btnvalue = $("#button_reward_ad").html();
+                            $("#button_reward_ad").prop( "disabled", true );
                             
                             if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
                             {
                                 try {
-                                    $("#button_reward_ad").prop( "disabled", true );
                                     const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
                                     if (isAdReadyResponse.ready === false) {
                                         
@@ -299,6 +301,7 @@ $( document ).ready(function() {
                                             // display modal to update Pi Browser
                                             // showAdsNotSupportedModal()
                                             alert("Update Pi Browser version, please!.");
+                                            $("#button_reward_ad").html(btnvalue);
                                             $("#button_reward_ad").prop( "disabled", false );
                                             return;
                                         }
@@ -306,6 +309,7 @@ $( document ).ready(function() {
                                             // display modal ads are temporarily unavailable and user should try again later
                                             // showAdUnavailableModal()
                                             alert("Ads are temporarily unavailable, try again later!.");
+                                            $("#button_reward_ad").html(btnvalue);
                                             $("#button_reward_ad").prop( "disabled", false );
                                             return;
                                         }
@@ -368,6 +372,7 @@ $( document ).ready(function() {
                                                         setTimeout(function ()
                                                         {
                                                             $("#button_reward_ad").html(btnvalue);
+                                                            $("#button_reward_ad").prop( "disabled", false );
                                                         }, 5000);
                                                     }
                                                 }else{
@@ -391,20 +396,24 @@ $( document ).ready(function() {
                                                 setConfirmUnloadPoints(false);
                                             });
                                         }else{
-                                                $("#button_reward_ad").prop( "disabled", false );
-                                            }
+                                            $("#button_reward_ad").html(btnvalue);
+                                            $("#button_reward_ad").prop( "disabled", false );
+                                        }
                                     } else {
+                                        $("#button_reward_ad").html(btnvalue);
                                         $("#button_reward_ad").prop( "disabled", false );
                                         // fallback logic
                                         // showAdErrorModal()
                                     }
                                     
                                 } catch (err) {
+                                    $("#button_reward_ad").html(btnvalue);
                                     $("#button_reward_ad").prop( "disabled", false );
                                     // good practice to handle any potential errors
                                 }
                             }else
                             {
+                                $("#button_reward_ad").html(btnvalue);
                                 $("#button_reward_ad").prop( "disabled", false );
                             }
                         }
