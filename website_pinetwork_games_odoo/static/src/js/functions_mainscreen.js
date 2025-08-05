@@ -1542,6 +1542,10 @@ $( document ).ready(function() {
         $.colorbox({href:"https://sports.latin-chain.com/?v=1.103", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".webcam-detect" ).click(function() {
+        $.colorbox({href:"https://mp3.latin-chain.com/webcam-object-detect/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     /*
     $( ".youtube-trends" ).click(function() {
         $.colorbox({href:"https://trends.latin-chain.com/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
