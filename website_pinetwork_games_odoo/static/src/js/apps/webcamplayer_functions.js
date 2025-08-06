@@ -296,9 +296,9 @@ async function switchCamera() {
 // New function to toggle continuous speech
 function toggleAutoSpeak() {
     isAutoSpeakEnabled = !isAutoSpeakEnabled;
-    toggleAutoSpeakButton.textContent = isAutoSpeakEnabled ? 'Disable Continuous Speech' : 'Enable Continuous Speech';
+    toggleAutoSpeakButton.textContent = isAutoSpeakEnabled ? 'Disable Continuous Detection' : 'Enable Continuous Detection';
     if (isAutoSpeakEnabled) {
-        speechStatusDiv.textContent = 'Continuous speech enabled.';
+        speechStatusDiv.textContent = 'Continuous detection enabled.';
         // Force a speech update immediately
         lastSpokenTime = 0;
     } else {

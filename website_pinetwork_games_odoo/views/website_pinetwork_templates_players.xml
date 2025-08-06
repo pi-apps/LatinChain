@@ -1534,7 +1534,7 @@
                             <div class="control-buttons">
                                 <button id="switchCameraButton" class="action-button">Switch Camera</button>
                                 <button id="askButton" class="action-button">Ask What I'm Seeing</button>
-                                <button id="toggleAutoSpeak" class="action-button">Enable Continuous Speech</button>
+                                <button id="toggleAutoSpeak" class="action-button">Enable Continuous Detection</button>
                             </div>
                             <div id="speechStatus" class="text-sm"></div>
 
@@ -1551,7 +1551,7 @@
                            
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webcamplayer_functions.js?v=1.114"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webcamplayer_functions.js?v=1.115"></script>
                     </body>
                 </html>
             </t>
