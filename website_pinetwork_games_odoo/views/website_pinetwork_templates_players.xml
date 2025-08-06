@@ -1513,6 +1513,7 @@
                                         }
                                     }, 10000);
                                 })();
+                                
                             });
                         </script>
                         
@@ -1538,80 +1539,57 @@
                     </head>
                     <body class="bg-gray-100 flex items-center justify-center min-h-screen">
                         <div class="container bg-white p-6 rounded-xl shadow-lg">
-                            <div style="text-align:center; width:100% !important">
-                                <style>
-                                    /* Adjustments for Google Translator to be visible */
-                                    .goog-te-banner-frame.skiptranslate,
-                                    .skiptranslate > iframe {
-                                        display: none !important;
-                                    }
-                                   
-                                    body {
-                                        top: 0px !important; 
-                                    }
-
-                                    .goog-te-menu-frame {
-                                        max-width:100% !important; 
-                                    }
-                                    .goog-te-menu2 { 
-                                        max-width: 100% !important;
-                                        overflow-x: scroll !important;
-                                        box-sizing:border-box !important; 
-                                        height:auto !important; 
-                                    }
-                                   
-                                    /* Hide unwanted elements without hiding the main widget */
-                                    #goog-gt-tt, 
-                                    #goog-gt-, 
-                                    .goog-te-balloon-frame {
-                                        display: none !important;
-                                    } 
-                                    .goog-text-highlight { 
-                                        background: none !important; 
-                                        box-shadow: none !important;
-                                    }
-                                   
-                                    .goog-logo-link {
-                                        display: none !important;
-                                    }
-                                    .goog-te-gadget {
-                                        height: 28px !important; 
-                                        overflow: hidden;
-                                    }
-                                </style>
+                            <style>
+                                /* Adjustments for Google Translator to be visible */
+                                .goog-te-banner-frame.skiptranslate,
+                                .skiptranslate > iframe {
+                                    display: none !important;
+                                }
                                
-                                <script type="text/javascript">
-                                    function googleTranslateElementInit() {
-                                        var lang_google='en';
-                                        if(location.pathname.substring(0, 3) == "/es")
-                                        {
-                                            lang_google='es';
-                                        }
-                                       
-                                        new google.translate.TranslateElement({pageLanguage: lang_google,
-                                                                                     autoDisplay: true,
-                                                                                     layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
-                                                                                     'google_translate_element');
-                                       
-                                        var el3 = document.querySelector('circle');
-                                        var observer = new window.IntersectionObserver(([entry]) => {
-                                            document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
-                                        }, {
-                                            root: null,
-                                            threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
-                                        });
+                                body {
+                                    top: 0px !important; 
+                                }
 
-                                        observer.observe(el3);
-                                       
-                                    }
-                                </script>
-
-                                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                                .goog-te-menu-frame {
+                                    max-width:100% !important; 
+                                }
+                                .goog-te-menu2 { 
+                                    max-width: 100% !important;
+                                    overflow-x: scroll !important;
+                                    box-sizing:border-box !important; 
+                                    height:auto !important; 
+                                }
                                
-                                <strong>Translate</strong>
-                                <div id="google_translate_element"></div>
-                                <br/>
-                           
+                                /* Hide unwanted elements without hiding the main widget */
+                                #goog-gt-tt, 
+                                #goog-gt-, 
+                                .goog-te-balloon-frame {
+                                    display: none !important;
+                                } 
+                                .goog-text-highlight { 
+                                    background: none !important; 
+                                    box-shadow: none !important;
+                                }
+                               
+                                .goog-logo-link {
+                                    display: none !important;
+                                }
+                                .goog-te-gadget {
+                                    height: 28px !important; 
+                                    overflow: hidden;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                $( document ).ready(function() {
+                                    $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                    $("#google_translate_element").appendTo(".translate_here");
+                                    
+                                    $("#translate_text_latinchain_2").show();
+                                    $("#google_translate_element").show();
+                                });
+                            </script>
+                            
+                            <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
                             </div>
                             
                             <div style="text-align:center; margin-bottom:15px;">

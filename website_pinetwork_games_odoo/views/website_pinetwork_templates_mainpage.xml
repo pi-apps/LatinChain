@@ -85,7 +85,7 @@
 
                     <script type="text/javascript">
                         function googleTranslateElementInit() {
-                          if(location.pathname.substring(0, 4) != "/web")
+                          if(location.pathname.substring(0, 5) != "/web")
                           {
                               var lang_google='en';
                               if(location.pathname.substring(0, 3) == "/es")
@@ -131,14 +131,14 @@
                         <script type="text/javascript">
                             setTimeout(function() {
                                 document.getElementById("loading_ajax_icon").style.display = "none";
-                                if(location.pathname.substring(0, 4) == "/web")
+                                if(location.pathname.substring(0, 5) == "/web")
                                 {
                                     document.getElementById("translate_text_latinchain_2").style.display = "none";
                                 }
                             }, 5000);
                             window.addEventListener('load', function() {
                                 document.getElementById("loading_ajax_icon").style.display = "none";
-                                if(location.pathname.substring(0, 4) == "/web")
+                                if(location.pathname.substring(0, 5) == "/web")
                                 {
                                     document.getElementById("translate_text_latinchain_2").style.display = "none";
                                 }
@@ -150,7 +150,7 @@
                         <script type="text/javascript">
                             setTimeout(function() {
                                 document.getElementById("loading_ajax_icon").style.display = "none";
-                                if(location.pathname.substring(0, 4) == "/web")
+                                if(location.pathname.substring(0, 5) == "/web")
                                 {
                                     document.getElementById("translate_text_latinchain_2").style.display = "none";
                                 }else
@@ -158,7 +158,7 @@
                             }, 5000);
                             window.addEventListener('load', function() {
                                 document.getElementById("loading_ajax_icon").style.display = "none";
-                                if(location.pathname.substring(0, 4) == "/web")
+                                if(location.pathname.substring(0, 5) == "/web")
                                 {
                                     document.getElementById("translate_text_latinchain_2").style.display = "none";
                                 }else
@@ -168,7 +168,7 @@
                         <t t-if="not hide_darkmode">
                             <script src="/website_pinetwork_games_odoo/static/src/js/Darkmode.js-master/lib/darkmode-js.js"></script>
                             <script>
-                                if(location.pathname.substring(0, 4) != "/web")
+                                if(location.pathname.substring(0, 5) != "/web")
                                 {
                                   new Darkmode({
                                     bottom: '10%',
@@ -478,7 +478,7 @@
            <xpath expr="//body" position="after">
                <!--<script t-if="not sandbox" type="text/javascript">
                     document.addEventListener("DOMContentLoaded", function(event) {
-                        if(location.pathname.substring(0, 4) != "/web")
+                        if(location.pathname.substring(0, 5) != "/web")
                         {
                             if (!navigator.userAgent.match(/PiBrowser/i)) {
                                 alert("For better experience use Pi Browser: https://minepi.com/rockcesar");
@@ -556,7 +556,7 @@
 
                 <script type="text/javascript">
                     function googleTranslateElementInit() {
-                      if(location.pathname.substring(0, 4) != "/web")
+                      if(location.pathname.substring(0, 5) != "/web")
                       {
                           var lang_google='en';
                           if(location.pathname.substring(0, 3) == "/es")
@@ -603,14 +603,14 @@
                     <script type="text/javascript">
                         setTimeout(function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
-                            if(location.pathname.substring(0, 4) == "/web")
+                            if(location.pathname.substring(0, 5) == "/web")
                             {
                                 document.getElementById("translate_text_latinchain_2").style.display = "none";
                             }
                         }, 5000);
                         window.addEventListener('load', function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
-                            if(location.pathname.substring(0, 4) == "/web")
+                            if(location.pathname.substring(0, 5) == "/web")
                             {
                                 document.getElementById("translate_text_latinchain_2").style.display = "none";
                             }
@@ -622,7 +622,7 @@
                     <script type="text/javascript">
                         setTimeout(function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
-                            if(location.pathname.substring(0, 4) == "/web")
+                            if(location.pathname.substring(0, 5) == "/web")
                             {
                                 document.getElementById("translate_text_latinchain_2").style.display = "none";
                             }else
@@ -630,7 +630,7 @@
                         }, 5000);
                         window.addEventListener('load', function() {
                             document.getElementById("loading_ajax_icon").style.display = "none";
-                            if(location.pathname.substring(0, 4) == "/web")
+                            if(location.pathname.substring(0, 5) == "/web")
                             {
                                 document.getElementById("translate_text_latinchain_2").style.display = "none";
                             }else
@@ -640,7 +640,7 @@
                     <t t-if="not hide_darkmode">
                         <script src="/website_pinetwork_games_odoo/static/src/js/Darkmode.js-master/lib/darkmode-js.js"></script>
                         <script>
-                            if(location.pathname.substring(0, 4) != "/web")
+                            if(location.pathname.substring(0, 5) != "/web")
                             {
                                 new Darkmode({
                                     bottom: '10%',
@@ -916,7 +916,7 @@
            <xpath expr="//header" position="after">
                <!--<script t-if="not sandbox" type="text/javascript">
                     document.addEventListener("DOMContentLoaded", function(event) {
-                        if(location.pathname.substring(0, 4) != "/web")
+                        if(location.pathname.substring(0, 5) != "/web")
                         {
                             if (!navigator.userAgent.match(/PiBrowser/i)) {
                                 alert("For better experience use Pi Browser: https://minepi.com/rockcesar");
