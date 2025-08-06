@@ -1281,5 +1281,280 @@
                 </html>
             </t>
 		</template>
+        
+        <template id="webcamplayer" name="Webcam Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Object Detection with Voice and Webcam</title>
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+                        <style>
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #f0f4f8; /* A soft background color */
+                            }
+                            .container {
+                                max-width: 90%; /* Max width for the container */
+                                margin: 2rem auto; /* Center and add space */
+                                padding: 1.5rem;
+                                background-color: #ffffff;
+                                border-radius: 1rem; /* Rounded corners */
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+                            video, canvas {
+                                display: block;
+                                border-radius: 0.75rem; /* Rounded corners for video/canvas */
+                                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                                max-width: 100%; /* Ensure it fits the container */
+                                height: auto; /* Maintain aspect ratio */
+                            }
+                            .loading-message {
+                                color: #3b82f6; /* Blue color for loading message */
+                                font-weight: 600;
+                            }
+                            .error-message {
+                                color: #ef4444; /* Red color for error message */
+                                font-weight: 600;
+                            }
+                            .detection-info {
+                                margin-top: 1rem;
+                                width: 100%;
+                                text-align: center;
+                            }
+                            .detection-list {
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.5rem;
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;
+                                gap: 0.5rem;
+                            }
+                            .detection-item {
+                                background-color: #e0f2fe; /* Background color for detected items */
+                                color: #1e40af; /* Text color for detected items */
+                                padding: 0.3rem 0.8rem;
+                                border-radius: 0.5rem;
+                                font-size: 0.9rem;
+                                font-weight: 500;
+                            }
+                            .control-buttons {
+                                display: flex;
+                                gap: 1rem; /* Space between buttons */
+                                margin-top: 1rem;
+                                flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+                                justify-content: center;
+                            }
+                            .action-button {
+                                background-color: #4CAF50; /* Green */
+                                color: white;
+                                padding: 10px 20px;
+                                border: none;
+                                border-radius: 8px;
+                                font-size: 16px;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                            }
+                            .action-button:hover {
+                                background-color: #45a049;
+                            }
+                            .action-button:active {
+                                background-color: #3e8e41;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                                transform: translateY(1px);
+                            }
+                            #speechStatus {
+                                margin-top: 10px;
+                                font-style: italic;
+                                color: #6b7280;
+                            }
+                            .confidence-control {
+                                margin-top: 1rem;
+                                width: 80%;
+                                max-width: 400px;
+                                text-align: center;
+                            }
+                            .confidence-control label {
+                                display: block;
+                                margin-bottom: 0.5rem;
+                                font-weight: 600;
+                                color: #4b5563;
+                            }
+                            .confidence-control input[type="range"] {
+                                width: 100%;
+                                -webkit-appearance: none;
+                                height: 8px;
+                                background: #d1d5db;
+                                border-radius: 5px;
+                                outline: none;
+                                opacity: 0.7;
+                                transition: opacity .2s;
+                            }
+                            .confidence-control input[type="range"]::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 20px;
+                                height: 20px;
+                                background: #3b82f6;
+                                border-radius: 50%;
+                                cursor: pointer;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                            }
+                            .confidence-control input[type="range"]::-moz-range-thumb {
+                                width: 20px;
+                                height: 20px;
+                                background: #3b82f6;
+                                border-radius: 50%;
+                                cursor: pointer;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            const Pi = window.Pi;
+                            $( document ).ready(function() {
+                            
+                                var pi_user_id = "";
+                                async function auth() {
+                                    try {
+                                        // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                        const scopes = ['username', 'payments', 'wallet_address'];
+                                        function onIncompletePaymentFound(payment) {
+                                            
+                                        }; // Read more about this in the SDK reference
+                                        
+                                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                            pi_user_id = auth.user.uid;
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'none';
+                                        }).catch(function(error) {
+                                            //Pi.openShareDialog("Error", error);
+                                            //alert(err);
+                                            console.error(error);
+                                        });
+                                    } catch (err) {
+                                        //Pi.openShareDialog("Error", err);
+                                        //alert(err);
+                                        console.error(err);
+                                        // Not able to fetch the user
+                                    }
+                                }
+                                
+                                (async () => {
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            auth();
+                                            
+                                            setTimeout(function ()
+                                            {
+                                                if(pi_user_id == "")
+                                                {
+                                                    //alert($("#pi_prowser_message").text());
+                                                    
+                                                    if(window.location.hostname == "localhost")
+                                                    {
+                                                        $("a.anchor-click").attr('href', window.location.origin);
+                                                    }
+                                                    else if(window.location.hostname == "test.latin-chain.com")
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                    }
+                                                    
+                                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                }
+                                            }, 10000);
+                                        }
+                                    }, 10000);
+                                })();
+                            });
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+                        <div class="container bg-white p-6 rounded-xl shadow-lg">
+                            <div style="text-align:center; margin-bottom:15px;">
+                                <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                            </div>
+                           
+                            <h1 class="text-3xl font-bold text-gray-800 mb-4">Real-time Object Detection with Voice</h1>
+                           
+                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Developed with Gemini AI</h3>
+
+                            <div id="status" class="text-lg text-gray-600 mb-4 loading-message">Loading model... please wait.</div>
+                            <div id="error" class="text-lg text-red-600 mb-4 error-message hidden"></div>
+
+                            <div class="relative w-full max-w-xl">
+                                <video id="webcam" autoplay="autoplay" muted="muted" playsinline="playsinline" class="w-full rounded-lg"></video>
+                                <canvas id="outputCanvas" class="absolute top-0 left-0 w-full h-full rounded-lg"></canvas>
+                            </div>
+
+                            <div class="control-buttons">
+                                <button id="switchCameraButton" class="action-button">Switch Camera</button>
+                                <button id="askButton" class="action-button">Ask What I'm Seeing</button>
+                                <button id="toggleAutoSpeak" class="action-button">Enable Continuous Speech</button>
+                            </div>
+                            <div id="speechStatus" class="text-sm"></div>
+
+                            <div class="confidence-control">
+                                <label for="confidenceThreshold">Min Confidence (the less confidence: the more detection, but the less accurate): <span id="confidenceValue">50%</span></label>
+                                <input type="range" id="confidenceThreshold" min="0" max="100" value="50"/>
+                            </div>
+
+                            <div id="detectionInfo" class="detection-info">
+                                <h2 class="text-xl font-semibold text-gray-700 mt-4 mb-2">Detected Objects:</h2>
+                                <ul id="detectionList" class="detection-list">
+                                </ul>
+                            </div>
+                           
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webcamplayer_functions.js?v=1.114"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
 
 </odoo>

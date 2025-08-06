@@ -376,6 +376,7 @@ function get_user() {
                 $(".show-musicplayer").show();
                 $(".show-videoplayer").show();
                 $(".show-imgplayer").show();
+                $(".show-webcamplayer").show();
                 //$(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
@@ -1540,10 +1541,6 @@ $( document ).ready(function() {
     
     $( ".sport-results" ).click(function() {
         $.colorbox({href:"https://sports.latin-chain.com/?v=1.103", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
-    $( ".webcam-detect" ).click(function() {
-        $.colorbox({href:"https://mp3.latin-chain.com/webcam-object-detect/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     /*
