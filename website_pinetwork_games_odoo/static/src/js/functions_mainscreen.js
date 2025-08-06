@@ -622,16 +622,25 @@ function get_user() {
     }
 }
 
-async function showPiAds(Pi) {
-    
+async function showPiAds(Pi, activated) {
     var btnvalue = $("#button_reward_ad").html();
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
     
     try {
+        var d1 = new Date();
+        var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
+        var date2 = new Date(date1.getTime() - 1 * 60 * 60000);
+        
+        if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
+        {
+            $("#button_reward_ad").html(btnvalue);
+            $("#button_reward_ad").prop( "disabled", false );
+            return;
+        }
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
-        
+
         if (isAdReadyResponse.ready === false) {
             await Pi.Ads.requestAd("interstitial");
         }
@@ -640,62 +649,18 @@ async function showPiAds(Pi) {
         
         if(showAdResponse.result == "AD_CLOSED")
         {
-            if(pi_user_id != "" && pi_user_code != "")
-            {
-                var data = {
-                            'pi_user_id': pi_user_id,
-                            'pi_user_code': pi_user_code,
-                            'accessToken': accessToken,
-                            'csrf_token': odoo.csrf_token,
-                        };
-                //$.ajaxSetup({async: false});
-                
-                return $.post( "/set-pi-ad-datetime", data).done(function(data) {
-                    data = JSON.parse(data);
-                    if(data.result)
-                    {
-                        //var btnvalue = $("#button_reward_ad").html();
-                        pi_ad_new = data.pi_ad_new;
-                        if(data.pi_ad_new)
-                        {
-                            $("#button_reward_ad").show();
-                            $("#piad_not_available").hide();
-                            setTimeout(function ()
-                            {
-                                $("#button_reward_ad").html(btnvalue);
-                                $("#button_reward_ad").prop( "disabled", false );
-                            }, 5000);
-                        }else
-                        {
-                            $("#button_reward_ad").hide();
-                            $("#piad_not_available").show();
-                            setTimeout(function ()
-                            {
-                                $("#button_reward_ad").html(btnvalue);
-                            }, 5000);
-                        }
-                    }else
-                    {
-                        $("#button_reward_ad").html(btnvalue);
-                        $("#button_reward_ad").prop( "disabled", false );
-                    }
-                }).fail(function() {
-                    $("#button_reward_ad").html(btnvalue);
-                    $("#button_reward_ad").prop( "disabled", false );
-                });
-            }else
-            {
-                $("#button_reward_ad").html(btnvalue);
-                $("#button_reward_ad").prop( "disabled", false );
-            }
-        }else{
-            $("#button_reward_ad").html(btnvalue);
-            $("#button_reward_ad").prop( "disabled", false );
+            var d1 = new Date();
+            var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
+
+            localStorage['pi_ad_datetime_latinchain'] = date1.getTime();
         }
+        
+        $("#button_reward_ad").html(btnvalue);
+        $("#button_reward_ad").prop( "disabled", false );
     } catch (err) {
         $("#button_reward_ad").html(btnvalue);
         $("#button_reward_ad").prop( "disabled", false );
-        //alert("Error: " + err);
+        //alert(err);
         // Not able to fetch the user
     }
 }
@@ -1295,7 +1260,7 @@ $( document ).ready(function() {
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                showPiAds(Pi);
+                                showPiAds(Pi, true);
                             }*/
                         }
                     });
@@ -1354,10 +1319,10 @@ $( document ).ready(function() {
         {
             $(".loggedout").show();
             
-            /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
-                showPiAds(Pi);
-            }*/
+                showPiAds(Pi, true);
+            }
         }
     
     })();
