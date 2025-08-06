@@ -36,112 +36,91 @@ let selectedVoice = null; // New variable to hold the selected voice object
 const translatedPhrases = {
     'en': {
         'i_see_a': 'I see a',
-        'i_see_and_a': 'I see a ... and a',
-        'i_see_and_b': 'I see a ...',
         'i_see_many': 'I see a ',
         'i_no_longer_see_a': 'I no longer see a',
         'no_objects_detected': 'No objects detected recently.',
-        'i_am_watching': "I'm watching"
     },
     'es': {
         'i_see_a': 'Veo un/una',
-        'i_see_and_a': 'Veo un/una ... y un/una',
-        'i_see_and_b': 'Veo un/una',
         'i_see_many': 'Veo un/una ',
         'i_no_longer_see_a': 'Ya no veo un/una',
         'no_objects_detected': 'No se detectaron objetos recientemente.',
-        'i_am_watching': 'Estoy viendo'
     },
     'pt': {
         'i_see_a': 'Eu vejo um/uma',
-        'i_see_and_a': 'Eu vejo um/uma ... e um/uma',
-        'i_see_and_b': 'Eu vejo um/uma',
         'i_see_many': 'Eu vejo um/uma ',
         'i_no_longer_see_a': 'Eu não vejo mais um/uma',
         'no_objects_detected': 'Nenhum objeto detectado recentemente.',
-        'i_am_watching': 'Estou vendo'
     },
     'ko': {
         'i_see_a': '하나의',
-        'i_see_and_a': '하나의 ... 과(와) 하나의',
-        'i_see_and_b': '하나의',
         'i_see_many': '하나의 ',
         'i_no_longer_see_a': '더 이상 하나의',
         'no_objects_detected': '최근에 감지된 개체가 없습니다.',
-        'i_am_watching': '보고 있어요'
     },
     'vi': {
         'i_see_a': 'Tôi thấy một',
-        'i_see_and_a': 'Tôi thấy một ... và một',
-        'i_see_and_b': 'Tôi thấy một',
         'i_see_many': 'Tôi thấy một ',
         'i_no_longer_see_a': 'Tôi không còn thấy một',
         'no_objects_detected': 'Không có đối tượng nào được phát hiện gần đây.',
-        'i_am_watching': 'Tôi đang xem'
     },
     'ja': {
         'i_see_a': '私は一つ',
-        'i_see_and_a': '私は一つ ... と一つ',
-        'i_see_and_b': '私は一つ',
         'i_see_many': '私は一つ ',
         'i_no_longer_see_a': '私はもう一つ',
         'no_objects_detected': '最近検出されたオブジェクトはありません。',
-        'i_am_watching': '見ています'
     },
     'zh': {
         'i_see_a': '我看到一个',
-        'i_see_and_a': '我看到一个... 和一个',
-        'i_see_and_b': '我看到一个',
         'i_see_many': '我看到一个',
         'i_no_longer_see_a': '我不再看到一个',
         'no_objects_detected': '最近没有检测到物体。',
-        'i_am_watching': '我正在看'
     },
     'fr': {
         'i_see_a': 'Je vois un',
-        'i_see_and_a': 'Je vois un ... et un',
-        'i_see_and_b': 'Je vois un',
         'i_see_many': 'Je vois un ',
         'i_no_longer_see_a': 'Je ne vois plus un',
         'no_objects_detected': "Aucun objet n'a été détecté récemment.",
-        'i_am_watching': 'Je regarde'
     },
     'de': {
         'i_see_a': 'Ich sehe ein',
-        'i_see_and_a': 'Ich sehe ein ... und ein',
-        'i_see_and_b': 'Ich sehe ein',
         'i_see_many': 'Ich sehe ein ',
         'i_no_longer_see_a': 'Ich sehe kein',
         'no_objects_detected': 'Kürzlich wurden keine Objekte erkannt.',
-        'i_am_watching': 'Ich schaue mir an'
     },
     'it': {
         'i_see_a': 'Vedo un/una',
-        'i_see_and_a': 'Vedo un/una ... e un/una',
-        'i_see_and_b': 'Vedo un/una',
         'i_see_many': 'Vedo un/una ',
         'i_no_longer_see_a': 'Non vedo più un/una',
         'no_objects_detected': 'Nessun oggetto rilevato di recente.',
-        'i_am_watching': 'Sto guardando'
     },
     'ru': {
         'i_see_a': 'Я вижу',
-        'i_see_and_a': 'Я вижу ... и',
-        'i_see_and_b': 'Я вижу',
         'i_see_many': 'Я вижу ',
         'i_no_longer_see_a': 'Я больше не вижу',
         'no_objects_detected': 'Недавно не было обнаружено ни одного объекта.',
-        'i_am_watching': 'Я смотрю'
     },
     'af': {
         'i_see_a': 'Ek sien \'n',
-        'i_see_and_a': 'Ek sien \'n ... en \'n',
-        'i_see_and_b': 'Ek sien \'n',
         'i_see_many': 'Ek sien \'n ',
         'i_no_longer_see_a': 'Ek sien nie meer \'n',
         'no_objects_detected': 'Geen voorwerpe onlangs opgespoor nie.',
-        'i_am_watching': 'Ek kyk'
     }
+};
+
+const andPhrase = {
+    en: ' and ',
+    es: ' y ',
+    pt: ' e ',
+    ko: '과(와)',
+    vi: ' và ',
+    ja: 'と',
+    zh: '和',
+    fr: ' et ',
+    de: ' und ',
+    it: ' e ',
+    ru: ' и ',
+    af: ' en '
 };
 
 /**
@@ -152,7 +131,7 @@ const translatedPhrases = {
  * @returns {string} The translated phrase.
  */
 function getTranslation(key, langCode) {
-    const shortLangCode = langCode.split('-')[0];
+    const shortLangCode = langCode.split(/[-_]/)[0];
     return (translatedPhrases[shortLangCode] && translatedPhrases[shortLangCode][key]) ?
            translatedPhrases[shortLangCode][key] :
            translatedPhrases['en'][key];
@@ -171,13 +150,15 @@ function populateVoiceList() {
     }
 
     const allVoices = window.speechSynthesis.getVoices();
+    console.log("All available voices:", allVoices); // Log all voices for debugging
+    
     const supportedShortLangs = [
         'en', 'es', 'pt', 'ko', 'vi', 'ja', 'zh', 'fr', 'de', 'it', 'ru', 'af'
     ];
 
     // Filter voices by checking if their language code starts with any of the supported short codes
     const filteredVoices = allVoices.filter(voice => {
-        const shortLang = voice.lang.split('-')[0];
+        const shortLang = voice.lang.split(/[-_]/)[0];
         return supportedShortLangs.includes(shortLang);
     });
     
@@ -226,8 +207,7 @@ if ('speechSynthesis' in window) {
 
 /**
  * Speaks the given text using the currently selected voice and language.
- * The text is translated if the voice is not English.
- * @param {string} textToSpeak The text to be spoken (in English).
+ * @param {string} textToSpeak The text to be spoken.
  */
 async function speakDetectedObjects(textToSpeak) {
     if ('speechSynthesis' in window && selectedVoice) {
@@ -386,10 +366,10 @@ async function detectObjects(currentTime) {
             );
 
             let speechText = '';
-            const langCode = selectedVoice ? selectedVoice.lang.split('-')[0] : 'en';
+            const langCode = selectedVoice ? selectedVoice.lang.split(/[-_]/)[0] : 'en';
 
             if (newObjects.length > 0) {
-                const last = newObjects.length > 1 ? ` and a ${newObjects.pop()}` : '';
+                const last = newObjects.length > 1 ? `${andPhrase[langCode] || ' and '}a ${newObjects.pop()}` : '';
                 const comma = newObjects.length > 0 && last ? ', ' : '';
                 speechText += `${getTranslation('i_see_a', langCode)} ${newObjects.join(comma + 'a ')}${last}.`;
             }
@@ -414,23 +394,10 @@ async function detectObjects(currentTime) {
 async function askWhatIsBeingSeen() {
     if (lastDetectedPredictions.length > 0) {
         const detectedClasses = Array.from(new Set(lastDetectedPredictions.map(p => p.class)));
-        const langCode = selectedVoice ? selectedVoice.lang.split('-')[0] : 'en';
+        const langCode = selectedVoice ? selectedVoice.lang.split(/[-_]/)[0] : 'en';
 
         let speechText;
-        const andPhrase = {
-            en: ' and ',
-            es: ' y ',
-            pt: ' e ',
-            ko: '과(와)',
-            vi: ' và ',
-            ja: 'と',
-            zh: '和',
-            fr: ' et ',
-            de: ' und ',
-            it: ' e ',
-            ru: ' и ',
-            af: ' en '
-        }[langCode] || ' and ';
+        const andPhraseText = andPhrase[langCode] || ' and ';
         
         let listString;
         if (detectedClasses.length === 1) {
@@ -438,13 +405,13 @@ async function askWhatIsBeingSeen() {
             speechText = `${getTranslation('i_see_a', langCode)} ${listString}.`;
         } else {
             const last = detectedClasses.pop();
-            listString = `${detectedClasses.join(', ')},${andPhrase}${last}`;
+            listString = `${detectedClasses.join(', ')}${andPhraseText}${last}`;
             speechText = `${getTranslation('i_see_many', langCode)} ${listString}.`;
         }
         
         await speakDetectedObjects(speechText);
     } else {
-        const langCode = selectedVoice ? selectedVoice.lang.split('-')[0] : 'en';
+        const langCode = selectedVoice ? selectedVoice.lang.split(/[-_]/)[0] : 'en';
         speechStatusDiv.textContent = getTranslation('no_objects_detected', langCode);
     }
 }
