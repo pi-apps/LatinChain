@@ -176,10 +176,11 @@ $( document ).ready(function() {
     const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
 
     if (localStorage.getItem(STORAGE_KEY_BACKEND) !== 'true' || !('speechSynthesis' in window)) {
+        alert("123");
         speechModule.deactivate();
     }else
     {
+        alert("1234");
         speechModule.activate();
-        speechModule.observer();
     }
 });
