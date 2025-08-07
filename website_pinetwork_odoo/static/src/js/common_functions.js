@@ -107,9 +107,16 @@ const speechModule = (() => {
           if (textToSpeak.trim()) {
             const utterance = new SpeechSynthesisUtterance(textToSpeak);
             const systemLanguage = navigator.language;
+            //const shortLang = systemLanguage.split(/[-_]/)[0];
+            var lang_synthesis='en';
+            if(location.pathname.substring(0, 3) == "/es")
+            {
+                lang_synthesis='es';
+            }
             const voices = window.speechSynthesis.getVoices();
-            const voice = voices.find(v => v.lang === systemLanguage) ||
-                          voices.find(v => v.lang.startsWith('en'));
+            const voice = voices.find(v => v.lang.startsWith(lang_synthesis));
+            /*const voice = voices.find(v => v.lang.startsWith(shortLang)) ||
+                          voices.find(v => v.lang.startsWith('en'));*/
 
             if (voice) {
               utterance.voice = voice;
