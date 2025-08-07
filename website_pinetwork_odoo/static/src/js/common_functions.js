@@ -113,9 +113,20 @@ const speechModule = (() => {
             const voices = window.speechSynthesis.getVoices();
             var voice = voices.find(v => v.lang.startsWith('en'));
             
-            if (voice) {
-              utterance.voice = voice;
+            if(shortLang == "es")
+            {
+                voice = voices.find(v => v.lang.startsWith('es')) ||
+                        voices.find(v => v.lang.startsWith('en'));
             }
+            
+            utterance.voice = voice;
+            utterance.lang = voice.lang;
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            
+            /*if (voice) {
+                utterance.voice = voice;
+            }*/
 
             window.speechSynthesis.speak(utterance);
             // Marcar el elemento como "leído" para no repetirlo
