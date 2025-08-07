@@ -111,6 +111,7 @@ const speechModule = (() => {
             
             //alert("lang_synthesis " + lang_synthesis);
             const voices = window.speechSynthesis.getVoices();
+            var voice;
             
             if(shortLang == "es")
             {
@@ -176,11 +177,9 @@ $( document ).ready(function() {
     const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
 
     if (localStorage.getItem(STORAGE_KEY_BACKEND) !== 'true' || !('speechSynthesis' in window)) {
-        alert("123");
         speechModule.deactivate();
     }else
     {
-        alert("1234");
         speechModule.activate();
     }
 });
