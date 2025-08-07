@@ -115,34 +115,12 @@ const speechModule = (() => {
             
             if(location.pathname.substring(0, 3) == "/es")
             {
-                for (const key in voices) {
-                    if (Object.prototype.hasOwnProperty.call(voices, key)) {
-                        const value = voices[key];
-                        if(value.lang.startsWith('es'))
-                        {
-                            alert(value.lang);
-                            voice = value;
-                            break;
-                        }
-                        //console.log(`Key: ${key}, Value: ${value}`);
-                    }
-                }
+                voice = voices.find(v => v.lang.startsWith('es_US')) || 
+                        voices.find(v => v.lang.startsWith('es_MX')) || 
+                        voices.find(v => v.lang.startsWith('es'));
             }else
             {
-                for (const key in voices) {
-                    if (Object.prototype.hasOwnProperty.call(voices, key)) {
-                        const value = voices[key];
-                        if(value.lang.startsWith('en'))
-                        {
-                            alert(value.lang);
-                            voice = value;
-                            break;
-                        }
-                        //console.log(`Key: ${key}, Value: ${value}`);
-                    }
-                }
-                
-                //voice = voices.find(v => v.lang.startsWith('en'));
+                voice = voices.find(v => v.lang.startsWith('en'));
             }
             
             //alert("voices " + voices);
