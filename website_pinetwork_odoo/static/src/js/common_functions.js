@@ -121,7 +121,7 @@ const speechModule = (() => {
                         if(value.lang.startsWith('es'))
                         {
                             alert(value.lang);
-                            voice = value.lang;
+                            voice = value;
                             break;
                         }
                         //console.log(`Key: ${key}, Value: ${value}`);
@@ -135,12 +135,14 @@ const speechModule = (() => {
                         if(value.lang.startsWith('en'))
                         {
                             alert(value.lang);
-                            voice = value.lang;
+                            voice = value;
                             break;
                         }
                         //console.log(`Key: ${key}, Value: ${value}`);
                     }
                 }
+                
+                //voice = voices.find(v => v.lang.startsWith('en'));
             }
             
             //alert("voices " + voices);
