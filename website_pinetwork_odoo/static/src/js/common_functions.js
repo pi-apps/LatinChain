@@ -109,8 +109,19 @@ const speechModule = (() => {
             const systemLanguage = navigator.language;
             const shortLang = systemLanguage.split(/[-_]/)[0];
             
+            //alert("lang_synthesis " + lang_synthesis);
             const voices = window.speechSynthesis.getVoices();
-            var voice = voices.find(v => v.lang.startsWith('en'));
+            var voice;
+            
+            if(shortLang == "es")
+            {
+                voice = voices.find(v => v.lang.startsWith('es')) ||
+                        voices.find(v => v.lang.startsWith('en'));
+            }else
+            {
+                voice = voices.find(v => v.lang.startsWith('en'));
+            }
+                
             
             if (voice) {
               utterance.voice = voice;
@@ -163,12 +174,14 @@ const speechModule = (() => {
 
 $( document ).ready(function() {
 
-    const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
+    setTimeout(function (){
+        const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
 
-    if (localStorage.getItem(STORAGE_KEY_BACKEND) !== 'true' || !('speechSynthesis' in window)) {
-        speechModule.deactivate();
-    }else
-    {
-        speechModule.activate();
-    }
+        if (localStorage.getItem(STORAGE_KEY_BACKEND) !== 'true' || !('speechSynthesis' in window)) {
+            speechModule.deactivate();
+        }else
+        {
+            speechModule.activate();
+        }
+    }, 5000);
 });
