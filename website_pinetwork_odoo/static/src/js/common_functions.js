@@ -111,20 +111,20 @@ const speechModule = (() => {
             
             //alert("lang_synthesis " + lang_synthesis);
             const voices = window.speechSynthesis.getVoices();
-            var voice;
+            var voice_var;
             
             if(shortLang == "es")
             {
-                voice = voices.find(v => v.lang.startsWith('es_US')) ||
+                voice_var = voices.find(v => v.lang.startsWith('es')) ||
                         voices.find(v => v.lang.startsWith('en'));
             }else
             {
-                voice = voices.find(v => v.lang.startsWith('en'));
+                voice_var = voices.find(v => v.lang.startsWith('en'));
             }
                 
             
             if (voice) {
-              utterance.voice = voice;
+              utterance.voice = voice_var;
             }
 
             window.speechSynthesis.speak(utterance);
