@@ -115,8 +115,6 @@ const speechModule = (() => {
             
             if(location.pathname.substring(0, 3) == "/es")
             {
-                voice = voices.find(v => v.lang.startsWith('es'));
-                
                 for (const key in voices) {
                     if (Object.prototype.hasOwnProperty.call(voices, key)) {
                         const value = voices[key];
