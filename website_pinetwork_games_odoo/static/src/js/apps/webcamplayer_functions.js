@@ -455,6 +455,7 @@ function toggleAutoSpeak() {
     }
 }
 
+/*
 // Add event listeners to buttons
 switchCameraButton.addEventListener('click', switchCamera);
 askButton.addEventListener('click', askWhatIsBeingSeen);
@@ -477,7 +478,33 @@ window.onload = async function() {
             animationFrameId = requestAnimationFrame(detectObjects);
         }
     }
-};
+};*/
+
+async function load_function()
+{
+    // Add event listeners to buttons
+    switchCameraButton.addEventListener('click', switchCamera);
+    askButton.addEventListener('click', askWhatIsBeingSeen);
+    toggleAutoSpeakButton.addEventListener('click', toggleAutoSpeak);
+
+    // Event listener for the confidence slider
+    confidenceThresholdSlider.addEventListener('input', (event) => {
+        minConfidence = parseFloat(event.target.value) / 100;
+        confidenceValueSpan.textContent = `${event.target.value}%`;
+    });
+    
+    const webcamReady = await setupWebcam('user');
+    if (webcamReady) {
+       
+        await loadModel();
+       
+        if (model) {
+            animationFrameId = requestAnimationFrame(detectObjects);
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', load_function);
 
 window.onbeforeunload = () => {
     if (animationFrameId) {
