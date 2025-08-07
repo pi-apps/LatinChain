@@ -53,7 +53,7 @@ function getGeminiImage()
 const speechModule = (() => {
   const STORAGE_KEY = 'speech_synthesis_active';
   let observer = null;
-  const spokenElements = new Set();
+  //const spokenElements = new Set();
 
   /**
    * 1. Activa la síntesis de voz en localStorage e inicia el observador.
@@ -99,10 +99,12 @@ const speechModule = (() => {
       if (localStorage.getItem(STORAGE_KEY) !== 'true' || !('speechSynthesis' in window)) {
         return;
       }
+      
+      window.speechSynthesis.cancel();
 
       entries.forEach(entry => {
         // Si el elemento es visible y no lo hemos leído antes
-        if (entry.isIntersecting && !spokenElements.has(entry.target)) {
+        if (entry.isIntersecting){ // && !spokenElements.has(entry.target)) {
           const textToSpeak = entry.target.textContent;
           if (textToSpeak.trim()) {
             const utterance = new SpeechSynthesisUtterance(textToSpeak);
@@ -130,7 +132,7 @@ const speechModule = (() => {
 
             window.speechSynthesis.speak(utterance);
             // Marcar el elemento como "leído" para no repetirlo
-            spokenElements.add(entry.target);
+            //spokenElements.add(entry.target);
           }
         }
       });
@@ -140,7 +142,7 @@ const speechModule = (() => {
 
     // Selecciona todos los elementos que quieres que sean leídos.
     // Puedes ajustar este selector para ser más específico (ej: 'p, h1, h2, li').
-    document.querySelectorAll('p, h1, h2, li').forEach(element => {
+    document.querySelectorAll('p, h1, h2, h3, h4, h5, li, div, span, button, a').forEach(element => {
       observer.observe(element);
     });
   };
@@ -157,7 +159,7 @@ const speechModule = (() => {
         observer.disconnect();
         observer = null;
       }
-      spokenElements.clear();
+      //spokenElements.clear();
       window.speechSynthesis.cancel(); // Detiene cualquier lectura en curso
       console.log('Síntesis de voz desactivada.');
     } catch (e) {
