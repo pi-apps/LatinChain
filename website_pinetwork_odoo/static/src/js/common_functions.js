@@ -113,10 +113,10 @@ const speechModule = (() => {
             {
                 lang_synthesis='es';
             }
-            alert("lang_synthesis " + lang_synthesis);
+            //alert("lang_synthesis " + lang_synthesis);
             const voices = window.speechSynthesis.getVoices();
-            const voice = voices.find(v => v.lang.startsWith(lang_synthesis));
-            alert("voice " + voice);
+            const voice = voices.find(v => v.lang.startsWith('es'));
+            //alert("voices " + voices);
             /*const voice = voices.find(v => v.lang.startsWith(shortLang)) ||
                           voices.find(v => v.lang.startsWith('en'));*/
 
