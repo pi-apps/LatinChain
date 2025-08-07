@@ -146,7 +146,7 @@ const speechModule = (() => {
 
     // Selecciona todos los elementos que quieres que sean leídos.
     // Puedes ajustar este selector para ser más específico (ej: 'p, h1, h2, li').
-    document.querySelectorAll('p, h1, h2, h3, h4, h5, li').forEach(element => {
+    document.querySelectorAll('p, h1, h2, h3, h4, h5').forEach(element => {
       observer.observe(element);
     });
   };
