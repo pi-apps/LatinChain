@@ -115,21 +115,34 @@ const speechModule = (() => {
             
             if(location.pathname.substring(0, 3) == "/es")
             {
-                voice = voices.find(v => v.lang.startsWith('es')) ||
-                          voices.find(v => v.lang.startsWith('es_US'));
+                voice = voices.find(v => v.lang.startsWith('es'));
+                
+                for (const key in voices) {
+                    if (Object.prototype.hasOwnProperty.call(voices, key)) {
+                        const value = voices[key];
+                        if(value.lang.startsWith('es'))
+                        {
+                            alert(value.lang);
+                            voice = value.lang;
+                        }
+                        //console.log(`Key: ${key}, Value: ${value}`);
+                    }
+                }
             }else
             {
-                voice = voices.find(v => v.lang.startsWith('en'));
-            }
-            
-            for (const key in voices) {
-                if (Object.prototype.hasOwnProperty.call(voices, key)) {
-                    const value = voices[key];
-                    if(value.lang.startsWith('es_US') || value.lang.startsWith('es') || value.lang.startsWith('en'))
-                        alert(value.lang);
-                    //console.log(`Key: ${key}, Value: ${value}`);
+                for (const key in voices) {
+                    if (Object.prototype.hasOwnProperty.call(voices, key)) {
+                        const value = voices[key];
+                        if(value.lang.startsWith('en'))
+                        {
+                            alert(value.lang);
+                            voice = value.lang;
+                        }
+                        //console.log(`Key: ${key}, Value: ${value}`);
+                    }
                 }
             }
+            
             //alert("voices " + voices);
             /*const voice = voices.find(v => v.lang.startsWith(shortLang)) ||
                           voices.find(v => v.lang.startsWith('en'));*/
