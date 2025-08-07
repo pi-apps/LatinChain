@@ -179,6 +179,33 @@ const speechModule = (() => {
   };
 })();
 
+async function speak(textIncome){
+    const textToSpeak = textIncome;
+    if (textToSpeak.trim()) {
+        const utterance = new SpeechSynthesisUtterance(textToSpeak);
+        const systemLanguage = navigator.language;
+        const shortLang = systemLanguage.split(/[-_]/)[0];
+
+        //alert("lang_synthesis " + lang_synthesis);
+        const voices = window.speechSynthesis.getVoices();
+        var voice = voices.find(v => v.lang.startsWith('en')) ||
+                    voices.find(v => v.lang.startsWith(shortLang));
+
+        if(shortLang == "es")
+        {
+            voice = voices.find(v => v.lang.startsWith('es')) ||
+                    voices.find(v => v.lang.startsWith('en'));
+        }
+
+        utterance.voice = voice;
+        utterance.lang = voice.lang;
+        utterance.pitch = 1;
+        utterance.rate = 1;
+        
+        window.speechSynthesis.speak(utterance);
+    }
+}
+
 function loadSpeechLanguages() {
     const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
 
