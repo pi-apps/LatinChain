@@ -111,26 +111,17 @@ const speechModule = (() => {
             
             //alert("lang_synthesis " + lang_synthesis);
             const voices = window.speechSynthesis.getVoices();
-            var voice = voices.find(v => v.lang.startsWith('en'));
             
             if(shortLang == "es")
             {
-                voice = voices.find(v => v.lang.startsWith('es')) ||
+                voice = voices.find(v => v.lang.startsWith(shortLang)) ||
                         voices.find(v => v.lang.startsWith('en'));
-            }
-            
-            /*if(location.pathname.substring(0, 3) == "/es")
-            {
-                voice = voices.find(v => v.lang.startsWith('es'));
             }else
             {
                 voice = voices.find(v => v.lang.startsWith('en'));
-            }*/
+            }
+                
             
-            //alert("voices " + voices);
-            /*const voice = voices.find(v => v.lang.startsWith(shortLang)) ||
-                          voices.find(v => v.lang.startsWith('en'));*/
-
             if (voice) {
               utterance.voice = voice;
             }
@@ -189,5 +180,6 @@ $( document ).ready(function() {
     }else
     {
         speechModule.activate();
+        speechModule.observer();
     }
 });
