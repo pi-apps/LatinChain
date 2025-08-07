@@ -635,7 +635,7 @@ async function showPiAds(Pi, activated) {
         if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
         {
             $("#button_reward_ad").html(btnvalue);
-            $("#button_reward_ad").prop( "disabled", false );
+            //$("#button_reward_ad").prop( "disabled", false );
             return;
         }
         
@@ -656,10 +656,10 @@ async function showPiAds(Pi, activated) {
         }
         
         $("#button_reward_ad").html(btnvalue);
-        $("#button_reward_ad").prop( "disabled", false );
+        //$("#button_reward_ad").prop( "disabled", false );
     } catch (err) {
         $("#button_reward_ad").html(btnvalue);
-        $("#button_reward_ad").prop( "disabled", false );
+        //$("#button_reward_ad").prop( "disabled", false );
         //alert(err);
         // Not able to fetch the user
     }
