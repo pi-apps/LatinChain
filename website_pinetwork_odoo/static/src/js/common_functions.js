@@ -115,7 +115,7 @@ const speechModule = (() => {
             
             if(shortLang == "es")
             {
-                voice = voices.find(v => v.lang.startsWith(shortLang)) ||
+                voice = voices.find(v => v.lang.startsWith('es_US')) ||
                         voices.find(v => v.lang.startsWith('en'));
             }else
             {
