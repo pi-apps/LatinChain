@@ -139,7 +139,7 @@ const speechModule = (() => {
               }
             }
           });
-      }, 2000);
+      }, 1000);
     };
 
     observer = new IntersectionObserver(callback, options);
