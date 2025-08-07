@@ -122,6 +122,7 @@ const speechModule = (() => {
                         {
                             alert(value.lang);
                             voice = value.lang;
+                            break;
                         }
                         //console.log(`Key: ${key}, Value: ${value}`);
                     }
@@ -135,6 +136,7 @@ const speechModule = (() => {
                         {
                             alert(value.lang);
                             voice = value.lang;
+                            break;
                         }
                         //console.log(`Key: ${key}, Value: ${value}`);
                     }
