@@ -207,13 +207,17 @@ async function speak(textIncome){
 }
 
 function loadSpeechLanguages() {
-    const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
-
-    if (localStorage.getItem(STORAGE_KEY_BACKEND) !== 'true' || !('speechSynthesis' in window)) {
-        speechModule.deactivate();
-    }else
+    if(location.pathname.substring(0, 13) != "/webcamplayer" && 
+        location.pathname.substring(0, 16) != "/es/webcamplayer")
     {
-        speechModule.activate();
+        const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
+
+        if (localStorage.getItem(STORAGE_KEY_BACKEND) !== 'true' || !('speechSynthesis' in window)) {
+            speechModule.deactivate();
+        }else
+        {
+            speechModule.activate();
+        }
     }
 }
 
