@@ -123,7 +123,7 @@ const speechModule = (() => {
             }
                 
             
-            if (voice) {
+            if (voice_var) {
               utterance.voice = voice_var;
             }
 
