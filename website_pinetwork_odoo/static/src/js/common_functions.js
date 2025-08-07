@@ -106,13 +106,14 @@ const speechModule = (() => {
           const textToSpeak = entry.target.textContent;
           if (textToSpeak.trim()) {
             const utterance = new SpeechSynthesisUtterance(textToSpeak);
-            const systemLanguage = navigator.language;
+            //const systemLanguage = navigator.language;
             //const shortLang = systemLanguage.split(/[-_]/)[0];
             var lang_synthesis='en';
             if(location.pathname.substring(0, 3) == "/es")
             {
                 lang_synthesis='es';
             }
+            alert(lang_synthesis);
             const voices = window.speechSynthesis.getVoices();
             const voice = voices.find(v => v.lang.startsWith(lang_synthesis));
             /*const voice = voices.find(v => v.lang.startsWith(shortLang)) ||
