@@ -106,22 +106,26 @@ const speechModule = (() => {
           const textToSpeak = entry.target.textContent;
           if (textToSpeak.trim()) {
             const utterance = new SpeechSynthesisUtterance(textToSpeak);
-            //const systemLanguage = navigator.language;
-            //const shortLang = systemLanguage.split(/[-_]/)[0];
+            const systemLanguage = navigator.language;
+            const shortLang = systemLanguage.split(/[-_]/)[0];
             
             //alert("lang_synthesis " + lang_synthesis);
             const voices = window.speechSynthesis.getVoices();
-            var voice;
+            var voice = voices.find(v => v.lang.startsWith('en'));
             
-            if(location.pathname.substring(0, 3) == "/es")
+            if(shortLang == "es")
             {
-                voice = voices.find(v => v.lang.startsWith('es_US')) || 
-                        voices.find(v => v.lang.startsWith('es_MX')) || 
-                        voices.find(v => v.lang.startsWith('es'));
+                voice = voices.find(v => v.lang.startsWith('es')) ||
+                        voices.find(v => v.lang.startsWith('en'));
+            }
+            
+            /*if(location.pathname.substring(0, 3) == "/es")
+            {
+                voice = voices.find(v => v.lang.startsWith('es'));
             }else
             {
                 voice = voices.find(v => v.lang.startsWith('en'));
-            }
+            }*/
             
             //alert("voices " + voices);
             /*const voice = voices.find(v => v.lang.startsWith(shortLang)) ||
