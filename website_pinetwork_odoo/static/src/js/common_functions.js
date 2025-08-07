@@ -53,7 +53,7 @@ function getGeminiImage()
 const speechModule = (() => {
   const STORAGE_KEY = 'speech_synthesis_active';
   let observer = null;
-  //const spokenElements = new Set();
+  const spokenElements = new Set();
 
   /**
    * 1. Activa la síntesis de voz en localStorage e inicia el observador.
@@ -101,48 +101,52 @@ const speechModule = (() => {
       }
       
       window.speechSynthesis.cancel();
+      spokenElements.clear();
 
-      entries.forEach(entry => {
-        // Si el elemento es visible y no lo hemos leído antes
-        if (entry.isIntersecting){ // && !spokenElements.has(entry.target)) {
-          const textToSpeak = entry.target.textContent;
-          if (textToSpeak.trim()) {
-            const utterance = new SpeechSynthesisUtterance(textToSpeak);
-            const systemLanguage = navigator.language;
-            const shortLang = systemLanguage.split(/[-_]/)[0];
-            
-            //alert("lang_synthesis " + lang_synthesis);
-            const voices = window.speechSynthesis.getVoices();
-            var voice = voices.find(v => v.lang.startsWith('en'));
-            
-            if(shortLang == "es")
-            {
-                voice = voices.find(v => v.lang.startsWith('es')) ||
-                        voices.find(v => v.lang.startsWith('en'));
-            }
-            
-            utterance.voice = voice;
-            utterance.lang = voice.lang;
-            utterance.pitch = 1;
-            utterance.rate = 1;
-            
-            /*if (voice) {
+      setTimeout(function() {
+          entries.forEach(entry => {
+            // Si el elemento es visible y no lo hemos leído antes
+            if ((entry.isIntersecting) && !spokenElements.has(entry.target)) {
+              const textToSpeak = entry.target.textContent;
+              if (textToSpeak.trim()) {
+                const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                const systemLanguage = navigator.language;
+                const shortLang = systemLanguage.split(/[-_]/)[0];
+                
+                //alert("lang_synthesis " + lang_synthesis);
+                const voices = window.speechSynthesis.getVoices();
+                var voice = voices.find(v => v.lang.startsWith('en')) ||
+                            voices.find(v => v.lang.startsWith(shortLang));
+                
+                if(shortLang == "es")
+                {
+                    voice = voices.find(v => v.lang.startsWith('es')) ||
+                            voices.find(v => v.lang.startsWith('en'));
+                }
+                
                 utterance.voice = voice;
-            }*/
+                utterance.lang = voice.lang;
+                utterance.pitch = 1;
+                utterance.rate = 1;
+                
+                /*if (voice) {
+                    utterance.voice = voice;
+                }*/
 
-            window.speechSynthesis.speak(utterance);
-            // Marcar el elemento como "leído" para no repetirlo
-            //spokenElements.add(entry.target);
-          }
-        }
-      });
+                window.speechSynthesis.speak(utterance);
+                // Marcar el elemento como "leído" para no repetirlo
+                spokenElements.add(entry.target);
+              }
+            }
+          });
+      }, 2000);
     };
 
     observer = new IntersectionObserver(callback, options);
 
     // Selecciona todos los elementos que quieres que sean leídos.
     // Puedes ajustar este selector para ser más específico (ej: 'p, h1, h2, li').
-    document.querySelectorAll('p, h1, h2, h3, h4, h5, li, div, span, button, a').forEach(element => {
+    document.querySelectorAll('p, h1, h2, h3, h4, h5, li').forEach(element => {
       observer.observe(element);
     });
   };
@@ -159,7 +163,7 @@ const speechModule = (() => {
         observer.disconnect();
         observer = null;
       }
-      //spokenElements.clear();
+      spokenElements.clear();
       window.speechSynthesis.cancel(); // Detiene cualquier lectura en curso
       console.log('Síntesis de voz desactivada.');
     } catch (e) {
