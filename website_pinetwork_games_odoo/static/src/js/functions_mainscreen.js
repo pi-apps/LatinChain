@@ -668,6 +668,30 @@ async function showPiAds(Pi, activated) {
 $( document ).ready(function() {
     colorboxLoaded();
     
+    const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
+    
+    if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true' || !('speechSynthesis' in window)) {
+        $('#pi_automatic_accessibility').prop('checked', false);
+        //speechModule.deactivate();
+    }else
+    {
+        $('#pi_automatic_accessibility').prop('checked', true);
+        //speechModule.activate();
+    }
+    
+    $('#pi_automatic_accessibility').change(function() {
+        var pi_automatic_accessibility = $("#pi_automatic_accessibility").is(":checked");
+        
+        if(pi_automatic_accessibility)
+        {
+            speechModule.activate();
+        }
+        else
+        {
+            speechModule.deactivate();
+        }
+    });
+    
     window.addEventListener('unhandledrejection', function (e) {
         e.preventDefault();
         e.stopPropagation();

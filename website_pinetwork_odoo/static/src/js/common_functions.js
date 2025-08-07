@@ -43,3 +43,131 @@ function getGeminiImage()
     
     return img_array[random_integer];
 }
+
+// speech-module.js
+
+/**
+ * Módulo para gestionar la síntesis de voz (Text-to-Speech) con localStorage.
+ * Utiliza IntersectionObserver para leer solo el contenido visible.
+ */
+const speechModule = (() => {
+  const STORAGE_KEY = 'speech_synthesis_active';
+  let observer = null;
+  const spokenElements = new Set();
+
+  /**
+   * 1. Activa la síntesis de voz en localStorage e inicia el observador.
+   *
+   * @returns {void}
+   */
+  const activateSpeech = () => {
+    try {
+      localStorage.setItem(STORAGE_KEY, 'true');
+      console.log('Síntesis de voz activada.');
+      setupObserver();
+    } catch (e) {
+      console.error('Error al guardar en localStorage:', e);
+    }
+  };
+
+  /**
+   * 2. Inicia el IntersectionObserver para monitorear los elementos visibles.
+   * Lee el contenido de los elementos a medida que entran en el viewport.
+   * Esta función ahora es interna.
+   *
+   * @returns {void}
+   */
+  const setupObserver = () => {
+    if (!('IntersectionObserver' in window)) {
+      console.error('IntersectionObserver no es compatible con este navegador.');
+      return;
+    }
+    
+    // Si ya hay un observador activo, lo desconecta primero.
+    if (observer) {
+        observer.disconnect();
+    }
+
+    // Opciones del observador: el callback se dispara cuando el 50% del elemento es visible.
+    const options = {
+      root: null, // El viewport
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const callback = (entries) => {
+      if (localStorage.getItem(STORAGE_KEY) !== 'true' || !('speechSynthesis' in window)) {
+        return;
+      }
+
+      entries.forEach(entry => {
+        // Si el elemento es visible y no lo hemos leído antes
+        if (entry.isIntersecting && !spokenElements.has(entry.target)) {
+          const textToSpeak = entry.target.textContent;
+          if (textToSpeak.trim()) {
+            const utterance = new SpeechSynthesisUtterance(textToSpeak);
+            const systemLanguage = navigator.language;
+            const voices = window.speechSynthesis.getVoices();
+            const voice = voices.find(v => v.lang === systemLanguage) ||
+                          voices.find(v => v.lang.startsWith('en'));
+
+            if (voice) {
+              utterance.voice = voice;
+            }
+
+            window.speechSynthesis.speak(utterance);
+            // Marcar el elemento como "leído" para no repetirlo
+            spokenElements.add(entry.target);
+          }
+        }
+      });
+    };
+
+    observer = new IntersectionObserver(callback, options);
+
+    // Selecciona todos los elementos que quieres que sean leídos.
+    // Puedes ajustar este selector para ser más específico (ej: 'p, h1, h2, li').
+    document.querySelectorAll('p, h1, h2, li').forEach(element => {
+      observer.observe(element);
+    });
+  };
+
+  /**
+   * 3. Desactiva la síntesis de voz en localStorage y detiene el observador.
+   *
+   * @returns {void}
+   */
+  const deactivateSpeech = () => {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+      if (observer) {
+        observer.disconnect();
+        observer = null;
+      }
+      spokenElements.clear();
+      window.speechSynthesis.cancel(); // Detiene cualquier lectura en curso
+      console.log('Síntesis de voz desactivada.');
+    } catch (e) {
+      console.error('Error al remover de localStorage:', e);
+    }
+  };
+
+  // Se retornan solo las funciones públicas para su uso.
+  return {
+    activate: activateSpeech,
+    deactivate: deactivateSpeech,
+    observer: setupObserver
+  };
+})();
+
+$( document ).ready(function() {
+
+    const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
+
+    if (localStorage.getItem(STORAGE_KEY_BACKEND) !== 'true' || !('speechSynthesis' in window)) {
+        speechModule.deactivate();
+    }else
+    {
+        speechModule.activate();
+    }
+});
