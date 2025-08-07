@@ -109,22 +109,11 @@ const speechModule = (() => {
             const systemLanguage = navigator.language;
             const shortLang = systemLanguage.split(/[-_]/)[0];
             
-            //alert("lang_synthesis " + lang_synthesis);
             const voices = window.speechSynthesis.getVoices();
-            var voice_var;
+            var voice = voices.find(v => v.lang.startsWith('en'));
             
-            if(shortLang == "es")
-            {
-                voice_var = voices.find(v => v.lang.startsWith('es')) ||
-                        voices.find(v => v.lang.startsWith('en'));
-            }else
-            {
-                voice_var = voices.find(v => v.lang.startsWith('en'));
-            }
-                
-            
-            if (voice_var) {
-              utterance.voice = voice_var;
+            if (voice) {
+              utterance.voice = voice;
             }
 
             window.speechSynthesis.speak(utterance);
