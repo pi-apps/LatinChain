@@ -118,7 +118,7 @@ const speechModule = (() => {
                 var voice = voices.find(v => v.lang.startsWith('en')) ||
                             voices.find(v => v.lang.startsWith(shortLang));
                 
-                if(shortLang == "es")
+                if(location.pathname.substring(0, 3) == "/es")
                 {
                     voice = voices.find(v => v.lang.startsWith('es')) ||
                             voices.find(v => v.lang.startsWith('en'));
@@ -193,7 +193,7 @@ async function speak(textIncome){
         var voice = voices.find(v => v.lang.startsWith('en')) ||
                     voices.find(v => v.lang.startsWith(shortLang));
 
-        if(shortLang == "es")
+        if(location.pathname.substring(0, 3) == "/es")
         {
             voice = voices.find(v => v.lang.startsWith('es')) ||
                     voices.find(v => v.lang.startsWith('en'));
@@ -212,7 +212,9 @@ async function speak(textIncome){
 
 function loadSpeechLanguages() {
     if(location.pathname.substring(0, 13) != "/webcamplayer" && 
-        location.pathname.substring(0, 16) != "/es/webcamplayer")
+        location.pathname.substring(0, 16) != "/es/webcamplayer" &&
+        location.pathname.substring(0, 5) != "/web" && 
+        location.pathname.substring(0, 8) != "/es/web")
     {
         const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
 
