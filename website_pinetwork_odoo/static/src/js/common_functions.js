@@ -124,18 +124,20 @@ const speechModule = (() => {
                             voices.find(v => v.lang.startsWith('en'));
                 }
                 
-                utterance.voice = voice;
-                utterance.lang = voice.lang;
-                utterance.pitch = 1;
-                utterance.rate = 1;
-                
-                /*if (voice) {
+                if (voice) {
                     utterance.voice = voice;
-                }*/
+                    utterance.lang = voice.lang;
+                    utterance.pitch = 1;
+                    utterance.rate = 1;
+                    
+                    /*if (voice) {
+                        utterance.voice = voice;
+                    }*/
 
-                window.speechSynthesis.speak(utterance);
-                // Marcar el elemento como "leído" para no repetirlo
-                spokenElements.add(entry.target);
+                    window.speechSynthesis.speak(utterance);
+                    // Marcar el elemento como "leído" para no repetirlo
+                    spokenElements.add(entry.target);
+                }
               }
             }
           });
@@ -197,12 +199,14 @@ async function speak(textIncome){
                     voices.find(v => v.lang.startsWith('en'));
         }
 
-        utterance.voice = voice;
-        utterance.lang = voice.lang;
-        utterance.pitch = 1;
-        utterance.rate = 1;
-        
-        window.speechSynthesis.speak(utterance);
+        if (voice) {
+            utterance.voice = voice;
+            utterance.lang = voice.lang;
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            
+            window.speechSynthesis.speak(utterance);
+        }
     }
 }
 
