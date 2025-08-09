@@ -214,7 +214,11 @@ function loadSpeechLanguages() {
     if(location.pathname.substring(0, 13) != "/webcamplayer" && 
         location.pathname.substring(0, 16) != "/es/webcamplayer" &&
         location.pathname.substring(0, 5) != "/web" && 
-        location.pathname.substring(0, 8) != "/es/web")
+        location.pathname.substring(0, 8) != "/es/web" &&
+        location.pathname.substring(0, 5) != "/web/" && 
+        location.pathname.substring(0, 8) != "/es/web/" &&
+        location.pathname.substring(0, 5) != "/web?" && 
+        location.pathname.substring(0, 8) != "/es/web?")
     {
         const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
 
