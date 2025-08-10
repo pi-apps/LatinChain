@@ -1440,7 +1440,8 @@
                                 margin-bottom: 0.5rem;
                                 font-weight: 600;
                                 color: #4b5563;
-                            }                        </style>
+                            }
+                        </style>
                         
                         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                         
@@ -1638,6 +1639,200 @@
                         </div>
 
                         <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webcamplayer_functions.js?v=1.118"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="texttospeechplayer" name="Text To Speech Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Text-to-Speech Reader</title>
+                        <!-- Tailwind CSS CDN for a modern and responsive style -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600');
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #f3f4f6;
+                            }
+                            /* Hide the default file input and style the label */
+                            .custom-file-input {
+                                display: none;
+                            }
+                            .custom-file-label {
+                                cursor: pointer;
+                            }
+                            .custom-file-label:hover {
+                                background-color: #d1d5db;
+                            }
+                        </style>
+                        <!-- Include pdf.js library for PDF file processing -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            const Pi = window.Pi;
+                            $( document ).ready(function() {
+                            
+                                var pi_user_id = "";
+                                async function auth() {
+                                    try {
+                                        // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                        const scopes = ['username', 'payments', 'wallet_address'];
+                                        function onIncompletePaymentFound(payment) {
+                                            
+                                        }; // Read more about this in the SDK reference
+                                        
+                                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                            pi_user_id = auth.user.uid;
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'none';
+                                        }).catch(function(error) {
+                                            //Pi.openShareDialog("Error", error);
+                                            //alert(err);
+                                            console.error(error);
+                                        });
+                                    } catch (err) {
+                                        //Pi.openShareDialog("Error", err);
+                                        //alert(err);
+                                        console.error(err);
+                                        // Not able to fetch the user
+                                    }
+                                }
+                                
+                                (async () => {
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            auth();
+                                            
+                                            setTimeout(function ()
+                                            {
+                                                if(pi_user_id == "")
+                                                {
+                                                    //alert($("#pi_prowser_message").text());
+                                                    
+                                                    if(window.location.hostname == "localhost")
+                                                    {
+                                                        $("a.anchor-click").attr('href', window.location.origin);
+                                                    }
+                                                    else if(window.location.hostname == "test.latin-chain.com")
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                    }
+                                                    
+                                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                }
+                                            }, 10000);
+                                        }
+                                    }, 10000);
+                                })();
+                                
+                            });
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+                        <div class="bg-white p-6 rounded-2xl shadow-xl max-w-sm w-full">
+                            
+                            <h1 class="text-2xl font-bold text-gray-800 text-center mb-6">Text-to-Speech Reader</h1>
+                            
+                            <!-- Textarea for pasting content -->
+                            <textarea id="articleText" rows="8" placeholder="Paste your text here..."
+                                      class="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 resize-y"></textarea>
+                            
+                            <!-- Character counter and limit message -->
+                            <div class="text-right text-xs text-gray-500 mt-1 mb-4">
+                                Characters: <span id="charCount">0</span> / 4000
+                                <p id="charLimitMessage" class="text-red-500 hidden mt-1">Text is too long for stable playback. Please shorten it.</p>
+                            </div>
+
+                            <!-- File upload and voice selection options -->
+                            <div class="flex flex-col justify-between items-center mb-6 space-y-4">
+                                
+                                <!-- Upload text/pdf file -->
+                                <div class="w-full">
+                                    <input type="file" id="fileInput" class="custom-file-input" accept=".txt,.pdf" />
+                                    <label for="fileInput" class="custom-file-label flex items-center justify-center px-4 py-2 bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all duration-200 hover:bg-gray-300 text-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 2h4v2H6V6zm0 4h8v2H6v-2zm0 4h8v2H6v-2z" clip-rule="evenodd" />
+                                        </svg>
+                                        <span>Upload .txt or .pdf file</span>
+                                    </label>
+                                </div>
+
+                                <!-- Voice selector -->
+                                <div class="w-full">
+                                    <select id="voiceSelect" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 text-sm">
+                                        <option value="" disabled="disabled" selected="selected">Select a voice</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Trim text button (conditionally visible) -->
+                            <button id="trimBtn" class="hidden w-full mb-3 bg-gray-500 text-white font-semibold py-2 px-6 rounded-xl shadow-md hover:bg-gray-600 transition-colors duration-200 text-sm">
+                                Trim Text to 4000 Chars
+                            </button>
+
+                            <!-- Playback control buttons -->
+                            <div class="flex flex-col space-y-3">
+                                <button id="playBtn" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl shadow-md hover:bg-blue-700 transition-colors duration-200 text-sm">
+                                    Play
+                                </button>
+                                <div class="flex justify-between space-x-3">
+                                    <button id="pauseBtn" class="w-1/2 bg-yellow-500 text-white font-semibold py-2 px-6 rounded-xl shadow-md hover:bg-yellow-600 transition-colors duration-200 text-sm">
+                                        Pause
+                                    </button>
+                                    <button id="stopBtn" class="w-1/2 bg-red-500 text-white font-semibold py-2 px-6 rounded-xl shadow-md hover:bg-red-600 transition-colors duration-200 text-sm">
+                                        Stop
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Status messages -->
+                            <div id="messageBox" class="mt-4 text-center text-gray-600 text-xs"></div>
+                            
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/texttospeechplayer_functions.js?v=1.101"></script>
                     </body>
                 </html>
             </t>

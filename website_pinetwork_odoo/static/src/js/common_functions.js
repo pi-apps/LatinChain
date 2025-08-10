@@ -227,6 +227,8 @@ async function speak(textIncome){
 function loadSpeechLanguages() {
     if(location.pathname.substring(0, 13) != "/webcamplayer" && 
         location.pathname.substring(0, 16) != "/es/webcamplayer" &&
+        location.pathname.substring(0, 19) != "/texttospeechplayer" && 
+        location.pathname.substring(0, 22) != "/es/texttospeechplayer" &&
         location.pathname.substring(0, 5) != "/web" && 
         location.pathname.substring(0, 8) != "/es/web" &&
         location.pathname.substring(0, 5) != "/web/" && 
