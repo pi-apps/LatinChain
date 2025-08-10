@@ -115,13 +115,20 @@ const speechModule = (() => {
                 
                 //alert("lang_synthesis " + lang_synthesis);
                 const voices = window.speechSynthesis.getVoices();
-                var voice = voices.find(v => v.lang.startsWith('en')) ||
+                var voice = voices.find(v => v.lang.startsWith('en_US')) ||
+                            voices.find(v => v.lang.startsWith('en-US')) ||
+                            voices.find(v => v.lang.startsWith('en')) ||
                             voices.find(v => v.lang.startsWith(shortLang));
                 
                 if(location.pathname.substring(0, 3) == "/es")
                 {
-                    voice = voices.find(v => v.lang.startsWith('es')) ||
-                            voices.find(v => v.lang.startsWith('en'));
+                    voice = voices.find(v => v.lang.startsWith('es_US')) ||
+                            voices.find(v => v.lang.startsWith('es-US')) ||
+                            voices.find(v => v.lang.startsWith('es')) ||
+                            voices.find(v => v.lang.startsWith('en_US')) ||
+                            voices.find(v => v.lang.startsWith('en-US')) ||
+                            voices.find(v => v.lang.startsWith('en')) ||
+                            voices.find(v => v.lang.startsWith(shortLang));
                 }
                 
                 if (voice) {
@@ -190,13 +197,20 @@ async function speak(textIncome){
 
         //alert("lang_synthesis " + lang_synthesis);
         const voices = window.speechSynthesis.getVoices();
-        var voice = voices.find(v => v.lang.startsWith('en')) ||
+        var voice = voices.find(v => v.lang.startsWith('en_US')) ||
+                    voices.find(v => v.lang.startsWith('en-US')) ||
+                    voices.find(v => v.lang.startsWith('en')) ||
                     voices.find(v => v.lang.startsWith(shortLang));
 
         if(location.pathname.substring(0, 3) == "/es")
         {
-            voice = voices.find(v => v.lang.startsWith('es')) ||
-                    voices.find(v => v.lang.startsWith('en'));
+            voice = voices.find(v => v.lang.startsWith('es_US')) ||
+                    voices.find(v => v.lang.startsWith('es-US')) ||
+                    voices.find(v => v.lang.startsWith('es')) ||
+                    voices.find(v => v.lang.startsWith('en_US')) ||
+                    voices.find(v => v.lang.startsWith('en-US')) ||
+                    voices.find(v => v.lang.startsWith('en')) ||
+                    voices.find(v => v.lang.startsWith(shortLang));
         }
 
         if (voice) {
