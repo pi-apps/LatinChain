@@ -1335,6 +1335,7 @@ $( document ).ready(function() {
                                     });*/
                                     $(".showInterstitialAd > a").click(function(e) {
                                         e.preventDefault();
+                                        alert(123);
                                         showPiInterstitialAds(Pi, $(this).attr('href'));
                                     });
                                 }
