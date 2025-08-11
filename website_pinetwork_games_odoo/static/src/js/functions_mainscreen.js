@@ -640,15 +640,14 @@ async function showPiInterstitialAds(Pi, url) {
         
         if(showAdResponse.result == "AD_CLOSED")
         {
-            alert("12345");
         }
-        alert("123456");
-        
+            
         window.location.href = url;
         
         $("#button_reward_ad").html(btnvalue);
         $("#button_reward_ad").prop( "disabled", false );
         //$("#button_reward_ad").prop( "disabled", false );
+        
     } catch (err) {
         $("#button_reward_ad").html(btnvalue);
         $("#button_reward_ad").prop( "disabled", false );
@@ -1335,7 +1334,6 @@ $( document ).ready(function() {
                                     
                                     $('.showInterstitialAd').find('a.btn').click(function(e) {
                                         e.preventDefault();
-                                        alert(123);
                                         showPiInterstitialAds(Pi, $(this).attr('href'));
                                     });
                                 }
