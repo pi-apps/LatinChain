@@ -1400,10 +1400,12 @@ $( document ).ready(function() {
             });
             
             function runBeforeEveryColorbox() {
+                alert(123);
                 $('.showInterstitialAd').find('button.btn').click(function(e) {
                     if($('#pi_ad_automatic').is(':checked')) {
                         if(!$(this).hasClass("href-external"))
                         {
+                            alert(1234);
                             showPiInterstitialAds(Pi, false);
                         }
                     }
@@ -1416,6 +1418,7 @@ $( document ).ready(function() {
                 {
                     if($.colorbox && !colorbox_opened)
                     {
+                        alert(12);
                         $.colorbox.settings.onOpen = runBeforeEveryColorbox;
                         
                         colorbox_opened = true;
