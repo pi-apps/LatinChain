@@ -1539,7 +1539,7 @@
                             </div>
                         </div>
                         
-                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center;" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center;" class="border-gradient-rounded showInterstitialAd">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinChainTV &#128250;</div></strong></h5>
                             </div>
@@ -1710,12 +1710,13 @@
                                 <div style="display: inline"><i id="play" class="fa fa-volume-off"></i></div> 
                                 <div style="display: inline">Hi<strong><span id="username" translate="no"></span></strong><span id="verified"></span>. Welcome to LatinChain Platform (Games from Latin America for Pi). Increase your Pi cryptocurrency mining power <i class="fa fa-bolt"></i> using this app. If you don't have it yet, download Pi Browser on <a target="_blank" href="https://apps.apple.com/us/app/pi-browser/id1560911608" class="btn btn-link text-white"><strong>App Store</strong></a> or <a target="_blank" href="https://play.google.com/store/apps/details?id=pi.browser" class="btn btn-link text-white"><strong>Play Store</strong></a> to watch it working.<br/></div>
                             </div>
-                            <img src="/website_pinetwork_games_odoo/static/src/img/pihackathon_badge.jpg" alt="LatinChain" class="img-fluid rounded" style="max-width: 350px" width="100%" height="170px" />
-                            <br/>
-                            <button id="vote" class="btn btn-info" style="margin-top: 5px">Pi Hackathon winners</button><br/><!--<strong t-if="mainnet == 'Testnet ON'">Testnet ON<br/></strong>--><!--<strong t-if="mainnet == 'Mainnet ON'">Mainnet ON. Ready to play.<br/></strong><br/>-->
-                            
-                            <br/>
-                            
+                            <div class="showInterstitialAd">
+                                <img src="/website_pinetwork_games_odoo/static/src/img/pihackathon_badge.jpg" alt="LatinChain" class="img-fluid rounded" style="max-width: 350px" width="100%" height="170px" />
+                                <br/>
+                                <button id="vote" class="btn btn-info" style="margin-top: 5px">Pi Hackathon winners</button><br/><!--<strong t-if="mainnet == 'Testnet ON'">Testnet ON<br/></strong>--><!--<strong t-if="mainnet == 'Mainnet ON'">Mainnet ON. Ready to play.<br/></strong><br/>-->
+                                
+                                <br/>
+                            </div>
                             <div class="p-3 mb-2 bg-info bg-gradient text-white rounded">
                                 Last 24 hours: 
                                 <br/>
