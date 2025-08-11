@@ -729,60 +729,6 @@ $( document ).ready(function() {
         }
     });
     
-    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) //&& !unblocked)
-    {
-        
-        $('.showInterstitialAd').find('a.btn').click(function(e) {
-            if($('#pi_ad_automatic').is(':checked')) {
-                if(!$(this).hasClass("href-external"))
-                {
-                    e.preventDefault();
-                    showPiInterstitialAds(Pi, $(this).attr('href'));
-                }
-            }
-        });
-        
-        function runBeforeEveryColorbox() {
-            $('.showInterstitialAd').find('button.btn').click(function(e) {
-                if($('#pi_ad_automatic').is(':checked')) {
-                    if(!$(this).hasClass("href-external"))
-                    {
-                        showPiInterstitialAds(Pi, false);
-                    }
-                }
-            });
-        }
-        
-        async function colorboxLoadedMainnet()
-        {
-            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-            {
-                if($.colorbox && !colorbox_opened)
-                {
-                    $.colorbox.settings.onOpen = runBeforeEveryColorbox;
-                    
-                    colorbox_opened = true;
-                    return false;
-                }else{
-                    if(colorbox_opened)
-                        return false;
-                    if(colorbox_count > 400)
-                        return false;
-                    setTimeout(function() {
-                        if(colorbox_opened)
-                            return false;
-                        if(colorbox_count > 400)
-                            return false;
-                        colorbox_count += 1;
-                        colorboxLoadedMainnet();
-                    }, 100);
-                }
-            }
-        }
-        
-        colorboxLoadedMainnet();
-    }
-    
     window.addEventListener('unhandledrejection', function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -1438,6 +1384,60 @@ $( document ).ready(function() {
             {
                 showPiAds(Pi, true);
             }
+        }
+        
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) //&& !unblocked)
+        {
+            
+            $('.showInterstitialAd').find('a.btn').click(function(e) {
+                if($('#pi_ad_automatic').is(':checked')) {
+                    if(!$(this).hasClass("href-external"))
+                    {
+                        e.preventDefault();
+                        showPiInterstitialAds(Pi, $(this).attr('href'));
+                    }
+                }
+            });
+            
+            function runBeforeEveryColorbox() {
+                $('.showInterstitialAd').find('button.btn').click(function(e) {
+                    if($('#pi_ad_automatic').is(':checked')) {
+                        if(!$(this).hasClass("href-external"))
+                        {
+                            showPiInterstitialAds(Pi, false);
+                        }
+                    }
+                });
+            }
+            
+            async function colorboxLoadedMainnet()
+            {
+                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                {
+                    if($.colorbox && !colorbox_opened)
+                    {
+                        $.colorbox.settings.onOpen = runBeforeEveryColorbox;
+                        
+                        colorbox_opened = true;
+                        return false;
+                    }else{
+                        if(colorbox_opened)
+                            return false;
+                        if(colorbox_count > 400)
+                            return false;
+                        setTimeout(function() {
+                            if(colorbox_opened)
+                                return false;
+                            if(colorbox_count > 400)
+                                return false;
+                            colorbox_count += 1;
+                            colorboxLoadedMainnet();
+                        }, 100);
+                    }
+                }
+            }
+            
+            colorboxLoadedMainnet();
         }
     
     })();
