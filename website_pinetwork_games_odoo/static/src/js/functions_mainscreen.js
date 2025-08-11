@@ -728,6 +728,19 @@ $( document ).ready(function() {
         }
     });
     
+    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) //&& !unblocked)
+    {
+        $('.showInterstitialAd').find('a.btn').click(function(e) {
+            if($('#pi_ad_automatic').is(':checked')) {
+                if(!$(this).hasClass("href-external"))
+                {
+                    e.preventDefault();
+                    showPiInterstitialAds(Pi, $(this).attr('href'));
+                }
+            }
+        });
+    }
+    
     window.addEventListener('unhandledrejection', function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -1317,18 +1330,6 @@ $( document ).ready(function() {
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 showRewardedPiAd();
-                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) //&& !unblocked)
-                            {
-                                $('.showInterstitialAd').find('a.btn').click(function(e) {
-                                    if($('#pi_ad_automatic').is(':checked')) {
-                                        if(!$(this).hasClass("href-external"))
-                                        {
-                                            e.preventDefault();
-                                            showPiInterstitialAds(Pi, $(this).attr('href'));
-                                        }
-                                    }
-                                });
-                            }
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
