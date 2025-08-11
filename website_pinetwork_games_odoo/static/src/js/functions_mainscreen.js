@@ -16,6 +16,8 @@ var generalranking = "/get-general-ranking/";
 
 var btnvalue = "";
 
+var accessed_interstitial = false;
+
 var colorbox_count = 0;
 var colorbox_opened = false;
 async function colorboxLoaded()
@@ -631,12 +633,31 @@ async function showPiInterstitialAds(Pi, url) {
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
     
     try {
+        accessed_interstitial = false;
+        
+        setTimeout(function(){
+            
+            if(accessed_interstitial == false)
+            {
+                if(url && url != false && url != undefined)
+                {
+                    window.location.href = url;
+                }
+                
+                $("#button_reward_ad").html(btnvalue);
+                $("#button_reward_ad").prop( "disabled", false );
+            }
+            
+            return;
+        }, 10000);
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
 
         if (isAdReadyResponse.ready === false) {
             await Pi.Ads.requestAd("interstitial");
         }
+        
+        accessed_interstitial = true;
         
         const showAdResponse = await Pi.Ads.showAd("interstitial");
         
