@@ -642,7 +642,7 @@ async function showPiInterstitialAds(Pi, url) {
         {
         }
         
-        if(url)
+        if(url && url != false && url != undefined)
             window.location.href = url;
         
         $("#button_reward_ad").html(btnvalue);
@@ -1399,15 +1399,20 @@ $( document ).ready(function() {
                 }
             });
             
+            $('.showInterstitialAd').find('button.btn').click(function(e) {
+                if($('#pi_ad_automatic').is(':checked')) {
+                    if(!$(this).hasClass("href-external"))
+                    {
+                        showPiInterstitialAds(Pi, false);
+                    }
+                }
+            });
+            /*
             function runBeforeEveryColorbox() {
-                alert(123);
-                window.parent.$('.showInterstitialAd').find('button.btn').click(function(e) {
-                    alert("a");
+                $('.showInterstitialAd').find('button').click(function(e) {
                     if($('#pi_ad_automatic').is(':checked')) {
-                        alert("b");
                         if(!$(this).hasClass("href-external"))
                         {
-                            alert(1234);
                             showPiInterstitialAds(Pi, false);
                         }
                     }
@@ -1420,7 +1425,6 @@ $( document ).ready(function() {
                 {
                     if($.colorbox && !colorbox_opened)
                     {
-                        alert(12);
                         $.colorbox.settings.onComplete = runBeforeEveryColorbox;
                         
                         colorbox_opened = true;
@@ -1442,7 +1446,7 @@ $( document ).ready(function() {
                 }
             }
             
-            colorboxLoadedMainnet();
+            colorboxLoadedMainnet();*/
         }
     
     })();
