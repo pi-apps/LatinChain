@@ -1121,7 +1121,7 @@
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
                     <div id="wrap">
-                        <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
+                        <section class="s_carousel_wrapper showInterstitialAd" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
                           <div id="myCarousel1647794696348" class="s_carousel s_carousel_default carousel slide" data-interval="10000" data-ride="carousel">
                             <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" t-set="background_indicators" t-value="''"/>
                             <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']" t-set="background_indicators" t-value="''"/>
@@ -1171,7 +1171,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="/website/social/youtube" target="_blank" class="btn btn-danger mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Youtube</div></a>
+                                          <a href="/website/social/youtube" target="_blank" class="href-external btn btn-danger mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Youtube</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1183,7 +1183,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="https://tiktok.com/@rockcesar85" target="_blank" class="btn btn-dark mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa-brands fa-tiktok"></i></div> <div style="display:inline;"><div style="display:inline;">Tiktok</div></div></a>
+                                          <a href="https://tiktok.com/@rockcesar85" target="_blank" class="href-external btn btn-dark mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa-brands fa-tiktok"></i></div> <div style="display:inline;"><div style="display:inline;">Tiktok</div></div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1195,7 +1195,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="/website/social/twitter" target="_blank" class="btn btn-dark mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div> <div style="display:inline;"><div style="display:inline;">Twitter</div><div style="display:inline;">(X)</div></div></a>
+                                          <a href="/website/social/twitter" target="_blank" class="href-external btn btn-dark mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div> <div style="display:inline;"><div style="display:inline;">Twitter</div><div style="display:inline;">(X)</div></div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1207,7 +1207,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 20px;" class="o_default_snippet_text">
-                                          <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-info mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-telegram"></i></div> <div style="display:inline;">Telegram</div></a>
+                                          <a href="https://t.me/LatinChainOfficial" target="_blank" class="href-external btn btn-info mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-telegram"></i></div> <div style="display:inline;">Telegram</div></a>
                                       </h2>
                                       <!--<div class="s_hr pt8 pb10" data-snippet="s_hr" data-name="Separator">
                                         <hr class="w-25 mx-auto" style="border-top-width: 1px; border-top-style: solid;"/>
@@ -1226,7 +1226,7 @@
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-discord"></i></div> <div style="display:inline;">Discord</div></a>
+                                      <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="href-external btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-discord"></i></div> <div style="display:inline;">Discord</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1239,7 +1239,7 @@
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="https://www.facebook.com/groups/365500906588396" target="_blank" class="btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-facebook"></i></div> <div style="display:inline;">Facebook</div></a>
+                                      <a href="https://www.facebook.com/groups/365500906588396" target="_blank" class="href-external btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-facebook"></i></div> <div style="display:inline;">Facebook</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1252,7 +1252,7 @@
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="https://www.instagram.com/rockcesar85/" target="_blank" class="btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-instagram"></i></div> <div style="display:inline;">Instagram</div></a>
+                                      <a href="https://www.instagram.com/rockcesar85/" target="_blank" class="href-external btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-instagram"></i></div> <div style="display:inline;">Instagram</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1276,7 +1276,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-info"></i></div> <div style="display:inline;">More Info</div></a>
+                                      <a href="https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html" target="_blank" class="href-external btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-info"></i></div> <div style="display:inline;">More Info</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1288,7 +1288,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="/api-docs/" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-laptop"></i></div> <div style="display:inline;">API Docs</div></a>
+                                      <a href="/api-docs/" target="_blank" class="href-external btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-laptop"></i></div> <div style="display:inline;">API Docs</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1640,7 +1640,7 @@
                             </div>
                         </div>-->
                         
-                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded showInterstitialAd">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#LatinChain #Magazine &#127909;</strong></h5>
                             </div>
@@ -1660,11 +1660,11 @@
                             </t>-->
                             
                             <div style="margin-bottom:5px;">
-                                <a href="https://promote.mexc.com/r/U2hkpZK0" target="_blank" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-door-open"></i></div><div style="font-size:100%;" translate="no">JOIN MEXC</div><div style="font-size:80%;">Pi KYB ready</div></a>
+                                <a href="https://promote.mexc.com/r/U2hkpZK0" target="_blank" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-door-open"></i></div><div style="font-size:100%;" translate="no">JOIN MEXC</div><div style="font-size:80%;">Pi KYB ready</div></a>
                             </div>
                             
                             <div style="margin-bottom:5px;">
-                                <a href="https://www.mexc.com/exchange/PI_USDT" target="_blank" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="font-size:100%;" translate="no">TRADE PI</div><div style="font-size:80%;">On MEXC</div></a>
+                                <a href="https://www.mexc.com/exchange/PI_USDT" target="_blank" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="font-size:100%;" translate="no">TRADE PI</div><div style="font-size:80%;">On MEXC</div></a>
                             </div>
                             
                             <!--
