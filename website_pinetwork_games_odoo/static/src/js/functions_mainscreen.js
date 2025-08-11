@@ -636,7 +636,6 @@ async function showPiInterstitialAds(Pi, url) {
         accessed_interstitial = false;
         
         setTimeout(function(){
-            
             if(accessed_interstitial == false)
             {
                 if(url && url != false && url != undefined)
@@ -646,9 +645,9 @@ async function showPiInterstitialAds(Pi, url) {
                 
                 $("#button_reward_ad").html(btnvalue);
                 $("#button_reward_ad").prop( "disabled", false );
+                
+                return;
             }
-            
-            return;
         }, 10000);
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
