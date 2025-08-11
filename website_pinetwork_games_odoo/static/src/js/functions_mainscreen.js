@@ -636,7 +636,7 @@ async function showPiInterstitialAds(Pi, url) {
         accessed_interstitial = false;
         
         setTimeout(function(){
-            if(accessed_interstitial == false)
+            if(accessed_interstitial == false && pi_user_code == "" && pi_user_id == "")
             {
                 if(url && url != false && url != undefined)
                 {
