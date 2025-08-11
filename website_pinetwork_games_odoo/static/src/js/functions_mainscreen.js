@@ -623,7 +623,7 @@ function get_user() {
     }
 }
 
-async function showPiInterstitialAds(Pi, url, type) {
+async function showPiInterstitialAds(Pi, url) {
     var btnvalue = $("#button_reward_ad").html();
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
@@ -642,7 +642,7 @@ async function showPiInterstitialAds(Pi, url, type) {
         {
         }
         
-        if(type == "href")
+        if(url && url != false && url != undefined)
         {
             window.location.href = url;
         }
@@ -654,7 +654,11 @@ async function showPiInterstitialAds(Pi, url, type) {
     } catch (err) {
         $("#button_reward_ad").html(btnvalue);
         $("#button_reward_ad").prop( "disabled", false );
-        window.location.href = url;
+        
+        if(url && url != false && url != undefined)
+        {
+            window.location.href = url;
+        }
         //$("#button_reward_ad").prop( "disabled", false );
         //alert(err);
         // Not able to fetch the user
@@ -1398,7 +1402,7 @@ $( document ).ready(function() {
                         if(!$(this).hasClass("href-external"))
                         {
                             e.preventDefault();
-                            showPiInterstitialAds(Pi, $(this).attr('href'), 'href');
+                            showPiInterstitialAds(Pi, $(this).attr('href'));
                         }
                     }
                 }
@@ -1408,7 +1412,7 @@ $( document ).ready(function() {
                 if($('#pi_ad_automatic').is(':checked')) {
                     if(!$(this).hasClass("href-external"))
                     {
-                        showPiInterstitialAds(Pi, false, 'button');
+                        showPiInterstitialAds(Pi, false);
                     }
                 }
             });
