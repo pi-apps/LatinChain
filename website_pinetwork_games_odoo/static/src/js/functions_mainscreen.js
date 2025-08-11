@@ -1317,7 +1317,7 @@ $( document ).ready(function() {
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 showRewardedPiAd();
-                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && !unblocked)
                             {
                                 $('.showInterstitialAd').find('a.btn').click(function(e) {
                                     if($('#pi_ad_automatic').is(':checked')) {
