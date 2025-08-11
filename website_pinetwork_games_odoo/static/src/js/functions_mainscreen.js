@@ -627,7 +627,6 @@ async function showPiInterstitialAds(Pi, url) {
     var btnvalue = $("#button_reward_ad").html();
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
-    var adShown = false;
     
     try {
         
@@ -637,13 +636,13 @@ async function showPiInterstitialAds(Pi, url) {
             await Pi.Ads.requestAd("interstitial");
         }
         
-        adShown = true;
-        
         const showAdResponse = await Pi.Ads.showAd("interstitial");
         
         if(showAdResponse.result == "AD_CLOSED")
         {
+            alert("12345");
         }
+        alert("123456");
         
         window.location.href = url;
         
