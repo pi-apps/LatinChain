@@ -9,6 +9,7 @@ var unblocked = false;
 var show_pi_ad_user = true;
 var show_pi_ad_user_time = 0;
 var pi_ad_new = false;
+var btnvalue = "";
 
 function setConfirmUnload(on) {
     if(on)
@@ -158,6 +159,8 @@ async function showPiAds(Pi) {
 }
 
 $( document ).ready(function() {
+    btnvalue = $("#button_reward_ad").html();
+    
     $(document).ajaxStop(function() {
                 $("#loading_section").hide();
                 $("#loading_word").hide();
@@ -287,7 +290,6 @@ $( document ).ready(function() {
                                 start_flag = true;
                             }
                             
-                            var btnvalue = $("#button_reward_ad").html();
                             $("#button_reward_ad").prop( "disabled", true );
                             $("#button_reward_ad").html("Showing Pi Rewarded Ad...");
                             
