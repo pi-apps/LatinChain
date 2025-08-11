@@ -1407,46 +1407,6 @@ $( document ).ready(function() {
                     }
                 }
             });
-            /*
-            function runBeforeEveryColorbox() {
-                $('.showInterstitialAd').find('button').click(function(e) {
-                    if($('#pi_ad_automatic').is(':checked')) {
-                        if(!$(this).hasClass("href-external"))
-                        {
-                            showPiInterstitialAds(Pi, false);
-                        }
-                    }
-                });
-            }
-            
-            async function colorboxLoadedMainnet()
-            {
-                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                {
-                    if($.colorbox && !colorbox_opened)
-                    {
-                        $.colorbox.settings.onComplete = runBeforeEveryColorbox;
-                        
-                        colorbox_opened = true;
-                        return false;
-                    }else{
-                        if(colorbox_opened)
-                            return false;
-                        if(colorbox_count > 400)
-                            return false;
-                        setTimeout(function() {
-                            if(colorbox_opened)
-                                return false;
-                            if(colorbox_count > 400)
-                                return false;
-                            colorbox_count += 1;
-                            colorboxLoadedMainnet();
-                        }, 100);
-                    }
-                }
-            }
-            
-            colorboxLoadedMainnet();*/
         }
     
     })();
