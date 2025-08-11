@@ -1333,7 +1333,8 @@ $( document ).ready(function() {
                                         e.preventDefault();
                                         alert("123");
                                     });*/
-                                    $(".showInterstitialAd > a").click(function(e) {
+                                    
+                                    $('.showInterstitialAd').find('a.btn').click(function(e) {
                                         e.preventDefault();
                                         alert(123);
                                         showPiInterstitialAds(Pi, $(this).attr('href'));
