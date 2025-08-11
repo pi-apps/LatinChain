@@ -1402,7 +1402,9 @@ $( document ).ready(function() {
             function runBeforeEveryColorbox() {
                 alert(123);
                 $('.showInterstitialAd').find('button.btn').click(function(e) {
+                    alert("a");
                     if($('#pi_ad_automatic').is(':checked')) {
+                        alert("b");
                         if(!$(this).hasClass("href-external"))
                         {
                             alert(1234);
