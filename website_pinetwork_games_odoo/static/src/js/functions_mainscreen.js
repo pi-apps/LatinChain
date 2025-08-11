@@ -14,6 +14,8 @@ var winnerzoneboard = "/get-winners-zone/";
 var streamerzoneboard = "/get-streamers-zone/";
 var generalranking = "/get-general-ranking/";
 
+var btnvalue = "";
+
 var colorbox_count = 0;
 var colorbox_opened = false;
 async function colorboxLoaded()
@@ -624,7 +626,7 @@ function get_user() {
 }
 
 async function showPiInterstitialAds(Pi, url) {
-    var btnvalue = $("#button_reward_ad").html();
+    
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
     
@@ -666,7 +668,7 @@ async function showPiInterstitialAds(Pi, url) {
 }
 
 async function showPiAds(Pi, activated) {
-    var btnvalue = $("#button_reward_ad").html();
+    
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
     
@@ -709,6 +711,8 @@ async function showPiAds(Pi, activated) {
 }
 
 $( document ).ready(function() {
+    btnvalue = $("#button_reward_ad").html();
+    
     colorboxLoaded();
     
     const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
@@ -1184,7 +1188,6 @@ $( document ).ready(function() {
                                     start_flag = true;
                                 }
                                 
-                                var btnvalue = $("#button_reward_ad").html();
                                 $("#button_reward_ad").prop( "disabled", true );
                                 $("#button_reward_ad").html("Showing Pi Rewarded Ad...");
                                 
