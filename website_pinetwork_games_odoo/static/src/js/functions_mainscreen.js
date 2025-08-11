@@ -648,7 +648,7 @@ async function showPiInterstitialAds(Pi, url) {
                 
                 return;
             }
-        }, 10000);
+        }, 15000);
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
 
