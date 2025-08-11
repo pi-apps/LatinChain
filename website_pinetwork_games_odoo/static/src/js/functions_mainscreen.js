@@ -1330,7 +1330,7 @@ $( document ).ready(function() {
                                 if($('#pi_ad_automatic').is(':checked')) {
                                     $('.showInterstitialAd').on('click', 'a.btn', function() {
                                         (async () => {
-                                            showPiInterstitialAds(Pi);
+                                            await showPiInterstitialAds(Pi);
                                         })();
                                     });
                                     /*$(".showInterstitialAd > a.btn").click(function(e) {
