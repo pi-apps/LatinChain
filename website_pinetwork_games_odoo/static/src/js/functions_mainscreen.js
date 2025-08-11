@@ -1137,7 +1137,7 @@ $( document ).ready(function() {
 
                 //get_user();
                 set_points(0).always(function(){
-                    get_user().always(async function(){
+                    get_user().always(function(){
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
@@ -1325,11 +1325,13 @@ $( document ).ready(function() {
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 showRewardedPiAd();
-                            else
+                            else if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 if($('#pi_ad_automatic').is(':checked')) {
                                     $('.showInterstitialAd').on('click', 'a.btn', function() {
-                                        await showPiInterstitialAds(Pi);
+                                        (async () => {
+                                            showPiInterstitialAds(Pi);
+                                        })();
                                     });
                                     /*$(".showInterstitialAd > a.btn").click(function(e) {
                                         
