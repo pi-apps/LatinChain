@@ -1319,15 +1319,15 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                if($('#pi_ad_automatic').is(':checked')) {
-                                    $('.showInterstitialAd').find('a.btn').click(function(e) {
+                                $('.showInterstitialAd').find('a.btn').click(function(e) {
+                                    if($('#pi_ad_automatic').is(':checked')) {
                                         if(!$(this).hasClass("href-external"))
                                         {
                                             e.preventDefault();
                                             showPiInterstitialAds(Pi, $(this).attr('href'));
                                         }
-                                    });
-                                }
+                                    }
+                                });
                             }
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
