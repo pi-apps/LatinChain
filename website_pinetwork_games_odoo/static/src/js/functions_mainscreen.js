@@ -1320,18 +1320,6 @@ $( document ).ready(function() {
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 if($('#pi_ad_automatic').is(':checked')) {
-                                    /*$('.showInterstitialAd').on('click', 'a.btn', function(e) {
-                                        e.preventDefault();
-                                        alert("12");
-                                        (async () => {
-                                            await showPiInterstitialAds(Pi);
-                                        })();
-                                    });
-                                    $(".showInterstitialAd > a.btn").click(function(e) {
-                                        e.preventDefault();
-                                        alert("123");
-                                    });*/
-                                    
                                     $('.showInterstitialAd').find('a.btn').click(function(e) {
                                         e.preventDefault();
                                         showPiInterstitialAds(Pi, $(this).attr('href'));
