@@ -623,7 +623,7 @@ function get_user() {
     }
 }
 
-async function showPiInterstitialAds(Pi) {
+async function showPiInterstitialAds(Pi, url) {
     var btnvalue = $("#button_reward_ad").html();
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
@@ -634,15 +634,6 @@ async function showPiInterstitialAds(Pi) {
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
 
         if (isAdReadyResponse.ready === false) {
-            adShown = false;
-            setTimeout(function(){
-                if(adShown == false)
-                {
-                    $("#button_reward_ad").html(btnvalue);
-                    $("#button_reward_ad").prop( "disabled", false );
-                    return;
-                }
-            }, 10000);
             await Pi.Ads.requestAd("interstitial");
         }
         
@@ -654,12 +645,15 @@ async function showPiInterstitialAds(Pi) {
         {
         }
         
+        window.location.href = url;
+        
         $("#button_reward_ad").html(btnvalue);
         $("#button_reward_ad").prop( "disabled", false );
         //$("#button_reward_ad").prop( "disabled", false );
     } catch (err) {
         $("#button_reward_ad").html(btnvalue);
         $("#button_reward_ad").prop( "disabled", false );
+        window.location.href = url;
         //$("#button_reward_ad").prop( "disabled", false );
         //alert(err);
         // Not able to fetch the user
@@ -1341,15 +1335,7 @@ $( document ).ready(function() {
                                     });*/
                                     $(".showInterstitialAd > a").click(function(e) {
                                         e.preventDefault();
-                                        (async () => {
-                                            await showPiInterstitialAds(Pi);
-                                            
-                                            // Get the URL from the anchor's href attribute
-                                            var url = $(this).attr('href');
-                                            
-                                            // Manually navigate to the URL
-                                            window.location.href = url;
-                                        })();
+                                        showPiInterstitialAds(Pi, $(this).attr('href'));
                                     });
                                 }
                             }
