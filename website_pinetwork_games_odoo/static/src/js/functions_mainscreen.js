@@ -1141,7 +1141,6 @@ $( document ).ready(function() {
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
-                            alert("12345");
                             if(show_pi_ad_user || pi_ad_new)
                             {
                                 $("#button_reward_ad").show();
