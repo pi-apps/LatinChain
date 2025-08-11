@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.394"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.395"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -2295,7 +2295,7 @@
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><a href="https://latinchainpal0712.pinet.com" target="_blank" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN PAL</div><div style="font-size:80%;">AI Chatbot</div><div style="font-size:80%;" >Utility</div></a></div>
+                                                <div class="col-10"><a href="https://latinchainpal0712.pinet.com" target="_blank" class="col-10 btn btn-outline-success font-weight-bold text-black border-success href-external" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN PAL</div><div style="font-size:80%;">AI Chatbot</div><div style="font-size:80%;" >Utility</div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>

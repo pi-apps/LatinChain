@@ -1321,8 +1321,11 @@ $( document ).ready(function() {
                             {
                                 if($('#pi_ad_automatic').is(':checked')) {
                                     $('.showInterstitialAd').find('a.btn').click(function(e) {
-                                        e.preventDefault();
-                                        showPiInterstitialAds(Pi, $(this).attr('href'));
+                                        if(!$(this).hasClass("href-external"))
+                                        {
+                                            e.preventDefault();
+                                            showPiInterstitialAds(Pi, $(this).attr('href'));
+                                        }
                                     });
                                 }
                             }
