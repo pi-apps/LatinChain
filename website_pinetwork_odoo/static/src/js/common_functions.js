@@ -237,7 +237,7 @@ function loadSpeechLanguages() {
         location.pathname.substring(0, 8) != "/es/web?")
     {
         const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
-
+        
         if (localStorage.getItem(STORAGE_KEY_BACKEND) !== 'true' || !('speechSynthesis' in window)) {
             speechModule.deactivate();
         }else

@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.369"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.374"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1948,7 +1948,7 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded">
+                            <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded showInterstitialAd">
                                 <div style="margin-bottom:5px; padding-top:5px;" class="border rounded" id="apps">
                                     <h5 translate="no"><strong>#LatinChain #Apps &#x1F680;</strong></h5>
                                 </div>

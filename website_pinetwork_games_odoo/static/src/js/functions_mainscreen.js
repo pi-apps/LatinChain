@@ -623,6 +623,49 @@ function get_user() {
     }
 }
 
+async function showPiInterstitialAds(Pi) {
+    var btnvalue = $("#button_reward_ad").html();
+    $("#button_reward_ad").prop( "disabled", true );
+    $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
+    var adShown = false;
+    
+    try {
+        
+        const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
+
+        if (isAdReadyResponse.ready === false) {
+            adShown = false;
+            setTimeout(function(){
+                if(adShown == false)
+                {
+                    $("#button_reward_ad").html(btnvalue);
+                    $("#button_reward_ad").prop( "disabled", false );
+                    return;
+                }
+            }, 10000);
+            await Pi.Ads.requestAd("interstitial");
+        }
+        
+        adShown = true;
+        
+        const showAdResponse = await Pi.Ads.showAd("interstitial");
+        
+        if(showAdResponse.result == "AD_CLOSED")
+        {
+        }
+        
+        $("#button_reward_ad").html(btnvalue);
+        $("#button_reward_ad").prop( "disabled", false );
+        //$("#button_reward_ad").prop( "disabled", false );
+    } catch (err) {
+        $("#button_reward_ad").html(btnvalue);
+        $("#button_reward_ad").prop( "disabled", false );
+        //$("#button_reward_ad").prop( "disabled", false );
+        //alert(err);
+        // Not able to fetch the user
+    }
+}
+
 async function showPiAds(Pi, activated) {
     var btnvalue = $("#button_reward_ad").html();
     $("#button_reward_ad").prop( "disabled", true );
@@ -1094,7 +1137,7 @@ $( document ).ready(function() {
 
                 //get_user();
                 set_points(0).always(function(){
-                    get_user().always(function(){
+                    get_user().always(async function(){
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
@@ -1282,6 +1325,17 @@ $( document ).ready(function() {
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 showRewardedPiAd();
+                            else
+                            {
+                                if($('#pi_ad_automatic').is(':checked')) {
+                                    $('.showInterstitialAd').on('click', 'a.btn', function() {
+                                        await showPiInterstitialAds(Pi);
+                                    });
+                                    /*$(".showInterstitialAd > a.btn").click(function(e) {
+                                        
+                                    });*/
+                                }
+                            }
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
