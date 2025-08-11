@@ -1401,7 +1401,7 @@ $( document ).ready(function() {
             
             function runBeforeEveryColorbox() {
                 alert(123);
-                $('.showInterstitialAd').find('button.btn').click(function(e) {
+                window.parent.$('.showInterstitialAd').find('button.btn').click(function(e) {
                     alert("a");
                     if($('#pi_ad_automatic').is(':checked')) {
                         alert("b");
@@ -1421,7 +1421,7 @@ $( document ).ready(function() {
                     if($.colorbox && !colorbox_opened)
                     {
                         alert(12);
-                        $.colorbox.settings.onOpen = runBeforeEveryColorbox;
+                        $.colorbox.settings.onComplete = runBeforeEveryColorbox;
                         
                         colorbox_opened = true;
                         return false;
