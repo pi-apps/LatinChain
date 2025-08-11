@@ -1141,6 +1141,7 @@ $( document ).ready(function() {
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
+                            alert("12345");
                             if(show_pi_ad_user || pi_ad_new)
                             {
                                 $("#button_reward_ad").show();
@@ -1325,17 +1326,32 @@ $( document ).ready(function() {
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 showRewardedPiAd();
-                            else if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 if($('#pi_ad_automatic').is(':checked')) {
-                                    $('.showInterstitialAd').on('click', 'a.btn', function() {
+                                    /*$('.showInterstitialAd').on('click', 'a.btn', function(e) {
+                                        e.preventDefault();
+                                        alert("12");
                                         (async () => {
                                             await showPiInterstitialAds(Pi);
                                         })();
                                     });
-                                    /*$(".showInterstitialAd > a.btn").click(function(e) {
-                                        
+                                    $(".showInterstitialAd > a.btn").click(function(e) {
+                                        e.preventDefault();
+                                        alert("123");
                                     });*/
+                                    $(".showInterstitialAd > a").click(function(e) {
+                                        e.preventDefault();
+                                        (async () => {
+                                            await showPiInterstitialAds(Pi);
+                                            
+                                            // Get the URL from the anchor's href attribute
+                                            var url = $(this).attr('href');
+                                            
+                                            // Manually navigate to the URL
+                                            window.location.href = url;
+                                        })();
+                                    });
                                 }
                             }
                             
