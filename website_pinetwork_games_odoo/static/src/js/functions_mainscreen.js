@@ -623,7 +623,7 @@ function get_user() {
     }
 }
 
-async function showPiInterstitialAds(Pi, url) {
+async function showPiInterstitialAds(Pi, url, type) {
     var btnvalue = $("#button_reward_ad").html();
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
@@ -642,8 +642,10 @@ async function showPiInterstitialAds(Pi, url) {
         {
         }
         
-        if(url && url != false && url != undefined)
+        if(type == "href")
+        {
             window.location.href = url;
+        }
         
         $("#button_reward_ad").html(btnvalue);
         $("#button_reward_ad").prop( "disabled", false );
@@ -1390,11 +1392,14 @@ $( document ).ready(function() {
         {
             
             $('.showInterstitialAd').find('a.btn').click(function(e) {
-                if($('#pi_ad_automatic').is(':checked')) {
-                    if(!$(this).hasClass("href-external"))
-                    {
-                        e.preventDefault();
-                        showPiInterstitialAds(Pi, $(this).attr('href'));
+                if($(this).attr('target') != "_blank")
+                {
+                    if($('#pi_ad_automatic').is(':checked')) {
+                        if(!$(this).hasClass("href-external"))
+                        {
+                            e.preventDefault();
+                            showPiInterstitialAds(Pi, $(this).attr('href'), 'href');
+                        }
                     }
                 }
             });
@@ -1403,7 +1408,7 @@ $( document ).ready(function() {
                 if($('#pi_ad_automatic').is(':checked')) {
                     if(!$(this).hasClass("href-external"))
                     {
-                        showPiInterstitialAds(Pi, false);
+                        showPiInterstitialAds(Pi, false, 'button');
                     }
                 }
             });
