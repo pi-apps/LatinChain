@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-02 23:46+0000\n"
-"PO-Revision-Date: 2025-08-02 23:46+0000\n"
+"POT-Creation-Date: 2025-08-12 02:50+0000\n"
+"PO-Revision-Date: 2025-08-12 02:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "#Accessibility 📰"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -867,6 +872,22 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+msgid ""
+"<select id=\"voiceSelect\" class=\"rounded-lg\">\n"
+"                                    <option>Voices...</option>\n"
+"                                </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+msgid ""
+"<select id=\"voiceSelect\" class=\"w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 text-sm\">\n"
+"                                        <option value=\"\" disabled=\"disabled\" selected=\"selected\">Select a voice</option>\n"
+"                                    </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid ""
 "<span class=\"1\">1</span>\n"
@@ -1002,6 +1023,11 @@ msgstr ""
 msgid ""
 "<span>Time: </span>\n"
 "                                    <span id=\"time-current\"/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+msgid "<span>Upload .txt or .pdf file</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1248,6 +1274,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Activate accessibility."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Activate automatic Pi Ads."
 msgstr ""
 
@@ -1344,6 +1375,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid "Are you sure you want to go back?."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+msgid "Ask What I'm Seeing"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1446,6 +1482,11 @@ msgid "Change your Avatar here."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+msgid "Characters: <span id=\"charCount\">0</span> / 4000"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Checkers"
 msgstr ""
@@ -1533,7 +1574,9 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webtorrent
 msgid "Click here"
 msgstr ""
@@ -1614,7 +1657,13 @@ msgid "Days available:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+msgid "Detected Objects:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
 msgid "Developed with Gemini AI"
 msgstr ""
 
@@ -1656,7 +1705,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Donate Pi to LatinChain Platform"
+msgid "Donate Pi to unblock LatinChain Platform"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1701,6 +1750,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Easy puzzle"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+msgid "Enable Continuous Detection"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1847,7 +1901,9 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webtorrent
 msgid "Go to Pi Browser"
 msgstr ""
@@ -2201,6 +2257,11 @@ msgid "Load single audio file"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+msgid "Loading model... please wait."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
@@ -2216,7 +2277,9 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webtorrent
 msgid "Loading..."
 msgstr ""
@@ -2327,6 +2390,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "Message"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+msgid ""
+"Min Confidence (the less confidence: the more detection, but the less "
+"accurate): <span id=\"confidenceValue\">50%</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2623,7 +2693,13 @@ msgid "Paste your magnet link here..."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+msgid "Paste your text here..."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
 msgid "Pause"
 msgstr ""
 
@@ -2764,6 +2840,11 @@ msgid "Platform"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+msgid "Play"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 msgid "Play Again"
@@ -2884,6 +2965,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Ready to receive the reward, click in Ok."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+msgid "Real-time Object Detection on Webcam"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3035,6 +3121,11 @@ msgid "Select Languages to Recognize"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+msgid "Select Voice:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 msgid "Select audio file"
 msgstr ""
@@ -3117,6 +3208,11 @@ msgid "Start New Game"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+msgid "Stop"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Success: You paid"
 msgstr ""
@@ -3134,6 +3230,11 @@ msgid "Super Snake"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+msgid "Switch Camera"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Switch Sides"
 msgstr ""
@@ -3141,6 +3242,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "TEST YOUR BRAIN"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "TEXT-TO-SPEECH READER"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3221,8 +3327,23 @@ msgid "Testnet (https://latinchaintest9869.pinet.com)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+msgid "Text is too long for stable playback. Please shorten it."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Text recognition"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+msgid "Text-to-Speech Reader"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Text-to-speech reader"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3293,6 +3414,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Transactions list"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+msgid "Trim Text to 4000 Chars"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3409,6 +3535,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "WEBCAM OBJECTS DETECT"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "WEBTORRENT"
 msgstr ""
 
@@ -3482,6 +3613,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "WebTorrent: Video torrent streaming."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Webcam objects recognition"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3618,7 +3754,9 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webtorrent
 msgid "You need to access from Pi Browser."
 msgstr ""
