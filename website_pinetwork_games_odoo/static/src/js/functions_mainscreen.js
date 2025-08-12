@@ -737,7 +737,7 @@ $( document ).ready(function() {
     
     const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
     
-    if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true' || !('speechSynthesis' in window)) {
+    if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
         $('#pi_automatic_accessibility').prop('checked', false);
         //speechModule.deactivate();
     }else

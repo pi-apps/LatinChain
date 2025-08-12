@@ -238,7 +238,7 @@ function loadSpeechLanguages() {
     {
         const STORAGE_KEY_BACKEND = 'speech_synthesis_active';
         
-        if (localStorage.getItem(STORAGE_KEY_BACKEND) !== 'true' || !('speechSynthesis' in window)) {
+        if (localStorage.getItem(STORAGE_KEY_BACKEND) !== 'true'){ // || !('speechSynthesis' in window)) {
             speechModule.deactivate();
         }else
         {
