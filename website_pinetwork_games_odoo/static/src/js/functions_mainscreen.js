@@ -1415,7 +1415,7 @@ $( document ).ready(function() {
             }
         }
         
-        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) //&& !unblocked)
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && !unblocked)
         {
             
             $('.showInterstitialAd').find('a.btn').click(function(e) {
