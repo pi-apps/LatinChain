@@ -232,7 +232,7 @@ $( document ).ready(function() {
                         //if(show_pi_ad_user)
                         //    showPiAds(Pi);
                         
-                        $( "#button_click" ).click(function() {
+                        function executepayment(){
                             if(!$( "#acceptConditions" ).prop("checked"))
                             {
                                 alert($("#donation_message").text());
@@ -258,9 +258,19 @@ $( document ).ready(function() {
                             }else{
                                 alert($("#payment_lessthan_message").text() + amount + " Pi" + $("#payment_morethan_message").text() + max_amount + " Pi.");
                             }
+                        }
+                        
+                        $( "#button_click" ).click(function() {
+                            executepayment();
                         });
                         
                         $("#button_click").prop( "disabled", false );
+                        
+                        if($.parseJSON($("#payoneclick").val().toLowerCase()))
+                        {
+                            $('#acceptConditions').prop('checked', true);
+                            executepayment();
+                        }
                         
                         if(show_pi_ad_user || pi_ad_new)
                         {

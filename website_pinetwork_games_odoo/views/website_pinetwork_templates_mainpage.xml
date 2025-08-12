@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.438"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.439"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1321,6 +1321,13 @@
                                 <button class="btn btn-outline-info font-weight-bold text-white border-white clear_cache" style="border-radius: 50%; border: 2px solid; font-size: 100% !important"><div style=""><i class="fa fa-refresh"></i></div></button>
                             </div>
                         </div>
+                        <div class="row">
+                            <div style="text-align:left; word-break: break-word;" class="col-12">
+                                <div class="text-white getverified">
+                                    <a href="/pinetwork?payoneclick=true" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="font-size:100%; display:inline" translate="no">Pay in one click</div></a>
+                                </div>
+                            </div>
+                        </div>
                         <div>
                             <script defer="defer" src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-6" lcw-coin="_______PI" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#1f2434" lcw-border-w="0" ></div>
                         </div>
@@ -1530,6 +1537,9 @@
                             </div>
                             <div class="div_user_status" style="margin-bottom:5px">
                                 <strong class="user_status"></strong>
+                            </div>
+                            <div style="margin-top:5px">
+                                <a href="/pinetwork?payoneclick=true" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="font-size:100%; display:inline" translate="no">Pay in one click</div></a>
                             </div>
                             <div style="margin-top:5px">
                                 <a href="/pinetwork" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a>
@@ -2020,7 +2030,12 @@
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><a href="/pinetwork" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a></div>
+                                                <div class="col-10">
+                                                    <div style="margin-bottom:5px">
+                                                        <a href="/pinetwork?payoneclick=true" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="font-size:100%; display:inline" translate="no">Pay in one click</div></a>
+                                                    </div>
+                                                    <a href="/pinetwork" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a>
+                                                </div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
@@ -2356,7 +2371,12 @@
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row">
-                                                <div class="col-12"><a href="/pinetwork" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a></div>
+                                                <div class="col-12">
+                                                    <div style="margin-bottom:5px">
+                                                        <a href="/pinetwork?payoneclick=true" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="font-size:100%; display:inline" translate="no">Pay in one click</div></a>
+                                                    </div>
+                                                    <a href="/pinetwork" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div><div style="font-size:80%;" >Payment</div></a>
+                                                </div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">

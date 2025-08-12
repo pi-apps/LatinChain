@@ -36,7 +36,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.217"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.222"></script>
                     
                     <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -138,6 +138,8 @@
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="amount" t-att-value="amount"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
+                    <input type="hidden" id="payoneclick" t-att-value="payoneclick"/>
+                    
                     <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
                     <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
                     <div id="points_message" style="display:none;"> points.</div>
