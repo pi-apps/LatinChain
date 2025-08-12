@@ -315,7 +315,7 @@
                                             <button id="back" class="btn btn-info back" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                                         </div>                                        
                                         
-                                        <div style="margin-top:5px">
+                                        <div style="margin-top:5px; display:none;">
                                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-12">
                                                 <button id="button_reward_ad" name="button_reward_ad" class="col-10 btn btn-success fw-bold text-white border-success" disabled="true" style="border: 2px solid; margin: 5px; max-width: 300px;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Rewarded Ads</div><div style="font-size:80%;">Earn Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%;"><i class="fa-solid fa-plug-circle-bolt"></i>x2 points <i class="fa-solid fa-arrow-right"></i> (Chess, Sudoku, Snake)</div><div style="font-size:80%; display: none">Testing feature</div></button>
                                                 <span id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
