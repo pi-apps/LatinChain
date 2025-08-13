@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const MAX_CHAR_LIMIT = 4000;
 
     // Check if the browser supports the SpeechSynthesis API
-    if ('speechSynthesis' in window) {
+    //if ('speechSynthesis' in window) {
         let speech = new SpeechSynthesisUtterance();
         let voices = [];
 
@@ -195,9 +195,9 @@ document.addEventListener('DOMContentLoaded', () => {
             messageBox.textContent = 'Error in speech synthesis: ' + event.error;
         };
 
-    } else {
+    /*} else {
         // Message if the API is not available
         messageBox.textContent = 'Sorry, your browser does not support the Text-to-Speech API.';
         [playBtn, pauseBtn, stopBtn, fileInput, voiceSelect].forEach(el => el.disabled = true);
-    }
+    }*/
 });
