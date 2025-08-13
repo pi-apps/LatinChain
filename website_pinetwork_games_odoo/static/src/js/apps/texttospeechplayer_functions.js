@@ -13,28 +13,86 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Define a max character limit to prevent browser issues
     const MAX_CHAR_LIMIT = 4000;
+    
+    // Function to update the character counter
+    function updateCharCounter() {
+        const length = articleText.value.length;
+        charCount.textContent = length;
+        if (length > MAX_CHAR_LIMIT) {
+            charLimitMessage.classList.remove('hidden');
+            playBtn.disabled = true;
+            playBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            trimBtn.classList.remove('hidden');
+        } else {
+            charLimitMessage.classList.add('hidden');
+            playBtn.disabled = false;
+            playBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            trimBtn.classList.add('hidden');
+        }
+    }
+    
+    // Add an input event listener to the textarea for character counting
+    articleText.addEventListener('input', updateCharCounter);
+    updateCharCounter(); // Initial count
+
+    // Load text from a file
+    fileInput.addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        messageBox.textContent = 'Loading file...';
+        articleText.value = '';
+
+        if (file.type === 'text/plain') {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                articleText.value = event.target.result;
+                messageBox.textContent = '.txt file loaded successfully.';
+                updateCharCounter();
+            };
+            reader.onerror = () => {
+                messageBox.textContent = 'Error reading the file.';
+            };
+            reader.readAsText(file);
+        } else if (file.type === 'application/pdf') {
+            try {
+                const arrayBuffer = await file.arrayBuffer();
+                
+                const pdfjsLib = window['pdfjs-dist/build/pdf'];
+                pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`;
+
+                const pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                let textContent = '';
+                
+                for (let i = 1; i <= pdfDoc.numPages; i++) {
+                    const page = await pdfDoc.getPage(i);
+                    const text = await page.getTextContent();
+                    textContent += text.items.map(item => item.str).join(' ') + '\n\n';
+                }
+                
+                articleText.value = textContent;
+                messageBox.textContent = '.pdf file loaded successfully.';
+                updateCharCounter();
+            } catch (error) {
+                messageBox.textContent = 'Error processing the PDF file.';
+                console.error('Error processing PDF:', error);
+            }
+        } else {
+            messageBox.textContent = 'Unsupported file format. Please upload a .txt or .pdf file.';
+        }
+    });
+    
+    // Event listener for the new trim button
+    trimBtn.addEventListener('click', () => {
+        articleText.value = articleText.value.substring(0, MAX_CHAR_LIMIT);
+        updateCharCounter();
+        messageBox.textContent = 'Text trimmed to 4000 characters.';
+    });
 
     // Check if the browser supports the SpeechSynthesis API
     if ('speechSynthesis' in window) {
         let speech = new SpeechSynthesisUtterance();
         let voices = [];
-
-        // Function to update the character counter
-        function updateCharCounter() {
-            const length = articleText.value.length;
-            charCount.textContent = length;
-            if (length > MAX_CHAR_LIMIT) {
-                charLimitMessage.classList.remove('hidden');
-                playBtn.disabled = true;
-                playBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                trimBtn.classList.remove('hidden');
-            } else {
-                charLimitMessage.classList.add('hidden');
-                playBtn.disabled = false;
-                playBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                trimBtn.classList.add('hidden');
-            }
-        }
 
         // Function to fill the voice selector and restore last selection
         function populateVoiceList() {
@@ -75,64 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
         voiceSelect.addEventListener('change', () => {
             const selectedVoiceName = voiceSelect.selectedOptions[0].getAttribute('data-name');
             localStorage.setItem('lastVoiceName', selectedVoiceName);
-        });
-
-        // Add an input event listener to the textarea for character counting
-        articleText.addEventListener('input', updateCharCounter);
-        updateCharCounter(); // Initial count
-
-        // Load text from a file
-        fileInput.addEventListener('change', async (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-
-            messageBox.textContent = 'Loading file...';
-            articleText.value = '';
-
-            if (file.type === 'text/plain') {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    articleText.value = event.target.result;
-                    messageBox.textContent = '.txt file loaded successfully.';
-                    updateCharCounter();
-                };
-                reader.onerror = () => {
-                    messageBox.textContent = 'Error reading the file.';
-                };
-                reader.readAsText(file);
-            } else if (file.type === 'application/pdf') {
-                try {
-                    const arrayBuffer = await file.arrayBuffer();
-                    
-                    const pdfjsLib = window['pdfjs-dist/build/pdf'];
-                    pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`;
-
-                    const pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-                    let textContent = '';
-                    
-                    for (let i = 1; i <= pdfDoc.numPages; i++) {
-                        const page = await pdfDoc.getPage(i);
-                        const text = await page.getTextContent();
-                        textContent += text.items.map(item => item.str).join(' ') + '\n\n';
-                    }
-                    
-                    articleText.value = textContent;
-                    messageBox.textContent = '.pdf file loaded successfully.';
-                    updateCharCounter();
-                } catch (error) {
-                    messageBox.textContent = 'Error processing the PDF file.';
-                    console.error('Error processing PDF:', error);
-                }
-            } else {
-                messageBox.textContent = 'Unsupported file format. Please upload a .txt or .pdf file.';
-            }
-        });
-        
-        // Event listener for the new trim button
-        trimBtn.addEventListener('click', () => {
-            articleText.value = articleText.value.substring(0, MAX_CHAR_LIMIT);
-            updateCharCounter();
-            messageBox.textContent = 'Text trimmed to 4000 characters.';
         });
 
         // Play event listener
@@ -200,80 +200,5 @@ document.addEventListener('DOMContentLoaded', () => {
         messageBox.textContent = 'Sorry, your browser does not support the Text-to-Speech API.';
         //[playBtn, pauseBtn, stopBtn, fileInput, voiceSelect].forEach(el => el.disabled = true);
         [playBtn, pauseBtn, stopBtn, voiceSelect].forEach(el => el.disabled = true);
-        
-        // Function to update the character counter
-        function updateCharCounter() {
-            const length = articleText.value.length;
-            charCount.textContent = length;
-            if (length > MAX_CHAR_LIMIT) {
-                charLimitMessage.classList.remove('hidden');
-                playBtn.disabled = true;
-                playBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                trimBtn.classList.remove('hidden');
-            } else {
-                charLimitMessage.classList.add('hidden');
-                playBtn.disabled = false;
-                playBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                trimBtn.classList.add('hidden');
-            }
-        }
-        
-        // Add an input event listener to the textarea for character counting
-        articleText.addEventListener('input', updateCharCounter);
-        updateCharCounter(); // Initial count
-
-        // Load text from a file
-        fileInput.addEventListener('change', async (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-
-            messageBox.textContent = 'Loading file...';
-            articleText.value = '';
-
-            if (file.type === 'text/plain') {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    articleText.value = event.target.result;
-                    messageBox.textContent = '.txt file loaded successfully.';
-                    updateCharCounter();
-                };
-                reader.onerror = () => {
-                    messageBox.textContent = 'Error reading the file.';
-                };
-                reader.readAsText(file);
-            } else if (file.type === 'application/pdf') {
-                try {
-                    const arrayBuffer = await file.arrayBuffer();
-                    
-                    const pdfjsLib = window['pdfjs-dist/build/pdf'];
-                    pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`;
-
-                    const pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-                    let textContent = '';
-                    
-                    for (let i = 1; i <= pdfDoc.numPages; i++) {
-                        const page = await pdfDoc.getPage(i);
-                        const text = await page.getTextContent();
-                        textContent += text.items.map(item => item.str).join(' ') + '\n\n';
-                    }
-                    
-                    articleText.value = textContent;
-                    messageBox.textContent = '.pdf file loaded successfully.';
-                    updateCharCounter();
-                } catch (error) {
-                    messageBox.textContent = 'Error processing the PDF file.';
-                    console.error('Error processing PDF:', error);
-                }
-            } else {
-                messageBox.textContent = 'Unsupported file format. Please upload a .txt or .pdf file.';
-            }
-        });
-        
-        // Event listener for the new trim button
-        trimBtn.addEventListener('click', () => {
-            articleText.value = articleText.value.substring(0, MAX_CHAR_LIMIT);
-            updateCharCounter();
-            messageBox.textContent = 'Text trimmed to 4000 characters.';
-        });
     }
 });
