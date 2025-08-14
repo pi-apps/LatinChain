@@ -379,6 +379,12 @@ $( document ).ready(function() {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
             }, 10000);
+        }else
+        {
+            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+            {
+                showPiAds(Pi, true);
+            }
         }
     
     })();

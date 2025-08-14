@@ -184,7 +184,7 @@ $(document).ready( function () {
         if(localStorage.getItem("loggedIn"))
         {
             auth();
-        
+            
             setTimeout(function ()
             {
                 if(pi_user_id == "" && pi_user_code == "")
@@ -200,6 +200,12 @@ $(document).ready( function () {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
             }, 10000);
+        }else
+        {
+            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+            {
+                showPiAds(Pi, true);
+            }
         }
     
     })();
