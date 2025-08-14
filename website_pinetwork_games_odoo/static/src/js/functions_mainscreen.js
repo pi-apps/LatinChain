@@ -537,12 +537,9 @@ function get_user() {
                     $("#button_click_memo").prop( "disabled", false );
                     $("#memo_id").prop( "disabled", false );
                 }else{
-                    if(["Mainnet ON"].includes($("#mainnet").val()))
-                    {
-                        $(".getverified").show();
-                        $(".isverified").hide();
-                        $(".isverified-username").hide();
-                    }
+                    $(".getverified").show();
+                    $(".isverified").hide();
+                    $(".isverified-username").hide();
                     
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
@@ -1408,6 +1405,10 @@ $( document ).ready(function() {
         }else
         {
             $(".loggedout").show();
+            
+            $(".getverified").show();
+            $(".isverified").hide();
+            $(".isverified-username").hide();
             
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
