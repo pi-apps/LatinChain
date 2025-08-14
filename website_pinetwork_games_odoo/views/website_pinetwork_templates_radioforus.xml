@@ -34,7 +34,7 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.140"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.141"></script>
                     
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
@@ -549,65 +549,56 @@
                                 e.stopImmediatePropagation();
                                 return false;
                             });
+                            
                             //(adsbygoogle = window.adsbygoogle || []).push({});
                             
-                            var pi_user_id = "", pi_user_code = "", accessToken = "";
-                        
-                            var myData ={};
-                            
-                            myData.pi_user_code = pi_user_code;
-                            myData.pi_user_id = pi_user_id;
-                            myData.accessToken = accessToken;
-                            
-                            var table = $('#transactions').DataTable( {
-                                responsive: true,
-                                //ajax: '/get-transactions-data',
-                                ajax: {
-                                    'type': 'POST',
-                                    'url': '/get-transactions-data/radioforus',
-                                    'data': function ( d ) {
-                                       return  $.extend(d, myData);
-                                    }
-                                },
-                                processing: true,
-                                serverSide: true,
-                                serverMethod: 'post',
-                                columns: [
-                                    { data: 'memo', width: "40%" },
-                                    { data: 'amount', width: "30%" },
-                                    { data: 'txid', width: "30%" },
-                                ],
-                                ordering: false,
-                                scrollCollapse: true,
-                                scrollX: false,
-                                autoWidth: false
-                            } );
+                            var pi_user_id = "", pi_user_code = "", accessToken = "", unblocked = false;
                             const Pi = window.Pi;
                             
-                            async function auth() {
-                                try {
-                                    // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
-                                    const scopes = ['username', 'payments', 'wallet_address'];
-                                    function onIncompletePaymentFound(payment) {
-                                        
-                                    }; // Read more about this in the SDK reference
+                            function set_points(points) {
+                                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                {
+                                    var passkey = "";
+                                    var data = {
+                                        'pi_user_id': pi_user_id,
+                                        'pi_user_code': pi_user_code,
+                                        'points': points,
+                                        'passkey': passkey,
+                                        'accessToken': accessToken,
+                                        'csrf_token': odoo.csrf_token,
+                                    };
+                                    //$.ajaxSetup({async: false});
+                                    return $.post( "/pi-points", data).done(function(data) {
+                                        data = JSON.parse(data);
+                                        //if(data.result)
+                                        //    alert("You won " + points + " points");
+                                        //$("#refresh").click();
 
-                                    Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-                                        pi_user_id = auth.user.uid;
-                                        pi_user_code = auth.user.username;
-                                        accessToken = auth.accessToken;
-                                        
-                                        $('#username').html(" " + auth.user.username);
-                                        
-                                        myData.pi_user_code = pi_user_code;
-                                        myData.pi_user_id = pi_user_id;
-                                        myData.accessToken = accessToken;
-                                        table.ajax.reload();
-                                    }).catch(function(error) {
-                                        console.error(error);
+                                    }).fail(function() {
                                     });
-                                } catch (err) {
-                                    console.error(err);
+                                }
+                            }
+                            
+                            function get_user() {
+                                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                                {
+                                    var data = {
+                                                'pi_user_id': pi_user_id,
+                                                'pi_user_code': pi_user_code,
+                                                'app_client': 'auth_example',
+                                                'accessToken': accessToken,
+                                                'csrf_token': odoo.csrf_token,
+                                            };
+                                    //$.ajaxSetup({async: false});
+                                    return $.post( "/get-user", data).done(function(data) {
+                                        data = JSON.parse(data);
+                                        if(data.result)
+                                        {
+                                            unblocked = data.unblocked;
+                                        }
+                                    }).fail(function() {
+                                        
+                                    });
                                 }
                             }
                             
@@ -642,6 +633,70 @@
                                 } catch (err) {
                                 }
                             }
+                        
+                            var myData ={};
+                            
+                            myData.pi_user_code = pi_user_code;
+                            myData.pi_user_id = pi_user_id;
+                            myData.accessToken = accessToken;
+                            
+                            var table = $('#transactions').DataTable( {
+                                responsive: true,
+                                //ajax: '/get-transactions-data',
+                                ajax: {
+                                    'type': 'POST',
+                                    'url': '/get-transactions-data/radioforus',
+                                    'data': function ( d ) {
+                                       return  $.extend(d, myData);
+                                    }
+                                },
+                                processing: true,
+                                serverSide: true,
+                                serverMethod: 'post',
+                                columns: [
+                                    { data: 'memo', width: "40%" },
+                                    { data: 'amount', width: "30%" },
+                                    { data: 'txid', width: "30%" },
+                                ],
+                                ordering: false,
+                                scrollCollapse: true,
+                                scrollX: false,
+                                autoWidth: false
+                            } );
+                            
+                            async function auth() {
+                                try {
+                                    // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                    const scopes = ['username', 'payments', 'wallet_address'];
+                                    function onIncompletePaymentFound(payment) {
+                                        
+                                    }; // Read more about this in the SDK reference
+
+                                    Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                        pi_user_id = auth.user.uid;
+                                        pi_user_code = auth.user.username;
+                                        accessToken = auth.accessToken;
+                                        
+                                        set_points(0).always(function(){
+                                            get_user().always(function(){
+                                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) &amp;&amp; unblocked)
+                                                    showPiAds(Pi, true);
+                                            });
+                                        });
+                                        
+                                        $('#username').html(" " + auth.user.username);
+                                        
+                                        myData.pi_user_code = pi_user_code;
+                                        myData.pi_user_id = pi_user_id;
+                                        myData.accessToken = accessToken;
+                                        table.ajax.reload();
+                                    }).catch(function(error) {
+                                        console.error(error);
+                                    });
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                            }
                             
                             // you usually would check the ads support ahead of time and store the information
                             (async () => {
@@ -655,8 +710,6 @@
                                         
                                         if(!adNetworkSupported)
                                             alert("Update Pi Browser version, please!.");
-                                            
-                                        showPiAds(Pi, true);
                                     }
                                   // store adNetworkSupported for later use
                                 })();

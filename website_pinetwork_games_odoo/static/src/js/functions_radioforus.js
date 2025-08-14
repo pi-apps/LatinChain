@@ -207,6 +207,9 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user(false).always(function(){
                         
+                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && unblocked)
+                            showPiAds(Pi, true);
+                        
                         //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         //    showPiAds(Pi);
                         
@@ -353,8 +356,6 @@ $( document ).ready(function() {
                 
                 if(!adNetworkSupported)
                     alert("Update Pi Browser version, please!.");
-                    
-                showPiAds(Pi, true);
             }
           // store adNetworkSupported for later use
         })();
