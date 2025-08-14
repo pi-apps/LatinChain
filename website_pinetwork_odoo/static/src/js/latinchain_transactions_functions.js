@@ -56,7 +56,7 @@ $(document).ready( function () {
     } );
 
     function set_points(points) {
-        if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+        if(pi_user_id != "" && pi_user_code != "")
         {
             var data = {
                 'pi_user_id': pi_user_id,
@@ -79,7 +79,7 @@ $(document).ready( function () {
     }
 
     function get_user() {
-        if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+        if(pi_user_id != "" && pi_user_code != "")
         {
             var data = {
                         'pi_user_id': pi_user_id,
@@ -121,7 +121,7 @@ $(document).ready( function () {
             
             if(showAdResponse.result == "AD_CLOSED")
             {
-                if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                if(pi_user_id != "" && pi_user_code != "")
                 {
                     var data = {
                                 'pi_user_id': pi_user_id,
@@ -169,7 +169,7 @@ $(document).ready( function () {
                 
                 set_points(0).always(function(){
                     get_user().always(function(){
-                        //if(show_pi_ad_user &amp;&amp; ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                        //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         //    showPiAds(Pi);
                     });
                 });
@@ -203,7 +203,7 @@ $(document).ready( function () {
         
             setTimeout(function ()
             {
-                if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                if(pi_user_id == "" && pi_user_code == "")
                     auth();
             }, 10000);
         }else if(confirm($("#modal_login_latinchain_v2_message").text()))
@@ -213,7 +213,7 @@ $(document).ready( function () {
         
             setTimeout(function ()
             {
-                if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                if(pi_user_id == "" && pi_user_code == "")
                     auth();
             }, 10000);
         }

@@ -4,6 +4,7 @@ var accessToken = "";
 var unblocked = false;
 var passkey = "";
 const Pi = window.Pi;
+var myData = {};
 
 function copyToClipboard(text) {
     var sampleTextarea = document.createElement("textarea");
@@ -24,7 +25,7 @@ $(document).ready( function () {
     //(adsbygoogle = window.adsbygoogle || []).push({});
     
     function set_points(points) {
-        if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+        if(pi_user_id != "" && pi_user_code != "")
         {
             var data = {
                 'pi_user_id': pi_user_id,
@@ -47,7 +48,7 @@ $(document).ready( function () {
     }
     
     function get_user() {
-        if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+        if(pi_user_id != "" && pi_user_code != "")
         {
             var data = {
                         'pi_user_id': pi_user_id,
@@ -76,7 +77,7 @@ $(document).ready( function () {
             var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
             var date2 = new Date(date1.getTime() - 1 * 60 * 60000);
             
-            if(localStorage &amp;&amp; localStorage['pi_ad_datetime_latinchain'] > date2.getTime() &amp;&amp; activated)
+            if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
             {
                 return;
             }
@@ -100,8 +101,6 @@ $(document).ready( function () {
         } catch (err) {
         }
     }
-
-    var myData ={};
     
     myData.pi_user_code = pi_user_code;
     myData.pi_user_id = pi_user_id;
@@ -146,7 +145,7 @@ $(document).ready( function () {
                 
                 set_points(0).always(function(){
                     get_user().always(function(){
-                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) &amp;&amp; !unblocked)
+                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && !unblocked)
                             showPiAds(Pi, true);
                     });
                 });
@@ -188,7 +187,7 @@ $(document).ready( function () {
         
             setTimeout(function ()
             {
-                if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                if(pi_user_id == "" && pi_user_code == "")
                     auth();
             }, 10000);
         }else if(confirm($("#modal_login_latinchain_v2_message").text()))
@@ -198,7 +197,7 @@ $(document).ready( function () {
         
             setTimeout(function ()
             {
-                if(pi_user_id == "" &amp;&amp; pi_user_code == "")
+                if(pi_user_id == "" && pi_user_code == "")
                     auth();
             }, 10000);
         }
@@ -275,4 +274,4 @@ $(document).ready( function () {
             anchor.click();
         }
     });
-} );
+});
