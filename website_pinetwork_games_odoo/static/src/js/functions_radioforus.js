@@ -107,10 +107,20 @@ function get_user(donation) {
     }
 }
 
-async function showPiAds(Pi) {
+async function showPiAds(Pi, activated) {
+    
     try {
+        var d1 = new Date();
+        var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
+        var date2 = new Date(date1.getTime() - 1 * 60 * 60000);
+        
+        if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
+        {
+            return;
+        }
+        
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
-                                
+
         if (isAdReadyResponse.ready === false) {
             await Pi.Ads.requestAd("interstitial");
         }
@@ -119,28 +129,13 @@ async function showPiAds(Pi) {
         
         if(showAdResponse.result == "AD_CLOSED")
         {
-            if(pi_user_id != "" && pi_user_code != "")
-            {
-                var data = {
-                            'pi_user_id': pi_user_id,
-                            'pi_user_code': pi_user_code,
-                            'accessToken': accessToken,
-                            'csrf_token': odoo.csrf_token,
-                        };
-                //$.ajaxSetup({async: false});
-                return $.post( "/set-pi-ad-datetime", data).done(function(data) {
-                    data = JSON.parse(data);
-                    if(data.result)
-                    {
-                    }
-                }).fail(function() {
-                    
-                });
-            }
+            var d1 = new Date();
+            var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
+
+            localStorage['pi_ad_datetime_latinchain'] = date1.getTime();
         }
+        
     } catch (err) {
-        //alert(err);
-        // Not able to fetch the user
     }
 }
 
@@ -358,6 +353,8 @@ $( document ).ready(function() {
                 
                 if(!adNetworkSupported)
                     alert("Update Pi Browser version, please!.");
+                    
+                showPiAds(Pi, true);
             }
           // store adNetworkSupported for later use
         })();

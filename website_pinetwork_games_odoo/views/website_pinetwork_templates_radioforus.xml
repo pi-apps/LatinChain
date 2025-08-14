@@ -34,7 +34,7 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.139"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.140"></script>
                     
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
@@ -611,9 +611,55 @@
                                 }
                             }
                             
+                            async function showPiAds(Pi, activated) {
+    
+                                try {
+                                    var d1 = new Date();
+                                    var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
+                                    var date2 = new Date(date1.getTime() - 1 * 60 * 60000);
+                                    
+                                    if(localStorage &amp;&amp; localStorage['pi_ad_datetime_latinchain'] > date2.getTime() &amp;&amp; activated)
+                                    {
+                                        return;
+                                    }
+                                    
+                                    const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
+
+                                    if (isAdReadyResponse.ready === false) {
+                                        await Pi.Ads.requestAd("interstitial");
+                                    }
+                                    
+                                    const showAdResponse = await Pi.Ads.showAd("interstitial");
+                                    
+                                    if(showAdResponse.result == "AD_CLOSED")
+                                    {
+                                        var d1 = new Date();
+                                        var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
+
+                                        localStorage['pi_ad_datetime_latinchain'] = date1.getTime();
+                                    }
+                                    
+                                } catch (err) {
+                                }
+                            }
+                            
                             // you usually would check the ads support ahead of time and store the information
                             (async () => {
                                 await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                
+                                (async () => {
+                                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                    {
+                                        const nativeFeaturesList = await Pi.nativeFeaturesList();
+                                        const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                                        
+                                        if(!adNetworkSupported)
+                                            alert("Update Pi Browser version, please!.");
+                                            
+                                        showPiAds(Pi, true);
+                                    }
+                                  // store adNetworkSupported for later use
+                                })();
                               // store adNetworkSupported for later use
                             
                                 if(localStorage.getItem("loggedIn"))
