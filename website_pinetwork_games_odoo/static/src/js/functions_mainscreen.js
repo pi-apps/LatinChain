@@ -641,7 +641,11 @@ async function showPiInterstitialAds(Pi, url) {
                 }
                 
                 $("#button_reward_ad").html(btnvalue);
-                $("#button_reward_ad").prop( "disabled", false );
+                
+                if((pi_user_id != "" && pi_user_code != "") && (show_pi_ad_user || pi_ad_new))
+                {
+                    $("#button_reward_ad").prop( "disabled", false );
+                }
                 
                 return;
             }
@@ -667,12 +671,18 @@ async function showPiInterstitialAds(Pi, url) {
         }
         
         $("#button_reward_ad").html(btnvalue);
-        $("#button_reward_ad").prop( "disabled", false );
+        if((pi_user_id != "" && pi_user_code != "") && (show_pi_ad_user || pi_ad_new))
+        {
+            $("#button_reward_ad").prop( "disabled", false );
+        }
         //$("#button_reward_ad").prop( "disabled", false );
         
     } catch (err) {
         $("#button_reward_ad").html(btnvalue);
-        $("#button_reward_ad").prop( "disabled", false );
+        if((pi_user_id != "" && pi_user_code != "") && (show_pi_ad_user || pi_ad_new))
+        {
+            $("#button_reward_ad").prop( "disabled", false );
+        }
         
         if(url && url != false && url != undefined)
         {
