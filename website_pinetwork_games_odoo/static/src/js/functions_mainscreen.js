@@ -1431,7 +1431,7 @@ $( document ).ready(function() {
             $('.showInterstitialAd').find('a.btn').click(function(e) {
                 if($(this).attr('target') != "_blank")
                 {
-                    if($('#pi_ad_automatic').is(':checked') && !unblocked) {
+                    if($('#pi_ad_automatic').is(':checked')) //&& !unblocked) {
                         if(!$(this).hasClass("href-external"))
                         {
                             e.preventDefault();
@@ -1442,7 +1442,7 @@ $( document ).ready(function() {
             });
             
             $('.showInterstitialAd').find('button.btn').click(function(e) {
-                if($('#pi_ad_automatic').is(':checked') && !unblocked) {
+                if($('#pi_ad_automatic').is(':checked')) //&& !unblocked) {
                     if(!$(this).hasClass("href-external"))
                     {
                         showPiInterstitialAds(Pi, false);
