@@ -27,28 +27,6 @@ const outputDiv = document.getElementById('output');
 const codesParagraph = document.getElementById('language-codes');
 
 /**
- * Initializes the Tesseract.js worker once.
- */
-/*async function initializeTesseractWorker() {
-    if (ocrWorker) return; // If worker already exists, do nothing
-
-    ocrWorker = await Tesseract.createWorker('afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+div+dzo+ell+eng+enm+epo+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+lao+lat+lav+lit+ltz+mal+mar+msa+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor',
-        //'eng+spa+afr+kor+chi_sim+jpn+fra+ita+chi_tra+vie+ara', 
-        1, 
-        {
-        logger: m => {
-            // Optional: Log Tesseract.js progress
-            // console.log(m);
-        },
-        // Use a worker path to ensure compatibility and correct loading
-        workerPath: 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/worker.min.js'
-    });
-        
-    //await ocrWorker.loadLanguage('afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+div+dzo+ell+eng+enm+epo+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+lao+lat+lav+lit+ltz+mal+mar+msa+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor');
-    //await ocrWorker.initialize('afr+amh+ara+asm+aze+aze_cyrl+bel+ben+bod+bos+bre+bul+cat+ceb+ces+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert+chr+cos+cym+dan+deu+div+dzo+ell+eng+enm+epo+est+eus+fao+fas+fil+fin+fra+frk+frm+fry+gla+gle+glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku+ind+isl+ita+ita_old+jav+jpn+jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+lao+lat+lav+lit+ltz+mal+mar+msa+mlt+mon+mri+mya+nep+nld+nor+osd+pan+pol+por+pus+que+ron+rus+san+sin+slk+slv+snd+spa+spa_old+sqi+srp+srp_latn+swa+swe+syr+tam+tat+tel+tha+tir+ton+tur+uig+ukr+urd+uzb+uzb_cyrl+vie+yid+yor');
-}*/
-
-/**
  * Recognizes text from the current image and updates the UI.
  */
 async function recognizeText() {
@@ -62,9 +40,6 @@ async function recognizeText() {
     ocrLoadingElement.classList.remove('hidden');
 
     try {
-        // Make sure the Tesseract worker is initialized
-        //await initializeTesseractWorker();
-        
         const selectedOptions = Array.from(selectElement.selectedOptions);
         const languageCodes = selectedOptions.map(option => option.value);
         
@@ -74,12 +49,9 @@ async function recognizeText() {
             codesParagraph.textContent = languageString;
             outputDiv.classList.remove('hidden');
 
-            // You would typically use this string to create your worker:
-            // await Tesseract.createWorker({ lang: languageString });
-            // alert(`Worker would be created with languages: ${languageString}`);
             if(ocrWorker)
                 await ocrWorker.terminate();
-            
+             
             ocrWorker = await Tesseract.createWorker(languageString,
                 1, 
                 {
@@ -102,10 +74,10 @@ async function recognizeText() {
 
             // Recognize text from the current photo's URL
             const { data: { text } } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
-            
+             
             // Update the UI with the recognized text
             recognizedTextElement.textContent = text.trim() || "No text found.";
-            
+             
             await ocrWorker.terminate();
         }
     } catch (error) {
@@ -119,15 +91,53 @@ async function recognizeText() {
 }
 
 
+/**
+ * Saves the selected language codes to local storage.
+ */
+function saveLanguagesToLocalStorage() {
+    const selectedOptions = Array.from(selectElement.selectedOptions);
+    const languageCodes = selectedOptions.map(option => option.value);
+    localStorage.setItem('selectedLanguages', JSON.stringify(languageCodes));
+    detectLanguages(); // Update the UI display after saving
+}
+
+/**
+ * Loads the selected language codes from local storage and updates the UI.
+ */
+function loadLanguagesFromLocalStorage() {
+    const savedLanguages = localStorage.getItem('selectedLanguages');
+    if (savedLanguages) {
+        const languageCodes = JSON.parse(savedLanguages);
+        // Deselect all options first
+        Array.from(selectElement.options).forEach(option => {
+            option.selected = false;
+        });
+        // Then select the saved ones
+        languageCodes.forEach(code => {
+            const option = selectElement.querySelector(`option[value="${code}"]`);
+            if (option) {
+                option.selected = true;
+            }
+        });
+    }
+    detectLanguages(); // Update the UI display with the loaded languages
+}
+
+/**
+ * Detects languages and displays them.
+ */
 async function detectLanguages() {
     // Create a comma-separated string of language codes
     const selectedOptions = Array.from(selectElement.selectedOptions);
     const languageCodes = selectedOptions.map(option => option.value);
-    
+     
     if (languageCodes.length > 0) {
         const languageString = languageCodes.join('+');
         codesParagraph.textContent = languageString;
         outputDiv.classList.remove('hidden');
+    } else {
+        codesParagraph.textContent = "";
+        outputDiv.classList.add('hidden');
     }
 }
 
@@ -276,7 +286,9 @@ prevBtn.addEventListener('click', prevPhoto);
 uploadInput.addEventListener('change', handleImageUpload);
 clearBtn.addEventListener('click', clearPhotos);
 textrecognitionBtn.addEventListener('click', recognizeText);
-selectElement.addEventListener('change', detectLanguages);
+
+// Call the save function whenever the selection changes
+selectElement.addEventListener('change', saveLanguagesToLocalStorage);
 
 // New: Assign click event to the main image to open zoom
 photoDisplay.addEventListener('click', openZoomModal);
@@ -291,8 +303,8 @@ zoomModal.addEventListener('click', (e) => {
 
 
 // Display initial state on page load (no photos)
-document.addEventListener('DOMContentLoaded', displayPhoto);
-// Also initialize the Tesseract worker on page load
-//document.addEventListener('DOMContentLoaded', initializeTesseractWorker);
-
-document.addEventListener('DOMContentLoaded', detectLanguages);
+document.addEventListener('DOMContentLoaded', () => {
+    // Load languages from local storage before displaying anything
+    loadLanguagesFromLocalStorage();
+    displayPhoto();
+});
