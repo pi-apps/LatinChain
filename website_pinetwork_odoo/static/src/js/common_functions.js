@@ -248,3 +248,10 @@ function loadSpeechLanguages() {
 }
 
 document.addEventListener('DOMContentLoaded', loadSpeechLanguages);
+
+window.onbeforeunload = () => {
+    if ('speechSynthesis' in window)
+    {
+        window.speechSynthesis.cancel();
+    }
+};

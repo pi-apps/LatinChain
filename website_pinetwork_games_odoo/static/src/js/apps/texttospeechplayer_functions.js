@@ -202,3 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
         [playBtn, pauseBtn, stopBtn, voiceSelect].forEach(el => el.disabled = true);
     }
 });
+
+window.onbeforeunload = () => {
+    if ('speechSynthesis' in window)
+    {
+        window.speechSynthesis.cancel();
+    }
+};

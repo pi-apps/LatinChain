@@ -513,4 +513,8 @@ window.onbeforeunload = () => {
     if (video.srcObject) {
         video.srcObject.getTracks().forEach(track => track.stop());
     }
+    if ('speechSynthesis' in window)
+    {
+        window.speechSynthesis.cancel();
+    }
 };
