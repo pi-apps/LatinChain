@@ -6,6 +6,7 @@ const mapElement = document.getElementById('map');
 
 let map;
 let userMarker;
+let clickedMarker; // New marker for a clicked location
 let userLat;
 let userLon;
 const searchMarkers = [];
@@ -99,6 +100,40 @@ function initMap(lat, lon) {
     });
     map.addControl(new locationControl());
 
+    // Listen for map clicks
+    map.on('click', async (e) => {
+        const lat = e.latlng.lat;
+        const lon = e.latlng.lng;
+        
+        // Clear any previous clicked marker
+        if (clickedMarker) {
+            map.removeLayer(clickedMarker);
+        }
+
+        statusMessage.textContent = 'Fetching location details...';
+        
+        const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            
+            if (data && data.display_name) {
+                const description = data.display_name;
+                const popupContent = `<b>${description}</b>`;
+
+                clickedMarker = L.marker([lat, lon]).addTo(map).bindPopup(popupContent).openPopup();
+                statusMessage.textContent = `Found details for clicked location.`;
+            } else {
+                statusMessage.textContent = `No detailed information found for this location.`;
+                clickedMarker = L.marker([lat, lon]).addTo(map).bindPopup('No details available.').openPopup();
+            }
+        } catch (error) {
+            console.error('Error in reverse geocoding:', error);
+            statusMessage.textContent = 'Error fetching location details. Try again.';
+            clickedMarker = L.marker([lat, lon]).addTo(map).bindPopup('Error fetching details.').openPopup();
+        }
+    });
+
     // Listen for location updates
     map.on('locationfound', (e) => {
         userLat = e.latlng.lat;
@@ -172,6 +207,11 @@ async function searchPlaces(query) {
     // Clear previous search markers
     searchMarkers.forEach(marker => map.removeLayer(marker));
     searchMarkers.length = 0;
+    // Also clear the clicked marker
+    if (clickedMarker) {
+        map.removeLayer(clickedMarker);
+        clickedMarker = null;
+    }
 
     let data = [];
     let searchType = 'local';
@@ -236,7 +276,15 @@ async function searchPlaces(query) {
         const lat = parseFloat(place.lat);
         const lon = parseFloat(place.lon);
         const name = place.display_name;
-        const marker = L.marker([lat, lon]).addTo(map).bindPopup(`<b>${name}</b>`);
+        const type = place.type;
+        const category = place.category;
+
+        let popupContent = `<b>${name}</b>`;
+        if (type || category) {
+            popupContent += `<br><i>Type: ${type || 'N/A'}, Category: ${category || 'N/A'}</i>`;
+        }
+
+        const marker = L.marker([lat, lon]).addTo(map).bindPopup(popupContent);
         searchMarkers.push(marker);
         bounds.extend([lat, lon]);
     });
