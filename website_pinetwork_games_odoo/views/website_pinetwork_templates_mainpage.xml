@@ -1028,7 +1028,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.449"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.450"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -2195,6 +2195,13 @@
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="texttospeechplayer" href="/texttospeechplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success texttospeechplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-feather"></i></div><div style="font-size:100%;" translate="no">TEXT-TO-SPEECH READER</div><div style="font-size:80%;">Text-to-speech reader</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">AI Multimedia</div></div></a></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-mapsplayer" style="display:none">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a id="mapsplayer" href="/mapsplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mapsplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-map-location-dot"></i></div><div style="font-size:100%;" translate="no">MAPS FINDER</div><div style="font-size:80%;">Place finder</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Multimedia</div></div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>

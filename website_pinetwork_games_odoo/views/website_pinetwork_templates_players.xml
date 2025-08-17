@@ -1841,5 +1841,223 @@
                 </html>
             </t>
 		</template>
+        
+        <template id="mapsplayer" name="Maps Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Place Finder</title>
+                        <!-- Leaflet CSS -->
+                        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+                         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+                         crossorigin=""/>
+                        <!-- Custom Stylesheet -->
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700');
+                            
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #f0f4f8;
+                                color: #333;
+                                margin: 0;
+                                padding: 0;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                min-height: 100vh;
+                            }
+
+                            .container {
+                                width: 100%;
+                                max-width: 500px;
+                                padding: 16px;
+                                box-sizing: border-box;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+
+                            h1 {
+                                color: #1e3a5f;
+                                text-align: center;
+                                margin-bottom: 20px;
+                            }
+
+                            #search-form {
+                                width: 100%;
+                                display: flex;
+                                gap: 8px;
+                                margin-bottom: 16px;
+                            }
+
+                            #search-input {
+                                flex-grow: 1;
+                                padding: 12px 16px;
+                                border: 2px solid #cbd5e1;
+                                border-radius: 8px;
+                                font-size: 1rem;
+                                outline: none;
+                                transition: border-color 0.2s;
+                            }
+
+                            #search-input:focus {
+                                border-color: #3b82f6;
+                            }
+                            
+                            #search-button {
+                                padding: 12px 20px;
+                                background-color: #3b82f6;
+                                color: white;
+                                border: none;
+                                border-radius: 8px;
+                                font-size: 1rem;
+                                font-weight: bold;
+                                cursor: pointer;
+                                transition: background-color 0.2s;
+                            }
+
+                            #search-button:hover {
+                                background-color: #2563eb;
+                            }
+
+                            #map {
+                                width: 100%;
+                                height: 60vh;
+                                border-radius: 12px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                                margin-bottom: 16px;
+                            }
+                            
+                            #status-message {
+                                text-align: center;
+                                color: #64748b;
+                                font-style: italic;
+                                margin-top: 10px;
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            const Pi = window.Pi;
+                            $( document ).ready(function() {
+                            
+                                var pi_user_id = "";
+                                async function auth() {
+                                    try {
+                                        // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                        const scopes = ['username', 'payments', 'wallet_address'];
+                                        function onIncompletePaymentFound(payment) {
+                                            
+                                        }; // Read more about this in the SDK reference
+                                        
+                                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                            pi_user_id = auth.user.uid;
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'none';
+                                        }).catch(function(error) {
+                                            //Pi.openShareDialog("Error", error);
+                                            //alert(err);
+                                            console.error(error);
+                                        });
+                                    } catch (err) {
+                                        //Pi.openShareDialog("Error", err);
+                                        //alert(err);
+                                        console.error(err);
+                                        // Not able to fetch the user
+                                    }
+                                }
+                                
+                                (async () => {
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            auth();
+                                            
+                                            setTimeout(function ()
+                                            {
+                                                if(pi_user_id == "")
+                                                {
+                                                    //alert($("#pi_prowser_message").text());
+                                                    
+                                                    if(window.location.hostname == "localhost")
+                                                    {
+                                                        $("a.anchor-click").attr('href', window.location.origin);
+                                                    }
+                                                    else if(window.location.hostname == "test.latin-chain.com")
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                    }
+                                                    
+                                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                }
+                                            }, 10000);
+                                        }
+                                    }, 10000);
+                                })();
+                                
+                            });
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+                        
+                        <div class="container">
+                            <div style="text-align:center; margin-bottom:15px;">
+                                <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                            </div>
+                            <h1>Place Finder</h1>
+                            <form id="search-form">
+                                <input type="text" id="search-input" placeholder="Search places..." required="required" />
+                                <button type="submit" id="search-button">Search</button>
+                            </form>
+                            <div id="map"></div>
+                            <div id="status-message">Finding your location...</div>
+                        </div>
+
+                        <!-- Leaflet JS -->
+                        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+                         crossorigin=""></script>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
 
 </odoo>
