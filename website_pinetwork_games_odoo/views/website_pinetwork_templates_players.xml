@@ -1937,6 +1937,18 @@
                                 font-style: italic;
                                 margin-top: 10px;
                             }
+                            
+                            #back {
+                                padding: 12px 20px;
+                                background-color: #3b82f6;
+                                color: white;
+                                border: none;
+                                border-radius: 8px;
+                                font-size: 1rem;
+                                font-weight: bold;
+                                cursor: pointer;
+                                transition: background-color 0.2s;
+                            }
                         </style>
                         
                         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
