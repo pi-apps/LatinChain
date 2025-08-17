@@ -9,6 +9,7 @@ let userMarker;
 let userLat;
 let userLon;
 const searchMarkers = [];
+let isWatching = false; // Flag to track if we're watching the user's location
 
 // Define the custom green icon for the user's location.
 // Using an image from an open-source CDN.
@@ -29,15 +30,99 @@ function initMap(lat, lon) {
     }
     
     map = L.map('map').setView([lat, lon], 15);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    
+    // Define base map layers for the layer control
+    const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    });
+
+    // OpenStreetMap HOT layer
+    const hotLayer = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+    });
+
+    // OpenTopMap layer
+    const opentopomapLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+    });
+    
+    // Add the default layer to the map
+    osmLayer.addTo(map);
 
     // Add a marker for the user's location
-    // Using the new green icon here
     userMarker = L.marker([lat, lon], {icon: greenIcon}).addTo(map)
         .bindPopup('You are here!')
         .openPopup();
+    
+    // Create layer control and add it to the map
+    const baseMaps = {
+        "Standard OSM": osmLayer,
+        "OSM HOT": hotLayer,
+        "OpenTopoMap": opentopomapLayer
+    };
+    L.control.layers(baseMaps).addTo(map);
+
+    // Create a custom control for re-centering on the user's location
+    const locationControl = L.Control.extend({
+        options: {
+            position: 'topleft'
+        },
+        onAdd: function (map) {
+            const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+            container.style.backgroundColor = 'white';
+            container.style.width = '30px';
+            container.style.height = '30px';
+            container.style.cursor = 'pointer';
+            container.style.textAlign = 'center';
+            container.style.lineHeight = '30px';
+            container.style.borderRadius = '5px';
+            container.innerHTML = '📍';
+            
+            container.onclick = function(){
+                if (isWatching) {
+                    map.stopLocate();
+                    isWatching = false;
+                    statusMessage.textContent = 'Location tracking stopped.';
+                    container.style.backgroundColor = 'white'; // Reset color
+                    container.style.boxShadow = 'none'; // Reset shadow
+                } else {
+                    map.locate({setView: true, watch: true, maxZoom: 15});
+                    isWatching = true;
+                    statusMessage.textContent = 'Tracking your location...';
+                    container.style.backgroundColor = '#d2e3f6'; // Highlight color
+                    container.style.boxShadow = 'inset 0 0 5px rgba(0,0,0,0.2)'; // Add shadow
+                }
+            }
+
+            return container;
+        }
+    });
+    map.addControl(new locationControl());
+
+    // Listen for location updates
+    map.on('locationfound', (e) => {
+        userLat = e.latlng.lat;
+        userLon = e.latlng.lng;
+        
+        // Update the marker position and move the map
+        userMarker.setLatLng(e.latlng);
+        map.setView(e.latlng, map.getZoom());
+        statusMessage.textContent = `Location updated. You are at ${userLat.toFixed(2)}, ${userLon.toFixed(2)}`;
+    });
+
+    // Handle location error
+    map.on('locationerror', (e) => {
+        console.error('Location error:', e.message);
+        statusMessage.textContent = 'Error: Could not track your location. ' + e.message;
+        map.stopLocate();
+        isWatching = false;
+        // Reset button style on error
+        const locationControlDiv = document.querySelector('.leaflet-control-custom');
+        if(locationControlDiv) {
+            locationControlDiv.style.backgroundColor = 'white';
+            locationControlDiv.style.boxShadow = 'none';
+        }
+    });
 }
 
 // Function to get the user's geolocation

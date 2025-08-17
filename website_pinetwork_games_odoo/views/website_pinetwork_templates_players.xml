@@ -1918,18 +1918,6 @@
                                 cursor: pointer;
                                 transition: background-color 0.2s;
                             }
-                            
-                            #back {
-                                padding: 12px 20px;
-                                background-color: #3b82f6;
-                                color: white;
-                                border: none;
-                                border-radius: 8px;
-                                font-size: 1rem;
-                                font-weight: bold;
-                                cursor: pointer;
-                                transition: background-color 0.2s;
-                            }
 
                             #search-button:hover {
                                 background-color: #2563eb;
@@ -2066,7 +2054,7 @@
                          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
                          crossorigin=""></script>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.101"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.102"></script>
                     </body>
                 </html>
             </t>
