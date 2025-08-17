@@ -78,7 +78,10 @@ function initMap(lat, lon) {
             container.style.lineHeight = '30px';
             container.style.borderRadius = '5px';
             container.innerHTML = '📍';
-            
+
+            // Stop click event propagation to prevent map click listener from firing
+            L.DomEvent.on(container, 'mousedown click', L.DomEvent.stopPropagation);
+
             container.onclick = function(){
                 if (isWatching) {
                     map.stopLocate();
