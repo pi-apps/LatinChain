@@ -1887,7 +1887,7 @@
                             }
 
                             #search-form {
-                                width: 90%;
+                                width: 100%;
                                 display: flex;
                                 gap: 8px;
                                 margin-bottom: 16px;
@@ -2046,7 +2046,7 @@
                         <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
                         
                     </head>
-                    <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+                    <body>
                         
                         <div class="container">
                             <div style="text-align:center; margin-bottom:15px;">
