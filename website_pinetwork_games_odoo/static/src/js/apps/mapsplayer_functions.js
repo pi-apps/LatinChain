@@ -118,8 +118,13 @@ function initMap(lat, lon) {
             const data = await response.json();
             
             if (data && data.display_name) {
-                const description = data.display_name;
-                const popupContent = `<b>${description}</b>`;
+                const name = data.display_name;
+                const type = data.type;
+                const category = data.category;
+                let popupContent = `<b>${name}</b>`;
+                if (type || category) {
+                    popupContent += `<br><i>Type: ${type || 'N/A'}, Category: ${category || 'N/A'}</i>`;
+                }
 
                 clickedMarker = L.marker([lat, lon]).addTo(map).bindPopup(popupContent).openPopup();
                 statusMessage.textContent = `Found details for clicked location.`;
