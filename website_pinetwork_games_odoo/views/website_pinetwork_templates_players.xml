@@ -1887,7 +1887,7 @@
                             }
 
                             #search-form {
-                                width: 100%;
+                                width: 90%;
                                 display: flex;
                                 gap: 8px;
                                 margin-bottom: 16px;
@@ -1908,6 +1908,18 @@
                             }
                             
                             #search-button {
+                                padding: 12px 20px;
+                                background-color: #3b82f6;
+                                color: white;
+                                border: none;
+                                border-radius: 8px;
+                                font-size: 1rem;
+                                font-weight: bold;
+                                cursor: pointer;
+                                transition: background-color 0.2s;
+                            }
+                            
+                            #back {
                                 padding: 12px 20px;
                                 background-color: #3b82f6;
                                 color: white;
@@ -2038,12 +2050,12 @@
                         
                         <div class="container">
                             <div style="text-align:center; margin-bottom:15px;">
-                                <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                                <a id="back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
                             </div>
                             <h1>Place Finder</h1>
                             <form id="search-form">
                                 <input type="text" id="search-input" placeholder="Search places..." required="required" />
-                                <button type="submit" id="search-button">Search</button>
+                                <button type="submit" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
                             <div id="map"></div>
                             <div id="status-message">Finding your location...</div>
