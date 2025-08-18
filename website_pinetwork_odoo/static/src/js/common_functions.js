@@ -256,46 +256,47 @@ window.onbeforeunload = () => {
     }
 };
 
-// Use a function to ensure the code runs after the DOM is ready.
-window.addEventListener('load', function() {
-    // Check for a saved language in LocalStorage
-    const savedLanguage = localStorage.getItem('lastTranslateLanguage');
+var checkLang = () => {
+    var lang = document.documentElement.getAttribute('lang');
     
-    // If a language was found, set the URL hash to load it automatically
-    if (savedLanguage) {
-        // The Google Translate widget uses a hash like #googtrans(en|es)
-        
-        if(location.pathname.substring(0, 3) == "/es")
+    if(lang)
+    {
+        if(location.pathname.substring(0, 3) == "/es" && lang != "es")
         {
-            window.location.hash = `#googtrans(es|${savedLanguage})`;
-        }else
+            localStorage.setItem('lastTranslateLanguage', lang);
+        }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
         {
-            window.location.hash = `#googtrans(en|${savedLanguage})`;
+            localStorage.setItem('lastTranslateLanguage', lang);
         }
     }
+    
+    loadLang();
+};
 
-    // Listen for changes to the URL hash (which the Google Translate widget does)
-    window.addEventListener('hashchange', function() {
-        // Get the new hash, e.g., "#googtrans(en|es)"
-        const newHash = window.location.hash;
-        
-        // Use a regular expression to extract the target language code
-        // The regex looks for `(en|...)` and captures the content inside the parentheses.
-        var match = "";
-        
-        if(location.pathname.substring(0, 3) == "/es")
+var loadLang = () => {
+    var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+    
+    // If a language was found, set the URL hash to load it automatically.
+    // This is still needed to trigger the initial translation on page load.
+    if (savedLanguage1) {
+        if(location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
         {
-            match = newHash.match(/\(es\|(\w+)\)/);
-        }else
+            window.location.hash = `#googtrans(es|${savedLanguage1})`;
+        }else if(location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
         {
-            match = newHash.match(/\(en\|(\w+)\)/);
+            window.location.hash = `#googtrans(en|${savedLanguage1})`;
         }
-        
-        if (match && match[1]) {
-            const targetLanguage = match[1];
-            // Save the new language to LocalStorage
-            localStorage.setItem('lastTranslateLanguage', targetLanguage);
-            //console.log(`Language changed to: ${targetLanguage}. Saved to LocalStorage.`);
-        }
-    });
+    }
+};
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    var observer1 = new MutationObserver(() => checkLang());
+    observer1.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+    loadLang();
 });
+
+window.onbeforeunload = () => {
+    checkLang();
+};
