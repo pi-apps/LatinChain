@@ -255,3 +255,47 @@ window.onbeforeunload = () => {
         window.speechSynthesis.cancel();
     }
 };
+
+// Use a function to ensure the code runs after the DOM is ready.
+window.addEventListener('load', function() {
+    // Check for a saved language in LocalStorage
+    const savedLanguage = localStorage.getItem('lastTranslateLanguage');
+    
+    // If a language was found, set the URL hash to load it automatically
+    if (savedLanguage) {
+        // The Google Translate widget uses a hash like #googtrans(en|es)
+        
+        if(location.pathname.substring(0, 3) == "/es")
+        {
+            window.location.hash = `#googtrans(es|${savedLanguage})`;
+        }else
+        {
+            window.location.hash = `#googtrans(en|${savedLanguage})`;
+        }
+    }
+
+    // Listen for changes to the URL hash (which the Google Translate widget does)
+    window.addEventListener('hashchange', function() {
+        // Get the new hash, e.g., "#googtrans(en|es)"
+        const newHash = window.location.hash;
+        
+        // Use a regular expression to extract the target language code
+        // The regex looks for `(en|...)` and captures the content inside the parentheses.
+        var match = "";
+        
+        if(location.pathname.substring(0, 3) == "/es")
+        {
+            match = newHash.match(/\(es\|(\w+)\)/);
+        }else
+        {
+            match = newHash.match(/\(en\|(\w+)\)/);
+        }
+        
+        if (match && match[1]) {
+            const targetLanguage = match[1];
+            // Save the new language to LocalStorage
+            localStorage.setItem('lastTranslateLanguage', targetLanguage);
+            //console.log(`Language changed to: ${targetLanguage}. Saved to LocalStorage.`);
+        }
+    });
+});
