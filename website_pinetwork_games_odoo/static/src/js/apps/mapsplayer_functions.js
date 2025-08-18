@@ -6,11 +6,16 @@ const mapElement = document.getElementById('map');
 
 let map;
 let userMarker;
-let clickedMarker; // New marker for a clicked location
+let clickedMarker; // Marker for a single clicked location
 let userLat;
 let userLon;
 const searchMarkers = [];
 let isWatching = false; // Flag to track if we're watching the user's location
+
+// --- Routing variables ---
+let routingControl;
+let routingState = 'idle'; // 'idle', 'selecting-start', 'selecting-end', 'route-ready'
+let waypoints = []; // Stores the start and end points for the route
 
 // Define the custom green icon for the user's location.
 // Using an image from an open-source CDN.
@@ -22,6 +27,41 @@ const greenIcon = new L.Icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
 });
+
+/**
+ * Clears all search and clicked markers, and any existing route.
+ */
+function clearAllMarkers() {
+    // Clear all markers from search results
+    searchMarkers.forEach(marker => map.removeLayer(marker));
+    searchMarkers.length = 0;
+    
+    // Clear the single-click marker
+    if (clickedMarker) {
+        map.removeLayer(clickedMarker);
+        clickedMarker = null;
+    }
+    
+    // Clear the route if it exists
+    if (routingControl) {
+        map.removeControl(routingControl);
+        routingControl = null;
+        waypoints = [];
+        routingState = 'idle';
+    }
+}
+
+/**
+ * Dynamically adjusts the max-height of the routing panel to 50% of the map's height.
+ * This prevents the panel from overflowing on smaller screens.
+ */
+function adjustRoutingPanelHeight() {
+    const routingPanel = document.querySelector('.leaflet-routing-container.leaflet-control');
+    if (routingPanel && mapElement) {
+        const mapHeight = mapElement.clientHeight;
+        routingPanel.style.maxHeight = `${mapHeight * 0.5}px`;
+    }
+}
 
 // Function to initialize the map
 function initMap(lat, lon) {
@@ -39,7 +79,7 @@ function initMap(lat, lon) {
 
     // OpenStreetMap HOT layer
     const hotLayer = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a></a>'
     });
 
     // OpenTopMap layer
@@ -103,42 +143,128 @@ function initMap(lat, lon) {
     });
     map.addControl(new locationControl());
 
+    // --- Add a routing control button ---
+    const routeControl = L.Control.extend({
+        options: {
+            position: 'topleft'
+        },
+        onAdd: function (map) {
+            const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+            container.style.backgroundColor = '#3b82f6';
+            container.style.color = 'white';
+            container.style.width = '30px';
+            container.style.height = '30px';
+            container.style.cursor = 'pointer';
+            container.style.textAlign = 'center';
+            container.style.lineHeight = '30px';
+            container.style.borderRadius = '5px';
+            container.innerHTML = '➡️';
+            container.style.marginTop = '5px';
+
+            L.DomEvent.on(container, 'mousedown click', L.DomEvent.stopPropagation);
+
+            container.onclick = function() {
+                if (routingState === 'idle' || routingState === 'route-ready') {
+                    // Clear previous route if it exists
+                    if (routingControl) {
+                        map.removeControl(routingControl);
+                    }
+                    waypoints = [];
+                    routingState = 'selecting-start';
+                    statusMessage.textContent = 'Click on the map to select your starting point.';
+                    container.style.backgroundColor = '#2563eb'; // Darken button to show it's active
+                }
+            };
+            return container;
+        }
+    });
+    map.addControl(new routeControl());
+
     // Listen for map clicks
     map.on('click', async (e) => {
         const lat = e.latlng.lat;
         const lon = e.latlng.lng;
         
-        // Clear any previous clicked marker
-        if (clickedMarker) {
-            map.removeLayer(clickedMarker);
-        }
-
-        statusMessage.textContent = 'Fetching location details...';
-        
-        const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
+        // --- Handle routing waypoints ---
+        if (routingState === 'selecting-start') {
+            // Clear existing markers and route when starting a new route selection
+            clearAllMarkers();
+            waypoints.push(L.latLng(lat, lon));
+            statusMessage.textContent = 'Start point selected. Now click to select the destination.';
+            routingState = 'selecting-end';
+        } else if (routingState === 'selecting-end') {
+            waypoints.push(L.latLng(lat, lon));
+            statusMessage.textContent = 'Destination selected. Calculating route...';
+            routingState = 'route-ready';
             
-            if (data && data.display_name) {
-                const name = data.display_name;
-                const type = data.type;
-                const category = data.category;
-                let popupContent = `<b>${name}</b>`;
-                if (type || category) {
-                    popupContent += `<br><i>Type: ${type || 'N/A'}, Category: ${category || 'N/A'}</i>`;
+            // Create the routing control and add it to the map
+            routingControl = L.Routing.control({
+                waypoints: waypoints,
+                // Use a free OSRM service
+                router: L.Routing.osrmv1({
+                    serviceUrl: 'https://router.project-osrm.org/route/v1'
+                }),
+                routeWhileDragging: false,
+                addWaypoints: true,
+                lineOptions: {
+                    styles: [{color: '#2563eb', weight: 6}]
                 }
+            }).addTo(map);
+            
+            // After the control is added, adjust its height
+            adjustRoutingPanelHeight();
 
-                clickedMarker = L.marker([lat, lon]).addTo(map).bindPopup(popupContent).openPopup();
-                statusMessage.textContent = `Found details for clicked location.`;
-            } else {
-                statusMessage.textContent = `No detailed information found for this location.`;
-                clickedMarker = L.marker([lat, lon]).addTo(map).bindPopup('No details available.').openPopup();
+            // Listen for route calculation to complete
+            routingControl.on('routesfound', (e) => {
+                const routes = e.routes;
+                const summary = routes[0].summary;
+                const totalTime = Math.round(summary.totalTime / 60); // in minutes
+                const totalDistance = (summary.totalDistance / 1000).toFixed(1); // in kilometers
+                statusMessage.textContent = `Route found: ${totalDistance} km, taking approx. ${totalTime} min.`;
+            });
+
+            // Reset the styling of the routing button
+            const routeControlDiv = document.querySelector('.leaflet-control-custom:nth-of-type(2)');
+            if (routeControlDiv) {
+                routeControlDiv.style.backgroundColor = '#3b82f6';
             }
-        } catch (error) {
-            console.error('Error in reverse geocoding:', error);
-            statusMessage.textContent = 'Error fetching location details. Try again.';
-            clickedMarker = L.marker([lat, lon]).addTo(map).bindPopup('Error fetching details.').openPopup();
+
+        } else if (routingState === 'idle' || routingState === 'route-ready') {
+            // --- SYNCHRONOUS MARKER CLEAR AND CREATION ---
+            // Clear all existing markers and routes immediately
+            clearAllMarkers();
+            
+            // Immediately create and show a temporary marker
+            clickedMarker = L.marker([lat, lon]).addTo(map).bindPopup('Fetching location details...').openPopup();
+
+            statusMessage.textContent = 'Fetching location details...';
+            
+            const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data && data.display_name) {
+                    const name = data.display_name;
+                    const type = data.type;
+                    const category = data.category;
+                    let popupContent = `<b>${name}</b>`;
+                    if (type || category) {
+                        popupContent += `<br><i>Type: ${type || 'N/A'}, Category: ${category || 'N/A'}</i>`;
+                    }
+
+                    // Update the content of the existing marker
+                    clickedMarker.bindPopup(popupContent).openPopup();
+                    statusMessage.textContent = `Found details for clicked location.`;
+                } else {
+                    clickedMarker.bindPopup('No detailed information found for this location.').openPopup();
+                    statusMessage.textContent = `No detailed information found for this location.`;
+                }
+            } catch (error) {
+                console.error('Error in reverse geocoding:', error);
+                clickedMarker.bindPopup('Error fetching details.').openPopup();
+                statusMessage.textContent = 'Error fetching location details. Try again.';
+            }
         }
     });
 
@@ -212,14 +338,8 @@ async function searchPlaces(query) {
         return;
     }
 
-    // Clear previous search markers
-    searchMarkers.forEach(marker => map.removeLayer(marker));
-    searchMarkers.length = 0;
-    // Also clear the clicked marker
-    if (clickedMarker) {
-        map.removeLayer(clickedMarker);
-        clickedMarker = null;
-    }
+    // Clear all existing markers and routes before performing a new search
+    clearAllMarkers();
 
     let data = [];
     let searchType = 'local';
@@ -313,6 +433,9 @@ searchForm.addEventListener('submit', (e) => {
         searchPlaces(query);
     }
 });
+
+// Add a resize listener to dynamically adjust the panel height
+window.addEventListener('resize', adjustRoutingPanelHeight);
 
 // Initial call to get location when the page loads
 document.addEventListener('DOMContentLoaded', getLocation);

@@ -1854,9 +1854,11 @@
                         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
                          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
                          crossorigin=""/>
+                        <!-- Leaflet Routing Machine CSS -->
+                        <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
                         <!-- Custom Stylesheet -->
                         <style>
-                            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700');
+                            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap');
                             
                             body {
                                 font-family: 'Inter', sans-serif;
@@ -1922,7 +1924,7 @@
                             #search-button:hover {
                                 background-color: #2563eb;
                             }
-
+                            
                             #map {
                                 width: 100%;
                                 height: 60vh;
@@ -1936,6 +1938,22 @@
                                 color: #64748b;
                                 font-style: italic;
                                 margin-top: 10px;
+                            }
+
+                            /* Custom styles for the routing control button */
+                            .leaflet-control-custom {
+                                font-size: 1.5em;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            /*
+                             * Responsive styles for the routing panel.
+                             * The height is now controlled by JavaScript.
+                             */
+                            .leaflet-routing-container.leaflet-control {
+                                overflow-y: auto; /* Enable vertical scrolling */
                             }
                             
                             #back {
@@ -2065,8 +2083,10 @@
                         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
                          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
                          crossorigin=""></script>
+                         <!-- Leaflet Routing Machine JS -->
+                        <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.105"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.108"></script>
                     </body>
                 </html>
             </t>
