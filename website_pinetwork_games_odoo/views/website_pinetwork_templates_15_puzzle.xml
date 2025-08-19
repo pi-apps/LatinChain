@@ -304,7 +304,7 @@
                     <h1 class="text-3xl font-extrabold text-gray-800 mb-6">15 Puzzle Game</h1>
 
                     <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
-                    <div id="puzzle-board" class="puzzle-board">
+                    <div id="puzzle-board" class="puzzle-board" translate="no">
                         <!-- Puzzle tiles will be dynamically generated here -->
                     </div>
 
