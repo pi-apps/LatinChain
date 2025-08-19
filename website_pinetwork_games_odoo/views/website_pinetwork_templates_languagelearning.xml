@@ -334,6 +334,59 @@
             <body>
                 <div class="container">
                     <header class="text-center py-8">
+                        <style>
+                            /* Adjustments for Google Translator to be visible */
+                            .goog-te-banner-frame.skiptranslate,
+                            .skiptranslate > iframe {
+                                display: none !important;
+                            }
+                           
+                            body {
+                                top: 0px !important; 
+                            }
+
+                            .goog-te-menu-frame {
+                                max-width:100% !important; 
+                            }
+                            .goog-te-menu2 { 
+                                max-width: 100% !important;
+                                overflow-x: scroll !important;
+                                box-sizing:border-box !important; 
+                                height:auto !important; 
+                            }
+                           
+                            /* Hide unwanted elements without hiding the main widget */
+                            #goog-gt-tt, 
+                            #goog-gt-, 
+                            .goog-te-balloon-frame {
+                                display: none !important;
+                            } 
+                            .goog-text-highlight { 
+                                background: none !important; 
+                                box-shadow: none !important;
+                            }
+                           
+                            .goog-logo-link {
+                                display: none !important;
+                            }
+                            .goog-te-gadget {
+                                height: 28px !important; 
+                                overflow: hidden;
+                            }
+                        </style>
+                        <script type="text/javascript">
+                            $( document ).ready(function() {
+                                $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                $("#google_translate_element").appendTo(".translate_here");
+                                
+                                $("#translate_text_latinchain_2").show();
+                                $("#google_translate_element").show();
+                            });
+                        </script>
+                        
+                        <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                        </div>
+                        
                         <div style="text-align:center; margin-bottom:15px;">
                             <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
                         </div>
