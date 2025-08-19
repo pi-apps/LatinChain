@@ -32,96 +32,115 @@ let lastSpokenTime = 0;
 // --- Variables and Functions for Voice Selection (Web Speech API) ---
 let selectedVoice = null; // New variable to hold the selected voice object
 
-// --- Pre-translated phrases for various languages ---
-const translatedPhrases = {
-    'en': {
-        'i_see_a': 'I see a',
-        'i_see_many': 'I see a ',
-        'i_no_longer_see_a': 'I no longer see a',
-        'no_objects_detected': 'No objects detected recently.',
-    },
-    'es': {
-        'i_see_a': 'Veo un/una',
-        'i_see_many': 'Veo un/una ',
-        'i_no_longer_see_a': 'Ya no veo un/una',
-        'no_objects_detected': 'No se detectaron objetos recientemente.',
-    },
-    'pt': {
-        'i_see_a': 'Eu vejo um/uma',
-        'i_see_many': 'Eu vejo um/uma ',
-        'i_no_longer_see_a': 'Eu não vejo mais um/uma',
-        'no_objects_detected': 'Nenhum objeto detectado recentemente.',
-    },
-    'ko': {
-        'i_see_a': '하나의',
-        'i_see_many': '하나의 ',
-        'i_no_longer_see_a': '더 이상 하나의',
-        'no_objects_detected': '최근에 감지된 개체가 없습니다.',
-    },
-    'vi': {
-        'i_see_a': 'Tôi thấy một',
-        'i_see_many': 'Tôi thấy một ',
-        'i_no_longer_see_a': 'Tôi không còn thấy một',
-        'no_objects_detected': 'Không có đối tượng nào được phát hiện gần đây.',
-    },
-    'ja': {
-        'i_see_a': '私は一つ',
-        'i_see_many': '私は一つ ',
-        'i_no_longer_see_a': '私はもう一つ',
-        'no_objects_detected': '最近検出されたオブジェクトはありません。',
-    },
-    'zh': {
-        'i_see_a': '我看到一个',
-        'i_see_many': '我看到一个',
-        'i_no_longer_see_a': '我不再看到一个',
-        'no_objects_detected': '最近没有检测到物体。',
-    },
-    'fr': {
-        'i_see_a': 'Je vois un',
-        'i_see_many': 'Je vois un ',
-        'i_no_longer_see_a': 'Je ne vois plus un',
-        'no_objects_detected': "Aucun objet n'a été détecté récemment.",
-    },
-    'de': {
-        'i_see_a': 'Ich sehe ein',
-        'i_see_many': 'Ich sehe ein ',
-        'i_no_longer_see_a': 'Ich sehe kein',
-        'no_objects_detected': 'Kürzlich wurden keine Objekte erkannt.',
-    },
-    'it': {
-        'i_see_a': 'Vedo un/una',
-        'i_see_many': 'Vedo un/una ',
-        'i_no_longer_see_a': 'Non vedo più un/una',
-        'no_objects_detected': 'Nessun oggetto rilevato di recente.',
-    },
-    'ru': {
-        'i_see_a': 'Я вижу',
-        'i_see_many': 'Я вижу ',
-        'i_no_longer_see_a': 'Я больше не вижу',
-        'no_objects_detected': 'Недавно не было обнаружено ни одного объекта.',
-    },
-    'af': {
-        'i_see_a': 'Ek sien \'n',
-        'i_see_many': 'Ek sien \'n ',
-        'i_no_longer_see_a': 'Ek sien nie meer \'n',
-        'no_objects_detected': 'Geen voorwerpe onlangs opgespoor nie.',
-    }
+const getTranslationValue = (Lang, phraseKey) => {
+    // --- Pre-translated phrases for various languages ---
+    const translatedPhrases = {
+        'en': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'es': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'pt': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'ko': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'vi': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'ja': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'zh': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'fr': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'de': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'it': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'ru': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        },
+        'af': {
+            'i_see_a': "I see a",
+            'i_see_many': "I see a ",
+            'i_no_longer_see_a': "I no longer see a",
+            'no_objects_detected': "No objects detected recently.",
+            'and': " and ",
+        }
+    };
+    
+    // Return the translation for the current language and phrase key
+    return translatedPhrases[Lang]?.[phraseKey] || '';
 };
 
-const andPhrase = {
-    en: ' and ',
-    es: ' y ',
-    pt: ' e ',
-    ko: '과(와)',
-    vi: ' và ',
-    ja: 'と',
-    zh: '和',
-    fr: ' et ',
-    de: ' und ',
-    it: ' e ',
-    ru: ' и ',
-    af: ' en '
-};
+const languages = ['en', 'es', 'pt', 'ko', 'vi', 'ja', 'zh', 'fr', 'de', 'it', 'ru', 'af'];
+
+/*const andPhrase = {
+    en: getTranslationValue("and"),
+    es: getTranslationValue("and"),
+    pt: getTranslationValue("and"),
+    ko: getTranslationValue("and"),
+    vi: getTranslationValue("and"),
+    ja: getTranslationValue("and"),
+    zh: getTranslationValue("and"),
+    fr: getTranslationValue("and"),
+    de: getTranslationValue("and"),
+    it: getTranslationValue("and"),
+    ru: getTranslationValue("and"),
+    af: getTranslationValue("and")
+};*/
 
 /**
  * A helper function to get the correct translated phrase.
@@ -132,9 +151,7 @@ const andPhrase = {
  */
 function getTranslation(key, langCode) {
     const shortLangCode = langCode.split(/[-_]/)[0];
-    return (translatedPhrases[shortLangCode] && translatedPhrases[shortLangCode][key]) ?
-           translatedPhrases[shortLangCode][key] :
-           translatedPhrases['en'][key];
+    return getTranslationValue('en', key) || getTranslationValue('en', key);
 }
 
 /**
@@ -157,10 +174,12 @@ function populateVoiceList() {
     ];
 
     // Filter voices by checking if their language code starts with any of the supported short codes
-    const filteredVoices = allVoices.filter(voice => {
+    /*const filteredVoices = allVoices.filter(voice => {
         const shortLang = voice.lang.split(/[-_]/)[0];
         return supportedShortLangs.includes(shortLang);
-    });
+    });*/
+    
+    const filteredVoices = allVoices;
     
     // Sort the voices alphabetically by language
     filteredVoices.sort((a, b) => a.lang.localeCompare(b.lang));
@@ -184,6 +203,20 @@ function populateVoiceList() {
         option.setAttribute('data-lang', voice.lang);
         voiceSelect.appendChild(option);
 
+        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+        
+        // If a language was found, set the URL hash to load it automatically.
+        // This is still needed to trigger the initial translation on page load.
+        if (voice.lang.startsWith(savedLanguage1) && !defaultVoice) {
+            defaultVoice = voice;
+        }
+    });
+    
+    filteredVoices.forEach(voice => {
+        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+        
+        // If a language was found, set the URL hash to load it automatically.
+        // This is still needed to trigger the initial translation on page load.
         if (voice.lang.startsWith('en') && !defaultVoice) {
             defaultVoice = voice;
         }
@@ -204,6 +237,44 @@ if ('speechSynthesis' in window) {
     window.speechSynthesis.onvoiceschanged = populateVoiceList;
     populateVoiceList();
 }
+
+loadLang = () => {
+    if(!is_changing_page)
+    {
+        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+        
+        // If a language was found, set the URL hash to load it automatically.
+        // This is still needed to trigger the initial translation on page load.
+        if (savedLanguage1) {
+            var original_lang = "en";
+            if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
+            {
+                original_lang = "es";
+            }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
+            {
+                original_lang = "en";
+            }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "es")
+            {
+                original_lang = "es";
+            }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "en")
+            {
+                original_lang = "en";
+            }else if(window.location.pathname.substring(0, 3) == "/es")
+            {
+                original_lang = "es";
+            }else if(window.location.pathname.substring(0, 3) != "/es")
+            {
+                original_lang = "en";
+            }
+            
+            window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
+            voiceSelect.innerHTML = "";
+            if ('speechSynthesis' in window) {
+                populateVoiceList();
+            }
+        }
+    }
+};
 
 /**
  * Speaks the given text using the currently selected voice and language.
@@ -369,7 +440,7 @@ async function detectObjects(currentTime) {
             const langCode = selectedVoice ? selectedVoice.lang.split(/[-_]/)[0] : 'en';
 
             if (newObjects.length > 0) {
-                const last = newObjects.length > 1 ? `${andPhrase[langCode] || ' and '}a ${newObjects.pop()}` : '';
+                const last = newObjects.length > 1 ? `${getTranslation('and', langCode) || ' and '}a ${newObjects.pop()}` : '';
                 const comma = newObjects.length > 0 && last ? ', ' : '';
                 speechText += `${getTranslation('i_see_a', langCode)} ${newObjects.join(comma + 'a ')}${last}.`;
             }
@@ -378,6 +449,10 @@ async function detectObjects(currentTime) {
                 if (speechText !== '') speechText += ' ';
                 speechText += `${getTranslation('i_no_longer_see_a', langCode)} ${lostObjects.join(', ')}.`;
             }
+            
+            $(".whole-phrase").text(speechText);
+            await delayAsync(3000);
+            speechText = $(".whole-phrase").text();
 
             if (speechText !== '') {
                 speakDetectedObjects(speechText);
@@ -397,7 +472,7 @@ async function askWhatIsBeingSeen() {
         const langCode = selectedVoice ? selectedVoice.lang.split(/[-_]/)[0] : 'en';
 
         let speechText;
-        const andPhraseText = andPhrase[langCode] || ' and ';
+        const andPhraseText = getTranslation('and', langCode) || ' and ';
         
         let listString;
         if (detectedClasses.length === 1) {
@@ -408,6 +483,10 @@ async function askWhatIsBeingSeen() {
             listString = `${detectedClasses.join(', ')}${andPhraseText}${last}`;
             speechText = `${getTranslation('i_see_many', langCode)} ${listString}.`;
         }
+        
+        $(".whole-phrase").text(speechText);
+        await delayAsync(3000);
+        speechText = $(".whole-phrase").text();
         
         await speakDetectedObjects(speechText);
     } else {

@@ -1606,7 +1606,7 @@
                         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                         
                         <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                        
+                        <!--
                         <script type="text/javascript">
                             const Pi = window.Pi;
                             $( document ).ready(function() {
@@ -1696,7 +1696,7 @@
                         <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                         <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                         <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
-                        
+                        -->
                     </head>
                     <body class="bg-gray-100 flex items-center justify-center min-h-screen">
                         <div class="container bg-white p-6 rounded-xl shadow-lg">
@@ -1756,14 +1756,14 @@
                             <div style="text-align:center; margin-bottom:15px;">
                                 <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
                             </div>
-                           
+                            
                             <h1 class="text-3xl font-bold text-gray-800 mb-4">Real-time Object Detection on Webcam</h1>
-       
+                            
                             <h3 class="text-1xl font-bold text-gray-800 mb-4">Developed with Gemini AI</h3>
-
+                            
                             <div id="status" class="text-lg text-gray-600 mb-4 loading-message">Loading model... please wait.</div>
                             <div id="error" class="text-lg text-red-600 mb-4 error-message hidden"></div>
-
+                            
                             <div class="relative w-full max-w-xl">
                                 <video id="webcam" autoplay="autoplay" muted="muted" playsinline="playsinline" class="w-full rounded-lg"></video>
                                 <canvas id="outputCanvas" class="absolute top-0 left-0 w-full h-full rounded-lg"></canvas>
@@ -1775,7 +1775,10 @@
                                 <button id="askButton" class="action-button">Ask What I'm Seeing</button>
                                 <button id="toggleAutoSpeak" class="action-button">Enable Continuous Detection</button>
                             </div>
-                            <div id="speechStatus" class="text-sm" translate="no"></div>
+                            <div id="speechStatus" class="text-sm"></div>
+                            
+                            <div class="whole-phrase">
+                            </div>
 
                             <div class="confidence-control">
                                 <label for="confidenceThreshold">Min Confidence (the less confidence: the more detection, but the less accurate): <span id="confidenceValue">50%</span></label>
@@ -1783,22 +1786,22 @@
                             </div>
 
                             <!-- New dropdown for voice selection -->
-                            <div id="voiceControl" class="voice-select">
+                            <div id="voiceControl" class="voice-select" style="display:none">
                                 <label for="voiceSelect">Select Voice:</label>
-                                <select id="voiceSelect" class="rounded-lg" translate="no">
+                                <select id="voiceSelect" class="rounded-lg">
                                     <option>Voices...</option>
                                 </select>
                             </div>
 
                             <div id="detectionInfo" class="detection-info">
                                 <h2 class="text-xl font-semibold text-gray-700 mt-4 mb-2">Detected Objects:</h2>
-                                <ul id="detectionList" class="detection-list" translate="no">
+                                <ul id="detectionList" class="detection-list">
                                 </ul>
                             </div>
                            
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webcamplayer_functions.js?v=1.119"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webcamplayer_functions.js?v=1.160"></script>
                     </body>
                 </html>
             </t>
@@ -2332,8 +2335,8 @@
                             <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
                             </div>
                             
-                            <div style="text-align:center; margin-top:15px;">
-                                <a id="back" href="/"><i class="fa fa-step-backward"></i></a>
+                            <div style="text-align:center; margin-bottom:15px;">
+                                <a id="back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
                             </div>
                             <h1>Place Finder</h1>
                             <form id="search-form">
@@ -2351,7 +2354,7 @@
                          <!-- Leaflet Routing Machine JS -->
                         <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.108"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.124"></script>
                     </body>
                 </html>
             </t>

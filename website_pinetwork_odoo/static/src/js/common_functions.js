@@ -1,3 +1,5 @@
+const delayAsync = ms => new Promise(res => setTimeout(res, ms));
+
 function validateYouTubeUrl(url)
 {
     if (url) {
@@ -315,13 +317,20 @@ var checkLang = () => {
     
     if(lang)
     {
-        if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
+        localStorage.setItem('lastTranslateLanguage', lang);
+        /*if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
         {
             localStorage.setItem('lastTranslateLanguage', lang);
         }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
         {
             localStorage.setItem('lastTranslateLanguage', lang);
-        }
+        }else if(window.location.pathname.substring(0, 3) == "/es" && lang == "es")
+        {
+            localStorage.setItem('lastTranslateLanguage', lang);
+        }else if(location.pathname.substring(0, 3) != "/es" && lang == "en")
+        {
+            localStorage.setItem('lastTranslateLanguage', lang);
+        }*/
     }
     loadLang();
 };
@@ -334,13 +343,28 @@ var loadLang = () => {
         // If a language was found, set the URL hash to load it automatically.
         // This is still needed to trigger the initial translation on page load.
         if (savedLanguage1) {
+            var original_lang = "en";
             if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
             {
-                window.location.hash = `googtrans(es|${savedLanguage1})`;
+                original_lang = "es";
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
             {
-                window.location.hash = `googtrans(en|${savedLanguage1})`;
+                original_lang = "en";
+            }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "es")
+            {
+                original_lang = "es";
+            }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "en")
+            {
+                original_lang = "en";
+            }else if(window.location.pathname.substring(0, 3) == "/es")
+            {
+                original_lang = "es";
+            }else if(window.location.pathname.substring(0, 3) != "/es")
+            {
+                original_lang = "en";
             }
+            
+            window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
         }
     }
 };
