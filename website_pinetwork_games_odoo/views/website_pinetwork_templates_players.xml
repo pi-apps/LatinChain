@@ -2075,7 +2075,7 @@
                                 <input type="text" id="search-input" placeholder="Search places..." required="required" />
                                 <button type="submit" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
-                            <div id="map"></div>
+                            <div id="map" translate="no"></div>
                             <div id="status-message">Finding your location...</div>
                         </div>
 
