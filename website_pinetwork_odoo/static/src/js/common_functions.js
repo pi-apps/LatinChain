@@ -285,10 +285,10 @@ var loadLang = () => {
         if (savedLanguage1) {
             if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es" && !savedLanguage1.startsWith("es"))
             {
-                window.location.hash = `googtrans(es|${savedLanguage1})`;
+                window.location.hash = `#googtrans(es|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en" && !savedLanguage1.startsWith("en"))
             {
-                window.location.hash = `googtrans(en|${savedLanguage1})`;
+                window.location.hash = `#googtrans(en|${savedLanguage1})`;
             }
         }
     }
