@@ -230,6 +230,8 @@ async function speak(textIncome){
                 
         var voice = "";
         
+        alert(savedLanguage1);
+        
         if (savedLanguage1) {
             voice = voices.find(v => v.lang.startsWith(savedLanguage1)) ||
                     voices.find(v => v.lang.startsWith('en_US')) ||
