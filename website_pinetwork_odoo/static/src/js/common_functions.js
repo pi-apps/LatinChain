@@ -271,6 +271,8 @@ var checkLang = () => {
             localStorage.setItem('lastTranslateLanguage', lang);
         }
     }
+    
+    loadLang();
 };
 
 var loadLang = () => {
@@ -296,7 +298,6 @@ var loadLang = () => {
 document.addEventListener('DOMContentLoaded', () => {
     var observer1 = new MutationObserver(() => {
         checkLang();
-        loadLang();
     });
     observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
