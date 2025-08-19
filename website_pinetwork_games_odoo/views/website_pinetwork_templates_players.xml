@@ -1445,7 +1445,7 @@
         <template id="webcamplayer" name="Webcam Player">
             <t t-call="web.layout">
                 &lt;!DOCTYPE html&gt;
-                <html>
+                <html lang="en">
                     <head>
                         <meta charset="UTF-8"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
