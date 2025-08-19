@@ -261,8 +261,6 @@ var is_changing_page = false;
 var checkLang = () => {
     var lang = window.document.documentElement.getAttribute('lang');
     
-    alert(lang);
-    
     if(lang)
     {
         if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
@@ -273,7 +271,6 @@ var checkLang = () => {
             localStorage.setItem('lastTranslateLanguage', lang);
         }
     }
-    
     loadLang();
 };
 
@@ -287,23 +284,32 @@ var loadLang = () => {
         if (savedLanguage1) {
             if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
             {
-                window.location.hash = `#googtrans(es|${savedLanguage1})`;
+                window.location.hash = `googtrans(es|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
             {
-                window.location.hash = `#googtrans(en|${savedLanguage1})`;
+                window.location.hash = `googtrans(en|${savedLanguage1})`;
             }
         }
     }
 };
 
+var loadLangInitial = () => {
+    var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+    
+    // If a language was found, set the URL hash to load it automatically.
+    // This is still needed to trigger the initial translation on page load.
+    if (savedLanguage1) {
+        document.documentElement.setAttribute('lang', savedLanguage1);
+    }
+};
 
 document.addEventListener('DOMContentLoaded', () => {
-    var observer1 = new MutationObserver(() => {
-        checkLang();
-    });
+    is_changing_page = false;
+    
+    var observer1 = new MutationObserver(() => checkLang());
     observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
-
-    loadLang();
+    
+    loadLangInitial();
 });
 
 window.onbeforeunload = () => {
