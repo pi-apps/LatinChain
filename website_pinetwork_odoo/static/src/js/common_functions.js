@@ -317,20 +317,13 @@ var checkLang = () => {
     
     if(lang)
     {
-        localStorage.setItem('lastTranslateLanguage', lang);
-        /*if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
+        if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
         {
             localStorage.setItem('lastTranslateLanguage', lang);
         }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
         {
             localStorage.setItem('lastTranslateLanguage', lang);
-        }else if(window.location.pathname.substring(0, 3) == "/es" && lang == "es")
-        {
-            localStorage.setItem('lastTranslateLanguage', lang);
-        }else if(location.pathname.substring(0, 3) != "/es" && lang == "en")
-        {
-            localStorage.setItem('lastTranslateLanguage', lang);
-        }*/
+        }
     }
     loadLang();
 };
@@ -347,24 +340,20 @@ var loadLang = () => {
             if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
             {
                 original_lang = "es";
+                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
             {
                 original_lang = "en";
+                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "es")
             {
                 original_lang = "es";
+                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "en")
             {
                 original_lang = "en";
-            }else if(window.location.pathname.substring(0, 3) == "/es")
-            {
-                original_lang = "es";
-            }else if(window.location.pathname.substring(0, 3) != "/es")
-            {
-                original_lang = "en";
+                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
             }
-            
-            window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
         }
     }
 };
@@ -374,6 +363,7 @@ var loadLangInitial = () => {
     
     // If a language was found, set the URL hash to load it automatically.
     // This is still needed to trigger the initial translation on page load.
+    
     if (savedLanguage1) {
         document.documentElement.setAttribute('lang', savedLanguage1);
     }
@@ -391,4 +381,51 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onbeforeunload = () => {
     checkLang();
     is_changing_page = true;
+};
+
+var googleTranslateElementInit = () => {
+    if(location.pathname.substring(0, 5) != "/web" && 
+        location.pathname.substring(0, 8) != "/es/web" && 
+        location.pathname.substring(0, 5) != "/web/" && 
+        location.pathname.substring(0, 8) != "/es/web/" && 
+        location.pathname.substring(0, 5) != "/web?" && 
+        location.pathname.substring(0, 8) != "/es/web?")
+    {
+        var lang_google='en';
+        if(location.pathname.substring(0, 3) == "/es")
+        {
+          lang_google='es';
+        }
+
+        new google.translate.TranslateElement({pageLanguage: lang_google,
+                                            autoDisplay: true,
+                                            multilanguagePage: false,
+                                            layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                            'google_translate_element');
+
+        //const el = document.querySelector('#goog-gt-');
+        //const el2 = document.querySelector('.skiptranslate');
+        const el3 = document.querySelector('circle');
+        //const el4 = document.querySelector('.goog-te-gadget');
+        const observer = new window.IntersectionObserver(([entry]) => {
+            /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
+            {
+                for(var j = 0; j &lt; document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
+                {
+                    if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
+                        document.getElementsByClassName("skiptranslate")[i].style.display = "none";
+                }
+            }
+            document.getElementById("goog-gt-").style.display = "none";*/
+            document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+        }, {
+            root: null,
+            threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+        });
+
+        //observer.observe(el);
+        //observer.observe(el2);
+        observer.observe(el3);
+        //observer.observe(el4);
+    }
 };

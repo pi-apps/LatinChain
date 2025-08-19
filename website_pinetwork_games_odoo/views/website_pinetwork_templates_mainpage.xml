@@ -82,55 +82,6 @@
                         .goog-logo-link{display: none !important;}
                         /*.goog-te-gadget{height: 28px !important;  overflow: hidden;}*/
                     </style>
-
-                    <script type="text/javascript">
-                        function googleTranslateElementInit() {
-                          if(location.pathname.substring(0, 5) != "/web" &amp;&amp; 
-                            location.pathname.substring(0, 8) != "/es/web" &amp;&amp;
-                            location.pathname.substring(0, 5) != "/web/" &amp;&amp; 
-                            location.pathname.substring(0, 8) != "/es/web/" &amp;&amp;
-                            location.pathname.substring(0, 5) != "/web?" &amp;&amp; 
-                            location.pathname.substring(0, 8) != "/es/web?")
-                          {
-                              var lang_google='en';
-                              if(location.pathname.substring(0, 3) == "/es")
-                              {
-                                  lang_google='es';
-                              }
-                              new google.translate.TranslateElement({pageLanguage: lang_google,
-                                                                    autoDisplay: true,
-                                                                    multilanguagePage: false,
-                                                                    layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
-                                                                    'google_translate_element');
-                             
-                                //const el = document.querySelector('#goog-gt-');
-                                //const el2 = document.querySelector('.skiptranslate');
-                                const el3 = document.querySelector('circle');
-                                //const el4 = document.querySelector('.goog-te-gadget');
-                                const observer = new window.IntersectionObserver(([entry]) => {
-                                    /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
-                                    {
-                                        for(var j = 0; j &lt; document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
-                                        {
-                                            if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
-                                                document.getElementsByClassName("skiptranslate")[i].style.display = "none";
-                                        }
-                                    }
-                                    document.getElementById("goog-gt-").style.display = "none";*/
-                                    document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
-                                }, {
-                                    root: null,
-                                    threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
-                                });
-
-                                //observer.observe(el);
-                                //observer.observe(el2);
-                                observer.observe(el3);
-                                //observer.observe(el4);
-                          }
-                        }
-                        
-                    </script>
                     
                     <t t-if="hide_google_translate">
                         <script type="text/javascript">
@@ -587,56 +538,6 @@
                     .goog-logo-link{display: none !important;}
                     /*.goog-te-gadget{height: 28px !important;  overflow: hidden;}*/
                 </style>
-
-                <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                      if(location.pathname.substring(0, 5) != "/web" &amp;&amp; 
-                            location.pathname.substring(0, 8) != "/es/web" &amp;&amp;
-                            location.pathname.substring(0, 5) != "/web/" &amp;&amp; 
-                            location.pathname.substring(0, 8) != "/es/web/" &amp;&amp;
-                            location.pathname.substring(0, 5) != "/web?" &amp;&amp; 
-                            location.pathname.substring(0, 8) != "/es/web?")
-                      {
-                          var lang_google='en';
-                          if(location.pathname.substring(0, 3) == "/es")
-                          {
-                              lang_google='es';
-                          }
-                          
-                          new google.translate.TranslateElement({pageLanguage: lang_google,
-                                                                autoDisplay: true,
-                                                                multilanguagePage: false,
-                                                                layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
-                                                                'google_translate_element');
-                         
-                            //const el = document.querySelector('#goog-gt-');
-                            //const el2 = document.querySelector('.skiptranslate');
-                            const el3 = document.querySelector('circle');
-                            //const el4 = document.querySelector('.goog-te-gadget');
-                            const observer = new window.IntersectionObserver(([entry]) => {
-                                /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
-                                {
-                                    for(var j = 0; j &lt; document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
-                                    {
-                                        if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
-                                            document.getElementsByClassName("skiptranslate")[i].style.display = "none";
-                                    }
-                                }
-                                document.getElementById("goog-gt-").style.display = "none";*/
-                                document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
-                            }, {
-                                root: null,
-                                threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
-                            });
-
-                            //observer.observe(el);
-                            //observer.observe(el2);
-                            observer.observe(el3);
-                            //observer.observe(el4);
-                      }
-                    }
-                    
-                </script>
                 
                 <t t-if="hide_google_translate">
                     <script type="text/javascript">

@@ -247,7 +247,7 @@ loadLang = () => {
         // This is still needed to trigger the initial translation on page load.
         if (savedLanguage1) {
             var original_lang = "en";
-            if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
+            /*if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
             {
                 original_lang = "es";
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
@@ -265,7 +265,7 @@ loadLang = () => {
             }else if(window.location.pathname.substring(0, 3) != "/es")
             {
                 original_lang = "en";
-            }
+            }*/
             
             window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
             voiceSelect.innerHTML = "";
@@ -596,4 +596,39 @@ window.onbeforeunload = () => {
     {
         window.speechSynthesis.cancel();
     }
+};
+
+googleTranslateElementInit = () => {
+    var lang_google='en';
+    
+    new google.translate.TranslateElement({pageLanguage: lang_google,
+                                        autoDisplay: true,
+                                        multilanguagePage: false,
+                                        layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+                                        'google_translate_element');
+
+    //const el = document.querySelector('#goog-gt-');
+    //const el2 = document.querySelector('.skiptranslate');
+    const el3 = document.querySelector('circle');
+    //const el4 = document.querySelector('.goog-te-gadget');
+    const observer = new window.IntersectionObserver(([entry]) => {
+        /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
+        {
+            for(var j = 0; j &lt; document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
+            {
+                if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
+                    document.getElementsByClassName("skiptranslate")[i].style.display = "none";
+            }
+        }
+        document.getElementById("goog-gt-").style.display = "none";*/
+        document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+    }, {
+        root: null,
+        threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+    });
+
+    //observer.observe(el);
+    //observer.observe(el2);
+    observer.observe(el3);
+    //observer.observe(el4);
 };
