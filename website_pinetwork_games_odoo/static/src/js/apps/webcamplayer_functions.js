@@ -579,6 +579,8 @@ async function load_function()
        
         if (model) {
             animationFrameId = requestAnimationFrame(detectObjects);
+            
+            changeSourceLanguage("en");
         }
     }
 }

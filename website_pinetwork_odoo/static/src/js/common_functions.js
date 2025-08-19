@@ -392,3 +392,18 @@ window.onbeforeunload = () => {
     checkLang();
     is_changing_page = true;
 };
+
+function changeSourceLanguage(newLang) {
+  // 1. Remove the old widget element
+  const translateContainer = document.getElementById('google_translate_element');
+  if (translateContainer) {
+    translateContainer.innerHTML = '';
+  }
+
+  // 2. Re-initialize the widget with the new language
+  new google.translate.TranslateElement({pageLanguage: newLang,
+        autoDisplay: true,
+        multilanguagePage: false,
+        layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 
+        'google_translate_element');
+}
