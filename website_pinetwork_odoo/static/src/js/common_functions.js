@@ -160,7 +160,6 @@ const speechModule = (() => {
                 }
                 
                 if (voice) {
-                    alert(voice.lang);
                     utterance.voice = voice;
                     utterance.lang = voice.lang;
                     utterance.pitch = 1;
