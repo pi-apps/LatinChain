@@ -263,10 +263,10 @@ var checkLang = () => {
     
     if(lang)
     {
-        if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
+        if(window.location.pathname.substring(0, 3) == "/es" && lang != "es" && !lang.startsWith("es"))
         {
             localStorage.setItem('lastTranslateLanguage', lang);
-        }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
+        }else if(location.pathname.substring(0, 3) != "/es" && lang != "en" && !lang.startsWith("en"))
         {
             localStorage.setItem('lastTranslateLanguage', lang);
         }
@@ -283,10 +283,10 @@ var loadLang = () => {
         // If a language was found, set the URL hash to load it automatically.
         // This is still needed to trigger the initial translation on page load.
         if (savedLanguage1) {
-            if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
+            if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es" && !savedLanguage1.startsWith("es"))
             {
                 window.location.hash = `googtrans(es|${savedLanguage1})`;
-            }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
+            }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en" && !savedLanguage1.startsWith("en"))
             {
                 window.location.hash = `googtrans(en|${savedLanguage1})`;
             }
