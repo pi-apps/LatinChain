@@ -367,13 +367,23 @@ var loadLang = () => {
 };
 
 var loadLangInitial = () => {
-    var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
-    
-    // If a language was found, set the URL hash to load it automatically.
-    // This is still needed to trigger the initial translation on page load.
-    
-    if (savedLanguage1) {
-        document.documentElement.setAttribute('lang', savedLanguage1);
+    if (localStorage.getItem('lastTranslateLanguage') != null) {
+        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
+        
+        // If a language was found, set the URL hash to load it automatically.
+        // This is still needed to trigger the initial translation on page load.
+        
+        if (savedLanguage1) {
+            document.documentElement.setAttribute('lang', savedLanguage1);
+        }
+    }else{
+        if(window.location.pathname.substring(0, 3) == "/es")
+        {
+            document.documentElement.setAttribute('lang', 'es');
+        }else if(location.pathname.substring(0, 3) != "/es")
+        {
+            document.documentElement.setAttribute('lang', 'en');
+        }
     }
 };
 
