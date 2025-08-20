@@ -310,6 +310,10 @@ window.onbeforeunload = () => {
     }
 };
 
+/*
+ * Here starts the language translation
+ * */
+
 var is_changing_page = false;
 
 var checkLang = () => {
@@ -449,3 +453,7 @@ var googleTranslateElementInit = () => {
         //observer.observe(el4);
     }
 };
+
+/*
+ * Here finish the language translation
+ * */
