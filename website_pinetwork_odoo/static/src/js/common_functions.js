@@ -118,7 +118,7 @@ const speechModule = (() => {
                 //alert("lang_synthesis " + lang_synthesis);
                 const voices = window.speechSynthesis.getVoices();
                 
-                var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+                var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
                 
                 var voice = "";
                 
@@ -226,7 +226,7 @@ async function speak(textIncome){
         //alert("lang_synthesis " + lang_synthesis);
         const voices = window.speechSynthesis.getVoices();
         
-        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
                 
         var voice = "";
         
@@ -313,7 +313,7 @@ window.onbeforeunload = () => {
 var is_changing_page = false;
 
 var checkLang = () => {
-    var lang = window.document.documentElement.getAttribute('lang');
+    var lang = window.document.documentElement.getAttribute('lang').split(/[-_]/)[0];
     
     if(lang)
     {
@@ -331,7 +331,7 @@ var checkLang = () => {
 var loadLang = () => {
     if(!is_changing_page)
     {
-        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
         
         // If a language was found, set the URL hash to load it automatically.
         // This is still needed to trigger the initial translation on page load.
@@ -353,13 +353,21 @@ var loadLang = () => {
             {
                 original_lang = "en";
                 window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
+            }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "auto")
+            {
+                original_lang = "es";
+                window.location.hash = `googtrans(es|es)`;
+            }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "auto")
+            {
+                original_lang = "en";
+                window.location.hash = `googtrans(en|en)`;
             }
         }
     }
 };
 
 var loadLangInitial = () => {
-    var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+    var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
     
     // If a language was found, set the URL hash to load it automatically.
     // This is still needed to trigger the initial translation on page load.
@@ -379,8 +387,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.onbeforeunload = () => {
-    checkLang();
     is_changing_page = true;
+    checkLang();
 };
 
 var googleTranslateElementInit = () => {

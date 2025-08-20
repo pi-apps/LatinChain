@@ -203,7 +203,7 @@ function populateVoiceList() {
         option.setAttribute('data-lang', voice.lang);
         voiceSelect.appendChild(option);
 
-        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
         
         // If a language was found, set the URL hash to load it automatically.
         // This is still needed to trigger the initial translation on page load.
@@ -213,8 +213,6 @@ function populateVoiceList() {
     });
     
     filteredVoices.forEach(voice => {
-        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
-        
         // If a language was found, set the URL hash to load it automatically.
         // This is still needed to trigger the initial translation on page load.
         if (voice.lang.startsWith('en') && !defaultVoice) {
@@ -238,36 +236,61 @@ if ('speechSynthesis' in window) {
     populateVoiceList();
 }
 
+/*checkLang = () => {
+    var lang = window.document.documentElement.getAttribute('lang').split(/[-_]/)[0];
+    
+    if(lang)
+    {
+        if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
+        {
+            localStorage.setItem('lastTranslateLanguage', lang);
+        }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
+        {
+            localStorage.setItem('lastTranslateLanguage', lang);
+        }else if(window.location.pathname.substring(0, 3) == "/es" && lang == "es"){
+            localStorage.setItem('lastTranslateLanguage', "es");
+        }else if(window.location.pathname.substring(0, 3) != "/es" && lang == "en"){
+            localStorage.setItem('lastTranslateLanguage', "en");
+        }
+    }
+    loadLang();
+};*/
+
 loadLang = () => {
     if(!is_changing_page)
     {
-        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage');
+        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
         
         // If a language was found, set the URL hash to load it automatically.
         // This is still needed to trigger the initial translation on page load.
         if (savedLanguage1) {
             var original_lang = "en";
-            /*if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
+            if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
             {
                 original_lang = "es";
+                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
             {
                 original_lang = "en";
+                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "es")
             {
                 original_lang = "es";
+                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "en")
             {
                 original_lang = "en";
-            }else if(window.location.pathname.substring(0, 3) == "/es")
+                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
+            }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "auto")
             {
                 original_lang = "es";
-            }else if(window.location.pathname.substring(0, 3) != "/es")
+                window.location.hash = `googtrans(es|es)`;
+            }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "auto")
             {
                 original_lang = "en";
-            }*/
+                window.location.hash = `googtrans(en|en)`;
+            }
             
-            window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
             voiceSelect.innerHTML = "";
             if ('speechSynthesis' in window) {
                 populateVoiceList();
@@ -598,7 +621,7 @@ window.onbeforeunload = () => {
     }
 };
 
-googleTranslateElementInit = () => {
+/*googleTranslateElementInit = () => {
     var lang_google='en';
     
     new google.translate.TranslateElement({pageLanguage: lang_google,
@@ -612,15 +635,6 @@ googleTranslateElementInit = () => {
     const el3 = document.querySelector('circle');
     //const el4 = document.querySelector('.goog-te-gadget');
     const observer = new window.IntersectionObserver(([entry]) => {
-        /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
-        {
-            for(var j = 0; j &lt; document.getElementsByClassName("skiptranslate")[i].childNodes.length; j++)
-            {
-                if(document.getElementsByClassName("skiptranslate")[i].childNodes[j].tagName == "IFRAME")
-                    document.getElementsByClassName("skiptranslate")[i].style.display = "none";
-            }
-        }
-        document.getElementById("goog-gt-").style.display = "none";*/
         document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
     }, {
         root: null,
@@ -631,4 +645,4 @@ googleTranslateElementInit = () => {
     //observer.observe(el2);
     observer.observe(el3);
     //observer.observe(el4);
-};
+};*/

@@ -1445,7 +1445,7 @@
         <template id="webcamplayer" name="Webcam Player">
             <t t-call="web.layout">
                 &lt;!DOCTYPE html&gt;
-                <html lang="en">
+                <html>
                     <head>
                         <meta charset="UTF-8"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -1801,7 +1801,7 @@
                            
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webcamplayer_functions.js?v=1.164"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webcamplayer_functions.js?v=1.189"></script>
                     </body>
                 </html>
             </t>
