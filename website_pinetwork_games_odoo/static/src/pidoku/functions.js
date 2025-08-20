@@ -56,7 +56,7 @@ function setConfirmUnload(on) {
     {
         //alert($("#notclose_message").text());
     }
-     window.onbeforeunload = on ? unloadMessage : null;
+    window.onbeforeunload = on ? unloadMessage : null;
 }
 
 function setConfirmUnloadPoints(on) {
@@ -64,6 +64,7 @@ function setConfirmUnloadPoints(on) {
 }
 
 function unloadMessage() {
+    is_changing_page = true;
     return true;
 }
 
