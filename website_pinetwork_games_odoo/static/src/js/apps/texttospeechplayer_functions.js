@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.onbeforeunload = () => {
+    is_changing_page = true;
     if ('speechSynthesis' in window)
     {
         window.speechSynthesis.cancel();

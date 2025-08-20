@@ -609,6 +609,8 @@ async function load_function()
 document.addEventListener('DOMContentLoaded', load_function);
 
 window.onbeforeunload = () => {
+    is_changing_page = true;
+    
     if (animationFrameId) {
         cancelAnimationFrame(animationFrameId);
     }
