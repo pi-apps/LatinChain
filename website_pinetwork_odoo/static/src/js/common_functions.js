@@ -380,9 +380,11 @@ var loadLangInitial = () => {
         if(window.location.pathname.substring(0, 3) == "/es")
         {
             document.documentElement.setAttribute('lang', 'es');
+            localStorage.setItem('lastTranslateLanguage', 'es');
         }else if(location.pathname.substring(0, 3) != "/es")
         {
             document.documentElement.setAttribute('lang', 'en');
+            localStorage.setItem('lastTranslateLanguage', 'en');
         }
     }
 };

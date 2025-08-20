@@ -3,7 +3,7 @@
 
         <template id="new_header_common_latinchain" inherit_id="web.layout">
             <xpath expr="//head//script[last()]" position="after">
-                <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.369"></script>
+                <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.371"></script>
             </xpath>
         </template>
 
