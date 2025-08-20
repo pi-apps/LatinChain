@@ -64,7 +64,6 @@ function setConfirmUnloadPoints(on) {
 }
 
 function unloadMessage() {
-    is_changing_page = true;
     return true;
 }
 
