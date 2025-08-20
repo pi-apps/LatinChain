@@ -317,16 +317,25 @@ window.onbeforeunload = () => {
 var is_changing_page = false;
 
 var checkLang = () => {
-    var lang = window.document.documentElement.getAttribute('lang').split(/[-_]/)[0];
-    
-    if(lang)
+    if(!is_changing_page)
     {
-        if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
+        var lang = window.document.documentElement.getAttribute('lang').split(/[-_]/)[0];
+        
+        if(lang)
         {
-            localStorage.setItem('lastTranslateLanguage', lang);
-        }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
-        {
-            localStorage.setItem('lastTranslateLanguage', lang);
+            if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
+            {
+                localStorage.setItem('lastTranslateLanguage', lang);
+            }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
+            {
+                localStorage.setItem('lastTranslateLanguage', lang);
+            }else if(window.location.pathname.substring(0, 3) == "/es" && lang == "es")
+            {
+                localStorage.setItem('lastTranslateLanguage', "es");
+            }else if(location.pathname.substring(0, 3) != "/es" && lang == "en")
+            {
+                localStorage.setItem('lastTranslateLanguage', "en");
+            }
         }
     }
     loadLang();
