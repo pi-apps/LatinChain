@@ -268,27 +268,27 @@ loadLang = () => {
             if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
             {
                 original_lang = "es";
-                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
+                window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
             {
                 original_lang = "en";
-                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
+                window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "es")
             {
                 original_lang = "es";
-                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
+                window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "en")
             {
                 original_lang = "en";
-                window.location.hash = `googtrans(${original_lang}|${savedLanguage1})`;
+                window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
             }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "auto")
             {
                 original_lang = "es";
-                window.location.hash = `googtrans(es|es)`;
+                window.location.hash = `#googtrans(es|es)`;
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "auto")
             {
                 original_lang = "en";
-                window.location.hash = `googtrans(en|en)`;
+                window.location.hash = `#googtrans(en|en)`;
             }
             
             voiceSelect.innerHTML = "";
