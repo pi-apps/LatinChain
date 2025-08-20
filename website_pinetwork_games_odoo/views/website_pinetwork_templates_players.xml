@@ -1786,7 +1786,7 @@
                             </div>
 
                             <!-- New dropdown for voice selection -->
-                            <div id="voiceControl" class="voice-select" style="display:none">
+                            <div id="voiceControl" class="voice-select">
                                 <label for="voiceSelect">Select Voice:</label>
                                 <select id="voiceSelect" class="rounded-lg">
                                     <option>Voices...</option>
