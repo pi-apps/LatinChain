@@ -67,16 +67,13 @@ function set_points(points) {
             'csrf_token': odoo.csrf_token,
         };
         //$.ajaxSetup({async: false});
-        setConfirmUnloadPoints(true);
         return $.post( "/pi-points", data).done(function(data) {
-            setConfirmUnloadPoints(false);
             data = JSON.parse(data);
             //if(data.result)
             //    alert("You won " + points + " points");
             //$("#refresh").click();
 
         }).fail(function() {
-            setConfirmUnloadPoints(false);
         });
     }
 }
@@ -217,9 +214,7 @@ function get_user_rewarded() {
                     'csrf_token': odoo.csrf_token,
                 };
         //$.ajaxSetup({async: false});
-        setConfirmUnloadPoints(true);
         return $.post( "/get-user", data).done(function(data) {
-            setConfirmUnloadPoints(false);
             data = JSON.parse(data);
             if(data.result)
             {
@@ -347,7 +342,6 @@ function get_user_rewarded() {
             }
             
         }).fail(function() {
-            setConfirmUnloadPoints(false);
         });
     }
 }
@@ -362,9 +356,7 @@ function get_user() {
                     'csrf_token': odoo.csrf_token,
                 };
         //$.ajaxSetup({async: false});
-        setConfirmUnloadPoints(true);
         return $.post( "/get-user", data).done(function(data) {
-            setConfirmUnloadPoints(false);
             data = JSON.parse(data);
             if(data.result)
             {
@@ -641,7 +633,6 @@ function get_user() {
             }
             
         }).fail(function() {
-            setConfirmUnloadPoints(false);
         });
     }
 }
