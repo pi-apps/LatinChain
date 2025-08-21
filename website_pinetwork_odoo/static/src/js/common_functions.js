@@ -329,9 +329,10 @@ var changeLanguage = () => {
     }
 
     // Save the new language to local storage
-    if (newLang) {
+    localStorage.setItem('lastTranslateLanguage', newLang);
+    /*if (newLang) {
         localStorage.setItem('lastTranslateLanguage', newLang);
-    }
+    }*/
 };
 
 const setupLanguageObserver = () => {
