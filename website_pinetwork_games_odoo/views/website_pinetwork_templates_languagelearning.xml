@@ -431,7 +431,7 @@
 
                 <!-- Lightbox for lesson details -->
                 <div id="lightbox" class="lightbox" translate="no">
-                    <button id="lightboxCloseBtn" class="lightbox-close-button">x</button>
+                    <button id="lightboxCloseBtn" class="lightbox-close-button"><i class="fa-solid fa-xmark"></i></button>
                     <h2 id="lightboxTitle" class="text-2xl font-bold mb-4"></h2>
                     <div id="lightboxContent" class="text-gray-700">
                         <!-- Lesson specific content will be loaded here -->
