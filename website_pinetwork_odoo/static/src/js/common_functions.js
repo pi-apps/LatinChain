@@ -312,10 +312,10 @@ var observer1;
 
 var changeLanguage = () => {
     // Get the new language from the 'lang' attribute
-    const newLang = document.documentElement.getAttribute('lang').split(/[-_]/)[0];
+    var newLang = document.documentElement.getAttribute('lang').split(/[-_]/)[0];
 
     // Get the base language of the page based on the URL path
-    const pageLang = window.location.pathname.startsWith('/es') ? 'es' : 'en';
+    var pageLang = window.location.pathname.startsWith('/es') ? 'es' : 'en';
 
     // Update the Google Translate hash to trigger the translation
     // Only set the hash if the target language is different from the page's original language
@@ -358,8 +358,8 @@ const setupLanguageObserver = () => {
 };
 
 const setInitialLanguage = () => {
-    const savedLang = localStorage.getItem('lastTranslateLanguage');
-    const pageLang = window.location.pathname.startsWith('/es') ? 'es' : 'en';
+    var savedLang = localStorage.getItem('lastTranslateLanguage');
+    var pageLang = window.location.pathname.startsWith('/es') ? 'es' : 'en';
 
     // If a language was previously saved, set the 'lang' attribute
     // to trigger the initial translation.
