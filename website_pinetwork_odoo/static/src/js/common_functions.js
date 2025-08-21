@@ -330,6 +330,8 @@ var changeLanguage = () => {
     // Save the new language to local storage
     if (newLang) {
         localStorage.setItem('lastTranslateLanguage', newLang);
+        
+        alert("lang2 = " + newLang);
     }
 };
 
@@ -360,6 +362,8 @@ const setupLanguageObserver = () => {
 const setInitialLanguage = () => {
     var savedLang = localStorage.getItem('lastTranslateLanguage');
     var pageLang = window.location.pathname.startsWith('/es') ? 'es' : 'en';
+    
+    alert("lang = " + savedLang + " - " + pageLang);
 
     // If a language was previously saved, set the 'lang' attribute
     // to trigger the initial translation.
