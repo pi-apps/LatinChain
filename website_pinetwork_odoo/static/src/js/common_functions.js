@@ -368,7 +368,9 @@ const setInitialLanguage = () => {
     // If a language was previously saved, set the 'lang' attribute
     // to trigger the initial translation.
     if (savedLang) {
+        alert("123");
         document.documentElement.setAttribute('lang', savedLang.split(/[-_]/)[0]);
+        localStorage.setItem('lastTranslateLanguage', savedLang.split(/[-_]/)[0]);
     } else {
         // If no language is saved, set the 'lang' attribute based on the page URL
         document.documentElement.setAttribute('lang', pageLang);
