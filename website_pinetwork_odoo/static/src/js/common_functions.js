@@ -308,116 +308,143 @@ document.addEventListener('DOMContentLoaded', loadSpeechLanguages);
  * */
 
 var is_changing_page = false;
-var observer1;
 
-var changeLanguage = () => {
-    // Get the new language from the 'lang' attribute
-    var newLang = document.documentElement.getAttribute('lang').split(/[-_]/)[0];
+var avoidAsking = false;
 
-    // Get the base language of the page based on the URL path
-    var pageLang = window.location.pathname.startsWith('/es') ? 'es' : 'en';
+var observer1 = new MutationObserver(() => checkLang());
 
-    // Update the Google Translate hash to trigger the translation
-    // Only set the hash if the target language is different from the page's original language
-    if (newLang && newLang !== pageLang) {
-        window.location.hash = `#googtrans(${pageLang}|${newLang})`;
-    } else {
-        // If the language is the same as the page's base language or null,
-        // we can clear the hash to remove the translation bar.
-        window.location.hash = '';
-    }
-
-    // Save the new language to local storage
-    if (newLang) {
-        localStorage.setItem('lastTranslateLanguage', newLang);
+var checkLang = () => {
+    if(!is_changing_page)
+    {
+        var lang = window.document.documentElement.getAttribute('lang').split(/[-_]/)[0];
         
-        alert("lang2 = " + newLang);
-    }
-};
-
-const setupLanguageObserver = () => {
-    // Disconnect any existing observer to prevent duplicates
-    if (observer1) {
-        observer1.disconnect();
-    }
-
-    // Create a new MutationObserver
-    observer1 = new MutationObserver(() => {
-        // Only run the language change logic if we are not in the process of leaving the page
-        if (!is_changing_page) {
-            changeLanguage();
-        } else {
-            // If the user cancelled the page change, reset the flag and reconnect the observer
-            is_changing_page = false;
+        if(lang)
+        {
+            if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
+            {
+                localStorage.setItem('lastTranslateLanguage', lang);
+            }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
+            {
+                localStorage.setItem('lastTranslateLanguage', lang);
+            }else if(window.location.pathname.substring(0, 3) == "/es" && lang == "es")
+            {
+                localStorage.setItem('lastTranslateLanguage', "es");
+            }else if(location.pathname.substring(0, 3) != "/es" && lang == "en")
+            {
+                localStorage.setItem('lastTranslateLanguage', "en");
+            }
         }
-    });
-
-    // Start observing the 'lang' attribute on the <html> tag
-    observer1.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ['lang']
-    });
-};
-
-const setInitialLanguage = () => {
-    var savedLang = localStorage.getItem('lastTranslateLanguage');
-    var pageLang = window.location.pathname.startsWith('/es') ? 'es' : 'en';
-    
-    alert("lang = " + savedLang + " - " + pageLang);
-
-    // If a language was previously saved, set the 'lang' attribute
-    // to trigger the initial translation.
-    if (savedLang) {
-        alert("123");
-        document.documentElement.setAttribute('lang', savedLang.split(/[-_]/)[0]);
-        localStorage.setItem('lastTranslateLanguage', savedLang.split(/[-_]/)[0]);
-    } else {
-        // If no language is saved, set the 'lang' attribute based on the page URL
-        document.documentElement.setAttribute('lang', pageLang);
-        localStorage.setItem('lastTranslateLanguage', pageLang);
+        loadLang();
+    }else if(is_changing_page == "changing")
+    {
+        is_changing_page = false;
     }
 };
 
-// --- Event Listeners ---
+var loadLang = () => {
+    if(!is_changing_page)
+    {
+        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
+        
+        // If a language was found, set the URL hash to load it automatically.
+        // This is still needed to trigger the initial translation on page load.
+        if (savedLanguage1) {
+            var original_lang = "en";
+            if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 != "es")
+            {
+                original_lang = "es";
+                window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
+            }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
+            {
+                original_lang = "en";
+                window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
+            }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "es")
+            {
+                original_lang = "es";
+                window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
+            }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "en")
+            {
+                original_lang = "en";
+                window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
+            }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "auto")
+            {
+                original_lang = "es";
+                window.location.hash = `#googtrans(es|es)`;
+            }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "auto")
+            {
+                original_lang = "en";
+                window.location.hash = `#googtrans(en|en)`;
+            }
+        }
+    }
+};
+
+var loadLangInitial = () => {
+    if (localStorage.getItem('lastTranslateLanguage') != null) {
+        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
+        
+        // If a language was found, set the URL hash to load it automatically.
+        // This is still needed to trigger the initial translation on page load.
+        
+        if (savedLanguage1) {
+            document.documentElement.setAttribute('lang', savedLanguage1);
+        }
+    }else{
+        if(window.location.pathname.substring(0, 3) == "/es")
+        {
+            document.documentElement.setAttribute('lang', 'es');
+            localStorage.setItem('lastTranslateLanguage', 'es');
+        }else if(location.pathname.substring(0, 3) != "/es")
+        {
+            document.documentElement.setAttribute('lang', 'en');
+            localStorage.setItem('lastTranslateLanguage', 'en');
+        }
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
-    setInitialLanguage();
-    setupLanguageObserver();
+    is_changing_page = false;
+    
+    observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    
+    loadLangInitial();
 });
 
 window.onbeforeunload = () => {
-    // When the user attempts to leave the page, set the flag.
     is_changing_page = true;
+    observer1.disconnect();
     
-    if ('speechSynthesis' in window)
+    /*if(!avoidAsking)
     {
-        window.speechSynthesis.cancel();
-    }
+        observer1 = new MutationObserver(() => checkLang());
+        observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+        is_changing_page = "changing";    
+        
+        return true;
+    }*/
 };
                         
 function unloadMessage(on) {
     if(on)
     {
         window.onbeforeunload = () => {
-            // When the user attempts to leave the page, set the flag.
             is_changing_page = true;
+            observer1.disconnect();
             
-            if ('speechSynthesis' in window)
+            if(!avoidAsking)
             {
-                window.speechSynthesis.cancel();
+                observer1 = new MutationObserver(() => checkLang());
+                observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+                is_changing_page = "changing";    
+                
+                return true;
             }
-            
-            return true;
         };
     }else
     {
         window.onbeforeunload = () => {
-            // When the user attempts to leave the page, set the flag.
             is_changing_page = true;
-            
-            if ('speechSynthesis' in window)
-            {
-                window.speechSynthesis.cancel();
-            }
+            observer1.disconnect();
         };
     }
 }

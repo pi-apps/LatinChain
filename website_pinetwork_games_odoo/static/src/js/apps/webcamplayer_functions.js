@@ -299,34 +299,6 @@ loadLang = () => {
     }
 };
 
-changeLanguage = () => {
-    // Get the new language from the 'lang' attribute
-    var newLang = document.documentElement.getAttribute('lang').split(/[-_]/)[0];
-
-    // Get the base language of the page based on the URL path
-    var pageLang = window.location.pathname.startsWith('/es') ? 'es' : 'en';
-
-    // Update the Google Translate hash to trigger the translation
-    // Only set the hash if the target language is different from the page's original language
-    if (newLang && newLang !== pageLang) {
-        window.location.hash = `#googtrans(${pageLang}|${newLang})`;
-    } else {
-        // If the language is the same as the page's base language or null,
-        // we can clear the hash to remove the translation bar.
-        window.location.hash = '';
-    }
-
-    // Save the new language to local storage
-    if (newLang) {
-        localStorage.setItem('lastTranslateLanguage', newLang);
-        
-        voiceSelect.innerHTML = "";
-        if ('speechSynthesis' in window) {
-            populateVoiceList();
-        }
-    }
-};
-
 /**
  * Speaks the given text using the currently selected voice and language.
  * @param {string} textToSpeak The text to be spoken.
