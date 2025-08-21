@@ -319,14 +319,14 @@ var changeLanguage = () => {
 
     // Update the Google Translate hash to trigger the translation
     // Only set the hash if the target language is different from the page's original language
-    window.location.hash = `#googtrans(${pageLang}|${newLang})`;
-    /*if (newLang && newLang != pageLang) {
+    //window.location.hash = `#googtrans(${pageLang}|${newLang})`;
+    if (newLang != pageLang) {
         window.location.hash = `#googtrans(${pageLang}|${newLang})`;
     } else {
         // If the language is the same as the page's base language or null,
         // we can clear the hash to remove the translation bar.
         window.location.hash = '';
-    }*/
+    }
 
     // Save the new language to local storage
     if (newLang) {
