@@ -316,6 +316,8 @@ window.onbeforeunload = () => {
 
 var is_changing_page = false;
 
+var observer1 = new MutationObserver(() => checkLang());
+
 var checkLang = () => {
     if(!is_changing_page)
     {
@@ -405,7 +407,6 @@ var loadLangInitial = () => {
 document.addEventListener('DOMContentLoaded', () => {
     is_changing_page = false;
     
-    var observer1 = new MutationObserver(() => checkLang());
     observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
     
     loadLangInitial();
@@ -413,7 +414,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onbeforeunload = () => {
     is_changing_page = true;
-    //checkLang();
+    observer1.disconnect();
+    return true;
 };
 
 var googleTranslateElementInit = () => {

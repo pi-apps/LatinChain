@@ -41,9 +41,16 @@
                     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js?v=1.154"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/pidoku/functions.js?v=1.155"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    
+                    <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                        window.onbeforeunload = () => {
+                            is_changing_page = true;
+                            observer1.disconnect();
+                        };
+                    </script>
                     
                     <!--<script type="text/javascript">
                       window._taboola = window._taboola || [];
@@ -118,7 +125,7 @@
                             });
                         
                             $( ".clear_cache" ).click(function() {
-                                var result = confirm($( "#clear_cache_message" ).text());
+                                /*var result = confirm($( "#clear_cache_message" ).text());
                                 if(result)
                                 {
                                     try {
@@ -131,16 +138,27 @@
                                     } catch (err) {
                                         console.error(err);
                                     }
+                                }*/
+                                try {
+                                    Cache.delete();
+                                } catch (err) {
+                                    console.error(err);
+                                }
+                                try {
+                                    window.location.reload(true);
+                                } catch (err) {
+                                    console.error(err);
                                 }
                             });
                             
                             $( ".back" ).click(function() {
-                                var result = confirm($( "#back_message" ).text());
+                                /*var result = confirm($( "#back_message" ).text());
                                 if(result)
                                 {
                                     //history.back();
                                     location.href="/";
-                                }
+                                }*/
+                                location.href="/";
                             });
                             
                             $('.carousel').carousel({'interval': 30000});

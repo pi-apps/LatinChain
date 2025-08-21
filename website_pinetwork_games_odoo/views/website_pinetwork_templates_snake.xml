@@ -34,7 +34,7 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
                 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js?v=1.153"></script>
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/responsive-snake/example/js/functions.js?v=1.154"></script>
                 
                 <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>-->
                 
@@ -261,12 +261,13 @@
                         });
                         
                         $( "#back" ).click(function() {
-                            var result = confirm($("#back_message").text());
+                            /*var result = confirm($("#back_message").text());
                             if(result)
                             {
                                 //history.back();
                                 location.href="/";
-                            }
+                            }*/
+                            location.href="/";
                         });
                         
                         $( "#show" ).click(function() {

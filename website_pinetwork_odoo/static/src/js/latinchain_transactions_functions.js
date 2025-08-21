@@ -220,7 +220,7 @@ $(document).ready( function () {
     })();
 
     $( "#clear_cache" ).click(function() {
-        var result = confirm($( "#clear_cache_message" ).text());
+        /*var result = confirm($( "#clear_cache_message" ).text());
         if(result)
         {
             try {
@@ -233,15 +233,27 @@ $(document).ready( function () {
             } catch (err) {
                 console.error(err);
             }
+        }*/
+        
+        try {
+            Cache.delete();
+        } catch (err) {
+            console.error(err);
+        }
+        try {
+            window.location.reload(true);
+        } catch (err) {
+            console.error(err);
         }
     });
 
     $( "#back" ).click(function() {
-        var result = confirm($( "#back_message" ).text());
+        /*var result = confirm($( "#back_message" ).text());
         if(result)
         {
             //history.back();
             location.href="/";
-        }
+        }*/
+        location.href="/";
     });
 });

@@ -52,19 +52,9 @@ function end() {
 }
 
 function setConfirmUnload(on) {
-    if(on)
-    {
-        //alert($("#notclose_message").text());
-    }
-     window.onbeforeunload = on ? unloadMessage : null;
 }
 
 function setConfirmUnloadPoints(on) {
-     window.onbeforeunload = on ? unloadMessage : null;
-}
-
-function unloadMessage() {
-    return true;
 }
 
 function set_points(points) {
