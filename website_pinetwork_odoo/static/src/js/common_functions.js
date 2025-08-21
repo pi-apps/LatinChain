@@ -414,6 +414,10 @@ window.onbeforeunload = () => {
     is_changing_page = true;
     observer1.disconnect();
     
+    if('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+    }
+    
     /*if(!avoidAsking)
     {
         observer1 = new MutationObserver(() => checkLang());
@@ -431,6 +435,10 @@ function unloadMessage(on) {
             is_changing_page = true;
             observer1.disconnect();
             
+            if('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+            
             if(!avoidAsking)
             {
                 observer1 = new MutationObserver(() => checkLang());
@@ -445,6 +453,10 @@ function unloadMessage(on) {
         window.onbeforeunload = () => {
             is_changing_page = true;
             observer1.disconnect();
+            
+            if('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
         };
     }
 }
