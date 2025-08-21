@@ -9,9 +9,11 @@ var unblocked = false;
 var show_pi_ad_user = true;
 
 function setConfirmUnload(on) {
+    unloadMessage(on);
 }
 
 function setConfirmUnloadPoints(on) {
+    unloadMessage(on);
 }
 
 function start() {

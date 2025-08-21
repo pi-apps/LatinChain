@@ -24,9 +24,11 @@ function end() {
 }
 
 function setConfirmUnload(on) {
+    unloadMessage(on);
 }
 
 function setConfirmUnloadPoints(on) {
+    unloadMessage(on);
 }
 
 function press(key)

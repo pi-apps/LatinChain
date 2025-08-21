@@ -34,16 +34,9 @@
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.144"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_radioforus.js?v=1.145"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
-                    
-                    <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                        window.onbeforeunload = () => {
-                            is_changing_page = true;
-                            observer1.disconnect();
-                        };
-                    </script>
                     
                     <!--<script type="text/javascript">
                       window._taboola = window._taboola || [];
@@ -108,7 +101,7 @@
                             });
                         
                             $( ".clear_cache" ).click(function() {
-                                /*var result = confirm($( "#clear_cache_message" ).text());
+                                var result = confirm($( "#clear_cache_message" ).text());
                                 if(result)
                                 {
                                     try {
@@ -121,21 +114,11 @@
                                     } catch (err) {
                                         console.error(err);
                                     }
-                                }*/
-                                try {
-                                    Cache.delete();
-                                } catch (err) {
-                                    console.error(err);
-                                }
-                                try {
-                                    window.location.reload(true);
-                                } catch (err) {
-                                    console.error(err);
                                 }
                             });
                             
                             $( ".back" ).click(function() {
-                                /*var result = confirm($( "#back_message" ).text());
+                                var result = confirm($( "#back_message" ).text());
                                 if(result)
                                 {
                                     //history.back();
@@ -143,15 +126,11 @@
 									anchor.href = "/";
 									anchor.target="_blank";
 									anchor.click();
-                                }*/
-                                var anchor = document.createElement('a');
-                                anchor.href = "/";
-                                anchor.target="_blank";
-                                anchor.click();
+                                }
                             });
                             
                             $( ".back_radioforus" ).click(function() {
-                                /*var result = confirm($( "#back_message" ).text());
+                                var result = confirm($( "#back_message" ).text());
                                 if(result)
                                 {
                                     //history.back();
@@ -159,12 +138,7 @@
                                     anchor.href = $("#link_back").val();
 									anchor.target="_blank";
 									anchor.click();
-                                }*/
-                                
-                                var anchor = document.createElement('a');
-                                anchor.href = $("#link_back").val();
-                                anchor.target="_blank";
-                                anchor.click();
+                                }
                             });
                         });
 

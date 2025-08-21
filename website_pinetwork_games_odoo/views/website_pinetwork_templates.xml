@@ -36,7 +36,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.224"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.225"></script>
                     
                     <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -104,7 +104,7 @@
                             });
                         
                             $( ".clear_cache" ).click(function() {
-                                /*var result = confirm($("#clear_cache_message").text());
+                                var result = confirm($("#clear_cache_message").text());
                                 if(result)
                                 {
                                     try {
@@ -117,27 +117,16 @@
                                     } catch (err) {
                                         console.error(err);
                                     }
-                                }*/
-                                
-                                try {
-                                    Cache.delete();
-                                } catch (err) {
-                                    console.error(err);
-                                }
-                                try {
-                                    window.location.reload(true);
-                                } catch (err) {
-                                    console.error(err);
                                 }
                             });
                             
                             $( ".back" ).click(function() {
-                                /*var result = confirm($("#back_message").text());
+                                var result = confirm($("#back_message").text());
                                 if(result)
                                 {
                                     //history.back();
                                     location.href="/";
-                                }*/
+                                }
                                 location.href="/";
                             });
                         });

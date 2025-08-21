@@ -316,6 +316,8 @@ window.onbeforeunload = () => {
 
 var is_changing_page = false;
 
+var avoidAsking = false;
+
 var observer1 = new MutationObserver(() => checkLang());
 
 var checkLang = () => {
@@ -339,8 +341,11 @@ var checkLang = () => {
                 localStorage.setItem('lastTranslateLanguage', "en");
             }
         }
+        loadLang();
+    }else if(is_changing_page == "changing")
+    {
+        is_changing_page = false;
     }
-    loadLang();
 };
 
 var loadLang = () => {
@@ -415,8 +420,41 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onbeforeunload = () => {
     is_changing_page = true;
     observer1.disconnect();
-    return true;
+    
+    /*if(!avoidAsking)
+    {
+        observer1 = new MutationObserver(() => checkLang());
+        observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+        is_changing_page = "changing";    
+        
+        return true;
+    }*/
 };
+                        
+function unloadMessage(on) {
+    if(on)
+    {
+        window.onbeforeunload = () => {
+            is_changing_page = true;
+            observer1.disconnect();
+            
+            if(!avoidAsking)
+            {
+                observer1 = new MutationObserver(() => checkLang());
+                observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+                is_changing_page = "changing";    
+                
+                return true;
+            }
+        };
+    }else
+    {
+        window.onbeforeunload = () => {
+            is_changing_page = true;
+            observer1.disconnect();
+        };
+    }
+}
 
 var googleTranslateElementInit = () => {
     if(location.pathname.substring(0, 5) != "/web" && 

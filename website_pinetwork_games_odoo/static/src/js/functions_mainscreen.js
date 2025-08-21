@@ -20,6 +20,15 @@ var accessed_interstitial = false;
 
 var colorbox_count = 0;
 var colorbox_opened = false;
+
+function setConfirmUnload(on) {
+    unloadMessage(on);
+}
+
+function setConfirmUnloadPoints(on) {
+    unloadMessage(on);
+}
+
 async function colorboxLoaded()
 {
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
@@ -58,13 +67,16 @@ function set_points(points) {
             'csrf_token': odoo.csrf_token,
         };
         //$.ajaxSetup({async: false});
+        setConfirmUnloadPoints(true);
         return $.post( "/pi-points", data).done(function(data) {
+            setConfirmUnloadPoints(false);
             data = JSON.parse(data);
             //if(data.result)
             //    alert("You won " + points + " points");
             //$("#refresh").click();
 
         }).fail(function() {
+            setConfirmUnloadPoints(false);
         });
     }
 }
@@ -137,7 +149,9 @@ function set_points_exchange(value_client) {
             //$.ajaxSetup({async: false});
             $('#button_exchange').prop( "disabled", true );
             $('#exchange_latin').prop( "disabled", true );
+            setConfirmUnloadPoints(true);
             return $.post( "/pi-points", data).done(function(data) {
+                setConfirmUnloadPoints(false);
                 data = JSON.parse(data);
                 if(data.result)
                 {
@@ -177,6 +191,7 @@ function set_points_exchange(value_client) {
                 //$("#refresh").click();
 
             }).fail(function() {
+                setConfirmUnloadPoints(false);
                 $('#button_exchange').prop( "disabled", false );
                 $('#exchange_latin').prop( "disabled", false );
             });
@@ -202,7 +217,9 @@ function get_user_rewarded() {
                     'csrf_token': odoo.csrf_token,
                 };
         //$.ajaxSetup({async: false});
+        setConfirmUnloadPoints(true);
         return $.post( "/get-user", data).done(function(data) {
+            setConfirmUnloadPoints(false);
             data = JSON.parse(data);
             if(data.result)
             {
@@ -330,6 +347,7 @@ function get_user_rewarded() {
             }
             
         }).fail(function() {
+            setConfirmUnloadPoints(false);
         });
     }
 }
@@ -344,7 +362,9 @@ function get_user() {
                     'csrf_token': odoo.csrf_token,
                 };
         //$.ajaxSetup({async: false});
+        setConfirmUnloadPoints(true);
         return $.post( "/get-user", data).done(function(data) {
+            setConfirmUnloadPoints(false);
             data = JSON.parse(data);
             if(data.result)
             {
@@ -621,6 +641,7 @@ function get_user() {
             }
             
         }).fail(function() {
+            setConfirmUnloadPoints(false);
         });
     }
 }
@@ -920,7 +941,9 @@ $( document ).ready(function() {
                 'csrf_token': odoo.csrf_token,
             };
             //$.ajaxSetup({async: false});
+            setConfirmUnloadPoints(true);
             $.post( "/set-streaming-url", data).done(function(data) {
+                setConfirmUnloadPoints(false);
                 data = JSON.parse(data);
                 if(data.result)
                     alert($("#streaming_url_saved").text());
@@ -928,6 +951,7 @@ $( document ).ready(function() {
                 $("#button_click").prop( "disabled", false );
                 $("#streaming_url").prop( "disabled", false );
             }).fail(function() {
+                setConfirmUnloadPoints(false);
                 $("#button_click").prop( "disabled", false );
                 $("#streaming_url").prop( "disabled", false );
             });
@@ -953,7 +977,9 @@ $( document ).ready(function() {
                 'csrf_token': odoo.csrf_token,
             };
             //$.ajaxSetup({async: false});
+            setConfirmUnloadPoints(true);
             $.post( "/validate-memo", data).done(function(data) {
+                setConfirmUnloadPoints(false);
                 data = JSON.parse(data);
                 if(data.result)
                     alert($("#memo_saved").text());
@@ -963,6 +989,7 @@ $( document ).ready(function() {
                 $("#button_click_memo").prop( "disabled", false );
                 $("#memo_id").prop( "disabled", false );
             }).fail(function() {
+                setConfirmUnloadPoints(false);
                 $("#button_click_memo").prop( "disabled", false );
                 $("#memo_id").prop( "disabled", false );
             });
@@ -986,7 +1013,9 @@ $( document ).ready(function() {
                 'csrf_token': odoo.csrf_token,
             };
             //$.ajaxSetup({async: false});
+            setConfirmUnloadPoints(true);
             $.post( "/avatar-user", data).done(function(data) {
+                setConfirmUnloadPoints(false);
                 data = JSON.parse(data);
                 if(data.result)
                 {
@@ -1003,6 +1032,7 @@ $( document ).ready(function() {
                 }, 3000);
                 
             }).fail(function() {
+                setConfirmUnloadPoints(false);
                 $("#avatar_user").prop( "disabled", false );
             });
         }
@@ -1023,7 +1053,9 @@ $( document ).ready(function() {
                 'csrf_token': odoo.csrf_token,
             };
             //$.ajaxSetup({async: false});
+            setConfirmUnloadPoints(true);
             $.post( "/pi-ad-automatic", data).done(function(data) {
+                setConfirmUnloadPoints(false);
                 data = JSON.parse(data);
                 if(data.result)
                 {
@@ -1044,6 +1076,7 @@ $( document ).ready(function() {
                 }, 3000);
                 
             }).fail(function() {
+                setConfirmUnloadPoints(false);
                 $("#pi_ad_automatic").prop( "disabled", false );
             });
         }
@@ -1066,7 +1099,9 @@ $( document ).ready(function() {
                 'csrf_token': odoo.csrf_token,
             };
             //$.ajaxSetup({async: false});
+            setConfirmUnloadPoints(true);
             $.post( "/set-referrer-code", data).done(function(data) {
+                setConfirmUnloadPoints(false);
                 data = JSON.parse(data);
                 if(data.result)
                     alert($("#referrer_code_saved").text());
@@ -1077,6 +1112,7 @@ $( document ).ready(function() {
                 $("#button_click_referrer").prop( "disabled", false );
                 $("#referrer_code").prop( "disabled", false );
             }).fail(function() {
+                setConfirmUnloadPoints(false);
                 $("#button_click_referrer").prop( "disabled", false );
                 $("#referrer_code").prop( "disabled", false );
             });
@@ -1108,17 +1144,6 @@ $( document ).ready(function() {
     });
 
     $("#verified").hide();
-    
-    function setConfirmUnload(on) {
-    }
-
-    function setConfirmUnloadPoints(on) {
-    }
-    
-    window.onbeforeunload = () => {
-        is_changing_page = true;
-        observer1.disconnect();
-    };
     
     async function auth() {
         try {

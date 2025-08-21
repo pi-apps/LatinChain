@@ -12,9 +12,11 @@ var pi_ad_new = false;
 var btnvalue = "";
 
 function setConfirmUnload(on) {
+    unloadMessage(on);
 }
 
 function setConfirmUnloadPoints(on) {
+    unloadMessage(on);
 }
 
 function start() {

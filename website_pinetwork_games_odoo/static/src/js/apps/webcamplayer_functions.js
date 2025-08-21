@@ -610,7 +610,7 @@ document.addEventListener('DOMContentLoaded', load_function);
 
 window.onbeforeunload = () => {
     is_changing_page = true;
-    
+    observer1.disconnect();
     if (animationFrameId) {
         cancelAnimationFrame(animationFrameId);
     }

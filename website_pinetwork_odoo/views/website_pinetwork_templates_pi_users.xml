@@ -3,7 +3,7 @@
 
         <template id="new_header_common_latinchain" inherit_id="web.layout">
             <xpath expr="//head//script[last()]" position="after">
-                <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.387"></script>
+                <script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.395"></script>
             </xpath>
         </template>
 
@@ -116,7 +116,7 @@
                                 });
                                 
                                 $( ".clear_cache" ).click(function() {
-                                    /*var result = confirm($("#clear_cache_message").text());
+                                    var result = confirm($("#clear_cache_message").text());
                                     if(result)
                                     {
                                         try {
@@ -129,17 +129,6 @@
                                         } catch (err) {
                                             console.error(err);
                                         }
-                                    }*/
-                                    
-                                    try {
-                                        Cache.delete();
-                                    } catch (err) {
-                                        console.error(err);
-                                    }
-                                    try {
-                                        window.location.reload(true);
-                                    } catch (err) {
-                                        console.error(err);
                                     }
                                 });
                             });
@@ -337,7 +326,7 @@
                                 });
                                 
                                 $( ".clear_cache" ).click(function() {
-                                    /*var result = confirm($("#clear_cache_message").text());
+                                    var result = confirm($("#clear_cache_message").text());
                                     if(result)
                                     {
                                         try {
@@ -350,18 +339,7 @@
                                         } catch (err) {
                                             console.error(err);
                                         }
-                                    }*/
-                                    
-                                    try {
-                                        Cache.delete();
-                                    } catch (err) {
-                                        console.error(err);
-                                    }
-                                    try {
-                                        window.location.reload(true);
-                                    } catch (err) {
-                                        console.error(err);
-                                    }
+                                    }                                    
                                 });
                             });
                         </script>
@@ -585,7 +563,7 @@
                                 });
                                 
                                 $( ".clear_cache" ).click(function() {
-                                    /*var result = confirm($("#clear_cache_message").text());
+                                    var result = confirm($("#clear_cache_message").text());
                                     if(result)
                                     {
                                         try {
@@ -598,17 +576,6 @@
                                         } catch (err) {
                                             console.error(err);
                                         }
-                                    }*/
-                                    
-                                    try {
-                                        Cache.delete();
-                                    } catch (err) {
-                                        console.error(err);
-                                    }
-                                    try {
-                                        window.location.reload(true);
-                                    } catch (err) {
-                                        console.error(err);
                                     }
                                 });
                             });
@@ -1069,7 +1036,7 @@
                                 });
                                 
                                 $( ".clear_cache" ).click(function() {
-                                    /*var result = confirm($("#clear_cache_message").text());
+                                    var result = confirm($("#clear_cache_message").text());
                                     if(result)
                                     {
                                         try {
@@ -1082,17 +1049,6 @@
                                         } catch (err) {
                                             console.error(err);
                                         }
-                                    }*/
-                                    
-                                    try {
-                                        Cache.delete();
-                                    } catch (err) {
-                                        console.error(err);
-                                    }
-                                    try {
-                                        window.location.reload(true);
-                                    } catch (err) {
-                                        console.error(err);
                                     }
                                 });
                             });
@@ -1304,7 +1260,7 @@
                                 });
                                 
                                 $( ".clear_cache" ).click(function() {
-                                    /*var result = confirm($("#clear_cache_message").text());
+                                    var result = confirm($("#clear_cache_message").text());
                                     if(result)
                                     {
                                         try {
@@ -1317,17 +1273,6 @@
                                         } catch (err) {
                                             console.error(err);
                                         }
-                                    }*/
-                                    
-                                    try {
-                                        Cache.delete();
-                                    } catch (err) {
-                                        console.error(err);
-                                    }
-                                    try {
-                                        window.location.reload(true);
-                                    } catch (err) {
-                                        console.error(err);
                                     }
                                 });
                             });
@@ -1906,32 +1851,29 @@
                             })();
                             
                             $( "#clear_cache" ).click(function() {
-                                /*var result = confirm($( "#clear_cache_message" ).text());
+                                var result = confirm($( "#clear_cache_message" ).text());
                                 if(result)
                                 {
-                                    
-                                }*/
-                                
-                                try {
-                                    Cache.delete();
-                                } catch (err) {
-                                    console.error(err);
-                                }
-                                try {
-                                    window.location.reload(true);
-                                } catch (err) {
-                                    console.error(err);
+                                    try {
+                                        Cache.delete();
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                    try {
+                                        window.location.reload(true);
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
                                 }
                             });
                             
                             $( "#back" ).click(function() {
-                                /*var result = confirm($( "#back_message" ).text());
+                                var result = confirm($( "#back_message" ).text());
                                 if(result)
                                 {
                                     //history.back();
                                     location.href="/";
-                                }*/
-                                location.href="/";
+                                }
                             });
                             
                             $(".open_streaming").click(function(){
@@ -2310,7 +2252,7 @@
                             })();
                             
                             $( "#clear_cache" ).click(function() {
-                                /*var result = confirm($( "#clear_cache_message" ).text());
+                                var result = confirm($( "#clear_cache_message" ).text());
                                 if(result)
                                 {
                                     try {
@@ -2323,28 +2265,16 @@
                                     } catch (err) {
                                         console.error(err);
                                     }
-                                }*/
-                                
-                                try {
-                                    Cache.delete();
-                                } catch (err) {
-                                    console.error(err);
-                                }
-                                try {
-                                    window.location.reload(true);
-                                } catch (err) {
-                                    console.error(err);
                                 }
                             });
                             
                             $( "#back" ).click(function() {
-                                /*var result = confirm($( "#back_message" ).text());
+                                var result = confirm($( "#back_message" ).text());
                                 if(result)
                                 {
                                     //history.back();
                                     location.href="/";
-                                }*/
-                                location.href="/";
+                                }
                             });
                         } );
                     </script>

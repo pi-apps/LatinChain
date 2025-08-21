@@ -123,11 +123,6 @@
                           'tb_loader_script');
                           if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
                             {window.performance.mark('tbl_ic');}
-                        
-                          window.onbeforeunload = () => {
-                            is_changing_page = true;
-                            observer1.disconnect();
-                          };
                         </script>
                         
                         <style>
