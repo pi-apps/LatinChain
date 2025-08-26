@@ -1311,8 +1311,8 @@
                                 <h5 translate="no"><strong><div style="display:inline;">#StakePi &#128202;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank</div><div style="font-size:80%;">Stake Pi to Boost Rank of LatinChain Mainnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://ecosystem.pinet.com/apps/63d38f4fa9a2245a1c0ef9cf" target="_blank" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank</div><div style="font-size:80%;">Stake Pi to Boost Rank of LatinChain Testnet</div></a>
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Mainnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://ecosystem.pinet.com/apps/63d38f4fa9a2245a1c0ef9cf" target="_blank" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Testnet</div></a>
                             </div>
                         </div>
                         
