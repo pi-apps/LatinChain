@@ -303,16 +303,21 @@ function loadSpeechLanguages() {
 
 document.addEventListener('DOMContentLoaded', loadSpeechLanguages);
 
-window.onerror = function(message, source, lineno, colno, error) {
-    console.error("Global error caught:");
-    console.error("Message:", message);
-    console.error("Source:", source);
-    console.error("Line:", lineno);
-    console.error("Column:", colno);
-    console.error("Error Object:", error);
-    // You can send this error information to a logging service
-    return true; // Prevents the default browser error handling
-};
+function errorHandlingLatinChain()
+{
+    window.onerror = function(message, source, lineno, colno, error) {
+        console.info("Global error caught:");
+        console.info("Message:", message);
+        console.info("Source:", source);
+        console.info("Line:", lineno);
+        console.info("Column:", colno);
+        console.info("Error Object:", error);
+        // You can send this error information to a logging service
+        return true; // Prevents the default browser error handling
+    };
+}
+
+document.addEventListener('DOMContentLoaded', errorHandlingLatinChain);
 
 /*
  * Here starts the language translation
