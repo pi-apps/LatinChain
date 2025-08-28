@@ -311,7 +311,7 @@ var is_changing_page = false;
 
 var avoidAsking = false;
 
-var observer1 = new window.IntersectionObserver(() => checkLang());
+var observer1 = new MutationObserver(() => checkLang());
 
 var checkLang = () => {
     if(!is_changing_page)
@@ -441,7 +441,7 @@ function unloadMessage(on) {
             
             if(!avoidAsking)
             {
-                observer1 = new window.IntersectionObserver(() => checkLang());
+                observer1 = new MutationObserver(() => checkLang());
                 observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
                 is_changing_page = "changing";    
                 
