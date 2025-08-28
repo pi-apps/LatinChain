@@ -304,12 +304,16 @@ function loadSpeechLanguages() {
 document.addEventListener('DOMContentLoaded', loadSpeechLanguages);
 
 new window.ResizeObserver((entries) => {
-    for (const entry of entries) {
-        const currentWidth = entry.contentBoxSize[0].inlineSize;
-        const targetWidth = 200; // Example target width
-        if (currentWidth !== targetWidth) {
-            entry.target.style.width = targetWidth + 'px';
+    try
+    {
+        for (const entry of entries) {
+            const currentWidth = entry.contentBoxSize[0].inlineSize;
+            const targetWidth = 200; // Example target width
+            if (currentWidth !== targetWidth) {
+                entry.target.style.width = targetWidth + 'px';
+            }
         }
+    }catch(e){
     }
 });
 
