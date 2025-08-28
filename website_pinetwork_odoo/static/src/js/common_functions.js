@@ -303,9 +303,16 @@ function loadSpeechLanguages() {
 
 document.addEventListener('DOMContentLoaded', loadSpeechLanguages);
 
-window.addEventListener("error", (e) => {
-    console.error(e.message);
-});
+window.onerror = function(message, source, lineno, colno, error) {
+    console.error("Global error caught:");
+    console.error("Message:", message);
+    console.error("Source:", source);
+    console.error("Line:", lineno);
+    console.error("Column:", colno);
+    console.error("Error Object:", error);
+    // You can send this error information to a logging service
+    return true; // Prevents the default browser error handling
+};
 
 /*
  * Here starts the language translation
