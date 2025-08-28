@@ -303,21 +303,9 @@ function loadSpeechLanguages() {
 
 document.addEventListener('DOMContentLoaded', loadSpeechLanguages);
 
-const observe_html = new window.ResizeObserver((entries) => {
-    try
-    {
-        for (const entry of entries) {
-            const currentWidth = entry.contentBoxSize[0].inlineSize;
-            const targetWidth = 200; // Example target width
-            if (currentWidth !== targetWidth) {
-                //entry.target.style.width = targetWidth + 'px';
-            }
-        }
-    }catch(e){
-    }
+window.addEventListener("error", (e) => {
+    console.error(e.message);
 });
-
-observe_html.observe(window.document.documentElement);
 
 /*
  * Here starts the language translation
