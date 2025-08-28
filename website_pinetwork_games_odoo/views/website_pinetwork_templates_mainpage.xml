@@ -929,7 +929,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.463"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.472"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1691,8 +1691,8 @@
                                                     <li class="list-group-item list-group-item-dark text-white"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
                                                     <li class="list-group-item list-group-item-dark text-white"><a href="/snake" class="btn btn-link">Play Snake</a></li>
                                                     <li t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="list-group-item list-group-item-dark text-white"><button onclick="document.getElementById('button_reward_ad').click()" class="href-external btn btn-link">Watch Pi Rewarded Ads</button></li>
-                                                    <li class="list-group-item list-group-item-dark text-white"><button class="href-external btn btn-link">Play Other Games</button></li>
-                                                    <li class="list-group-item list-group-item-dark text-white"><button class="href-external btn btn-link">Use Utilities</button></li>
+                                                    <li class="list-group-item list-group-item-dark text-white"><button class="href-external btn btn-link go-to-home-tab">Play Other Games</button></li>
+                                                    <li class="list-group-item list-group-item-dark text-white"><button class="href-external btn btn-link go-to-home-tab">Use Utilities</button></li>
                                                 </ul>
                                             </div>
                                             <div class="col-1">

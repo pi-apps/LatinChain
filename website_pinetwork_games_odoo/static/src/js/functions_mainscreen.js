@@ -828,12 +828,15 @@ $( document ).ready(function() {
     // Or, if you want to show it via a button click, for example:
     $('#go-to-user-tab').on('click', function (e) {
         tab.show();
-        //e.preventDefault();
-        //$('#user-tab').tab('show');
-        //$('#user-tab').click();
-        //alert($('.nav-pills a[href="#user-tab"]').html());
-        //$('.nav-tab a[href="#user-tab"]').tab('show');
-        //$('.nav-pills a[href="#user-tab"]').click();
+        window.location.href="#pay_with";
+    });
+    
+    const appsTabTrigger = document.getElementById('home-tab');
+    const tabApps = new bootstrap.Tab(appsTabTrigger);
+
+    // Or, if you want to show it via a button click, for example:
+    $('.go-to-home-tab').on('click', function (e) {
+        tabApps.show();
         window.location.href="#pay_with";
     });
     
