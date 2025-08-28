@@ -303,22 +303,6 @@ function loadSpeechLanguages() {
 
 document.addEventListener('DOMContentLoaded', loadSpeechLanguages);
 
-function errorHandlingLatinChain()
-{
-    window.onerror = function(message, source, lineno, colno, error) {
-        console.info("Global error caught:");
-        console.info("Message:", message);
-        console.info("Source:", source);
-        console.info("Line:", lineno);
-        console.info("Column:", colno);
-        console.info("Error Object:", error);
-        // You can send this error information to a logging service
-        return true; // Prevents the default browser error handling
-    };
-}
-
-document.addEventListener('DOMContentLoaded', errorHandlingLatinChain);
-
 /*
  * Here starts the language translation
  * */
@@ -327,7 +311,7 @@ var is_changing_page = false;
 
 var avoidAsking = false;
 
-var observer1 = new MutationObserver(() => checkLang());
+var observer1 = new window.IntersectionObserver(() => checkLang());
 
 var checkLang = () => {
     if(!is_changing_page)
@@ -457,7 +441,7 @@ function unloadMessage(on) {
             
             if(!avoidAsking)
             {
-                observer1 = new MutationObserver(() => checkLang());
+                observer1 = new window.IntersectionObserver(() => checkLang());
                 observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
                 is_changing_page = "changing";    
                 
