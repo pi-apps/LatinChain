@@ -1686,13 +1686,13 @@
                                             <div class="col-10">
                                                 <h3>Today's tasks</h3>
                                                 <ul class="list-group">
-                                                    <li class="list-group-item getverified"><a href="/pinetwork" class="href-external btn btn-link">Get verified</a></li>
-                                                    <li class="list-group-item"><a href="/chess" class="btn btn-link">Play Chess</a></li>
-                                                    <li class="list-group-item"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
-                                                    <li class="list-group-item"><a href="/snake" class="btn btn-link">Play Snake</a></li>
-                                                    <li t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="list-group-item"><button onclick="document.getElementById('button_reward_ad').click()" class="href-external btn btn-link">Watch Pi Rewarded Ads</button></li>
-                                                    <li class="list-group-item">Play Other Games</li>
-                                                    <li class="list-group-item">Use Utilities</li>
+                                                    <li class="list-group-item list-group-item-dark text-white getverified"><a href="/pinetwork" class="href-external btn btn-link">Get verified</a></li>
+                                                    <li class="list-group-item list-group-item-dark text-white"><a href="/chess" class="btn btn-link">Play Chess</a></li>
+                                                    <li class="list-group-item list-group-item-dark text-white"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
+                                                    <li class="list-group-item list-group-item-dark text-white"><a href="/snake" class="btn btn-link">Play Snake</a></li>
+                                                    <li t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="list-group-item list-group-item-dark text-white"><button onclick="document.getElementById('button_reward_ad').click()" class="href-external btn btn-link">Watch Pi Rewarded Ads</button></li>
+                                                    <li class="list-group-item list-group-item-dark text-white"><button class="href-external btn btn-link">Play Other Games</button></li>
+                                                    <li class="list-group-item list-group-item-dark text-white"><button class="href-external btn btn-link">Use Utilities</button></li>
                                                 </ul>
                                             </div>
                                             <div class="col-1">
