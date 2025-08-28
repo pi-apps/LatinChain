@@ -1667,6 +1667,43 @@
                             <div class="text-center" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                 
                             </div>
+                            
+                            <div id="accordionTasks" style="margin-bottom:5px">
+                              <div class="card">
+                                
+                                <h2 class="accordion-header" id="headingTasks">
+                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTasks" aria-expanded="true" aria-controls="collapseTasks">
+                                    <div style=""><i class="fa-solid fa-list-check"></i></div><div style="">Tasks</div>
+                                  </button>
+                                </h2>
+
+                                <div id="collapseTasks" class="collapse" aria-labelledby="headingTasks" data-parent="#accordionTasks">
+                                  <div class="card-body">
+                                    <div style="text-align:center" class="form-group container showInterstitialAd">
+                                        <div class="row">
+                                            <div class="col-1">
+                                            </div>
+                                            <div class="col-10">
+                                                <h3>Today's tasks</h3>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item getverified"><a href="/pinetwork" class="href-external btn btn-link">Get verified</a></li>
+                                                    <li class="list-group-item"><a href="/chess" class="btn btn-link">Play Chess</a></li>
+                                                    <li class="list-group-item"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
+                                                    <li class="list-group-item"><a href="/snake" class="btn btn-link">Play Snake</a></li>
+                                                    <li t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="list-group-item"><button onclick="document.getElementById('button_reward_ad').click()" class="href-external btn btn-link">Watch Pi Rewarded Ads</button></li>
+                                                    <li class="list-group-item">Play Other Games</li>
+                                                    <li class="list-group-item">Use Utilities</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
                             <div id="accordionOne" style="margin-bottom:5px">
                               <div class="card">
                                 <!--<div class="card-header" id="headingOne">
