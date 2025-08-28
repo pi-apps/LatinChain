@@ -127,7 +127,7 @@ class PiNetworkController(http.Controller):
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
-            amount_latin_pay = admin_app_list[0].amount*100
+            amount_latin_pay = admin_app_list[0].amount_latin_pay
             google_adsense = admin_app_list[0].google_adsense
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
@@ -633,7 +633,7 @@ class PiNetworkController(http.Controller):
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
-            amount_latin_pay = admin_app_list[0].amount*100
+            amount_latin_pay = admin_app_list[0].amount_latin_pay
             google_adsense = admin_app_list[0].google_adsense
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
@@ -671,7 +671,7 @@ class PiNetworkController(http.Controller):
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
-            amount_latin_pay = admin_app_list[0].amount*100
+            amount_latin_pay = admin_app_list[0].amount_latin_pay
             google_adsense = admin_app_list[0].google_adsense
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
@@ -715,7 +715,7 @@ class PiNetworkController(http.Controller):
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
-            amount_latin_pay = admin_app_list[0].amount*100
+            amount_latin_pay = admin_app_list[0].amount_latin_pay
             google_adsense = admin_app_list[0].google_adsense
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
