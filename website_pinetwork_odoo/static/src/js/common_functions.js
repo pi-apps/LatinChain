@@ -303,6 +303,16 @@ function loadSpeechLanguages() {
 
 document.addEventListener('DOMContentLoaded', loadSpeechLanguages);
 
+new window.ResizeObserver((entries) => {
+    for (const entry of entries) {
+        const currentWidth = entry.contentBoxSize[0].inlineSize;
+        const targetWidth = 200; // Example target width
+        if (currentWidth !== targetWidth) {
+            entry.target.style.width = targetWidth + 'px';
+        }
+    }
+});
+
 /*
  * Here starts the language translation
  * */
@@ -314,33 +324,30 @@ var avoidAsking = false;
 var observer1 = new MutationObserver(() => checkLang());
 
 var checkLang = () => {
-    try{
-        if(!is_changing_page)
+    if(!is_changing_page)
+    {
+        var lang = window.document.documentElement.getAttribute('lang').split(/[-_]/)[0];
+        
+        if(lang)
         {
-            var lang = window.document.documentElement.getAttribute('lang').split(/[-_]/)[0];
-            
-            if(lang)
+            if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
             {
-                if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
-                {
-                    localStorage.setItem('lastTranslateLanguage', lang);
-                }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
-                {
-                    localStorage.setItem('lastTranslateLanguage', lang);
-                }else if(window.location.pathname.substring(0, 3) == "/es" && lang == "es")
-                {
-                    localStorage.setItem('lastTranslateLanguage', "es");
-                }else if(location.pathname.substring(0, 3) != "/es" && lang == "en")
-                {
-                    localStorage.setItem('lastTranslateLanguage', "en");
-                }
+                localStorage.setItem('lastTranslateLanguage', lang);
+            }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
+            {
+                localStorage.setItem('lastTranslateLanguage', lang);
+            }else if(window.location.pathname.substring(0, 3) == "/es" && lang == "es")
+            {
+                localStorage.setItem('lastTranslateLanguage', "es");
+            }else if(location.pathname.substring(0, 3) != "/es" && lang == "en")
+            {
+                localStorage.setItem('lastTranslateLanguage', "en");
             }
-            loadLang();
-        }else if(is_changing_page == "changing")
-        {
-            is_changing_page = false;
         }
-    }catch(e){
+        loadLang();
+    }else if(is_changing_page == "changing")
+    {
+        is_changing_page = false;
     }
 };
 
