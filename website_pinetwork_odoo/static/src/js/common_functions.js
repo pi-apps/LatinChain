@@ -314,30 +314,33 @@ var avoidAsking = false;
 var observer1 = new MutationObserver(() => checkLang());
 
 var checkLang = () => {
-    if(!is_changing_page)
-    {
-        var lang = window.document.documentElement.getAttribute('lang').split(/[-_]/)[0];
-        
-        if(lang)
+    try{
+        if(!is_changing_page)
         {
-            if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
+            var lang = window.document.documentElement.getAttribute('lang').split(/[-_]/)[0];
+            
+            if(lang)
             {
-                localStorage.setItem('lastTranslateLanguage', lang);
-            }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
-            {
-                localStorage.setItem('lastTranslateLanguage', lang);
-            }else if(window.location.pathname.substring(0, 3) == "/es" && lang == "es")
-            {
-                localStorage.setItem('lastTranslateLanguage', "es");
-            }else if(location.pathname.substring(0, 3) != "/es" && lang == "en")
-            {
-                localStorage.setItem('lastTranslateLanguage', "en");
+                if(window.location.pathname.substring(0, 3) == "/es" && lang != "es")
+                {
+                    localStorage.setItem('lastTranslateLanguage', lang);
+                }else if(location.pathname.substring(0, 3) != "/es" && lang != "en")
+                {
+                    localStorage.setItem('lastTranslateLanguage', lang);
+                }else if(window.location.pathname.substring(0, 3) == "/es" && lang == "es")
+                {
+                    localStorage.setItem('lastTranslateLanguage', "es");
+                }else if(location.pathname.substring(0, 3) != "/es" && lang == "en")
+                {
+                    localStorage.setItem('lastTranslateLanguage', "en");
+                }
             }
+            loadLang();
+        }else if(is_changing_page == "changing")
+        {
+            is_changing_page = false;
         }
-        loadLang();
-    }else if(is_changing_page == "changing")
-    {
-        is_changing_page = false;
+    }catch(e){
     }
 };
 
