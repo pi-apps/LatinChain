@@ -2806,6 +2806,7 @@
                             <div class="calculator-container" translate="no">
                                 <div class="display-container">
                                     <div class="display">
+                                        <div class="memory-indicator" id="memory-indicator"></div>
                                         <div class="previous-operand"></div>
                                         <div class="current-operand">0</div>
                                     </div>
@@ -2819,8 +2820,8 @@
                                 <div class="calculator-buttons" id="normal-calc">
                                     <button class="clear">C</button>
                                     <button class="delete">⌫</button>
-                                    <button class="memory" data-memory="mc">MC</button>
-                                    <button class="memory" data-memory="mr">MR</button>
+                                    <button class="memory" id="mc-button" data-memory="mc">MC</button>
+                                    <button class="memory" id="mr-button" data-memory="mr">MR</button>
                                     
                                     <button class="scientific" data-operation="sin">sin</button>
                                     <button class="scientific" data-operation="cos">cos</button>
@@ -2842,7 +2843,7 @@
                                     <button class="number" data-number="3">3</button>
                                     <button class="operator" data-operation="+">+</button>
                                     
-                                    <button class="memory" data-memory="ms">MS</button>
+                                    <button class="memory" id="ms-button" data-memory="ms">MS</button>
                                     <button class="number" data-number="0">0</button>
                                     <button class="number" data-number=".">.</button>
                                     <button class="equals">=</button>
@@ -2874,14 +2875,15 @@
                                     <button class="angle-mode" data-operation="rad">RAD</button>
                                     
                                     <button class="scientific" data-operation="percent">%</button>
-                                    <button class="memory" data-memory="m+">M+</button>
-                                    <button class="memory" data-memory="m-">M-</button>
+                                    <button class="memory" id="mplus-button" data-memory="m+">M+</button>
+                                    <button class="memory" id="mminus-button" data-memory="m-">M-</button>
                                 </div>
                             </div>
                             
                             <div class="instructions">
                                 <h2>Usage Instructions</h2>
                                 <ul>
+                                    <li><strong>Memory Functions</strong>: MC (Memory Clear), MR (Memory Recall), MS (Memory Store), M+ (Memory Add), M- (Memory Subtract)</li>
                                     <li><strong>Any root (ⁿ√)</strong>: First enter the index, then press ⁿ√, then enter the radicand and press =</li>
                                     <li><strong>Example for ⁴√16</strong>: Press 4 → ⁿ√ → 16 → = (result: 2)</li>
                                     <li>The result display remains fixed when scrolling</li>
@@ -2897,7 +2899,7 @@
                             </div>
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calcplayer_functions.js?v=1.101"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calcplayer_functions.js?v=1.102"></script>
                     </body>
                 </html>
             </t>

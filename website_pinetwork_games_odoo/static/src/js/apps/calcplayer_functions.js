@@ -2,10 +2,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Calculator elements
     const previousOperandElement = document.querySelector('.previous-operand');
     const currentOperandElement = document.querySelector('.current-operand');
+    const memoryIndicatorElement = document.getElementById('memory-indicator');
     const normalCalc = document.getElementById('normal-calc');
     const scientificCalc = document.getElementById('scientific-calc');
     const normalModeBtn = document.getElementById('normal-mode');
     const scientificModeBtn = document.getElementById('scientific-mode');
+    
+    // Memory buttons
+    const mcButton = document.getElementById('mc-button');
+    const mrButton = document.getElementById('mr-button');
+    const msButton = document.getElementById('ms-button');
+    const mplusButton = document.getElementById('mplus-button');
+    const mminusButton = document.getElementById('mminus-button');
     
     // Calculator state
     let currentOperand = '0';
@@ -16,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let isRadiansMode = false;
     let waitingForSecondOperand = false;
     let rootIndex = null;
+    let memoryStored = false;
     
     // Switch between modes
     normalModeBtn.addEventListener('click', () => {
@@ -39,6 +48,21 @@ document.addEventListener('DOMContentLoaded', function() {
             previousOperandElement.innerText = `${previousOperand} ${getOperationSymbol(operation)}`;
         } else {
             previousOperandElement.innerText = previousOperand;
+        }
+        
+        // Update memory indicator
+        if (memoryStored) {
+            memoryIndicatorElement.innerText = `Memory: ${memory}`;
+            // Add active class to memory buttons
+            [mcButton, mrButton, msButton, mplusButton, mminusButton].forEach(btn => {
+                btn.classList.add('active');
+            });
+        } else {
+            memoryIndicatorElement.innerText = '';
+            // Remove active class from memory buttons
+            [mcButton, mrButton, msButton, mplusButton, mminusButton].forEach(btn => {
+                btn.classList.remove('active');
+            });
         }
     }
     
@@ -257,24 +281,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Memory functions
     function memoryFunction(func) {
+        const current = parseFloat(currentOperand);
+        if (isNaN(current)) return;
+        
         switch (func) {
-            case 'mc':
+            case 'mc': // Memory Clear
                 memory = 0;
+                memoryStored = false;
                 break;
-            case 'mr':
+            case 'mr': // Memory Recall
                 currentOperand = memory.toString();
-                updateDisplay();
                 break;
-            case 'ms':
-                memory = parseFloat(currentOperand);
+            case 'ms': // Memory Store
+                memory = current;
+                memoryStored = true;
                 break;
-            case 'm+':
-                memory += parseFloat(currentOperand);
+            case 'm+': // Memory Add
+                memory += current;
+                memoryStored = true;
                 break;
-            case 'm-':
-                memory -= parseFloat(currentOperand);
+            case 'm-': // Memory Subtract
+                memory -= current;
+                memoryStored = true;
                 break;
         }
+        
+        updateDisplay();
     }
     
     // Clear display
@@ -332,6 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Memory buttons event listeners
     document.querySelectorAll('.memory').forEach(button => {
         button.addEventListener('click', () => {
             memoryFunction(button.getAttribute('data-memory'));
