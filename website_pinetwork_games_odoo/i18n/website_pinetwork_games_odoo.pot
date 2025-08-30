@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 02:50+0000\n"
-"PO-Revision-Date: 2025-08-12 02:50+0000\n"
+"POT-Creation-Date: 2025-08-30 11:41+0000\n"
+"PO-Revision-Date: 2025-08-30 11:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -43,6 +43,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "#PiAds #EarnPoints 📰"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "#StakePi 📊"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1077,6 +1082,18 @@ msgid "<strong>15 Puzzle Game</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid ""
+"<strong>Any root (ⁿ√)</strong>: First enter the index, then press ⁿ√, then "
+"enter the radicand and press ="
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "<strong>Any root demo:</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>App Store</strong>"
 msgstr ""
@@ -1129,6 +1146,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "<strong>Domino</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "<strong>Example for ⁴√16</strong>: Press 4 → ⁿ√ → 16 → = (result: 2)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1219,6 +1241,11 @@ msgid "<strong>Test Your Brain</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+msgid "<strong>Text-to-speech Reader</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
 msgid "<strong>Theme: </strong>"
 msgstr ""
@@ -1237,6 +1264,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "<strong>WebTorrent</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+msgid "<strong>Webcam Objects Detect</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1264,7 +1296,17 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "AI Chat"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "AI Chatbot"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "AI Multimedia"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1445,6 +1487,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "CALCULATOR"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "CHECKERS"
 msgstr ""
 
@@ -1456,6 +1503,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "COINTELEGRAPH"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "Calculator with scientific functions and any root"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1560,6 +1612,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
@@ -1569,6 +1622,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
@@ -1642,6 +1696,11 @@ msgid "César Cordero Rodríguez"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "DEG"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "DOMINO"
 msgstr ""
@@ -1659,6 +1718,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
 msgid "Detected Objects:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Developed with DeepSeek AI"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1719,6 +1783,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Donators list (verified)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "EXP"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1798,6 +1867,11 @@ msgid "Facebook"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
+msgid "Finding your location..."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "First Rule: Once you paid a monthly subscription, you'll have 30 days to "
@@ -1865,6 +1939,11 @@ msgid "General ranking (verified)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Get verified"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid ""
 "Get verified: Auto ads switch, Avatar, Pi Ads <i class=\"fa-solid fa-plug-"
@@ -1888,6 +1967,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
@@ -1896,6 +1976,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
@@ -2202,6 +2283,11 @@ msgid "Learn: Chess, Sudoku, Snake"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Learning"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid "Link"
 msgstr ""
@@ -2263,6 +2349,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
@@ -2271,6 +2358,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
@@ -2316,7 +2404,27 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "MAPS FINDER"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "MC"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "MORE INFO"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "MR"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "MS"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2363,6 +2471,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.askanexpert
 msgid "Marina Molechino"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Math"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2417,6 +2530,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
 msgid "Moves: 0"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Multimedia"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2560,6 +2678,7 @@ msgid "No video loaded"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 msgid "Normal"
 msgstr ""
@@ -2623,7 +2742,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webtorrent
 msgid ""
 "Only WebRTC peers, like a (but not limited to) PeerTube torrent. We don't "
-"provide torrent files."
+"provide torrent files. The user is totally responsible of the torrent "
+"content that he sees here."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2835,6 +2955,16 @@ msgid "PingPong"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
+msgid "Place Finder"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Place finder"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Platform"
 msgstr ""
@@ -2851,10 +2981,30 @@ msgid "Play Again"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Play Chess"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid ""
 "Play Chess against the best AI Chess Player (Stockfish) using Pi "
 "cryptocurrency"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Play Other Games"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Play Snake"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Play Sudoku"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2891,6 +3041,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
 msgid "Playlist is empty."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "Press \"Scientific\" to switch to advanced functions"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2936,6 +3091,11 @@ msgid "Professional Video Player"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "RAD"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "RadioForUs"
 msgstr ""
@@ -2943,6 +3103,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid "RadioForUs.<br/>Mainnet:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "Rand"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3093,6 +3258,21 @@ msgid "Sci-Fi"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "Scientific"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "Scientific Calculator"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Scientific and normal calculator"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid ""
 "Score :\n"
@@ -3102,6 +3282,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Search apps"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
+msgid "Search places..."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3177,6 +3362,11 @@ msgid "Snake"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Social"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
 msgid "Spanish"
@@ -3193,8 +3383,23 @@ msgid "Sport results"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Sports"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Sports: Soccer results."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Stake Pi to Boost Rank of LatinChain Mainnet"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Stake Pi to Boost Rank of LatinChain Testnet"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3281,6 +3486,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Tasks"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Team"
 msgstr ""
 
@@ -3347,6 +3557,11 @@ msgid "Text-to-speech reader"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Text-to-speech: Text-to-speech reader."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -3366,6 +3581,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "The following certifies that the Pioneer"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "The result display remains fixed when scrolling"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3389,6 +3609,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Time"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Today's tasks"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3472,8 +3697,28 @@ msgid "Unblock with"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Unlock in one touch"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 msgid "Upload your photos to get started."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "Usage Instructions"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "Use DEG/RAD to switch between degrees and radians"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Use Utilities"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3621,15 +3866,20 @@ msgid "Webcam objects recognition"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
-msgid ""
-"Welcome to the reading club: Literary, Sci-Fi and other genres books to "
-"read."
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Webcam: Webcam objects detect."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Welcome!. Get verified."
+msgid "Welcome to LatinChain!."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid ""
+"Welcome to the reading club: Literary, Sci-Fi and other genres books to "
+"read."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3741,6 +3991,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
@@ -3749,6 +4000,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
@@ -3868,6 +4120,11 @@ msgid "a.- You will can use"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "acos"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "ads /"
@@ -3889,8 +4146,28 @@ msgid "and watch ads"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "asin"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "atan"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "certification"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "cos"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "cosh"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3941,6 +4218,21 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "ln"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "log"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "mod"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "or"
 msgstr ""
@@ -3968,6 +4260,26 @@ msgid "points."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "sin"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "sinh"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "tan"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "tanh"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "to"
@@ -3989,6 +4301,21 @@ msgid "x2 points was activated."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "x^y"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "x²"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "³√64 = 4 → 3 → ⁿ√ → 64 → ="
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "¿Are you sure you want to Logout?"
 msgstr ""
@@ -4002,4 +4329,9 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "¿Do you want to Login on LatinChain Platform?"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "⁵√243 = 3 → 5 → ⁿ√ → 243 → ="
 msgstr ""
