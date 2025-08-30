@@ -2359,5 +2359,548 @@
                 </html>
             </t>
 		</template>
+        
+        <template id="calcplayer" name="Maps Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Scientific Calculator</title>
+                        <style>
+                            * {
+                                margin: 0;
+                                padding: 0;
+                                box-sizing: border-box;
+                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            }
+                            
+                            body {
+                                background: linear-gradient(135deg, #1e3c72, #2a5298);
+                                color: white;
+                                padding: 20px;
+                                min-height: 100vh;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+                            
+                            .container {
+                                width: 100%;
+                                max-width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+                            
+                            header {
+                                text-align: center;
+                                margin-bottom: 20px;
+                                padding: 15px;
+                                background: rgba(0, 0, 0, 0.2);
+                                border-radius: 15px;
+                                width: 100%;
+                                max-width: 400px;
+                            }
+                            
+                            h1 {
+                                font-size: 1.8rem;
+                                margin-bottom: 8px;
+                            }
+                            
+                            .description {
+                                font-size: 1rem;
+                                opacity: 0.9;
+                            }
+                            
+                            .calculator-container {
+                                width: 100%;
+                                max-width: 400px;
+                                background-color: #222;
+                                border-radius: 20px;
+                                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                                overflow: hidden;
+                                margin-bottom: 20px;
+                            }
+                            
+                            .display-container {
+                                position: sticky;
+                                top: 0;
+                                z-index: 100;
+                                background-color: #222;
+                                padding-top: 10px;
+                            }
+                            
+                            .display {
+                                background-color: #333;
+                                color: white;
+                                text-align: right;
+                                padding: 20px 15px;
+                                font-size: 1.8rem;
+                                min-height: 100px;
+                                word-wrap: break-word;
+                                word-break: break-all;
+                                border-bottom: 1px solid #444;
+                            }
+                            
+                            .previous-operand {
+                                color: rgba(255, 255, 255, 0.7);
+                                font-size: 1.1rem;
+                                min-height: 25px;
+                                margin-bottom: 8px;
+                            }
+                            
+                            .current-operand {
+                                color: white;
+                                font-size: 2.2rem;
+                                min-height: 50px;
+                            }
+                            
+                            .calculator-mode {
+                                display: flex;
+                                background-color: #333;
+                                border-bottom: 1px solid #444;
+                            }
+                            
+                            .mode-btn {
+                                flex: 1;
+                                padding: 10px;
+                                background-color: #444;
+                                color: white;
+                                border: none;
+                                font-size: 1rem;
+                                cursor: pointer;
+                                transition: background-color 0.3s;
+                            }
+                            
+                            .mode-btn.active {
+                                background-color: #2980b9;
+                                font-weight: bold;
+                            }
+                            
+                            .mode-btn:hover {
+                                background-color: #555;
+                            }
+                            
+                            .calculator-buttons {
+                                display: grid;
+                                grid-template-columns: repeat(4, 1fr);
+                                gap: 1px;
+                                background-color: #444;
+                            }
+                            
+                            .scientific-buttons {
+                                display: grid;
+                                grid-template-columns: repeat(5, 1fr);
+                                gap: 1px;
+                                background-color: #444;
+                                display: none;
+                            }
+                            
+                            button {
+                                border: none;
+                                padding: 15px 0;
+                                font-size: 1.1rem;
+                                cursor: pointer;
+                                background-color: #333;
+                                color: white;
+                                transition: all 0.2s;
+                            }
+                            
+                            button:hover {
+                                background-color: #444;
+                                transform: scale(1.02);
+                            }
+                            
+                            button:active {
+                                transform: scale(0.98);
+                            }
+                            
+                            .operator {
+                                background-color: #444;
+                                color: #3498db;
+                                font-weight: bold;
+                            }
+                            
+                            .equals {
+                                background-color: #2980b9;
+                                color: white;
+                                font-weight: bold;
+                            }
+                            
+                            .equals:hover {
+                                background-color: #3498db;
+                            }
+                            
+                            .clear, .delete {
+                                background-color: #e74c3c;
+                                color: white;
+                                font-weight: bold;
+                            }
+                            
+                            .clear:hover, .delete:hover {
+                                background-color: #c0392b;
+                            }
+                            
+                            .scientific {
+                                background-color: #16a085;
+                                color: white;
+                                font-size: 0.9rem;
+                            }
+                            
+                            .scientific:hover {
+                                background-color: #1abc9c;
+                            }
+                            
+                            .memory {
+                                background-color: #8e44ad;
+                                color: white;
+                                font-size: 0.9rem;
+                            }
+                            
+                            .memory:hover {
+                                background-color: #9b59b6;
+                            }
+                            
+                            .angle-mode {
+                                background-color: #d35400;
+                                color: white;
+                                font-size: 0.9rem;
+                            }
+                            
+                            .angle-mode:hover {
+                                background-color: #e67e22;
+                            }
+                            
+                            .instructions {
+                                background: rgba(0, 0, 0, 0.2);
+                                padding: 15px;
+                                border-radius: 15px;
+                                margin-top: 15px;
+                                width: 100%;
+                                max-width: 400px;
+                            }
+                            
+                            .instructions h2 {
+                                margin-bottom: 12px;
+                                color: #1abc9c;
+                                font-size: 1.2rem;
+                            }
+                            
+                            .instructions ul {
+                                list-style-type: none;
+                            }
+                            
+                            .instructions li {
+                                margin-bottom: 8px;
+                                padding-left: 18px;
+                                position: relative;
+                                font-size: 0.9rem;
+                            }
+                            
+                            .instructions li:before {
+                                content: "•";
+                                color: #3498db;
+                                font-weight: bold;
+                                position: absolute;
+                                left: 0;
+                            }
+                            
+                            .root-demo {
+                                margin-top: 12px;
+                                padding: 12px;
+                                background: rgba(255, 255, 255, 0.1);
+                                border-radius: 8px;
+                                font-size: 0.9rem;
+                            }
+                            
+                            @media (max-width: 480px) {
+                                .calculator-container {
+                                    border-radius: 15px;
+                                }
+                                
+                                .display {
+                                    padding: 15px 10px;
+                                    font-size: 1.5rem;
+                                    min-height: 80px;
+                                }
+                                
+                                .current-operand {
+                                    font-size: 1.8rem;
+                                }
+                                
+                                button {
+                                    padding: 12px 0;
+                                    font-size: 1rem;
+                                }
+                                
+                                .scientific, .memory, .angle-mode {
+                                    font-size: 0.8rem;
+                                }
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            const Pi = window.Pi;
+                            $( document ).ready(function() {
+                            
+                                var pi_user_id = "";
+                                async function auth() {
+                                    try {
+                                        // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                        const scopes = ['username', 'payments', 'wallet_address'];
+                                        function onIncompletePaymentFound(payment) {
+                                            
+                                        }; // Read more about this in the SDK reference
+                                        
+                                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                            pi_user_id = auth.user.uid;
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'none';
+                                        }).catch(function(error) {
+                                            //Pi.openShareDialog("Error", error);
+                                            //alert(err);
+                                            console.error(error);
+                                        });
+                                    } catch (err) {
+                                        //Pi.openShareDialog("Error", err);
+                                        //alert(err);
+                                        console.error(err);
+                                        // Not able to fetch the user
+                                    }
+                                }
+                                
+                                (async () => {
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            auth();
+                                            
+                                            setTimeout(function ()
+                                            {
+                                                if(pi_user_id == "")
+                                                {
+                                                    //alert($("#pi_prowser_message").text());
+                                                    
+                                                    if(window.location.hostname == "localhost")
+                                                    {
+                                                        $("a.anchor-click").attr('href', window.location.origin);
+                                                    }
+                                                    else if(window.location.hostname == "test.latin-chain.com")
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                    }
+                                                    
+                                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                }
+                                            }, 10000);
+                                        }
+                                    }, 10000);
+                                })();
+                                
+                            });
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body>
+                        
+                        <div class="container">
+                            <style>
+                                /* Adjustments for Google Translator to be visible */
+                                .goog-te-banner-frame.skiptranslate,
+                                .skiptranslate > iframe {
+                                    display: none !important;
+                                }
+                               
+                                body {
+                                    top: 0px !important; 
+                                }
 
+                                .goog-te-menu-frame {
+                                    max-width:100% !important; 
+                                }
+                                .goog-te-menu2 { 
+                                    max-width: 100% !important;
+                                    overflow-x: scroll !important;
+                                    box-sizing:border-box !important; 
+                                    height:auto !important; 
+                                }
+                               
+                                /* Hide unwanted elements without hiding the main widget */
+                                #goog-gt-tt, 
+                                #goog-gt-, 
+                                .goog-te-balloon-frame {
+                                    display: none !important;
+                                } 
+                                .goog-text-highlight { 
+                                    background: none !important; 
+                                    box-shadow: none !important;
+                                }
+                               
+                                .goog-logo-link {
+                                    display: none !important;
+                                }
+                                .goog-te-gadget {
+                                    height: 28px !important; 
+                                    overflow: hidden;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                $( document ).ready(function() {
+                                    $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                    $("#google_translate_element").appendTo(".translate_here");
+                                    
+                                    $("#translate_text_latinchain_2").show();
+                                    $("#google_translate_element").show();
+                                });
+                            </script>
+                            
+                            <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                            </div>
+                            
+                            <header style="text-align:center; max-width: 50px">
+                                <h3 style="text-align:center; color: white">
+                                    <a id="back" href="/" style="color:white !important"><i class="fa fa-step-backward"></i></a>
+                                </h3>
+                            </header>
+                            
+                            <header>
+                                <h1>Scientific Calculator</h1>
+                                <p class="description">Calculator with scientific functions and any root</p>
+                            </header>
+                            
+                            <div class="calculator-container" translate="no">
+                                <div class="display-container">
+                                    <div class="display">
+                                        <div class="previous-operand"></div>
+                                        <div class="current-operand">0</div>
+                                    </div>
+                                    
+                                    <div class="calculator-mode">
+                                        <button class="mode-btn active" id="normal-mode">Normal</button>
+                                        <button class="mode-btn" id="scientific-mode">Scientific</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="calculator-buttons" id="normal-calc">
+                                    <button class="clear">C</button>
+                                    <button class="delete">⌫</button>
+                                    <button class="memory" data-memory="mc">MC</button>
+                                    <button class="memory" data-memory="mr">MR</button>
+                                    
+                                    <button class="scientific" data-operation="sin">sin</button>
+                                    <button class="scientific" data-operation="cos">cos</button>
+                                    <button class="scientific" data-operation="tan">tan</button>
+                                    <button class="operator" data-operation="/">/</button>
+                                    
+                                    <button class="number" data-number="7">7</button>
+                                    <button class="number" data-number="8">8</button>
+                                    <button class="number" data-number="9">9</button>
+                                    <button class="operator" data-operation="*">×</button>
+                                    
+                                    <button class="number" data-number="4">4</button>
+                                    <button class="number" data-number="5">5</button>
+                                    <button class="number" data-number="6">6</button>
+                                    <button class="operator" data-operation="-">-</button>
+                                    
+                                    <button class="number" data-number="1">1</button>
+                                    <button class="number" data-number="2">2</button>
+                                    <button class="number" data-number="3">3</button>
+                                    <button class="operator" data-operation="+">+</button>
+                                    
+                                    <button class="memory" data-memory="ms">MS</button>
+                                    <button class="number" data-number="0">0</button>
+                                    <button class="number" data-number=".">.</button>
+                                    <button class="equals">=</button>
+                                </div>
+                                
+                                <div class="scientific-buttons" id="scientific-calc">
+                                    <button class="scientific" data-operation="sqrt">√</button>
+                                    <button class="scientific" data-operation="nthroot">ⁿ√</button>
+                                    <button class="scientific" data-operation="square">x²</button>
+                                    <button class="scientific" data-operation="power">x^y</button>
+                                    <button class="scientific" data-operation="log">log</button>
+                                    
+                                    <button class="scientific" data-operation="ln">ln</button>
+                                    <button class="scientific" data-operation="pi">π</button>
+                                    <button class="scientific" data-operation="e">e</button>
+                                    <button class="scientific" data-operation="factorial">x!</button>
+                                    <button class="scientific" data-operation="exp">EXP</button>
+                                    
+                                    <button class="scientific" data-operation="mod">mod</button>
+                                    <button class="scientific" data-operation="sinh">sinh</button>
+                                    <button class="scientific" data-operation="cosh">cosh</button>
+                                    <button class="scientific" data-operation="tanh">tanh</button>
+                                    <button class="scientific" data-operation="asin">asin</button>
+                                    
+                                    <button class="scientific" data-operation="acos">acos</button>
+                                    <button class="scientific" data-operation="atan">atan</button>
+                                    <button class="scientific" data-operation="rand">Rand</button>
+                                    <button class="angle-mode" data-operation="deg">DEG</button>
+                                    <button class="angle-mode" data-operation="rad">RAD</button>
+                                    
+                                    <button class="scientific" data-operation="percent">%</button>
+                                    <button class="memory" data-memory="m+">M+</button>
+                                    <button class="memory" data-memory="m-">M-</button>
+                                </div>
+                            </div>
+                            
+                            <div class="instructions">
+                                <h2>Usage Instructions</h2>
+                                <ul>
+                                    <li><strong>Any root (ⁿ√)</strong>: First enter the index, then press ⁿ√, then enter the radicand and press =</li>
+                                    <li><strong>Example for ⁴√16</strong>: Press 4 → ⁿ√ → 16 → = (result: 2)</li>
+                                    <li>The result display remains fixed when scrolling</li>
+                                    <li>Press "Scientific" to switch to advanced functions</li>
+                                    <li>Use DEG/RAD to switch between degrees and radians</li>
+                                </ul>
+                                
+                                <div class="root-demo">
+                                    <p><strong>Any root demo:</strong></p>
+                                    <p>⁵√243 = 3 → 5 → ⁿ√ → 243 → =</p>
+                                    <p>³√64 = 4 → 3 → ⁿ√ → 64 → =</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calcplayer_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
 </odoo>
