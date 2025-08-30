@@ -168,19 +168,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scientific functions
     function scientificFunction(func) {
         const current = parseFloat(currentOperand);
-        if (isNaN(current) && func !== 'rand' && func !== 'pi' && func !== 'e') return;
         
         switch (func) {
             case 'sin':
+                if (isNaN(current)) return;
                 currentOperand = isRadiansMode ? Math.sin(current) : Math.sin(current * Math.PI / 180);
                 break;
             case 'cos':
+                if (isNaN(current)) return;
                 currentOperand = isRadiansMode ? Math.cos(current) : Math.cos(current * Math.PI / 180);
                 break;
             case 'tan':
+                if (isNaN(current)) return;
                 currentOperand = isRadiansMode ? Math.tan(current) : Math.tan(current * Math.PI / 180);
                 break;
             case 'sqrt':
+                if (isNaN(current)) return;
                 if (current < 0) {
                     currentOperand = 'Error';
                 } else {
@@ -191,12 +194,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 chooseOperation('nthroot');
                 break;
             case 'square':
+                if (isNaN(current)) return;
                 currentOperand = Math.pow(current, 2);
                 break;
             case 'power':
                 chooseOperation('power');
                 break;
             case 'log':
+                if (isNaN(current)) return;
                 if (current <= 0) {
                     currentOperand = 'Error';
                 } else {
@@ -204,6 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 break;
             case 'ln':
+                if (isNaN(current)) return;
                 if (current <= 0) {
                     currentOperand = 'Error';
                 } else {
@@ -217,6 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentOperand = Math.E.toString();
                 break;
             case 'factorial':
+                if (isNaN(current)) return;
                 if (current < 0 || !Number.isInteger(current)) {
                     currentOperand = 'Error';
                 } else {
@@ -228,24 +235,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 break;
             case 'exp':
+                if (isNaN(current)) return;
                 currentOperand = (current * Math.pow(10, current)).toString();
                 break;
             case 'sinh':
+                if (isNaN(current)) return;
                 currentOperand = Math.sinh(current);
                 break;
             case 'cosh':
+                if (isNaN(current)) return;
                 currentOperand = Math.cosh(current);
                 break;
             case 'tanh':
+                if (isNaN(current)) return;
                 currentOperand = Math.tanh(current);
                 break;
             case 'asin':
-                currentOperand = isRadiansMode ? Math.asin(current) : Math.asin(current) * 180 / Math.PI;
+                if (isNaN(current)) return;
+                if (current < -1 || current > 1) {
+                    currentOperand = 'Error';
+                } else {
+                    currentOperand = isRadiansMode ? Math.asin(current) : Math.asin(current) * 180 / Math.PI;
+                }
                 break;
             case 'acos':
-                currentOperand = isRadiansMode ? Math.acos(current) : Math.acos(current) * 180 / Math.PI;
+                if (isNaN(current)) return;
+                if (current < -1 || current > 1) {
+                    currentOperand = 'Error';
+                } else {
+                    currentOperand = isRadiansMode ? Math.acos(current) : Math.acos(current) * 180 / Math.PI;
+                }
                 break;
             case 'atan':
+                if (isNaN(current)) return;
                 currentOperand = isRadiansMode ? Math.atan(current) : Math.atan(current) * 180 / Math.PI;
                 break;
             case 'rand':
@@ -258,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 isRadiansMode = true;
                 break;
             case 'percent':
+                if (isNaN(current)) return;
                 currentOperand = (current / 100).toString();
                 break;
             case 'mod':

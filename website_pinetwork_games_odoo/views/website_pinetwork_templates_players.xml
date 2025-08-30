@@ -2886,20 +2886,23 @@
                                     <li><strong>Memory Functions</strong>: MC (Memory Clear), MR (Memory Recall), MS (Memory Store), M+ (Memory Add), M- (Memory Subtract)</li>
                                     <li><strong>Any root (ⁿ√)</strong>: First enter the index, then press ⁿ√, then enter the radicand and press =</li>
                                     <li><strong>Example for ⁴√16</strong>: Press 4 → ⁿ√ → 16 → = (result: 2)</li>
+                                    <li><strong>Hyperbolic functions</strong>: sinh, cosh, tanh</li>
+                                    <li><strong>Inverse trigonometric functions</strong>: asin, acos, atan</li>
                                     <li>The result display remains fixed when scrolling</li>
                                     <li>Press "Scientific" to switch to advanced functions</li>
                                     <li>Use DEG/RAD to switch between degrees and radians</li>
                                 </ul>
                                 
                                 <div class="root-demo">
-                                    <p><strong>Any root demo:</strong></p>
-                                    <p>⁵√243 = 3 → 5 → ⁿ√ → 243 → =</p>
-                                    <p>³√64 = 4 → 3 → ⁿ√ → 64 → =</p>
+                                    <p><strong>Function examples:</strong></p>
+                                    <p>tanh(1) = 0.7616</p>
+                                    <p>asin(0.5) = 30° (DEG) or 0.5236 rad (RAD)</p>
+                                    <p>acos(0.5) = 60° (DEG) or 1.0472 rad (RAD)</p>
                                 </div>
                             </div>
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calcplayer_functions.js?v=1.102"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calcplayer_functions.js?v=1.103"></script>
                     </body>
                 </html>
             </t>
