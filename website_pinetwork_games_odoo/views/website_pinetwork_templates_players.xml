@@ -2360,7 +2360,7 @@
             </t>
 		</template>
         
-        <template id="calcplayer" name="Maps Player">
+        <template id="calcplayer" name="Calc Player">
             <t t-call="web.layout">
                 &lt;!DOCTYPE html&gt;
                 <html>
@@ -2377,7 +2377,7 @@
                             }
                             
                             body {
-                                background: linear-gradient(135deg, #1e3c72, #2a5298);
+                                background: #1e3c72;
                                 color: white;
                                 padding: 20px;
                                 min-height: 100vh;
