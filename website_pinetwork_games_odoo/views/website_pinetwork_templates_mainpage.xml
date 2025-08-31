@@ -929,7 +929,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.473"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.474"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -2160,6 +2160,14 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
+                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-calendarplayer" style="display:none">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a id="calendarplayer" href="/calendarplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success calendarplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-calendar-days"></i></div><div style="font-size:100%;" translate="no">CALENDAR CONVERSOR</div><div style="font-size:80%;">Convert from Gregorian to Mayan calendar</div><div style="font-size:80%;">Developed with DeepSeek AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Math</div></div></a></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        
                                         <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-gameslearning" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>

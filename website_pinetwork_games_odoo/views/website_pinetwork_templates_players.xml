@@ -2908,4 +2908,510 @@
             </t>
 		</template>
         
+        <template id="calendarplayer" name="Calendar Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Gregorian and Mayan Calendar Converter</title>
+                        <style>
+                            :root {
+                                --primary: #2c3e50;
+                                --secondary: #e74c3c;
+                                --accent: #3498db;
+                                --light: #ecf0f1;
+                                --dark: #2c3e50;
+                                --success: #2ecc71;
+                                --warning: #f39c12;
+                                --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                --radius: 8px;
+                            }
+                            
+                            * {
+                                margin: 0;
+                                padding: 0;
+                                box-sizing: border-box;
+                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            }
+                            
+                            body {
+                                background-color: #f5f7fa;
+                                color: var(--dark);
+                                line-height: 1.6;
+                                padding-bottom: 70px;
+                                width: 100vw;
+                                overflow-x: hidden;
+                            }
+                            
+                            header {
+                                background: linear-gradient(135deg, var(--primary), var(--dark));
+                                color: white;
+                                text-align: center;
+                                padding: 1.5rem;
+                                box-shadow: var(--shadow);
+                                width: 100%;
+                            }
+                            
+                            h1 {
+                                font-size: 1.8rem;
+                                margin-bottom: 0.5rem;
+                            }
+                            
+                            .container {
+                                width: 100%;
+                                margin: 0 auto;
+                                padding: 1rem;
+                            }
+                            
+                            .calendar-container {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 2rem;
+                                margin-top: 1.5rem;
+                                width: 100%;
+                            }
+                            
+                            @media (min-width: 768px) {
+                                .calendar-container {
+                                    flex-direction: row;
+                                }
+                                
+                                .calendar {
+                                    flex: 1;
+                                }
+                            }
+                            
+                            .calendar {
+                                background: white;
+                                border-radius: var(--radius);
+                                padding: 1.5rem;
+                                box-shadow: var(--shadow);
+                                width: 100%;
+                            }
+                            
+                            .calendar h2 {
+                                color: var(--primary);
+                                margin-bottom: 1.2rem;
+                                padding-bottom: 0.5rem;
+                                border-bottom: 2px solid var(--light);
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                            }
+                            
+                            .calendar h2 i {
+                                color: var(--accent);
+                            }
+                            
+                            .input-group {
+                                margin-bottom: 1.2rem;
+                                width: 100%;
+                            }
+                            
+                            .input-group label {
+                                display: block;
+                                margin-bottom: 0.5rem;
+                                font-weight: 600;
+                                color: var(--dark);
+                            }
+                            
+                            .input-row {
+                                display: flex;
+                                gap: 0.8rem;
+                                width: 100%;
+                                flex-wrap: wrap;
+                            }
+                            
+                            .input-row input, .input-row select {
+                                flex: 1;
+                                min-width: 60px;
+                            }
+                            
+                            select, input {
+                                padding: 0.8rem;
+                                border: 1px solid #ddd;
+                                border-radius: var(--radius);
+                                font-size: 1rem;
+                                width: 100%;
+                            }
+                            
+                            .bc-toggle {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                                margin-top: 0.5rem;
+                                width: 100%;
+                            }
+                            
+                            .toggle-switch {
+                                position: relative;
+                                display: inline-block;
+                                width: 50px;
+                                height: 24px;
+                            }
+                            
+                            .toggle-switch input {
+                                opacity: 0;
+                                width: 0;
+                                height: 0;
+                            }
+                            
+                            .slider {
+                                position: absolute;
+                                cursor: pointer;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background-color: #ccc;
+                                transition: .4s;
+                                border-radius: 24px;
+                            }
+                            
+                            .slider:before {
+                                position: absolute;
+                                content: "";
+                                height: 16px;
+                                width: 16px;
+                                left: 4px;
+                                bottom: 4px;
+                                background-color: white;
+                                transition: .4s;
+                                border-radius: 50%;
+                            }
+                            
+                            input:checked + .slider {
+                                background-color: var(--accent);
+                            }
+                            
+                            input:checked + .slider:before {
+                                transform: translateX(26px);
+                            }
+                            
+                            .mayan-cycle {
+                                background-color: #f8f9fa;
+                                padding: 1rem;
+                                border-radius: var(--radius);
+                                margin-top: 1.5rem;
+                                border-left: 4px solid var(--warning);
+                                width: 100%;
+                            }
+                            
+                            .mayan-cycle h3 {
+                                color: var(--warning);
+                                margin-bottom: 0.5rem;
+                            }
+                            
+                            .cycle-display {
+                                font-size: 1.2rem;
+                                font-weight: bold;
+                                color: var(--dark);
+                                text-align: center;
+                                padding: 0.5rem;
+                                background: white;
+                                border-radius: var(--radius);
+                                margin-top: 0.5rem;
+                            }
+                            
+                            .today-btn {
+                                position: fixed;
+                                bottom: 20px;
+                                right: 20px;
+                                background: var(--success);
+                                color: white;
+                                border: none;
+                                border-radius: 50%;
+                                width: 60px;
+                                height: 60px;
+                                font-size: 1.5rem;
+                                cursor: pointer;
+                                box-shadow: var(--shadow);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                z-index: 100;
+                                transition: transform 0.3s, background 0.3s;
+                            }
+                            
+                            .today-btn:hover {
+                                transform: scale(1.05);
+                                background: #27ae60;
+                            }
+                            
+                            .explanation {
+                                margin-top: 1.5rem;
+                                font-size: 0.9rem;
+                                color: #7f8c8d;
+                                line-height: 1.5;
+                                width: 100%;
+                            }
+                            
+                            .highlight {
+                                color: var(--accent);
+                                font-weight: 600;
+                            }
+                            
+                            @media (max-width: 480px) {
+                                .input-row {
+                                    flex-direction: column;
+                                    gap: 0.5rem;
+                                }
+                                
+                                .input-row input, .input-row select {
+                                    width: 100%;
+                                }
+                                
+                                .calendar {
+                                    padding: 1rem;
+                                }
+                                
+                                h1 {
+                                    font-size: 1.5rem;
+                                }
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            const Pi = window.Pi;
+                            $( document ).ready(function() {
+                            
+                                var pi_user_id = "";
+                                async function auth() {
+                                    try {
+                                        // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                        const scopes = ['username', 'payments', 'wallet_address'];
+                                        function onIncompletePaymentFound(payment) {
+                                            
+                                        }; // Read more about this in the SDK reference
+                                        
+                                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                            pi_user_id = auth.user.uid;
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'none';
+                                        }).catch(function(error) {
+                                            //Pi.openShareDialog("Error", error);
+                                            //alert(err);
+                                            console.error(error);
+                                        });
+                                    } catch (err) {
+                                        //Pi.openShareDialog("Error", err);
+                                        //alert(err);
+                                        console.error(err);
+                                        // Not able to fetch the user
+                                    }
+                                }
+                                
+                                (async () => {
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            auth();
+                                            
+                                            setTimeout(function ()
+                                            {
+                                                if(pi_user_id == "")
+                                                {
+                                                    //alert($("#pi_prowser_message").text());
+                                                    
+                                                    if(window.location.hostname == "localhost")
+                                                    {
+                                                        $("a.anchor-click").attr('href', window.location.origin);
+                                                    }
+                                                    else if(window.location.hostname == "test.latin-chain.com")
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                    }
+                                                    
+                                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                }
+                                            }, 10000);
+                                        }
+                                    }, 10000);
+                                })();
+                                
+                            });
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body>
+                        
+                        <div>
+                            <style>
+                                /* Adjustments for Google Translator to be visible */
+                                .goog-te-banner-frame.skiptranslate,
+                                .skiptranslate > iframe {
+                                    display: none !important;
+                                }
+                               
+                                body {
+                                    top: 0px !important; 
+                                }
+
+                                .goog-te-menu-frame {
+                                    max-width:100% !important; 
+                                }
+                                .goog-te-menu2 { 
+                                    max-width: 100% !important;
+                                    overflow-x: scroll !important;
+                                    box-sizing:border-box !important; 
+                                    height:auto !important; 
+                                }
+                               
+                                /* Hide unwanted elements without hiding the main widget */
+                                #goog-gt-tt, 
+                                #goog-gt-, 
+                                .goog-te-balloon-frame {
+                                    display: none !important;
+                                } 
+                                .goog-text-highlight { 
+                                    background: none !important; 
+                                    box-shadow: none !important;
+                                }
+                               
+                                .goog-logo-link {
+                                    display: none !important;
+                                }
+                                .goog-te-gadget {
+                                    height: 45px !important; 
+                                    overflow: hidden;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                $( document ).ready(function() {
+                                    $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                    $("#google_translate_element").appendTo(".translate_here");
+                                    
+                                    $("#translate_text_latinchain_2").show();
+                                    $("#google_translate_element").show();
+                                });
+                            </script>
+                            
+                        </div>
+                        
+                        <header style="justify-content: center; align-items: center;">
+                            <p class="translate_here" style="margin: 0 auto; max-width: 200px; margin-bottom:15px;">
+                            </p>
+                            <h1 style="text-align:center; color: white !important">
+                                <a id="back" href="/" style="color:white !important"><i class="fa fa-step-backward"></i></a>
+                            </h1>
+                            <h1>Gregorian and Mayan Calendar Converter</h1>
+                            <p>Convert dates between Gregorian and Mayan calendars</p>
+                        </header>
+                        
+                        <div class="container">
+                            <div class="calendar-container">
+                                <div class="calendar">
+                                    <h2>📅 Gregorian Calendar</h2>
+                                    
+                                    <div class="input-group">
+                                        <label>Year</label>
+                                        <div class="input-row">
+                                            <input type="number" id="gregorian-year" value="2023" min="1" />
+                                            <div class="bc-toggle">
+                                                <span>BCE</span>
+                                                <label class="toggle-switch">
+                                                    <input type="checkbox" id="bc-toggle" checked="true"/>
+                                                    <span class="slider"></span>
+                                                </label>
+                                                <span>CE</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="input-group">
+                                        <label>Month</label>
+                                        <select id="gregorian-month">
+                                            <option value="0">January</option>
+                                            <option value="1">February</option>
+                                            <option value="2">March</option>
+                                            <option value="3">April</option>
+                                            <option value="4">May</option>
+                                            <option value="5">June</option>
+                                            <option value="6">July</option>
+                                            <option value="7">August</option>
+                                            <option value="8">September</option>
+                                            <option value="9">October</option>
+                                            <option value="10">November</option>
+                                            <option value="11">December</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="input-group">
+                                        <label>Day</label>
+                                        <input type="number" id="gregorian-day" value="1" min="1" max="31" />
+                                    </div>
+                                </div>
+                                
+                                <div class="calendar">
+                                    <h2>🌄 Mayan Calendar</h2>
+                                    
+                                    <div class="input-group">
+                                        <label>Long Count</label>
+                                        <label>Order: baktun.katun.tun.uinal.kin</label>
+                                        <label id="mayan-format-date">123</label>
+                                        <div class="input-row">
+                                            <input type="number" id="baktun" placeholder="Baktun" min="0" max="19" value="13" readonly="true"/>
+                                            <input type="number" id="katun" placeholder="Katun" min="0" max="19" value="0" readonly="true"/>
+                                            <input type="number" id="tun" placeholder="Tun" min="0" max="19" value="0" readonly="true"/>
+                                            <input type="number" id="uinal" placeholder="Uinal" min="0" max="17" value="0" readonly="true"/>
+                                            <input type="number" id="kin" placeholder="Kin" min="0" max="19" value="0" readonly="true"/>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mayan-cycle">
+                                        <h3>Calendar Cycle</h3>
+                                        <p>The Mayan calendar is cyclic. Each cycle consists of 13 Baktuns (approximately 5,125 years).</p>
+                                        <div class="cycle-display" id="cycle-display">Current Sun Cycle: 0</div>
+                                    </div>
+                                    
+                                    <div class="explanation">
+                                        <p>The Mayan Long Count calendar consists of cycles: <span class="highlight">Baktun</span> (144,000 days), <span class="highlight">Katun</span> (7,200 days), <span class="highlight">Tun</span> (360 days), <span class="highlight">Uinal</span> (20 days), and <span class="highlight">Kin</span> (1 day).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="today-btn" id="today-btn">📅</button>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calendarplayer_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
 </odoo>
