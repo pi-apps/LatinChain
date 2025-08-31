@@ -69,7 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
         uinal.value = mayanLongCount.uinal;
         kin.value = mayanLongCount.kin;
         
-        mayanFormatDate.textContent = baktunVal + "." + katunVal + "." + tunVal + "." + uinalVal + "." + kinVal;
+        if(baktunVal && katunVal && tunVal && uinalVal && kinVal)
+            mayanFormatDate.textContent = baktunVal + "." + katunVal + "." + tunVal + "." + uinalVal + "." + kinVal;
+        else
+            mayanFormatDate.textContent = "";
         
         // Update cycle display
         updateCycleDisplay(mayanLongCount.cycle);
@@ -122,7 +125,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update cycle display
     function updateCycleDisplay(cycle) {
-        cycleDisplay.textContent = `Current Sun Cycle: ${cycle}`;
+        if(cycle)
+            cycleDisplay.textContent = `Current Sun Cycle: ${cycle}`;
+        else
+            cycleDisplay.textContent = `Current Sun Cycle: `;
         
         if (cycle > 0) {
             cycleDisplay.style.backgroundColor = '#e8f5e9';
