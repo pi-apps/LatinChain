@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         uinal.value = mayanLongCount.uinal;
         kin.value = mayanLongCount.kin;
         
-        if(baktunVal != NaN && katunVal != NaN && tunVal != NaN && uinalVal != NaN && kinVal != NaN)
+        if(!isNaN(baktunVal) && !isNaN(katunVal) && !isNaN(tunVal) && !isNaN(uinalVal) && !isNaN(kinVal))
             mayanFormatDate.textContent = baktunVal + "." + katunVal + "." + tunVal + "." + uinalVal + "." + kinVal;
         else
             mayanFormatDate.textContent = "";
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update cycle display
     function updateCycleDisplay(cycle) {
-        if(cycle != NaN)
+        if(!isNaN(cycle))
             cycleDisplay.textContent = `Current Sun Cycle: ${cycle}`;
         else
             cycleDisplay.textContent = `Current Sun Cycle: `;
