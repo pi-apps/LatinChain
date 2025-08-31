@@ -3383,8 +3383,8 @@
                                     <div class="input-group">
                                         <label>Long Count</label>
                                         <label>Order: baktun.katun.tun.uinal.kin</label>
-                                        <label id="mayan-format-date">123</label>
-                                        <div class="input-row">
+                                        <h1 id="mayan-format-date"></h1>
+                                        <div class="input-row" style="display: none !important;">
                                             <input type="number" id="baktun" placeholder="Baktun" min="0" max="19" value="13" readonly="true"/>
                                             <input type="number" id="katun" placeholder="Katun" min="0" max="19" value="0" readonly="true"/>
                                             <input type="number" id="tun" placeholder="Tun" min="0" max="19" value="0" readonly="true"/>
