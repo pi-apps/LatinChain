@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-30 11:41+0000\n"
-"PO-Revision-Date: 2025-08-30 11:41+0000\n"
+"POT-Creation-Date: 2025-09-01 11:22+0000\n"
+"PO-Revision-Date: 2025-09-01 11:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -815,6 +815,25 @@ msgstr ""
 "                                                    </select>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid ""
+"<select id=\"gregorian-month\">\n"
+"                                            <option value=\"0\">January</option>\n"
+"                                            <option value=\"1\">February</option>\n"
+"                                            <option value=\"2\">March</option>\n"
+"                                            <option value=\"3\">April</option>\n"
+"                                            <option value=\"4\">May</option>\n"
+"                                            <option value=\"5\">June</option>\n"
+"                                            <option value=\"6\">July</option>\n"
+"                                            <option value=\"7\">August</option>\n"
+"                                            <option value=\"8\">September</option>\n"
+"                                            <option value=\"9\">October</option>\n"
+"                                            <option value=\"10\">November</option>\n"
+"                                            <option value=\"11\">December</option>\n"
+"                                        </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 msgid ""
 "<select id=\"language-select\" multiple=\"multiple\" size=\"10\" class=\"w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all duration-200\">\n"
@@ -1152,10 +1171,20 @@ msgstr ""
 "                                                    <span id=\"game-state\" class=\"hidden\"/>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "<span>BCE</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 msgid ""
 "<span>Best: </span>\n"
 "                                    <span id=\"time-best\"/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "<span>CE</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1224,11 +1253,6 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
-msgid "<strong>Any root demo:</strong>"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>App Store</strong>"
 msgstr ""
@@ -1289,14 +1313,29 @@ msgid "<strong>Example for ⁴√16</strong>: Press 4 → ⁿ√ → 16 → = (r
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "<strong>Function examples:</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "<strong>Games learning: Chess, Sudoku, Snake</strong>"
 msgstr "<strong>Aprendizaje de juegos: Chess, Sudoku, Snake</strong>"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "<strong>Hyperbolic functions</strong>: sinh, cosh, tanh"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "<strong>Introduction and minimum payment</strong><br/>"
 msgstr "<strong>Introducción y pago mínimo</strong><br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "<strong>Inverse trigonometric functions</strong>: asin, acos, atan"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
@@ -1326,6 +1365,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "<strong>Membership</strong><br/>"
 msgstr "<strong>Membresía</strong><br/>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid ""
+"<strong>Memory Functions</strong>: MC (Memory Clear), MR (Memory Recall), MS"
+" (Memory Store), M+ (Memory Add), M- (Memory Subtract)"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
@@ -1613,6 +1659,11 @@ msgid "Back"
 msgstr "Atrás"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Baktun"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Benefits:"
 msgstr "Beneficios:"
@@ -1639,6 +1690,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "CALENDAR CONVERTER"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "CHECKERS"
 msgstr ""
 
@@ -1655,6 +1711,16 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 msgid "Calculator with scientific functions and any root"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Calendar"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Calendar Cycle"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1760,6 +1826,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
@@ -1815,6 +1882,16 @@ msgid "Congrats, you won"
 msgstr "Felicidades, ganaste"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Convert dates between Gregorian and Mayan calendars"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Convert from Gregorian to Mayan calendar"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Credits"
 msgstr "Créditos"
@@ -1823,6 +1900,11 @@ msgstr "Créditos"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Crypto news"
 msgstr "Cripto Noticias"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Current Sun Cycle: 0"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
@@ -1856,6 +1938,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "DONATE"
 msgstr "DONAR"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Day"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2123,6 +2210,7 @@ msgstr "Ir a Mainnet"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
@@ -2153,6 +2241,11 @@ msgstr "Ir a Testnet"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Go to one of the games to do it."
 msgstr "Ve a uno de los juegos para hacerlo."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Gregorian to Mayan Calendar Converter"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2302,6 +2395,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Just Browse"
 msgstr "Sólo Navegar"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Katun"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Kin"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
@@ -2535,6 +2638,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
@@ -2570,6 +2674,11 @@ msgstr "Mensaje de Login"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Logout"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Long Count"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2708,6 +2817,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Minimum payment for"
 msgstr "Pago mínimo para"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Month"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2960,6 +3074,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webtorrent
 msgid "Or upload a .torrent file:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Order: baktun.katun.tun.uinal.kin"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3787,6 +3906,24 @@ msgid "Thank you very much!."
 msgstr "Muchas gracias!."
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid ""
+"The Mayan Long Count calendar consists of cycles: <span "
+"class=\"highlight\">Baktun</span> (144,000 days), <span "
+"class=\"highlight\">Katun</span> (7,200 days), <span "
+"class=\"highlight\">Tun</span> (360 days), <span "
+"class=\"highlight\">Uinal</span> (20 days), and <span "
+"class=\"highlight\">Kin</span> (1 day)."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid ""
+"The Mayan calendar is cyclic. Each cycle consists of 13 Baktuns "
+"(approximately 5,125 years)."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "The following certifies that the Pioneer"
 msgstr "Lo siguiente certifica que el Pionero"
@@ -3863,6 +4000,11 @@ msgid "Try again"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Tun"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 msgid "Turn: <span id=\"current-player-text\">Red</span>"
 msgstr ""
@@ -3897,6 +4039,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "UTILITIES"
 msgstr "UTILIDADES"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Uinal"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -4153,6 +4300,11 @@ msgid "Xiomeli"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "Year"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Yes"
 msgstr "Sí"
@@ -4214,6 +4366,7 @@ msgstr "Debes pagar Pi, para desbloquear todas las apps en LatinChain."
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
@@ -4353,6 +4506,11 @@ msgid "acos"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "acos(0.5) = 60° (DEG) or 1.0472 rad (RAD)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "ads /"
@@ -4376,6 +4534,11 @@ msgstr "y ve anuncios"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 msgid "asin"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "asin(0.5) = 30° (DEG) or 0.5236 rad (RAD)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4510,6 +4673,11 @@ msgid "tanh"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+msgid "tanh(1) = 0.7616"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "to"
@@ -4541,11 +4709,6 @@ msgid "x²"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
-msgid "³√64 = 4 → 3 → ⁿ√ → 64 → ="
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "¿Are you sure you want to Logout?"
 msgstr "¿Estás seguro(a) que quieres cerrar sesión (Logout)?"
@@ -4562,6 +4725,11 @@ msgid "¿Do you want to Login on LatinChain Platform?"
 msgstr "¿Quieres hacer Login en LatinChain Platform?"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
-msgid "⁵√243 = 3 → 5 → ⁿ√ → 243 → ="
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "🌄 Mayan Calendar"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid "📅 Gregorian Calendar"
 msgstr ""
