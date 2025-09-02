@@ -1059,7 +1059,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <button id="cryptonews" class="btn btn-primary mb-2 o_default_snippet_text cryptonews"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">News</div></button>
+                                          <button id="cryptonews" class="href-external btn btn-primary mb-2 o_default_snippet_text cryptonews"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">News</div></button>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1421,10 +1421,10 @@
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinChainCool &#128240;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <button id="cryptonews_4" class="col-8 btn btn-outline-info font-weight-bold text-black border-info cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Crypto news</div></button>
+                                <button id="cryptonews_4" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Crypto news</div></button>
                             </div>
                             <div style="margin-bottom:5px">
-                                <button id="sport-results-2" class="col-8 btn btn-outline-info font-weight-bold text-black border-info sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div>Sport results</div></button>
+                                <button id="sport-results-2" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div>Sport results</div></button>
                             </div>
                         </div>
                         
@@ -1582,7 +1582,7 @@
                             </div>
                             
                             <div style="margin-bottom:5px">
-                                <button id="cryptonews_3" class="col-8 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div></button>
+                                <button id="cryptonews_3" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div></button>
                             </div>
                             <!--<t t-if="pi_main_user">
                                 <div style="margin-bottom:5px" t-if="pi_main_user.streaming_url">
@@ -2204,7 +2204,7 @@
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><button id="sport-results" class="col-10 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Sports</div></div></button></div>
+                                                <div class="col-10"><button id="sport-results" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Sports</div></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
@@ -2278,7 +2278,7 @@
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
-                                                <div class="col-10"><button id="cryptonews_2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
+                                                <div class="col-10"><button id="cryptonews_2" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
