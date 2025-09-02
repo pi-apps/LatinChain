@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const isCE = bcToggle.checked;
         
         // Calculate Julian Day Number
-        const jd = gregorianToJulianDay(isCE ? year : -year, month + 1, day);
+        const jd = gregorianToJulianDay(isCE ? year : -year, isCE ? month + 1 : -month, isCE ? day : -day);
         
         // Convert to Mayan Long Count
         const mayanLongCount = julianDayToMayanLongCount(jd);
