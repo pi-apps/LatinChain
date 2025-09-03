@@ -1416,7 +1416,7 @@
                             </div>
                         </div>
                         
-                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded showInterstitialAd">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinChainCool &#128240;</div></strong></h5>
                             </div>
@@ -1426,6 +1426,14 @@
                             <div style="margin-bottom:5px">
                                 <button id="sport-results-2" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div>Sport results</div></button>
                             </div>
+                            <div style="margin-bottom:5px">
+                                <a href="https://latinchainpal0712.pinet.com" target="_blank" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">Latinchain Pal</div></a>
+                            </div>
+                            <t t-if="pioneers_streaming">
+                                <div style="margin-bottom:5px">
+                                    <button id="streamerzoneboard3" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">LatinChain dSocial</div></button>
+                                </div>
+                            </t>
                         </div>
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center" class="border-gradient-rounded">
@@ -2067,6 +2075,22 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
+                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a href="https://latinchainpal0712.pinet.com" target="_blank" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN PAL</div><div style="font-size:80%;">AI Chatbot</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">AI Chat</div></div></a></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <t t-if="pioneers_streaming">
+                                            <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                                <div class="row" style="text-align: left;">
+                                                    <div class="col-2"></div>
+                                                    <div class="col-10"><button id="streamerzoneboard2" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Social</div></div></button></div>
+                                                    <div class="col-0"></div>
+                                                </div>
+                                            </li>
+                                        </t>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-12" style="text-align: center"><div class="next-pi" style="display:inline;"><i class="fa-solid fa-gamepad"></i></div> <div class="next-pi" style="display:inline; font-size: 18px">GAMES</div></div>
@@ -2305,22 +2329,6 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                            <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a href="https://latinchainpal0712.pinet.com" target="_blank" class="col-10 btn btn-outline-success font-weight-bold text-black border-success href-external" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN PAL</div><div style="font-size:80%;">AI Chatbot</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">AI Chat</div></div></a></div>
-                                                <div class="col-0"></div>
-                                            </div>
-                                        </li>
-                                        <t t-if="pioneers_streaming">
-                                            <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                                <div class="row" style="text-align: left;">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-10"><button id="streamerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Social</div></div></button></div>
-                                                    <div class="col-0"></div>
-                                                </div>
-                                            </li>
-                                        </t>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row">
                                                 <div class="col-12"><button class="href-external btn btn-outline-info font-weight-bold text-black border-info clear_cache" style="border: 2px solid;"><div style=""><i class="fa fa-refresh"></i></div><div style="font-size:100%;">Clear Cache</div></button></div>
