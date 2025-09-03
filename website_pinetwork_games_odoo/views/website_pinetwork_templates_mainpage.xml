@@ -1585,16 +1585,16 @@
                                 <h5 translate="no"><strong>#LatinChain #Magazine &#127909;</strong></h5>
                             </div>
                             
-                            <div class="" style="margin-bottom:5px;" t-if="pioneers_streaming">
-                                <button id="streamerzoneboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div></button>
-                            </div>
-                            
                             <div style="margin-bottom:5px">
                                 <button id="cryptonews_3" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div></button>
                             </div>
                             
                             <div style="margin-bottom:5px">
                                 <button id="sport-results-3" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div></button>
+                            </div>
+                            
+                            <div class="" style="margin-bottom:5px;" t-if="pioneers_streaming">
+                                <button id="streamerzoneboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div></button>
                             </div>
                             
                             <!--<t t-if="pi_main_user">
