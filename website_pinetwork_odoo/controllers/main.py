@@ -119,6 +119,10 @@ class PiNetworkBaseController(http.Controller):
     def brand_book(self, **kw):
         return http.request.redirect('https://www.amazon.com/dp/B0F79N2ZWQ')
         
+    @http.route('/collection-2025-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def collection_2025_book(self, **kw):
+        return http.request.redirect('https://www.amazon.com/dp/B0FPPVRGWG')
+        
     @http.route('/books-collection/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def books_collection(self, **kw):
         return http.request.redirect('https://www.amazon.com/dp/B0F771VKRF')
