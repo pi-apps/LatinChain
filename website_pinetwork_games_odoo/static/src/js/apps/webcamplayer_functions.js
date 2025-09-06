@@ -259,7 +259,13 @@ if ('speechSynthesis' in window) {
 loadLang = () => {
     if(!is_changing_page)
     {
-        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
+        var lang1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/);
+        var savedLanguage1 = lang1[0];
+        try{
+            if(lang1[1])
+                savedLanguage1 += "-" + lang1[1];
+        }catch(e){
+        }
         
         // If a language was found, set the URL hash to load it automatically.
         // This is still needed to trigger the initial translation on page load.
