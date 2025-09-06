@@ -316,7 +316,13 @@ var observer1 = new MutationObserver(() => checkLang());
 var checkLang = () => {
     if(!is_changing_page)
     {
-        var lang = window.document.documentElement.getAttribute('lang').split(/[-_]/)[0];
+        var lang1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/);
+        var lang = lang1[0];
+        try{
+            if(lang1[1])
+                lang += "-" + lang1[1];
+        }catch(e){
+        }
         
         if(lang)
         {
@@ -344,7 +350,13 @@ var checkLang = () => {
 var loadLang = () => {
     if(!is_changing_page)
     {
-        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
+        var lang1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/);
+        var savedLanguage1 = lang1[0];
+        try{
+            if(lang1[1])
+                savedLanguage1 += "-" + lang1[1];
+        }catch(e){
+        }
         
         // If a language was found, set the URL hash to load it automatically.
         // This is still needed to trigger the initial translation on page load.
@@ -381,7 +393,13 @@ var loadLang = () => {
 
 var loadLangInitial = () => {
     if (localStorage.getItem('lastTranslateLanguage') != null) {
-        var savedLanguage1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/)[0];
+        var lang1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/);
+        var savedLanguage1 = lang1[0];
+        try{
+            if(lang1[1])
+                savedLanguage1 += "-" + lang1[1];
+        }catch(e){
+        }
         
         // If a language was found, set the URL hash to load it automatically.
         // This is still needed to trigger the initial translation on page load.
