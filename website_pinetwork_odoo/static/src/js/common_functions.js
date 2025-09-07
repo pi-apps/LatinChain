@@ -316,7 +316,7 @@ var observer1 = new MutationObserver(() => checkLang());
 var checkLang = () => {
     if(!is_changing_page)
     {
-        var lang1 = localStorage.getItem('lastTranslateLanguage').split(/[-_]/);
+        var lang1 = window.document.documentElement.getAttribute('lang').split(/[-_]/);
         var lang = lang1[0];
         try{
             if(lang1[1])
