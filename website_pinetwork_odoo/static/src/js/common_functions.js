@@ -496,7 +496,10 @@ var googleTranslateElementInit = () => {
         location.pathname.substring(0, 8) != "/es/web?")
     {
         var lang_google='en';
-        if(location.pathname.substring(0, 3) == "/es")
+        if(location.pathname.substring(0, 16) == "/es/webcamplayer")
+        {
+          lang_google='en';
+        }else if(location.pathname.substring(0, 3) == "/es")
         {
           lang_google='es';
         }
