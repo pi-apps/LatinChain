@@ -1316,6 +1316,32 @@
                             </div>
                         </div>
                         
+                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center;" class="border-gradient-rounded showInterstitialAd">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline;">#LatinChainTV &#128250;</div></strong></h5>
+                            </div>
+                            <div style="margin-bottom:5px">
+                                <!--<div>Subscribe here:</div>
+                                <div style="filter: contrast(100%) !important;">
+                                &#128073;
+                                <a href="https://www.youtube.com/@rockcesar85" target="_blank">
+                                    <img src="/website_pinetwork_games_odoo/static/src/img/youtube.png" alt="Youtube" class="img-fluid" style="max-width: 130px" width="100%" height="50px" />
+                                </a>
+                                &#128072;
+                                </div>-->
+                                <!--
+                                <div style="margin-bottom:5px" translate="no">
+                                    <button style="max-width: 130px" class="col-8 btn btn-danger font-weight-bold youtube-social" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">channel</div></button>
+                                </div>
+                                -->
+                                <div style="margin-bottom:5px" translate="no">
+                                    <button class="btn btn-danger font-weight-bold streamerzoneboard" ><div style="display:inline;"><i class="fa-solid fa-tv"></i></div> <div style="display:inline;">LatinChain dSocial</div></button>
+                                </div>
+                                <div>Watch good content daily</div>
+                                <iframe id="latinchain-tv" class="rounded" style="max-width: 380px" width="100%" height="200px" src="" title="YouTube video player" frameborder="0" allowfullscreen="true"></iframe>
+                            </div>
+                        </div>
+                        
                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:5px; width: 100%; text-align: center" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#PiAds #EarnPoints &#128240;</div></strong></h5>
@@ -1476,32 +1502,6 @@
                             </div>
                             <div style="margin-top:5px; margin-bottom: 5px">
                                 <button id="rules_button_4" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center;" class="border-gradient-rounded showInterstitialAd">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">#LatinChainTV &#128250;</div></strong></h5>
-                            </div>
-                            <div style="margin-bottom:5px">
-                                <!--<div>Subscribe here:</div>
-                                <div style="filter: contrast(100%) !important;">
-                                &#128073;
-                                <a href="https://www.youtube.com/@rockcesar85" target="_blank">
-                                    <img src="/website_pinetwork_games_odoo/static/src/img/youtube.png" alt="Youtube" class="img-fluid" style="max-width: 130px" width="100%" height="50px" />
-                                </a>
-                                &#128072;
-                                </div>-->
-                                <!--
-                                <div style="margin-bottom:5px" translate="no">
-                                    <button style="max-width: 130px" class="col-8 btn btn-danger font-weight-bold youtube-social" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">channel</div></button>
-                                </div>
-                                -->
-                                <div style="margin-bottom:5px" translate="no">
-                                    <button class="btn btn-danger font-weight-bold streamerzoneboard" ><div style="display:inline;"><i class="fa-solid fa-tv"></i></div> <div style="display:inline;">LatinChain dSocial</div></button>
-                                </div>
-                                <div>Watch good content daily</div>
-                                <iframe id="latinchain-tv" class="rounded" style="max-width: 380px" width="100%" height="200px" src="" title="YouTube video player" frameborder="0" allowfullscreen="true"></iframe>
                             </div>
                         </div>
                         
