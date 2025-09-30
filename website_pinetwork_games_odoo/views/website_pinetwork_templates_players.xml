@@ -2915,7 +2915,7 @@
                     <head>
                         <meta charset="UTF-8"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                        <title>Gregorian and Mayan Calendar Converter</title>
+                        <title>Gregorian and Mayan Calendar (Solar and Universal Calendar) Converter</title>
                         <style>
                             :root {
                                 --primary: #2c3e50;
@@ -3329,14 +3329,14 @@
                             <h1 style="text-align:center; color: white !important">
                                 <a id="back" href="/" style="color:white !important"><i class="fa fa-step-backward"></i></a>
                             </h1>
-                            <h1>Gregorian to Mayan Calendar Converter</h1>
-                            <p>Convert dates between Gregorian and Mayan calendars</p>
+                            <h1>Gregorian to Mayan Calendar (Solar and Universal Calendar) Converter</h1>
+                            <p>Convert dates between Gregorian and Mayan (Solar and Universal Calendar) calendars</p>
                         </header>
                         
                         <div class="container">
                             <div class="calendar-container">
                                 <div class="calendar">
-                                    <h2>📅 Gregorian Calendar</h2>
+                                    <h2>📅 Gregorian Calendar (Solar and Universal Calendar)</h2>
                                     
                                     <div class="input-group">
                                         <label>Year</label>
@@ -3378,7 +3378,7 @@
                                 </div>
                                 
                                 <div class="calendar">
-                                    <h2>🌄 Mayan Calendar</h2>
+                                    <h2>🌄 Mayan Calendar (Solar and Universal Calendar)</h2>
                                     
                                     <div class="input-group">
                                         <label>Long Count</label>
@@ -3395,12 +3395,12 @@
                                     
                                     <div class="mayan-cycle">
                                         <h3>Calendar Cycle</h3>
-                                        <p>The Mayan calendar is cyclic. Each cycle consists of 13 Baktuns (approximately 5,125 years).</p>
+                                        <p>The Mayan calendar (Solar and Universal Calendar) is cyclic. Each cycle consists of 13 Baktuns (approximately 5,125 years).</p>
                                         <div class="cycle-display" id="cycle-display">Current Sun Cycle: 0</div>
                                     </div>
                                     
                                     <div class="explanation">
-                                        <p>The Mayan Long Count calendar consists of cycles: <span class="highlight">Baktun</span> (144,000 days), <span class="highlight">Katun</span> (7,200 days), <span class="highlight">Tun</span> (360 days), <span class="highlight">Uinal</span> (20 days), and <span class="highlight">Kin</span> (1 day).</p>
+                                        <p>The Mayan Long (Solar and Universal Calendar) Count calendar consists of cycles: <span class="highlight">Baktun</span> (144,000 days), <span class="highlight">Katun</span> (7,200 days), <span class="highlight">Tun</span> (360 days), <span class="highlight">Uinal</span> (20 days), and <span class="highlight">Kin</span> (1 day).</p>
                                     </div>
                                 </div>
                             </div>
