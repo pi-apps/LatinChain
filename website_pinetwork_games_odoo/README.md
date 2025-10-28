@@ -18,6 +18,8 @@ Pi Developers: https://developers.minepi.com/
 
 Repository: https://github.com/rockcesar/LatinChainDevelopments
 
+Institutional Repository: https://github.com/rockcesar/LatinChainDevelops
+
 Odoo Developments: https://github.com/rockcesar/odoo_addons
 
 Check our apps published: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
@@ -67,6 +69,18 @@ Music Player (PiOS License). Developed with Gemini AI (Google).
 Video Player (PiOS License). Developed with Gemini AI (Google).
 
 Photo Viewer (PiOS License). Developed with Gemini AI (Google).
+
+Webcam Ojects Detect (PiOS License). Developed with Gemini AI (Google).
+
+Text-To-Speech Reader (PiOS License). Developed with Gemini AI (Google).
+
+Maps Finder (PiOS License). Developed with Gemini AI (Google).
+
+News Player (PiOS License). Developed with Gemini AI (Google).
+
+Calculator (PiOS License). Developed with DeepSeek AI (Google).
+
+Calendar Converter (PiOS License). Developed with DeepSeek AI (Google).
 
 More Info: https://github.com/rockcesar/LatinChainDevelopments
 

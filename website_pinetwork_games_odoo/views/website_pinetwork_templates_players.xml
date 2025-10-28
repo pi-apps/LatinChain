@@ -2902,7 +2902,7 @@
                             </div>
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calcplayer_functions.js?v=1.104"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calcplayer_functions.js?v=1.105"></script>
                     </body>
                 </html>
             </t>
@@ -3409,6 +3409,243 @@
                         <button class="today-btn" id="today-btn">📅</button>
 
                         <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calendarplayer_functions.js?v=1.110"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+        <template id="newsplayer" name="News Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Global RSS News Aggregator</title>
+                        <!-- Carga de Tailwind CSS -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <!-- Configuración de Tailwind para usar la fuente Inter -->
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900');
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #f7f9fc; /* Fondo claro */
+                            }
+                            /* Estilos personalizados para el scrollbar */
+                            ::-webkit-scrollbar {
+                                width: 8px;
+                            }
+                            ::-webkit-scrollbar-thumb {
+                                background: #9ca3af;
+                                border-radius: 10px;
+                            }
+                            ::-webkit-scrollbar-thumb:hover {
+                                background: #6b7280;
+                            }
+                        </style>
+                        <script>
+                            tailwind.config = {
+                                theme: {
+                                    extend: {
+                                        colors: {
+                                            'primary-blue': '#1e40af',
+                                            'accent-orange': '#f59e0b',
+                                        },
+                                    }
+                                }
+                            }
+                        </script>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            const Pi = window.Pi;
+                            $( document ).ready(function() {
+                            
+                                var pi_user_id = "";
+                                async function auth() {
+                                    try {
+                                        // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
+                                        const scopes = ['username', 'payments', 'wallet_address'];
+                                        function onIncompletePaymentFound(payment) {
+                                            
+                                        }; // Read more about this in the SDK reference
+                                        
+                                        Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+                                            pi_user_id = auth.user.uid;
+                                            
+                                            document.getElementById('blockingOverlay').style.display = 'none';
+                                        }).catch(function(error) {
+                                            //Pi.openShareDialog("Error", error);
+                                            //alert(err);
+                                            console.error(error);
+                                        });
+                                    } catch (err) {
+                                        //Pi.openShareDialog("Error", err);
+                                        //alert(err);
+                                        console.error(err);
+                                        // Not able to fetch the user
+                                    }
+                                }
+                                
+                                (async () => {
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                    auth();
+                                    
+                                    setTimeout(function ()
+                                    {
+                                        if(pi_user_id == "")
+                                        {
+                                            auth();
+                                            
+                                            setTimeout(function ()
+                                            {
+                                                if(pi_user_id == "")
+                                                {
+                                                    //alert($("#pi_prowser_message").text());
+                                                    
+                                                    if(window.location.hostname == "localhost")
+                                                    {
+                                                        $("a.anchor-click").attr('href', window.location.origin);
+                                                    }
+                                                    else if(window.location.hostname == "test.latin-chain.com")
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
+                                                    }
+                                                    else
+                                                    {
+                                                        $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
+                                                    }
+                                                    
+                                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                }
+                                            }, 10000);
+                                        }
+                                    }, 10000);
+                                })();
+                                
+                            });
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                    </head>
+                    <body class="min-h-screen antialiased">
+
+                        <div class="container mx-auto p-4 sm:p-8">
+                                <!-- Encabezado -->
+                            <header class="text-center mb-8 bg-white p-6 rounded-xl shadow-lg">
+                                <div>
+                                    <style>
+                                        /* Adjustments for Google Translator to be visible */
+                                        .goog-te-banner-frame.skiptranslate,
+                                        .skiptranslate > iframe {
+                                            display: none !important;
+                                        }
+                                       
+                                        body {
+                                            top: 0px !important; 
+                                        }
+
+                                        .goog-te-menu-frame {
+                                            max-width:100% !important; 
+                                        }
+                                        .goog-te-menu2 { 
+                                            max-width: 100% !important;
+                                            overflow-x: scroll !important;
+                                            box-sizing:border-box !important; 
+                                            height:auto !important; 
+                                        }
+                                       
+                                        /* Hide unwanted elements without hiding the main widget */
+                                        #goog-gt-tt, 
+                                        #goog-gt-, 
+                                        .goog-te-balloon-frame {
+                                            display: none !important;
+                                        } 
+                                        .goog-text-highlight { 
+                                            background: none !important; 
+                                            box-shadow: none !important;
+                                        }
+                                       
+                                        .goog-logo-link {
+                                            display: none !important;
+                                        }
+                                        .goog-te-gadget {
+                                            height: 28px !important;
+                                            overflow: hidden;
+                                        }
+                                    </style>
+                                    <script type="text/javascript">
+                                        $( document ).ready(function() {
+                                            $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                            $("#google_translate_element").appendTo(".translate_here");
+                                            
+                                            $("#translate_text_latinchain_2").show();
+                                            $("#google_translate_element").show();
+                                        });
+                                    </script>
+                                    
+                                </div>
+                            
+                                <p class="translate_here" style="margin: 0 auto; max-width: 220px; margin-bottom:15px;">
+                                </p>
+                                
+                                <h1 class="text-4xl font-extrabold text-gray-900 mb-2">
+                                    <div class="flex justify-center text-center">
+                                        <div class="justify-content-center text-center" style="border: 1px solid blue; border-radius: 20px; padding: 5px; color: blue !important; max-width: 50px; min-width: 50px">
+                                            <a id="back" href="/" style="color: blue !important"><i class="fa fa-step-backward"></i></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <br/>
+                                    
+                                    Global News <span class="text-primary-blue">RSS</span>
+                                </h1>
+                                <p class="text-lg text-gray-600">Headline aggregator from the world's leading sources.</p>
+                            </header>
+
+                            <!-- Contenedor de feeds -->
+                            <div id="feeds-container" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+                                <!-- Los feeds se cargarán aquí -->
+                                
+                                <!-- Indicador de carga -->
+                                <div id="loading-indicator" class="col-span-full text-center p-12">
+                                    <div class="animate-spin inline-block w-10 h-10 border-4 border-t-4 border-primary-blue border-t-transparent rounded-full mb-3"></div>
+                                    <p class="text-xl text-gray-700">Loading feeds. This may take a moment...</p>
+                                    <p class="text-sm text-blue-500 mt-2">
+                                        <strong class="font-bold">Note:</strong> A public proxy service is used to avoid CORS issues.
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+
+                        <footer class="text-center p-4 text-gray-500 text-sm mt-10">
+                        </footer>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/newsplayer_functions.js?v=1.118"></script>
                     </body>
                 </html>
             </t>

@@ -397,6 +397,7 @@ function get_user() {
                 $(".show-mapsplayer").show();
                 $(".show-calcplayer").show();
                 $(".show-calendarplayer").show();
+                //$(".show-newsplayer").show(); //News Player
                 //$(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();

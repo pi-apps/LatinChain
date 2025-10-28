@@ -5,7 +5,7 @@ Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
 
 Original Repository: https://github.com/rockcesar/LatinChainDevelopments
 
-Institutional Repository: https://github.com/pi-apps/LatinChain
+Institutional Repository: https://github.com/rockcesar/LatinChainDevelops
 
 Currently https://latin-chain.com is working with website_pinetwork_odoo and website_pinetwork_games_odoo, made in Odoo.
 

@@ -77,7 +77,7 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/api-docs/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def api_external_docs(self, **kw):
-        return http.request.redirect('https://github.com/pi-apps/LatinChain/tree/main/docs')
+        return http.request.redirect('https://github.com/rockcesar/LatinChainDevelops/tree/master/docs')
     
     @http.route('/mainnet/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def latinchain_mainnet(self, **kw):

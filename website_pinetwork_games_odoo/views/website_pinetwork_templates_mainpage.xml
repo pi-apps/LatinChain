@@ -929,7 +929,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.475"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.487"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1107,13 +1107,13 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 20px;" class="o_default_snippet_text">
-                                          <a href="https://t.me/LatinChainOfficial" target="_blank" class="href-external btn btn-info mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-telegram"></i></div> <div style="display:inline;">Telegram</div></a>
+                                          <a href="https://t.me/LatinChainOfficial_LATAM" target="_blank" class="href-external btn btn-info mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-telegram"></i></div> <div style="display:inline;">Telegram</div></a>
                                       </h2>
                                       <!--<div class="s_hr pt8 pb10" data-snippet="s_hr" data-name="Separator">
                                         <hr class="w-25 mx-auto" style="border-top-width: 1px; border-top-style: solid;"/>
                                       </div>-->
                                       <!--<p>
-                                        <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text">Telegram Group</a>
+                                        <a href="https://t.me/LatinChainOfficial_LATAM" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text">Telegram Group</a>
                                       </p>-->
                                       <br/>
                                     </div>
@@ -1126,7 +1126,7 @@
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <!--<h2 style="font-size: 30px;" class="o_default_snippet_text">Join Discord</h2>-->
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="href-external btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-discord"></i></div> <div style="display:inline;">Discord</div></a>
+                                      <a href="https://discord.gg/ycFUnnVwyX" target="_blank" class="href-external btn btn-secondary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fab fa-discord"></i></div> <div style="display:inline;">Discord</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -2214,6 +2214,14 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
+                                        <!--<li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-newsplayer" style="display:none">-->
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-newsplayer" style="display:none">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
+                                                <div class="col-10"><a id="newsplayer" href="/newsplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success newsplayer" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS PLAYER</div><div style="font-size:80%;">News player</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></a></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-calcplayer" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
@@ -2455,12 +2463,12 @@
                                 
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><a href="https://github.com/pi-apps/LatinChain/tree/main/website_pinetwork_odoo/" target="_blank" class="col-10 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Odoo App</div></a></div>
+                                        <div class="col-12"><a href="https://github.com/rockcesar/LatinChainDevelops/tree/master/website_pinetwork_odoo/" target="_blank" class="col-10 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Odoo App</div></a></div>
                                     </div>
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><a href="https://github.com/pi-apps/LatinChain/tree/main/website_pinetwork_games_odoo/" target="_blank" class="col-10 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Platform</div></a></div>
+                                        <div class="col-12"><a href="https://github.com/rockcesar/LatinChainDevelops/tree/master/website_pinetwork_games_odoo/" target="_blank" class="col-10 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Platform</div></a></div>
                                     </div>
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -2483,7 +2491,7 @@
                                 
                                 <div style="text-align:center">
                                     <br/>Odoo Community Member:<br/><br/>
-                                    <a href="https://github.com/pi-apps/LatinChain/" target="_blank"><img src="/website_pinetwork_games_odoo/static/src/img/odoo_community_member_rgb.jpg" alt="LatinChain Odoo Community Member" class="img-fluid rounded" style="max-width: 350px" width="100%" height="200px" /></a>
+                                    <a href="https://github.com/rockcesar/LatinChainDevelops/" target="_blank"><img src="/website_pinetwork_games_odoo/static/src/img/odoo_community_member_rgb.jpg" alt="LatinChain Odoo Community Member" class="img-fluid rounded" style="max-width: 350px" width="100%" height="200px" /></a>
                                 </div>
                                 <div>
                                 <br/>Video presentation:<br/><br/>
@@ -2598,8 +2606,8 @@
                             <div class="container" style="text-align:center">
                                 <div class="row">
                                     <div class="col-12"><a href="/website/social/youtube" target="_blank" class="btn btn-outline-danger mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-youtube"></i></div></a>
-                                                        <a href="https://t.me/LatinChainOfficial" target="_blank" class="btn btn-outline-info mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-telegram"></i></div></a>
-                                                        <a href="https://discord.gg/YBfGj6ttar" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-discord"></i></div></a>
+                                                        <a href="https://t.me/LatinChainOfficial_LATAM" target="_blank" class="btn btn-outline-info mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-telegram"></i></div></a>
+                                                        <a href="https://discord.gg/ycFUnnVwyX" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-discord"></i></div></a>
                                                         <a href="/website/social/twitter" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-x-twitter"></i></div></a>
                                                         <a href="/website/social/github" target="_blank" class="btn btn-outline-dark mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-github"></i></div></a>
                                     </div>
@@ -2637,9 +2645,8 @@
                         
                     </div>
                     
+                    <!--
                     <div class="container" style="text-align:center;" t-if="mainnet in [False]">
-                        
-                        <!-- LatinChain Ad responsive -->
                         
                         <ins class="adsbygoogle"
                              style="display:block"
@@ -2651,22 +2658,22 @@
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
                         <br/>
-                    </div>
+                    </div>-->
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                         <!-- LatinChain Ad responsive 2 -->
                         
-                        <!--<ins class="adsbygoogle"
+                        <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
-                             data-ad-slot="9525388880"
+                             data-ad-slot="6625994850"
                              data-ad-format="auto"
                              data-full-width-responsive="true"></ins>
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
                         
-                        <br/>-->
+                        <br/>
                         
                         <div id="taboola-below-article-thumbnails"></div>
                         <script type="text/javascript">

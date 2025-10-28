@@ -18,6 +18,8 @@ Pi Developers: https://developers.minepi.com/
 
 Repository: https://github.com/rockcesar/LatinChainDevelopments
 
+Institutional Repository: https://github.com/rockcesar/LatinChainDevelops
+
 Odoo Developments: https://github.com/rockcesar/odoo_addons
 
 Check our apps published: https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
