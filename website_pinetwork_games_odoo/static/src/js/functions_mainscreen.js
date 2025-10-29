@@ -397,7 +397,7 @@ function get_user() {
                 $(".show-mapsplayer").show();
                 $(".show-calcplayer").show();
                 $(".show-calendarplayer").show();
-                $(".show-newsplayer").show();
+                //$(".show-newsplayer").show();
                 //$(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
@@ -1617,6 +1617,10 @@ $( document ).ready(function() {
     
     $( ".cryptonews" ).click(function() {
         $.colorbox({href:"https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".trends-news" ).click(function() {
+        $.colorbox({href:"https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     /*

@@ -929,7 +929,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.488"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.489"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -2072,6 +2072,13 @@
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
+                                                <div class="col-10"><button id="trends-news" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success trends-news" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">TRENDS NEWS</div><div style="font-size:80%;">Trends news</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
+                                                <div class="col-0"></div>
+                                            </div>
+                                        </li>
+                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
+                                                <div class="col-2"></div>
                                                 <div class="col-10"><button id="sport-results" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">Sports</div></div></button></div>
                                                 <div class="col-0"></div>
                                             </div>
@@ -2214,13 +2221,14 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
+                                        <!--
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-newsplayer" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="newsplayer" href="/newsplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success newsplayer" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS PLAYER</div><div style="font-size:80%;">News player</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></a></div>
                                                 <div class="col-0"></div>
                                             </div>
-                                        </li>
+                                        </li>-->
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-calcplayer" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
