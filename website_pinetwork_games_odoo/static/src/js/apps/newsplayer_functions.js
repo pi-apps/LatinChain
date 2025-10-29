@@ -1,5 +1,15 @@
 // Configuración de los feeds RSS solicitados. Se han actualizado a HTTPS para mejorar la fiabilidad.
 const FEED_CONFIGS = [
+    { name: "Contelegraph", url: "https://cointelegraph.com/rss" },
+    { name: "Bitcoinist", url: "https://bitcoinist.com/feed" },
+    { name: "NewsBTC", url: "https://newsbtc.com/feed" },
+    { name: "Crypto News", url: "https://crypto.news/feed" },
+    { name: "Investing", url: "https://www.investing.com/rss/news_301.rss" },
+    { name: "Investing Economy", url: "https://www.investing.com/rss/news_14.rss" },
+    { name: "Investing Company News", url: "https://www.investing.com/rss/news_356.rss" },
+    { name: "Investing Earning Reports a Whispers", url: "https://www.investing.com/rss/news_1062.rss" },
+    { name: "Investing Economic Indicators News", url: "https://www.investing.com/rss/news_95.rss" },
+    /*
     { name: "BBC News (Global)", url: "https://feeds.bbci.co.uk/news/world/rss.xml" },
     { name: "CNN (World News)", url: "http://rss.cnn.com/rss/cnn_world.rss" },
     //{ name: "CNN en español", url: "https://cnnespanol.cnn.com/feed/" },
@@ -12,6 +22,7 @@ const FEED_CONFIGS = [
     { name: "Aljazeera", url: "https://www.aljazeera.com/xml/rss/all.xml" },
     { name: "HispanTV", url: "https://www.hispantv.com/services/news.asmx/Rss?category=-1" },
     { name: "RT (News)", url: "https://www.rt.com/rss/news" },
+    */
 ];
 
 const feedsContainer = document.getElementById('feeds-container');

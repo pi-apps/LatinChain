@@ -929,7 +929,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.487"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.488"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -2214,8 +2214,7 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <!--<li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-newsplayer" style="display:none">-->
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-newsplayer" style="display:none">
+                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-newsplayer" style="display:none">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><a id="newsplayer" href="/newsplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success newsplayer" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS PLAYER</div><div style="font-size:80%;">News player</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></a></div>
