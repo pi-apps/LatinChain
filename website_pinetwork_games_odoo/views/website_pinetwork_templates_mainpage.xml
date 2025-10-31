@@ -2736,6 +2736,23 @@
                       _taboola.push({flush: true});
                     </script>
                     
+                    <style>
+                        /* 1. The parent container for the buttons */
+                        .button-group {
+                            display: flex; /* Makes the children flex items */
+                            /* Optional: Controls the spacing/wrapping */
+                            gap: 10px; /* Space between the buttons */
+                            align-items: stretch; /* This is the default, but ensures they match height */
+                        }
+
+                        /* 2. The buttons themselves */
+                        .button-group .btn {
+                            /* Optional: Allows buttons to grow if needed */
+                            flex-grow: 1;
+                            /* You might remove fixed heights if they are present */
+                        }
+                    </style>
+                    
                     <!-- Button trigger modal -->
                     <button id="open_modal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" style="display: none;">
                       Open Modal
@@ -2753,14 +2770,18 @@
                           <div class="modal-body">
                             
                           </div>
-                          <div class="modal-footer">
+                          <div class="modal-footer button-group">
                             <a href="/pinetwork?payoneclick=true" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;" translate="no">Earn Latin points (<div style="display:inline;"><i class="fa-solid fa-heart"></i></div>)</div></a>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary font-weight-bold" data-bs-dismiss="modal">Close</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>
                         </div>
                       </div>
                     </div>
+                    
+                    <script>
+                        $("#open_modal").click();
+                    </script>
                     
                     <!-- Button trigger modal -->
                     <button id="open_modal_login" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLogin" style="display: none;">
@@ -2779,7 +2800,7 @@
                           <div class="modal-body-login">
                             
                           </div>
-                          <div class="modal-footer">
+                          <div class="modal-footer button-group">
                             <button type="button" class="btn btn-secondary" id="login_latinchain_on_message" data-bs-dismiss="modal">Login</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Just Browse</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
