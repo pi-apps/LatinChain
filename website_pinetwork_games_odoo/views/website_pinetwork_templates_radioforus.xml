@@ -436,6 +436,23 @@
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
                     </script>-->
+
+                    <style>
+                        /* 1. The parent container for the buttons */
+                        .button-group {
+                            display: flex; /* Makes the children flex items */
+                            /* Optional: Controls the spacing/wrapping */
+                            gap: 10px; /* Space between the buttons */
+                            align-items: stretch; /* This is the default, but ensures they match height */
+                        }
+
+                        /* 2. The buttons themselves */
+                        .button-group .btn {
+                            /* Optional: Allows buttons to grow if needed */
+                            flex-grow: 1;
+                            /* You might remove fixed heights if they are present */
+                        }
+                    </style>
                     
                     <!-- Button trigger modal -->
                     <button id="open_modal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" style="display: none;">
@@ -454,7 +471,7 @@
                           <div class="modal-body">
                             
                           </div>
-                          <div class="modal-footer">
+                          <div class="modal-footer button-group">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>
