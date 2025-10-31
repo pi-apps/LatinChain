@@ -2873,6 +2873,7 @@
                                     <button class="scientific" data-operation="rand">Rand</button>
                                     <button class="scientific angle-mode" data-operation="deg">DEG</button>
                                     <button class="scientific angle-mode" data-operation="rad">RAD</button>
+                                    <button class="angle-mode" id="deg-rad-btn"></button>
                                     
                                     <button class="scientific" data-operation="percent">%</button>
                                     <button class="memory" id="mplus-button" data-memory="m+">M+</button>
@@ -2902,7 +2903,7 @@
                             </div>
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calcplayer_functions.js?v=1.108"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/calcplayer_functions.js?v=1.1081"></script>
                     </body>
                 </html>
             </t>
