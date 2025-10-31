@@ -2754,12 +2754,17 @@
                             
                           </div>
                           <div class="modal-footer">
+                            <a href="/pinetwork?payoneclick=true" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate to unlock LatinChain</div></a>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>
                         </div>
                       </div>
                     </div>
+                    
+                    <script>
+                        $("#open_modal").click();
+                    </script>
                     
                     <!-- Button trigger modal -->
                     <button id="open_modal_login" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLogin" style="display: none;">
