@@ -2762,10 +2762,6 @@
                       </div>
                     </div>
                     
-                    <script>
-                        $("#open_modal").click();
-                    </script>
-                    
                     <!-- Button trigger modal -->
                     <button id="open_modal_login" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLogin" style="display: none;">
                       Open Modal Login
