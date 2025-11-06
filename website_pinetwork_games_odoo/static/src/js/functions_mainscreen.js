@@ -741,6 +741,11 @@ async function showPiAds(Pi, activated) {
             var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
 
             localStorage['pi_ad_datetime_latinchain'] = date1.getTime();
+            
+            var gemini_image = getGeminiImage();
+            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>");
+            
+            $("#open_modal").click();
         }
         
         $("#button_reward_ad").html(btnvalue);
