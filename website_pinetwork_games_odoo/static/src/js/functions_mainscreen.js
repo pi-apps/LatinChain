@@ -1336,6 +1336,11 @@ $( document ).ready(function() {
                                                             $("#button_reward_ad").html(btnvalue);
                                                             $("#button_reward_ad").prop( "disabled", false );
                                                         }, 5000);
+                                                        
+                                                        var gemini_image = getGeminiImage();
+                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>");
+                                                        
+                                                        $("#open_modal").click();
                                                     }
                                                     start();
                                                 }).fail(function() {
@@ -1347,10 +1352,20 @@ $( document ).ready(function() {
                                                         $("#button_reward_ad").prop( "disabled", false );
                                                     }, 5000);
                                                     setConfirmUnloadPoints(false);
+                                                    
+                                                    var gemini_image = getGeminiImage();
+                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>");
+                                                    
+                                                    $("#open_modal").click();
                                                 });
                                             }else{
                                                 $("#button_reward_ad").html(btnvalue);
                                                 $("#button_reward_ad").prop( "disabled", false );
+                                                
+                                                var gemini_image = getGeminiImage();
+                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>");
+                                                
+                                                $("#open_modal").click();
                                             }
                                         } else {
                                             $("#button_reward_ad").html(btnvalue);
