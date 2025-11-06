@@ -1247,6 +1247,18 @@
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
+                        
+                        <br/>
+                        <div id="taboola-mid-article-thumbnails"></div>
+                        <script type="text/javascript">
+                          window._taboola = window._taboola || [];
+                          _taboola.push({
+                            mode: 'alternating-thumbnails-a-mid',
+                            container: 'taboola-mid-article-thumbnails',
+                            placement: 'Mid Article Thumbnails',
+                            target_type: 'mix'
+                          });
+                        </script>
                     </div>
                     
                     <div class="container" style="text-align:center; max-width: 810px;">
