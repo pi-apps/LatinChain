@@ -152,12 +152,11 @@ function get_user() {
                     
                     var tab_name = get_tab();
                     refresh_board();
-                    /*setTimeout(function() {
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-					}, 2000);*/
                     
+                    /*
                     $("#test_game").hide();
                     $(".show_test_game").hide();
+                    */
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Sudoku, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -170,10 +169,12 @@ function get_user() {
                     var tab_name = get_tab();
                     refresh_board();
                     
+                    /*
                     $("#test_game").hide();
                     $(".show_test_game").hide();
+                    */
                 }
-                else
+                /*else
                 {
                     $(".hide_when_unblock").show();
                     $("#pi_donate").hide();
@@ -195,7 +196,7 @@ function get_user() {
                         $("#test_game").hide();
                         $(".show_test_game").hide();
                     });
-                }
+                }*/
             }
         }).fail(function() {
             

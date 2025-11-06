@@ -138,7 +138,9 @@ function get_user(pause) {
                     if(pause)
                         press(80);
                         
+                    /*
                     $("#test_game").hide();
+                    */
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Snake, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -159,9 +161,11 @@ function get_user(pause) {
                     if(pause)
                         press(80);
                     
+                    /*
                     $("#test_game").hide();
+                    */
                 }
-                else
+                /*else
                 {
                     $("#reset_pause_controls").hide();
                     $("#plus_minus_controls").hide();
@@ -198,7 +202,7 @@ function get_user(pause) {
                             press(80);
                         $("#test_game").hide();
                     });
-                }
+                }*/
             }
         }).fail(function() {
             

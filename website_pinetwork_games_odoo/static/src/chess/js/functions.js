@@ -179,9 +179,6 @@ function get_user() {
                     $('#chess-tab').show();
                     $("#home-tab").prop( "disabled", true );
                     $('#chess-tab').click();
-                    /*setTimeout(function() {
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-					}, 1000);*/
                     
                     setTimeout(function() {
                       load_all_boards();
@@ -190,8 +187,10 @@ function get_user() {
                       }, 2000);
 					}, 1000);
                     
+                    /*
                     $("#test_game").hide();
                     $(".show_test_game").hide();
+                    */
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Chess, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -203,9 +202,6 @@ function get_user() {
                     $('#chess-tab').show();
                     $("#home-tab").prop( "disabled", true );
                     $('#chess-tab').click();
-                    /*setTimeout(function() {
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-					}, 1000);*/
                     
                     setTimeout(function() {
                       load_all_boards();
@@ -214,10 +210,12 @@ function get_user() {
                       }, 2000);
 					}, 1000);
                     
+                    /*
                     $("#test_game").hide();
                     $(".show_test_game").hide();
+                    */
                 }
-                else
+                /*else
                 {
                     $(".hide_when_unblock").show();
                     $("#loading_word").hide();
@@ -238,9 +236,6 @@ function get_user() {
                         $('#chess-tab').show();
                         $("#home-tab").prop( "disabled", true );
                         $('#chess-tab').click();
-                        /*setTimeout(function() {
-                          (adsbygoogle = window.adsbygoogle || []).push({});
-                        }, 1000);*/
                         
                         setTimeout(function() {
                           load_all_boards();
@@ -251,7 +246,7 @@ function get_user() {
                         $("#test_game").hide();
                         $(".show_test_game").hide();
                     });
-                }
+                }*/
             }
         }).fail(function() {
             

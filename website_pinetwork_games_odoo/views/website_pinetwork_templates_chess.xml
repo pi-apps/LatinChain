@@ -37,7 +37,7 @@
                     
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
-                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js?v=1.175"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/functions.js?v=1.176"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -318,10 +318,10 @@
                                                             <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
                                                             <br/>
                                                             <button id="button_click" name="button_click" class="btn btn-success fw-bold" disabled="true"><div><i class="fa-solid fa-money-bill-transfer"></i></div><div>Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></button>
-                                                            <div class="show_test_game">
+                                                            <!--<div class="show_test_game">
                                                                 <br/>
                                                                 <button id="test_game" name="test_game" class="btn btn-success fw-bold" disabled="true"><div><i class="fa-solid fa-flask-vial"></i></div><div>Test game</div></button>
-                                                            </div>
+                                                            </div>-->
                                                         </div>
                                                     </div>
                                                 </div>
