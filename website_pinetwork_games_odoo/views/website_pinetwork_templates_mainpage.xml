@@ -929,7 +929,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.493"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.494"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1002,6 +1002,8 @@
                     <div id="modal_reward_message" style="display:none;">Congrats, you won </div>
                     <div id="modal_reward_nextpiad" style="display:none;">Next Pi Ad in </div>
                     <div id="modal_reward_nextpiad_time" style="display:none;"> hours.</div>
+                    <div id="modal_not_latin_rewarded_message" style="display:none;">No Latin points shared.</div>
+                    <div id="modal_not_rewarded_message" style="display:none;">No points shared.</div>
                     <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game (Chess, Sudoku and Snake). Only if you are verified.</div>
                     <div id="modal_use_anytime" style="display:none;">You can use this app anytime, for testing purposes, until Pi OpenMainnet.</div>
                     <div id="modal_unlock_use_anytime" style="display:none;">You have to pay Pi, to unlock all the LatinChain apps.</div>

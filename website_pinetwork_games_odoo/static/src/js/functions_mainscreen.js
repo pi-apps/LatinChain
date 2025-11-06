@@ -743,7 +743,7 @@ async function showPiAds(Pi, activated) {
             localStorage['pi_ad_datetime_latinchain'] = date1.getTime();*/
             
             var gemini_image = getGeminiImage();
-            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>");
+            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_rewarded_message").text());
             
             $("#open_modal").click();
         }
@@ -1338,7 +1338,7 @@ $( document ).ready(function() {
                                                         }, 5000);
                                                         
                                                         var gemini_image = getGeminiImage();
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>");
+                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
                                                         
                                                         $("#open_modal").click();
                                                     }
@@ -1354,7 +1354,7 @@ $( document ).ready(function() {
                                                     setConfirmUnloadPoints(false);
                                                     
                                                     var gemini_image = getGeminiImage();
-                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>");
+                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
                                                     
                                                     $("#open_modal").click();
                                                 });
@@ -1363,7 +1363,7 @@ $( document ).ready(function() {
                                                 $("#button_reward_ad").prop( "disabled", false );
                                                 
                                                 var gemini_image = getGeminiImage();
-                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>");
+                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
                                                 
                                                 $("#open_modal").click();
                                             }
