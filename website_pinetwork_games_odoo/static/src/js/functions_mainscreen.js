@@ -398,7 +398,7 @@ function get_user() {
                 $(".show-calcplayer").show();
                 $(".show-calendarplayer").show();
                 //$(".show-newsplayer").show();
-                //$(".show-tvonline").show();
+                $(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
                 $(".show-streamerzoneboard").show();
