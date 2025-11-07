@@ -929,7 +929,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.498"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.499"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1482,7 +1482,7 @@
                             <div style="margin-bottom:5px">
                                 <button id="sport-results-2" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div>Sport results</div></button>
                             </div>
-                            <div style="margin-bottom:5px; display:none" class="show-tvonline">
+                            <div style="margin-bottom:5px;" class="show-tvonline">
                                 <button id="tvonline-2" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div>TV Online</div></button>
                             </div>
                             <div style="margin-bottom:5px">
@@ -2157,7 +2157,7 @@
                                                 <div class="col-0"></div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tvonline" style="display:none">
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tvonline">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-2"></div>
                                                 <div class="col-10"><button id="tvonline-3" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">TV ONLINE</div><div style="font-size:80%;">TV streaming</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">TV Online</div></div></button></div>

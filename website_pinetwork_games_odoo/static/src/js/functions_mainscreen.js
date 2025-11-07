@@ -1790,7 +1790,7 @@ $( document ).ready(function() {
     });
     
     $( ".tvonline" ).click(function() {
-        $.colorbox({href:"https://pluto.tv/latam/live-tv/6320d80a66666000086712d7?lang=en", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({href:"https://trends.latin-chain.com/plutotv/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     
