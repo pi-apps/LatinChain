@@ -1,3 +1,5 @@
+"use strict";
+
 var pi_user_id = "";
 var pi_user_code = "";
 var accessToken = "";

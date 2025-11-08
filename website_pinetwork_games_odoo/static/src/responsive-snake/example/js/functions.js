@@ -1,3 +1,5 @@
+"use strict";
+
 var pi_user_id = "";
 var pi_user_code = "";
 var accessToken = "";
@@ -103,7 +105,10 @@ function get_user(pause) {
             if(data.result)
             {
                 if(data.complete_found)
+                {
                     alert($("#payment_message").text());
+                    window.location.reload(true);
+                }
                 
                 show_pi_ad_user = data.show_pi_ad;
                 
@@ -385,6 +390,7 @@ $( document ).ready(function() {
                                             if(data.complete_found)
                                             {
                                                 alert($("#payment_message").text());
+                                                window.location.reload(true);
                                             }
                                         }
                                     } catch (e) {

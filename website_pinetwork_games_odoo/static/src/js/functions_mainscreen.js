@@ -1,3 +1,5 @@
+"use strict";
+
 var pi_user_id = "";
 var pi_user_code = "";
 var accessToken = "";
@@ -361,7 +363,10 @@ function get_user() {
             if(data.result)
             {
                 if(data.complete_found)
+                {
                     alert($("#payment_message").text());
+                    window.location.reload(true);
+                }
                 
                 /*if(data.pi_user_code && data.pi_user_code == $("#pi_main_user").val())
                 {
