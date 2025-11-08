@@ -737,8 +737,6 @@ async function showPiAds(Pi, activated) {
             await Pi.Ads.requestAd("interstitial");
         }
         
-        $("#button_reward_ad").html(btnvalue);
-        
         const showAdResponse = await Pi.Ads.showAd("interstitial");
         
         if(showAdResponse.result == "AD_CLOSED")
