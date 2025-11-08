@@ -11,6 +11,7 @@ var unblocked = false;
 var show_pi_ad_user = true;
 var show_pi_ad_user_time = 0;
 var pi_ad_new = false;
+var pi_ad_max = 0;
 var btnvalue = "";
 
 function setConfirmUnload(on) {

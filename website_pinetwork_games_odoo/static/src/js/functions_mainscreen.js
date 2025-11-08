@@ -9,6 +9,7 @@ var unblocked = false;
 var show_pi_ad_user = true;
 var show_pi_ad_user_time = 0;
 var pi_ad_new = false;
+var pi_ad_max = 0;
 
 var leaderboard = "/get-points/";
 var winnerboard = "/get-top10-zone/";
