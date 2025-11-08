@@ -24,6 +24,9 @@ var accessed_interstitial = false;
 var colorbox_count = 0;
 var colorbox_opened = false;
 
+var colorbox_count_mainnet = 0;
+var colorbox_opened_mainnet = false;
+
 function setConfirmUnload(on) {
     unloadMessage(on);
 }
@@ -53,6 +56,32 @@ async function colorboxLoaded()
                     return false;
                 colorbox_count += 1;
                 colorboxLoaded();
+            }, 100);
+        }
+    }
+}
+
+async function colorboxLoadedMainnet()
+{
+    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
+    {
+        if($.colorbox && !colorbox_opened_mainnet)
+        {
+            $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            colorbox_opened_mainnet = true;
+            return false;
+        }else{
+            if(colorbox_opened_mainnet)
+                return false;
+            if(colorbox_count_mainnet > 400)
+                return false;
+            setTimeout(function() {
+                if(colorbox_opened_mainnet)
+                    return false;
+                if(colorbox_count_mainnet > 400)
+                    return false;
+                colorbox_count_mainnet += 1;
+                colorboxLoadedMainnet();
             }, 100);
         }
     }
@@ -224,6 +253,11 @@ function get_user_rewarded() {
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
+                    
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    {
+                        colorboxLoadedMainnet();
+                    }
                     
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
