@@ -256,11 +256,6 @@ function get_user_rewarded() {
                     
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
-                        colorboxLoadedMainnet();
-                    }
-                    
-                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                    {
                         $(".total_points_latin").html(new Intl.NumberFormat('en-US').format(data.points_latin));
                         $(".total-points-latin-div").show();
                     }
@@ -317,6 +312,11 @@ function get_user_rewarded() {
                                                 '</table>');
                     $("#user_points_datetime").html(data.points_datetime);
                 }else{
+                    
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    {
+                        colorboxLoadedMainnet();
+                    }
                 
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
