@@ -63,7 +63,6 @@ async function colorboxLoaded()
 
 async function colorboxLoadedMainnet()
 {
-    alert("123");
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         if($.colorbox && !colorbox_opened_mainnet)
@@ -250,12 +249,7 @@ function get_user_rewarded() {
         return $.post( "/get-user", data).done(function(data) {
             data = JSON.parse(data);
             if(data.result)
-            {
-                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                {
-                    colorboxLoadedMainnet();
-                }
-                    
+            {    
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
@@ -484,6 +478,20 @@ function get_user() {
                 $("#avatar_user_img_div").html('<img src="' + data.avatar_user_url + '" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
                 $("#avatar_user").show();
                 $("#avatar_user_img_div").show();
+                
+                if(!data.unblocked)
+                {
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    {
+                        colorboxLoadedMainnet();
+                    }
+                }else
+                {
+                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                    {
+                        colorboxLoadedMainnet();
+                    }
+                }
                 
                 passkey=data.passkey;
                 if(data.unblocked)
