@@ -30,6 +30,14 @@
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
                 </div>
+                <div id="ins-adsbygoogle-div">
+                    <style>
+                        ins.adsbygoogle[data-ad-status="unfilled"]
+                        {
+                            display: none !important;
+                        }
+                    </style>
+                </div>
             </xpath>
             
            <xpath expr="//body" position="before">
