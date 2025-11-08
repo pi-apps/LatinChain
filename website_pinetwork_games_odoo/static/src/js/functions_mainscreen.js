@@ -727,13 +727,25 @@ async function showPiAds(Pi, activated) {
             return;
         }*/
         
+        $("#button_reward_ad").html(btnvalue);
+        
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
+        
+        $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
 
         if (isAdReadyResponse.ready === false) {
+            $("#button_reward_ad").html(btnvalue);
+            
             await Pi.Ads.requestAd("interstitial");
+            
+            $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
         }
         
+        $("#button_reward_ad").html(btnvalue);
+        
         const showAdResponse = await Pi.Ads.showAd("interstitial");
+        
+        $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
         
         if(showAdResponse.result == "AD_CLOSED")
         {
