@@ -1,3 +1,5 @@
+"use strict";
+
 const delayAsync = ms => new Promise(res => setTimeout(res, ms));
 
 function validateYouTubeUrl(url)
