@@ -482,7 +482,7 @@ function get_user() {
                     $("#verified").html(" (" + $("#verified_message").html() + ", " + data.unblocked_datetime + ")");
                     $("#verified").show();
                     
-                    winner = ""
+                    var winner = "";
                     if(data.im_winner)
                         winner = $("#winner_message").html();
                     
