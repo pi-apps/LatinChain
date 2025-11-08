@@ -139,7 +139,7 @@
                         
                     </head>
 
-                    <body>
+                    <body t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                         <div class="container form-group" style="text-align:center; max-width: 810px">
                             <br/>
                             <div style="font-size: 90%; word-break: break-word;">
