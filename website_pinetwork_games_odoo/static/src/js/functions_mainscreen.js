@@ -250,6 +250,11 @@ function get_user_rewarded() {
             data = JSON.parse(data);
             if(data.result)
             {
+                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                {
+                    colorboxLoadedMainnet();
+                }
+                    
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
@@ -312,11 +317,6 @@ function get_user_rewarded() {
                                                 '</table>');
                     $("#user_points_datetime").html(data.points_datetime);
                 }else{
-                    
-                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                    {
-                        colorboxLoadedMainnet();
-                    }
                 
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
