@@ -174,9 +174,8 @@
                                 </div>
                             </div>-->
                             <br/>
-                            <a href="/?nopopup=true" target="_self" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
-                            <!--<button onClick="window.parent.location.href='/?nopopup=true'" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
-                            <!--<button onClick="window.parent.$.colorbox.close()" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
+                            <button onClick="window.parent.location.href='/?nopopup=true'" class="btn btn-link going-back">Go to LatinChain Testnet</button>
+							<!--<button onClick="window.parent.$.colorbox.close()" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
                             <br/>
                             <br/>
                             <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
