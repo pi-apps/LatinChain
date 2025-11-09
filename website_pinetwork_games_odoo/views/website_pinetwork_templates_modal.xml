@@ -142,13 +142,13 @@
                     <body t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                         <div class="container form-group" style="text-align:center; max-width: 810px">
                             <br/>
-                            <div style="font-size: 85%; word-break: break-word;">
+                            <div style="font-size: 90%; word-break: break-word;">
                                 Modal URL: <strong>https://test.latin-chain.com/latinchain-mainnet-redirect</strong>.
                                 <button style="font-size: 100%;" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="This modal (webpage on popup) will be displayed when load on LatinChain Testnet (always), on LatinChain Mainnet (only if you are unverified)">
                                     Show tip
                                 </button>
                             </div>
-                            <div style="font-size: 85%">
+                            <div style="font-size: 90%">
                                 We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem. Get double utility usage bonus <i class="fa-solid fa-bolt"></i> by using both Mainnet and Testnet.
                                 <br/>
                                 <br/>
