@@ -485,13 +485,13 @@ function get_user() {
                     {
                         colorboxLoadedMainnet();
                     }
-                }/*else
+                }else
                 {
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
                         colorboxLoadedMainnet();
                     }
-                }*/
+                }
                 
                 passkey=data.passkey;
                 if(data.unblocked)
