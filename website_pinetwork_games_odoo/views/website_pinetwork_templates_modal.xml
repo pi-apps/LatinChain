@@ -143,7 +143,10 @@
                         <div class="container form-group" style="text-align:center; max-width: 810px">
                             <br/>
                             <div style="font-size: 90%; word-break: break-word;">
-                                This modal is on: <strong>https://test.latin-chain.com/latinchain-mainnet-redirect</strong>.
+                                This modal is on: <strong>https://test.latin-chain.com/latinchain-mainnet-redirect</strong>. 
+                                <button style="font-size: 100%;" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="This modal (webpage on popup) will be displayed when load on LatinChain Testnet (always), in LatinChain Mainnet (only if you are unverified)">
+                                    Tip here
+                                </button>
                             </div>
                             <div style="font-size: 90%">
                                 We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem. Get double utility usage bonus <i class="fa-solid fa-bolt"></i> by using both Mainnet and Testnet.
@@ -239,6 +242,13 @@
                         <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                           window._taboola = window._taboola || [];
                           _taboola.push({flush: true});
+                        </script>
+                        
+                        <script>
+                            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                                return new bootstrap.Tooltip(tooltipTriggerEl)
+                            })
                         </script>
                     </body>
                 </html>
