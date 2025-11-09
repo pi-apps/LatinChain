@@ -765,7 +765,7 @@ async function showPiAds(Pi, activated) {
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
     
     try {
-        /*var d1 = new Date();
+        var d1 = new Date();
         var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
         var date2 = new Date(date1.getTime() - 1 * 60 * 60000);
         
@@ -774,7 +774,7 @@ async function showPiAds(Pi, activated) {
             $("#button_reward_ad").html(btnvalue);
             //$("#button_reward_ad").prop( "disabled", false );
             return;
-        }*/
+        }
         
         $("#button_reward_ad").html(btnvalue);
         
@@ -790,10 +790,10 @@ async function showPiAds(Pi, activated) {
         
         if(showAdResponse.result == "AD_CLOSED")
         {
-            /*var d1 = new Date();
+            var d1 = new Date();
             var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
 
-            localStorage['pi_ad_datetime_latinchain'] = date1.getTime();*/
+            localStorage['pi_ad_datetime_latinchain'] = date1.getTime();
             
             var gemini_image = getGeminiImage();
             $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_rewarded_message").text());
