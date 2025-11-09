@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-01 11:22+0000\n"
-"PO-Revision-Date: 2025-09-01 11:22+0000\n"
+"POT-Creation-Date: 2025-11-09 19:36+0000\n"
+"PO-Revision-Date: 2025-11-09 19:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "#LatinChain #Avatar 😎"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "#LatinChainCool 📰"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -544,6 +549,14 @@ msgid ""
 msgstr ""
 "7.- Los premios solo se entregarán si alcanzamos al menos 1000 usuarios "
 "verificados antes de que se entregue el premio."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
+msgid ""
+"<br/>\n"
+"                                    \n"
+"                                    Global News <span class=\"text-primary-blue\">RSS</span>"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -1200,6 +1213,20 @@ msgid "<span>Upload .txt or .pdf file</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
+msgid ""
+"<strong class=\"font-bold\">Note:</strong> A public proxy service is used to"
+" avoid CORS issues."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid ""
+"<strong translate=\"no\">test.latin-chain.com/latinchain-mainnet-"
+"redirect</strong>."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "<strong>#LatinChain #Apps 🚀</strong>"
 msgstr ""
@@ -1265,6 +1292,16 @@ msgstr "<strong>Blockrain (un tipo de tetris)</strong>"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "<strong>Bubble Shooter</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+msgid "<strong>Calculator</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+msgid "<strong>Calendar Converter</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1359,6 +1396,11 @@ msgstr "<strong>Niveles</strong>"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid "<strong>Mahjong</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
+msgid "<strong>Maps Finder</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1709,8 +1751,18 @@ msgid "COINTELEGRAPH"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "COOL APPS"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 msgid "Calculator with scientific functions and any root"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Calculator: Scientific calculator."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1721,6 +1773,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 msgid "Calendar Cycle"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Calendar: Gregorian to Mayan calendar converter."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1838,6 +1895,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
@@ -1883,12 +1941,19 @@ msgstr "Felicidades, ganaste"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "Convert dates between Gregorian and Mayan calendars"
+msgid ""
+"Convert dates between Gregorian and Mayan (Solar and Universal Calendar) "
+"calendars"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Convert from Gregorian to Mayan calendar"
+msgid "Convert from Gregorian to Mayan calendar (Solar and Universal)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Cool App"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1922,11 +1987,6 @@ msgstr "Hora actual:"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.askanexpert
 msgid "César Cordero Rodríguez"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
-msgid "DEG"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2005,6 +2065,11 @@ msgstr "Done la criptomoneda Pi aquí"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Donate Pi to unblock LatinChain Platform"
 msgstr "Donar Pi para desbloquear LatinChain Platform"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Donate in one touch"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -2179,11 +2244,6 @@ msgid "General ranking (verified)"
 msgstr "Ranking general (verificados)"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Get verified"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid ""
 "Get verified: Auto ads switch, Avatar, Pi Ads <i class=\"fa-solid fa-plug-"
@@ -2201,6 +2261,11 @@ msgstr "Comenzando con Odoo Slides"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Global Ranking"
 msgstr "Ranking Global"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid "Go to LatinChain Testnet"
+msgstr "Ir a LatinChain Testnet"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2221,6 +2286,7 @@ msgstr "Ir a Mainnet"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
@@ -2244,7 +2310,7 @@ msgstr "Ve a uno de los juegos para hacerlo."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "Gregorian to Mayan Calendar Converter"
+msgid "Gregorian to Mayan Calendar (Solar and Universal Calendar) Converter"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2261,6 +2327,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Hard puzzle"
 msgstr "Juego difícil"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
+msgid "Headline aggregator from the world's leading sources."
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -2552,6 +2623,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LatinChainPal"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Leaders"
 msgstr "Líderes"
 
@@ -2631,6 +2707,11 @@ msgid "Load single audio file"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
+msgid "Loading feeds. This may take a moment..."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
 msgid "Loading model... please wait."
 msgstr ""
@@ -2649,6 +2730,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
@@ -2755,6 +2837,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Mainnet status"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "Maps: Place finder."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2964,8 +3051,18 @@ msgid "No"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "No Latin points shared. Try again."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 msgid "No more possible moves."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "No points shared. You need to login to earn points."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3416,11 +3513,6 @@ msgid "Professional Video Player"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
-msgid "RAD"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "RadioForUs"
 msgstr ""
@@ -3508,11 +3600,6 @@ msgstr "Reiniciar"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 msgid "Restart Game"
 msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
-msgid "Return to LatinChain Testnet"
-msgstr "Volver a LatinChain Testnet"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -3673,6 +3760,11 @@ msgid "Show Hint"
 msgstr "Muestra Pista"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid "Show tip"
+msgstr "Ver tip"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 msgid "Shuffle playlist"
 msgstr ""
@@ -3788,7 +3880,17 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "TRENDS NEWS"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "TV ONLINE"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "TV Online"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3847,12 +3949,6 @@ msgid "Test Your Brain"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Test game"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Testing feature"
@@ -3908,8 +4004,8 @@ msgstr "Muchas gracias!."
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 msgid ""
-"The Mayan Long Count calendar consists of cycles: <span "
-"class=\"highlight\">Baktun</span> (144,000 days), <span "
+"The Mayan Long (Solar and Universal Calendar) Count calendar consists of "
+"cycles: <span class=\"highlight\">Baktun</span> (144,000 days), <span "
 "class=\"highlight\">Katun</span> (7,200 days), <span "
 "class=\"highlight\">Tun</span> (360 days), <span "
 "class=\"highlight\">Uinal</span> (20 days), and <span "
@@ -3919,8 +4015,8 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 msgid ""
-"The Mayan calendar is cyclic. Each cycle consists of 13 Baktuns "
-"(approximately 5,125 years)."
+"The Mayan calendar (Solar and Universal Calendar) is cyclic. Each cycle "
+"consists of 13 Baktuns (approximately 5,125 years)."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3948,6 +4044,17 @@ msgstr ""
 "Esta es una lista de expertos(as) en LatinChain Platform (latin-chain.com), "
 "entre ellos(as) hay expertos(as) en Redes Sociales, Informáticos(as) y otras"
 " interesantes profesiones, de todo el Mundo. ¡Échale un vistazo!."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid ""
+"This modal (webpage on popup) will be displayed when load on LatinChain "
+"Testnet (always) and on LatinChain Mainnet (only if you are unverified). "
+"This Modal is at: test.latin-chain.com/latinchain-mainnet-redirect"
+msgstr ""
+"Esta ventana emergente se mostrará al cargar LatinChain "
+"Testnet (siempre) y en LatinChain Mainnet (solo si no está verificado). "
+"Esta ventana emergente se encuentra en: test.latin-chain.com/latinchain-mainnet-redirect"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -3988,6 +4095,11 @@ msgstr "Transacciones"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Transactions list"
 msgstr "Lista de transacciones"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Trends news"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
@@ -4057,11 +4169,6 @@ msgid "Unblock with"
 msgstr "Desbloquea con"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Unlock in one touch"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 msgid "Upload your photos to get started."
 msgstr ""
@@ -4069,6 +4176,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 msgid "Usage Instructions"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Use Cool Apps"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4377,6 +4489,7 @@ msgstr "Debes pagar Pi, para desbloquear todas las apps en LatinChain."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
@@ -4726,10 +4839,10 @@ msgstr "¿Quieres hacer Login en LatinChain Platform?"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "🌄 Mayan Calendar"
+msgid "🌄 Mayan Calendar (Solar and Universal Calendar)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "📅 Gregorian Calendar"
+msgid "📅 Gregorian Calendar (Solar and Universal Calendar)"
 msgstr ""
