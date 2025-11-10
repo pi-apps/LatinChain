@@ -814,7 +814,7 @@ async function showPiAds(Pi, activated) {
 $( document ).ready(function() {
     btnvalue = $("#button_reward_ad").html();
     
-    colorboxLoaded();
+    //colorboxLoaded();
     
     const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
     
@@ -1524,6 +1524,11 @@ $( document ).ready(function() {
             {
                 showPiAds(Pi, true);
             }
+        }
+        
+        if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+        {
+            colorboxLoaded();
         }
         
         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
