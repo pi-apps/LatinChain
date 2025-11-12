@@ -262,6 +262,11 @@ class admin_apps(models.Model):
                 
                 i.amount_price = result_dict["rate"]
                 i.amount = 5 / i.amount_price #5 USD / price in Pi
+                
+                admin_other_apps = self.env["admin.apps"].sudo().search([('app', 'in', ['auth_snake', 'auth_pidoku', 'auth_example'])])
+                
+                admin_other_apps.write({'amount': i.amount})
+                
             except Exception as e:
                 pass
     
