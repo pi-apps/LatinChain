@@ -452,15 +452,17 @@
            </xpath>
            
            <xpath expr="//head//script[last()]" position="after">
-                <!-- Google tag (gtag.js) -->
-                <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-139G91GZND"></script>
-                <script>
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
+                <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                    <!-- Google tag (gtag.js) -->
+                    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-139G91GZND"></script>
+                    <script>
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());
 
-                  gtag('config', 'G-139G91GZND');
-                </script>
+                      gtag('config', 'G-139G91GZND');
+                    </script>
+                </div>
             </xpath>
            
            <!--<xpath expr="//body" position="after">
