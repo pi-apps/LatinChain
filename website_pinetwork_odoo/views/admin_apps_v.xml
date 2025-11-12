@@ -30,7 +30,6 @@
                                     <field name="pi_users_account_balance"/>
                                     <field name="sandbox"/>
                                     <field name="mainnet"/>
-                                    <field name="amount"/>
                                     <field name="google_adsense"/>
                                     <field name="google_adsense_ads_txt"/>
                                     <field name="a_ads"/>
@@ -50,6 +49,11 @@
                                 <field name="pi_ad_seconds"/>
                                 <field name="pi_ad_max"/>
                                 <field name="amount_latin_pay" readonly="False"/>
+                            </group>
+                            <group string="Amount Price config">
+                                <field name="amount" readonly="True"/>
+                                <field name="amount_price" readonly="True"/>
+                                <field name="amount_price_apikey"/>
                             </group>
                             <group string="Referrers config">
                                 <field name="pi_referrer_amount"/>

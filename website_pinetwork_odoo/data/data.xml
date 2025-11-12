@@ -70,6 +70,21 @@ model.search([('app', 'in', ['auth_platform'])])._compute_daily()
            <field eval="False" name="doall"/>
         </record>
         
+        <record forcecreate="True" id="update_amount_price" model="ir.cron">
+           <field name="name">Update Amount Price</field>
+           <field eval="True" name="active" />
+           <field name="user_id" ref="base.user_root" />
+           <field name="interval_number">5</field>
+           <field name="interval_type">minutes</field>
+           <field name="numbercall">-1</field>
+           <field ref="model_admin_apps" name="model_id" />
+            <field name="state">code</field>
+           <field name="code">
+               model.search([('app', 'in', ['auth_platform', 'auth_snake', 'auth_pidoku', 'auth_example'])])._update_amount_price()
+            </field>
+           <field eval="False" name="doall"/>
+        </record>
+        
         <!--<record forcecreate="True" id="check_pi_users_base_v1" model="ir.cron">
            <field name="name">Check Pi Users</field>
            <field eval="True" name="active" />

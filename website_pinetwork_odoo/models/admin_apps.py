@@ -210,7 +210,7 @@ class admin_apps(models.Model):
     pi_users_devs_to_pay_percent = fields.Float('Devs To Pay percent (from 0 to 100)', digits=(50,2), default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_devs_completed_payments = fields.Integer('Devs To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
-    amount = fields.Float('Amount', digits=(50,7), default=1)
+    amount = fields.Float('Amount', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_referrer_amount = fields.Float('Referrers amount', digits=(50,7), default=0.05)
     google_adsense = fields.Char('Google Adsense src', required=True, default="Set your Google Adsense", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     google_adsense_ads_txt = fields.Text('Google Adsense ads.txt', default="Set your Google Adsense ads.txt", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -235,6 +235,8 @@ class admin_apps(models.Model):
     pi_ad_seconds = fields.Integer('Pi Ad seconds', default=300, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_max = fields.Integer('Pi Ad max', default=5, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     amount_latin_pay = fields.Float('Amount Latin Pay', digits=(50,7), store=True)
+    amount_price = fields.Float('Amount price', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    amount_price_apikey = fields.Char('Amount price apikey', store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     """
     @api.depends("amount")
@@ -242,6 +244,26 @@ class admin_apps(models.Model):
         for i in self:
             i.amount_latin_pay = i.amount * 100
     """
+  
+    def _update_amount_price(self):
+        for i in self:
+            
+            url = 'https://api.livecoinwatch.com/coins/single'
+            
+            obj = {"currency":"USD","code":"_______PI","meta":True}
+            
+            admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+            
+            re = requests.post(url,json=obj,headers={ 'x-api-key': admin_app[0].amount_price_apikey })
+        
+            try:
+                result = re.json()
+                result_dict = json.loads(str(json.dumps(result)))
+                
+                i.amount_price = result_dict["rate"]
+                i.amount = i.amount_price * 5
+            except Exception as e:
+                pass
     
     @api.depends("top_50_streamers_ids")
     def _compute_streaming(self):
