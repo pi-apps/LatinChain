@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-09 19:36+0000\n"
-"PO-Revision-Date: 2025-11-09 19:36+0000\n"
+"POT-Creation-Date: 2025-11-12 22:29+0000\n"
+"PO-Revision-Date: 2025-11-12 22:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -131,7 +131,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "* Rules to be in the Winners Board and win Prizes:"
+msgid "* Rules to be in the Winners Board:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -323,13 +323,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
-"3.- All prize payments will be paid automatically to your Pi Wallet "
-"associated in your Pi Browser."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
 "3.- Be one of the first 50 users with more total points, who have added "
 "their Youtube video links."
 msgstr ""
@@ -347,6 +340,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "3.- None prize is related to this specific list of users."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid "3.- None prize payment will be paid by now."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -372,9 +370,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"3.- You could earn prizes if you are one of the leaders. Read the Rules "
-"section for more info."
+msgid "3.- You could be among Leaders. Read the Rules section for more info."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -448,14 +444,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"5.- If you are in this specific list of users and want to earn prizes, you "
-"have to verify your user in LatinChain Platform, to appear in Leaders Board "
-"and Winners Board."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "5.- Winning in level 4, you will earn 12 points."
 msgstr ""
 
@@ -479,13 +467,6 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"7.- Prizes will only be paid out if we reach at least 1000 verified users "
-"before the prize is paid out."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 msgid ""
 "<br/>\n"
@@ -497,7 +478,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<br/>\n"
-"                                                Read the Rules to know the prize payment amount:<br/>"
+"                                                Read the Rules:<br/>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1361,7 +1342,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "<strong>Winners Board and Prizes</strong>"
+msgid "<strong>Winners Board</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1443,24 +1424,12 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "All data here as prizes and minimum payment, is referring to"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid ""
-"All prize payments will be paid automatically to your Pi Wallet associated in your Pi Browser.<br/><br/>\n"
-"                                                Here you can watch your incoming and outgoing transactions:<br/>"
+msgid "All data here as minimum payment, is referring to"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "Amount"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "App to user payments (it means, prizes) not working yet."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2384,9 +2353,9 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "Latin points are part of total points to be in Leaders Board. If you are in "
-"Leaders Board, then you could be in Winners Board to earn Pi prizes (To know"
-" more about Leaders Board and Winners Board, read about it in Rules section,"
-" and Winners Board and Prizes section, in this page)."
+"Leaders Board, then you could be in Winners Board (To know more about "
+"Leaders Board and Winners Board, read about it in Rules section, and Winners"
+" Board section, in this page)."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2889,6 +2858,13 @@ msgid "No video loaded"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"None prize will be paid by now, but you can play anytime!. And we are incorporating the price of the market for Pi.<br/><br/>\n"
+"                                                Here you can watch your incoming and outgoing transactions:<br/>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
 msgid "Normal"
@@ -3102,11 +3078,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "Pi and"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Pi each 30 days:"
 msgstr ""
 
@@ -3125,11 +3096,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "Pi, depending on the platform income."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Pi, or much more, depending on the income."
 msgstr ""
 
@@ -3142,12 +3108,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "Pi, then prize payment will be between"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "Pi, there isn't prize payment on Testnet, but you can play any time."
+msgid "Pi."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3290,18 +3251,6 @@ msgid "Privacy Policy"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "Prize payment for"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid ""
-"Prizes will only be paid out if we reach at least 1000 verified users before"
-" the prize is paid out."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
 msgid "Professional Video Player"
 msgstr ""
@@ -3325,7 +3274,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "Read four sections: Membership (why to subscribe), Rules (norms), Winners "
-"Board and Prizes (prizes), and Levels (how to obtain points)."
+"Board (winners board), and Levels (how to obtain points)."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4097,6 +4046,13 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
+msgid ""
+"We have deleted the prizes. None prize will be paid by now, but you can play"
+" anytime!. And we are incorporating the price of the market for Pi."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid "We won an Honorable mention!!!:"
 msgstr ""
@@ -4566,11 +4522,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "to watch it working.<br/>"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "will be three times its minimum payment. Supposing minimum payment is"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

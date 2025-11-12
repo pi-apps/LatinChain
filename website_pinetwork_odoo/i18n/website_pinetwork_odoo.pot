@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-31 23:21+0000\n"
-"PO-Revision-Date: 2025-07-31 23:21+0000\n"
+"POT-Creation-Date: 2025-11-12 22:30+0000\n"
+"PO-Revision-Date: 2025-11-12 22:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -42,12 +42,6 @@ msgid "<strong> You are winner, check in this winner list.</strong>"
 msgstr ""
 
 #. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid ""
-"<strong>App to user payments (it means, prizes) not working yet.</strong>"
-msgstr ""
-
-#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
 msgid "<strong>Donators</strong>"
 msgstr ""
@@ -55,8 +49,8 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
 msgid ""
-"<strong>Prizes will be paid the 15th of each month, if we reach 1000 "
-"verified users.</strong>"
+"<strong>None prize will be paid by now, but you can play anytime!. And we "
+"are incorporating the price of the market for Pi.</strong>"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -170,6 +164,21 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__amount_latin_pay
 msgid "Amount Latin Pay"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Amount Price config"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__amount_price
+msgid "Amount price"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__amount_price_apikey
+msgid "Amount price apikey"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -1123,6 +1132,13 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__unblocked_datetime
 msgid "Unblocked datetime"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.actions.server,name:website_pinetwork_odoo.update_amount_price_ir_actions_server
+#: model:ir.cron,cron_name:website_pinetwork_odoo.update_amount_price
+#: model:ir.cron,name:website_pinetwork_odoo.update_amount_price
+msgid "Update Amount Price"
 msgstr ""
 
 #. module: website_pinetwork_odoo
