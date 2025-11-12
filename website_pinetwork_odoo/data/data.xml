@@ -74,7 +74,7 @@ model.search([('app', 'in', ['auth_platform'])])._compute_daily()
            <field name="name">Update Amount Price</field>
            <field eval="True" name="active" />
            <field name="user_id" ref="base.user_root" />
-           <field name="interval_number">8</field>
+           <field name="interval_number">10</field>
            <field name="interval_type">minutes</field>
            <field name="numbercall">-1</field>
            <field ref="model_admin_apps" name="model_id" />
