@@ -261,7 +261,7 @@ class admin_apps(models.Model):
                 result_dict = json.loads(str(json.dumps(result)))
                 
                 i.amount_price = result_dict["rate"]
-                i.amount = 5 / i.amount_price
+                i.amount = 5 / i.amount_price #5 USD / price in Pi
             except Exception as e:
                 pass
     
