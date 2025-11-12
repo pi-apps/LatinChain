@@ -51,8 +51,8 @@
                                 <field name="amount_latin_pay" readonly="False"/>
                             </group>
                             <group string="Amount Price config">
-                                <field name="amount" readonly="True"/>
-                                <field name="amount_price" readonly="True"/>
+                                <field name="amount"/>
+                                <field name="amount_price"/>
                                 <field name="amount_price_apikey"/>
                             </group>
                             <group string="Referrers config">
