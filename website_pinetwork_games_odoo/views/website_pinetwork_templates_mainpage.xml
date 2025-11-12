@@ -451,7 +451,7 @@
                 
            </xpath>
            
-           <!--<xpath expr="//head//script[last()]" position="after">
+           <xpath expr="//head//script[last()]" position="after">
                 <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                     
                     <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-139G91GZND"></script>
@@ -463,7 +463,7 @@
                       gtag('config', 'G-139G91GZND');
                     </script>
                 </t>
-            </xpath>-->
+            </xpath>
            
            <!--<xpath expr="//body" position="after">
                <script t-if="not sandbox" type="text/javascript">
