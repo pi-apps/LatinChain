@@ -969,7 +969,9 @@
                         .btn-outline-success:hover, 
                         .btn-outline-success:active, 
                         a.btn-outline-success:hover, 
-                        a.btn-outline-success:active {
+                        a.btn-outline-success:active,
+                        a.btn-outline-info:hover, 
+                        a.btn-outline-info:active {
                             color: #fff !important;
                         }
                         
