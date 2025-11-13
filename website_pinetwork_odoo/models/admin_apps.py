@@ -291,6 +291,9 @@ class admin_apps(models.Model):
             i.top_50_streamers_ids = [(6, 0, pi_user_list.ids)]
             pi_user_list = self.env["pi.users"].sudo().search([], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
             i.pi_users_general_ranking_ids = [(6, 0, pi_user_list.ids)]
+            
+            if i.mainnet in ["Mainnet ON", "Mainnet OFF"]:
+                i._update_amount_price()
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_winners_all_paid(self):
