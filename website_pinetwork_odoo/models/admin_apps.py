@@ -291,8 +291,8 @@ class admin_apps(models.Model):
             i.pi_users_general_ranking_ids = [(6, 0, pi_user_list.ids)]
             
             now = datetime.now().time()  # Get current time (without date)
-            start_time = time(14, 40, 0)
-            end_time = time(15, 0, 0)
+            start_time = time(16, 0, 0)
+            end_time = time(16, 10, 0)
             
             if i.mainnet in ["Mainnet ON"]:
                 i._update_amount_price()
