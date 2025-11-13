@@ -237,6 +237,7 @@ class admin_apps(models.Model):
     amount_latin_pay = fields.Float('Amount Latin Pay', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     amount_price = fields.Float('Amount price', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     amount_price_apikey = fields.Char('Amount price apikey', store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    amount_price_topay_usd = fields.Float('Amount price to pay (USD)', digits=(50,7), default=5, store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     """
     @api.depends("amount")
@@ -261,7 +262,7 @@ class admin_apps(models.Model):
                 result_dict = json.loads(str(json.dumps(result)))
                 
                 i.amount_price = result_dict["rate"]
-                i.amount = 5 / i.amount_price #5 USD / price in Pi
+                i.amount = i.amount_price_topay_usd / i.amount_price #5 USD / price in Pi
                 
                 admin_other_apps = self.env["admin.apps"].sudo().search([('app', 'in', ['auth_snake', 'auth_pidoku', 'auth_example'])])
                 
