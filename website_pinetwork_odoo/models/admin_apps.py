@@ -290,15 +290,18 @@ class admin_apps(models.Model):
             pi_user_list = self.env["pi.users"].sudo().search([], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
             i.pi_users_general_ranking_ids = [(6, 0, pi_user_list.ids)]
             
+            now = datetime.now().time()  # Get current time (without date)
+            start_time = time(14, 40, 0)
+            end_time = time(15, 0, 0)
+            
             if i.mainnet in ["Mainnet ON"]:
                 i._update_amount_price()
             elif i.mainnet in ["Testnet ON", "Testnet OFF", "Mainnet OFF"]:
-                now = datetime.now().time()  # Get current time (without date)
-                start_time = time(14, 30, 0)
-                end_time = time(15, 0, 0)
-                
                 if start_time <= now <= end_time:
                     i._update_amount_price()
+                
+            if start_time <= now <= end_time:
+                model.search([('app', 'in', ['auth_platform'])]).fill_winners()
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_winners_all_paid(self):
