@@ -294,9 +294,9 @@ class admin_apps(models.Model):
                 i._update_amount_price()
             elif i.mainnet in ["Testnet ON", "Testnet OFF", "Mainnet OFF"]:
                 now = datetime.now().time()  # Get current time (without date)
-                start_time = time(10, 0, 0)  # 2:00 PM
-                end_time = time(10, 30, 0) # 2:30 PM
-
+                start_time = time(14, 30, 0)
+                end_time = time(15, 0, 0)
+                
                 if start_time <= now <= end_time:
                     i._update_amount_price()
     
