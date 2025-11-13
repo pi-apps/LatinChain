@@ -301,7 +301,7 @@ class admin_apps(models.Model):
                     i._update_amount_price()
                 
             if start_time <= now <= end_time:
-                model.search([('app', 'in', ['auth_platform'])]).fill_winners()
+                self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])]).fill_winners()
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_winners_all_paid(self):
