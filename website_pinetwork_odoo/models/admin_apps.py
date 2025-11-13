@@ -7,14 +7,12 @@ from odoo.exceptions import ValidationError
 import requests
 import json
 
-import time
-
 import odoo
 
 import logging
 _logger = logging.getLogger(__name__)
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time
 
 from dateutil.relativedelta import relativedelta, MO
 
