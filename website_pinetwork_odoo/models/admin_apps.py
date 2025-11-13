@@ -264,7 +264,7 @@ class admin_apps(models.Model):
                 i.amount_price = result_dict["rate"]
                 i.amount = i.amount_price_topay_usd / i.amount_price #5 USD / price in Pi
                 
-                admin_other_apps = self.env["admin.apps"].sudo().search([('app', 'in', ['auth_snake', 'auth_pidoku', 'auth_example'])])
+                admin_other_apps = self.env["admin.apps"].sudo().search([('app', 'in', ['auth_snake', 'auth_pidoku', 'auth_example', 'auth_first_app'])])
                 
                 admin_other_apps.write({'amount': i.amount, 'amount_price_topay_usd': i.amount_price_topay_usd, 'amount_price': i.amount_price})
                 
