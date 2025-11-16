@@ -1640,7 +1640,12 @@ class PiNetworkBaseController(http.Controller):
             pi_toml = ""
         else:
             if admin_app_list[0].mainnet in ["Mainnet ON"]:
-                pi_toml = ""
+                pi_toml = """[[CURRENCIES]]
+code="LatinChain"
+issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
+name="LatinChain Platform"
+desc="Token for LatinChain Platform on Mainnet."
+image="https://latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" """
             else:
                 pi_toml = """[[CURRENCIES]]
 code="LatinChain"
