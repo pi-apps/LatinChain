@@ -1638,7 +1638,7 @@ class PiNetworkBaseController(http.Controller):
         
         if len(admin_app_list) == 0:
             pi_toml = ""
-        else
+        else:
             pi_toml = """
                         [[CURRENCIES]]
                         code="LatinChain"
