@@ -1639,7 +1639,10 @@ class PiNetworkBaseController(http.Controller):
         if len(admin_app_list) == 0:
             pi_toml = ""
         else:
-            pi_toml = """[[CURRENCIES]]
+            if admin_app_list[0].mainnet in ["Mainnet ON"]:
+                pi_toml = ""
+            else:
+                pi_toml = """[[CURRENCIES]]
 code="LatinChain"
 issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
 name="LatinChain Platform"
