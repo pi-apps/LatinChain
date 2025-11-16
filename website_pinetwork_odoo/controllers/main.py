@@ -1645,14 +1645,14 @@ code="LatinChain"
 issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
 name="LatinChain Platform"
 desc="Token for LatinChain Platform on Mainnet."
-image="https://latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" """
+image="https://latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.png" """
             else:
                 pi_toml = """[[CURRENCIES]]
 code="LatinChain"
 issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
 name="LatinChain Platform"
 desc="Token for LatinChain Platform on Testnet and has no value."
-image="https://test.latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" """
+image="https://test.latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.png" """
 
         headers = {'Content-Type': 'text; charset=UTF-8'}
         return Response(pi_toml, headers=headers)
