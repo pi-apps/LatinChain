@@ -1631,3 +1631,22 @@ class PiNetworkBaseController(http.Controller):
         )
         #except FileNotFoundError:
         #    return request.not_found()
+
+    @http.route('/.well-known/pi.toml', type='http', auth="public", website=True, csrf=False)
+    def pi_toml(self, **kw):
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            pi_toml = ""
+        else
+            pi_toml = """
+                        [[CURRENCIES]]
+                        code="LatinChain"
+                        issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
+                        name="LatinChain Platform"
+                        desc="Token for LatinChain Platform on Testnet and has no value."
+                        image="https://test.latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg"
+                    """
+
+        headers = {'Content-Type': 'text; charset=UTF-8'}
+        return Response(pi_toml, headers=headers)
