@@ -1639,14 +1639,12 @@ class PiNetworkBaseController(http.Controller):
         if len(admin_app_list) == 0:
             pi_toml = ""
         else:
-            pi_toml = """
-                        [[CURRENCIES]]
-                        code="LatinChain"
-                        issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
-                        name="LatinChain Platform"
-                        desc="Token for LatinChain Platform on Testnet and has no value."
-                        image="https://test.latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg"
-                    """
+            pi_toml = """[[CURRENCIES]]
+code="LatinChain"
+issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
+name="LatinChain Platform"
+desc="Token for LatinChain Platform on Testnet and has no value."
+image="https://test.latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.jpeg" """
 
         headers = {'Content-Type': 'text; charset=UTF-8'}
         return Response(pi_toml, headers=headers)
