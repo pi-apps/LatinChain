@@ -1250,7 +1250,7 @@
                                 Current minimum payment
                             </div>
                             <div>
-                                <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline"><i class="fa-solid fa-equals"></i></div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div>
+                                <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div>
                             </div>
                         </div>
                     </div>
