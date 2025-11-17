@@ -1258,13 +1258,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <script>
-                            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-                            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                                return new bootstrap.Tooltip(tooltipTriggerEl)
-                            })
-                        </script>
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
@@ -2840,6 +2833,13 @@
                     <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
+                    </script>
+                    
+                    <script>
+                        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                            return new bootstrap.Tooltip(tooltipTriggerEl)
+                        })
                     </script>
                     
                     <style>
