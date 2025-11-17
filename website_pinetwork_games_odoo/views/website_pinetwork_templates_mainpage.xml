@@ -1247,12 +1247,24 @@
                         </div>
                         <div style="color: #ffffff !important; background-color: #1f2434 !important;">
                             <div>
-                                Current minimum payment
+                                <div style="display: inline">
+                                    Current minimum payment
+                                </div>
                             </div>
                             <div>
-                                <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div>
+                                <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div> 
+                                <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </div>
                             </div>
                         </div>
+                        
+                        <script>
+                            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                                return new bootstrap.Tooltip(tooltipTriggerEl)
+                            })
+                        </script>
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
