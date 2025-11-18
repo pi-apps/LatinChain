@@ -157,8 +157,6 @@ async function showPiAds(Pi) {
 }
 
 $( document ).ready(function() {
-    alert("12345");
-    
     btnvalue = $("#button_reward_ad").html();
     
     $(document).ajaxStop(function() {
@@ -266,17 +264,11 @@ $( document ).ready(function() {
                         
                         $("#button_click").prop( "disabled", false );
                         
-                        alert("123456");
-                        
-                        alert($("#payoneclick").val().toLowerCase());
-                        
-                        if($.parseJSON($("#payoneclick").val().toLowerCase()))
+                        if(Boolean(($("#payoneclick").val().toLowerCase())))
                         {
                             $('#acceptConditions').prop('checked', true);
                             executepayment();
                         }
-                        
-                        alert("1234567");
                         
                         if(show_pi_ad_user || pi_ad_new)
                         {
@@ -290,8 +282,6 @@ $( document ).ready(function() {
                         }
                         
                         var start_flag = false;
-                        
-                        alert("123457");
                         
                         async function showRewardedPiAd()
                         {
@@ -467,15 +457,8 @@ $( document ).ready(function() {
                             showRewardedPiAd();
                         });
                         
-                        alert("1234");
-                        
-                        alert($.parseJSON($("#showpiad").val().toLowerCase()));
-                        
-                        alert($.parseJSON($("#payoneclick").val().toLowerCase()));
-                        
-                        if($.parseJSON($("#showpiad").val().toLowerCase()) && !$.parseJSON($("#payoneclick").val().toLowerCase()))
+                        if(Boolean(($("#showpiad").val().toLowerCase())) && !Boolean(($("#payoneclick").val().toLowerCase())))
                         {
-                            alert("123");
                             showRewardedPiAd();
                         }
                         
