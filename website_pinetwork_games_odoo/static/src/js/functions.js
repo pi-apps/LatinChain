@@ -286,7 +286,7 @@ $( document ).ready(function() {
                         async function showRewardedPiAd()
                         {
                             end();
-                            if(seconds < 5 && start_flag)
+                            if(seconds <= 5 && start_flag)
                             {
                                 start();
                                 return;
@@ -304,7 +304,6 @@ $( document ).ready(function() {
                             if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
                             {
                                 try {
-                                    
                                     const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
                                     if (isAdReadyResponse.ready === false) {
                                         
@@ -352,7 +351,7 @@ $( document ).ready(function() {
                                                 if(data.result && data.points_latin > 0)
                                                 {
                                                     $("#button_reward_ad").prop( "disabled", true );
-                                                    $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                    $("#button_reward_ad").html("+" + data.points_latin + " Latin points.");
                                                     var gemini_image = getGeminiImage();
                                                     $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                                                     
@@ -365,6 +364,7 @@ $( document ).ready(function() {
                                                         $("#button_reward_ad").html(btnvalue);
                                                         $("#button_reward_ad").prop( "disabled", false );
                                                     }, 5000);*/
+                                                    //alert("+" + data.points_latin + " Latin points.");
                                                     
                                                     pi_ad_new = data.pi_ad_new;
                                                     if(data.pi_ad_new)
@@ -388,63 +388,39 @@ $( document ).ready(function() {
                                                     }
                                                 }else{
                                                     //$("#button_reward_ad").html("Error, try again...");
-                        
+                                                    
                                                     setTimeout(function ()
                                                     {
                                                         $("#button_reward_ad").html(btnvalue);
                                                         $("#button_reward_ad").prop( "disabled", false );
                                                     }, 5000);
-                                                    
-                                                    var gemini_image = getGeminiImage();
-                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
-                                                    
-                                                    $("#open_modal").click();
                                                 }
                                                 start();
                                             }).fail(function() {
                                                 $("#button_reward_ad").html("Fail, try again...");
-                        
+                                                    
                                                 setTimeout(function ()
                                                 {
                                                     $("#button_reward_ad").html(btnvalue);
                                                     $("#button_reward_ad").prop( "disabled", false );
                                                 }, 5000);
                                                 setConfirmUnloadPoints(false);
-                                                
-                                                var gemini_image = getGeminiImage();
-                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
-                                                
-                                                $("#open_modal").click();
                                             });
                                         }else{
                                             $("#button_reward_ad").html(btnvalue);
                                             $("#button_reward_ad").prop( "disabled", false );
-                                            
-                                            var gemini_image = getGeminiImage();
-                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
-                                            
-                                            $("#open_modal").click();
                                         }
                                     } else {
                                         $("#button_reward_ad").html(btnvalue);
                                         $("#button_reward_ad").prop( "disabled", false );
                                         // fallback logic
                                         // showAdErrorModal()
-                                        var gemini_image = getGeminiImage();
-                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
-                                        
-                                        $("#open_modal").click();
                                     }
                                     
                                 } catch (err) {
                                     $("#button_reward_ad").html(btnvalue);
                                     $("#button_reward_ad").prop( "disabled", false );
                                     // good practice to handle any potential errors
-                                    
-                                    var gemini_image = getGeminiImage();
-                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
-                                    
-                                    $("#open_modal").click();
                                 }
                             }else
                             {
@@ -457,10 +433,13 @@ $( document ).ready(function() {
                             showRewardedPiAd();
                         });
                         
-                        showRewardedPiAd();
+                        if($.parseJSON($("#showpiad").val().toLowerCase()) && !$.parseJSON($("#payoneclick").val().toLowerCase()))
+                        {
+                            showRewardedPiAd();
+                        }
                         
-                        //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                        //    showRewardedPiAd();
+                        /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            showRewardedPiAd();*/
                         
                         /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
