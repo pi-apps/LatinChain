@@ -268,6 +268,8 @@ $( document ).ready(function() {
                         
                         alert("123456");
                         
+                        alert($("#payoneclick").val().toLowerCase());
+                        
                         if($.parseJSON($("#payoneclick").val().toLowerCase()))
                         {
                             $('#acceptConditions').prop('checked', true);
