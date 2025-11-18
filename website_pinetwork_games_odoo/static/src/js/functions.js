@@ -433,6 +433,10 @@ $( document ).ready(function() {
                             showRewardedPiAd();
                         });
                         
+                        alert($.parseJSON($("#showpiad").val().toLowerCase()));
+                        
+                        alert($.parseJSON($("#payoneclick").val().toLowerCase()));
+                        
                         if($.parseJSON($("#showpiad").val().toLowerCase()) && !$.parseJSON($("#payoneclick").val().toLowerCase()))
                         {
                             alert("123");
