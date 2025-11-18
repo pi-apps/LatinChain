@@ -266,11 +266,15 @@ $( document ).ready(function() {
                         
                         $("#button_click").prop( "disabled", false );
                         
+                        alert("123456");
+                        
                         if($.parseJSON($("#payoneclick").val().toLowerCase()))
                         {
                             $('#acceptConditions').prop('checked', true);
                             executepayment();
                         }
+                        
+                        alert("1234567");
                         
                         if(show_pi_ad_user || pi_ad_new)
                         {
@@ -284,6 +288,8 @@ $( document ).ready(function() {
                         }
                         
                         var start_flag = false;
+                        
+                        alert("123457");
                         
                         async function showRewardedPiAd()
                         {
