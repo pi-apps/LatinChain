@@ -137,9 +137,18 @@
                             
                         </style>
                         
+                        <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                            $(document).ready( function () {
+                                $(".openMainnetModal").click(function(){
+                                    $(".modal-body").html($("#open_mainnet_message").html());
+                                    $("#open_modal").click();
+                                });
+                            });
+                        </script>
                     </head>
 
                     <body t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                        <div id="open_mainnet_message" style="display:none;">You can Donate on LatinChain Mainnet and start using it everyday being verified during a month. Or access as unverified user.<br/>Which one you choose?.</div>
                         <div class="container form-group" style="text-align:center; max-width: 810px">
                             <br/>
                             <div style="font-size: 90%; word-break: break-word;">
@@ -156,7 +165,7 @@
                             </div>
                             
                             <!--<a href="https://latinchain.pinet.com/?nopopup=true" target="_blank" class="btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>-->
-                            <a href="https://latinchain.pinet.com/index-nopopup" target="_blank" class="btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>
+                            <button class="openMainnetModal btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></button>
                             <!--<br/>
                             <div class="container rounded" style="text-align:center; max-width: 810px; border:3px solid; padding:5px;">
                                 <div class="row">
@@ -241,6 +250,21 @@
                                 #myBtn:hover {
                                     background-color: #7dbbf1;
                                 }
+                               
+                            /* 1. The parent container for the buttons */
+                            .button-group {
+                                display: flex; /* Makes the children flex items */
+                                /* Optional: Controls the spacing/wrapping */
+                                gap: 10px; /* Space between the buttons */
+                                align-items: stretch; /* This is the default, but ensures they match height */
+                            }
+
+                            /* 2. The buttons themselves */
+                            .button-group .btn {
+                                /* Optional: Allows buttons to grow if needed */
+                                flex-grow: 1;
+                                /* You might remove fixed heights if they are present */
+                            }
                         </style>
                         
                         <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
@@ -254,6 +278,33 @@
                                 return new bootstrap.Tooltip(tooltipTriggerEl)
                             })
                         </script>
+                        
+                        <!-- Button trigger modal -->
+                        <button id="open_modal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" style="display: none;">
+                          Open Modal
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="text-align:center">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="ModalLabel">Message</h5>
+                                <button type="button" class="btn-close" style="background-color:white !important; color:black !important; filter: contrast(100%) !important;" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>-->
+                              </div>
+                              <div class="modal-body">
+                                
+                              </div>
+                              <div class="modal-footer button-group">
+                                <a href="https://latinchain.pinet.com/pinetwork?payoneclick=true" target="_blank" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;" translate="no">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></strong></a>
+                                <a href="https://latinchain.pinet.com/index-nopopup" target="_blank" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div><i class="fa-solid fa-house-chimney"></i></div><div>Click here</div><div style="font-size:80%;">(Go to LatinChain Mainnet)</div></strong></a>
+                                <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+                                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                     </body>
                 </html>
             </t>

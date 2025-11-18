@@ -41,7 +41,7 @@ async function colorboxLoaded()
     {
         if($.colorbox && !colorbox_opened)
         {
-            $.colorbox({href:"https://test.latin-chain.com/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
             return false;
         }else{

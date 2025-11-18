@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-13 12:06+0000\n"
-"PO-Revision-Date: 2025-11-13 12:06+0000\n"
+"POT-Creation-Date: 2025-11-18 22:09+0000\n"
+"PO-Revision-Date: 2025-11-18 22:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -194,16 +194,6 @@ msgid "0% Complete (0/0 Lessons)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
-msgid "0.5x"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
-msgid "0.75x"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 msgid "0:00 / 0:00"
 msgstr ""
@@ -251,16 +241,6 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
-msgid "1.25x"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
-msgid "1.5x"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "15 PUZZLE GAME"
 msgstr ""
@@ -269,11 +249,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "15 Puzzle Game"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
-msgid "1x"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -343,11 +318,6 @@ msgid ""
 "2.- Your playing records will be saved in our servers, you can consult them "
 "anytime. After finish the subscription, your records would be hidden, but "
 "when you start the subscription again, your records will be shown again."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
-msgid "2x"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -721,6 +691,218 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
 msgid "<i class=\"fas fa-trash-alt mr-1 md:mr-2\"/>Clear Playlist"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"<select id=\"exchange_latin\" class=\"form-control\" disabled=\"true\" style=\"filter: contrast(100%) !important;\">\n"
+"                                                        <option value=\"Chess10x1\" selected=\"true\">Pay 10 Latin points, earn 1 Chess points</option>\n"
+"                                                        <option value=\"Sudoku10x3\">Pay 10 Latin points, earn 3 Sudoku points</option>\n"
+"                                                        <option value=\"Snake10x1\">Pay 10 Latin points, earn 1 Snake points</option>\n"
+"                                                        <option value=\"Chess100x10\">Pay 100 Latin points, earn 10 Chess points</option>\n"
+"                                                        <option value=\"Sudoku100x12\">Pay 100 Latin points, earn 12 Sudoku points</option>\n"
+"                                                        <option value=\"Snake100x10\">Pay 100 Latin points, earn 10 Snake points</option>\n"
+"                                                    </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+msgid ""
+"<select id=\"gregorian-month\">\n"
+"                                            <option value=\"0\">January</option>\n"
+"                                            <option value=\"1\">February</option>\n"
+"                                            <option value=\"2\">March</option>\n"
+"                                            <option value=\"3\">April</option>\n"
+"                                            <option value=\"4\">May</option>\n"
+"                                            <option value=\"5\">June</option>\n"
+"                                            <option value=\"6\">July</option>\n"
+"                                            <option value=\"7\">August</option>\n"
+"                                            <option value=\"8\">September</option>\n"
+"                                            <option value=\"9\">October</option>\n"
+"                                            <option value=\"10\">November</option>\n"
+"                                            <option value=\"11\">December</option>\n"
+"                                        </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
+msgid ""
+"<select id=\"language-select\" multiple=\"multiple\" size=\"10\" class=\"w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all duration-200\">\n"
+"                                  <option value=\"eng\" selected=\"selected\">English</option>\n"
+"                                  <option value=\"spa\" selected=\"selected\">Spanish</option>\n"
+"                                  <option value=\"afr\">Afrikaans</option>\n"
+"                                  <option value=\"amh\">Amharic</option>\n"
+"                                  <option value=\"ara\">Arabic</option>\n"
+"                                  <option value=\"asm\">Assamese</option>\n"
+"                                  <option value=\"aze\">Azerbaijani</option>\n"
+"                                  <option value=\"aze_cyrl\">Azerbaijani (Cyrillic)</option>\n"
+"                                  <option value=\"bel\">Belarusian</option>\n"
+"                                  <option value=\"ben\">Bengali</option>\n"
+"                                  <option value=\"bod\">Tibetan</option>\n"
+"                                  <option value=\"bos\">Bosnian</option>\n"
+"                                  <option value=\"bre\">Breton</option>\n"
+"                                  <option value=\"bul\">Bulgarian</option>\n"
+"                                  <option value=\"cat\">Catalan</option>\n"
+"                                  <option value=\"ceb\">Cebuano</option>\n"
+"                                  <option value=\"ces\">Czech</option>\n"
+"                                  <option value=\"chi_sim\">Chinese (Simplified)</option>\n"
+"                                  <option value=\"chi_sim_vert\">Chinese (Simplified Vertical)</option>\n"
+"                                  <option value=\"chi_tra\">Chinese (Traditional)</option>\n"
+"                                  <option value=\"chi_tra_vert\">Chinese (Traditional Vertical)</option>\n"
+"                                  <option value=\"chr\">Cherokee</option>\n"
+"                                  <option value=\"cos\">Corsican</option>\n"
+"                                  <option value=\"cym\">Welsh</option>\n"
+"                                  <option value=\"dan\">Danish</option>\n"
+"                                  <option value=\"deu\">German</option>\n"
+"                                  <option value=\"div\">Divehi</option>\n"
+"                                  <option value=\"dzo\">Dzongkha</option>\n"
+"                                  <option value=\"ell\">Greek</option>\n"
+"                                  <option value=\"enm\">English (Middle)</option>\n"
+"                                  <option value=\"epo\">Esperanto</option>\n"
+"                                  <option value=\"est\">Estonian</option>\n"
+"                                  <option value=\"eus\">Basque</option>\n"
+"                                  <option value=\"fao\">Faroese</option>\n"
+"                                  <option value=\"fas\">Persian</option>\n"
+"                                  <option value=\"fil\">Filipino</option>\n"
+"                                  <option value=\"fin\">Finnish</option>\n"
+"                                  <option value=\"fra\">French</option>\n"
+"                                  <option value=\"frk\">Frankish</option>\n"
+"                                  <option value=\"frm\">French (Middle)</option>\n"
+"                                  <option value=\"fry\">Frisian</option>\n"
+"                                  <option value=\"gla\">Scottish Gaelic</option>\n"
+"                                  <option value=\"gle\">Irish</option>\n"
+"                                  <option value=\"glg\">Galician</option>\n"
+"                                  <option value=\"grc\">Greek (Ancient)</option>\n"
+"                                  <option value=\"guj\">Gujarati</option>\n"
+"                                  <option value=\"hat\">Haitian Creole</option>\n"
+"                                  <option value=\"heb\">Hebrew</option>\n"
+"                                  <option value=\"hin\">Hindi</option>\n"
+"                                  <option value=\"hrv\">Croatian</option>\n"
+"                                  <option value=\"hun\">Hungarian</option>\n"
+"                                  <option value=\"hye\">Armenian</option>\n"
+"                                  <option value=\"iku\">Inuktitut</option>\n"
+"                                  <option value=\"ind\">Indonesian</option>\n"
+"                                  <option value=\"isl\">Icelandic</option>\n"
+"                                  <option value=\"ita\">Italian</option>\n"
+"                                  <option value=\"ita_old\">Italian (Old)</option>\n"
+"                                  <option value=\"jav\">Javanese</option>\n"
+"                                  <option value=\"jpn\">Japanese</option>\n"
+"                                  <option value=\"jpn_vert\">Japanese (Vertical)</option>\n"
+"                                  <option value=\"kan\">Kannada</option>\n"
+"                                  <option value=\"kat\">Georgian</option>\n"
+"                                  <option value=\"kat_old\">Georgian (Old)</option>\n"
+"                                  <option value=\"kaz\">Kazakh</option>\n"
+"                                  <option value=\"khm\">Khmer</option>\n"
+"                                  <option value=\"kir\">Kyrgyz</option>\n"
+"                                  <option value=\"kmr\">Kurmanji</option>\n"
+"                                  <option value=\"kor\">Korean</option>\n"
+"                                  <option value=\"kor_vert\">Korean (Vertical)</option>\n"
+"                                  <option value=\"lao\">Lao</option>\n"
+"                                  <option value=\"lat\">Latin</option>\n"
+"                                  <option value=\"lav\">Latvian</option>\n"
+"                                  <option value=\"lit\">Lithuanian</option>\n"
+"                                  <option value=\"ltz\">Luxembourgish</option>\n"
+"                                  <option value=\"mal\">Malayalam</option>\n"
+"                                  <option value=\"mar\">Marathi</option>\n"
+"                                  <option value=\"msa\">Malay</option>\n"
+"                                  <option value=\"mlt\">Maltese</option>\n"
+"                                  <option value=\"mon\">Mongolian</option>\n"
+"                                  <option value=\"mri\">Māori</option>\n"
+"                                  <option value=\"mya\">Burmese</option>\n"
+"                                  <option value=\"nep\">Nepali</option>\n"
+"                                  <option value=\"nld\">Dutch</option>\n"
+"                                  <option value=\"nor\">Norwegian</option>\n"
+"                                  <option value=\"osd\">Orientation and script detection</option>\n"
+"                                  <option value=\"pan\">Punjabi</option>\n"
+"                                  <option value=\"pol\">Polish</option>\n"
+"                                  <option value=\"por\">Portuguese</option>\n"
+"                                  <option value=\"pus\">Pashto</option>\n"
+"                                  <option value=\"que\">Quechua</option>\n"
+"                                  <option value=\"ron\">Romanian</option>\n"
+"                                  <option value=\"rus\">Russian</option>\n"
+"                                  <option value=\"san\">Sanskrit</option>\n"
+"                                  <option value=\"sin\">Sinhala</option>\n"
+"                                  <option value=\"slk\">Slovak</option>\n"
+"                                  <option value=\"slv\">Slovenian</option>\n"
+"                                  <option value=\"snd\">Sindhi</option>\n"
+"                                  <option value=\"spa_old\">Spanish (Old)</option>\n"
+"                                  <option value=\"sqi\">Albanian</option>\n"
+"                                  <option value=\"srp\">Serbian</option>\n"
+"                                  <option value=\"srp_latn\">Serbian (Latin)</option>\n"
+"                                  <option value=\"swa\">Swahili</option>\n"
+"                                  <option value=\"swe\">Swedish</option>\n"
+"                                  <option value=\"syr\">Syriac</option>\n"
+"                                  <option value=\"tam\">Tamil</option>\n"
+"                                  <option value=\"tat\">Tatar</option>\n"
+"                                  <option value=\"tel\">Telugu</option>\n"
+"                                  <option value=\"tha\">Thai</option>\n"
+"                                  <option value=\"tir\">Tigrinya</option>\n"
+"                                  <option value=\"ton\">Tongan</option>\n"
+"                                  <option value=\"tur\">Turkish</option>\n"
+"                                  <option value=\"uig\">Uighur</option>\n"
+"                                  <option value=\"ukr\">Ukrainian</option>\n"
+"                                  <option value=\"urd\">Urdu</option>\n"
+"                                  <option value=\"uzb\">Uzbek</option>\n"
+"                                  <option value=\"uzb_cyrl\">Uzbek (Cyrillic)</option>\n"
+"                                  <option value=\"vie\">Vietnamese</option>\n"
+"                                  <option value=\"yid\">Yiddish</option>\n"
+"                                  <option value=\"yor\">Yoruba</option>\n"
+"                                </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
+msgid ""
+"<select id=\"playbackSpeed\">\n"
+"                                                <option value=\"0.5\">0.5x</option>\n"
+"                                                <option value=\"0.75\">0.75x</option>\n"
+"                                                <option value=\"1\" selected=\"selected\">1x</option>\n"
+"                                                <option value=\"1.25\">1.25x</option>\n"
+"                                                <option value=\"1.5\">1.5x</option>\n"
+"                                                <option value=\"2\">2x</option>\n"
+"                                            </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+msgid ""
+"<select id=\"promote_as\" class=\"form-select\" style=\"max-width: 200px\">\n"
+"                                                 <option value=\"q\" selected=\"true\">Queen</option>\n"
+"                                                 <option value=\"b\">Bishop</option>\n"
+"                                                 <option value=\"n\">Knight</option>\n"
+"                                                 <option value=\"r\">Rook</option>\n"
+"                                               </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
+msgid ""
+"<select id=\"themes\" class=\"form-select\" style=\"max-width: 200px\">\n"
+"                                <option value=\"candy\" selected=\"true\">Candy</option>\n"
+"                                <option value=\"modern\">Modern</option>\n"
+"                                <option value=\"retro\">Retro</option>\n"
+"                                <option value=\"vim\">VIM</option>\n"
+"                                <option value=\"monochrome\">Monochrome</option>\n"
+"                                <option value=\"gameboy\">Gameboy</option>\n"
+"                                <option value=\"aerolab\">Aerolab</option>\n"
+"                            </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+msgid ""
+"<select id=\"voiceSelect\" class=\"rounded-lg\">\n"
+"                                    <option>Voices...</option>\n"
+"                                </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+msgid ""
+"<select id=\"voiceSelect\" class=\"w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 text-sm\">\n"
+"                                        <option value=\"\" disabled=\"disabled\" selected=\"selected\">Select a voice</option>\n"
+"                                    </select>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1222,21 +1404,6 @@ msgid "Adrian Latorre"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
-msgid "Aerolab"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Afrikaans"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Albanian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 msgid "Album Art"
 msgstr ""
@@ -1261,11 +1428,6 @@ msgid "All data here as minimum payment, is referring to"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Amharic"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.list_transactions_radioforus
 msgid "Amount"
 msgstr ""
@@ -1273,16 +1435,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Apps"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "April"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Arabic"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1325,23 +1477,8 @@ msgid "Are you sure you want to go back?."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Armenian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
 msgid "Ask What I'm Seeing"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Assamese"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "August"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1364,16 +1501,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Avatar was saved."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Azerbaijani"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Azerbaijani (Cyrillic)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1401,28 +1528,8 @@ msgid "Baktun"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Basque"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Belarusian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Benefits:"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Bengali"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Bishop"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1436,28 +1543,8 @@ msgid "Blockrain"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Bosnian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Breton"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Bubble Shooter"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Bulgarian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Burmese"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1529,21 +1616,6 @@ msgid "Cancel Player"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
-msgid "Candy"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Catalan"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Cebuano"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Cesar"
 msgstr ""
@@ -1569,35 +1641,10 @@ msgid "Checkers Game"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Cherokee"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Chess"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Chinese (Simplified Vertical)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Chinese (Simplified)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Chinese (Traditional Vertical)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Chinese (Traditional)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1684,6 +1731,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -1732,18 +1780,8 @@ msgid "Cool App"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Corsican"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Credits"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Croatian"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1754,6 +1792,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 msgid "Current Sun Cycle: 0"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Current minimum payment"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1770,11 +1813,6 @@ msgid "Current time:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Czech"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.askanexpert
 msgid "César Cordero Rodríguez"
 msgstr ""
@@ -1785,13 +1823,9 @@ msgid "DOMINO"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "DONATE"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Danish"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1802,11 +1836,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Days available:"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "December"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1828,11 +1857,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Discord"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Divehi"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1890,22 +1914,13 @@ msgid "Donators list (verified)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Dutch"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Dzongkha"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 msgid "EXP"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -1946,14 +1961,8 @@ msgid "Engine Toggle (On/Off)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
 msgid "English"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "English (Middle)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1964,16 +1973,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Enter a puzzle as a string of 81 digits, 1-9, and '.' as spaces."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Esperanto"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Estonian"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1997,28 +1996,8 @@ msgid "Facebook"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Faroese"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "February"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Filipino"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 msgid "Finding your location..."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Finnish"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2039,28 +2018,8 @@ msgid "Flip Board"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Frankish"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Free Minigames:"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "French"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "French (Middle)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Frisian"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2076,11 +2035,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "GAMES LEARNING"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Galician"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2104,11 +2058,6 @@ msgid "Game Over!"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
-msgid "Gameboy"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Games learning: Chess, Sudoku, Snake."
 msgstr ""
@@ -2116,21 +2065,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "General ranking (verified)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Georgian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Georgian (Old)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "German"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2197,33 +2131,13 @@ msgid "Go to one of the games to do it."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Greek"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Greek (Ancient)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 msgid "Gregorian to Mayan Calendar (Solar and Universal Calendar) Converter"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Gujarati"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Gunter"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Haitian Creole"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2239,11 +2153,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 msgid "Headline aggregator from the world's leading sources."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Hebrew"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2288,18 +2197,8 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Hindi"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 msgid "Hint"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Hungarian"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2311,18 +2210,8 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Icelandic"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Import..."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Indonesian"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2336,16 +2225,6 @@ msgid "Instagram"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Inuktitut"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Irish"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "It isn't a Memo ID or Payment ID."
 msgstr ""
@@ -2356,39 +2235,13 @@ msgid "It isn't an URL youtube video."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Italian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Italian (Old)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "JOIN MEXC"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "January"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 msgid "Japanese"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Japanese (Vertical)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Javanese"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2412,23 +2265,8 @@ msgid "Julio"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "July"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "June"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Just Browse"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Kannada"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2437,44 +2275,13 @@ msgid "Katun"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Kazakh"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Khmer"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 msgid "Kin"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Knight"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 msgid "Korean"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Korean (Vertical)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Kurmanji"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Kyrgyz"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2523,11 +2330,6 @@ msgid "Language: Language Learning."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Lao"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Large"
 msgstr ""
@@ -2542,11 +2344,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Last payment was on"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Latin"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2622,11 +2419,6 @@ msgid "LatinChainPal"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Latvian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Leaders"
 msgstr ""
@@ -2659,11 +2451,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "List of users (verified and not verified)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Lithuanian"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2774,11 +2561,6 @@ msgid "Lost a transaction?"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Luxembourgish"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Lyam"
 msgstr ""
@@ -2850,33 +2632,8 @@ msgid "Mainnet status"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Malay"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Malayalam"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Maltese"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Maps: Place finder."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Marathi"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "March"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2892,11 +2649,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Math"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "May"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2920,6 +2672,7 @@ msgid "Menu"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -2941,21 +2694,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Minimum payment for"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
-msgid "Modern"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Mongolian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
-msgid "Monochrome"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3013,11 +2751,6 @@ msgid "My Photo Viewer"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Māori"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "NEWS"
 msgstr ""
@@ -3065,11 +2798,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Nelson"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Nepali"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3152,11 +2880,6 @@ msgid "Normal"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Norwegian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Not exchanged. Not enough"
 msgstr ""
@@ -3164,11 +2887,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Not verified. Each 30 days you should unlock the app paying"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "November"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3194,11 +2912,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "ODOO LEARNING"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "October"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3235,6 +2948,7 @@ msgid "Only verified users can change their Avatar."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -3259,11 +2973,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 msgid "Order: baktun.katun.tun.uinal.kin"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Orientation and script detection"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3296,11 +3005,6 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Pashto"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
 msgid "Pass"
 msgstr ""
@@ -3328,31 +3032,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pay 10 Latin points, earn 1 Snake points"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pay 10 Latin points, earn 3 Sudoku points"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pay 100 Latin points, earn 10 Chess points"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pay 100 Latin points, earn 10 Snake points"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pay 100 Latin points, earn 12 Sudoku points"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "PayPi"
 msgstr ""
 
@@ -3367,11 +3046,6 @@ msgid "Peers: <span id=\"peer-count\">0</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Persian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Photo player"
 msgstr ""
@@ -3382,6 +3056,7 @@ msgid "Photo: Photo viewer."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "Pi"
 msgstr ""
@@ -3557,16 +3232,6 @@ msgid "Playlist is empty."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Polish"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Portuguese"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 msgid "Press \"Scientific\" to switch to advanced functions"
 msgstr ""
@@ -3599,21 +3264,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
 msgid "Professional Video Player"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Punjabi"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Quechua"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Queen"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3704,11 +3354,6 @@ msgid "Restart Game"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
-msgid "Retro"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Rita"
 msgstr ""
@@ -3716,16 +3361,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.askanexpert
 msgid "Rita Nguyen"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Romanian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-msgid "Rook"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3754,11 +3389,6 @@ msgid "Rules of Sudoku"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Russian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "SNAKE"
 msgstr ""
@@ -3771,11 +3401,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "SUDOKU"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Sanskrit"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3821,11 +3446,6 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Scottish Gaelic"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Search apps"
 msgstr ""
@@ -3857,11 +3477,6 @@ msgid "Select Voice:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
-msgid "Select a voice"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 msgid "Select audio file"
 msgstr ""
@@ -3879,21 +3494,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 msgid "Selected Language Codes:"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
-msgid "September"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Serbian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Serbian (Latin)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3927,26 +3527,6 @@ msgid "SilkRoad for Pi.<br/>Mainnet:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Sindhi"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Sinhala"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Slovak"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Slovenian"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Snake"
@@ -3958,15 +3538,9 @@ msgid "Social"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
 msgid "Spanish"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Spanish (Old)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4032,16 +3606,6 @@ msgid "Super Snake"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Swahili"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Swedish"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
 msgid "Switch Camera"
 msgstr ""
@@ -4049,11 +3613,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Switch Sides"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Syriac"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4107,18 +3666,8 @@ msgid "Take Back"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Tamil"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Tasks"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Tatar"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4139,11 +3688,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Telegram"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Telugu"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4190,11 +3734,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Text-to-speech: Text-to-speech reader."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Thai"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4264,16 +3803,6 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Tibetan"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Tigrinya"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Tiktok"
 msgstr ""
@@ -4286,11 +3815,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Today's tasks"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Tongan"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4339,11 +3863,6 @@ msgid "Tun"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Turkish"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
 msgid "Turn: <span id=\"current-player-text\">Red</span>"
 msgstr ""
@@ -4351,6 +3870,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Twitter"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "USD"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4378,18 +3902,8 @@ msgid "UTILITIES"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Uighur"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 msgid "Uinal"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Ukrainian"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4404,13 +3918,13 @@ msgid "Unblock with"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Upload your photos to get started."
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Updated each minute (on Mainnet), and each 1 day (on Testnet)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Urdu"
+msgid "Upload your photos to get started."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4456,23 +3970,8 @@ msgid "Utility"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Uzbek"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Uzbek (Cyrillic)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "VIDEO PLAYER"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
-msgid "VIM"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4496,14 +3995,8 @@ msgid "Video: Video player."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 msgid "Vietnamese"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
-msgid "Voices..."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4623,11 +4116,6 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Welsh"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "White"
 msgstr ""
@@ -4688,18 +4176,16 @@ msgid "Yes"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Yiddish"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
-msgid "Yoruba"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "You are at"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid ""
+"You can Donate on LatinChain Mainnet and start using it everyday being "
+"verified during a month. Or access as unverified user.<br/>Which one you "
+"choose?."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
