@@ -435,6 +435,7 @@ $( document ).ready(function() {
                         
                         if($.parseJSON($("#showpiad").val().toLowerCase()) && !$.parseJSON($("#payoneclick").val().toLowerCase()))
                         {
+                            alert("123");
                             showRewardedPiAd();
                         }
                         
