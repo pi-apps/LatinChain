@@ -457,7 +457,10 @@ $( document ).ready(function() {
                             showRewardedPiAd();
                         });
                         
-                        if(Boolean(($("#showpiad").val().toLowerCase())) && !Boolean(($("#payoneclick").val().toLowerCase())))
+                        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                        {
+                            showRewardedPiAd();
+                        }else if(Boolean(($("#showpiad").val().toLowerCase())) && !Boolean(($("#payoneclick").val().toLowerCase())) && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
                             showRewardedPiAd();
                         }
