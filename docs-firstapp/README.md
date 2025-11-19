@@ -206,7 +206,7 @@ MINTING TOKEN:
 
 SETTING HOME DOMAIN (FOR THE TOML FILE):
 
-    //Setting Home Domain (TOML file will be at https://yourdomain.com/.well-known/pi.toml)
+    //Setting Home Domain (TOML file should be at https://yourdomain.com/.well-known/pi.toml)
     async function settingHomeDomainTOMLToken()
     {
         const StellarSDK = require("@stellar/stellar-sdk");
