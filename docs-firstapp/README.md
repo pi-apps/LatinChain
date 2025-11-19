@@ -80,7 +80,7 @@ Blazor: https://github.com/pi-apps/pi-blazor
 
 C#: https://github.com/pi-apps/pi-csharp
 
-# Creating a new Token on The Pi Network
+# Creating a new Token on The Pi Network (My version)
 
 Official DOCS: https://github.com/pi-apps/pi-platform-docs/blob/master/tokens.md
 
