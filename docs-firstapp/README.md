@@ -84,7 +84,7 @@ C#: https://github.com/pi-apps/pi-csharp
 
 Official DOCS: https://github.com/pi-apps/pi-platform-docs/blob/master/tokens.md
 
-And this is my version code (run it in a .cjs file):
+And this is my code version (run it in a .cjs file):
 
 CREATE TOKEN (TRUST LINE):
 
