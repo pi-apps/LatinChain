@@ -102,7 +102,7 @@ CREATE TOKEN (TRUST LINE):
 
         // define a token
         // token code should be alphanumeric and up to 12 characters, case sensitive
-        //CHANGE THIS
+        //CHANGE THIS (TOKEN NAME)
         const customToken = new StellarSDK.Asset("TokenName", issuerKeypair.publicKey());
 
         const distributorAccount = await server.loadAccount(distributorKeypair.publicKey());
@@ -118,7 +118,7 @@ CREATE TOKEN (TRUST LINE):
           networkPassphrase: NETWORK_PASSPHRASE,
           timebounds: await server.fetchTimebounds(90),
         })
-        //CHANGE THIS
+        //CHANGE THIS (LIMIT)
           .addOperation(StellarSDK.Operation.changeTrust({ asset: customToken, limit: "100000000" }))
           .build();
 
@@ -145,7 +145,7 @@ MINTING TOKEN:
 
         // define a token
         // token code should be alphanumeric and up to 12 characters, case sensitive
-        //CHANGE THIS
+        //CHANGE THIS (TOKEN NAME)
         const customToken = new StellarSDK.Asset("TokenName", issuerKeypair.publicKey());
 
         const distributorAccount = await server.loadAccount(distributorKeypair.publicKey());
@@ -169,7 +169,7 @@ MINTING TOKEN:
             StellarSDK.Operation.payment({
               destination: distributorKeypair.publicKey(),
               asset: customToken,
-              //CHANGE THIS
+              //CHANGE THIS (AMOUNT, NO MORE THAN LIMIT IN TOKEN CREATION)
               amount: "100000000", // amount to mint
             })
           )
@@ -217,7 +217,7 @@ SETTING HOME DOMAIN (FOR THE TOML FILE):
           networkPassphrase: NETWORK_PASSPHRASE,
           timebounds: await server.fetchTimebounds(90),
         })
-        //CHANGE THIS
+        //CHANGE THIS (HOME DOMAIN)
           .addOperation(StellarSDK.Operation.setOptions({ homeDomain: "yourdomain.com" })) // replace with your actual domain
           .build();
 
