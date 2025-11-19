@@ -84,6 +84,18 @@ C#: https://github.com/pi-apps/pi-csharp
 
 Official DOCS: https://github.com/pi-apps/pi-platform-docs/blob/master/tokens.md
 
+INSTALL:
+
+    nmp install @stellar/stellar-sdk
+
+PREREQUISITES:
+
+    You need two different wallet addresses. First for issuer and the second for distributor.
+
+    Consider use these tools to get secret key from the wallets:
+    
+    https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/mnemonicToSecret
+
 And this is my code version (run it in a .cjs file):
 
 CREATE TOKEN (TRUST LINE):
