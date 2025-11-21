@@ -1522,8 +1522,14 @@ $( document ).ready(function() {
             
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
-                showPiAds(Pi, true);
+                colorboxLoadedMainnet();
             }
+            
+            /*
+            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+            {
+                showPiAds(Pi, true);
+            }*/
         }
         
         if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
