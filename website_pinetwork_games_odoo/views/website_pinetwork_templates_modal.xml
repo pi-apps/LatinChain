@@ -165,9 +165,12 @@
                             </div>
                             
                             <!--<a href="https://latinchain.pinet.com/?nopopup=true" target="_blank" class="btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>-->
-                            <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;" translate="no"><div style="display: inline">Earn Latin points (<t t-esc="amount_latin_pay" />)</div> <div style="display: inline">(Mainnet)</div></div></strong></a>
-                            <br/><br/>
-                            <button class="openMainnetModal btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></button>
+                            <div style="margin-bottom:5px">
+                                <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;" translate="no"><div style="display: inline">Earn Latin points (<t t-esc="amount_latin_pay" />)</div> <div style="display: inline">(Mainnet)</div></div></strong></a>
+                            </div>
+                            <div style="margin-bottom:5px">
+                                <button class="openMainnetModal btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></button>
+                            </div>
                             <!--<br/>
                             <div class="container rounded" style="text-align:center; max-width: 810px; border:3px solid; padding:5px;">
                                 <div class="row">
@@ -190,9 +193,11 @@
                                     </div>
                                 </div>
                             </div>-->
-                            <br/>
+                            
                             <!--<a href="https://latinchaintest9869.pinet.com/?nopopup=true" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>-->
-                            <a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
+                            <div>
+                                <a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
+                            </div>
                             <!--<button onClick="window.parent.location.href='/?nopopup=true'" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
 							<!--<button onClick="window.parent.$.colorbox.close()" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
                             <br/>
