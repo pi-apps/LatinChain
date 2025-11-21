@@ -170,8 +170,8 @@
                                 <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;" translate="no"><div style="display: inline">Earn Latin points (<t t-esc="amount_latin_pay" />)</div> <div style="display: inline">(Mainnet)</div></div></strong></a>
                             </div>
                             <div style="margin-bottom:5px">
-                                <!--<a href="https://latinchain.pinet.com" target="_blank" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>-->
-                                <button class="openMainnetModal btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></button>
+                                <a href="https://latinchain.pinet.com" target="_blank" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>
+                                <!--<button class="openMainnetModal btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></button>-->
                             </div>
                             <!--<br/>
                             <div class="container rounded" style="text-align:center; max-width: 810px; border:3px solid; padding:5px;">
