@@ -1494,6 +1494,16 @@
                             </script>
                         </div>-->
                         
+                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
+                            </div>
+                            <div style="margin-bottom:5px">
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="col-8 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" target="_blank" class="col-8 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
+                            </div>
+                        </div>
+                        
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded showInterstitialAd">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinChainCool &#128240;</div></strong></h5>
@@ -1532,16 +1542,6 @@
                                     Activate accessibility.
                                 </div>
                               </label>
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
-                            </div>
-                            <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="col-8 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" target="_blank" class="col-8 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
                         
