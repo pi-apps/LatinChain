@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-18 22:10+0000\n"
-"PO-Revision-Date: 2025-11-18 22:10+0000\n"
+"POT-Creation-Date: 2025-11-22 11:32+0000\n"
+"PO-Revision-Date: 2025-11-22 11:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -76,6 +76,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 msgid "(Go to LatinChain Mainnet)"
 msgstr "(Ir a LatinChain Mainnet)"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid "(Mainnet)"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
@@ -1187,13 +1192,6 @@ msgstr ""
 msgid ""
 "<strong class=\"font-bold\">Note:</strong> A public proxy service is used to"
 " avoid CORS issues."
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
-msgid ""
-"<strong translate=\"no\">test.latin-chain.com/latinchain-mainnet-"
-"redirect</strong>."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3991,11 +3989,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 msgid ""
 "This modal (webpage on popup) will be displayed when load on LatinChain "
-"Testnet (always) and on LatinChain Mainnet (only if you are unverified). "
-"This Modal is at: test.latin-chain.com/latinchain-mainnet-redirect"
+"Mainnet (only if you are unverified). This Modal is at: test.latin-"
+"chain.com/latinchain-mainnet-redirect"
 msgstr ""
-"Esta ventana emergente se mostrará al cargar LatinChain Testnet (siempre) y "
-"en LatinChain Mainnet (solo si no está verificado). Esta ventana emergente "
+"Esta ventana emergente se mostrará al cargar en LatinChain "
+"Mainnet (solo si no está verificado). Esta ventana emergente "
 "se encuentra en: test.latin-chain.com/latinchain-mainnet-redirect"
 
 #. module: website_pinetwork_games_odoo
@@ -4392,8 +4390,8 @@ msgid ""
 "verified during a month. Or access as unverified user.<br/>Which one you "
 "choose?."
 msgstr ""
-"Puedes Donar en la Mainnet de LatinChain y empezar a usarla a diario tras ser "
-"verificado, durante un mes. O acceder como usuario no verificado.<br/> "
+"Puedes Donar en la Mainnet de LatinChain y empezar a usarla a diario tras "
+"ser verificado, durante un mes. O acceder como usuario no verificado.<br/> "
 "¿Cuál eliges?."
 
 #. module: website_pinetwork_games_odoo
