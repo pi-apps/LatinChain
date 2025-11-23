@@ -79,10 +79,24 @@ class PiNetworkBaseController(http.Controller):
         
         if len(admin_app_list) == 0:
             points_latin_daily_total = 0
+            
+            response_result = f"""
+                                Points Latin by Ads Daily Total = {points_latin_daily_total}
+                            """
         else:
             points_latin_daily_total = admin_app_list[0].points_latin_daily_total
         
-        response_result = "Points Latin by Ads Daily Total = " + str(points_latin_daily_total)
+            pi_user_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', admin_app_list[0].pi_main_user)])
+            
+            if len(pi_user_list) == 0:
+                points_latin_daily_total_oneuser = 0
+            else:
+                points_latin_daily_total_oneuser = pi_user_list[0].points_latin_daily
+            
+            response_result = f"""
+                                Points Latin by Ads Daily Total = {points_latin_daily_total}
+                                Points Latin by Ads Daily for Admin User = {points_latin_daily}
+                            """
         
         headers = {'Content-Type': 'text; charset=UTF-8'}
         return Response(response_result, headers=headers)
