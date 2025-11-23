@@ -694,7 +694,7 @@ class PiNetworkBaseController(http.Controller):
             
             points_latin_daily = pi_users_list[0].points_latin_daily
             
-            if start_time <= now:
+            if now <= start_time:
                 points_latin_daily += 1
             else:
                 points_latin_daily = 1
