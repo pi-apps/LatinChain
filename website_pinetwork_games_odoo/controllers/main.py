@@ -13,7 +13,7 @@ _logger = logging.getLogger(__name__)
 
 from odoo.addons.website.controllers.main import Website
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time
 
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True, csrf=False)

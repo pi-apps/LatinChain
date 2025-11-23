@@ -236,6 +236,7 @@ class admin_apps(models.Model):
     amount_price = fields.Float('Amount price', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     amount_price_apikey = fields.Char('Amount price apikey', store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     amount_price_topay_usd = fields.Float('Amount price to pay (USD)', digits=(50,7), default=5, store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    points_latin_daily_total = fields.Integer('Points Latin_daily total', compute="_compute_points_latin_daily_total", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     """
     @api.depends("amount")
@@ -243,6 +244,19 @@ class admin_apps(models.Model):
         for i in self:
             i.amount_latin_pay = i.amount * 100
     """
+    
+    def _compute_points_latin_daily_total(self):
+        for i in self:
+        
+            total = 0
+            
+            users_domain = [('points_latin_daily', '>', 0)]
+            users_ids = self.env["pi.users"].read_group(users_domain, ['points_latin_daily'], ['pi_user_role'])
+            
+            if len(users_ids) > 0:
+                total = users_ids[0]['points_latin_daily']
+            
+            i.points_latin_daily_total = total
   
     def _update_amount_price(self):
         for i in self:
@@ -1288,6 +1302,7 @@ class pi_users(models.Model):
     avatar_user = fields.Selection(selection='_get_dynamic_avatar_options', string='User Avatar', default='select_one', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     avatar_user_url = fields.Char('Avatar user URL', compute="_compute_avatar_user_url", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     x2_game = fields.Boolean('x2 Game', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    points_latin_daily = fields.Integer('Points Latin_daily', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("avatar_user")
     def _compute_avatar_user_url(self):

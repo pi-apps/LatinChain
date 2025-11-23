@@ -4,8 +4,6 @@ from odoo import http
 from odoo.http import request, Response
 import json
 
-import time
-
 import odoo
 
 import requests
@@ -23,7 +21,7 @@ from random import choice
 
 import random
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time
 
 import os
 
@@ -74,6 +72,20 @@ class PiNetworkBaseController(http.Controller):
             sandbox = admin_app_list[0].sandbox
         
         return http.request.render('website_pinetwork_odoo.example', {'sandbox': sandbox})
+        
+    @http.route('/points-latin-daily-total', type='http', auth="public", website=True, csrf=False)
+    def points_latin_daily_total(self, **kw):
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            points_latin_daily_total = 0
+        else:
+            points_latin_daily_total = admin_app_list[0].points_latin_daily_total
+        
+        response_result = "Points Latin by Ads Daily_Total = " + str(points_latin_daily_total)
+        
+        headers = {'Content-Type': 'text; charset=UTF-8'}
+        return Response(response_result, headers=headers)
         
     @http.route('/api-docs/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def api_external_docs(self, **kw):
@@ -663,7 +675,18 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             """
             
-            values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount}
+            now = datetime.now()  # Get current time (without date)
+            start_time = datetime(now.year, now.month, now.day, 23, 59, 59)
+            
+            points_latin_daily = pi_users_list[0].points_latin_daily
+            
+            if start_time <= now:
+                points_latin_daily += 1
+            else:
+                points_latin_daily = 1
+            
+            values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount, 
+                        'points_latin_daily': points_latin_daily}
             
             values.update({'x2_game': True})
             
