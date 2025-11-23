@@ -82,7 +82,7 @@ class PiNetworkBaseController(http.Controller):
         else:
             points_latin_daily_total = admin_app_list[0].points_latin_daily_total
         
-        response_result = "Points Latin by Ads Daily_Total = " + str(points_latin_daily_total)
+        response_result = "Points Latin by Ads Daily Total = " + str(points_latin_daily_total)
         
         headers = {'Content-Type': 'text; charset=UTF-8'}
         return Response(response_result, headers=headers)
