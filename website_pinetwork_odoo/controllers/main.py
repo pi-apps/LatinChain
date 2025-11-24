@@ -694,7 +694,9 @@ class PiNetworkBaseController(http.Controller):
             
             points_latin_daily = pi_users_list[0].points_latin_daily
 
-            if pi_users_list[0].last_connection.date() != current_date:
+            if not pi_users_list[0].pi_ad_datetime:
+                points_latin_daily = 1
+            elif pi_users_list[0].pi_ad_datetime.date() != current_date:
                 points_latin_daily = 1
             else:
                 points_latin_daily = points_latin_daily + 1
