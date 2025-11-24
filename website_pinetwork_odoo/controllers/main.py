@@ -694,10 +694,10 @@ class PiNetworkBaseController(http.Controller):
             
             points_latin_daily = pi_users_list[0].points_latin_daily
 
-            if pi_users_list[0].last_connection.date() != current_date and points_latin_daily != 1:
+            if pi_users_list[0].last_connection.date() != current_date:
                 points_latin_daily = 1
             else:
-                points_latin_daily = pi_users_list[0].points_latin_daily + 1
+                points_latin_daily = points_latin_daily + 1
             
             values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount, 
                         'points_latin_daily': points_latin_daily}
