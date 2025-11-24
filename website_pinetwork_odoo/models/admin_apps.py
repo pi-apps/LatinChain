@@ -250,7 +250,7 @@ class admin_apps(models.Model):
         for i in self:
         
             total = 0
-            
+            """
             users_domain = [('points_latin_daily', '>', 0)]
             users_ids = self.env["pi.users"].read_group(users_domain, ['points_latin_daily'], ['pi_user_role'])
             
@@ -259,6 +259,7 @@ class admin_apps(models.Model):
                 while cont < len(users_ids):
                     total = users_ids[cont]['points_latin_daily']
                     cont+=1
+            """
             
             i.points_latin_daily_total = total
   
