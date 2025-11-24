@@ -690,14 +690,12 @@ class PiNetworkBaseController(http.Controller):
             """
             
             now = datetime.now()  # Get current time (without date)
-            start_time = datetime(now.year, now.month, now.day, 23, 59, 59)
-            
-            points_latin_daily = pi_users_list[0].points_latin_daily
-            
-            if now <= start_time:
-                points_latin_daily += 1
-            else:
+            current_date = now.date() # Obtenemos solo la fecha (sin hora), ej: 2023-11-23
+
+            if pi_users_list[0].last_connection.date() != current_date:
                 points_latin_daily = 1
+            else:
+                points_latin_daily = pi_users_list[0].points_latin_daily + 1
             
             values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount, 
                         'points_latin_daily': points_latin_daily}
