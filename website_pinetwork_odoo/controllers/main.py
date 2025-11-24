@@ -86,7 +86,7 @@ class PiNetworkBaseController(http.Controller):
                                 Points Latin by Ads Daily Total = {points_latin_daily_total}
                             """
         else:
-            points_latin_daily_total = admin_app_list[0].points_latin_daily_total
+            points_latin_daily_total = admin_app_list[0].points_latin_daily_total_notcomputed
         
             pi_user_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', admin_app_list[0].pi_main_user.pi_user_code)])
             

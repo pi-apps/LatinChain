@@ -237,6 +237,7 @@ class admin_apps(models.Model):
     amount_price_apikey = fields.Char('Amount price apikey', store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     amount_price_topay_usd = fields.Float('Amount price to pay (USD)', digits=(50,7), default=5, store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     points_latin_daily_total = fields.Integer('Points Latin_daily total', compute="_compute_points_latin_daily_total", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    points_latin_daily_total_notcomputed = fields.Integer('Points Latin_daily total notcomputed', store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     """
     @api.depends("amount")
@@ -306,6 +307,8 @@ class admin_apps(models.Model):
             i.top_50_streamers_ids = [(6, 0, pi_user_list.ids)]
             pi_user_list = self.env["pi.users"].sudo().search([], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
             i.pi_users_general_ranking_ids = [(6, 0, pi_user_list.ids)]
+            
+            i.points_latin_daily_total_notcomputed = i.points_latin_daily_total
             
             now = datetime.now().time()  # Get current time (without date)
             start_time = time(16, 0, 0)
