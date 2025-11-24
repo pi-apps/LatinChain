@@ -83,6 +83,7 @@ class PiNetworkBaseController(http.Controller):
             points_latin_daily_total = 0
             
             response_result = f"""
+                                Current datetime: {datetime.now()}
                                 Points Latin by Ads Daily Total = {points_latin_daily_total}
                             """
         else:
@@ -96,6 +97,7 @@ class PiNetworkBaseController(http.Controller):
                 points_latin_daily_oneuser = pi_user_list[0].points_latin_daily
             
             response_result = f"""
+                                    Current datetime: {datetime.now()} UTC
                                     Points Latin by Ads Daily Total = {points_latin_daily_total}
                                     Points Latin by Ads Daily for Admin User = {points_latin_daily_oneuser}
                             """
