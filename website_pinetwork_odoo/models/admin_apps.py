@@ -1305,7 +1305,7 @@ class pi_users(models.Model):
     avatar_user = fields.Selection(selection='_get_dynamic_avatar_options', string='User Avatar', default='select_one', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     avatar_user_url = fields.Char('Avatar user URL', compute="_compute_avatar_user_url", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     x2_game = fields.Boolean('x2 Game', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    points_latin_daily = fields.Integer('Points Latin_daily', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    points_latin_daily = fields.Integer('Points Latin_daily', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("avatar_user")
     def _compute_avatar_user_url(self):
