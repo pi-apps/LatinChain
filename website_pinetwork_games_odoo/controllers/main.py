@@ -642,7 +642,48 @@ class PiNetworkController(http.Controller):
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
         
-        return http.request.render('website_pinetwork_games_odoo.latinchain_mainnet_redirect', {'amount_latin_pay': amount_latin_pay, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        onlymainnet = False
+        
+        return http.request.render('website_pinetwork_games_odoo.latinchain_mainnet_redirect', {'onlymainnet': onlymainnet, 'amount_latin_pay': amount_latin_pay, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+    
+    @http.route('/latinchain-onlymainnet-redirect', type='http', auth="public", website=True, csrf=False)
+    def latinchain_onlymainnet_redirect(self, **kw):
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+            amount = False
+            amount_latin_pay = False
+            google_adsense = ""
+            a_ads = ""
+            a_ads_data = ""
+            a_ads_style = ""
+            a_ads_2 = ""
+            a_ads_data_2 = ""
+            a_ads_style_2 = ""
+            a_ads_3 = ""
+            a_ads_data_3 = ""
+            a_ads_style_3 = ""
+            mainnet = ""
+        else:
+            sandbox = admin_app_list[0].sandbox
+            amount = admin_app_list[0].amount
+            amount_latin_pay = admin_app_list[0].amount_latin_pay
+            google_adsense = admin_app_list[0].google_adsense
+            a_ads = admin_app_list[0].a_ads
+            a_ads_data = admin_app_list[0].a_ads_data
+            a_ads_style = admin_app_list[0].a_ads_style
+            a_ads_2 = admin_app_list[0].a_ads_2
+            a_ads_data_2 = admin_app_list[0].a_ads_data_2
+            a_ads_style_2 = admin_app_list[0].a_ads_style_2
+            a_ads_3 = admin_app_list[0].a_ads_3
+            a_ads_data_3 = admin_app_list[0].a_ads_data_3
+            a_ads_style_3 = admin_app_list[0].a_ads_style_3
+            mainnet = admin_app_list[0].mainnet
+        
+        onlymainnet = True
+        
+        return http.request.render('website_pinetwork_games_odoo.latinchain_mainnet_redirect', {'onlymainnet': onlymainnet, 'amount_latin_pay': amount_latin_pay, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/latinchain_x', type='http', auth="public", website=True, csrf=False)
     def latinchain_x(self, **kw):

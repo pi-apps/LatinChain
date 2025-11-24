@@ -938,7 +938,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.552"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.553"></script>
                     
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -1346,39 +1346,13 @@
                         
                         <div id="loading_word_under" style="margin-top:10px; width: 100%; display: none;"></div>
                         
-                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">#StakePi &#128202;</div></strong></h5>
+                                <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="href-external col-8 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Mainnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://ecosystem.pinet.com/apps/63d38f4fa9a2245a1c0ef9cf" target="_blank" class="href-external col-8 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Testnet</div></a>
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center;" class="border-gradient-rounded showInterstitialAd">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">#LatinChainTV &#128250;</div></strong></h5>
-                            </div>
-                            <div style="margin-bottom:5px">
-                                <!--<div>Subscribe here:</div>
-                                <div style="filter: contrast(100%) !important;">
-                                &#128073;
-                                <a href="https://www.youtube.com/@rockcesar85" target="_blank">
-                                    <img src="/website_pinetwork_games_odoo/static/src/img/youtube.png" alt="Youtube" class="img-fluid" style="max-width: 130px" width="100%" height="50px" />
-                                </a>
-                                &#128072;
-                                </div>-->
-                                <!--
-                                <div style="margin-bottom:5px" translate="no">
-                                    <button style="max-width: 130px" class="col-8 btn btn-danger font-weight-bold youtube-social" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">channel</div></button>
-                                </div>
-                                -->
-                                <div style="margin-bottom:5px" translate="no">
-                                    <button class="btn btn-danger font-weight-bold streamerzoneboard" ><div style="display:inline;"><i class="fa-solid fa-tv"></i></div> <div style="display:inline;">LatinChain dSocial</div></button>
-                                </div>
-                                <div>Watch good content daily</div>
-                                <iframe id="latinchain-tv" class="rounded" style="max-width: 380px" width="100%" height="200px" src="" title="YouTube video player" frameborder="0" allowfullscreen="true"></iframe>
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="col-8 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" target="_blank" class="col-8 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
                         
@@ -1482,6 +1456,42 @@
                             </div>
                         </div>
                         
+                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline;">#StakePi &#128202;</div></strong></h5>
+                            </div>
+                            <div style="margin-bottom:5px">
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="href-external col-8 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Mainnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://ecosystem.pinet.com/apps/63d38f4fa9a2245a1c0ef9cf" target="_blank" class="href-external col-8 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Testnet</div></a>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom:5px; padding:5px; width: 100%; text-align: center;" class="border-gradient-rounded showInterstitialAd">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline;">#LatinChainTV &#128250;</div></strong></h5>
+                            </div>
+                            <div style="margin-bottom:5px">
+                                <!--<div>Subscribe here:</div>
+                                <div style="filter: contrast(100%) !important;">
+                                &#128073;
+                                <a href="https://www.youtube.com/@rockcesar85" target="_blank">
+                                    <img src="/website_pinetwork_games_odoo/static/src/img/youtube.png" alt="Youtube" class="img-fluid" style="max-width: 130px" width="100%" height="50px" />
+                                </a>
+                                &#128072;
+                                </div>-->
+                                <!--
+                                <div style="margin-bottom:5px" translate="no">
+                                    <button style="max-width: 130px" class="col-8 btn btn-danger font-weight-bold youtube-social" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">channel</div></button>
+                                </div>
+                                -->
+                                <div style="margin-bottom:5px" translate="no">
+                                    <button class="btn btn-danger font-weight-bold streamerzoneboard" ><div style="display:inline;"><i class="fa-solid fa-tv"></i></div> <div style="display:inline;">LatinChain dSocial</div></button>
+                                </div>
+                                <div>Watch good content daily</div>
+                                <iframe id="latinchain-tv" class="rounded" style="max-width: 380px" width="100%" height="200px" src="" title="YouTube video player" frameborder="0" allowfullscreen="true"></iframe>
+                            </div>
+                        </div>
+                        
                         <!--<div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                             <ins class="adsbygoogle"
                                  style="display:block"
@@ -1493,16 +1503,6 @@
                                  (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                         </div>-->
-                        
-                        <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
-                            </div>
-                            <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="col-8 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" target="_blank" class="col-8 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
-                            </div>
-                        </div>
                         
                         <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded showInterstitialAd">
                             <div style="margin-bottom:5px" class="border-bottom">

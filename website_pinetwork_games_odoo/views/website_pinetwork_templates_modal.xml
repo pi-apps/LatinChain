@@ -153,14 +153,27 @@
                             <br/>
                             <div style="font-size: 90%; word-break: break-word;">
                                 <!--<div style="display: inline"><i class="fa-solid fa-link"></i></div> <div style="display: inline"><strong translate="no">test.latin-chain.com/latinchain-mainnet-redirect</strong>.-->
-                                <div style="display: inline">
+                                <div style="display: inline" t-if="not onlymainnet">
                                     <button style="font-size: 100%;" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="This modal (webpage on popup) will be displayed when load on LatinChain Mainnet (only if you are unverified). This Modal is at: test.latin-chain.com/latinchain-mainnet-redirect">
                                         Show tip
                                     </button>
                                 </div>
+                                
+                                <div style="display: inline" t-if="onlymainnet">
+                                    <button style="font-size: 100%;" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="This modal (webpage on popup) will be displayed when load on LatinChain Mainnet (only if you are unverified). This Modal is at: test.latin-chain.com/latinchain-onlymainnet-redirect">
+                                        Show tip
+                                    </button>
+                                </div>
                             </div>
-                            <div style="font-size: 90%">
+                            
+                            <div style="font-size: 90%" t-if="not onlymainnet">
                                 We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem. Get double utility usage bonus <i class="fa-solid fa-bolt"></i> by using both Mainnet and Testnet.
+                                <br/>
+                                <br/>
+                            </div>
+                            
+                            <div style="font-size: 90%" t-if="onlymainnet">
+                                We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem.
                                 <br/>
                                 <br/>
                             </div>
@@ -197,7 +210,7 @@
                             </div>-->
                             
                             <!--<a href="https://latinchaintest9869.pinet.com/?nopopup=true" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>-->
-                            <div>
+                            <div t-if="not onlymainnet">
                                 <a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
                             </div>
                             <!--<button onClick="window.parent.location.href='/?nopopup=true'" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
