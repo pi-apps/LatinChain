@@ -166,17 +166,17 @@
                                 </div>
                             </div>
                             
-                            <div style="font-size: 90%">
+                            <div style="font-size: 90%" t-if="not onlymainnet">
                                 We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem. Get double utility usage bonus <i class="fa-solid fa-bolt"></i> by using both Mainnet and Testnet.
                                 <br/>
                                 <br/>
                             </div>
                             
-                            <!--<div style="font-size: 90%" t-if="onlymainnet">
+                            <div style="font-size: 90%" t-if="onlymainnet">
                                 We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem.
                                 <br/>
                                 <br/>
-                            </div>-->
+                            </div>
                             
                             <!--<a href="https://latinchain.pinet.com/?nopopup=true" target="_blank" class="btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>-->
                             <!--<div style="margin-bottom:5px">
@@ -211,7 +211,7 @@
                             </div>-->
                             
                             <!--<a href="https://latinchaintest9869.pinet.com/?nopopup=true" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>-->
-                            <div>
+                            <div t-if="not onlymainnet">
                                 <a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
                             </div>
                             <!--<button onClick="window.parent.location.href='/?nopopup=true'" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
