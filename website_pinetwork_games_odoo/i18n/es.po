@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 11:32+0000\n"
-"PO-Revision-Date: 2025-11-22 11:32+0000\n"
+"POT-Creation-Date: 2025-11-24 09:59+0000\n"
+"PO-Revision-Date: 2025-11-24 09:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -76,11 +76,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 msgid "(Go to LatinChain Mainnet)"
 msgstr "(Ir a LatinChain Mainnet)"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
-msgid "(Mainnet)"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
@@ -3992,9 +3987,20 @@ msgid ""
 "Mainnet (only if you are unverified). This Modal is at: test.latin-"
 "chain.com/latinchain-mainnet-redirect"
 msgstr ""
-"Esta ventana emergente se mostrará al cargar en LatinChain "
-"Mainnet (solo si no está verificado). Esta ventana emergente "
-"se encuentra en: test.latin-chain.com/latinchain-mainnet-redirect"
+"Esta ventana emergente se mostrará al cargar en LatinChain Mainnet (solo si "
+"no está verificado). Esta ventana emergente se encuentra en: test.latin-"
+"chain.com/latinchain-mainnet-redirect"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid ""
+"This modal (webpage on popup) will be displayed when load on LatinChain "
+"Mainnet (only if you are unverified). This Modal is at: test.latin-"
+"chain.com/latinchain-onlymainnet-redirect"
+msgstr ""
+"Esta ventana emergente se mostrará al cargar en LatinChain Mainnet (solo si "
+"no está verificado). Esta ventana emergente se encuentra en: test.latin-"
+"chain.com/latinchain-onlymainnet-redirect"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -4248,6 +4254,17 @@ msgstr "Ver el tweet del Pi Core Team"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Watch user"
 msgstr "Ver usuario"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid ""
+"We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem.\n"
+"                                <br/>\n"
+"                                <br/>"
+msgstr ""
+"Estamos probando LatinChain Mainnet en el ecosistema de criptomonedas de Pi Network.\n"
+"                                <br/>\n"
+"                                <br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
