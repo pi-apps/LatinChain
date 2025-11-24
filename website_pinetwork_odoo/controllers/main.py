@@ -25,6 +25,8 @@ from datetime import datetime, timedelta, time
 
 import os
 
+import textwrap
+
 """
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
@@ -94,9 +96,11 @@ class PiNetworkBaseController(http.Controller):
                 points_latin_daily_oneuser = pi_user_list[0].points_latin_daily
             
             response_result = f"""
-                                Points Latin by Ads Daily Total = {points_latin_daily_total}
-                                Points Latin by Ads Daily for Admin User = {points_latin_daily_oneuser}
+                                    Points Latin by Ads Daily Total = {points_latin_daily_total}
+                                    Points Latin by Ads Daily for Admin User = {points_latin_daily_oneuser}
                             """
+        
+        response_result = textwrap.dedent(response_result).strip()
         
         headers = {'Content-Type': 'text; charset=UTF-8'}
         return Response(response_result, headers=headers)
