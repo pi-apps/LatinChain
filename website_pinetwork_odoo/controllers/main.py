@@ -678,6 +678,7 @@ class PiNetworkBaseController(http.Controller):
             
             if not (result_dict['identifier'] == kw['adId'] and result_dict['mediator_ack_status'] == "granted"):
                 _logger.info("Not granted")
+                _logger.info(str(result_dict))
                 return json.dumps({'result': False})
         except:
             _logger.info("Ad authorization error")
