@@ -1021,6 +1021,7 @@ class PiNetworkBaseController(http.Controller):
                                                     'points_sudoku': 0,
                                                     'points_snake': 0,
                                                     'points_latin': 0,
+                                                    'x2_game': False,
                                                     'unblocked_datetime': False,
                                                     'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
                                                     'last_connection': datetime.now(),
