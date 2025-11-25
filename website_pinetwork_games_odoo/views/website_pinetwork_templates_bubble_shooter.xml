@@ -57,6 +57,51 @@
                             var accessToken = "";
                             var passkey = "";
                             
+                            function test_rewarded()
+                            {
+                                document.getElementById('blockingOverlay').style.display = 'none';
+                            }
+
+                            async function showPiRewardedAds(Pi) {
+                                try {
+                                    
+                                    const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
+                                    if (isAdReadyResponse.ready === false) {
+                                        
+                                        const requestAdResponse = await Pi.Ads.requestAd("rewarded");
+                                        if (requestAdResponse.result === "ADS_NOT_SUPPORTED") {
+                                            // display modal to update Pi Browser
+                                            // showAdsNotSupportedModal()
+                                            alert("Update Pi Browser version, please!.");
+                                            return;
+                                        }
+                                        if (requestAdResponse.result !== "AD_LOADED") {
+                                            // display modal ads are temporarily unavailable and user should try again later
+                                            // showAdUnavailableModal()
+                                            alert("Ads are temporarily unavailable, try again later!.");
+                                            return;
+                                        }
+                                    }
+                                    
+                                    const showAdResponse = await Pi.Ads.showAd("rewarded");
+                                    
+                                    if (showAdResponse.result === "AD_REWARDED")
+                                    {
+                                        if(showAdResponse.adId)
+                                        {
+                                            
+                                        }
+                                        test_rewarded();
+                                    }
+                                } catch (err) {
+                                }
+                            }
+                            
+                            $("#test_app").click(function(){
+                                alert("You can use this app, for testing purposes, until you unblock the game.");
+                                showPiRewardedAds(Pi);
+                            });
+                            
                             function set_points(points) {
                                 if(pi_user_id != "" &amp;&amp; pi_user_code != "")
                                 {
@@ -210,6 +255,10 @@
                                 </div>
                                 <div>
                                     <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                </div>
+                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <br/>
+                                    <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
                                 </div>
                             </div>
                             <div id="loading-message" style="display: block;">
