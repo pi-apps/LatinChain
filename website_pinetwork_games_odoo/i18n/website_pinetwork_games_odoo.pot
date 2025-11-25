@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-25 10:38+0000\n"
-"PO-Revision-Date: 2025-11-25 10:38+0000\n"
+"POT-Creation-Date: 2025-11-25 13:12+0000\n"
+"PO-Revision-Date: 2025-11-25 13:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2037,11 +2037,6 @@ msgid "Flip Board"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
-msgid "Free Minigames:"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
 msgid "Fullscreen"
 msgstr ""
@@ -2985,6 +2980,32 @@ msgid "Operations"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.checkers
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.fifteen_puzzle
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.gameslearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.videoplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webtorrent
+msgid "Or here to test this app"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webtorrent
 msgid "Or upload a .torrent file:"
 msgstr ""
@@ -3717,6 +3738,12 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Test Your Brain"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Test app"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
