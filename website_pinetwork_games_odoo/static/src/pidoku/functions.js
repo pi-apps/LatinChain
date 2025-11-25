@@ -158,10 +158,8 @@ function get_user() {
                     var tab_name = get_tab();
                     refresh_board();
                     
-                    /*
-                    $("#test_game").hide();
-                    $(".show_test_game").hide();
-                    */
+                    $("#test_app").hide();
+                    $(".show_test_app").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Sudoku, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -174,12 +172,10 @@ function get_user() {
                     var tab_name = get_tab();
                     refresh_board();
                     
-                    /*
-                    $("#test_game").hide();
-                    $(".show_test_game").hide();
-                    */
+                    $("#test_app").hide();
+                    $(".show_test_app").hide();
                 }
-                /*else
+                else
                 {
                     $(".hide_when_unblock").show();
                     $("#pi_donate").hide();
@@ -187,25 +183,65 @@ function get_user() {
                     $("#sudoku-tab").hide();
                     $("#home-tab").click();
                     
-                    $("#test_game").prop( "disabled", false );
-                    $("#test_game").click(function(){
+                    $("#test_app").prop( "disabled", false );
+                    $("#test_app").click(function(){
                         alert("You can use Sudoku, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
-                        $("#pi_donate").hide();
-                        $("#button_click").show();
-                        $(".hide_when_unblock").show();
-                        $("#sudoku-tab").show();
-                        $("#sudoku-tab").click();
-                        
-                        var tab_name = get_tab();
-                        refresh_board();
-                        $("#test_game").hide();
-                        $(".show_test_game").hide();
+                        showPiRewardedAds(Pi);
                     });
-                }*/
+                }
             }
         }).fail(function() {
             
         });
+    }
+}
+
+function test_rewarded()
+{
+    $("#pi_donate").hide();
+    $("#button_click").show();
+    $(".hide_when_unblock").show();
+    $("#sudoku-tab").show();
+    $("#sudoku-tab").click();
+    
+    var tab_name = get_tab();
+    refresh_board();
+    $("#test_app").hide();
+    $(".show_test_app").hide();
+}
+
+async function showPiRewardedAds(Pi) {
+    try {
+        
+        const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
+        if (isAdReadyResponse.ready === false) {
+            
+            const requestAdResponse = await Pi.Ads.requestAd("rewarded");
+            if (requestAdResponse.result === "ADS_NOT_SUPPORTED") {
+                // display modal to update Pi Browser
+                // showAdsNotSupportedModal()
+                alert("Update Pi Browser version, please!.");
+                return;
+            }
+            if (requestAdResponse.result !== "AD_LOADED") {
+                // display modal ads are temporarily unavailable and user should try again later
+                // showAdUnavailableModal()
+                alert("Ads are temporarily unavailable, try again later!.");
+                return;
+            }
+        }
+        
+        const showAdResponse = await Pi.Ads.showAd("rewarded");
+        
+        if (showAdResponse.result === "AD_REWARDED")
+        {
+            if(showAdResponse.adId)
+            {
+                
+            }
+            test_rewarded();
+        }
+    } catch (err) {
     }
 }
 
