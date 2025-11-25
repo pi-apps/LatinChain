@@ -1025,6 +1025,7 @@ class PiNetworkBaseController(http.Controller):
                                                     'user_agent': request.httprequest.environ.get('HTTP_USER_AGENT', ''),
                                                     'last_connection': datetime.now(),
                                                 })
+            pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
         else:
             
             """
