@@ -1532,7 +1532,7 @@ $( document ).ready(function() {
             colorboxLoaded();
         }*/
         
-        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+        /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
         {
             $('.showInterstitialAd').find('a.btn').click(function(e) {
                 if($(this).attr('target') != "_blank")
@@ -1555,7 +1555,7 @@ $( document ).ready(function() {
                     }
                 }
             });
-        }
+        }*/
     
     })();
     
