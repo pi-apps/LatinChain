@@ -1392,7 +1392,7 @@ $( document ).ready(function() {
                                                         }, 5000);
                                                         
                                                         var gemini_image = getGeminiImage();
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
+                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error)");
                                                         
                                                         $("#open_modal").click();
                                                     }
@@ -1408,7 +1408,7 @@ $( document ).ready(function() {
                                                     setConfirmUnloadPoints(false);
                                                     
                                                     var gemini_image = getGeminiImage();
-                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
+                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (Post failed Error)");
                                                     
                                                     $("#open_modal").click();
                                                 });
@@ -1417,7 +1417,7 @@ $( document ).ready(function() {
                                                 $("#button_reward_ad").prop( "disabled", false );
                                                 
                                                 var gemini_image = getGeminiImage();
-                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
+                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (adId Error)");
                                                 
                                                 $("#open_modal").click();
                                             }
@@ -1427,7 +1427,7 @@ $( document ).ready(function() {
                                             // fallback logic
                                             // showAdErrorModal()
                                             var gemini_image = getGeminiImage();
-                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
+                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (AD_REWARDED Error)");
                                             
                                             $("#open_modal").click();
                                         }
@@ -1438,7 +1438,7 @@ $( document ).ready(function() {
                                         // good practice to handle any potential errors
                                         
                                         var gemini_image = getGeminiImage();
-                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text());
+                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error)");
                                         
                                         $("#open_modal").click();
                                     }
