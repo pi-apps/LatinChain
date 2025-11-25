@@ -122,7 +122,7 @@ function get_user(pause) {
                     $("#x2_game").hide();
                 }
                 
-                if(!data.unblocked)
+                if(data.unblocked)
                 {
                     unblocked = data.unblocked;
                     
