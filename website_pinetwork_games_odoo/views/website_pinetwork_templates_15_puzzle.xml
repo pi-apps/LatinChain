@@ -296,9 +296,9 @@
                                             document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
                                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                         }
-                                    }, 15000);
+                                    }, 10000);
                                 }
-                            }, 15000);
+                            }, 10000);
                         })();
                     });
                 </script>
