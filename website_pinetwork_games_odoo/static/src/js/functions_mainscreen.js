@@ -1527,10 +1527,10 @@ $( document ).ready(function() {
             }
         }
         
-        if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+        /*if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
         {
             colorboxLoaded();
-        }
+        }*/
         
         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
         {
