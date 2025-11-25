@@ -145,7 +145,7 @@ function get_user() {
                     $("#x2_game").hide();
                 }
                 
-                if(data.unblocked)
+                if(!data.unblocked)
                 {
                     unblocked = data.unblocked;
                     
