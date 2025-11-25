@@ -93,7 +93,7 @@ var startCommonAppsAI = () => {
                     data = JSON.parse(data);
                     if(data.result)
                     {
-                        if(!data.unblocked)
+                        if(data.unblocked)
                         {
                             document.getElementById('blockingOverlay').style.display = 'none';
                         }else
