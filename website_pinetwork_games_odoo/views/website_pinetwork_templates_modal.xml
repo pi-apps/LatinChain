@@ -107,7 +107,7 @@
                         
                         <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                         
-                        <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                        <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and not onlymainnet">
                           window._taboola = window._taboola || [];
                           _taboola.push({article:'auto'});
                           !function (e, f, u, i) {
@@ -220,28 +220,54 @@
                             <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                 <!-- LatinChain Ad responsive 2 -->
                                 
-                                <ins class="adsbygoogle"
-                                     style="display:block"
-                                     data-ad-client="ca-pub-2334449220276386"
-                                     data-ad-slot="9525388880"
-                                     data-ad-format="auto"
-                                     data-full-width-responsive="true"></ins>
-                                <script>
-                                     (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
+                                <div t-if="onlymainnet">
+                                    <ins class="adsbygoogle"
+                                         style="display:block"
+                                         data-ad-client="ca-pub-2334449220276386"
+                                         data-ad-slot="9525388880"
+                                         data-ad-format="auto"
+                                         data-full-width-responsive="true"></ins>
+                                    <script>
+                                         (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                    
+                                    <br/>
+                                    
+                                    <ins class="adsbygoogle"
+                                         style="display:block"
+                                         data-ad-client="ca-pub-2334449220276386"
+                                         data-ad-slot="9525388880"
+                                         data-ad-format="auto"
+                                         data-full-width-responsive="true"></ins>
+                                    <script>
+                                         (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                </div>
                                 
-                                <br/>
-                                
-                                <div id="taboola-below-article-thumbnails"></div>
-                                <script type="text/javascript">
-                                  window._taboola = window._taboola || [];
-                                  _taboola.push({
-                                    mode: 'alternating-thumbnails-a',
-                                    container: 'taboola-below-article-thumbnails',
-                                    placement: 'Below Article Thumbnails',
-                                    target_type: 'mix'
-                                  });
-                                </script>
+                                <div t-if="not onlymainnet">
+                                    <ins class="adsbygoogle"
+                                         style="display:block"
+                                         data-ad-client="ca-pub-2334449220276386"
+                                         data-ad-slot="9525388880"
+                                         data-ad-format="auto"
+                                         data-full-width-responsive="true"></ins>
+                                    <script>
+                                         (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                    
+                                    <br/>
+                                    
+                                    <div id="taboola-below-article-thumbnails"></div>
+                                    <script type="text/javascript">
+                                      window._taboola = window._taboola || [];
+                                      _taboola.push({
+                                        mode: 'alternating-thumbnails-a',
+                                        container: 'taboola-below-article-thumbnails',
+                                        placement: 'Below Article Thumbnails',
+                                        target_type: 'mix'
+                                      });
+                                    </script>
+                                </div>
                             </div>
                         </div>
                         <br/><br/><br/><br/><br/>
