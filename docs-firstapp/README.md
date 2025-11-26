@@ -241,6 +241,10 @@ SETTING HOME DOMAIN (FOR THE TOML FILE):
 
 TOML FILE CONTENT:
 
+    # You can use the file as example:
+    # https://test.latin-chain.com/es/.well-known/pi.toml
+    
+    # File starts here
     [[CURRENCIES]]
     code="TestToken"
     issuer="GCNCQ6RRVEERQXWGKB3XMRK6VGJRIHGT5UTDAAU6QEU5NL2AHFOJDYLC"
