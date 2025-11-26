@@ -238,3 +238,12 @@ SETTING HOME DOMAIN (FOR THE TOML FILE):
         await server.submitTransaction(setOptionsTransaction);
         console.log("Home Domain is set successfully.");
     }
+
+TOML FILE CONTENT:
+
+    [[CURRENCIES]]
+    code="TestToken"
+    issuer="GCNCQ6RRVEERQXWGKB3XMRK6VGJRIHGT5UTDAAU6QEU5NL2AHFOJDYLC"
+    name="Pi Core Team"
+    desc="This is a test token that is created as an example and has no value."
+    image="https://image-of-your-token.com/image.png"
