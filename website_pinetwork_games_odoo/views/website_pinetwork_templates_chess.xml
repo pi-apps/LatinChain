@@ -799,7 +799,7 @@
                                 if(result)
                                 {
                                     //history.back();
-                                    location.href="/";
+                                    window.location.href="/";
                                 }
                             });
                         });

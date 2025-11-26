@@ -125,7 +125,7 @@
                                 if(result)
                                 {
                                     //history.back();
-                                    location.href="/index-nopopup";
+                                    window.location.href="/index-nopopup";
                                 }
                             });
                         });
