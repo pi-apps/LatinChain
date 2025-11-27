@@ -310,9 +310,20 @@
                                     
                                     <t t-set="amount_end" t-value="round(amount*3, 7)"/>
                                     
+                                    <div id="loading_section" style="margin-bottom:10px;">
+                                        <br />
+                                        <span id="loading_word" style="display: none;">Loading...</span>
+                                        <br/>
+                                    </div>
+                                    
                                     <div style="margin-bottom:5px; padding:5px; width: 100%;" class="border-gradient-rounded">
                                         <div style="margin-bottom:5px" class="border-bottom">
                                             <h5 translate="no"><strong>#RadioForUs #PayPi &#128177;</strong></h5>
+                                        </div>
+                                        
+                                        <div style="margin-top:5px; margin-bottom: 10px">
+                                            <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>
+                                            <button id="back_radioforus" class="btn btn-info back_radioforus" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                                         </div>
                                         
                                         <div style="margin-top:5px;">
@@ -347,8 +358,6 @@
                                     Click in Clear Cache or <i class="fa fa-refresh"></i> if button Donate doesn't activate.
                                     <br />
                                     <br />
-                                    <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>
-                                    <button id="back_radioforus" class="btn btn-info back_radioforus" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                                     <!--<a href="https://radioforus.com" target="_blank" class="btn btn-info">Back to RadioForUs</a>-->
                                     <!--<br/><br/>
                                     <button id="back" class="btn btn-info">Back to LatinChain</button>
@@ -363,14 +372,7 @@
                                          
                                     <!--<br/><br/>
                                     <iframe id="a-ads_3" t-att-data-aa='a_ads_data_3' src="" t-att-style='a_ads_style_3'></iframe>-->
-                                    <br/><br/>
                                     <a href="https://github.com/rockcesar/LatinChainDevelops" target="_blank" class="btn btn-link">Watch code</a>
-                                    <div id="loading_section">
-                                    <br />
-                                    <br />
-                                    <span id="loading_word" style="display: none;">Loading...</span>
-                                    <br/>
-                                    </div>
                                     <!--<ins class="adsbygoogle"
                                              style="display:block"
                                              data-ad-format="autorelaxed"

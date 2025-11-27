@@ -316,7 +316,7 @@
                                         <div style="margin-top:5px; margin-bottom: 10px">
                                             <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>
                                             <button id="back" class="btn btn-info back" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
-                                        </div>                                        
+                                        </div>
                                         
                                         <div style="margin-top:5px; display:none;">
                                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-12">

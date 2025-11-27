@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-25 13:12+0000\n"
-"PO-Revision-Date: 2025-11-25 13:12+0000\n"
+"POT-Creation-Date: 2025-11-27 19:44+0000\n"
+"PO-Revision-Date: 2025-11-27 19:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,6 +78,11 @@ msgid "(Go to LatinChain Mainnet)"
 msgstr "(Ir a LatinChain Mainnet)"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid "(Mainnet)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
 msgid ""
 "(Remember <strong>clear the Pi Browser cache</strong> if it is not working "
@@ -85,6 +90,11 @@ msgid ""
 msgstr ""
 "(Recuerda <strong>borrar la caché del navegador Pi</strong> si no funciona "
 "bien)."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+msgid "(UNLOCK)"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -548,6 +558,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid ""
 "<br/>\n"
@@ -557,19 +568,6 @@ msgstr ""
 "<br/>\n"
 "                                    <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
 "                                    <br/>"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-msgid ""
-"<br/>\n"
-"                                    <br/>\n"
-"                                    <span id=\"loading_word\" style=\"display: none;\">Loading...</span>\n"
-"                                    <br/>"
-msgstr ""
-"<br/>\n"
-"                        <br/>\n"
-"                        <span id=\"loading_word\" style=\"display: none;\">Cargando...</span>\n"
-"                        <br/>"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -1923,6 +1921,8 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "Current minimum payment"
 msgstr ""
 
@@ -3276,6 +3276,8 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 msgid "Pi"
 msgstr ""
@@ -4127,6 +4129,8 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "USD"
 msgstr ""
 
@@ -4174,6 +4178,8 @@ msgstr "Desbloquea con"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "Updated each minute (on Mainnet), and each 1 day (on Testnet)"
 msgstr ""
 
