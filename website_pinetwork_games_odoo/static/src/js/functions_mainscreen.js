@@ -479,7 +479,7 @@ function get_user() {
                 $("#avatar_user").show();
                 $("#avatar_user_img_div").show();
                 
-                if(true) // !data.unblocked)
+                if(!data.unblocked)
                 {
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
@@ -1459,7 +1459,7 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
-                            //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 showRewardedPiAd();
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
