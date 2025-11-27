@@ -70,19 +70,7 @@ async function colorboxLoadedMainnet()
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
-            $.colorbox({href:"https://test.latin-chain.com/latinchain-onlymainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%",
-                onComplete: function() {
-                    
-                    var iframe = $('#cboxLoadedContent iframe');
-        
-                    // 2. Wait for the internal page to load completely
-                    iframe.on('load', function() {
-                        // 3. Access the internal element using .contents()
-                        internalElementOpenModalColorbox = iframe.contents().find('#open_modal');
-                        internalElementModalBodyColorbox = iframe.contents().find('.modal-body');
-                    });
-                }
-            });
+            $.colorbox({href:"https://test.latin-chain.com/latinchain-onlymainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened_mainnet = true;
             return false;
         }else{
