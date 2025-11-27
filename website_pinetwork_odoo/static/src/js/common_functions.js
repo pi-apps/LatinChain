@@ -43,7 +43,7 @@ function getGeminiImage()
                     "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Vietnam.png",
                     "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Honduras.png"];
     
-    var random_integer = Math.floor(Math.random() * 9);
+    var random_integer = Math.floor(Math.random() * img_array.length);
     
     return img_array[random_integer];
 }
