@@ -66,7 +66,7 @@ async function colorboxLoaded()
 
 async function colorboxLoadedMainnet()
 {
-    if(["Mainnet ON", "Mainnet OFF", "Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
+    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
@@ -498,6 +498,7 @@ function get_user() {
                 {
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
+                        alert("123");
                         colorboxLoadedMainnet();
                     }
                 }
