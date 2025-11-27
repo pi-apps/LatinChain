@@ -27,6 +27,9 @@ var colorbox_opened = false;
 var colorbox_count_mainnet = 0;
 var colorbox_opened_mainnet = false;
 
+var internalElementOpenModalColorbox = false;
+var internalElementModalBodyColorbox = false;
+
 function setConfirmUnload(on) {
     unloadMessage(on);
 }
@@ -67,7 +70,19 @@ async function colorboxLoadedMainnet()
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
-            $.colorbox({href:"https://test.latin-chain.com/latinchain-onlymainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({href:"https://test.latin-chain.com/latinchain-onlymainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%",
+                onComplete: function() {
+                    
+                    var iframe = $('#cboxLoadedContent iframe');
+        
+                    // 2. Wait for the internal page to load completely
+                    iframe.on('load', function() {
+                        // 3. Access the internal element using .contents()
+                        internalElementOpenModalColorbox = iframe.contents().find('#open_modal');
+                        internalElementModalBodyColorbox = iframe.contents().find('.modal-body');
+                    });
+                }
+            });
             colorbox_opened_mainnet = true;
             return false;
         }else{
@@ -479,7 +494,7 @@ function get_user() {
                 $("#avatar_user").show();
                 $("#avatar_user_img_div").show();
                 
-                if(!data.unblocked)
+                if(true) //!data.unblocked)
                 {
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
@@ -1354,6 +1369,13 @@ $( document ).ready(function() {
                                                             $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
                                                         
                                                         $("#open_modal").click();
+                                                        
+                                                        if(internalElementOpenModalColorbox)
+                                                        {
+                                                            internalElementModalBodyColorbox.html($(".modal-body").html());
+                                                            internalElementOpenModalColorbox.click();
+                                                            internalElementOpenModalColorbox = false;
+                                                        }
                                                         /*setTimeout(function ()
                                                         {
                                                             $("#button_reward_ad").html(btnvalue);
@@ -1395,6 +1417,13 @@ $( document ).ready(function() {
                                                         $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error)");
                                                         
                                                         $("#open_modal").click();
+                                                        
+                                                        if(internalElementOpenModalColorbox)
+                                                        {
+                                                            internalElementModalBodyColorbox.html($(".modal-body").html());
+                                                            internalElementOpenModalColorbox.click();
+                                                            internalElementOpenModalColorbox = false;
+                                                        }
                                                     }
                                                     start();
                                                 }).fail(function() {
@@ -1411,6 +1440,13 @@ $( document ).ready(function() {
                                                     $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (Post failed Error)");
                                                     
                                                     $("#open_modal").click();
+                                                    
+                                                    if(internalElementOpenModalColorbox)
+                                                    {
+                                                        internalElementModalBodyColorbox.html($(".modal-body").html());
+                                                        internalElementOpenModalColorbox.click();
+                                                        internalElementOpenModalColorbox = false;
+                                                    }
                                                 });
                                             }else{
                                                 $("#button_reward_ad").html(btnvalue);
@@ -1420,6 +1456,13 @@ $( document ).ready(function() {
                                                 $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (adId Error)");
                                                 
                                                 $("#open_modal").click();
+                                                
+                                                if(internalElementOpenModalColorbox)
+                                                {
+                                                    internalElementModalBodyColorbox.html($(".modal-body").html());
+                                                    internalElementOpenModalColorbox.click();
+                                                    internalElementOpenModalColorbox = false;
+                                                }
                                             }
                                         } else {
                                             $("#button_reward_ad").html(btnvalue);
@@ -1430,6 +1473,13 @@ $( document ).ready(function() {
                                             $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (AD_REWARDED Error)");
                                             
                                             $("#open_modal").click();
+                                            
+                                            if(internalElementOpenModalColorbox)
+                                            {
+                                                internalElementModalBodyColorbox.html($(".modal-body").html());
+                                                internalElementOpenModalColorbox.click();
+                                                internalElementOpenModalColorbox = false;
+                                            }
                                         }
                                         
                                     } catch (err) {
@@ -1441,6 +1491,13 @@ $( document ).ready(function() {
                                         $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error)");
                                         
                                         $("#open_modal").click();
+                                        
+                                        if(internalElementOpenModalColorbox)
+                                        {
+                                            internalElementModalBodyColorbox.html($(".modal-body").html());
+                                            internalElementOpenModalColorbox.click();
+                                            internalElementOpenModalColorbox = false;
+                                        }
                                     }
                                 }else
                                 {
