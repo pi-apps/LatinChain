@@ -80,6 +80,9 @@ async function colorboxLoadedMainnet()
                         // 3. Access the internal element using .contents()
                         internalElementOpenModalColorbox = iframe.contents().find('#open_modal');
                         internalElementModalBodyColorbox = iframe.contents().find('.modal-body');
+                        
+                        alert(internalElementOpenModalColorbox);
+                        alert(internalElementModalBodyColorbox);
                     });
                 }
             });
@@ -1511,6 +1514,8 @@ $( document ).ready(function() {
                             });
                             
                             //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                alert(internalElementOpenModalColorbox);
+                                alert(internalElementModalBodyColorbox);
                                 showRewardedPiAd();
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
