@@ -181,6 +181,7 @@ class PiNetworkController(http.Controller):
             sandbox = False
             amount = False
             amount_latin_pay = False
+            amount_price_topay_usd = False
             google_adsense = ""
             a_ads = ""
             a_ads_data = ""
@@ -197,6 +198,7 @@ class PiNetworkController(http.Controller):
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
             amount_latin_pay = admin_app_list[0].amount_latin_pay
+            amount_price_topay_usd = admin_app_list[0].amount_price_topay_usd
             google_adsense = admin_app_list[0].google_adsense
             a_ads = admin_app_list[0].a_ads
             a_ads_data = admin_app_list[0].a_ads_data
@@ -210,7 +212,7 @@ class PiNetworkController(http.Controller):
             mainnet = admin_app_list[0].mainnet
             points_latin_amount = admin_app_list[0].points_latin_amount
         
-        return http.request.render('website_pinetwork_games_odoo.radioforus', {'amount_latin_pay': amount_latin_pay, 'points_latin_amount': points_latin_amount, 'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.radioforus', {'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'points_latin_amount': points_latin_amount, 'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True, csrf=False)
     def get_transactions_radioforus(self, **kw):
