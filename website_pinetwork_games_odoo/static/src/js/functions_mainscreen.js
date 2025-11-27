@@ -66,7 +66,7 @@ async function colorboxLoaded()
 
 async function colorboxLoadedMainnet()
 {
-    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
+    if(["Mainnet ON", "Mainnet OFF", "Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
@@ -1510,7 +1510,7 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
-                            if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 showRewardedPiAd();
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
