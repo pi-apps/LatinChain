@@ -27,9 +27,6 @@ var colorbox_opened = false;
 var colorbox_count_mainnet = 0;
 var colorbox_opened_mainnet = false;
 
-var internalElementOpenModalColorbox = false;
-var internalElementModalBodyColorbox = false;
-
 function setConfirmUnload(on) {
     unloadMessage(on);
 }
@@ -1358,12 +1355,6 @@ $( document ).ready(function() {
                                                         
                                                         $("#open_modal").click();
                                                         
-                                                        if(internalElementOpenModalColorbox)
-                                                        {
-                                                            internalElementModalBodyColorbox.html($(".modal-body").html());
-                                                            internalElementOpenModalColorbox.click();
-                                                            internalElementOpenModalColorbox = false;
-                                                        }
                                                         /*setTimeout(function ()
                                                         {
                                                             $("#button_reward_ad").html(btnvalue);
@@ -1406,12 +1397,6 @@ $( document ).ready(function() {
                                                         
                                                         $("#open_modal").click();
                                                         
-                                                        if(internalElementOpenModalColorbox)
-                                                        {
-                                                            internalElementModalBodyColorbox.html($(".modal-body").html());
-                                                            internalElementOpenModalColorbox.click();
-                                                            internalElementOpenModalColorbox = false;
-                                                        }
                                                     }
                                                     start();
                                                 }).fail(function() {
@@ -1429,12 +1414,6 @@ $( document ).ready(function() {
                                                     
                                                     $("#open_modal").click();
                                                     
-                                                    if(internalElementOpenModalColorbox)
-                                                    {
-                                                        internalElementModalBodyColorbox.html($(".modal-body").html());
-                                                        internalElementOpenModalColorbox.click();
-                                                        internalElementOpenModalColorbox = false;
-                                                    }
                                                 });
                                             }else{
                                                 $("#button_reward_ad").html(btnvalue);
@@ -1445,12 +1424,6 @@ $( document ).ready(function() {
                                                 
                                                 $("#open_modal").click();
                                                 
-                                                if(internalElementOpenModalColorbox)
-                                                {
-                                                    internalElementModalBodyColorbox.html($(".modal-body").html());
-                                                    internalElementOpenModalColorbox.click();
-                                                    internalElementOpenModalColorbox = false;
-                                                }
                                             }
                                         } else {
                                             $("#button_reward_ad").html(btnvalue);
@@ -1462,12 +1435,6 @@ $( document ).ready(function() {
                                             
                                             $("#open_modal").click();
                                             
-                                            if(internalElementOpenModalColorbox)
-                                            {
-                                                internalElementModalBodyColorbox.html($(".modal-body").html());
-                                                internalElementOpenModalColorbox.click();
-                                                internalElementOpenModalColorbox = false;
-                                            }
                                         }
                                         
                                     } catch (err) {
@@ -1480,33 +1447,12 @@ $( document ).ready(function() {
                                         
                                         $("#open_modal").click();
                                         
-                                        if(internalElementOpenModalColorbox)
-                                        {
-                                            internalElementModalBodyColorbox.html($(".modal-body").html());
-                                            internalElementOpenModalColorbox.click();
-                                            internalElementOpenModalColorbox = false;
-                                        }
                                     }
                                 }else
                                 {
                                     $("#button_reward_ad").html(btnvalue);
                                     $("#button_reward_ad").prop( "disabled", false );
                                 }
-                            }
-                            
-                            var iframe = $('#cboxLoadedContent iframe');
-                            
-                            if(iframe)
-                            {
-                                // 2. Wait for the internal page to load completely
-                                iframe.on('load', function() {
-                                    // 3. Access the internal element using .contents()
-                                    internalElementOpenModalColorbox = iframe.contents().find('#open_modal');
-                                    internalElementModalBodyColorbox = iframe.contents().find('.modal-body');
-                                    
-                                    alert(internalElementOpenModalColorbox);
-                                    alert(internalElementModalBodyColorbox);
-                                });
                             }
                             
                             $( "#button_reward_ad" ).click(async function() {
