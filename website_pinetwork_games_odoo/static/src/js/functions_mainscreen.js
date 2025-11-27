@@ -498,7 +498,6 @@ function get_user() {
                 {
                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                     {
-                        alert("123");
                         colorboxLoadedMainnet();
                     }
                 }
@@ -1511,7 +1510,7 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
-                            //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 showRewardedPiAd();
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
