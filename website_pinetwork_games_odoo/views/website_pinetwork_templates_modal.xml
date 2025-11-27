@@ -215,8 +215,10 @@
                             </div>-->
                             
                             <!--<a href="https://latinchaintest9869.pinet.com/?nopopup=true" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>-->
-                            <div style="margin-bottom:10px" t-if="not onlymainnet">
-                                <a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
+                            <div class="row">
+                                <div style="margin-bottom:10px" t-if="not onlymainnet" class="col-12">
+                                    <a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="col-12 btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
+                                </div>
                             </div>
                             <!--<button onClick="window.parent.location.href='/?nopopup=true'" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
 							<!--<button onClick="window.parent.$.colorbox.close()" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
