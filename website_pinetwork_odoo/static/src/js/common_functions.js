@@ -313,7 +313,22 @@ var is_changing_page = false;
 
 var avoidAsking = false;
 
-var observer1 = new MutationObserver(() => checkLang());
+var observer1_state = false;
+var observer1 = false;
+
+if(location.pathname.substring(0, 5) != "/web" && 
+    location.pathname.substring(0, 8) != "/es/web" && 
+    location.pathname.substring(0, 5) != "/web/" && 
+    location.pathname.substring(0, 8) != "/es/web/" && 
+    location.pathname.substring(0, 5) != "/web?" && 
+    location.pathname.substring(0, 8) != "/es/web?")
+{
+    observer1 = new MutationObserver(() => checkLang());
+    observer1_state = true;
+}else
+{
+    observer1_state = false;
+}
 
 var hashLatinChainGoogleTranslate = "";
 
@@ -431,16 +446,20 @@ var loadLangInitial = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    
     is_changing_page = false;
     
-    observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
-    
-    loadLangInitial();
+    if(observer1_state)
+    {
+        observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+        loadLangInitial();
+    }
 });
 
 window.onbeforeunload = () => {
     is_changing_page = true;
-    observer1.disconnect();
+    if(observer1_state)
+        observer1.disconnect();
     
     if('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
@@ -461,7 +480,8 @@ function unloadMessage(on) {
     {
         window.onbeforeunload = () => {
             is_changing_page = true;
-            observer1.disconnect();
+            if(observer1_state)
+                observer1.disconnect();
             
             if('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
@@ -469,8 +489,11 @@ function unloadMessage(on) {
             
             if(!avoidAsking)
             {
-                observer1 = new MutationObserver(() => checkLang());
-                observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+                if(observer1_state)
+                {
+                    observer1 = new MutationObserver(() => checkLang());
+                    observer1.observe(window.document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+                }
                 is_changing_page = "changing";    
                 
                 return true;
@@ -480,7 +503,8 @@ function unloadMessage(on) {
     {
         window.onbeforeunload = () => {
             is_changing_page = true;
-            observer1.disconnect();
+            if(observer1_state)
+                observer1.disconnect();
             
             if('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
