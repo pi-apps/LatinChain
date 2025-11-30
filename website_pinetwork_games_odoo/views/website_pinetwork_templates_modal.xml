@@ -375,7 +375,43 @@
                         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                         
-                        <base target="_blank" />
+                        <!--<base target="_blank" />-->
+                        
+                        <style>
+                            .border-gradient-rounded {
+                              /* Border */
+                              border: 4px solid transparent;
+                              border-radius: 20px;
+                              background: 
+                                linear-gradient(to right, white, white), 
+                                linear-gradient(to right, red , blue); 
+                              background-clip: padding-box, border-box;
+                              background-origin: padding-box, border-box;
+                              color: black !important;
+                              filter: contrast(100%) !important;
+                              
+                              margin-bottom:5px;
+                              padding:10px;
+                              width: 100%;
+                            }
+                            
+                            .darkmode--activated .border-gradient-rounded {
+                              /* Border */
+                              border: 4px solid transparent;
+                              border-radius: 20px;
+                              background: 
+                                linear-gradient(to right, #021526, #021526), 
+                                linear-gradient(to right, red , blue); 
+                              background-clip: padding-box, border-box;
+                              background-origin: padding-box, border-box;
+                              color: white !important;
+                              filter: contrast(100%) !important;
+                              
+                              margin-bottom:5px;
+                              padding:10px;
+                              width: 100%;
+                            }
+                        </style>
                         
                     </head>
 
@@ -384,12 +420,12 @@
                             <br/>
                             <h3>You can search these books in Amazon by ASIN.</h3>
                             <br/>
-                            <h5 style="border:3px solid; padding:10px;" class="rounded"><img src="https://m.media-amazon.com/images/I/71Ir+19r4+L._SL1500_.jpg" width="120px" height="180px" /><br/><strong>How to develop a Pi App (webapp) on the Pi Network (ASIN: B0DK3NJ23V)</strong> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)</h5>
-                            <h5 style="border:3px solid; padding:10px;" class="rounded"><img src="https://m.media-amazon.com/images/I/71eGkTh9m0L._SL1500_.jpg" width="120px" height="180px" /><br/><strong>Odoo Technical Training en Español (ASIN: B0DJVY51LS)</strong> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)</h5>
-                            <h5 style="border:3px solid; padding:10px;" class="rounded"><img src="https://m.media-amazon.com/images/I/81JvHXej7bL._SL1500_.jpg" width="120px" height="180px" /><br/><strong>Mastering Google Gemini AI y NotebookLM (ASIN: B0G4GZMTND)</strong> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)</h5>
-                            <h5 style="border:3px solid; padding:10px;" class="rounded"><img src="https://m.media-amazon.com/images/I/71N7EawedGL._SL1500_.jpg" width="120px" height="180px" /><br/><strong>Aprende Inglés hoy (para Hispanohablantes) (ASIN: B0F7792QFW)</strong> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)</h5>
-                            <h5 style="border:3px solid; padding:10px;" class="rounded"><img src="https://m.media-amazon.com/images/I/81-Y+CgJe4L._SL1500_.jpg" width="120px" height="180px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert (ASIN: B0F79N2ZWQ)</strong> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)</h5>
-                            <h5 style="border:3px solid; padding:10px;" class="rounded"><img src="https://m.media-amazon.com/images/I/81yXzTNOG3L._SL1500_.jpg" width="120px" height="180px" /><br/><strong>My Sci and Sci-Fi Books' Collection 2025 - Mi Colección de Libros Sci y Sci-Fi 2025 (ASIN: B0FPPVRGWG)</strong> (<div style="display:inline;">Books ompilation</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)</h5>
+                            <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://m.media-amazon.com/images/I/71Ir+19r4+L._SL1500_.jpg" width="120px" height="180px" /><br/><strong>How to develop a Pi App (webapp) on the Pi Network (ASIN: B0DK3NJ23V and B0DK4N3XTB)</strong> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)</h5>
+                            <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://m.media-amazon.com/images/I/71eGkTh9m0L._SL1500_.jpg" width="120px" height="180px" /><br/><strong>Odoo Technical Training en Español (ASIN: B0DJVY51LS and B0DJX718Q2)</strong> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)</h5>
+                            <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://m.media-amazon.com/images/I/81JvHXej7bL._SL1500_.jpg" width="120px" height="180px" /><br/><strong>Mastering Google Gemini AI y NotebookLM (ASIN: B0G4GZMTND and B0G4H6W7PX)</strong> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)</h5>
+                            <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://m.media-amazon.com/images/I/71N7EawedGL._SL1500_.jpg" width="120px" height="180px" /><br/><strong>Aprende Inglés hoy (para Hispanohablantes) (ASIN: B0F7792QFW and B0F79L26F6)</strong> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)</h5>
+                            <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://m.media-amazon.com/images/I/81-Y+CgJe4L._SL1500_.jpg" width="120px" height="180px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert (ASIN: B0F79N2ZWQ and B0F7G4RV6Y)</strong> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)</h5>
+                            <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://m.media-amazon.com/images/I/81yXzTNOG3L._SL1500_.jpg" width="120px" height="180px" /><br/><strong>My Sci and Sci-Fi Books' Collection 2025 - Mi Colección de Libros Sci y Sci-Fi 2025 (ASIN: B0FPPVRGWG and B0FPX3HS2M)</strong> (<div style="display:inline;">Books ompilation</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)</h5>
                         </div>
                         <br/><br/><br/><br/><br/>
                     </body>
