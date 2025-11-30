@@ -1701,9 +1701,9 @@ $( document ).ready(function() {
         $.colorbox({href:streamerzoneboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
-    /*$( ".readingclub" ).click(function() {
+    $( ".readingclub" ).click(function() {
         $.colorbox({href:"/reading-club", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });*/
+    });
     
     $( "#credits" ).click(function() {
         $.colorbox({href:"/get-credits", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
