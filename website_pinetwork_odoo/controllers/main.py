@@ -147,6 +147,10 @@ class PiNetworkBaseController(http.Controller):
     def ai_master_book(self, **kw):
         return http.request.redirect('https://www.amazon.com/dp/B0G4GZMTND')
     
+    @http.route('/sudoku-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def sudoku_book(self, **kw):
+        return http.request.redirect('https://www.amazon.com/dp/B0G4L8YGY3')
+    
     @http.route('/english-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_book(self, **kw):
         return http.request.redirect('https://www.amazon.com/dp/B0F7792QFW')
