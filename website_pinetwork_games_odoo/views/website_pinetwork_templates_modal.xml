@@ -151,14 +151,15 @@
                         <div id="open_mainnet_message" style="display:none;">You can Donate on LatinChain Mainnet and start using it everyday being verified during a month. Or access as unverified user.<br/>Which one you choose?.</div>
                         <div class="container form-group" style="text-align:center; max-width: 810px">
                             <div style="font-size: 90%; word-break: break-word;">
-                                <!--<div style="display: inline"><i class="fa-solid fa-link"></i></div> <div style="display: inline"><strong translate="no">test.latin-chain.com/latinchain-mainnet-redirect</strong>.-->
                                 <div style="display: inline" t-if="not onlymainnet">
-                                    <button style="font-size: 100%;" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="This modal (webpage on popup) will be displayed when load on LatinChain Mainnet (only if you are unverified). This Modal is at: test.latin-chain.com/latinchain-mainnet-redirect">
+                                    <div style="display: inline"><i class="fa-solid fa-link"></i></div> <div style="display: inline"><strong translate="no">test.latin-chain.com/latinchain-mainnet-redirect</strong>.</div> 
+                                    <button style="font-size: 100%; display: inline" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="This modal (webpage on popup) will be displayed when load on LatinChain Mainnet (only if you are unverified). This Modal is at: test.latin-chain.com/latinchain-mainnet-redirect">
                                         Show tip
                                     </button>
                                 </div>
                                 
                                 <div style="display: inline" t-if="onlymainnet">
+                                    <div style="display: inline; display: inline"><i class="fa-solid fa-link"></i></div> <div style="display: inline"><strong translate="no">test.latin-chain.com/latinchain-onlymainnet-redirect</strong>.</div> 
                                     <button style="font-size: 100%;" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="This modal (webpage on popup) will be displayed when load on LatinChain Mainnet (only if you are unverified). This Modal is at: test.latin-chain.com/latinchain-onlymainnet-redirect">
                                         Show tip
                                     </button>
