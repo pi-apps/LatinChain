@@ -479,21 +479,6 @@ function get_user() {
                 $("#avatar_user").show();
                 $("#avatar_user_img_div").show();
                 
-                if(!data.unblocked)
-                {
-                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                    {
-                        colorboxLoadedMainnet();
-                    }
-                }
-                /*else
-                {
-                    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                    {
-                        colorboxLoadedMainnet();
-                    }
-                }*/
-                
                 passkey=data.passkey;
                 if(data.unblocked)
                 {
@@ -1460,7 +1445,15 @@ $( document ).ready(function() {
                             });
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            {
                                 showRewardedPiAd();
+                            }else if(!unblocked)
+                            {
+                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                {
+                                    colorboxLoadedMainnet();
+                                }
+                            }
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
