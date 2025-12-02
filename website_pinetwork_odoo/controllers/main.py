@@ -137,15 +137,15 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/odoo-tech-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def odoo_technical_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0DJVY51LS')
+        return http.request.redirect('https://www.amazon.com/dp/B0DJX718Q2')
     
     @http.route('/piapps-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def piapps_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0DK3NJ23V')
+        return http.request.redirect('https://www.amazon.com/dp/B0DK4N3XTB')
     
     @http.route('/ai-master-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def ai_master_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0G4GZMTND')
+        return http.request.redirect('https://www.amazon.com/dp/B0G4H6W7PX')
     
     @http.route('/sudoku-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def sudoku_book(self, **kw):
@@ -153,11 +153,11 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route('/english-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0F7792QFW')
+        return http.request.redirect('https://www.amazon.com/dp/B0F79L26F6')
     
     @http.route('/brand-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def brand_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0F79N2ZWQ')
+        return http.request.redirect('https://www.amazon.com/dp/B0F7G4RV6Y')
         
     @http.route('/collection-2025-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def collection_2025_book(self, **kw):
@@ -165,7 +165,7 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/books-collection/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def books_collection(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0F771VKRF')
+        return http.request.redirect('https://www.amazon.com/dp/B0FPX3HS2M')
     
     @http.route('/terms/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def latinchain_terms(self, **kw):
