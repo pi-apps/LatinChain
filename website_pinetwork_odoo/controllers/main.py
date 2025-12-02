@@ -135,33 +135,61 @@ class PiNetworkBaseController(http.Controller):
     def brand_course(self, **kw):
         return http.request.redirect('https://www.udemy.com/course/como-crear-tu-marca-personal-by-cesar-opensource-expert/?referralCode=755FB82D3B05FA01F3D5')
         
-    @http.route('/odoo-tech-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    @http.route(['/odoo-tech-book/', '/odoo-tech-book/paperback', '/odoo-tech-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def odoo_technical_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0DJX718Q2')
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/odoo-tech-book/', '/odoo-tech-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0DJX718Q2')
+        elif accessed_path in ['/odoo-tech-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0DJVY51LS')
     
-    @http.route('/piapps-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    @http.route(['/piapps-book/', '/piapps-book/paperback', '/piapps-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def piapps_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0DK4N3XTB')
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/piapps-book/', '/piapps-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0DK4N3XTB')
+        elif accessed_path in ['/piapps-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0DK3NJ23V')
     
-    @http.route('/ai-master-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    @http.route(['/ai-master-book/', '/ai-master-book/paperback', '/ai-master-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def ai_master_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0G4H6W7PX')
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/ai-master-book/', '/ai-master-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0G4H6W7PX')
+        elif accessed_path in ['/ai-master-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0G4GZMTND')
     
-    @http.route('/sudoku-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    @http.route(['/sudoku-book/', '/sudoku-book/paperback', '/sudoku-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def sudoku_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0G4L8YGY3')
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/sudoku-book/', '/sudoku-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0G4L8YGY3')
+        elif accessed_path in ['/sudoku-book/hardcover']:
+            return http.request.redirect('https://www.amazon.com/dp/B0G4L9T3J5')
     
-    @http.route('/english-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    @http.route(['/english-book/', '/english-book/paperback', '/english-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0F79L26F6')
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/english-book/', '/english-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0F79L26F6')
+        elif accessed_path in ['/english-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0F7792QFW')
     
-    @http.route('/brand-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    @http.route(['/brand-book/', '/brand-book/paperback', '/brand-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def brand_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0F7G4RV6Y')
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/brand-book/', '/brand-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0F7G4RV6Y')
+        elif accessed_path in ['/brand-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0F79N2ZWQ')
         
-    @http.route('/collection-2025-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    @http.route(['/collection-2025-book/', '/collection-2025-book/paperback', '/collection-2025-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def collection_2025_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0FPX3HS2M')
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/collection-2025-book/', '/collection-2025-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0FPX3HS2M')
+        elif accessed_path in ['/collection-2025-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0FPPVRGWG')
         
     @http.route('/books-collection/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def books_collection(self, **kw):
