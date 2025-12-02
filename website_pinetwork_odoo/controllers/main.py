@@ -161,11 +161,11 @@ class PiNetworkBaseController(http.Controller):
         
     @http.route('/collection-2025-book/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def collection_2025_book(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0FPPVRGWG')
+        return http.request.redirect('https://www.amazon.com/dp/B0FPX3HS2M')
         
     @http.route('/books-collection/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def books_collection(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0FPX3HS2M')
+        return http.request.redirect('https://www.amazon.com/dp/B0F771VKRF')
     
     @http.route('/terms/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def latinchain_terms(self, **kw):
