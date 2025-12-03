@@ -3254,7 +3254,69 @@
                             
                             <!-- Header -->
                             <div class="bg-indigo-600 p-6 text-white text-center rounded-t-2xl">
+                                <div>
+                                    <style>
+                                        /* Adjustments for Google Translator to be visible */
+                                        .goog-te-banner-frame.skiptranslate,
+                                        .skiptranslate > iframe {
+                                            display: none !important;
+                                        }
+                                       
+                                        body {
+                                            top: 0px !important; 
+                                        }
+
+                                        .goog-te-menu-frame {
+                                            max-width:100% !important; 
+                                        }
+                                        .goog-te-menu2 { 
+                                            max-width: 100% !important;
+                                            overflow-x: scroll !important;
+                                            box-sizing:border-box !important; 
+                                            height:auto !important; 
+                                        }
+                                       
+                                        /* Hide unwanted elements without hiding the main widget */
+                                        #goog-gt-tt, 
+                                        #goog-gt-, 
+                                        .goog-te-balloon-frame {
+                                            display: none !important;
+                                        } 
+                                        .goog-text-highlight { 
+                                            background: none !important; 
+                                            box-shadow: none !important;
+                                        }
+                                       
+                                        .goog-logo-link {
+                                            display: none !important;
+                                        }
+                                        .goog-te-gadget {
+                                            height: 28px !important;
+                                            overflow: hidden;
+                                        }
+                                    </style>
+                                    <script type="text/javascript">
+                                        $( document ).ready(function() {
+                                            $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                            $("#google_translate_element").appendTo(".translate_here");
+                                            
+                                            $("#translate_text_latinchain_2").show();
+                                            $("#google_translate_element").show();
+                                        });
+                                    </script>
+                                    
+                                </div>
+                            
+                                <p class="translate_here" style="margin: 0 auto; max-width: 220px; margin-bottom:15px;">
+                                </p>
+                                
                                 <h1 class="text-2xl font-bold flex items-center justify-center gap-2">
+                                    <div class="flex justify-center text-center">
+                                        <div class="justify-content-center text-center" style="border: 1px solid white; border-radius: 20px; padding: 5px; color: blue !important; max-width: 50px; min-width: 50px">
+                                            <a id="back" href="/" style="color: white !important"><i class="fa fa-step-backward"></i></a>
+                                        </div>
+                                    </div>
+                                    <br/>
                                     <i class="ph ph-globe-stand text-3xl"></i>
                                     Global Time Converter
                                 </h1>
