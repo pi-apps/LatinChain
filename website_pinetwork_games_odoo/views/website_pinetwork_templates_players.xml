@@ -3160,4 +3160,182 @@
             </t>
 		</template>
         
+        <template id="timezoneplayer" name="Global Time Converter Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Global Time Converter</title>
+                       
+                        <!-- Tailwind CSS -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        
+                        <!-- Luxon (Date Management) -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.4/luxon.min.js"></script>
+
+                        <!-- Google Fonts -->
+                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700" rel="stylesheet"/>
+
+                        <!-- Phosphor Icons -->
+                        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+                        <style>
+                            body { font-family: 'Inter', sans-serif; }
+                            
+                            /* Custom Dropdown Styles */
+                            .custom-dropdown {
+                                max-height: 250px;
+                                overflow-y: auto;
+                                scrollbar-width: thin;
+                                scrollbar-color: #cbd5e1 transparent;
+                            }
+                            .custom-dropdown::-webkit-scrollbar {
+                                width: 6px;
+                            }
+                            .custom-dropdown::-webkit-scrollbar-thumb {
+                                background-color: #cbd5e1;
+                                border-radius: 4px;
+                            }
+                            
+                            /* Flash animation for updates */
+                            @keyframes flash-green {
+                                0% { background-color: #ecfdf5; border-color: #10b981; }
+                                100% { background-color: #f8fafc; border-color: #cbd5e1; }
+                            }
+                            .flash-update {
+                                animation: flash-green 0.8s ease-out;
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Donate to unlock Apps
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                    </head>
+                    <body class="bg-slate-900 min-h-screen text-slate-800 flex flex-col items-center justify-center p-4">
+
+                        <div class="w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-visible relative">
+                            
+                            <!-- Header -->
+                            <div class="bg-indigo-600 p-6 text-white text-center rounded-t-2xl">
+                                <h1 class="text-2xl font-bold flex items-center justify-center gap-2">
+                                    <i class="ph ph-globe-stand text-3xl"></i>
+                                    Global Time Converter
+                                </h1>
+                                <p class="text-indigo-200 text-sm mt-1">Search and convert any city worldwide</p>
+                            </div>
+
+                            <div class="p-6 space-y-6">
+                                
+                                <!-- Date Selector -->
+                                <div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <label class="text-xs font-bold text-slate-500 uppercase">Date &amp; Time</label>
+                                        <button id="btnSetNow" class="text-xs text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-1 cursor-pointer bg-indigo-50 px-2 py-1 rounded hover:bg-indigo-100 transition-colors">
+                                            <i class="ph ph-clock-clockwise"></i> Set to Now
+                                        </button>
+                                    </div>
+                                    <!-- Reverted to single datetime-local input -->
+                                    <input type="datetime-local" id="inputDate" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-lg font-semibold text-slate-700 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-colors"/>
+                                </div>
+
+                                <!-- ORIGIN (Custom Dropdown) -->
+                                <div class="relative group z-30">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <label class="text-xs font-bold text-slate-500 uppercase">From (Origin)</label>
+                                        <button id="btnLocate" class="text-xs text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-1 cursor-pointer bg-indigo-50 px-2 py-1 rounded hover:bg-indigo-100 transition-colors">
+                                            <i class="ph ph-crosshair"></i> My Location (Reset)
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="relative">
+                                        <i class="ph ph-airplane-takeoff absolute left-3 top-3.5 text-indigo-500 text-xl z-10"></i>
+                                        <input type="text" id="sourceInput" placeholder="Search city (e.g. New York)..." 
+                                               class="pl-10 w-full bg-slate-50 border border-slate-300 text-slate-900 rounded-lg p-3 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                                               autocomplete="off"/>
+                                        <!-- Dropdown List Origin -->
+                                        <ul id="sourceList" class="hidden absolute w-full bg-white border border-slate-200 rounded-lg shadow-xl mt-1 custom-dropdown z-50 text-sm">
+                                            <!-- Filled by JS -->
+                                        </ul>
+                                    </div>
+                                    <p id="sourceOffset" class="text-xs text-slate-400 mt-1 ml-1">--</p>
+                                </div>
+
+                                <!-- Swap Button -->
+                                <div class="flex justify-center -my-4 relative z-10">
+                                    <button id="btnSwap" class="bg-indigo-50 border-2 border-indigo-100 text-indigo-600 rounded-full p-2 shadow-md hover:bg-white hover:scale-110 transition-transform" title="Swap zones">
+                                        <i class="ph ph-arrows-down-up text-xl font-bold"></i>
+                                    </button>
+                                </div>
+
+                                <!-- DESTINATION (Custom Dropdown) -->
+                                <div class="relative group z-20">
+                                    <label class="block text-xs font-bold text-slate-500 uppercase mb-2">To (Destination)</label>
+                                    <div class="relative">
+                                        <i class="ph ph-airplane-landing absolute left-3 top-3.5 text-emerald-600 text-xl z-10"></i>
+                                        <input type="text" id="targetInput" placeholder="Search city (e.g. Tokyo)..." 
+                                               class="pl-10 w-full bg-slate-50 border border-slate-300 text-slate-900 rounded-lg p-3 shadow-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                                               autocomplete="off"/>
+                                        <!-- Dropdown List Target -->
+                                        <ul id="targetList" class="hidden absolute w-full bg-white border border-slate-200 rounded-lg shadow-xl mt-1 custom-dropdown z-50 text-sm">
+                                            <!-- Filled by JS -->
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Result -->
+                                <div class="bg-indigo-50 rounded-xl p-5 text-center border border-indigo-100 mt-4">
+                                    <p class="text-xs text-indigo-400 uppercase font-bold tracking-wider mb-1">Result</p>
+                                    <div id="resultTime" class="text-4xl font-black text-indigo-900 mb-1">--:--</div>
+                                    <div id="resultDate" class="text-md text-indigo-600 font-medium">--</div>
+                                    <div id="resultDiff" class="mt-3 inline-block px-3 py-1 bg-white rounded-full text-xs font-bold text-indigo-400 shadow-sm border border-indigo-100">
+                                        --
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/timezoneplayer_functions.js?v=1.102"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
 </odoo>

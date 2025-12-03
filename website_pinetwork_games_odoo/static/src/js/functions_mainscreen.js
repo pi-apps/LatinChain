@@ -432,6 +432,7 @@ function get_user() {
                 $(".show-mapsplayer").show();
                 $(".show-calcplayer").show();
                 $(".show-calendarplayer").show();
+                $(".show-timezoneplayer").show();
                 //$(".show-newsplayer").show();
                 $(".show-tvonline").show();
                 //$(".show-sport-results").show();
