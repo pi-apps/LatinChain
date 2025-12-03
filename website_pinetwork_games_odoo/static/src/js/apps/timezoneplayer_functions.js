@@ -167,6 +167,16 @@ document.getElementById('btnSwap').addEventListener('click', () => {
     const icon = document.querySelector('#btnSwap i');
     icon.classList.toggle('rotate-180');
     
+    // --- AUTO-UPDATE LOGIC FOR SWAP ---
+    // Set input to current time in the NEW source zone
+    const nowInZone = DateTime.now().setZone(selectedSource);
+    inputDate.value = nowInZone.toFormat("yyyy-MM-dd'T'HH:mm");
+    
+    // Visual feedback (flash)
+    inputDate.classList.remove('flash-update');
+    void inputDate.offsetWidth; 
+    inputDate.classList.add('flash-update');
+
     updateUI();
 });
 
