@@ -1444,7 +1444,7 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
-                            if(unblocked)
+                            if(!unblocked)
                             {
                                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 {
