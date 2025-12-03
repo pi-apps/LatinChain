@@ -1444,12 +1444,9 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
-                            if(!unblocked)
+                            if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                {
-                                    colorboxLoadedMainnet();
-                                }
+                                colorboxLoadedMainnet();
                             }
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
