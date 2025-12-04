@@ -418,6 +418,7 @@ function get_user() {
                 $(".show-15-puzzle").show();
                 $(".show-pingpong").show();
                 $(".show-checkers").show();
+                $(".show-xiangqi").show();
                 $(".show-domino").show();
                 $(".show-latincrush").show();
                 $(".show-gameslearning").show();
@@ -1829,6 +1830,10 @@ $( document ).ready(function() {
     
     $( ".checkersinfo" ).click(function() {
         $.colorbox({href:"https://en.m.wikipedia.org/wiki/Checkers", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".xiangqiinfo" ).click(function() {
+        $.colorbox({href:"https://en.m.wikipedia.org/wiki/Xiangqi", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".dominoinfo" ).click(function() {
