@@ -365,7 +365,9 @@
                         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
                         <meta name="viewport" content="width=device-width, user-scalable=yes"/>
                         
-                        <link href="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" rel="shortcut icon" />
+                        <meta property="og:title" content="Reading Club"/>
+                        <meta property="og:description" content="Reading Club"/>
+                        <meta property="og:image" content="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg"/>
                         
                         <!-- ios support -->
                         <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
