@@ -126,7 +126,11 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/piapps-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def piapps_course(self, **kw):
         return http.request.redirect('https://www.udemy.com/course/learn-how-to-develop-a-pi-app-on-the-pi-network/?referralCode=ADD5DE357007E267B364')
-        
+    
+    @http.route('/google-ai-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def google_ai_course(self, **kw):
+        return http.request.redirect('https://www.udemy.com/course/mastering-google-gemini-ai-y-notebooklm/?referralCode=BF9048D7098324B1F14D')
+    
     @http.route('/english-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_course(self, **kw):
         return http.request.redirect('https://www.udemy.com/course/aprende-ingles-practico-hoy-mismo-con-ia/?referralCode=D67C6EEEA0A577E2C2CF')
