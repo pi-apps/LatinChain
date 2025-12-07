@@ -1386,7 +1386,7 @@ $( document ).ready(function() {
                                                         }, 5000);
                                                         
                                                         var gemini_image = getGeminiImage();
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error)");
+                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error) Result: " + data.result);
                                                         
                                                         $("#open_modal").click();
                                                         
