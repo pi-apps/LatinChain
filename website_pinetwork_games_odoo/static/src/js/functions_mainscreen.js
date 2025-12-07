@@ -1270,8 +1270,6 @@ $( document ).ready(function() {
 
                             var start_flag = false;
                             
-                            var current_state = "";
-                            
                             async function showRewardedPiAd()
                             {
                                 end();
@@ -1316,18 +1314,11 @@ $( document ).ready(function() {
                                             }
                                         }
                                         
-                                        current_state = "1-";
-                                        
                                         const showAdResponse = await Pi.Ads.showAd("rewarded");
                                         
-                                        current_state = "2-";
-                                        
                                         if (showAdResponse.result === "AD_REWARDED") {
-                                            current_state = "3-";
                                             if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                                             {
-                                                current_state = "4-";
-                                                
                                                 $("#button_reward_ad").prop( "disabled", true );
                                                 $("#button_reward_ad").html("Verifying...");
                                                 //alert($("#ready_reward_message").text());
@@ -1341,9 +1332,7 @@ $( document ).ready(function() {
                                                 };
                                                 //$.ajaxSetup({async: false});
                                                 setConfirmUnloadPoints(true);
-                                                current_state = "5-";
-                                                $.post( "/set-latin-points", data).done(function(data) {
-                                                    current_state = "6-";
+                                                return $.post( "/set-latin-points", data).done(function(data) {
                                                     end();
                                                     setConfirmUnloadPoints(false);
                                                     data = JSON.parse(data);
@@ -1419,8 +1408,6 @@ $( document ).ready(function() {
                                                     $("#open_modal").click();
                                                     
                                                 });
-                                                current_state = "7-";
-                                                return true;
                                             }else{
                                                 $("#button_reward_ad").html(btnvalue);
                                                 $("#button_reward_ad").prop( "disabled", false );
@@ -1449,7 +1436,7 @@ $( document ).ready(function() {
                                         // good practice to handle any potential errors
                                         
                                         var gemini_image = getGeminiImage();
-                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error) " + err + " " + current_state);
+                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error) " + err);
                                         
                                         $("#open_modal").click();
                                         
@@ -1463,7 +1450,6 @@ $( document ).ready(function() {
                             
                             $( "#button_reward_ad" ).click(async function() {
                                 showRewardedPiAd();
-                                return true;
                             });
                             
                             if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))

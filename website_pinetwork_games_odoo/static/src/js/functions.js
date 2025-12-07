@@ -345,7 +345,7 @@ $( document ).ready(function() {
                                             };
                                             //$.ajaxSetup({async: false});
                                             setConfirmUnloadPoints(true);
-                                            $.post( "/set-latin-points", data).done(function(data) {
+                                            return $.post( "/set-latin-points", data).done(function(data) {
                                                 end();
                                                 setConfirmUnloadPoints(false);
                                                 data = JSON.parse(data);
@@ -416,7 +416,6 @@ $( document ).ready(function() {
                                                 
                                                 $("#open_modal").click();
                                             });
-                                            return true;
                                         }else{
                                             $("#button_reward_ad").html(btnvalue);
                                             $("#button_reward_ad").prop( "disabled", false );
@@ -456,7 +455,6 @@ $( document ).ready(function() {
                         
                         $( "#button_reward_ad" ).click(async function() {
                             showRewardedPiAd();
-                            return true;
                         });
                         
                         if(!Boolean(($("#payoneclick").val().toLowerCase())) && show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
