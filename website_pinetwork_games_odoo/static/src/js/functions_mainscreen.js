@@ -802,6 +802,12 @@ async function showPiAds(Pi, activated) {
 $( document ).ready(function() {
     btnvalue = $("#button_reward_ad").html();
     
+    /*
+       colorboxLoaded();
+       $(".modal-body").html("");
+       $("#open_modal").click();
+     */
+    
     //colorboxLoaded();
     
     const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
