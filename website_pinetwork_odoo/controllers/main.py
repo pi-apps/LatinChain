@@ -357,7 +357,7 @@ class PiNetworkBaseController(http.Controller):
         
         passkey = ''.join([choice('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789%^*(-_=+)') for i in range(20)])
         
-        pi_users_list[0].sudo().write({'passkey': passkey})
+        #pi_users_list[0].sudo().write({'passkey': passkey})
         
         im_winner = False
         if pi_users_list[0].id in apps_list.pi_users_winners_ids.ids:
