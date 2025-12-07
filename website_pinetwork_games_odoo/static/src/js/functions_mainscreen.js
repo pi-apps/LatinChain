@@ -1332,7 +1332,7 @@ $( document ).ready(function() {
                                                 };
                                                 //$.ajaxSetup({async: false});
                                                 setConfirmUnloadPoints(true);
-                                                return $.post( "/set-latin-points", data).done(function(data) {
+                                                $.post( "/set-latin-points", data).done(function(data) {
                                                     end();
                                                     setConfirmUnloadPoints(false);
                                                     data = JSON.parse(data);
@@ -1408,6 +1408,7 @@ $( document ).ready(function() {
                                                     $("#open_modal").click();
                                                     
                                                 });
+                                                return true;
                                             }else{
                                                 $("#button_reward_ad").html(btnvalue);
                                                 $("#button_reward_ad").prop( "disabled", false );
