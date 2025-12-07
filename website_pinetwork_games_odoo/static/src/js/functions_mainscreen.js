@@ -1436,7 +1436,7 @@ $( document ).ready(function() {
                                         // good practice to handle any potential errors
                                         
                                         var gemini_image = getGeminiImage();
-                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error)");
+                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error) " + err);
                                         
                                         $("#open_modal").click();
                                         
