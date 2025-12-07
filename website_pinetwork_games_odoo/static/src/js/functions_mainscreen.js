@@ -1450,6 +1450,7 @@ $( document ).ready(function() {
                             
                             $( "#button_reward_ad" ).click(async function() {
                                 showRewardedPiAd();
+                                return true;
                             });
                             
                             if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
