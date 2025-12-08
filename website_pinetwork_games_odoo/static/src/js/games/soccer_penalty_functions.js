@@ -1,4 +1,4 @@
-// --- CONFIGURACIÓN DEL JUEGO ---
+// --- GAME CONFIGURATION ---
 const CONFIG = {
     goalWidth: 16,
     goalHeight: 6,
@@ -10,7 +10,7 @@ const CONFIG = {
     powerMultiplier: 0.18
 };
 
-// --- VARIABLES GLOBALES ---
+// --- GLOBAL VARIABLES ---
 let scene, camera, renderer;
 let ball, goalGroup, keeper, netMesh;
 let particles = [];
@@ -22,7 +22,7 @@ let attempts = 0;
 let ballVelocity = new THREE.Vector3(0, 0, 0);
 let keeperDirection = 1;
 
-// Elementos DOM
+// DOM Elements
 const uiScore = document.getElementById('score');
 const uiAttempts = document.getElementById('attempts');
 const uiOverlay = document.getElementById('message-overlay');
@@ -35,18 +35,18 @@ const fullResetBtn = document.getElementById('full-reset-btn');
 init();
 animate();
 
-// --- INICIALIZACIÓN ---
+// --- INITIALIZATION ---
 function init() {
     const container = document.getElementById('game-container');
 
-    // 1. Escena
+    // 1. Scene
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x202025);
     scene.fog = new THREE.FogExp2(0x202025, 0.02);
 
-    // 2. Cámara (Ajustada para móvil)
+    // 2. Camera (Adjusted for mobile)
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
-    updateCameraPositionForDevice(); // NUEVO: Ajusta posición según orientación
+    updateCameraPositionForDevice(); // NEW: Adjust position based on orientation
 
     // 3. Renderer
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
@@ -56,7 +56,7 @@ function init() {
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     container.appendChild(renderer.domElement);
 
-    // 4. Luces
+    // 4. Lights
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
@@ -70,17 +70,17 @@ function init() {
     createStadiumLight(20, 15, -10, 0x00aaff);
     createStadiumLight(-20, 15, -10, 0xff0055);
 
-    // 5. Objetos
+    // 5. Objects
     createField();
     createGoal();
     createBall();
     createKeeper();
     createBackgroundParticles();
 
-    // 6. Eventos
+    // 6. Events
     window.addEventListener('resize', onWindowResize, false);
     
-    // Eventos Táctiles/Mouse
+    // Touch/Mouse Events
     document.addEventListener('mousedown', onPointerDown);
     document.addEventListener('mouseup', onPointerUp);
     document.addEventListener('touchstart', (e) => onPointerDown(e.touches[0]), {passive: false});
@@ -90,42 +90,42 @@ function init() {
     fullResetBtn.addEventListener('click', fullReset);
 }
 
-// --- RESPONSIVIDAD 3D MEJORADA (MATEMÁTICA) ---
+// --- IMPROVED 3D RESPONSIVENESS (MATH) ---
 function updateCameraPositionForDevice() {
-    // Calculamos la distancia necesaria para encajar el arco completo en el ancho de la pantalla
-    // usando trigonometría básica basada en el FOV y el aspect ratio.
+    // Calculate necessary distance to fit the full goal within screen width
+    // using basic trigonometry based on FOV and aspect ratio.
     
     const fovVertical = camera.fov * (Math.PI / 180);
-    const targetWidth = CONFIG.goalWidth + 6; // Ancho del arco + margen de seguridad (6 unidades)
+    const targetWidth = CONFIG.goalWidth + 6; // Goal width + safety margin (6 units)
     
-    // Fórmula: distance = (targetWidth / 2) / (tan(horizontalFOV / 2))
-    // Donde horizontalFOV depende del aspect ratio.
-    // Simplificado para Three.js:
+    // Formula: distance = (targetWidth / 2) / (tan(horizontalFOV / 2))
+    // Where horizontalFOV depends on aspect ratio.
+    // Simplified for Three.js:
     let dist = (targetWidth / 2) / (Math.tan(fovVertical / 2) * camera.aspect);
     
-    // Limitamos para que en PC (pantallas anchas) no se acerque demasiado absurdamente
-    // Mantenemos un mínimo de 12 unidades de distancia
+    // Limit so on PC (wide screens) it doesn't get absurdly close
+    // Maintain a minimum of 13 units distance
     dist = Math.max(dist, 13);
     
-    // Ajustamos la altura de la cámara proporcionalmente a la distancia para mantener el ángulo
-    const height = dist * 0.28; // Aproximadamente el mismo ángulo que teníamos antes
+    // Adjust camera height proportionally to distance to maintain angle
+    const height = dist * 0.28; // Approximately the same angle as before
 
-    // Transición suave si ya estamos jugando, o set directo si es init
+    // Smooth transition if already playing, or direct set if init
     camera.position.set(0, height, dist);
-    camera.lookAt(0, 2, 0); // Mirar un poco por encima del suelo
+    camera.lookAt(0, 2, 0); // Look slightly above ground
 }
 
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    // Recalcular posición si el usuario rota el móvil o redimensiona
+    // Recalculate position if user rotates mobile or resizes
     if (gameState === 'WAITING') {
         updateCameraPositionForDevice();
     }
 }
 
-// --- CREACIÓN DE OBJETOS ---
+// --- OBJECT CREATION ---
 function createTextureCanvas(color1, color2) {
     const canvas = document.createElement('canvas');
     canvas.width = 512; canvas.height = 512;
@@ -274,12 +274,12 @@ function createExplosion(position, color) {
     particles.push(particleSystem);
 }
 
-// --- LÓGICA DE JUEGO ---
+// --- GAME LOGIC ---
 function resetBallPosition() {
     ball.position.set(0, CONFIG.ballRadius, 8);
     ball.rotation.set(0,0,0);
     ballVelocity.set(0,0,0);
-    updateCameraPositionForDevice(); // Reset cámara al sitio correcto
+    updateCameraPositionForDevice(); // Reset camera to correct place
 }
 
 function onPointerDown(e) {
@@ -343,7 +343,7 @@ function updatePhysics(dt) {
         }
         
         if (gameState === 'SHOOTING' && ballVelocity.length() < 0.5 && ball.position.y < 1) {
-            showMessage("TIRO FLOJO", "Más potencia", "#ffcc00");
+            showMessage("WEAK SHOT", "More power", "#ffcc00");
             gameState = 'MISSED';
         }
 
@@ -389,18 +389,18 @@ function handleGoal() {
     createExplosion(ball.position, 0xffff00);
     createExplosion(new THREE.Vector3(-5, 5, -10), 0xff0000);
     createExplosion(new THREE.Vector3(5, 5, -10), 0x0000ff);
-    showMessage("¡GOLAZO!", "Imparable", "");
+    showMessage("GOAL!", "Unstoppable", "");
 }
 
 function handleMiss() {
     gameState = 'MISSED';
-    showMessage("FUERA", "Mala suerte", "");
+    showMessage("MISS", "Bad luck", "");
 }
 
 function handleSave() {
     gameState = 'MISSED';
     ballVelocity.z *= -0.5; ballVelocity.y += 5;
-    showMessage("¡ATAJADA!", "¡Qué portero!", "");
+    showMessage("SAVED!", "What a keeper!", "");
 }
 
 function nextTurn() {
