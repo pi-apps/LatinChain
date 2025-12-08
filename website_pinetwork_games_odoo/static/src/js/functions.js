@@ -330,16 +330,15 @@ $( document ).ready(function() {
                                     // 1. Set your timeout limit (in milliseconds)
                                     const TIME_LIMIT = 300000; // e.g., 5 minutes
 
-                                    // 2. Create the timeout promise
-                                    const timeout = new Promise((_, reject) =>
-                                        setTimeout(() => reject(new Error("Ad request timed out")), TIME_LIMIT)
-                                    );
-
-                                    // 3. The actual Ad execution
-                                    const adRequest = Pi.Ads.showAd("rewarded");
-                                    
-                                    // 4. Race the Ad against the Timeout
-                                    const showAdResponse = await Promise.race([adRequest, timeout]);
+                                    const showAdResponse = await Promise.race([
+                                        // The actual task
+                                        Pi.Ads.showAd("rewarded"),
+                                        
+                                        // The timeout timer
+                                        new Promise((_, reject) => 
+                                            setTimeout(() => reject(new Error("Ad request timed out")), TIME_LIMIT)
+                                        )
+                                    ]);
                                     
                                     //const showAdResponse = await Pi.Ads.showAd("rewarded");
                                     
