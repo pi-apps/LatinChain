@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="soccer_penalty" name="Soccer Penalty">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+
+                <head>
+                    <meta charset="UTF-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+                    <title>Super Penalty 3D Arena</title>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Russo+One&amp;display=swap');
+
+                        body {
+                            margin: 0;
+                            overflow: hidden;
+                            background-color: #111;
+                            font-family: 'Russo One', sans-serif;
+                            user-select: none;
+                            -webkit-user-select: none;
+                        }
+
+                        #game-container {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100vw;
+                            height: 100vh;
+                            z-index: 1;
+                        }
+
+                        #ui-layer {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            pointer-events: none;
+                            z-index: 10;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                        }
+
+                        /* HUD */
+                        .hud-top {
+                            padding: 20px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            text-shadow: 0 4px 6px rgba(0,0,0,0.5);
+                            pointer-events: auto; /* Allow clicking buttons here */
+                        }
+
+                        .score-board {
+                            background: rgba(0, 0, 0, 0.6);
+                            backdrop-filter: blur(5px);
+                            padding: 10px 25px;
+                            border-radius: 50px;
+                            border: 2px solid rgba(255, 255, 255, 0.2);
+                            color: white;
+                            font-size: 24px;
+                            display: flex;
+                            gap: 20px;
+                        }
+
+                        .score-item span {
+                            color: #ffcc00;
+                        }
+                        
+                        /* Manual Reset Button (Top Right) */
+                        .reset-icon-btn {
+                            background: rgba(255, 255, 255, 0.2);
+                            border: 1px solid rgba(255, 255, 255, 0.4);
+                            color: white;
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            font-size: 24px;
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            transition: all 0.2s;
+                            pointer-events: auto;
+                        }
+                        
+                        .reset-icon-btn:hover {
+                            background: rgba(255, 0, 85, 0.8);
+                            transform: rotate(180deg);
+                        }
+
+                        /* Overlay Messages */
+                        #message-overlay {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            text-align: center;
+                            opacity: 0;
+                            transition: opacity 0.3s, transform 0.3s;
+                            pointer-events: none;
+                        }
+
+                        #message-overlay.visible {
+                            opacity: 1;
+                            transform: translate(-50%, -50%) scale(1.1);
+                            pointer-events: auto; /* Allow clicks when visible */
+                        }
+
+                        #main-text {
+                            font-size: 80px;
+                            color: white;
+                            text-transform: uppercase;
+                            margin: 0;
+                            background: linear-gradient(to bottom, #fff 0%, #ddd 50%, #fff 100%);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            filter: drop-shadow(0 0 20px rgba(0,0,0,0.8));
+                            letter-spacing: -2px;
+                        }
+
+                        #sub-text {
+                            font-size: 24px;
+                            color: #ffcc00;
+                            margin-top: 10px;
+                            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+                        }
+
+                        /* Interactive Hints */
+                        #interaction-hint {
+                            position: absolute;
+                            bottom: 20%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            color: rgba(255, 255, 255, 0.8);
+                            font-size: 18px;
+                            text-align: center;
+                            animation: pulse 2s infinite;
+                            pointer-events: none;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                        }
+
+                        .arrow-guide {
+                            display: block;
+                            width: 40px;
+                            height: 40px;
+                            border-top: 4px solid white;
+                            border-right: 4px solid white;
+                            transform: rotate(-45deg);
+                            margin: 0 auto 10px auto;
+                            animation: swipeUp 1.5s infinite;
+                        }
+
+                        /* Restart Button (Center Screen) */
+                        #restart-btn {
+                            pointer-events: auto;
+                            background: linear-gradient(45deg, #ff0055, #ff5500);
+                            border: none;
+                            padding: 15px 40px;
+                            color: white;
+                            font-family: 'Russo One', sans-serif;
+                            font-size: 20px;
+                            border-radius: 30px;
+                            cursor: pointer;
+                            box-shadow: 0 10px 20px rgba(255, 0, 85, 0.4);
+                            transition: transform 0.2s, box-shadow 0.2s;
+                            display: none; /* Hidden by default */
+                            margin-top: 20px;
+                        }
+
+                        #restart-btn:hover {
+                            transform: scale(1.05);
+                            box-shadow: 0 10px 30px rgba(255, 0, 85, 0.6);
+                        }
+
+                        @keyframes pulse {
+                            0% { opacity: 0.5; }
+                            50% { opacity: 1; }
+                            100% { opacity: 0.5; }
+                        }
+
+                        @keyframes swipeUp {
+                            0% { transform: rotate(-45deg) translate(0, 0); opacity: 0; }
+                            50% { opacity: 1; }
+                            100% { transform: rotate(-45deg) translate(-10px, -10px); opacity: 0; }
+                        }
+
+                        /* Mobile adjustments */
+                        @media (max-width: 600px) {
+                            #main-text { font-size: 50px; }
+                            .score-board { font-size: 18px; padding: 8px 15px; }
+                            .hud-top { padding: 10px; }
+                        }
+                    </style>
+                    
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    
+                    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    
+                    <script type="text/javascript">
+                        startCommonAppsAI();
+                    </script>
+                    
+                    <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                        <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                            <div id="blocking-message" style="display: none;">
+                                <div>
+                                    Go to Pi Browser
+                                </div>
+                                <div>
+                                    <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                </div>
+                            </div>
+                            <div id="paying-message" style="display: none;">
+                                <div>
+                                    Donate to unlock Apps
+                                </div>
+                                <div>
+                                    <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                </div>
+                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <br/>
+                                    <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                </div>
+                            </div>
+                            <div id="loading-message" style="display: block;">
+                                Loading...
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                    <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                </head>
+                
+                <body translate="no">
+                    
+                    <div id="game-container"></div>
+
+                    <div id="ui-layer">
+                        <div class="hud-top">
+                            <div class="score-board">
+                                <div class="score-item">Goals: <span id="score">0</span></div>
+                                <div style="width: 20px;"></div>
+                                <div class="score-item">Attempts: <span id="attempts">0</span></div>
+                                <a id="back" class="score-item" style="color: white !important" href="/"><i class="fas fa-step-backward"></i></a>
+                            </div>
+                            <button class="reset-icon-btn" id="full-reset-btn" title="Reset Match">↻</button>
+                        </div>
+
+                        <div id="message-overlay">
+                            <h1 id="main-text">GOAL!</h1>
+                            <p id="sub-text">+1 Point</p>
+                            <button id="restart-btn">Shoot Again</button>
+                        </div>
+
+                        <div id="interaction-hint">
+                            <div class="arrow-guide"></div>
+                            Swipe fast to shoot
+                        </div>
+                    </div>
+                    
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/soccer_penalty_functions.js?v=1.101"></script>
+
+                </body>
+
+            </html>
+            </t>
+		</template>
+
+</odoo>
