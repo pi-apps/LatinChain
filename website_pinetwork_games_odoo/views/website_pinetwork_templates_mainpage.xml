@@ -48,6 +48,10 @@
                 -->
             </xpath>
             
+            <xpath expr="//head" position="inside">
+                <meta name="thumbnail" content="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg"/>
+            </xpath>
+            
            <xpath expr="//body" position="before">
                <span id="website_translation_latin_chain" name="website_translation_latin_chain">
                     <t t-if="hide_google_translate">
