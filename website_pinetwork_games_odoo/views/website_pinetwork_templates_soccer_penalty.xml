@@ -15,6 +15,11 @@
                         @import url('https://fonts.googleapis.com/css2?family=Russo+One&amp;display=swap');
 
                         /* --- MOBILE FIRST CSS BASE --- */
+                        :root {
+                            /* Variable para altura real en móviles (descarta barra navegador) */
+                            --app-height: 100vh;
+                        }
+
                         body {
                             margin: 0;
                             overflow: hidden;
@@ -22,17 +27,19 @@
                             font-family: 'Russo One', sans-serif;
                             user-select: none;
                             -webkit-user-select: none;
-                            /* Critical for mobile games: prevents browser default gestures like pull-to-refresh */
                             touch-action: none; 
                             -webkit-tap-highlight-color: transparent;
+                            width: 100vw;
+                            height: 100vh; /* Fallback */
+                            height: 100dvh; /* Moderno: Dynamic Viewport Height */
                         }
 
                         #game-container {
                             position: absolute;
                             top: 0;
                             left: 0;
-                            width: 100vw;
-                            height: 100vh;
+                            width: 100%;
+                            height: 100%;
                             z-index: 1;
                         }
 
@@ -47,156 +54,158 @@
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
+                            /* Respetar áreas seguras (Notch/Isla dinámica) */
+                            padding-top: env(safe-area-inset-top);
+                            padding-bottom: env(safe-area-inset-bottom);
+                            padding-left: env(safe-area-inset-left);
+                            padding-right: env(safe-area-inset-right);
+                            box-sizing: border-box;
                         }
 
-                        /* HUD - Mobile Optimized */
+                        /* HUD - Optimizado para que no tape el juego */
                         .hud-top {
-                            /* Use safe-area-inset for notched phones */
-                            padding: max(15px, env(safe-area-inset-top)) 15px 15px 15px; 
+                            padding: 15px;
                             display: flex;
                             justify-content: space-between;
                             align-items: flex-start;
-                            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
                             pointer-events: auto;
                             width: 100%;
                             box-sizing: border-box;
                         }
 
                         .score-board {
-                            background: rgba(0, 0, 0, 0.6);
-                            backdrop-filter: blur(5px);
-                            padding: 8px 16px; /* Compact padding for mobile */
-                            border-radius: 25px;
-                            border: 1px solid rgba(255, 255, 255, 0.2);
+                            background: rgba(0, 0, 0, 0.5); /* Más transparente */
+                            backdrop-filter: blur(4px);
+                            padding: 8px 14px;
+                            border-radius: 12px;
+                            border: 1px solid rgba(255, 255, 255, 0.15);
                             color: white;
-                            font-size: 16px; /* Readable on small screens */
+                            font-size: 15px;
                             display: flex;
-                            gap: 15px;
+                            gap: 12px;
                             white-space: nowrap;
+                            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
                         }
 
                         .score-item span {
                             color: #ffcc00;
+                            font-size: 1.1em;
                         }
                         
-                        /* Reset Button - Touch Friendly */
+                        /* Botón Reset compacto */
                         .reset-icon-btn {
-                            background: rgba(255, 255, 255, 0.2);
-                            border: 1px solid rgba(255, 255, 255, 0.4);
+                            background: rgba(255, 255, 255, 0.15);
+                            border: 1px solid rgba(255, 255, 255, 0.3);
                             color: white;
-                            width: 44px; /* Minimum recommended touch target size */
-                            height: 44px;
+                            width: 40px;
+                            height: 40px;
                             border-radius: 50%;
-                            font-size: 20px;
+                            font-size: 18px;
                             cursor: pointer;
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            transition: all 0.2s;
                             pointer-events: auto;
-                            /* Ensure it doesn't stick to the very edge */
-                            margin-left: 10px; 
+                            margin-left: 10px;
+                            backdrop-filter: blur(2px);
                         }
                         
                         .reset-icon-btn:active {
-                            background: rgba(255, 0, 85, 0.8);
-                            transform: scale(0.9);
+                            background: #ff0055;
+                            transform: scale(0.95);
                         }
 
-                        /* Overlay Messages */
+                        /* Mensajes Centrales */
                         #message-overlay {
                             position: absolute;
-                            top: 45%; /* Slightly higher on mobile to clear thumb area */
+                            top: 40%; /* Subir un poco para no tapar al portero */
                             left: 50%;
                             transform: translate(-50%, -50%);
                             text-align: center;
                             opacity: 0;
-                            transition: opacity 0.3s, transform 0.3s;
+                            transition: opacity 0.2s, transform 0.2s;
                             pointer-events: none;
-                            width: 90%; /* Prevent overflow on narrow screens */
+                            width: 100%;
                         }
 
                         #message-overlay.visible {
                             opacity: 1;
-                            transform: translate(-50%, -50%) scale(1.1);
+                            transform: translate(-50%, -50%) scale(1);
                             pointer-events: auto;
                         }
 
                         #main-text {
-                            /* Responsive font size based on viewport width */
-                            font-size: 12vw; 
+                            font-size: clamp(40px, 15vw, 90px); /* Texto fluido */
                             color: white;
                             text-transform: uppercase;
                             margin: 0;
                             background: linear-gradient(to bottom, #fff 0%, #ddd 50%, #fff 100%);
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
-                            filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
-                            letter-spacing: -1px;
-                            line-height: 1.1;
+                            filter: drop-shadow(0 0 15px rgba(0,0,0,0.9));
+                            line-height: 1;
                         }
 
                         #sub-text {
-                            font-size: 5vw; /* Responsive subtitle */
+                            font-size: clamp(16px, 5vw, 24px);
                             color: #ffcc00;
                             margin-top: 5px;
-                            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+                            text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+                            font-weight: normal;
+                            letter-spacing: 1px;
                         }
 
-                        /* Interaction Hint */
+                        /* Pista Visual */
                         #interaction-hint {
                             position: absolute;
-                            bottom: 15%; /* Higher to avoid conflict with swipe area */
-                            left: 50%;
-                            transform: translateX(-50%);
-                            color: rgba(255, 255, 255, 0.8);
-                            font-size: 14px;
+                            bottom: 15%;
+                            left: 0;
+                            width: 100%;
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 13px;
                             text-align: center;
                             animation: pulse 2s infinite;
                             pointer-events: none;
                             text-transform: uppercase;
-                            letter-spacing: 1px;
-                            width: 100%;
+                            letter-spacing: 2px;
                         }
 
                         .arrow-guide {
                             display: block;
-                            width: 30px;
-                            height: 30px;
-                            border-top: 3px solid white;
-                            border-right: 3px solid white;
+                            width: 24px;
+                            height: 24px;
+                            border-top: 3px solid rgba(255, 255, 255, 0.8);
+                            border-right: 3px solid rgba(255, 255, 255, 0.8);
                             transform: rotate(-45deg);
-                            margin: 0 auto 10px auto;
+                            margin: 0 auto 8px auto;
                             animation: swipeUp 1.5s infinite;
                         }
 
-                        /* Big Action Button */
+                        /* Botón de Acción Grande */
                         #restart-btn {
                             pointer-events: auto;
                             background: linear-gradient(45deg, #ff0055, #ff5500);
                             border: none;
-                            padding: 12px 30px;
+                            padding: 14px 35px;
                             color: white;
                             font-family: 'Russo One', sans-serif;
                             font-size: 18px;
                             border-radius: 30px;
                             cursor: pointer;
-                            box-shadow: 0 5px 15px rgba(255, 0, 85, 0.4);
+                            box-shadow: 0 8px 20px rgba(255, 0, 85, 0.5);
                             display: none;
-                            margin-top: 15px;
-                            /* Prevent accidental double taps zooming */
-                            touch-action: manipulation; 
+                            margin-top: 20px;
+                            touch-action: manipulation;
+                            text-transform: uppercase;
                         }
 
                         #restart-btn:active {
-                            transform: scale(0.95);
+                            transform: scale(0.96);
                         }
 
-                        /* Animations */
                         @keyframes pulse {
-                            0% { opacity: 0.5; }
+                            0%, 100% { opacity: 0.5; }
                             50% { opacity: 1; }
-                            100% { opacity: 0.5; }
                         }
 
                         @keyframes swipeUp {
@@ -205,61 +214,13 @@
                             100% { transform: rotate(-45deg) translate(-10px, -10px); opacity: 0; }
                         }
 
-                        /* --- DESKTOP / TABLET ENHANCEMENTS --- */
+                        /* --- MEDIA QUERIES --- */
                         @media (min-width: 768px) {
-                            .hud-top {
-                                padding: 30px;
-                            }
-
-                            .score-board {
-                                font-size: 24px;
-                                padding: 10px 30px;
-                                border-width: 2px;
-                                gap: 25px;
-                            }
-
-                            .reset-icon-btn {
-                                width: 50px;
-                                height: 50px;
-                                font-size: 24px;
-                            }
-
-                            .reset-icon-btn:hover {
-                                background: rgba(255, 0, 85, 0.8);
-                                transform: rotate(180deg);
-                            }
-
-                            #main-text {
-                                font-size: 80px; /* Fixed max size for desktop */
-                                filter: drop-shadow(0 0 20px rgba(0,0,0,0.8));
-                            }
-
-                            #sub-text {
-                                font-size: 24px;
-                                margin-top: 10px;
-                            }
-
-                            #restart-btn {
-                                padding: 15px 40px;
-                                font-size: 20px;
-                            }
-                            
-                            #restart-btn:hover {
-                                transform: scale(1.05);
-                                box-shadow: 0 10px 30px rgba(255, 0, 85, 0.6);
-                            }
-
-                            #interaction-hint {
-                                font-size: 18px;
-                                bottom: 20%;
-                                letter-spacing: 2px;
-                            }
-
-                            .arrow-guide {
-                                width: 40px;
-                                height: 40px;
-                                border-width: 4px;
-                            }
+                            .hud-top { padding: 30px; }
+                            .score-board { font-size: 24px; padding: 12px 30px; gap: 30px; }
+                            .reset-icon-btn { width: 50px; height: 50px; font-size: 24px; }
+                            #restart-btn { padding: 18px 50px; font-size: 22px; }
+                            #restart-btn:hover { transform: scale(1.05); }
                         }
                     </style>
                     
