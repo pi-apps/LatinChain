@@ -327,7 +327,21 @@ $( document ).ready(function() {
                                         }
                                     }
                                     
-                                    const showAdResponse = await Pi.Ads.showAd("rewarded");
+                                    // 1. Set your timeout limit (in milliseconds)
+                                    const TIME_LIMIT = 300000; // e.g., 5 minutes
+
+                                    // 2. Create the timeout promise
+                                    const timeout = new Promise((_, reject) =>
+                                        setTimeout(() => reject(new Error("Ad request timed out")), TIME_LIMIT)
+                                    );
+
+                                    // 3. The actual Ad execution
+                                    const adRequest = Pi.Ads.showAd("rewarded");
+                                    
+                                    // 4. Race the Ad against the Timeout
+                                    const showAdResponse = await Promise.race([adRequest, timeout]);
+                                    
+                                    //const showAdResponse = await Pi.Ads.showAd("rewarded");
                                     
                                     if (showAdResponse.result === "AD_REWARDED") {
                                         if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
