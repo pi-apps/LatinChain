@@ -271,31 +271,6 @@
                     <div id="ui-layer">
                         <div class="hud-top">
                             <div class="score-board">
-                                <div class="score-item">Goals: <span id="score">0</span></div>
-                                <div style="width: 20px;"></div>
-                                <div class="score-item">Attempts: <span id="attempts">0</span></div>
-                                <a id="back" class="score-item" style="color: white !important" href="/"><i class="fas fa-step-backward"></i></a>
-                            </div>
-                            <button class="reset-icon-btn" id="full-reset-btn" title="Reset Match">↻</button>
-                        </div>
-
-                        <div id="message-overlay">
-                            <h1 id="main-text">GOAL!</h1>
-                            <p id="sub-text">+1 Point</p>
-                            <button id="restart-btn">Shoot Again</button>
-                        </div>
-
-                        <div id="interaction-hint">
-                            <div class="arrow-guide"></div>
-                            Swipe fast to shoot
-                        </div>
-                    </div>
-                    
-                    <div id="game-container"></div>
-
-                    <div id="ui-layer">
-                        <div class="hud-top">
-                            <div class="score-board">
                                 <div class="score-item">GOALS <span id="score">0</span></div>
                                 <div style="width: 1px; background: rgba(255,255,255,0.2); margin: 0 5px;"></div>
                                 <div class="score-item">ATTEMPTS <span id="attempts">0</span></div>
