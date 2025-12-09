@@ -173,7 +173,7 @@
                             <button id="last-result-btn" onclick="viewLastCertificate()" class="hidden w-full bg-white border-2 border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800 font-semibold py-3 px-6 rounded-lg transition">
                                 View Last Certificate
                             </button>
-                            <button id="last-result-btn" onclick="viewHigherScoreCertificate()" class="hidden w-full bg-white border-2 border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800 font-semibold py-3 px-6 rounded-lg transition">
+                            <button id="high-result-btn" onclick="viewHigherScoreCertificate()" class="hidden w-full bg-white border-2 border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800 font-semibold py-3 px-6 rounded-lg transition">
                                 View Higher Scored Certificate
                             </button>
                         </div>
@@ -273,7 +273,7 @@
 
                     </div>
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/iq_test_functions.js?v=1.111"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/iq_test_functions.js?v=1.112"></script>
 
                 </body>
 

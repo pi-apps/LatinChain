@@ -13,6 +13,7 @@ const i18n = {
         placeholder: "Your Full Name",
         startBtn: "Start Test",
         lastBtn: "View Last Certificate",
+        highBtn: "View Higer Scored Certificate",
         qLabel: "Question",
         qOf: "of",
         next: "Next",
@@ -45,6 +46,7 @@ const i18n = {
         placeholder: "Tu Nombre Completo",
         startBtn: "Comenzar Prueba",
         lastBtn: "Ver Último Certificado",
+        highBtn: "Ver Certificado con nota más alta",
         qLabel: "Pregunta",
         qOf: "de",
         next: "Siguiente",
@@ -87,6 +89,7 @@ function applyLanguage() {
     document.getElementById('username').placeholder = translations.placeholder;
     document.getElementById('ui-btn-start').innerText = translations.startBtn;
     document.getElementById('last-result-btn').innerText = translations.lastBtn;
+    document.getElementById('high-result-btn').innerText = translations.highBtn;
 
     // Quiz Screen
     document.getElementById('ui-q-label').innerText = translations.qLabel;
