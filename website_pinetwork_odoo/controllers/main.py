@@ -470,7 +470,7 @@ class PiNetworkBaseController(http.Controller):
                             'iq_name': pi_users_list[0].iq_name,
                             'iq_result': pi_users_list[0].iq_result,
                             'iq_category': pi_users_list[0].iq_category,
-                            'iq_date': pi_users_list[0].iq_date
+                            'iq_date': str(pi_users_list[0].iq_date)
                             })
     
     @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, methods=['POST'], csrf=False)
