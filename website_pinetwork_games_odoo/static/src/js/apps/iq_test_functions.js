@@ -517,7 +517,7 @@ async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
                     'iq_category': iq_category,
                     'iq_date': dateString
                 };
-        alert(dateString + " " + iq_category + " " + iq_result + " " + iq_name);
+                
         //$.ajaxSetup({async: false});
         return $.post( "/set-iq-result", data).done(function(data) {
             data = JSON.parse(data);
