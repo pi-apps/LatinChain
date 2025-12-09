@@ -425,7 +425,13 @@ function finishQuiz() {
     // Show Certificate
     renderCertificate(userName, iq, category, date);
     
-    setIQResult(userName, iq, category, date);
+    var dateObj = new Date(date);
+    const month   = dateObj.getMonth() + 1; // months from 1-12
+    const day     = dateObj.getDate();
+    const year    = dateObj.getFullYear();
+    const dateString = year + "-" + month + "-" + day;
+    
+    setIQResult(userName, iq, category, dateString);
     
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
@@ -439,11 +445,12 @@ function viewLastCertificate() {
     if (savedData) {
         var dateObj = new Date(savedData.date);
         const month   = dateObj.getMonth() + 1; // months from 1-12
-        const day     = dateObj.getDate() + 1;
+        const day     = dateObj.getDate();
         const year    = dateObj.getFullYear();
         dateObj = new Date(year + "-" + month + "-" + day);
+        const dateString = year + "-" + month + "-" + day;
         
-        setIQResult(savedData.name, savedData.iq, savedData.category, savedData.date);
+        setIQResult(savedData.name, savedData.iq, savedData.category, dateString);
         renderCertificate(savedData.name, savedData.iq, savedData.category, dateObj.toLocaleDateString());
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
@@ -455,7 +462,7 @@ function viewHigherScoreCertificate() {
     if (savedData) {
         var dateObj = new Date(savedData.iq_date);
         const month   = dateObj.getMonth() + 1; // months from 1-12
-        const day     = dateObj.getDate() + 1;
+        const day     = dateObj.getDate();
         const year    = dateObj.getFullYear();
         dateObj = new Date(year + "-" + month + "-" + day);
         
@@ -479,11 +486,12 @@ async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
     
     if(pi_user_id != "" && pi_user_code != "")
     {
-        var dateObj = new Date(iq_date);
+        var dateObj = new Date(savedData.date);
         const month   = dateObj.getMonth() + 1; // months from 1-12
         const day     = dateObj.getDate();
         const year    = dateObj.getFullYear();
-        dateObj = new Date(year + "-" + day + "-" + month);
+        
+        const dateString = year + "-" + month + "-" + day;
         
         var data = {
                     'pi_user_id': pi_user_id,
@@ -493,9 +501,8 @@ async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
                     'iq_name': iq_name,
                     'iq_result': iq_result,
                     'iq_category': iq_category,
-                    'iq_date': dateObj.toDateString()
+                    'iq_date': dateString
                 };
-        alert(data);
         //$.ajaxSetup({async: false});
         return $.post( "/set-iq-result", data).done(function(data) {
             data = JSON.parse(data);
