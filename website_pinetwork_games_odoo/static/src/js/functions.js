@@ -140,14 +140,17 @@ async function showPiAds(Pi) {
                             'csrf_token': odoo.csrf_token,
                         };
                 //$.ajaxSetup({async: false});
-                return $.post( "/set-pi-ad-datetime", data).done(function(data) {
-                    data = JSON.parse(data);
-                    if(data.result)
-                    {
-                    }
-                }).fail(function() {
-                    
-                });
+                setTimeout(function ()
+                {
+                    $.post( "/set-pi-ad-datetime", data).done(function(data) {
+                        data = JSON.parse(data);
+                        if(data.result)
+                        {
+                        }
+                    }).fail(function() {
+                        
+                    });
+                }, 3000);
             }
         }
     } catch (err) {
@@ -345,77 +348,80 @@ $( document ).ready(function() {
                                             };
                                             //$.ajaxSetup({async: false});
                                             setConfirmUnloadPoints(true);
-                                            return $.post( "/set-latin-points", data).done(function(data) {
-                                                end();
-                                                setConfirmUnloadPoints(false);
-                                                data = JSON.parse(data);
-                                                if(data.result && data.points_latin > 0)
-                                                {
-                                                    $("#button_reward_ad").prop( "disabled", true );
-                                                    $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                                                    var gemini_image = getGeminiImage();
-                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                                                    
-                                                    if(data.x2_game)
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
-                                                    
-                                                    $("#open_modal").click();
-                                                    /*setTimeout(function ()
+                                            setTimeout(function ()
+                                            {
+                                                $.post( "/set-latin-points", data).done(function(data) {
+                                                    end();
+                                                    setConfirmUnloadPoints(false);
+                                                    data = JSON.parse(data);
+                                                    if(data.result && data.points_latin > 0)
                                                     {
-                                                        $("#button_reward_ad").html(btnvalue);
-                                                        $("#button_reward_ad").prop( "disabled", false );
-                                                    }, 5000);*/
-                                                    
-                                                    pi_ad_new = data.pi_ad_new;
-                                                    if(data.pi_ad_new)
-                                                    {
-                                                        $("#button_reward_ad").show();
-                                                        $("#piad_not_available").hide();
+                                                        $("#button_reward_ad").prop( "disabled", true );
+                                                        $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                        var gemini_image = getGeminiImage();
+                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                        
+                                                        if(data.x2_game)
+                                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                                        
+                                                        $("#open_modal").click();
+                                                        /*setTimeout(function ()
+                                                        {
+                                                            $("#button_reward_ad").html(btnvalue);
+                                                            $("#button_reward_ad").prop( "disabled", false );
+                                                        }, 5000);*/
+                                                        
+                                                        pi_ad_new = data.pi_ad_new;
+                                                        if(data.pi_ad_new)
+                                                        {
+                                                            $("#button_reward_ad").show();
+                                                            $("#piad_not_available").hide();
+                                                            setTimeout(function ()
+                                                            {
+                                                                $("#button_reward_ad").html(btnvalue);
+                                                                $("#button_reward_ad").prop( "disabled", false );
+                                                            }, 5000);
+                                                        }else
+                                                        {
+                                                            $("#button_reward_ad").hide();
+                                                            $("#piad_not_available").show();
+                                                            setTimeout(function ()
+                                                            {
+                                                                $("#button_reward_ad").html(btnvalue);
+                                                                $("#button_reward_ad").prop( "disabled", false );
+                                                            }, 5000);
+                                                        }
+                                                    }else{
+                                                        //$("#button_reward_ad").html("Error, try again...");
+                            
                                                         setTimeout(function ()
                                                         {
                                                             $("#button_reward_ad").html(btnvalue);
                                                             $("#button_reward_ad").prop( "disabled", false );
                                                         }, 5000);
-                                                    }else
-                                                    {
-                                                        $("#button_reward_ad").hide();
-                                                        $("#piad_not_available").show();
-                                                        setTimeout(function ()
-                                                        {
-                                                            $("#button_reward_ad").html(btnvalue);
-                                                            $("#button_reward_ad").prop( "disabled", false );
-                                                        }, 5000);
+                                                        
+                                                        var gemini_image = getGeminiImage();
+                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error) Result: " + data.result);
+                                                        
+                                                        $("#open_modal").click();
                                                     }
-                                                }else{
-                                                    //$("#button_reward_ad").html("Error, try again...");
-                        
+                                                    start();
+                                                }).fail(function() {
+                                                    $("#button_reward_ad").html("Fail, try again...");
+                            
                                                     setTimeout(function ()
                                                     {
                                                         $("#button_reward_ad").html(btnvalue);
                                                         $("#button_reward_ad").prop( "disabled", false );
                                                     }, 5000);
+                                                    setConfirmUnloadPoints(false);
                                                     
                                                     var gemini_image = getGeminiImage();
-                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error) Result: " + data.result);
+                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (Post failed Error)");
                                                     
                                                     $("#open_modal").click();
-                                                }
-                                                start();
-                                            }).fail(function() {
-                                                $("#button_reward_ad").html("Fail, try again...");
-                        
-                                                setTimeout(function ()
-                                                {
-                                                    $("#button_reward_ad").html(btnvalue);
-                                                    $("#button_reward_ad").prop( "disabled", false );
-                                                }, 5000);
-                                                setConfirmUnloadPoints(false);
-                                                
-                                                var gemini_image = getGeminiImage();
-                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (Post failed Error)");
-                                                
-                                                $("#open_modal").click();
-                                            });
+                                                });
+                                            }, 3000);
                                         }else{
                                             $("#button_reward_ad").html(btnvalue);
                                             $("#button_reward_ad").prop( "disabled", false );
