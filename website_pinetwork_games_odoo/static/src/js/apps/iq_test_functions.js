@@ -447,7 +447,7 @@ function viewLastCertificate() {
 function viewHigherScoreCertificate() {
     const savedData = startCommonAppsAIVars;
     if (savedData) {
-        renderCertificate(savedData.iq_name, savedData.iq_reault, savedData.iq_category, savedData.iq_date);
+        renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, savedData.iq_date);
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
     }
