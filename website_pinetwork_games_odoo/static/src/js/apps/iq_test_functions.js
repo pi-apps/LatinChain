@@ -477,7 +477,7 @@ async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
         const month   = dateObj.getMonth() + 1; // months from 1-12
         const day     = dateObj.getDate();
         const year    = dateObj.getFullYear();
-        dateObj = new Date(year + "-" + month + "-" + day);
+        dateObj = new Date(day + "/" + month + "/" + year);
         
         var data = {
                     'pi_user_id': pi_user_id,
@@ -487,7 +487,7 @@ async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
                     'iq_name': iq_name,
                     'iq_result': iq_result,
                     'iq_category': iq_category,
-                    'iq_date': dateObj
+                    'iq_date': dateObj.toString()
                 };
         alert(data);
         //$.ajaxSetup({async: false});
