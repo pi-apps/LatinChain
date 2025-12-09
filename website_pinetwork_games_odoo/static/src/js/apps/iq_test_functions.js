@@ -441,7 +441,7 @@ function viewLastCertificate() {
         const month   = dateObj.getMonth() + 1; // months from 1-12
         const day     = dateObj.getDate() + 1;
         const year    = dateObj.getFullYear();
-        dateObj = new Date(year + "-" + day + "-" + month);
+        dateObj = new Date(year + "-" + month + "-" + day);
         
         setIQResult(savedData.name, savedData.iq, savedData.category, savedData.date);
         renderCertificate(savedData.name, savedData.iq, savedData.category, dateObj.toLocaleDateString());
@@ -457,7 +457,7 @@ function viewHigherScoreCertificate() {
         const month   = dateObj.getMonth() + 1; // months from 1-12
         const day     = dateObj.getDate() + 1;
         const year    = dateObj.getFullYear();
-        dateObj = new Date(year + "-" + day + "-" + month);
+        dateObj = new Date(year + "-" + month + "-" + day);
         
         renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, dateObj.toLocaleDateString());
         startScreen.classList.add('hidden');
