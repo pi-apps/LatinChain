@@ -1316,6 +1316,8 @@ $( document ).ready(function() {
                                             }
                                         }
                                         
+                                        alert($.ajaxSettings.timeout);
+                                        
                                         const showAdResponse = await Pi.Ads.showAd("rewarded");
                                         
                                         if (showAdResponse.result === "AD_REWARDED") {
