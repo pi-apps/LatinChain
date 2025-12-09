@@ -424,6 +424,7 @@ function finishQuiz() {
     const day     = dateObj.getDate();
     const year    = dateObj.getFullYear();
     const dateString = year + "-" + month + "-" + day;
+    const dateStringCert = day + "/" + month + "/" + year;
 
     // Save to LocalStorage
     const resultData = {
@@ -435,7 +436,7 @@ function finishQuiz() {
     localStorage.setItem('iq_test_last_result', JSON.stringify(resultData));
 
     // Show Certificate
-    renderCertificate(userName, iq, category, dateString);
+    renderCertificate(userName, iq, category, dateStringCert);
     
     setIQResult(userName, iq, category, dateString);
     
@@ -456,7 +457,7 @@ function viewLastCertificate() {
         dateObj = new Date(year + "-" + month + "-" + day);
         const dateString = year + "-" + month + "-" + day;
         
-        const dateStringCert = "99/99/9999";
+        const dateStringCert = day + "/" + month + "/" + year;
         
         setIQResult(savedData.name, savedData.iq, savedData.category, dateString);
         renderCertificate(savedData.name, savedData.iq, savedData.category, dateStringCert);
@@ -474,8 +475,9 @@ function viewHigherScoreCertificate() {
         const year    = dateObj.getFullYear();
         dateObj = new Date(year + "-" + month + "-" + day);
         const dateString = year + "-" + month + "-" + day;
+        const dateStringCert = day + "/" + month + "/" + year;
         
-        renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, dateString);
+        renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, dateStringCert);
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
     }else
