@@ -437,8 +437,14 @@ function finishQuiz() {
 function viewLastCertificate() {
     const savedData = JSON.parse(localStorage.getItem('iq_test_last_result'));
     if (savedData) {
+        var dateObj = new Date(savedData.date);
+        const month   = dateObj.getMonth() + 1; // months from 1-12
+        const day     = dateObj.getDate() + 1;
+        const year    = dateObj.getFullYear();
+        dateObj = new Date(year + "-" + day + "-" + month);
+        
         setIQResult(savedData.name, savedData.iq, savedData.category, savedData.date);
-        renderCertificate(savedData.name, savedData.iq, savedData.category, savedData.date);
+        renderCertificate(savedData.name, savedData.iq, savedData.category, dateObj.toLocaleDateString());
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
     }
