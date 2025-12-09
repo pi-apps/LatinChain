@@ -287,6 +287,12 @@ window.onload = function() {
 };
 
 function startQuiz() {
+    if(nameInput.value.trim() == "")
+    {
+        alert("Set a name for the Certificate");
+        return;
+    }
+    
     userName = nameInput.value.trim() || (isSpanish ? "Anónimo" : "Anonymous");
     
     // Randomly select 35 questions
