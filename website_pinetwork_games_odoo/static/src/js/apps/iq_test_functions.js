@@ -451,7 +451,7 @@ function viewHigherScoreCertificate() {
         const month   = dateObj.getMonth() + 1; // months from 1-12
         const day     = dateObj.getDate() + 1;
         const year    = dateObj.getFullYear();
-        dateObj = new Date(year + "-" + month + "-" + day);
+        dateObj = new Date(day + "/" + month + "/" + year);
         
         renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, dateObj.toLocaleDateString());
         startScreen.classList.add('hidden');
@@ -487,7 +487,7 @@ async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
                     'iq_name': iq_name,
                     'iq_result': iq_result,
                     'iq_category': iq_category,
-                    'iq_date': dateObj.toString()
+                    'iq_date': dateObj.toLocaleDateString()
                 };
         alert(data);
         //$.ajaxSetup({async: false});
