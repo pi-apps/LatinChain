@@ -475,7 +475,7 @@ async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
     {
         var dateObj = new Date(iq_date);
         const month   = dateObj.getMonth() + 1; // months from 1-12
-        const day     = dateObj.getDate();
+        const day     = dateObj.getDate() + 10;
         const year    = dateObj.getFullYear();
         dateObj = new Date(year + "-" + month + "-" + day);
         
