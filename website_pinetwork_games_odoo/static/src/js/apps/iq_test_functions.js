@@ -449,7 +449,7 @@ function viewHigherScoreCertificate() {
     if (savedData) {
         var dateObj = new Date(savedData.iq_date);
         const month   = dateObj.getMonth() + 1; // months from 1-12
-        const day     = dateObj.getDate() + 10;
+        const day     = dateObj.getDate() + 1;
         const year    = dateObj.getFullYear();
         dateObj = new Date(year + "-" + month + "-" + day);
         
@@ -489,6 +489,7 @@ async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
                     'iq_category': iq_category,
                     'iq_date': dateObj
                 };
+        alert(data);
         //$.ajaxSetup({async: false});
         return $.post( "/set-iq-result", data).done(function(data) {
             data = JSON.parse(data);
