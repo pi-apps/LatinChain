@@ -447,7 +447,13 @@ function viewLastCertificate() {
 function viewHigherScoreCertificate() {
     const savedData = startCommonAppsAIVars;
     if (savedData) {
-        renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, savedData.iq_date);
+        var dateObj = new Date(savedData.iq_date);
+        const month   = dateObj.getMonth() + 1; // months from 1-12
+        const day     = dateObj.getDate();
+        const year    = dateObj.getFullYear();
+        dateObj = new Date(year + "-" + day + "-" + month);
+        
+        renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, dateObj.toLocaleDateString());
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
     }
