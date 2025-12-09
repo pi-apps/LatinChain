@@ -447,8 +447,7 @@ function viewLastCertificate() {
 function viewHigherScoreCertificate() {
     const savedData = startCommonAppsAIVars;
     if (savedData) {
-        alert(savedData.iq_date);
-        renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, new Date(savedData.iq_date).toLocaleDateString());
+        renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, savedData.iq_date.toLocaleDateString());
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
     }
