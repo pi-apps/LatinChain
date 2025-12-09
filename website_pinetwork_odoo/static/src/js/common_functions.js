@@ -1,6 +1,6 @@
 "use strict";
 
-//$.ajaxSetup({timeout:1200000};
+$.ajaxSetup({timeout:1200000});
 
 const delayAsync = ms => new Promise(res => setTimeout(res, ms));
 
