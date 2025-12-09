@@ -451,7 +451,7 @@ function viewHigherScoreCertificate() {
         const month   = dateObj.getMonth() + 1; // months from 1-12
         const day     = dateObj.getDate();
         const year    = dateObj.getFullYear();
-        dateObj = new Date(year + "-" + day + "-" + month);
+        dateObj = new Date(year + "-" + month + "-" + day);
         
         renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, dateObj.toLocaleDateString());
         startScreen.classList.add('hidden');
