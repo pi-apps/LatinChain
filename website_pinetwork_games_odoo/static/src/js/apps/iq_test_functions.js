@@ -447,6 +447,10 @@ function renderCertificate(name, iq, category, date) {
 }
 
 async function setIQResult(iq_result) {
+    var pi_user_id = startCommonAppsAIVars.pi_user_id;
+    var pi_user_code = startCommonAppsAIVars.pi_user_code;
+    var accessToken = startCommonAppsAIVars.accessToken;
+    
     if(pi_user_id != "" && pi_user_code != "")
     {
         var data = {

@@ -1,5 +1,11 @@
 "use strict";
 
+var startCommonAppsAIVars = {
+    'pi_user_id': '',
+    'pi_user_code': '',
+    'accessToken': ''
+};
+
 var startCommonAppsAI = () => {
 
     $( document ).ready(function() {
@@ -133,6 +139,10 @@ var startCommonAppsAI = () => {
                     pi_user_id = auth.user.uid;
                     pi_user_code = auth.user.username;
                     accessToken = auth.accessToken;
+                    
+                    startCommonAppsAIVars.pi_user_id = auth.user.uid;
+                    startCommonAppsAIVars.pi_user_code = auth.user.username;
+                    startCommonAppsAIVars.accessToken = auth.accessToken;
                     
                     set_points(0).always(function(){
                         get_user().always(function(){
