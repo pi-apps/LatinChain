@@ -4,7 +4,10 @@ var startCommonAppsAIVars = {
     'pi_user_id': '',
     'pi_user_code': '',
     'accessToken': '',
-    'iq_result': ''
+    'iq_name': '',
+    'iq_result': '',
+    'iq_category': '',
+    'iq_date': '',
 };
 
 var startCommonAppsAI = () => {
@@ -100,7 +103,10 @@ var startCommonAppsAI = () => {
                     data = JSON.parse(data);
                     if(data.result)
                     {
+                        startCommonAppsAIVars.iq_name = data.iq_name;
                         startCommonAppsAIVars.iq_result = data.iq_result;
+                        startCommonAppsAIVars.iq_category = data.iq_category;
+                        startCommonAppsAIVars.iq_date = data.iq_date;
                         if(data.unblocked)
                         {
                             document.getElementById('blockingOverlay').style.display = 'none';
