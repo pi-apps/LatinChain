@@ -273,6 +273,7 @@ const progressBar = document.getElementById('progress-bar');
 const nextBtn = document.getElementById('next-btn');
 const nameInput = document.getElementById('username');
 const lastResultBtn = document.getElementById('last-result-btn');
+const highResultBtn = document.getElementById('high-result-btn');
 
 // Check for saved result on load
 window.onload = function() {
@@ -280,6 +281,7 @@ window.onload = function() {
     const savedData = localStorage.getItem('iq_test_last_result');
     if (savedData) {
         lastResultBtn.classList.remove('hidden');
+        highResultBtn.classList.remove('hidden');
     }
 };
 
