@@ -1311,6 +1311,7 @@ class pi_users(models.Model):
     avatar_user_url = fields.Char('Avatar user URL', compute="_compute_avatar_user_url", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     x2_game = fields.Boolean('x2 Game', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     points_latin_daily = fields.Integer('Points Latin_daily', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    iq_result = fields.Float('IQ Result', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("avatar_user")
     def _compute_avatar_user_url(self):

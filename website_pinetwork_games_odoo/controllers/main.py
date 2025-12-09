@@ -1030,16 +1030,18 @@ class PiNetworkController(http.Controller):
         if len(pi_user) == 0:
             username = "--"
             unblocked = False
+            iq_result = 0
         else:
             username = pi_user.pi_user_code
             unblocked = pi_user.unblocked
+            iq_result = pi_user.iq_result
         
         if len(admin_app_list) == 0:
             mainnet = ""
         else:
             mainnet = admin_app_list[0].mainnet
         
-        return http.request.render('website_pinetwork_games_odoo.certification', {'mainnet': mainnet, 'username': username, 'unblocked': unblocked})
+        return http.request.render('website_pinetwork_games_odoo.certification', {'mainnet': mainnet, 'username': username, 'unblocked': unblocked, 'iq_result': iq_result})
 
     @http.route('/latinchain-partners', type='http', auth="public", website=True, csrf=False)
     def partners(self, **kw):

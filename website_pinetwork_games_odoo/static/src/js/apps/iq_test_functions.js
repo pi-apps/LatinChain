@@ -420,6 +420,8 @@ function finishQuiz() {
     // Show Certificate
     renderCertificate(userName, iq, category, date);
     
+    setIQResult(iq);
+    
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
     
@@ -430,6 +432,7 @@ function finishQuiz() {
 function viewLastCertificate() {
     const savedData = JSON.parse(localStorage.getItem('iq_test_last_result'));
     if (savedData) {
+        setIQResult(savedData.iq);
         renderCertificate(savedData.name, savedData.iq, savedData.category, savedData.date);
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
@@ -441,4 +444,27 @@ function renderCertificate(name, iq, category, date) {
     document.getElementById('iq-score').innerText = iq;
     document.getElementById('iq-category').innerText = category;
     document.getElementById('cert-date').innerText = date;
+}
+
+async function setIQResult(iq_result) {
+    if(pi_user_id != "" && pi_user_code != "")
+    {
+        var data = {
+                    'pi_user_id': pi_user_id,
+                    'pi_user_code': pi_user_code,
+                    'accessToken': accessToken,
+                    'csrf_token': odoo.csrf_token,
+                    'iq_result': iq_result,
+                };
+        //$.ajaxSetup({async: false});
+        return $.post( "/set-iq-result", data).done(function(data) {
+            data = JSON.parse(data);
+            if(data.result)
+            {
+                //alert("IQ was saved");
+            }
+        }).fail(function() {
+            
+        });
+    }
 }

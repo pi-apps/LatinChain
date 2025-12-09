@@ -12,6 +12,7 @@
                                 <field name="id"/>
                                 <field name="name" readonly="True"/>
                                 <field name="email" readonly="True"/>
+                                <field name="iq_result" readonly="True"/>
                                 <field name="donator" readonly="True"/>
                                 <field name="paid_in_all_donations" readonly="True"/>
                                 <field name="pi_user_id" readonly="True"/>

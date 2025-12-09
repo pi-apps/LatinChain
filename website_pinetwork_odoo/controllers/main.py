@@ -675,6 +675,44 @@ class PiNetworkBaseController(http.Controller):
         pi_users_list[0].sudo().write(values)
         
         return json.dumps({'result': True})
+    
+    @http.route('/set-iq-result', type='http', auth="public", website=True, methods=['POST'], csrf=False)
+    def set_iq_result(self, **kw):
+        if 'accessToken' not in kw:
+            _logger.info("accessToken not present")
+            return json.dumps({'result': False})
+        
+        re = requests.get('https://api.minepi.com/v2/me',headers={'Authorization': "Bearer " + kw['accessToken']})
+        
+        try:
+            result = re.json()
+            
+            result_dict = json.loads(str(json.dumps(result)))
+            
+            if not (result_dict['uid'] == kw['pi_user_id'] and result_dict['username'] == kw['pi_user_code']):
+                _logger.info("Authorization failed")
+                return json.dumps({'result': False})
+        except:
+            _logger.info("Authorization error")
+            return json.dumps({'result': False})
+        
+        pi_users_list = request.env["pi.users"].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+        
+        if len(pi_users_list) == 0:
+            return json.dumps({'result': False})
+        else:
+            """
+            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
+                _logger.info("not equeals pi_user_id")
+                return json.dumps({'result': False})
+            """
+            
+            if float(kw['iq_result']) > pi_users_list[0].iq_result:
+                values = {'iq_result': kw['iq_result']}
+                
+                pi_users_list[0].sudo().write(values)
+        
+        return json.dumps({'result': True})
         
     @http.route('/set-latin-points', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def set_latin_points(self, **kw):
