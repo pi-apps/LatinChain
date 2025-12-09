@@ -328,9 +328,7 @@ $( document ).ready(function() {
                                         }
                                     }
                                     
-                                    const showAdResponse = await showAdWithTimeout("rewarded", 1200000);
-                                    
-                                    //const showAdResponse = await Pi.Ads.showAd("rewarded");
+                                    const showAdResponse = await Pi.Ads.showAd("rewarded");
                                     
                                     if (showAdResponse.result === "AD_REWARDED") {
                                         await delayAsync(2000);

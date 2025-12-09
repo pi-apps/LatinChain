@@ -1,41 +1,5 @@
 "use strict";
 
-/**
- * Attempts to show an ad with a custom timeout.
- * If the Pi SDK hangs for more than `timeoutMs`, we abort and return null.
- */
-async function showAdWithTimeout(type, timeoutMs = 1200000) {
-    let hasTimedOut = false;
-
-    // 1. Create a timeout promise that rejects after X seconds
-    const timeoutPromise = new Promise((_, reject) => {
-        setTimeout(() => {
-            hasTimedOut = true;
-            reject(new Error("Ad request took too long (manual timeout)"));
-        }, timeoutMs);
-    });
-
-    // 2. Race the real Ad call against the timeout
-    try {
-        const result = await Promise.race([
-            Pi.Ads.showAd(type),
-            timeoutPromise
-        ]);
-        return result; // Ad showed successfully
-    } catch (error) {
-        if (hasTimedOut) {
-            console.warn("Ad timed out - bypassing ad logic to keep app smooth.");
-            // DECISION: Do you want to give the reward anyway? 
-            // Often yes, to avoid frustrating the user due to technical bugs.
-            return { result: "AD_FAILED_BUT_CONTINUE" }; 
-        } else {
-            // A real error from Pi SDK (e.g. "Ad not loaded")
-            console.error("Ad failed:", error);
-            throw error;
-        }
-    }
-}
-
 const delayAsync = ms => new Promise(res => setTimeout(res, ms));
 
 function validateYouTubeUrl(url)
