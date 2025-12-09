@@ -454,7 +454,9 @@ function viewLastCertificate() {
         const day     = dateObj.getDate();
         const year    = dateObj.getFullYear();
         dateObj = new Date(year + "-" + month + "-" + day);
-        const dateString = year + "-" + month + "-" + day;
+        var dateString = year + "-" + month + "-" + day;
+        
+        dateString = "9999-99-99";
         
         setIQResult(savedData.name, savedData.iq, savedData.category, dateString);
         renderCertificate(savedData.name, savedData.iq, savedData.category, dateString);
