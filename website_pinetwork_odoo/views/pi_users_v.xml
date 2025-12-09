@@ -8,11 +8,10 @@
                 <sheet>
                     <notebook>
                         <page string="Pi Users">
-                            <group>
+                            <group string="User">
                                 <field name="id"/>
                                 <field name="name" readonly="True"/>
                                 <field name="email" readonly="True"/>
-                                <field name="iq_result" readonly="True"/>
                                 <field name="donator" readonly="True"/>
                                 <field name="paid_in_all_donations" readonly="True"/>
                                 <field name="pi_user_id" readonly="True"/>
@@ -47,6 +46,12 @@
                                 <field name="admin_apps_winners_ids" widget="many2many_tags"/>
                                 <field name="admin_apps_winners_paid_ids" widget="many2many_tags"/>
                                 <field name="pi_transactions_ids" readonly="True"/>
+                            </group>
+                            <group string="IQ">
+                                <field name="iq_name" readonly="True"/>
+                                <field name="iq_result" readonly="True"/>
+                                <field name="iq_category" readonly="True"/>
+                                <field name="iq_date" readonly="True"/>
                             </group>
                         </page>
                     </notebook>

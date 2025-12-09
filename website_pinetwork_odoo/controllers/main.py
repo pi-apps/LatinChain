@@ -466,7 +466,11 @@ class PiNetworkBaseController(http.Controller):
                             'pi_ad_automatic': pi_ad_automatic,
                             'avatar_user': pi_users_list[0].avatar_user,
                             'avatar_user_url': pi_users_list[0].avatar_user_url,
-                            'x2_game': pi_users_list[0].x2_game
+                            'x2_game': pi_users_list[0].x2_game,
+                            'iq_name': pi_users_list[0].iq_name,
+                            'iq_result': pi_users_list[0].iq_result,
+                            'iq_category': pi_users_list[0].iq_category,
+                            'iq_date': pi_users_list[0].iq_date
                             })
     
     @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, methods=['POST'], csrf=False)
@@ -707,8 +711,9 @@ class PiNetworkBaseController(http.Controller):
                 return json.dumps({'result': False})
             """
             
-            if float(kw['iq_result']) > pi_users_list[0].iq_result:
-                values = {'iq_result': kw['iq_result']}
+            if float(kw['iq_result']) >= pi_users_list[0].iq_result:
+                values = {'iq_name': kw['iq_name'], 'iq_result': kw['iq_result'], 
+                        'iq_category': kw['iq_category'], 'iq_date': kw['iq_date']}
                 
                 pi_users_list[0].sudo().write(values)
         

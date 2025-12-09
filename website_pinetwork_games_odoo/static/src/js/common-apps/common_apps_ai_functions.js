@@ -3,7 +3,8 @@
 var startCommonAppsAIVars = {
     'pi_user_id': '',
     'pi_user_code': '',
-    'accessToken': ''
+    'accessToken': '',
+    'iq_result': ''
 };
 
 var startCommonAppsAI = () => {
@@ -99,6 +100,7 @@ var startCommonAppsAI = () => {
                     data = JSON.parse(data);
                     if(data.result)
                     {
+                        startCommonAppsAIVars.iq_result = data.iq_result;
                         if(data.unblocked)
                         {
                             document.getElementById('blockingOverlay').style.display = 'none';

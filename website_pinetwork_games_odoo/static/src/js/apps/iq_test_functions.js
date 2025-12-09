@@ -420,7 +420,7 @@ function finishQuiz() {
     // Show Certificate
     renderCertificate(userName, iq, category, date);
     
-    setIQResult(iq);
+    setIQResult(userName, iq, category, date);
     
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
@@ -432,8 +432,17 @@ function finishQuiz() {
 function viewLastCertificate() {
     const savedData = JSON.parse(localStorage.getItem('iq_test_last_result'));
     if (savedData) {
-        setIQResult(savedData.iq);
+        setIQResult(savedData.name, savedData.iq, savedData.category, savedData.date);
         renderCertificate(savedData.name, savedData.iq, savedData.category, savedData.date);
+        startScreen.classList.add('hidden');
+        resultScreen.classList.remove('hidden');
+    }
+}
+
+function viewHigherScoreCertificate() {
+    const savedData = startCommonAppsAIVars;
+    if (savedData) {
+        renderCertificate(savedData.iq_name, savedData.iq_reault, savedData.iq_category, savedData.iq_date);
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
     }
@@ -446,7 +455,7 @@ function renderCertificate(name, iq, category, date) {
     document.getElementById('cert-date').innerText = date;
 }
 
-async function setIQResult(iq_result) {
+async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
     var pi_user_id = startCommonAppsAIVars.pi_user_id;
     var pi_user_code = startCommonAppsAIVars.pi_user_code;
     var accessToken = startCommonAppsAIVars.accessToken;
@@ -458,7 +467,10 @@ async function setIQResult(iq_result) {
                     'pi_user_code': pi_user_code,
                     'accessToken': accessToken,
                     'csrf_token': odoo.csrf_token,
+                    'iq_name': iq_name,
                     'iq_result': iq_result,
+                    'iq_category': iq_category,
+                    'iq_date': iq_date
                 };
         //$.ajaxSetup({async: false});
         return $.post( "/set-iq-result", data).done(function(data) {
