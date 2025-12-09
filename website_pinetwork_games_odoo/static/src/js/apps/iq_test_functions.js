@@ -422,14 +422,14 @@ function finishQuiz() {
     };
     localStorage.setItem('iq_test_last_result', JSON.stringify(resultData));
 
-    // Show Certificate
-    renderCertificate(userName, iq, category, date);
-    
     var dateObj = new Date(date);
     const month   = dateObj.getMonth() + 1; // months from 1-12
     const day     = dateObj.getDate();
     const year    = dateObj.getFullYear();
     const dateString = year + "-" + month + "-" + day;
+
+    // Show Certificate
+    renderCertificate(userName, iq, category, dateString);
     
     setIQResult(userName, iq, category, dateString);
     
@@ -451,7 +451,7 @@ function viewLastCertificate() {
         const dateString = year + "-" + month + "-" + day;
         
         setIQResult(savedData.name, savedData.iq, savedData.category, dateString);
-        renderCertificate(savedData.name, savedData.iq, savedData.category, dateObj.toLocaleDateString());
+        renderCertificate(savedData.name, savedData.iq, savedData.category, dateString);
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
     }
@@ -465,8 +465,9 @@ function viewHigherScoreCertificate() {
         const day     = dateObj.getDate();
         const year    = dateObj.getFullYear();
         dateObj = new Date(year + "-" + month + "-" + day);
+        const dateString = year + "-" + month + "-" + day;
         
-        renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, dateObj.toLocaleDateString());
+        renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, dateString);
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
     }

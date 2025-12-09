@@ -712,7 +712,7 @@ class PiNetworkBaseController(http.Controller):
             """
             
             if float(kw['iq_result']) >= pi_users_list[0].iq_result:
-                formatted_date = datetime.strptime(kw['iq_date'], "%a %b %d %Y").strftime("%Y-%m-%d")
+                formatted_date = datetime.strptime(kw['iq_date'], "%Y-%m-%d").strftime("%Y-%m-%d")
                 
                 values = {'iq_name': kw['iq_name'], 'iq_result': kw['iq_result'], 
                         'iq_category': kw['iq_category'], 'iq_date': formatted_date}
