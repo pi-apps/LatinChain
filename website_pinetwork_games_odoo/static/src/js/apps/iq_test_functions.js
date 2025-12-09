@@ -411,22 +411,21 @@ function finishQuiz() {
     
     const iq = calculateIQ(score, timeTaken);
     const category = getIQCategory(iq);
-    const date = new Date().toLocaleDateString();
+    
+    var dateObj = new Date();
+    const month   = dateObj.getMonth() + 1; // months from 1-12
+    const day     = dateObj.getDate();
+    const year    = dateObj.getFullYear();
+    const dateString = year + "-" + month + "-" + day;
 
     // Save to LocalStorage
     const resultData = {
         name: userName,
         iq: iq,
         category: category,
-        date: date
+        date: dateString
     };
     localStorage.setItem('iq_test_last_result', JSON.stringify(resultData));
-
-    var dateObj = new Date(date);
-    const month   = dateObj.getMonth() + 1; // months from 1-12
-    const day     = dateObj.getDate();
-    const year    = dateObj.getFullYear();
-    const dateString = year + "-" + month + "-" + day;
 
     // Show Certificate
     renderCertificate(userName, iq, category, dateString);
@@ -462,7 +461,7 @@ function viewHigherScoreCertificate() {
     if (savedData) {
         var dateObj = new Date(savedData.iq_date);
         const month   = dateObj.getMonth() + 1; // months from 1-12
-        const day     = dateObj.getDate();
+        const day     = dateObj.getDate() + 1;
         const year    = dateObj.getFullYear();
         dateObj = new Date(year + "-" + month + "-" + day);
         const dateString = year + "-" + month + "-" + day;
