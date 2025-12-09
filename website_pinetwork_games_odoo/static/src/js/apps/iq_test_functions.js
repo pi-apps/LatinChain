@@ -9,6 +9,7 @@ const i18n = {
         l1: "Evaluates logic, numerical patterns, and verbal reasoning.",
         l2: "<strong>Time impacts your score.</strong> Try to be quick but accurate.",
         l3: "You will receive a certificate with your estimated score upon completion.",
+        l4: "IQ's grades: <80(Below Average), >=80(Low Average), >=90(Average), >=110(High Average), >=120(Superior), >=120(Genius / Very Superior)",
         nameLabel: "Enter your name for the certificate:",
         placeholder: "Your Full Name",
         startBtn: "Start Test",
@@ -42,6 +43,7 @@ const i18n = {
         l1: "Evalúa lógica, patrones numéricos y razonamiento verbal.",
         l2: "<strong>El tiempo afecta tu puntaje.</strong> Intenta ser rápido pero preciso.",
         l3: "Al finalizar, recibirás un certificado con tu puntuación estimada.",
+        l4: "Grados de IQ: <80(Bajo Promedio), >=80(Promedio Bajo), >=90(Promedio), >=110(Promedio Alto), >=120(Superior), >=120(Genio / Muy Superior)",
         nameLabel: "Ingresa tu nombre para el certificado:",
         placeholder: "Tu Nombre Completo",
         startBtn: "Comenzar Prueba",
@@ -85,6 +87,7 @@ function applyLanguage() {
     document.getElementById('ui-li1').innerText = translations.l1;
     document.getElementById('ui-li2').innerHTML = translations.l2;
     document.getElementById('ui-li3').innerText = translations.l3;
+    document.getElementById('ui-li4').innerText = translations.l4;
     document.getElementById('ui-label-name').innerText = translations.nameLabel;
     document.getElementById('username').placeholder = translations.placeholder;
     document.getElementById('ui-btn-start').innerText = translations.startBtn;
