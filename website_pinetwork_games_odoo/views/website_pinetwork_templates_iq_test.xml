@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="iqtest" name="IQ Test">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+
+                <head>
+                    <meta charset="UTF-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                    <title>Certified IQ Test</title>
+                    <script src="https://cdn.tailwindcss.com"></script>
+                    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Inter:wght@300;400;600&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet"/>
+                    <style>
+                        body {
+                            font-family: 'Inter', sans-serif;
+                            background-color: #f3f4f6;
+                            user-select: none; /* Prevent accidental text selection */
+                        }
+                        .certificate-font {
+                            font-family: 'Cinzel', serif;
+                        }
+                        .signature-font {
+                            font-family: 'Pinyon Script', cursive;
+                        }
+                        .fade-in {
+                            animation: fadeIn 0.5s ease-in-out;
+                        }
+                        @keyframes fadeIn {
+                            from { opacity: 0; transform: translateY(10px); }
+                            to { opacity: 1; transform: translateY(0); }
+                        }
+                        /* Subtle background pattern for certificate */
+                        .cert-bg {
+                            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+                            background-size: 20px 20px;
+                        }
+                    </style>
+                    
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    
+                    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    
+                    <script type="text/javascript">
+                        startCommonAppsAI();
+                    </script>
+                    
+                    <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                        <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                            <div id="blocking-message" style="display: none;">
+                                <div>
+                                    Go to Pi Browser
+                                </div>
+                                <div>
+                                    <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                </div>
+                            </div>
+                            <div id="paying-message" style="display: none;">
+                                <div>
+                                    Donate to unlock Apps
+                                </div>
+                                <div>
+                                    <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                </div>
+                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <br/>
+                                    <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                </div>
+                            </div>
+                            <div id="loading-message" style="display: block;">
+                                Loading...
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                    <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                </head>
+                
+                <body translate="no" class="min-h-screen flex items-center justify-center p-4">
+
+                    <!-- Main Container -->
+                    <div id="app" class="w-full max-w-2xl bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 relative min-h-[500px]">
+                        
+                        <!-- SCREEN 1: START -->
+                        <div id="start-screen" class="p-8 text-center fade-in flex flex-col justify-center h-full">
+                            <div class="mb-6">
+                                <svg class="w-20 h-20 mx-auto text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                            </div>
+                            <h1 class="text-3xl font-bold text-gray-800 mb-4">Certified IQ Test</h1>
+                            <p class="text-gray-600 mb-6 text-lg">
+                                This test consists of <span class="font-bold text-blue-600">35 questions</span> randomly selected from a bank of 150 items.
+                            </p>
+                            <div class="bg-blue-50 p-4 rounded-lg text-left text-sm text-gray-700 mb-8 border border-blue-100">
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li>Evaluates logic, numerical patterns, and verbal reasoning.</li>
+                                    <li><strong>Time impacts your score.</strong> Try to be quick but accurate.</li>
+                                    <li>You will receive a certificate with your estimated score upon completion.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-left text-sm font-medium text-gray-700 mb-1">Enter your name for the certificate:</label>
+                                <input type="text" id="username" placeholder="Your Full Name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"/>
+                            </div>
+
+                            <button onclick="startQuiz()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-[1.02] shadow-lg mb-3">
+                                Start Test
+                            </button>
+                            
+                            <!-- Button to view last result (hidden by default) -->
+                            <button id="last-result-btn" onclick="viewLastCertificate()" class="hidden w-full bg-white border-2 border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800 font-semibold py-3 px-6 rounded-lg transition">
+                                View Last Certificate
+                            </button>
+                        </div>
+
+                        <!-- SCREEN 2: QUESTIONS -->
+                        <div id="quiz-screen" class="hidden flex flex-col h-full">
+                            <!-- Progress Bar -->
+                            <div class="bg-gray-100 h-2 w-full">
+                                <div id="progress-bar" class="bg-blue-600 h-2 transition-all duration-500" style="width: 0%"></div>
+                            </div>
+                            
+                            <div class="p-6 flex-grow flex flex-col justify-between fade-in" id="question-container">
+                                <div>
+                                    <div class="flex justify-between items-center mb-4">
+                                        <div>
+                                            <span class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Question <span id="current-q-num">1</span> of 35</span>
+                                            <span class="text-xs bg-gray-200 px-2 py-1 rounded text-gray-600 ml-2" id="category-badge">Logic</span>
+                                        </div>
+                                        <div class="text-gray-600 font-mono font-bold text-lg bg-gray-100 px-3 py-1 rounded-md" id="timer-display">00:00</div>
+                                    </div>
+                                    
+                                    <h2 id="question-text" class="text-xl md:text-2xl font-medium text-gray-800 mb-8 leading-relaxed">
+                                        <!-- Question goes here -->
+                                    </h2>
+
+                                    <div id="options-container" class="grid gap-3">
+                                        <!-- Options go here -->
+                                    </div>
+                                </div>
+
+                                <div class="mt-8 flex justify-end">
+                                    <button id="next-btn" onclick="nextQuestion()" disabled="disabled" class="bg-gray-300 text-gray-500 font-bold py-3 px-8 rounded-lg cursor-not-allowed transition">
+                                        Next
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SCREEN 3: CERTIFICATE -->
+                        <div id="result-screen" class="hidden fade-in relative bg-white h-full flex flex-col items-center justify-center p-4">
+            
+                            <!-- Certificate Container (Fixed 300px Height) -->
+                            <div class="cert-bg w-full h-[300px] border-4 border-double border-yellow-600 px-4 py-2 text-center relative shadow-inner max-w-xl mx-auto my-2 flex flex-col justify-between overflow-hidden">
+                                <!-- Watermark -->
+                                <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+                                    <svg class="w-48 h-48 text-gray-900" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+
+                                <!-- Header Section -->
+                                <div class="mt-1">
+                                    <svg class="w-8 h-8 mx-auto text-yellow-600 mb-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <h2 class="text-2xl font-bold text-gray-800 leading-none certificate-font tracking-wide">CERTIFICATE</h2>
+                                    <p class="text-[10px] uppercase tracking-widest text-gray-500">OF INTELLECTUAL COMPETENCE</p>
+                                </div>
+
+                                <!-- User Section -->
+                                <div>
+                                    <p class="text-gray-600 text-xs italic">This document certifies that</p>
+                                    <h3 id="cert-name" class="text-xl font-bold text-gray-900 underline decoration-yellow-600 decoration-2 underline-offset-4 truncate px-4">User Name</h3>
+                                </div>
+
+                                <!-- Score Section -->
+                                <div>
+                                     <div class="bg-gray-50 border border-gray-200 inline-block px-6 py-1 rounded-lg">
+                                        <span class="block text-[10px] text-gray-500 uppercase">IQ Score</span>
+                                        <span id="iq-score" class="text-3xl font-black text-blue-900 leading-tight">100</span>
+                                        <span id="iq-category" class="block text-[10px] font-semibold text-blue-600 leading-none">Average</span>
+                                    </div>
+                                </div>
+
+                                <!-- Footer Section -->
+                                <div class="flex justify-between items-end px-2 mb-1">
+                                    <div class="text-left">
+                                        <p class="text-[10px] text-gray-400 uppercase">Date</p>
+                                        <p id="cert-date" class="text-xs font-semibold text-gray-700">01/01/2024</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="border-b border-gray-400 px-2 mb-0">
+                                            <span class="signature-font text-xl text-gray-800">Dr. A. Cognitus</span>
+                                        </div>
+                                        <p class="text-[10px] text-gray-400 uppercase">Chief Evaluator</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 text-center">
+                                <p class="text-red-500 font-medium animate-pulse mb-3">⚠ IMPORTANT: Please take a screenshot.</p>
+                                <button class="bg-gray-800 text-white px-6 py-2 rounded-full text-sm font-semibold shadow hover:bg-gray-700 flex items-center mx-auto gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    Take Screenshot Now
+                                </button>
+                                <button onclick="location.reload()" class="mt-4 text-gray-500 text-sm hover:underline">Restart Test</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/iq_test_functions.js?v=1.101"></script>
+
+                </body>
+
+            </html>
+            </t>
+		</template>
+
+</odoo>

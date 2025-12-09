@@ -425,6 +425,7 @@ function get_user() {
                 $(".show-gameslearning").show();
                 $(".show-odoolearning").show();
                 $(".show-languagelearning").show();
+                $(".show-iqtest").show();
                 $(".show-webtorrent").show();
                 $(".show-musicplayer").show();
                 $(".show-videoplayer").show();
