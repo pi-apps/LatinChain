@@ -449,7 +449,7 @@ function viewHigherScoreCertificate() {
     if (savedData) {
         var dateObj = new Date(savedData.iq_date);
         const month   = dateObj.getMonth() + 1; // months from 1-12
-        const day     = dateObj.getDate() + 1;
+        const day     = dateObj.getDate();
         const year    = dateObj.getFullYear();
         dateObj = new Date(year + "-" + month + "-" + day);
         
