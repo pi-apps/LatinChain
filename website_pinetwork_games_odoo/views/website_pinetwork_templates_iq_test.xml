@@ -241,7 +241,7 @@
                                 <div>
                                      <div class="bg-gray-50 border border-gray-200 inline-block px-6 py-1 rounded-lg">
                                         <span id="cert-score-label" class="block text-[10px] text-gray-500 uppercase">IQ Score</span>
-                                        <span id="iq-score" class="text-3xl font-black text-blue-900 leading-tight">100</span>
+                                        <span id="iq-score" style="font-size: 80% !important" class="font-black text-blue-900 leading-tight">100</span>
                                         <span id="iq-category" class="block text-[10px] font-semibold text-blue-600 leading-none">Average</span>
                                     </div>
                                 </div>
