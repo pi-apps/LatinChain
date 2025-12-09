@@ -281,8 +281,9 @@ window.onload = function() {
     const savedData = localStorage.getItem('iq_test_last_result');
     if (savedData) {
         lastResultBtn.classList.remove('hidden');
-        highResultBtn.classList.remove('hidden');
     }
+    
+    highResultBtn.classList.remove('hidden');
 };
 
 function startQuiz() {
@@ -458,7 +459,7 @@ function viewLastCertificate() {
 
 function viewHigherScoreCertificate() {
     const savedData = startCommonAppsAIVars;
-    if (savedData) {
+    if (savedData.iq_result) {
         var dateObj = new Date(savedData.iq_date);
         const month   = dateObj.getMonth() + 1; // months from 1-12
         const day     = dateObj.getDate() + 1;
@@ -469,6 +470,9 @@ function viewHigherScoreCertificate() {
         renderCertificate(savedData.iq_name, savedData.iq_result, savedData.iq_category, dateString);
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
+    }else
+    {
+        alert("None IQ Result registered");
     }
 }
 
