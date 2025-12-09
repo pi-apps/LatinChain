@@ -454,12 +454,12 @@ function viewLastCertificate() {
         const day     = dateObj.getDate();
         const year    = dateObj.getFullYear();
         dateObj = new Date(year + "-" + month + "-" + day);
-        var dateString = year + "-" + month + "-" + day;
+        const dateString = year + "-" + month + "-" + day;
         
-        dateString = "9999-99-99";
+        const dateStringCert = "99/99/9999";
         
         setIQResult(savedData.name, savedData.iq, savedData.category, dateString);
-        renderCertificate(savedData.name, savedData.iq, savedData.category, dateString);
+        renderCertificate(savedData.name, savedData.iq, savedData.category, dateStringCert);
         startScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
     }
