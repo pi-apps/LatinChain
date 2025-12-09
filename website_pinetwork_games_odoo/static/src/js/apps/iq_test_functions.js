@@ -473,6 +473,12 @@ async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
     
     if(pi_user_id != "" && pi_user_code != "")
     {
+        var dateObj = new Date(iq_date);
+        const month   = dateObj.getMonth() + 1; // months from 1-12
+        const day     = dateObj.getDate() + 1;
+        const year    = dateObj.getFullYear();
+        dateObj = new Date(year + "-" + month + "-" + day);
+        
         var data = {
                     'pi_user_id': pi_user_id,
                     'pi_user_code': pi_user_code,
@@ -481,7 +487,7 @@ async function setIQResult(iq_name, iq_result, iq_category, iq_date) {
                     'iq_name': iq_name,
                     'iq_result': iq_result,
                     'iq_category': iq_category,
-                    'iq_date': iq_date
+                    'iq_date': dateObj
                 };
         //$.ajaxSetup({async: false});
         return $.post( "/set-iq-result", data).done(function(data) {
