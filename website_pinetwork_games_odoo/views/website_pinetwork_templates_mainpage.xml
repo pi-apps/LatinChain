@@ -2841,6 +2841,24 @@
                     
                     <a id="myABtn" href="#top" style="color: white" translate="no"><button id="myBtn"><i class="fa-solid fa-arrow-up"></i></button></a>
                     
+                    <!--<a id="myActionsABtn" href="#" style="color: white" translate="no">-->
+                    <div class="btn-group dropend position-fixed bottom-0 end-0 m-4">
+                        <button type="button" id="myActionsBtn" style="color: black !important" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-rocket"></i>
+                        </button>
+                        <ul class="dropdown-menu mb-2" style="background-color: #021526 !important;">
+                            <li class="item-latin-action"><a class="dropdown-item" style="color: white !important;" href="/chess"><div style="display:inline;"><i class="fa-solid fa-chess-knight"></i></div> <div style="display:inline;">Play Chess</div></a></li>
+                            <li class="item-latin-action"><a class="dropdown-item" style="color: white !important;" href="/sudoku"><div style="display:inline;"><i class="fa-solid fa-puzzle-piece"></i></div> <div style="display:inline;">Play Sudoku</div></a></li>
+                            <li class="item-latin-action"><a class="dropdown-item" style="color: white !important;" href="/snake"><div style="display:inline;"><i class="fa-solid fa-staff-snake"></i></div> <div style="display:inline;">Play Snake</div></a></li>
+                            <li class="item-latin-action"><a class="dropdown-item getverified" style="color: white !important;" href="/pinetwork?payoneclick=true"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">Donate in one touch</div></a></li>
+                            <li><hr class="dropdown-divider" style="color: white !important;"/></li>
+                            <li class="item-latin-action"><a class="dropdown-item go-to-home-tab" style="color: white !important;" href="#"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;">Use Cool Apps</div></a></li>
+                            <li class="item-latin-action"><a class="dropdown-item go-to-home-tab" style="color: white !important;" href="#"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;">Play Other Games</div></a></li>
+                            <li class="item-latin-action"><a class="dropdown-item go-to-home-tab" style="color: white !important;" href="#"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;">Use Utilities</div></a></li>
+                        </ul>
+                    </div>
+                    <!--</a>-->
+                    
                     <style>
                         /*Floating Back-To-Top Button*/
                             #myBtn {
@@ -2887,6 +2905,38 @@
                             #myPayPiBtn:hover {
                                 background-color: #7dbbf1;
                             }
+                        
+                        /*Floating Actions Button*/
+                            #myActionsBtn {
+                                position: fixed;
+                                float: left;
+                                left: 10%;
+                                bottom: 20%;
+                                max-width: 50px;
+                                max-height: 50px;
+                                width: 100%;
+                                height: 100%;
+                                font-size: 18px;
+                                border-color: rgba(85, 85, 85, 0.2);
+                                background-color: rgb(100,100,100);
+                                /*padding: 10px;*/
+                                border-radius: 4px;
+                                opacity: 0.5;
+                                z-index:100;
+                            }
+                        /*On Hover Color Change*/
+                            #myActionsBtn:hover {
+                                background-color: #7dbbf1;
+                            }
+                            
+                            .item-latin-action:hover, .item-latin-action:active {
+                                background-color: gray;
+                            }
+                            
+                            .item-latin-action * {
+                                background-color: #021526;
+                            }
+                            
                     </style>
                     
                     <script type="text/javascript" t-if="mainnet in ['Testnet OFF2']">

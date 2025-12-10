@@ -883,7 +883,7 @@ $( document ).ready(function() {
     const tab = new bootstrap.Tab(contactTabTrigger);
 
     // Or, if you want to show it via a button click, for example:
-    $('#go-to-user-tab').on('click', function (e) {
+    $('.go-to-user-tab').on('click', function (e) {
         tab.show();
         window.location.href="#pay_with";
     });
