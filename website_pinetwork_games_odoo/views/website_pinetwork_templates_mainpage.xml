@@ -2837,17 +2837,24 @@
                     
                     <br/><br/><br/><br/><br/><br/><br/><br/>
                     
-                    <a id="myPayPiABtn" href="/pinetwork" style="color: white" translate="no"><button id="myPayPiBtn"><i class="fa-solid fa-fingerprint"></i></button></a>
-                    
                     <a id="myABtn" href="#top" style="color: white" translate="no"><button id="myBtn"><i class="fa-solid fa-arrow-up"></i></button></a>
                     
+                    <div class="btn-group dropup position-fixed bottom-0 end-0 m-4 isverified" translate="no" style="display:none;">
+                        <button type="button" id="myPayPiBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-handshake-simple"></i>
+                        </button>
+                        <ul class="dropdown-menu mb-2 item-latin-menu" style="background-color: #021526 !important; max-width: 30% !important">
+                            <li class="item-latin-action"><a class="dropdown-item" style="color: white !important;" href="/pinetwork"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">Donate</div></a></li>
+                        </ul>
+                    </div>
+                    
                     <!--<a id="myActionsABtn" href="#" style="color: white" translate="no">-->
-                    <div class="btn-group dropup position-fixed bottom-0 end-0 m-4 item-latin-fields" translate="no">
+                    <div class="btn-group dropup position-fixed bottom-0 end-0 m-4" translate="no">
                         <button type="button" id="myActionsBtn" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-rocket"></i>
                         </button>
                         <ul class="dropdown-menu mb-2 item-latin-menu" style="background-color: #021526 !important; max-width: 30% !important">
-                            <li class="item-latin-action getverified"><a class="dropdown-item getverified" style="color: white !important;" href="/pinetwork?payoneclick=true"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">Donate</div></a></li>
+                            <li class="item-latin-action getverified"><a class="dropdown-item" style="color: white !important;" href="/pinetwork?payoneclick=true"><div style="display:inline;"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline;">Donate</div></a></li>
                             <li class="item-latin-action getverified"><hr class="dropdown-divider" style="color: white !important;"/></li>
                             <li class="item-latin-action"><a class="dropdown-item go-to-home-tab" style="color: white !important;" href="javascript:void(0)"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;">Apps</div></a></li>
                         </ul>
@@ -2917,12 +2924,11 @@
                                 /*padding: 10px;*/
                                 border-radius: 4px;
                                 opacity: 0.5;
-                                z-index:100000;
+                                z-index:100;
                             }
                         /*On Hover Color Change*/
                             #myActionsBtn:hover {
                                 background-color: #7dbbf1;
-                                z-index:100000;
                             }
                             
                             .item-latin-action:hover, .item-latin-action:active {
@@ -2931,15 +2937,6 @@
                             
                             .item-latin-action * {
                                 background-color: #021526;
-                                z-index:100000;
-                            }
-                            
-                            .item-latin-menu * {
-                                z-index:100000;
-                            }
-                            
-                            .item-latin-fields * {
-                                z-index:100000;
                             }
                             
                     </style>
