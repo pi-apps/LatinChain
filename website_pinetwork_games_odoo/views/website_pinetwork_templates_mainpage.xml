@@ -1245,7 +1245,7 @@
                         <div class="row getverified" style="">
                             <div style="text-align:left; word-break: break-word;" class="col-12">
                                 <div class="text-white">
-                                    <a href="/pinetwork?payoneclick=true" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
+                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
                                 </div>
                             </div>
                         </div>
@@ -1573,7 +1573,7 @@
                                 <strong class="user_status"></strong>
                             </div>
                             <div style="margin-top:5px;" class="getverified">
-                                <a href="/pinetwork?payoneclick=true" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
+                                <a href="/pinetwork" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
                             </div>
                             <div style="margin-top:5px">
                                 <a href="/pinetwork" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
@@ -1805,7 +1805,7 @@
                                             <div class="col-10">
                                                 <h3 class="text-black" style="color:black !important">Today's tasks</h3>
                                                 <ul class="list-group">
-                                                    <li class="list-group-item getverified" style=""><a href="/pinetwork?payoneclick=true" class="href-external btn btn-link">Donate in one touch</a></li>
+                                                    <li class="list-group-item getverified" style=""><a href="/pinetwork" class="href-external btn btn-link">Donate in one touch</a></li>
                                                     <li class="list-group-item"><a href="/chess" class="btn btn-link">Play Chess</a></li>
                                                     <li class="list-group-item"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
                                                     <li class="list-group-item"><a href="/snake" class="btn btn-link">Play Snake</a></li>
@@ -2111,7 +2111,7 @@
                                                 <div class="col-2"></div>
                                                 <div class="col-10">
                                                     <div style="margin-bottom:5px;" class="getverified">
-                                                        <a href="/pinetwork?payoneclick=true" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
+                                                        <a href="/pinetwork" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
                                                     </div>
                                                     <a href="/pinetwork" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                 </div>
@@ -2535,7 +2535,7 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div style="margin-bottom:5px;" class="getverified">
-                                                        <a href="/pinetwork?payoneclick=true" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
+                                                        <a href="/pinetwork" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
                                                     </div>
                                                     <a href="/pinetwork" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                 </div>
@@ -2854,7 +2854,7 @@
                             <i class="fa-solid fa-rocket"></i>
                         </button>
                         <ul class="dropdown-menu mb-2 item-latin-menu" style="background-color: #021526 !important; max-width: 30% !important">
-                            <li class="item-latin-action getverified"><a class="dropdown-item" style="color: white !important;" href="/pinetwork?payoneclick=true"><div style="display:inline;"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline;">Donate</div></a></li>
+                            <li class="item-latin-action getverified"><a class="dropdown-item" style="color: white !important;" href="/pinetwork"><div style="display:inline;"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline;">Donate</div></a></li>
                             <li class="item-latin-action getverified"><hr class="dropdown-divider" style="color: white !important;"/></li>
                             <li class="item-latin-action"><a class="dropdown-item go-to-home-tab" style="color: white !important;" href="javascript:void(0)"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;">Apps</div></a></li>
                         </ul>
@@ -2988,7 +2988,7 @@
                             
                           </div>
                           <div class="modal-footer button-group">
-                            <a href="/pinetwork?payoneclick=true" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;" translate="no">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></a>
+                            <a href="/pinetwork" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;" translate="no">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></a>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>
