@@ -948,9 +948,9 @@
                     
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.638"></script>
                     
-                    <script t-if="mainnet in ['Testnet OFF2']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
-                    <script type="text/javascript" t-if="mainnet in ['Testnet OFF2']">
+                    <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
                       !function (e, f, u, i) {
@@ -1267,7 +1267,7 @@
                         </div>
                     </div>
                     
-                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet OFF2']">
+                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup">
                         
                         <!-- LatinChain Ad responsive 2 -->
                         
@@ -2808,7 +2808,7 @@
                         <br/>
                     </div>-->
                     
-                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet OFF2']">
+                    <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup">
                         <!-- LatinChain Ad responsive 2 -->
                         
                         <!--<ins class="adsbygoogle"
@@ -2941,7 +2941,7 @@
                             
                     </style>
                     
-                    <script type="text/javascript" t-if="mainnet in ['Testnet OFF2']">
+                    <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup">
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
                     </script>
