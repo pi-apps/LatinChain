@@ -1359,8 +1359,8 @@
                                 <h5 translate="no"><strong><div style="display:inline;">#StakePi &#128202;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="href-external col-8 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Mainnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://ecosystem.pinet.com/apps/63d38f4fa9a2245a1c0ef9cf" target="_blank" class="href-external col-8 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Testnet</div></a>
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="href-external col-12 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Mainnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://ecosystem.pinet.com/apps/63d38f4fa9a2245a1c0ef9cf" target="_blank" class="href-external col-12 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Testnet</div></a>
                             </div>
                         </div>
                         
@@ -1369,7 +1369,7 @@
                                 <h5 translate="no"><strong><div style="display:inline;">#PiAds #EarnPoints &#128240;</div></strong></h5>
                             </div>
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px">
-                                <button id="button_reward_ad" name="button_reward_ad" class="col-8 btn btn-outline-success font-weight-bold text-black border-success" disabled="true" style="border: 2px solid;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Rewarded Ads</div><div style="font-size:80%;">Earn Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%;"><i class="fa-solid fa-plug-circle-bolt"></i>x2 points <i class="fa-solid fa-arrow-right"></i> (Chess, Sudoku, Snake)</div><div style="font-size:80%; display: none">Testing feature</div></button>
+                                <button id="button_reward_ad" name="button_reward_ad" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" disabled="true" style="border: 2px solid;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Rewarded Ads</div><div style="font-size:80%;">Earn Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%;"><i class="fa-solid fa-plug-circle-bolt"></i>x2 points <i class="fa-solid fa-arrow-right"></i> (Chess, Sudoku, Snake)</div><div style="font-size:80%; display: none">Testing feature</div></button>
                                 <span id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
                                     Pi Rewarded Ads not available (<div id="pi_ad_max" style="display:inline;"></div> ads / <div id="pi_ad_hours" style="display:inline;"></div>h).
                                 </span>
@@ -1408,9 +1408,7 @@
                                   <div class="card-body">
                                     <div style="text-align:center" class="form-group container justify-content-center">
                                         <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
+                                            <div class="col-12">
                                                 <div>
                                                     Exchange Latin points (You need to be verified):
                                                 </div>
@@ -1434,8 +1432,6 @@
                                                     <button id="go-to-user-tab" name="go-to-user-tab" class="btn btn-info go-to-user-tab">Watch user</button>
                                                 </div>
                                                 <br/>
-                                            </div>
-                                            <div class="col-1">
                                             </div>
                                         </div>
                                       </div>
@@ -1469,8 +1465,8 @@
                                 <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="col-8 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" target="_blank" class="col-8 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" target="_blank" class="col-12 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" target="_blank" class="col-12 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
                         
@@ -1489,7 +1485,7 @@
                                 </div>-->
                                 <!--
                                 <div style="margin-bottom:5px" translate="no">
-                                    <button style="max-width: 130px" class="col-8 btn btn-danger font-weight-bold youtube-social" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">channel</div></button>
+                                    <button style="max-width: 130px" class="col-12 btn btn-danger font-weight-bold youtube-social" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">channel</div></button>
                                 </div>
                                 -->
                                 <div style="margin-bottom:5px" translate="no">
@@ -1517,23 +1513,23 @@
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinChainCool &#128240;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <button id="cryptonews_4" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Crypto news</div></button>
+                                <button id="cryptonews_4" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Crypto news</div></button>
                             </div>
                             <div style="margin-bottom:5px">
-                                <button id="trends-news_2" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info trends-news" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Trends news</div></button>
+                                <button id="trends-news_2" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info trends-news" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Trends news</div></button>
                             </div>
                             <div style="margin-bottom:5px">
-                                <button id="sport-results-2" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div>Sport results</div></button>
+                                <button id="sport-results-2" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div>Sport results</div></button>
                             </div>
                             <div style="margin-bottom:5px; display: none" class="show-tvonline">
-                                <button id="tvonline-2" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div>TV Online</div></button>
+                                <button id="tvonline-2" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div>TV Online</div></button>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a href="https://latinchainpal0712.pinet.com" target="_blank" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LatinChainPal</div></a>
+                                <a href="https://latinchainpal0712.pinet.com" target="_blank" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LatinChainPal</div></a>
                             </div>
                             <t t-if="pioneers_streaming">
                                 <div style="margin-bottom:5px">
-                                    <button id="streamerzoneboard3" class="href-external col-8 btn btn-outline-info font-weight-bold text-black border-info streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">LatinChain dSocial</div></button>
+                                    <button id="streamerzoneboard3" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">LatinChain dSocial</div></button>
                                 </div>
                             </t>
                         </div>
@@ -1573,13 +1569,13 @@
                                 <strong class="user_status"></strong>
                             </div>
                             <div style="margin-top:5px;" class="getverified">
-                                <a href="/pinetwork" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
+                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
                             </div>
                             <div style="margin-top:5px">
-                                <a href="/pinetwork" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                             </div>
                             <div style="margin-top:5px; margin-bottom: 5px">
-                                <button id="rules_button_4" class="col-8 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
+                                <button id="rules_button_4" class="col-12 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
                             </div>
                         </div>
                         
@@ -1664,19 +1660,19 @@
                             </div>
                             
                             <div style="margin-bottom:5px">
-                                <button id="cryptonews_3" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div></button>
+                                <button id="cryptonews_3" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div></button>
                             </div>
                             
                             <div style="margin-bottom:5px">
-                                <button id="trends-news_3" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success trends-news" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">TRENDS NEWS</div><div style="font-size:80%;">Trends news</div></button>
+                                <button id="trends-news_3" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success trends-news" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">TRENDS NEWS</div><div style="font-size:80%;">Trends news</div></button>
                             </div>
                             
                             <div style="margin-bottom:5px">
-                                <button id="sport-results-3" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div></button>
+                                <button id="sport-results-3" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div></button>
                             </div>
                             
                             <div class="" style="margin-bottom:5px;" t-if="pioneers_streaming">
-                                <button id="streamerzoneboard" class="col-8 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div></button>
+                                <button id="streamerzoneboard" class="col-12 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div></button>
                             </div>
                             
                             <!--<t t-if="pi_main_user">
@@ -1687,43 +1683,43 @@
                             </t>-->
                             
                             <div style="margin-bottom:5px;">
-                                <a href="https://promote.mexc.com/r/U2hkpZK0" target="_blank" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-door-open"></i></div><div style="font-size:100%;" translate="no">JOIN MEXC</div><div style="font-size:80%;">Pi KYB ready</div></a>
+                                <a href="https://promote.mexc.com/r/U2hkpZK0" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-door-open"></i></div><div style="font-size:100%;" translate="no">JOIN MEXC</div><div style="font-size:80%;">Pi KYB ready</div></a>
                             </div>
                             
                             <div style="margin-bottom:5px;">
-                                <a href="https://www.mexc.com/exchange/PI_USDT" target="_blank" class="href-external col-8 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="font-size:100%;" translate="no">TRADE PI</div><div style="font-size:80%;">On MEXC</div></a>
+                                <a href="https://www.mexc.com/exchange/PI_USDT" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="font-size:100%;" translate="no">TRADE PI</div><div style="font-size:80%;">On MEXC</div></a>
                             </div>
                             
                             <!--
                             <div style="margin-bottom:5px; display:none">
-                                <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3o2Tbr75z-5oDg1AFNZ1u8" class="col-8 btn btn-danger open_streaming_playlist font-weight-bold" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top videos</div></button>
+                                <button videourl="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3o2Tbr75z-5oDg1AFNZ1u8" class="col-12 btn btn-danger open_streaming_playlist font-weight-bold" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">top videos</div></button>
                             </div>
                             -->
                             
                             <!--
                             <div style="margin-bottom:5px" translate="no">
-                                <button class="col-8 btn btn-danger font-weight-bold youtube-trends" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">trends</div></button>
+                                <button class="col-12 btn btn-danger font-weight-bold youtube-trends" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">trends</div></button>
                             </div>
                             -->
                             
                             <!--
                             <div style="margin-bottom:5px" translate="no">
-                                <button class="col-8 btn btn-danger font-weight-bold youtube-social" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">channel</div></button>
+                                <button class="col-12 btn btn-danger font-weight-bold youtube-social" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">channel</div></button>
                             </div>
                             -->
                             
                             <div style="margin-bottom:5px">
-                                <button class="col-8 btn btn-info readingclub font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-book-open-reader"></i></div> <div style="display:inline;">reading club</div></button>
+                                <button class="col-12 btn btn-info readingclub font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-book-open-reader"></i></div> <div style="display:inline;">reading club</div></button>
                             </div>
                             
                             <!--<div style="margin-bottom:5px">
-                                <button class="col-8 btn btn-info askanexpert font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-question"></i></div> <div style="display:inline;">ask an expert</div></button>
+                                <button class="col-12 btn btn-info askanexpert font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-question"></i></div> <div style="display:inline;">ask an expert</div></button>
                             </div>-->
                             <div style="margin-bottom:5px">
-                                <button class="col-8 btn btn-info partners font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-handshake"></i></div> <div style="display:inline;">partners</div></button>
+                                <button class="col-12 btn btn-info partners font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-handshake"></i></div> <div style="display:inline;">partners</div></button>
                             </div>
                             <div class="div-certification" style="display: none; margin-bottom: 5px">
-                                <button class="col-8 btn btn-info certification font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-certificate"></i></div> <div style="display:inline;">certification</div></button>
+                                <button class="col-12 btn btn-info certification font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-certificate"></i></div> <div style="display:inline;">certification</div></button>
                             </div>
                         </div>
                         
@@ -1800,9 +1796,7 @@
                                   <div class="card-body">
                                     <div style="text-align:center" class="form-group container showInterstitialAd">
                                         <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
+                                            <div class="col-12">
                                                 <h3 class="text-black" style="color:black !important">Today's tasks</h3>
                                                 <ul class="list-group">
                                                     <li class="list-group-item getverified" style=""><a href="/pinetwork" class="href-external btn btn-link">Donate in one touch</a></li>
@@ -1814,8 +1808,6 @@
                                                     <li class="list-group-item"><button class="href-external btn btn-link go-to-home-tab">Play Other Games</button></li>
                                                     <li class="list-group-item"><button class="href-external btn btn-link go-to-home-tab">Use Utilities</button></li>
                                                 </ul>
-                                            </div>
-                                            <div class="col-1">
                                             </div>
                                         </div>
                                     </div>
@@ -1844,9 +1836,7 @@
                                   <div class="card-body">
                                     <div style="text-align:center" class="form-group container showInterstitialAd">
                                         <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
+                                            <div class="col-12">
                                                 <!--A normal Pi wallet address looks like this:<br/>
                                                 <div class="form-group container" style="overflow-x: auto; white-space: nowrap; text-align:center">GAABCDEFGHIJKLMNOPQ...</div>
                                                 <strong>Set your Pi wallet address here and click in Save</strong> (DON'T SEND YOUR PASSPHRASE):
@@ -1861,8 +1851,6 @@
                                                 Read the Rules:<br/>
                                                 <button id="rules_button_3" class="btn btn-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid; color:black !important;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
                                                 </div>
-                                            </div>
-                                            <div class="col-1">
                                             </div>
                                         </div>
                                       </div>
@@ -1890,9 +1878,7 @@
                                   <div class="card-body">
                                     <div style="text-align:center" class="form-group container">
                                         <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
+                                            <div class="col-12">
                                                 Hello, are you Youtuber or want to become one?. Now you can stream your videos on LatinChain Platform. <strong>Set your Youtube streaming video here and click in Save, play, win and then it will be watched on Winners Board and Top 50 streamers (LatinChain dSocial)</strong>:
                                                 <textarea id="streaming_url" name="streaming_url" placeholder="Youtube video URL" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
                                                 <br/>
@@ -1907,8 +1893,6 @@
                                                 <br/>A Youtube short video URL looks like this:<br/>
                                                 <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/shorts/SZEljmi-wr4</textarea>
                                                 </div>
-                                            </div>
-                                            <div class="col-1">
                                             </div>
                                         </div>
                                       </div>
@@ -1938,9 +1922,7 @@
                                   <div class="card-body">
                                     <div style="text-align:center" class="form-group container">
                                         <div class="row">
-                                            <div class="col-1">
-                                            </div>
-                                            <div class="col-10">
+                                            <div class="col-12">
                                                 Hello, did you lost a transaction?. Now you can register your transaction. <strong>Set your Memo ID or Payment ID here and click in Save. You can find your Memo ID or Payment ID by accessing to TXID link in Pi Blockexplorer</strong>:
                                                 <textarea id="memo_id" name="memo_id" placeholder="Memo ID" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
                                                 <br/>
@@ -1951,8 +1933,6 @@
                                                 <br/>A Memo ID or Payment ID looks like this:<br/>
                                                 <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">WVV68I9Nz2VGHoWUV9mH3P5Te8Dn</textarea>
                                                 </div>
-                                            </div>
-                                            <div class="col-1">
                                             </div>
                                         </div>
                                       </div>
@@ -2061,7 +2041,7 @@
                                             <div class="row">
                                                 <div class="col-1">
                                                 </div>
-                                                <div class="col-10">
+                                                <div class="col-12">
                                                     <div>Soon available, not yet.<br/></div>
                                                     Now you can set the referrer code of another Pioneer (not yours), to whom we will pay an amount for being your referrer, also you will receive a payback of the same amount of your referrer. Then, click in Save:
                                                     <textarea id="referrer_code" name="referrer_code" placeholder="Pi referrer code" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
@@ -2096,9 +2076,7 @@
                                     <ul class="list-group">
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="rules_button_2" class="col-10 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="rules_button_2" class="col-12 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -2108,14 +2086,12 @@
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10">
+                                                <div class="col-12">
                                                     <div style="margin-bottom:5px;" class="getverified">
-                                                        <a href="/pinetwork" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
+                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
                                                     </div>
-                                                    <a href="/pinetwork" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                 </div>
-                                                <div class="col-0"></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -2130,31 +2106,23 @@
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a href="/chess" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:100%;" translate="no">CHESS</div><div style="font-size:80%;">Worldwide Chess Championship</div><div style="font-size:80%;">Earn points</div><div style="font-size:80%;" >Game</div></a><button id="chessinfo" class="col-auto btn btn-sm btn-outline-info chessinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a href="/chess" class="btn btn-outline-success font-weight-bold text-black border-success" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-chess-knight"></i></div><div style="font-size:100%;" translate="no">CHESS</div><div style="font-size:80%;">Worldwide Chess Championship</div><div style="font-size:80%;">Earn points</div><div style="font-size:80%;" >Game</div></a><button id="chessinfo" class="col-auto btn btn-sm btn-outline-info chessinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a href="/sudoku" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">SUDOKU</div><div style="font-size:80%;">Worldwide Sudoku Championship</div><div style="font-size:80%;">Earn points</div><div style="font-size:80%;" >Game</div></a><button id="sudokuinfo" class="col-auto btn btn-sm btn-outline-info sudokuinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a href="/sudoku" class="btn btn-outline-success font-weight-bold text-black border-success" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">SUDOKU</div><div style="font-size:80%;">Worldwide Sudoku Championship</div><div style="font-size:80%;">Earn points</div><div style="font-size:80%;" >Game</div></a><button id="sudokuinfo" class="col-auto btn btn-sm btn-outline-info sudokuinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a href="/snake" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-staff-snake"></i></div><div style="font-size:100%;" translate="no">SNAKE</div><div style="font-size:80%;">Worldwide Snake Championship</div><div style="font-size:80%;">Earn points</div><div style="font-size:80%;" >Game</div></a><button id="snakeinfo" class="col-auto btn btn-sm btn-outline-info snakeinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a href="/snake" class="btn btn-outline-success font-weight-bold text-black border-success" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-staff-snake"></i></div><div style="font-size:100%;" translate="no">SNAKE</div><div style="font-size:80%;">Worldwide Snake Championship</div><div style="font-size:80%;">Earn points</div><div style="font-size:80%;" >Game</div></a><button id="snakeinfo" class="col-auto btn btn-sm btn-outline-info snakeinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <!--
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a href="/latinchain-academy" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN ACADEMY</div><div style="font-size:80%;">Learn Odoo with LatinChain</div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a href="/latinchain-academy" class="btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN ACADEMY</div><div style="font-size:80%;">Learn Odoo with LatinChain</div></a></div>
                                             </div>
                                         </li>
                                         -->
@@ -2165,79 +2133,57 @@
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-tetris" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="tetris" href="/tetris" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tetris" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes"></i></div><div style="font-size:100%;" translate="no">BLOCKRAIN</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div></a><button id="tetrisinfo" class="col-auto btn btn-sm btn-outline-info tetrisinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="tetris" href="/tetris" class="btn btn-outline-success font-weight-bold text-black border-success tetris" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-cubes"></i></div><div style="font-size:100%;" translate="no">BLOCKRAIN</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div></a><button id="tetrisinfo" class="col-auto btn btn-sm btn-outline-info tetrisinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-mahjong" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="mahjong" href="/mahjong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mahjong" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">MAHJONG</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div></a><button id="mahjonginfo" class="col-auto btn btn-sm btn-outline-info mahjonginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="mahjong" href="/mahjong" class="btn btn-outline-success font-weight-bold text-black border-success mahjong" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">MAHJONG</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div></a><button id="mahjonginfo" class="col-auto btn btn-sm btn-outline-info mahjonginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-bubble-shooter" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="bubble-shooter" href="/bubble-shooter" class="col-10 btn btn-outline-success font-weight-bold text-black border-success bubble-shooter" style="border: 2px solid;"><div style=""><i class="fa-solid fa-soap"></i></div><div style="font-size:100%;" translate="no">BUBBLE SHOOTER</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div></a><button id="bubble-shooterinfo" class="col-auto btn btn-sm btn-outline-info bubble-shooterinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="bubble-shooter" href="/bubble-shooter" class="btn btn-outline-success font-weight-bold text-black border-success bubble-shooter" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-soap"></i></div><div style="font-size:100%;" translate="no">BUBBLE SHOOTER</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div></a><button id="bubble-shooterinfo" class="col-auto btn btn-sm btn-outline-info bubble-shooterinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-test-your-brain" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="test-your-brain" href="/test-your-brain" class="col-10 btn btn-outline-success font-weight-bold text-black border-success test-your-brain" style="border: 2px solid;"><div style=""><i class="fa-solid fa-braille"></i></div><div style="font-size:100%;" translate="no">TEST YOUR BRAIN</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div></a><button id="test-your-braininfo" class="col-auto btn btn-sm btn-outline-info test-your-braininfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="test-your-brain" href="/test-your-brain" class="btn btn-outline-success font-weight-bold text-black border-success test-your-brain" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-braille"></i></div><div style="font-size:100%;" translate="no">TEST YOUR BRAIN</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div></a><button id="test-your-braininfo" class="col-auto btn btn-sm btn-outline-info test-your-braininfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-15-puzzle" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="15-puzzle" href="/fifteen-puzzle" class="col-10 btn btn-outline-success font-weight-bold text-black border-success 15-puzzle" style="border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">15 PUZZLE GAME</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="15-puzzleinfo" class="col-auto btn btn-sm btn-outline-info 15-puzzleinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="15-puzzle" href="/fifteen-puzzle" class="btn btn-outline-success font-weight-bold text-black border-success 15-puzzle" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-puzzle-piece"></i></div><div style="font-size:100%;" translate="no">15 PUZZLE GAME</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="15-puzzleinfo" class="col-auto btn btn-sm btn-outline-info 15-puzzleinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-pingpong" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="pingpong" href="/pingpong" class="col-10 btn btn-outline-success font-weight-bold text-black border-success pingpong" style="border: 2px solid;"><div style=""><i class="fa-solid fa-table-tennis-paddle-ball"></i></div><div style="font-size:100%;" translate="no">PINGPONG</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="pingponginfo" class="col-auto btn btn-sm btn-outline-info pingponginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="pingpong" href="/pingpong" class="btn btn-outline-success font-weight-bold text-black border-success pingpong" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-table-tennis-paddle-ball"></i></div><div style="font-size:100%;" translate="no">PINGPONG</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="pingponginfo" class="col-auto btn btn-sm btn-outline-info pingponginfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-checkers" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="checkers" href="/checkers" class="col-10 btn btn-outline-success font-weight-bold text-black border-success checkers" style="border: 2px solid;"><div style=""><i class="fa-solid fa-chess-board"></i></div><div style="font-size:100%;" translate="no">CHECKERS</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="checkersinfo" class="col-auto btn btn-sm btn-outline-info checkersinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="checkers" href="/checkers" class="btn btn-outline-success font-weight-bold text-black border-success checkers" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-chess-board"></i></div><div style="font-size:100%;" translate="no">CHECKERS</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="checkersinfo" class="col-auto btn btn-sm btn-outline-info checkersinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-xiangqi" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="xiangqi" href="/xiangqi" class="col-10 btn btn-outline-success font-weight-bold text-black border-success xiangqi" style="border: 2px solid;"><div style=""><i class="fa-solid fa-chess-board"></i></div><div style="font-size:100%;" translate="no">XIANGQI (Chinese chess)</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="xiangqiinfo" class="col-auto btn btn-sm btn-outline-info xiangqiinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="xiangqi" href="/xiangqi" class="btn btn-outline-success font-weight-bold text-black border-success xiangqi" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-chess-board"></i></div><div style="font-size:100%;" translate="no">XIANGQI (Chinese chess)</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="xiangqiinfo" class="col-auto btn btn-sm btn-outline-info xiangqiinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-domino" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="domino" href="/domino" class="col-10 btn btn-outline-success font-weight-bold text-black border-success domino" style="border: 2px solid;"><div style=""><i class="fa-solid fa-lines-leaning"></i></div><div style="font-size:100%;" translate="no">DOMINO</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="dominoinfo" class="col-auto btn btn-sm btn-outline-info dominoinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="domino" href="/domino" class="btn btn-outline-success font-weight-bold text-black border-success domino" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-lines-leaning"></i></div><div style="font-size:100%;" translate="no">DOMINO</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="dominoinfo" class="col-auto btn btn-sm btn-outline-info dominoinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-latincrush" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="latincrush" href="/latincrush" class="col-10 btn btn-outline-success font-weight-bold text-black border-success latincrush" style="border: 2px solid;"><div style=""><i class="fa-solid fa-candy-cane"></i></div><div style="font-size:100%;" translate="no">LATIN CRUSH</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="latincrushinfo" class="col-auto btn btn-sm btn-outline-info latincrushinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="latincrush" href="/latincrush" class="btn btn-outline-success font-weight-bold text-black border-success latincrush" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-candy-cane"></i></div><div style="font-size:100%;" translate="no">LATIN CRUSH</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="latincrushinfo" class="col-auto btn btn-sm btn-outline-info latincrushinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-soccer-penalty" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="soccer-penalty" href="/soccer-penalty" class="col-10 btn btn-outline-success font-weight-bold text-black border-success soccer-penalty" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SOCCER PENALTY</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="soccer-penaltyinfo" class="col-auto btn btn-sm btn-outline-info soccer-penaltyinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="soccer-penalty" href="/soccer-penalty" class="btn btn-outline-success font-weight-bold text-black border-success soccer-penalty" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SOCCER PENALTY</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with Gemini AI</div></a><button id="soccer-penaltyinfo" class="col-auto btn btn-sm btn-outline-info soccer-penaltyinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -2247,189 +2193,137 @@
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-webtorrent" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="webtorrent" href="/webtorrent" class="col-10 btn btn-outline-success font-weight-bold text-black border-success webtorrent" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tornado"></i></div><div style="font-size:100%;" translate="no">WEBTORRENT</div><div style="font-size:80%;">WebTorrent P2P Player (we don't provide torrent files)</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Multimedia</div></div></a><button id="webtorrentinfo" class="col-auto btn btn-sm btn-outline-info webtorrentinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="webtorrent" href="/webtorrent" class="btn btn-outline-success font-weight-bold text-black border-success webtorrent" style="width: 89% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-tornado"></i></div><div style="font-size:100%;" translate="no">WEBTORRENT</div><div style="font-size:80%;">WebTorrent P2P Player (we don't provide torrent files)</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Multimedia</div></div></a><button id="webtorrentinfo" class="col-auto btn btn-sm btn-outline-info webtorrentinfo" style="vertical-align: top;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-musicplayer" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="musicplayer" href="/musicplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success musicplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-headphones"></i></div><div style="font-size:100%;" translate="no">MUSIC PLAYER</div><div style="font-size:80%;">Music player</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Multimedia</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="musicplayer" href="/musicplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success musicplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-headphones"></i></div><div style="font-size:100%;" translate="no">MUSIC PLAYER</div><div style="font-size:80%;">Music player</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Multimedia</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-videoplayer" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="videoplayer" href="/videoplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success videoplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-video"></i></div><div style="font-size:100%;" translate="no">VIDEO PLAYER</div><div style="font-size:80%;">Video player</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Multimedia</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="videoplayer" href="/videoplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success videoplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-video"></i></div><div style="font-size:100%;" translate="no">VIDEO PLAYER</div><div style="font-size:80%;">Video player</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Multimedia</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-imgplayer" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="imgplayer" href="/imgplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success imgplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-images"></i></div><div style="font-size:100%;" translate="no">PHOTO VIEWER</div><div style="font-size:80%;">Photo player</div><div style="font-size:80%;">Text recognition</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">AI Multimedia</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="imgplayer" href="/imgplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success imgplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-images"></i></div><div style="font-size:100%;" translate="no">PHOTO VIEWER</div><div style="font-size:80%;">Photo player</div><div style="font-size:80%;">Text recognition</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">AI Multimedia</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-webcamplayer" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="webcamplayer" href="/webcamplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success webcamplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-camera-retro"></i></div><div style="font-size:100%;" translate="no">WEBCAM OBJECTS DETECT</div><div style="font-size:80%;">Webcam objects recognition</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">AI Multimedia</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="webcamplayer" href="/webcamplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success webcamplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-camera-retro"></i></div><div style="font-size:100%;" translate="no">WEBCAM OBJECTS DETECT</div><div style="font-size:80%;">Webcam objects recognition</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">AI Multimedia</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-texttospeechplayer" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="texttospeechplayer" href="/texttospeechplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success texttospeechplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-feather"></i></div><div style="font-size:100%;" translate="no">TEXT-TO-SPEECH READER</div><div style="font-size:80%;">Text-to-speech reader</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">AI Multimedia</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="texttospeechplayer" href="/texttospeechplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success texttospeechplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-feather"></i></div><div style="font-size:100%;" translate="no">TEXT-TO-SPEECH READER</div><div style="font-size:80%;">Text-to-speech reader</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">AI Multimedia</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-mapsplayer" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="mapsplayer" href="/mapsplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success mapsplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-map-location-dot"></i></div><div style="font-size:100%;" translate="no">MAPS FINDER</div><div style="font-size:80%;">Place finder</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Multimedia</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="mapsplayer" href="/mapsplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success mapsplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-map-location-dot"></i></div><div style="font-size:100%;" translate="no">MAPS FINDER</div><div style="font-size:80%;">Place finder</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Multimedia</div></div></a></div>
                                             </div>
                                         </li>
                                         <!--
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-newsplayer" style="display:none">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="newsplayer" href="/newsplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success newsplayer" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS PLAYER</div><div style="font-size:80%;">News player</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="newsplayer" href="/newsplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success newsplayer" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS PLAYER</div><div style="font-size:80%;">News player</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></a></div>
                                             </div>
                                         </li>-->
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-calcplayer" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="calcplayer" href="/calcplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success calcplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-calculator"></i></div><div style="font-size:100%;" translate="no">CALCULATOR</div><div style="font-size:80%;">Scientific and normal calculator</div><div style="font-size:80%;">Developed with DeepSeek AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Math</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="calcplayer" href="/calcplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success calcplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-calculator"></i></div><div style="font-size:100%;" translate="no">CALCULATOR</div><div style="font-size:80%;">Scientific and normal calculator</div><div style="font-size:80%;">Developed with DeepSeek AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Math</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-calendarplayer" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="calendarplayer" href="/calendarplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success calendarplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-calendar-days"></i></div><div style="font-size:100%;" translate="no">CALENDAR CONVERTER</div><div style="font-size:80%;">Convert from Gregorian to Mayan calendar (Long count)</div><div style="font-size:80%;">Developed with DeepSeek AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Calendar</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="calendarplayer" href="/calendarplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success calendarplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-calendar-days"></i></div><div style="font-size:100%;" translate="no">CALENDAR CONVERTER</div><div style="font-size:80%;">Convert from Gregorian to Mayan calendar (Long count)</div><div style="font-size:80%;">Developed with DeepSeek AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Calendar</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-timezoneplayer" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="timezoneplayer" href="/timezoneplayer" class="col-10 btn btn-outline-success font-weight-bold text-black border-success timezoneplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-clock"></i></div><div style="font-size:100%;" translate="no">TIMEZONE CONVERTER</div><div style="font-size:80%;">Convert Timezones</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Timezone</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="timezoneplayer" href="/timezoneplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success timezoneplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-clock"></i></div><div style="font-size:100%;" translate="no">TIMEZONE CONVERTER</div><div style="font-size:80%;">Convert Timezones</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Timezone</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-gameslearning" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="gameslearning" href="/gameslearning" class="col-10 btn btn-outline-success font-weight-bold text-black border-success gameslearning" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">GAMES LEARNING</div><div style="font-size:80%;">Learn: Chess, Sudoku, Snake</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Learning</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="gameslearning" href="/gameslearning" class="col-12 btn btn-outline-success font-weight-bold text-black border-success gameslearning" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">GAMES LEARNING</div><div style="font-size:80%;">Learn: Chess, Sudoku, Snake</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Learning</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-odoolearning" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="odoolearning" href="/odoolearning" class="col-10 btn btn-outline-success font-weight-bold text-black border-success odoolearning" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">ODOO LEARNING</div><div style="font-size:80%;">Learn Odoo Development</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Learning</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="odoolearning" href="/odoolearning" class="col-12 btn btn-outline-success font-weight-bold text-black border-success odoolearning" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">ODOO LEARNING</div><div style="font-size:80%;">Learn Odoo Development</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Learning</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-languagelearning" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="languagelearning" href="/languagelearning" class="col-10 btn btn-outline-success font-weight-bold text-black border-success languagelearning" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LANGUAGE LEARNING</div><div style="font-size:80%;">Spanish, English, Korean, Chinese Mandarin, Japanese, Vietnamese</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Learning</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="languagelearning" href="/languagelearning" class="col-12 btn btn-outline-success font-weight-bold text-black border-success languagelearning" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LANGUAGE LEARNING</div><div style="font-size:80%;">Spanish, English, Korean, Chinese Mandarin, Japanese, Vietnamese</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Learning</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-iqtest" style="">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a id="iqtest" href="/iq-test" class="col-10 btn btn-outline-success font-weight-bold text-black border-success iqtest" style="border: 2px solid;"><div style=""><i class="fa-solid fa-brain"></i></div><div style="font-size:100%;" translate="no">IQ TEST</div><div style="font-size:80%;">Certified IQ Test</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">IQ Test</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a id="iqtest" href="/iq-test" class="col-12 btn btn-outline-success font-weight-bold text-black border-success iqtest" style="border: 2px solid;"><div style=""><i class="fa-solid fa-brain"></i></div><div style="font-size:100%;" translate="no">IQ TEST</div><div style="font-size:80%;">Certified IQ Test</div><div style="font-size:80%;">Developed with Gemini AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">IQ Test</div></div></a></div>
                                             </div>
                                         </li>
                                         <!--
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="youtube-trends" class="col-10 btn btn-outline-success font-weight-bold text-black border-success youtube-trends" style="border: 2px solid;"><div style=""><i class="fa-solid fa-square-poll-vertical"></i></div><div style="font-size:100%;" translate="no">TRENDS</div><div style="font-size:80%;">Youtube Trends</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="youtube-trends" class="col-12 btn btn-outline-success font-weight-bold text-black border-success youtube-trends" style="border: 2px solid;"><div style=""><i class="fa-solid fa-square-poll-vertical"></i></div><div style="font-size:100%;" translate="no">TRENDS</div><div style="font-size:80%;">Youtube Trends</div></button></div>
                                             </div>
                                         </li>
                                         -->
                                         <!--
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="youtube-social" class="col-10 btn btn-outline-success font-weight-bold text-black border-success youtube-social" style="border: 2px solid;"><div style=""><i class="fa-solid fa-square-poll-vertical"></i></div><div style="font-size:100%;" translate="no">CHANNEL</div><div style="font-size:80%;">Youtube Social</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="youtube-social" class="col-12 btn btn-outline-success font-weight-bold text-black border-success youtube-social" style="border: 2px solid;"><div style=""><i class="fa-solid fa-square-poll-vertical"></i></div><div style="font-size:100%;" translate="no">CHANNEL</div><div style="font-size:80%;">Youtube Social</div></button></div>
                                             </div>
                                         </li>
                                         -->
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-latin-academy" style="display:none">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="latin-academy" class="col-10 btn btn-outline-success font-weight-bold text-black border-success latin-academy" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN ACADEMY</div><div style="font-size:80%;">Getting started with Odoo Slides</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="latin-academy" class="col-12 btn btn-outline-success font-weight-bold text-black border-success latin-academy" style="border: 2px solid;"><div style=""><i class="fa-solid fa-school"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN ACADEMY</div><div style="font-size:80%;">Getting started with Odoo Slides</div></button></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-latin-university" style="display:none">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="latin-university" class="col-10 btn btn-outline-success font-weight-bold text-black border-success latin-university" style="border: 2px solid;"><div style=""><i class="fa-solid fa-building-columns"></i></div><div style="font-size:100%;" translate="no">LATIN UNIVERSITY</div><div style="font-size:80%;">Wikiversity Online</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="latin-university" class="col-12 btn btn-outline-success font-weight-bold text-black border-success latin-university" style="border: 2px solid;"><div style=""><i class="fa-solid fa-building-columns"></i></div><div style="font-size:100%;" translate="no">LATIN UNIVERSITY</div><div style="font-size:80%;">Wikiversity Online</div></button></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-latin-dictionary" style="display:none">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="latin-dictionary" class="col-10 btn btn-outline-success font-weight-bold text-black border-success latin-dictionary" style="border: 2px solid;"><div style=""><i class="fa-solid fa-spell-check"></i></div><div style="font-size:100%;" translate="no">LATIN DICTIONARY</div><div style="font-size:80%;">Wiktionary Online</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="latin-dictionary" class="col-12 btn btn-outline-success font-weight-bold text-black border-success latin-dictionary" style="border: 2px solid;"><div style=""><i class="fa-solid fa-spell-check"></i></div><div style="font-size:100%;" translate="no">LATIN DICTIONARY</div><div style="font-size:80%;">Wiktionary Online</div></button></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-latin-books" style="display:none">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="latin-books" class="col-10 btn btn-outline-success font-weight-bold text-black border-success latin-books" style="border: 2px solid;"><div style=""><i class="fa-solid fa-book"></i></div><div style="font-size:100%;" translate="no">LATIN BOOKS</div><div style="font-size:80%;">Wikibooks Online</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="latin-books" class="col-12 btn btn-outline-success font-weight-bold text-black border-success latin-books" style="border: 2px solid;"><div style=""><i class="fa-solid fa-book"></i></div><div style="font-size:100%;" translate="no">LATIN BOOKS</div><div style="font-size:80%;">Wikibooks Online</div></button></div>
                                             </div>
                                         </li>
                                         <!--<li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-stellarium" style="display:none">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="stellarium" class="col-10 btn btn-outline-success font-weight-bold text-black border-success stellarium" style="border: 2px solid;"><div style=""><i class="fa-solid fa-sun"></i></div><div style="font-size:100%;" translate="no">STELLARIUM</div><div style="font-size:80%;">Decentralized Universe</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="stellarium" class="col-12 btn btn-outline-success font-weight-bold text-black border-success stellarium" style="border: 2px solid;"><div style=""><i class="fa-solid fa-sun"></i></div><div style="font-size:100%;" translate="no">STELLARIUM</div><div style="font-size:80%;">Decentralized Universe</div></button></div>
                                             </div>
                                         </li>-->
                                         <!--<li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-latin-search" style="display:none">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="latin-search" class="col-10 btn btn-outline-success font-weight-bold text-black border-success latin-search" style="border: 2px solid;"><div style=""><i class="fa-solid fa-magnifying-glass-dollar"></i></div><div style="font-size:100%;" translate="no">LATIN SEARCH</div><div style="font-size:80%;">Metacrawler Search Site</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="latin-search" class="col-12 btn btn-outline-success font-weight-bold text-black border-success latin-search" style="border: 2px solid;"><div style=""><i class="fa-solid fa-magnifying-glass-dollar"></i></div><div style="font-size:100%;" translate="no">LATIN SEARCH</div><div style="font-size:80%;">Metacrawler Search Site</div></button></div>
                                             </div>
                                         </li>-->
                                         <!--<li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-tvonline" style="display:none">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="tvonline" class="col-10 btn btn-outline-success font-weight-bold text-black border-success tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">TV ONLINE</div><div style="font-size:80%;">TV streaming</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="tvonline" class="col-12 btn btn-outline-success font-weight-bold text-black border-success tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">TV ONLINE</div><div style="font-size:80%;">TV streaming</div></button></div>
                                             </div>
                                         </li>-->
                                         <!--<li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="cryptonews_2" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="cryptonews_2" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
                                             </div>
                                         </li>-->
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top show-cointelegraph" style="display:none">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="cointelegraph" class="col-10 btn btn-outline-success font-weight-bold text-black border-success cointelegraph" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">COINTELEGRAPH</div><div style="font-size:80%;">Crypto news</div><div style="font-size:80%;" >Utility</div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="cointelegraph" class="col-12 btn btn-outline-success font-weight-bold text-black border-success cointelegraph" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">COINTELEGRAPH</div><div style="font-size:80%;">Crypto news</div><div style="font-size:80%;" >Utility</div></button></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -2444,45 +2338,33 @@
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="cryptonews_2" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="cryptonews_2" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="trends-news" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success trends-news" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">TRENDS NEWS</div><div style="font-size:80%;">Trends news</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="trends-news" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success trends-news" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">TRENDS NEWS</div><div style="font-size:80%;">Trends news</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="sport-results" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">Sports</div></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="sport-results" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">Sports</div></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-tvonline" style="display: none">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><button id="tvonline-3" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">TV ONLINE</div><div style="font-size:80%;">TV streaming</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">TV Online</div></div></button></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><button id="tvonline-3" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">TV ONLINE</div><div style="font-size:80%;">TV streaming</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">TV Online</div></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
-                                                <div class="col-2"></div>
-                                                <div class="col-10"><a href="https://latinchainpal0712.pinet.com" target="_blank" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN PAL</div><div style="font-size:80%;">AI Chatbot</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">AI Chat</div></div></a></div>
-                                                <div class="col-0"></div>
+                                                <div class="col-12"><a href="https://latinchainpal0712.pinet.com" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN PAL</div><div style="font-size:80%;">AI Chatbot</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">AI Chat</div></div></a></div>
                                             </div>
                                         </li>
                                         <t t-if="pioneers_streaming">
                                             <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                                 <div class="row" style="text-align: left;">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-10"><button id="streamerzoneboard2" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">Social</div></div></button></div>
-                                                    <div class="col-0"></div>
+                                                    <div class="col-12"><button id="streamerzoneboard2" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success streamerzoneboard" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">LatinChain dSocial</div><div style="font-size:80%;">Top 50 streamers</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">Social</div></div></button></div>
                                                 </div>
                                             </li>
                                         </t>
@@ -2523,7 +2405,7 @@
                                     <ul class="list-group">
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row">
-                                                <div class="col-12"><button id="rules_button_5" class="col-10 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
+                                                <div class="col-12"><button id="rules_button_5" class="col-12 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -2535,9 +2417,9 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div style="margin-bottom:5px;" class="getverified">
-                                                        <a href="/pinetwork" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
+                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Donate in one touch</div></a>
                                                     </div>
-                                                    <a href="/pinetwork" class="href-external col-10 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                 </div>
                                             </div>
                                         </li>
@@ -2548,7 +2430,7 @@
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row">
-                                                <div class="col-12"><a href="/get-transactions/" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Transactions</div><div style="font-size:80%;">Transactions list</div></a></div>
+                                                <div class="col-12"><a href="/get-transactions/" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Transactions</div><div style="font-size:80%;">Transactions list</div></a></div>
                                             </div>
                                         </li>
                                     </ul>
@@ -2611,27 +2493,27 @@
                                 
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><a href="https://github.com/rockcesar/LatinChainDevelops/tree/master/website_pinetwork_odoo/" target="_blank" class="col-10 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Odoo App</div></a></div>
+                                        <div class="col-12"><a href="https://github.com/rockcesar/LatinChainDevelops/tree/master/website_pinetwork_odoo/" target="_blank" class="col-12 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Odoo App</div></a></div>
                                     </div>
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><a href="https://github.com/rockcesar/LatinChainDevelops/tree/master/website_pinetwork_games_odoo/" target="_blank" class="col-10 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Platform</div></a></div>
+                                        <div class="col-12"><a href="https://github.com/rockcesar/LatinChainDevelops/tree/master/website_pinetwork_games_odoo/" target="_blank" class="col-12 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">Platform</div></a></div>
                                     </div>
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><a href="/website/social/github" target="_blank" class="col-10 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fab fa-github"></i></div><div style="font-size:100%;">Repository</div></a></div>
+                                        <div class="col-12"><a href="/website/social/github" target="_blank" class="col-12 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fab fa-github"></i></div><div style="font-size:100%;">Repository</div></a></div>
                                     </div>
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><a href="/api-docs" target="_blank" class="col-10 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain API</div></a></div>
+                                        <div class="col-12"><a href="/api-docs" target="_blank" class="col-12 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain API</div></a></div>
                                     </div>
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row">
-                                        <div class="col-12"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="col-10 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain dSocial</div></a></div>
+                                        <div class="col-12"><a href="https://dev-rockcesar.blogspot.com/2021/03/proyecto-para-red-social-gigante.html" target="_blank" class="col-12 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain dSocial</div></a></div>
                                     </div>
                                 </li>
                                 
@@ -2669,7 +2551,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="rules_button" class="col-10 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
+                                            <div class="col-12"><button id="rules_button" class="col-12 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -2679,7 +2561,7 @@
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="generalranking" class="col-10 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;" translate="no">Global Ranking</div><div style="font-size:80%;">List of users (verified and not verified)</div></button></div>
+                                            <div class="col-12"><button id="generalranking" class="col-12 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;" translate="no">Global Ranking</div><div style="font-size:80%;">List of users (verified and not verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -2689,12 +2571,12 @@
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="leaderboard" class="col-10 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;" translate="no">Leaders Board</div><div style="font-size:80%;">General ranking (verified)</div></button></div>
+                                            <div class="col-12"><button id="leaderboard" class="col-12 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;" translate="no">Leaders Board</div><div style="font-size:80%;">General ranking (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="winnerboard" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;" translate="no">Top 10 Board</div><div style="font-size:80%;">Top 10 ranking by game (verified)</div></button></div>
+                                            <div class="col-12"><button id="winnerboard" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-ranking-star"></i></div><div style="font-size:100%;" translate="no">Top 10 Board</div><div style="font-size:80%;">Top 10 ranking by game (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -2704,7 +2586,7 @@
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><button id="winnerzoneboard2" class="col-10 btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;" translate="no">Winners Board</div><div style="font-size:80%;">Table of all winners (verified)</div></button></div>
+                                            <div class="col-12"><button id="winnerzoneboard2" class="col-12 btn btn-outline-success font-weight-bold text-black border-success winnerzoneboard" style="border: 2px solid;"><div style=""><i class="fa fa-trophy"></i></div><div style="font-size:100%;" translate="no">Winners Board</div><div style="font-size:80%;">Table of all winners (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
@@ -2714,7 +2596,7 @@
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                         <div class="row">
-                                            <div class="col-12"><button id="credits" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">Credits</div><div style="font-size:80%;">Donators list (verified)</div></button></div>
+                                            <div class="col-12"><button id="credits" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">Credits</div><div style="font-size:80%;">Donators list (verified)</div></button></div>
                                         </div>
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -2724,7 +2606,7 @@
                                     </li>
                                     <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                         <div class="row">
-                                            <div class="col-12"><a href="/get-transactions/" class="col-10 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Transactions</div><div style="font-size:80%;">Transactions list</div></a></div>
+                                            <div class="col-12"><a href="/get-transactions/" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Transactions</div><div style="font-size:80%;">Transactions list</div></a></div>
                                         </div>
                                     </li>
                                 </ul>
