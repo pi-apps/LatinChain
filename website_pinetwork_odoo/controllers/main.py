@@ -198,7 +198,15 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/books-collection/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def books_collection(self, **kw):
         return http.request.redirect('https://www.amazon.com/dp/B0F771VKRF')
+        
+    @http.route('/spring-store/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def spring_store(self, **kw):
+        return http.request.redirect('https://my-store-10dea32.creator-spring.com')
     
+    @http.route('/youtube-store/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def youtube_store(self, **kw):
+        return http.request.redirect('https://www.youtube.com/@rockcesar85/store')
+        
     @http.route('/terms/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def latinchain_terms(self, **kw):
         return http.request.redirect('/blog/latinchain-blog-1/terms-of-service-6')

@@ -429,6 +429,11 @@
                             <br/>
                             <h3>You can find these, our most notable books by ASIN or ISBN, in bookstores as Amazon (globally), Iberlibro (Europe) or others around the world. There are also courses available.</h3>
                             <br/>
+                            <t t-if="with_links">
+                                <h3>Clothing Store:</h3>
+                                <h5 style="padding:10px;" class="border-gradient-rounded"><img src="/website_pinetwork_games_odoo/static/src/img/logo-opensource-expert.png" width="110px" height="110px" /><br/><strong>Clothing Store</strong><div style="">Author: César Cordero</div><div><div style="display: inline"><a href="/youtube-store" target="_blank">Youtube Store</a></div> <div style="display: inline">|</div> <div style="display: inline"><a href="/spring-store" target="_blank">Spring Store</a></div></div></h5>
+                            </t>
+                            <br/>
                             <h3>Udemy courses (all courses with personalized Certificate of Completion):</h3>
                             <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://img-c.udemycdn.com/course/200_H/6505675_3364_4.jpg" width="180px" height="110px" /><br/><strong>Learn how to develop a Pi App (webapp) on the Pi Network</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-course/" target="_blank">Udemy course</a></t></h5>
                             <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://img-c.udemycdn.com/course/200_H/4538222_ce85_5.jpg" width="180px" height="110px" /><br/><strong>Odoo 14 Technical Training en Español</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Author: César Cordero</div> <t t-if="with_links"><a href="/odoo-tech-course/" target="_blank">Udemy course</a></t></h5>
