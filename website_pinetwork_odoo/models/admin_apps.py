@@ -282,7 +282,16 @@ class admin_apps(models.Model):
                 
                 if "rate" in result_dict:
                     i.amount_price = result_dict["rate"]
-                    i.amount = i.amount_price_topay_usd / i.amount_price #5 USD / price in Pi
+                    
+                    if i.discount_active and i.discount_percentage:
+                        amount_price_topay_usd = i.amount_price_topay_usd - i.amount_price_topay_usd * (i.discount_percentage/100)
+                    else:
+                        amount_price_topay_usd = i.amount_price_topay_usd
+                    
+                    i.amount = amount_price_topay_usd / i.amount_price #5 USD / price in Pi
+                    
+                    _logger.info(str(amount_price_topay_usd))
+                    _logger.info(str(i.amount))
                     
                     admin_other_apps = self.env["admin.apps"].sudo().search([('app', 'in', ['auth_snake', 'auth_pidoku', 'auth_example', 'auth_first_app'])])
                     
