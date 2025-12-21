@@ -238,6 +238,8 @@ class admin_apps(models.Model):
     amount_price_topay_usd = fields.Float('Amount price to pay (USD)', digits=(50,7), default=5, store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     points_latin_daily_total = fields.Integer('Points Latin_daily total', compute="_compute_points_latin_daily_total", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     points_latin_daily_total_notcomputed = fields.Integer('Points Latin_daily total notcomputed', store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    discount_active = fields.Boolean('Discount', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    discount_percentage = fields.Float('Discount percentage', default=50, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     """
     @api.depends("amount")
@@ -281,6 +283,10 @@ class admin_apps(models.Model):
                 if "rate" in result_dict:
                     i.amount_price = result_dict["rate"]
                     i.amount = i.amount_price_topay_usd / i.amount_price #5 USD / price in Pi
+                    
+                    if i.discount_active and i.discount_percentage:
+                        i.amount = i.amount * (i.discount_percentage/100)
+                        i.amount_price_topay_usd = i.amount_price_topay_usd * (i.discount_percentage/100)
                     
                     admin_other_apps = self.env["admin.apps"].sudo().search([('app', 'in', ['auth_snake', 'auth_pidoku', 'auth_example', 'auth_first_app'])])
                     
