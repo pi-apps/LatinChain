@@ -1255,7 +1255,7 @@
                         <div style="color: #ffffff !important; background-color: #1f2434 !important;">
                             <div>
                                 <div style="display: inline" t-if="discount_active and discount_percentage">
-                                    Payment amount (<t t-esc="discount_percentage" />%)
+                                    Payment (discount <t t-esc="discount_percentage" />%)
                                 </div>
                                 <div style="display: inline" t-if="not discount_active">
                                     Payment amount
