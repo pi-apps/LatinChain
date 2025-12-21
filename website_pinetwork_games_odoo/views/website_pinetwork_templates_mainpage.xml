@@ -1264,16 +1264,24 @@
                             <div style="word-break: break-word;">
                                 <div t-if="discount_active and discount_percentage">
                                     <del>
-                                        <div style="display: inline">Pi <t t-esc="amount*(100/discount_percentage)" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd*(100/discount_percentage)" /></div> 
+                                        <div style="display: inline">Pi <t t-esc="amount*(100/discount_percentage)" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div> 
                                         <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
                                             <i class="fa-solid fa-circle-info"></i>
                                         </div>
                                     </del>
+                                    <div>
+                                        <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100)" /></div> 
+                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
+                                            <i class="fa-solid fa-circle-info"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div> 
-                                    <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
-                                        <i class="fa-solid fa-circle-info"></i>
+                                <div t-else>
+                                    <div>
+                                        <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div> 
+                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
+                                            <i class="fa-solid fa-circle-info"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
