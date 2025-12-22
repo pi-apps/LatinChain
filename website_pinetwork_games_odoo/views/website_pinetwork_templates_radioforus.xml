@@ -326,15 +326,38 @@
                                             <button id="back_radioforus" class="btn btn-info back_radioforus" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                                         </div>
                                         
-                                        <div style="margin-top:5px;">
-                                            <div style="display: inline">
-                                                Current minimum payment
+                                        <div>
+                                            <div>
+                                                <div style="display: inline" t-if="discount_active and discount_percentage">
+                                                    Seasonal discount (<t t-esc="discount_percentage" />%)
+                                                </div>
+                                                <div style="display: inline" t-if="not discount_active">
+                                                    Payment amount
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div style="word-break: break-word;">
-                                            <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div> 
-                                            <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
-                                                <i class="fa-solid fa-circle-info"></i>
+                                            <div style="word-break: break-word;" translate="no">
+                                                <div t-if="discount_active and discount_percentage">
+                                                    <del>
+                                                        <div style="display: inline">Pi <t t-esc="amount*(100/discount_percentage)" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div> 
+                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
+                                                            <i class="fa-solid fa-circle-info"></i>
+                                                        </div>
+                                                    </del>
+                                                    <div>
+                                                        <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100)" /></div> 
+                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
+                                                            <i class="fa-solid fa-circle-info"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div t-else="">
+                                                    <div>
+                                                        <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div> 
+                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
+                                                            <i class="fa-solid fa-circle-info"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         
