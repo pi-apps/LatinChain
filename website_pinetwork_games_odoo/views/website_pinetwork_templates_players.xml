@@ -1793,13 +1793,10 @@
                         <meta charset="UTF-8"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                         <title>Place Finder</title>
-                        <!-- Leaflet CSS -->
                         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
                          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
                          crossorigin=""/>
-                        <!-- Leaflet Routing Machine CSS -->
                         <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
-                        <!-- Custom Stylesheet -->
                         <style>
                             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap');
                             
@@ -1911,15 +1908,15 @@
                                 transition: background-color 0.2s;
                             }
                         </style>
-                        
+                       
                         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                        
+                       
                         <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-                        
+                       
                         <script type="text/javascript">
                             startCommonAppsAI();
                         </script>
-                        
+                       
                         <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
                             <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
                                 <div id="blocking-message" style="display: none;">
@@ -1950,10 +1947,10 @@
                         <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                         <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                         <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
-                        
+                       
                     </head>
                     <body>
-                        
+                       
                         <div class="container">
                             <style>
                                 /* Adjustments for Google Translator to be visible */
@@ -2020,14 +2017,12 @@
                             <div id="status-message">Finding your location...</div>
                         </div>
 
-                        <!-- Leaflet JS -->
                         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
                          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
                          crossorigin=""></script>
-                         <!-- Leaflet Routing Machine JS -->
-                        <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+                         <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.124"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.126"></script>
                     </body>
                 </html>
             </t>

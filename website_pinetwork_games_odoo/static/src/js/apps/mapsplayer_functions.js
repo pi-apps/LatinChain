@@ -70,25 +70,31 @@ function initMap(lat, lon) {
         map.remove(); // Remove the existing map instance
     }
     
-    map = L.map('map').setView([lat, lon], 15);
+    // Initialize the map WITHOUT the attribution control (removes Leaflet text and flag)
+    map = L.map('map', { attributionControl: false }).setView([lat, lon], 15);
     
-    // Define base map layers for the layer control
-    const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    // --- GOOGLE MAPS LAYERS ---
+
+    // Google Streets
+    const googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     });
 
-    // OpenStreetMap HOT layer
-    const hotLayer = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a></a>'
+    // Google Hybrid (Satellite + Labels)
+    const googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     });
 
-    // OpenTopMap layer
-    const opentopomapLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+    // Google Satellite (No Labels)
+    const googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     });
     
-    // Add the default layer to the map
-    osmLayer.addTo(map);
+    // Add default layer (Streets) to the map
+    googleStreets.addTo(map);
 
     // Add a marker for the user's location
     userMarker = L.marker([lat, lon], {icon: greenIcon}).addTo(map)
@@ -97,9 +103,9 @@ function initMap(lat, lon) {
     
     // Create layer control and add it to the map
     const baseMaps = {
-        "Standard OSM": osmLayer,
-        "OSM HOT": hotLayer,
-        "OpenTopoMap": opentopomapLayer
+        "Google Streets": googleStreets,
+        "Google Hybrid": googleHybrid,
+        "Google Satellite": googleSat
     };
     L.control.layers(baseMaps).addTo(map);
 
@@ -297,6 +303,13 @@ function initMap(lat, lon) {
 // Function to get the user's geolocation
 function getLocation() {
     if (navigator.geolocation) {
+        // Set options for high accuracy to prevent getting a cached/ISP location
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        };
+
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 userLat = position.coords.latitude;
@@ -306,8 +319,10 @@ function getLocation() {
             },
             (error) => {
                 console.error('Error getting location:', error);
+                // Fallback to low accuracy if high accuracy fails, or show error
                 statusMessage.textContent = 'Could not get location. Please enable location services.';
-            }
+            },
+            options // Pass the options here
         );
     } else {
         statusMessage.textContent = 'Geolocation is not supported by this browser.';
