@@ -1795,7 +1795,7 @@
                         <title>Place Finder</title>
                         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
                          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-                         crossorigin="anonymous"/>
+                         crossorigin=""/>
                         <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
                         <style>
                             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap');
@@ -2019,10 +2019,10 @@
 
                         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
                          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-                         crossorigin="anonymous"></script>
+                         crossorigin=""></script>
                          <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.126"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.127"></script>
                     </body>
                 </html>
             </t>
