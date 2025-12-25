@@ -1676,7 +1676,7 @@ $( document ).ready(function() {
         });
     }
     
-    $( "#vote" ).click(function() {
+    $( ".pi-hackathon-info" ).click(function() {
         $.colorbox({href:"/modal-vote", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
