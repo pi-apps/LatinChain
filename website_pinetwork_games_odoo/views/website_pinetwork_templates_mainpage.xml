@@ -1231,6 +1231,11 @@
                     
                     <div translate="no" class="justify-content-left text-left p-3 mb-2" style="color: #ffffff !important; background-color: #1f2434 !important">
                         <div class="row">
+                            <div style="text-align:left;" class="col-12">
+                                <img src="/website_pinetwork_games_odoo/static/src/img/pihackathon_badge_top.png?v=1.102" class="img-fluid" style="border-radius: 20px;" width="150px" height="50px" />
+                            </div>
+                        </div>
+                        <div class="row">
                             <div style="text-align:left; word-break: break-word;" class="col-6">
                                 <div class="text-white getverified">Welcome to LatinChain!.</div>
                                 <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
@@ -1291,10 +1296,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div style="text-align:left;" class="col-12">
-                        <img src="/website_pinetwork_games_odoo/static/src/img/pihackathon_badge_top.png?v=1.102" class="img-fluid" style="border-radius: 20px;" width="150px" height="50px" />
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup">
