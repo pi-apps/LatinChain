@@ -1293,6 +1293,10 @@
                         </div>
                     </div>
                     
+                    <div style="text-align:left;" class="col-12">
+                        <img src="/website_pinetwork_games_odoo/static/src/img/pihackathon_badge_top.png?v=1.102" class="img-fluid" style="border-radius: 20px;" width="150px" height="50px" />
+                    </div>
+                    
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup">
                         
                         <!-- LatinChain Ad responsive 2 -->
