@@ -239,7 +239,7 @@ class admin_apps(models.Model):
     points_latin_daily_total = fields.Integer('Points Latin_daily total', compute="_compute_points_latin_daily_total", store=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     points_latin_daily_total_notcomputed = fields.Integer('Points Latin_daily total notcomputed', store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     discount_active = fields.Boolean('Discount', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    discount_percentage = fields.Float('Discount percentage', default=50, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    discount_percentage = fields.Float('Discount percentage', digits=(50,7), default=50, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     """
     @api.depends("amount")
