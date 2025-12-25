@@ -292,7 +292,10 @@ class admin_apps(models.Model):
                     
                     admin_other_apps = self.env["admin.apps"].sudo().search([('app', 'in', ['auth_snake', 'auth_pidoku', 'auth_example', 'auth_first_app'])])
                     
-                    admin_other_apps.write({'amount': i.amount, 'amount_price_topay_usd': i.amount_price_topay_usd, 'amount_price': i.amount_price})
+                    admin_other_apps.write({'amount': i.amount, 'discount_active': i.discount_active, 
+                                            'discount_percentage': i.discount_percentage, 
+                                            'amount_price_topay_usd': i.amount_price_topay_usd, 
+                                            'amount_price': i.amount_price})
                 
             except Exception as e:
                 pass
