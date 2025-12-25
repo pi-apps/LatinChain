@@ -339,14 +339,19 @@
                                             </div>
                                             <div style="word-break: break-word;" translate="no">
                                                 <div t-if="discount_active and discount_percentage">
+                                                    <t t-set="usd_discount" t-value="round(amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100), 2)"/>
+                                                    <t t-set="pi_total" t-value="round(((amount*amount_price_topay_usd)/usd_discount), 7)"/>
+                                                    <t t-set="usd_total" t-value="amount_price_topay_usd"/>
+                                                    <t t-set="pi_discount" t-value="amount"/>
+                                                    
                                                     <del>
-                                                        <div style="display: inline">Pi <t t-esc="round(amount*(100/discount_percentage), 7)" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div> 
+                                                        <div style="display: inline">Pi <t t-esc="pi_total" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="usd_total" /></div> 
                                                         <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
                                                             <i class="fa-solid fa-circle-info"></i>
                                                         </div>
                                                     </del>
                                                     <div>
-                                                        <div style="display: inline">Pi <t t-esc="amount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="round(amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100), 2)" /></div> 
+                                                        <div style="display: inline">Pi <t t-esc="pi_discount" /></div> <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="usd_discount" /></div> 
                                                         <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" title="Updated each minute (on Mainnet), and each 1 day (on Testnet)">
                                                             <i class="fa-solid fa-circle-info"></i>
                                                         </div>
