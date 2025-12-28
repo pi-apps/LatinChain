@@ -430,7 +430,7 @@
                             <h3>You can find these, our most notable books by ASIN or ISBN, in bookstores as Amazon (globally), Iberlibro (Europe) or others around the world. There are also courses available.</h3>
                             <br/>
                             <t t-if="with_links">
-                                <div style="margin-bottom:5px" class="border border-top-0">
+                                <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                     <h3>Clothing and Collectibles Store:</h3>
                                 </div>
                                 <h5 style="padding:10px;" class="border-gradient-rounded">
@@ -438,7 +438,7 @@
                                 </h5>
                             </t>
                             <br/>
-                            <div style="margin-bottom:5px" class="border border-top-0">
+                            <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                 <h3>Udemy courses (all courses with personalized Certificate of Completion):</h3>
                             </div>
                             <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://img-c.udemycdn.com/course/200_H/6505675_3364_4.jpg" width="180px" height="110px" /><br/><strong>Learn how to develop a Pi App (webapp) on the Pi Network</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-course/" target="_blank">Udemy course</a></t></h5>
@@ -447,7 +447,7 @@
                             <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://img-c.udemycdn.com/course/200_H/6522069_77ba.jpg" width="180px" height="110px" /><br/><strong>Aprende Inglés práctico hoy mismo (con IA)</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Author: César Cordero</div> <t t-if="with_links"><a href="/english-course/" target="_blank">Udemy course</a></t></h5>
                             <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://img-c.udemycdn.com/course/200_H/6595211_0834_3.jpg" width="180px" height="110px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Author: César Cordero</div> <t t-if="with_links"><a href="/brand-course/" target="_blank">Udemy course</a></t></h5>
                             <br/>
-                            <div style="margin-bottom:5px" class="border border-top-0">
+                            <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                 <h3>Amazon books:</h3>
                             </div>
                             <h5 style="padding:10px;" class="border-gradient-rounded"><img src="https://m.media-amazon.com/images/I/71Ir+19r4+L._CLa|2909,2525|81JvHXej7bL.jpg,71eGkTh9m0L.jpg|0,0,1322,2525+1587,0,1322,2525+661,0,1587,2525_._SY300_.jpg" width="210px" height="180px" /><br/><strong>Books Collection<br/>(ASIN: B0F771VKRF)</strong><div style="">Author: César Cordero</div> <t t-if="with_links"><a href="/books-collection/" target="_blank">Books Collection link</a></t></h5>
