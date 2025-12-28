@@ -188,7 +188,7 @@
                                 </div>
                                 
                                 <div style="margin-bottom:5px" t-if="onlymainnet" class="col-12">
-                                    <a href="#" onclick="$('#cboxClose').click();" class="col-12 href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>
+                                    <a href="javascript:void(0);" onclick="alert($('#cboxClose').html());" class="col-12 href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>
                                     
                                     <!--<button class="openMainnetModal btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></button>-->
                                 </div>
@@ -224,7 +224,7 @@
                             <!--<a href="https://latinchaintest9869.pinet.com/?nopopup=true" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>-->
                             <div class="row">
                                 <div style="margin-bottom:10px" t-if="not onlymainnet" class="col-12">
-                                    <a href="#" onclick="jQuery('#cboxClose').click();" class="col-12 btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
+                                    <a href="javascript:void(0);" onclick="jQuery('#cboxClose').click();" class="col-12 btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
                                     
                                     <!--
                                         <a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="col-12 btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
