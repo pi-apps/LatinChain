@@ -41,9 +41,7 @@ async function colorboxLoaded()
     {
         if($.colorbox && !colorbox_opened)
         {
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:true, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
             return false;
         }else{
@@ -69,9 +67,7 @@ async function colorboxLoadedMainnet()
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            $.colorbox({href:"https://test.latin-chain.com/latinchain-onlymainnet-redirect", closeButton:true, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({href:"https://test.latin-chain.com/latinchain-onlymainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened_mainnet = true;
             return false;
         }else{
@@ -808,11 +804,6 @@ async function showPiAds(Pi, activated) {
 $( document ).ready(function() {
     btnvalue = $("#button_reward_ad").html();
     
-    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-    {
-        colorboxLoadedMainnet();
-    }
-    
     /*
        colorboxLoaded();
        $(".modal-body").html("");
@@ -1464,10 +1455,10 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
-                            /*if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 colorboxLoadedMainnet();
-                            }*/
+                            }
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
