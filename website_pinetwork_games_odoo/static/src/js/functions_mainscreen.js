@@ -43,7 +43,7 @@ async function colorboxLoaded()
         {
             await new Promise(resolve => setTimeout(resolve, 1500));
             
-            $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:true, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
             return false;
         }else{
@@ -71,7 +71,7 @@ async function colorboxLoadedMainnet()
         {
             await new Promise(resolve => setTimeout(resolve, 1500));
             
-            $.colorbox({href:"https://test.latin-chain.com/latinchain-onlymainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({href:"https://test.latin-chain.com/latinchain-onlymainnet-redirect", closeButton:true, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened_mainnet = true;
             return false;
         }else{
@@ -813,6 +813,11 @@ $( document ).ready(function() {
        $(".modal-body").html("");
        $("#open_modal").click();
      */
+     
+    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+    {
+        colorboxLoadedMainnet();
+    }
     
     //colorboxLoaded();
     
@@ -1459,10 +1464,10 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
-                            if(unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            /*if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 colorboxLoadedMainnet();
-                            }
+                            }*/
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
