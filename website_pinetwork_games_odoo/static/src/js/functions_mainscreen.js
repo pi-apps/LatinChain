@@ -1869,6 +1869,9 @@ $( document ).ready(function() {
         $.colorbox({href:"https://trends.latin-chain.com/plutotv/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".latinchain-ecosystem" ).click(function() {
+        $.colorbox({href:"https://ecosystem.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
     
     $( ".search-apps" ).keyup(function() {
         var search_apps_val = $( ".search-apps" ).val().trim();
