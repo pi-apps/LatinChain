@@ -808,16 +808,16 @@ async function showPiAds(Pi, activated) {
 $( document ).ready(function() {
     btnvalue = $("#button_reward_ad").html();
     
+    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+    {
+        colorboxLoadedMainnet();
+    }
+    
     /*
        colorboxLoaded();
        $(".modal-body").html("");
        $("#open_modal").click();
      */
-     
-    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-    {
-        colorboxLoadedMainnet();
-    }
     
     //colorboxLoaded();
     
