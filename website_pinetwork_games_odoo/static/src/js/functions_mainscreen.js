@@ -41,7 +41,7 @@ async function colorboxLoaded()
     {
         if($.colorbox && !colorbox_opened)
         {
-            $.colorbox({href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({fixed: true, href:"/latinchain-mainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
             return false;
         }else{
@@ -67,7 +67,7 @@ async function colorboxLoadedMainnet()
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
-            $.colorbox({href:"https://test.latin-chain.com/latinchain-onlymainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({fixed: true, href:"https://test.latin-chain.com/latinchain-onlymainnet-redirect", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened_mainnet = true;
             return false;
         }else{
@@ -909,18 +909,18 @@ $( document ).ready(function() {
     $(".open_streaming").click(function(){
         var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
         streaming_url = streaming_url[1];
-        $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '?autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+        $.colorbox({fixed: true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '?autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
     });
     
     $(".open_latinchaintv").click(function(){
         var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
         streaming_url = streaming_url[1];
-        $.colorbox({href:"https://trends.latin-chain.com/latinchain-tv.html", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/latinchain-tv.html", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $(".open_streaming_playlist").click(function(){
         var streaming_url = $(this).attr("videourl");
-        $.colorbox({width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="' + streaming_url + '&amp;autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
+        $.colorbox({fixed: true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="' + streaming_url + '&amp;autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
     });
     
     /*$( ".askanexpert" ).click(function() {
@@ -928,7 +928,7 @@ $( document ).ready(function() {
     });*/
     
     $( ".partners" ).click(function() {
-        $.colorbox({href:"/latinchain-partners/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"/latinchain-partners/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
 
     /*(adsbygoogle = window.adsbygoogle || []).push({});
@@ -1228,7 +1228,7 @@ $( document ).ready(function() {
                 generalranking = "/get-general-ranking/" + auth.user.username;
                 
                 $( ".certification" ).click(function() {
-                    $.colorbox({href:"/latinchain-certification/" + auth.user.username, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+                    $.colorbox({fixed: true, href:"/latinchain-certification/" + auth.user.username, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                 });
                 
                 $( ".div-certification" ).show();
@@ -1677,47 +1677,47 @@ $( document ).ready(function() {
     }
     
     $( ".pi-hackathon-info" ).click(function() {
-        $.colorbox({href:"/modal-vote", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"/modal-vote", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".rules_button" ).click(function() {
-        $.colorbox({href:"/modal-rules", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"/modal-rules", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( "#leaderboard" ).click(function() {
-        $.colorbox({href:leaderboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:leaderboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( "#generalranking" ).click(function() {
-        $.colorbox({href:generalranking, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:generalranking, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( "#winnerboard" ).click(function() {
-        $.colorbox({href:winnerboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:winnerboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".winnerzoneboard" ).click(function() {
-        $.colorbox({href:winnerzoneboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:winnerzoneboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".streamerzoneboard" ).click(function() {
-        $.colorbox({href:streamerzoneboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:streamerzoneboard, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".readingclub" ).click(function() {
-        $.colorbox({href:"/reading-club", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"/reading-club", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( "#credits" ).click(function() {
-        $.colorbox({href:"/get-credits", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"/get-credits", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".cryptonews" ).click(function() {
-        $.colorbox({href:"https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".trends-news" ).click(function() {
-        $.colorbox({href:"https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     /*
@@ -1730,27 +1730,27 @@ $( document ).ready(function() {
     });*/
     
     $( ".latin-search" ).click(function() {
-        $.colorbox({href:"https://www.metacrawler.com/serp?q=LatinChain+Platform&sc=iLjHiOa0KXCr10", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://www.metacrawler.com/serp?q=LatinChain+Platform&sc=iLjHiOa0KXCr10", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".latin-dictionary" ).click(function() {
-        $.colorbox({href:"https://www.wiktionary.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://www.wiktionary.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".latin-books" ).click(function() {
-        $.colorbox({href:"https://www.wikibooks.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://www.wikibooks.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".latin-university" ).click(function() {
-        $.colorbox({href:"https://www.wikiversity.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://www.wikiversity.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".latin-academy" ).click(function() {
-        $.colorbox({href:"https://www.odoo.com/slides", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://www.odoo.com/slides", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".sport-results" ).click(function() {
-        $.colorbox({href:"https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     /*
@@ -1798,79 +1798,79 @@ $( document ).ready(function() {
     });*/
     
     $( ".show_status" ).click(function() {
-        $.colorbox({href:"/latinchain_x", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"/latinchain_x", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".chessinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Rules_of_chess", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Rules_of_chess", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".sudokuinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Sudoku", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Sudoku", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".snakeinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Snake_(video_game_genre)", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Snake_(video_game_genre)", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".tetrisinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Tetris", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".mahjonginfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".bubble-shooterinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Puzzle_Bobble", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Puzzle_Bobble", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".test-your-braininfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Concentration_(card_game)", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Concentration_(card_game)", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".15-puzzleinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/15_puzzle", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/15_puzzle", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".pingponginfo" ).click(function() {
-        $.colorbox({href:"https://en.m.wikipedia.org/wiki/Table_tennis", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.m.wikipedia.org/wiki/Table_tennis", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".checkersinfo" ).click(function() {
-        $.colorbox({href:"https://en.m.wikipedia.org/wiki/Checkers", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.m.wikipedia.org/wiki/Checkers", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".xiangqiinfo" ).click(function() {
-        $.colorbox({href:"https://en.m.wikipedia.org/wiki/Xiangqi", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.m.wikipedia.org/wiki/Xiangqi", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".dominoinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Dominoes", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Dominoes", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".latincrushinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Candy_Crush_Saga", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Candy_Crush_Saga", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".soccer-penaltyinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".webtorrentinfo" ).click(function() {
-        $.colorbox({href:"https://en.wikipedia.org/wiki/WebTorrent", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/WebTorrent", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".cointelegraph" ).click(function() {
-        $.colorbox({href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".tvonline" ).click(function() {
-        $.colorbox({href:"https://trends.latin-chain.com/plutotv/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/plutotv/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".latinchain-ecosystem" ).click(function() {
-        $.colorbox({href:"https://ecosystem.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".search-apps" ).keyup(function() {
