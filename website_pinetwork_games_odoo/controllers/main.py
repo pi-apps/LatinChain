@@ -47,8 +47,6 @@ class Website(Website):
             points_latin_amount = 1
             pi_ad_hours = 0
             pi_ad_max = 0
-            discount_active = False
-            discount_percentage = False
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -706,6 +704,8 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = ""
             a_ads_style_3 = ""
             mainnet = ""
+            discount_active = False
+            discount_percentage = False
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -721,10 +721,12 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = admin_app_list[0].a_ads_data_3
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
+            discount_active = admin_app_list[0].discount_active
+            discount_percentage = admin_app_list[0].discount_percentage
         
         onlymainnet = False
         
-        return http.request.render('website_pinetwork_games_odoo.latinchain_mainnet_redirect', {'onlymainnet': onlymainnet, 'amount_latin_pay': amount_latin_pay, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.latinchain_mainnet_redirect', {'onlymainnet': onlymainnet, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_latin_pay': amount_latin_pay, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/latinchain-onlymainnet-redirect', type='http', auth="public", website=True, csrf=False)
     def latinchain_onlymainnet_redirect(self, **kw):

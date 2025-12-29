@@ -105,6 +105,10 @@
                         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                         
+                        <link rel="stylesheet" href="/website_pinetwork_games_odoo/static/src/modals/colorbox/example3/colorbox.css" />
+            
+                        <script id="colorbox-lib" src="/website_pinetwork_games_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
+                        
                         <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                         
                         <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
@@ -142,6 +146,10 @@
                                 $(".openMainnetModal").click(function(){
                                     $(".modal-body").html($("#open_mainnet_message").html());
                                     $("#open_modal").click();
+                                });
+                                
+                                $( ".latinchain-ecosystem" ).click(function() {
+                                    $.colorbox({href:"https://ecosystem.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
                                 });
                             });
                         </script>
@@ -190,6 +198,26 @@
                             <div class="row">
                                 <div style="margin-bottom:10px" t-if="onlymainnet" class="col-12">
                                     <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="col-12 href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no"><div style="display: inline">DONATE</div> <div style="display: inline">(UNLOCK)</div></div><div style="font-size:80%;" translate="no"><div style="display: inline">Earn Latin points (<t t-esc="amount_latin_pay" />)</div> <div style="display: inline">(Mainnet)</div></div></strong></a>
+                                </div>
+                                
+                                <div style="margin-bottom:10px" class="col-12">
+                                    <div t-if="discount_active and discount_percentage" style="margin-bottom:5px; padding:1px; width: 100%; text-align: center" class="border-gradient-rounded">
+                                        <div style="margin-bottom:5px" class="border-bottom">
+                                            <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SeasonalDiscount <t t-esc="discount_percentage"/>%</div></strong></h5>
+                                        </div>
+                                        <div style="margin-bottom:5px">
+                                            <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="margin-bottom:5px; padding:1px; width: 100%; text-align: center" class="border-gradient-rounded">
+                                        <div style="margin-bottom:5px" class="border-bottom">
+                                            <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#HolidaySeasonCollection</div></strong></h5>
+                                        </div>
+                                        <div style="margin-bottom:5px">
+                                            <img src="/website_pinetwork_games_odoo/static/src/img/latinchain-ecosystem.png?v=1.102" alt="LatinChain Collectible Ecosystem" class="img-fluid latinchain-ecosystem" style="cursor: pointer; max-width: 350px; border-radius: 20px;" width="100%" height="200px" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!--<br/>
