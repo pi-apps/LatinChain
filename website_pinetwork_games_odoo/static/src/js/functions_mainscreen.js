@@ -1455,10 +1455,12 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
+                            /*
                             if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 colorboxLoadedMainnet();
                             }
+                            */
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
