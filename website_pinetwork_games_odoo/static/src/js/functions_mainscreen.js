@@ -1455,7 +1455,7 @@ $( document ).ready(function() {
                                 showRewardedPiAd();
                             });
                             
-                            if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 colorboxLoadedMainnet();
                             }
