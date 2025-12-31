@@ -930,6 +930,10 @@ $( document ).ready(function() {
     $( ".partners" ).click(function() {
         $.colorbox({fixed: true, href:"/latinchain-partners/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
+    
+    $( ".latinchain-token" ).click(function() {
+        $.colorbox({fixed: true, href:"/latinchain-token/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
 
     /*(adsbygoogle = window.adsbygoogle || []).push({});
     (adsbygoogle = window.adsbygoogle || []).push({});
