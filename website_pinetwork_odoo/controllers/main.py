@@ -1795,57 +1795,63 @@ class PiNetworkBaseController(http.Controller):
         else:
             if admin_app_list[0].mainnet in ["Mainnet ON"]:
                 #FOR MAINNET
-                pi_toml = """NETWORK_PASSPHRASE = "Pi Mainnet"
-VERSION = "2.1.0"
+                pi_toml = """
+                    NETWORK_PASSPHRASE = "Pi Mainnet"
+                    VERSION = "2.1.0"
 
-[DOCUMENTATION]
-ORG_NAME = "LatinChain Platform"
-ORG_URL = "https://latin-chain.com"
-ORG_LOGO = "https://latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.png"
-ORG_DESCRIPTION = "Latin gaming app on the Pi Network"
+                    [DOCUMENTATION]
+                    ORG_NAME = "LatinChain Platform"
+                    ORG_URL = "https://latin-chain.com"
+                    ORG_LOGO = "https://latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.png"
+                    ORG_DESCRIPTION = "Latin gaming app on the Pi Network"
 
-# Official Accounts
-ACCOUNTS = [
-  "",  # Issuer
-  ""   # Distribution
-]
+                    # Official Accounts
+                    ACCOUNTS = [
+                      "",  # Issuer
+                      ""   # Distribution
+                    ]
 
-[[CURRENCIES]]
-code="LatinChain"
-issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
-name="LatinChain Token"
-desc="Token for LatinChain Platform on Mainnet."
-image="https://latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.png"
-status = "live"            # change to "live" after Mainnet launch
-display_decimals = 7
-conditions = "Not yet available for Pi Mainnet." """
+                    [[CURRENCIES]]
+                    code="LatinChain"
+                    issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
+                    name="LatinChain Token"
+                    desc="Token for LatinChain Platform on Mainnet."
+                    image="https://latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.png"
+                    status = "live"            # change to "live" after Mainnet launch
+                    display_decimals = 7
+                    conditions = "Not yet available for Pi Mainnet." 
+                """
 
             else:
                 #FOR TESTNET
-                pi_toml = """NETWORK_PASSPHRASE = "Pi Testnet"
-VERSION = "2.1.0"
+                pi_toml = """
+                    NETWORK_PASSPHRASE = "Pi Testnet"
+                    VERSION = "2.1.0"
 
-[DOCUMENTATION]
-ORG_NAME = "LatinChain Platform"
-ORG_URL = "https://latin-chain.com"
-ORG_LOGO = "https://latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.png"
-ORG_DESCRIPTION = "Latin gaming app on Pi Network"
+                    [DOCUMENTATION]
+                    ORG_NAME = "LatinChain Platform"
+                    ORG_URL = "https://latin-chain.com"
+                    ORG_LOGO = "https://latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.png"
+                    ORG_DESCRIPTION = "Latin gaming app on Pi Network"
 
-# Official Accounts
-ACCOUNTS = [
-  "GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5",  # Issuer
-  "GATM5ZWJTTMZBDCGDZJNYMTC2IUMTXC7I2VXIBXHVOCALUYWC5U4LXXO"   # Distribution
-]
+                    # Official Accounts
+                    ACCOUNTS = [
+                      "GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5",  # Issuer
+                      "GATM5ZWJTTMZBDCGDZJNYMTC2IUMTXC7I2VXIBXHVOCALUYWC5U4LXXO"   # Distribution
+                    ]
 
-[[CURRENCIES]]
-code="LatinChain"
-issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
-name="LatinChain Token"
-desc="Token for LatinChain Platform on Testnet and has no value."
-image="https://test.latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.png"
-status = "test"            # change to "live" after Mainnet launch
-display_decimals = 7
-conditions = "Available for Pi Testnet educational and utility purposes." """
+                    [[CURRENCIES]]
+                    code="LatinChain"
+                    issuer="GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
+                    name="LatinChain Token"
+                    desc="Token for LatinChain Platform on Testnet and has no value."
+                    image="https://test.latin-chain.com/website_pinetwork_odoo/static/src/img/latin-chain-logo.png"
+                    status = "test"            # change to "live" after Mainnet launch
+                    display_decimals = 7
+                    conditions = "Available for Pi Testnet educational and utility purposes." 
+                """
+
+        pi_toml = textwrap.dedent(pi_toml).strip()
 
         headers = {'Content-Type': 'text; charset=UTF-8'}
         return Response(pi_toml, headers=headers)
