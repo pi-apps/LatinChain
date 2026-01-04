@@ -1295,6 +1295,8 @@
                         <!--
                         Jackpot to pay to winners: <strong><t t-esc="pi_users_winners_to_pay" /> Pi / <t t-esc="pi_users_winners_count" /></strong><br/><br/>
                         -->
+                        <div style="margin-bottom:5px" translate="no">#Comment #Like #Share #Follow</div>
+                        
                         <div class="accordion" id="accordionExample">
                           <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
