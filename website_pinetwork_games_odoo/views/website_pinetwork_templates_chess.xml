@@ -61,218 +61,205 @@
 
                 </head>
 
-                <body bgcolor="#ffffff" style="text-align: center; height: 100%; overflow: hidden; margin: 0;">
-                    <div class="o_scroll_wrapper" id="o_scroll_wrapper" style="height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+                <body bgcolor="#ffffff" style="text-align: center; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; margin: 0;">
                     
-                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
-                        <input type="hidden" id="amount" t-att-value="amount"/>
-                        <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
-                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
-                        <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
-                        <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
-                        <div id="points_message" style="display:none;"> points.</div>
-                        <div id="unblocked_message" style="display:none;">Thank you for your donation. You were unblocked.</div>
-                        <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
-                        <div id="payment_lessthan_message" style="display:none;">You can't pay less than </div>
-                        <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
-                        <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game. Only if you are verified.</div>
-                        <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="amount" t-att-value="amount"/>
+                    <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
+                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                    <div id="clear_cache_message" style="display:none;">Are you sure you want to Clear Cache?, it will reloads the page.</div>
+                    <div id="back_message" style="display:none;">Are you sure you want to go back?.</div>
+                    <div id="points_message" style="display:none;"> points.</div>
+                    <div id="unblocked_message" style="display:none;">Thank you for your donation. You were unblocked.</div>
+                    <div id="payment_message" style="display:none;">A payment was registered. Reload the page to view the changes.</div>
+                    <div id="payment_lessthan_message" style="display:none;">You can't pay less than </div>
+                    <div id="notclose_message" style="display:none;">Alert!: In the following process don't close your Browser or you will lose your payment!</div>
+                    <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game. Only if you are verified.</div>
+                    <div id="modal_login_latinchain_v2_message" style="display:none;">¿Do you want to Login on LatinChain Platform?</div>
+                    
+                    <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
+                    <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
+                    <div class="content" style="text-align: center">
+                        <div class="container text-center" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                         
-                        <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
-                        <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
-                        <div class="content" style="text-align: center">
-                            <div class="container text-center" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                            
-                                <!-- LatinChain Ad responsive -->
-                                <br/>
-                                <ins class="adsbygoogle"
-                                     style="display:block"
-                                     data-ad-client="ca-pub-2334449220276386"
-                                     data-ad-slot="6625994850"
-                                     data-ad-format="auto"
-                                     data-full-width-responsive="true"></ins>
-                                <script>
-                                     (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
-                                
-                                
-                                <!--<br/>
-                                <div id="taboola-mid-article-thumbnails"></div>
-                                <script type="text/javascript">
-                                  window._taboola = window._taboola || [];
-                                  _taboola.push({
-                                    mode: 'alternating-thumbnails-a-mid',
-                                    container: 'taboola-mid-article-thumbnails',
-                                    placement: 'Mid Article Thumbnails',
-                                    target_type: 'mix'
-                                  });
-                                </script>-->
-                            
-                            </div>
-                            <style>
-                                .sticky {
-                                  position: fixed;
-                                  top: 0;
-                                  width: 100%;
-                                  z-index:99999;
-                                }
-                                #translate_text_latinchain
-                                {
-                                  margin-top: 50px !important;
-                                }
-                                
-                                .nav-pills > .nav-item > .active {
-                                    background-color: #198754;
-                                }
-                                #game-state {
-                                    background-color: blue !important;
-                                    color: white !important;
-                                    padding: 3px !important;
-                                }
-                            </style>
-                            
-                            <style>    
-                                 /* The side navigation menu */
-                                .sidenav {
-                                  height: 100%; /* 100% Full-height */
-                                  width: 0; /* 0 width - change this with JavaScript */
-                                  position: fixed; /* Stay in place */
-                                  z-index: 1; /* Stay on top */
-                                  top: 0; /* Stay at the top */
-                                  left: 0;
-                                  background-color: #111; /* Black*/
-                                  overflow-x: hidden; /* Disable horizontal scroll */
-                                  padding-top: 60px; /* Place content 60px from the top */
-                                  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-                                }
-
-                                /* The navigation menu links */
-                                .sidenav a {
-                                  padding: 8px 8px 8px 32px;
-                                  text-decoration: none;
-                                  font-size: 25px;
-                                  color: #818181;
-                                  display: block;
-                                  transition: 0.3s;
-                                }
-
-                                /* When you mouse over the navigation links, change their color */
-                                .sidenav a:hover {
-                                  color: #f1f1f1;
-                                }
-
-                                /* Position and style the close button (top right corner) */
-                                .sidenav .closebtn {
-                                  position: absolute;
-                                  top: 0;
-                                  right: 25px;
-                                  font-size: 36px;
-                                  margin-left: 50px;
-                                }
-
-                                /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-                                @media screen and (max-height: 450px) {
-                                  .sidenav {padding-top: 15px;}
-                                  .sidenav a {font-size: 18px;}
-                                } 
-                            </style>
-                            
+                            <!-- LatinChain Ad responsive -->
+                            <br/>
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-2334449220276386"
+                                 data-ad-slot="6625994850"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
                             <script>
-                                /* Set the width of the side navigation to 250px */
-                                var open_nav = false;
-                                function openNav() {
-                                  if(!open_nav)
-                                  {
-                                      document.getElementById("mySidenav").style.width = "250px";
-                                      open_nav = true;
-                                  }else
-                                  {
-                                      document.getElementById("mySidenav").style.width = "0";
-                                      open_nav = false;
-                                  }
-                                }
-
-                                /* Set the width of the side navigation to 0 */
-                                function closeNav() {
-                                  document.getElementById("mySidenav").style.width = "0";
-                                  open_nav = false;
-                                } 
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                             
-                            <div id="mySidenav" class="sidenav">
-                              <div style="margin-top:50px"></div>
-                              <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" style="margin-top:50px !important"><i class="fa-solid fa-x"></i></a>
-                              <a href="javascript:void(0);"><button style="margin-left:5px; height:100%" class="clear_cache btn btn-info"><div style="display:inline;"><i class="fa fa-refresh"></i></div> <div style="display:inline;">Clear Cache</div></button></a>
-                              <a href="javascript:void(0);"><button style="margin-left:5px; height:100%" class="back btn btn-info"><div style="display:inline;"><i class="fa fa-step-backward"></i></div> <div style="display:inline;">Back</div></button></a>
-                              <a href="javascript:void(0);"><button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
-                                            <div style="display:inline;"><i id="play" class="fa fa-volume-off"></i></div> <div style="display:inline;">Music</div>
-                                          </button>
-                              </a>
-                            </div>
+                            
+                            <!--<br/>
+                            <div id="taboola-mid-article-thumbnails"></div>
+                            <script type="text/javascript">
+                              window._taboola = window._taboola || [];
+                              _taboola.push({
+                                mode: 'alternating-thumbnails-a-mid',
+                                container: 'taboola-mid-article-thumbnails',
+                                placement: 'Mid Article Thumbnails',
+                                target_type: 'mix'
+                              });
+                            </script>-->
+                        
+                        </div>
+                        <style>
+                            .sticky {
+                              position: fixed;
+                              top: 0;
+                              width: 100%;
+                              z-index:99999;
+                            }
+                            #translate_text_latinchain
+                            {
+                              margin-top: 50px !important;
+                            }
+                            
+                            .nav-pills > .nav-item > .active {
+                                background-color: #198754;
+                            }
+                            #game-state {
+                                background-color: blue !important;
+                                color: white !important;
+                                padding: 3px !important;
+                            }
+                        </style>
+                        
+                        <style>    
+                             /* The side navigation menu */
+                            .sidenav {
+                              height: 100%; /* 100% Full-height */
+                              width: 0; /* 0 width - change this with JavaScript */
+                              position: fixed; /* Stay in place */
+                              z-index: 1; /* Stay on top */
+                              top: 0; /* Stay at the top */
+                              left: 0;
+                              background-color: #111; /* Black*/
+                              overflow-x: hidden; /* Disable horizontal scroll */
+                              padding-top: 60px; /* Place content 60px from the top */
+                              transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+                            }
 
-                            <ul class="nav nav-pills justify-content-center sticky" id="myTab" role="tablist" style="background-color: #e3f2fd;" translate="no">
-                              <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><i class="fa-solid fa-house"></i></button>
-                              </li>
-                              <li class="nav-item" role="presentation">
-                                <button style="display: none;" class="nav-link" id="chess-tab" data-bs-toggle="tab" data-bs-target="#chess" type="button" role="tab" aria-controls="chess" aria-selected="false"><i class="fa-solid fa-chess-knight"></i><span id="counter_span"></span></button>
-                              </li>
-                              
-                              <li><button style="margin-left:5px; height:100%" class="btn btn-info" onclick="openNav()"><i class="fa-solid fa-bars"></i></button></li>
-                              
-                              <li>
-                                  <button id="gained_points" style="margin-left:5px; height:100%; display:none" class="btn btn-info">
-                                    <i class="fa fa-level-up"></i>
-                                  </button>
-                              </li>
-                              <li>
-                                  <button id="x2_game" style="margin-left:5px; height:100%; display:none" class="btn btn-info">
-                                    <i class="fa-solid fa-plug-circle-bolt"></i>x2
-                                  </button>
-                              </li>
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="-webkit-transition: none !important; transition: none !important;">
-                                    <div class="content" style="text-align:center;">
-                                        <div align="center" class="container" style="text-align:center; max-width:840px">
-                                            <!-- LatinChain Ad responsive -->
-                                            <!--
-                                            <br/>
-                                            <ins class="adsbygoogle"
-                                                 style="display:block"
-                                                 data-ad-client="ca-pub-2334449220276386"
-                                                 data-ad-slot="6625994850"
-                                                 data-ad-format="auto"
-                                                 data-full-width-responsive="true"></ins>
-                                            -->
-                                            <!--
-                                            <br/>
-                                            
-                                            <ins class="adsbygoogle"
-                                                 style="display:block"
-                                                 data-ad-format="fluid"
-                                                 data-ad-layout-key="-gc+4r+1p-d0+h0"
-                                                 data-ad-client="ca-pub-2334449220276386"
-                                                 data-ad-slot="6758976353"></ins>-->
-                                            <!--<strong>Publicity:</strong>-->
-                                            
-                                            
-                                            
-                                            <div align="center" style="text-align:center">
-                                                <!--<br/>
-                                                <script type="text/javascript">
-                                                    atOptions = {
-                                                        'key' : 'b3626277f6615b27c340298a132b7897',
-                                                        'format' : 'iframe',
-                                                        'height' : 250,
-                                                        'width' : 300,
-                                                        'params' : {}
-                                                    };
-                                                </script>
-                                                <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>-->
-                                                <!--<iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>-->
-                                            </div>
-                                            <!--<script type="text/javascript">
+                            /* The navigation menu links */
+                            .sidenav a {
+                              padding: 8px 8px 8px 32px;
+                              text-decoration: none;
+                              font-size: 25px;
+                              color: #818181;
+                              display: block;
+                              transition: 0.3s;
+                            }
+
+                            /* When you mouse over the navigation links, change their color */
+                            .sidenav a:hover {
+                              color: #f1f1f1;
+                            }
+
+                            /* Position and style the close button (top right corner) */
+                            .sidenav .closebtn {
+                              position: absolute;
+                              top: 0;
+                              right: 25px;
+                              font-size: 36px;
+                              margin-left: 50px;
+                            }
+
+                            /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+                            @media screen and (max-height: 450px) {
+                              .sidenav {padding-top: 15px;}
+                              .sidenav a {font-size: 18px;}
+                            } 
+                        </style>
+                        
+                        <script>
+                            /* Set the width of the side navigation to 250px */
+                            var open_nav = false;
+                            function openNav() {
+                              if(!open_nav)
+                              {
+                                  document.getElementById("mySidenav").style.width = "250px";
+                                  open_nav = true;
+                              }else
+                              {
+                                  document.getElementById("mySidenav").style.width = "0";
+                                  open_nav = false;
+                              }
+                            }
+
+                            /* Set the width of the side navigation to 0 */
+                            function closeNav() {
+                              document.getElementById("mySidenav").style.width = "0";
+                              open_nav = false;
+                            } 
+                        </script>
+                        
+                        <div id="mySidenav" class="sidenav">
+                          <div style="margin-top:50px"></div>
+                          <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" style="margin-top:50px !important"><i class="fa-solid fa-x"></i></a>
+                          <a href="javascript:void(0);"><button style="margin-left:5px; height:100%" class="clear_cache btn btn-info"><div style="display:inline;"><i class="fa fa-refresh"></i></div> <div style="display:inline;">Clear Cache</div></button></a>
+                          <a href="javascript:void(0);"><button style="margin-left:5px; height:100%" class="back btn btn-info"><div style="display:inline;"><i class="fa fa-step-backward"></i></div> <div style="display:inline;">Back</div></button></a>
+                          <a href="javascript:void(0);"><button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
+                                        <div style="display:inline;"><i id="play" class="fa fa-volume-off"></i></div> <div style="display:inline;">Music</div>
+                                      </button>
+                          </a>
+                        </div>
+
+                        <ul class="nav nav-pills justify-content-center sticky" id="myTab" role="tablist" style="background-color: #e3f2fd;" translate="no">
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><i class="fa-solid fa-house"></i></button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button style="display: none;" class="nav-link" id="chess-tab" data-bs-toggle="tab" data-bs-target="#chess" type="button" role="tab" aria-controls="chess" aria-selected="false"><i class="fa-solid fa-chess-knight"></i><span id="counter_span"></span></button>
+                          </li>
+                          
+                          <li><button style="margin-left:5px; height:100%" class="btn btn-info" onclick="openNav()"><i class="fa-solid fa-bars"></i></button></li>
+                          
+                          <li>
+                              <button id="gained_points" style="margin-left:5px; height:100%; display:none" class="btn btn-info">
+                                <i class="fa fa-level-up"></i>
+                              </button>
+                          </li>
+                          <li>
+                              <button id="x2_game" style="margin-left:5px; height:100%; display:none" class="btn btn-info">
+                                <i class="fa-solid fa-plug-circle-bolt"></i>x2
+                              </button>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="-webkit-transition: none !important; transition: none !important;">
+                                <div class="content" style="text-align:center;">
+                                    <div align="center" class="container" style="text-align:center; max-width:840px">
+                                        <!-- LatinChain Ad responsive -->
+                                        <!--
+                                        <br/>
+                                        <ins class="adsbygoogle"
+                                             style="display:block"
+                                             data-ad-client="ca-pub-2334449220276386"
+                                             data-ad-slot="6625994850"
+                                             data-ad-format="auto"
+                                             data-full-width-responsive="true"></ins>
+                                        -->
+                                        <!--
+                                        <br/>
+                                        
+                                        <ins class="adsbygoogle"
+                                             style="display:block"
+                                             data-ad-format="fluid"
+                                             data-ad-layout-key="-gc+4r+1p-d0+h0"
+                                             data-ad-client="ca-pub-2334449220276386"
+                                             data-ad-slot="6758976353"></ins>-->
+                                        <!--<strong>Publicity:</strong>-->
+                                        
+                                        
+                                        
+                                        <div align="center" style="text-align:center">
+                                            <!--<br/>
+                                            <script type="text/javascript">
                                                 atOptions = {
                                                     'key' : 'b3626277f6615b27c340298a132b7897',
                                                     'format' : 'iframe',
@@ -281,539 +268,550 @@
                                                     'params' : {}
                                                 };
                                             </script>
-                                            <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
+                                            <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>-->
+                                            <!--<iframe id="a-ads" t-att-data-aa='a_ads_data' src="" t-att-style='a_ads_style'></iframe>-->
+                                        </div>
+                                        <!--<script type="text/javascript">
+                                            atOptions = {
+                                                'key' : 'b3626277f6615b27c340298a132b7897',
+                                                'format' : 'iframe',
+                                                'height' : 250,
+                                                'width' : 300,
+                                                'params' : {}
+                                            };
+                                        </script>
+                                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/b3626277f6615b27c340298a132b7897/invoke.js"></script>
+                                        <br/>
+                                        <script type="text/javascript">
+                                            atOptions = {
+                                                'key' : '1771e7291ef3d0a686ff7e2bb191f557',
+                                                'format' : 'iframe',
+                                                'height' : 50,
+                                                'width' : 320,
+                                                'params' : {}
+                                            };
+                                        </script>
+                                        <script type="text/javascript" src="https://www.effectivecreativeformat.com/1771e7291ef3d0a686ff7e2bb191f557/invoke.js"></script>
+                                        <br/>-->
+                                        <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
+                                        <br/>
+                                        <img class="rounded" width="80" height="80" src="/website_pinetwork_games_odoo/static/src/chess/img/icons/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
+                                        <h1 align="center" style="font-weight:600">Chess</h1>
+                                        
+                                        <div class="loading_section" style="margin-bottom:10px;">
                                             <br/>
-                                            <script type="text/javascript">
-                                                atOptions = {
-                                                    'key' : '1771e7291ef3d0a686ff7e2bb191f557',
-                                                    'format' : 'iframe',
-                                                    'height' : 50,
-                                                    'width' : 320,
-                                                    'params' : {}
-                                                };
-                                            </script>
-                                            <script type="text/javascript" src="https://www.effectivecreativeformat.com/1771e7291ef3d0a686ff7e2bb191f557/invoke.js"></script>
-                                            <br/>-->
-                                            <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
-                                            <br/>
-                                            <img class="rounded" width="80" height="80" src="/website_pinetwork_games_odoo/static/src/chess/img/icons/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
-                                            <h1 align="center" style="font-weight:600">Chess</h1>
-                                            
-                                            <div class="loading_section" style="margin-bottom:10px;">
-                                                <br/>
-                                                <span id="loading_word" style="display: none;">Loading...</span>
+                                            <span id="loading_word" style="display: none;">Loading...</span>
+                                        </div>
+                                        
+                                        <div style="margin-bottom:5px; padding:5px; padding-top:10px; padding-bottom:10px; width: 100%;" class="border-gradient-rounded">
+                                        
+                                            <div class="p-3 mb-2 bg-info bg-gradient text-black rounded border border-1 border-white" style="filter: contrast(100%) !important;">
+                                              <h2 align="center" style="color:#000000 !important;">Play Chess against the best AI Chess Player (Stockfish) using Pi cryptocurrency</h2>
                                             </div>
-                                            
-                                            <div style="margin-bottom:5px; padding:5px; padding-top:10px; padding-bottom:10px; width: 100%;" class="border-gradient-rounded">
-                                            
-                                                <div class="p-3 mb-2 bg-info bg-gradient text-black rounded border border-1 border-white" style="filter: contrast(100%) !important;">
-                                                  <h2 align="center" style="color:#000000 !important;">Play Chess against the best AI Chess Player (Stockfish) using Pi cryptocurrency</h2>
-                                                </div>
-                                                <br />
-                                            
-                                                <div style="text-align:center" class="form-group container">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>
-                                                            <button id="back" class="btn btn-info back" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button><br/>
-                                                            <div class="hide_when_unblock">
-                                                                <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
+                                            <br />
+                                        
+                                            <div style="text-align:center" class="form-group container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <button id="clear_cache" class="btn btn-info clear_cache"><i class="fa fa-refresh"></i></button>
+                                                        <button id="back" class="btn btn-info back" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button><br/>
+                                                        <div class="hide_when_unblock">
+                                                            <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
+                                                            <br/>
+                                                            <button id="button_click" name="button_click" class="btn btn-success fw-bold" disabled="true"><div><i class="fa-solid fa-money-bill-transfer"></i></div><div>Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></button>
+                                                            <div class="show_test_app" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                                 <br/>
-                                                                <button id="button_click" name="button_click" class="btn btn-success fw-bold" disabled="true"><div><i class="fa-solid fa-money-bill-transfer"></i></div><div>Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></button>
-                                                                <div class="show_test_app" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                                    <br/>
-                                                                    <button id="test_app" name="test_app" class="btn btn-success fw-bold" disabled="true"><div><i class="fa-solid fa-flask-vial"></i></div><div>Test app</div></button>
-                                                                </div>
+                                                                <button id="test_app" name="test_app" class="btn btn-success fw-bold" disabled="true"><div><i class="fa-solid fa-flask-vial"></i></div><div>Test app</div></button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <br/>
-                                            <!--<ins class="adsbygoogle"
-                                                 style="display:block"
-                                                 data-ad-format="fluid"
-                                                 data-ad-layout-key="-gc+4r+1p-d0+h0"
-                                                 data-ad-client="ca-pub-2334449220276386"
-                                                 data-ad-slot="6758976353"></ins>-->
-                                            <!--<ins class="adsbygoogle"
-                                                 style="display:block"
-                                                 data-ad-format="autorelaxed"
-                                                 data-ad-client="ca-pub-2334449220276386"
-                                                 data-ad-slot="1794208680"></ins>-->
-                                            <!--<br/>
-                                            <iframe id="a-ads_3" t-att-data-aa='a_ads_data_3' src="" t-att-style='a_ads_style_3'></iframe>-->
-                                            
-                                            
-                                            <div style="text-align:center; display:none">
-                                                <!--<br/>Crypto news:<br/><br/>
-                                                <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
-                                                -->
-                                                <br/><br/>LatinChain TV:<br/><br/>
-                                                <!--<div>Subscribe here:</div>
-                                                <div style="filter: contrast(100%) !important;">
-                                                &#128073;
-                                                <a href="https://www.youtube.com/@rockcesar85" target="_blank">
-                                                    <img src="/website_pinetwork_games_odoo/static/src/img/youtube.png" alt="Youtube" class="img-fluid" style="max-width: 130px" width="100%" height="50px" />
-                                                </a>
-                                                &#128072;
-                                                </div>-->
-                                                <iframe id="latinchain-tv" class="rounded" style="max-width: 350px" width="100%" height="200px" src="https://www.youtube.com/embed/videoseries?si=P8GjW-mFvDJaQr5o&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
-                                            </div>
-                                            
-                                            <div style="text-align:center; display:none">
-                                                <!--<br/>Crypto news:<br/><br/>
-                                                <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
-                                                -->
-                                                <br/><br/>Enjoy:<br/><br/>
-                                                <iframe id="tiesto" class="rounded" style="text-align:center; max-width: 350px" width="100%" height="200px" src="https://www.youtube.com/embed/videoseries?si=gFrL8BcOj_l3kXAf&amp;list=PLmedLgLFYxR2PhV-bmZ6spZ73etMbPSUq" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
-                                            </div>
-                                            
-                                            <style>
-                                            .cont { text-align:center; font-size:30px}
-
-                                            </style>
-                                            <!--
-                                            <br/>
-                                            <ins class="adsbygoogle"
-                                                 style="display:block"
-                                                 data-ad-client="ca-pub-2334449220276386"
-                                                 data-ad-slot="6625994850"
-                                                 data-ad-format="auto"
-                                                 data-full-width-responsive="true"></ins>
+                                        </div>
+                                        <br/>
+                                        <!--<ins class="adsbygoogle"
+                                             style="display:block"
+                                             data-ad-format="fluid"
+                                             data-ad-layout-key="-gc+4r+1p-d0+h0"
+                                             data-ad-client="ca-pub-2334449220276386"
+                                             data-ad-slot="6758976353"></ins>-->
+                                        <!--<ins class="adsbygoogle"
+                                             style="display:block"
+                                             data-ad-format="autorelaxed"
+                                             data-ad-client="ca-pub-2334449220276386"
+                                             data-ad-slot="1794208680"></ins>-->
+                                        <!--<br/>
+                                        <iframe id="a-ads_3" t-att-data-aa='a_ads_data_3' src="" t-att-style='a_ads_style_3'></iframe>-->
+                                        
+                                        
+                                        <div style="text-align:center; display:none">
+                                            <!--<br/>Crypto news:<br/><br/>
+                                            <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
                                             -->
-                                            
-                                            
-                                            
+                                            <br/><br/>LatinChain TV:<br/><br/>
+                                            <!--<div>Subscribe here:</div>
+                                            <div style="filter: contrast(100%) !important;">
+                                            &#128073;
+                                            <a href="https://www.youtube.com/@rockcesar85" target="_blank">
+                                                <img src="/website_pinetwork_games_odoo/static/src/img/youtube.png" alt="Youtube" class="img-fluid" style="max-width: 130px" width="100%" height="50px" />
+                                            </a>
+                                            &#128072;
+                                            </div>-->
+                                            <iframe id="latinchain-tv" class="rounded" style="max-width: 350px" width="100%" height="200px" src="https://www.youtube.com/embed/videoseries?si=P8GjW-mFvDJaQr5o&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
                                         </div>
+                                        
+                                        <div style="text-align:center; display:none">
+                                            <!--<br/>Crypto news:<br/><br/>
+                                            <iframe id="crypto_news" width="300px" height="170px" src="https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                                            -->
+                                            <br/><br/>Enjoy:<br/><br/>
+                                            <iframe id="tiesto" class="rounded" style="text-align:center; max-width: 350px" width="100%" height="200px" src="https://www.youtube.com/embed/videoseries?si=gFrL8BcOj_l3kXAf&amp;list=PLmedLgLFYxR2PhV-bmZ6spZ73etMbPSUq" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1"></iframe>
+                                        </div>
+                                        
+                                        <style>
+                                        .cont { text-align:center; font-size:30px}
+
+                                        </style>
+                                        <!--
+                                        <br/>
+                                        <ins class="adsbygoogle"
+                                             style="display:block"
+                                             data-ad-client="ca-pub-2334449220276386"
+                                             data-ad-slot="6625994850"
+                                             data-ad-format="auto"
+                                             data-full-width-responsive="true"></ins>
+                                        -->
+                                        
+                                        
+                                        
                                     </div>
-                                    <br/><br/>
-                                    
                                 </div>
-                                  <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab" style="-webkit-transition: none !important; transition: none !important;">
-                                      <!--<span t-if="mainnet != 'Mainnet ON'">-->
-                                      <div align="center" class="container" style="text-align:center; max-width:840px">
-                                          <!--<br/>
-                                              <ins class="adsbygoogle"
-                                                 style="display:block"
-                                                 data-ad-client="ca-pub-2334449220276386"
-                                                 data-ad-slot="6625994850"
-                                                 data-ad-format="auto"
-                                                 data-full-width-responsive="true"></ins>
-                                          
-                                          <br/>
-                                              <div id="taboola-mid-article-thumbnails-2"></div>
-                                                <script type="text/javascript">
-                                                  window._taboola = window._taboola || [];
-                                                  _taboola.push({
-                                                    mode: 'alternating-thumbnails-a-mid',
-                                                    container: 'taboola-mid-article-thumbnails-2',
-                                                    placement: 'Mid Article Thumbnails 2',
-                                                    target_type: 'mix'
-                                                  });
-                                                </script>
-                                          -->    
-                                              
-                              
-                                      </div>
-                                      <!--</span>-->
+                                <br/><br/>
+                                
+                            </div>
+                              <div class="tab-pane fade show" id="chess" role="tabpanel" aria-labelledby="chess-tab" style="-webkit-transition: none !important; transition: none !important;">
+                                  <!--<span t-if="mainnet != 'Mainnet ON'">-->
+                                  <div align="center" class="container" style="text-align:center; max-width:840px">
+                                      <!--<br/>
+                                          <ins class="adsbygoogle"
+                                             style="display:block"
+                                             data-ad-client="ca-pub-2334449220276386"
+                                             data-ad-slot="6625994850"
+                                             data-ad-format="auto"
+                                             data-full-width-responsive="true"></ins>
+                                      
                                       <br/>
-                                    <div class="container" style="text-align:center; max-width:840px">
-                                        <div style="text-align: center">
-                                            <div class="row justify-content-center" style="">
-                                                <div class="col-12">
-                                                <h1 style="font-weight:600;">Chess</h1>
-                                                </div>
-                                            </div><br/>
-                                            <div class="row justify-content-center" style="">
-                                                <div class="col-12">
-                                                <h3>You want to promote as</h3>
-                                                <p class="row justify-content-center"><select id="promote_as" class="form-select" style="max-width: 200px">
-                                                     <option value="q" selected="true">Queen</option>
-                                                     <option value="b">Bishop</option>
-                                                     <option value="n">Knight</option>
-                                                     <option value="r">Rook</option>
-                                                   </select>
-                                                </p>
-                                                </div>
-                                            </div><br/>
-                                            <div class="row justify-content-center" style="">
-                                                <div class="cont col-6">
-                                                <h3>White</h3>
-                                                <p><button style="display:none;" class="btn btn-default" onClick="$('.timer_white').countimer('start');$('.timer_black').countimer('start');$('.timer_black').countimer('stop');">Start</button> <button style="display:none;" class="btn btn-warning" onClick="$('.timer_white').countimer('stop');$('.timer_black').countimer('resume');">Pause</button> </p>
-                                                <div class="timer_white well"></div>
-                                                </div>
-                                                <div class="cont col-6">
-                                                <h3>Black</h3>
-                                                <p><button style="display:none;" class="btn btn-warning" onClick="$('.timer_black').countimer('stop');$('.timer_white').countimer('resume');">Pause</button></p>
-                                                <div class="timer_black well"></div>
-                                                </div>
-                                            </div><br/>
-                                        </div>
-                                        <div class="row justify-content-center" style="">
-                                            <div class="col-12">
-                                                
-                                                <div class="chess-area">
-                                                    <div class="board-table">
-                                                        <div id="board-top-controls" class="top-controls">
-                                                            <div id="game-promotion" class="promotion hidden">
-                                                                <span figure="q">Queen</span>
-                                                                <span figure="b">Bishop</span>
-                                                                <span figure="n">Knight</span>
-                                                                <span figure="r">Rook</span>
-                                                            </div>
-                                                            <div id="board-save-pgn-area" class="popup hidden">
-                                                                <span class="close"></span>
-                                                                <label>Save PGN Notation:</label>
-                                                                <textarea readonly="true"></textarea>
-                                                                <button>Close</button>
-                                                            </div>
-                                                            <div id="board-load-fen-area" class="popup hidden">
-                                                                <span class="close"></span>
-                                                                <label>Load FEN Notation:</label>
-                                                                <textarea></textarea>
-                                                                <button>Load</button>
-                                                            </div>
-                                                            <div id="board-load-pgn-area" class="popup large hidden">
-                                                                <span class="close"></span>
-                                                                <label>Load PGN Notation:</label>
-                                                                <textarea></textarea>
-                                                                <button>Load</button>
-                                                            </div>
-                                                            <div id="board-resign-game-area" class="popup hidden">
-                                                                <span class="close"></span>
-                                                                <label>Do you want to resign?</label>
-                                                                <button class="yes">Yes</button>
-                                                                <button class="no">No</button>
-                                                            </div>
-                                                        </div>
-                                                        <div id="board" class="board" translate="no"></div>
-                                                        <div id="board-controls" class="controls">
-                                                            <div class="buttons">
-                                                                <button id="btn-switch-sides" class="" title="Switch Sides"><i class="icon"></i></button>
-                                                                <button id="btn-flip-board" title="Flip Board"><i class="icon"></i></button>
-                                                                <button id="btn-save-pgn" title="Save PNG"><i class="icon"></i></button>
-                                                                <button id="btn-engine-disable" class="disabled hidden" title="Engine Toggle (On/Off)">AI</button>
-                                                                <button id="btn-show-hint" class="disabled hidden" title="Show Hint"><i class="icon"></i></button>
-                                                                <button id="btn-take-back" class="disabled hidden" title="Take Back"><i class="icon"></i></button>
-                                                            </div>
-                                                            <div class="status">
-                                                                <!-- <span id="game-timer" class="hidden">00:00</span> -->
-                                                                <span id="game-turn" style="display: none;">It's your turn!</span>
-                                                                <span id="game-state" class="hidden"></span>
-                                                            </div>
-                                                            <div id="board-messages" class="messages hidden" style="display: none !important;"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="board-settings">
-                                                        <div class="apex">
-                                                            <span class="label-history">Game History</span>
-                                                            <div class="game-level" id="game-difficulty-option" title="Choose The Engine's Skill Level">
-                                                                <span class="label">Level</span>
-                                                                <span class="value" id="game-difficulty-skill-value">10</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="game-difficulty hidden" id="game-difficulty-skill-settings">
-                                                            <span class="label">Select Engine's Level:</span>
-                                                            <span class="close"></span>
-                                                            <div class="values">
-                                                                <span class="1">1</span>
-                                                                <span class="2">2</span>
-                                                                <span class="3">3</span>
-                                                                <span class="4">4</span>
-                                                                <span class="5">5</span>
-                                                                <span class="6">6</span>
-                                                                <span class="7">7</span>
-                                                                <span class="8">8</span>
-                                                                <span class="9">9</span>
-                                                                <span class="10 selected">10</span>
-                                                                <span class="11">11</span>
-                                                                <span class="12">12</span>
-                                                                <span class="13">13</span>
-                                                                <span class="14">14</span>
-                                                                <span class="15">15</span>
-                                                                <span class="16">16</span>
-                                                                <span class="17">17</span>
-                                                                <span class="18">18</span>
-                                                                <span class="19">19</span>
-                                                                <span class="20">20</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="turns-history" id="game-turns-history">
-                                                            <ol></ol>
-                                                        </div>
-                                                        <div class="game-analyze hidden" id="game-analyze-string"></div>
-                                                        <div class="game-menu hidden" id="game-settings">
-                                                            <span class="label-choose-side">Select Side</span>
-                                                            <span class="btn game-white-side selected" id="btn-choose-white-side"></span>
-                                                            <span class="btn game-black-side" id="btn-choose-black-side"></span>
-                                                        </div>
-                                                        <div class="tunes">
-                                                            <span id="btn-new-game" title="Start New Game" class="btn-new-game">
-                                                <span class="icon"></span>
-                                                            <span class="label">New Game</span>
-                                                            </span>
-                                                            <span id="btn-settings" title="Choose The Engine's Skill Level" class="btn settings"></span>
-                                                            <span id="btn-resign" title="Resign" class="btn resign"></span>
-                                                            <!--<span id="btn-analyze" style="display:none;" title="Request Engine Evaluation" class="btn analyze">
-                                                <i class="icon"></i>
-                                              </span>-->
-                                                        </div>
-                                                        <div class="params">
-                                                            <div class="cell side" id="game-player-side" style="display: none;">
-                                                                <label>Your Side:</label>
-                                                                <span class="white active">White</span>
-                                                                <span class="black">Black</span>
-                                                            </div>
-                                                            <div class="cell first-turn" id="game-first-turn" style="display: none;">
-                                                                <label>First Turn:</label>
-                                                                <span class="player active">Player</span>
-                                                                <span class="computer">Computer</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="chess-log"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                      <!--<div align="center" class="container" style="text-align:center">
-                                           <div id="taboola-below-article-thumbnails-2"></div>
+                                          <div id="taboola-mid-article-thumbnails-2"></div>
                                             <script type="text/javascript">
                                               window._taboola = window._taboola || [];
                                               _taboola.push({
-                                                mode: 'alternating-thumbnails-a',
-                                                container: 'taboola-below-article-thumbnails-2',
-                                                placement: 'Below Article Thumbnails 2',
+                                                mode: 'alternating-thumbnails-a-mid',
+                                                container: 'taboola-mid-article-thumbnails-2',
+                                                placement: 'Mid Article Thumbnails 2',
                                                 target_type: 'mix'
                                               });
                                             </script>
-                                      </div>-->
+                                      -->    
+                                          
+                          
+                                  </div>
+                                  <!--</span>-->
+                                  <br/>
+                                <div class="container" style="text-align:center; max-width:840px">
+                                    <div style="text-align: center">
+                                        <div class="row justify-content-center" style="">
+                                            <div class="col-12">
+                                            <h1 style="font-weight:600;">Chess</h1>
+                                            </div>
+                                        </div><br/>
+                                        <div class="row justify-content-center" style="">
+                                            <div class="col-12">
+                                            <h3>You want to promote as</h3>
+                                            <p class="row justify-content-center"><select id="promote_as" class="form-select" style="max-width: 200px">
+                                                 <option value="q" selected="true">Queen</option>
+                                                 <option value="b">Bishop</option>
+                                                 <option value="n">Knight</option>
+                                                 <option value="r">Rook</option>
+                                               </select>
+                                            </p>
+                                            </div>
+                                        </div><br/>
+                                        <div class="row justify-content-center" style="">
+                                            <div class="cont col-6">
+                                            <h3>White</h3>
+                                            <p><button style="display:none;" class="btn btn-default" onClick="$('.timer_white').countimer('start');$('.timer_black').countimer('start');$('.timer_black').countimer('stop');">Start</button> <button style="display:none;" class="btn btn-warning" onClick="$('.timer_white').countimer('stop');$('.timer_black').countimer('resume');">Pause</button> </p>
+                                            <div class="timer_white well"></div>
+                                            </div>
+                                            <div class="cont col-6">
+                                            <h3>Black</h3>
+                                            <p><button style="display:none;" class="btn btn-warning" onClick="$('.timer_black').countimer('stop');$('.timer_white').countimer('resume');">Pause</button></p>
+                                            <div class="timer_black well"></div>
+                                            </div>
+                                        </div><br/>
+                                    </div>
+                                    <div class="row justify-content-center" style="">
+                                        <div class="col-12">
+                                            
+                                            <div class="chess-area">
+                                                <div class="board-table">
+                                                    <div id="board-top-controls" class="top-controls">
+                                                        <div id="game-promotion" class="promotion hidden">
+                                                            <span figure="q">Queen</span>
+                                                            <span figure="b">Bishop</span>
+                                                            <span figure="n">Knight</span>
+                                                            <span figure="r">Rook</span>
+                                                        </div>
+                                                        <div id="board-save-pgn-area" class="popup hidden">
+                                                            <span class="close"></span>
+                                                            <label>Save PGN Notation:</label>
+                                                            <textarea readonly="true"></textarea>
+                                                            <button>Close</button>
+                                                        </div>
+                                                        <div id="board-load-fen-area" class="popup hidden">
+                                                            <span class="close"></span>
+                                                            <label>Load FEN Notation:</label>
+                                                            <textarea></textarea>
+                                                            <button>Load</button>
+                                                        </div>
+                                                        <div id="board-load-pgn-area" class="popup large hidden">
+                                                            <span class="close"></span>
+                                                            <label>Load PGN Notation:</label>
+                                                            <textarea></textarea>
+                                                            <button>Load</button>
+                                                        </div>
+                                                        <div id="board-resign-game-area" class="popup hidden">
+                                                            <span class="close"></span>
+                                                            <label>Do you want to resign?</label>
+                                                            <button class="yes">Yes</button>
+                                                            <button class="no">No</button>
+                                                        </div>
+                                                    </div>
+                                                    <div id="board" class="board" translate="no"></div>
+                                                    <div id="board-controls" class="controls">
+                                                        <div class="buttons">
+                                                            <button id="btn-switch-sides" class="" title="Switch Sides"><i class="icon"></i></button>
+                                                            <button id="btn-flip-board" title="Flip Board"><i class="icon"></i></button>
+                                                            <button id="btn-save-pgn" title="Save PNG"><i class="icon"></i></button>
+                                                            <button id="btn-engine-disable" class="disabled hidden" title="Engine Toggle (On/Off)">AI</button>
+                                                            <button id="btn-show-hint" class="disabled hidden" title="Show Hint"><i class="icon"></i></button>
+                                                            <button id="btn-take-back" class="disabled hidden" title="Take Back"><i class="icon"></i></button>
+                                                        </div>
+                                                        <div class="status">
+                                                            <!-- <span id="game-timer" class="hidden">00:00</span> -->
+                                                            <span id="game-turn" style="display: none;">It's your turn!</span>
+                                                            <span id="game-state" class="hidden"></span>
+                                                        </div>
+                                                        <div id="board-messages" class="messages hidden" style="display: none !important;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="board-settings">
+                                                    <div class="apex">
+                                                        <span class="label-history">Game History</span>
+                                                        <div class="game-level" id="game-difficulty-option" title="Choose The Engine's Skill Level">
+                                                            <span class="label">Level</span>
+                                                            <span class="value" id="game-difficulty-skill-value">10</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="game-difficulty hidden" id="game-difficulty-skill-settings">
+                                                        <span class="label">Select Engine's Level:</span>
+                                                        <span class="close"></span>
+                                                        <div class="values">
+                                                            <span class="1">1</span>
+                                                            <span class="2">2</span>
+                                                            <span class="3">3</span>
+                                                            <span class="4">4</span>
+                                                            <span class="5">5</span>
+                                                            <span class="6">6</span>
+                                                            <span class="7">7</span>
+                                                            <span class="8">8</span>
+                                                            <span class="9">9</span>
+                                                            <span class="10 selected">10</span>
+                                                            <span class="11">11</span>
+                                                            <span class="12">12</span>
+                                                            <span class="13">13</span>
+                                                            <span class="14">14</span>
+                                                            <span class="15">15</span>
+                                                            <span class="16">16</span>
+                                                            <span class="17">17</span>
+                                                            <span class="18">18</span>
+                                                            <span class="19">19</span>
+                                                            <span class="20">20</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="turns-history" id="game-turns-history">
+                                                        <ol></ol>
+                                                    </div>
+                                                    <div class="game-analyze hidden" id="game-analyze-string"></div>
+                                                    <div class="game-menu hidden" id="game-settings">
+                                                        <span class="label-choose-side">Select Side</span>
+                                                        <span class="btn game-white-side selected" id="btn-choose-white-side"></span>
+                                                        <span class="btn game-black-side" id="btn-choose-black-side"></span>
+                                                    </div>
+                                                    <div class="tunes">
+                                                        <span id="btn-new-game" title="Start New Game" class="btn-new-game">
+                                            <span class="icon"></span>
+                                                        <span class="label">New Game</span>
+                                                        </span>
+                                                        <span id="btn-settings" title="Choose The Engine's Skill Level" class="btn settings"></span>
+                                                        <span id="btn-resign" title="Resign" class="btn resign"></span>
+                                                        <!--<span id="btn-analyze" style="display:none;" title="Request Engine Evaluation" class="btn analyze">
+                                            <i class="icon"></i>
+                                          </span>-->
+                                                    </div>
+                                                    <div class="params">
+                                                        <div class="cell side" id="game-player-side" style="display: none;">
+                                                            <label>Your Side:</label>
+                                                            <span class="white active">White</span>
+                                                            <span class="black">Black</span>
+                                                        </div>
+                                                        <div class="cell first-turn" id="game-first-turn" style="display: none;">
+                                                            <label>First Turn:</label>
+                                                            <span class="player active">Player</span>
+                                                            <span class="computer">Computer</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chess-log"></div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <br/>
+                                  <!--<div align="center" class="container" style="text-align:center">
+                                       <div id="taboola-below-article-thumbnails-2"></div>
+                                        <script type="text/javascript">
+                                          window._taboola = window._taboola || [];
+                                          _taboola.push({
+                                            mode: 'alternating-thumbnails-a',
+                                            container: 'taboola-below-article-thumbnails-2',
+                                            placement: 'Below Article Thumbnails 2',
+                                            target_type: 'mix'
+                                          });
+                                        </script>
+                                  </div>-->
                             </div>
-                            <div class="container text-center" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                            
-                                <!-- LatinChain Ad responsive 2 -->
-                                
-                                <ins class="adsbygoogle"
-                                     style="display:block"
-                                     data-ad-client="ca-pub-2334449220276386"
-                                     data-ad-slot="9525388880"
-                                     data-ad-format="auto"
-                                     data-full-width-responsive="true"></ins>
-                                <script>
-                                     (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
-                                
-                                <!--<br/>
-                                
-                                <div id="taboola-below-article-thumbnails"></div>
-                                <script type="text/javascript">
-                                  window._taboola = window._taboola || [];
-                                  _taboola.push({
-                                    mode: 'alternating-thumbnails-a',
-                                    container: 'taboola-below-article-thumbnails',
-                                    placement: 'Below Article Thumbnails',
-                                    target_type: 'mix'
-                                  });
-                                </script>-->
-                            </div>
-                            
-                            <br/><br/><br/><br/><br/>
-                            
-                            <a id="myABtn" href="#top" style="color: white" translate="no"><button id="myBtn"><i class="fa-solid fa-arrow-up"></i></button></a>
+                        </div>
+                        <div class="container text-center" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                         
-                            <style>
-                                /*Floating Back-To-Top Button*/
-                                    #myBtn {
-                                        position: fixed;
-                                        bottom: 10px;
-                                        float: right;
-                                        right: 10%;
-                                        bottom: 60px;
-                                        max-width: 50px;
-                                        max-height: 50px;
-                                        width: 100%;
-                                        height: 100%;
-                                        font-size: 18px;
-                                        border-color: rgba(85, 85, 85, 0.2);
-                                        background-color: rgb(100,100,100);
-                                        /*padding: 10px;*/
-                                        border-radius: 4px;
-                                        opacity: 0.5;
-                                        z-index:100;
-                                    }
-                                /*On Hover Color Change*/
-                                    #myBtn:hover {
-                                        background-color: #7dbbf1;
-                                    }
-                            </style>                      
+                            <!-- LatinChain Ad responsive 2 -->
+                            
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-2334449220276386"
+                                 data-ad-slot="9525388880"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                            
+                            <!--<br/>
+                            
+                            <div id="taboola-below-article-thumbnails"></div>
+                            <script type="text/javascript">
+                              window._taboola = window._taboola || [];
+                              _taboola.push({
+                                mode: 'alternating-thumbnails-a',
+                                container: 'taboola-below-article-thumbnails',
+                                placement: 'Below Article Thumbnails',
+                                target_type: 'mix'
+                              });
+                            </script>-->
                         </div>
                         
-
-                        <!--<script src="js/jquery-3.4.1.min.js"></script>-->
-                        <script src="/website_pinetwork_games_odoo/static/src/chess/js/chess.min.js"></script>
-                        <script src="/website_pinetwork_games_odoo/static/src/chess/js/ltpgnviewer.js"></script>
-
-                        <script>
-                            var all_was_loaded = false;
-                            var all_was_loaded_lib = false;
-                            $( document ).ready(function() {
-                                window.addEventListener('unhandledrejection', function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    e.stopImmediatePropagation();
-                                    return false;
-                                });
-                            
-                                /*(adsbygoogle = window.adsbygoogle || []).push({});
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                                (adsbygoogle = window.adsbygoogle || []).push({});*/
-                                //$("#a-ads").prop('src', $("#a_ads_val").val());
-                                /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
-                                $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
-                                //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
-                                $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR2PhV-bmZ6spZ73etMbPSUq');
-                                $("#latinchain-tv").prop('src', 'https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG');
-                                
-                                function is_touch_device() {
-                                    return 'ontouchstart' in window || navigator.maxTouchPoints;
-                                };
-
-                                function loadCss(cssId, cssHref) {
-                                    $('#' + cssId).attr('href', cssHref);
-                                }
-
-                                var mobileLibs = 8;
-                                var desktopLibs = 8;
-
-                                var isMobile = is_touch_device();
-
-                                if (isMobile == true) {
-
-                                    var chess, board;
-
-                                    loadCss('chessboard-css', '/website_pinetwork_games_odoo/static/src/chess/css/caustique-chessboard.css');
-
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/chessboard-caustique-min.js', initGameBoard('mobile'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js?v=1.104', initGameBoard('mobile'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js?v=1.101', initGameBoard('mobile'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js?v=1.101', initGameBoard('mobile'));
-
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-time.js', initGameBoard('mobile'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js?v=1.103', initGameBoard('mobile'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-mobile.js?v=1.104', initGameBoard('mobile'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js?v=1.102', initGameBoard('mobile'));
-
-                                } else {
-
-                                    loadCss('chessboard-css', '/website_pinetwork_games_odoo/static/src/chess/css/chessboard.css');
-
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/chessboard.min.js', initGameBoard('desktop'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js?v=1.104', initGameBoard('desktop'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js?v=1.101', initGameBoard('desktop'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js', initGameBoard('desktop'));
-
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-time.js', initGameBoard('desktop'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js?v=1.103', initGameBoard('desktop'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-desktop.js?v=1.103', initGameBoard('desktop'));
-                                    $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js?v=1.102', initGameBoard('desktop'));
-
-                                }
-
-                                function initGameBoard(lib = false) {
-
-                                    if (lib == 'mobile') {
-                                        mobileLibs--;
-                                        if (mobileLibs == 0) {
-                                            console.log('Mobile loaded');
-                                            all_was_loaded = true;
-                                            all_was_loaded_lib = lib;
-                                            /*setTimeout(function() {
-                                                setMobileBoard();
-                                            }, 10000);*/
-                                        }
-                                    }
-
-                                    if (lib == 'desktop') {
-                                        desktopLibs--;
-                                        if (desktopLibs == 0) {
-                                            console.log('Desktop loaded');
-                                            all_was_loaded = true;
-                                            all_was_loaded_lib = lib;
-                                            /*setTimeout(function() {
-                                                setDesktopBoard();
-                                            }, 10000);*/
-                                        }
-                                    }
-
-                                }
-                            });
-                        </script>
+                        <br/><br/><br/><br/><br/>
                         
-                        <script type="text/javascript">
-                            $( document ).ready(function() {
-                                var status_audio = false;
-                                var audioElement = document.createElement('audio');
-                                audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/music.mp3');
-                                audioElement.addEventListener('ended', function() {
-                                    this.play();
-                                }, false);
-                                
-                                $('#play_button').click(function() {
-                                    if(!status_audio)
-                                    {
-                                        audioElement.play();
-                                        status_audio = true;
-                                        $("#play").removeClass("fa-volume-off");
-                                        $("#play").addClass("fa-volume-up");
-                                        //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
-                                    }
-                                    else
-                                    {
-                                        audioElement.pause();
-                                        status_audio = false;
-                                        $("#play").removeClass("fa-volume-up");
-                                        $("#play").addClass("fa-volume-off");
-                                        //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
-                                    }
-                                });
-                            
-                                $( ".clear_cache" ).click(function() {
-                                    var result = confirm($("#clear_cache_message").text());
-                                    if(result)
-                                    {
-                                        try {
-                                            Cache.delete();
-                                        } catch (err) {
-                                            console.error(err);
-                                        }
-                                        try {
-                                            window.location.reload(true);
-                                        } catch (err) {
-                                            console.error(err);
-                                        }
-                                    }
-                                });
-                                $( ".back" ).click(function() {
-                                    var result = confirm($("#back_message").text());
-                                    if(result)
-                                    {
-                                        //history.back();
-                                        window.location.href="/";
-                                    }
-                                });
-                            });
-
-                        </script>
-                        
-                        
-                        <!--<script type="text/javascript">
-                          window._taboola = window._taboola || [];
-                          _taboola.push({flush: true});
-                        </script>-->
+                        <a id="myABtn" href="#top" style="color: white" translate="no"><button id="myBtn"><i class="fa-solid fa-arrow-up"></i></button></a>
+                    
+                        <style>
+                            /*Floating Back-To-Top Button*/
+                                #myBtn {
+                                    position: fixed;
+                                    bottom: 10px;
+                                    float: right;
+                                    right: 10%;
+                                    bottom: 60px;
+                                    max-width: 50px;
+                                    max-height: 50px;
+                                    width: 100%;
+                                    height: 100%;
+                                    font-size: 18px;
+                                    border-color: rgba(85, 85, 85, 0.2);
+                                    background-color: rgb(100,100,100);
+                                    /*padding: 10px;*/
+                                    border-radius: 4px;
+                                    opacity: 0.5;
+                                    z-index:100;
+                                }
+                            /*On Hover Color Change*/
+                                #myBtn:hover {
+                                    background-color: #7dbbf1;
+                                }
+                        </style>                      
                     </div>
+                    
+
+                    <!--<script src="js/jquery-3.4.1.min.js"></script>-->
+                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/chess.min.js"></script>
+                    <script src="/website_pinetwork_games_odoo/static/src/chess/js/ltpgnviewer.js"></script>
+
+                    <script>
+                        var all_was_loaded = false;
+                        var all_was_loaded_lib = false;
+                        $( document ).ready(function() {
+                            window.addEventListener('unhandledrejection', function (e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+                                return false;
+                            });
+                        
+                            /*(adsbygoogle = window.adsbygoogle || []).push({});
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            (adsbygoogle = window.adsbygoogle || []).push({});*/
+                            //$("#a-ads").prop('src', $("#a_ads_val").val());
+                            /*$("#a-ads_2").prop('src', $("#a_ads_val_2").val());
+                            $("#a-ads_3").prop('src', $("#a_ads_val_3").val());*/
+                            //$("#crypto_news").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR3qX-vNpSf5gpblUqFVUtQs');
+                            $("#tiesto").prop('src', 'https://www.youtube.com/embed/videoseries?list=PLmedLgLFYxR2PhV-bmZ6spZ73etMbPSUq');
+                            $("#latinchain-tv").prop('src', 'https://www.youtube.com/embed/videoseries?si=Jad786J0eb5c4NoN&amp;list=PLmedLgLFYxR3oFeslBQfZ0zb8GJuU3VQG');
+                            
+                            function is_touch_device() {
+                                return 'ontouchstart' in window || navigator.maxTouchPoints;
+                            };
+
+                            function loadCss(cssId, cssHref) {
+                                $('#' + cssId).attr('href', cssHref);
+                            }
+
+                            var mobileLibs = 8;
+                            var desktopLibs = 8;
+
+                            var isMobile = is_touch_device();
+
+                            if (isMobile == true) {
+
+                                var chess, board;
+
+                                loadCss('chessboard-css', '/website_pinetwork_games_odoo/static/src/chess/css/caustique-chessboard.css');
+
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/chessboard-caustique-min.js', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js?v=1.104', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js?v=1.101', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js?v=1.101', initGameBoard('mobile'));
+
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-time.js', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js?v=1.103', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-mobile.js?v=1.104', initGameBoard('mobile'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js?v=1.102', initGameBoard('mobile'));
+
+                            } else {
+
+                                loadCss('chessboard-css', '/website_pinetwork_games_odoo/static/src/chess/css/chessboard.css');
+
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/chessboard.min.js', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-side.js?v=1.104', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-controls-bottom.js?v=1.101', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-sets.js', initGameBoard('desktop'));
+
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-time.js', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions.js?v=1.103', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-actions-desktop.js?v=1.103', initGameBoard('desktop'));
+                                $.getScript('/website_pinetwork_games_odoo/static/src/chess/js/board-init.js?v=1.102', initGameBoard('desktop'));
+
+                            }
+
+                            function initGameBoard(lib = false) {
+
+                                if (lib == 'mobile') {
+                                    mobileLibs--;
+                                    if (mobileLibs == 0) {
+                                        console.log('Mobile loaded');
+                                        all_was_loaded = true;
+                                        all_was_loaded_lib = lib;
+                                        /*setTimeout(function() {
+                                            setMobileBoard();
+                                        }, 10000);*/
+                                    }
+                                }
+
+                                if (lib == 'desktop') {
+                                    desktopLibs--;
+                                    if (desktopLibs == 0) {
+                                        console.log('Desktop loaded');
+                                        all_was_loaded = true;
+                                        all_was_loaded_lib = lib;
+                                        /*setTimeout(function() {
+                                            setDesktopBoard();
+                                        }, 10000);*/
+                                    }
+                                }
+
+                            }
+                        });
+                    </script>
+                    
+                    <script type="text/javascript">
+                        $( document ).ready(function() {
+                            var status_audio = false;
+                            var audioElement = document.createElement('audio');
+                            audioElement.setAttribute('src', '/website_pinetwork_games_odoo/static/src/music/music.mp3');
+                            audioElement.addEventListener('ended', function() {
+                                this.play();
+                            }, false);
+                            
+                            $('#play_button').click(function() {
+                                if(!status_audio)
+                                {
+                                    audioElement.play();
+                                    status_audio = true;
+                                    $("#play").removeClass("fa-volume-off");
+                                    $("#play").addClass("fa-volume-up");
+                                    //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/music.png');
+                                }
+                                else
+                                {
+                                    audioElement.pause();
+                                    status_audio = false;
+                                    $("#play").removeClass("fa-volume-up");
+                                    $("#play").addClass("fa-volume-off");
+                                    //$("#play").attr('src','/website_pinetwork_games_odoo/static/src/music/mute.png');
+                                }
+                            });
+                        
+                            $( ".clear_cache" ).click(function() {
+                                var result = confirm($("#clear_cache_message").text());
+                                if(result)
+                                {
+                                    try {
+                                        Cache.delete();
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                    try {
+                                        window.location.reload(true);
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                }
+                            });
+                            $( ".back" ).click(function() {
+                                var result = confirm($("#back_message").text());
+                                if(result)
+                                {
+                                    //history.back();
+                                    window.location.href="/";
+                                }
+                            });
+                        });
+
+                    </script>
+                    
+                    
+                    <!--<script type="text/javascript">
+                      window._taboola = window._taboola || [];
+                      _taboola.push({flush: true});
+                    </script>-->
 
                 </body>
 
