@@ -108,6 +108,20 @@
                         
                         </div>
                         <style>
+                            .darkmode--activated html {
+                                background-color: #1a1a1a !important;
+                                min-height: 100dvh !important;
+                            }
+                            .darkmode--activated body {
+                                background-color: #1a1a1a !important;
+                                min-height: 100dvh !important;
+                                /* El truco del buffer */
+                                padding-bottom: 200px !important;
+                                margin-bottom: -200px !important;
+                                /* Asegurar que el overscroll siga bloqueado */
+                                overscroll-behavior-y: none;
+                            }
+                            
                             .sticky {
                               position: fixed;
                               top: 0;
