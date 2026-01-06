@@ -29,6 +29,24 @@
         </xpath>
     </template>
     
+        <template id="web_layout_scroll_fix" inherit_id="web.layout">
+            
+            <xpath expr="//html" position="attributes">
+                <attribute name="style">height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch;</attribute>
+            </xpath>
+            
+            <xpath expr="//body" position="attributes">
+                <attribute name="style">height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch;</attribute>
+            </xpath>
+
+            <!--<xpath expr="//t[@t-raw='0']" position="replace">
+                <div class="o_scroll_wrapper" style="height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+                    <t t-raw="0"/>
+                </div>
+            </xpath>-->
+
+        </template>
+    
         <template id="new_header" inherit_id="web.layout">
             <xpath expr="//head//link[last()]" position="after">
                 <div id="font-awesome-div">
