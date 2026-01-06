@@ -109,7 +109,10 @@
                         </div>
                         <style>
                             html {
-                                scroll-behavior: smooth;
+                                background-color: #d3d3d3; /* Color del footer */
+                            }
+                            body {
+                                background-color: #d3d3d3; /* Color del contenido */
                             }
                             
                             .sticky {
