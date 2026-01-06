@@ -113,6 +113,22 @@
                                 overscroll-behavior-y: none;
                             }
                             
+                            .darkmode--activated html {
+                                /* IMPORTANTE: Usa el mismo color HEX exacto de tu modo oscuro */
+                                background-color: #1a1a1a;
+                                
+                                /* Asegura que el html ocupe siempre toda la altura de la ventana */
+                                min-height: 100%;
+                            }
+
+                            .darkmode--activated body {
+                                /* El body también debe tener el color, por si acaso */
+                                background-color: #1a1a1a;
+                                
+                                /* Asegura que el body estire para cubrir cualquier hueco vertical */
+                                min-height: 100vh;
+                            }
+                            
                             .sticky {
                               position: fixed;
                               top: 0;
