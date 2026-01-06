@@ -61,8 +61,7 @@
 
                 </head>
 
-                <body bgcolor="#ffffff" style="text-align: center; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; margin: 0;">
-                    
+                <body bgcolor="#ffffff" style="text-align: center">
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="amount" t-att-value="amount"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
@@ -393,12 +392,12 @@
                                   <!--<span t-if="mainnet != 'Mainnet ON'">-->
                                   <div align="center" class="container" style="text-align:center; max-width:840px">
                                       <!--<br/>
-                                          <ins class="adsbygoogle"
-                                             style="display:block"
-                                             data-ad-client="ca-pub-2334449220276386"
-                                             data-ad-slot="6625994850"
-                                             data-ad-format="auto"
-                                             data-full-width-responsive="true"></ins>
+										  <ins class="adsbygoogle"
+											 style="display:block"
+											 data-ad-client="ca-pub-2334449220276386"
+											 data-ad-slot="6625994850"
+											 data-ad-format="auto"
+											 data-full-width-responsive="true"></ins>
                                       
                                       <br/>
                                           <div id="taboola-mid-article-thumbnails-2"></div>
@@ -413,7 +412,7 @@
                                             </script>
                                       -->    
                                           
-                          
+				          
                                   </div>
                                   <!--</span>-->
                                   <br/>
