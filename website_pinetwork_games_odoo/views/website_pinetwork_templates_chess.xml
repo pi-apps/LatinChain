@@ -108,12 +108,18 @@
                         
                         </div>
                         <style>
+                            
+                            .darkmode--activated .wrapper, .darkmode--activated .container, 
+                            .darkmode--activated .container-fluid, .darkmode--activated #root, 
+                            .darkmode--activated #__next {
+                                background-color: #d3d3d3 !important; 
+                            }
                             .darkmode--activated html {
-                                background-color: #1a1a1a !important;
+                                background-color: #d3d3d3 !important;
                                 min-height: 100dvh !important;
                             }
                             .darkmode--activated body {
-                                background-color: #1a1a1a !important;
+                                background-color: #d3d3d3 !important;
                                 min-height: 100dvh !important;
                                 /* El truco del buffer */
                                 padding-bottom: 200px !important;
