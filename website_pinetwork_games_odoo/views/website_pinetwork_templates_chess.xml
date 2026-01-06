@@ -108,6 +108,11 @@
                         
                         </div>
                         <style>
+                            html, body {
+                                /* Esto deshabilita el "rebote" y el gesto de actualizar */
+                                overscroll-behavior-y: none;
+                            }
+                            
                             .sticky {
                               position: fixed;
                               top: 0;
@@ -129,10 +134,7 @@
                             }
                         </style>
                         
-                        <style>
-                            html {
-                                overscroll-behavior-y: none;
-                            }
+                        <style>    
                              /* The side navigation menu */
                             .sidenav {
                               height: 100%; /* 100% Full-height */
