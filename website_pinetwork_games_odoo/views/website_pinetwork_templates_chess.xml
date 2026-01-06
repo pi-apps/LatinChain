@@ -108,14 +108,18 @@
                         
                         </div>
                         <style>
-                            html {
-                                background-color: #d3d3d3; /* Color del footer */
-                            }
-                            body {
-                                background-color: #d3d3d3; /* Color del contenido */
-                            }
+                            /* 1. Congela el marco principal */
                             html, body {
-                                overscroll-behavior-y: none; /* Bloquea el efecto elástico */
+                                height: 100%;       /* Ocupa exactamente el alto de la pantalla */
+                                margin: 0;
+                                overflow: hidden;   /* IMPORTANTE: Desactiva el scroll del navegador */
+                            }
+
+                            /* 2. Crea un contenedor para tu contenido */
+                            body {
+                                height: 100%;          /* Ocupa todo el espacio disponible */
+                                overflow-y: auto;      /* Aquí es donde ocurre el scroll real */
+                                -webkit-overflow-scrolling: touch; /* Suavidad nativa en iOS */
                             }
                             
                             .sticky {
