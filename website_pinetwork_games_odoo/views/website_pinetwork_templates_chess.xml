@@ -108,6 +108,10 @@
                         
                         </div>
                         <style>
+                            html {
+                                scroll-behavior: smooth;
+                            }
+                            
                             .sticky {
                               position: fixed;
                               top: 0;
