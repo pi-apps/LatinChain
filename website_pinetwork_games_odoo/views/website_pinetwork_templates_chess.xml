@@ -108,15 +108,6 @@
                         
                         </div>
                         <style>
-                            html, body {
-                                /* Desactiva el rebote vertical y el efecto de "brillo" en Android */
-                                overscroll-behavior-y: none; 
-                                
-                                /* Asegura que ocupen todo el alto */
-                                height: 100%; 
-                                margin: 0;
-                            }
-                            
                             .sticky {
                               position: fixed;
                               top: 0;
