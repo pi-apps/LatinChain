@@ -181,21 +181,21 @@
                             </script>
                             <style>
                                 
-                                html {
-                                    /* Reemplaza #1a1a1a con el código de color exacto del fondo de tu sitio 
+                                .darkmode--activated html {
+                                    /* Reemplaza #1a1a1a con el código de color exacto del fondo de tu sitio */
                                     background-color: #1a1a1a;
-                                    */
                                     
                                     /* Opcional: Esto evita el efecto de rebote elástico que revela el fondo */
                                     overscroll-behavior-y: none;
                                 }
 
-                                body {
+                                .darkmode--activated body {
                                     /* Asegura que el cuerpo ocupe al menos toda la altura visible dinámica */
+                                    color: #000 !important;
                                     min-height: 100dvh;
                                 }
                                 
-                                .darkmode--activated p, .darkmode--activated body, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
+                                .darkmode--activated p, .darkmode--activated .timer_black, .darkmode--activated .timer_white,
                                 .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated label {
                                   color: #000 !important;
                                 }
