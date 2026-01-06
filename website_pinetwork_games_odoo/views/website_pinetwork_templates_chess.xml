@@ -113,20 +113,24 @@
                                 overscroll-behavior-y: none;
                             }
                             
-                            html {
-                                /* IMPORTANTE: Usa el mismo color HEX exacto de tu modo oscuro */
-                                background-color: #fff;
-                                
-                                /* Asegura que el html ocupe siempre toda la altura de la ventana */
-                                min-height: 100%;
-                            }
-
-                            body {
-                                /* El body también debe tener el color, por si acaso */
-                                background-color: #fff;
-                                
-                                /* Asegura que el body estire para cubrir cualquier hueco vertical */
+                            /*.darkmode--activated html, .darkmode--activated body {
+                                background-color: #d3d3d3 !important;
                                 min-height: 100vh;
+                                width: 100%;
+                                margin: 0;
+                                padding: 0;
+                            }*/
+                            
+                            .darkmode--activated body::before {
+                                content: "";
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100vw;
+                                height: 100vh;
+                                background-color: #d3d3d3;
+                                z-index: -9999;
+                                pointer-events: none;
                             }
                             
                             .sticky {
