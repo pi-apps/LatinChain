@@ -113,7 +113,7 @@
                                 overscroll-behavior-y: none;
                             }
                             
-                            .darkmode--activated html {
+                            html {
                                 /* IMPORTANTE: Usa el mismo color HEX exacto de tu modo oscuro */
                                 background-color: #1a1a1a;
                                 
@@ -121,7 +121,7 @@
                                 min-height: 100%;
                             }
 
-                            .darkmode--activated body {
+                            body {
                                 /* El body también debe tener el color, por si acaso */
                                 background-color: #1a1a1a;
                                 
