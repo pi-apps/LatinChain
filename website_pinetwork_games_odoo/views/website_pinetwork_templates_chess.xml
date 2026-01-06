@@ -116,7 +116,7 @@
                             }
 
                             /* 2. Crea un contenedor para tu contenido */
-                            body {
+                            .content {
                                 height: 100%;          /* Ocupa todo el espacio disponible */
                                 overflow-y: auto;      /* Aquí es donde ocurre el scroll real */
                                 -webkit-overflow-scrolling: touch; /* Suavidad nativa en iOS */
