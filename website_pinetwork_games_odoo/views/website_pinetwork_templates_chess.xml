@@ -109,9 +109,7 @@
                         </div>
                         <style>
                             .darkmode--activated * {
-                                box-sizing: border-box;
-                                margin: 0;
-                                padding: 0;
+                                -webkit-backdrop-filter: none;
                                 backdrop-filter: none;
                             }
                             
