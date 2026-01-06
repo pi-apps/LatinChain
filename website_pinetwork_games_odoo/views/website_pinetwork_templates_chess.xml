@@ -114,6 +114,9 @@
                             body {
                                 background-color: #d3d3d3; /* Color del contenido */
                             }
+                            html, body {
+                                overscroll-behavior-y: none; /* Bloquea el efecto elástico */
+                            }
                             
                             .sticky {
                               position: fixed;
