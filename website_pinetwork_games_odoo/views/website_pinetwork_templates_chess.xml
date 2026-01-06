@@ -108,19 +108,6 @@
                         
                         </div>
                         <style>
-                            html, body {
-                                /* Esto deshabilita el "rebote" y el gesto de actualizar */
-                                overscroll-behavior-y: none;
-                            }
-                            
-                            .darkmode--activated html, .darkmode--activated body {
-                                background-color: #d3d3d3 !important;
-                                min-height: 100vh;
-                                width: 100%;
-                                margin: 0;
-                                padding: 0;
-                            }
-                            
                             .sticky {
                               position: fixed;
                               top: 0;
