@@ -490,7 +490,7 @@
                             <div style="margin-bottom:10px;">
                                 <div class="input-group input-group-lg">
                                   <span class="input-group-text" id="inputGroup-sizing-lg" style="color: black !important"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                  <input type="text" class="search-collectibles form-control" placeholder="Search collectibles" aria-label="Search collectibles" aria-describedby="inputGroup-sizing-lg" />
+                                  <input type="text" class="search-collectibles form-control" placeholder="Search [Books, Courses]" aria-label="Search collectibles" aria-describedby="inputGroup-sizing-lg" />
                                 </div>
                             </div>
                             <t t-if="with_links">
