@@ -1250,7 +1250,7 @@
                         <div class="row getverified" style="">
                             <div style="text-align:left; word-break: break-word;" class="col-12">
                                 <div class="text-white">
-                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Unlock in one touch</div></a>
+                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Pay here</div></a>
                                 </div>
                             </div>
                         </div>
@@ -1260,7 +1260,7 @@
                         <div style="color: #ffffff !important; background-color: #1f2434 !important;">
                             <div>
                                 <div style="display: inline" t-if="discount_active and discount_percentage">
-                                    Seasonal discount (-<t t-esc="discount_percentage" />%)
+                                    Payment discount (-<t t-esc="discount_percentage" />%)
                                 </div>
                                 <div style="display: inline" t-if="not discount_active">
                                     Payment amount
@@ -1388,7 +1388,7 @@
                         <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                             <div t-if="discount_active and discount_percentage" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                                 <div style="margin-bottom:5px" class="border-bottom">
-                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SeasonalDiscount -<t t-esc="discount_percentage"/>%</div></strong></h5>
+                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount -<t t-esc="discount_percentage"/>%</div></strong></h5>
                                 </div>
                                 <div style="margin-bottom:5px">
                                     <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
@@ -1398,7 +1398,7 @@
                         <t t-elif="mainnet in ['Testnet ON', 'Testnet OFF']">
                             <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                                 <div style="margin-bottom:5px" class="border-bottom">
-                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SeasonalDiscount #Mainnet</div></strong></h5>
+                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount #Mainnet</div></strong></h5>
                                 </div>
                                 <div style="margin-bottom:5px">
                                     <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
@@ -1408,7 +1408,7 @@
                         
                         <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#HolidaySeasonCollection</div></strong></h5>
+                                <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SeasonCollection</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
                                 <img src="/website_pinetwork_games_odoo/static/src/img/latinchain-ecosystem.png?v=1.102" alt="LatinChain Collectible Ecosystem" class="img-fluid latinchain-ecosystem" style="cursor: pointer; max-width: 350px; border-radius: 20px;" width="100%" height="200px" />
@@ -1657,10 +1657,10 @@
                                 <strong class="user_status"></strong>
                             </div>
                             <div style="margin-top:5px;" class="getverified">
-                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Unlock in one touch</div></a>
+                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Pay here</div></a>
                             </div>
                             <div style="margin-top:5px">
-                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                             </div>
                             <div style="margin-top:5px; margin-bottom: 5px">
                                 <button id="rules_button_4" class="col-12 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
@@ -1891,7 +1891,7 @@
                                             <div class="col-12">
                                                 <h3 class="text-black" style="color:black !important">Today's tasks</h3>
                                                 <ul class="list-group">
-                                                    <li class="list-group-item getverified" style=""><a href="/pinetwork" class="href-external btn btn-link">Unlock in one touch</a></li>
+                                                    <li class="list-group-item getverified" style=""><a href="/pinetwork" class="href-external btn btn-link">Pay here</a></li>
                                                     <li class="list-group-item"><a href="/chess" class="btn btn-link">Play Chess</a></li>
                                                     <li class="list-group-item"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
                                                     <li class="list-group-item"><a href="/snake" class="btn btn-link">Play Snake</a></li>
@@ -2180,9 +2180,9 @@
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12">
                                                     <div style="margin-bottom:5px;" class="getverified">
-                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Unlock in one touch</div></a>
+                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Pay here</div></a>
                                                     </div>
-                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                 </div>
                                             </div>
                                         </li>
@@ -2509,9 +2509,9 @@
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12">
                                                     <div style="margin-bottom:5px;" class="getverified">
-                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Unlock in one touch</div></a>
+                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">Pay here</div></a>
                                                     </div>
-                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                 </div>
                                             </div>
                                         </li>
@@ -2961,7 +2961,7 @@
                             
                           </div>
                           <div class="modal-footer button-group">
-                            <a href="/pinetwork" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">DONATE</div><div style="font-size:80%;" translate="no">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></a>
+                            <a href="/pinetwork" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;" translate="no">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></a>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>
