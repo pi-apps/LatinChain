@@ -212,6 +212,8 @@ $( document ).ready(function() {
                             {
                                 if(!confirm($("#donation_message").text()))
                                     return false;
+                                else
+                                    $( "#acceptConditions" ).prop("checked", true);
                             }
                             var max_amount = 0;
                             
