@@ -36,7 +36,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.1.123"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.1.124"></script>
                     
                     <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -331,7 +331,7 @@
                                         <div>
                                             <div>
                                                 <div style="display: inline" t-if="discount_active and discount_percentage">
-                                                    Seasonal discount (-<t t-esc="discount_percentage" />%)
+                                                    Payment discount (-<t t-esc="discount_percentage" />%)
                                                 </div>
                                                 <div style="display: inline" t-if="not discount_active">
                                                     Payment amount

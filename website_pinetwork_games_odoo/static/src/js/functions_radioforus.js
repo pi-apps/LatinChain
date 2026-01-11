@@ -210,8 +210,8 @@ $( document ).ready(function() {
                         $( "#button_click" ).click(function() {
                             if(!$( "#acceptConditions" ).prop("checked"))
                             {
-                                alert($("#donation_message").text());
-                                return false;
+                                if(!confirm($("#donation_message").text()))
+                                    return false;
                             }
                             var max_amount = 0;
                             
