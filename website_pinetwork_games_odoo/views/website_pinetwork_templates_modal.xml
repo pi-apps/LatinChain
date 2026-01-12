@@ -156,6 +156,7 @@
                     </head>
 
                     <body t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                        
                         <div id="open_mainnet_message" style="display:none;">You can Donate on LatinChain Mainnet and start using it everyday being verified during a month. Or access as unverified user.<br/>Which one you choose?.</div>
                         <div class="container form-group" style="text-align:center; max-width: 810px">
                             <div style="font-size: 90%; word-break: break-word;">
@@ -183,6 +184,22 @@
                             <div style="font-size: 90%" t-if="onlymainnet">
                                 We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem.
                                 <br/>
+                                <br/>
+                            </div>
+                            
+                            <div style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                <!-- LatinChain Ad responsive 2 -->
+                                
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-2334449220276386"
+                                     data-ad-slot="9525388880"
+                                     data-ad-format="auto"
+                                     data-full-width-responsive="true"></ins>
+                                <script>
+                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                                
                                 <br/>
                             </div>
                             
@@ -252,7 +269,7 @@
                             <!--<button onClick="window.parent.location.href='/?nopopup=true'" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
 							<!--<button onClick="window.parent.$.colorbox.close()" class="btn btn-link going-back">Return to LatinChain Testnet</button>-->
                             
-                            <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                            <div style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                 <!-- LatinChain Ad responsive 2 -->
                                 
                                 <ins class="adsbygoogle"
