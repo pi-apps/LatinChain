@@ -22,6 +22,9 @@ https://developers.minepi.com/
 Official Pi App Demo example code:
 https://github.com/pi-apps/demo
 
+New ways to do Pi Payments (this is a 10 minutes guide from Pi Core Team, where they are implementing a new way to do payments):
+https://minepi.com/blog/10-minutes-pi-payments/
+
 # Simplest example for User2App payment
 
 And the following is my Working Example for receiving Payments in Pi Platform:
