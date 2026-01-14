@@ -22,7 +22,7 @@ https://developers.minepi.com/
 Official Pi App Demo example code:
 https://github.com/pi-apps/demo
 
-New ways to do Pi Payments (this is a 10 minutes guide from Pi Core Team, where they are implementing a new way to do payments):
+New ways to do Pi Payments (this is a 10 minutes guide from Pi Core Team, where they are implementing a new way to do payments, based in classes as in Oriented Object Programming):
 https://minepi.com/blog/10-minutes-pi-payments/
 
 # Simplest example for User2App payment
