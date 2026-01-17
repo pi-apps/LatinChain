@@ -1610,9 +1610,9 @@
                     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
-                    
+                    <!--
                     <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
-                    
+                    -->
                     <!--
                     <script type="text/javascript">
                       window._taboola = window._taboola || [];
@@ -1887,7 +1887,7 @@
                     
                     <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="container">
                         <!-- LatinChain Ad responsive -->
-                        
+                        <!--
                         <br/>
                         <ins class="adsbygoogle"
                              style="display:block"
@@ -1898,6 +1898,7 @@
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
+                        -->
                     </div>
                     
                     <div class="container" style="text-align:center; max-width: 840px">
@@ -2287,7 +2288,7 @@
                     
                     <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="container">
                         <!-- LatinChain Ad responsive -->
-                        
+                        <!--
                         <br/>
                         <ins class="adsbygoogle"
                              style="display:block"
@@ -2298,6 +2299,7 @@
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
+                        -->
                     </div>
                     
                     <div class="container" style="text-align:center; max-width: 840px">

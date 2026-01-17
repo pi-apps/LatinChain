@@ -948,8 +948,9 @@
                     
                     <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.657"></script>
                     
-                    <script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
-                    
+                    <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                    -->
+                    <!--
                     <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup">
                       window._taboola = window._taboola || [];
                       _taboola.push({article:'auto'});
@@ -967,7 +968,7 @@
                       if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
                         {window.performance.mark('tbl_ic');}
                     </script>
-                    
+                    -->
                     <style>
                         .btn-outline-info:hover, 
                         .btn-outline-info:active, 
@@ -1304,7 +1305,7 @@
                         
                         <br/>
                         
-                        <ins class="adsbygoogle"
+                        <!--<ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
                              data-ad-slot="9525388880"
@@ -1313,6 +1314,7 @@
                         <script>
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
+                        -->
                         
                         <!--
                         <br/>
@@ -2784,7 +2786,7 @@
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup">
                         <!-- LatinChain Ad responsive 2 -->
                         
-                        <ins class="adsbygoogle"
+                        <!--<ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2334449220276386"
                              data-ad-slot="6625994850"
@@ -2818,6 +2820,7 @@
                             target_type: 'mix'
                           });
                         </script>
+                        -->
                     </div>
                     
                     <br/><br/><br/><br/><br/><br/><br/><br/>
@@ -2926,10 +2929,12 @@
                             
                     </style>
                     
+                    <!--
                     <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup">
                       window._taboola = window._taboola || [];
                       _taboola.push({flush: true});
                     </script>
+                    -->
                     
                     <script>
                         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
