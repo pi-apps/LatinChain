@@ -41,7 +41,7 @@ async function colorboxLoaded()
     {
         if($.colorbox && !colorbox_opened)
         {
-            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/adsense-1", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-1", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
             return false;
         }else{
@@ -67,7 +67,7 @@ async function colorboxLoadedMainnet()
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
-            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/adsense-mainnet", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-mainnet", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened_mainnet = true;
             return false;
         }else{
