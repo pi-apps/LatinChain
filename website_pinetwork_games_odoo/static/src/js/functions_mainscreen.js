@@ -41,7 +41,8 @@ async function colorboxLoaded()
     {
         if($.colorbox && !colorbox_opened)
         {
-            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-1", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            window.location.href = "https://ecosystem.latin-chain.com/page-1";
+            //$.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-1", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
             return false;
         }else{
@@ -67,7 +68,8 @@ async function colorboxLoadedMainnet()
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
-            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-mainnet", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            window.location.href = "https://ecosystem.latin-chain.com/page-mainnet";
+            //$.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-mainnet", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened_mainnet = true;
             return false;
         }else{
@@ -1276,7 +1278,7 @@ $( document ).ready(function() {
 
                             var start_flag = false;
                             
-                            async function showRewardedPiAd()
+                            async function showRewardedPiAd(redirect)
                             {
                                 end();
                                 if(seconds < 5 && start_flag)
@@ -1383,6 +1385,9 @@ $( document ).ready(function() {
                                                         }
                                                         
                                                         get_user_rewarded();
+                                                        
+                                                        if(redirect)
+                                                            colorboxLoadedMainnet();
                                                     }else{
                                                         //$("#button_reward_ad").html("Error, try again...");
                             
@@ -1456,17 +1461,20 @@ $( document ).ready(function() {
                             }
                             
                             $( "#button_reward_ad" ).click(async function() {
-                                showRewardedPiAd();
+                                showRewardedPiAd(false);
                             });
                             
-                            if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            /*if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 colorboxLoadedMainnet();
-                            }
+                            }*/
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                showRewardedPiAd();
+                                showRewardedPiAd(true);
+                            }else if(unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            {
+                                colorboxLoadedMainnet();
                             }
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
