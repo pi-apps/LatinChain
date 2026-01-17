@@ -109,7 +109,7 @@
             
                         <script id="colorbox-lib" src="/website_pinetwork_games_odoo/static/src/modals/colorbox/jquery.colorbox.js"></script>
                         
-                        <script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
+                        <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF']" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                         
                         <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                           window._taboola = window._taboola || [];
@@ -128,7 +128,7 @@
                           if(window.performance &amp;&amp; typeof window.performance.mark == 'function')
                             {window.performance.mark('tbl_ic');}
                         </script>
-                        
+                        -->
                         <style>
                         
                             .darkmode--activated a.amazon-list {
@@ -187,7 +187,7 @@
                             
                             <div style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                 <!-- LatinChain Ad responsive 2 -->
-                                
+                                <!--
                                 <ins class="adsbygoogle"
                                      style="display:block"
                                      data-ad-client="ca-pub-2334449220276386"
@@ -197,7 +197,7 @@
                                 <script>
                                      (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
-                                
+                                -->
                                 <br/>
                             </div>
                             
@@ -269,7 +269,7 @@
                             
                             <div style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                 <!-- LatinChain Ad responsive 2 -->
-                                
+                                <!--
                                 <ins class="adsbygoogle"
                                      style="display:block"
                                      data-ad-client="ca-pub-2334449220276386"
@@ -304,6 +304,7 @@
                                     target_type: 'mix'
                                   });
                                 </script>
+                                -->
                             </div>
                         </div>
                         <br/><br/><br/><br/><br/>
@@ -350,11 +351,12 @@
                                 /* You might remove fixed heights if they are present */
                             }
                         </style>
-                        
+                        <!--
                         <script type="text/javascript" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                           window._taboola = window._taboola || [];
                           _taboola.push({flush: true});
                         </script>
+                        -->
                         
                         <script>
                             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
