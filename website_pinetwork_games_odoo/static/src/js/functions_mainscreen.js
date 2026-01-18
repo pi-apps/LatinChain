@@ -919,12 +919,6 @@ $( document ).ready(function() {
         $.colorbox({fixed: true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '?autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
     });
     
-    $(".open_latinchaintv").click(function(){
-        var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
-        streaming_url = streaming_url[1];
-        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/latinchain-tv.html", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
     $(".open_streaming_playlist").click(function(){
         var streaming_url = $(this).attr("videourl");
         $.colorbox({fixed: true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="' + streaming_url + '&amp;autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
@@ -1726,12 +1720,10 @@ $( document ).ready(function() {
     
     $( ".cryptonews" ).click(function() {
         window.location.href = "https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate;
-        //$.colorbox({fixed: true, href:"https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".trends-news" ).click(function() {
         window.location.href = "https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate;
-        //$.colorbox({fixed: true, href:"https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     /*
@@ -1768,17 +1760,6 @@ $( document ).ready(function() {
         //$.colorbox({fixed: true, href:"https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
-    /*
-    $( ".youtube-trends" ).click(function() {
-        $.colorbox({href:"https://trends.latin-chain.com/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    */
-    
-    /*
-    $( ".youtube-social" ).click(function() {
-        $.colorbox({href:"https://trends.latin-chain.com/latinchain-dsocial.html", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    */
     /*
     $( ".mahjong" ).click(function() {
         $.colorbox({href:"/mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
