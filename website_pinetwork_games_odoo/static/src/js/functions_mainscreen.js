@@ -37,6 +37,9 @@ function setConfirmUnloadPoints(on) {
 
 async function colorboxLoaded()
 {
+    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+        window.location.href = "https://ecosystem.latin-chain.com/page-1";
+    /*
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         if($.colorbox && !colorbox_opened)
@@ -58,11 +61,14 @@ async function colorboxLoaded()
                 colorboxLoaded();
             }, 100);
         }
-    }
+    }*/
 }
 
 async function colorboxLoadedMainnet()
 {
+    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+        window.location.href = "https://ecosystem.latin-chain.com/page-mainnet";
+    /*
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         if($.colorbox && !colorbox_opened_mainnet)
@@ -85,6 +91,7 @@ async function colorboxLoadedMainnet()
             }, 100);
         }
     }
+    */
 }
 
 function set_points(points) {
@@ -1276,7 +1283,7 @@ $( document ).ready(function() {
 
                             var start_flag = false;
                             
-                            async function showRewardedPiAd()
+                            async function showRewardedPiAd(redirect)
                             {
                                 end();
                                 if(seconds < 5 && start_flag)
@@ -1383,6 +1390,9 @@ $( document ).ready(function() {
                                                         }
                                                         
                                                         get_user_rewarded();
+                                                        
+                                                        if(redirect)
+                                                            colorboxLoadedMainnet();
                                                     }else{
                                                         //$("#button_reward_ad").html("Error, try again...");
                             
@@ -1456,17 +1466,15 @@ $( document ).ready(function() {
                             }
                             
                             $( "#button_reward_ad" ).click(async function() {
-                                showRewardedPiAd();
+                                showRewardedPiAd(false);
                             });
-                            
-                            if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                            {
-                                colorboxLoadedMainnet();
-                            }
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                showRewardedPiAd();
+                                showRewardedPiAd(true);
+                            }else if(/*!unblocked && */ ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            {
+                                colorboxLoadedMainnet();
                             }
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
