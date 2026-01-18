@@ -1391,7 +1391,7 @@ $( document ).ready(function() {
                                                         
                                                         get_user_rewarded();
                                                         
-                                                        if(redirect)
+                                                        if(redirect && !unblocked)
                                                             colorboxLoadedMainnet();
                                                     }else{
                                                         //$("#button_reward_ad").html("Error, try again...");
