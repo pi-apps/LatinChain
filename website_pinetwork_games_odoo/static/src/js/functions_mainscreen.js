@@ -1711,11 +1711,11 @@ $( document ).ready(function() {
     });
     
     $( ".cryptonews" ).click(function() {
-        $.colorbox({fixed: true, href:"https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".trends-news" ).click(function() {
-        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     /*
