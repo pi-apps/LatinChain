@@ -38,7 +38,7 @@ function setConfirmUnloadPoints(on) {
 async function colorboxLoaded()
 {
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-        window.location.href = "https://ecosystem.latin-chain.com/page-1";
+        window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.101"+hashLatinChainGoogleTranslate;
     /*
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
@@ -67,7 +67,7 @@ async function colorboxLoaded()
 async function colorboxLoadedMainnet()
 {
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-        window.location.href = "https://ecosystem.latin-chain.com/page-mainnet";
+        window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.101"+hashLatinChainGoogleTranslate;
     /*
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
@@ -1725,11 +1725,13 @@ $( document ).ready(function() {
     });
     
     $( ".cryptonews" ).click(function() {
-        $.colorbox({fixed: true, href:"https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        window.location.href = "https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate;
+        //$.colorbox({fixed: true, href:"https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".trends-news" ).click(function() {
-        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        window.location.href = "https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate;
+        //$.colorbox({fixed: true, href:"https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     /*
@@ -1762,7 +1764,8 @@ $( document ).ready(function() {
     });
     
     $( ".sport-results" ).click(function() {
-        $.colorbox({fixed: true, href:"https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        window.location.href = "https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate;
+        //$.colorbox({fixed: true, href:"https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     /*
