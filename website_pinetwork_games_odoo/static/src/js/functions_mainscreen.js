@@ -1734,27 +1734,32 @@ $( document ).ready(function() {
     /*$( ".stellarium" ).click(function() {
         $.colorbox({href:"https://stellarium-web.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });*/
-    
+    /*
     $( ".latin-search" ).click(function() {
         $.colorbox({fixed: true, href:"https://www.metacrawler.com/serp?q=LatinChain+Platform&sc=iLjHiOa0KXCr10", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
-    
+    */
+    /*
     $( ".latin-dictionary" ).click(function() {
         $.colorbox({fixed: true, href:"https://www.wiktionary.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
-    
+    */
+    /*
     $( ".latin-books" ).click(function() {
         $.colorbox({fixed: true, href:"https://www.wikibooks.org", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
-    
+    */
+    /*
     $( ".latin-university" ).click(function() {
         $.colorbox({fixed: true, href:"https://www.wikiversity.org/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
-    
+    */
+    /*
     $( ".latin-academy" ).click(function() {
         $.colorbox({fixed: true, href:"https://www.odoo.com/slides", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
-    
+    */
+
     $( ".sport-results" ).click(function() {
         window.location.href = "https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate;
         //$.colorbox({fixed: true, href:"https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
@@ -1862,11 +1867,13 @@ $( document ).ready(function() {
     });
     
     $( ".tvonline" ).click(function() {
-        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/plutotv/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        window.location.href = "https://trends.latin-chain.com/plutotv/";
+        //$.colorbox({fixed: true, href:"https://trends.latin-chain.com/plutotv/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".latinchain-ecosystem" ).click(function() {
-        $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        window.location.href = "https://ecosystem.latin-chain.com";
+        //$.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".search-apps" ).keyup(function() {
