@@ -241,20 +241,20 @@
                                             </p>
                                         </div>
 
-                                        <div class="card shadow-sm mb-4 border-0">
-                                            <div class="card-body">
-                                                <h3 class="h4 card-title text-success"><i class="bi bi-check-circle-fill me-2"></i>Why Choose the Mainnet?</h3>
-                                                <p class="card-text">
+                                        <div class="card shadow-sm mb-4 border-0 text-black" style="color:black !important">
+                                            <div class="card-body text-black" style="color:black !important">
+                                                <h3 class="h4 card-title text-black" style="color:black !important"><i class="bi bi-check-circle-fill me-2"></i>Why Choose the Mainnet?</h3>
+                                                <p class="card-text text-black" style="color:black !important">
                                                     The LatinChain Mainnet (<code>latinchain.pinet.com</code>) is the live production environment where real value is exchanged. By accessing the Mainnet, you are interacting with the fully operational version of our blockchain application.
                                                 </p>
-                                                <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item text-gray" style="color:gray !important">
                                                         <strong>Real Utility:</strong> Every action contributes to the genuine activity of the network.
                                                     </li>
-                                                    <li class="list-group-item">
+                                                    <li class="list-group-item text-gray" style="color:gray !important">
                                                         <strong>Verified Status:</strong> Users who choose to support the ecosystem via donations can unlock "Verified" status. This signals your commitment to the community.
                                                     </li>
-                                                    <li class="list-group-item">
+                                                    <li class="list-group-item text-gray" style="color:gray !important">
                                                         <strong>Double Utility Bonus:</strong> Active usage on the Mainnet contributes to your Pi utility usage bonus.
                                                     </li>
                                                 </ul>
@@ -268,7 +268,7 @@
                                             </p>
                                         </div>
 
-                                        <div class="mb-5 bg-light p-4 rounded-3">
+                                        <div class="mb-5 p-4 rounded-3">
                                             <h3 class="h4">How the LatinChain Token Works</h3>
                                             <p>
                                                 LatinChain is designed to foster a digital economy within the Pi Browser. By participating in either network, you are helping to stress-test and improve a growing financial ecosystem.
