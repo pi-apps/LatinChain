@@ -177,7 +177,7 @@
                             
                             <div style="font-size: 90%" t-if="not onlymainnet">
                                 We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem. Get double utility usage bonus <i class="fa-solid fa-bolt"></i> by using both Mainnet and Testnet.
-                                <a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Close this page</a>
+                                <!--<a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Close this page</a>-->
                             </div>
                             
                             <div style="font-size: 90%" t-if="onlymainnet">
