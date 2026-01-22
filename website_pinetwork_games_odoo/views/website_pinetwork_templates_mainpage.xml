@@ -2723,6 +2723,12 @@
                           </div>
                         </div>
                         
+                        <style>
+                                .darkmode--activated .text-latin-dark {
+                                  color: white !important;
+                                }
+                        </style>
+                        
                         <div class="container my-5">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-10 col-lg-8">
@@ -2749,13 +2755,13 @@
                                                 The LatinChain Mainnet (<code>latinchain.pinet.com</code>) is the live production environment where real value is exchanged. By accessing the Mainnet, you are interacting with the fully operational version of our blockchain application.
                                             </p>
                                             <ul class="list-group">
-                                                <li class="list-group-item text-gray" style="color:gray !important">
+                                                <li class="list-group-item text-latin-dark" style="color:black">
                                                     <strong>Real Utility:</strong> Every action contributes to the genuine activity of the network.
                                                 </li>
-                                                <li class="list-group-item text-gray" style="color:gray !important">
+                                                <li class="list-group-item text-latin-dark" style="color:black">
                                                     <strong>Verified Status:</strong> Users who choose to support the ecosystem via donations can unlock "Verified" status. This signals your commitment to the community.
                                                 </li>
-                                                <li class="list-group-item text-gray" style="color:gray !important">
+                                                <li class="list-group-item text-latin-dark" style="color:black">
                                                     <strong>Double Utility Bonus:</strong> Active usage on the Mainnet contributes to your Pi utility usage bonus.
                                                 </li>
                                             </ul>
