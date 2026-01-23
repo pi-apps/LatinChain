@@ -1346,47 +1346,51 @@ $( document ).ready(function() {
                                                     data = JSON.parse(data);
                                                     if(data.result && data.points_latin > 0)
                                                     {
-                                                        $("#button_reward_ad").prop( "disabled", true );
-                                                        $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                                                        var gemini_image = getGeminiImage();
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                                                        
-                                                        if(data.x2_game)
-                                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
-                                                        
-                                                        $("#open_modal").click();
-                                                        
-                                                        /*setTimeout(function ()
+                                                        if(redirect) //&& !unblocked)
                                                         {
-                                                            $("#button_reward_ad").html(btnvalue);
-                                                            $("#button_reward_ad").prop( "disabled", false );
-                                                        }, 5000);*/
-                                                        
-                                                        pi_ad_new = data.pi_ad_new;
-                                                        if(data.pi_ad_new)
-                                                        {
-                                                            $("#button_reward_ad").show();
-                                                            $("#piad_not_available").hide();
-                                                            setTimeout(function ()
-                                                            {
-                                                                $("#button_reward_ad").html(btnvalue);
-                                                                $("#button_reward_ad").prop( "disabled", false );
-                                                            }, 5000);
-                                                        }else
-                                                        {
-                                                            $("#button_reward_ad").hide();
-                                                            $("#piad_not_available").show();
-                                                            setTimeout(function ()
-                                                            {
-                                                                $("#button_reward_ad").html(btnvalue);
-                                                                $("#button_reward_ad").prop( "disabled", false );
-                                                            }, 5000);
-                                                        }
-                                                        
-                                                        get_user_rewarded();
-                                                        
-                                                        if(redirect && !unblocked)
                                                             colorboxLoadedMainnet();
+                                                        }
+                                                        else
+                                                        {
+                                                            $("#button_reward_ad").prop( "disabled", true );
+                                                            $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                            var gemini_image = getGeminiImage();
+                                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                            
+                                                            if(data.x2_game)
+                                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                                            
+                                                            $("#open_modal").click();
+                                                            
+                                                            /*setTimeout(function ()
+                                                            {
+                                                                $("#button_reward_ad").html(btnvalue);
+                                                                $("#button_reward_ad").prop( "disabled", false );
+                                                            }, 5000);*/
+                                                            
+                                                            pi_ad_new = data.pi_ad_new;
+                                                            if(data.pi_ad_new)
+                                                            {
+                                                                $("#button_reward_ad").show();
+                                                                $("#piad_not_available").hide();
+                                                                setTimeout(function ()
+                                                                {
+                                                                    $("#button_reward_ad").html(btnvalue);
+                                                                    $("#button_reward_ad").prop( "disabled", false );
+                                                                }, 5000);
+                                                            }else
+                                                            {
+                                                                $("#button_reward_ad").hide();
+                                                                $("#piad_not_available").show();
+                                                                setTimeout(function ()
+                                                                {
+                                                                    $("#button_reward_ad").html(btnvalue);
+                                                                    $("#button_reward_ad").prop( "disabled", false );
+                                                                }, 5000);
+                                                            }
+                                                            
+                                                            get_user_rewarded();
+                                                        }
                                                     }else{
                                                         //$("#button_reward_ad").html("Error, try again...");
                             
