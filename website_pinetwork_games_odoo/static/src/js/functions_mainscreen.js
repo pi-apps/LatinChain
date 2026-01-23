@@ -1346,7 +1346,7 @@ $( document ).ready(function() {
                                                     data = JSON.parse(data);
                                                     if(data.result && data.points_latin > 0)
                                                     {
-                                                        if(redirect) // && unblocked)
+                                                        if(redirect && unblocked)
                                                         {
                                                             colorboxLoadedMainnet();
                                                         }
