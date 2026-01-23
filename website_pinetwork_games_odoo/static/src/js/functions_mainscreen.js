@@ -64,9 +64,9 @@ async function colorboxLoaded()
     }*/
 }
 
-async function colorboxLoadedMainnet(openanyway)
+async function colorboxLoadedMainnet()
 {
-    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && ($("#nopopup").val() == false || openanyway == true))
+    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
         window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.107"+hashLatinChainGoogleTranslate;
     /*
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
@@ -1346,9 +1346,9 @@ $( document ).ready(function() {
                                                     data = JSON.parse(data);
                                                     if(data.result && data.points_latin > 0)
                                                     {
-                                                        if(redirect && unblocked)
+                                                        if(redirect && !unblocked)
                                                         {
-                                                            colorboxLoadedMainnet(true);
+                                                            colorboxLoadedMainnet();
                                                         }
                                                         else
                                                         {
@@ -1472,7 +1472,7 @@ $( document ).ready(function() {
                                 showRewardedPiAd(true);
                             }else if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                colorboxLoadedMainnet(false);
+                                colorboxLoadedMainnet();
                             }
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
