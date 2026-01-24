@@ -1275,7 +1275,7 @@ $( document ).ready(function() {
 
                             var start_flag = false;
                             
-                            async function showRewardedPiAd()
+                            async function showRewardedPiAd(redirect)
                             {
                                 end();
                                 if(seconds < 5 && start_flag)
@@ -1344,13 +1344,20 @@ $( document ).ready(function() {
                                                     data = JSON.parse(data);
                                                     if(data.result && data.points_latin > 0)
                                                     {
-                                                        var gemini_image = getGeminiImage();
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                                                        
-                                                        if(data.x2_game)
-                                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
-                                                        
-                                                        $("#open_modal").click();
+                                                        if(redirect && !unblocked)
+                                                        {
+                                                            colorboxLoadedMainnet();
+                                                        }
+                                                        else
+                                                        {
+                                                            var gemini_image = getGeminiImage();
+                                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                            
+                                                            if(data.x2_game)
+                                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                                            
+                                                            $("#open_modal").click();
+                                                        }
                                                         
                                                         $("#button_reward_ad").prop( "disabled", true );
                                                         $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
@@ -1456,12 +1463,15 @@ $( document ).ready(function() {
                             }
                             
                             $( "#button_reward_ad" ).click(async function() {
-                                showRewardedPiAd();
+                                showRewardedPiAd(false);
                             });
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                showRewardedPiAd();
+                                showRewardedPiAd(true);
+                            }else if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            {
+                                colorboxLoadedMainnet();
                             }
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
