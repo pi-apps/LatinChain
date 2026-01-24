@@ -46,7 +46,7 @@ async function colorboxLoaded()
     {
         if($.colorbox && !colorbox_opened)
         {
-            window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.107"+hashLatinChainGoogleTranslate;
+            window.location.href = "https://ecosystem.latin-chain.com/page-1";
             //$.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-1", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
             return false;
@@ -78,7 +78,7 @@ async function colorboxLoadedMainnet()
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
-            window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.107"+hashLatinChainGoogleTranslate;
+            window.location.href = "https://ecosystem.latin-chain.com/page-mainnet";
             //$.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-mainnet", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened_mainnet = true;
             return false;
