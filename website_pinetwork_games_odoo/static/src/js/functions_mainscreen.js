@@ -37,17 +37,17 @@ function setConfirmUnloadPoints(on) {
 
 async function colorboxLoaded()
 {
-    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
+    /*if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         await delayAsync(4000);
         window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.107"+hashLatinChainGoogleTranslate;
-    }
-    /*
+    }*/
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         if($.colorbox && !colorbox_opened)
         {
-            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-1", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.107"+hashLatinChainGoogleTranslate;
+            //$.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-1", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
             return false;
         }else{
@@ -64,22 +64,22 @@ async function colorboxLoaded()
                 colorboxLoaded();
             }, 100);
         }
-    }*/
+    }
 }
 
 async function colorboxLoadedMainnet()
 {
-    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
+    /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         await delayAsync(4000);
         window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.107"+hashLatinChainGoogleTranslate;
-    }
-    /*
+    }*/
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
-            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-mainnet", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.107"+hashLatinChainGoogleTranslate;
+            //$.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-mainnet", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened_mainnet = true;
             return false;
         }else{
@@ -97,7 +97,6 @@ async function colorboxLoadedMainnet()
             }, 100);
         }
     }
-    */
 }
 
 function set_points(points) {
