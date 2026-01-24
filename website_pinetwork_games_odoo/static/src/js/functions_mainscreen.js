@@ -1275,7 +1275,7 @@ $( document ).ready(function() {
 
                             var start_flag = false;
                             
-                            async function showRewardedPiAd(redirect)
+                            async function showRewardedPiAd()
                             {
                                 end();
                                 if(seconds < 5 && start_flag)
@@ -1456,12 +1456,12 @@ $( document ).ready(function() {
                             }
                             
                             $( "#button_reward_ad" ).click(async function() {
-                                showRewardedPiAd(false);
+                                showRewardedPiAd();
                             });
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                showRewardedPiAd(true);
+                                showRewardedPiAd();
                             }
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
