@@ -44,7 +44,7 @@ async function colorboxLoaded()
     {
         if($.colorbox && !colorbox_opened)
         {
-            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-1?v=1.108"+hashLatinChainGoogleTranslate, closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-1", closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
             return false;
         }else{
