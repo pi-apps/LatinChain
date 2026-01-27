@@ -1466,10 +1466,12 @@ $( document ).ready(function() {
                                 showRewardedPiAd(false);
                             });
                             
-                            if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 showRewardedPiAd(true);
-                            }else if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            }else*/
+                            
+                            if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 colorboxLoadedMainnet();
                             }
