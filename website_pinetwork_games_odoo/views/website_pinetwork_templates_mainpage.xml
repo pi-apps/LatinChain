@@ -944,7 +944,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.704"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.705"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1385,6 +1385,50 @@
                         
                         <div id="loading_word_under" style="margin-top:10px; width: 100%; display: none;"></div>
                         
+                        <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                            <div t-if="discount_active and discount_percentage" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                                <div style="margin-bottom:5px" class="border-bottom">
+                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount -<t t-esc="discount_percentage"/>%</div></strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-elif="mainnet in ['Testnet ON', 'Testnet OFF']">
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                                <div style="margin-bottom:5px" class="border-bottom">
+                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount #Mainnet</div></strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
+                                </div>
+                            </div>
+                        </t>
+                        
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SeasonCollection</div></strong></h5>
+                            </div>
+                            <div style="margin-bottom:5px">
+                                <img src="/website_pinetwork_games_odoo/static/src/img/latinchain-ecosystem.png?v=1.102" alt="LatinChain Collectible Ecosystem" class="img-fluid latinchain-ecosystem" style="cursor: pointer; max-width: 350px; border-radius: 20px;" width="100%" height="200px" />
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline;">#StakePi &#128202;</div></strong></h5>
+                            </div>
+                            <div style="margin-bottom:5px">
+                                <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="href-external col-12 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Mainnet</div></a>
+                                <!--<a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://ecosystem.pinet.com/apps/63d38f4fa9a2245a1c0ef9cf" target="_blank" class="href-external col-12 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Testnet</div></a>
+                                -->
+                            </div>
+                            <div style="margin-bottom:5px;">
+                                <a href="https://promote.mexc.com/r/U2hkpZK0" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="font-size:100%;" translate="no">JOIN MEXC AND TRADE PI</div><div style="font-size:80%;">Pi KYB ready</div></a>
+                            </div>
+                        </div>
+                        
                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#PiAds #EarnPoints &#128240;</div></strong></h5>
@@ -1396,8 +1440,7 @@
                                 </span>
                             </div>
                             
-                            <!--show_pi_ad_automatic-->
-                            <div class="row justify-content-center text-center p-3 mb-2 bg-info bg-gradient text-white rounded" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px; display: none;">
+                            <div class="row justify-content-center text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
                               <input class="form-check-input" type="checkbox" id="pi_ad_automatic" disabled="true" checked="true" />
                               <label class="form-check-label" for="pi_ad_automatic">
                                 <br/>
@@ -1479,50 +1522,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">#StakePi &#128202;</div></strong></h5>
-                            </div>
-                            <div style="margin-bottom:5px">
-                                <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="href-external col-12 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Mainnet</div></a>
-                                <!--<a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://ecosystem.pinet.com/apps/63d38f4fa9a2245a1c0ef9cf" target="_blank" class="href-external col-12 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Testnet</div></a>
-                                -->
-                            </div>
-                            <div style="margin-bottom:5px;">
-                                <a href="https://promote.mexc.com/r/U2hkpZK0" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="font-size:100%;" translate="no">JOIN MEXC AND TRADE PI</div><div style="font-size:80%;">Pi KYB ready</div></a>
-                            </div>
-                        </div>
-                        
-                        <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                            <div t-if="discount_active and discount_percentage" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                                <div style="margin-bottom:5px" class="border-bottom">
-                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount -<t t-esc="discount_percentage"/>%</div></strong></h5>
-                                </div>
-                                <div style="margin-bottom:5px">
-                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
-                                </div>
-                            </div>
-                        </t>
-                        <t t-elif="mainnet in ['Testnet ON', 'Testnet OFF']">
-                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                                <div style="margin-bottom:5px" class="border-bottom">
-                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount #Mainnet</div></strong></h5>
-                                </div>
-                                <div style="margin-bottom:5px">
-                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
-                                </div>
-                            </div>
-                        </t>
-                        
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SeasonCollection</div></strong></h5>
-                            </div>
-                            <div style="margin-bottom:5px">
-                                <img src="/website_pinetwork_games_odoo/static/src/img/latinchain-ecosystem.png?v=1.102" alt="LatinChain Collectible Ecosystem" class="img-fluid latinchain-ecosystem" style="cursor: pointer; max-width: 350px; border-radius: 20px;" width="100%" height="200px" />
                             </div>
                         </div>
                         
