@@ -1385,36 +1385,6 @@
                         
                         <div id="loading_word_under" style="margin-top:10px; width: 100%; display: none;"></div>
                         
-                        <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                            <div t-if="discount_active and discount_percentage" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                                <div style="margin-bottom:5px" class="border-bottom">
-                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount -<t t-esc="discount_percentage"/>%</div></strong></h5>
-                                </div>
-                                <div style="margin-bottom:5px">
-                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
-                                </div>
-                            </div>
-                        </t>
-                        <t t-elif="mainnet in ['Testnet ON', 'Testnet OFF']">
-                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                                <div style="margin-bottom:5px" class="border-bottom">
-                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount #Mainnet</div></strong></h5>
-                                </div>
-                                <div style="margin-bottom:5px">
-                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
-                                </div>
-                            </div>
-                        </t>
-                        
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SeasonCollection</div></strong></h5>
-                            </div>
-                            <div style="margin-bottom:5px">
-                                <img src="/website_pinetwork_games_odoo/static/src/img/latinchain-ecosystem.png?v=1.102" alt="LatinChain Collectible Ecosystem" class="img-fluid latinchain-ecosystem" style="cursor: pointer; max-width: 350px; border-radius: 20px;" width="100%" height="200px" />
-                            </div>
-                        </div>
-                        
                         <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#StakePi &#128202;</div></strong></h5>
@@ -1522,6 +1492,36 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                        
+                        <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                            <div t-if="discount_active and discount_percentage" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                                <div style="margin-bottom:5px" class="border-bottom">
+                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount -<t t-esc="discount_percentage"/>%</div></strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-elif="mainnet in ['Testnet ON', 'Testnet OFF']">
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                                <div style="margin-bottom:5px" class="border-bottom">
+                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount #Mainnet</div></strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="200px" /></a>
+                                </div>
+                            </div>
+                        </t>
+                        
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SeasonCollection</div></strong></h5>
+                            </div>
+                            <div style="margin-bottom:5px">
+                                <img src="/website_pinetwork_games_odoo/static/src/img/latinchain-ecosystem.png?v=1.102" alt="LatinChain Collectible Ecosystem" class="img-fluid latinchain-ecosystem" style="cursor: pointer; max-width: 350px; border-radius: 20px;" width="100%" height="200px" />
                             </div>
                         </div>
                         
