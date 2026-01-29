@@ -1725,9 +1725,10 @@ $( document ).ready(function() {
         window.location.href = "https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate;
     });
     
+    /*
     $( ".trends-news" ).click(function() {
         window.location.href = "https://trends.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate;
-    });
+    });*/
     
     /*
     $( ".tetris" ).click(function() {
