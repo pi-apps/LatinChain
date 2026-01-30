@@ -1514,12 +1514,12 @@ $( document ).ready(function() {
     
         if(localStorage.getItem("loggedIn"))
         {
-            await auth();
+            auth();
             
             setTimeout(function ()
             {
                 if(pi_user_id == "" && pi_user_code == "")
-                    await auth();
+                    auth();
                 setTimeout(function ()
                 {
                     if(pi_user_id == "" && pi_user_code == "")
@@ -1529,13 +1529,13 @@ $( document ).ready(function() {
             $(".loggedin").show();
         }else if(confirm($("#modal_login_latinchain_v2_message").text()))
         {
-            await auth();
+            auth();
             localStorage.setItem("loggedIn", true);
         
             setTimeout(function ()
             {
                 if(pi_user_id == "" && pi_user_code == "")
-                    await auth();
+                    auth();
                 setTimeout(function ()
                 {
                     if(pi_user_id == "" && pi_user_code == "")
@@ -1611,14 +1611,14 @@ $( document ).ready(function() {
         }
     });
     
-    $("#login_latinchain").click(async function(){
-        await auth();
+    $("#login_latinchain").click(function(){
+        auth();
         localStorage.setItem("loggedIn", true);
     
         setTimeout(function ()
         {
             if(pi_user_id == "" && pi_user_code == "")
-                await auth();
+                auth();
         }, 10000);
         $(".loggedin").show();
         $(".loggedout").hide();
