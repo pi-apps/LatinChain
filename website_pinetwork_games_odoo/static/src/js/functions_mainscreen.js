@@ -1554,7 +1554,6 @@ $( document ).ready(function() {
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
                 var result_piad = await showPiAds(Pi, true);
-                
                 if(!result_piad)
                 {
                     if(pi_user_id == "" && pi_user_code == "")
