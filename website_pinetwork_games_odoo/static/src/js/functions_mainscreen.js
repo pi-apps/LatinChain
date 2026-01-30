@@ -1739,7 +1739,7 @@ $( document ).ready(function() {
     });
     
     $( ".cryptonews" ).click(function() {
-        window.location.href = "https://news.latin-chain.com/?v=1.101"+hashLatinChainGoogleTranslate;
+        window.location.href = "https://news.latin-chain.com/?v=1.102"+hashLatinChainGoogleTranslate;
     });
     
     /*
