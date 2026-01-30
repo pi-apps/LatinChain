@@ -801,11 +801,11 @@ async function showPiAds(Pi, activated) {
         //$("#button_reward_ad").prop( "disabled", false );
     } catch (err) {
         $("#button_reward_ad").html(btnvalue);
-        return false;
         //$("#button_reward_ad").prop( "disabled", false );
         //alert(err);
         // Not able to fetch the user
     }
+    return false;
 }
 
 $( document ).ready(function() {
