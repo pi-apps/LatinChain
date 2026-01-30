@@ -38,7 +38,7 @@ function setConfirmUnloadPoints(on) {
 async function colorboxLoaded()
 {
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-        window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.110"+hashLatinChainGoogleTranslate;
+        window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.111"+hashLatinChainGoogleTranslate;
     /*
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
@@ -67,7 +67,7 @@ async function colorboxLoaded()
 async function colorboxLoadedMainnet()
 {
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-        window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.110"+hashLatinChainGoogleTranslate;
+        window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.111"+hashLatinChainGoogleTranslate;
     /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         if($.colorbox && !colorbox_opened_mainnet)
