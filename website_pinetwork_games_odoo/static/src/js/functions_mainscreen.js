@@ -1527,7 +1527,7 @@ $( document ).ready(function() {
                 }, 10000);
             }, 10000);
             $(".loggedin").show();
-        }else if(confirm($("#modal_login_latinchain_v2_message").text()))
+        }else if($("#nopopup").val() == false && confirm($("#modal_login_latinchain_v2_message").text()))
         {
             auth();
             localStorage.setItem("loggedIn", true);
