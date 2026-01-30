@@ -1553,7 +1553,7 @@ $( document ).ready(function() {
             
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
-                var result_piad = showPiAds(Pi, true);
+                var result_piad = await showPiAds(Pi, true);
                 alert(result_piad);
                 if(!result_piad)
                 {
