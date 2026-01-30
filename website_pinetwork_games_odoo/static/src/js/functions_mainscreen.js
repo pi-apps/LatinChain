@@ -37,8 +37,8 @@ function setConfirmUnloadPoints(on) {
 
 async function colorboxLoaded()
 {
-    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-        window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.111"+hashLatinChainGoogleTranslate;
+    //if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
+    //    window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.111"+hashLatinChainGoogleTranslate;
     /*
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
