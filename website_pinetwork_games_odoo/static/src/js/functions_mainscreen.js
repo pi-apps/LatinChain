@@ -797,11 +797,9 @@ async function showPiAds(Pi, activated) {
         }
         
         $("#button_reward_ad").html(btnvalue);
-        return true;
         //$("#button_reward_ad").prop( "disabled", false );
     } catch (err) {
         $("#button_reward_ad").html(btnvalue);
-        return false;
         //$("#button_reward_ad").prop( "disabled", false );
         //alert(err);
         // Not able to fetch the user
@@ -1520,11 +1518,6 @@ $( document ).ready(function() {
             {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
-                setTimeout(function ()
-                {
-                    if(pi_user_id == "" && pi_user_code == "")
-                        colorboxLoadedMainnet();
-                }, 10000);
             }, 10000);
             $(".loggedin").show();
         }else if(confirm($("#modal_login_latinchain_v2_message").text()))
@@ -1536,11 +1529,6 @@ $( document ).ready(function() {
             {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
-                setTimeout(function ()
-                {
-                    if(pi_user_id == "" && pi_user_code == "")
-                        colorboxLoadedMainnet();
-                }, 10000);
             }, 10000);
             $(".loggedin").show();
         }else
@@ -1553,11 +1541,7 @@ $( document ).ready(function() {
             
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
-                if(!showPiAds(Pi, true))
-                {
-                    if(pi_user_id == "" && pi_user_code == "")
-                        colorboxLoadedMainnet();
-                }
+                showPiAds(Pi, true);
             }
         }
         
