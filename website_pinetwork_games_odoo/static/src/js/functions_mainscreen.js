@@ -1553,7 +1553,9 @@ $( document ).ready(function() {
             
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
-                if(!showPiAds(Pi, true))
+                var result_piad = showPiAds(Pi, true);
+                alert(result_piad);
+                if(!result_piad)
                 {
                     if(pi_user_id == "" && pi_user_code == "")
                         colorboxLoadedMainnet();
