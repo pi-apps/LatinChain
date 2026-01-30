@@ -1553,12 +1553,14 @@ $( document ).ready(function() {
             
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
-                var result_piad = await showPiAds(Pi, true);
+                (async () => {
+                    var result_piad = await showPiAds(Pi, true);
                 
-                if(!result_piad)
-                {
-                    colorboxLoadedMainnet();
-                }
+                    if(!result_piad)
+                    {
+                        colorboxLoadedMainnet();
+                    }
+                })();
             }
         }
         
