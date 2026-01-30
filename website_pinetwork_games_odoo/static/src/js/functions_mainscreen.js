@@ -768,7 +768,7 @@ async function showPiAds(Pi, activated) {
         {
             $("#button_reward_ad").html(btnvalue);
             //$("#button_reward_ad").prop( "disabled", false );
-            return;
+            return "datetime-not-meet";
         }
         
         $("#button_reward_ad").html(btnvalue);
