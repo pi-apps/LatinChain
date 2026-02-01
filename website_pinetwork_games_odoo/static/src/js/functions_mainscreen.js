@@ -427,6 +427,7 @@ function get_user() {
                 $(".show-domino").show();
                 $(".show-latincrush").show();
                 $(".show-soccer-penalty").show();
+                $(".show-rpggame").show();
                 $(".show-gameslearning").show();
                 $(".show-odoolearning").show();
                 $(".show-languagelearning").show();
@@ -1879,6 +1880,10 @@ $( document ).ready(function() {
     
     $( ".soccer-penaltyinfo" ).click(function() {
         $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $( ".rpggameinfo" ).click(function() {
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Dungeons_%26_Dragons", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".webtorrentinfo" ).click(function() {

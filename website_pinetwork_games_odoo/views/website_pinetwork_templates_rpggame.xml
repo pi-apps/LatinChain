@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="rpggame" name="RPGGame">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html lang="en">
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Ember's Reach: The Shadow Crawler</title>
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Quicksand:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+                        <style>
+                            :root {
+                                --primary: #e63946;
+                                --secondary: #1d3557;
+                                --accent: #f1faee;
+                                --dark: #0a0a0a;
+                                --gold: #d4af37;
+                            }
+
+                            body {
+                                font-family: 'Quicksand', sans-serif;
+                                background-color: var(--dark);
+                                color: var(--accent);
+                                margin: 0;
+                                overflow: hidden;
+                                user-select: none;
+                            }
+
+                            h1, h2, h3, .cinzel {
+                                font-family: 'Cinzel', serif;
+                            }
+
+                            .rpg-container {
+                                height: 100vh;
+                                display: flex;
+                                flex-direction: column;
+                                background: linear-gradient(180deg, #121212 0%, #000 100%);
+                                position: relative;
+                            }
+
+                            .screen {
+                                display: none;
+                                flex: 1;
+                                padding: 20px;
+                                overflow-y: auto;
+                                animation: fadeIn 0.4s ease-out;
+                            }
+
+                            .screen.active {
+                                display: flex;
+                                flex-direction: column;
+                            }
+
+                            @keyframes fadeIn {
+                                from { opacity: 0; transform: translateY(10px); }
+                                to { opacity: 1; transform: translateY(0); }
+                            }
+
+                            .btn-fancy {
+                                background: linear-gradient(45deg, #451a1a, #801a1a);
+                                border: 2px solid var(--gold);
+                                color: white;
+                                padding: 12px 24px;
+                                border-radius: 4px;
+                                transition: all 0.2s;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+                                cursor: pointer;
+                                text-align: center;
+                            }
+
+                            .btn-fancy:active { transform: scale(0.95); }
+                            .btn-fancy:disabled { opacity: 0.5; cursor: not-allowed; }
+
+                            .btn-secondary {
+                                background: #2d3748;
+                                border: 1px solid #4a5568;
+                            }
+
+                            .stat-bar {
+                                height: 12px;
+                                background: #222;
+                                border-radius: 6px;
+                                overflow: hidden;
+                                border: 1px solid #444;
+                            }
+
+                            .hp-fill { background: linear-gradient(90deg, #ff4d4d, #b30000); width: 100%; transition: width 0.3s ease; }
+                            .xp-fill { background: linear-gradient(90deg, #ffd700, #b8860b); width: 0%; transition: width 0.3s ease; }
+
+                            .battle-stage {
+                                flex: 1;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-around;
+                                align-items: center;
+                                position: relative;
+                            }
+
+                            .enemy-sprite {
+                                font-size: 5rem;
+                                filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
+                                animation: float 3s ease-in-out infinite;
+                            }
+
+                            @keyframes float {
+                                0%, 100% { transform: translateY(0); }
+                                50% { transform: translateY(-20px); }
+                            }
+
+                            .hit-effect { animation: shake 0.4s; }
+                            @keyframes shake {
+                                0%, 100% { transform: translateX(0); }
+                                25% { transform: translateX(-10px); }
+                                75% { transform: translateX(10px); }
+                            }
+
+                            .log {
+                                background: rgba(0,0,0,0.8);
+                                border-top: 2px solid var(--gold);
+                                height: 120px;
+                                overflow-y: auto;
+                                padding: 10px;
+                                font-size: 0.85rem;
+                                color: #ccc;
+                            }
+
+                            .log-player { color: #5dade2; }
+                            .log-enemy { color: #ec7063; }
+                            .log-event { color: #f4d03f; }
+
+                            .room-desc {
+                                background: rgba(255,255,255,0.05);
+                                padding: 20px;
+                                border-radius: 8px;
+                                margin-bottom: 20px;
+                                border-left: 4px solid var(--gold);
+                            }
+
+                            .modal-overlay {
+                                position: fixed;
+                                top: 0; left: 0; right: 0; bottom: 0;
+                                background: rgba(0,0,0,0.95);
+                                display: none;
+                                justify-content: center;
+                                align-items: center;
+                                z-index: 100;
+                            }
+
+                            .floating-text {
+                                position: absolute;
+                                font-weight: bold;
+                                pointer-events: none;
+                                animation: floatUp 1s forwards;
+                                z-index: 10;
+                            }
+
+                            @keyframes floatUp {
+                                0% { opacity: 1; transform: translateY(0); }
+                                100% { opacity: 0; transform: translateY(-60px); }
+                            }
+
+                            #top-bar {
+                                padding: 10px 20px;
+                                background: rgba(0,0,0,0.5);
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                border-bottom: 1px solid #333;
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Donate to unlock Apps
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                    </head>
+                    <body translate="no">
+
+                        <div class="rpg-container">
+                            
+                            <!-- MAIN MENU -->
+                            <div id="screen-menu" class="screen active justify-center items-center text-center">
+                                <h1 class="text-5xl md:text-7xl mb-4 text-white font-bold tracking-widest cinzel">EMBER'S REACH</h1>
+                                <p class="text-lg md:text-xl mb-12 text-gray-400">The Shadow Crawler</p>
+                                
+                                <div class="flex flex-col gap-4 w-64">
+                                    <button id="btn-continue" class="btn-fancy hidden" onclick="continueGame()">Continue Journey</button>
+                                    <button class="btn-fancy" onclick="newGame()">New Quest</button>
+                                    <button class="btn-fancy" onclick="window.location.href='/'"><i class="fa fa-step-backward"></i></button>
+                                </div>
+                                
+                                <p class="text-xs text-gray-600 mt-12">Progress is saved after battles and resting.</p>
+                            </div>
+
+                            <!-- CHARACTER CREATION -->
+                            <div id="screen-character" class="screen items-center">
+                                <h2 class="text-3xl mb-8 cinzel">Choose Your Path</h2>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+                                    <div class="bg-gray-900 p-6 rounded border border-gray-700 hover:border-red-500 cursor-pointer transition group" onclick="selectClass('Warrior')">
+                                        <div class="text-4xl mb-4 group-hover:scale-110 transition">⚔️</div>
+                                        <h3 class="text-xl font-bold mb-2">Warrior</h3>
+                                        <p class="text-sm text-gray-400">High health and brute force. Relies on heavy strikes.</p>
+                                    </div>
+                                    <div class="bg-gray-900 p-6 rounded border border-gray-700 hover:border-blue-500 cursor-pointer transition group" onclick="selectClass('Mage')">
+                                        <div class="text-4xl mb-4 group-hover:scale-110 transition">🔮</div>
+                                        <h3 class="text-xl font-bold mb-2">Mage</h3>
+                                        <p class="text-sm text-gray-400">Fragile but powerful. Uses arcane fire to incinerate foes.</p>
+                                    </div>
+                                    <div class="bg-gray-900 p-6 rounded border border-gray-700 hover:border-green-500 cursor-pointer transition group" onclick="selectClass('Rogue')">
+                                        <div class="text-4xl mb-4 group-hover:scale-110 transition">🗡️</div>
+                                        <h3 class="text-xl font-bold mb-2">Rogue</h3>
+                                        <p class="text-sm text-gray-400">Quick and deadly. High critical strike chance.</p>
+                                    </div>
+                                </div>
+                                <button class="mt-8 text-gray-500 underline" onclick="showScreen('screen-menu')">Back to Menu</button>
+                            </div>
+
+                            <!-- EXPLORATION SCREEN -->
+                            <div id="screen-explore" class="screen">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div>
+                                        <span class="text-gold font-bold cinzel" id="ui-char-name">Hero</span>
+                                        <span class="text-gray-500 ml-2 text-sm">Lvl <span id="ui-lvl">1</span></span>
+                                    </div>
+                                    <div class="text-sm bg-gray-800 px-3 py-1 rounded">Floor: <span id="ui-floor">1</span></div>
+                                </div>
+                                
+                                <div class="room-desc">
+                                    <h3 class="text-gold mb-2 cinzel" id="room-title">The Entrance</h3>
+                                    <p id="room-text" class="text-sm italic">A cold breeze whistles through the stone corridor.</p>
+                                </div>
+
+                                <div class="flex-1 flex flex-col justify-center gap-4 max-w-md mx-auto w-full">
+                                    <button class="btn-fancy" onclick="exploreRoom()">Venture Deeper</button>
+                                    <button class="btn-fancy bg-gray-800" onclick="rest()">Rest &amp; Recover</button>
+                                    <button id="btn-restore-explore" class="btn-fancy btn-secondary text-xs py-2 mt-4 hidden" onclick="confirmLoad()">Restore Last Save</button>
+                                    <button class="text-xs text-gray-600 mt-4" onclick="showScreen('screen-menu')">Quit to Menu</button>
+                                </div>
+
+                                <div class="mt-8">
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span>HP: <span id="ui-hp">100</span>/<span id="ui-maxhp">100</span></span>
+                                        <span>XP: <span id="ui-xp">0</span>/<span id="ui-nextxp">50</span></span>
+                                    </div>
+                                    <div class="stat-bar mb-2"><div id="bar-hp" class="hp-fill"></div></div>
+                                    <div class="stat-bar"><div id="bar-xp" class="xp-fill"></div></div>
+                                </div>
+                            </div>
+
+                            <!-- BATTLE SCREEN -->
+                            <div id="screen-battle" class="screen">
+                                <div class="battle-stage" id="battle-stage">
+                                    <div class="entity" id="enemy-container">
+                                        <div id="enemy-sprite" class="enemy-sprite">👾</div>
+                                        <h3 id="enemy-name" class="mt-2 text-xl font-bold cinzel">Shadow Imp</h3>
+                                        <div class="stat-bar w-48 mx-auto mt-2"><div id="bar-enemy-hp" class="hp-fill"></div></div>
+                                        <p class="text-xs mt-1"><span id="enemy-hp-text">20/20</span> HP</p>
+                                    </div>
+
+                                    <div class="entity" id="player-container">
+                                        <div class="text-xs uppercase tracking-widest text-gray-500 mb-1">Vitals</div>
+                                        <div class="stat-bar w-64 mx-auto"><div id="bar-player-hp" class="hp-fill"></div></div>
+                                        <p class="text-xs mt-1 font-bold"><span id="player-hp-text">100/100</span> HP</p>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3 p-2 max-w-md mx-auto w-full">
+                                    <button class="btn-fancy text-sm" onclick="playerAction('attack')">Attack</button>
+                                    <button class="btn-fancy text-sm" id="btn-skill" onclick="playerAction('skill')">Special</button>
+                                    <button class="btn-fancy text-sm bg-blue-900" onclick="playerAction('defend')">Defend</button>
+                                    <button class="btn-fancy text-sm bg-gray-700" onclick="playerAction('flee')">Flee</button>
+                                </div>
+
+                                <div class="log" id="battle-log"></div>
+                            </div>
+
+                            <!-- MODAL: CONFIRM LOAD -->
+                            <div id="modal-confirm" class="modal-overlay">
+                                <div class="bg-gray-900 p-8 rounded-lg border-2 border-gold text-center max-w-sm mx-4">
+                                    <h2 class="text-2xl text-gold font-bold mb-4 cinzel">RESTORE SAVE?</h2>
+                                    <p class="mb-6 text-gray-400">You will lose all progress made on this floor and return to your last checkpoint.</p>
+                                    <div class="flex gap-4">
+                                        <button class="btn-fancy flex-1 text-sm bg-gray-700" onclick="document.getElementById('modal-confirm').style.display='none'">Cancel</button>
+                                        <button class="btn-fancy flex-1 text-sm" onclick="continueGame(); document.getElementById('modal-confirm').style.display='none'">Restore</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GAME OVER MODAL -->
+                            <div id="modal-death" class="modal-overlay">
+                                <div class="bg-gray-900 p-8 rounded-lg border-2 border-red-600 text-center max-w-sm mx-4">
+                                    <h2 class="text-4xl text-red-600 font-bold mb-4 cinzel">DEFEATED</h2>
+                                    <p class="mb-4 text-gray-400">The shadows have claimed your soul.</p>
+                                    <button class="btn-fancy w-full mb-3" onclick="continueGame(); document.getElementById('modal-death').style.display='none'">Reload Last Save</button>
+                                    <button class="btn-fancy w-full bg-gray-800" onclick="resetGame()">Start New Journey</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/rpggame_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>

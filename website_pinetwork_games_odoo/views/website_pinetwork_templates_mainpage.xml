@@ -944,7 +944,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.735"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.736"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -2280,6 +2280,11 @@
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-soccer-penalty" style="">
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12"><a id="soccer-penalty" href="/soccer-penalty" class="btn btn-outline-success font-weight-bold text-black border-success soccer-penalty" style="width: 100% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SOCCER PENALTY</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with AI</div></a><button id="soccer-penaltyinfo" class="col-auto btn btn-sm btn-outline-info soccer-penaltyinfo" style="position: absolute; top: 0; right: -2;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                            </div>
+                                        </li>
+                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-rpggame" style="">
+                                            <div class="row" style="text-align: center; padding: 10px">
+                                                <div class="col-12"><a id="rpggame" href="/rpggame" class="btn btn-outline-success font-weight-bold text-black border-success rpggame" style="width: 100% !important; border: 2px solid;"><div style=""><i class="fa-brands fa-space-awesome"></i></div><div style="font-size:100%;" translate="no">RPG GAME</div><div style="font-size:80%;">Minigame (you won't earn points from it, just for passing the time)</div><div style="font-size:80%;">Developed with AI</div></a><button id="rpggameinfo" class="col-auto btn btn-sm btn-outline-info rpggameinfo" style="position: absolute; top: 0; right: -2;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
