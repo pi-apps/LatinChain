@@ -763,7 +763,7 @@ async function showPiAds(Pi, activated) {
     try {
         var d1 = new Date();
         var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
-        var date2 = new Date(date1.getTime() - 5 * parseInt($("#pi_ad_seconds").val()) * 1000);
+        var date2 = new Date(date1.getTime() - parseInt($("#pi_ad_seconds").val()) * 1000);
         
         if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
         {
