@@ -797,15 +797,20 @@ async function showPiAds(Pi, activated) {
             $("#open_modal").click();*/
         }
         
+        $("#button_reward_ad").prop( "disabled", false );
         $("#button_reward_ad").html(btnvalue);
         return true;
         //$("#button_reward_ad").prop( "disabled", false );
     } catch (err) {
+        $("#button_reward_ad").prop( "disabled", false );
         $("#button_reward_ad").html(btnvalue);
         //$("#button_reward_ad").prop( "disabled", false );
         //alert(err);
         // Not able to fetch the user
     }
+    
+    $("#button_reward_ad").prop( "disabled", false );
+    $("#button_reward_ad").html(btnvalue);
     return false;
 }
 
