@@ -763,14 +763,14 @@ async function showPiAds(Pi, activated) {
     try {
         var d1 = new Date();
         var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
-        var date2 = new Date(date1.getTime() - 1 * 60 * 60000);
+        var date2 = new Date(date1.getTime() - 5 * 60000);
         
-        /*if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
+        if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
         {
             $("#button_reward_ad").html(btnvalue);
             //$("#button_reward_ad").prop( "disabled", false );
             return "datetime-not-meet";
-        }*/
+        }
         
         $("#button_reward_ad").html(btnvalue);
         
@@ -1472,7 +1472,16 @@ $( document ).ready(function() {
                             
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                showRewardedPiAd(true);
+                                (async () => {
+                                    var result_piad = await showPiAds(Pi, true);
+                                
+                                    /*if(!result_piad)
+                                    {
+                                        colorboxLoadedMainnet();
+                                    }*/
+                                })();
+                                
+                                //showRewardedPiAd(true);
                             }/*else if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 colorboxLoadedMainnet();
