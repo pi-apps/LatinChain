@@ -1347,20 +1347,21 @@ $( document ).ready(function() {
                                                     data = JSON.parse(data);
                                                     if(data.result && data.points_latin > 0)
                                                     {
-                                                        if(redirect && !unblocked)
+                                                        /*if(redirect && !unblocked)
                                                         {
-                                                            colorboxLoadedMainnet();
+                                                            //colorboxLoadedMainnet();
                                                         }
                                                         else
                                                         {
-                                                            var gemini_image = getGeminiImage();
-                                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                                                            
-                                                            if(data.x2_game)
-                                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
-                                                            
-                                                            $("#open_modal").click();
-                                                        }
+                                                        }*/
+                                                        
+                                                        var gemini_image = getGeminiImage();
+                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                        
+                                                        if(data.x2_game)
+                                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                                        
+                                                        $("#open_modal").click();
                                                         
                                                         $("#button_reward_ad").prop( "disabled", true );
                                                         $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
@@ -1472,10 +1473,10 @@ $( document ).ready(function() {
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 showRewardedPiAd(true);
-                            }else if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            }/*else if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 colorboxLoadedMainnet();
-                            }
+                            }*/
                             
                             /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
@@ -1521,11 +1522,11 @@ $( document ).ready(function() {
             {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
-                setTimeout(function ()
+                /*setTimeout(function ()
                 {
                     if(pi_user_id == "" && pi_user_code == "")
                         colorboxLoadedMainnet();
-                }, 10000);
+                }, 10000);*/
             }, 10000);
             $(".loggedin").show();
         }else if(confirm($("#modal_login_latinchain_v2_message").text()))
@@ -1537,11 +1538,11 @@ $( document ).ready(function() {
             {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
-                setTimeout(function ()
+                /*setTimeout(function ()
                 {
                     if(pi_user_id == "" && pi_user_code == "")
                         colorboxLoadedMainnet();
-                }, 10000);
+                }, 10000);*/
             }, 10000);
             $(".loggedin").show();
         }else
@@ -1557,10 +1558,10 @@ $( document ).ready(function() {
                 (async () => {
                     var result_piad = await showPiAds(Pi, true);
                 
-                    if(!result_piad)
+                    /*if(!result_piad)
                     {
                         colorboxLoadedMainnet();
-                    }
+                    }*/
                 })();
             }
         }
