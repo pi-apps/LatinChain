@@ -768,6 +768,7 @@ async function showPiAds(Pi, activated) {
         if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
         {
             $("#button_reward_ad").html(btnvalue);
+            $("#button_reward_ad").prop( "disabled", false );
             //$("#button_reward_ad").prop( "disabled", false );
             return "datetime-not-meet";
         }
@@ -1470,8 +1471,6 @@ $( document ).ready(function() {
                                     $("#button_reward_ad").prop( "disabled", false );
                                 }
                             }
-                            
-                            $("#button_reward_ad").prop( "disabled", false );
                             
                             $( "#button_reward_ad" ).click(async function() {
                                 showRewardedPiAd(false);
