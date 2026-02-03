@@ -791,10 +791,10 @@ async function showPiAds(Pi, activated) {
 
             localStorage['pi_ad_datetime_latinchain'] = date1.getTime();
             
-            var gemini_image = getGeminiImage();
+            /*var gemini_image = getGeminiImage();
             $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_rewarded_message").text());
             
-            $("#open_modal").click();
+            $("#open_modal").click();*/
         }
         
         $("#button_reward_ad").html(btnvalue);
