@@ -113,13 +113,13 @@ var startCommonAppsAI = () => {
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
-                                test_rewarded();
                             }
                             start();
                         }).fail(function() {
                             
                         });
                     }
+                    test_rewarded();
                 }
             } catch (err) {
             }
