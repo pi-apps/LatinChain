@@ -25,12 +25,52 @@ var startCommonAppsAI = () => {
         var accessToken = "";
         var passkey = "";
         
+        function setConfirmAIUnload(on) {
+            unloadMessage(on);
+        }
+
+        function setConfirmAIUnloadPoints(on) {
+            unloadMessage(on);
+        }
+        
         function test_rewarded()
         {
             document.getElementById('blockingOverlay').style.display = 'none';
         }
+        
+        var startTime=new Date(), endTime=new Date(), seconds=0;
 
-        async function showPiRewardedAds(Pi) {
+        function start() {
+          startTime = new Date();
+        };
+
+        function end() {
+          endTime = new Date();
+          var timeDiff = endTime - startTime; //in ms
+          // strip the ms
+          timeDiff /= 1000;
+
+          // get seconds 
+          seconds = Math.round(timeDiff);
+        }
+
+        var start_flag = false;
+        
+        async function showRewardedPiAd(redirect)
+        {
+            end();
+            if(seconds < 5 && start_flag)
+            {
+                start();
+                return;
+            }
+            start();
+            
+            if(!start_flag)
+            {
+                start_flag = true;
+            }
+            
             try {
                 
                 const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
@@ -55,11 +95,31 @@ var startCommonAppsAI = () => {
                 
                 if (showAdResponse.result === "AD_REWARDED")
                 {
-                    if(showAdResponse.adId)
+                    if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                     {
-                        
+                        var data = {
+                            'pi_user_id': pi_user_id,
+                            'pi_user_code': pi_user_code,
+                            'adId': showAdResponse.adId,
+                            'passkey': passkey,
+                            'accessToken': accessToken,
+                            'csrf_token': odoo.csrf_token,
+                        };
+                        //$.ajaxSetup({async: false});
+                        setConfirmAIUnloadPoints(true);
+                        return $.post( "/set-latin-points", data).done(function(data) {
+                            end();
+                            setConfirmAIUnloadPoints(false);
+                            data = JSON.parse(data);
+                            if(data.result && data.points_latin > 0)
+                            {
+                                test_rewarded();
+                            }
+                            start();
+                        }).fail(function() {
+                            
+                        });
                     }
-                    test_rewarded();
                 }
             } catch (err) {
             }
