@@ -56,7 +56,7 @@ var startCommonAppsAI = () => {
 
         var start_flag = false;
         
-        async function showRewardedPiAd(redirect)
+        async function showPiRewardedAds()
         {
             end();
             if(seconds < 5 && start_flag)
