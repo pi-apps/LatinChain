@@ -169,7 +169,7 @@ var startCommonAppsAI = () => {
                     
                     set_points(0).always(function(){
                         get_user().always(function(){
-                            test_rewarded();
+                            $("#test_app").click();
                             //document.getElementById('blockingOverlay').style.display = 'none';
                         });
                     });
