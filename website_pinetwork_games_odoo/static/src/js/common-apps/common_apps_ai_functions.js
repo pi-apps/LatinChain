@@ -8,6 +8,10 @@ var startCommonAppsAIVars = {
     'iq_result': '',
     'iq_category': '',
     'iq_date': '',
+    'show_pi_ad_user': true,
+    'show_pi_ad_user_time': 0,
+    'pi_ad_new': false,
+    'pi_ad_max': 0,
 };
 
 var startCommonAppsAI = () => {
@@ -62,8 +66,14 @@ var startCommonAppsAI = () => {
         }
         
         $("#test_app").click(function(){
-            alert("You can use this app, for testing purposes, until you unblock the game.");
-            showPiRewardedAds(Pi);
+            if(startCommonAppsAIVars.pi_ad_new)
+            {
+                alert("You can use this app, for testing purposes, until you unblock the game.");
+                showPiRewardedAds(Pi);
+            }else
+            {
+                alert("Max rewarded ads per day reached.");
+            }
         });
         
         function set_points(points) {
@@ -107,6 +117,11 @@ var startCommonAppsAI = () => {
                         startCommonAppsAIVars.iq_result = data.iq_result;
                         startCommonAppsAIVars.iq_category = data.iq_category;
                         startCommonAppsAIVars.iq_date = data.iq_date;
+                        startCommonAppsAIVars.show_pi_ad_user = data.show_pi_ad;
+                        startCommonAppsAIVars.show_pi_ad_user_time = data.show_pi_ad_time;
+                        startCommonAppsAIVars.pi_ad_new = data.pi_ad_new;
+                        startCommonAppsAIVars.pi_ad_max = data.pi_ad_max;
+                        
                         if(data.unblocked)
                         {
                             document.getElementById('blockingOverlay').style.display = 'none';
@@ -154,7 +169,7 @@ var startCommonAppsAI = () => {
                     
                     set_points(0).always(function(){
                         get_user().always(function(){
-                    
+                            test_rewarded();
                             //document.getElementById('blockingOverlay').style.display = 'none';
                         });
                     });
