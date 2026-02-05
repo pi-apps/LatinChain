@@ -256,6 +256,7 @@ function get_user_rewarded() {
             if(data.result)
             {
                 $("#pi_ad_counter").html(data.pi_ad_counter);
+                $("#resting_time").html(data.resting_time);
                 
                 if(data.unblocked)
                 {
@@ -416,6 +417,7 @@ function get_user() {
                 pi_ad_max = data.pi_ad_max;
                 
                 $("#pi_ad_counter").html(data.pi_ad_counter);
+                $("#resting_time").html(data.resting_time);
                 
                 $("#pi_ad_hours").html(show_pi_ad_user_time);
                 $("#pi_ad_max").html(pi_ad_max);

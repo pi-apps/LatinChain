@@ -466,6 +466,8 @@ class PiNetworkBaseController(http.Controller):
         else:
             referrer_code = ""
         
+        resting_time = str(timedelta(seconds=((datetime.now() - timedelta(seconds=pi_ad_seconds))-datetime.now()).timestamp()))
+        
         #if apps_list[0].mainnet in ['Testnet OFF']:
         #    apps_list[0].sudo()._pay_onincomplete_a2u(pi_users_list[0])
             
@@ -498,6 +500,7 @@ class PiNetworkBaseController(http.Controller):
                             'pi_ad_new': pi_ad_new,
                             'pi_ad_max': pi_ad_max,
                             'pi_ad_counter': pi_users_list[0].pi_ad_counter,
+                            'resting_time': resting_time,
                             'pi_ad_automatic': pi_ad_automatic,
                             'avatar_user': pi_users_list[0].avatar_user,
                             'avatar_user_url': pi_users_list[0].avatar_user_url,
