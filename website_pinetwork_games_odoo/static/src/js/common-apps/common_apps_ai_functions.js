@@ -35,7 +35,10 @@ var startCommonAppsAI = () => {
         
         function test_rewarded()
         {
-            document.getElementById('blockingOverlay').style.display = 'none';
+            document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+            document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
         }
         
         var startTime=new Date(), endTime=new Date(), seconds=0;
