@@ -468,6 +468,10 @@ class PiNetworkBaseController(http.Controller):
         
         resting_time = str((pi_users_list[0].pi_ad_datetime-(datetime.now() - timedelta(seconds=pi_ad_seconds))))
         
+        pi_ad_counter = pi_users_list[0].pi_ad_counter
+        if pi_users_list[0].pi_ad_counter > pi_ad_max:
+            pi_ad_counter = pi_ad_max
+        
         #if apps_list[0].mainnet in ['Testnet OFF']:
         #    apps_list[0].sudo()._pay_onincomplete_a2u(pi_users_list[0])
             
@@ -499,7 +503,7 @@ class PiNetworkBaseController(http.Controller):
                             'show_pi_ad_time': show_pi_ad_time,
                             'pi_ad_new': pi_ad_new,
                             'pi_ad_max': pi_ad_max,
-                            'pi_ad_counter': pi_users_list[0].pi_ad_counter,
+                            'pi_ad_counter': pi_ad_counter,
                             'resting_time': resting_time,
                             'pi_ad_automatic': pi_ad_automatic,
                             'avatar_user': pi_users_list[0].avatar_user,
