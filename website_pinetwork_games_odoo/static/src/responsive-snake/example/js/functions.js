@@ -145,6 +145,7 @@ function get_user(pause) {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     
+                    $("#test_app").show();
                     $("#test_app").prop( "disabled", false );
                     $("#test_app").click(function(){
                         if(pi_ad_new)

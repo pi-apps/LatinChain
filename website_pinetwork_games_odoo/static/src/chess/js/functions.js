@@ -190,6 +190,7 @@ function get_user() {
                     $("#home-tab").prop( "disabled", true );
                     $('#chess-tab').click();
                     
+                    $("#test_app").show();
                     $("#test_app").prop( "disabled", false );
                     $("#test_app").click(function(){
                         if(pi_ad_new)

@@ -160,6 +160,7 @@ function get_user() {
                     $("#sudoku-tab").show();
                     $("#sudoku-tab").click();
                     
+                    $("#test_app").show();
                     $("#test_app").prop( "disabled", false );
                     $("#test_app").click(function(){
                         if(pi_ad_new)
