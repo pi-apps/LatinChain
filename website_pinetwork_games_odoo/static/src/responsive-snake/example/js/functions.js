@@ -145,23 +145,10 @@ function get_user(pause) {
                     $("#pi_donate").hide();
                     $("#button_click").hide();
                     
-                    $("#test_app").show();
-                    $("#test_app").prop( "disabled", false );
-                    $("#test_app").click(function(){
-                        if(pi_ad_new)
-                        {
-                            alert("You can use this app, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
-                            showPiRewardedAds(Pi);
-                        }else
-                        {
-                            alert("Max rewarded ads per day reached.");
-                        }
-                    });
-                    
                     if(pause)
                         press(80);
                     
-                    //$("#test_app").hide();
+                    $("#test_app").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Snake, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");

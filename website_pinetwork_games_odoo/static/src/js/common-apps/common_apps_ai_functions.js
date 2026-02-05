@@ -188,10 +188,8 @@ var startCommonAppsAI = () => {
                         
                         if(data.unblocked)
                         {
-                            //document.getElementById('blockingOverlay').style.display = 'none';
-                            
-                            document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
-                            document.getElementById('paying-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                            document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                         }else

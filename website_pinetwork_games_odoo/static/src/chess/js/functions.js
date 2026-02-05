@@ -183,25 +183,12 @@ function get_user() {
                     
                     $("#pi_donate").hide();
                     $("#button_click").hide();
-                    //$(".hide_when_unblock").hide();
+                    $(".hide_when_unblock").hide();
                     $("#loading_word").hide();
                     $(".loading_section").hide();
                     $('#chess-tab').show();
                     $("#home-tab").prop( "disabled", true );
                     $('#chess-tab').click();
-                    
-                    $("#test_app").show();
-                    $("#test_app").prop( "disabled", false );
-                    $("#test_app").click(function(){
-                        if(pi_ad_new)
-                        {
-                            alert("You can use this app, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
-                            showPiRewardedAds(Pi);
-                        }else
-                        {
-                            alert("Max rewarded ads per day reached.");
-                        }
-                    });
                     
                     setTimeout(function() {
                       load_all_boards();
@@ -210,8 +197,8 @@ function get_user() {
                       }, 2000);
 					}, 1000);
                     
-                    //$("#test_app").hide();
-                    //$(".show_test_app").hide();
+                    $("#test_app").hide();
+                    $(".show_test_app").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Chess, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
