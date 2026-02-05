@@ -281,7 +281,7 @@ async function showPiRewardedAds(Pi)
                 };
                 //$.ajaxSetup({async: false});
                 setConfirmUnloadPoints(true);
-                return $.post( "/set-latin-points", data).done(function(data) {
+                $.post( "/set-latin-points", data).done(function(data) {
                     end();
                     setConfirmUnloadPoints(false);
                     data = JSON.parse(data);
