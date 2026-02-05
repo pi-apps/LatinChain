@@ -35,7 +35,7 @@ var startCommonAppsAI = () => {
         
         function test_rewarded()
         {
-            //document.getElementById('blockingOverlay').style.display = 'none';
+            document.getElementById('blockingOverlay').style.display = 'none';
         }
         
         var startTime=new Date(), endTime=new Date(), seconds=0;
