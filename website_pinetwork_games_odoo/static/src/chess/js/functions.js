@@ -9,6 +9,8 @@ const Pi = window.Pi;
 var startTime=new Date(), endTime=new Date(), seconds=0;
 var unblocked = false;
 var show_pi_ad_user = true;
+var pi_ad_new = false;
+var pi_ad_max = 0;
 
 function showConfetti(duration){
     const end = Date.now() + duration * 1000;
@@ -160,6 +162,9 @@ function get_user() {
                     window.location.reload(true);
                 }
                 
+                pi_ad_new = data.pi_ad_new;
+                pi_ad_max = data.pi_ad_max;
+                
                 show_pi_ad_user = data.show_pi_ad;
                 
                 passkey=data.passkey;
@@ -192,8 +197,8 @@ function get_user() {
                       }, 2000);
 					}, 1000);
                     
-                    $("#test_app").hide();
-                    $(".show_test_app").hide();
+                    //$("#test_app").hide();
+                    //$(".show_test_app").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Chess, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -213,8 +218,8 @@ function get_user() {
                       }, 2000);
 					}, 1000);
                     
-                    $("#test_app").hide();
-                    $(".show_test_app").hide();
+                    //$("#test_app").hide();
+                    //$(".show_test_app").hide();
                 }
                 else
                 {
@@ -228,8 +233,14 @@ function get_user() {
                     
                     $("#test_app").prop( "disabled", false );
                     $("#test_app").click(function(){
-                        alert("You can use Chess, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
-                        showPiRewardedAds(Pi);
+                        if(pi_ad_new)
+                        {
+                            alert("You can use this app, for testing purposes, until you unblock the game.");
+                            showPiRewardedAds(Pi);
+                        }else
+                        {
+                            alert("Max rewarded ads per day reached.");
+                        }
                     });
                 }
             }
@@ -256,11 +267,27 @@ function test_rewarded()
         $("#home-tab").prop( "disabled", false );
       }, 2000);
     }, 1000);
-    $("#test_app").hide();
-    $(".show_test_app").hide();
+    //$("#test_app").hide();
+    //$(".show_test_app").hide();
 }
 
-async function showPiRewardedAds(Pi) {
+var start_flag = false;
+
+async function showPiRewardedAds()
+{
+    end();
+    if(seconds < 5 && start_flag)
+    {
+        start();
+        return;
+    }
+    start();
+    
+    if(!start_flag)
+    {
+        start_flag = true;
+    }
+    
     try {
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
@@ -285,9 +312,29 @@ async function showPiRewardedAds(Pi) {
         
         if (showAdResponse.result === "AD_REWARDED")
         {
-            if(showAdResponse.adId)
+            if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
             {
-                
+                var data = {
+                    'pi_user_id': pi_user_id,
+                    'pi_user_code': pi_user_code,
+                    'adId': showAdResponse.adId,
+                    'passkey': passkey,
+                    'accessToken': accessToken,
+                    'csrf_token': odoo.csrf_token,
+                };
+                //$.ajaxSetup({async: false});
+                setConfirmAIUnloadPoints(true);
+                return $.post( "/set-latin-points", data).done(function(data) {
+                    end();
+                    setConfirmAIUnloadPoints(false);
+                    data = JSON.parse(data);
+                    if(data.result && data.points_latin > 0)
+                    {
+                    }
+                    start();
+                }).fail(function() {
+                    
+                });
             }
             test_rewarded();
         }
