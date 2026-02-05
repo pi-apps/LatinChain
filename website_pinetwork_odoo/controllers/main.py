@@ -466,7 +466,10 @@ class PiNetworkBaseController(http.Controller):
         else:
             referrer_code = ""
         
-        resting_time = str((pi_users_list[0].pi_ad_datetime-(datetime.now() - timedelta(seconds=pi_ad_seconds)))).split(".")[0]
+        if pi_users_list[0].pi_ad_datetime:
+            resting_time = str((pi_users_list[0].pi_ad_datetime-(datetime.now() - timedelta(seconds=pi_ad_seconds)))).split(".")[0]
+        else:
+            resting_time = ""
         
         pi_ad_counter = pi_users_list[0].pi_ad_counter
         if pi_users_list[0].pi_ad_counter > pi_ad_max:
