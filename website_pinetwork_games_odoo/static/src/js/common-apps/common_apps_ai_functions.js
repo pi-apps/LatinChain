@@ -116,7 +116,7 @@ var startCommonAppsAI = () => {
                             }
                             start();
                         }).fail(function() {
-                            
+                            setConfirmAIUnloadPoints(false);
                         });
                     }
                     test_rewarded();

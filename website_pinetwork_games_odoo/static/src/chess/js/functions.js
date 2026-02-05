@@ -335,17 +335,17 @@ async function showPiRewardedAds()
                     'csrf_token': odoo.csrf_token,
                 };
                 //$.ajaxSetup({async: false});
-                setConfirmAIUnloadPoints(true);
+                setConfirmUnloadPoints(true);
                 return $.post( "/set-latin-points", data).done(function(data) {
                     end();
-                    setConfirmAIUnloadPoints(false);
+                    setConfirmUnloadPoints(false);
                     data = JSON.parse(data);
                     if(data.result && data.points_latin > 0)
                     {
                     }
                     start();
                 }).fail(function() {
-                    
+                    setConfirmUnloadPoints(false);
                 });
             }
             test_rewarded();
