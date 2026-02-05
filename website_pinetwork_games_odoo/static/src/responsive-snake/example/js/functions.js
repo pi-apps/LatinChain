@@ -10,6 +10,8 @@ var totalpoints = 0;
 var startTime=new Date(), endTime=new Date(), seconds=0;
 var unblocked = false;
 var show_pi_ad_user = true;
+var pi_ad_new = false;
+var pi_ad_max = 0;
 
 function start() {
   startTime = new Date();
@@ -110,6 +112,9 @@ function get_user(pause) {
                     window.location.reload(true);
                 }
                 
+                pi_ad_new = data.pi_ad_new;
+                pi_ad_max = data.pi_ad_max;
+                
                 show_pi_ad_user = data.show_pi_ad;
                 
                 passkey=data.passkey;
@@ -139,6 +144,18 @@ function get_user(pause) {
                     }
                     $("#pi_donate").hide();
                     $("#button_click").hide();
+                    
+                    $("#test_app").prop( "disabled", false );
+                    $("#test_app").click(function(){
+                        if(pi_ad_new)
+                        {
+                            alert("You can use this app, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
+                            showPiRewardedAds(Pi);
+                        }else
+                        {
+                            alert("Max rewarded ads per day reached.");
+                        }
+                    });
                     
                     if(pause)
                         press(80);
@@ -184,8 +201,14 @@ function get_user(pause) {
                     
                     $("#test_app").prop( "disabled", false );
                     $("#test_app").click(function(){
-                        alert("You can use Snake, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
-                        showPiRewardedAds(Pi);
+                        if(pi_ad_new)
+                        {
+                            alert("You can use this app, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
+                            showPiRewardedAds(Pi);
+                        }else
+                        {
+                            alert("Max rewarded ads per day reached.");
+                        }
                     });
                 }
             }

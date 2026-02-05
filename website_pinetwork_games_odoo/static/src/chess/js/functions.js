@@ -194,7 +194,7 @@ function get_user() {
                     $("#test_app").click(function(){
                         if(pi_ad_new)
                         {
-                            alert("You can use this app, for testing purposes, until you unblock the game.");
+                            alert("You can use this app, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
                             showPiRewardedAds(Pi);
                         }else
                         {
@@ -209,8 +209,8 @@ function get_user() {
                       }, 2000);
 					}, 1000);
                     
-                    //$("#test_app").hide();
-                    //$(".show_test_app").hide();
+                    $("#test_app").hide();
+                    $(".show_test_app").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Chess, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
@@ -230,8 +230,8 @@ function get_user() {
                       }, 2000);
 					}, 1000);
                     
-                    //$("#test_app").hide();
-                    //$(".show_test_app").hide();
+                    $("#test_app").hide();
+                    $(".show_test_app").hide();
                 }
                 else
                 {
@@ -247,7 +247,7 @@ function get_user() {
                     $("#test_app").click(function(){
                         if(pi_ad_new)
                         {
-                            alert("You can use this app, for testing purposes, until you unblock the game.");
+                            alert("You can use this app, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
                             showPiRewardedAds(Pi);
                         }else
                         {
@@ -279,13 +279,13 @@ function test_rewarded()
         $("#home-tab").prop( "disabled", false );
       }, 2000);
     }, 1000);
-    //$("#test_app").hide();
-    //$(".show_test_app").hide();
+    $("#test_app").hide();
+    $(".show_test_app").hide();
 }
 
 var start_flag = false;
 
-async function showPiRewardedAds()
+async function showPiRewardedAds(Pi)
 {
     end();
     if(seconds < 5 && start_flag)

@@ -35,7 +35,7 @@ var startCommonAppsAI = () => {
         
         function test_rewarded()
         {
-            document.getElementById('blockingOverlay').style.display = 'none';
+            //document.getElementById('blockingOverlay').style.display = 'none';
         }
         
         var startTime=new Date(), endTime=new Date(), seconds=0;
@@ -56,7 +56,7 @@ var startCommonAppsAI = () => {
 
         var start_flag = false;
         
-        async function showPiRewardedAds()
+        async function showPiRewardedAds(Pi)
         {
             end();
             if(seconds < 5 && start_flag)
