@@ -210,8 +210,8 @@ function get_user() {
                       }, 2000);
 					}, 1000);
                     
-                    $("#test_app").hide();
-                    $(".show_test_app").hide();
+                    //$("#test_app").hide();
+                    //$(".show_test_app").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Chess, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");

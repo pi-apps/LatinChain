@@ -161,7 +161,7 @@ function get_user(pause) {
                     if(pause)
                         press(80);
                     
-                    $("#test_app").hide();
+                    //$("#test_app").hide();
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Snake, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
