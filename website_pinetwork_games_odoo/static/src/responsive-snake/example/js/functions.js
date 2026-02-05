@@ -240,7 +240,23 @@ function test_rewarded()
     $("#test_app").hide();
 }
 
-async function showPiRewardedAds(Pi) {
+var start_flag = false;
+
+async function showPiRewardedAds(Pi)
+{
+    end();
+    if(seconds < 5 && start_flag)
+    {
+        start();
+        return;
+    }
+    start();
+    
+    if(!start_flag)
+    {
+        start_flag = true;
+    }
+    
     try {
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
@@ -265,9 +281,30 @@ async function showPiRewardedAds(Pi) {
         
         if (showAdResponse.result === "AD_REWARDED")
         {
-            if(showAdResponse.adId)
+            await delayAsync(5000);
+            if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
             {
-                
+                var data = {
+                    'pi_user_id': pi_user_id,
+                    'pi_user_code': pi_user_code,
+                    'adId': showAdResponse.adId,
+                    'passkey': passkey,
+                    'accessToken': accessToken,
+                    'csrf_token': odoo.csrf_token,
+                };
+                //$.ajaxSetup({async: false});
+                setConfirmUnloadPoints(true);
+                return $.post( "/set-latin-points", data).done(function(data) {
+                    end();
+                    setConfirmUnloadPoints(false);
+                    data = JSON.parse(data);
+                    if(data.result && data.points_latin > 0)
+                    {
+                    }
+                    start();
+                }).fail(function() {
+                    setConfirmUnloadPoints(false);
+                });
             }
             test_rewarded();
         }
