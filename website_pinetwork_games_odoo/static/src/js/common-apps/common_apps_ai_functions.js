@@ -95,6 +95,7 @@ var startCommonAppsAI = () => {
                 
                 if (showAdResponse.result === "AD_REWARDED")
                 {
+                    await delayAsync(2000);
                     if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                     {
                         var data = {
