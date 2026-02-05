@@ -169,17 +169,6 @@ function get_user() {
                 
                 passkey=data.passkey;
                 
-                $("#test_app").click(function(){
-                    if(pi_ad_new)
-                    {
-                        alert("You can use this app, for testing purposes, until you unblock the game.");
-                        showPiRewardedAds(Pi);
-                    }else
-                    {
-                        alert("Max rewarded ads per day reached.");
-                    }
-                });
-                
                 if(data.x2_game)
                 {
                     $("#x2_game").show();
@@ -440,6 +429,17 @@ $( document ).ready(function() {
                 $("#loading_word").hide();
                 $(".loading_section").hide();
             });
+            
+    $("#test_app").click(function(){
+        if(pi_ad_new)
+        {
+            alert("You can use this app, for testing purposes, until you unblock the game.");
+            showPiRewardedAds(Pi);
+        }else
+        {
+            alert("Max rewarded ads per day reached.");
+        }
+    });
     
     amount = $("#amount").val();
     
