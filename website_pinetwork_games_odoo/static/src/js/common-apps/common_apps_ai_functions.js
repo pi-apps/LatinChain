@@ -98,7 +98,6 @@ var startCommonAppsAI = () => {
                 
                 if (showAdResponse.result === "AD_REWARDED")
                 {
-                    test_rewarded();
                     await delayAsync(2000);
                     if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                     {
@@ -112,7 +111,7 @@ var startCommonAppsAI = () => {
                         };
                         //$.ajaxSetup({async: false});
                         setConfirmAIUnloadPoints(true);
-                        return $.post( "/set-latin-points", data).done(function(data) {
+                        $.post( "/set-latin-points", data).done(function(data) {
                             end();
                             setConfirmAIUnloadPoints(false);
                             data = JSON.parse(data);
@@ -124,6 +123,7 @@ var startCommonAppsAI = () => {
                             setConfirmAIUnloadPoints(false);
                         });
                     }
+                    test_rewarded();
                 }
             } catch (err) {
             }
