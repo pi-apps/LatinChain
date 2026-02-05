@@ -254,7 +254,9 @@ function get_user_rewarded() {
         return $.post( "/get-user", data).done(function(data) {
             data = JSON.parse(data);
             if(data.result)
-            {    
+            {
+                $("#pi_ad_counter").html(data.pi_ad_counter);
+                
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
@@ -412,6 +414,8 @@ function get_user() {
                 show_pi_ad_user_time = data.show_pi_ad_time;
                 pi_ad_new = data.pi_ad_new;
                 pi_ad_max = data.pi_ad_max;
+                
+                $("#pi_ad_counter").html(data.pi_ad_counter);
                 
                 $("#pi_ad_hours").html(show_pi_ad_user_time);
                 $("#pi_ad_max").html(pi_ad_max);

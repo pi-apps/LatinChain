@@ -497,6 +497,7 @@ class PiNetworkBaseController(http.Controller):
                             'show_pi_ad_time': show_pi_ad_time,
                             'pi_ad_new': pi_ad_new,
                             'pi_ad_max': pi_ad_max,
+                            'pi_ad_counter': pi_users_list[0].pi_ad_counter,
                             'pi_ad_automatic': pi_ad_automatic,
                             'avatar_user': pi_users_list[0].avatar_user,
                             'avatar_user_url': pi_users_list[0].avatar_user_url,

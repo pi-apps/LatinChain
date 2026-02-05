@@ -944,7 +944,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.745"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.746"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1414,7 +1414,7 @@
                                 <div class="text-white">
                                     Max ads by day:
                                     <br/>
-                                    (<t t-esc="pi_ad_max" /> Pi Ads / <t t-esc="pi_ad_hours" />h)
+                                    (<span id="pi_ad_counter">0</span>/<t t-esc="pi_ad_max" /> Pi Ads | <t t-esc="pi_ad_hours" />h)
                                 </div>
                             </div>
                             
