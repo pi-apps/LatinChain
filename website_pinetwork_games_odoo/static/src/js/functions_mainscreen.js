@@ -767,7 +767,7 @@ async function showPiAds(Pi, activated) {
     try {
         var d1 = new Date();
         var date1 = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
-        var date2 = new Date(date1.getTime() - 300 * 1000);
+        var date2 = new Date(date1.getTime() - 5 * 60000);
         
         if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
         {
@@ -1480,7 +1480,8 @@ $( document ).ready(function() {
                                 showRewardedPiAd(false);
                             });
                             
-                            if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            //if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 (async () => {
                                     var result_piad = await showPiAds(Pi, true);
