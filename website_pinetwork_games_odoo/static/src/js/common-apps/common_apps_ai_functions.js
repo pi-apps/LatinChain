@@ -136,7 +136,7 @@ var startCommonAppsAI = () => {
                 showPiRewardedAds(Pi);
             }else
             {
-                alert("Max rewarded ads per day reached.");
+                alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_new + " rewarded ad each " + startCommonAppsAIVars.show_pi_ad_user_time + "h");
             }
         });
         
