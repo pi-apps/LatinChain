@@ -168,7 +168,6 @@ function get_user() {
                     $("#test_app").hide();
                     $(".show_test_app").hide();
                     
-                    alert("Max rewarded ads number reached. " + pi_ad_max + " rewarded ad each " + show_pi_ad_user_time + "h");
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Sudoku, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");

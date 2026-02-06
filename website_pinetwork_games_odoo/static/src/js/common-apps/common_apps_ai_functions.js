@@ -136,7 +136,7 @@ var startCommonAppsAI = () => {
                 showPiRewardedAds(Pi);
             }else
             {
-                alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_max + " rewarded ad each " + startCommonAppsAIVars.show_pi_ad_user_time + "h");
+                alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_max + " rewarded ads each " + startCommonAppsAIVars.show_pi_ad_user_time + "h");
             }
         });
         
@@ -185,8 +185,6 @@ var startCommonAppsAI = () => {
                         startCommonAppsAIVars.show_pi_ad_user_time = data.show_pi_ad_time;
                         startCommonAppsAIVars.pi_ad_new = data.pi_ad_new;
                         startCommonAppsAIVars.pi_ad_max = data.pi_ad_max;
-                        
-                        alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_max + " rewarded ad each " + startCommonAppsAIVars.show_pi_ad_user_time + "h");
                         
                         if(data.unblocked)
                         {

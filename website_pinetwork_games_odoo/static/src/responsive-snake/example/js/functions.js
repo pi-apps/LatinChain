@@ -152,7 +152,6 @@ function get_user(pause) {
                     
                     $("#test_app").hide();
                     
-                    alert("Max rewarded ads number reached. " + pi_ad_max + " rewarded ads each " + show_pi_ad_user_time + "h");
                 }else if(["Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     alert("You can use Snake, for testing purposes, until Pi OpenMainnet. No points will be shared for this game by now.");
