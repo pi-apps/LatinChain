@@ -444,7 +444,10 @@ class PiNetworkBaseController(http.Controller):
             else:
                 pi_ad_new = True
         else:
-            pi_ad_new = True
+            if pi_users_list[0].pi_ad_counter >= pi_ad_max:
+                pi_ad_new = False
+            else:
+                pi_ad_new = True
                 
         
         if pi_users_list[0].unblocked:
