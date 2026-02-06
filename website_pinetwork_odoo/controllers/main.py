@@ -444,6 +444,7 @@ class PiNetworkBaseController(http.Controller):
             else:
                 pi_ad_new = True
         else:
+            pi_users_list[0].write({'pi_ad_counter': 0})
             pi_ad_new = True
         
         if pi_users_list[0].unblocked:
@@ -478,7 +479,7 @@ class PiNetworkBaseController(http.Controller):
         #if apps_list[0].mainnet in ['Testnet OFF']:
         #    apps_list[0].sudo()._pay_onincomplete_a2u(pi_users_list[0])
             
-        request.env.cr.commit()
+        #request.env.cr.commit()
         
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 
