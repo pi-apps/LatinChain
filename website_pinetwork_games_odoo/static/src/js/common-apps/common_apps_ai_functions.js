@@ -129,6 +129,8 @@ var startCommonAppsAI = () => {
             }
         }
         
+        alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_max + " rewarded ad each " + startCommonAppsAIVars.show_pi_ad_user_time + "h");
+        
         $("#test_app").click(function(){
             if(startCommonAppsAIVars.pi_ad_new)
             {
@@ -136,7 +138,7 @@ var startCommonAppsAI = () => {
                 showPiRewardedAds(Pi);
             }else
             {
-                alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_new + " rewarded ad each " + startCommonAppsAIVars.show_pi_ad_user_time + "h");
+                alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_max + " rewarded ad each " + startCommonAppsAIVars.show_pi_ad_user_time + "h");
             }
         });
         
