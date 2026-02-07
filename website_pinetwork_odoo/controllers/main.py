@@ -578,7 +578,11 @@ class PiNetworkBaseController(http.Controller):
             else:
                 values.update({'pi_ad_datetime': datetime.now()})
                 values.update({'pi_ad_counter': 1})
-                pi_ad_new = True
+                
+                if 1 >= pi_ad_max:
+                    pi_ad_new = False
+                else:
+                    pi_ad_new = True
         
         #Uncomment in case of you want to save wallet address
         pi_users_list[0].sudo().write(values)
@@ -877,7 +881,11 @@ class PiNetworkBaseController(http.Controller):
             else:
                 values.update({'pi_ad_datetime': datetime.now()})
                 values.update({'pi_ad_counter': 1})
-                pi_ad_new = True
+                
+                if 1 >= pi_ad_max:
+                    pi_ad_new = False
+                else:
+                    pi_ad_new = True
         
         pi_users_list[0].sudo().write(values)
         
