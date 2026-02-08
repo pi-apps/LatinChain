@@ -618,41 +618,36 @@
                             <br/>
                             <div style="margin-bottom:10px;">
                                 <h3 style="text-align:left">
-                                    <div class="form-check" style="margin-bottom: 10px">
+                                    <div class="form-check" style="margin-bottom: 13px">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-all" value="show-all" checked="true"/>
                                       <label class="form-check-label" for="show-all">
                                         Show all sections
                                       </label>
                                     </div>
-                                    <hr/>
-                                    <div class="form-check" style="margin-bottom: 10px" t-if="with_links">
+                                    <div class="form-check" style="margin-bottom: 13px" t-if="with_links">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-spring-clothing" value="show-spring-clothing" />
                                       <label class="form-check-label" for="show-spring-clothing">
                                         Show only Spring clothing store
                                       </label>
                                     </div>
-                                    <hr/>
-                                    <div class="form-check" style="margin-bottom: 10px" t-if="with_links">
+                                    <div class="form-check" style="margin-bottom: 13px" t-if="with_links">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-amazon-best-deals" value="show-amazon-best-deals" />
                                       <label class="form-check-label" for="show-amazon-best-deals">
                                         Show only Amazon best sellers and deals
                                       </label>
                                     </div>
-                                    <hr/>
-                                    <div class="form-check" style="margin-bottom: 10px">
+                                    <div class="form-check" style="margin-bottom: 13px">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-udemy-courses" value="show-udemy-courses" />
                                       <label class="form-check-label" for="show-udemy-courses">
                                         Show only Udemy courses
                                       </label>
                                     </div>
-                                    <hr/>
-                                    <div class="form-check" style="margin-bottom: 10px">
+                                    <div class="form-check" style="margin-bottom: 13px">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-amazon-books" value="show-amazon-books" />
                                       <label class="form-check-label" for="show-amazon-books">
                                         Show only Amazon books
                                       </label>
                                     </div>
-                                    <hr/>
                                 </h3>
                                 <div class="input-group input-group-lg search-section">
                                   <span class="input-group-text" id="inputGroup-sizing-lg" style="color: black !important"><i class="fa-solid fa-magnifying-glass"></i></span>
@@ -680,35 +675,44 @@
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top: 10px">
-                                        <div class="col-12">
+                                        <h3 class="col-12">
                                             <div>
                                                 <a href="https://amzn.to/4qpX7aS" target="_blank" class="btn btn-link amazon-list"><strong>Deals in Amazon.</strong></a>
                                             </div>
+                                            <hr/>
                                             <div>
                                                 <a href="https://amzn.to/4bCo9Z0" target="_blank" class="btn btn-link amazon-list"><strong>Eletronic Deals in Amazon.</strong></a>
                                             </div>
+                                            <hr/>
                                             <div>
                                                 <a href="https://amzn.to/4akiO66" target="_blank" class="btn btn-link amazon-list"><strong>Cellphones and Accessories Deals in Amazon.</strong></a>
                                             </div>
+                                            <hr/>
                                             <div>
                                                 <a href="https://amzn.to/4alHefE" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers in Amazon.</strong></a>
                                             </div>
+                                            <hr/>
                                             <div>
                                                 <a href="https://amzn.to/4tk3Shj" target="_blank" class="btn btn-link amazon-list"><strong>New Releases in Amazon.</strong></a>
                                             </div>
+                                            <hr/>
                                             <div>
                                                 <a href="https://amzn.to/4aj21Ap" target="_blank" class="btn btn-link amazon-list"><strong>Move and Shakers in Amazon.</strong></a>
                                             </div>
+                                            <hr/>
                                             <div>
                                                 <a href="https://amzn.to/4qY1rPM" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Computers and Accesories in Amazon.</strong></a>
                                             </div>
+                                            <hr/>
                                             <div>
                                                 <a href="https://amzn.to/4aAApIq" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Electronics in Amazon.</strong></a>
                                             </div>
+                                            <hr/>
                                             <div>
                                                 <a href="https://amzn.to/4ko9Pp6" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Cell Phones and Accesories in Amazon.</strong></a>
                                             </div>
-                                        </div>
+                                            <hr/>
+                                        </h3>
                                     </div>
                                 </div>
                             </div>
