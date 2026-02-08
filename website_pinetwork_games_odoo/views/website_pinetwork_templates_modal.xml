@@ -588,6 +588,41 @@
                                 </h5>
                             </t>
                             <br/>
+                            <t t-if="with_links">
+                                <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
+                                    <h3>Products in Amazon:</h3>
+                                </div>
+                                <div style="padding:10px;" class="border-gradient-rounded product">
+                                    <div class="row">
+                                        <div class="col-12" style="margin-top: 10px">
+                                            <div><i class="fa-brands fa-amazon fa-2xl"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 10px">
+                                        <div class="col-12">
+                                            <div>
+                                                <a href="https://amzn.to/4alHefE" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers in Amazon.</strong></a>
+                                            </div>
+                                            <div>
+                                                <a href="https://amzn.to/4tk3Shj" target="_blank" class="btn btn-link amazon-list"><strong>New Releases in Amazon.</strong></a>
+                                            </div>
+                                            <div>
+                                                <a href="https://amzn.to/4aj21Ap" target="_blank" class="btn btn-link amazon-list"><strong>Move and Shakers in Amazon.</strong></a>
+                                            </div>
+                                            <div>
+                                                <a href="https://amzn.to/4qY1rPM" target="_blank" class="btn btn-link amazon-list"><strong>Best Seller Computers and Accesories in Amazon.</strong></a>
+                                            </div>
+                                            <div>
+                                                <a href="https://amzn.to/4aAApIq" target="_blank" class="btn btn-link amazon-list"><strong>Best Seller Electronics in Amazon.</strong></a>
+                                            </div>
+                                            <div>
+                                                <a href="https://amzn.to/4ko9Pp6" target="_blank" class="btn btn-link amazon-list"><strong>Best Seller Cell Phones and Accesories in Amazon.</strong></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                            </t>
                             <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                 <h3>Udemy courses (all courses with personalized Certificate of Completion):</h3>
                             </div>
