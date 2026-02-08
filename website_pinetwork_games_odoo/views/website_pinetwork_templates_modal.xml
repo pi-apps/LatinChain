@@ -624,24 +624,28 @@
                                         Show all sections
                                       </label>
                                     </div>
+                                    <br/>
                                     <div class="form-check" t-if="with_links">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-spring-clothing" value="show-spring-clothing" />
                                       <label class="form-check-label" for="show-spring-clothing">
                                         Show only Spring clothing store
                                       </label>
                                     </div>
+                                    <br/>
                                     <div class="form-check" t-if="with_links">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-amazon-best-deals" value="show-amazon-best-deals" />
                                       <label class="form-check-label" for="show-amazon-best-deals">
                                         Show only Amazon best sellers and deals
                                       </label>
                                     </div>
+                                    <br/>
                                     <div class="form-check">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-udemy-courses" value="show-udemy-courses" />
                                       <label class="form-check-label" for="show-udemy-courses">
                                         Show only Udemy courses
                                       </label>
                                     </div>
+                                    <br/>
                                     <div class="form-check">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-amazon-books" value="show-amazon-books" />
                                       <label class="form-check-label" for="show-amazon-books">
