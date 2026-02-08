@@ -561,6 +561,49 @@
                                         });
                                     }
                                 });
+                                
+                                $('input[name="show-section"]').change(function() {
+                                    var selectedValue = $(this).val();
+                                    
+                                    if(selectedValue == "show-all")
+                                    {
+                                        $(".spring-clothing").show();
+                                        $(".amazon-best-deals").show();
+                                        $(".udemy-courses").show();
+                                        $(".amazon-books").show();
+                                        $(".search-section").show();
+                                    }else if(selectedValue == "show-spring-clothing")
+                                    {
+                                        $(".spring-clothing").show();
+                                        $(".amazon-best-deals").hide();
+                                        $(".udemy-courses").hide();
+                                        $(".amazon-books").hide();
+                                        $(".search-section").hide();
+                                    }else if(selectedValue == "show-amazon-best-deals")
+                                    {
+                                        $(".spring-clothing").hide();
+                                        $(".amazon-best-deals").show();
+                                        $(".udemy-courses").hide();
+                                        $(".amazon-books").hide();
+                                        $(".search-section").hide();
+                                    }else if(selectedValue == "show-udemy-courses")
+                                    {
+                                        $(".spring-clothing").hide();
+                                        $(".amazon-best-deals").hide();
+                                        $(".udemy-courses").show();
+                                        $(".amazon-books").hide();
+                                        $(".search-section").show();
+                                    }else if(selectedValue == "show-amazon-books")
+                                    {
+                                        $(".spring-clothing").hide();
+                                        $(".amazon-best-deals").hide();
+                                        $(".udemy-courses").hide();
+                                        $(".amazon-books").show();
+                                        $(".search-section").show();
+                                    }
+                                });
+                                
+                                $('input[name="show-section"][value="show-all"]').prop('checked', true);
                             });
                         </script>
                         
@@ -574,21 +617,53 @@
                             <h3>You can find these, our most notable books by ASIN or ISBN, in bookstores as Amazon (globally), Iberlibro (Europe) or others around the world. There are also courses available. Shipping worldwide.</h3>
                             <br/>
                             <div style="margin-bottom:10px;">
-                                <div class="input-group input-group-lg">
+                                <h3 style="text-align:left">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="show-section" id="show-all" value="show-all" checked="true"/>
+                                      <label class="form-check-label" for="show-all">
+                                        Show all sections
+                                      </label>
+                                    </div>
+                                    <div class="form-check" t-if="with_links">
+                                      <input class="form-check-input" type="radio" name="show-section" id="show-spring-clothing" value="show-spring-clothing" />
+                                      <label class="form-check-label" for="show-spring-clothing">
+                                        Show only Spring clothing store
+                                      </label>
+                                    </div>
+                                    <div class="form-check" t-if="with_links">
+                                      <input class="form-check-input" type="radio" name="show-section" id="show-amazon-best-deals" value="show-amazon-best-deals" />
+                                      <label class="form-check-label" for="show-amazon-best-deals">
+                                        Show only Amazon best sellers and deals
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="show-section" id="show-udemy-courses" value="show-udemy-courses" />
+                                      <label class="form-check-label" for="show-udemy-courses">
+                                        Show only Udemy courses
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="show-section" id="show-amazon-books" value="show-amazon-books" />
+                                      <label class="form-check-label" for="show-amazon-books">
+                                        Show only Amazon books
+                                      </label>
+                                    </div>
+                                </h3>
+                                <div class="input-group input-group-lg search-section">
                                   <span class="input-group-text" id="inputGroup-sizing-lg" style="color: black !important"><i class="fa-solid fa-magnifying-glass"></i></span>
                                   <input type="text" class="search-collectibles form-control" placeholder="Search [Books, Courses]" aria-label="Search collectibles" aria-describedby="inputGroup-sizing-lg" />
                                 </div>
                             </div>
-                            <t t-if="with_links">
+                            <div t-if="with_links" class="spring-clothing">
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                     <h3>Clothing and Collectibles in César OpenSource Store with Spring:</h3>
                                 </div>
                                 <h5 style="padding:10px;" class="border-gradient-rounded product">
                                     <iframe style="border-radius:24px;border:none" src="https://embed.creator-spring.com/widget?slug=my-store-10dea32&amp;per=30&amp;currency=&amp;page=1&amp;layout=carousel-wide&amp;theme=light" title="César OpenSource Store Merch store powered by Spring" width="100%" height="420" data-reactroot=""></iframe>
                                 </h5>
-                            </t>
+                            </div>
                             <br/>
-                            <t t-if="with_links">
+                            <div t-if="with_links" class="amazon-best-deals">
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                     <h3>Best Products in Amazon:</h3>
                                 </div>
@@ -601,6 +676,15 @@
                                     <div class="row" style="margin-top: 10px">
                                         <div class="col-12">
                                             <div>
+                                                <a href="https://amzn.to/4qpX7aS" target="_blank" class="btn btn-link amazon-list"><strong>Deals in Amazon.</strong></a>
+                                            </div>
+                                            <div>
+                                                <a href="https://amzn.to/4bCo9Z0" target="_blank" class="btn btn-link amazon-list"><strong>Eletronic Deals in Amazon.</strong></a>
+                                            </div>
+                                            <div>
+                                                <a href="https://amzn.to/4akiO66" target="_blank" class="btn btn-link amazon-list"><strong>Cellphones and Accessories Deals in Amazon.</strong></a>
+                                            </div>
+                                            <div>
                                                 <a href="https://amzn.to/4alHefE" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers in Amazon.</strong></a>
                                             </div>
                                             <div>
@@ -610,42 +694,46 @@
                                                 <a href="https://amzn.to/4aj21Ap" target="_blank" class="btn btn-link amazon-list"><strong>Move and Shakers in Amazon.</strong></a>
                                             </div>
                                             <div>
-                                                <a href="https://amzn.to/4qY1rPM" target="_blank" class="btn btn-link amazon-list"><strong>Best Seller Computers and Accesories in Amazon.</strong></a>
+                                                <a href="https://amzn.to/4qY1rPM" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Computers and Accesories in Amazon.</strong></a>
                                             </div>
                                             <div>
-                                                <a href="https://amzn.to/4aAApIq" target="_blank" class="btn btn-link amazon-list"><strong>Best Seller Electronics in Amazon.</strong></a>
+                                                <a href="https://amzn.to/4aAApIq" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Electronics in Amazon.</strong></a>
                                             </div>
                                             <div>
-                                                <a href="https://amzn.to/4ko9Pp6" target="_blank" class="btn btn-link amazon-list"><strong>Best Seller Cell Phones and Accesories in Amazon.</strong></a>
+                                                <a href="https://amzn.to/4ko9Pp6" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Cell Phones and Accesories in Amazon.</strong></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <br/>
-                            </t>
-                            <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
-                                <h3>Udemy courses (all courses with personalized Certificate of Completion):</h3>
                             </div>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6505675_3364_4.jpg" width="180px" height="110px" /><br/><strong>Learn how to develop a Pi App (webapp) on the Pi Network</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-course/" target="_blank">Udemy course</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/4538222_ce85_5.jpg" width="180px" height="110px" /><br/><strong>Odoo 14 Technical Training en Español</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/odoo-tech-course/" target="_blank">Udemy course</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6956213_6b6f.jpg" width="180px" height="110px" /><br/><strong>Mastering Google Gemini AI y NotebookLM</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/ai-master-course/" target="_blank">Udemy course</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6522069_77ba.jpg" width="180px" height="110px" /><br/><strong>Aprende Inglés práctico hoy mismo (con IA)</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/english-course/" target="_blank">Udemy course</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6595211_0834_3.jpg" width="180px" height="110px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/brand-course/" target="_blank">Udemy course</a></t></h5>
-                            <br/>
-                            <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
-                                <h3>Amazon books:</h3>
+                            <div class="udemy-courses">
+                                <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
+                                    <h3>Udemy courses (all courses with personalized Certificate of Completion):</h3>
+                                </div>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6505675_3364_4.jpg" width="180px" height="110px" /><br/><strong>Learn how to develop a Pi App (webapp) on the Pi Network</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-course/" target="_blank">Udemy course</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/4538222_ce85_5.jpg" width="180px" height="110px" /><br/><strong>Odoo 14 Technical Training en Español</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/odoo-tech-course/" target="_blank">Udemy course</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6956213_6b6f.jpg" width="180px" height="110px" /><br/><strong>Mastering Google Gemini AI y NotebookLM</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/ai-master-course/" target="_blank">Udemy course</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6522069_77ba.jpg" width="180px" height="110px" /><br/><strong>Aprende Inglés práctico hoy mismo (con IA)</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/english-course/" target="_blank">Udemy course</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6595211_0834_3.jpg" width="180px" height="110px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/brand-course/" target="_blank">Udemy course</a></t></h5>
+                                <br/>
                             </div>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71Ir+19r4+L._CLa|2909,2525|81JvHXej7bL.jpg,71eGkTh9m0L.jpg|0,0,1322,2525+1587,0,1322,2525+661,0,1587,2525_._SY300_.jpg" width="210px" height="180px" /><br/><strong>Books Collection<br/>(ASIN: B0F771VKRF)</strong><div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/books-collection/" target="_blank">Books Collection link</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61HydA6aoZL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>How to develop a Pi App (webapp) on the Pi Network<br/> (ASIN: B0DK3NJ23V and ASIN: B0DK4N3XTB)<br/> (ISBN: 979-8343272321)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-book/ebook" target="_blank">eBook</a> | <a href="/piapps-book/paperback" target="_blank">Paperback</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/713nh2zLqQL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Odoo Technical Training en Español<br/> (ASIN: B0DJVY51LS and ASIN: B0DJX718Q2)<br/> (ISBN: 979-8342822534)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/odoo-tech-book/ebook" target="_blank">eBook</a> | <a href="/odoo-tech-book/paperback" target="_blank">Paperback</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/712UDT1bssL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Mastering Google Gemini AI y NotebookLM<br/> (ASIN: B0G4GZMTND and ASIN: B0G4H6W7PX)<br/> (ISBN: 979-8276636375)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/ai-master-book/ebook" target="_blank">eBook</a> | <a href="/ai-master-book/paperback" target="_blank">Paperback</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61lPIa7CwiL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Aprende Inglés hoy (para Hispanohablantes)<br/> (ASIN: B0F7792QFW and ASIN: B0F79L26F6)<br/> (ISBN: 979-8282175301)</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/english-book/ebook" target="_blank">eBook</a> | <a href="/english-book/paperback" target="_blank">Paperback</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61Of5Vg7OZL._SL1491_.jpg" width="120px" height="180px" /><br/><strong>Workbook de Inglés (para Hispanohablantes)<br/> (ASIN: B0GL3B3WVS)<br/> (ISBN: 979-8246629185)</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><!--<a href="/english-workbook/paperback" target="_blank">Paperback</a> | --><a href="/english-workbook/hardcover" target="_blank">Hardcover</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61HiN2CksyL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert<br/> (ASIN: B0F79N2ZWQ and ASIN: B0F7G4RV6Y)<br/> (ISBN: 979-8282242003)</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/brand-book/ebook" target="_blank">eBook</a> | <a href="/brand-book/paperback" target="_blank">Paperback</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71UuyX2Z5GL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Sudoku Notebook Vol. 1<br/> (ASIN: B0G4L8YGY3 and ASIN: B0G4L9T3J5)<br/> (ISBN: 979-8276786056 and ISBN: 979-8276787473)</strong><br/> (<div style="display:inline;">Puzzles</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/sudoku-book/paperback" target="_blank">Paperback</a> | <a href="/sudoku-book/hardcover" target="_blank">Hardcover</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71GWMwNA61L._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Curso de Programación Completo, de Cero a Experto<br/> (ASIN: B0GCNT449Q, ASIN: B0GCNQ5TJJ and ASIN: B0GCNVNLQJ)<br/> (ISBN: 979-8241341686 and ISBN: 979-8241342508)</strong><br/> (<div style="display:inline;">Software Development</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/dev-book/ebook" target="_blank">eBook</a> | <a href="/dev-book/paperback" target="_blank">Paperback</a> | <a href="/dev-book/hardcover" target="_blank">Hardcover</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71o65qmDIsL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Curso de Computación Cuántica, de Cero a Experto<br/> (ASIN: B0GFGTML2P, ASIN: B0GFK2VL31)<br/> (ISBN: 979-8243027755)</strong><br/> (<div style="display:inline;">Software Development</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/quantum-book/ebook" target="_blank">eBook</a> | <a href="/quantum-book/paperback" target="_blank">Paperback</a></t></h5>
-                            <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61L4Ju0dOcL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>My Sci and Sci-Fi Books' Collection 2025 - Mi Colección de Libros Sci y Sci-Fi 2025<br/> (ASIN: B0FPPVRGWG and ASIN: B0G4WK2WT7)<br/> (ISBN: 979-8277179994)</strong><br/> (<div style="display:inline;">Books compilation</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/collection-2025-book/ebook" target="_blank">eBook</a> | <a href="/collection-2025-book/paperback" target="_blank">Paperback</a></t></h5>
+                            <div class="amazon-books">
+                                <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
+                                    <h3>Amazon books:</h3>
+                                </div>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71Ir+19r4+L._CLa|2909,2525|81JvHXej7bL.jpg,71eGkTh9m0L.jpg|0,0,1322,2525+1587,0,1322,2525+661,0,1587,2525_._SY300_.jpg" width="210px" height="180px" /><br/><strong>Books Collection<br/>(ASIN: B0F771VKRF)</strong><div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/books-collection/" target="_blank">Books Collection link</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61HydA6aoZL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>How to develop a Pi App (webapp) on the Pi Network<br/> (ASIN: B0DK3NJ23V and ASIN: B0DK4N3XTB)<br/> (ISBN: 979-8343272321)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-book/ebook" target="_blank">eBook</a> | <a href="/piapps-book/paperback" target="_blank">Paperback</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/713nh2zLqQL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Odoo Technical Training en Español<br/> (ASIN: B0DJVY51LS and ASIN: B0DJX718Q2)<br/> (ISBN: 979-8342822534)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/odoo-tech-book/ebook" target="_blank">eBook</a> | <a href="/odoo-tech-book/paperback" target="_blank">Paperback</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/712UDT1bssL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Mastering Google Gemini AI y NotebookLM<br/> (ASIN: B0G4GZMTND and ASIN: B0G4H6W7PX)<br/> (ISBN: 979-8276636375)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/ai-master-book/ebook" target="_blank">eBook</a> | <a href="/ai-master-book/paperback" target="_blank">Paperback</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61lPIa7CwiL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Aprende Inglés hoy (para Hispanohablantes)<br/> (ASIN: B0F7792QFW and ASIN: B0F79L26F6)<br/> (ISBN: 979-8282175301)</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/english-book/ebook" target="_blank">eBook</a> | <a href="/english-book/paperback" target="_blank">Paperback</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61Of5Vg7OZL._SL1491_.jpg" width="120px" height="180px" /><br/><strong>Workbook de Inglés (para Hispanohablantes)<br/> (ASIN: B0GL3B3WVS)<br/> (ISBN: 979-8246629185)</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><!--<a href="/english-workbook/paperback" target="_blank">Paperback</a> | --><a href="/english-workbook/hardcover" target="_blank">Hardcover</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61HiN2CksyL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert<br/> (ASIN: B0F79N2ZWQ and ASIN: B0F7G4RV6Y)<br/> (ISBN: 979-8282242003)</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/brand-book/ebook" target="_blank">eBook</a> | <a href="/brand-book/paperback" target="_blank">Paperback</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71UuyX2Z5GL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Sudoku Notebook Vol. 1<br/> (ASIN: B0G4L8YGY3 and ASIN: B0G4L9T3J5)<br/> (ISBN: 979-8276786056 and ISBN: 979-8276787473)</strong><br/> (<div style="display:inline;">Puzzles</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/sudoku-book/paperback" target="_blank">Paperback</a> | <a href="/sudoku-book/hardcover" target="_blank">Hardcover</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71GWMwNA61L._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Curso de Programación Completo, de Cero a Experto<br/> (ASIN: B0GCNT449Q, ASIN: B0GCNQ5TJJ and ASIN: B0GCNVNLQJ)<br/> (ISBN: 979-8241341686 and ISBN: 979-8241342508)</strong><br/> (<div style="display:inline;">Software Development</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/dev-book/ebook" target="_blank">eBook</a> | <a href="/dev-book/paperback" target="_blank">Paperback</a> | <a href="/dev-book/hardcover" target="_blank">Hardcover</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71o65qmDIsL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Curso de Computación Cuántica, de Cero a Experto<br/> (ASIN: B0GFGTML2P, ASIN: B0GFK2VL31)<br/> (ISBN: 979-8243027755)</strong><br/> (<div style="display:inline;">Software Development</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/quantum-book/ebook" target="_blank">eBook</a> | <a href="/quantum-book/paperback" target="_blank">Paperback</a></t></h5>
+                                <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61L4Ju0dOcL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>My Sci and Sci-Fi Books' Collection 2025 - Mi Colección de Libros Sci y Sci-Fi 2025<br/> (ASIN: B0FPPVRGWG and ASIN: B0G4WK2WT7)<br/> (ISBN: 979-8277179994)</strong><br/> (<div style="display:inline;">Books compilation</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/collection-2025-book/ebook" target="_blank">eBook</a> | <a href="/collection-2025-book/paperback" target="_blank">Paperback</a></t></h5>
+                            </div>
                         </div>
                         <br/><br/><br/><br/><br/><br/><br/>
                     </body>
