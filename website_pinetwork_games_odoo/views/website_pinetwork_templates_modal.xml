@@ -625,6 +625,7 @@
                                 
                                 $('input[name="show-section"][value="show-all"]').prop('checked', true);
                                 $(".search-collectibles").val("");
+                                search_collectibles_value_ext = "";
                                 $(".search-collectibles").trigger(e_keyup);
                             });
                         </script>
