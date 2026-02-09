@@ -546,8 +546,7 @@
                                 $( ".search-collectibles" ).keyup(function() {
                                     var search_collectibles_val = $( ".search-collectibles" ).val().trim();
                                     
-                                    if($( ".search-collectibles" ).val() != "")
-                                        search_collectibles_value_ext = $( ".search-collectibles" ).val();
+                                    search_collectibles_value_ext = $( ".search-collectibles" ).val();
 
                                     if(search_collectibles_val == "")
                                     {
