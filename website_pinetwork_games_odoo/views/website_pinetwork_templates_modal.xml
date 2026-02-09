@@ -611,9 +611,6 @@
                                         $(".amazon-books").show();
                                         $(".search-section").show();
                                     }
-
-                                    // Trigger the event on the desired element
-                                    $(".search-collectibles").trigger(e_keyup);
                                 });
                                 
                                 $('input[name="show-section"][value="show-all"]').prop('checked', true);
