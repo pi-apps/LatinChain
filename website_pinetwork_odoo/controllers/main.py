@@ -183,7 +183,7 @@ class PiNetworkBaseController(http.Controller):
     def english_workbook(self, **kw):
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/english-workbook/', '/english-workbook/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0GL3B3WVS')
+            return http.request.redirect('https://www.amazon.com/dp/B0GM9SKH13')
         elif accessed_path in ['/english-workbook/hardcover']:
             return http.request.redirect('https://www.amazon.com/dp/B0GL3B3WVS')
     
