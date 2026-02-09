@@ -536,8 +536,18 @@
                         
                         <script>
                             $( document ).ready(function() {
+                                
+                                var search_collectibles_value_ext = $( ".search-collectibles" ).val();
+                                
+                                var e_keyup = jQuery.Event("keyup");
+                                e_keyup.which = 13; // 13 is the key code for 'Enter'
+                                e_keyup.keyCode = 13; // Setting both for cross-browser safety
+                            
                                 $( ".search-collectibles" ).keyup(function() {
                                     var search_collectibles_val = $( ".search-collectibles" ).val().trim();
+                                    
+                                    if($( ".search-collectibles" ).val() != "")
+                                        search_collectibles_value_ext = $( ".search-collectibles" ).val();
 
                                     if(search_collectibles_val == "")
                                     {
@@ -572,6 +582,7 @@
                                         $(".udemy-courses").show();
                                         $(".amazon-books").show();
                                         $(".search-section").show();
+                                        $( ".search-collectibles" ).val(search_collectibles_value_ext);
                                     }else if(selectedValue == "show-spring-clothing")
                                     {
                                         $(".spring-clothing").show();
@@ -579,6 +590,9 @@
                                         $(".udemy-courses").hide();
                                         $(".amazon-books").hide();
                                         $(".search-section").hide();
+                                        if($( ".search-collectibles" ).val() != "")
+                                            search_collectibles_value_ext = $( ".search-collectibles" ).val();
+                                        $( ".search-collectibles" ).val("");
                                     }else if(selectedValue == "show-amazon-best-deals")
                                     {
                                         $(".spring-clothing").hide();
@@ -586,6 +600,9 @@
                                         $(".udemy-courses").hide();
                                         $(".amazon-books").hide();
                                         $(".search-section").hide();
+                                        if($( ".search-collectibles" ).val() != "")
+                                            search_collectibles_value_ext = $( ".search-collectibles" ).val();
+                                        $( ".search-collectibles" ).val("");
                                     }else if(selectedValue == "show-udemy-courses")
                                     {
                                         $(".spring-clothing").hide();
@@ -593,6 +610,7 @@
                                         $(".udemy-courses").show();
                                         $(".amazon-books").hide();
                                         $(".search-section").show();
+                                        $( ".search-collectibles" ).val(search_collectibles_value_ext);
                                     }else if(selectedValue == "show-amazon-books")
                                     {
                                         $(".spring-clothing").hide();
@@ -600,10 +618,16 @@
                                         $(".udemy-courses").hide();
                                         $(".amazon-books").show();
                                         $(".search-section").show();
+                                        $( ".search-collectibles" ).val(search_collectibles_value_ext);
                                     }
+
+                                    // Trigger the event on the desired element
+                                    $(".search-collectibles").trigger(e_keyup);
                                 });
                                 
                                 $('input[name="show-section"][value="show-all"]').prop('checked', true);
+                                $(".search-collectibles").val("");
+                                $(".search-collectibles").trigger(e_keyup);
                             });
                         </script>
                         
