@@ -599,10 +599,8 @@
                                         $(".amazon-best-deals").show();
                                         $(".udemy-courses").hide();
                                         $(".amazon-books").hide();
-                                        $(".search-section").hide();
-                                        if($( ".search-collectibles" ).val() != "")
-                                            search_collectibles_value_ext = $( ".search-collectibles" ).val();
-                                        $( ".search-collectibles" ).val("");
+                                        $(".search-section").show();
+                                        $( ".search-collectibles" ).val(search_collectibles_value_ext);
                                     }else if(selectedValue == "show-udemy-courses")
                                     {
                                         $(".spring-clothing").hide();
@@ -680,7 +678,7 @@
                                 </h3>
                                 <div class="input-group input-group-lg search-section">
                                   <span class="input-group-text" id="inputGroup-sizing-lg" style="color: black !important"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                  <input type="text" class="search-collectibles form-control" placeholder="Search [Books, Courses]" aria-label="Search collectibles" aria-describedby="inputGroup-sizing-lg" />
+                                  <input type="text" class="search-collectibles form-control" placeholder="Search [Books, Courses, Amazon products]" aria-label="Search collectibles" aria-describedby="inputGroup-sizing-lg" />
                                 </div>
                             </div>
                             <div t-if="with_links" class="spring-clothing">
@@ -705,43 +703,43 @@
                                     </div>
                                     <div class="row" style="margin-top: 10px">
                                         <h3 class="col-12">
-                                            <hr/>
                                             <div class="product">
+                                                <hr/>
                                                 <a href="https://amzn.to/4qpX7aS" target="_blank" class="btn btn-link amazon-list"><strong>Deals in Amazon.</strong></a>
                                             </div>
-                                            <hr/>
                                             <div class="product">
+                                                <hr/>
                                                 <a href="https://amzn.to/4bCo9Z0" target="_blank" class="btn btn-link amazon-list"><strong>Eletronic Deals in Amazon.</strong></a>
                                             </div>
-                                            <hr/>
                                             <div class="product">
+                                                <hr/>
                                                 <a href="https://amzn.to/4akiO66" target="_blank" class="btn btn-link amazon-list"><strong>Cellphones and Accessories Deals in Amazon.</strong></a>
                                             </div>
-                                            <hr/>
                                             <div class="product">
+                                                <hr/>
                                                 <a href="https://amzn.to/4alHefE" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers in Amazon.</strong></a>
                                             </div>
-                                            <hr/>
                                             <div class="product">
+                                                <hr/>
                                                 <a href="https://amzn.to/4tk3Shj" target="_blank" class="btn btn-link amazon-list"><strong>New Releases in Amazon.</strong></a>
                                             </div>
-                                            <hr/>
                                             <div class="product">
+                                                <hr/>
                                                 <a href="https://amzn.to/4aj21Ap" target="_blank" class="btn btn-link amazon-list"><strong>Move and Shakers in Amazon.</strong></a>
                                             </div>
-                                            <hr/>
                                             <div class="product">
+                                                <hr/>
                                                 <a href="https://amzn.to/4qY1rPM" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Computers and Accesories in Amazon.</strong></a>
                                             </div>
-                                            <hr/>
                                             <div class="product">
+                                                <hr/>
                                                 <a href="https://amzn.to/4aAApIq" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Electronics in Amazon.</strong></a>
                                             </div>
-                                            <hr/>
                                             <div class="product">
+                                                <hr/>
                                                 <a href="https://amzn.to/4ko9Pp6" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Cell Phones and Accesories in Amazon.</strong></a>
+                                                <hr/>
                                             </div>
-                                            <hr/>
                                         </h3>
                                     </div>
                                 </div>
