@@ -1787,6 +1787,9 @@ class PiNetworkBaseController(http.Controller):
             google_adsense_ads_txt = ""
         else:
             google_adsense_ads_txt = admin_app_list[0].google_adsense_ads_txt
+            
+            if admin_app_list[0].mainnet in ["Testnet ON", "Testnet OFF"]:
+                return Response(template='website.page_404', status=404)
 
         headers = {'Content-Type': 'text; charset=UTF-8'}
         return Response(google_adsense_ads_txt, headers=headers)
