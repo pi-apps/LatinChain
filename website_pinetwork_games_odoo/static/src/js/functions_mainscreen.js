@@ -1559,7 +1559,7 @@ $( document ).ready(function() {
             }, 10000);
             $(".loggedin").show();
         }else{
-            await delayAsync(5000);
+            await delayAsync(3000);
             
             if(confirm($("#modal_login_latinchain_v2_message").text()))
             {
