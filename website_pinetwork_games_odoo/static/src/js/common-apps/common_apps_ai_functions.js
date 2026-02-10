@@ -255,12 +255,11 @@ var startCommonAppsAI = () => {
         
         (async () => {
             await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-            
-            
-            await delayAsync(3000);
     
             if(localStorage.getItem("loggedIn"))
             {
+                await delayAsync(3000);
+                
                 auth();
             
                 setTimeout(function ()
@@ -297,18 +296,9 @@ var startCommonAppsAI = () => {
                 }, 10000);
             }else
             {
-                if(window.location.hostname == "localhost")
-                {
-                    $("a.anchor-click").attr('href', window.location.origin);
-                }
-                else if(window.location.hostname == "test.latin-chain.com")
-                {
-                    $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com");
-                }
-                else
-                {
-                    $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
-                }
+                $(".anchor-click").replaceWith('<a class="anchor-goback" style="color: blue;" href="_self" target="_blank">Go back</a>');
+                
+                await delayAsync(3000);
                 
                 document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                 document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
