@@ -628,7 +628,7 @@
                             <br/>
                             <h1>Welcome to Your LatinChain Club</h1>
                             <br/>
-                            <h3 t-if="not with_links">Udemy courses, Amazon Books. Shipping worldwide.</h3>
+                            <h3 t-if="not with_links">Udemy courses, Amazon Books.</h3>
                             <h3 t-elif="with_links">Clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
                             <br/>
                             <div style="margin-bottom:10px;">
