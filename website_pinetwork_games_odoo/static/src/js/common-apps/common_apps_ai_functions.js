@@ -300,7 +300,7 @@ var startCommonAppsAI = () => {
                 '    Login in main screen' +
                 '</div>' +
                 '<div>' +
-                '    <a class="anchor-goback" style="color: blue;" href="/" target="_blank">Go back</a>' +
+                '    <a class="anchor-goback" style="color: blue;" href="/" target="_self">Go back</a>' +
                 '</div>');
                 
                 await delayAsync(5000);
