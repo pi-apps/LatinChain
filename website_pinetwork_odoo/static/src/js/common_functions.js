@@ -2,6 +2,10 @@
 
 const delayAsync = ms => new Promise(res => setTimeout(res, ms));
 
+$.ajaxSetup({
+    timeout: 500000,
+});
+
 function validateYouTubeUrl(url)
 {
     if (url) {
