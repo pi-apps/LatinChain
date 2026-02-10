@@ -1485,7 +1485,7 @@ $( document ).ready(function() {
                             //if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                if(confirm("Watch a video to claim your reward?.\n\nIn order to maintain our servers, we ask you to watch a Rewarded Ad until the end, we will give you a reward at the end of the ad."))
+                                if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
                                     showRewardedPiAd(false);
                                 /*(async () => {
                                     var result_piad = await showPiAds(Pi, true);
