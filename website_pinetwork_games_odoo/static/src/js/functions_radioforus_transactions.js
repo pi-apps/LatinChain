@@ -192,21 +192,25 @@ $(document).ready( function () {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
             }, 10000);
-        }else if(confirm($("#modal_login_latinchain_v2_message").text()))
-        {
-            auth();
-            localStorage.setItem("loggedIn", true);
-        
-            setTimeout(function ()
+        }else{
+            await delayAsync(5000);
+            
+            if(confirm($("#modal_login_latinchain_v2_message").text()))
             {
-                if(pi_user_id == "" && pi_user_code == "")
-                    auth();
-            }, 10000);
-        }else
-        {
-            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                auth();
+                localStorage.setItem("loggedIn", true);
+            
+                setTimeout(function ()
+                {
+                    if(pi_user_id == "" && pi_user_code == "")
+                        auth();
+                }, 10000);
+            }else
             {
-                showPiAds(Pi, true);
+                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                {
+                    showPiAds(Pi, true);
+                }
             }
         }
     

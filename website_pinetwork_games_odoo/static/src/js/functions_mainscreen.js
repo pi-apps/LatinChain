@@ -1542,8 +1542,6 @@ $( document ).ready(function() {
             }
           // store adNetworkSupported for later use
         })();
-        
-        await delayAsync(5000);
     
         if(localStorage.getItem("loggedIn"))
         {
@@ -1560,40 +1558,44 @@ $( document ).ready(function() {
                 }, 10000);*/
             }, 10000);
             $(".loggedin").show();
-        }else if(confirm($("#modal_login_latinchain_v2_message").text()))
-        {
-            auth();
-            localStorage.setItem("loggedIn", true);
-        
-            setTimeout(function ()
+        }else{
+            await delayAsync(5000);
+            
+            if(confirm($("#modal_login_latinchain_v2_message").text()))
             {
-                if(pi_user_id == "" && pi_user_code == "")
-                    auth();
-                /*setTimeout(function ()
+                auth();
+                localStorage.setItem("loggedIn", true);
+            
+                setTimeout(function ()
                 {
                     if(pi_user_id == "" && pi_user_code == "")
-                        colorboxLoadedMainnet();
-                }, 10000);*/
-            }, 10000);
-            $(".loggedin").show();
-        }else
-        {
-            $(".loggedout").show();
-            
-            $(".getverified").show();
-            $(".isverified").hide();
-            $(".isverified-username").hide();
-            
-            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-            {
-                (async () => {
-                    var result_piad = await showPiAds(Pi, true);
-                
-                    /*if(!result_piad)
+                        auth();
+                    /*setTimeout(function ()
                     {
-                        colorboxLoadedMainnet();
-                    }*/
-                })();
+                        if(pi_user_id == "" && pi_user_code == "")
+                            colorboxLoadedMainnet();
+                    }, 10000);*/
+                }, 10000);
+                $(".loggedin").show();
+            }else
+            {
+                $(".loggedout").show();
+                
+                $(".getverified").show();
+                $(".isverified").hide();
+                $(".isverified-username").hide();
+                
+                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                {
+                    (async () => {
+                        var result_piad = await showPiAds(Pi, true);
+                    
+                        /*if(!result_piad)
+                        {
+                            colorboxLoadedMainnet();
+                        }*/
+                    })();
+                }
             }
         }
         

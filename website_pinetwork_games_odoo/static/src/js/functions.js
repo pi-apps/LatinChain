@@ -608,16 +608,21 @@ $( document ).ready(function() {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
             }, 10000);
-        }else if(confirm($("#modal_login_latinchain_v2_message").text()))
+        }else
         {
-            auth();
-            localStorage.setItem("loggedIn", true);
-        
-            setTimeout(function ()
+            await delayAsync(5000);
+            
+            if(confirm($("#modal_login_latinchain_v2_message").text()))
             {
-                if(pi_user_id == "" && pi_user_code == "")
-                    auth();
-            }, 10000);
+                auth();
+                localStorage.setItem("loggedIn", true);
+            
+                setTimeout(function ()
+                {
+                    if(pi_user_id == "" && pi_user_code == "")
+                        auth();
+                }, 10000);
+            }
         }
     
     // store adNetworkSupported for later use

@@ -258,8 +258,6 @@ var startCommonAppsAI = () => {
     
             if(localStorage.getItem("loggedIn"))
             {
-                await delayAsync(3000);
-                
                 auth();
             
                 setTimeout(function ()
