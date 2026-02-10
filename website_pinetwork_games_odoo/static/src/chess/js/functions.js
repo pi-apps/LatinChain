@@ -643,6 +643,8 @@ $( document ).ready(function() {
             }
           // store adNetworkSupported for later use
         })();
+        
+        await delayAsync(3000);
 
         if(localStorage.getItem("loggedIn"))
         {

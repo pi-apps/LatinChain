@@ -1486,7 +1486,7 @@ $( document ).ready(function() {
                             if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 (async () => {
-                                    await delayAsync(3000);
+                                    //await delayAsync(3000);
                                     
                                     if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
                                         showRewardedPiAd(false);
@@ -1542,6 +1542,8 @@ $( document ).ready(function() {
             }
           // store adNetworkSupported for later use
         })();
+        
+        await delayAsync(3000);
     
         if(localStorage.getItem("loggedIn"))
         {
