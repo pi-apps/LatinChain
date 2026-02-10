@@ -303,7 +303,7 @@ var startCommonAppsAI = () => {
                 '    <a class="anchor-goback" style="color: blue;" href="/" target="_blank">Go back</a>' +
                 '</div>');
                 
-                await delayAsync(3000);
+                await delayAsync(5000);
                 
                 document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                 document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'

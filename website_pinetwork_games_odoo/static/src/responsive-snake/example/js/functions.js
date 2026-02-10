@@ -542,7 +542,7 @@ $( document ).ready(function() {
           // store adNetworkSupported for later use
         })();
         
-        await delayAsync(3000);
+        await delayAsync(5000);
 
         if(localStorage.getItem("loggedIn"))
         {

@@ -486,7 +486,7 @@ async function detectObjects(currentTime) {
             }
             
             $(".whole-phrase").text(speechText);
-            await delayAsync(3000);
+            await delayAsync(5000);
             speechText = $(".whole-phrase").text();
 
             if (speechText !== '') {

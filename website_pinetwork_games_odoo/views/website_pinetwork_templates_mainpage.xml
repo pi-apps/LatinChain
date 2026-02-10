@@ -7,7 +7,7 @@
     
     <template id="new_header_common_apps_latinchain_ai" inherit_id="web.layout">
         <xpath expr="//head//script[last()]" position="after">
-            <script src="/website_pinetwork_games_odoo/static/src/js/common-apps/common_apps_ai_functions.js?v=1.136"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/js/common-apps/common_apps_ai_functions.js?v=1.138"></script>
         </xpath>
     </template>
     
@@ -944,7 +944,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.768"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.770"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
