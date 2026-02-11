@@ -1238,14 +1238,14 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div style="text-align:left; word-break: break-word;" class="col-5">
+                            <div style="text-align:left; word-break: break-word;" class="col-6">
                                 <div class="text-white getverified">Welcome to LatinChain!.</div>
                                 <div class="isverified" style="display: none;">Verified <i class="fa fa-check-circle-o"></i>.</div>
                                 <div class="isverified-username font-weight-bold" style="display: none;"></div>
                             </div>
-                            <div style="text-align:right; padding-left: 0px" class="col-7">
-                                <button id="logout_latinchain" class="btn btn-outline-danger font-weight-bold text-white border-white loggedin" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div>Logout</div></button>
-                                <button id="login_latinchain" class="btn btn-outline-success font-weight-bold text-white border-white loggedout" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div>Login</div></button>
+                            <div style="text-align:right; padding-left: 0px" class="col-6">
+                                <button id="logout_latinchain" class="btn btn-outline-danger font-weight-bold text-white border-white loggedin" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div><i class="fa-solid fa-right-from-bracket"></i></div></button>
+                                <button id="login_latinchain" class="btn btn-outline-success font-weight-bold text-white border-white loggedout" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div><i class="fa-solid fa-right-to-bracket"></i></div></button>
                                 <button class="btn btn-outline-info font-weight-bold text-white border-white clear_cache" style="border-radius: 50%; border: 2px solid; font-size: 100% !important"><div style=""><i class="fa fa-refresh"></i></div></button>
                                 <button class="btn btn-outline-info font-weight-bold text-white border-white button-share" style="border-radius: 50%; border: 2px solid; font-size: 100% !important"><div style=""><i class="fa fa-share-alt"></i></div></button>
                             </div>
