@@ -1688,7 +1688,7 @@ $( document ).ready(function() {
     }*/
 
     //$("#social_div").css("visibility", "visible");
-    const btn = document.querySelector('#button1');
+    const btn = document.querySelector('.button-share');
     //const resultPara = document.querySelector('.result');
     
     // Must be triggered some kind of "user activation"
