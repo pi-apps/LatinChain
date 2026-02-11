@@ -626,7 +626,8 @@
                     <body>
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <br/>
-                            <h1>Welcome to Your LatinChain Club</h1>
+                            <h1 t-if="not with_links">Welcome to Your LatinChain Club</h1>
+                            <h1 t-elif="with_links">Welcome to Your LatinChain Shopping Club</h1>
                             <br/>
                             <h3 t-if="not with_links">Udemy courses, Amazon Books.</h3>
                             <h3 t-elif="with_links">Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
