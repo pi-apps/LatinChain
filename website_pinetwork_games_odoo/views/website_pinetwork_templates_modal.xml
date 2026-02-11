@@ -636,35 +636,35 @@
                                     <div class="form-check" style="margin-bottom: 10px">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-all" value="show-all" checked="true"/>
                                       <label class="form-check-label" for="show-all">
-                                        Show all sections
+                                        <h3>Show all sections</h3>
                                       </label>
                                     </div>
                                     <hr/>
                                     <div class="form-check" style="margin-bottom: 10px" t-if="with_links">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-spring-clothing" value="show-spring-clothing" />
                                       <label class="form-check-label" for="show-spring-clothing">
-                                        Show only Spring clothing store
+                                        <h3>Show only Spring clothing store</h3>
                                       </label>
                                     </div>
                                     <hr t-if="with_links"/>
                                     <div class="form-check" style="margin-bottom: 10px" t-if="with_links">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-amazon-best-deals" value="show-amazon-best-deals" />
                                       <label class="form-check-label" for="show-amazon-best-deals">
-                                        Show only Amazon best sellers and deals
+                                        <h3>Show only Amazon best sellers and deals</h3>
                                       </label>
                                     </div>
                                     <hr t-if="with_links"/>
                                     <div class="form-check" style="margin-bottom: 10px">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-udemy-courses" value="show-udemy-courses" />
                                       <label class="form-check-label" for="show-udemy-courses">
-                                        Show only Udemy courses
+                                        <h3>Show only Udemy courses</h3>
                                       </label>
                                     </div>
                                     <hr/>
                                     <div class="form-check" style="margin-bottom: 10px">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-amazon-books" value="show-amazon-books" />
                                       <label class="form-check-label" for="show-amazon-books">
-                                        Show only Amazon books
+                                        <h3>Show only Amazon books</h3>
                                       </label>
                                     </div>
                                     <hr/>
