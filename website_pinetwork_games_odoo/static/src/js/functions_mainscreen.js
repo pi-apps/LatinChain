@@ -1497,11 +1497,11 @@ $( document ).ready(function() {
                                 })();*/
                                 
                                 //showRewardedPiAd(true);
-                            }else if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            }/*else if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 if($("#pi_ad_automatic").is(":checked"))
                                     showPiAds(Pi, true);
-                            }
+                            }*/
                             /*else if(!unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 colorboxLoadedMainnet();
@@ -1585,17 +1585,12 @@ $( document ).ready(function() {
                 $(".isverified").hide();
                 $(".isverified-username").hide();
                 
-                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     (async () => {
                         var result_piad = await showPiAds(Pi, true);
-                    
-                        /*if(!result_piad)
-                        {
-                            colorboxLoadedMainnet();
-                        }*/
                     })();
-                }
+                }*/
             }
         }
         
