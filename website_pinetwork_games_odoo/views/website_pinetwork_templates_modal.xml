@@ -630,7 +630,7 @@
                             <h1 t-elif="with_links">Welcome to Your LatinChain Shopping Club</h1>
                             <br/>
                             <h3 t-if="not with_links">Udemy courses, Amazon Books.</h3>
-                            <h3 t-elif="with_links">Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
+                            <h3 t-elif="with_links">Buying point: Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
                             <br/>
                             <div style="margin-bottom:10px;">
                                 <h3 style="text-align:left">
