@@ -2,11 +2,11 @@
 
 const delayAsync = ms => new Promise(res => setTimeout(res, ms));
 
-document.addEventListener('DOMContentLoaded', (event) => {
+/*document.addEventListener('DOMContentLoaded', (event) => {
     $.ajaxSetup({
         timeout: 600000,
     });
-});
+});*/
 
 function validateYouTubeUrl(url)
 {
