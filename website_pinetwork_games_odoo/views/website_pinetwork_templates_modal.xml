@@ -628,7 +628,11 @@
                             <br/>
                             <h1 t-if="not with_links">Welcome to Your LatinChain Club</h1>
                             <h1 t-elif="with_links">Welcome to Your LatinChain Shopping Club</h1>
+                            
                             <br/>
+                            <h3 t-if="with_links">Visit our Blockchain dApp:<br/>
+                            <a href="https://latinchain.pinet.com/">https://latinchain.pinet.com/</a></h3>
+                            <h3 t-if="with_links">From Venezuela you can use mailboxes to import from the USA (find your own in your country): Zoom, Telocomproenusa, etc.</h3>
                             <h3 t-if="not with_links">Udemy courses, Amazon Books.</h3>
                             <h3 t-elif="with_links">Buying point: Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
                             <br/>
