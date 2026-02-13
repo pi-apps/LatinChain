@@ -532,6 +532,11 @@
                               padding:10px;
                               width: 100%;
                             }
+                            
+                            .big-checkbox {
+                                width: 20px;
+                                height: 20px;
+                            }
                         </style>
                         
                         <script>
@@ -622,25 +627,52 @@
                                 var btn = $('.button-share');
                                 
                                 // Must be triggered some kind of "user activation"
-                                btn.click(async () => {
-                                    const shareData = {
-                                        title: 'LatinChain Shopping Club',
-                                        text: $("#share-message-1").text() + "\n\nClub:\nhttps://club.latin-chain.com/\nBlockchain dApps:\nhttps://latinchain.pinet.com/",
-                                        //url: 'https://latin-chain.com/',
-                                    }
+                                if(btn)
+                                {
+                                    btn.click(async () => {
+                                        const shareData = {
+                                            title: 'LatinChain Shopping Club',
+                                            text: $("#share-message-1").text() + "\n\nClub:\nhttps://club.latin-chain.com/\nBlockchain dApps:\nhttps://latinchain.pinet.com/",
+                                            //url: 'https://latin-chain.com/',
+                                        }
+                                        
+                                        if (!navigator.share) {
+                                            Pi.openShareDialog(shareData.title, shareData.text);
+                                        }else
+                                        {
+                                          try {
+                                            await navigator.share(shareData);
+                                            //resultPara.textContent = 'MDN shared successfully'
+                                          } catch(err) {
+                                            //alert('Error: ' + err);
+                                          }
+                                        }
+                                    });
+                                }
+                                
+                                const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
+                                
+                                $('#pi_automatic_accessibility').change(function() {
+                                    var pi_automatic_accessibility = $("#pi_automatic_accessibility").is(":checked");
                                     
-                                    if (!navigator.share) {
-                                        Pi.openShareDialog(shareData.title, shareData.text);
-                                    }else
+                                    if(pi_automatic_accessibility)
                                     {
-                                      try {
-                                        await navigator.share(shareData);
-                                        //resultPara.textContent = 'MDN shared successfully'
-                                      } catch(err) {
-                                        //alert('Error: ' + err);
-                                      }
+                                        speechModule.activate();
+                                    }
+                                    else
+                                    {
+                                        speechModule.deactivate();
                                     }
                                 });
+                                
+                                if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
+                                    $('#pi_automatic_accessibility').prop('checked', false);
+                                    //speechModule.deactivate();
+                                }else
+                                {
+                                    $('#pi_automatic_accessibility').prop('checked', true);
+                                    //speechModule.activate();
+                                }
                             });
                         </script>
                         
@@ -651,7 +683,20 @@
                             <br/>
                             <h1 t-if="not with_links">Welcome to Your LatinChain Club</h1>
                             <h1 t-elif="with_links">Welcome to Your LatinChain Shopping Club <button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></h1>
-                            
+                            <br/>
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                                <div style="margin-bottom:5px" class="border-bottom">
+                                    <h5 translate="no"><strong><div style="display:inline;">#Accessibility &#128240;</div></strong></h5>
+                                </div>
+                                <div class="row justify-content-center text-center p-3 mb-2 bg-info bg-gradient rounded" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
+                                  <input class="form-check-input big-checkbox" type="checkbox" id="pi_automatic_accessibility" />
+                                  <label class="form-check-label" for="pi_automatic_accessibility">
+                                    <div style="filter: contrast(100%) !important; color: black">
+                                        Activate accessibility.
+                                    </div>
+                                  </label>
+                                </div>
+                            </div>
                             <br/>
                             <h3 t-if="with_links">Visit our Blockchain dApp:<br/>
                             <a href="https://latinchain.pinet.com/">https://latinchain.pinet.com/</a></h3>

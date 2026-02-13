@@ -834,15 +834,6 @@ $( document ).ready(function() {
     
     const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
     
-    if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
-        $('#pi_automatic_accessibility').prop('checked', false);
-        //speechModule.deactivate();
-    }else
-    {
-        $('#pi_automatic_accessibility').prop('checked', true);
-        //speechModule.activate();
-    }
-    
     $('#pi_automatic_accessibility').change(function() {
         var pi_automatic_accessibility = $("#pi_automatic_accessibility").is(":checked");
         
@@ -855,6 +846,15 @@ $( document ).ready(function() {
             speechModule.deactivate();
         }
     });
+    
+    if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
+        $('#pi_automatic_accessibility').prop('checked', false);
+        //speechModule.deactivate();
+    }else
+    {
+        $('#pi_automatic_accessibility').prop('checked', true);
+        //speechModule.activate();
+    }
     
     window.addEventListener('unhandledrejection', function (e) {
         e.preventDefault();
