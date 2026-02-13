@@ -623,24 +623,18 @@
                                 
                                 // Must be triggered some kind of "user activation"
                                 btn.click(async () => {
-                                    alert("123");
-                                    alert($("#share-message-1").text() + "\n\nClub:\nhttps://club.latin-chain.com/\ndApps:\nhttps://latinchain.pinet.com/");
-                                    var shareData = {
+                                    const shareData = {
                                         title: 'LatinChain Shopping Club',
-                                        text: "1234",//$("#share-message-1").text() + "\n\nClub:\nhttps://club.latin-chain.com/\ndApps:\nhttps://latinchain.pinet.com/",
+                                        text: $("#share-message-1").text() + "\n\nClub:\nhttps://club.latin-chain.com/\ndApps:\nhttps://latinchain.pinet.com/",
                                         //url: 'https://latin-chain.com/',
                                     }
                                     
                                     if (!navigator.share) {
-                                        alert("01");
                                         Pi.openShareDialog(shareData.title, shareData.text);
-                                        alert("02");
                                     }else
                                     {
                                       try {
-                                        alert("1");
                                         await navigator.share(shareData);
-                                        alert("2");
                                         //resultPara.textContent = 'MDN shared successfully'
                                       } catch(err) {
                                         //alert('Error: ' + err);
