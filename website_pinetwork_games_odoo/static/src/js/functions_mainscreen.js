@@ -836,11 +836,11 @@ $( document ).ready(function() {
     
     if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
         $('#pi_automatic_accessibility').prop('checked', false);
-        speechModule.deactivate();
+        //speechModule.deactivate();
     }else
     {
         $('#pi_automatic_accessibility').prop('checked', true);
-        speechModule.activate();
+        //speechModule.activate();
     }
     
     $('#pi_automatic_accessibility').change(function() {

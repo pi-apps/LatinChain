@@ -660,12 +660,12 @@
                                 
                                 if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
                                     $('#pi_automatic_accessibility').prop('checked', false);
-                                    speechModule.deactivate();
+                                    //speechModule.deactivate();
                                     alert("123");
                                 }else
                                 {
                                     $('#pi_automatic_accessibility').prop('checked', true);
-                                    speechModule.activate();
+                                    //speechModule.activate();
                                     alert("1234");
                                 }
                                 
