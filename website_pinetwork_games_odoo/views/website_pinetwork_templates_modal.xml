@@ -541,7 +541,31 @@
                         
                         <script t-if="with_links">
                             $( document ).ready(function() {
-                                $("html").attr("lang", "en"); 
+                                $("html").attr("lang", "en");
+                                
+                                const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
+                                
+                                if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
+                                    $('#pi_automatic_accessibility').prop('checked', false);
+                                    //speechModule.deactivate();
+                                }else
+                                {
+                                    $('#pi_automatic_accessibility').prop('checked', true);
+                                    //speechModule.activate();
+                                }
+                                
+                                $('#pi_automatic_accessibility').change(function() {
+                                    var pi_automatic_accessibility = $("#pi_automatic_accessibility").is(":checked");
+                                    
+                                    if(pi_automatic_accessibility)
+                                    {
+                                        speechModule.activate();
+                                    }
+                                    else
+                                    {
+                                        speechModule.deactivate();
+                                    }
+                                });
                             });
                         </script>
                         
@@ -655,34 +679,6 @@
                                         }
                                     });
                                 }
-                                
-                                const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
-                                
-                                if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
-                                    $('#pi_automatic_accessibility').prop('checked', false);
-                                    speechModule.deactivate();
-                                }else
-                                {
-                                    $('#pi_automatic_accessibility').prop('checked', true);
-                                    speechModule.deactivate();
-                                    speechModule.activate();
-                                    //speechModule.activate();
-                                }
-                                
-                                $('#pi_automatic_accessibility').change(function() {
-                                    var pi_automatic_accessibility = $("#pi_automatic_accessibility").is(":checked");
-                                    
-                                    alert(pi_automatic_accessibility);
-                                    
-                                    if(pi_automatic_accessibility)
-                                    {
-                                        speechModule.activate();
-                                    }
-                                    else
-                                    {
-                                        speechModule.deactivate();
-                                    }
-                                });
                             });
                         </script>
                         
