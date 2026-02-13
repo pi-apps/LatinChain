@@ -672,6 +672,8 @@
                                 $('#pi_automatic_accessibility').change(function() {
                                     var pi_automatic_accessibility = $("#pi_automatic_accessibility").is(":checked");
                                     
+                                    alert(pi_automatic_accessibility);
+                                    
                                     if(pi_automatic_accessibility)
                                     {
                                         speechModule.activate();
