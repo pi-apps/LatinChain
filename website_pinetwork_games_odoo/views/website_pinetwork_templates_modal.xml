@@ -618,6 +618,29 @@
                                 $('input[name="show-section"][value="show-all"]').prop('checked', true);
                                 $(".search-collectibles").val("");
                                 $(".search-collectibles").trigger(e_keyup);
+                                
+                                var btn = $('.button-share');
+                                
+                                // Must be triggered some kind of "user activation"
+                                btn.click(async () => {
+                                    const shareData = {
+                                        title: 'LatinChain Shopping Club',
+                                        text: $(".share-message-1").text() + "\n\nClub:https://club.latin-chain.com/\ndApps:\nhttps://latinchain.pinet.com/",
+                                        //url: 'https://latin-chain.com/',
+                                    }
+                                    
+                                    if (!navigator.share) {
+                                        Pi.openShareDialog(shareData.title, shareData.text);
+                                    }else
+                                    {
+                                      try {
+                                        await navigator.share(shareData);
+                                        //resultPara.textContent = 'MDN shared successfully'
+                                      } catch(err) {
+                                        //alert('Error: ' + err);
+                                      }
+                                    }
+                                });
                             });
                         </script>
                         
@@ -627,14 +650,14 @@
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <br/>
                             <h1 t-if="not with_links">Welcome to Your LatinChain Club</h1>
-                            <h1 t-elif="with_links">Welcome to Your LatinChain Shopping Club</h1>
+                            <h1 t-elif="with_links">Welcome to Your LatinChain Shopping Club <button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></h1>
                             
                             <br/>
                             <h3 t-if="with_links">Visit our Blockchain dApp:<br/>
                             <a href="https://latinchain.pinet.com/">https://latinchain.pinet.com/</a></h3>
                             <h3 t-if="with_links">From Venezuela you can use mailboxes to import from the USA (find your own in your country): Zoom, Telocomproenusa, etc.</h3>
                             <h3 t-if="not with_links">Udemy courses, Amazon Books.</h3>
-                            <h3 t-elif="with_links">Buying point: Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
+                            <h3 t-elif="with_links" id="share-message-1">Buying point: Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
                             <br/>
                             <div style="margin-bottom:10px;">
                                 <h3 style="text-align:left">
