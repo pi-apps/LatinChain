@@ -625,7 +625,7 @@
                                 btn.click(async () => {
                                     const shareData = {
                                         title: 'LatinChain Shopping Club',
-                                        text: $(".share-message-1").text() + "\n\nClub:https://club.latin-chain.com/\ndApps:\nhttps://latinchain.pinet.com/",
+                                        text: $("#share-message-1").text() + "\n\nClub:https://club.latin-chain.com/\ndApps:\nhttps://latinchain.pinet.com/",
                                         //url: 'https://latin-chain.com/',
                                     }
                                     
