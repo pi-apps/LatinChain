@@ -539,8 +539,14 @@
                             }
                         </style>
                         
-                        <script>
+                        <script t-if="with_links">
                             $( document ).ready(function() {
+                                $("html").attr("lang", "en"); 
+                            });
+                        </script>
+                        
+                        <script>
+                            $( document ).ready(function() { 
                                 
                                 var e_keyup = jQuery.Event("keyup");
                                 e_keyup.which = 13; // 13 is the key code for 'Enter'
