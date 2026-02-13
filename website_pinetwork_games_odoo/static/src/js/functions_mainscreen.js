@@ -1683,11 +1683,11 @@ $( document ).ready(function() {
     }*/
 
     //$("#social_div").css("visibility", "visible");
-    const btn = document.querySelector('.button-share');
+    const btn = $('.button-share');
     //const resultPara = document.querySelector('.result');
     
     // Must be triggered some kind of "user activation"
-    btn.addEventListener('click', async () => {
+    btn.click(async () => {
         const shareData = {
             title: 'LatinChain Platform',
             text: $("#share_message").text() + "\n\nMainnet:\nhttps://latinchain.pinet.com/\nTestnet:\nhttps://latinchaintest9869.pinet.com/\nCrypto news:\nhttps://news.latin-chain.com/",
@@ -1707,13 +1707,13 @@ $( document ).ready(function() {
         }
     });
     
-    const share_video = document.querySelector('#share_video');
+    const share_video = $('#share_video');
     //const resultPara = document.querySelector('.result');
     
     if(share_video)
     {
         // Must be triggered some kind of "user activation"
-        share_video.addEventListener('click', async () => {
+        share_video.click(async () => {
             const shareData = {
                 title: 'LatinChain Platform',
                 text: $("#share_message").text() + "\n\nVideo:\n" + $(".open_streaming").attr("videourl") + "\nMainnet:\nhttps://latinchain.pinet.com/\nTestnet:\nhttps://latinchaintest9869.pinet.com/",
