@@ -541,31 +541,37 @@
                         
                         <script t-if="with_links">
                             $( document ).ready(function() {
-                                $("html").attr("lang", "en");
+                                (async () => {
                                 
-                                const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
-                                
-                                if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
-                                    $('#pi_automatic_accessibility').prop('checked', false);
-                                    //speechModule.deactivate();
-                                }else
-                                {
-                                    $('#pi_automatic_accessibility').prop('checked', true);
-                                    //speechModule.activate();
-                                }
-                                
-                                $('#pi_automatic_accessibility').change(function() {
-                                    var pi_automatic_accessibility = $("#pi_automatic_accessibility").is(":checked");
+                                    $("html").attr("lang", "en");
                                     
-                                    if(pi_automatic_accessibility)
+                                    await delayAsync(5000);
+                                    
+                                    const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
+                                    
+                                    if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
+                                        $('#pi_automatic_accessibility').prop('checked', false);
+                                        //speechModule.deactivate();
+                                    }else
                                     {
-                                        speechModule.activate();
+                                        $('#pi_automatic_accessibility').prop('checked', true);
+                                        //speechModule.activate();
                                     }
-                                    else
-                                    {
-                                        speechModule.deactivate();
-                                    }
-                                });
+                                    
+                                    $('#pi_automatic_accessibility').change(function() {
+                                        var pi_automatic_accessibility = $("#pi_automatic_accessibility").is(":checked");
+                                        
+                                        if(pi_automatic_accessibility)
+                                        {
+                                            speechModule.activate();
+                                        }
+                                        else
+                                        {
+                                            speechModule.deactivate();
+                                        }
+                                    });
+                                
+                                })();
                             });
                         </script>
                         
