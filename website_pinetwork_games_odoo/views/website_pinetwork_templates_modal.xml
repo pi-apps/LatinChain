@@ -660,13 +660,13 @@
                                 
                                 if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
                                     $('#pi_automatic_accessibility').prop('checked', false);
-                                    //speechModule.deactivate();
-                                    alert("123");
+                                    speechModule.deactivate();
                                 }else
                                 {
                                     $('#pi_automatic_accessibility').prop('checked', true);
+                                    speechModule.deactivate();
+                                    speechModule.activate();
                                     //speechModule.activate();
-                                    alert("1234");
                                 }
                                 
                                 $('#pi_automatic_accessibility').change(function() {
