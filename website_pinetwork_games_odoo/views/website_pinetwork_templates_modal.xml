@@ -590,7 +590,7 @@
                                     // 5. Quitar la selección después de un tiempo (ej. 2 segundos)
                                     setTimeout(function() {
                                         window.getSelection().removeAllRanges(); // Esto quita la selección
-                                    }, 2000);
+                                    }, 10000);
                                 
                                 })();
                             });
