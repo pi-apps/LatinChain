@@ -543,10 +543,7 @@
                             $( document ).ready(function() {
                                 (async () => {
                                 
-                                    if(window.location.pathname.substring(0, 3) == "/es")
-                                    {
-                                        window.location.href = "/en/reading-club-links"
-                                    }
+                                    $("html").attr("lang", "en");
                                     
                                     speechModule.deactivate();
                                 
