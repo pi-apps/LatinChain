@@ -305,8 +305,6 @@ function loadSpeechLanguages() {
         }else
         {
             speechModule.activate();
-            
-            $("body").focus();
         }
     }
 }
