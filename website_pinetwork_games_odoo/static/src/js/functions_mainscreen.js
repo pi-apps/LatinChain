@@ -1483,7 +1483,7 @@ $( document ).ready(function() {
                             });
                             
                             //if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                            if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 (async () => {
                                     //await delayAsync(3000);
