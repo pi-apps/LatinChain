@@ -539,35 +539,11 @@
                             }
                         </style>
                         
-                        <script t-if="with_links">
+                        <script>
                             $( document ).ready(function() {
                                 (async () => {
                                 
-                                    $("html").attr("lang", "en");
-                                    
-                                    const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
-                                    
-                                    if (localStorage.getItem(STORAGE_KEY_MAINSCREEN) !== 'true'){ // || !('speechSynthesis' in window)) {
-                                        $('#pi_automatic_accessibility').prop('checked', false);
-                                        //speechModule.deactivate();
-                                    }else
-                                    {
-                                        $('#pi_automatic_accessibility').prop('checked', true);
-                                        //speechModule.activate();
-                                    }
-                                    
-                                    $('#pi_automatic_accessibility').change(function() {
-                                        var pi_automatic_accessibility = $("#pi_automatic_accessibility").is(":checked");
-                                        
-                                        if(pi_automatic_accessibility)
-                                        {
-                                            speechModule.activate();
-                                        }
-                                        else
-                                        {
-                                            speechModule.deactivate();
-                                        }
-                                    });
+                                    speechModule.deactivate();
                                 
                                 })();
                             });
@@ -693,21 +669,9 @@
                             <br/>
                             <h1 t-if="not with_links">Welcome to Your LatinChain Club</h1>
                             <h1 t-elif="with_links">Welcome to Your LatinChain Shopping Club <button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></h1>
+                            
                             <br/>
-                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                                <div style="margin-bottom:5px" class="border-bottom">
-                                    <h5 translate="no"><strong><div style="display:inline;">#Accessibility &#128240;</div></strong></h5>
-                                </div>
-                                <div class="row justify-content-center text-center p-3 mb-2 bg-info bg-gradient rounded" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
-                                  <input class="form-check-input big-checkbox" type="checkbox" id="pi_automatic_accessibility" />
-                                  <label class="form-check-label" for="pi_automatic_accessibility">
-                                    <div style="filter: contrast(100%) !important; color: black">
-                                        Activate accessibility.
-                                    </div>
-                                  </label>
-                                </div>
-                            </div>
-                            <br/>
+                            
                             <h3 t-if="with_links">Visit our Blockchain dApp:<br/>
                             <a href="https://latinchain.pinet.com/">https://latinchain.pinet.com/</a></h3>
                             <h3 t-if="with_links">From Venezuela you can use mailboxes to import from the USA (find your own in your country): Zoom, Telocomproenusa, etc.</h3>
