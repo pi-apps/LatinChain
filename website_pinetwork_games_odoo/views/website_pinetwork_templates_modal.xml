@@ -569,7 +569,9 @@
                                         }
                                     });
                                     
-                                    $('.first-title').show();
+                                    $('.first-title').focus().select();
+                                    await delayAsync(5000);
+                                    window.getSelection().removeAllRanges();
                                 
                                 })();
                             });
@@ -693,8 +695,8 @@
                     <body>
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <br/>
-                            <h1 t-if="not with_links" class="first-title" style="display:none">Welcome to Your LatinChain Club</h1>
-                            <h1 t-elif="with_links" class="first-title" style="display:none">Welcome to Your LatinChain Shopping Club <button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></h1>
+                            <h1 t-if="not with_links" class="first-title">Welcome to Your LatinChain Club</h1>
+                            <h1 t-elif="with_links" class="first-title">Welcome to Your LatinChain Shopping Club <button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></h1>
                             <br/>
                             <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                                 <div style="margin-bottom:5px" class="border-bottom">
