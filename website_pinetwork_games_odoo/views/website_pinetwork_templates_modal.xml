@@ -539,7 +539,7 @@
                             }
                         </style>
                         
-                        <script>
+                        <script t-if="with_links">
                             $( document ).ready(function() {
                                 (async () => {
                                 
