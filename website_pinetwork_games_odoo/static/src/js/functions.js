@@ -458,7 +458,7 @@ $( document ).ready(function() {
                             }
                         }
                         
-                        $( "#button_reward_ad" ).click(async function() {
+                        /*$( "#button_reward_ad" ).click(async function() {
                             showRewardedPiAd();
                         });
                         
@@ -468,7 +468,7 @@ $( document ).ready(function() {
                         }else if(Boolean(($("#showpiad").val().toLowerCase())) && !Boolean(($("#payoneclick").val().toLowerCase())) && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
                             showRewardedPiAd();
-                        }
+                        }*/
                         
                         /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             showRewardedPiAd();*/
