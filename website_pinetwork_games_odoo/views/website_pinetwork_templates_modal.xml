@@ -543,7 +543,7 @@
                             $( document ).ready(function() {
                                 (async () => {
                                 
-                                    //$("html").attr("lang", "en");
+                                    $("html").attr("lang", "en");
                                     
                                     const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
                                     
