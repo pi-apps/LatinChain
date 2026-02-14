@@ -543,8 +543,6 @@
                             $( document ).ready(function() {
                                 (async () => {
                                 
-                                    $("html").attr("lang", "en");
-                                    
                                     speechModule.deactivate();
                                 
                                 })();
