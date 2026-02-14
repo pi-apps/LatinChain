@@ -568,6 +568,8 @@
                                             speechModule.deactivate();
                                         }
                                     });
+                                    
+                                    $("body").focus();
                                 
                                 })();
                             });
