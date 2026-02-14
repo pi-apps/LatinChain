@@ -539,11 +539,11 @@
                             }
                         </style>
                         
-                        <script>
+                        <script t-if="with_links">
                             $( document ).ready(function() {
                                 (async () => {
                                 
-                                    $("html").attr("lang", "en");
+                                    //$("html").attr("lang", "en");
                                     
                                     const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
                                     
@@ -568,29 +568,6 @@
                                             speechModule.deactivate();
                                         }
                                     });
-                                    
-                                    /*$('.first-title').focus().select();
-                                    await delayAsync(5000);
-                                    window.getSelection().removeAllRanges();*/
-                                    
-                                    // 1. Obtenemos el elemento nativo del DOM (el [0] extrae el elemento de jQuery)
-                                    var elementoDOM = $('.first-title')[0]; 
-                                    
-                                    // 2. Creamos un "rango" y le decimos que cubra el contenido de nuestro h3
-                                    var rango = document.createRange();
-                                    rango.selectNodeContents(elementoDOM);
-                                    
-                                    // 3. Obtenemos la selección actual del usuario en la ventana
-                                    var seleccion = window.getSelection();
-                                    
-                                    // 4. Limpiamos cualquier selección previa y aplicamos la nueva
-                                    seleccion.removeAllRanges(); 
-                                    seleccion.addRange(rango); // ¡Aquí se sombrea/selecciona el texto gráficamente!
-
-                                    // 5. Quitar la selección después de un tiempo (ej. 2 segundos)
-                                    setTimeout(function() {
-                                        window.getSelection().removeAllRanges(); // Esto quita la selección
-                                    }, 10000);
                                 
                                 })();
                             });
@@ -714,8 +691,8 @@
                     <body>
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <br/>
-                            <h1 t-if="not with_links" class="first-title">Welcome to Your LatinChain Club</h1>
-                            <h1 t-elif="with_links" class="first-title">Welcome to Your LatinChain Shopping Club <button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></h1>
+                            <h1 t-if="not with_links">Welcome to Your LatinChain Club</h1>
+                            <h1 t-elif="with_links">Welcome to Your LatinChain Shopping Club <button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></h1>
                             <br/>
                             <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                                 <div style="margin-bottom:5px" class="border-bottom">
