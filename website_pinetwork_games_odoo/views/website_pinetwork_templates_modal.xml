@@ -569,9 +569,28 @@
                                         }
                                     });
                                     
-                                    $('.first-title').focus().select();
+                                    /*$('.first-title').focus().select();
                                     await delayAsync(5000);
-                                    window.getSelection().removeAllRanges();
+                                    window.getSelection().removeAllRanges();*/
+                                    
+                                    // 1. Obtenemos el elemento nativo del DOM (el [0] extrae el elemento de jQuery)
+                                    var elementoDOM = $('.first-title')[0]; 
+                                    
+                                    // 2. Creamos un "rango" y le decimos que cubra el contenido de nuestro h3
+                                    var rango = document.createRange();
+                                    rango.selectNodeContents(elementoDOM);
+                                    
+                                    // 3. Obtenemos la selección actual del usuario en la ventana
+                                    var seleccion = window.getSelection();
+                                    
+                                    // 4. Limpiamos cualquier selección previa y aplicamos la nueva
+                                    seleccion.removeAllRanges(); 
+                                    seleccion.addRange(rango); // ¡Aquí se sombrea/selecciona el texto gráficamente!
+
+                                    // 5. Quitar la selección después de un tiempo (ej. 2 segundos)
+                                    setTimeout(function() {
+                                        window.getSelection().removeAllRanges(); // Esto quita la selección
+                                    }, 2000);
                                 
                                 })();
                             });
