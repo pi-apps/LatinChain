@@ -458,16 +458,19 @@ $( document ).ready(function() {
                             }
                         }
                         
-                        /*$( "#button_reward_ad" ).click(async function() {
+                        $( "#button_reward_ad" ).click(async function() {
                             showRewardedPiAd();
                         });
                         
-                        if(!Boolean(($("#payoneclick").val().toLowerCase())) && show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                        if(!Boolean(($("#payoneclick").val().toLowerCase())) && show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
-                            showRewardedPiAd();
-                        }else if(Boolean(($("#showpiad").val().toLowerCase())) && !Boolean(($("#payoneclick").val().toLowerCase())) && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
+                                showRewardedPiAd();
+                        }
+                        /*else if(Boolean(($("#showpiad").val().toLowerCase())) && !Boolean(($("#payoneclick").val().toLowerCase())) && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
-                            showRewardedPiAd();
+                            if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
+                                showRewardedPiAd();
                         }*/
                         
                         /*if(show_pi_ad_user && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
