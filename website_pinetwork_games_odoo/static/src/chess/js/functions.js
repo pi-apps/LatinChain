@@ -238,8 +238,8 @@ function get_user() {
                     $("#test_app").click(function(){
                         if(pi_ad_new)
                         {
-                            alert("You can use this app, for testing purposes, until you unblock the game. No points will be shared for this game on testing mode.");
-                            showPiRewardedAds(Pi);
+                            if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
+                                showPiRewardedAds(Pi);
                         }else
                         {
                             alert("Max rewarded ads number reached. " + pi_ad_max + " rewarded ads each " + show_pi_ad_user_time + "h");

@@ -7,7 +7,7 @@
     
     <template id="new_header_common_apps_latinchain_ai" inherit_id="web.layout">
         <xpath expr="//head//script[last()]" position="after">
-            <script src="/website_pinetwork_games_odoo/static/src/js/common-apps/common_apps_ai_functions.js?v=1.140"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/js/common-apps/common_apps_ai_functions.js?v=1.141"></script>
         </xpath>
     </template>
     
@@ -49,6 +49,9 @@
             </xpath>
             
            <xpath expr="//body" position="before">
+                <div id="rewarded_message_1" style="display:none;">▶️ Watch a video to claim your reward?.</div>
+                <div id="rewarded_message_2" style="display:none;">In order to maintain our servers, we ask you to watch a Rewarded Ad until the end, we will give you a reward at the end of the ad.</div>
+                
                <span id="website_translation_latin_chain" name="website_translation_latin_chain">
                     <t t-if="hide_google_translate">
                         <t t-set="hide_google_translate_2" t-value="'display: none !important;'"/>
@@ -944,7 +947,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.785"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.786"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1038,8 +1041,6 @@
                     <div id="modal_exchange_message_3" style="display:none;">x2 points was activated.</div>
                     <div id="modal_exchange_message_4" style="display:none;">Not exchanged. Not enough</div>
                     <div id="modal_exchange_message_5" style="display:none;">Are you sure you want to exchange the Latin points?. This action is irreversible.</div>
-                    <div id="rewarded_message_1" style="display:none;">▶️ Watch a video to claim your reward?.</div>
-                    <div id="rewarded_message_2" style="display:none;">In order to maintain our servers, we ask you to watch a Rewarded Ad until the end, we will give you a reward at the end of the ad.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
