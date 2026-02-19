@@ -540,7 +540,7 @@
                         </style>
                         
                         <script t-if="shopping">
-                            var queryString = "?v=1.106";
+                            var queryString = "?v=1.107";
                             if(window.location.pathname.substring(0, 3) == "/es")
                             {
                                 window.location.href="/en"+window.location.pathname.substring(3)+queryString;
@@ -684,7 +684,7 @@
                             <div t-if="with_links">
                                 <br/>
                                 <a href="https://amzn.to/3MuNfil" target="_blank">
-                                    <img src="/website_pinetwork_games_odoo/static/src/img/club/amazon-purchase-image.png?v=1.103" width="250px" height="250px" />
+                                    <img src="/website_pinetwork_games_odoo/static/src/img/club/amazon-purchase-image.png?v=1.104" width="250px" height="250px" />
                                 </a>
                             </div>
                             
