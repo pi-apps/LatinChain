@@ -681,6 +681,17 @@
                             <h1 t-if="not with_links">Welcome to Your LatinChain Club</h1>
                             <h1 t-elif="with_links">Welcome to Your LatinChain Shopping Club <button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></h1>
                             
+                            <div t-if="with_links">
+                                <br/>
+                                <a href="https://amzn.to/3MuNfil" target="_blank">
+                                    <img src="/website_pinetwork_games_odoo/static/src/img/club/amazon-purchase-image.png?v=1.102" width="250px" height="250px" />
+                                </a>
+                            </div>
+                            
+                            <div t-if="with_links">
+                                (As Amazon associates we earn from qualifying purchases)
+                            </div>
+                            
                             <br/>
                             
                             <!--<h3 t-if="with_links">Visit our Blockchain dApp:<br/>
