@@ -1086,6 +1086,21 @@ class PiNetworkController(http.Controller):
         with_links = True
         
         return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links})
+    
+    @http.route(['/shopping'], type='http', auth="public", website=True, csrf=False)
+    def shopping(self, **kw):
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            mainnet = ""
+        else:
+            mainnet = admin_app_list[0].mainnet
+        
+        with_links = True
+        
+        shopping = True
+        
+        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links, 'shopping': shopping})
         
     @http.route('/askanexpert', type='http', auth="public", website=True, csrf=False)
     def askanexpert(self, **kw):

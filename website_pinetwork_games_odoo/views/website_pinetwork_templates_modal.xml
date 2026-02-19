@@ -467,7 +467,7 @@
         <template id="reading_club" name="Reading club View">
             <t t-call="web.layout">
                 &lt;!DOCTYPE html&gt;
-                <html>
+                <html lang="en">
                     <head>
                         <meta charset="UTF-8"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -538,6 +538,13 @@
                                 height: 20px;
                             }
                         </style>
+                        
+                        <script t-if="shopping">
+                            if(window.location.pathname.substring(0, 3) == "/es")
+                            {
+                                window.location.href="/en"+window.location.pathname.substring(3);
+                            }
+                        </script>
                         
                         <script t-if="with_links">
                             $( document ).ready(function() {
