@@ -688,9 +688,9 @@
                                 </a>
                             </div>
                             
-                            <div t-if="with_links">
+                            <h5 t-if="with_links">
                                 (As Amazon associates we earn from qualifying purchases)
-                            </div>
+                            </h5>
                             
                             <br/>
                             
@@ -699,6 +699,7 @@
                             <h3 t-if="with_links">From Venezuela you can use mailboxes to import from the USA (find your own in your country): Zoom, Telocomproenusa, etc.</h3>
                             <h3 t-if="not with_links">Udemy courses, Amazon Books.</h3>
                             <h3 t-elif="with_links" id="share-message-1">Buying point: Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
+                            <h5 t-if="with_links">Contact: latinchain.info@gmail.com</h5>
                             <br/>
                             <div style="margin-bottom:10px;">
                                 <h3 style="text-align:left">
@@ -746,7 +747,7 @@
                             <div t-if="with_links" class="spring-clothing">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
-                                    <h3>Clothing and Collectibles in César OpenSource Store with Spring:</h3>
+                                    <h3>Clothing and Collectibles in César OpenSource Store with Spring</h3>
                                 </div>
                                 <h5 style="padding:10px;" class="border-gradient-rounded product">
                                     <iframe style="border-radius:24px;border:none" src="https://embed.creator-spring.com/widget?slug=my-store-10dea32&amp;per=30&amp;currency=&amp;page=1&amp;layout=carousel-wide&amp;theme=light" title="César OpenSource Store Merch store powered by Spring" width="100%" height="420" data-reactroot=""></iframe>
@@ -755,7 +756,8 @@
                             <div t-if="with_links" class="amazon-best-deals">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
-                                    <h3>Today's Best Products on Amazon<br/>(As Amazon associates we earn from qualifying purchases - Como afiliados de Amazon, ganamos con las compras que califican):</h3>
+                                    <h3>Today's Best Products on Amazon</h3>
+                                    <h5>(As Amazon associates we earn from qualifying purchases - Como afiliados de Amazon, ganamos con las compras que califican)</h5>
                                 </div>
                                 <div style="padding:10px;" class="border-gradient-rounded">
                                     <div class="row">
@@ -885,7 +887,8 @@
                             <div class="udemy-courses">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
-                                    <h3>Udemy courses (all courses with personalized Certificate of Completion):</h3>
+                                    <h3>Udemy courses</h3>
+                                    <h5>(all courses with personalized Certificate of Completion)</h5>
                                 </div>
                                 <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6505675_3364_4.jpg" width="180px" height="110px" /><br/><strong>Learn how to develop a Pi App (webapp) on the Pi Network</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-course/" target="_blank">Udemy course</a></t></h5>
                                 <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/4538222_ce85_5.jpg" width="180px" height="110px" /><br/><strong>Odoo 14 Technical Training en Español</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/odoo-tech-course/" target="_blank">Udemy course</a></t></h5>
@@ -896,7 +899,7 @@
                             <div class="amazon-books">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
-                                    <h3>Amazon books:</h3>
+                                    <h3>Amazon books</h3>
                                 </div>
                                 <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71Ir+19r4+L._CLa|2909,2525|81JvHXej7bL.jpg,71eGkTh9m0L.jpg|0,0,1322,2525+1587,0,1322,2525+661,0,1587,2525_._SY300_.jpg" width="210px" height="180px" /><br/><strong>Books Collection (more than 40 published books)<br/>(ASIN: B0F771VKRF)</strong><div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/books-collection/" target="_blank">Books Collection link</a></t></h5>
                                 <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61HydA6aoZL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>How to develop a Pi App (webapp) on the Pi Network<br/> (ASIN: B0DK3NJ23V and ASIN: B0DK4N3XTB)<br/> (ISBN: 979-8343272321)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-book/ebook" target="_blank">eBook</a> | <a href="/piapps-book/paperback" target="_blank">Paperback</a></t></h5>
