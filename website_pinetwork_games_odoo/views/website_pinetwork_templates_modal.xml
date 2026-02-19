@@ -540,10 +540,8 @@
                         </style>
                         
                         <script t-if="shopping">
-                            alert(window.location.pathname);
                             if(window.location.pathname.substring(0, 3) == "/es")
                             {
-                                alert("accessed");
                                 window.location.href="/en"+window.location.pathname.substring(3);
                             }
                         </script>
