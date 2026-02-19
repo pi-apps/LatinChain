@@ -540,7 +540,7 @@
                         </style>
                         
                         <script t-if="shopping">
-                            var queryString = "?v=1.105";
+                            var queryString = "?v=1.106";
                             if(window.location.pathname.substring(0, 3) == "/es")
                             {
                                 window.location.href="/en"+window.location.pathname.substring(3)+queryString;
