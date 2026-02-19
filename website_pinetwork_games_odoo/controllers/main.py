@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import http
-from odoo.http import request
+from odoo.http import request, Response
 import json
 
 import requests
@@ -1089,6 +1089,10 @@ class PiNetworkController(http.Controller):
     
     @http.route(['/shopping'], type='http', auth="public", website=True, csrf=False)
     def shopping(self, **kw):
+        
+        if http.request.httprequest.host not in ['club.latin-chain.com', 'localhost', 'localhost:8014']:
+            return Response(template='website.page_404', status=404)
+        
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
         if len(admin_app_list) == 0:
