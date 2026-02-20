@@ -713,6 +713,8 @@
                                             await navigator.share(shareData);
                                             //resultPara.textContent = 'MDN shared successfully'
                                           } catch(err) {
+                                            if(copyToClipboard(shareData.text))
+                                                showQuickMessage("Copied");
                                             //alert('Error: ' + err);
                                           }
                                         }

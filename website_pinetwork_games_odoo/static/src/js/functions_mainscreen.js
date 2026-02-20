@@ -1735,12 +1735,7 @@ $( document ).ready(function() {
     }
     
     $( ".fans-shopping-club" ).click(function() {
-        $.colorbox({fixed: true, href:"https://club.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%",
-            onComplete: function() {
-                var iframe = $('#cboxLoadedContent').find('iframe');
-                $('iframe.cboxIframe').attr('allow', 'web-share');
-            }
-        });
+        $.colorbox({fixed: true, href:"https://club.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".pi-hackathon-info" ).click(function() {
