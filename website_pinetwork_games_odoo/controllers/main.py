@@ -1105,6 +1105,7 @@ class PiNetworkController(http.Controller):
             
         link_back = "https://latinchain.pinet.com"
         if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
+            _logger.info(http.request.httprequest.environ['HTTP_REFERER'])
             if "https://latin-chain.com" in http.request.httprequest.environ['HTTP_REFERER']:
                 link_back = "https://latinchain.pinet.com"
             elif "https://test.latin-chain.com" in http.request.httprequest.environ['HTTP_REFERER']:
