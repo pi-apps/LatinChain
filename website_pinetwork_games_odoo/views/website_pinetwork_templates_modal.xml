@@ -732,7 +732,7 @@
                             
                             <nav t-if="with_links" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
                               <div class="container-fluid" style="text-align:center; max-width: 810px;">
-                                <a class="navbar-brand" href="#show-all" onclick="$('#show-all').click()"><i class="fa-solid fa-globe"></i></a>
+                                <a class="navbar-brand" href="#choosing-section" onclick="$('#show-all').click()"><i class="fa-solid fa-globe"></i></a>
                                 <a class="navbar-brand" href="#spring-clothing" onclick="$('#show-spring-clothing').click()"><i class="fa-solid fa-shirt"></i></a>
                                 <a class="navbar-brand" href="#amazon-best-deals" onclick="$('#show-amazon-best-deals').click()"><i class="fa-brands fa-amazon"></i></a>
                                 <a class="navbar-brand" href="#udemy-courses" onclick="$('#show-udemy-courses').click()"><i class="fa-solid fa-graduation-cap"></i></a>
@@ -766,7 +766,7 @@
                             <h3 t-elif="with_links" id="share-message-1">Buying point: Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
                             <h5 t-if="with_links">Contact: latinchain.info@gmail.com</h5>
                             <br/>
-                            <div style="margin-bottom:10px;">
+                            <div style="margin-bottom:10px;" id="choosing-section">
                                 <h3 style="text-align:left">
                                     <div class="form-check" style="margin-bottom: 10px">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-all" value="show-all" checked="true"/>
