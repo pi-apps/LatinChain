@@ -13,6 +13,8 @@ _logger = logging.getLogger(__name__)
 
 from odoo.addons.website.controllers.main import Website
 
+from odoo.addons.website_pinetwork_odoo.controllers.main import PiNetworkBaseController
+
 from datetime import datetime, timedelta, time
 
 class Website(Website):
@@ -1072,7 +1074,9 @@ class PiNetworkController(http.Controller):
         
         with_links = False
         
-        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links})
+        amazon_aff_code = PiNetworkBaseController.get_amazon_affiliate_code(self)
+        
+        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links, 'amazon_aff_code': amazon_aff_code})
     
     @http.route(['/reading-club-links', '/shopping-club', '/latinchain-store'], type='http', auth="public", website=True, csrf=False)
     def reading_club_links(self, **kw):
@@ -1085,7 +1089,9 @@ class PiNetworkController(http.Controller):
         
         with_links = True
         
-        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links})
+        amazon_aff_code = PiNetworkBaseController.get_amazon_affiliate_code(self)
+        
+        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links, 'amazon_aff_code': amazon_aff_code})
     
     @http.route(['/shopping'], type='http', auth="public", website=True, csrf=False)
     def shopping(self, **kw):
@@ -1104,7 +1110,9 @@ class PiNetworkController(http.Controller):
         
         shopping = True
         
-        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links, 'shopping': shopping})
+        amazon_aff_code = PiNetworkBaseController.get_amazon_affiliate_code(self)
+        
+        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links, 'shopping': shopping, 'amazon_aff_code': amazon_aff_code})
         
     @http.route('/askanexpert', type='http', auth="public", website=True, csrf=False)
     def askanexpert(self, **kw):
