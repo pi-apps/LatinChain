@@ -537,6 +537,19 @@
                                 width: 20px;
                                 height: 20px;
                             }
+                            
+                            #messageBox {
+                                /* Add your styles here */
+                                position: fixed;
+                                bottom: 30px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                background-color: #333;
+                                color: white;
+                                padding: 16px;
+                                border-radius: 5px;
+                                z-index: 1000;
+                            }
                         </style>
                         
                         <script t-if="shopping">
@@ -651,6 +664,32 @@
                                 $(".search-collectibles").val("");
                                 $(".search-collectibles").trigger(e_keyup);
                                 
+                                function copyToClipboard(text) {
+                                    // Create a temporary input field
+                                    var $temp = $("&lt;textarea&gt;");
+                                    $("body").append($temp);
+                                    // Set the input's value to the text of the target element
+                                    $temp.val(text).select();
+                                    
+                                    try {
+                                        // Execute the copy command
+                                        var successful = document.execCommand('copy');
+                                        $temp.remove();
+                                        return successful;
+                                    } catch (err) {
+                                        $temp.remove();
+                                        return false;
+                                    }
+                                }
+                                
+                                function showQuickMessage(message) {
+                                    // Set the message text
+                                    $("#messageBox").find(".messageText").text(message);
+
+                                    // Fade in, delay for 3 seconds (3000ms), and fade out
+                                    $("#messageBox").fadeIn("slow").delay(3000).fadeOut("slow");
+                                }
+                                
                                 var btn = $('.button-share');
                                 
                                 // Must be triggered some kind of "user activation"
@@ -664,7 +703,10 @@
                                         }
                                         
                                         if (!navigator.share) {
-                                            Pi.openShareDialog(shareData.title, shareData.text);
+                                            if(copyToClipboard(shareData.text))
+                                                showQuickMessage("Copied to clipboard.");
+                                                
+                                            //Pi.openShareDialog(shareData.title, shareData.text);
                                         }else
                                         {
                                           try {
@@ -683,6 +725,11 @@
 
                     <body>
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
+                            <div id="messageBox" style="display: none;">
+                                <!-- Your message content goes here -->
+                                <p class="messageText"></p>
+                            </div>
+                            
                             <nav t-if="with_links" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
                               <div class="container-fluid" style="text-align:center; max-width: 810px;">
                                 <a class="navbar-brand" href="#show-all" onclick="$('#show-all').click()"><i class="fa-solid fa-globe"></i></a>
