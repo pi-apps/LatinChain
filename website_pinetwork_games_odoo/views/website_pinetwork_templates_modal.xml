@@ -744,7 +744,7 @@
                             </nav>
                             
                             <br/>
-                            <a id="back" class="btn btn-info rounded back" style="margin-bottom:15px;" href="https://latinchain.pinet.com"><i class="fa fa-step-backward"></i></a>
+                            <a id="back" class="btn btn-info rounded back" style="margin-bottom:15px;" href="https://latinchain.pinet.com"><div><i class="fa fa-step-backward"></i></div><div>Mainnet</div></a>
                             <br/>
                             <h1 t-if="not with_links">Welcome to Your LatinChain Fans Club</h1>
                             <h1 t-elif="with_links"><div style="display:inline;">Welcome to Your LatinChain and César OpenSource Fans Shopping Club</div> <div style="display:inline;"><button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></div></h1>
