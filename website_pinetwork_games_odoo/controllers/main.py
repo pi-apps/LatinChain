@@ -1106,10 +1106,14 @@ class PiNetworkController(http.Controller):
         link_back = "https://latinchain.pinet.com"
         if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
             _logger.info(http.request.httprequest.environ['HTTP_REFERER'])
-            if "https://latin-chain.com" in http.request.httprequest.environ['HTTP_REFERER']:
+            if ["https://latin-chain.com", "https://latinchain.pinet.com"] in http.request.httprequest.environ['HTTP_REFERER']:
                 link_back = "https://latinchain.pinet.com"
-            elif "https://test.latin-chain.com" in http.request.httprequest.environ['HTTP_REFERER']:
+            elif ["https://test.latin-chain.com", "https://latinchaintest9869.pinet.com"] in http.request.httprequest.environ['HTTP_REFERER']:
                 link_back = "https://latinchaintest9869.pinet.com"
+        else:
+            if http.request.httprequest.environ['HTTP_HOST'] == "club.latin-chain.com":
+                link_back = "https://latinchain.pinet.com"
+                link_text = "Mainnet"
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
@@ -1124,7 +1128,7 @@ class PiNetworkController(http.Controller):
         
         amazon_aff_code = PiNetworkBaseController.get_amazon_affiliate_code(self)
         
-        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'link_back': link_back, 'with_links': with_links, 'shopping': shopping, 'amazon_aff_code': amazon_aff_code})
+        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'link_back': link_back, 'link_text': link_text, 'with_links': with_links, 'shopping': shopping, 'amazon_aff_code': amazon_aff_code})
         
     @http.route('/askanexpert', type='http', auth="public", website=True, csrf=False)
     def askanexpert(self, **kw):
