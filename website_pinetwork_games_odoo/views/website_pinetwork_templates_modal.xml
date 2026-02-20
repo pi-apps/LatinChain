@@ -851,122 +851,122 @@
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Music-Pop/zgbs/music/40?_encoding=UTF8&amp;tag=' + link_tag_code + '&amp;linkCode=ur2&amp;linkId=7e8e7e'"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?rh=n%3A5174%2Cn%3A37&amp;qid=1771541943&amp;rnid=5945958011&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=c6f895907cc2e7d3024f58c6b107b054&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Pop Music on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Music-International-Pop/zgbs/music/67206?_encoding=UTF8&amp;tag=' + link_tag_code + '&amp;linkCode=ur2'"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/Korean-Pop/b?ie=UTF8&amp;node=5945958011&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=cb10d52c92ca98358d2753111c193ac4&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Korean Pop Music on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Portable-Prefab-Homes/b?node=123456&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=prefabricated+portable+house&amp;crid=3LZPSBJUOZRBK&amp;sprefix=prefabricated+portable+house%2Caps%2C328&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=82ba85ddaf6775fdaef22ab0fe070fd3&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Prefabricated Portable Houses on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/best-sellers-video-games/zgbs/videogames?tag=' + link_tag_code + '&amp;ref_=ast_sto_dp'"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=video+games&amp;crid=1T2DLYF7H7SSO&amp;sprefix=video+games%2Caps%2C304&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=3db42aa5fa09a52c95c06966df26e196&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Video Games on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Video-Games-Consoles/zgbs/videogames/7115162011?tag=' + link_tag_code + '&amp;ref_=zg_bs_nav_videogames_1'"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=video+games+consoles&amp;crid=3N8W9S77505YU&amp;sprefix=video+games+consoles%2Caps%2C209&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=fe977ce240b334d523cffa29eb24e47a&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Video Games Consoles on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/fifa-world-cup-2026/s?k=fifa+world+cup+2026&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=fifa+world+cup+2026&amp;crid=1F51JCUOLVOLW&amp;sprefix=FIFA+World+%2Caps%2C339&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=3516e238a76d1daa510d09937b17e8e8&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>FIFA World Cup 2026 Products on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/FIFA-World-Cup-2026-Soccer-Ball/s?k=soccer+ball&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/adidas-Unisex-Adult-World-Training-Soccer/dp/B0DJWPM9VB?crid=1F51JCUOLVOLW&amp;dib=eyJ2IjoiMSJ9.CLZrDjtE4hRfuJ2S5Aqzc0IfdwBKdbIIgqVoDhRiLRNhdZOUEfj6Pwtd6xHMVNVFpPqELxTg0tSsW2hx9p3_xYtrelOq_0_UPwmUQUl86B9G06tZawa7afW3CBvvp0GfzwlpGUwKrB5W8kbOiiIdvaFtHJ20CF1zXQJOw28CWJu5Sqzfqu3NHOWDR3uSvjxcUDfGjKisGOWf84UXIqalZu-mFCIClIWYGC1B-Ipd5kalcbWuPCr4ZFf3pwUR8KY4cZm48eMlTQQtgLKG6Fid67AvRXZej41kdDvUTAc5fXw.jny7J272jNjAGzz0fdzDjIC_3DnLqFj4g6LYXQAkPMI&amp;dib_tag=se&amp;keywords=fifa%2Bworld%2Bcup%2B2026&amp;qid=1771014318&amp;sprefix=FIFA%2BWorld%2B%2Caps%2C339&amp;sr=8-1&amp;th=1&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=6a7f97120e948839150796f984e86e68&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>FIFA World Cup 2026 Soccer Ball on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/deals?ref_=nav_cs_gb&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/deals?_encoding=UTF8&amp;pd_rd_w=2b50z&amp;content-id=amzn1.sym.53ab817d-78e4-4b4c-a705-8a294ef3e1e6&amp;pf_rd_p=53ab817d-78e4-4b4c-a705-8a294ef3e1e6&amp;pf_rd_r=J995YMYZHTFC7HSH8DZT&amp;pd_rd_wg=GO0fj&amp;pd_rd_r=8f0a5ba1-6fa9-4411-a27d-a6ed35e43cf0&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=b74e17dae2c059afe1d34ce78be3f8a9&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Deals on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Computers-Accessories/zgbs/pc?tag=' + link_tag_code + '&amp;ref_=zg_bs_nav_pc_0'"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/deals?discounts-widget=%2522%257B%255C%2522state%255C%2522%253A%257B%255C%2522refinementFilters%255C%2522%253A%257B%255C%2522departments%255C%2522%253A%255B%255C%2522493964%252F541966%255C%2522%255D%257D%257D%252C%255C%2522version%255C%2522%253A1%257D%2522&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=db083b3248b33e40f1c1a9e14aa2b093&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Computers and Accessories Deals on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Electronics/zgbs/electronics?tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/deals?discounts-widget=%2522%257B%255C%2522state%255C%2522%253A%257B%255C%2522refinementFilters%255C%2522%253A%257B%255C%2522departments%255C%2522%253A%255B%255C%2522493964%255C%2522%255D%257D%257D%252C%255C%2522version%255C%2522%253A1%257D%2522&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=08e595d332b419a09eb5329960e5f1f7&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Electronic Deals on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Cell-Phones-Accessories/zgbs/wireless?tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/deals?discounts-widget=%2522%257B%255C%2522state%255C%2522%253A%257B%255C%2522refinementFilters%255C%2522%253A%257B%255C%2522departments%255C%2522%253A%255B%255C%25222335753011%255C%2522%255D%257D%257D%252C%255C%2522version%255C%2522%253A1%257D%2522&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=28bfa186ac7ead0bda2269108a82bdf9&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Cellphones and Accessories Deals on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Shoes/zgbs/fashion/679255011?tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=Shoes&amp;i=deals-intl-ship&amp;crid=2LJIVPZ5B0T8I&amp;sprefix=shoes%2Cdeals-intl-ship%2C407&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=c51e19ff05560bcef83a08a8f576b6d6&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Shoes Deals on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Nike-Shoes/s?k=nike+shoes&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=Shoes&amp;rh=p_123%3A234394&amp;ds=v1%3AO3HJAwmRYTeV7zujHnf5zBRK0Wbw5YQHxCm21BAuDIk&amp;crid=QJT7YC8C8X8Y&amp;qid=1770837221&amp;rnid=85457740011&amp;sprefix=shoes%2Caps%2C236&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=a0ff66b00657bc933821f7de38770e3b&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Shoes Nike on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Adidas-Shoes/s?k=adidas+shoes&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=Shoes&amp;rh=p_123%3A198664&amp;ds=v1%3ApcA7ECOaOyiwjXmS%2F68xH5J2CbR25XCiU3pOLKIdHsU&amp;crid=QJT7YC8C8X8Y&amp;qid=1770837266&amp;rnid=85457740011&amp;sprefix=shoes%2Caps%2C236&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=30bba618222175d56e58091c3629158a&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Shoes Adidas on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/PUMA-Shoes/s?k=puma+shoes&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=Shoes&amp;rh=p_123%3A256097&amp;ds=v1%3AIr6GaYCZzF1Kqoy90kJIg30zavSb2pMT%2BIMwHvfvfzg&amp;crid=QJT7YC8C8X8Y&amp;qid=1770837309&amp;rnid=85457740011&amp;sprefix=shoes%2Caps%2C236&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=1d250a41d7bdd7c2fb19be91304856eb&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Shoes PUMA on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Under-Armour-Shoes/s?k=under+armour+shoes&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=Shoes&amp;rh=p_123%3A6832&amp;ds=v1%3A8MIJ7dKKvS6Emd0cSTA1oH82ROX0mScnz%2FWsPhV2vG8&amp;crid=QJT7YC8C8X8Y&amp;qid=1770837380&amp;rnid=85457740011&amp;sprefix=shoes%2Caps%2C236&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=d9f3a17e7e78db70f972d01c41273071&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Shoes Under Armour on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Reebok-Shoes/s?k=reebok+shoes&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=Shoes&amp;rh=p_123%3A232840&amp;ds=v1%3ArzFqotHnfKFYAf4e59FjRGfMSM39prxPKlNh5zrHKIg&amp;crid=QJT7YC8C8X8Y&amp;qid=1770837486&amp;rnid=85457740011&amp;sprefix=shoes%2Caps%2C236&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=2d2fe0cfd9d00663994199743d2c67b2&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Shoes Reebok on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Skechers-Shoes/s?k=skechers+shoes&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=Shoes&amp;rh=p_123%3A234502&amp;ds=v1%3ACELcO4B%2BTifFVVM9aQNCqx1Ent8EstMcyuXLyzhKbkA&amp;crid=QJT7YC8C8X8Y&amp;qid=1770837528&amp;rnid=85457740011&amp;sprefix=shoes%2Caps%2C236&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=94ee35589a58b133ce59960da2a1929c&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Shoes Skechers on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/New-Balance-Shoes/s?k=new+balance+shoes&amp;tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/s?k=Shoes&amp;rh=p_123%3A197955&amp;ds=v1%3ASUj7UFT8%2Bh5PkJMR3iw%2FEX4ZfcfsE5iPqdItKGX%2Bf5c&amp;crid=QJT7YC8C8X8Y&amp;qid=1770837555&amp;rnid=85457740011&amp;sprefix=shoes%2Caps%2C236&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=778642ccf504a7da6bc6c201ecf1d6e8&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Shoes New Balance on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers/zgbs?tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers/zgbs?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=45bacb11608bf5cd4e4c6eb38ca5f1cb&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/gp/new-releases?tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/gp/new-releases?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=f0129b8f66160f44dfa9d30ed7ea1056&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>New Releases on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/gp/movers-and-shakers?tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/gp/movers-and-shakers?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=607791395c3b4c47f54be00ce103c920&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Move and Shakers on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Computers-Accessories/zgbs/pc?tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Computers-Accessories/zgbs/pc?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=ba2187a1948f1d5901ce6c9276fcf991&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Computers and Accessories on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Electronics/zgbs/electronics?tag=' + link_tag_code + ''"/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Electronics/zgbs/electronics?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=0fd3d267e98b7acff6a1a8c288c7568e&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Electronics on Amazon</strong></a>
                                             </div>
                                         </h3>
