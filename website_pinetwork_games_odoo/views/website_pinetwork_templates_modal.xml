@@ -727,7 +727,7 @@
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <div id="messageBox" style="display: none;">
                                 <!-- Your message content goes here -->
-                                <p class="messageText"></p>
+                                <p class="messageText" style="color: white !important;"></p>
                             </div>
                             
                             <nav t-if="with_links" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
