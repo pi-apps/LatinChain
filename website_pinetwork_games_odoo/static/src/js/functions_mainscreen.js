@@ -1774,9 +1774,9 @@ $( document ).ready(function() {
         window.location.href = "https://news.latin-chain.com/?v=1.102"+hashLatinChainGoogleTranslate;
     });
     
-    $( ".fans-shopping-club" ).click(function() {
+    /*$( ".fans-shopping-club" ).click(function() {
         window.location.href = "https://club.latin-chain.com";
-    });
+    });*/
     
     /*
     $( ".trends-news" ).click(function() {
