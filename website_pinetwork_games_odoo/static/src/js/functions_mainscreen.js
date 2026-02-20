@@ -1734,13 +1734,13 @@ $( document ).ready(function() {
         });
     }
     
-    $(document).bind('cbox_complete', function(){
-        // Selecciona el iframe dentro de la estructura de Colorbox y añade el permiso
-        $('iframe.cboxIframe').attr('allow', 'web-share');
-    });
-    
     $( ".fans-shopping-club" ).click(function() {
-        $.colorbox({fixed: true, href:"https://club.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://club.latin-chain.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%",
+            onComplete: function() {
+                var iframe = $('#cboxLoadedContent').find('iframe');
+                $('iframe.cboxIframe').attr('allow', 'web-share');
+            }
+        });
     });
     
     $( ".pi-hackathon-info" ).click(function() {
