@@ -541,12 +541,13 @@
                         
                         <script t-if="shopping">
                             var queryString = "?v=1.107";
-                            if(window.location.pathname.substring(0, 3) == "/es")
+                            /*if(window.location.pathname.substring(0, 3) == "/es")
                             {
                                 window.location.href="/en"+window.location.pathname.substring(3)+queryString;
-                            }else if(window.location.search != queryString)
+                            }else */
+                            if(window.location.search != queryString)
                             {
-                                window.location.href="/en"+window.location.pathname+queryString;
+                                window.location.href="/"+window.location.pathname+queryString;
                             }
                         </script>
                         
