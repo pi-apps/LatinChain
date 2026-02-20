@@ -704,7 +704,7 @@
                                         
                                         if (!navigator.share) {
                                             if(copyToClipboard(shareData.text))
-                                                showQuickMessage("Copied to clipboard.");
+                                                showQuickMessage("Copied");
                                                 
                                             //Pi.openShareDialog(shareData.title, shareData.text);
                                         }else
