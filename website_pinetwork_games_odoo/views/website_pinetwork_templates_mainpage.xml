@@ -1232,9 +1232,19 @@
                         </section>
                     </div>
                     
-                    <div class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
-                        <a href="https://latinchain.pinet.com/pinetwork" class="btn btn-link" style="font-size: 120%; color: black !important;" t-att-target="'_self' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else '_blank'">Hello Pioneers, we need your help, <strong>we need at least 400 pioneers verified monthly</strong> to keep paying our servers. Click here to get verified and fund our operations. (This announcement will dissapear when you get verified)</a>
-                    </div>
+                    <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                        <div t-if="total_users_daily_count &lt; 400" class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
+                            <a href="https://latinchain.pinet.com/pinetwork" class="btn btn-link" style="font-size: 120%; color: black !important;" t-att-target="'_self' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else '_blank'">Hello Pioneers, we need your help, <strong>we need at least 400 (now <span t-esc="'{:,}'.format(total_users_daily_count)" />/400) pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations. (This announcement will dissapear when you get verified)</a>
+                        </div>
+                        <div t-else="" class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
+                            Thank you pioneers we reached 400 verified users!.
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <div class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
+                            <a href="https://latinchain.pinet.com/pinetwork" class="btn btn-link" style="font-size: 120%; color: black !important;" t-att-target="'_self' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else '_blank'">Hello Pioneers, we need your help, <strong>we need at least 400 pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations. (This announcement will dissapear when you get verified)</a>
+                        </div>
+                    </t>
                     
                     <div translate="no" class="justify-content-left text-left p-3 mb-2" style="color: #ffffff !important; background-color: #1f2434 !important">
                         <div class="row" style="margin-bottom: 5px;">
