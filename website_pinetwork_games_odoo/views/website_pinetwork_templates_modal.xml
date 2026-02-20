@@ -732,7 +732,7 @@
                             
                             <nav t-if="with_links" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
                               <div class="container-fluid" style="text-align:center; max-width: 810px;">
-                                <a class="navbar-brand" href="#choosing-section" onclick="$('#show-all').click()"><i class="fa-solid fa-globe"></i></a>
+                                <a class="navbar-brand" href="#share-message-1" onclick="$('#show-all').click()"><i class="fa-solid fa-globe"></i></a>
                                 <a class="navbar-brand" href="#spring-clothing" onclick="$('#show-spring-clothing').click()"><i class="fa-solid fa-shirt"></i></a>
                                 <a class="navbar-brand" href="#amazon-best-deals" onclick="$('#show-amazon-best-deals').click()"><i class="fa-brands fa-amazon"></i></a>
                                 <a class="navbar-brand" href="#udemy-courses" onclick="$('#show-udemy-courses').click()"><i class="fa-solid fa-graduation-cap"></i></a>
