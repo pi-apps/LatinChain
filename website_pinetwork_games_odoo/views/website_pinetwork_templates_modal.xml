@@ -547,7 +547,7 @@
                             }else */
                             if(window.location.search != queryString)
                             {
-                                window.location.href="/"+window.location.pathname+queryString;
+                                window.location.href="https://club.latin-chain.com/"+window.location.pathname+queryString;
                             }
                         </script>
                         
