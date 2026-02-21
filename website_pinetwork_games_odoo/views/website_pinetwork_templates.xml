@@ -299,6 +299,7 @@
                                     <br/>
                                     <img class="rounded" width="80" height="80" src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" style="display: block; margin-left: auto; margin-right: auto"/>
                                     <h1 align="center" style="font-weight:600">Donate Pi cryptocurrency here</h1>
+                                    <h3 align="center" style="font-weight:600">Get verified</h3>
                                     
                                     <t t-set="amount_end" t-value="round(amount*3, 7)"/>
                                     
