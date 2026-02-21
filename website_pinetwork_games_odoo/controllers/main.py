@@ -1102,7 +1102,8 @@ class PiNetworkController(http.Controller):
         
         if http.request.httprequest.host not in ['club.latin-chain.com', 'localhost', 'localhost:8014']:
             return Response(template='website.page_404', status=404)
-            
+        
+        link_text = False
         link_back = "https://latinchain.pinet.com"
         if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
             _logger.info(http.request.httprequest.environ['HTTP_REFERER'])
