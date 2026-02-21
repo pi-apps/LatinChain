@@ -1107,9 +1107,9 @@ class PiNetworkController(http.Controller):
         link_back = "https://latinchain.pinet.com"
         if 'HTTP_REFERER' in http.request.httprequest.environ and 'HTTP_HOST' in http.request.httprequest.environ:
             _logger.info(http.request.httprequest.environ['HTTP_REFERER'])
-            if ["https://latin-chain.com", "https://latinchain.pinet.com"] in http.request.httprequest.environ['HTTP_REFERER']:
+            if http.request.httprequest.environ['HTTP_REFERER'] in ["https://latin-chain.com", "https://latinchain.pinet.com"]:
                 link_back = "https://latinchain.pinet.com"
-            elif ["https://test.latin-chain.com", "https://latinchaintest9869.pinet.com"] in http.request.httprequest.environ['HTTP_REFERER']:
+            elif http.request.httprequest.environ['HTTP_REFERER'] in ["https://test.latin-chain.com", "https://latinchaintest9869.pinet.com"]:
                 link_back = "https://latinchaintest9869.pinet.com"
         else:
             if http.request.httprequest.environ['HTTP_HOST'] == "club.latin-chain.com":
