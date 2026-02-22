@@ -832,7 +832,7 @@ $( document ).ready(function() {
                 if(pi_ad_new)
                     showRewardedPiAd(false);
                 else
-                    alert($("#piad_not_available").text());
+                    alert($("#piad_not_available").text().trim());
             }else
                 alert("This button only work inside Pi Browser.");
         }
