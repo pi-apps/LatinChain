@@ -826,24 +826,6 @@ async function showPiAds(Pi, activated) {
 $( document ).ready(function() {
     btnvalue = $("#button_reward_ad").html();
     
-    $( "#test_app" ).click(async function() {
-        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-        {
-            if(pi_user_id != "" && pi_user_code != "")
-            {
-                if(pi_ad_new)
-                    showRewardedPiAd(false);
-                else
-                    alert($("#piad_not_available").text().trim());
-            }else
-                alert("This button only work inside Pi Browser.");
-        }
-        else
-        {
-            alert("This button only works on Mainnet inside Pi Browser.");
-        }
-    });
-    
     /*
        colorboxLoaded();
        $(".modal-body").html("");
@@ -882,6 +864,217 @@ $( document ).ready(function() {
         e.stopImmediatePropagation();
         return false;
     });
+    
+    var startTime=new Date(), endTime=new Date(), seconds=0;
+
+    function start() {
+      startTime = new Date();
+    };
+
+    function end() {
+      endTime = new Date();
+      var timeDiff = endTime - startTime; //in ms
+      // strip the ms
+      timeDiff /= 1000;
+
+      // get seconds 
+      seconds = Math.round(timeDiff);
+    }
+
+    var start_flag = false;
+    
+    async function showRewardedPiAd(redirect)
+    {
+        end();
+        if(seconds < 5 && start_flag)
+        {
+            start();
+            return;
+        }
+        start();
+        
+        if(!start_flag)
+        {
+            start_flag = true;
+        }
+        
+        $("#button_reward_ad").prop( "disabled", true );
+        $("#button_reward_ad").html("Showing Pi Rewarded Ad...");
+        
+        if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
+        {
+            try {
+                
+                const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
+                if (isAdReadyResponse.ready === false) {
+                    
+                    const requestAdResponse = await Pi.Ads.requestAd("rewarded");
+                    if (requestAdResponse.result === "ADS_NOT_SUPPORTED") {
+                        // display modal to update Pi Browser
+                        // showAdsNotSupportedModal()
+                        alert("Update Pi Browser version, please!.");
+                        $("#button_reward_ad").html(btnvalue);
+                        $("#button_reward_ad").prop( "disabled", false );
+                        return;
+                    }
+                    if (requestAdResponse.result !== "AD_LOADED") {
+                        // display modal ads are temporarily unavailable and user should try again later
+                        // showAdUnavailableModal()
+                        alert("Ads are temporarily unavailable, try again later!.");
+                        $("#button_reward_ad").html(btnvalue);
+                        $("#button_reward_ad").prop( "disabled", false );
+                        return;
+                    }
+                }
+                
+                const showAdResponse = await Pi.Ads.showAd("rewarded");
+                
+                if (showAdResponse.result === "AD_REWARDED") {
+                    await delayAsync(2000);
+                    if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
+                    {
+                        $("#button_reward_ad").prop( "disabled", true );
+                        $("#button_reward_ad").html("Verifying...");
+                        //alert($("#ready_reward_message").text());
+                        var data = {
+                            'pi_user_id': pi_user_id,
+                            'pi_user_code': pi_user_code,
+                            'adId': showAdResponse.adId,
+                            'passkey': passkey,
+                            'accessToken': accessToken,
+                            'csrf_token': odoo.csrf_token,
+                        };
+                        //$.ajaxSetup({async: false});
+                        setConfirmUnloadPoints(true);
+                        return $.post( "/set-latin-points", data).done(function(data) {
+                            end();
+                            setConfirmUnloadPoints(false);
+                            data = JSON.parse(data);
+                            if(data.result && data.points_latin > 0)
+                            {
+                                /*if(redirect && !unblocked)
+                                {
+                                    //colorboxLoadedMainnet();
+                                }
+                                else
+                                {
+                                }*/
+                                
+                                document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                                document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                
+                                var gemini_image = getGeminiImage();
+                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                
+                                if(data.x2_game)
+                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                
+                                $("#open_modal").click();
+                                
+                                $("#button_reward_ad").prop( "disabled", true );
+                                $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                
+                                /*setTimeout(function ()
+                                {
+                                    $("#button_reward_ad").html(btnvalue);
+                                    $("#button_reward_ad").prop( "disabled", false );
+                                }, 5000);*/
+                                
+                                pi_ad_new = data.pi_ad_new;
+                                if(data.pi_ad_new)
+                                {
+                                    $("#button_reward_ad").show();
+                                    $("#piad_not_available").hide();
+                                    setTimeout(function ()
+                                    {
+                                        $("#button_reward_ad").html(btnvalue);
+                                        $("#button_reward_ad").prop( "disabled", false );
+                                    }, 5000);
+                                }else
+                                {
+                                    $("#button_reward_ad").hide();
+                                    $("#piad_not_available").show();
+                                    setTimeout(function ()
+                                    {
+                                        $("#button_reward_ad").html(btnvalue);
+                                        $("#button_reward_ad").prop( "disabled", false );
+                                    }, 5000);
+                                }
+                                
+                                get_user_rewarded();
+                            }else{
+                                //$("#button_reward_ad").html("Error, try again...");
+    
+                                setTimeout(function ()
+                                {
+                                    $("#button_reward_ad").html(btnvalue);
+                                    $("#button_reward_ad").prop( "disabled", false );
+                                }, 5000);
+                                
+                                var gemini_image = getGeminiImage();
+                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error) Result: " + data.result);
+                                
+                                $("#open_modal").click();
+                                
+                            }
+                            start();
+                        }).fail(function() {
+                            $("#button_reward_ad").html("Fail, try again...");
+    
+                            setTimeout(function ()
+                            {
+                                $("#button_reward_ad").html(btnvalue);
+                                $("#button_reward_ad").prop( "disabled", false );
+                            }, 5000);
+                            setConfirmUnloadPoints(false);
+                            
+                            var gemini_image = getGeminiImage();
+                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (Post failed Error)");
+                            
+                            $("#open_modal").click();
+                            
+                        });
+                    }else{
+                        $("#button_reward_ad").html(btnvalue);
+                        $("#button_reward_ad").prop( "disabled", false );
+                        
+                        var gemini_image = getGeminiImage();
+                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (adId Error)");
+                        
+                        $("#open_modal").click();
+                        
+                    }
+                } else {
+                    $("#button_reward_ad").html(btnvalue);
+                    $("#button_reward_ad").prop( "disabled", false );
+                    // fallback logic
+                    // showAdErrorModal()
+                    var gemini_image = getGeminiImage();
+                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (AD_REWARDED Error)");
+                    
+                    $("#open_modal").click();
+                    
+                }
+                
+            } catch (err) {
+                $("#button_reward_ad").html(btnvalue);
+                $("#button_reward_ad").prop( "disabled", false );
+                // good practice to handle any potential errors
+                
+                var gemini_image = getGeminiImage();
+                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error) " + err);
+                
+                $("#open_modal").click();
+                
+            }
+        }else
+        {
+            $("#button_reward_ad").html(btnvalue);
+            $("#button_reward_ad").prop( "disabled", false );
+        }
+    }
     
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
     {
@@ -1305,217 +1498,6 @@ $( document ).ready(function() {
                                 $("#button_reward_ad").hide();
                                 $("#piad_not_available").show();
                             }
-                                    
-                            var startTime=new Date(), endTime=new Date(), seconds=0;
-
-                            function start() {
-                              startTime = new Date();
-                            };
-
-                            function end() {
-                              endTime = new Date();
-                              var timeDiff = endTime - startTime; //in ms
-                              // strip the ms
-                              timeDiff /= 1000;
-
-                              // get seconds 
-                              seconds = Math.round(timeDiff);
-                            }
-
-                            var start_flag = false;
-                            
-                            async function showRewardedPiAd(redirect)
-                            {
-                                end();
-                                if(seconds < 5 && start_flag)
-                                {
-                                    start();
-                                    return;
-                                }
-                                start();
-                                
-                                if(!start_flag)
-                                {
-                                    start_flag = true;
-                                }
-                                
-                                $("#button_reward_ad").prop( "disabled", true );
-                                $("#button_reward_ad").html("Showing Pi Rewarded Ad...");
-                                
-                                if(pi_user_id != "" && pi_user_code != "" && pi_ad_new)
-                                {
-                                    try {
-                                        
-                                        const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
-                                        if (isAdReadyResponse.ready === false) {
-                                            
-                                            const requestAdResponse = await Pi.Ads.requestAd("rewarded");
-                                            if (requestAdResponse.result === "ADS_NOT_SUPPORTED") {
-                                                // display modal to update Pi Browser
-                                                // showAdsNotSupportedModal()
-                                                alert("Update Pi Browser version, please!.");
-                                                $("#button_reward_ad").html(btnvalue);
-                                                $("#button_reward_ad").prop( "disabled", false );
-                                                return;
-                                            }
-                                            if (requestAdResponse.result !== "AD_LOADED") {
-                                                // display modal ads are temporarily unavailable and user should try again later
-                                                // showAdUnavailableModal()
-                                                alert("Ads are temporarily unavailable, try again later!.");
-                                                $("#button_reward_ad").html(btnvalue);
-                                                $("#button_reward_ad").prop( "disabled", false );
-                                                return;
-                                            }
-                                        }
-                                        
-                                        const showAdResponse = await Pi.Ads.showAd("rewarded");
-                                        
-                                        if (showAdResponse.result === "AD_REWARDED") {
-                                            await delayAsync(2000);
-                                            if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
-                                            {
-                                                $("#button_reward_ad").prop( "disabled", true );
-                                                $("#button_reward_ad").html("Verifying...");
-                                                //alert($("#ready_reward_message").text());
-                                                var data = {
-                                                    'pi_user_id': pi_user_id,
-                                                    'pi_user_code': pi_user_code,
-                                                    'adId': showAdResponse.adId,
-                                                    'passkey': passkey,
-                                                    'accessToken': accessToken,
-                                                    'csrf_token': odoo.csrf_token,
-                                                };
-                                                //$.ajaxSetup({async: false});
-                                                setConfirmUnloadPoints(true);
-                                                return $.post( "/set-latin-points", data).done(function(data) {
-                                                    end();
-                                                    setConfirmUnloadPoints(false);
-                                                    data = JSON.parse(data);
-                                                    if(data.result && data.points_latin > 0)
-                                                    {
-                                                        /*if(redirect && !unblocked)
-                                                        {
-                                                            //colorboxLoadedMainnet();
-                                                        }
-                                                        else
-                                                        {
-                                                        }*/
-                                                        
-                                                        document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
-                                                        document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                                        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                                        document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                                        
-                                                        var gemini_image = getGeminiImage();
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                                                        
-                                                        if(data.x2_game)
-                                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
-                                                        
-                                                        $("#open_modal").click();
-                                                        
-                                                        $("#button_reward_ad").prop( "disabled", true );
-                                                        $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                                                        
-                                                        /*setTimeout(function ()
-                                                        {
-                                                            $("#button_reward_ad").html(btnvalue);
-                                                            $("#button_reward_ad").prop( "disabled", false );
-                                                        }, 5000);*/
-                                                        
-                                                        pi_ad_new = data.pi_ad_new;
-                                                        if(data.pi_ad_new)
-                                                        {
-                                                            $("#button_reward_ad").show();
-                                                            $("#piad_not_available").hide();
-                                                            setTimeout(function ()
-                                                            {
-                                                                $("#button_reward_ad").html(btnvalue);
-                                                                $("#button_reward_ad").prop( "disabled", false );
-                                                            }, 5000);
-                                                        }else
-                                                        {
-                                                            $("#button_reward_ad").hide();
-                                                            $("#piad_not_available").show();
-                                                            setTimeout(function ()
-                                                            {
-                                                                $("#button_reward_ad").html(btnvalue);
-                                                                $("#button_reward_ad").prop( "disabled", false );
-                                                            }, 5000);
-                                                        }
-                                                        
-                                                        get_user_rewarded();
-                                                    }else{
-                                                        //$("#button_reward_ad").html("Error, try again...");
-                            
-                                                        setTimeout(function ()
-                                                        {
-                                                            $("#button_reward_ad").html(btnvalue);
-                                                            $("#button_reward_ad").prop( "disabled", false );
-                                                        }, 5000);
-                                                        
-                                                        var gemini_image = getGeminiImage();
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error) Result: " + data.result);
-                                                        
-                                                        $("#open_modal").click();
-                                                        
-                                                    }
-                                                    start();
-                                                }).fail(function() {
-                                                    $("#button_reward_ad").html("Fail, try again...");
-                            
-                                                    setTimeout(function ()
-                                                    {
-                                                        $("#button_reward_ad").html(btnvalue);
-                                                        $("#button_reward_ad").prop( "disabled", false );
-                                                    }, 5000);
-                                                    setConfirmUnloadPoints(false);
-                                                    
-                                                    var gemini_image = getGeminiImage();
-                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (Post failed Error)");
-                                                    
-                                                    $("#open_modal").click();
-                                                    
-                                                });
-                                            }else{
-                                                $("#button_reward_ad").html(btnvalue);
-                                                $("#button_reward_ad").prop( "disabled", false );
-                                                
-                                                var gemini_image = getGeminiImage();
-                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (adId Error)");
-                                                
-                                                $("#open_modal").click();
-                                                
-                                            }
-                                        } else {
-                                            $("#button_reward_ad").html(btnvalue);
-                                            $("#button_reward_ad").prop( "disabled", false );
-                                            // fallback logic
-                                            // showAdErrorModal()
-                                            var gemini_image = getGeminiImage();
-                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (AD_REWARDED Error)");
-                                            
-                                            $("#open_modal").click();
-                                            
-                                        }
-                                        
-                                    } catch (err) {
-                                        $("#button_reward_ad").html(btnvalue);
-                                        $("#button_reward_ad").prop( "disabled", false );
-                                        // good practice to handle any potential errors
-                                        
-                                        var gemini_image = getGeminiImage();
-                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error) " + err);
-                                        
-                                        $("#open_modal").click();
-                                        
-                                    }
-                                }else
-                                {
-                                    $("#button_reward_ad").html(btnvalue);
-                                    $("#button_reward_ad").prop( "disabled", false );
-                                }
-                            }
                             
                             $( "#button_reward_ad" ).click(async function() {
                                 showRewardedPiAd(false);
@@ -1712,6 +1694,29 @@ $( document ).ready(function() {
         }, 10000);
         $(".loggedin").show();
         $(".loggedout").hide();
+    });
+    
+    $( "#test_app" ).click(async function() {
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            if(pi_user_id != "" && pi_user_code != "")
+            {
+                if(pi_ad_new)
+                {
+                    (async () => {
+                        if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
+                            showRewardedPiAd(false);
+                    })();
+                }
+                else
+                    alert($("#piad_not_available").text().trim());
+            }else
+                alert("This button only work inside Pi Browser.");
+        }
+        else
+        {
+            alert("This button only works on Mainnet inside Pi Browser.");
+        }
     });
     
     /*
