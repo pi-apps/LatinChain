@@ -840,7 +840,7 @@ $( document ).ready(function() {
         }
         else
         {
-            alert("This button only works on Mainnet.");
+            alert("This button only works on Mainnet inside Pi Browser.");
         }
     });
     
