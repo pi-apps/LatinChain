@@ -1277,7 +1277,7 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user().always(function(){
                         
-                        if(unblocked)
+                        if(!unblocked)
                         {
                             //alert($("#pi_prowser_message").text());
                             
@@ -1600,7 +1600,7 @@ $( document ).ready(function() {
                     
                 setTimeout(function ()
                 {
-                    if(unblocked)
+                    if(!unblocked)
                     {
                         //alert($("#pi_prowser_message").text());
                         
@@ -1639,7 +1639,7 @@ $( document ).ready(function() {
                         auth();
                     setTimeout(function ()
                     {
-                        if(unblocked)
+                        if(!unblocked)
                         {
                             //alert($("#pi_prowser_message").text());
                             
