@@ -947,7 +947,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.831"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.832"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1295,8 +1295,8 @@
                                 <div class="isverified-username font-weight-bold" style="display: none;"></div>
                             </div>
                             <div style="text-align:right; padding-left: 0px; font-size: 80%" class="col-6">
-                                <button id="logout_latinchain" class="btn btn-outline-danger font-weight-bold text-white border-white loggedin" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div><i class="fa-solid fa-right-from-bracket"></i></div></button>
-                                <button id="login_latinchain" class="btn btn-outline-success font-weight-bold text-white border-white loggedout" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div><i class="fa-solid fa-right-to-bracket"></i></div></button>
+                                <button class="logout_latinchain btn btn-outline-danger font-weight-bold text-white border-white loggedin" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div><i class="fa-solid fa-right-from-bracket"></i></div></button>
+                                <button class="login_latinchain btn btn-outline-success font-weight-bold text-white border-white loggedout" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div><i class="fa-solid fa-right-to-bracket"></i></div></button>
                                 <button class="btn btn-outline-info font-weight-bold text-white border-white clear_cache" style="border-radius: 50%; border: 2px solid; font-size: 100% !important"><div style=""><i class="fa fa-refresh"></i></div></button>
                                 <button class="btn btn-outline-info font-weight-bold text-white border-white button-share" style="border-radius: 50%; border: 2px solid; font-size: 100% !important"><div style=""><i class="fa fa-share-alt"></i></div></button>
                             </div>
@@ -3207,6 +3207,9 @@
                                 </div>
                                 <div>
                                     <a id="test_app" class="btn btn-link" style="color: blue !important;" href="#">Or here to test this app</a>
+                                </div>
+                                <div>
+                                    <a class="logout_latinchain btn btn-link" style="color: blue !important;" href="#">Logout</a>
                                 </div>
                             </div>
                             <div id="loading-message" style="display: block;">

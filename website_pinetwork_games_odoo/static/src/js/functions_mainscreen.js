@@ -1666,7 +1666,7 @@ $( document ).ready(function() {
     
     })();
     
-    $("#logout_latinchain").click(function(){
+    $(".logout_latinchain").click(function(){
         if(confirm($("#modal_logout_latinchain_v2_message").text()))
         {
             localStorage.removeItem("loggedIn");
@@ -1683,7 +1683,7 @@ $( document ).ready(function() {
         }
     });
     
-    $("#login_latinchain").click(function(){
+    $(".login_latinchain").click(function(){
         auth();
         localStorage.setItem("loggedIn", true);
     
@@ -1731,7 +1731,7 @@ $( document ).ready(function() {
         }, 10000);
     }else
     {
-        $("#login_latinchain").click(function(){
+        $(".login_latinchain").click(function(){
             auth();
         
             setTimeout(function ()
