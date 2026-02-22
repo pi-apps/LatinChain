@@ -824,6 +824,24 @@ async function showPiAds(Pi, activated) {
 $( document ).ready(function() {
     btnvalue = $("#button_reward_ad").html();
     
+    $( "#test_app" ).click(async function() {
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            if(pi_user_id == "" && pi_user_code == "")
+            {
+                if(show_pi_ad_user && pi_ad_new)
+                    showRewardedPiAd(false);
+                else
+                    alert("There isn't more rewarded ads by now.");
+            }else
+                alert("This button only work inside Pi Browser.");
+        }
+        else
+        {
+            alert("This button only works on Mainnet.");
+        }
+    });
+    
     /*
        colorboxLoaded();
        $(".modal-body").html("");
@@ -1259,6 +1277,29 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user().always(function(){
                         
+                        if(!unblocked)
+                        {
+                            //alert($("#pi_prowser_message").text());
+                            
+                            if(window.location.hostname == "localhost")
+                            {
+                                $("a.anchor-click").attr('href', window.location.origin+"/pinetwork");
+                            }
+                            else if(window.location.hostname == "test.latin-chain.com")
+                            {
+                                $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com/pinetwork");
+                            }
+                            else
+                            {
+                                $("a.anchor-click").attr('href', "https://latinchain.pinet.com/pinetwork");
+                            }
+                            
+                            document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                        }
+                        
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
                             if(show_pi_ad_user || pi_ad_new)
@@ -1366,6 +1407,11 @@ $( document ).ready(function() {
                                                         else
                                                         {
                                                         }*/
+                                                        
+                                                        document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                        document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                                        document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                                         
                                                         var gemini_image = getGeminiImage();
                                                         $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
@@ -1551,11 +1597,32 @@ $( document ).ready(function() {
             {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
-                /*setTimeout(function ()
+                    
+                setTimeout(function ()
                 {
-                    if(pi_user_id == "" && pi_user_code == "")
-                        colorboxLoadedMainnet();
-                }, 10000);*/
+                    if(!unblocked)
+                    {
+                        //alert($("#pi_prowser_message").text());
+                        
+                        if(window.location.hostname == "localhost")
+                        {
+                            $("a.anchor-click").attr('href', window.location.origin+"/pinetwork");
+                        }
+                        else if(window.location.hostname == "test.latin-chain.com")
+                        {
+                            $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com/pinetwork");
+                        }
+                        else
+                        {
+                            $("a.anchor-click").attr('href', "https://latinchain.pinet.com/pinetwork");
+                        }
+                        
+                        document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                        document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+                        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                        document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                    }
+                }, 10000);
             }, 10000);
             $(".loggedin").show();
         }else{
@@ -1570,11 +1637,31 @@ $( document ).ready(function() {
                 {
                     if(pi_user_id == "" && pi_user_code == "")
                         auth();
-                    /*setTimeout(function ()
+                    setTimeout(function ()
                     {
-                        if(pi_user_id == "" && pi_user_code == "")
-                            colorboxLoadedMainnet();
-                    }, 10000);*/
+                        if(!unblocked)
+                        {
+                            //alert($("#pi_prowser_message").text());
+                            
+                            if(window.location.hostname == "localhost")
+                            {
+                                $("a.anchor-click").attr('href', window.location.origin+"/pinetwork");
+                            }
+                            else if(window.location.hostname == "test.latin-chain.com")
+                            {
+                                $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com/pinetwork");
+                            }
+                            else
+                            {
+                                $("a.anchor-click").attr('href', "https://latinchain.pinet.com/pinetwork");
+                            }
+                            
+                            document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                        }
+                    }, 10000);
                 }, 10000);
                 $(".loggedin").show();
             }else
