@@ -1277,22 +1277,11 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user().always(function(){
                         
-                        if(unblocked)
+                        if(!unblocked)
                         {
                             //alert($("#pi_prowser_message").text());
                             
-                            if(window.location.hostname == "localhost")
-                            {
-                                $("a.anchor-click").attr('href', window.location.origin+"/pinetwork");
-                            }
-                            else if(window.location.hostname == "test.latin-chain.com")
-                            {
-                                $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com/pinetwork");
-                            }
-                            else
-                            {
-                                $("a.anchor-click").attr('href', "https://latinchain.pinet.com/pinetwork");
-                            }
+                            $("a.anchor-click").attr('href', "/pinetwork");
                             
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
@@ -1600,22 +1589,11 @@ $( document ).ready(function() {
                     
                 setTimeout(function ()
                 {
-                    if(unblocked)
+                    if(!unblocked)
                     {
                         //alert($("#pi_prowser_message").text());
                         
-                        if(window.location.hostname == "localhost")
-                        {
-                            $("a.anchor-click").attr('href', window.location.origin+"/pinetwork");
-                        }
-                        else if(window.location.hostname == "test.latin-chain.com")
-                        {
-                            $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com/pinetwork");
-                        }
-                        else
-                        {
-                            $("a.anchor-click").attr('href', "https://latinchain.pinet.com/pinetwork");
-                        }
+                        $("a.anchor-click").attr('href', "/pinetwork");
                         
                         document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                         document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
@@ -1639,22 +1617,11 @@ $( document ).ready(function() {
                         auth();
                     setTimeout(function ()
                     {
-                        if(unblocked)
+                        if(!unblocked)
                         {
                             //alert($("#pi_prowser_message").text());
                             
-                            if(window.location.hostname == "localhost")
-                            {
-                                $("a.anchor-click").attr('href', window.location.origin+"/pinetwork");
-                            }
-                            else if(window.location.hostname == "test.latin-chain.com")
-                            {
-                                $("a.anchor-click").attr('href', "https://latinchaintest9869.pinet.com/pinetwork");
-                            }
-                            else
-                            {
-                                $("a.anchor-click").attr('href', "https://latinchain.pinet.com/pinetwork");
-                            }
+                            $("a.anchor-click").attr('href', "/pinetwork");
                             
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
