@@ -827,7 +827,7 @@ $( document ).ready(function() {
     $( "#test_app" ).click(async function() {
         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
         {
-            if(pi_user_id == "" && pi_user_code == "")
+            if(pi_user_id != "" && pi_user_code != "")
             {
                 if(show_pi_ad_user && pi_ad_new)
                     showRewardedPiAd(false);
