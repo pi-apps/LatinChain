@@ -1725,7 +1725,7 @@ $( document ).ready(function() {
                 else
                     alert($("#piad_not_available").text().trim());
             }else
-                alert("This button only work inside Pi Browser.");
+                alert("This button only works inside Pi Browser.");
         }
         else
         {
