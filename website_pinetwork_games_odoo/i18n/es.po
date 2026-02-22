@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-21 11:24+0000\n"
-"PO-Revision-Date: 2026-02-21 11:24+0000\n"
+"POT-Creation-Date: 2026-02-22 19:57+0000\n"
+"PO-Revision-Date: 2026-02-22 19:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1536,6 +1536,11 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
+msgid "<strong>Amazon Basics on Amazon</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 msgid ""
 "<strong>Any root (ⁿ√)</strong>: First enter the index, then press ⁿ√, then "
@@ -2277,6 +2282,11 @@ msgid "Books compilation"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Boost Rank"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid "Bubble Shooter"
 msgstr ""
@@ -2503,6 +2513,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
@@ -2758,6 +2769,7 @@ msgstr "Dona para desbloquear con"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
@@ -3037,6 +3049,7 @@ msgstr "Ir a Mainnet"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
@@ -3107,9 +3120,10 @@ msgid ""
 "verified monthly on Mainnet</strong> to keep paying our servers. Click here "
 "to get verified and fund our operations."
 msgstr ""
-"Hola Pioneros, necesitamos tu ayuda. <strong>Necesitamos al menos 400 pioneros "
-"verificados mensualmente en la Mainnet</strong> para seguir pagando nuestros "
-"servidores. Hagan clic aquí para verificarse y financiar nuestras operaciones."
+"Hola Pioneros, necesitamos tu ayuda. <strong>Necesitamos al menos 400 "
+"pioneros verificados mensualmente en la Mainnet</strong> para seguir pagando"
+" nuestros servidores. Hagan clic aquí para verificarse y financiar nuestras "
+"operaciones."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -3583,6 +3597,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
@@ -4073,6 +4088,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
@@ -4170,6 +4186,11 @@ msgstr "Pausa"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Pay 10 Latin points, earn 1 Chess points"
 msgstr "Paga 10 Latin points, gana 1 Chess points"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Pay Pi"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
@@ -6186,9 +6207,9 @@ msgid ""
 "to keep paying our servers. Click here to get verified and fund our "
 "operations. (This notification will disappear once you get verified)"
 msgstr ""
-"para seguir pagando nuestros servidores. Haz clic aquí para verificar "
-"tu cuenta y financiar nuestras operaciones. (Esta notificación "
-"desaparecerá una vez que te verifiques)."
+"para seguir pagando nuestros servidores. Haz clic aquí para verificar tu "
+"cuenta y financiar nuestras operaciones. (Esta notificación desaparecerá una"
+" vez que te verifiques)."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
