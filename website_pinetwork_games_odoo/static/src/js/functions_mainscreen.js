@@ -1705,6 +1705,20 @@ $( document ).ready(function() {
         {
             if(pi_user_id == "" && pi_user_code == "")
                 auth();
+            setTimeout(function ()
+            {
+                if(!unblocked)
+                {
+                    //alert($("#pi_prowser_message").text());
+                    
+                    $("a.anchor-click").attr('href', "/pinetwork");
+                    
+                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                    document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                }
+            }, 10000);
         }, 10000);
         $(".loggedin").show();
         $(".loggedout").hide();

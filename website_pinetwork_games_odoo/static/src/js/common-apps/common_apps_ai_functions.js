@@ -191,8 +191,27 @@ var startCommonAppsAI = () => {
                         
                         if(data.unblocked)
                         {
+                            /*
                             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            */
+                            if(window.location.hostname == "localhost")
+                            {
+                                $("a.anchor-click").attr('href', window.location.origin + "/pinetwork");
+                            }
+                            else if(window.location.hostname == "test.latin-chain.com")
+                            {
+                                $("a.anchor-click").attr('href', "/pinetwork");
+                            }
+                            else
+                            {
+                                $("a.anchor-click").attr('href', "/pinetwork");
+                            }
+                            
+                            document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('paying-message').style.display = 'block'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                         }else
