@@ -829,7 +829,7 @@ $( document ).ready(function() {
         {
             if(pi_user_id != "" && pi_user_code != "")
             {
-                if(show_pi_ad_user && pi_ad_new)
+                if(pi_ad_new)
                     showRewardedPiAd(false);
                 else
                     alert("There isn't more rewarded ads by now.");
