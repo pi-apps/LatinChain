@@ -1277,8 +1277,8 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user().always(function(){
                         
-                        /*if(!unblocked)
-                        {*/
+                        if(!unblocked)
+                        {
                             //alert($("#pi_prowser_message").text());
                             
                             $("a.anchor-click").attr('href', "/pinetwork");
@@ -1287,7 +1287,7 @@ $( document ).ready(function() {
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                        //}
+                        }
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
