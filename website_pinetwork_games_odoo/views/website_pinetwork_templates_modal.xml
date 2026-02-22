@@ -853,6 +853,10 @@
                                             </div>
                                             <div class="product">
                                                 <hr/>
+                                                <a href="https://www.amazon.com/stores/AmazonBasics/page/947C6949-CF8E-4BD3-914A-B411DD3E4433?&amp;linkCode=ll2&amp;tag=' + link_tag_code + '&amp;linkId=e23a9553d9d287363864232038921dc5&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" class="btn btn-link amazon-list"><strong>DOOGEE S200 5G Rugged Phone (all-terrain, ultra-resistant) on Amazon</strong></a>
+                                            </div>
+                                            <div class="product">
+                                                <hr/>
                                                 <t t-set="link_value" t-value="'https://www.amazon.com/s?rh=n%3A5174%2Cn%3A37&amp;qid=1771541943&amp;rnid=5945958011&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=c6f895907cc2e7d3024f58c6b107b054&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Pop Music on Amazon</strong></a>
                                             </div>
