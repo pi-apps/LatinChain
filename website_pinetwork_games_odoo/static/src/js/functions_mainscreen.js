@@ -11,6 +11,8 @@ var show_pi_ad_user_time = 0;
 var pi_ad_new = false;
 var pi_ad_max = 0;
 
+var showing_paying = false;
+
 var leaderboard = "/get-points/";
 var winnerboard = "/get-top10-zone/";
 var winnerzoneboard = "/get-winners-zone/";
@@ -1277,7 +1279,7 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user().always(function(){
                         
-                        if(!unblocked)
+                        if(unblocked)
                         {
                             //alert($("#pi_prowser_message").text());
                             
@@ -1287,6 +1289,8 @@ $( document ).ready(function() {
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            
+                            showing_paying = true;
                         }
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
@@ -1589,7 +1593,7 @@ $( document ).ready(function() {
                     
                 setTimeout(function ()
                 {
-                    if(!unblocked)
+                    if(unblocked && !showing_paying)
                     {
                         //alert($("#pi_prowser_message").text());
                         
@@ -1617,7 +1621,7 @@ $( document ).ready(function() {
                         auth();
                     setTimeout(function ()
                     {
-                        if(!unblocked)
+                        if(unblocked && !showing_paying)
                         {
                             //alert($("#pi_prowser_message").text());
                             
