@@ -1249,7 +1249,19 @@
                             </div>
                         </div>
                         <div t-else="" class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
-                            Thank you pioneers we reached 400 verified users this month!.
+                            <div class="row">
+                                <div class="col-12">
+                                    Thank you pioneers we reached 400 verified users this month!.
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6" style="text-align: right">
+                                    <a href="https://latinchain.pinet.com/pinetwork" class="btn btn-link" style="color: black !important;" t-att-target="'_self' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else '_blank'">Pay Pi</a>
+                                </div>
+                                <div class="col-6" style="text-align: left">
+                                    <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-link" style="color: black !important;">Boost Rank</a>
+                                </div>
+                            </div>
                         </div>
                     </t>
                     <t t-else="">
