@@ -947,7 +947,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.838"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.842"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3223,10 +3223,10 @@
                                 <div style="margin-top: 10px;" class="row">
                                     <a id="test_app" class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="#">Test This App (Pi Ad)</a>
                                 </div>
-                                <div class="PiBrowserLink row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <a class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
                                 </div>
-                                <div class="PiBrowserLink row" style="margin-top: 10px;" t-else="">
+                                <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-else="">
                                     <a class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row">

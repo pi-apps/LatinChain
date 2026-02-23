@@ -1698,7 +1698,10 @@ $( document ).ready(function() {
                 else
                     alert($("#piad_not_available").text().trim());
             }else
+            {
+                $(".PiBrowserLink").show();
                 alert("This button only works inside Pi Browser.");
+            }
         }
         else
         {
