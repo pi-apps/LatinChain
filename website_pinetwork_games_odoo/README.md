@@ -48,39 +48,39 @@ bubble-shooter (MIT License) is the Bubble Shooter. It's a modification of https
 
 memory-game (MIT License) is the Test Your Brain. It's a modification of https://github.com/MTrajK/memory-game (MIT License, 2014)
 
-15 Puzzle Game (PiOS License). Developed with Gemini AI (Google).
+15 Puzzle Game (PiOS License). Developed with AI.
 
-PingPong (PiOS License). Developed with Gemini AI (Google).
+PingPong (PiOS License). Developed with AI.
 
-Checkers (PiOS License). Developed with Gemini AI (Google).
+Checkers (PiOS License). Developed with AI.
 
-Domino (PiOS License). Developed with Gemini AI (Google).
+Domino (PiOS License). Developed with AI.
 
-Latin Crush (PiOS License). Developed with Gemini AI (Google).
+Latin Crush (PiOS License). Developed with AI.
 
-Odoo Learning (PiOS License). Developed with Gemini AI (Google).
+Odoo Learning (PiOS License). Developed with AI.
 
-Language Learning (PiOS License). Developed with Gemini AI (Google).
+Language Learning (PiOS License). Developed with AI.
 
-WebTorrent P2P Player (PiOS License). Developed with Gemini AI (Google).
+WebTorrent P2P Player (PiOS License). Developed with AI.
 
-Music Player (PiOS License). Developed with Gemini AI (Google).
+Music Player (PiOS License). Developed with AI.
 
-Video Player (PiOS License). Developed with Gemini AI (Google).
+Video Player (PiOS License). Developed with AI.
 
-Photo Viewer (PiOS License). Developed with Gemini AI (Google).
+Photo Viewer (PiOS License). Developed with AI.
 
-Webcam Ojects Detect (PiOS License). Developed with Gemini AI (Google).
+Webcam Ojects Detect (PiOS License). Developed AI.
 
-Text-To-Speech Reader (PiOS License). Developed with Gemini AI (Google).
+Text-To-Speech Reader (PiOS License). Developed with AI.
 
-Maps Finder (PiOS License). Developed with Gemini AI (Google).
+Maps Finder (PiOS License). Developed with AI.
 
-News Player (PiOS License). Developed with Gemini AI (Google).
+News Player (PiOS License). Developed with AI.
 
-Calculator (PiOS License). Developed with DeepSeek AI (Google).
+Calculator (PiOS License). Developed with AI.
 
-Calendar Converter (PiOS License). Developed with DeepSeek AI (Google).
+Calendar Converter (PiOS License). Developed with AI.
 
 More Info: https://github.com/rockcesar/LatinChainDevelopments
 
