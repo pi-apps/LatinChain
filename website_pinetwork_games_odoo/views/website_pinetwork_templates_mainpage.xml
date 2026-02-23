@@ -947,7 +947,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.842"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.843"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1233,22 +1233,22 @@
                     </div>
                     
                     <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                        <div t-if="total_users_verified_count &lt; 400" class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
+                        <div t-if="total_users_verified_count &lt; 400" class="alert alert-primary" role="alert" style="text-align: center; margin-bottom: 0px !important">
                             <div class="row">
                                 <div class="col-12">
-                                    <a t-att-href="'/pinetwork' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else 'https://latinchain.pinet.com/pinetwork'" t-att-target="'_self' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else '_blank'" class="btn btn-link" style="color: black !important;">Hello Pioneers, we need your help, <strong>we need at least 400 (now <span t-esc="'{:,}'.format(total_users_verified_count)" /> of 400) pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations. (This notification will disappear once you get verified)</a>
+                                    <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="btn btn-link MainnetLink" style="color: black !important;">Hello Pioneers, we need your help, <strong>we need at least 400 (now <span t-esc="'{:,}'.format(total_users_verified_count)" /> of 400) pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations. (This notification will disappear once you get verified)</a>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6" style="text-align: right">
-                                    <a t-att-href="'/pinetwork' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else 'https://latinchain.pinet.com/pinetwork'" t-att-target="'_self' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else '_blank'" class="btn btn-success rounded" style="border: 2px solid black; color: white !important;">Pay Pi</a>
+                                    <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="btn btn-success rounded MainnetLink" style="border: 2px solid black; color: white !important;">Pay Pi</a>
                                 </div>
                                 <div class="col-6" style="text-align: left">
                                     <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-success rounded" style="border: 2px solid black; color: white !important;">Boost Rank</a>
                                 </div>
                             </div>
                         </div>
-                        <div t-else="" class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
+                        <div t-else="" class="alert alert-primary" role="alert" style="text-align: center; margin-bottom: 0px !important">
                             <div class="row">
                                 <div class="col-12">
                                     Thank you pioneers we reached 400 verified users this month!.
@@ -1256,7 +1256,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6" style="text-align: right">
-                                    <a t-att-href="'/pinetwork' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else 'https://latinchain.pinet.com/pinetwork'" t-att-target="'_self' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else '_blank'" class="btn btn-success rounded" style="border: 2px solid black; color: white !important;">Pay Pi</a>
+                                    <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="btn btn-success rounded MainnetLink" style="border: 2px solid black; color: white !important;">Pay Pi</a>
                                 </div>
                                 <div class="col-6" style="text-align: left">
                                     <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-success rounded" style="border: 2px solid black; color: white !important;">Boost Rank</a>
@@ -1268,12 +1268,12 @@
                         <div class="alert alert-primary" role="alert" style="text-align: center; margin-bottom: 0px !important">
                             <div class="row">
                                 <div class="col-12">
-                                    <a t-att-href="'/pinetwork' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else 'https://latinchain.pinet.com/pinetwork'" t-att-target="'_self' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else '_blank'" class="btn btn-link" style="color: black !important;">Hello Pioneers, we need your help, <strong>we need at least 400 pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations.</a>
+                                    <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="btn btn-link MainnetLink" style="color: black !important;">Hello Pioneers, we need your help, <strong>we need at least 400 pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations.</a>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6" style="text-align: right">
-                                    <a t-att-href="'/pinetwork' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else 'https://latinchain.pinet.com/pinetwork'" t-att-target="'_self' if mainnet in ['Mainnet ON', 'Mainnet OFF'] else '_blank'" class="btn btn-success rounded" style="border: 2px solid black; color: white !important;">Mainnet</a>
+                                    <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="btn btn-success rounded MainnetLink" style="border: 2px solid black; color: white !important;">Mainnet</a>
                                 </div>
                                 <div class="col-6" style="text-align: left">
                                     <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-success rounded" style="border: 2px solid black; color: white !important;">Boost Rank</a>

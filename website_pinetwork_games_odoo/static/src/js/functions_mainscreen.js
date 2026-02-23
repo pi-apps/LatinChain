@@ -1464,6 +1464,12 @@ $( document ).ready(function() {
                 
                 $( ".div-certification" ).show();
                 
+                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                {
+                    $(".MainnetLink").prop('href', '/pinetwork');
+                    $(".MainnetLink").prop('blank', '_self');
+                }
+                
                 /*$("#leaderboard").attr("href", "/get-points/" + auth.user.username);
                 $("#winnerboard").attr("href", "/get-top10-zone/" + auth.user.username);
                 $("#winnerzoneboard").attr("href", "/get-winners-zone/" + auth.user.username);*/
