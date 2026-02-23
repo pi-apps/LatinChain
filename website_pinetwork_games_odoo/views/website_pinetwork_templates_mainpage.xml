@@ -3203,13 +3203,13 @@
                             </div>
                             <div id="paying-message" class="container" style="display: none; flex-direction: column; margin-top: auto;">
                                 <div style="margin-top: 10px;" class="row">
-                                    <a class="anchor-click btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;" href="#">Pay to unlock</a>
+                                    <a class="anchor-click btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;" href="#">Pay To Unlock</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row">
-                                    <a id="test_app" class="btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;" href="#">Test this app</a>
+                                    <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;">Boost Rank</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row">
-                                    <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;">Boost this app</a>
+                                    <a id="test_app" class="btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;" href="#">Test This App</a>
                                 </div>
                                 <div class="PiBrowserLink row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <a class="btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
