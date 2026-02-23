@@ -3206,8 +3206,8 @@
                             </div>
                             <div id="paying-message" class="container" style="display: none; flex-direction: column; margin-top: auto;">
                                 <div style="" class="row">
-                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" align="center" style="font-weight:600">LatinChain Mainnet</h3>
-                                    <h3 t-else="" align="center" style="font-weight:600">LatinChain Testnet</h3>
+                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" align="center" style="color: black !important; font-weight:600">LatinChain Mainnet</h3>
+                                    <h3 t-else="" align="center" style="color: black !important; font-weight:600">LatinChain Testnet</h3>
                                 </div>
                                 <div style="" class="row">
                                     <a class="anchor-click btn btn-success rounded col-12" style="border: 2px solid black; color: white !important;" href="/pinetwork">Pay Pi To Unlock</a>
