@@ -1436,6 +1436,9 @@
                         <script type="text/javascript" src="https://www.effectivecreativeformat.com/1771e7291ef3d0a686ff7e2bb191f557/invoke.js"></script>
                         <br/>-->
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
+                        <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" align="center" style="font-weight:600">LatinChain Mainnet</h3>
+                        <h3 t-else="" align="center" style="font-weight:600">LatinChain Testnet</h3>
+                        
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
                         <div id="loading_word_under" style="margin-top:10px; width: 100%; display: none;"></div>
@@ -3202,6 +3205,10 @@
                                 </div>
                             </div>
                             <div id="paying-message" class="container" style="display: none; flex-direction: column; margin-top: auto;">
+                                <div style="" class="row">
+                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" align="center" style="font-weight:600">LatinChain Mainnet</h3>
+                                    <h3 t-else="" align="center" style="font-weight:600">LatinChain Testnet</h3>
+                                </div>
                                 <div style="" class="row">
                                     <a class="anchor-click btn btn-success rounded col-12" style="border: 2px solid black; color: white !important;" href="/pinetwork">Pay Pi To Unlock</a>
                                 </div>
