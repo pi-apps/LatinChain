@@ -841,15 +841,18 @@
                                         <h3 class="col-12">
                                             <div class="product">
                                                 <hr/>
-                                                <a href="https://www.amazon.com/dp/B0D73FQTHQ?ref=t_ac_view_request_product_image&amp;campaignId=amzn1.campaign.68MPXAEHFGC0&amp;linkCode=tr1&amp;tag=' + link_tag_code + '&amp;linkId=amzn1.campaign.68MPXAEHFGC0_1771337661156" target="_blank" class="btn btn-link amazon-list"><strong>DOOGEE S200 5G Rugged Phone (all-terrain, ultra-resistant) on Amazon</strong></a>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/dp/B0D73FQTHQ?ref=t_ac_view_request_product_image&amp;campaignId=amzn1.campaign.68MPXAEHFGC0&amp;linkCode=tr1&amp;tag=' + link_tag_code + '&amp;linkId=amzn1.campaign.68MPXAEHFGC0_1771337661156'"/>
+                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>DOOGEE S200 5G Rugged Phone (all-terrain, ultra-resistant) on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <a href="https://www.amazon.com/dp/B08K85LFY9?ref=t_ac_view_request_product_image&amp;campaignId=amzn1.campaign.1DDNGV9YECCK4&amp;linkCode=tr1&amp;tag=' + link_tag_code + '&amp;linkId=amzn1.campaign.1DDNGV9YECCK4_1771336406777" target="_blank" class="btn btn-link amazon-list"><strong>Adidas Premium Yoga Mat on Amazon</strong></a>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/dp/B08K85LFY9?ref=t_ac_view_request_product_image&amp;campaignId=amzn1.campaign.1DDNGV9YECCK4&amp;linkCode=tr1&amp;tag=' + link_tag_code + '&amp;linkId=amzn1.campaign.1DDNGV9YECCK4_1771336406777'"/>
+                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Adidas Premium Yoga Mat on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
-                                                <a href="https://www.amazon.com/dp/B0DNYXKWRV?ref=t_ac_view_request_product_image&amp;campaignId=amzn1.campaign.HN0T8CQQ4EJB&amp;linkCode=tr1&amp;tag=' + link_tag_code + '&amp;linkId=amzn1.campaign.HN0T8CQQ4EJB_1771335184998" target="_blank" class="btn btn-link amazon-list"><strong>Automatic Cat Litter Box Self Cleaning on Amazon</strong></a>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/dp/B0DNYXKWRV?ref=t_ac_view_request_product_image&amp;campaignId=amzn1.campaign.HN0T8CQQ4EJB&amp;linkCode=tr1&amp;tag=' + link_tag_code + '&amp;linkId=amzn1.campaign.HN0T8CQQ4EJB_1771335184998'"/>
+                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Automatic Cat Litter Box Self Cleaning on Amazon</strong></a>
                                             </div>
                                             <div class="product">
                                                 <hr/>
