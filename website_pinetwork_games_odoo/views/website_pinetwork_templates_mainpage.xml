@@ -3215,22 +3215,22 @@
                                     <h3 t-else="" align="center" style="color: black !important; font-weight:600">LatinChain Testnet</h3>
                                 </div>
                                 <div style="" class="row">
-                                    <a class="anchor-click btn btn-success rounded col-12" style="border: 2px solid black; color: white !important;" href="/pinetwork">Pay Pi To Unlock</a>
+                                    <a class="anchor-click btn btn-success rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="/pinetwork">Pay Pi To Unlock</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row">
-                                    <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important;">Boost Rank (Stake)</a>
+                                    <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;">Boost Rank (Stake)</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row">
-                                    <a id="test_app" class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important;" href="#">Test This App (Pi Ad)</a>
+                                    <a id="test_app" class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="#">Test This App (Pi Ad)</a>
                                 </div>
                                 <div class="PiBrowserLink row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <a class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
+                                    <a class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
                                 </div>
                                 <div class="PiBrowserLink row" style="margin-top: 10px;" t-else="">
-                                    <a class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important;" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
+                                    <a class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row">
-                                    <a class="logout_latinchain btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important;" href="#">Logout</a>
+                                    <a class="logout_latinchain btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="#">Logout</a>
                                 </div>
                             </div>
                             <div id="loading-message" style="display: block; margin-top: auto;">
