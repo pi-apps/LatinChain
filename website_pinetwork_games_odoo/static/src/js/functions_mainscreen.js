@@ -1467,7 +1467,7 @@ $( document ).ready(function() {
                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     $(".MainnetLink").prop('href', '/pinetwork');
-                    $(".MainnetLink").prop('blank', '_self');
+                    $(".MainnetLink").prop('target', '_self');
                 }
                 
                 /*$("#leaderboard").attr("href", "/get-points/" + auth.user.username);
