@@ -947,7 +947,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.836"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.837"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3207,6 +3207,12 @@
                                 </div>
                                 <div style="margin-top: 5px;">
                                     <a id="test_app" class="btn btn-link rounded" style="border: 2px solid; color: blue !important;" href="#">Or here to test this app</a>
+                                </div>
+                                <div class="PiBrowserLink" style="margin-top: 5px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <a class="btn btn-link rounded" style="border: 2px solid; color: blue !important;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
+                                </div>
+                                <div class="PiBrowserLink" style="margin-top: 5px;" t-else="">
+                                    <a class="btn btn-link rounded" style="border: 2px solid; color: blue !important;" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
                                 </div>
                                 <div style="margin-top: 5px;">
                                     <a class="logout_latinchain btn btn-link rounded" style="border: 2px solid; color: blue !important;" href="#">Logout</a>

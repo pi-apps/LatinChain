@@ -1476,6 +1476,8 @@ $( document ).ready(function() {
                         {
                             //alert($("#pi_prowser_message").text());
                             
+                            $(".PiBrowserLink").hide();
+                            
                             $("a.anchor-click").attr('href', "/pinetwork");
                             
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
