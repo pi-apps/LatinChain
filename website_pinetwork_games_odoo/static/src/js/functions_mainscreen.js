@@ -1478,8 +1478,6 @@ $( document ).ready(function() {
                             
                             $(".PiBrowserLink").hide();
                             
-                            $("a.anchor-click").attr('href', "/pinetwork");
-                            
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1560,8 +1558,6 @@ $( document ).ready(function() {
                     {
                         //alert($("#pi_prowser_message").text());
                         
-                        $("a.anchor-click").attr('href', "/pinetwork");
-                        
                         document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                         document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1587,8 +1583,6 @@ $( document ).ready(function() {
                         if(!unblocked && !showing_paying)
                         {
                             //alert($("#pi_prowser_message").text());
-                            
-                            $("a.anchor-click").attr('href', "/pinetwork");
                             
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
@@ -1677,8 +1671,6 @@ $( document ).ready(function() {
                 if(!unblocked && !showing_paying)
                 {
                     //alert($("#pi_prowser_message").text());
-                    
-                    $("a.anchor-click").attr('href', "/pinetwork");
                     
                     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                     document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
