@@ -3203,10 +3203,10 @@
                             </div>
                             <div id="paying-message" class="container" style="display: none; flex-direction: column; margin-top: auto;">
                                 <div style="margin-top: 5px;" class="row">
-                                    <a class="anchor-click btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;" href="#">Donate to unlock Apps</a>
+                                    <a class="anchor-click btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;" href="#">Pay to unlock</a>
                                 </div>
                                 <div style="margin-top: 5px;" class="row">
-                                    <a id="test_app" class="btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;" href="#">Or here to test this app</a>
+                                    <a id="test_app" class="btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;" href="#">Test this app</a>
                                 </div>
                                 <div class="PiBrowserLink row" style="margin-top: 5px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <a class="btn btn-link rounded col-12" style="border: 2px solid black; color: black !important;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
