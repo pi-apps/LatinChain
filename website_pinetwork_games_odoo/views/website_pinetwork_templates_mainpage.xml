@@ -1436,8 +1436,12 @@
                         <script type="text/javascript" src="https://www.effectivecreativeformat.com/1771e7291ef3d0a686ff7e2bb191f557/invoke.js"></script>
                         <br/>-->
                         <!--<iframe id="a-ads_2" t-att-data-aa='a_ads_data_2' src="" t-att-style='a_ads_style_2'></iframe>-->
-                        <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" align="center" style="font-weight:600">LatinChain Mainnet</h3>
-                        <h3 t-else="" align="center" style="font-weight:600">LatinChain Testnet</h3>
+                        <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                            <h3 align="center" style="font-weight:600">LatinChain Mainnet</h3>
+                        </t>
+                        <t t-else="">
+                            <h3 align="center" style="font-weight:600">LatinChain Testnet</h3>
+                        </t>
                         
                         <br/><span id="loading_word" style="display: none;">Loading...<br/></span>
                         
