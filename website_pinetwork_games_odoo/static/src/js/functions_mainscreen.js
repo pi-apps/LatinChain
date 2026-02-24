@@ -1511,14 +1511,14 @@ $( document ).ready(function() {
                                     if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
                                         showRewardedPiAd(false);
                                 })();
-                            }else if(!unblocked)
+                            }/*else if(!unblocked)
                             {
                                 if($("#total_users_verified_count").val() < 400)
                                 {
                                     if(confirm($("#MainnetLinkId1").text()))
                                         window.location.href="/pinetwork";
                                 }
-                            }
+                            }*/
                         }
                     });
                 });
