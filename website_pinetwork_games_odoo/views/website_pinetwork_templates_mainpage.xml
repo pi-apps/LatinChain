@@ -3216,7 +3216,7 @@
                                     <h3 t-else="" align="center" style="color: black !important; font-weight:600">LatinChain Testnet</h3>
                                 </div>
                                 <div style="" class="row">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-success rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Pay Pi To Unlock (Please)</a>
+                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-success rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Pay Pi To Unlock (Thanks)</a>
                                     <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-success rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Pay Pi To Unlock</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row">
