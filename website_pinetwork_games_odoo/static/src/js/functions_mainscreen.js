@@ -1470,6 +1470,9 @@ $( document ).ready(function() {
                     $(".MainnetLink").prop('target', '_self');
                 }
                 
+                $(".PayPiLink").prop('href', '/pinetwork');
+                $(".PayPiLink").prop('target', '_self');
+                
                 /*$("#leaderboard").attr("href", "/get-points/" + auth.user.username);
                 $("#winnerboard").attr("href", "/get-top10-zone/" + auth.user.username);
                 $("#winnerzoneboard").attr("href", "/get-winners-zone/" + auth.user.username);*/
