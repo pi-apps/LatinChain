@@ -1501,7 +1501,8 @@ $( document ).ready(function() {
                             }
                             
                             $( "#button_reward_ad" ).click(async function() {
-                                showRewardedPiAd(false);
+                                if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
+                                    showRewardedPiAd(false);
                             });
                             
                             if(show_pi_ad_user && pi_ad_new && unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
