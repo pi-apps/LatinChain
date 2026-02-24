@@ -1490,8 +1490,10 @@ $( document ).ready(function() {
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
                             if($("#total_users_verified_count").val() < 400)
-                                if(confirm($(".MainnetLink").text()))
-                                    $(".PayPiLink").click();
+                            {
+                                if(confirm($("#MainnetLinkId1").text()))
+                                    $("#PayPiLinkId1").click();
+                            }
                             if(show_pi_ad_user || pi_ad_new)
                             {
                                 $("#button_reward_ad").show();
