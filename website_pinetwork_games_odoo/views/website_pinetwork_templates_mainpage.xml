@@ -947,7 +947,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.849"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.850"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3149,7 +3149,7 @@
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="text-align:center">
+                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="text-align:center; z-index: 9999999 !important;">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -3179,7 +3179,7 @@
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="ModalLogin" tabindex="-1" aria-labelledby="ModalLabelLogin" aria-hidden="true" style="text-align:center">
+                    <div class="modal fade" id="ModalLogin" tabindex="-1" aria-labelledby="ModalLabelLogin" aria-hidden="true" style="text-align:center; z-index: 9999999 !important;">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
