@@ -952,16 +952,22 @@ $( document ).ready(function() {
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
-                                if(redirect)
+                                if(redirect && !unblocked)
                                 {
                                     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                                     document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                                     document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                     document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                }else
+                                }else if(!redirect && unblocked)
                                 {
                                     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                                     document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                }else if(!redirect)
+                                {
+                                    document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                                    document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                     document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                     document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                 }
