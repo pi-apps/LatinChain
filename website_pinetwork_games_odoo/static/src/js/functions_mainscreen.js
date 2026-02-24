@@ -1492,7 +1492,7 @@ $( document ).ready(function() {
                             if($("#total_users_verified_count").val() < 400)
                             {
                                 if(confirm($("#MainnetLinkId1").text()))
-                                    $("#PayPiLinkId1").click();
+                                    window.location.href="/pinetwork";
                             }
                             if(show_pi_ad_user || pi_ad_new)
                             {
