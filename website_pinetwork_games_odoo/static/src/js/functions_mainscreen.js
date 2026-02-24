@@ -1489,29 +1489,34 @@ $( document ).ready(function() {
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
-                            if(show_pi_ad_user || pi_ad_new)
+                            if(!unblocked && $("#nopopup").val() != false && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                $("#button_reward_ad").show();
-                                $("#piad_not_available").hide();
-                                $("#button_reward_ad").prop( "disabled", false );
+                                colorboxLoadedMainnet();
                             }else
                             {
-                                $("#button_reward_ad").hide();
-                                $("#piad_not_available").show();
-                            }
-                            
-                            $( "#button_reward_ad" ).click(async function() {
-                                if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                                    showRewardedPiAd(false);
-                            });
-                            
-                            if(show_pi_ad_user && pi_ad_new && unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                            {
-                                (async () => {
+                                if(show_pi_ad_user || pi_ad_new)
+                                {
+                                    $("#button_reward_ad").show();
+                                    $("#piad_not_available").hide();
+                                    $("#button_reward_ad").prop( "disabled", false );
+                                }else
+                                {
+                                    $("#button_reward_ad").hide();
+                                    $("#piad_not_available").show();
+                                }
+                                
+                                $( "#button_reward_ad" ).click(async function() {
                                     if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
                                         showRewardedPiAd(false);
-                                })();
+                                });
                                 
+                                if(show_pi_ad_user && pi_ad_new && unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                {
+                                    (async () => {
+                                        if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
+                                            showRewardedPiAd(false);
+                                    })();
+                                }
                             }
                         }
                     });
