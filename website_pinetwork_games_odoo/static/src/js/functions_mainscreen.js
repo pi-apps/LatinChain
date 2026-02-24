@@ -1489,7 +1489,7 @@ $( document ).ready(function() {
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
-                            if($("#nopopup").val() != false && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if($("#nopopup").val() == false)
                             {
                                 colorboxLoadedMainnet();
                             }else
