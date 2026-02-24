@@ -952,19 +952,10 @@ $( document ).ready(function() {
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
-                                if(redirect && !unblocked)
-                                {
-                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
-                                    document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
-                                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                }else
-                                {
-                                    document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
-                                    document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                }
+                                document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                                document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                 
                                 var gemini_image = getGeminiImage();
                                 $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
@@ -1513,11 +1504,11 @@ $( document ).ready(function() {
                                 showRewardedPiAd(false);
                             });
                             
-                            if(show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(show_pi_ad_user && pi_ad_new && unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 (async () => {
                                     if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                                        showRewardedPiAd(true);
+                                        showRewardedPiAd(false);
                                 })();
                                 
                             }

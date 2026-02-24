@@ -462,7 +462,7 @@ $( document ).ready(function() {
                             showRewardedPiAd();
                         });
                         
-                        if(!Boolean(($("#payoneclick").val().toLowerCase())) && show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                        if(!Boolean(($("#payoneclick").val().toLowerCase())) && show_pi_ad_user && pi_ad_new && unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
                             if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
                                 showRewardedPiAd();
