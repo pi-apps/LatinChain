@@ -1478,22 +1478,27 @@ $( document ).ready(function() {
                         {
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                //alert($("#pi_prowser_message").text());
                                 if(confirm($("#MainnetLinkId1").text()))
                                 {
                                     window.location.href="/pinetwork";
                                 }
                                 else
                                 {
-                                    $(".PiBrowserLink").hide();
-                                    
-                                    document.getElementById('PayPiLinkId1').style.display = 'flex';
-                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
-                                    document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
-                                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                    
-                                    showing_paying = true;
+                                    if($("#nopopup").val() == false)
+                                    {
+                                        colorboxLoadedMainnet();
+                                    }else
+                                    {
+                                        $(".PiBrowserLink").hide();
+                                        
+                                        document.getElementById('PayPiLinkId1').style.display = 'flex';
+                                        document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                        document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                        document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                        
+                                        showing_paying = true;
+                                    }
                                 }
                             }else
                             {
