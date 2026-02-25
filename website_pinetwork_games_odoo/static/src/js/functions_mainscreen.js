@@ -1484,7 +1484,17 @@ $( document ).ready(function() {
                                 }
                                 else
                                 {
-                                    if($("#nopopup").val() == false)
+                                    $(".PiBrowserLink").hide();
+                                    
+                                    document.getElementById('PayPiLinkId1').style.display = 'flex';
+                                    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                    document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+                                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                    
+                                    showing_paying = true;
+                                    
+                                    /*if($("#nopopup").val() == false)
                                     {
                                         colorboxLoadedMainnet();
                                     }else
@@ -1498,7 +1508,7 @@ $( document ).ready(function() {
                                         document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                         
                                         showing_paying = true;
-                                    }
+                                    }*/
                                 }
                             }else
                             {
