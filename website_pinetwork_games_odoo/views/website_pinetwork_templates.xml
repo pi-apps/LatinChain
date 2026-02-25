@@ -39,7 +39,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.1.133"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.1.134"></script>
                     
                     <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -305,6 +305,7 @@
                                     <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" align="center" style="font-weight:600">Mainnet</h3>
                                     <h3 t-else="" align="center" style="font-weight:600">Testnet</h3>
                                     <h3 align="center" style="font-weight:600" class="show-not-verified-user">Get verified</h3>
+                                    <h3 align="center" style="font-weight:600; display: none;" class="show-verified-user">You are already verified</h3>
                                     
                                     <t t-set="amount_end" t-value="round(amount*3, 7)"/>
                                     
