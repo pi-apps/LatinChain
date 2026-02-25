@@ -165,6 +165,10 @@ $( document ).ready(function() {
                 $("#loading_word").hide();
             });
     
+    $( ".rules_button" ).click(function() {
+        $.colorbox({fixed: true, href:"/modal-rules", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     //alert(PiNetworkClient);
     
     amount = $("#amount").val();
