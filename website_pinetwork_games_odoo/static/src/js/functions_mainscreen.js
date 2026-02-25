@@ -1474,7 +1474,7 @@ $( document ).ready(function() {
                 set_points(0).always(function(){
                     get_user().always(function(){
                         
-                        if(!unblocked)
+                        if(unblocked)
                         {
                             //alert($("#pi_prowser_message").text());
                             
