@@ -1485,6 +1485,12 @@ $( document ).ready(function() {
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             
                             showing_paying = true;
+                        }else
+                        {
+                            document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                         }
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
