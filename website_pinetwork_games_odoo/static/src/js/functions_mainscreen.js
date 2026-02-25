@@ -952,6 +952,7 @@ $( document ).ready(function() {
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
+                                document.getElementById('PayPiLinkId1').style.display = 'none';
                                 document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                                 document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1479,6 +1480,7 @@ $( document ).ready(function() {
                             
                             $(".PiBrowserLink").hide();
                             
+                            document.getElementById('PayPiLinkId1').style.display = 'flex';
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1487,6 +1489,7 @@ $( document ).ready(function() {
                             showing_paying = true;
                         }else
                         {
+                            document.getElementById('PayPiLinkId1').style.display = 'none';
                             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1572,6 +1575,7 @@ $( document ).ready(function() {
                     {
                         //alert($("#pi_prowser_message").text());
                         
+                        document.getElementById('PayPiLinkId1').style.display = 'none';
                         document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                         document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1598,6 +1602,7 @@ $( document ).ready(function() {
                         {
                             //alert($("#pi_prowser_message").text());
                             
+                            document.getElementById('PayPiLinkId1').style.display = 'none';
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1608,6 +1613,12 @@ $( document ).ready(function() {
                 $(".loggedin").show();
             }else
             {
+                document.getElementById('PayPiLinkId1').style.display = 'none';
+                document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                
                 $(".loggedout").show();
                 
                 $(".getverified").show();
@@ -1658,6 +1669,12 @@ $( document ).ready(function() {
     $(".logout_latinchain").click(function(){
         if(confirm($("#modal_logout_latinchain_v2_message").text()))
         {
+            document.getElementById('PayPiLinkId1').style.display = 'none';
+            document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+            document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+            
             localStorage.removeItem("loggedIn");
             try {
                 Cache.delete();
@@ -1686,6 +1703,7 @@ $( document ).ready(function() {
                 {
                     //alert($("#pi_prowser_message").text());
                     
+                    document.getElementById('PayPiLinkId1').style.display = 'none';
                     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                     document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                     document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
