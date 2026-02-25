@@ -1587,12 +1587,6 @@ $( document ).ready(function() {
         }else{
             await delayAsync(1000);
             
-            document.getElementById('PayPiLinkId1').style.display = 'none';
-            document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
-            document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
-            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-            document.getElementById('loading-message').style.display = 'flex'; // Use 'flex' instead of 'block'
-            
             if(confirm($("#modal_login_latinchain_v2_message").text()))
             {
                 auth();
@@ -1696,6 +1690,12 @@ $( document ).ready(function() {
     });
     
     $(".login_latinchain").click(function(){
+        document.getElementById('PayPiLinkId1').style.display = 'none';
+        document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+        document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('loading-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+        
         auth();
         localStorage.setItem("loggedIn", true);
     
