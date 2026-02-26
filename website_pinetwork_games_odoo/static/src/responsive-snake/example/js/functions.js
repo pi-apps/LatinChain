@@ -341,6 +341,8 @@ async function showPiAds(Pi) {
 
 $( document ).ready(function() {
     
+    $("#test_app").hide();
+    
     $(document).ajaxStop(function() {
                 $("#loading_word").hide();
             });

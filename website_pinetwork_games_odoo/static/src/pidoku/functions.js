@@ -377,6 +377,9 @@ $( document ).ready(function() {
         clear_this_board();
     });*/
     
+    $("#test_app").hide();
+    $(".show_test_app").hide();
+    
     $('.timer').countimer({
 			autoStart : false
 			});

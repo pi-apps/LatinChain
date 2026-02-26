@@ -421,6 +421,9 @@ async function showPiAdsNotTiming(Pi) {
 }
 
 $( document ).ready(function() {
+    $("#test_app").hide();
+    $(".show_test_app").hide();
+    
     $('.timer_white').countimer({
 			autoStart : false
 			});

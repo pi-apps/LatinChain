@@ -129,6 +129,8 @@ var startCommonAppsAI = () => {
             }
         }
         
+        $("#test_app").hide();
+        
         $("#test_app").click(function(){
             if(startCommonAppsAIVars.pi_ad_new)
             {
