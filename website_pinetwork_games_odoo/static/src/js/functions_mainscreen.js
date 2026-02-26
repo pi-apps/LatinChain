@@ -952,11 +952,14 @@ $( document ).ready(function() {
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
-                                //document.getElementById('PayPiLinkId1').style.display = 'none';
-                                document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
-                                document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                if(!redirect)
+                                {
+                                    //document.getElementById('PayPiLinkId1').style.display = 'none';
+                                    document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                                    document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                }
                                 
                                 var gemini_image = getGeminiImage();
                                 $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
@@ -1518,14 +1521,14 @@ $( document ).ready(function() {
                                     if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
                                         showRewardedPiAd(false);
                                 })();
-                            }else if(!unblocked)
+                            }/*else if(!unblocked)
                             {
                                 if($("#total_users_verified_count").val() < 400)
                                 {
                                     if(confirm($("#MainnetLinkId1").text()))
                                         window.location.href="/pinetwork";
                                 }
-                            }
+                            }*/
                         }
                     });
                 });
@@ -1728,7 +1731,7 @@ $( document ).ready(function() {
                 {
                     (async () => {
                         if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                            showRewardedPiAd(false);
+                            showRewardedPiAd(true);
                     })();
                 }
                 else
