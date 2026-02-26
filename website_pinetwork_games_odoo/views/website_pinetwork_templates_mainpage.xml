@@ -947,7 +947,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.888"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.889"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3222,7 +3222,7 @@
                                 <div style="margin-top: 10px;" class="row">
                                     <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;">Boost Rank (Stake)</a>
                                 </div>
-                                <div style="margin-top: 10px;" class="row">
+                                <div style="margin-top: 10px;" class="row show_test_app">
                                     <a id="test_app" class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="#">Earn Latin points (Pi Ad)</a>
                                 </div>
                                 <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">

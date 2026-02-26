@@ -695,7 +695,7 @@ function get_user() {
 
 async function showPiInterstitialAds(Pi, url) {
     
-    $("#test_app").hide();
+    $(".show_test_app").hide();
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
     
@@ -714,7 +714,7 @@ async function showPiInterstitialAds(Pi, url) {
                 
                 if((pi_user_id != "" && pi_user_code != "") && (show_pi_ad_user || pi_ad_new))
                 {
-                    $("#test_app").show();
+                    $(".show_test_app").show();
                     $("#button_reward_ad").prop( "disabled", false );
                 }
                 
@@ -744,7 +744,7 @@ async function showPiInterstitialAds(Pi, url) {
         $("#button_reward_ad").html(btnvalue);
         if((pi_user_id != "" && pi_user_code != "") && (show_pi_ad_user || pi_ad_new))
         {
-            $("#test_app").show();
+            $(".show_test_app").show();
             $("#button_reward_ad").prop( "disabled", false );
         }
         //$("#button_reward_ad").prop( "disabled", false );
@@ -753,7 +753,7 @@ async function showPiInterstitialAds(Pi, url) {
         $("#button_reward_ad").html(btnvalue);
         if((pi_user_id != "" && pi_user_code != "") && (show_pi_ad_user || pi_ad_new))
         {
-            $("#test_app").show();
+            $(".show_test_app").show();
             $("#button_reward_ad").prop( "disabled", false );
         }
         
@@ -769,7 +769,7 @@ async function showPiInterstitialAds(Pi, url) {
 
 async function showPiAds(Pi, activated) {
     
-    $("#test_app").hide();
+    $(".show_test_app").hide();
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
     
@@ -780,7 +780,7 @@ async function showPiAds(Pi, activated) {
         
         if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
         {
-            $("#test_app").show();
+            $(".show_test_app").show();
             $("#button_reward_ad").html(btnvalue);
             $("#button_reward_ad").prop( "disabled", false );
             //$("#button_reward_ad").prop( "disabled", false );
@@ -791,7 +791,7 @@ async function showPiAds(Pi, activated) {
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
         
-        $("#test_app").hide();
+        $(".show_test_app").hide();
         $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
 
         if (isAdReadyResponse.ready === false) {
@@ -813,13 +813,13 @@ async function showPiAds(Pi, activated) {
             $("#open_modal").click();*/
         }
         
-        $("#test_app").show();
+        $(".show_test_app").show();
         $("#button_reward_ad").prop( "disabled", false );
         $("#button_reward_ad").html(btnvalue);
         return true;
         //$("#button_reward_ad").prop( "disabled", false );
     } catch (err) {
-        $("#test_app").show();
+        $(".show_test_app").show();
         $("#button_reward_ad").prop( "disabled", false );
         $("#button_reward_ad").html(btnvalue);
         //$("#button_reward_ad").prop( "disabled", false );
@@ -827,7 +827,7 @@ async function showPiAds(Pi, activated) {
         // Not able to fetch the user
     }
     
-    $("#test_app").show();
+    $(".show_test_app").show();
     $("#button_reward_ad").prop( "disabled", false );
     $("#button_reward_ad").html(btnvalue);
     return false;
@@ -908,7 +908,7 @@ $( document ).ready(function() {
             start_flag = true;
         }
         
-        $("#test_app").hide();
+        $(".show_test_app").hide();
         $("#button_reward_ad").prop( "disabled", true );
         $("#button_reward_ad").html("Showing Pi Rewarded Ad...");
         
@@ -924,7 +924,7 @@ $( document ).ready(function() {
                         // display modal to update Pi Browser
                         // showAdsNotSupportedModal()
                         alert("Update Pi Browser version, please!.");
-                        $("#test_app").show();
+                        $(".show_test_app").show();
                         $("#button_reward_ad").html(btnvalue);
                         $("#button_reward_ad").prop( "disabled", false );
                         return;
@@ -933,7 +933,7 @@ $( document ).ready(function() {
                         // display modal ads are temporarily unavailable and user should try again later
                         // showAdUnavailableModal()
                         alert("Ads are temporarily unavailable, try again later!.");
-                        $("#test_app").show();
+                        $(".show_test_app").show();
                         $("#button_reward_ad").html(btnvalue);
                         $("#button_reward_ad").prop( "disabled", false );
                         return;
@@ -946,7 +946,7 @@ $( document ).ready(function() {
                     await delayAsync(2000);
                     if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                     {
-                        $("#test_app").hide();
+                        $(".show_test_app").hide();
                         $("#button_reward_ad").prop( "disabled", true );
                         $("#button_reward_ad").html("Verifying...");
                         //alert($("#ready_reward_message").text());
@@ -983,7 +983,7 @@ $( document ).ready(function() {
                                 
                                 $("#open_modal").click();
                                 
-                                $("#test_app").hide();
+                                $(".show_test_app").hide();
                                 $("#button_reward_ad").prop( "disabled", true );
                                 $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                                 
@@ -1000,7 +1000,7 @@ $( document ).ready(function() {
                                     $("#piad_not_available").hide();
                                     setTimeout(function ()
                                     {
-                                        $("#test_app").show();
+                                        $(".show_test_app").show();
                                         $("#button_reward_ad").html(btnvalue);
                                         $("#button_reward_ad").prop( "disabled", false );
                                     }, 5000);
@@ -1010,7 +1010,7 @@ $( document ).ready(function() {
                                     $("#piad_not_available").show();
                                     setTimeout(function ()
                                     {
-                                        $("#test_app").show();
+                                        $(".show_test_app").show();
                                         $("#button_reward_ad").html(btnvalue);
                                         $("#button_reward_ad").prop( "disabled", false );
                                     }, 5000);
@@ -1022,7 +1022,7 @@ $( document ).ready(function() {
     
                                 setTimeout(function ()
                                 {
-                                    $("#test_app").show();
+                                    $(".show_test_app").show();
                                     $("#button_reward_ad").html(btnvalue);
                                     $("#button_reward_ad").prop( "disabled", false );
                                 }, 5000);
@@ -1039,7 +1039,7 @@ $( document ).ready(function() {
     
                             setTimeout(function ()
                             {
-                                $("#test_app").show();
+                                $(".show_test_app").show();
                                 $("#button_reward_ad").html(btnvalue);
                                 $("#button_reward_ad").prop( "disabled", false );
                             }, 5000);
@@ -1052,7 +1052,7 @@ $( document ).ready(function() {
                             
                         });
                     }else{
-                        $("#test_app").show();
+                        $(".show_test_app").show();
                         $("#button_reward_ad").html(btnvalue);
                         $("#button_reward_ad").prop( "disabled", false );
                         
@@ -1063,7 +1063,7 @@ $( document ).ready(function() {
                         
                     }
                 } else {
-                    $("#test_app").show();
+                    $(".show_test_app").show();
                     $("#button_reward_ad").html(btnvalue);
                     $("#button_reward_ad").prop( "disabled", false );
                     // fallback logic
@@ -1076,7 +1076,7 @@ $( document ).ready(function() {
                 }
                 
             } catch (err) {
-                $("#test_app").show();
+                $(".show_test_app").show();
                 $("#button_reward_ad").html(btnvalue);
                 $("#button_reward_ad").prop( "disabled", false );
                 // good practice to handle any potential errors
@@ -1089,7 +1089,7 @@ $( document ).ready(function() {
             }
         }else
         {
-            $("#test_app").show();
+            $(".show_test_app").show();
             $("#button_reward_ad").html(btnvalue);
             $("#button_reward_ad").prop( "disabled", false );
         }
@@ -1524,13 +1524,13 @@ $( document ).ready(function() {
                         {
                             if(show_pi_ad_user || pi_ad_new)
                             {
-                                $("#test_app").show();
+                                $(".show_test_app").show();
                                 $("#button_reward_ad").show();
                                 $("#piad_not_available").hide();
                                 $("#button_reward_ad").prop( "disabled", false );
                             }else
                             {
-                                $("#test_app").show();
+                                $(".show_test_app").show();
                                 $("#button_reward_ad").hide();
                                 $("#piad_not_available").show();
                             }
