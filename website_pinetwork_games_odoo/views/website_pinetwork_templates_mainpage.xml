@@ -81,8 +81,10 @@
                         color: black !important;
                     }
                     
-                    .darkmode--activated .btn:disabled, .darkmode--activated .btn:disabled *, 
-                    .darkmode--activated .btn:disabled:hover, .darkmode--activated .btn:disabled:active
+                    .darkmode--activated .btn-outline-success:disabled, 
+                    .darkmode--activated .btn-outline-success:disabled *, 
+                    .darkmode--activated .btn-outline-success:disabled:hover, 
+                    .darkmode--activated .btn-outline-success:disabled:active
                     {
                         color: silver !important;
                     }
