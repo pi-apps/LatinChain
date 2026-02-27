@@ -73,6 +73,7 @@
                     
                     .btn:disabled, .btn:disabled:hover, .btn:disabled:active
                     {
+                        color: black !important;
                         transform: none;
                     }
                     
