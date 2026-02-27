@@ -78,7 +78,13 @@
                     
                     .btn:disabled, .btn:disabled *, .btn:disabled:hover, .btn:disabled:active
                     {
-                        color: gray !important;
+                        color: black !important;
+                    }
+                    
+                    .darkmode--activated .btn:disabled, .darkmode--activated .btn:disabled *, 
+                    .darkmode--activated .btn:disabled:hover, .darkmode--activated .btn:disabled:active
+                    {
+                        color: silver !important;
                     }
                 </style>
                 
