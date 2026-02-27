@@ -73,7 +73,9 @@
                     
                     .btn:disabled, .btn:disabled:hover, .btn:disabled:active
                     {
-                        color: black !important;
+                        color: white !important;
+                        font-weight: bold !important;
+                        border: 2px solid black !important;
                     }
                 </style>
                 
