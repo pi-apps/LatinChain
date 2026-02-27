@@ -52,6 +52,35 @@
                 <div id="rewarded_message_1" style="display:none;">▶️ Watch a video to claim your reward?.</div>
                 <div id="rewarded_message_2" style="display:none;">In order to maintain our servers, we ask you to watch a Rewarded Ad until the end, we will give you a reward at the end of the ad.</div>
                 
+                <style>
+                    .btn, .btn:hover, .btn:active
+                    {
+                        color: white !important;
+                        font-weight: bold !important;
+                        border: 2px solid black !important;
+                        word-spacing: 2px !important;
+                        letter-spacing: 2px !important;
+                        text-shadow: 
+                            -1px -1px 0px #000,
+                             0px -1px 0px #000,
+                             1px -1px 0px #000,
+                            -1px  0px 0px #000,
+                             1px  0px 0px #000,
+                            -1px  1px 0px #000,
+                             0px  1px 0px #000,
+                             1px  1px 0px #000;
+                    }
+                    
+                    .btn:disabled, .btn:disabled:hover, .btn:disabled:active
+                    {
+                        color: black !important;
+                        font-weight: bold !important;
+                        border: 2px solid black !important;
+                        word-spacing: 2px !important;
+                        letter-spacing: 2px !important;
+                    }
+                </style>
+                
                <span id="website_translation_latin_chain" name="website_translation_latin_chain">
                     <t t-if="hide_google_translate">
                         <t t-set="hide_google_translate_2" t-value="'display: none !important;'"/>
