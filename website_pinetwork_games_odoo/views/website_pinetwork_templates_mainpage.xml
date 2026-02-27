@@ -57,7 +57,7 @@
                     {
                         color: silver !important;
                         font-weight: bold !important;
-                        border: 2px solid black !important;
+                        border: 2px solid silver !important;
                         /*word-spacing: 2px !important;
                         letter-spacing: 2px !important;*/
                         text-shadow: 
@@ -73,9 +73,9 @@
                     
                     .btn:disabled, .btn:disabled:hover, .btn:disabled:active
                     {
-                        color: white !important;
+                        color: silver !important;
                         font-weight: bold !important;
-                        border: 2px solid black !important;
+                        border: 2px solid silver !important;
                     }
                 </style>
                 
