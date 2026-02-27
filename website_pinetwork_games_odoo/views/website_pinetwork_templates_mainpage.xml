@@ -976,7 +976,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.889"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.904"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3228,7 +3228,7 @@
                                     <a class="anchor-click" style="color: blue !important;" href="#" target="_blank">Click here</a>
                                 </div>
                             </div>
-                            <div id="paying-message" class="container justify-content-center text-center" style="display: none; flex-direction: column; margin-top: auto; text-align: center;">
+                            <div id="paying-message" class="container justify-content-center text-center" style="display: flex; flex-direction: column; margin-top: auto; text-align: center;">
                                 <div style="text-align: center;" class="row justify-content-center text-center">
                                     <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="color: black !important;"><strong>LatinChain Mainnet</strong></h3>
                                     <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet</strong></h3>
@@ -3237,12 +3237,12 @@
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Pay Pi to Unlock Screen</a>
                                     <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Pay Pi to Unlock Screen</a>
                                 </div>
+                                <div style="margin-top: 5px;" class="row">
+                                    <button class="latinchain-specs btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">LatinChain Specs</button>
+                                </div>
                                 <div class="showMoreOptions text-black" onClick="$('.showMoreOptions').hide(); $('.showOptions').show();" style="text-align: center; margin-top: 5px; cursor: pointer; color: black !important; font-size: 16px">
                                     <div style="">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </div>
-                                    <div style="">
-                                        SHOW MORE
+                                        <i class="fa-solid fa-plus"></i> SHOW MORE
                                     </div>
                                 </div>
                                 <div class="showOptions" style="display:none;">
@@ -3263,10 +3263,7 @@
                                     </div>
                                     <div class="text-black" onClick="$('.showOptions').hide(); $('.showMoreOptions').show();" style="text-align: center; margin-top: 5px; cursor: pointer; color: black !important; font-size: 16px">
                                         <div style="">
-                                            <i class="fa-solid fa-minus"></i>
-                                        </div>
-                                        <div style="">
-                                            SHOW LESS
+                                            <i class="fa-solid fa-minus"></i> SHOW LESS
                                         </div>
                                     </div>
                                 </div>

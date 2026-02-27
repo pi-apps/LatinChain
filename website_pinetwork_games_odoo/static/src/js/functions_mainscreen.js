@@ -37,6 +37,17 @@ function setConfirmUnloadPoints(on) {
     unloadMessage(on);
 }
 
+function showImageModal(imageUrl, captionText) {
+    
+    var modalHTML = `
+        <img src="${imageUrl}" class="img-fluid" alt="${captionText}" style="max-height: 100%; max-width: 100%"/>
+    `;
+    
+    $(".modal-body").html(modalHTML);
+    $("#open_modal").click();
+}
+
+
 async function colorboxLoaded()
 {
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
@@ -1850,6 +1861,11 @@ $( document ).ready(function() {
             }
         });
     }
+    
+    
+    $('.latinchain-specs').on('click', function() {
+        showImageModal('/website_pinetwork_games_odoo/static/src/img/specs/latinchain-specs.jpg', 'LatinChain Specs');
+    });
     
     $( ".pi-hackathon-info" ).click(function() {
         $.colorbox({fixed: true, href:"/modal-vote", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
