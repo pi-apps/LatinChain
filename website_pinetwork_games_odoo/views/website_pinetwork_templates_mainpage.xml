@@ -53,7 +53,7 @@
                 <div id="rewarded_message_2" style="display:none;">In order to maintain our servers, we ask you to watch a Rewarded Ad until the end, we will give you a reward at the end of the ad.</div>
                 
                 <style>
-                    .btn:not(:disabled), .btn:not(:disabled):hover, .btn:not(:disabled):active
+                    .btn:not(:disabled), .btn:not(:disabled) *, .btn:not(:disabled):hover, .btn:not(:disabled):active
                     {
                         color: silver !important;
                         font-weight: bold !important;
@@ -71,7 +71,7 @@
                              1px  1px 0px #000;
                     }
                     
-                    .btn:disabled, .btn:disabled:hover, .btn:disabled:active
+                    .btn:disabled, .btn:disabled *, .btn:disabled:hover, .btn:disabled:active
                     {
                         transform: none;
                     }
@@ -452,18 +452,6 @@
                                   filter: contrast(100%) !important;
                                 }
                                 
-                                .darkmode--activated .btn-outline-info:hover, 
-                                .darkmode--activated .btn-outline-info:active, 
-                                .darkmode--activated .btn-outline-primary:hover, 
-                                .darkmode--activated .btn-outline-primary:active, 
-                                .darkmode--activated .btn-outline-success *, 
-                                .darkmode--activated a.btn-outline-success *,
-                                .darkmode--activated .btn-outline-info:disabled:hover, 
-                                .darkmode--activated .btn-outline-primary:disabled:hover, 
-                                .darkmode--activated .btn-outline-success:disabled:hover {
-                                    color: #fff !important;
-                                }
-                                
                                 .border-gradient-rounded {
                                   /* Border */
                                   border: 4px solid transparent;
@@ -823,18 +811,6 @@
                             
                             .darkmode--activated .o_colored_level > p > span {
                               background-color: #2C2C2C !important;
-                            }
-                            
-                            .darkmode--activated .btn-outline-info:hover, 
-                            .darkmode--activated .btn-outline-info:active, 
-                            .darkmode--activated .btn-outline-primary:hover, 
-                            .darkmode--activated .btn-outline-primary:active, 
-                            .darkmode--activated .btn-outline-success *, 
-                            .darkmode--activated a.btn-outline-success *,
-                            .darkmode--activated .btn-outline-info:disabled:hover, 
-                            .darkmode--activated .btn-outline-primary:disabled:hover, 
-                            .darkmode--activated .btn-outline-success:disabled:hover {
-                                color: #fff !important;
                             }
                             
                             .darkmode--activated .list-group-item {
