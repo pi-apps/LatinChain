@@ -71,15 +71,15 @@
                              1px  1px 0px #000;
                     }
                     
+                    .btn *
+                    {
+                        color: silver !important;
+                    }
+                    
                     .btn:disabled, .btn:disabled:hover, .btn:disabled:active
                     {
                         color: black !important;
                         transform: none;
-                    }
-                    
-                    .btn *
-                    {
-                        color: silver !important;
                     }
                 </style>
                 
