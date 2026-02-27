@@ -3234,8 +3234,8 @@
                                     <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet</strong></h3>
                                 </div>
                                 <div class="row">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Unlock Screen (Click here)</a>
-                                    <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Unlock Screen (Click here)</a>
+                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Pay Pi to Unlock Screen</a>
+                                    <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Pay Pi to Unlock Screen</a>
                                 </div>
                                 <div class="showMoreOptions text-black" onClick="$('.showMoreOptions').hide(); $('.showOptions').show();" style="text-align: center; margin-top: 5px; cursor: pointer; color: black !important; font-size: 16px">
                                     <div style="">
