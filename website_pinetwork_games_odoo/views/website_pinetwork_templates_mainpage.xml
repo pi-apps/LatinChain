@@ -3228,7 +3228,7 @@
                                     <a class="anchor-click" style="color: blue !important;" href="#" target="_blank">Click here</a>
                                 </div>
                             </div>
-                            <div id="paying-message" class="container" style="display: none; flex-direction: column; margin-top: auto;">
+                            <div id="paying-message" class="container" style="display: none; flex-direction: column; margin-top: auto; text-align: center;">
                                 <div style="" class="row">
                                     <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" align="center" style="color: black !important; font-weight:600">LatinChain Mainnet</h3>
                                     <h3 t-else="" align="center" style="color: black !important; font-weight:600">LatinChain Testnet</h3>
