@@ -53,7 +53,34 @@
                 <div id="rewarded_message_2" style="display:none;">In order to maintain our servers, we ask you to watch a Rewarded Ad until the end, we will give you a reward at the end of the ad.</div>
                 
                 <style>
-                    .btn:not(:disabled), .btn:not(:disabled):hover, .btn:not(:disabled):active
+                    .btn:not(:disabled), 
+                    .btn:not(:disabled):hover, 
+                    .btn:not(:disabled):active
+                    {
+                        color: black !important;
+                        font-weight: bold !important;
+                        border: 2px solid silver !important;
+                        /*word-spacing: 2px !important;
+                        letter-spacing: 2px !important;*/
+                        text-shadow: 
+                            -1px -1px 0px silver,
+                             0px -1px 0px silver,
+                             1px -1px 0px silver,
+                            -1px  0px 0px silver,
+                             1px  0px 0px silver,
+                            -1px  1px 0px silver,
+                             0px  1px 0px silver,
+                             1px  1px 0px silver;
+                    }
+                    
+                    .btn *
+                    {
+                        color: black !important;
+                    }
+                    
+                    .darkmode--activated .btn:not(:disabled), 
+                    .darkmode--activated .btn:not(:disabled):hover, 
+                    .darkmode--activated .btn:not(:disabled):active
                     {
                         color: silver !important;
                         font-weight: bold !important;
@@ -71,7 +98,7 @@
                              1px  1px 0px #000;
                     }
                     
-                    .btn *
+                    .darkmode--activated .btn *
                     {
                         color: silver !important;
                     }
