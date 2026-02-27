@@ -837,11 +837,6 @@
                                 color: #fff !important;
                             }
                             
-                            .darkmode--activated .btn-outline-warning:hover, 
-                            .darkmode--activated .btn-outline-warning:active {
-                                color: #000 !important;
-                            }
-                            
                             .darkmode--activated .list-group-item {
                                 background-color: #484848 !important;
                             }
@@ -887,13 +882,6 @@
                             
                             .darkmode--activated .next-pi {
                                 color: white !important;
-                            }
-                            
-                            .btn-outline-info:disabled:hover, 
-                            .btn-outline-primary:disabled:hover, 
-                            .btn-outline-success:disabled:hover,
-                            .a.btn-outline-success:disabled:hover{
-                                color: #000 !important;
                             }
                             
                             .border-gradient-rounded {
