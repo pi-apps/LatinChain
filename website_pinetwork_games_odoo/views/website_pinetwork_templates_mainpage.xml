@@ -3230,8 +3230,8 @@
                             </div>
                             <div id="paying-message" class="container" style="display: none; flex-direction: column; margin-top: auto; text-align: center;">
                                 <div style="" class="row">
-                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" align="center" style="color: black !important; font-weight:600">LatinChain Mainnet</h3>
-                                    <h3 t-else="" align="center" style="color: black !important; font-weight:600">LatinChain Testnet</h3>
+                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="color: black !important; font-weight:600; text-align: center;">LatinChain Mainnet</h3>
+                                    <h3 t-else="" style="color: black !important; font-weight:600; text-align: center;">LatinChain Testnet</h3>
                                 </div>
                                 <div style="" class="row">
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Unlock Screen (Click here)</a>
