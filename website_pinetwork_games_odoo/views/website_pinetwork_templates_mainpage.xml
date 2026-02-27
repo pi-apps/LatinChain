@@ -80,11 +80,15 @@
                     {
                         color: black !important;
                     }
-                    
-                    .darkmode--activated .btn-outline-success:disabled, 
-                    .darkmode--activated .btn-outline-success:disabled *, 
-                    .darkmode--activated .btn-outline-success:disabled:hover, 
-                    .darkmode--activated .btn-outline-success:disabled:active
+
+                    .darkmode--activated [class^="btn-outline-"]:disabled,
+                    .darkmode--activated [class*=" btn-outline-"]:disabled,
+                    .darkmode--activated [class^="btn-outline-"]:disabled *,
+                    .darkmode--activated [class*=" btn-outline-"]:disabled *,
+                    .darkmode--activated [class^="btn-outline-"]:disabled:hover,
+                    .darkmode--activated [class*=" btn-outline-"]:disabled:hover,
+                    .darkmode--activated [class^="btn-outline-"]:disabled:active,
+                    .darkmode--activated [class*=" btn-outline-"]:disabled:active
                     {
                         color: silver !important;
                     }
