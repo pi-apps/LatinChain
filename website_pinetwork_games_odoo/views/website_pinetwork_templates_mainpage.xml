@@ -872,10 +872,6 @@
                               color: white !important;
                             }
                             
-                            .darkmode--activated .accordion-button {
-                              color: black !important;
-                            }
-                            
                             .darkmode--activated .border-gradient-rounded {
                               /* Border */
                               border: 4px solid transparent;
@@ -2064,7 +2060,7 @@
                                                 <div>
                                                 <br/>
                                                 Read the Rules:<br/>
-                                                <button id="rules_button_3" class="btn btn-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid; color:black !important;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
+                                                <button id="rules_button_3" class="btn btn-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid; "><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
                                                 </div>
                                             </div>
                                         </div>
