@@ -73,9 +73,7 @@
                     
                     .btn:disabled, .btn:disabled:hover, .btn:disabled:active
                     {
-                        color: silver !important;
-                        font-weight: bold !important;
-                        border: 2px solid silver !important;
+                        transform: none;
                     }
                 </style>
                 
