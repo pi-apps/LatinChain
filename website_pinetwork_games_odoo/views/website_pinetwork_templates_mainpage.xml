@@ -3234,23 +3234,23 @@
                                     <h3 t-else="" align="center" style="color: black !important; font-weight:600">LatinChain Testnet</h3>
                                 </div>
                                 <div style="" class="row">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-success rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Unlock Screen (Click here)</a>
-                                    <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-success rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Unlock Screen (Click here)</a>
+                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Unlock Screen (Click here)</a>
+                                    <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Unlock Screen (Click here)</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row">
-                                    <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;">Boost Rank (Stake)</a>
+                                    <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">Boost Rank (Stake)</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row show_test_app">
-                                    <a id="test_app" class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="#">Earn Latin points (Pi Ad)</a>
+                                    <a id="test_app" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Earn Latin points (Pi Ad)</a>
                                 </div>
                                 <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <a class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
+                                    <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
                                 </div>
                                 <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-else="">
-                                    <a class="btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
+                                    <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row">
-                                    <a class="logout_latinchain btn btn-dark rounded col-12" style="border: 2px solid black; color: white !important; font-weight: bold;" href="#">Logout</a>
+                                    <a class="logout_latinchain btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Logout</a>
                                 </div>
                             </div>
                             <div id="loading-message" style="display: block; margin-top: auto;">
