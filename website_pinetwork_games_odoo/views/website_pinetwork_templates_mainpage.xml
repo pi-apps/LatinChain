@@ -3237,10 +3237,10 @@
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Pay Pi to Unlock Screen</a>
                                     <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Pay Pi to Unlock Screen</a>
                                 </div>
-                                <div style="margin-top: 5px;" class="row">
+                                <div style="margin-top: 10px;" class="row">
                                     <button class="latinchain-specs btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">LatinChain Specs</button>
                                 </div>
-                                <div class="showMoreOptions text-black" onClick="$('.showMoreOptions').hide(); $('.showOptions').show();" style="text-align: center; margin-top: 5px; cursor: pointer; color: black !important; font-size: 16px">
+                                <div class="showMoreOptions text-black" onClick="$('.showMoreOptions').hide(); $('.showOptions').show();" style="text-align: center; margin-top: 10px; cursor: pointer; color: black !important; font-size: 16px">
                                     <div style="">
                                         <i class="fa-solid fa-plus"></i>
                                     </div>
@@ -3249,22 +3249,22 @@
                                     </div>
                                 </div>
                                 <div class="showOptions" style="display:none;">
-                                    <div style="margin-top: 5px;" class="row">
+                                    <div style="margin-top: 10px;" class="row">
                                         <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">Boost Rank (Stake)</a>
                                     </div>
-                                    <div style="margin-top: 5px;" class="row show_test_app">
+                                    <div style="margin-top: 10px;" class="row show_test_app">
                                         <a id="test_app" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Earn Latin points (Pi Ad)</a>
                                     </div>
-                                    <div class="PiBrowserLink row" style="margin-top: 5px; display:none" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                         <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
                                     </div>
-                                    <div class="PiBrowserLink row" style="margin-top: 5px; display:none" t-else="">
+                                    <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-else="">
                                         <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
                                     </div>
-                                    <div style="margin-top: 5px;" class="row">
+                                    <div style="margin-top: 10px;" class="row">
                                         <a class="logout_latinchain btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Logout</a>
                                     </div>
-                                    <div class="text-black" onClick="$('.showOptions').hide(); $('.showMoreOptions').show();" style="text-align: center; margin-top: 5px; cursor: pointer; color: black !important; font-size: 16px">
+                                    <div class="text-black" onClick="$('.showOptions').hide(); $('.showMoreOptions').show();" style="text-align: center; margin-top: 10px; cursor: pointer; color: black !important; font-size: 16px">
                                         <div style="">
                                             <i class="fa-solid fa-minus"></i>
                                         </div>
