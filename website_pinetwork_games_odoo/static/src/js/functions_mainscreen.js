@@ -40,7 +40,9 @@ function setConfirmUnloadPoints(on) {
 function showImageModal(imageUrl, captionText) {
     
     var modalHTML = `
-        <img src="${imageUrl}" class="img-fluid" alt="${captionText}" style="max-height: 100%; max-width: 100%"/>
+        <div style="max-height: 100%; max-width: 100%; height: 250px; overflow-y: auto; overflow-x: hidden; padding: 10px; width: 100%;">
+            <img src="${imageUrl}" class="img-fluid" alt="${captionText}" />
+        </div>
     `;
     
     $(".modal-body").html(modalHTML);
