@@ -983,6 +983,7 @@ $( document ).ready(function() {
                                 {
                                     //document.getElementById('PayPiLinkId1').style.display = 'none';
                                     document.querySelector('.darkmode-toggle').style.display = 'block';
+                                    document.querySelector('.darkmode-layer').style.display = 'block';
                                     document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                                     document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                     document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1520,6 +1521,7 @@ $( document ).ready(function() {
                                 
                             //document.getElementById('PayPiLinkId1').style.display = 'flex';
                             document.querySelector('.darkmode-toggle').style.display = 'none';
+                            document.querySelector('.darkmode-layer').style.display = 'none';
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1530,6 +1532,7 @@ $( document ).ready(function() {
                         {
                             //document.getElementById('PayPiLinkId1').style.display = 'none';
                             document.querySelector('.darkmode-toggle').style.display = 'block';
+                            document.querySelector('.darkmode-layer').style.display = 'block';
                             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1619,6 +1622,7 @@ $( document ).ready(function() {
                         
                         //document.getElementById('PayPiLinkId1').style.display = 'none';
                         document.querySelector('.darkmode-toggle').style.display = 'none';
+                        document.querySelector('.darkmode-layer').style.display = 'none';
                         document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                         document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1646,7 +1650,8 @@ $( document ).ready(function() {
                             //alert($("#pi_prowser_message").text());
                             
                             //document.getElementById('PayPiLinkId1').style.display = 'none'
-                            document.querySelector('.darkmode-toggle').style.display = 'none';;
+                            document.querySelector('.darkmode-toggle').style.display = 'none';
+                            document.querySelector('.darkmode-layer').style.display = 'none';;
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1659,6 +1664,7 @@ $( document ).ready(function() {
             {
                 //document.getElementById('PayPiLinkId1').style.display = 'none';
                 document.querySelector('.darkmode-toggle').style.display = 'block';
+                document.querySelector('.darkmode-layer').style.display = 'block';
                 document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                 document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1716,6 +1722,7 @@ $( document ).ready(function() {
         {
             //document.getElementById('PayPiLinkId1').style.display = 'none';
             document.querySelector('.darkmode-toggle').style.display = 'block';
+            document.querySelector('.darkmode-layer').style.display = 'block';
             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1738,6 +1745,7 @@ $( document ).ready(function() {
     $(".login_latinchain").click(function(){
         //document.getElementById('PayPiLinkId1').style.display = 'none';
         document.querySelector('.darkmode-toggle').style.display = 'none';
+        document.querySelector('.darkmode-layer').style.display = 'none';
         document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
         document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1758,6 +1766,7 @@ $( document ).ready(function() {
                     
                     //document.getElementById('PayPiLinkId1').style.display = 'none';
                     document.querySelector('.darkmode-toggle').style.display = 'none';
+                    document.querySelector('.darkmode-layer').style.display = 'none';
                     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                     document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                     document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
