@@ -40,13 +40,13 @@ function setConfirmUnloadPoints(on) {
 function showImageModal(imageUrl, captionText) {
     
     var modalHTML = `
-        <div style="max-height: 100%; max-width: 100%; height: 250px; overflow-y: auto; overflow-x: hidden; padding: 10px; width: 100%;">
+        <div style="max-height: 100%; max-width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; padding: 10px; width: 100%;">
             <img src="${imageUrl}" class="img-fluid" alt="${captionText}" />
         </div>
     `;
     
-    $(".modal-body-specs").html(modalHTML);
-    $("#open_modal_specs").click();
+    $(".modal-body").html(modalHTML);
+    $("#open_modal").click();
 }
 
 
@@ -982,6 +982,7 @@ $( document ).ready(function() {
                                 if(!redirect)
                                 {
                                     //document.getElementById('PayPiLinkId1').style.display = 'none';
+                                    document.querySelector('.darkmode-toggle').style.display = 'block';
                                     document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                                     document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                     document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1518,6 +1519,7 @@ $( document ).ready(function() {
                             $(".PiBrowserLink").hide();
                                 
                             //document.getElementById('PayPiLinkId1').style.display = 'flex';
+                            document.querySelector('.darkmode-toggle').style.display = 'none';
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1527,6 +1529,7 @@ $( document ).ready(function() {
                         }else
                         {
                             //document.getElementById('PayPiLinkId1').style.display = 'none';
+                            document.querySelector('.darkmode-toggle').style.display = 'block';
                             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1615,6 +1618,7 @@ $( document ).ready(function() {
                         //alert($("#pi_prowser_message").text());
                         
                         //document.getElementById('PayPiLinkId1').style.display = 'none';
+                        document.querySelector('.darkmode-toggle').style.display = 'none';
                         document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                         document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1641,7 +1645,8 @@ $( document ).ready(function() {
                         {
                             //alert($("#pi_prowser_message").text());
                             
-                            //document.getElementById('PayPiLinkId1').style.display = 'none';
+                            //document.getElementById('PayPiLinkId1').style.display = 'none'
+                            document.querySelector('.darkmode-toggle').style.display = 'none';;
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1653,6 +1658,7 @@ $( document ).ready(function() {
             }else
             {
                 //document.getElementById('PayPiLinkId1').style.display = 'none';
+                document.querySelector('.darkmode-toggle').style.display = 'block';
                 document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                 document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1709,6 +1715,7 @@ $( document ).ready(function() {
         if(confirm($("#modal_logout_latinchain_v2_message").text()))
         {
             //document.getElementById('PayPiLinkId1').style.display = 'none';
+            document.querySelector('.darkmode-toggle').style.display = 'block';
             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1730,6 +1737,7 @@ $( document ).ready(function() {
     
     $(".login_latinchain").click(function(){
         //document.getElementById('PayPiLinkId1').style.display = 'none';
+        document.querySelector('.darkmode-toggle').style.display = 'none';
         document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
         document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1749,6 +1757,7 @@ $( document ).ready(function() {
                     //alert($("#pi_prowser_message").text());
                     
                     //document.getElementById('PayPiLinkId1').style.display = 'none';
+                    document.querySelector('.darkmode-toggle').style.display = 'none';
                     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                     document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                     document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
