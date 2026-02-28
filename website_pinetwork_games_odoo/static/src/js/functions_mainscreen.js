@@ -45,8 +45,8 @@ function showImageModal(imageUrl, captionText) {
         </div>
     `;
     
-    $(".modal-body").html(modalHTML);
-    $("#open_modal").click();
+    $(".modal-body-specs").html(modalHTML);
+    $("#open_modal_specs").click();
 }
 
 
