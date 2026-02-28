@@ -3242,7 +3242,10 @@
                                 </div>
                                 <div class="showMoreOptions text-black" onClick="$('.showMoreOptions').hide(); $('.showOptions').show();" style="text-align: center; margin-top: 5px; cursor: pointer; color: black !important; font-size: 16px">
                                     <div style="">
-                                        <i class="fa-solid fa-plus"></i> SHOW MORE
+                                        <i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <div style="">
+                                        SHOW MORE
                                     </div>
                                 </div>
                                 <div class="showOptions" style="display:none;">
@@ -3263,7 +3266,10 @@
                                     </div>
                                     <div class="text-black" onClick="$('.showOptions').hide(); $('.showMoreOptions').show();" style="text-align: center; margin-top: 5px; cursor: pointer; color: black !important; font-size: 16px">
                                         <div style="">
-                                            <i class="fa-solid fa-minus"></i> SHOW LESS
+                                            <i class="fa-solid fa-minus"></i>
+                                        </div>
+                                        <div style="">
+                                            SHOW LESS
                                         </div>
                                     </div>
                                 </div>
