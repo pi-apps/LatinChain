@@ -754,7 +754,8 @@
                             
                             <div t-if="with_links">
                                 <br/>
-                                <a href="https://www.amazon.com/?&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=f84d100dc0684303b0c16c600d90f848&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank">
+                                <t t-set="link_value" t-value="'https://www.amazon.com/?&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=f84d100dc0684303b0c16c600d90f848&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
+                                <a t-att-href="link_value" target="_blank">
                                     <img src="/website_pinetwork_games_odoo/static/src/img/club/amazon-purchase-image.png?v=1.104" width="250px" height="250px" />
                                 </a>
                             </div>
