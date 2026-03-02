@@ -1248,6 +1248,16 @@
                           </div>
                         </section>
                     </div>
+                    
+                    <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                        <div t-if="total_users_verified_count &lt; 400" class="alert alert-primary" role="alert" style="text-align: center; margin-bottom: 0px !important">
+                            <div class="row">
+                                <div class="col-12">
+                                    <strong>Now <span t-esc="'{:,}'.format(total_users_verified_count)" /> of 400 verified users</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
 
                     <div style="display: none">
                         <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
