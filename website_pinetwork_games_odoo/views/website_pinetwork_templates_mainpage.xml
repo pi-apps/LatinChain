@@ -1253,7 +1253,7 @@
                         <div t-if="total_users_verified_count &lt; 400" class="alert alert-primary" role="alert" style="text-align: center; margin-bottom: 0px !important">
                             <div class="row">
                                 <div class="col-12">
-                                    <strong>Now <span t-esc="'{:,}'.format(total_users_verified_count)" /> of 400 verified users</strong>
+                                    <strong>Now <span t-esc="'{:,}'.format(total_users_verified_count)" /> verified users of 400</strong>
                                 </div>
                             </div>
                         </div>
@@ -3245,7 +3245,7 @@
                                 </div>
                                 <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <div t-if="total_users_verified_count &lt; 400" class="row justify-content-center text-center" style="color: black !important; max-width: 250px; font-size: 14px">
-                                        <strong>Now <span t-esc="'{:,}'.format(total_users_verified_count)" /> of 400 verified users</strong>
+                                        <strong>Now <span t-esc="'{:,}'.format(total_users_verified_count)" /> verified users of 400</strong>
                                     </div>
                                 </t>
                                 <div class="row">
