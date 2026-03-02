@@ -103,19 +103,54 @@
                         color: silver !important;
                     }
                     
-                    .btn:disabled, .btn:disabled *, .btn:disabled:hover, .btn:disabled:active
+                    .btn:disabled, .btn:disabled:hover, .btn:disabled:active
+                    {
+                        color: black !important;
+                        font-weight: bold !important;
+                        border: 2px solid silver !important;
+                        /*word-spacing: 2px !important;
+                        letter-spacing: 2px !important;*/
+                        text-shadow: 
+                            -1px -1px 0px white,
+                             0px -1px 0px white,
+                             1px -1px 0px white,
+                            -1px  0px 0px white,
+                             1px  0px 0px white,
+                            -1px  1px 0px white,
+                             0px  1px 0px white,
+                             1px  1px 0px white;
+                    }
+                    
+                    .btn:disabled *
                     {
                         color: black !important;
                     }
 
                     .darkmode--activated [class^="btn-outline-"]:disabled,
                     .darkmode--activated [class*=" btn-outline-"]:disabled,
-                    .darkmode--activated [class^="btn-outline-"]:disabled *,
-                    .darkmode--activated [class*=" btn-outline-"]:disabled *,
                     .darkmode--activated [class^="btn-outline-"]:disabled:hover,
                     .darkmode--activated [class*=" btn-outline-"]:disabled:hover,
                     .darkmode--activated [class^="btn-outline-"]:disabled:active,
                     .darkmode--activated [class*=" btn-outline-"]:disabled:active
+                    {
+                        color: silver !important;
+                        font-weight: bold !important;
+                        border: 2px solid silver !important;
+                        /*word-spacing: 2px !important;
+                        letter-spacing: 2px !important;*/
+                        text-shadow: 
+                            -1px -1px 0px black,
+                             0px -1px 0px black,
+                             1px -1px 0px black,
+                            -1px  0px 0px black,
+                             1px  0px 0px black,
+                            -1px  1px 0px black,
+                             0px  1px 0px black,
+                             1px  1px 0px black;
+                    }
+                    
+                    .darkmode--activated [class^="btn-outline-"]:disabled *,
+                    .darkmode--activated [class*=" btn-outline-"]:disabled *
                     {
                         color: silver !important;
                     }
@@ -782,7 +817,7 @@
                               filter: contrast(100%) !important;
                             }
                             
-                            .darkmode--activated .card-header > h5 > button > div, .darkmode--activated .card-body > .container > .row > div, .darkmode--activated .card-body > .container > .row > div > a > div {
+                            .darkmode--activated .card-header > h5 > button > div, .darkmode--activated .card-body > .container > .row > div, .darkmode--activated .card-body {
                               color: #000 !important;
                             }
                             
