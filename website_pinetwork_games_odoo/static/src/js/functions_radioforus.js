@@ -242,7 +242,11 @@ $( document ).ready(function() {
                                 alert($("#payment_lessthan_message").text() + amount + " Pi" + $("#payment_morethan_message").text() + max_amount + " Pi.");
                             }
                         });
-                        $("#button_click").prop( "disabled", false );
+                        
+                        if(!unblocked)
+                            $("#button_click").prop( "disabled", false );
+                        else
+                            $("#button_click").prop( "disabled", true );
                         
                     });
                 });

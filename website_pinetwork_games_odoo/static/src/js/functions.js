@@ -269,7 +269,10 @@ $( document ).ready(function() {
                             executepayment();
                         });
                         
-                        $("#button_click").prop( "disabled", false );
+                        if(!unblocked)
+                            $("#button_click").prop( "disabled", false );
+                        else
+                            $("#button_click").prop( "disabled", true );
                         
                         if(Boolean(($("#payoneclick").val().toLowerCase())))
                         {
