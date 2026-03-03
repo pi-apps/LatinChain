@@ -1808,7 +1808,7 @@
                             </script>
                         </div>-->
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="border-gradient-rounded showInterstitialAd">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="getverified border-gradient-rounded showInterstitialAd">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#LatinChain #PayPi &#128177;</strong></h5>
                             </div>
@@ -2335,7 +2335,7 @@
                                                 <div class="col-12" style="text-align: center"><div style="display:inline;">&#128071;</div> <div class="next-pi" style="display:inline; font-size: 18px">NEXT IS TO PAY PI</div></div>
                                             </div>
                                         </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top getverified">
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12">
                                                     <div style="margin-bottom:5px;" class="getverified">
@@ -2669,7 +2669,7 @@
                                                 <div class="col-12" style="text-align: center"><div style="display:inline;">&#128071;</div> <div class="next-pi" style="display:inline; font-size: 18px">NEXT IS TO PAY PI</div></div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top getverified">
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12">
                                                     <div style="margin-bottom:5px;" class="getverified">
@@ -3225,7 +3225,7 @@
                             
                           </div>
                           <div class="modal-footer button-group">
-                            <a href="/pinetwork" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">GET VERIFIED</div><div style="font-size:80%;" translate="no">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></a>
+                            <a href="/pinetwork" class="href-external btn btn-success font-weight-bold text-white border-success getverified" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">GET VERIFIED</div><div style="font-size:80%;" translate="no">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></a>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>
