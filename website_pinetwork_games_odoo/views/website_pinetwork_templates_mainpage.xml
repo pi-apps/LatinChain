@@ -1368,7 +1368,7 @@
                         <div class="row getverified" style="">
                             <div style="text-align:left; word-break: break-word;" class="col-12">
                                 <div class="text-white">
-                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">PAY HERE</div></a>
+                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">REMOVE ADS</div></a>
                                 </div>
                             </div>
                         </div>
@@ -1816,10 +1816,10 @@
                                 <strong class="user_status"></strong>
                             </div>
                             <div style="margin-top:5px;" class="getverified">
-                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">PAY HERE</div></a>
+                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">REMOVE ADS</div></a>
                             </div>
                             <div style="margin-top:5px">
-                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">REMOVE ADS</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                             </div>
                             <div style="margin-top:5px; margin-bottom: 5px">
                                 <button id="rules_button_4" class="col-12 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
@@ -2050,7 +2050,7 @@
                                             <div class="col-12">
                                                 <h3 class="text-black" style="color:black !important">Today's tasks</h3>
                                                 <ul class="list-group">
-                                                    <li class="list-group-item getverified" style=""><a href="/pinetwork" class="href-external btn btn-link">PAY HERE</a></li>
+                                                    <li class="list-group-item getverified" style=""><a href="/pinetwork" class="href-external btn btn-link">REMOVE ADS</a></li>
                                                     <li class="list-group-item"><a href="/chess" class="btn btn-link">Play Chess</a></li>
                                                     <li class="list-group-item"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
                                                     <li class="list-group-item"><a href="/snake" class="btn btn-link">Play Snake</a></li>
@@ -2339,9 +2339,9 @@
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12">
                                                     <div style="margin-bottom:5px;" class="getverified">
-                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">PAY HERE</div></a>
+                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">REMOVE ADS</div></a>
                                                     </div>
-                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">REMOVE ADS</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                 </div>
                                             </div>
                                         </li>
@@ -2673,9 +2673,9 @@
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12">
                                                     <div style="margin-bottom:5px;" class="getverified">
-                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">PAY HERE</div></a>
+                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">REMOVE ADS</div></a>
                                                     </div>
-                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">REMOVE ADS</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                 </div>
                                             </div>
                                         </li>
@@ -3079,7 +3079,7 @@
                             <i class="fa-solid fa-handshake-simple"></i>
                         </button>
                         <ul class="dropdown-menu mb-2 item-latin-menu" style="background-color: #021526 !important; max-width: 30% !important">
-                            <li class="item-latin-action"><a class="dropdown-item" style="color: white !important;" href="/pinetwork"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">PAY HERE</div></a></li>
+                            <li class="item-latin-action"><a class="dropdown-item" style="color: white !important;" href="/pinetwork"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">REMOVE ADS</div></a></li>
                         </ul>
                     </div>
                     
@@ -3089,7 +3089,7 @@
                             <i class="fa-solid fa-rocket"></i>
                         </button>
                         <ul class="dropdown-menu mb-2 item-latin-menu" style="background-color: #021526 !important; max-width: 30% !important">
-                            <li class="item-latin-action getverified"><a class="dropdown-item" style="color: white !important;" href="/pinetwork"><div style="display:inline;"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline;">PAY HERE</div></a></li>
+                            <li class="item-latin-action getverified"><a class="dropdown-item" style="color: white !important;" href="/pinetwork"><div style="display:inline;"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline;">REMOVE ADS</div></a></li>
                             <li class="item-latin-action getverified"><hr class="dropdown-divider" style="color: white !important;"/></li>
                             <li class="item-latin-action"><a class="dropdown-item go-to-home-tab" style="color: white !important;" href="javascript:void(0)"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;">Apps</div></a></li>
                         </ul>
@@ -3225,7 +3225,7 @@
                             
                           </div>
                           <div class="modal-footer button-group">
-                            <a href="/pinetwork" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;" translate="no">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></a>
+                            <a href="/pinetwork" class="href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">REMOVE ADS</div><div style="font-size:80%;" translate="no">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></a>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>
@@ -3263,69 +3263,71 @@
                       </div>
                     </div>
                     
-                    <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 999999 !important; justify-content: center; align-items: center;">
-                        <div style="display: flex; flex-direction: column; top: 20px; position: fixed; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333; min-width: 250px; max-width: 90%">
-                            <div id="blocking-message" style="display: none; flex-direction: column; margin-top: auto;">
-                                <div style="margin-top: 5px;">
-                                    Go to Pi Browser
-                                </div>
-                                <div style="margin-top: 5px;">
-                                    <a class="anchor-click" style="color: blue !important;" href="#" target="_blank">Click here</a>
-                                </div>
-                            </div>
-                            <div id="paying-message" class="container justify-content-center text-center" style="display: none; flex-direction: column; margin-top: auto; text-align: center;">
-                                <div style="text-align: center;" class="row justify-content-center text-center">
-                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="color: black !important;"><strong>LatinChain Mainnet</strong></h3>
-                                    <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet</strong></h3>
-                                </div>
-                                <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <div t-if="total_users_verified_count &lt; 400" class="row justify-content-center text-center" style="color: black !important; max-width: 250px; font-size: 14px">
-                                        <strong><span t-esc="'{:,}'.format(total_users_verified_count)" /> verified users out of 400</strong>
+                    <div style="display: none">
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 999999 !important; justify-content: center; align-items: center;">
+                            <div style="display: flex; flex-direction: column; top: 20px; position: fixed; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333; min-width: 250px; max-width: 90%">
+                                <div id="blocking-message" style="display: none; flex-direction: column; margin-top: auto;">
+                                    <div style="margin-top: 5px;">
+                                        Go to Pi Browser
                                     </div>
-                                </t>
-                                <div class="row">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Pay Pi to Unlock Screen</a>
-                                    <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Pay Pi to Unlock Screen</a>
-                                </div>
-                                <div class="showMoreOptions text-black" onClick="$('.showMoreOptions').hide(); $('.showOptions').show();" style="text-align: center; margin-top: 10px; cursor: pointer; color: black !important; font-size: 16px">
-                                    <div style="">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </div>
-                                    <div style="">
-                                        SHOW MORE
+                                    <div style="margin-top: 5px;">
+                                        <a class="anchor-click" style="color: blue !important;" href="#" target="_blank">Click here</a>
                                     </div>
                                 </div>
-                                <div class="showOptions" style="display:none;">
-                                    <div style="margin-top: 10px;" class="row">
-                                        <button class="latinchain-specs btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">LatinChain Specs</button>
+                                <div id="paying-message" class="container justify-content-center text-center" style="display: none; flex-direction: column; margin-top: auto; text-align: center;">
+                                    <div style="text-align: center;" class="row justify-content-center text-center">
+                                        <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="color: black !important;"><strong>LatinChain Mainnet</strong></h3>
+                                        <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet</strong></h3>
                                     </div>
-                                    <div style="margin-top: 10px;" class="row">
-                                        <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">Boost Rank (Stake)</a>
+                                    <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <div t-if="total_users_verified_count &lt; 400" class="row justify-content-center text-center" style="color: black !important; max-width: 250px; font-size: 14px">
+                                            <strong><span t-esc="'{:,}'.format(total_users_verified_count)" /> verified users out of 400</strong>
+                                        </div>
+                                    </t>
+                                    <div class="row">
+                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Pay Pi to Unlock Screen</a>
+                                        <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Pay Pi to Unlock Screen</a>
                                     </div>
-                                    <div style="margin-top: 10px;" class="row show_test_app">
-                                        <a id="test_app" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Earn Latin points (Pi Ad)</a>
-                                    </div>
-                                    <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
-                                    </div>
-                                    <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-else="">
-                                        <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
-                                    </div>
-                                    <div style="margin-top: 10px;" class="row">
-                                        <a class="logout_latinchain btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Logout</a>
-                                    </div>
-                                    <div class="text-black" onClick="$('.showOptions').hide(); $('.showMoreOptions').show();" style="text-align: center; margin-top: 10px; cursor: pointer; color: black !important; font-size: 16px">
+                                    <div class="showMoreOptions text-black" onClick="$('.showMoreOptions').hide(); $('.showOptions').show();" style="text-align: center; margin-top: 10px; cursor: pointer; color: black !important; font-size: 16px">
                                         <div style="">
-                                            <i class="fa-solid fa-minus"></i>
+                                            <i class="fa-solid fa-plus"></i>
                                         </div>
                                         <div style="">
-                                            SHOW LESS
+                                            SHOW MORE
+                                        </div>
+                                    </div>
+                                    <div class="showOptions" style="display:none;">
+                                        <div style="margin-top: 10px;" class="row">
+                                            <button class="latinchain-specs btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">LatinChain Specs</button>
+                                        </div>
+                                        <div style="margin-top: 10px;" class="row">
+                                            <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">Boost Rank (Stake)</a>
+                                        </div>
+                                        <div style="margin-top: 10px;" class="row show_test_app">
+                                            <a id="test_app" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Earn Latin points (Pi Ad)</a>
+                                        </div>
+                                        <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                            <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
+                                        </div>
+                                        <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-else="">
+                                            <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
+                                        </div>
+                                        <div style="margin-top: 10px;" class="row">
+                                            <a class="logout_latinchain btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Logout</a>
+                                        </div>
+                                        <div class="text-black" onClick="$('.showOptions').hide(); $('.showMoreOptions').show();" style="text-align: center; margin-top: 10px; cursor: pointer; color: black !important; font-size: 16px">
+                                            <div style="">
+                                                <i class="fa-solid fa-minus"></i>
+                                            </div>
+                                            <div style="">
+                                                SHOW LESS
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="loading-message" style="display: block; margin-top: auto;">
-                                Loading...
+                                <div id="loading-message" style="display: block; margin-top: auto;">
+                                    Loading...
+                                </div>
                             </div>
                         </div>
                     </div>
