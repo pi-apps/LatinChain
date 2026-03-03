@@ -981,7 +981,6 @@ $( document ).ready(function() {
                             {
                                 if(!redirect)
                                 {
-                                    /*
                                     //document.getElementById('PayPiLinkId1').style.display = 'none';
                                     $('.darkmode-toggle').css('display', 'block');
                                     if($('.darkmode-toggle--white').length === 0)
@@ -992,7 +991,6 @@ $( document ).ready(function() {
                                     document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                     document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                     document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                    */
                                 }
                                 
                                 var gemini_image = getGeminiImage();
@@ -1524,7 +1522,6 @@ $( document ).ready(function() {
                         {
                             $(".PiBrowserLink").hide();
                             
-                            /*
                             //document.getElementById('PayPiLinkId1').style.display = 'flex';
                             $('.darkmode-toggle').css('display', 'none');
                             if($('.darkmode-toggle--white').length === 0)
@@ -1537,10 +1534,8 @@ $( document ).ready(function() {
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             
                             showing_paying = true;
-                            */
                         }else
                         {
-                            /*
                             //document.getElementById('PayPiLinkId1').style.display = 'none';
                             $('.darkmode-toggle').css('display', 'block');
                             if($('.darkmode-toggle--white').length === 0)
@@ -1551,7 +1546,6 @@ $( document ).ready(function() {
                             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                            */
                         }
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
@@ -1629,7 +1623,7 @@ $( document ).ready(function() {
                 if(pi_user_id == "" && pi_user_code == "")
                     auth();
                     
-                /*setTimeout(function ()
+                setTimeout(function ()
                 {
                     if(!unblocked && !showing_paying)
                     {
@@ -1646,7 +1640,7 @@ $( document ).ready(function() {
                         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                         document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                     }
-                }, 10000);*/
+                }, 10000);
             }, 10000);
             $(".loggedin").show();
         }else{
@@ -1662,7 +1656,6 @@ $( document ).ready(function() {
                     if(pi_user_id == "" && pi_user_code == "")
                         auth();
                     
-                    /*
                     setTimeout(function ()
                     {
                         if(!unblocked && !showing_paying)
@@ -1680,12 +1673,11 @@ $( document ).ready(function() {
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                         }
-                    }, 10000);*/
+                    }, 10000);
                 }, 10000);
                 $(".loggedin").show();
             }else
             {
-                /*
                 //document.getElementById('PayPiLinkId1').style.display = 'none';
                 $('.darkmode-toggle').css('display', 'block');
                 if($('.darkmode-toggle--white').length === 0)
@@ -1696,7 +1688,6 @@ $( document ).ready(function() {
                 document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                 document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                */
                 
                 $(".loggedout").show();
                 
@@ -1745,10 +1736,22 @@ $( document ).ready(function() {
     
     })();
     
+    $(".close_latinchain").click(function(){
+        //document.getElementById('PayPiLinkId1').style.display = 'none';
+        $('.darkmode-toggle').css('display', 'block');
+        if($('.darkmode-toggle--white').length === 0)
+            $('.darkmode-layer--button').css('display', 'block');
+        else
+            $('.darkmode-toggle--white').css('display', 'block');
+        document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+    });
+    
     $(".logout_latinchain").click(function(){
         if(confirm($("#modal_logout_latinchain_v2_message").text()))
         {
-            /*
             //document.getElementById('PayPiLinkId1').style.display = 'none';
             $('.darkmode-toggle').css('display', 'block');
             if($('.darkmode-toggle--white').length === 0)
@@ -1759,7 +1762,6 @@ $( document ).ready(function() {
             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-            */
             
             localStorage.removeItem("loggedIn");
             try {
@@ -1776,7 +1778,6 @@ $( document ).ready(function() {
     });
     
     $(".login_latinchain").click(function(){
-        /*
         //document.getElementById('PayPiLinkId1').style.display = 'none';
         $('.darkmode-toggle').css('display', 'none');
         if($('.darkmode-toggle--white').length === 0)
@@ -1787,7 +1788,6 @@ $( document ).ready(function() {
         document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('loading-message').style.display = 'flex'; // Use 'flex' instead of 'block'
-        */
         
         auth();
         localStorage.setItem("loggedIn", true);
@@ -1797,7 +1797,6 @@ $( document ).ready(function() {
             if(pi_user_id == "" && pi_user_code == "")
                 auth();
             
-            /*
             setTimeout(function ()
             {
                 if(!unblocked && !showing_paying)
@@ -1816,7 +1815,6 @@ $( document ).ready(function() {
                     document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                 }
             }, 10000);
-            */
         }, 10000);
         $(".loggedin").show();
         $(".loggedout").hide();
