@@ -1568,7 +1568,7 @@ $( document ).ready(function() {
                                     showRewardedPiAd(false);
                             });
                             
-                            if(show_pi_ad_user && pi_ad_new && unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 (async () => {
                                     if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
