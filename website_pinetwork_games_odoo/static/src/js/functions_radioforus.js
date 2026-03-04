@@ -71,7 +71,10 @@ function get_user(donation) {
             if(data.result)
             {
                 if(data.complete_found)
+                {
                     alert($("#payment_message").text());
+                    window.location.reload(true);
+                }
                 
                 passkey=data.passkey;
                 if(data.unblocked)
@@ -188,6 +191,7 @@ $( document ).ready(function() {
                         data = JSON.parse(data);
                         if(data.result && data.completed)
                         {
+                            $("#button_click").prop( "disabled", true );
                             alert($("#payment_message").text());
                         }
                     } catch (e) {
@@ -303,6 +307,7 @@ $( document ).ready(function() {
                                 if(data.complete_found)
                                 {
                                     alert($("#payment_message").text());
+                                    window.location.reload(true);
                                 }
                             }
                         } catch (e) {
@@ -330,7 +335,10 @@ $( document ).ready(function() {
                         
                         data = JSON.parse(data);
                         if(data.result && data.completed)
+                        {
                             get_user(true);
+                            $("#button_click").prop( "disabled", true );
+                        }
                     }).fail(function() {
                         setConfirmUnload(false);
                         $("#button_click").prop( "disabled", false );
