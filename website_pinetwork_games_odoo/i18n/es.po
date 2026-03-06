@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 22:34+0000\n"
-"PO-Revision-Date: 2026-02-25 22:34+0000\n"
+"POT-Creation-Date: 2026-03-06 01:13+0000\n"
+"PO-Revision-Date: 2026-03-06 01:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1763,6 +1763,16 @@ msgid "<strong>Latin Crush</strong>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>LatinChain Mainnet</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "<strong>LatinChain Testnet</strong>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.certification
 msgid ""
 "<strong>Learn: Spanish, English, Korean, Chinese Mandarin, Japanese, "
@@ -2818,6 +2828,11 @@ msgid "Earn Latin points ("
 msgstr "Gana Latin points ("
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Earn Latin points (Pi Ad)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "Earn Latin points, doing tasks highlighted in the interface, plus the points"
@@ -2970,6 +2985,11 @@ msgid "GAMES LEARNING"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "GET VERIFIED"
+msgstr "VERIFÍCATE"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.soccer_penalty
 msgid "GOAL!"
 msgstr ""
@@ -3013,6 +3033,11 @@ msgstr "Aprendizaje de juegos: Chess, Sudoku, Snake."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "General ranking (verified)"
 msgstr "Ranking general (verificados)"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Get Verified"
+msgstr "Verifícate"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
@@ -3455,6 +3480,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LatinChain Specs"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LatinChain Testnet"
 msgstr ""
 
@@ -3643,11 +3673,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Login Message"
 msgstr "Mensaje de Login"
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Logout"
-msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
@@ -4147,7 +4172,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "PAY HERE"
 msgstr ""
 
@@ -4218,16 +4242,6 @@ msgstr "Paga 10 Latin points, gana 1 Chess points"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Pay Pi"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pay Pi To Unlock"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pay Pi To Unlock (Thanks)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4731,6 +4745,16 @@ msgstr "Reglas del Sudoku"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "SHOW LESS"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "SHOW MORE"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "SNAKE"
 msgstr ""
 
@@ -5138,11 +5162,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Terms (ToS)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Test This App (Pi Ad)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
