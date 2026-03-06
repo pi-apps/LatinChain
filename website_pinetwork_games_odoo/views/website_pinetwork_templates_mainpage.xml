@@ -2252,7 +2252,7 @@
 
                         <ul class="nav nav-pills justify-content-center nav-justified rounded sticky" id="myTabApps" role="tablist" style="background-color: #e3f2fd;" translate="no">
                           <li class="nav-item item-color home-tab-li" role="presentation" onclick="window.location.href='#pay_with'">
-                            <a href="#home-tab" class="nav-link active link_height" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="font-size:80%;" translate="no">Apps</div></a>
+                            <a href="#home-tab" class="nav-link active link_height" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="font-size:80%;" translate="no">dApps</div></a>
                           </li>
                           <li class="nav-item item-color rules-tab-li" role="presentation" onclick="window.location.href='#pay_with'" >
                             <a href="#rules-tab" class="nav-link link_height" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button" role="tab" aria-controls="rules" aria-selected="false" style="padding-left: 8px; padding-right:8px"><div style=""><i class="fa fa-fire"></i></div><div style="font-size:80%;">Leaders</div></a>
@@ -2271,7 +2271,7 @@
                           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div style="margin-bottom:5px; padding:5px; width: 100%" class="rounded showInterstitialAd">
                                 <div style="margin-bottom:5px; padding-top:5px;" class="border rounded" id="apps">
-                                    <h5 translate="no"><strong>#LatinChain #Apps &#x1F680;</strong></h5>
+                                    <h5 translate="no"><strong>#LatinChain #dApps &#x1F680;</strong></h5>
                                 </div>
                                 
                                 <div class="div_user_status">
@@ -3091,7 +3091,7 @@
                         <ul class="dropdown-menu mb-2 item-latin-menu" style="background-color: #021526 !important; max-width: 30% !important">
                             <li class="item-latin-action getverified"><a class="dropdown-item" style="color: white !important;" href="/pinetwork"><div style="display:inline;"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline;">GET VERIFIED</div></a></li>
                             <li class="item-latin-action getverified"><hr class="dropdown-divider" style="color: white !important;"/></li>
-                            <li class="item-latin-action"><a class="dropdown-item go-to-home-tab" style="color: white !important;" href="javascript:void(0)"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;">Apps</div></a></li>
+                            <li class="item-latin-action"><a class="dropdown-item go-to-home-tab" style="color: white !important;" href="javascript:void(0)"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;">dApps</div></a></li>
                         </ul>
                     </div>
                     <!--</a>-->
@@ -3288,10 +3288,10 @@
                                     <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Get Verified</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row">
-                                    <a class="close_latinchain btn btn-lg btn-block btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Close</a>
+                                    <button class="latinchain-specs btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;">dApps list</button>
                                 </div>
-                                <div style="margin-top: 10px; display: none;" class="row">
-                                    <button class="latinchain-specs btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">LatinChain Specs</button>
+                                <div style="margin-top: 10px;" class="row">
+                                    <a class="close_latinchain btn btn-lg btn-block btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Close</a>
                                 </div>
                                 <div class="showMoreOptions text-black" onClick="$('.showMoreOptions').hide(); $('.showOptions').show();" style="text-align: center; margin-top: 10px; cursor: pointer; color: black !important; font-size: 16px; display: none">
                                     <div style="">
