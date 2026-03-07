@@ -979,19 +979,10 @@ $( document ).ready(function() {
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
-                                /*if(!redirect)
+                                if(!redirect && !unblocked)
                                 {
-                                    //document.getElementById('PayPiLinkId1').style.display = 'none';
-                                    $('.darkmode-toggle').css('display', 'block');
-                                    if($('.darkmode-toggle--white').length === 0)
-                                        $('.darkmode-layer--button').css('display', 'block');
-                                    else
-                                        $('.darkmode-toggle--white').css('display', 'block');
-                                    document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
-                                    document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                }*/
+                                    colorboxLoadedMainnet();
+                                }
                                 
                                 var gemini_image = getGeminiImage();
                                 $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
@@ -1534,6 +1525,8 @@ $( document ).ready(function() {
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             
                             showing_paying = true;
+
+                            colorboxLoadedMainnet();
                         }else
                         {
                             //document.getElementById('PayPiLinkId1').style.display = 'none';
@@ -1639,6 +1632,8 @@ $( document ).ready(function() {
                         document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                         document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+
+                        colorboxLoadedMainnet();
                     }
                 }, 10000);
             }, 10000);
@@ -1672,6 +1667,8 @@ $( document ).ready(function() {
                             document.getElementById('paying-message').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+
+                            colorboxLoadedMainnet();
                         }
                     }, 10000);
                 }, 10000);
@@ -1695,12 +1692,10 @@ $( document ).ready(function() {
                 $(".isverified").hide();
                 $(".isverified-username").hide();
                 
-                /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                 {
-                    (async () => {
-                        var result_piad = await showPiAds(Pi, true);
-                    })();
-                }*/
+                    colorboxLoadedMainnet();
+                }
             }
         }
         
