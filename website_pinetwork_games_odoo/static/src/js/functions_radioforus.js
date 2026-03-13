@@ -32,6 +32,18 @@ function end() {
   seconds = Math.round(timeDiff);
 }
 
+function showImageModal(imageUrl, captionText) {
+    
+    var modalHTML = `
+        <div style="max-height: 100%; max-width: 100%; height: 250px; overflow-y: auto; overflow-x: hidden; padding: 10px; width: 100%;" tabindex="0">
+            <img src="${imageUrl}" class="img-fluid" alt="${captionText}" />
+        </div>
+    `;
+    
+    $(".modal-body").html(modalHTML);
+    $("#open_modal").click();
+}
+
 function set_points(points) {
     if(pi_user_id != "" && pi_user_code != "")
     {
@@ -146,6 +158,10 @@ $( document ).ready(function() {
     
     $( ".rules_button" ).click(function() {
         $.colorbox({fixed: true, href:"/modal-rules", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
+    $('.latinchain-specs').on('click', function() {
+        showImageModal('/website_pinetwork_games_odoo/static/src/img/specs/latinchain-specs.jpg', 'LatinChain Specs');
     });
             
     //alert(PiNetworkClient);
