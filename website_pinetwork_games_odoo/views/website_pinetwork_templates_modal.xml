@@ -182,7 +182,10 @@
                             
                             <div style="font-size: 90%" t-if="onlymainnet">
                                 We are testing LatinChain Mainnet on Pi Network cryptocurrency ecosystem. Get double utility usage bonus <i class="fa-solid fa-bolt"></i> by using both Mainnet and Testnet.
-                                <a href="https://latinchain.pinet.com/index-nopopup" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Close this page</a>
+                                <form action="https://latinchain.pinet.com/index-nopopup" method="post" target="_blank">
+                                    <button type="submit" class="btn btn-link mb-2 o_default_snippet_text">Close this page</button>
+                                </form>
+                                <!--<a href="https://latinchain.pinet.com/index-nopopup" target="_blank" class="btn btn-link mb-2 o_default_snippet_text">Close this page</a>-->
                             </div>
                             
                             <div style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
@@ -205,7 +208,12 @@
                             
                             <div class="row">
                                 <div style="margin-bottom:5px" class="col-12">
+                                    <form action="https://latinchain.pinet.com/index-nopopup" method="post" target="_blank">
+                                        <button type="submit" class="col-12 href-external btn btn-success font-weight-bold text-white border-success"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></button>
+                                    </form>
+                                    <!--
                                     <a href="https://latinchain.pinet.com/index-nopopup" target="_blank" class="col-12 href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></a>
+                                    -->
                                     
                                     <!--<button class="openMainnetModal btn btn-success mb-2 o_default_snippet_text"><strong><div>Click here</div><div>(Go to LatinChain Mainnet)</div></strong></button>-->
                                 </div>
@@ -218,7 +226,12 @@
                             
                             <div class="row">
                                 <div style="margin-bottom:5px" class="col-12">
+                                    <form action="https://latinchaintest9869.pinet.com/index-nopopup" method="post" target="_blank">
+                                        <button type="submit" class="col-12 btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</button>
+                                    </form>
+                                    <!--
                                     <a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="col-12 btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
+                                    -->
                                 </div>
                             </div>
                             
