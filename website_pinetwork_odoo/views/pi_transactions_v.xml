@@ -15,6 +15,7 @@
                                 <field name="app"/>
                                 <field name="action" readonly="True"/>
                                 <field name="action_type" readonly="True"/>
+                                <field name="token_type" readonly="True"/>
                                 <field name="counted_to_pay" readonly="True"/>
                                 <field name="payment_id" attrs="{'readonly': [('action', '==', 'complete')]}"/>
                                 <field name="txid" readonly="True"/>

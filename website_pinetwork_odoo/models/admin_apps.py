@@ -34,6 +34,7 @@ class pi_transactions(models.Model):
     app = fields.Char(related="app_id.app")
     action = fields.Selection([('approve', 'Approve'), ('complete', 'Complete'), ('cancelled', 'Cancelled')], 'Action', required=True, default='approve')
     action_type = fields.Selection([('receive', 'Receive'), ('send', 'Send')], 'Action type', default="receive")
+    token_type = fields.Selection([('pinetwork', 'Pi'), ('latinchain', 'LatinChain')], 'Token type', default="pinetwork")
     counted_to_pay = fields.Selection([('counted', 'Counted'), ('not_counted', 'Not counted')], 'Counted to pay', default="not_counted")
     payment_id = fields.Char('PaymentId', required=True)
     txid = fields.Text('TXID')
