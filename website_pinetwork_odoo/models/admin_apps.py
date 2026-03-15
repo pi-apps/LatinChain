@@ -304,8 +304,6 @@ class admin_apps(models.Model):
     def _update_amount_price_testnet(self):
         for i in self:
             
-            admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
-            
             if i.discount_active and i.discount_percentage:
                 amount_price_topay_usd = i.amount_price_topay_usd - i.amount_price_topay_usd * (i.discount_percentage/100)
             else:
