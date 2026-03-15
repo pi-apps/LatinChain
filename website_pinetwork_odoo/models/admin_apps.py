@@ -301,6 +301,25 @@ class admin_apps(models.Model):
             except Exception as e:
                 pass
     
+    def _update_amount_price_testnet(self):
+        for i in self:
+            
+            admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+            
+            if i.discount_active and i.discount_percentage:
+                amount_price_topay_usd = i.amount_price_topay_usd - i.amount_price_topay_usd * (i.discount_percentage/100)
+            else:
+                amount_price_topay_usd = i.amount_price_topay_usd
+            
+            i.amount = amount_price_topay_usd / i.amount_price #5 USD / price in Pi
+            
+            admin_other_apps = self.env["admin.apps"].sudo().search([('app', 'in', ['auth_snake', 'auth_pidoku', 'auth_example', 'auth_first_app'])])
+            
+            admin_other_apps.write({'amount': i.amount, 'discount_active': i.discount_active, 
+                                    'discount_percentage': i.discount_percentage, 
+                                    'amount_price_topay_usd': i.amount_price_topay_usd, 
+                                    'amount_price': i.amount_price})
+    
     @api.depends("top_50_streamers_ids")
     def _compute_streaming(self):
         for i in self:
@@ -329,10 +348,12 @@ class admin_apps(models.Model):
             end_time = time(16, 10, 0)
             
             if i.mainnet in ["Mainnet ON"]:
-                i._update_amount_price()
+                self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price()
             elif i.mainnet in ["Testnet ON", "Testnet OFF", "Mainnet OFF"]:
                 if start_time <= now <= end_time:
-                    i._update_amount_price()
+                    self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price()
+                else:
+                    self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price_testnet()
                 
             if start_time <= now <= end_time:
                 self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])]).fill_winners()
