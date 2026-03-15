@@ -399,7 +399,9 @@
                                                     <br/>
                                                     I accept this is a donation and if I pay Pi, I will receive 30 available days from today, to use this app!
                                                 </div>
-                                                <br/>
+                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                    <br/>
+                                                </div>
                                                 <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                     Paying LatinChain Token:
                                                     <br/>
