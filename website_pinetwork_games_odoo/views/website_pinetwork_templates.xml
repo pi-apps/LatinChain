@@ -400,7 +400,7 @@
                                                     I accept this is a donation and if I pay Pi, I will receive 30 available days from today, to use this app!
                                                 </div>
                                                 <br/>
-                                                <div>
+                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                     Paying LatinChain Token:
                                                     <br/>
                                                     I accept this is a donation and if I pay LatinChain Token, I will receive Latin points!
@@ -423,14 +423,16 @@
                                                     <u>RadioForUs Benefits:</u> Auto ads switch (ON/OFF), access to all Music, all Radio stations, all dApps and functionalities in RadioForUs.
                                                     </strong>
                                                 </div>
-                                                <br/>
-                                                <div>
-                                                    Benefits paying LatinChain Token:
-                                                </div>
-                                                <div>
+                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                     <br/>
                                                 </div>
-                                                <div>
+                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                    Benefits paying LatinChain Token:
+                                                </div>
+                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                    <br/>
+                                                </div>
+                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                     <strong>
                                                     <u>LatinChain Platform Benefits:</u> Receive Latin points.
                                                     </strong>
