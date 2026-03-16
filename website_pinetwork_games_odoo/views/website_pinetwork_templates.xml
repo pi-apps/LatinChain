@@ -403,7 +403,7 @@
                                                 </div>
                                                 <div style="border: 3px solid darkgreen; border-radius: 20px; padding: 5px; margin: 5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                        Paying LatinChain Token:
+                                                        Paying LatinChain Token (SOON):
                                                         <br/>
                                                         I accept this is a donation and if I pay LatinChain Token, I will receive Latin points!
                                                     </div>
@@ -429,14 +429,14 @@
                                                 </div>
                                                 <div style="border: 3px solid darkgreen; border-radius: 20px; padding: 5px; margin: 5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                        Benefits paying LatinChain Token:
+                                                        Benefits paying LatinChain Token (SOON):
                                                     </div>
                                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                         <br/>
                                                     </div>
                                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                         <strong>
-                                                        <u>LatinChain Platform Benefits:</u> Receive Latin points.
+                                                        <u>LatinChain Platform Benefits:</u> Receive Latin points to use it inside LatinChain Platform.
                                                         </strong>
                                                     </div>
                                                 </div>
