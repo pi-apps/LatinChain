@@ -39,7 +39,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.1.140"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions.js?v=1.1.142"></script>
                     
                     <!--<script async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     
@@ -376,6 +376,16 @@
                                         </div>
                                         
                                         <div style="margin-top:5px" class="justify-content-center">
+                                            <div style="margin-bottom:5px;">
+                                                Who invite you to LatinChain Platform?:
+                                            </div>
+                                            <div style="margin-bottom:5px;">
+                                                <select id="who-invite-you" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                  <option selected="selected" value="social">From Social Networks</option>
+                                                  <option value="rockcesar">rockcesar</option>
+                                                </select>
+                                            </div>
+                                            
                                             <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
                                             <button id="button_click" name="button_click" class="col-12 btn btn-success fw-bold text-black border-success" disabled="true" style="border: 2px solid; margin-bottom: 5px;"><div><i class="fa-solid fa-money-bill-transfer"></i></div><div>Donate to unblock with <span t-esc="amount" /> Pi for 30 days from today</div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" class="show-not-verified-user">Get verified</div></button>
                                             
