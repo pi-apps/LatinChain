@@ -58,6 +58,9 @@
                                 <field name="discount_active"/>
                                 <field name="discount_percentage"/>
                             </group>
+                            <group string="Amount LatinChain Token Price config">
+                                <field name="amount_latinchain_token"/>
+                            </group>
                             <group string="Referrers config">
                                 <field name="pi_referrer_amount"/>
                             </group>
