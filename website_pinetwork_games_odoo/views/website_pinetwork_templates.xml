@@ -396,50 +396,49 @@
                                             <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded col-12" style="filter: contrast(100%) !important;">
                                               <input class="form-check-input" type="checkbox" value="" id="acceptConditions"/>
                                               <label class="form-check-label" for="acceptConditions">
-                                                <div>
+                                                <div style="border: 3px solid green; border-radius: 20px; padding: 5px; margin: 5px">
                                                     Paying Pi:
                                                     <br/>
                                                     I accept this is a donation and if I pay Pi, I will receive 30 available days from today, to use this app!
                                                 </div>
-                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                    <br/>
+                                                <div style="border: 3px solid blue; border-radius: 20px; padding: 5px; margin: 5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                        Paying LatinChain Token:
+                                                        <br/>
+                                                        I accept this is a donation and if I pay LatinChain Token, I will receive Latin points!
+                                                    </div>
                                                 </div>
-                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                    Paying LatinChain Token:
-                                                    <br/>
-                                                    I accept this is a donation and if I pay LatinChain Token, I will receive Latin points!
+                                                <div style="border: 3px solid green; border-radius: 20px; padding: 5px; margin: 5px">
+                                                    <div>
+                                                        Benefits paying Pi:
+                                                    </div>
+                                                    <div>
+                                                        <br/>
+                                                    </div>
+                                                    <div>
+                                                        <strong>
+                                                        <u>LatinChain Platform Benefits:</u> Auto ads switch (ON/OFF), change Avatar, Pi Ads <i class="fa-solid fa-plug-circle-bolt"></i>x2 points, access to all Games, all dApps and functionalities in LatinChain Platform.
+                                                        <br/>
+                                                        <u>Other LatinChain Platform Benefits:</u> Access to premium news, access to dApp tools, specialized technical formation.
+                                                        <br/>
+                                                        <button class="latinchain-specs btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;">Full LatinChain's dApps list</button>
+                                                        <br/>
+                                                        <u>RadioForUs Benefits:</u> Auto ads switch (ON/OFF), access to all Music, all Radio stations, all dApps and functionalities in RadioForUs.
+                                                        </strong>
+                                                    </div>
                                                 </div>
-                                                <br/>
-                                                <div>
-                                                    Benefits paying Pi:
-                                                </div>
-                                                <div>
-                                                    <br/>
-                                                </div>
-                                                <div>
-                                                    <strong>
-                                                    <u>LatinChain Platform Benefits:</u> Auto ads switch (ON/OFF), change Avatar, Pi Ads <i class="fa-solid fa-plug-circle-bolt"></i>x2 points, access to all Games, all dApps and functionalities in LatinChain Platform.
-                                                    <br/>
-                                                    <u>Other LatinChain Platform Benefits:</u> Access to premium news, access to dApp tools, specialized technical formation.
-                                                    <br/>
-                                                    <button class="latinchain-specs btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;">Full LatinChain's dApps list</button>
-                                                    <br/>
-                                                    <u>RadioForUs Benefits:</u> Auto ads switch (ON/OFF), access to all Music, all Radio stations, all dApps and functionalities in RadioForUs.
-                                                    </strong>
-                                                </div>
-                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                    <br/>
-                                                </div>
-                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                    Benefits paying LatinChain Token:
-                                                </div>
-                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                    <br/>
-                                                </div>
-                                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                    <strong>
-                                                    <u>LatinChain Platform Benefits:</u> Receive Latin points.
-                                                    </strong>
+                                                <div style="border: 3px solid blue; border-radius: 20px; padding: 5px; margin: 5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                        Benefits paying LatinChain Token:
+                                                    </div>
+                                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                        <br/>
+                                                    </div>
+                                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                        <strong>
+                                                        <u>LatinChain Platform Benefits:</u> Receive Latin points.
+                                                        </strong>
+                                                    </div>
                                                 </div>
                                                 <div>
                                                     <br/>
