@@ -401,7 +401,7 @@
                                                     <br/>
                                                     I accept this is a donation and if I pay Pi, I will receive 30 available days from today, to use this app!
                                                 </div>
-                                                <div style="border: 3px solid blue; border-radius: 20px; padding: 5px; margin: 5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <div style="border: 3px solid darkgreen; border-radius: 20px; padding: 5px; margin: 5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                         Paying LatinChain Token:
                                                         <br/>
@@ -427,7 +427,7 @@
                                                         </strong>
                                                     </div>
                                                 </div>
-                                                <div style="border: 3px solid blue; border-radius: 20px; padding: 5px; margin: 5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <div style="border: 3px solid darkgreen; border-radius: 20px; padding: 5px; margin: 5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                         Benefits paying LatinChain Token:
                                                     </div>
