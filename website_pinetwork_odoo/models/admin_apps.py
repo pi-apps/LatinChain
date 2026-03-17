@@ -93,6 +93,8 @@ class pi_transactions(models.Model):
                     pit.from_address = json_result["from_address"]
                 else:
                     pit.from_address = ""
+                
+                #pit._compute_send_email()
             else:
                 pit.from_address = ""
     
