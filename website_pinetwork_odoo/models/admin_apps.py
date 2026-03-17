@@ -51,21 +51,6 @@ class pi_transactions(models.Model):
     cancelled = fields.Boolean('cancelled')
     user_cancelled = fields.Boolean('user_cancelled')
     json_result = fields.Text('JSON Result', required=False)
-    pi_user_referred_by = fields.Char('Pi User Referred by', required=False)
-    
-    def send_direct_email(self, subject, body_html, email_to):
-        for record in self:
-            mail_details = {
-                'subject': subject,
-                'body_html': body_html,
-                'email_to': email_to,
-                'email_from': "latinchain.info@gmail.com",
-                'auto_delete': True, # Optional: automatically delete the email record after sending
-            }
-            
-            # Create and send the email
-            mail_id = self.env['mail.mail'].create(mail_details)
-            mail_id.send()
     
     @api.depends("json_result")
     def _compute_json_values(self):
@@ -1209,9 +1194,6 @@ class admin_apps(models.Model):
                         data_dict.update({'action_type': 'send'})
                     elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
                         data_dict.update({'action_type': 'receive'})
-                    
-                    if "pi_user_referred_by" in kw:
-                        data_dict.update({'pi_user_referred_by': kw['pi_user_referred_by']})
                         
                     self.env["pi.transactions"].sudo().create(data_dict)
                     
@@ -1249,9 +1231,6 @@ class admin_apps(models.Model):
                                 'developer_completed': result_dict["status"]["developer_completed"], 
                                 'cancelled': result_dict["status"]["cancelled"], 
                                 'user_cancelled': result_dict["status"]["user_cancelled"]}
-                    
-                    if "pi_user_referred_by" in kw:
-                        data_dict.update({'pi_user_referred_by': kw['pi_user_referred_by']})
                     
                     admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
                     
@@ -1293,26 +1272,6 @@ class admin_apps(models.Model):
                                 #    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
                                 users[0].sudo().write(data_write)
-                                
-                                if transaction[0].pi_user_referred_by:
-                                    subject = "Payment released"
-                                    body_html = f"""
-                                        Sending from {transaction[0].app_id.mainnet}.
-                                        <br/><br/>
-                                        The pioneer: {transaction[0].pi_user_code} paid {transaction[0].amount} {transaction[0].token_type}.
-                                        <br/><br/>
-                                        The referred by: {transaction[0].pi_user_referred_by}
-                                        <br/><br/>
-                                        TXID: {transaction[0].txid}
-                                        <br/>
-                                        Payment ID: {transaction[0].payment_id}
-                                        <br/><br/>
-                                        Date create: {transaction[0].create_date}
-                                        <br/>
-                                        Date write: {transaction[0].write_date}
-                                    """
-                                    email_to = "latinchain.info@gmail.com"
-                                    transaction[0].send_direct_email(subject, body_html, email_to)
                                 
                                 #try:
                                 #    if admin_app[0].mainnet in ['Testnet OFF']:

@@ -534,7 +534,6 @@ $( document ).ready(function() {
                             'accessToken': accessToken,
                             'pi_user_code': pi_user_code,
                             'pi_user_id': pi_user_id,
-                            'pi_user_referred_by': $("#who-invite-you option:selected").val(),
                         };
                     
                     setConfirmUnload(true);
@@ -568,7 +567,6 @@ $( document ).ready(function() {
                         'accessToken': accessToken,
                         'pi_user_code': pi_user_code,
                         'pi_user_id': pi_user_id,
-                        'pi_user_referred_by': $("#who-invite-you option:selected").val(),
                     };
                     
                     setConfirmUnload(true);
