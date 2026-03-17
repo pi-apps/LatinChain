@@ -59,7 +59,7 @@ class pi_transactions(models.Model):
         for pit in self:
             if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
                 body_html = f"""
-                    The pioneer <strong>{pit.pi_user.pi_user_code}</strong> paid {pit.amount} {pit.action_type} on {pit.app}
+                    The pioneer <strong>{pit.pi_user.pi_user_code}</strong> paid {pit.amount} {pit.token_type} on {pit.app}
                     <br/><br/>
                     Type of payment: {pit.action_type}
                     <br/><br/>
