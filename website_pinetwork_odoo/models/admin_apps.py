@@ -77,10 +77,6 @@ class pi_transactions(models.Model):
                 # Use .sudo() if the user context lacks permissions to create mail.mail records
                 mail_id = self.env['mail.mail'].sudo().create(values)
                 mail_id.send()
-            
-                pit.email_sent = True
-            else:
-                pit.email_sent = False
     
     @api.depends("json_result", "action")
     def _compute_json_values(self):
