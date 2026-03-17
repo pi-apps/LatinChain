@@ -53,9 +53,7 @@ class pi_transactions(models.Model):
     cancelled = fields.Boolean('cancelled')
     user_cancelled = fields.Boolean('user_cancelled')
     json_result = fields.Text('JSON Result', required=False)
-    email_sent = fields.Boolean('From address', compute="_compute_send_email", store=False)
     
-    @api.depends("action")
     def _compute_send_email(self):
         for pit in self:
             if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
@@ -84,7 +82,7 @@ class pi_transactions(models.Model):
             else:
                 pit.email_sent = False
     
-    @api.depends("json_result")
+    @api.depends("json_result", "action")
     def _compute_json_values(self):
         for pit in self:
             if pit.json_result:
