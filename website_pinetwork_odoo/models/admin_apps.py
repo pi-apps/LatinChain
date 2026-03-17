@@ -65,6 +65,10 @@ class pi_transactions(models.Model):
                     <br/><br/>
                     Referred by: {pit.pi_user_referred_by}
                     <br/><br/>
+                    TXID: {pit.txid_url}
+                    <br/>
+                    Payment ID: {pit.payment_id}
+                    <br/><br/>
                     Create date: {pit.create_date}
                     <br/>
                     Write date: {pit.write_date}
