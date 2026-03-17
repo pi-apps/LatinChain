@@ -377,7 +377,7 @@
                                         
                                         <div style="margin-top:5px" class="justify-content-center">
                                             <div style="margin-bottom:5px;">
-                                                LatinChain's referrer
+                                                LatinChain's referrer (<t t-esc="pi_user_referred_by"/> is inviting you)
                                             </div>
                                             <div class="input-group mb-3">
                                               <span style="color: black !important;" class="input-group-text" id="basic-addon1">@</span>
