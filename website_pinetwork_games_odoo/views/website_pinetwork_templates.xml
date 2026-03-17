@@ -377,11 +377,11 @@
                                         
                                         <div style="margin-top:5px" class="justify-content-center">
                                             <div style="margin-bottom:5px;">
-                                                ¿Who's your LatinChain's referrer?
+                                                LatinChain's referrer
                                             </div>
                                             <div class="input-group mb-3">
                                               <span style="color: black !important;" class="input-group-text" id="basic-addon1">@</span>
-                                              <input id="pi-user-referred-by" t-att-value="pi_user_referred_by" maxlength="40" type="text" class="form-control" placeholder="¿LatinChain's referrer?" aria-label="¿LatinChain's referrer?" aria-describedby="basic-addon1"/>
+                                              <input id="pi-user-referred-by" disabled="disabled" t-att-value="pi_user_referred_by" maxlength="40" type="text" class="form-control" placeholder="¿LatinChain's referrer?" aria-label="¿LatinChain's referrer?" aria-describedby="basic-addon1"/>
                                             </div>
                                             
                                             <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
