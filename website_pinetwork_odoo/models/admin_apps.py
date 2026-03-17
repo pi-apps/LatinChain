@@ -94,7 +94,7 @@ class pi_transactions(models.Model):
                 else:
                     pit.from_address = ""
                 
-                #pit._compute_send_email()
+                pit._compute_send_email()
             else:
                 pit.from_address = ""
     
