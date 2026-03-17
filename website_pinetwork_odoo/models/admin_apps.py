@@ -53,6 +53,7 @@ class pi_transactions(models.Model):
     cancelled = fields.Boolean('cancelled')
     user_cancelled = fields.Boolean('user_cancelled')
     json_result = fields.Text('JSON Result', required=False)
+    pi_user_referred_by = fields.Char('Pi User Referred by', default="rockcesar")
     
     def _compute_send_email(self):
         for pit in self:
@@ -60,7 +61,13 @@ class pi_transactions(models.Model):
                 body_html = f"""
                     The pioneer <strong>{pit.pi_user.pi_user_code}</strong> paid {pit.amount} {pit.action_type} on {pit.app}
                     <br/><br/>
-                    Create date: {pit.create_date}, Write date: {pit.write_date}
+                    Type of payment: {pit.action_type}
+                    <br/><br/>
+                    Referred by: {pit.pi_user_referred_by}
+                    <br/><br/>
+                    Create date: {pit.create_date}
+                    <br/>
+                    Write date: {pit.write_date}
                 """
                 
                 body_html = textwrap.dedent(body_html).strip()
@@ -88,9 +95,18 @@ class pi_transactions(models.Model):
                 else:
                     pit.from_address = ""
                 
+                if "metadata" in json_result:
+                    if "pi_user_referred_by" in json_result["metadata"]:
+                        pit.pi_user_referred_by = json_result["metadata"]["pi_user_referred_by"]
+                    else:
+                        pit.pi_user_referred_by = "rockcesar"
+                else:
+                    pit.pi_user_referred_by = "rockcesar"
+                
                 pit._compute_send_email()
             else:
                 pit.from_address = ""
+                pit.pi_user_referred_by = "rockcesar"
     
     def _compute_txid_url(self):
         for pit in self:
