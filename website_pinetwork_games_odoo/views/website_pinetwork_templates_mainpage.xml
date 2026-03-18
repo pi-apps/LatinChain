@@ -1556,7 +1556,7 @@
                             </div>
                             
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="row justify-content-center text-center p-3 mb-2 bg-info bg-gradient text-white rounded" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
-                                <div class="text-white">
+                                <div class="text-white" style="word-break: break-word;">
                                     Your referral link. You will earn <t t-esc="amount_latin_pay/2" /> Latin points for each payment made with your link:
                                     <br/>
                                     <div translate="no">
