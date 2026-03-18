@@ -1590,7 +1590,7 @@ $( document ).ready(function() {
             // Not able to fetch the user
         }
     }
-    $(".referrer_username").html("<strong>--</strong>");
+    $(".referrer_username").html("");
     
     // you usually would check the ads support ahead of time and store the information
     (async () => {
