@@ -846,6 +846,15 @@ async function showPiAds(Pi, activated) {
     return false;
 }
 
+function copyToClipboard(text) {
+    var sampleTextarea = document.createElement("textarea");
+    document.body.appendChild(sampleTextarea);
+    sampleTextarea.value = text; //save main text in it
+    sampleTextarea.select(); //select textarea contenrs
+    document.execCommand("copy");
+    document.body.removeChild(sampleTextarea);
+}
+
 $( document ).ready(function() {
     btnvalue = $("#button_reward_ad").html();
     
@@ -854,6 +863,20 @@ $( document ).ready(function() {
        $(".modal-body").html("");
        $("#open_modal").click();
      */
+     
+    $(".copy_referrer_link").click(function(){
+        if($("#username").html().trim() == "")
+            copyToClipboard("https://latinchain.pinet.com/pinetwork");
+        else
+            copyToClipboard("https://latinchain.pinet.com/pinetwork/" + $("#username").html().trim());
+    });
+    
+    $(".copy_referrer_username").click(function(){
+        if($("#username").html().trim() == "")
+            alert("You have to login on Pi Browser first.");
+        else
+            copyToClipboard($("#username").html().trim());
+    });
     
     //colorboxLoaded();
     
