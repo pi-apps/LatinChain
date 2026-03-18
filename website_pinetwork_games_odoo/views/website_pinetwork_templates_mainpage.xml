@@ -1558,15 +1558,15 @@
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="row justify-content-center text-center p-3 mb-2 bg-info bg-gradient text-white rounded" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
                                 <div class="text-white">
                                     Your referral link. You will earn <t t-esc="amount_latin_pay/2" /> Latin points for each payment made with your link:
-                                    <br/><br/>
+                                    <br/>
                                     <div translate="no">
-                                        https://latinchain.pinet.com/pinetwork/<span translate="no" class="referrer_username"></span>
+                                        <strong>https://latinchain.pinet.com/pinetwork/<span translate="no" class="referrer_username"></span></strong>
                                     </div>
                                     <br/><br/>
                                     Your referral code:
-                                    <br/><br/>
+                                    <br/>
                                     <div translate="no">
-                                        <span translate="no" class="referrer_username"></span>
+                                        <strong><span translate="no" class="referrer_username"></span></strong>
                                     </div>
                                 </div>
                             </div>
