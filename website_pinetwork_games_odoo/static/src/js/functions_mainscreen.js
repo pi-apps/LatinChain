@@ -878,7 +878,8 @@ $( document ).ready(function() {
             copyToClipboard($("#username").html().trim());
     });
     
-    $(".share_referrer_message").click(async () => {
+    function shareReferrerMessage()
+    {
         var link_referrer = "";
         var username_referrer = "";
         if($("#username").html().trim() == "")
@@ -894,7 +895,7 @@ $( document ).ready(function() {
         
         const shareData = {
             title: 'LatinChain Platform',
-            text: $("#share_referrer_latinchain_message").text() + "\n\nLatinChain referral link:\n" + link_referrer + "\nReferral username:\n" + username_referrer,
+            text: $("#share_referrer_latinchain_message").text() + " #LatinChain #PiApps #PiNetwork \n\nLatinChain referral link:\n" + link_referrer + "\nReferral username:\n" + username_referrer,
             //url: 'https://latin-chain.com/',
         }
         
@@ -909,6 +910,10 @@ $( document ).ready(function() {
             //alert('Error: ' + err);
           }
         }
+    }
+    
+    $(".share_referrer_message").click(async () => {
+        shareReferrerMessage();
     });
     
     //colorboxLoaded();
@@ -1929,23 +1934,7 @@ $( document ).ready(function() {
     
     // Must be triggered some kind of "user activation"
     btn.click(async () => {
-        const shareData = {
-            title: 'LatinChain Platform',
-            text: $("#share_message").text() + "\n\nMainnet:\nhttps://latinchain.pinet.com/\nTestnet:\nhttps://latinchaintest9869.pinet.com/\nCrypto news:\nhttps://news.latin-chain.com/",
-            //url: 'https://latin-chain.com/',
-        }
-        
-        if (!navigator.share) {
-            Pi.openShareDialog(shareData.title, shareData.text);
-        }else
-        {
-          try {
-            await navigator.share(shareData);
-            //resultPara.textContent = 'MDN shared successfully'
-          } catch(err) {
-            //alert('Error: ' + err);
-          }
-        }
+        shareReferrerMessage();
     });
     
     const share_video = $('#share_video');
