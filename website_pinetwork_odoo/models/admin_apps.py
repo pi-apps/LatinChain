@@ -89,7 +89,7 @@ class pi_transactions(models.Model):
                 mail_id = self.env['mail.mail'].sudo().create(values)
                 mail_id.send()
                 
-                if pit.action_type == "receive":
+                if pit.action_type == "receive" and pit.token_type == "pinetwork":
                     pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', pit.pi_user_referred_by)], limit=1)
                     if pi_user:
                         incremento = pit.app_id.amount_latin_pay / 2
