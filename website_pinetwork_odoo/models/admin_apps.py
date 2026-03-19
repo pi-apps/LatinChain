@@ -83,7 +83,7 @@ class pi_transactions(models.Model):
                         pi_user.invalidate_cache(fnames=['points_latin'], ids=[pi_user.id])
 
                         # 3. LÓGICA DE PUNTOS: Ahora es 100% seguro sumar
-                        incremento = pit.app_id.amount_latin_pay / 2
+                        incremento = pit.app_id.amount_latin_pay / 10
                         nuevo_total = pi_user.points_latin + incremento
                         
                         # 4. GUARDAR: El write actualizará la DB
