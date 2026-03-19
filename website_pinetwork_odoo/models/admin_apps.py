@@ -100,7 +100,7 @@ class pi_transactions(models.Model):
     
     def _send_payment_email(self, pit):
         if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
-            _logger.info("01")
+            
             body_html = f"""
                 The pioneer <strong>{pit.pi_user.pi_user_code}</strong> paid {pit.amount} {pit.token_type} on {pit.app}
                 <br/><br/>
