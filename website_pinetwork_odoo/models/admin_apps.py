@@ -1492,9 +1492,16 @@ class pi_users(models.Model):
     @api.depends("points_chess", "points_sudoku", "points_snake", "points_latin")
     def _total_points(self):
         for i in self:
-            total_points = i.points
-            i.points = i.points_chess + i.points_sudoku + i.points_snake + i.points_latin
-            if i.points != total_points:
+            # Sumamos asegurando que no haya None (usando or 0.0)
+            new_total = (i.points_chess or 0.0) + \
+                        (i.points_sudoku or 0.0) + \
+                        (i.points_snake or 0.0) + \
+                        (i.points_latin or 0.0)
+            
+            # Guardamos el valor actual para comparar
+            # Si i.points es un campo "Stored", esto es eficiente.
+            if i.points != new_total:
+                i.points = new_total
                 i.points_datetime = datetime.now()
                 
     @api.depends("unblocked_datetime")
