@@ -60,13 +60,18 @@ class pi_transactions(models.Model):
         Método para procesar el pago. 
         Llamar a esto cuando el pago pase a estado 'complete'.
         """
+        _logger.info("1")
         for pit in self:
             if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
                 # 1. ENVIAR EMAIL (Lógica existente)
                 self._send_payment_email(pit)
+                
+                _logger.info("2")
 
                 # 2. SUMAR PUNTOS (SQL Atómico)
                 if pit.action_type == "receive" and pit.token_type == "pinetwork" and pit.pi_user_referred_by:
+                    
+                    _logger.info("3")
                     # Buscamos el ID del usuario referido
                     pi_user = self.env['pi.users'].sudo().search(
                         [('pi_user_code', '=', pit.pi_user_referred_by)], limit=1
@@ -75,6 +80,8 @@ class pi_transactions(models.Model):
                     if pi_user:
                         incremento = pit.app_id.amount_latin_pay / 2
                         
+                        _logger.info("5")
+                        
                         # ACTUALIZACIÓN ATÓMICA: Evita que dos pagos simultáneos se pisen
                         self.env.cr.execute("""
                             UPDATE pi_users 
@@ -82,12 +89,19 @@ class pi_transactions(models.Model):
                             WHERE id = %s
                         """, (incremento, pi_user.id))
                         
+                        _logger.info("6")
+                        
                         # IMPORTANTE: Invalidamos el caché para que el @api.depends 
                         # de los puntos totales se entere del cambio
                         pi_user.invalidate_recordset(['points_latin'])
+                        
+                        _logger.info("7")
+                    
+                    _logger.info("4")
     
     def _send_payment_email(self, pit):
         if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
+            _logger.info("01")
             body_html = f"""
                 The pioneer <strong>{pit.pi_user.pi_user_code}</strong> paid {pit.amount} {pit.token_type} on {pit.app}
                 <br/><br/>
@@ -1347,9 +1361,9 @@ class admin_apps(models.Model):
                                 #if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
                                 #    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
-                                users[0].sudo().write(data_write)
-                                
                                 transaction[0].sudo().action_complete_payment()
+                                
+                                users[0].sudo().write(data_write)
                                 
                                 #try:
                                 #    if admin_app[0].mainnet in ['Testnet OFF']:
