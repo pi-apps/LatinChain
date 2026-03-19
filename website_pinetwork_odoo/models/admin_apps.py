@@ -90,9 +90,19 @@ class pi_transactions(models.Model):
                 mail_id.send()
                 
                 if pit.action_type == "receive":
-                    pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', pit.pi_user_referred_by)])
-                    if len(pi_user) > 0:
-                        pi_user[0].write({'points_latin': pi_user[0].points_latin + pit.app_id.amount_latin_pay/2})
+                    pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', pit.pi_user_referred_by)], limit=1)
+                    if pi_user:
+                        incremento = pit.app_id.amount_latin_pay / 2
+        
+                        # Ejecutamos una consulta SQL directa de actualización atómica
+                        self.env.cr.execute("""
+                            UPDATE pi_users 
+                            SET points_latin = points_latin + %s 
+                            WHERE id = %s
+                        """, (incremento, pi_user.id))
+                        
+                        # Opcional: Invalidar el cache para que Odoo vea el nuevo valor inmediatamente
+                        pi_user.invalidate_recordset(['points_latin'])
     
     @api.depends("json_result", "action")
     def _compute_json_values(self):
