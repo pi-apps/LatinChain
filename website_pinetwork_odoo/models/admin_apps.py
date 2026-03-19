@@ -80,9 +80,13 @@ class pi_transactions(models.Model):
                     if pi_user:
                         incremento = pit.app_id.amount_latin_pay / 2
                         
+                        _logger.info("5")
+                        
                         # 1. Forzamos a Odoo a escribir cualquier cosa pendiente en la DB 
                         # para limpiar el túnel de comunicación.
                         pi_user.flush_recordset(['points_latin'])
+                        
+                        _logger.info("6")
                         
                         # 2. Ejecutamos el SQL Atómico
                         self.env.cr.execute("""
@@ -91,10 +95,12 @@ class pi_transactions(models.Model):
                             WHERE id = %s
                         """, (incremento, pi_user.id))
                         
+                        _logger.info("7")
+                        
                         # 3. En lugar de invalidate_recordset solo, usamos esto que es más ligero:
                         pi_user.invalidate_cache(fnames=['points_latin'], ids=pi_user.ids)
                         
-                        _logger.info("7")
+                        _logger.info("8")
                     
                     _logger.info("4")
     
