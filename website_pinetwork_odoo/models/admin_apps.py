@@ -1368,7 +1368,11 @@ class admin_apps(models.Model):
                                 
                                 users[0].sudo().write(data_write)
                                 
+                                self.env.cr.commit()
+                                
                                 transaction[0].sudo().action_complete_payment()
+                                
+                                self.env.cr.commit()
                                 
                                 #try:
                                 #    if admin_app[0].mainnet in ['Testnet OFF']:
