@@ -900,7 +900,11 @@ $( document ).ready(function() {
         }
         
         if (!navigator.share) {
-            Pi.openShareDialog(shareData.title, shareData.text);
+            try {
+                Pi.openShareDialog(shareData.title, shareData.text);
+            } catch(err) {
+                copyToClipboard($("#share_referrer_latinchain_message").text() + " #LatinChain #PiApps #PiNetwork \n\nLatinChain referral link:\n" + link_referrer + "\nReferral username:\n" + username_referrer);
+            }
         }else
         {
           try {
@@ -908,8 +912,6 @@ $( document ).ready(function() {
             //resultPara.textContent = 'MDN shared successfully'
           } catch(err) {
             //alert('Error: ' + err);
-            
-            copyToClipboard($("#share_referrer_latinchain_message").text() + " #LatinChain #PiApps #PiNetwork \n\nLatinChain referral link:\n" + link_referrer + "\nReferral username:\n" + username_referrer);
           }
         }
     }
