@@ -76,25 +76,27 @@ class pi_transactions(models.Model):
                     
                     if pi_user:
                         incremento = pit.app_id.amount_latin_pay / 2
-                        user_id = pi_user.id # Guardamos el ID para no usar el objeto recordset en el SQL
+                        user_id = pi_user.id
                         
-                        # 1. NO uses flush_recordset si sospechas de bloqueos.
-                        # 2. Ejecuta el SQL directamente usando el ID (esto es lo más rápido)
                         try:
-                            # Usamos un comando de PostgreSQL para intentar bloquear la fila 
-                            # Si está bloqueada por otro, fallará inmediatamente en lugar de quedarse "pegado"
+                            # 1. Ejecutamos el SQL Atómico directamente
                             self.env.cr.execute("""
                                 UPDATE pi_users 
                                 SET points_latin = COALESCE(points_latin, 0) + %s 
                                 WHERE id = %s
                             """, (incremento, user_id))
                             
-                            # 3. Informamos a Odoo que el valor en su memoria ya no es válido
-                            # Usamos invalidate_cache que es más profundo que invalidate_recordset
-                            self.env.invalidate_all() 
+                            # 2. En Odoo 14, para invalidar el caché de un campo específico:
+                            # Esto le dice a Odoo que el valor de 'points_latin' para ese ID ya no es válido.
+                            self.env.cache.invalidate([(pi_user._fields['points_latin'], pi_user.ids)])
                             
+                            # 3. También invalidamos el campo computado 'points' para que se recalcule
+                            if 'points' in pi_user._fields:
+                                self.env.cache.invalidate([(pi_user._fields['points'], pi_user.ids)])
+
                         except Exception as e:
-                            _logger.info("Error actualizando puntos por concurrencia: %s", e)
+                            # Si hay un bloqueo real (Deadlock), esto evitará que el sistema colapse
+                            _logger.info("Error de concurrencia en Odoo 14: %s", e)
     
     def _send_payment_email(self, pit):
         if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
