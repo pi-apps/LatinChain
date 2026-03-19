@@ -828,6 +828,9 @@ class PiNetworkBaseController(http.Controller):
         if len(pi_users_list) == 0:
             return json.dumps({'result': False})
         else:
+            
+            request.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [pi_users_list[0].id])
+            
             """
             if pi_users_list[0].pi_user_id != kw['pi_user_id']:
                 _logger.info("not equeals pi_user_id")
@@ -1207,6 +1210,9 @@ class PiNetworkBaseController(http.Controller):
             previous_x2_game = False
             
             if pi_users_list[0].unblocked:
+                
+                request.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [pi_users_list[0].id])
+                
                 #if int(kw['points']) > 0:
                 #    pi_users_winnners_count = request.env["pi.users"].sudo().search_count(winner_domain)
                 #    

@@ -63,9 +63,7 @@ class pi_transactions(models.Model):
         
         for pit in self:
             if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
-                # 1. ENVIAR EMAIL (Lógica existente)
-                self._send_payment_email(pit)
-
+                
                 # 2. SUMAR PUNTOS (SQL Atómico)
                 if pit.action_type == "receive" and pit.token_type == "pinetwork" and pit.pi_user_referred_by:
                     
@@ -75,28 +73,28 @@ class pi_transactions(models.Model):
                     )
                     
                     if pi_user:
-                        incremento = pit.app_id.amount_latin_pay / 2
-                        user_id = pi_user.id
                         
-                        try:
-                            # 1. Ejecutamos el SQL Atómico directamente
-                            self.env.cr.execute("""
-                                UPDATE pi_users 
-                                SET points_latin = COALESCE(points_latin, 0) + %s 
-                                WHERE id = %s
-                            """, (incremento, user_id))
-                            
-                            # 2. En Odoo 14, para invalidar el caché de un campo específico:
-                            # Esto le dice a Odoo que el valor de 'points_latin' para ese ID ya no es válido.
-                            self.env.cache.invalidate([(pi_user._fields['points_latin'], pi_user.ids)])
-                            
-                            # 3. También invalidamos el campo computado 'points' para que se recalcule
-                            if 'points' in pi_user._fields:
-                                self.env.cache.invalidate([(pi_user._fields['points'], pi_user.ids)])
+                        # 1. BLOQUEO: Ponemos el cerrojo en la base de datos
+                        # Si otro proceso está ejecutando esto para el mismo usuario, esperará aquí.
+                        self.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [pi_user.id])
+                        
+                        # 2. REFRESCAR: Borramos el caché de Odoo 14 para este usuario
+                        # Así nos aseguramos de leer el valor que dejó el proceso anterior.
+                        pi_user.invalidate_cache(fnames=['points_latin'], ids=[pi_user.id])
 
-                        except Exception as e:
-                            # Si hay un bloqueo real (Deadlock), esto evitará que el sistema colapse
-                            _logger.info("Error de concurrencia en Odoo 14: %s", e)
+                        # 3. LÓGICA DE PUNTOS: Ahora es 100% seguro sumar
+                        incremento = pit.app_id.amount_latin_pay / 2
+                        nuevo_total = pi_user.points_latin + incremento
+                        
+                        # 4. GUARDAR: El write actualizará la DB
+                        pi_user.write({'points_latin': nuevo_total})
+
+                        # 5. RECALCULAR: Forzamos a Odoo a sumar los totales (chess + sudoku + latin...)
+                        # Esto disparará tu método @api.depends("_total_points")
+                        pi_user.recompute()
+                
+                # 1. ENVIAR EMAIL (Lógica existente)
+                self._send_payment_email(pit)
     
     def _send_payment_email(self, pit):
         if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
@@ -1357,8 +1355,10 @@ class admin_apps(models.Model):
                                 if not unblocked_previous:
                                     data_write.update({'pi_ad_automatic': False})
                                 
-                                #if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
-                                #    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
+                                if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
+                                    self.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [users[0].id])
+                                    
+                                    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
                                 users[0].sudo().write(data_write)
                                 
@@ -1565,7 +1565,7 @@ class pi_users(models.Model):
             paid_in_transactions = i.paid_in_transactions
             
             i.paid_in_transactions = total
-                
+            
             transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
@@ -1579,7 +1579,6 @@ class pi_users(models.Model):
                 
                 if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
                     if i.paid_in_transactions > paid_in_transactions:
-                        i.points_latin = i.points_latin + admin_app_list[0].amount_latin_pay
                         if not unblocked_previous:
                             i.pi_ad_automatic = False
                 
