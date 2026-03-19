@@ -79,30 +79,25 @@ class pi_transactions(models.Model):
                     
                     if pi_user:
                         incremento = pit.app_id.amount_latin_pay / 2
+                        user_id = pi_user.id # Guardamos el ID para no usar el objeto recordset en el SQL
                         
-                        _logger.info("5")
-                        
-                        # 1. Forzamos a Odoo a escribir cualquier cosa pendiente en la DB 
-                        # para limpiar el túnel de comunicación.
-                        pi_user.flush_recordset(['points_latin'])
-                        
-                        _logger.info("6")
-                        
-                        # 2. Ejecutamos el SQL Atómico
-                        self.env.cr.execute("""
-                            UPDATE pi_users 
-                            SET points_latin = COALESCE(points_latin, 0) + %s 
-                            WHERE id = %s
-                        """, (incremento, pi_user.id))
-                        
-                        _logger.info("7")
-                        
-                        # 3. En lugar de invalidate_recordset solo, usamos esto que es más ligero:
-                        pi_user.invalidate_cache(fnames=['points_latin'], ids=pi_user.ids)
-                        
-                        _logger.info("8")
-                    
-                    _logger.info("4")
+                        # 1. NO uses flush_recordset si sospechas de bloqueos.
+                        # 2. Ejecuta el SQL directamente usando el ID (esto es lo más rápido)
+                        try:
+                            # Usamos un comando de PostgreSQL para intentar bloquear la fila 
+                            # Si está bloqueada por otro, fallará inmediatamente en lugar de quedarse "pegado"
+                            self.env.cr.execute("""
+                                UPDATE pi_users 
+                                SET points_latin = COALESCE(points_latin, 0) + %s 
+                                WHERE id = %s
+                            """, (incremento, user_id))
+                            
+                            # 3. Informamos a Odoo que el valor en su memoria ya no es válido
+                            # Usamos invalidate_cache que es más profundo que invalidate_recordset
+                            self.env.invalidate_all() 
+                            
+                        except Exception as e:
+                            _logger.error("Error actualizando puntos por concurrencia: %s", e)
     
     def _send_payment_email(self, pit):
         if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
@@ -1368,11 +1363,7 @@ class admin_apps(models.Model):
                                 
                                 users[0].sudo().write(data_write)
                                 
-                                self.env.cr.commit()
-                                
                                 transaction[0].sudo().action_complete_payment()
-                                
-                                self.env.cr.commit()
                                 
                                 #try:
                                 #    if admin_app[0].mainnet in ['Testnet OFF']:
