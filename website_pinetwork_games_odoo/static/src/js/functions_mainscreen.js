@@ -900,11 +900,7 @@ $( document ).ready(function() {
         }
         
         if (!navigator.share) {
-            try {
-                Pi.openShareDialog(shareData.title, shareData.text);
-            } catch(err) {
-                copyToClipboard(shareData.text);
-            }
+            Pi.openShareDialog(shareData.title, shareData.text);
         }else
         {
           try {
