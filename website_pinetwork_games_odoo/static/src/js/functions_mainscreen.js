@@ -878,6 +878,39 @@ $( document ).ready(function() {
             copyToClipboard($("#username").html().trim());
     });
     
+    $(".share_referrer_message").click(async () => {
+        var link_referrer = "";
+        var username_referrer = "";
+        if($("#username").html().trim() == "")
+        {
+            link_referrer = "https://latinchain.pinet.com/pinetwork";
+            username_referrer = "rockcesar";
+        }
+        else
+        {
+            link_referrer = "https://latinchain.pinet.com/pinetwork/" + $("#username").html().trim();
+            username_referrer = $("#username").html().trim();
+        }
+        
+        const shareData = {
+            title: 'LatinChain Platform',
+            text: $("#share_referrer_latinchain_message").text() + "\n\nLatinChain referral link:\n" + link_referrer +  + "\nReferral username:\n" + username_referrer,
+            //url: 'https://latin-chain.com/',
+        }
+        
+        if (!navigator.share) {
+            Pi.openShareDialog(shareData.title, shareData.text);
+        }else
+        {
+          try {
+            await navigator.share(shareData);
+            //resultPara.textContent = 'MDN shared successfully'
+          } catch(err) {
+            //alert('Error: ' + err);
+          }
+        }
+    });
+    
     //colorboxLoaded();
     
     const STORAGE_KEY_MAINSCREEN = 'speech_synthesis_active';
