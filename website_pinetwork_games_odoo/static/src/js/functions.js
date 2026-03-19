@@ -221,6 +221,8 @@ $( document ).ready(function() {
                         'pi_user_id': pi_user_id,
                     };
                 
+                $("#button_click").prop( "disabled", true );
+                
                 setConfirmUnloadPoints(true);
                 return $.post( "/pi-api", data).done(function(data) {
                     setConfirmUnloadPoints(false);
@@ -571,6 +573,8 @@ $( document ).ready(function() {
                         'pi_user_code': pi_user_code,
                         'pi_user_id': pi_user_id,
                     };
+                    
+                    $("#button_click").prop( "disabled", true );
                     
                     setConfirmUnload(true);
                     return $.post( "/pi-api", data).done(function(data) {
