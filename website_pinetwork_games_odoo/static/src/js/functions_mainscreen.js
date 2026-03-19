@@ -894,7 +894,7 @@ $( document ).ready(function() {
         
         const shareData = {
             title: 'LatinChain Platform',
-            text: $("#share_referrer_latinchain_message").text() + "\n\nLatinChain referral link:\n" + link_referrer +  + "\nReferral username:\n" + username_referrer,
+            text: $("#share_referrer_latinchain_message").text() + "\n\nLatinChain referral link:\n" + link_referrer + "\nReferral username:\n" + username_referrer,
             //url: 'https://latin-chain.com/',
         }
         
