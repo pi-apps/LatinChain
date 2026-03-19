@@ -80,20 +80,19 @@ class pi_transactions(models.Model):
                     if pi_user:
                         incremento = pit.app_id.amount_latin_pay / 2
                         
-                        _logger.info("5")
+                        # 1. Forzamos a Odoo a escribir cualquier cosa pendiente en la DB 
+                        # para limpiar el túnel de comunicación.
+                        pi_user.flush_recordset(['points_latin'])
                         
-                        # ACTUALIZACIÓN ATÓMICA: Evita que dos pagos simultáneos se pisen
+                        # 2. Ejecutamos el SQL Atómico
                         self.env.cr.execute("""
                             UPDATE pi_users 
                             SET points_latin = COALESCE(points_latin, 0) + %s 
                             WHERE id = %s
                         """, (incremento, pi_user.id))
                         
-                        _logger.info("6")
-                        
-                        # IMPORTANTE: Invalidamos el caché para que el @api.depends 
-                        # de los puntos totales se entere del cambio
-                        pi_user.invalidate_recordset(['points_latin'])
+                        # 3. En lugar de invalidate_recordset solo, usamos esto que es más ligero:
+                        pi_user.invalidate_cache(fnames=['points_latin'], ids=pi_user.ids)
                         
                         _logger.info("7")
                     
@@ -1361,9 +1360,9 @@ class admin_apps(models.Model):
                                 #if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
                                 #    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
-                                transaction[0].sudo().action_complete_payment()
-                                
                                 users[0].sudo().write(data_write)
+                                
+                                transaction[0].sudo().action_complete_payment()
                                 
                                 #try:
                                 #    if admin_app[0].mainnet in ['Testnet OFF']:
