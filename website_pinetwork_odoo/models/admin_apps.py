@@ -55,54 +55,69 @@ class pi_transactions(models.Model):
     json_result = fields.Text('JSON Result', required=False)
     pi_user_referred_by = fields.Char('Pi User Referred by', default="rockcesar")
     
-    def _compute_send_email(self):
+    def action_complete_payment(self):
+        """
+        Método para procesar el pago. 
+        Llamar a esto cuando el pago pase a estado 'complete'.
+        """
         for pit in self:
             if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
-                body_html = f"""
-                    The pioneer <strong>{pit.pi_user.pi_user_code}</strong> paid {pit.amount} {pit.token_type} on {pit.app}
-                    <br/><br/>
-                    Type of payment: {pit.action_type}
-                    <br/><br/>
-                    Referred by: {pit.pi_user_referred_by}
-                    <br/><br/>
-                    TXID: {pit.txid_url}
-                    <br/>
-                    Payment ID: {pit.payment_id}
-                    <br/><br/>
-                    Create date: {pit.create_date}
-                    <br/>
-                    Write date: {pit.write_date}
-                """
-                
-                body_html = textwrap.dedent(body_html).strip()
-                
-                values = {
-                    'subject': 'Payment executed',
-                    'body_html': body_html,
-                    'email_to': 'latinchain.info@gmail.com', # Can be a static address or from a record, e.g., rec.partner_id.email
-                    'email_from': 'latinchain.info@gmail.com', # Odoo user's email
-                    'auto_delete': True, # Optional: Deletes the email record after sending
-                }
+                # 1. ENVIAR EMAIL (Lógica existente)
+                self._send_payment_email(pit)
 
-                # Create and send the mail record
-                # Use .sudo() if the user context lacks permissions to create mail.mail records
-                mail_id = self.env['mail.mail'].sudo().create(values)
-                mail_id.send()
-                
-                if pit.action_type == "receive" and pit.token_type == "pinetwork":
-                    pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', pit.pi_user_referred_by)], limit=1)
+                # 2. SUMAR PUNTOS (SQL Atómico)
+                if pit.action_type == "receive" and pit.token_type == "pinetwork" and pit.pi_user_referred_by:
+                    # Buscamos el ID del usuario referido
+                    pi_user = self.env['pi.users'].sudo().search(
+                        [('pi_user_code', '=', pit.pi_user_referred_by)], limit=1
+                    )
+                    
                     if pi_user:
                         incremento = pit.app_id.amount_latin_pay / 2
-        
-                        # Ejecutamos una consulta SQL directa de actualización atómica
+                        
+                        # ACTUALIZACIÓN ATÓMICA: Evita que dos pagos simultáneos se pisen
                         self.env.cr.execute("""
                             UPDATE pi_users 
-                            SET points_latin = points_latin + %s 
+                            SET points_latin = COALESCE(points_latin, 0) + %s 
                             WHERE id = %s
                         """, (incremento, pi_user.id))
                         
-                        # Opcional: Invalidar el cache para que Odoo vea el nuevo valor inmediatamente
+                        # IMPORTANTE: Invalidamos el caché para que el @api.depends 
+                        # de los puntos totales se entere del cambio
                         pi_user.invalidate_recordset(['points_latin'])
+    
+    def _send_payment_email(self, pit):
+        if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
+            body_html = f"""
+                The pioneer <strong>{pit.pi_user.pi_user_code}</strong> paid {pit.amount} {pit.token_type} on {pit.app}
+                <br/><br/>
+                Type of payment: {pit.action_type}
+                <br/><br/>
+                Referred by: {pit.pi_user_referred_by}
+                <br/><br/>
+                TXID: {pit.txid_url}
+                <br/>
+                Payment ID: {pit.payment_id}
+                <br/><br/>
+                Create date: {pit.create_date}
+                <br/>
+                Write date: {pit.write_date}
+            """
+            
+            body_html = textwrap.dedent(body_html).strip()
+            
+            values = {
+                'subject': 'Payment executed',
+                'body_html': body_html,
+                'email_to': 'latinchain.info@gmail.com', # Can be a static address or from a record, e.g., rec.partner_id.email
+                'email_from': 'latinchain.info@gmail.com', # Odoo user's email
+                'auto_delete': True, # Optional: Deletes the email record after sending
+            }
+
+            # Create and send the mail record
+            # Use .sudo() if the user context lacks permissions to create mail.mail records
+            mail_id = self.env['mail.mail'].sudo().create(values)
+            mail_id.send()
     
     @api.depends("json_result", "action")
     def _compute_json_values(self):
@@ -121,8 +136,6 @@ class pi_transactions(models.Model):
                         pit.pi_user_referred_by = "rockcesar"
                 else:
                     pit.pi_user_referred_by = "rockcesar"
-                
-                pit._compute_send_email()
             else:
                 pit.from_address = ""
                 pit.pi_user_referred_by = "rockcesar"
@@ -1335,6 +1348,8 @@ class admin_apps(models.Model):
                                 #    data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
                                 users[0].sudo().write(data_write)
+                                
+                                transaction[0].sudo().action_complete_payment()
                                 
                                 #try:
                                 #    if admin_app[0].mainnet in ['Testnet OFF']:
