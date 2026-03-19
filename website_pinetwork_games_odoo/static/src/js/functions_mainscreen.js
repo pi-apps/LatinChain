@@ -878,7 +878,7 @@ $( document ).ready(function() {
             copyToClipboard($("#username").html().trim());
     });
     
-    function shareReferrerMessage()
+    async function shareReferrerMessage()
     {
         var link_referrer = "";
         var username_referrer = "";
