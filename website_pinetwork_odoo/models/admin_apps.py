@@ -97,7 +97,7 @@ class pi_transactions(models.Model):
                             self.env.invalidate_all() 
                             
                         except Exception as e:
-                            _logger.error("Error actualizando puntos por concurrencia: %s", e)
+                            _logger.info("Error actualizando puntos por concurrencia: %s", e)
     
     def _send_payment_email(self, pit):
         if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
