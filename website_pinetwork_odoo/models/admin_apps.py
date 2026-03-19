@@ -60,18 +60,15 @@ class pi_transactions(models.Model):
         Método para procesar el pago. 
         Llamar a esto cuando el pago pase a estado 'complete'.
         """
-        _logger.info("1")
+        
         for pit in self:
             if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
                 # 1. ENVIAR EMAIL (Lógica existente)
                 self._send_payment_email(pit)
-                
-                _logger.info("2")
 
                 # 2. SUMAR PUNTOS (SQL Atómico)
                 if pit.action_type == "receive" and pit.token_type == "pinetwork" and pit.pi_user_referred_by:
                     
-                    _logger.info("3")
                     # Buscamos el ID del usuario referido
                     pi_user = self.env['pi.users'].sudo().search(
                         [('pi_user_code', '=', pit.pi_user_referred_by)], limit=1
