@@ -831,6 +831,8 @@ class PiNetworkBaseController(http.Controller):
             
             request.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [pi_users_list[0].id])
             
+            pi_users_list[0].invalidate_cache(fnames=['points_latin'], ids=[pi_users_list[0].id])
+            
             """
             if pi_users_list[0].pi_user_id != kw['pi_user_id']:
                 _logger.info("not equeals pi_user_id")
@@ -1212,6 +1214,8 @@ class PiNetworkBaseController(http.Controller):
             if pi_users_list[0].unblocked:
                 
                 request.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [pi_users_list[0].id])
+                
+                pi_users_list[0].invalidate_cache(fnames=['points_latin'], ids=[pi_users_list[0].id])
                 
                 #if int(kw['points']) > 0:
                 #    pi_users_winnners_count = request.env["pi.users"].sudo().search_count(winner_domain)

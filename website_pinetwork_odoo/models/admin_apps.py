@@ -1358,6 +1358,8 @@ class admin_apps(models.Model):
                                 if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
                                     self.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [users[0].id])
                                     
+                                    users[0].invalidate_cache(fnames=['points_latin'], ids=users.ids)
+                                    
                                     data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
                                 
                                 users[0].sudo().write(data_write)
