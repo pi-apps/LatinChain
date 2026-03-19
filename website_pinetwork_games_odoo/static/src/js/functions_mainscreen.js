@@ -883,7 +883,7 @@ $( document ).ready(function() {
         var username_referrer = "";
         if($("#username").html().trim() == "")
         {
-            link_referrer = "https://latinchain.pinet.com/pinetwork";
+            link_referrer = "https://latinchain.pinet.com/pinetwork/rockcesar";
             username_referrer = "rockcesar";
         }
         else
