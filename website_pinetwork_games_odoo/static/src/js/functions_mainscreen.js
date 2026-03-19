@@ -903,7 +903,7 @@ $( document ).ready(function() {
             try {
                 Pi.openShareDialog(shareData.title, shareData.text);
             } catch(err) {
-                copyToClipboard($("#share_referrer_latinchain_message").text() + " #LatinChain #PiApps #PiNetwork \n\nLatinChain referral link:\n" + link_referrer + "\nReferral username:\n" + username_referrer);
+                copyToClipboard(shareData.text);
             }
         }else
         {
