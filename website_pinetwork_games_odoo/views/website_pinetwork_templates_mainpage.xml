@@ -1295,7 +1295,7 @@
                         </div>
                     </t>-->
 
-                    <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+					<t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
 						<div t-if="total_users_verified_count &lt; 400" class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
 							<div class="row">
 								<div class="col-12">
