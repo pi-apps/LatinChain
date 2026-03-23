@@ -1355,16 +1355,20 @@ class admin_apps(models.Model):
                                 if not unblocked_previous:
                                     data_write.update({'pi_ad_automatic': False})
                                 
+                                """
                                 if admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
                                     self.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [users[0].id])
                                     
                                     users[0].invalidate_cache(fnames=['points_latin'], ids=users.ids)
                                     
                                     data_write.update({'points_latin': users[0].points_latin + admin_app_list[0].amount_latin_pay})
+                                """
                                 
                                 users[0].sudo().write(data_write)
                                 
+                                """
                                 transaction[0].sudo().action_complete_payment()
+                                """
                                 
                                 #try:
                                 #    if admin_app[0].mainnet in ['Testnet OFF']:
@@ -1581,6 +1585,14 @@ class pi_users(models.Model):
                 
                 if len(admin_app_list) > 0 and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']:
                     if i.paid_in_transactions > paid_in_transactions:
+                        self.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [i.id])
+                        
+                        i.invalidate_cache(fnames=['points_latin'], ids=[i.id])
+                        
+                        i.points_latin = i.points_latin + admin_app_list[0].amount_latin_pay
+                        
+                        transaction[0].sudo().action_complete_payment()
+                        
                         if not unblocked_previous:
                             i.pi_ad_automatic = False
                 
