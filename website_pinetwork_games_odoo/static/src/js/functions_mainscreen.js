@@ -55,8 +55,8 @@ function openInNewTab(url) {
   
   // 2. Set the necessary attributes
   anchor.href = url;
-  anchor.target = '_blank';
-  //anchor.rel = 'noopener noreferrer';
+  anchor.target = '_self';
+  anchor.rel = 'noopener noreferrer';
 
   // 3. Append to body (required for some browsers like Firefox to trigger the click)
   document.body.appendChild(anchor);
@@ -71,7 +71,10 @@ function openInNewTab(url) {
 async function colorboxLoaded()
 {
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-        window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.115"+hashLatinChainGoogleTranslate;
+    {
+        openInNewTab("https://ecosystem.latin-chain.com/page-1?v=1.115"+hashLatinChainGoogleTranslate);
+        //window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.115"+hashLatinChainGoogleTranslate;
+    }
         
     /*
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
@@ -101,7 +104,10 @@ async function colorboxLoaded()
 async function colorboxLoadedMainnet()
 {
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-        window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.115"+hashLatinChainGoogleTranslate;
+    {
+        openInNewTab("https://ecosystem.latin-chain.com/page-mainnet?v=1.115"+hashLatinChainGoogleTranslate);
+        //window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.115"+hashLatinChainGoogleTranslate;
+    }
         
     /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
