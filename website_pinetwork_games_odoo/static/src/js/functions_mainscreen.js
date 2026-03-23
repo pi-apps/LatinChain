@@ -49,11 +49,32 @@ function showImageModal(imageUrl, captionText) {
     $("#open_modal").click();
 }
 
+function openInNewTab(url) {
+  // 1. Create the anchor element
+  const anchor = document.createElement('a');
+  
+  // 2. Set the necessary attributes
+  anchor.href = url;
+  anchor.target = '_blank';
+  anchor.rel = 'noopener noreferrer';
+
+  // 3. Append to body (required for some browsers like Firefox to trigger the click)
+  document.body.appendChild(anchor);
+
+  // 4. Trigger the click event
+  anchor.click();
+
+  // 5. Remove the element from the DOM immediately
+  document.body.removeChild(anchor);
+}
 
 async function colorboxLoaded()
 {
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-        window.open("https://ecosystem.latin-chain.com/page-1?v=1.115"+hashLatinChainGoogleTranslate, '_blank');
+    {
+        openInNewTab("https://ecosystem.latin-chain.com/page-1?v=1.115"+hashLatinChainGoogleTranslate);
+        //window.open("https://ecosystem.latin-chain.com/page-1?v=1.115"+hashLatinChainGoogleTranslate, '_blank');
+    }
         //window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.115"+hashLatinChainGoogleTranslate;
     /*
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
@@ -83,7 +104,10 @@ async function colorboxLoaded()
 async function colorboxLoadedMainnet()
 {
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-        window.open("https://ecosystem.latin-chain.com/page-mainnet?v=1.115"+hashLatinChainGoogleTranslate, '_blank');
+    {
+        openInNewTab("https://ecosystem.latin-chain.com/page-mainnet?v=1.115"+hashLatinChainGoogleTranslate);
+        //window.open("https://ecosystem.latin-chain.com/page-mainnet?v=1.115"+hashLatinChainGoogleTranslate, '_blank');
+    }
         //window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.115"+hashLatinChainGoogleTranslate;
     /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
