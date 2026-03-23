@@ -2187,7 +2187,7 @@
                               </div>
                             </div>
                             
-                            <div id="accordionThree" style="margin-bottom:5px">
+                            <div id="accordionThree" style="margin-bottom:5px" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                           
                               <div class="card">
                                 <!--<div class="card-header" id="headingThree">
