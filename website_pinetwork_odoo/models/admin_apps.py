@@ -204,7 +204,7 @@ class pi_transactions(models.Model):
                         
                     if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled" and pit.action_type == "receive":
                         pit.write({'action': 'cancelled'})
-                    elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="approve" and pit.action_type == "receive":
+                    elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action not in ["approve", "complete"] and pit.action_type == "receive":
                         pit.write({'action': 'approve'})
                     if result_dict["status"]["transaction_verified"] and result_dict['status']['developer_completed'] and pit.action!="complete" and pit.action_type == "receive":
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', result_dict["user_uid"])])
@@ -230,7 +230,7 @@ class pi_transactions(models.Model):
                     if pit.action == "cancelled" and pit.action_type == "receive" and \
                         (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']): #11 horas
                         pit.unlink()
-                    if pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
+                    elif pit.action == "approve" and pit.action_type == "receive" and result_dict["status"]["developer_approved"] and \
                         result_dict["status"]["transaction_verified"] and not result_dict["status"]["developer_completed"] and \
                         not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']):
                         pi_user = self.env['pi.users'].sudo().search([('pi_user_id', '=', result_dict["user_uid"])])
@@ -1562,7 +1562,7 @@ class pi_users(models.Model):
         for i in self:
             total = 0
             
-            transactions_domain = [('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')]
+            transactions_domain = [('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('token_type', '=', 'pinetwork')]
             transactions_ids = self.env["pi.transactions"].read_group(transactions_domain, ['amount', 'action_type'], ['action_type'])
             
             if len(transactions_ids) > 0:
@@ -1572,7 +1572,7 @@ class pi_users(models.Model):
             
             i.paid_in_transactions = total
             
-            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="create_date desc", limit=1)
+            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('token_type', '=', 'pinetwork')], order="create_date desc", limit=1)
             
             if len(transaction) == 0:
                 i.unblocked_datetime = False
