@@ -202,7 +202,7 @@ class pi_transactions(models.Model):
                 
                 if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                         
-                    if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action!="cancelled" and pit.action_type == "receive":
+                    if (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action not in ["cancelled", "complete"] and pit.action_type == "receive":
                         pit.write({'action': 'cancelled'})
                     elif result_dict['status']['developer_approved'] and not (result_dict['status']['cancelled'] or result_dict['status']['user_cancelled']) and pit.action not in ["approve", "complete"] and pit.action_type == "receive":
                         pit.write({'action': 'approve'})
