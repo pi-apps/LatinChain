@@ -57,7 +57,7 @@ function openInNewTab(url) {
   anchor.href = url;
   anchor.target = '_self';
   //anchor.rel = 'noopener noreferrer';
-  anchor.rel = 'noopener';
+  anchor.rel = 'nofollow noopener';
 
   // 3. Append to body (required for some browsers like Firefox to trigger the click)
   document.body.appendChild(anchor);
