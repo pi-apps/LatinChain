@@ -394,7 +394,7 @@
                                             
                                             <div class="input-group mb-3">
                                               <span style="color: black !important;" class="input-group-text" id="basic-addon-username1">@</span>
-                                              <input id="username" disabled="disabled" type="text" class="form-control" placeholder="Go to Pi Browser" aria-label="Go to Pi Browser" aria-describedby="basic-addon-username1"/>
+                                              <input id="username" disabled="disabled" type="text" class="form-control username" placeholder="Go to Pi Browser" aria-label="Go to Pi Browser" aria-describedby="basic-addon-username1"/>
                                             </div>
                                             
                                             <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>
