@@ -379,7 +379,9 @@
                                             <div style="margin-bottom:5px;">
                                                 LatinChain's referrer (<t t-esc="pi_user_referred_by"/> is inviting you).
                                                 <br/>
-                                                You'll get <t t-esc="amount_latin_pay" /> Latin points and <t t-esc="pi_user_referred_by"/> will get <t t-esc="amount_latin_pay/10" /> Latin points.
+                                                Paying Pi you'll get <t t-esc="amount_latin_pay" /> Latin points and <t t-esc="pi_user_referred_by"/> will get <t t-esc="amount_latin_pay/10" /> Latin points.
+                                                <br/>
+                                                Paying LatinChain Token (SOON).
                                                 <br/>
                                                 (Only on Mainnet)
                                             </div>
