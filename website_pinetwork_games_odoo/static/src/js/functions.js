@@ -247,7 +247,7 @@ $( document ).ready(function() {
                 pi_user_code = auth.user.username;
                 accessToken = auth.accessToken;
                 
-                $(".username").val(pi_user_code);
+                $(".pi-username").val(pi_user_code);
               
                 //get_user(false);
                 set_points(0).always(function(){
