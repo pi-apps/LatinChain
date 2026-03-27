@@ -121,6 +121,7 @@
                         max-width: 90%; /* Max width for responsiveness */
                         max-height: 90%; /* Max height for responsiveness */
                         overflow-y: auto; /* Enable scrolling for long content */
+                        overscroll-behavior: contain;
                     }
                     .message-box {
                         width: 100%; /* Max width for responsiveness */
@@ -136,7 +137,7 @@
                         max-height: 90%; /* Max height for responsiveness */
                     }
                     .overlay {
-                        position: absolute;
+                        position: fixed;
                         top: 0;
                         left: 0;
                         width: 100%;
