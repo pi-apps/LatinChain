@@ -136,7 +136,7 @@
                         max-height: 90%; /* Max height for responsiveness */
                     }
                     .overlay {
-                        position: fixed;
+                        position: absolute;
                         top: 0;
                         left: 0;
                         width: 100%;
