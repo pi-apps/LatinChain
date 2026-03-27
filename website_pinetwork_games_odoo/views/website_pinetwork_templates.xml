@@ -378,12 +378,6 @@
                                         <div style="margin-top:5px" class="justify-content-center">
                                             <div style="margin-bottom:5px;">
                                                 LatinChain's referrer (<t t-esc="pi_user_referred_by"/> is inviting you).
-                                                <br/>
-                                                <strong>Paying Pi:</strong> You'll get <t t-esc="amount_latin_pay" /> Latin points and <t t-esc="pi_user_referred_by"/> will get <t t-esc="amount_latin_pay/10" /> Latin points.
-                                                <br/>
-                                                <strong>Paying LatinChain Token (SOON):</strong> You'll get <t t-esc="amount_latin_pay/10" /> Latin points and <t t-esc="pi_user_referred_by"/> will get <t t-esc="amount_latin_pay/100" /> Latin points.
-                                                <br/>
-                                                (Only on Mainnet)
                                             </div>
                                             <div class="input-group mb-3">
                                               <span style="color: black !important;" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen-button"></i></span>
@@ -421,12 +415,20 @@
                                                     Paying Pi (Working now):
                                                     <br/>
                                                     I accept this is a donation and if I pay Pi, I will receive 30 available days from today, to use this app!
+                                                    <br/><br/>
+                                                    You'll get <t t-esc="amount_latin_pay" /> Latin points and <t t-esc="pi_user_referred_by"/> will get <t t-esc="amount_latin_pay/10" /> Latin points.
+                                                    <br/>
+                                                    (Only on Mainnet)
                                                 </div>
                                                 <div style="border: 3px solid darkgreen; border-radius: 20px; padding: 5px; margin: 5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                         Paying LatinChain Token (SOON):
                                                         <br/>
                                                         I accept this is a donation and if I pay LatinChain Token, I will receive Latin points!
+                                                        <br/><br/>
+                                                        You'll get <t t-esc="amount_latin_pay/10" /> Latin points and <t t-esc="pi_user_referred_by"/> will get <t t-esc="amount_latin_pay/100" /> Latin points.
+                                                        <br/>
+                                                        (Only on Mainnet)
                                                     </div>
                                                 </div>
                                                 <div style="border: 3px solid darkblue; border-radius: 20px; padding: 5px; margin: 5px">
