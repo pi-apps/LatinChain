@@ -747,7 +747,8 @@ async function showPiInterstitialAds(Pi, url) {
             {
                 if(url && url != false && url != undefined)
                 {
-                    window.location.href = url;
+                    openInNewTab(url);
+                    //window.location.href = url;
                 }
                 
                 $("#button_reward_ad").html(btnvalue);
@@ -778,7 +779,8 @@ async function showPiInterstitialAds(Pi, url) {
         
         if(url && url != false && url != undefined)
         {
-            window.location.href = url;
+            openInNewTab(url);
+            //window.location.href = url;
         }
         
         $("#button_reward_ad").html(btnvalue);
@@ -799,7 +801,8 @@ async function showPiInterstitialAds(Pi, url) {
         
         if(url && url != false && url != undefined)
         {
-            window.location.href = url;
+            openInNewTab(url);
+            //window.location.href = url;
         }
         //$("#button_reward_ad").prop( "disabled", false );
         //alert(err);
@@ -2033,7 +2036,8 @@ $( document ).ready(function() {
     });
     
     $( ".cryptonews" ).click(function() {
-        window.location.href = "https://news.latin-chain.com/?v=1.102"+hashLatinChainGoogleTranslate;
+        openInNewTab("https://news.latin-chain.com/?v=1.102"+hashLatinChainGoogleTranslate);
+        //window.location.href = "https://news.latin-chain.com/?v=1.102"+hashLatinChainGoogleTranslate;
     });
     
     /*$( ".fans-shopping-club" ).click(function() {
@@ -2080,7 +2084,8 @@ $( document ).ready(function() {
     */
 
     $( ".sport-results" ).click(function() {
-        window.location.href = "https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate;
+        openInNewTab("https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate);
+        //window.location.href = "https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate;
         //$.colorbox({fixed: true, href:"https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
