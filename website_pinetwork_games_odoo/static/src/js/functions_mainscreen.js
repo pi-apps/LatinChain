@@ -55,23 +55,15 @@ function openInNewTab(url) {
   
   // 2. Set the necessary attributes
   anchor.href = url;
-  anchor.target = '_blank';
+  anchor.target = '_self';
   //anchor.rel = 'noopener noreferrer';
-  anchor.rel = 'noopener noreferrer';
+  anchor.rel = 'nofollow noopener noreferrer';
 
   // 3. Append to body (required for some browsers like Firefox to trigger the click)
   document.body.appendChild(anchor);
 
   // 4. Trigger the click event
-  //anchor.click();
-  
-  const clickEvent = new MouseEvent('click', {
-    view: window,
-    bubbles: true,
-    cancelable: true
-  });
-
-  anchor.dispatchEvent(clickEvent);
+  anchor.click();
 
   // 5. Remove the element from the DOM immediately
   document.body.removeChild(anchor);
