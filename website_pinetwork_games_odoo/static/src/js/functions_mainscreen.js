@@ -50,6 +50,7 @@ function showImageModal(imageUrl, captionText) {
 }
 
 function openInNewTab(url) {
+  /*
   // 1. Create the anchor element
   const anchor = document.createElement('a');
   
@@ -66,7 +67,11 @@ function openInNewTab(url) {
   anchor.click();
 
   // 5. Remove the element from the DOM immediately
-  document.body.removeChild(anchor);
+  document.body.removeChild(anchor);*/
+  
+  const windowServer = window.open("about:blank", "_blank");
+  
+  windowServer.location.href = url;
 }
 
 async function colorboxLoaded()
