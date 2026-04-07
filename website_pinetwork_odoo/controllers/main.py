@@ -158,6 +158,18 @@ class PiNetworkBaseController(http.Controller):
         elif accessed_path in ['/piapps-book/ebook']:
             return http.request.redirect('https://www.amazon.com/dp/B0DK3NJ23V' + '?tag=' + self.get_amazon_affiliate_code())
     
+    @http.route(['/ml-piapps-book/', '/ml-piapps-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def mercado_libre_piapps_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/ml-piapps-book/', '/ml-piapps-book/ebook']:
+            return http.request.redirect('https://articulo.mercadolibre.com.ve/MLV-995655386-5-realidades-sobre-pi-network-para-programadores-cesar-c-_JM')
+    
+    @http.route(['/ml-traveling-book/', '/ml-traveling-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def mercado_libre_traveling_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/ml-traveling-book/', '/ml-traveling-book/ebook']:
+            return http.request.redirect('https://articulo.mercadolibre.com.ve/MLV-995513636-realidades-impactantes-del-mundo-cesar-cordero-2026-_JM')
+    
     @http.route(['/ai-master-book/', '/ai-master-book/paperback', '/ai-master-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def ai_master_book(self, **kw):
         accessed_path = http.request.httprequest.path
