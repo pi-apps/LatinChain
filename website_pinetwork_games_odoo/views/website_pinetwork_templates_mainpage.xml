@@ -3327,7 +3327,7 @@
                                         Go to Pi Browser
                                     </div>
                                     <div style="margin-top: 5px;">
-                                        <a class="anchor-click" style="color: blue !important;" href="#" target="_blank">Click here</a>
+                                        <a class="anchor-click" style="color: blue !important;" href="#" rel="noopener" target="_blank">Click here</a>
                                     </div>
                                 </div>
                                 <div id="paying-message" class="container justify-content-center text-center" style="display: none; flex-direction: column; margin-top: auto; text-align: center;">
@@ -3341,8 +3341,8 @@
                                         </div>
                                     </t>-->
                                     <div class="row">
-                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Get Verified</a>
-                                        <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Get Verified</a>
+                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank">Get Verified</a>
+                                        <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" rel="noopener" target="_blank">Get Verified</a>
                                     </div>
                                     <div style="margin-top: 10px;" class="row">
                                         <button class="latinchain-specs btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;">dApps list</button>
@@ -3360,16 +3360,16 @@
                                     </div>
                                     <div class="showOptions" style="display: none;">
                                         <div style="margin-top: 10px;" class="row">
-                                            <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">Boost Rank (Stake)</a>
+                                            <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;">Boost Rank (Stake)</a>
                                         </div>
                                         <div style="margin-top: 10px;" class="row show_test_app">
                                             <a id="test_app" class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Earn Latin points (Pi Ad)</a>
                                         </div>
                                         <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                            <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
+                                            <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" rel="noopener" target="_blank" href="https://latinchain.pinet.com">Pi Browser</a>
                                         </div>
                                         <div class="PiBrowserLink row" style="margin-top: 10px; display:none" t-else="">
-                                            <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
+                                            <a class="btn btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" rel="noopener" target="_blank" href="https://latinchaintest9869.pinet.com">Pi Browser</a>
                                         </div>
                                         <div class="text-black" onClick="$('.showOptions').hide(); $('.showMoreOptions').show();" style="text-align: center; margin-top: 10px; cursor: pointer; color: black !important; font-size: 16px">
                                             <div style="">
@@ -3397,12 +3397,12 @@
                                     </div>
                                 </t>-->
                                 <div class="row">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" target="_blank">Unlock (Click Here)</a>
-                                    <a t-else="" id="GoForwardLink" class="GoForwardLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" target="_blank">Unlock (Click Here)</a>
+                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank">Unlock (Click Here)</a>
+                                    <a t-else="" id="GoForwardLink" class="GoForwardLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" rel="noopener" target="_blank">Unlock (Click Here)</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Get Verified</a>
-                                    <a t-else="" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" target="_blank">Get Verified</a>
+                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank">Get Verified</a>
+                                    <a t-else="" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" rel="noopener" target="_blank">Get Verified</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow2">
                                     <button class="latinchain-specs btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;">dApps list</button>
