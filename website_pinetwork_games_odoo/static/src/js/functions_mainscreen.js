@@ -1639,6 +1639,9 @@ $( document ).ready(function() {
                                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                 document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             }
+                            
+                            document.getElementById('GoForwardShow1').style.display = 'none';
+                            
                         }
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
