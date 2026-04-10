@@ -1011,7 +1011,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.972"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.973"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3397,8 +3397,8 @@
                                     </div>
                                 </t>-->
                                 <div class="row">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" target="_blank">Go Forward</a>
-                                    <a t-else="" id="GoForwardLink" class="GoForwardLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" target="_blank">Go Forward</a>
+                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" target="_blank">Unlock Watching Ads</a>
+                                    <a t-else="" id="GoForwardLink" class="GoForwardLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" target="_blank">Unlock Watching Ads</a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1">
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" target="_blank">Get Verified</a>
@@ -3406,6 +3406,9 @@
                                 </div>
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow2">
                                     <button class="latinchain-specs btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;">dApps list</button>
+                                </div>
+                                <div style="margin-top: 10px; display: none;" class="row" id="GoForwardShow3">
+                                    <a class="close_latinchain btn btn-lg btn-block btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#">Close</a>
                                 </div>
                             </div>
                         </div>

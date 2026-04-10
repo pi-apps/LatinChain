@@ -56,6 +56,7 @@ function openInNewTab(url) {
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow1').style.display = 'none'; // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow2').style.display = 'none'; // Use 'flex' instead of 'block'
+    document.getElementById('GoForwardShow3').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('all-messages').style.display = 'none'; // Use 'flex' instead of 'block'
     
 }
@@ -65,6 +66,9 @@ function openInNewTabAds(url) {
     document.getElementById('GoForwardLink').href = url;
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+    document.getElementById('GoForwardShow1').style.display = 'flex'; // Use 'flex' instead of 'block'
+    document.getElementById('GoForwardShow2').style.display = 'flex'; // Use 'flex' instead of 'block'
+    document.getElementById('GoForwardShow3').style.display = 'none'; // Use 'flex' instead of 'block'
     document.getElementById('all-messages').style.display = 'none'; // Use 'flex' instead of 'block'
     
 }
