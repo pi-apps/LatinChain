@@ -52,6 +52,7 @@ function showImageModal(imageUrl, captionText) {
 function openInNewTab(url) {
   
     document.getElementById('GoForwardLink').href = url;
+    document.getElementById('GoForwardLink').textContent = "Go Forward";
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow1').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -64,6 +65,7 @@ function openInNewTab(url) {
 function openInNewTabAds(url) {
   
     document.getElementById('GoForwardLink').href = url;
+    document.getElementById('GoForwardLink').textContent = "Unlock Watching Ads";
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow1').style.display = 'flex'; // Use 'flex' instead of 'block'
