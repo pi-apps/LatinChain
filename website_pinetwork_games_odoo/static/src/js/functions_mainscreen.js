@@ -1841,10 +1841,18 @@ $( document ).ready(function() {
             $('.darkmode-layer--button').css('display', 'block');
         else
             $('.darkmode-toggle--white').css('display', 'block');
+        
+        document.getElementById('goforward-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('GoForwardShow1').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('GoForwardShow2').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('GoForwardShow3').style.display = 'none'; // Use 'flex' instead of 'block'
+            
         document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('all-messages').style.display = 'flex'; // Use 'flex' instead of 'block'
+        
     });
     
     $(".logout_latinchain").click(function(){
