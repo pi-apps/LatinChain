@@ -69,7 +69,16 @@ function openInNewTab(url) {
   // 5. Remove the element from the DOM immediately
   document.body.removeChild(anchor);*/
   
-  window.location.assign(url);
+  //window.location.assign(url);
+  
+    document.getElementById('GoForwardLink').href = url;
+    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+    document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+    document.getElementById('all-messages').style.display = 'none'; // Use 'flex' instead of 'block'
+    /*document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+    */
 }
 
 async function colorboxLoaded()
