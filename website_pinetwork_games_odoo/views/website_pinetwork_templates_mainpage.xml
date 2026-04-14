@@ -1312,15 +1312,15 @@
 						<div t-if="total_users_verified_count &lt; 400" class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
 							<div class="row">
 								<div class="col-12">
-									<a id="MainnetLinkId1" href="https://latinchain.pinet.com/pinetwork" rel="nofollow noopener noreferrer" target="_blank" class="btn btn-link MainnetLink">Hello Pioneers, we need your help, <strong>we need at least 400 (now <span t-esc="'{:,}'.format(total_users_verified_count)" /> of 400) pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations. (This notification will disappear once you get verified)</a>
+									<a id="MainnetLinkId1" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank" class="btn btn-link MainnetLink">Hello Pioneers, we need your help, <strong>we need at least 400 (now <span t-esc="'{:,}'.format(total_users_verified_count)" /> of 400) pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations. (This notification will disappear once you get verified)</a>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-6" style="text-align: right">
-									<a href="https://latinchain.pinet.com/pinetwork" rel="nofollow noopener noreferrer" target="_blank" class="btn btn-success rounded MainnetLink" style="border: 2px solid black;">Pay Pi</a>
+									<a href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank" class="btn btn-success rounded MainnetLink" style="border: 2px solid black;">Pay Pi</a>
 								</div>
 								<div class="col-6" style="text-align: left">
-									<a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="nofollow noopener noreferrer" target="_blank" class="btn btn-success rounded" style="border: 2px solid black;">Boost Rank</a>
+									<a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="btn btn-success rounded" style="border: 2px solid black;">Boost Rank</a>
 								</div>
 							</div>
 						</div>
@@ -1344,15 +1344,15 @@
 						<div class="alert alert-primary" role="alert" style="text-align: center; margin-bottom: 0px !important">
 							<div class="row">
 								<div class="col-12">
-									<a id="MainnetLinkId1" href="https://latinchain.pinet.com/pinetwork" rel="nofollow noopener noreferrer" target="_blank" class="btn btn-link MainnetLink">Hello Pioneers, we need your help, <strong>we need at least 400 pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations.</a>
+									<a id="MainnetLinkId1" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank" class="btn btn-link MainnetLink">Hello Pioneers, we need your help, <strong>we need at least 400 pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations.</a>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-6" style="text-align: right">
-									<a href="https://latinchain.pinet.com/pinetwork" rel="nofollow noopener noreferrer" target="_blank" class="btn btn-success rounded MainnetLink" style="border: 2px solid black;">Mainnet</a>
+									<a href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank" class="btn btn-success rounded MainnetLink" style="border: 2px solid black;">Mainnet</a>
 								</div>
 								<div class="col-6" style="text-align: left">
-									<a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="nofollow noopener noreferrer" target="_blank" class="btn btn-success rounded" style="border: 2px solid black;">Boost Rank</a>
+									<a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="btn btn-success rounded" style="border: 2px solid black;">Boost Rank</a>
 								</div>
 							</div>
 						</div>
@@ -1660,7 +1660,7 @@
                                 <h5 translate="no"><strong><div style="display:inline;">#StakePi &#128202;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="nofollow noopener noreferrer" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-white" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">BOOST LATINCHAIN RANK</div><div style="font-size:80%;">Stake Pi during 365 days (any amount and time is permitted, we thank you) to Boost Rank of your favorite Pi App: LatinChain Mainnet on Pi Ecosystem, by clicking here.<br/><br/>Among everyone, we could stake 1 million Pi to Boost LatinChain.</div></a>
+                                <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-white" style="border: 2px solid;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">BOOST LATINCHAIN RANK</div><div style="font-size:80%;">Stake Pi during 365 days (any amount and time is permitted, we thank you) to Boost Rank of your favorite Pi App: LatinChain Mainnet on Pi Ecosystem, by clicking here.<br/><br/>Among everyone, we could stake 1 million Pi to Boost LatinChain.</div></a>
                                 <!--<a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://ecosystem.pinet.com/apps/63d38f4fa9a2245a1c0ef9cf" target="_blank" class="href-external col-12 btn font-weight-bold text-white" style="border: 2px solid; background-color: #703d92; border-color: #703d92;"><div style=""><i class="fa-solid fa-cubes-stacked"></i></div><div style="font-size:100%;">Stake Pi to Boost Rank of LatinChain Testnet</div></a>
                                 -->
                             </div>
@@ -1679,7 +1679,7 @@
                             <div style="margin-bottom:5px">
                                 <div><strong>Watch our LatinChain and César OpenSource Fans Shopping Club</strong></div>
                                 <div>
-                                    <a href="https://club.latin-chain.com" rel="nofollow noopener noreferrer" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success fans-shopping-club" ><div><i class="fa-solid fa-store"></i></div><div>Fans Shopping Club</div></a>
+                                    <a href="https://club.latin-chain.com" rel="noopener" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success fans-shopping-club" ><div><i class="fa-solid fa-store"></i></div><div>Fans Shopping Club</div></a>
                                 </div>
                                 <div><strong>Watch our Crypto News</strong></div>
                                 <div>
@@ -1759,8 +1759,8 @@
                                 <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" rel="nofollow noopener noreferrer" target="_blank" class="col-12 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
-                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" rel="nofollow noopener noreferrer" target="_blank" class="col-12 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
+                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" href="https://latinchaintest9869.pinet.com" rel="noopener" target="_blank" class="col-12 gototestnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Testnet</div></a>
+                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" rel="noopener" target="_blank" class="col-12 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
                         <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center;" class="border-gradient-rounded showInterstitialAd">
@@ -1843,7 +1843,7 @@
                                 <button id="tvonline-2" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div>TV Online</div></button>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a href="https://latinchainpal0712.pinet.com" rel="nofollow noopener noreferrer" target="_blank" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LatinChainPal</div></a>
+                                <a href="https://latinchainpal0712.pinet.com" rel="noopener" target="_blank" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LatinChainPal</div></a>
                             </div>
                             <t t-if="pioneers_streaming">
                                 <div style="margin-bottom:5px">
@@ -1986,7 +1986,7 @@
                             </t>-->
                             
                             <div style="margin-bottom:5px;">
-                                <a href="https://promote.mexc.com/r/U2hkpZK0" rel="nofollow noopener noreferrer" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="font-size:100%;" translate="no">JOIN MEXC AND TRADE PI</div><div style="font-size:80%;">Pi KYB ready</div></a>
+                                <a href="https://promote.mexc.com/r/U2hkpZK0" rel="noopener" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="font-size:100%;" translate="no">JOIN MEXC AND TRADE PI</div><div style="font-size:80%;">Pi KYB ready</div></a>
                             </div>
                             <!--
                             <div style="margin-bottom:5px;">
