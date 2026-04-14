@@ -234,6 +234,9 @@ function get_user() {
                     $('#chess-tab').hide();
                     $("#home-tab").click();
                     
+                    $("#test_app").show();
+                    $(".show_test_app").show();
+                    
                     $("#test_app").prop( "disabled", false );
                     $("#test_app").click(function(){
                         if(pi_ad_new)
