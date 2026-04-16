@@ -1556,7 +1556,7 @@
                             <div class="control-buttons">
                                 <button id="switchCameraButton" class="action-button">Switch Camera</button>
                                 <button id="askButton" class="action-button">Ask What I'm Seeing</button>
-                                <button id="toggleAutoSpeak" class="action-button">Enable Continuous Detection</button>
+                                <button id="toggleAutoSpeak" class="action-button" style="display: none;">Enable Continuous Detection</button>
                             </div>
                             <div id="speechStatus" class="text-sm"></div>
                             
