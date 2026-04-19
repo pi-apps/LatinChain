@@ -1812,6 +1812,31 @@
                             </div>
                         </div>
                         
+                        
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline;">#LatinChain #Avatar &#128526;</div></strong></h5>
+                            </div>
+                            
+                            <div class="text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
+                                <div class="row justify-content-center avatar_show_blocked" style="margin-left: 1px; margin-right: 1px">
+                                    Only verified users can change their Avatar.
+                                </div>
+                                <div class="row justify-content-center avatar_show_unblocked" style="margin-left: 1px; margin-right: 1px">
+                                    Change your Avatar here.
+                                </div>
+                                <div class="row justify-content-center">
+                                    <select id="avatar_user" class="form-control" disabled="true" style="max-width: 250px; display: none; filter: contrast(100%) !important;">
+                                        <t t-foreach="avatar_user_options" t-as="avatar">
+                                            <option t-att-value="avatar[0]"><t t-esc="avatar[1]"/></option>
+                                        </t>
+                                    </select>
+                                </div>
+                                <div class="row justify-content-center" id="avatar_user_img_div" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
+                                </div>
+                            </div>
+                        </div>
+                        
                         <!--<div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                             <ins class="adsbygoogle"
                                  style="display:block"
@@ -1877,30 +1902,6 @@
                             </div>
                             <div style="margin-top:5px; margin-bottom: 5px">
                                 <button id="rules_button_4" class="col-12 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">#LatinChain #Avatar &#128526;</div></strong></h5>
-                            </div>
-                            
-                            <div class="text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
-                                <div class="row justify-content-center avatar_show_blocked" style="margin-left: 1px; margin-right: 1px">
-                                    Only verified users can change their Avatar.
-                                </div>
-                                <div class="row justify-content-center avatar_show_unblocked" style="margin-left: 1px; margin-right: 1px">
-                                    Change your Avatar here.
-                                </div>
-                                <div class="row justify-content-center">
-                                    <select id="avatar_user" class="form-control" disabled="true" style="max-width: 250px; display: none; filter: contrast(100%) !important;">
-                                        <t t-foreach="avatar_user_options" t-as="avatar">
-                                            <option t-att-value="avatar[0]"><t t-esc="avatar[1]"/></option>
-                                        </t>
-                                    </select>
-                                </div>
-                                <div class="row justify-content-center" id="avatar_user_img_div" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
-                                </div>
                             </div>
                         </div>
                         
