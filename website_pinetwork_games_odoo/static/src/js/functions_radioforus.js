@@ -295,7 +295,7 @@ $( document ).ready(function() {
 
     async function transfer() {
         try {
-            var pi_user_referred = "radioforus";
+            var pi_user_referred = "Boxtred";
             
             const payment = Pi.createPayment({
               // Amount of π to be paid:
