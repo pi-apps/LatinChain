@@ -259,7 +259,10 @@ var startCommonAppsAI = () => {
         }
         
         (async () => {
-            await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+            try{
+                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+            }catch(e){
+            }
     
             if(localStorage.getItem("loggedIn"))
             {

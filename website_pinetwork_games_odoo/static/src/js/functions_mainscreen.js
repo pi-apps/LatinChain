@@ -1697,7 +1697,10 @@ $( document ).ready(function() {
     
     // you usually would check the ads support ahead of time and store the information
     (async () => {
-        await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+        try{
+            await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+        }catch(e){
+        }
         (async () => {
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {

@@ -1465,7 +1465,7 @@
                         {window.performance.mark('tbl_ic');}
                     </script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_odoo/static/src/js/latinchain_transactions_functions.js?v=1.120"></script>
+                    <script type="text/javascript" src="/website_pinetwork_odoo/static/src/js/latinchain_transactions_functions.js?v=1.121"></script>
                     
                     <title>Transactions</title>
                 </head>
@@ -1797,7 +1797,10 @@
                             
                             // you usually would check the ads support ahead of time and store the information
                             (async () => {
-                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                try{
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                }catch(e){
+                                }
                                 (async () => {
                                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                     {
@@ -2202,7 +2205,10 @@
                             
                             // you usually would check the ads support ahead of time and store the information
                             (async () => {
-                                await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                try{
+                                    await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+                                }catch(e){
+                                }
                                 (async () => {
                                     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                     {
