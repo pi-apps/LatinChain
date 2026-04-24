@@ -1299,10 +1299,10 @@
                         <div class="row">
                             <div class="col-12">
                                 <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <h3 align="center" style="font-weight:600; color: black !important">LatinChain Mainnet</h3>
+                                    <h3 align="center" style="font-weight:600; color: black !important">LatinChain Mainnet<br/><div style="font-size: 80%;">Boost Pi utility usage bonus here</div></h3>
                                 </t>
                                 <t t-else="">
-                                    <h3 align="center" style="font-weight:600; color: black !important">LatinChain Testnet</h3>
+                                    <h3 align="center" style="font-weight:600; color: black !important">LatinChain Testnet<br/><div style="font-size: 80%;">Boost Pi utility usage bonus here</div></h3>
                                 </t>
                             </div>
                         </div>
@@ -3330,8 +3330,8 @@
                                 </div>
                                 <div id="paying-message" class="container justify-content-center text-center" style="display: none; flex-direction: column; margin-top: auto; text-align: center;">
                                     <div style="text-align: center;" class="row justify-content-center text-center">
-                                        <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="color: black !important;"><strong>LatinChain Mainnet</strong></h3>
-                                        <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet</strong></h3>
+                                        <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="color: black !important;"><strong>LatinChain Mainnet<br/><div style="font-size: 80%;">Boost Pi utility usage bonus here</div></strong></h3>
+                                        <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet<br/><div style="font-size: 80%;">Boost Pi utility usage bonus here</div></strong></h3>
                                     </div>
                                     <!--<t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                         <div t-if="total_users_verified_count &lt; 400" class="row justify-content-center text-center" style="color: black !important; max-width: 250px; font-size: 14px">
@@ -3386,8 +3386,8 @@
                             
                             <div id="goforward-message" class="container justify-content-center text-center" style="display: none; flex-direction: column; margin-top: auto; text-align: center;">
                                 <div style="text-align: center;" class="row justify-content-center text-center">
-                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="color: black !important;"><strong>LatinChain Mainnet</strong></h3>
-                                    <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet</strong></h3>
+                                    <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="color: black !important;"><strong>LatinChain Mainnet<br/><div style="font-size: 80%;">Boost Pi utility usage bonus here</div></strong></h3>
+                                    <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet<br/><div style="font-size: 80%;">Boost Pi utility usage bonus here</div></strong></h3>
                                 </div>
                                 <!--<t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <div t-if="total_users_verified_count &lt; 400" class="row justify-content-center text-center" style="color: black !important; max-width: 250px; font-size: 14px">
