@@ -1469,7 +1469,7 @@ class pi_users(models.Model):
                 ('lion_female', 'Female Lion'), ('lion_male', 'Male Lion'),
                 ('macaw_female', 'Female Macaw'), ('macaw_male', 'Male Macaw'),
                 ('math_girl', 'Math Girl'), ('math_guy', 'Math Guy'),
-                ('monkey_female', 'Monkey Female'), ('monkey_male', 'Monkey Male'),
+                ('monkey_female', 'Female Monkey'), ('monkey_male', 'Male Monkey'),
                 ('pawn_female', 'Female Pawn'), ('pawn_male', 'Male Pawn'),
                 ('penguin_female', 'Female Penguin'), ('penguin_male', 'Male Penguin'),
                 ('programmer_female', 'Female Programmer'), ('programmer_male', 'Male Programmer'),
