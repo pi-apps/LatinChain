@@ -3342,9 +3342,11 @@
                                         <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank">Get Verified (no ads)</a>
                                         <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" rel="noopener" target="_blank">Get Verified</a>
                                     </div>
+                                    <!--
                                     <div style="margin-top: 10px;" class="row getverified">
                                         <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;">Boost Mainnet Rank</a>
                                     </div>
+                                    -->
                                     <div style="margin-top: 10px;" class="row">
                                         <button class="latinchain-specs btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;">dApps list</button>
                                     </div>
@@ -3405,9 +3407,11 @@
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank">Get Verified (no ads)</a>
                                     <a t-else="" class="PayPiLink btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" rel="noopener" target="_blank">Get Verified</a>
                                 </div>
+                                <!--
                                 <div style="margin-top: 10px;" class="row getverified">
                                     <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;">Boost Mainnet Rank</a>
                                 </div>
+                                -->
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow2">
                                     <button class="latinchain-specs btn btn-lg btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;">dApps list</button>
                                 </div>
