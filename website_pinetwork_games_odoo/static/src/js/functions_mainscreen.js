@@ -1697,10 +1697,21 @@ $( document ).ready(function() {
     
     // you usually would check the ads support ahead of time and store the information
     (async () => {
+        document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        
         try{
             await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
         }catch(e){
         }
+        
+        document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+        document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('loading-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+        
         (async () => {
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
