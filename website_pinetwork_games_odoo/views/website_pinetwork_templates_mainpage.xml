@@ -1011,7 +1011,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.991"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.992"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1815,9 +1815,11 @@
                             <div style="margin-bottom:5px">
                                 <button id="sport-results-2" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div>Sport results</div></button>
                             </div>
+                            <!--
                             <div style="margin-bottom:5px; display: none" class="show-tvonline">
                                 <button id="tvonline-2" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div>TV Online</div></button>
                             </div>
+                            -->
                             <div style="margin-bottom:5px">
                                 <a href="https://latinchainpal0712.pinet.com" rel="noopener" target="_blank" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LatinChainPal</div></a>
                             </div>
@@ -2661,11 +2663,12 @@
                                                 <div class="col-12"><button id="sport-results" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">Sports</div></div></button></div>
                                             </div>
                                         </li>
+                                        <!--
                                         <li class="search-apps-li-pibrowser list-group-item border-left-0 border-bottom border-right-0 border-top show-tvonline" style="display: none">
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12"><button id="tvonline-3" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success tvonline" style="border: 2px solid;"><div style=""><i class="fa-solid fa-tv"></i></div><div style="font-size:100%;" translate="no">TV ONLINE</div><div style="font-size:80%;">TV streaming</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">TV Online</div></div></button></div>
                                             </div>
-                                        </li>
+                                        </li>-->
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12"><a href="https://latinchainpal0712.pinet.com" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN PAL</div><div style="font-size:80%;">AI Chatbot</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">AI Chat</div></div></a></div>
