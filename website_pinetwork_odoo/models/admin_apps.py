@@ -1448,7 +1448,7 @@ class pi_users(models.Model):
     @api.depends("avatar_user")
     def _compute_avatar_user_url(self):
         for i in self:
-            i.avatar_user_url = "/website_pinetwork_games_odoo/static/src/img/avatars_users/" + i.avatar_user + ".jpeg?v=1.104"
+            i.avatar_user_url = "/website_pinetwork_games_odoo/static/src/img/avatars_users/" + i.avatar_user + ".jpeg?v=1.105"
     
     def _get_dynamic_avatar_options(self):
         # Logic to fetch options dynamically
