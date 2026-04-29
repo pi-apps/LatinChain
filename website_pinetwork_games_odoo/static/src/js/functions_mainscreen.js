@@ -497,7 +497,7 @@ function get_user() {
                 $(".show-calendarplayer").show();
                 $(".show-timezoneplayer").show();
                 //$(".show-newsplayer").show();
-                //$(".show-tvonline").show();
+                $(".show-tvonline").show();
                 //$(".show-sport-results").show();
                 //$(".show-cointelegraph").show();
                 $(".show-streamerzoneboard").show();
@@ -2226,17 +2226,14 @@ $( document ).ready(function() {
         $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/WebTorrent", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
-    /*
     $( ".cointelegraph" ).click(function() {
         $.colorbox({fixed: true, href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });*/
+    });
     
-    /*
     $( ".tvonline" ).click(function() {
         //window.location.href = "https://trends.latin-chain.com/plutotv/";
-        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/plutotv/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/tvtube/", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
-    */
     
     $( ".latinchain-ecosystem" ).click(function() {
         //window.location.href = "https://ecosystem.latin-chain.com";
