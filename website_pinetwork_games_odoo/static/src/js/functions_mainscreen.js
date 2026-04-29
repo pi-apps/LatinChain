@@ -2232,7 +2232,7 @@ $( document ).ready(function() {
     
     $( ".tvonline" ).click(function() {
         //window.location.href = "https://trends.latin-chain.com/plutotv/";
-        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/tvtube/?v=1.101", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://trends.latin-chain.com/tvtube/?v=1.102", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".latinchain-ecosystem" ).click(function() {
