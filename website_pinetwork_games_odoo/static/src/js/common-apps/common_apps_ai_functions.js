@@ -18,6 +18,8 @@ var startCommonAppsAI = () => {
 
     $( document ).ready(function() {
         
+        document.body.style.overflow = 'hidden';
+        
         const Pi = window.Pi;
         
         var pi_user_id = "";
@@ -35,6 +37,7 @@ var startCommonAppsAI = () => {
         
         function test_rewarded()
         {
+            document.body.style.overflow = undefined;
             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -193,6 +196,7 @@ var startCommonAppsAI = () => {
                         
                         if(data.unblocked)
                         {
+                            document.body.style.overflow = undefined;
                             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -212,6 +216,7 @@ var startCommonAppsAI = () => {
                                 $("a.anchor-click").attr('href', "/pinetwork");
                             }
                             
+                            document.body.style.overflow = 'hidden';
                             document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'block'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -293,6 +298,7 @@ var startCommonAppsAI = () => {
                                     $("a.anchor-click").attr('href', "https://latinchain.pinet.com");
                                 }
                                 
+                                document.body.style.overflow = 'hidden';
                                 document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
                                 document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -311,6 +317,7 @@ var startCommonAppsAI = () => {
                 
                 await delayAsync(5000);
                 
+                document.body.style.overflow = 'hidden';
                 document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
                 document.getElementById('blocking-message').style.display = 'block'; // Use 'flex' instead of 'block'
                 document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
