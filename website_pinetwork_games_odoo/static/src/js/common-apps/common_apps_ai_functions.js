@@ -37,7 +37,7 @@ var startCommonAppsAI = () => {
         
         function test_rewarded()
         {
-            document.body.style.overflow = undefined;
+            document.body.style.overflow = "auto";
             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -196,7 +196,7 @@ var startCommonAppsAI = () => {
                         
                         if(data.unblocked)
                         {
-                            document.body.style.overflow = undefined;
+                            document.body.style.overflow = "auto";
                             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
