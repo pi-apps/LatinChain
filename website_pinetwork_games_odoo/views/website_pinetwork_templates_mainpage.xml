@@ -1535,6 +1535,30 @@
                         
                         <div id="loading_word_under" style="margin-top:10px; width: 100%; display: none;"></div>
                         
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline;">#Your #Avatar &#128526;</div></strong></h5>
+                            </div>
+                            
+                            <div class="text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
+                                <div class="row justify-content-center avatar_show_blocked" style="margin-left: 1px; margin-right: 1px">
+                                    Only verified users can change their Avatar.
+                                </div>
+                                <div class="row justify-content-center avatar_show_unblocked" style="margin-left: 1px; margin-right: 1px">
+                                    Change your Avatar here.
+                                </div>
+                                <div class="row justify-content-center">
+                                    <select id="avatar_user" class="form-control" disabled="true" style="max-width: 250px; display: none; filter: contrast(100%) !important;">
+                                        <t t-foreach="avatar_user_options" t-as="avatar">
+                                            <option t-att-value="avatar[0]"><t t-esc="avatar[1]"/></option>
+                                        </t>
+                                    </select>
+                                </div>
+                                <div class="row justify-content-center" id="avatar_user_img_div" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#PiAds #EarnPoints &#128240;</div></strong></h5>
@@ -2023,30 +2047,6 @@
                                 <div style="margin-bottom:5px" translate="no">LatinWarrior: LatinChain Platform's Avatar</div>
                                 
                                 <img src="/website_pinetwork_odoo/static/src/img/latinchain-avatar.jpeg?v=1.101" alt="" class="img-fluid rounded" style="width: 100%; height: 100%; max-width: 250px; max-height: 250px;" />
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">#LatinChain #Avatar &#128526;</div></strong></h5>
-                            </div>
-                            
-                            <div class="text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
-                                <div class="row justify-content-center avatar_show_blocked" style="margin-left: 1px; margin-right: 1px">
-                                    Only verified users can change their Avatar.
-                                </div>
-                                <div class="row justify-content-center avatar_show_unblocked" style="margin-left: 1px; margin-right: 1px">
-                                    Change your Avatar here.
-                                </div>
-                                <div class="row justify-content-center">
-                                    <select id="avatar_user" class="form-control" disabled="true" style="max-width: 250px; display: none; filter: contrast(100%) !important;">
-                                        <t t-foreach="avatar_user_options" t-as="avatar">
-                                            <option t-att-value="avatar[0]"><t t-esc="avatar[1]"/></option>
-                                        </t>
-                                    </select>
-                                </div>
-                                <div class="row justify-content-center" id="avatar_user_img_div" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
-                                </div>
                             </div>
                         </div>
                         
