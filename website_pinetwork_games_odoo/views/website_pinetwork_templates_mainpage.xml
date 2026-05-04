@@ -71,11 +71,13 @@
                             -1px  1px 0px white,
                              0px  1px 0px white,
                              1px  1px 0px white;
+                        border-radius: 20px !important;
                     }
                     
                     .btn *
                     {
                         color: black !important;
+                        border-radius: 20px !important;
                     }
                     
                     .darkmode--activated .btn:not(:disabled), 
@@ -96,11 +98,13 @@
                             -1px  1px 0px #000,
                              0px  1px 0px #000,
                              1px  1px 0px #000;
+                        border-radius: 20px !important;
                     }
                     
                     .darkmode--activated .btn *
                     {
                         color: silver !important;
+                        border-radius: 20px !important;
                     }
                     
                     .btn:disabled, .btn:disabled:hover, .btn:disabled:active
@@ -119,11 +123,13 @@
                             -1px  1px 0px white,
                              0px  1px 0px white,
                              1px  1px 0px white;
+                        border-radius: 20px !important;
                     }
                     
                     .btn:disabled *
                     {
                         color: black !important;
+                        border-radius: 20px !important;
                     }
 
                     .darkmode--activated [class^="btn-outline-"]:disabled,
@@ -147,12 +153,14 @@
                             -1px  1px 0px black,
                              0px  1px 0px black,
                              1px  1px 0px black;
+                        border-radius: 20px !important;
                     }
                     
                     .darkmode--activated [class^="btn-outline-"]:disabled *,
                     .darkmode--activated [class*=" btn-outline-"]:disabled *
                     {
                         color: silver !important;
+                        border-radius: 20px !important;
                     }
                 </style>
                 
