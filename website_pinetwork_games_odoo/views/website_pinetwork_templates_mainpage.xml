@@ -2435,6 +2435,11 @@
                                         -->
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
+                                                <div class="col-12" style="text-align: center"><div style="display:inline;">&#128071;</div> <div class="next-pi" style="display:inline; font-size: 18px">NEXT ARE PAID APPS</div></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: left;">
                                                 <div class="col-12" style="text-align: center"><div class="next-pi" style="display:inline;"><i class="fa-solid fa-gamepad"></i></div> <div class="next-pi" style="display:inline; font-size: 18px">GAMES</div></div>
                                             </div>
                                         </li>
@@ -3130,15 +3135,14 @@
                     
                     <a id="myABtn" href="#top" style="color: white" translate="no"><button id="myBtn"><i class="fa-solid fa-arrow-up"></i></button></a>
                     
-                    <!--
-                    <div class="btn-group dropup position-fixed bottom-0 end-0 m-4 isverified" translate="no" style="display:none; z-index:100;">
+                    <div class="btn-group dropup position-fixed bottom-0 end-0 m-4" translate="no" style="z-index:100;">
                         <button type="button" id="myPayPiBtn" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-handshake-simple"></i>
+                            <i class="fa-solid fa-robot"></i>
                         </button>
                         <ul class="dropdown-menu mb-2 item-latin-menu" style="background-color: #021526 !important; max-width: 30% !important">
-                            <li class="item-latin-action"><a class="dropdown-item" style="color: white !important;" href="/pinetwork"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">PAY (SOON)</div></a></li>
+                            <li class="item-latin-action"><a class="dropdown-item" style="color: white !important;" href="https://latinchainpal0712.pinet.com" target="_blank"><div style="display:inline;"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display:inline;">LatinChain Pal</div></a></li>
                         </ul>
-                    </div>-->
+                    </div>
                     
                     <!--<a id="myActionsABtn" href="#" style="color: white" translate="no">-->
                     <div class="btn-group dropup position-fixed bottom-0 end-0 m-4" style="z-index:100;" translate="no">
