@@ -1552,7 +1552,7 @@ $( document ).ready(function() {
 
     $("#verified").hide();
     
-    function displayAds()
+    async function displayAds()
     {
         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
         {
@@ -1689,6 +1689,10 @@ $( document ).ready(function() {
                                 /*if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
                                     showRewardedPiAd(false);*/
                                 
+                                displayAds();
+                            });
+                            
+                            $( ".displayAds" ).click(async function() {
                                 displayAds();
                             });
                             

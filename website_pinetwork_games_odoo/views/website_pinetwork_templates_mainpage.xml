@@ -1019,7 +1019,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.114"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.115"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -2123,7 +2123,7 @@
                                                     <li class="list-group-item"><a href="/chess" class="btn btn-link">Play Chess</a></li>
                                                     <li class="list-group-item"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
                                                     <li class="list-group-item"><a href="/snake" class="btn btn-link">Play Snake</a></li>
-                                                    <li t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="list-group-item"><button onclick="displayAds()" class="href-external btn btn-link">Watch Pi Rewarded Ads</button></li>
+                                                    <li t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="list-group-item"><button class="displayAds href-external btn btn-link">Watch Pi Rewarded Ads</button></li>
                                                     <li class="list-group-item"><button class="href-external btn btn-link go-to-home-tab">Use Cool Apps</button></li>
                                                     <li class="list-group-item"><button class="href-external btn btn-link go-to-home-tab">Play Other Games</button></li>
                                                     <li class="list-group-item"><button class="href-external btn btn-link go-to-home-tab">Use Utilities</button></li>
