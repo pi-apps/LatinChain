@@ -1671,14 +1671,13 @@ $( document ).ready(function() {
                                         {
                                             (async () => {
                                                 if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                                                    showRewardedPiAd(true);
+                                                    showRewardedPiAd(false);
                                             })();
                                         }
                                         else
                                             alert($("#piad_not_available").text().trim());
                                     }else
                                     {
-                                        $(".PiBrowserLink").show();
                                         alert("This button only works inside Pi Browser.");
                                     }
                                 }
