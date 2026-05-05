@@ -1664,7 +1664,7 @@ $( document ).ready(function() {
                                     showRewardedPiAd(false);*/
                                 
                                 alert("1");
-                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 {
                                     alert("2");
                                     if(pi_user_id != "" && pi_user_code != "")
@@ -1693,7 +1693,7 @@ $( document ).ready(function() {
                                 {
                                     alert("7");
                                     alert("This button only works on Mainnet inside Pi Browser.");
-                                }
+                                }*/
                             });
                             
                             if(show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
