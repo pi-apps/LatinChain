@@ -1578,6 +1578,10 @@ $( document ).ready(function() {
         }
     }
     
+    $( ".displayAds" ).click(async function() {
+        displayAds();
+    });
+    
     async function auth() {
         try {
             
@@ -1686,13 +1690,6 @@ $( document ).ready(function() {
                             }
                             
                             $( "#button_reward_ad" ).click(async function() {
-                                /*if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                                    showRewardedPiAd(false);*/
-                                
-                                displayAds();
-                            });
-                            
-                            $( ".displayAds" ).click(async function() {
                                 displayAds();
                             });
                             
