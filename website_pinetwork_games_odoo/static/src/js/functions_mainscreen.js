@@ -1660,8 +1660,32 @@ $( document ).ready(function() {
                             }
                             
                             $( "#button_reward_ad" ).click(async function() {
-                                if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                                    showRewardedPiAd(false);
+                                /*if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
+                                    showRewardedPiAd(false);*/
+                                    
+                                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                {
+                                    if(pi_user_id != "" && pi_user_code != "")
+                                    {
+                                        if(pi_ad_new)
+                                        {
+                                            (async () => {
+                                                if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
+                                                    showRewardedPiAd(true);
+                                            })();
+                                        }
+                                        else
+                                            alert($("#piad_not_available").text().trim());
+                                    }else
+                                    {
+                                        $(".PiBrowserLink").show();
+                                        alert("This button only works inside Pi Browser.");
+                                    }
+                                }
+                                else
+                                {
+                                    alert("This button only works on Mainnet inside Pi Browser.");
+                                }
                             });
                             
                             if(show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
