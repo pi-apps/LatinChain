@@ -1662,27 +1662,36 @@ $( document ).ready(function() {
                             $( "#button_reward_ad" ).click(async function() {
                                 /*if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
                                     showRewardedPiAd(false);*/
-                                    
+                                
+                                alert("1");
                                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 {
+                                    alert("2");
                                     if(pi_user_id != "" && pi_user_code != "")
                                     {
+                                        alert("3");
                                         if(pi_ad_new)
                                         {
+                                            alert("4");
                                             (async () => {
                                                 if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
                                                     showRewardedPiAd(false);
                                             })();
                                         }
                                         else
+                                        {
+                                            alert("5");
                                             alert($("#piad_not_available").text().trim());
+                                        }
                                     }else
                                     {
+                                        alert("6");
                                         alert("This button only works inside Pi Browser.");
                                     }
                                 }
                                 else
                                 {
+                                    alert("7");
                                     alert("This button only works on Mainnet inside Pi Browser.");
                                 }
                             });
