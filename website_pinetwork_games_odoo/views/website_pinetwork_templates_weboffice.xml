@@ -251,7 +251,7 @@
                             </div>
 
                             <!-- EDITOR DE DOCUMENTOS -->
-                            <div id="view-doc" class="hidden view-content max-w-5xl mx-auto bg-white rounded-lg shadow-md flex flex-col h-full border border-gray-200">
+                            <div id="view-doc" translate="no" class="hidden view-content max-w-5xl mx-auto bg-white rounded-lg shadow-md flex flex-col h-full border border-gray-200">
                                 <!-- Toolbar Word -->
                                 <div class="bg-gray-50 p-2 border-b flex flex-wrap gap-2 items-center rounded-t-lg">
                                     <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="undo" title="Undo"><i class="fas fa-undo"></i></button>
@@ -285,7 +285,7 @@
                             </div>
 
                             <!-- EDITOR DE HOJA DE CÁLCULO -->
-                            <div id="view-sheet" class="hidden view-content max-w-full mx-auto bg-white rounded-lg shadow-md flex flex-col h-full border border-gray-200">
+                            <div id="view-sheet" translate="no" class="hidden view-content max-w-full mx-auto bg-white rounded-lg shadow-md flex flex-col h-full border border-gray-200">
                                 <!-- Toolbar Excel -->
                                 <div class="bg-gray-50 p-2 border-b flex flex-wrap gap-2 items-center rounded-t-lg">
                                     <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="undo" title="Undo"><i class="fas fa-undo"></i></button>
@@ -320,7 +320,7 @@
                             </div>
 
                             <!-- EDITOR DE PRESENTACIONES -->
-                            <div id="view-slide" class="hidden view-content max-w-5xl mx-auto bg-white rounded-lg shadow-md flex flex-col md:flex-row h-full border border-gray-200">
+                            <div id="view-slide" translate="no" class="hidden view-content max-w-5xl mx-auto bg-white rounded-lg shadow-md flex flex-col md:flex-row h-full border border-gray-200">
                                 <!-- Sidebar Diapositivas -->
                                 <div class="w-full md:w-48 border-r border-b md:border-b-0 bg-gray-50 flex flex-row md:flex-col p-2 overflow-x-auto md:overflow-y-auto shrink-0 gap-2">
                                     <button id="add-slide" class="w-full py-2 bg-red-50 text-red-700 border border-red-200 rounded hover:bg-red-100 text-sm transition mb-2 whitespace-nowrap md:whitespace-normal">
