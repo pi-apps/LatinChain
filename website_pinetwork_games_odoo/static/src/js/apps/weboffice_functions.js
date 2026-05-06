@@ -49,7 +49,7 @@ $(document).ready(function() {
         $('.view-content').addClass('hidden');
         $('#view-dashboard').removeClass('hidden');
         $('#btn-back, #btn-export').addClass('hidden');
-        $('#app-title').text('WebOffice (Testing Phase)');
+        $('#app-title').text('(Drafts use only, not prod)');
         $('nav').removeClass('bg-blue-600 bg-green-600 bg-red-600').addClass('bg-indigo-600');
         currentApp = '';
     });
