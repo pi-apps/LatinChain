@@ -418,33 +418,127 @@ $(document).ready(function() {
         let currentAppId = currentApp;
 
         if (currentAppId === 'doc') {
-            // Exportar a DOCX real nativo
+            // Exportar a DOCX real nativo usando docx.js
             let $btn = $(this);
             let originalBtnHTML = $btn.html();
             $btn.html('<i class="fas fa-spinner fa-spin mr-1"></i> Exporting...');
             $btn.prop('disabled', true);
 
-            let docHTML = $('#doc-content').html();
-            let htmlContent = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Document</title></head><body>${docHTML}</body></html>`;
-            
-            // Convertir HTML a un Blob DOCX usando la librería
-            let convertedDocx = htmlDocx.asBlob(htmlContent);
-            
-            // Convertir Blob a Base64 (Data URI) para soportar descargas en Pi Browser
-            let reader = new FileReader();
-            reader.onload = function() {
-                let dataUri = reader.result;
-                let a = document.createElement('a');
-                a.href = dataUri;
-                a.download = 'Document.docx';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                
+            try {
+                const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType } = docx;
+                const paragraphs = [];
+
+                // Función recursiva para leer formato HTML a formato DOCX
+                function parseNode(node, formatting) {
+                    let runs = [];
+                    node.childNodes.forEach(child => {
+                        if (child.nodeType === 3) { // Nodo de texto
+                            let text = child.textContent.replace(/[\n\r]/g, '');
+                            if (text) {
+                                 runs.push(new TextRun({
+                                     text: text,
+                                     bold: formatting.bold,
+                                     italics: formatting.italics,
+                                     underline: formatting.underline ? { type: "single" } : undefined
+                                 }));
+                            }
+                        } else if (child.nodeType === 1) { // Nodo de elemento
+                            let tag = child.tagName.toLowerCase();
+                            if (tag === 'br') {
+                                runs.push(new TextRun({ break: 1 }));
+                            } else {
+                                let newFormatting = { ...formatting };
+                                if (tag === 'b' || tag === 'strong') newFormatting.bold = true;
+                                if (tag === 'i' || tag === 'em') newFormatting.italics = true;
+                                if (tag === 'u') newFormatting.underline = true;
+                                runs = runs.concat(parseNode(child, newFormatting));
+                            }
+                        }
+                    });
+                    return runs;
+                }
+
+                // Iterar sobre los elementos principales del editor
+                $('#doc-content').contents().each(function() {
+                    if (this.nodeType === 3) { 
+                        let text = this.textContent.trim();
+                        if (text) paragraphs.push(new Paragraph({ children: [new TextRun(text)] }));
+                        return;
+                    }
+                    
+                    let tag = $(this).prop("tagName").toLowerCase();
+                    let runs = parseNode(this, {bold: false, italics: false, underline: false});
+                    
+                    if (runs.length === 0) runs.push(new TextRun(""));
+                    
+                    let pAttrs = { children: runs };
+                    
+                    // Alineación
+                    let align = $(this).css('text-align');
+                    if (align === 'center') pAttrs.alignment = AlignmentType.CENTER;
+                    else if (align === 'right') pAttrs.alignment = AlignmentType.RIGHT;
+                    else if (align === 'justify') pAttrs.alignment = AlignmentType.JUSTIFIED;
+
+                    if (tag === 'h1') { pAttrs.heading = HeadingLevel.HEADING_1; paragraphs.push(new Paragraph(pAttrs)); }
+                    else if (tag === 'h2') { pAttrs.heading = HeadingLevel.HEADING_2; paragraphs.push(new Paragraph(pAttrs)); }
+                    else if (tag === 'h3') { pAttrs.heading = HeadingLevel.HEADING_3; paragraphs.push(new Paragraph(pAttrs)); }
+                    else if (tag === 'ul' || tag === 'ol') {
+                        $(this).children('li').each(function() {
+                            let liRuns = parseNode(this, {bold: false, italics: false, underline: false});
+                            if (liRuns.length === 0) liRuns.push(new TextRun(""));
+                            paragraphs.push(new Paragraph({
+                                children: liRuns,
+                                bullet: tag === 'ul' ? { level: 0 } : undefined,
+                                numbering: tag === 'ol' ? { reference: "numRef", level: 0 } : undefined
+                            }));
+                        });
+                    }
+                    else {
+                        paragraphs.push(new Paragraph(pAttrs));
+                    }
+                });
+
+                const doc = new Document({
+                    sections: [{
+                        properties: {},
+                        children: paragraphs
+                    }],
+                    numbering: {
+                        config: [
+                            {
+                                reference: "numRef",
+                                levels: [
+                                    {
+                                        level: 0,
+                                        format: "decimal",
+                                        text: "%1.",
+                                        alignment: "start",
+                                        style: { paragraph: { indent: { left: 720, hanging: 360 } } }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                });
+
+                Packer.toBase64String(doc).then((base64Data) => {
+                    let dataUri = 'data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,' + base64Data;
+                    let a = document.createElement('a');
+                    a.href = dataUri;
+                    a.download = 'Document.docx';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    
+                    $btn.html(originalBtnHTML);
+                    $btn.prop('disabled', false);
+                });
+
+            } catch (err) {
+                showAlert("Error generating DOCX: " + err.message);
                 $btn.html(originalBtnHTML);
                 $btn.prop('disabled', false);
-            };
-            reader.readAsDataURL(convertedDocx);
+            }
         } 
         else if (currentAppId === 'sheet') {
             // Exportar a XLSX real usando SheetJS
