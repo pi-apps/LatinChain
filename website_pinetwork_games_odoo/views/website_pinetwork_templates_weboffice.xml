@@ -8,7 +8,7 @@
                     <head>
                         <meta charset="UTF-8"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                        <title>WebOffice</title>
+                        <title>WebOffice (Testng Phase)</title>
                         <!-- Tailwind CSS para diseño Mobile-First y UI moderna -->
                         <script src="https://cdn.tailwindcss.com"></script>
                         <!-- FontAwesome para Iconos -->
@@ -128,7 +128,7 @@
                                 </button>
                                 <h1 class="text-xl font-bold flex items-center space-x-2">
                                     <i class="fas fa-cloud"></i>
-                                    <span id="app-title">WebOffice Suite</span>
+                                    <span id="app-title">WebOffice (Testing Phase)</span>
                                 </h1>
                             </div>
                             <div>
@@ -244,6 +244,7 @@
                                 </div>
                                 
                                 <div class="mt-8 text-center text-gray-400 text-sm">
+                                    <p>We are not responsible of data loss due to bad use of this app.</p>
                                     <p>For download cappabilities, use: https://trends.latin-chain.com/weboffice</p>
                                     <p>100% client-side web application. No data is sent to any server.</p>
                                 </div>
@@ -368,7 +369,7 @@
                             </div>
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/weboffice_functions.js?v=1.108"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/weboffice_functions.js?v=1.109"></script>
                     </body>
                 </html>
             </t>
