@@ -75,16 +75,28 @@ $(document).ready(function() {
                 openApp('doc');
             } 
             else if (ext === 'csv') {
-                // Importación rudimentaria de CSV
+                // Importación mejorada de CSV
                 const lines = text.split('\n').filter(l => l.trim() !== '');
+                
+                // Determinar el delimitador más probable (coma o punto y coma)
+                let delimiter = ',';
+                if (lines.length > 0 && lines[0].indexOf(';') !== -1 && lines[0].split(';').length > lines[0].split(',').length) {
+                    delimiter = ';';
+                }
+
                 let cCount = 4;
-                if(lines.length > 0) cCount = Math.max(4, lines[0].split(',').length);
                 let rCount = Math.max(10, lines.length);
+                
+                // Escanear todas las filas para encontrar el máximo de columnas
+                lines.forEach(line => {
+                    const colLength = line.split(delimiter).length;
+                    if (colLength > cCount) cCount = colLength;
+                });
                 
                 renderEmptySheet(rCount, cCount);
                 
                 lines.forEach((line, r) => {
-                    const cells = line.split(',');
+                    const cells = line.split(delimiter);
                     cells.forEach((val, c) => {
                         if(c < cols) {
                             $(`#sheet-content tbody tr:eq(${r}) td:eq(${c+1})`).text(val.trim());
@@ -100,11 +112,14 @@ $(document).ready(function() {
                 
                 if (table) {
                     const trs = Array.from(table.querySelectorAll('tr'));
-                    let rCount = trs.length;
+                    let rCount = Math.max(10, trs.length);
                     let cCount = 4;
-                    if(trs.length > 0) {
-                        cCount = Math.max(4, trs[0].querySelectorAll('td, th').length);
-                    }
+                    
+                    // Escanear todas las filas para encontrar el máximo de columnas
+                    trs.forEach(tr => {
+                        const colLength = tr.querySelectorAll('td, th').length;
+                        if (colLength > cCount) cCount = colLength;
+                    });
                     
                     renderEmptySheet(rCount, cCount);
                     
@@ -403,14 +418,14 @@ $(document).ready(function() {
         }
 
         // Disparar descarga estándar (Word y Excel)
-        let blob = new Blob(['\ufeff', content], { type: mimeType });
-        let url = URL.createObjectURL(blob);
+        // Usamos Data URI en base64 en lugar de Blob para mayor compatibilidad (ej. Pi Browser)
+        let base64Data = window.btoa(unescape(encodeURIComponent('\ufeff' + content)));
+        let dataUri = 'data:' + mimeType + ';base64,' + base64Data;
         let a = document.createElement('a');
-        a.href = url;
+        a.href = dataUri;
         a.download = filename;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-        URL.revokeObjectURL(url);
     });
 });
