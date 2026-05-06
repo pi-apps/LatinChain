@@ -2061,7 +2061,7 @@ $( document ).ready(function() {
     
     
     $('.latinchain-specs').on('click', function() {
-        showImageModal('/website_pinetwork_games_odoo/static/src/img/specs/latinchain-specs.jpg', 'LatinChain Specs');
+        showImageModal('/website_pinetwork_games_odoo/static/src/img/specs/latinchain-specs.jpg?v=1.101', 'LatinChain Specs');
     });
     
     $( ".pi-hackathon-info" ).click(function() {
