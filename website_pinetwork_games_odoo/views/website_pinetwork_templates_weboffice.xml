@@ -237,9 +237,9 @@
                                 <!-- Importación de Archivos -->
                                 <div class="mt-12 text-center border-t border-gray-300 pt-8">
                                     <h2 class="text-xl font-semibold mb-4 text-gray-700">Or import an existing file</h2>
-                                    <input type="file" id="file-import" accept=".txt,.html,.csv" class="hidden"/>
+                                    <input type="file" id="file-import" accept=".txt,.html,.doc,.docx,.csv,.xls,.xlsx" class="hidden"/>
                                     <button id="btn-import" class="bg-gray-800 text-white px-6 py-3 rounded-lg shadow hover:bg-gray-700 transition inline-flex items-center">
-                                        <i class="fas fa-upload mr-2"></i> Upload File (.csv, .txt, .html)
+                                        <i class="fas fa-upload mr-2"></i> Upload File (.docx, .xlsx, .csv, .txt)
                                     </button>
                                 </div>
                                 
