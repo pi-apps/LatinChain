@@ -43,7 +43,7 @@ $(document).ready(function() {
         $('.view-content').addClass('hidden');
         $('#view-dashboard').removeClass('hidden');
         $('#btn-back, #btn-export').addClass('hidden');
-        $('#app-title').text('WebOffice Free');
+        $('#app-title').text('WebOffice Suite');
         $('nav').removeClass('bg-blue-600 bg-green-600 bg-red-600').addClass('bg-indigo-600');
         currentApp = '';
     });
