@@ -58,89 +58,96 @@ $(document).ready(function() {
         if (!file) return;
 
         const ext = file.name.split('.').pop().toLowerCase();
+        const isTextBased = ['txt', 'html'].includes(ext);
+        const isSheet = ['csv', 'xls', 'xlsx'].includes(ext);
+        const isWord = ['doc', 'docx'].includes(ext);
+
+        if (!isTextBased && !isSheet && !isWord) {
+            showAlert('File format not supported.');
+            $(this).val('');
+            return;
+        }
+
         const reader = new FileReader();
 
         reader.onload = function(evt) {
-            const text = evt.target.result;
+            const result = evt.target.result;
 
             if (ext === 'txt') {
-                $('#doc-content').html(`<p>${text.replace(/\n/g, '<br>')}</p>`);
+                $('#doc-content').html(`<p>${result.replace(/\n/g, '<br>')}</p>`);
                 openApp('doc');
             } 
-            else if (ext === 'html' || ext === 'doc') {
+            else if (ext === 'html') {
                 const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                // Extraer el contenido del body para limpiar tags de cabecera html
-                $('#doc-content').html(doc.body.innerHTML || text);
+                const doc = parser.parseFromString(result, 'text/html');
+                $('#doc-content').html(doc.body.innerHTML || result);
                 openApp('doc');
             } 
-            else if (ext === 'csv') {
-                // Importación mejorada de CSV
-                const lines = text.split('\n').filter(l => l.trim() !== '');
-                
-                // Determinar el delimitador más probable (coma o punto y coma)
-                let delimiter = ',';
-                if (lines.length > 0 && lines[0].indexOf(';') !== -1 && lines[0].split(';').length > lines[0].split(',').length) {
-                    delimiter = ';';
-                }
-
-                let cCount = 4;
-                let rCount = Math.max(10, lines.length);
-                
-                // Escanear todas las filas para encontrar el máximo de columnas
-                lines.forEach(line => {
-                    const colLength = line.split(delimiter).length;
-                    if (colLength > cCount) cCount = colLength;
-                });
-                
-                renderEmptySheet(rCount, cCount);
-                
-                lines.forEach((line, r) => {
-                    const cells = line.split(delimiter);
-                    cells.forEach((val, c) => {
-                        if(c < cols) {
-                            $(`#sheet-content tbody tr:eq(${r}) td:eq(${c+1})`).text(val.trim());
-                        }
+            else if (ext === 'docx') {
+                // Utilizar Mammoth para leer archivos DOCX binarios
+                mammoth.convertToHtml({arrayBuffer: result})
+                    .then(function(res) {
+                        $('#doc-content').html(res.value || '<p></p>');
+                        openApp('doc');
+                    })
+                    .catch(function(err) {
+                        showAlert('Error importing DOCX: ' + err.message);
                     });
-                });
-                openApp('sheet');
-            } 
-            else if (ext === 'xls') {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                const table = doc.querySelector('table');
-                
-                if (table) {
-                    const trs = Array.from(table.querySelectorAll('tr'));
-                    let rCount = Math.max(10, trs.length);
+            }
+            else if (ext === 'doc') {
+                // Los .doc antiguos que exportábamos eran HTML, decodificamos el ArrayBuffer a Texto
+                const decoder = new TextDecoder('utf-8');
+                const text = decoder.decode(result);
+                if (text.includes('<html')) {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(text, 'text/html');
+                    $('#doc-content').html(doc.body.innerHTML || text);
+                    openApp('doc');
+                } else {
+                    showAlert('Legacy binary .doc files are not fully supported. Please use .docx or .html');
+                }
+            }
+            else if (isSheet) {
+                // Utilizar SheetJS para procesar XLSX, XLS y CSV nativamente a partir del ArrayBuffer
+                try {
+                    const workbook = XLSX.read(result, {type: 'array'});
+                    const firstSheetName = workbook.SheetNames[0];
+                    const worksheet = workbook.Sheets[firstSheetName];
+                    
+                    // Convertir a matriz bidimensional (arreglo de arreglos)
+                    const sheetData = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+                    
+                    let rCount = Math.max(10, sheetData.length);
                     let cCount = 4;
                     
-                    // Escanear todas las filas para encontrar el máximo de columnas
-                    trs.forEach(tr => {
-                        const colLength = tr.querySelectorAll('td, th').length;
-                        if (colLength > cCount) cCount = colLength;
+                    // Encontrar la fila más larga para columnas
+                    sheetData.forEach(row => {
+                        if (row.length > cCount) cCount = row.length;
                     });
                     
                     renderEmptySheet(rCount, cCount);
                     
-                    trs.forEach((tr, r) => {
-                        const tds = tr.querySelectorAll('td'); // Como limpiamos los headers al exportar
-                        tds.forEach((td, c) => {
-                            if(c < cols) {
-                                $(`#sheet-content tbody tr:eq(${r}) td:eq(${c+1})`).html(td.innerHTML);
+                    // Poblar la tabla visual
+                    sheetData.forEach((row, r) => {
+                        row.forEach((val, c) => {
+                            if(val !== undefined && val !== null && c < cols) {
+                                $(`#sheet-content tbody tr:eq(${r}) td:eq(${c+1})`).text(val);
                             }
                         });
                     });
+                    openApp('sheet');
+                } catch (e) {
+                    showAlert('Error importing spreadsheet: ' + e.message);
                 }
-                openApp('sheet');
             }
         };
 
-        // Formatos válidos que podemos leer vía texto en cliente puro
-        if (['txt', 'html', 'doc', 'csv', 'xls'].includes(ext)) {
+        // Lectura inteligente dependiendo del tipo de archivo
+        if (isTextBased) {
             reader.readAsText(file);
         } else {
-            showAlert('File format not supported. Please select a .txt, .html, .doc, .csv, or .xls file.');
+            // Archivos Word y Excel requieren leerse como ArrayBuffer (Binario)
+            reader.readAsArrayBuffer(file);
         }
         
         $(this).val(''); // Limpiar el input file
