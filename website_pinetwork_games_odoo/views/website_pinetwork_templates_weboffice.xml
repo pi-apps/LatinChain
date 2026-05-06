@@ -133,9 +133,8 @@
                                 </button>
                             </div>
                         </nav>
-
-                        <!-- Área principal -->
-                        <main class="flex-1 overflow-y-auto p-4 md:p-8">
+                        
+                        <div>
                             
                             <style>
                                 /* Adjustments for Google Translator to be visible */
@@ -193,6 +192,10 @@
                             <div style="text-align:center; margin-bottom:15px;">
                                 <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
                             </div>
+                        </div>
+
+                        <!-- Área principal -->
+                        <main class="flex-1 overflow-y-auto p-4 md:p-8">
                             
                             <!-- DASHBOARD (Menú Principal) -->
                             <div id="view-dashboard" class="max-w-4xl mx-auto">
