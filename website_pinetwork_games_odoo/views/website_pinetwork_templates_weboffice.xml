@@ -8,7 +8,7 @@
                     <head>
                         <meta charset="UTF-8"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                        <title>(Drafts use only, not prod)</title>
+                        <title>WebOffice Suite</title>
                         <!-- Tailwind CSS para diseño Mobile-First y UI moderna -->
                         <script src="https://cdn.tailwindcss.com"></script>
                         <!-- FontAwesome para Iconos -->
@@ -204,7 +204,7 @@
                             
                             <!-- DASHBOARD (Menú Principal) -->
                             <div id="view-dashboard" class="max-w-4xl mx-auto view-content">
-                                <h2 class="text-2xl font-semibold mb-6 text-center md:text-left">Create a new file</h2>
+                                <h2 class="text-2xl font-semibold mb-6 text-center md:text-left">Create a new file<br/>(Drafts use only, not prod)</h2>
                                 
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <!-- Tarjeta Documento -->
@@ -370,7 +370,7 @@
                             </div>
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/weboffice_functions.js?v=1.112"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/weboffice_functions.js?v=1.113"></script>
                     </body>
                 </html>
             </t>
