@@ -26,7 +26,13 @@ $(document).ready(function() {
             colorClass = 'bg-green-600'; 
             if ($('#sheet-content tbody tr').length === 0) initSheet(); 
         }
-        if(currentApp === 'slide') { title = 'Presentation'; colorClass = 'bg-red-600'; initSlides(); }
+        if(currentApp === 'slide') { 
+            title = 'Presentation'; 
+            colorClass = 'bg-red-600'; 
+            // Inicializar miniaturas asegurando que pinte la que corresponde
+            renderSlideThumbnails();
+            loadSlide(currentSlideIdx);
+        }
         
         $('#app-title').text(title);
         
@@ -43,7 +49,7 @@ $(document).ready(function() {
         $('.view-content').addClass('hidden');
         $('#view-dashboard').removeClass('hidden');
         $('#btn-back, #btn-export').addClass('hidden');
-        $('#app-title').text('WebOffice Free');
+        $('#app-title').text('WebOffice Suite');
         $('nav').removeClass('bg-blue-600 bg-green-600 bg-red-600').addClass('bg-indigo-600');
         currentApp = '';
     });
@@ -61,8 +67,9 @@ $(document).ready(function() {
         const isTextBased = ['txt', 'html'].includes(ext);
         const isSheet = ['csv', 'xls', 'xlsx'].includes(ext);
         const isWord = ['doc', 'docx'].includes(ext);
+        const isPresentation = ['pptx'].includes(ext);
 
-        if (!isTextBased && !isSheet && !isWord) {
+        if (!isTextBased && !isSheet && !isWord && !isPresentation) {
             showAlert('File format not supported.');
             $(this).val('');
             return;
@@ -95,7 +102,6 @@ $(document).ready(function() {
                     });
             }
             else if (ext === 'doc') {
-                // Los .doc antiguos que exportábamos eran HTML, decodificamos el ArrayBuffer a Texto
                 const decoder = new TextDecoder('utf-8');
                 const text = decoder.decode(result);
                 if (text.includes('<html')) {
@@ -140,13 +146,75 @@ $(document).ready(function() {
                     showAlert('Error importing spreadsheet: ' + e.message);
                 }
             }
+            else if (ext === 'pptx') {
+                // Importación de texto de PPTX desempaquetando el ZIP XML nativo
+                JSZip.loadAsync(result).then(function(zip) {
+                    let slidePromises = [];
+                    
+                    // Buscar todos los XML de las diapositivas (slide1.xml, slide2.xml...)
+                    let slideFiles = Object.keys(zip.files).filter(fileName => /^ppt\/slides\/slide\d+\.xml$/.test(fileName));
+                    
+                    // Ordenar alfabéticamente/numéricamente
+                    slideFiles.sort((a, b) => {
+                        let numA = parseInt(a.match(/slide(\d+)\.xml/)[1]);
+                        let numB = parseInt(b.match(/slide(\d+)\.xml/)[1]);
+                        return numA - numB;
+                    });
+
+                    if (slideFiles.length === 0) {
+                        showAlert('No slides found in this PPTX.');
+                        return;
+                    }
+
+                    // Leer el contenido XML de cada archivo asíncronamente
+                    slideFiles.forEach(fileName => {
+                        slidePromises.push(zip.files[fileName].async("string"));
+                    });
+
+                    Promise.all(slidePromises).then(function(slideContents) {
+                        slides = []; // Limpiar las diapos previas
+                        
+                        slideContents.forEach(content => {
+                            let textBlocks = [];
+                            // Parsear el XML con Regex para buscar texto en las etiquetas <a:t>
+                            let regex = /<a:t[^>]*>([\s\S]*?)<\/a:t>/g;
+                            let match;
+                            while ((match = regex.exec(content)) !== null) {
+                                let text = match[1].trim();
+                                if (text !== "") {
+                                    textBlocks.push(text);
+                                }
+                            }
+                            
+                            let slideHtml = '';
+                            if (textBlocks.length > 0) {
+                                slideHtml += `<h1>${textBlocks[0]}</h1>`;
+                                for(let i=1; i<textBlocks.length; i++) {
+                                    slideHtml += `<p>${textBlocks[i]}</p>`;
+                                }
+                            } else {
+                                slideHtml = '<h2 class="text-gray-400 italic">[Slide with Images / No Text]</h2>';
+                            }
+                            slides.push(slideHtml);
+                        });
+                        
+                        currentSlideIdx = 0;
+                        openApp('slide');
+                        showAlert('PPTX Loaded! Note: Only text is extracted. Layouts, shapes, and images are ignored to keep the app lightweight client-side. (PPTX exported directly by this app are saved as images and cannot be text-edited).');
+                    }).catch(function(e) {
+                        showAlert('Error reading slide data: ' + e.message);
+                    });
+                }).catch(function(e) {
+                    showAlert('Error unzipping PPTX format: ' + e.message);
+                });
+            }
         };
 
         // Lectura inteligente dependiendo del tipo de archivo
         if (isTextBased) {
             reader.readAsText(file);
         } else {
-            // Archivos Word y Excel requieren leerse como ArrayBuffer (Binario)
+            // Archivos Word, Excel y PPTX requieren leerse como ArrayBuffer (Binario)
             reader.readAsArrayBuffer(file);
         }
         
@@ -280,8 +348,12 @@ $(document).ready(function() {
     let currentSlideIdx = 0;
 
     function initSlides() {
+        // Prevenir sobre-escritura si ya se cargaron slides (como por el import)
+        if (slides.length === 0) {
+            slides = ["<h1>Presentation Title</h1><p>Subtitle or text</p>"];
+        }
         renderSlideThumbnails();
-        loadSlide(0);
+        loadSlide(currentSlideIdx);
     }
 
     function renderSlideThumbnails() {
@@ -308,7 +380,9 @@ $(document).ready(function() {
     }
 
     function loadSlide(idx) {
-        $('#slide-content').html(slides[idx]);
+        if (slides[idx] !== undefined) {
+            $('#slide-content').html(slides[idx]);
+        }
     }
 
     $('#add-slide').click(function() {
@@ -341,11 +415,9 @@ $(document).ready(function() {
 
     // --- EXPORTACIÓN DE ARCHIVOS ---
     $('#btn-export').click(function() {
-        let content = '';
-        let filename = '';
-        let mimeType = '';
+        let currentAppId = currentApp;
 
-        if (currentApp === 'doc') {
+        if (currentAppId === 'doc') {
             // Exportar a DOCX real nativo
             let $btn = $(this);
             let originalBtnHTML = $btn.html();
@@ -373,10 +445,8 @@ $(document).ready(function() {
                 $btn.prop('disabled', false);
             };
             reader.readAsDataURL(convertedDocx);
-            
-            return; // Terminamos aquí porque ya descargamos
         } 
-        else if (currentApp === 'sheet') {
+        else if (currentAppId === 'sheet') {
             // Exportar a XLSX real usando SheetJS
             let sheetHTML = $('#sheet-content').clone();
             sheetHTML.find('td[contenteditable]').removeAttr('contenteditable');
@@ -401,11 +471,9 @@ $(document).ready(function() {
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            
-            return; // Terminamos aquí porque ya descargamos
         }
-        else if (currentApp === 'slide') {
-            // SOLUCIÓN 2: Exportar a PPTX real usando PptxGenJS y html2canvas
+        else if (currentAppId === 'slide') {
+            // Exportar a PPTX real usando PptxGenJS y html2canvas
             saveCurrentSlide();
             
             let $btn = $(this);
@@ -442,15 +510,27 @@ $(document).ready(function() {
                 // Restaurar a la diapositiva en la que estaba el usuario
                 loadSlide(originalIdx);
                 
-                // Descargar el archivo PPTX
-                pptx.writeFile({ fileName: "Presentation.pptx" }).then(() => {
+                // FIX PI BROWSER: Forzar salida de PPTX a Base64 en vez de Blob
+                pptx.write('base64').then((base64Data) => {
+                    let dataUri = 'data:application/vnd.openxmlformats-officedocument.presentationml.presentation;base64,' + base64Data;
+                    
+                    let a = document.createElement('a');
+                    a.href = dataUri;
+                    a.download = 'Presentation.pptx';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    
+                    $btn.html(originalBtnHTML);
+                    $btn.prop('disabled', false);
+                }).catch((err) => {
+                    showAlert("Error saving presentation: " + err);
                     $btn.html(originalBtnHTML);
                     $btn.prop('disabled', false);
                 });
             }
             
             generatePPTX();
-            return; // Retornamos para evitar ejecutar la descarga tradicional de Blob (solo para word/excel)
         }
     });
 });
