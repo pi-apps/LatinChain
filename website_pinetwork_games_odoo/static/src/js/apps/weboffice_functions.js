@@ -403,14 +403,14 @@ $(document).ready(function() {
         }
 
         // Disparar descarga estándar (Word y Excel)
-        let blob = new Blob(['\ufeff', content], { type: mimeType });
-        let url = URL.createObjectURL(blob);
+        // Usamos Data URI en base64 en lugar de Blob para mayor compatibilidad (ej. Pi Browser)
+        let base64Data = window.btoa(unescape(encodeURIComponent('\ufeff' + content)));
+        let dataUri = 'data:' + mimeType + ';base64,' + base64Data;
         let a = document.createElement('a');
-        a.href = url;
+        a.href = dataUri;
         a.download = filename;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-        URL.revokeObjectURL(url);
     });
 });
