@@ -195,15 +195,15 @@
                         </div>
 
                         <!-- Área principal -->
-                        <main class="flex-1 overflow-y-auto p-4 md:p-8">
+                        <main class="flex-1 overflow-y-auto p-4 md:p-8 relative">
                             
                             <!-- DASHBOARD (Menú Principal) -->
-                            <div id="view-dashboard" class="max-w-4xl mx-auto">
+                            <div id="view-dashboard" class="max-w-4xl mx-auto view-content">
                                 <h2 class="text-2xl font-semibold mb-6 text-center md:text-left">Create a new file</h2>
                                 
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <!-- Tarjeta Documento -->
-                                    <button class="app-card bg-white p-8 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center border-t-4 border-blue-500" data-target="view-doc">
+                                    <button class="app-card bg-white p-8 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center border-t-4 border-blue-500" data-target="doc">
                                         <div class="bg-blue-100 text-blue-600 p-4 rounded-full mb-4 text-3xl">
                                             <i class="fas fa-file-word"></i>
                                         </div>
@@ -212,7 +212,7 @@
                                     </button>
 
                                     <!-- Tarjeta Hoja de cálculo -->
-                                    <button class="app-card bg-white p-8 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center border-t-4 border-green-500" data-target="view-sheet">
+                                    <button class="app-card bg-white p-8 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center border-t-4 border-green-500" data-target="sheet">
                                         <div class="bg-green-100 text-green-600 p-4 rounded-full mb-4 text-3xl">
                                             <i class="fas fa-file-excel"></i>
                                         </div>
@@ -221,7 +221,7 @@
                                     </button>
 
                                     <!-- Tarjeta Presentación -->
-                                    <button class="app-card bg-white p-8 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center border-t-4 border-red-500" data-target="view-slide">
+                                    <button class="app-card bg-white p-8 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center border-t-4 border-red-500" data-target="slide">
                                         <div class="bg-red-100 text-red-600 p-4 rounded-full mb-4 text-3xl">
                                             <i class="fas fa-file-powerpoint"></i>
                                         </div>
@@ -229,14 +229,23 @@
                                         <p class="text-gray-500 text-sm mt-2 text-center">PowerPoint or Impress style slides.</p>
                                     </button>
                                 </div>
+
+                                <!-- Importación de Archivos -->
+                                <div class="mt-12 text-center border-t border-gray-300 pt-8">
+                                    <h2 class="text-xl font-semibold mb-4 text-gray-700">Or import an existing file</h2>
+                                    <input type="file" id="file-import" accept=".txt,.html,.doc,.csv,.xls" class="hidden"/>
+                                    <button id="btn-import" class="bg-gray-800 text-white px-6 py-3 rounded-lg shadow hover:bg-gray-700 transition inline-flex items-center">
+                                        <i class="fas fa-upload mr-2"></i> Upload File (.doc, .xls, .csv, .txt)
+                                    </button>
+                                </div>
                                 
-                                <div class="mt-12 text-center text-gray-500 text-sm">
+                                <div class="mt-8 text-center text-gray-400 text-sm">
                                     <p>100% client-side web application. No data is sent to any server.</p>
                                 </div>
                             </div>
 
                             <!-- EDITOR DE DOCUMENTOS -->
-                            <div id="view-doc" class="hidden max-w-5xl mx-auto bg-white rounded-lg shadow-md flex flex-col h-full border border-gray-200">
+                            <div id="view-doc" class="hidden view-content max-w-5xl mx-auto bg-white rounded-lg shadow-md flex flex-col h-full border border-gray-200">
                                 <!-- Toolbar Word -->
                                 <div class="bg-gray-50 p-2 border-b flex flex-wrap gap-2 items-center rounded-t-lg">
                                     <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="undo" title="Undo"><i class="fas fa-undo"></i></button>
@@ -270,7 +279,7 @@
                             </div>
 
                             <!-- EDITOR DE HOJA DE CÁLCULO -->
-                            <div id="view-sheet" class="hidden max-w-full mx-auto bg-white rounded-lg shadow-md flex flex-col h-full border border-gray-200">
+                            <div id="view-sheet" class="hidden view-content max-w-full mx-auto bg-white rounded-lg shadow-md flex flex-col h-full border border-gray-200">
                                 <!-- Toolbar Excel -->
                                 <div class="bg-gray-50 p-2 border-b flex flex-wrap gap-2 items-center rounded-t-lg">
                                     <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="undo" title="Undo"><i class="fas fa-undo"></i></button>
@@ -305,7 +314,7 @@
                             </div>
 
                             <!-- EDITOR DE PRESENTACIONES -->
-                            <div id="view-slide" class="hidden max-w-5xl mx-auto bg-white rounded-lg shadow-md flex flex-col md:flex-row h-full border border-gray-200">
+                            <div id="view-slide" class="hidden view-content max-w-5xl mx-auto bg-white rounded-lg shadow-md flex flex-col md:flex-row h-full border border-gray-200">
                                 <!-- Sidebar Diapositivas -->
                                 <div class="w-full md:w-48 border-r border-b md:border-b-0 bg-gray-50 flex flex-row md:flex-col p-2 overflow-x-auto md:overflow-y-auto shrink-0 gap-2">
                                     <button id="add-slide" class="w-full py-2 bg-red-50 text-red-700 border border-red-200 rounded hover:bg-red-100 text-sm transition mb-2 whitespace-nowrap md:whitespace-normal">
@@ -342,10 +351,19 @@
                                     </div>
                                 </div>
                             </div>
-
                         </main>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/weboffice_functions.js?v=1.101"></script>
+                        <!-- Custom Alert Modal UI -->
+                        <div id="alert-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                            <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center transform transition-all">
+                                <div class="text-indigo-500 text-5xl mb-4"><i class="fas fa-info-circle"></i></div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-800">Notice</h3>
+                                <p id="alert-message" class="text-gray-600 mb-6"></p>
+                                <button onclick="$('#alert-modal').addClass('hidden')" class="bg-indigo-600 text-white px-6 py-2 rounded shadow hover:bg-indigo-700 transition">Got it</button>
+                            </div>
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/weboffice_functions.js?v=1.102"></script>
                     </body>
                 </html>
             </t>

@@ -1,34 +1,134 @@
 $(document).ready(function() {
     let currentApp = ''; // 'doc', 'sheet', o 'slide'
     
-    // --- NAVEGACIÓN ---
-    $('.app-card').click(function() {
-        const targetId = $(this).data('target');
-        currentApp = targetId.replace('view-', '');
+    // --- UTILIDADES ---
+    function showAlert(msg) {
+        $('#alert-message').text(msg);
+        $('#alert-modal').removeClass('hidden');
+    }
+
+    // --- NAVEGACIÓN PRINCIPAL ---
+    function openApp(appType) {
+        currentApp = appType;
+        let targetId = 'view-' + appType;
         
-        // Actualizar UI del Navbar
-        $('#view-dashboard').addClass('hidden');
+        // Actualizar UI del Navbar y Views
+        $('.view-content').addClass('hidden');
         $('#' + targetId).removeClass('hidden');
         $('#btn-back, #btn-export').removeClass('hidden');
         
-        // Cambiar título
+        // Cambiar título y color
         let title = '';
         let colorClass = '';
         if(currentApp === 'doc') { title = 'Document'; colorClass = 'bg-blue-600'; }
-        if(currentApp === 'sheet') { title = 'Spreadsheet'; colorClass = 'bg-green-600'; initSheet(); }
+        if(currentApp === 'sheet') { 
+            title = 'Spreadsheet'; 
+            colorClass = 'bg-green-600'; 
+            if ($('#sheet-content tbody tr').length === 0) initSheet(); 
+        }
         if(currentApp === 'slide') { title = 'Presentation'; colorClass = 'bg-red-600'; initSlides(); }
         
         $('#app-title').text(title);
-        $('nav').removeClass('bg-indigo-600').addClass(colorClass);
+        
+        // Modificando las clases de Tailwind del nav
+        $('nav').removeClass('bg-indigo-600 bg-blue-600 bg-green-600 bg-red-600 text-indigo-600').addClass(colorClass);
+        $('#btn-export').removeClass('text-indigo-600 text-blue-600 text-green-600 text-red-600').addClass('text-' + colorClass.replace('bg-', ''));
+    }
+
+    $('.app-card').click(function() {
+        openApp($(this).data('target'));
     });
 
     $('#btn-back').click(function() {
-        $('.view-content, main > div').addClass('hidden');
+        $('.view-content').addClass('hidden');
         $('#view-dashboard').removeClass('hidden');
         $('#btn-back, #btn-export').addClass('hidden');
         $('#app-title').text('WebOffice Free');
-        $('nav').attr('class', 'bg-indigo-600 text-white shadow-md p-4 flex justify-between items-center z-10');
+        $('nav').removeClass('bg-blue-600 bg-green-600 bg-red-600').addClass('bg-indigo-600');
         currentApp = '';
+    });
+
+    // --- IMPORTACIÓN / CARGA DE ARCHIVOS ---
+    $('#btn-import').click(function() {
+        $('#file-import').click();
+    });
+
+    $('#file-import').change(function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const ext = file.name.split('.').pop().toLowerCase();
+        const reader = new FileReader();
+
+        reader.onload = function(evt) {
+            const text = evt.target.result;
+
+            if (ext === 'txt') {
+                $('#doc-content').html(`<p>${text.replace(/\n/g, '<br>')}</p>`);
+                openApp('doc');
+            } 
+            else if (ext === 'html' || ext === 'doc') {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                // Extraer el contenido del body para limpiar tags de cabecera html
+                $('#doc-content').html(doc.body.innerHTML || text);
+                openApp('doc');
+            } 
+            else if (ext === 'csv') {
+                // Importación rudimentaria de CSV
+                const lines = text.split('\n').filter(l => l.trim() !== '');
+                let cCount = 4;
+                if(lines.length > 0) cCount = Math.max(4, lines[0].split(',').length);
+                let rCount = Math.max(10, lines.length);
+                
+                renderEmptySheet(rCount, cCount);
+                
+                lines.forEach((line, r) => {
+                    const cells = line.split(',');
+                    cells.forEach((val, c) => {
+                        if(c < cols) {
+                            $(`#sheet-content tbody tr:eq(${r}) td:eq(${c+1})`).text(val.trim());
+                        }
+                    });
+                });
+                openApp('sheet');
+            } 
+            else if (ext === 'xls') {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const table = doc.querySelector('table');
+                
+                if (table) {
+                    const trs = Array.from(table.querySelectorAll('tr'));
+                    let rCount = trs.length;
+                    let cCount = 4;
+                    if(trs.length > 0) {
+                        cCount = Math.max(4, trs[0].querySelectorAll('td, th').length);
+                    }
+                    
+                    renderEmptySheet(rCount, cCount);
+                    
+                    trs.forEach((tr, r) => {
+                        const tds = tr.querySelectorAll('td'); // Como limpiamos los headers al exportar
+                        tds.forEach((td, c) => {
+                            if(c < cols) {
+                                $(`#sheet-content tbody tr:eq(${r}) td:eq(${c+1})`).html(td.innerHTML);
+                            }
+                        });
+                    });
+                }
+                openApp('sheet');
+            }
+        };
+
+        // Formatos válidos que podemos leer vía texto en cliente puro
+        if (['txt', 'html', 'doc', 'csv', 'xls'].includes(ext)) {
+            reader.readAsText(file);
+        } else {
+            showAlert('File format not supported. Please select a .txt, .html, .doc, .csv, or .xls file.');
+        }
+        
+        $(this).val(''); // Limpiar el input file
     });
 
     // --- FORMATO DE TEXTO GENERAL ---
@@ -59,9 +159,23 @@ $(document).ready(function() {
         focusedSheetCell = $(this);
     });
     
+    function renderEmptySheet(rCount, cCount) {
+        cols = cCount;
+        rows = rCount;
+        $('#sheet-content thead tr').empty().append('<th></th>');
+        $('#sheet-content tbody').empty();
+        
+        for(let i=0; i<cols; i++) {
+            $('#sheet-content thead tr').append(`<th>${getColName(i)}</th>`);
+        }
+        for(let i=1; i<=rows; i++) {
+            addSheetRow(i);
+        }
+    }
+
     function initSheet() {
         if ($('#sheet-content tbody tr').length === 0) {
-            for(let i=1; i<=rows; i++) addSheetRow(i);
+            renderEmptySheet(10, 4);
         }
     }
 
