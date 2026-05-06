@@ -43,7 +43,7 @@ $(document).ready(function() {
         $('.view-content').addClass('hidden');
         $('#view-dashboard').removeClass('hidden');
         $('#btn-back, #btn-export').addClass('hidden');
-        $('#app-title').text('WebOffice Suite');
+        $('#app-title').text('WebOffice Free');
         $('nav').removeClass('bg-blue-600 bg-green-600 bg-red-600').addClass('bg-indigo-600');
         currentApp = '';
     });
@@ -339,34 +339,63 @@ $(document).ready(function() {
         let mimeType = '';
 
         if (currentApp === 'doc') {
-            // Exportar Documento tipo Word (HTML con mime type específico)
+            // Exportar a DOCX real nativo
+            let $btn = $(this);
+            let originalBtnHTML = $btn.html();
+            $btn.html('<i class="fas fa-spinner fa-spin mr-1"></i> Exporting...');
+            $btn.prop('disabled', true);
+
             let docHTML = $('#doc-content').html();
-            content = `
-                <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
-                <head><meta charset="utf-8"><title>Document</title></head>
-                <body>${docHTML}</body></html>
-            `;
-            filename = 'Document.doc';
-            mimeType = 'application/msword';
+            let htmlContent = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Document</title></head><body>${docHTML}</body></html>`;
+            
+            // Convertir HTML a un Blob DOCX usando la librería
+            let convertedDocx = htmlDocx.asBlob(htmlContent);
+            
+            // Convertir Blob a Base64 (Data URI) para soportar descargas en Pi Browser
+            let reader = new FileReader();
+            reader.onload = function() {
+                let dataUri = reader.result;
+                let a = document.createElement('a');
+                a.href = dataUri;
+                a.download = 'Document.docx';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                
+                $btn.html(originalBtnHTML);
+                $btn.prop('disabled', false);
+            };
+            reader.readAsDataURL(convertedDocx);
+            
+            return; // Terminamos aquí porque ya descargamos
         } 
         else if (currentApp === 'sheet') {
-            // Exportar a Excel (Tabla HTML con mime type de excel)
+            // Exportar a XLSX real usando SheetJS
             let sheetHTML = $('#sheet-content').clone();
             sheetHTML.find('td[contenteditable]').removeAttr('contenteditable');
             
-            // SOLUCIÓN 1: Remover la cabecera (A, B, C...) y la primera columna (1, 2, 3...)
+            // Remover la cabecera (A, B, C...) y la primera columna (1, 2, 3...)
             sheetHTML.find('thead').remove();
             sheetHTML.find('tbody tr').each(function() {
                 $(this).find('td:first').remove();
             });
 
-            content = `
-                <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
-                <head><meta charset="utf-8"></head>
-                <body>${sheetHTML.prop('outerHTML')}</body></html>
-            `;
-            filename = 'Spreadsheet.xls';
-            mimeType = 'application/vnd.ms-excel';
+            // Generar libro de Excel desde la tabla HTML limpia
+            let wb = XLSX.utils.table_to_book(sheetHTML[0]);
+            
+            // Escribir el archivo a base64
+            let base64Data = XLSX.write(wb, { bookType: 'xlsx', type: 'base64' });
+            let dataUri = 'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,' + base64Data;
+            
+            // Descargar en Pi Browser vía Data URI
+            let a = document.createElement('a');
+            a.href = dataUri;
+            a.download = 'Spreadsheet.xlsx';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            return; // Terminamos aquí porque ya descargamos
         }
         else if (currentApp === 'slide') {
             // SOLUCIÓN 2: Exportar a PPTX real usando PptxGenJS y html2canvas
@@ -416,16 +445,5 @@ $(document).ready(function() {
             generatePPTX();
             return; // Retornamos para evitar ejecutar la descarga tradicional de Blob (solo para word/excel)
         }
-
-        // Disparar descarga estándar (Word y Excel)
-        // Usamos Data URI en base64 en lugar de Blob para mayor compatibilidad (ej. Pi Browser)
-        let base64Data = window.btoa(unescape(encodeURIComponent('\ufeff' + content)));
-        let dataUri = 'data:' + mimeType + ';base64,' + base64Data;
-        let a = document.createElement('a');
-        a.href = dataUri;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
     });
 });

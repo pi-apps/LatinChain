@@ -16,10 +16,12 @@
                         <!-- jQuery -->
                         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
                         
-                        <!-- Librerías para generar archivos .PPTX Nativos -->
+                        <!-- Librerías para generar archivos Nativos (.PPTX, .XLSX, .DOCX) -->
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
                         <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+                        <script src="https://unpkg.com/html-docx-js@0.3.1/dist/html-docx.js"></script>
 
                         <style>
                             /* Estilos personalizados para editores */
@@ -364,7 +366,7 @@
                             </div>
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/weboffice_functions.js?v=1.105"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/weboffice_functions.js?v=1.106"></script>
                     </body>
                 </html>
             </t>
