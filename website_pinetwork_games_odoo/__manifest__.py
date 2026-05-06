@@ -100,6 +100,7 @@ https://www.youtube.com/watch?v=9KqcyAoCZzo
         'views/website_pinetwork_templates_gameslearning.xml',
         'views/website_pinetwork_templates_odoolearning.xml',
         'views/website_pinetwork_templates_languagelearning.xml',
+        'views/website_pinetwork_templates_weboffice.xml',
         'views/website_pinetwork_templates_webtorrent.xml',
         'views/website_pinetwork_templates_players.xml',
         'views/website_pinetwork_templates_iq_test.xml',

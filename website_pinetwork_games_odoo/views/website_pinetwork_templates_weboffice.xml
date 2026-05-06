@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="weboffice" name="WebOffice">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html lang="en">
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>WebOffice</title>
+                        <!-- Tailwind CSS para diseño Mobile-First y UI moderna -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <!-- FontAwesome para Iconos -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+                        <!-- jQuery -->
+                        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+                        
+                        <!-- Librerías para generar archivos .PPTX Nativos -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.min.js"></script>
+
+                        <style>
+                            /* Estilos personalizados para editores */
+                            .editor-container {
+                                min-height: 60vh;
+                                outline: none;
+                            }
+                            
+                            /* Rich Text Editor Styles (Overrides Tailwind's base reset) */
+                            .editor-container h1 { font-size: 2.25rem; font-weight: bold; margin-top: 1.5rem; margin-bottom: 1rem; line-height: 1.2; }
+                            .editor-container h2 { font-size: 1.875rem; font-weight: bold; margin-top: 1.5rem; margin-bottom: 1rem; line-height: 1.3; }
+                            .editor-container h3 { font-size: 1.5rem; font-weight: bold; margin-top: 1.5rem; margin-bottom: 1rem; line-height: 1.4; }
+                            .editor-container p { margin-bottom: 1rem; line-height: 1.6; }
+                            .editor-container ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+                            .editor-container ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+                            .editor-container li { margin-bottom: 0.25rem; }
+                            
+                            /* Estilos de la hoja de cálculo */
+                            .spreadsheet-table {
+                                border-collapse: collapse;
+                                width: 100%;
+                            }
+                            .spreadsheet-table th, .spreadsheet-table td {
+                                border: 1px solid #d1d5db;
+                                padding: 8px;
+                                min-width: 100px;
+                                outline: none;
+                            }
+                            .spreadsheet-table th {
+                                background-color: #f3f4f6;
+                                text-align: center;
+                                font-weight: bold;
+                                color: #4b5563;
+                            }
+                            .spreadsheet-table td:focus {
+                                border-color: #10b981;
+                                box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+                            }
+
+                            /* Estilos de presentación */
+                            .slide-canvas {
+                                aspect-ratio: 16 / 9;
+                                width: 100%;
+                                border: 1px solid #d1d5db;
+                                background: white;
+                                padding: 2rem;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                text-align: center;
+                                font-size: 1.5rem;
+                                outline: none;
+                                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                            }
+                        </style>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Donate to unlock Apps
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="bg-gray-100 text-gray-800 font-sans h-screen flex flex-col overflow-hidden">
+                        <!-- Navbar -->
+                        <nav class="bg-indigo-600 text-white shadow-md p-4 flex justify-between items-center z-10">
+                            <div class="flex items-center space-x-3">
+                                <button id="btn-back" class="hidden hover:bg-indigo-700 p-2 rounded-full transition">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                                <h1 class="text-xl font-bold flex items-center space-x-2">
+                                    <i class="fas fa-cloud"></i>
+                                    <span id="app-title">WebOffice Free</span>
+                                </h1>
+                            </div>
+                            <div>
+                                <button id="btn-export" class="hidden bg-white text-indigo-600 px-4 py-2 rounded shadow font-semibold hover:bg-indigo-50 transition text-sm md:text-base">
+                                    <i class="fas fa-download mr-1"></i> Export
+                                </button>
+                            </div>
+                        </nav>
+
+                        <!-- Área principal -->
+                        <main class="flex-1 overflow-y-auto p-4 md:p-8">
+                            
+                            <style>
+                                /* Adjustments for Google Translator to be visible */
+                                .goog-te-banner-frame.skiptranslate,
+                                .skiptranslate > iframe {
+                                    display: none !important;
+                                }
+                               
+                                body {
+                                    top: 0px !important; 
+                                }
+
+                                .goog-te-menu-frame {
+                                    max-width:100% !important; 
+                                }
+                                .goog-te-menu2 { 
+                                    max-width: 100% !important;
+                                    overflow-x: scroll !important;
+                                    box-sizing:border-box !important; 
+                                    height:auto !important; 
+                                }
+                               
+                                /* Hide unwanted elements without hiding the main widget */
+                                #goog-gt-tt, 
+                                #goog-gt-, 
+                                .goog-te-balloon-frame {
+                                    display: none !important;
+                                } 
+                                .goog-text-highlight { 
+                                    background: none !important; 
+                                    box-shadow: none !important;
+                                }
+                               
+                                .goog-logo-link {
+                                    display: none !important;
+                                }
+                                .goog-te-gadget {
+                                    height: 28px !important; 
+                                    overflow: hidden;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                $( document ).ready(function() {
+                                    $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                    $("#google_translate_element").appendTo(".translate_here");
+                                    
+                                    $("#translate_text_latinchain_2").show();
+                                    $("#google_translate_element").show();
+                                });
+                            </script>
+                            
+                            <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                            </div>
+                            
+                            <div style="text-align:center; margin-bottom:15px;">
+                                <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                            </div>
+                            
+                            <!-- DASHBOARD (Menú Principal) -->
+                            <div id="view-dashboard" class="max-w-4xl mx-auto">
+                                <h2 class="text-2xl font-semibold mb-6 text-center md:text-left">Create a new file</h2>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <!-- Tarjeta Documento -->
+                                    <button class="app-card bg-white p-8 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center border-t-4 border-blue-500" data-target="view-doc">
+                                        <div class="bg-blue-100 text-blue-600 p-4 rounded-full mb-4 text-3xl">
+                                            <i class="fas fa-file-word"></i>
+                                        </div>
+                                        <h3 class="text-lg font-bold">Document</h3>
+                                        <p class="text-gray-500 text-sm mt-2 text-center">Word or Writer style word processor.</p>
+                                    </button>
+
+                                    <!-- Tarjeta Hoja de cálculo -->
+                                    <button class="app-card bg-white p-8 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center border-t-4 border-green-500" data-target="view-sheet">
+                                        <div class="bg-green-100 text-green-600 p-4 rounded-full mb-4 text-3xl">
+                                            <i class="fas fa-file-excel"></i>
+                                        </div>
+                                        <h3 class="text-lg font-bold">Spreadsheet</h3>
+                                        <p class="text-gray-500 text-sm mt-2 text-center">Excel or Calc style tables and data.</p>
+                                    </button>
+
+                                    <!-- Tarjeta Presentación -->
+                                    <button class="app-card bg-white p-8 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 flex flex-col items-center border-t-4 border-red-500" data-target="view-slide">
+                                        <div class="bg-red-100 text-red-600 p-4 rounded-full mb-4 text-3xl">
+                                            <i class="fas fa-file-powerpoint"></i>
+                                        </div>
+                                        <h3 class="text-lg font-bold">Presentation</h3>
+                                        <p class="text-gray-500 text-sm mt-2 text-center">PowerPoint or Impress style slides.</p>
+                                    </button>
+                                </div>
+                                
+                                <div class="mt-12 text-center text-gray-500 text-sm">
+                                    <p>100% client-side web application. No data is sent to any server.</p>
+                                </div>
+                            </div>
+
+                            <!-- EDITOR DE DOCUMENTOS -->
+                            <div id="view-doc" class="hidden max-w-5xl mx-auto bg-white rounded-lg shadow-md flex flex-col h-full border border-gray-200">
+                                <!-- Toolbar Word -->
+                                <div class="bg-gray-50 p-2 border-b flex flex-wrap gap-2 items-center rounded-t-lg">
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="undo" title="Undo"><i class="fas fa-undo"></i></button>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="redo" title="Redo"><i class="fas fa-redo"></i></button>
+                                    <div class="w-px h-6 bg-gray-300 mx-1"></div>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="bold" title="Bold"><i class="fas fa-bold"></i></button>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="italic" title="Italic"><i class="fas fa-italic"></i></button>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="underline" title="Underline"><i class="fas fa-underline"></i></button>
+                                    <div class="w-px h-6 bg-gray-300 mx-1"></div>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="justifyLeft" title="Align Left"><i class="fas fa-align-left"></i></button>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="justifyCenter" title="Align Center"><i class="fas fa-align-center"></i></button>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="justifyRight" title="Align Right"><i class="fas fa-align-right"></i></button>
+                                    <div class="w-px h-6 bg-gray-300 mx-1"></div>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="insertUnorderedList" title="Bulleted List"><i class="fas fa-list-ul"></i></button>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
+                                    <div class="w-px h-6 bg-gray-300 mx-1"></div>
+                                    <select class="format-select p-1 border rounded text-sm bg-white" id="heading-select">
+                                        <option value="p">Normal Paragraph</option>
+                                        <option value="h1">Heading 1</option>
+                                        <option value="h2">Heading 2</option>
+                                        <option value="h3">Heading 3</option>
+                                    </select>
+                                </div>
+                                <!-- Papel -->
+                                <div class="p-6 md:p-12 overflow-y-auto flex-1 bg-gray-100">
+                                    <div id="doc-content" class="editor-container bg-white shadow-sm mx-auto p-8 max-w-3xl prose" contenteditable="true">
+                                        <h1>Untitled Document</h1>
+                                        <p>Type your text here...</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EDITOR DE HOJA DE CÁLCULO -->
+                            <div id="view-sheet" class="hidden max-w-full mx-auto bg-white rounded-lg shadow-md flex flex-col h-full border border-gray-200">
+                                <!-- Toolbar Excel -->
+                                <div class="bg-gray-50 p-2 border-b flex flex-wrap gap-2 items-center rounded-t-lg">
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="undo" title="Undo"><i class="fas fa-undo"></i></button>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="redo" title="Redo"><i class="fas fa-redo"></i></button>
+                                    <div class="w-px h-6 bg-gray-300 mx-1"></div>
+                                    <button id="add-row" class="px-3 py-1 bg-green-50 text-green-700 border border-green-200 rounded hover:bg-green-100 text-sm transition"><i class="fas fa-plus mr-1"></i> Row</button>
+                                    <button id="del-row" class="px-3 py-1 bg-red-50 text-red-700 border border-red-200 rounded hover:bg-red-100 text-sm transition" title="Delete selected or last row"><i class="fas fa-minus mr-1"></i> Row</button>
+                                    <div class="w-px h-6 bg-gray-300 mx-1"></div>
+                                    <button id="add-col" class="px-3 py-1 bg-green-50 text-green-700 border border-green-200 rounded hover:bg-green-100 text-sm transition"><i class="fas fa-plus mr-1"></i> Column</button>
+                                    <button id="del-col" class="px-3 py-1 bg-red-50 text-red-700 border border-red-200 rounded hover:bg-red-100 text-sm transition" title="Delete selected or last column"><i class="fas fa-minus mr-1"></i> Column</button>
+                                    <div class="w-px h-6 bg-gray-300 mx-1"></div>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="bold" title="Bold"><i class="fas fa-bold"></i></button>
+                                    <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="italic" title="Italic"><i class="fas fa-italic"></i></button>
+                                </div>
+                                <!-- Tabla -->
+                                <div class="p-4 overflow-auto flex-1">
+                                    <table id="sheet-content" class="spreadsheet-table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>A</th>
+                                                <th>B</th>
+                                                <th>C</th>
+                                                <th>D</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Generado por JS -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- EDITOR DE PRESENTACIONES -->
+                            <div id="view-slide" class="hidden max-w-5xl mx-auto bg-white rounded-lg shadow-md flex flex-col md:flex-row h-full border border-gray-200">
+                                <!-- Sidebar Diapositivas -->
+                                <div class="w-full md:w-48 border-r border-b md:border-b-0 bg-gray-50 flex flex-row md:flex-col p-2 overflow-x-auto md:overflow-y-auto shrink-0 gap-2">
+                                    <button id="add-slide" class="w-full py-2 bg-red-50 text-red-700 border border-red-200 rounded hover:bg-red-100 text-sm transition mb-2 whitespace-nowrap md:whitespace-normal">
+                                        <i class="fas fa-plus"></i> New Slide
+                                    </button>
+                                    <button id="del-slide" class="w-full py-2 bg-gray-100 text-gray-700 border border-gray-300 rounded hover:bg-gray-200 text-sm transition mb-2 whitespace-nowrap md:whitespace-normal">
+                                        <i class="fas fa-trash"></i> Delete Slide
+                                    </button>
+                                    <div id="slide-thumbnails" class="flex flex-row md:flex-col gap-2 w-full">
+                                        <!-- Miniaturas -->
+                                    </div>
+                                </div>
+                                <!-- Área Principal Diapositiva -->
+                                <div class="flex-1 flex flex-col">
+                                     <!-- Toolbar PPT -->
+                                     <div class="bg-gray-50 p-2 border-b flex flex-wrap gap-2 items-center">
+                                        <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="undo" title="Undo"><i class="fas fa-undo"></i></button>
+                                        <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="redo" title="Redo"><i class="fas fa-redo"></i></button>
+                                        <div class="w-px h-6 bg-gray-300 mx-1"></div>
+                                        <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="bold"><i class="fas fa-bold"></i></button>
+                                        <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="italic"><i class="fas fa-italic"></i></button>
+                                        <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="justifyCenter"><i class="fas fa-align-center"></i></button>
+                                        <div class="w-px h-6 bg-gray-300 mx-1"></div>
+                                        <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="fontSize" data-val="6" title="Large Text"><i class="fas fa-font"></i><i class="fas fa-plus text-[10px] align-top ml-1"></i></button>
+                                        <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="fontSize" data-val="4" title="Normal Text"><i class="fas fa-font"></i></button>
+                                        <button class="format-btn p-2 hover:bg-gray-200 rounded text-gray-700" data-cmd="fontSize" data-val="2" title="Small Text"><i class="fas fa-font"></i><i class="fas fa-minus text-[10px] align-top ml-1"></i></button>
+                                    </div>
+                                    <!-- Canvas Diapositiva -->
+                                    <div class="p-4 md:p-8 flex-1 bg-gray-200 flex items-center justify-center overflow-hidden">
+                                        <div id="slide-content" class="slide-canvas" contenteditable="true">
+                                            <h1>Presentation Title</h1>
+                                            <p>Subtitle or text</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </main>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/weboffice_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>
