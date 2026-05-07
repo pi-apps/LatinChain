@@ -351,8 +351,8 @@ function printToTerminal(text, isError = false, isInfo = false) {
 }
 
 function setLoading(isLoading) {
-    runBtn.disabled = isLoading;
-    if (isLoading) {
+    //runBtn.disabled = isLoading;
+    /*if (isLoading) {
         //runIcon.classList.add('hidden');
         loadingIcon.classList.remove('hidden');
         runText.textContent = "Running...";
@@ -364,7 +364,7 @@ function setLoading(isLoading) {
         runText.textContent = "Run";
         runBtn.classList.replace('bg-gray-600', 'bg-green-600');
         //stopBtn.classList.add('hidden');
-    }
+    }*/
 }
 
 langSelect.addEventListener('change', handleLanguageChange);
