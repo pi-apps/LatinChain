@@ -106,7 +106,7 @@ sys.stdout = io.StringIO()
                     
                     const cdns = [
                         'https://cdn.jsdelivr.net/npm/JSCPP@2.0.6/dist/JSCPP.es5.min.js',
-                        'https://unpkg.com/jscpp@2.0.6/lib/JSCPP.es5.js'
+                        'https://cdn.jsdelivr.net/npm/JSCPP@2.0.6/dist/JSCPP.es5.js'
                     ];
                     
                     for(let i=0; i<cdns.length; i++) {
