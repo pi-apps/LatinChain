@@ -58,6 +58,7 @@ const workerScript = `
 
     let pyodideInstance = null;
     let JSCPP_Engine = null;
+    let JAVAPOLY_Engine = null;
 
     self.onmessage = async function(e) {
         const { lang, code } = e.data;
@@ -108,10 +109,10 @@ sys.stdout = io.StringIO()
                 if (!JSCPP_Engine) {
                     self.postMessage({ type: 'info', output: 'Attempting to load C/C++ interpreter...' });
                     
-                    const cdns = [
+                    /*const cdns = [
                         'https://cdn.jsdelivr.net/npm/JSCPP@2.0.6/dist/JSCPP.es5.min.js',
                         'https://cdn.jsdelivr.net/npm/JSCPP@2.0.6/dist/JSCPP.es5.js'
-                    ];
+                    ];*/
                     
                     importScripts('https://cdn.jsdelivr.net/npm/JSCPP@2.0.6/dist/JSCPP.es5.min.js');
                     
