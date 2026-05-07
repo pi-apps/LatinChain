@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="webcode" name="WebCode">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html lang="en">
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Code Cage - Open Source Sandbox</title>
+                        
+                        <!-- Tailwind CSS -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        
+                        <!-- CodeMirror CSS -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css"/>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css"/>
+                        
+                        <style>
+                            .CodeMirror {
+                                height: 100%;
+                                font-family: 'Fira Code', 'Courier New', Courier, monospace;
+                                font-size: 14px;
+                            }
+                            ::-webkit-scrollbar { width: 8px; height: 8px; }
+                            ::-webkit-scrollbar-track { background: #1f2937; }
+                            ::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 4px; }
+                            ::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Donate to unlock Apps
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                    </head>
+                    <body class="bg-gray-900 text-gray-100 h-screen flex flex-col overflow-hidden font-sans">
+
+                        <!-- Header and Controls -->
+                        <header class="bg-gray-800 border-b border-gray-700 p-4 shadow-md flex flex-col sm:flex-row justify-between items-center gap-4 z-10">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                                <div>
+                                    <h1 class="text-xl font-bold tracking-wide">Code Cage</h1>
+                                    <p class="text-xs text-gray-400">100% Client-Side Execution (Offline)</p>
+                                    <div style="text-align:center; margin-bottom:15px;">
+                                        <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex w-full sm:w-auto items-center gap-3">
+                                <select id="language-select" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full sm:w-40 p-2.5 outline-none transition-colors">
+                                    <option value="javascript">JavaScript</option>
+                                    <option value="python">Python 3 (Pyodide)</option>
+                                    <option value="c">C (Local)</option>
+                                    <option value="cpp">C++ (Local)</option>
+                                    <option value="php">PHP (Uniter)</option>
+                                    <option value="java">Java (Transpiler)</option>
+                                </select>
+                                
+                                <button id="stop-btn" class="hidden bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg text-sm px-4 py-2.5 focus:outline-none transition-colors shadow-lg shadow-red-500/30">
+                                    Stop
+                                </button>
+
+                                <button id="run-btn" class="bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none transition-colors flex items-center gap-2 shadow-lg shadow-green-500/30">
+                                    <svg id="run-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                    <svg id="loading-icon" class="animate-spin w-4 h-4 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                                    <span id="run-text">Run</span>
+                                </button>
+                            </div>
+                        </header>
+
+                        <!-- Main Area -->
+                        <main class="flex-1 flex flex-col lg:flex-row overflow-hidden relative">
+                            <div class="w-full lg:w-3/5 h-1/2 lg:h-full relative flex flex-col">
+                                <div class="bg-gray-800 text-xs text-gray-400 px-4 py-1 uppercase tracking-wider font-semibold border-b border-gray-700 flex justify-between">
+                                    <span>Source Code</span>
+                                </div>
+                                <div class="flex-1 overflow-hidden">
+                                    <textarea id="code-editor"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="w-full lg:w-2/5 h-1/2 lg:h-full flex flex-col border-t lg:border-t-0 lg:border-l border-gray-700 bg-[#0d1117]">
+                                <div class="bg-gray-800 text-xs text-gray-400 px-4 py-1 uppercase tracking-wider font-semibold border-b border-gray-700 flex justify-between items-center">
+                                    <span>Console Output</span>
+                                    <button id="clear-btn" class="hover:text-white transition-colors" title="Clear output">Clear</button>
+                                </div>
+                                <pre id="output-terminal" class="flex-1 p-4 font-mono text-sm overflow-auto text-gray-300 whitespace-pre-wrap focus:outline-none"></pre>
+                            </div>
+                        </main>
+
+                        <!-- CodeMirror Core JS & Modes -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/clike/clike.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/xml/xml.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/php/php.min.js"></script>
+                        
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webcode_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>
