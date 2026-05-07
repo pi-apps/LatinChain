@@ -9,8 +9,12 @@ const languageConfig = {
     },
     c: {
         cmMode: 'text/x-csrc',
-        defaultCode: `#include <stdio.h>\n\n/* Executed using the JSCPP interpreter in the browser */\nint main() {\n    printf("Hello World from C! (With accents: áéíóú)\\n");\n    int a = 10;\n    int b = 20;\n    printf("Sum: %d\\n", a + b);\n    return 0;\n}`
+        defaultCode: `#include <iostream>\n\n/* Executed using the JSCPP interpreter in the browser */\nint main() {\n    cout << "Hello World from C!" << endl;\n    for(int i = 0; i < 3; i++) {\n        cout << "Loop " << i << endl;\n    }\n    return 0;\n}`
     },
+    //c: {
+    //    cmMode: 'text/x-csrc',
+    //    defaultCode: `#include <stdio.h>\n\n/* Executed using the JSCPP interpreter in the browser */\nint main() {\n    printf("Hello World from C! (With accents: áéíóú)\\n");\n    int a = 10;\n    int b = 20;\n    printf("Sum: %d\\n", a + b);\n    return 0;\n}`
+    //},
     cpp: {
         cmMode: 'text/x-c++src',
         defaultCode: `#include <iostream>\nusing namespace std;\n\n/* Executed using the JSCPP interpreter in the browser */\nint main() {\n    cout << "Hello World from C++!" << endl;\n    for(int i = 0; i < 3; i++) {\n        cout << "Loop " << i << endl;\n    }\n    return 0;\n}`
@@ -109,16 +113,12 @@ sys.stdout = io.StringIO()
                         'https://cdn.jsdelivr.net/npm/JSCPP@2.0.6/dist/JSCPP.es5.js'
                     ];
                     
-                    for(let i=0; i<cdns.length; i++) {
-                        try { 
-                            importScripts(cdns[i]); 
-                            JSCPP_Engine = self.JSCPP || self.module.exports.JSCPP || self.module.exports || self.window.JSCPP;
-                            if (JSCPP_Engine && typeof JSCPP_Engine.run === 'function') {
-                                jscppLoaded = true; 
-                                break; 
-                            }
-                        } catch(e) {}
-                    }
+                    importScripts('https://cdn.jsdelivr.net/npm/JSCPP@2.0.6/dist/JSCPP.es5.min.js');
+                    
+                    jscppLoaded = true;
+                    
+                    JSCPP_Engine = JSCPP;
+                    
                 } else {
                     jscppLoaded = true;
                 }
@@ -126,8 +126,8 @@ sys.stdout = io.StringIO()
                 let jscppSuccess = false;
 
                 if (jscppLoaded) {
-                    try {
-                        // UTF-8 Preprocessor
+                    //try {
+                        
                         let safeCode = code.replace(/[\\u0080-\\uFFFF]/g, function(match) {
                             let utf8 = unescape(encodeURIComponent(match));
                             let result = '';
@@ -149,11 +149,13 @@ sys.stdout = io.StringIO()
 
                         self.postMessage({ type: 'success', output: cppOutput || 'Program finished with no output.' });
                         jscppSuccess = true;
-                    } catch(err) {
-                        self.postMessage({ type: 'info', output: '[Warning]: JSCPP failed (' + err.message + '). Using Local Transpiler fallback...\\n\\n' });
-                    }
+                        
+                    //} catch(err) {
+                    //    self.postMessage({ type: 'info', output: '[Warning]: JSCPP failed (' + err.message + '). Using Local Transpiler fallback...\\n\\n' });
+                    //}
                 } 
                 
+                /*
                 if (!jscppSuccess) {
                     if (!jscppLoaded) {
                         self.postMessage({ type: 'info', output: '[Warning]: Network blocked. Using Local C/C++ Transpiler...\\n\\n' });
@@ -192,7 +194,7 @@ sys.stdout = io.StringIO()
                     } catch(cErr) {
                         throw new Error("C/C++ syntax error (or transpiler limitation): " + cErr.message);
                     }
-                }
+                }*/
             }
 
             // --- PHP ---
