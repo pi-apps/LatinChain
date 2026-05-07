@@ -352,9 +352,8 @@ function printToTerminal(text, isError = false, isInfo = false) {
 
 function setLoading(isLoading) {
     runBtn.disabled = isLoading;
-    runBtn.classList.remove('hidden');
     if (isLoading) {
-        runIcon.classList.remove('hidden');
+        runIcon.classList.add('hidden');
         loadingIcon.classList.remove('hidden');
         runText.textContent = "Running...";
         runBtn.classList.replace('bg-green-600', 'bg-gray-600');
