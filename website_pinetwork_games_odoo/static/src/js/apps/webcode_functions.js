@@ -26,6 +26,30 @@ const languageConfig = {
     java: {
         cmMode: 'text/x-java',
         defaultCode: `// Offline execution via a Pseudo-Transpiler to JS\n// (Supports basic variables, loops, and System.out.println)\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello World from Java (Offline)!");\n        \n        int a = 15;\n        int b = 30;\n        System.out.println("The sum is: " + (a + b));\n        \n        for(int i = 1; i <= 3; i++) {\n            System.out.println("For loop: " + i);\n        }\n    }\n}`
+    },
+    xml: {
+        cmMode: 'xml',
+        defaultCode: `<?xml version="1.0" encoding="UTF-8"?>\n<note>\n    <to>User</to>\n    <from>System</from>\n    <heading>Reminder</heading>\n    <body>Don't forget to close your tags!</body>\n</note>`
+    },
+    html: {
+        cmMode: 'text/html',
+        defaultCode: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <style>\n        body { font-family: sans-serif; text-align: center; margin-top: 2rem; color: #333; }\n        h1 { color: #0078D7; }\n    </style>\n</head>\n<body>\n    <h1>Hello from HTML!</h1>\n    <p>This code is being rendered directly in the browser.</p>\n</body>\n</html>`
+    },
+    css: {
+        cmMode: 'css',
+        defaultCode: `/* Write your CSS here. It will be applied to a test template. */\n/* The HTML structure is made by:
+        html
+            head
+                style
+            head
+            body
+                h1: CSS Preview
+                p: This is a test text to observe how your styles are applied.
+                button: Test Button
+                div class="box": Standard div element
+            body
+        html
+        */\nbody {\n    background-color: #282a36;\n    color: #f8f8f2;\n    font-family: monospace;\n    padding: 20px;\n}\n\nh1 {\n    color: #ff79c6;\n    text-shadow: 2px 2px #6272a4;\n}`
     }
 };
 
@@ -301,10 +325,19 @@ function handleLanguageChange() {
 
 function executeCode() {
     const codeContent = editor.getValue();
+    const selectedLang = langSelect.value;
+
     if (!codeContent.trim()) {
         printToTerminal("Error: The editor is empty.", true);
         return;
     }
+
+    // --- NEW: Intercept web languages ---
+    if (['html', 'css', 'xml'].includes(selectedLang)) {
+        renderWebMarkup(selectedLang, codeContent);
+        return;
+    }
+    // ----------------------------------------
 
     setLoading(true);
     printToTerminal("Starting execution...\n", false, true);
@@ -317,7 +350,7 @@ function executeCode() {
     }, 15000);
 
     worker.postMessage({
-        lang: langSelect.value,
+        lang: selectedLang,
         code: codeContent
     });
 }
@@ -351,6 +384,58 @@ function printToTerminal(text, isError = false, isInfo = false) {
     } else {
         outputTerminal.classList.add('text-green-400');
     }
+}
+
+function renderWebMarkup(lang, code) {
+    // Clear the normal text terminal
+    outputTerminal.textContent = ''; 
+    outputTerminal.classList.remove('text-gray-300', 'text-green-400', 'text-red-400', 'text-yellow-400');
+    
+    // Top indicator
+    const infoMsg = document.createElement('div');
+    infoMsg.textContent = `[Rendered ${lang.toUpperCase()} Preview]`;
+    infoMsg.className = 'text-yellow-400 mb-2 font-mono text-sm';
+    outputTerminal.appendChild(infoMsg);
+
+    // Create the web viewer
+    const iframe = document.createElement('iframe');
+    iframe.style.width = '100%';
+    iframe.style.height = 'calc(100% - 30px)'; // Subtract the space taken by the indicator text
+    iframe.style.minHeight = '250px';
+    iframe.style.border = 'none';
+    iframe.style.backgroundColor = '#ffffff'; // White background so HTML/CSS looks natural
+    iframe.style.borderRadius = '0.25rem';
+
+    let contentToRender = code;
+    
+    // If it's CSS, we inject it into a pre-made HTML template so the user can see the result
+    if (lang === 'css') {
+        contentToRender = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style>${code}</style>
+            </head>
+            <body>
+                <h1>CSS Preview</h1>
+                <p>This is a test text to observe how your styles are applied.</p>
+                <button>Test Button</button>
+                <div class="box">Standard div element</div>
+            </body>
+            </html>
+        `;
+    } 
+    // For XML, we display it as preformatted text to prevent the browser from hiding it
+    else if (lang === 'xml') {
+        const safeXml = code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        contentToRender = `
+            <pre style="font-family: monospace; color: #333; padding: 10px;"><code>${safeXml}</code></pre>
+        `;
+    }
+
+    // Inject the code into the iframe
+    iframe.srcdoc = contentToRender;
+    outputTerminal.appendChild(iframe);
 }
 
 function setLoading(isLoading) {
