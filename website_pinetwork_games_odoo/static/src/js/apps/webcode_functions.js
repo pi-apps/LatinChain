@@ -353,17 +353,17 @@ function printToTerminal(text, isError = false, isInfo = false) {
 function setLoading(isLoading) {
     runBtn.disabled = isLoading;
     if (isLoading) {
-        runIcon.classList.add('hidden');
+        //runIcon.classList.add('hidden');
         loadingIcon.classList.remove('hidden');
         runText.textContent = "Running...";
         runBtn.classList.replace('bg-green-600', 'bg-gray-600');
-        stopBtn.classList.remove('hidden');
+        //stopBtn.classList.remove('hidden');
     } else {
-        runIcon.classList.remove('hidden');
+        //runIcon.classList.remove('hidden');
         loadingIcon.classList.add('hidden');
         runText.textContent = "Run";
         runBtn.classList.replace('bg-gray-600', 'bg-green-600');
-        stopBtn.classList.add('hidden');
+        //stopBtn.classList.add('hidden');
     }
 }
 
