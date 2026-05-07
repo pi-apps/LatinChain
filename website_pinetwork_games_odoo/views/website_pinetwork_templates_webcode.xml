@@ -84,8 +84,8 @@
                                 <select id="language-select" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full sm:w-40 p-2.5 outline-none transition-colors">
                                     <option value="javascript">JavaScript</option>
                                     <option value="python">Python 3 (Pyodide)</option>
-                                    <option value="c">C (Local)</option>
-                                    <option value="cpp">C++ (Local)</option>
+                                    <option value="c">C (JSCPP)</option>
+                                    <option value="cpp">C++ (JSCPP)</option>
                                     <option value="php">PHP (Uniter)</option>
                                     <option value="java">Java (Transpiler)</option>
                                 </select>
