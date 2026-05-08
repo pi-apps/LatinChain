@@ -53,6 +53,11 @@
                 <div id="rewarded_message_2" style="display:none;">In order to maintain our servers, we ask you to watch a Rewarded Ad until the end, we will give you a reward at the end of the ad.</div>
                 
                 <style>
+                    /*Floating Back-To-Top Button*/
+                    #myBtn {
+                        border-radius: 20px !important;
+                    }
+                    
                     .btn:not(:disabled), 
                     .btn:not(:disabled):hover, 
                     .btn:not(:disabled):active
