@@ -38,18 +38,18 @@ const languageConfig = {
     css: {
         cmMode: 'css',
         defaultCode: `/* Write your CSS here. It will be applied to a test template. */\n/* The HTML structure is made by:
-        html
-            head
-                style
-            head
-            body
-                h1: CSS Preview
-                p: This is a test text to observe how your styles are applied.
-                button: Test Button
-                div class="box": Standard div element
-            body
-        html
-        */\nbody {\n    background-color: #282a36;\n    color: #f8f8f2;\n    font-family: monospace;\n    padding: 20px;\n}\n\nh1 {\n    color: #ff79c6;\n    text-shadow: 2px 2px #6272a4;\n}`
+        html:
+            head:
+                style: css-code /style
+            /head
+            body:
+                h1: CSS Preview /h1
+                p: This is a test text to observe how your styles are applied. /p
+                button: Test Button /button
+                div class="box": Standard div element /div
+            /body
+        /html
+*/\nbody {\n    background-color: #282a36;\n    color: #f8f8f2;\n    font-family: monospace;\n    padding: 20px;\n}\n\nh1 {\n    color: #ff79c6;\n    text-shadow: 2px 2px #6272a4;\n}`
     }
 };
 
