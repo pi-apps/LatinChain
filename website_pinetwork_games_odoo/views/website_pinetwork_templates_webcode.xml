@@ -72,6 +72,61 @@
 
                         <!-- Header and Controls -->
                         <header class="bg-gray-800 border-b border-gray-700 p-4 shadow-md flex flex-col sm:flex-row justify-between items-center gap-4 z-10">
+                            <style>
+                                /* Adjustments for Google Translator to be visible */
+                                .goog-te-banner-frame.skiptranslate,
+                                .skiptranslate > iframe {
+                                    display: none !important;
+                                }
+                               
+                                body {
+                                    top: 0px !important; 
+                                }
+
+                                .goog-te-menu-frame {
+                                    max-width:100% !important; 
+                                }
+                                .goog-te-menu2 { 
+                                    max-width: 100% !important;
+                                    overflow-x: scroll !important;
+                                    box-sizing:border-box !important; 
+                                    height:auto !important; 
+                                }
+                               
+                                /* Hide unwanted elements without hiding the main widget */
+                                #goog-gt-tt, 
+                                #goog-gt-, 
+                                .goog-te-balloon-frame {
+                                    display: none !important;
+                                } 
+                                .goog-text-highlight { 
+                                    background: none !important; 
+                                    box-shadow: none !important;
+                                }
+                               
+                                .goog-logo-link {
+                                    display: none !important;
+                                }
+                                .goog-te-gadget {
+                                    height: 28px !important; 
+                                    overflow: hidden;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                $( document ).ready(function() {
+                                    $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                    $("#google_translate_element").appendTo(".translate_here");
+                                    
+                                    $("#translate_text_latinchain_2").show();
+                                    $("#google_translate_element").show();
+                                });
+                            </script>
+                            
+                            <div class="flex items-center" style="margin-bottom:1px !important;">
+                                <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:1px !important;">
+                                </div>
+                            </div>
+                            
                             <div class="flex items-center gap-2">
                                 <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                                 <div>
