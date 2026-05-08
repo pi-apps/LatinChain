@@ -51,6 +51,7 @@ class Website(Website):
             pi_ad_hours = 0
             pi_ad_max = 0
             pi_ad_seconds = 0
+            latinchain_specs = ""
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -80,6 +81,7 @@ class Website(Website):
             #round(((admin_app_list[0].pi_ad_seconds/3600)*60)/100,4)
             pi_ad_max = admin_app_list[0].pi_ad_max
             pi_ad_seconds = admin_app_list[0].pi_ad_seconds
+            latinchain_specs = admin_app_list[0]._get_latinchain_specs()
         
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
 
@@ -87,7 +89,7 @@ class Website(Website):
         if "nopopup" in kw:
             nopopup = kw["nopopup"]
         
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'pi_ad_seconds': pi_ad_seconds, 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'total_users_verified_count': total_users_verified_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'pi_ad_seconds': pi_ad_seconds, 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'total_users_verified_count': total_users_verified_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/index-nopopup', type='http', auth="public", website=True, csrf=False)
     def index_no_popup(self, **kw):
@@ -121,6 +123,7 @@ class Website(Website):
             points_latin_amount = 1
             pi_ad_hours = 0
             pi_ad_max = 0
+            latinchain_specs = ""
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -149,6 +152,7 @@ class Website(Website):
             pi_ad_hours = str(timedelta(seconds=admin_app_list[0].pi_ad_seconds))
             #round(((admin_app_list[0].pi_ad_seconds/3600)*60)/100,4)
             pi_ad_max = admin_app_list[0].pi_ad_max
+            latinchain_specs = admin_app_list[0]._get_latinchain_specs()
         
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
 
@@ -158,7 +162,7 @@ class Website(Website):
         
         nopopup = True
         
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'total_users_verified_count': total_users_verified_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'total_users_verified_count': total_users_verified_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
 class PiNetworkController(http.Controller):
     @http.route('/radioforus', type='http', auth="public", website=True, csrf=False)
@@ -212,6 +216,7 @@ class PiNetworkController(http.Controller):
             a_ads_style_3 = ""
             mainnet = ""
             points_latin_amount = 1
+            latinchain_specs = ""
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -231,8 +236,9 @@ class PiNetworkController(http.Controller):
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
             points_latin_amount = admin_app_list[0].points_latin_amount
+            latinchain_specs = admin_app_list[0]._get_latinchain_specs()
         
-        return http.request.render('website_pinetwork_games_odoo.radioforus', {'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'points_latin_amount': points_latin_amount, 'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.radioforus', {'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'points_latin_amount': points_latin_amount, 'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True, csrf=False)
     def get_transactions_radioforus(self, **kw):
@@ -925,6 +931,7 @@ class PiNetworkController(http.Controller):
             points_latin_amount = 1
             pi_ad_hours = 0
             pi_ad_max = 0
+            latinchain_specs = ""
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -948,6 +955,7 @@ class PiNetworkController(http.Controller):
             pi_ad_hours = str(timedelta(seconds=admin_app_list[0].pi_ad_seconds))
             #round(((admin_app_list[0].pi_ad_seconds/3600)*60)/100,4)
             pi_ad_max = admin_app_list[0].pi_ad_max
+            latinchain_specs = admin_app_list[0]._get_latinchain_specs()
             
         payoneclick = False
         if "payoneclick" in kw:
@@ -962,7 +970,7 @@ class PiNetworkController(http.Controller):
         else:
             pi_user_referred_by = "rockcesar"
         
-        return http.request.render('website_pinetwork_games_odoo.pinetwork', {'pi_user_referred_by': pi_user_referred_by, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_latinchain_token': amount_latinchain_token, 'amount_price_topay_usd': amount_price_topay_usd, 'payoneclick': payoneclick, 'showpiad': showpiad, 'amount_latin_pay': amount_latin_pay, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.pinetwork', {'latinchain_specs': latinchain_specs, 'pi_user_referred_by': pi_user_referred_by, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_latinchain_token': amount_latinchain_token, 'amount_price_topay_usd': amount_price_topay_usd, 'payoneclick': payoneclick, 'showpiad': showpiad, 'amount_latin_pay': amount_latin_pay, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/sudoku', type='http', auth="public", website=True, csrf=False)
     def sudoku(self, **kw):

@@ -1024,7 +1024,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.119"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.120"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1062,6 +1062,7 @@
                     <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                     <input type="hidden" id="pi_ad_seconds" t-att-value="pi_ad_seconds"/>
                     <input type="hidden" id="total_users_verified_count" t-att-value="total_users_verified_count"/>
+                    <input type="hidden" id="latinchain_specs" t-att-value="latinchain_specs"/>
                     <button id="open_mainnet_redirect" class="open_mainnet_redirect" style="display:none"></button>
                     <t t-if="pi_main_user">
                         <input type="hidden" id="pi_main_user" t-att-value="pi_main_user.pi_user_code"/>
