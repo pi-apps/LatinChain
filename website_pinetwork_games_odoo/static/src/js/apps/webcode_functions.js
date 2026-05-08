@@ -176,7 +176,7 @@ sys.stdout = io.StringIO()
                         jscppSuccess = true;
                         
                     //} catch(err) {
-                    //    self.postMessage({ type: 'info', output: '[Warning]: JSCPP failed (' + err.message + '). Using Local Transpiler fallback...\\n\\n' });
+                    //    self.postMessage({ type: 'info', output: '[Warning]: JSCPP failed (' + err.message + ').\\n\\n' });
                     //}
                 } 
                 
