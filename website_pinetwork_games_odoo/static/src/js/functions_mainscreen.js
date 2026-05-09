@@ -895,6 +895,8 @@ $( document ).ready(function() {
     
     const video_latinchain = document.getElementById('loading-message-video');
     video_latinchain.style.display="block";
+    video_latinchain.width=250;
+    video_latinchain.height=150;
     
     btnvalue = $("#button_reward_ad").html();
     

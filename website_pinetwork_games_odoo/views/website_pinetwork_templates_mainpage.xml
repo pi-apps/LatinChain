@@ -1024,7 +1024,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.130"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.131"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3435,7 +3435,7 @@
                                         </div>
                                         <div class="justify-content-center text-center" style="display: block; margin-top: 15px;">
                                             
-                                            <video style="display: none; border-radius: 20%;" id="loading-message-video" autoplay="autoplay" muted="muted" playsinline="playsinline" loop="loop" width="250" height="150">
+                                            <video style="display: none; border-radius: 20%;" id="loading-message-video" autoplay="autoplay" muted="muted" playsinline="playsinline" loop="loop" width="0" height="0">
                                               <source src="/website_pinetwork_games_odoo/static/src/video/video-presentation-latinchain.mp4" type="video/mp4" />
                                             </video>
                                             
