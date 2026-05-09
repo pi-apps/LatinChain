@@ -3434,25 +3434,16 @@
                                             Loading...
                                         </div>
                                         <div class="justify-content-center text-center" style="display: block; margin-top: 15px;">
-                                            <style>
-                                              #loading-message-video {
-                                                opacity: 0;
-                                                transition: opacity 0.5s ease-in;
-                                              }
-                                            </style>
                                             
-                                            <video id="loading-message-video" autoplay="autoplay" muted="muted" playsinline="playsinline" loop="loop" width="250" height="150">
+                                            <video style="display: none" id="loading-message-video" autoplay="autoplay" muted="muted" playsinline="playsinline" loop="loop" width="250" height="150">
                                               <source src="/website_pinetwork_games_odoo/static/src/video/video-presentation-latinchain.mp4" type="video/mp4" />
                                             </video>
                                             
                                             <script>
-                                                const video = document.getElementById('loading-message-video');
-                                                
-                                                video.addEventListener('canplaythrough', () => {
-                                                    // 1. Make it visible
-                                                    video.style.opacity = "1";
-                                                }, { once: true }); // { once: true } ensures this only runs the first time it loads
-                                                
+                                                $( document ).ready(function() {
+                                                    const video = document.getElementById('loading-message-video');
+                                                    video.style.display="block";
+                                                });
                                             </script>
                                         </div>
                                     </div>
