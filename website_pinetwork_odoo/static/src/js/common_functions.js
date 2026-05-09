@@ -589,10 +589,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                             '</div>';
             
             const video_latinchain = document.getElementById('loading-message-video');
-            video_latinchain.style.display="block";
-            video_latinchain.width=250;
-            video_latinchain.height=150;
-
+            video_latinchain.addEventListener('playing', () => {
+                video_latinchain.style.display="block";
+                video_latinchain.width=250;
+                video_latinchain.height=150;
+            });
+        
     }catch(e)
     {
     }
