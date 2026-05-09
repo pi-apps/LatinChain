@@ -581,7 +581,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                                 '<div style="display: block; ">' +
                                                     loading_latinchain_pre +
                                                 '</div>' +
-                                                '<div class="justify-content-center text-center" style="display: block; margin-top: 15px;">' +
+                                                '<div id="loading-message-section" class="justify-content-center text-center" style="display: none; margin-top: 15px;">' +
                                                     '<video style="display: none; border-radius: 20%;" id="loading-message-video" autoplay="autoplay" muted="muted" playsinline="playsinline" loop="loop" width="0" height="0">' +
                                                       '<source src="/website_pinetwork_games_odoo/static/src/video/video-presentation-latinchain.mp4?v=1.101" type="video/mp4" />' +
                                                     '</video>' +
@@ -589,10 +589,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                             '</div>';
             
             const video_latinchain = document.getElementById('loading-message-video');
+            const video_latinchain_section = document.getElementById('loading-message-section');
             video_latinchain.addEventListener('playing', () => {
                 video_latinchain.style.display="block";
                 video_latinchain.width=250;
                 video_latinchain.height=150;
+                video_latinchain_section.style.display="block";
             });
         
     }catch(e)
