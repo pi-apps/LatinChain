@@ -52,7 +52,7 @@ function showImageModal(imageUrl, captionText) {
 function openInNewTab(url) {
   
     document.getElementById('GoForwardLink').href = url;
-    document.getElementById('GoForwardLink').textContent = "Go Forward";
+    document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-forward"></i></div> <div style="display: inline">Go Forward</div>';
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow1').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -65,7 +65,7 @@ function openInNewTab(url) {
 function openInNewTabAds(url) {
   
     document.getElementById('GoForwardLink').href = url;
-    document.getElementById('GoForwardLink').textContent = "Unlock (Click Here)";
+    document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock (Click Here)</div>';
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow1').style.display = 'flex'; // Use 'flex' instead of 'block'
