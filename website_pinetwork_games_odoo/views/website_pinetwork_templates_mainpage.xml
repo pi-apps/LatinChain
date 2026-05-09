@@ -1024,7 +1024,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.131"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.132"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3429,6 +3429,8 @@
                                     </div>
                                 </div>
                                 <div id="loading-message" class="container justify-content-center text-center" style="display: flex; margin-top: auto; color: black !important;">
+                                    Loading...
+                                    <!--
                                     <div style="display: block; ">
                                         <div style="display: block; ">
                                             Loading...
@@ -3440,7 +3442,7 @@
                                             </video>
                                             
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                             
