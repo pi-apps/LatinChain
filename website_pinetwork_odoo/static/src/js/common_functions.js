@@ -2,6 +2,48 @@
 
 const delayAsync = ms => new Promise(res => setTimeout(res, ms));
 
+async function loadMessageLatinChain(){
+    
+    try{
+        
+        const loading_latinchain = document.getElementById('loading-message');
+
+        const loading_latinchain_pre = loading_latinchain.innerHTML;
+
+        loading_latinchain.innerHTML = '<div style="display: block; ">' +
+                                            '<div style="display: block; ">' +
+                                                loading_latinchain_pre +
+                                            '</div>' +
+                                            '<div id="loading-message-section" class="justify-content-center text-center" style="display: none; margin-top: 15px;">' +
+                                                '<video style="display: none; border-radius: 30%; max-width: 250px; max-height: 150px; width: 250px; height: 150px; aspect-ratio: 16 / 9; object-fit: cover;" id="loading-message-video" muted="muted" playsinline="playsinline" loop="loop" width="250" height="150">' +
+                                                  '<source src="/website_pinetwork_games_odoo/static/src/video/video-presentation-latinchain.mp4?v=1.103" type="video/mp4" />' +
+                                                '</video>' +
+                                            '</div>' +
+                                        '</div>';
+        
+        const video_latinchain = document.getElementById('loading-message-video');
+        const video_latinchain_section = document.getElementById('loading-message-section');
+        video_latinchain.addEventListener('playing', () => {
+            video_latinchain.style.display="block";
+            //video_latinchain.width=250;
+            //video_latinchain.height=150;
+            video_latinchain_section.style.display="block";
+        }, { once: true });
+        
+        video_latinchain.play();
+        
+    }catch(e)
+    {
+    }
+    
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    loadMessageLatinChain();
+    
+});
+
 /*document.addEventListener('DOMContentLoaded', (event) => {
     $.ajaxSetup({
         timeout: 600000,
@@ -568,42 +610,6 @@ var googleTranslateElementInit = () => {
         //observer.observe(el4);
     }
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    try{
-        
-        const loading_latinchain = document.getElementById('loading-message');
-
-        const loading_latinchain_pre = loading_latinchain.innerHTML;
-
-        loading_latinchain.innerHTML = '<div style="display: block; ">' +
-                                            '<div style="display: block; ">' +
-                                                loading_latinchain_pre +
-                                            '</div>' +
-                                            '<div id="loading-message-section" class="justify-content-center text-center" style="display: none; margin-top: 15px;">' +
-                                                '<video style="display: none; border-radius: 30%; max-width: 250px; max-height: 150px; width: 250px; height: 150px; aspect-ratio: 16 / 9; object-fit: cover;" id="loading-message-video" muted="muted" playsinline="playsinline" loop="loop" width="250" height="150">' +
-                                                  '<source src="/website_pinetwork_games_odoo/static/src/video/video-presentation-latinchain.mp4?v=1.103" type="video/mp4" />' +
-                                                '</video>' +
-                                            '</div>' +
-                                        '</div>';
-        
-        const video_latinchain = document.getElementById('loading-message-video');
-        const video_latinchain_section = document.getElementById('loading-message-section');
-        video_latinchain.addEventListener('playing', () => {
-            video_latinchain.style.display="block";
-            //video_latinchain.width=250;
-            //video_latinchain.height=150;
-            video_latinchain_section.style.display="block";
-        }, { once: true });
-        
-        video_latinchain.play();
-        
-    }catch(e)
-    {
-    }
-        
-});
 
 
 /*
