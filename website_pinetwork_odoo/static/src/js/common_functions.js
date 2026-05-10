@@ -573,28 +573,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try{
         
-        function waitForElement(id) {
-            return new Promise((resolve) => {
-                // 1. Check if it already exists
-                const existingElement = document.getElementById(id);
-                if (existingElement) return resolve(existingElement);
-
-                // 2. Otherwise, observe the DOM for changes
-                const observer = new MutationObserver((mutations, obs) => {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        obs.disconnect(); // Stop watching once found
-                        resolve(element);
-                    }
-                });
-
-                observer.observe(document.body, {
-                    childList: true,
-                    subtree: true
-                });
-            });
-        }
-        
         const loading_latinchain = document.getElementById('loading-message');
 
         const loading_latinchain_pre = loading_latinchain.innerHTML;
@@ -609,24 +587,17 @@ document.addEventListener("DOMContentLoaded", () => {
                                                 '</video>' +
                                             '</div>' +
                                         '</div>';
-                                        
-        // Usage:
-        waitForElement("loading-message-video").then((el) => {
-            waitForElement("loading-message-section").then((el2) => {
-                
-                const video_latinchain = document.getElementById('loading-message-video');
-                const video_latinchain_section = document.getElementById('loading-message-section');
-                video_latinchain.addEventListener('playing', () => {
-                    video_latinchain.style.display="block";
-                    //video_latinchain.width=250;
-                    //video_latinchain.height=150;
-                    video_latinchain_section.style.display="block";
-                });
-                
-                video_latinchain.play();
-                
-            });
-        });        
+        
+        const video_latinchain = document.getElementById('loading-message-video');
+        const video_latinchain_section = document.getElementById('loading-message-section');
+        video_latinchain.addEventListener('playing', () => {
+            video_latinchain.style.display="block";
+            //video_latinchain.width=250;
+            //video_latinchain.height=150;
+            video_latinchain_section.style.display="block";
+        });
+        
+        video_latinchain.play();
         
     }catch(e)
     {
