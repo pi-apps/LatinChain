@@ -595,7 +595,7 @@ document.addEventListener("DOMContentLoaded", () => {
             //video_latinchain.width=250;
             //video_latinchain.height=150;
             video_latinchain_section.style.display="block";
-        });
+        }, { once: true });
         
         video_latinchain.play();
         
