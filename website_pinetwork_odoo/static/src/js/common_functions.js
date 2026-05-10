@@ -616,7 +616,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 const video_latinchain = document.getElementById('loading-message-video');
                 const video_latinchain_section = document.getElementById('loading-message-section');
-                video_latinchain.addEventListener('playing', () => {
+                video_latinchain.addEventListener('play', () => {
                     video_latinchain.style.display="block";
                     //video_latinchain.width=250;
                     //video_latinchain.height=150;
