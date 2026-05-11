@@ -413,7 +413,8 @@ class admin_apps(models.Model):
                     admin_other_apps.write({'amount': i.amount, 'discount_active': i.discount_active, 
                                             'discount_percentage': i.discount_percentage, 
                                             'amount_price_topay_usd': i.amount_price_topay_usd, 
-                                            'amount_price': i.amount_price})
+                                            'amount_price': i.amount_price,
+                                            'amount_percentage_external_apps': i.amount_percentage_external_apps})
                 
             except Exception as e:
                 pass
