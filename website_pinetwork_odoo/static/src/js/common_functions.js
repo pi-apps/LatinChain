@@ -588,6 +588,7 @@ var googleTranslateElementInit = () => {
         //const el2 = document.querySelector('.skiptranslate');
         const el3 = document.querySelector('circle');
         var translateWidth;
+        var translateImg;
         //const el4 = document.querySelector('.goog-te-gadget');
         const observer = new window.IntersectionObserver(([entry]) => {
             /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
@@ -604,15 +605,20 @@ var googleTranslateElementInit = () => {
             translateWidth = document.querySelector('a[href="https://translate.google.com"]');
 
             if (translateWidth) {
+                
                 translateWidth.style.maxWidth = "500px";
                 translateWidth.style.width = "fit-content";
                 translateWidth.style.display = "inline-flex";
-                translateWidth.style.alignItems = "center";
+                translateWidth.style.alignItems = "baseline";
                 
-                translateWidth.style.flexWrap = "nowrap";
-                translateWidth.style.whiteSpace = "nowrap";
+                translateImg = translateWidth.querySelector('img'); 
                 
-                //translateWidth.parent.style.display = "flex";
+                translateImg.style.alignItems = "baseline";
+                translateImg.style.height = "auto";
+                
+                translateWidth.parentElement.style.alignItems = "baseline";
+                
+                translateWidth.parentElement.parentElement.style.alignItems = "baseline";
             }
         }, {
             root: null,
