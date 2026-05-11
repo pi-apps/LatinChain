@@ -142,18 +142,19 @@ class pi_transactions(models.Model):
             mail_id = self.env['mail.mail'].sudo().create(values)
             mail_id.send()
             
-            values = {
-                'subject': 'Payment executed',
-                'body_html': body_html,
-                'email_to': 'dalepuespublicidad@gmail.com', # Can be a static address or from a record, e.g., rec.partner_id.email
-                'email_from': 'latinchain.info@gmail.com', # Odoo user's email
-                'auto_delete': True, # Optional: Deletes the email record after sending
-            }
+            if "RadioForUs" in pit.memo:
+                values = {
+                    'subject': 'Payment executed',
+                    'body_html': body_html,
+                    'email_to': 'dalepuespublicidad@gmail.com', # Can be a static address or from a record, e.g., rec.partner_id.email
+                    'email_from': 'latinchain.info@gmail.com', # Odoo user's email
+                    'auto_delete': True, # Optional: Deletes the email record after sending
+                }
 
-            # Create and send the mail record
-            # Use .sudo() if the user context lacks permissions to create mail.mail records
-            mail_id = self.env['mail.mail'].sudo().create(values)
-            mail_id.send()
+                # Create and send the mail record
+                # Use .sudo() if the user context lacks permissions to create mail.mail records
+                mail_id = self.env['mail.mail'].sudo().create(values)
+                mail_id.send()
     
     @api.depends("json_result", "action")
     def _compute_json_values(self):
