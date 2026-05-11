@@ -191,12 +191,6 @@
                                 });
                             </script>
                             
-                            <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
-                            </div>
-                            
-                            <div style="text-align:center; margin-bottom:15px;">
-                                <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
-                            </div>
                         </div>
 
                         <!-- Área principal -->
@@ -204,6 +198,12 @@
                             
                             <!-- DASHBOARD (Menú Principal) -->
                             <div id="view-dashboard" class="max-w-4xl mx-auto view-content">
+                                <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                                </div>
+                                
+                                <div style="text-align:center; margin-bottom:15px;">
+                                    <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                                </div>
                                 <h2 class="text-2xl font-semibold mb-6 text-center md:text-left">Create a new file<br/>(Drafts and quick edit use only, not for production. This Software doesn't has any kind of warranty, following the PiOS License)</h2>
                                 
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
