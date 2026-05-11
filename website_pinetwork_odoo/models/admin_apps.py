@@ -102,7 +102,7 @@ class pi_transactions(models.Model):
             topayradio = ""
             
             if "RadioForUs" in pit.memo:
-                amountradio = pit.amount * pit.app_id.amount_percentage_external_apps
+                amountradio = pit.amount * pit.app_id.amount_percentage_external_apps / 100
                 topayradio = f"""
                     <br/><br/>
                     RadioForUs receives: {amountradio} {pit.token_type}
@@ -322,7 +322,7 @@ class admin_apps(models.Model):
     pi_users_devs_completed_payments = fields.Integer('Devs To Pay completed payments', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     block_points = fields.Boolean('Block points', default=False)
     amount = fields.Float('Amount', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
-    amount_percentage_external_apps = fields.Float('Amount Percentage External Apps', digits=(50,7), default=0.7115, store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    amount_percentage_external_apps = fields.Float('Amount Percentage External Apps', digits=(50,7), default=71.15, store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_referrer_amount = fields.Float('Referrers amount', digits=(50,7), default=0.05)
     google_adsense = fields.Char('Google Adsense src', required=True, default="Set your Google Adsense", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     google_adsense_ads_txt = fields.Text('Google Adsense ads.txt', default="Set your Google Adsense ads.txt", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
