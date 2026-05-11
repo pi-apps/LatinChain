@@ -99,6 +99,15 @@ class pi_transactions(models.Model):
     def _send_payment_email(self, pit):
         if pit.app_id.mainnet == "Mainnet ON" and pit.action == "complete":
             
+            topayradio = ""
+            
+            if "RadioForUs" in pit.memo:
+                amountradio = pit.amount * 0.7115
+                topayradio = f"""
+                    <br/><br/>
+                    RadioForUs receives: {amountradio} {pit.token_type}
+                """
+            
             body_html = f"""
                 The pioneer <strong>{pit.pi_user.pi_user_code}</strong> paid {pit.amount} {pit.token_type} on {pit.app}
                 <br/><br/>
@@ -107,6 +116,7 @@ class pi_transactions(models.Model):
                 Referred by: {pit.pi_user_referred_by}
                 <br/><br/>
                 Memo: {pit.memo}
+                {topayradio}
                 <br/><br/>
                 TXID: {pit.txid_url}
                 <br/>
@@ -123,6 +133,19 @@ class pi_transactions(models.Model):
                 'subject': 'Payment executed',
                 'body_html': body_html,
                 'email_to': 'latinchain.info@gmail.com', # Can be a static address or from a record, e.g., rec.partner_id.email
+                'email_from': 'latinchain.info@gmail.com', # Odoo user's email
+                'auto_delete': True, # Optional: Deletes the email record after sending
+            }
+
+            # Create and send the mail record
+            # Use .sudo() if the user context lacks permissions to create mail.mail records
+            mail_id = self.env['mail.mail'].sudo().create(values)
+            mail_id.send()
+            
+            values = {
+                'subject': 'Payment executed',
+                'body_html': body_html,
+                'email_to': 'dalepuespublicidad@gmail.com', # Can be a static address or from a record, e.g., rec.partner_id.email
                 'email_from': 'latinchain.info@gmail.com', # Odoo user's email
                 'auto_delete': True, # Optional: Deletes the email record after sending
             }
