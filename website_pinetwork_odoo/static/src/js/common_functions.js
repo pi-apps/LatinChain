@@ -603,10 +603,16 @@ var googleTranslateElementInit = () => {
             
             translateWidth = document.querySelector('a[href="https://translate.google.com"]');
 
-            if(translateWidth)
-            {
+            if (translateWidth) {
                 translateWidth.style.maxWidth = "500px";
-                translateWidth.style.display = "inline-block";
+                translateWidth.style.width = "fit-content";
+                translateWidth.style.display = "inline-flex";
+                translateWidth.style.alignItems = "center";
+                
+                translateWidth.style.flexWrap = "nowrap";
+                translateWidth.style.whiteSpace = "nowrap";
+                
+                //translateWidth.parent.style.display = "flex";
             }
         }, {
             root: null,
