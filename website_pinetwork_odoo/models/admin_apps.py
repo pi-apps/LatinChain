@@ -102,7 +102,7 @@ class pi_transactions(models.Model):
             topayradio = ""
             
             if "RadioForUs" in pit.memo:
-                amountradio = pit.amount * pit.app_id.amount_percentage_external_apps / 100
+                amountradio = pit.amount * (pit.app_id.amount_percentage_external_apps / 100)
                 topayradio = f"""
                     <br/><br/>
                     RadioForUs receives: {amountradio} {pit.token_type}
