@@ -106,6 +106,8 @@ class pi_transactions(models.Model):
                 <br/><br/>
                 Referred by: {pit.pi_user_referred_by}
                 <br/><br/>
+                Memo: {pit.memo}
+                <br/><br/>
                 TXID: {pit.txid_url}
                 <br/>
                 Payment ID: {pit.payment_id}
