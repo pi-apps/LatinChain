@@ -610,6 +610,7 @@ var googleTranslateElementInit = () => {
                 translateWidth.style.width = "fit-content";
                 translateWidth.style.display = "inline-flex";
                 translateWidth.style.alignItems = "baseline";
+                translateWidth.style.height = "auto";
                 
                 translateImg = translateWidth.querySelector('img'); 
                 
