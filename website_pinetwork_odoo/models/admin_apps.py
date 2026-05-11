@@ -103,6 +103,8 @@ class pi_transactions(models.Model):
             
             if "RadioForUs" in pit.memo:
                 amountradio = pit.amount * (pit.app_id.amount_percentage_external_apps / 100)
+                amountradio = round(amountradio, 7)
+                
                 topayradio = f"""
                     <br/><br/>
                     RadioForUs receives: {amountradio} {pit.token_type}
@@ -407,7 +409,7 @@ class admin_apps(models.Model):
                     else:
                         amount_price_topay_usd = i.amount_price_topay_usd
                     
-                    i.amount = amount_price_topay_usd / i.amount_price #5 USD / price in Pi
+                    i.amount = amount_price_topay_usd / i.amount_price #USD / price in Pi
                     
                     admin_other_apps = self.env["admin.apps"].sudo().search([('app', 'in', ['auth_snake', 'auth_pidoku', 'auth_example', 'auth_first_app'])])
                     
