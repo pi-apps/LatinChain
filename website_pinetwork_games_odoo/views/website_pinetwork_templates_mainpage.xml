@@ -53,6 +53,11 @@
                 <div id="rewarded_message_2" style="display:none;">In order to maintain our servers, we ask you to watch a Rewarded Ad until the end, we will give you a reward at the end of the ad.</div>
                 
                 <style>
+                    .goog-te-gadget.goog-te-gadget {
+                        height: auto !important; /* or whatever value you want */
+                        overflow: visible !important;
+                    }
+                    
                     /*Floating Back-To-Top Button*/
                     #myBtn {
                         border-radius: 20px !important;

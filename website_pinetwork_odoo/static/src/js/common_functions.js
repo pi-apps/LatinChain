@@ -587,6 +587,7 @@ var googleTranslateElementInit = () => {
         //const el = document.querySelector('#goog-gt-');
         //const el2 = document.querySelector('.skiptranslate');
         const el3 = document.querySelector('circle');
+        var translateWidth;
         //const el4 = document.querySelector('.goog-te-gadget');
         const observer = new window.IntersectionObserver(([entry]) => {
             /*for(var i = 0; i &lt; document.getElementsByClassName("skiptranslate").length; i++)
@@ -599,6 +600,14 @@ var googleTranslateElementInit = () => {
             }
             document.getElementById("goog-gt-").style.display = "none";*/
             document.getElementsByTagName("circle")[0].parentNode.parentNode.style.display = "none";
+            
+            translateWidth = document.querySelector('a[href="https://translate.google.com"]');
+
+            if(translateWidth)
+            {
+                translateWidth.style.maxWidth = "500px";
+                translateWidth.style.display = "inline-block";
+            }
         }, {
             root: null,
             threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
