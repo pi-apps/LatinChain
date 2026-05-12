@@ -612,14 +612,11 @@ var googleTranslateElementInit = () => {
                 translateWidth.style.alignItems = "baseline";
                 translateWidth.style.height = "auto";
                 
-                translateImg = translateWidth.querySelector('img'); 
+                translateImg = translateWidth.querySelector('img');
                 
                 translateImg.style.alignItems = "baseline";
                 translateImg.style.height = "auto";
-                
-                translateWidth.parentElement.style.alignItems = "baseline";
-                
-                translateWidth.parentElement.parentElement.style.alignItems = "baseline";
+                translateImg.style.marginTop = "auto";
             }
         }, {
             root: null,
