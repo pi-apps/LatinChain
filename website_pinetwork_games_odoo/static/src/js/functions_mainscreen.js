@@ -1846,10 +1846,10 @@ $( document ).ready(function() {
                 $(".isverified").hide();
                 $(".isverified-username").hide();
                 
-                if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                 {
                     colorboxLoadedMainnet();
-                }
+                }*/
             }
         }
         
