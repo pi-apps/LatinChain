@@ -75,7 +75,7 @@ function openInNewTabAds(url) {
     
 }
 
-async function colorboxLoaded()
+function colorboxLoaded()
 {
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
@@ -108,7 +108,7 @@ async function colorboxLoaded()
     }*/
 }
 
-async function colorboxLoadedMainnet()
+function colorboxLoadedMainnet()
 {
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
