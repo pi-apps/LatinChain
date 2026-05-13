@@ -81,6 +81,19 @@ function colorboxLoaded()
     {
         openInNewTabAds("https://ecosystem.latin-chain.com/page-1/?v=1.123"+hashLatinChainGoogleTranslate);
         //window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.115"+hashLatinChainGoogleTranslate;
+        
+        $('.darkmode-toggle').css('display', 'none');
+        if($('.darkmode-toggle--white').length === 0)
+            $('.darkmode-layer--button').css('display', 'none');
+        else
+            $('.darkmode-toggle--white').css('display', 'none');
+    }else
+    {
+        $('.darkmode-toggle').css('display', 'block');
+        if($('.darkmode-toggle--white').length === 0)
+            $('.darkmode-layer--button').css('display', 'block');
+        else
+            $('.darkmode-toggle--white').css('display', 'block');
     }
         
     /*
@@ -114,6 +127,19 @@ function colorboxLoadedMainnet()
     {
         openInNewTabAds("https://ecosystem.latin-chain.com/page-mainnet/?v=1.123"+hashLatinChainGoogleTranslate);
         //window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.115"+hashLatinChainGoogleTranslate;
+        
+        $('.darkmode-toggle').css('display', 'none');
+        if($('.darkmode-toggle--white').length === 0)
+            $('.darkmode-layer--button').css('display', 'none');
+        else
+            $('.darkmode-toggle--white').css('display', 'none');
+    }else
+    {
+        $('.darkmode-toggle').css('display', 'block');
+        if($('.darkmode-toggle--white').length === 0)
+            $('.darkmode-layer--button').css('display', 'block');
+        else
+            $('.darkmode-toggle--white').css('display', 'block');
     }
         
     /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
