@@ -15,7 +15,7 @@ async function loadMessageLatinChain(){
                                                 loading_latinchain_pre +
                                             '</div>' +
                                             '<div id="loading-message-section" class="justify-content-center text-center" style="display: none; margin-top: 15px;">' +
-                                                '<video style="display: none; border-radius: 30%; max-width: 250px; max-height: 150px; width: 250px; height: 150px; aspect-ratio: 16 / 9; object-fit: cover;" id="loading-message-video" muted="muted" playsinline="playsinline" loop="loop" width="250" height="150">' +
+                                                '<video style="display: none; border-radius: 30% !important; max-width: 250px !important; max-height: 150px !important; min-width: 250px !important; min-height: 150px !important; width: 250px !important; height: 150px !important; aspect-ratio: 16 / 9 !important; object-fit: cover !important;" id="loading-message-video" muted="muted" playsinline="playsinline" loop="loop" width="250" height="150">' +
                                                   '<source src="/website_pinetwork_games_odoo/static/src/video/video-presentation-latinchain.mp4?v=1.103" type="video/mp4" />' +
                                                 '</video>' +
                                             '</div>' +
