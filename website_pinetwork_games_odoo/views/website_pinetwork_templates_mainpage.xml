@@ -7,7 +7,7 @@
     
     <template id="new_header_common_apps_latinchain_ai" inherit_id="web.layout">
         <xpath expr="//head//script[last()]" position="after">
-            <script src="/website_pinetwork_games_odoo/static/src/js/common-apps/common_apps_ai_functions.js?v=1.154"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/js/common-apps/common_apps_ai_functions.js?v=1.155"></script>
         </xpath>
     </template>
     
@@ -3465,6 +3465,10 @@
                                 
                                 <div style="margin-top: 10px;" class="row show_test_app">
                                     <a id="test_app" class="btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="#"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Earn points (Pi Ad)</div></a>
+                                </div>
+                                
+                                <div style="margin-top: 10px; display: none" class="row show_test_app_loading">
+                                    <img width="50" height="50" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif" />
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1">

@@ -778,6 +778,7 @@ function get_user() {
 async function showPiInterstitialAds(Pi, url) {
     
     $(".show_test_app").hide();
+    $(".show_test_app_loading").show();
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
     
@@ -798,6 +799,7 @@ async function showPiInterstitialAds(Pi, url) {
                 if((pi_user_id != "" && pi_user_code != "") && (show_pi_ad_user || pi_ad_new))
                 {
                     $(".show_test_app").show();
+                    $(".show_test_app_loading").hide();
                     $("#button_reward_ad").prop( "disabled", false );
                 }
                 
@@ -829,6 +831,7 @@ async function showPiInterstitialAds(Pi, url) {
         if((pi_user_id != "" && pi_user_code != "") && (show_pi_ad_user || pi_ad_new))
         {
             $(".show_test_app").show();
+            $(".show_test_app_loading").hide();
             $("#button_reward_ad").prop( "disabled", false );
         }
         //$("#button_reward_ad").prop( "disabled", false );
@@ -838,6 +841,7 @@ async function showPiInterstitialAds(Pi, url) {
         if((pi_user_id != "" && pi_user_code != "") && (show_pi_ad_user || pi_ad_new))
         {
             $(".show_test_app").show();
+            $(".show_test_app_loading").hide();
             $("#button_reward_ad").prop( "disabled", false );
         }
         
@@ -855,6 +859,7 @@ async function showPiInterstitialAds(Pi, url) {
 async function showPiAds(Pi, activated) {
     
     $(".show_test_app").hide();
+    $(".show_test_app_loading").show();
     $("#button_reward_ad").prop( "disabled", true );
     $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
     
@@ -866,6 +871,7 @@ async function showPiAds(Pi, activated) {
         if(localStorage && localStorage['pi_ad_datetime_latinchain'] > date2.getTime() && activated)
         {
             $(".show_test_app").show();
+            $(".show_test_app_loading").hide();
             $("#button_reward_ad").html(btnvalue);
             $("#button_reward_ad").prop( "disabled", false );
             //$("#button_reward_ad").prop( "disabled", false );
@@ -877,6 +883,7 @@ async function showPiAds(Pi, activated) {
         const isAdReadyResponse = await Pi.Ads.isAdReady("interstitial");
         
         $(".show_test_app").hide();
+        $(".show_test_app_loading").show();
         $("#button_reward_ad").html("Showing Pi Interstitial Ad...");
 
         if (isAdReadyResponse.ready === false) {
@@ -899,12 +906,14 @@ async function showPiAds(Pi, activated) {
         }
         
         $(".show_test_app").show();
+        $(".show_test_app_loading").hide();
         $("#button_reward_ad").prop( "disabled", false );
         $("#button_reward_ad").html(btnvalue);
         return true;
         //$("#button_reward_ad").prop( "disabled", false );
     } catch (err) {
         $(".show_test_app").show();
+        $(".show_test_app_loading").hide();
         $("#button_reward_ad").prop( "disabled", false );
         $("#button_reward_ad").html(btnvalue);
         //$("#button_reward_ad").prop( "disabled", false );
@@ -913,6 +922,7 @@ async function showPiAds(Pi, activated) {
     }
     
     $(".show_test_app").show();
+    $(".show_test_app_loading").hide();
     $("#button_reward_ad").prop( "disabled", false );
     $("#button_reward_ad").html(btnvalue);
     return false;
@@ -1061,6 +1071,7 @@ $( document ).ready(function() {
         }
         
         $(".show_test_app").hide();
+        $(".show_test_app_loading").show();
         $("#button_reward_ad").prop( "disabled", true );
         $("#button_reward_ad").html("Showing Pi Rewarded Ad...");
         
@@ -1077,6 +1088,7 @@ $( document ).ready(function() {
                         // showAdsNotSupportedModal()
                         alert("Update Pi Browser version, please!.");
                         $(".show_test_app").show();
+                        $(".show_test_app_loading").hide();
                         $("#button_reward_ad").html(btnvalue);
                         $("#button_reward_ad").prop( "disabled", false );
                         return;
@@ -1086,6 +1098,7 @@ $( document ).ready(function() {
                         // showAdUnavailableModal()
                         alert("Ads are temporarily unavailable, try again later!.");
                         $(".show_test_app").show();
+                        $(".show_test_app_loading").hide();
                         $("#button_reward_ad").html(btnvalue);
                         $("#button_reward_ad").prop( "disabled", false );
                         return;
@@ -1099,6 +1112,7 @@ $( document ).ready(function() {
                     if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                     {
                         $(".show_test_app").hide();
+                        $(".show_test_app_loading").show();
                         $("#button_reward_ad").prop( "disabled", true );
                         $("#button_reward_ad").html("Verifying...");
                         //alert($("#ready_reward_message").text());
@@ -1132,6 +1146,7 @@ $( document ).ready(function() {
                                 $("#open_modal").click();
                                 
                                 $(".show_test_app").hide();
+                                $(".show_test_app_loading").show();
                                 $("#button_reward_ad").prop( "disabled", true );
                                 $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                                 
@@ -1149,6 +1164,7 @@ $( document ).ready(function() {
                                     setTimeout(function ()
                                     {
                                         $(".show_test_app").show();
+                                        $(".show_test_app_loading").hide();
                                         $("#button_reward_ad").html(btnvalue);
                                         $("#button_reward_ad").prop( "disabled", false );
                                     }, 5000);
@@ -1159,6 +1175,7 @@ $( document ).ready(function() {
                                     setTimeout(function ()
                                     {
                                         $(".show_test_app").show();
+                                        $(".show_test_app_loading").hide();
                                         $("#button_reward_ad").html(btnvalue);
                                         $("#button_reward_ad").prop( "disabled", false );
                                     }, 5000);
@@ -1171,6 +1188,7 @@ $( document ).ready(function() {
                                 setTimeout(function ()
                                 {
                                     $(".show_test_app").show();
+                                    $(".show_test_app_loading").hide();
                                     $("#button_reward_ad").html(btnvalue);
                                     $("#button_reward_ad").prop( "disabled", false );
                                 }, 5000);
@@ -1188,6 +1206,7 @@ $( document ).ready(function() {
                             setTimeout(function ()
                             {
                                 $(".show_test_app").show();
+                                $(".show_test_app_loading").hide();
                                 $("#button_reward_ad").html(btnvalue);
                                 $("#button_reward_ad").prop( "disabled", false );
                             }, 5000);
@@ -1201,6 +1220,7 @@ $( document ).ready(function() {
                         });
                     }else{
                         $(".show_test_app").show();
+                        $(".show_test_app_loading").hide();
                         $("#button_reward_ad").html(btnvalue);
                         $("#button_reward_ad").prop( "disabled", false );
                         
@@ -1212,6 +1232,7 @@ $( document ).ready(function() {
                     }
                 } else {
                     $(".show_test_app").show();
+                    $(".show_test_app_loading").hide();
                     $("#button_reward_ad").html(btnvalue);
                     $("#button_reward_ad").prop( "disabled", false );
                     // fallback logic
@@ -1225,6 +1246,7 @@ $( document ).ready(function() {
                 
             } catch (err) {
                 $(".show_test_app").show();
+                $(".show_test_app_loading").hide();
                 $("#button_reward_ad").html(btnvalue);
                 $("#button_reward_ad").prop( "disabled", false );
                 // good practice to handle any potential errors
@@ -1238,6 +1260,7 @@ $( document ).ready(function() {
         }else
         {
             $(".show_test_app").show();
+            $(".show_test_app_loading").hide();
             $("#button_reward_ad").html(btnvalue);
             $("#button_reward_ad").prop( "disabled", false );
         }
@@ -1722,12 +1745,14 @@ $( document ).ready(function() {
                             if(show_pi_ad_user || pi_ad_new)
                             {
                                 $(".show_test_app").show();
+                                $(".show_test_app_loading").hide();
                                 $("#button_reward_ad").show();
                                 $("#piad_not_available").hide();
                                 $("#button_reward_ad").prop( "disabled", false );
                             }else
                             {
                                 $(".show_test_app").show();
+                                $(".show_test_app_loading").hide();
                                 $("#button_reward_ad").hide();
                                 $("#piad_not_available").show();
                             }
