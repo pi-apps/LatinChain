@@ -1055,7 +1055,7 @@ $( document ).ready(function() {
 
     var start_flag = false;
     
-    async function showRewardedPiAd(redirect)
+    async function showRewardedPiAd()
     {
         end();
         if(seconds < 5 && start_flag)
@@ -1132,10 +1132,6 @@ $( document ).ready(function() {
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
-                                if(!redirect && !unblocked)
-                                {
-                                    colorboxLoadedMainnet();
-                                }
                                 
                                 var gemini_image = getGeminiImage();
                                 $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
@@ -1626,7 +1622,7 @@ $( document ).ready(function() {
                 if(pi_ad_new)
                 {
                     (async () => {
-                        showRewardedPiAd(false);
+                        showRewardedPiAd();
                     })();
                 }
                 else
@@ -1764,7 +1760,7 @@ $( document ).ready(function() {
                             {
                                 (async () => {
                                     if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                                        showRewardedPiAd(false);
+                                        showRewardedPiAd();
                                 })();
                             }/*else if(!unblocked)
                             {
@@ -2053,7 +2049,7 @@ $( document ).ready(function() {
                 if(pi_ad_new)
                 {
                     (async () => {
-                        showRewardedPiAd(true);
+                        showRewardedPiAd();
                     })();
                 }
                 else
