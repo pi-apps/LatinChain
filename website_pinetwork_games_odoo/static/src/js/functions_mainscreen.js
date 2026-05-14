@@ -1715,6 +1715,7 @@ $( document ).ready(function() {
                             
                             document.getElementById('GoForwardShow1').style.display = 'none';
                             
+                            colorboxLoadedMainnet();
                         }
                         
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
