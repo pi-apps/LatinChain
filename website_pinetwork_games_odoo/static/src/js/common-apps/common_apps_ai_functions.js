@@ -137,8 +137,7 @@ var startCommonAppsAI = () => {
         $("#test_app").click(function(){
             if(startCommonAppsAIVars.pi_ad_new)
             {
-                if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                    showPiRewardedAds(Pi);
+                showPiRewardedAds(Pi);
                 
                 //alert("You can use this app, for testing purposes, until you unblock the game.");
                 //showPiRewardedAds(Pi);

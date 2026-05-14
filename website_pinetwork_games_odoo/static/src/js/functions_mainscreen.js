@@ -1626,8 +1626,7 @@ $( document ).ready(function() {
                 if(pi_ad_new)
                 {
                     (async () => {
-                        if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                            showRewardedPiAd(false);
+                        showRewardedPiAd(false);
                     })();
                 }
                 else
@@ -2054,8 +2053,7 @@ $( document ).ready(function() {
                 if(pi_ad_new)
                 {
                     (async () => {
-                        if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                            showRewardedPiAd(true);
+                        showRewardedPiAd(true);
                     })();
                 }
                 else

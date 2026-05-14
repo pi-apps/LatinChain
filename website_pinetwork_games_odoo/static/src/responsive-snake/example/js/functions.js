@@ -196,8 +196,7 @@ function get_user(pause) {
                     $("#test_app").click(function(){
                         if(pi_ad_new)
                         {
-                            if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                                showPiRewardedAds(Pi);
+                            showPiRewardedAds(Pi);
                         }else
                         {
                             alert("Max rewarded ads number reached. " + pi_ad_max + " rewarded ads each " + show_pi_ad_user_time + "h");
