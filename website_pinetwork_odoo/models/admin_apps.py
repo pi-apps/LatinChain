@@ -476,8 +476,20 @@ class admin_apps(models.Model):
                 else:
                     self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price_testnet()
             
-            if minute % 15 == 0:
-                i.total_users_count = self.env["pi.users"].sudo().search_count([])
+            #if minute % 15 == 0:
+                #i.total_users_count = self.env["pi.users"].sudo().search_count([])
+            
+            # Reemplaza el search_count por una consulta directa a pg_class
+            self.env.cr.execute("""
+                SELECT reltuples::bigint 
+                FROM pg_class 
+                WHERE relname = 'pi_users'
+            """)
+            result = self.env.cr.fetchone()
+            total_users = result[0] if result else 0
+            
+            if total_users > 0:
+                i.total_users_count = total_users
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_winners_all_paid(self):
