@@ -2142,7 +2142,7 @@
                                                     <li class="list-group-item"><a href="/chess" class="btn btn-link">Play Chess</a></li>
                                                     <li class="list-group-item"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
                                                     <li class="list-group-item"><a href="/snake" class="btn btn-link">Play Snake</a></li>
-                                                    <li t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="list-group-item"><button class="displayAds show_test_app href-external btn btn-link">Watch Pi Rewarded Ads</button></li>
+                                                    <li t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="list-group-item show_test_app"><button class="displayAds href-external btn btn-link">Watch Pi Rewarded Ads</button></li>
                                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display: none" class="list-group-item justify-content-center text-center show_test_app_loading">
                                                         <img width="50" height="50" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif" />
                                                     </div>
