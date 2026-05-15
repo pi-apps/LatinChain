@@ -1627,8 +1627,12 @@ $( document ).ready(function() {
                 }
                 else
                     alert($("#piad_not_available").text().trim());
+            }else if(!localStorage.getItem("loggedIn"))
+            {
+                alert("This button only works if you're logged in, inside Pi Browser. Reload this page to login.");
             }else
             {
+                //$(".PiBrowserLink").show();
                 alert("This button only works inside Pi Browser.");
             }
         }
