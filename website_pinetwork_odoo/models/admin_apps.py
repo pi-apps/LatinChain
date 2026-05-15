@@ -450,7 +450,7 @@ class admin_apps(models.Model):
             now = datetime.now()
             minute = now.minute
             
-            now_time = datetime.now().time()  # Get current time (without date)
+            now_time = now.time()  # Get current time (without date)
             start_time = time(16, 0, 0)
             end_time = time(16, 10, 0)
             
