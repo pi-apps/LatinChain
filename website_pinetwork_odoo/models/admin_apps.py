@@ -447,9 +447,16 @@ class admin_apps(models.Model):
 
     def _compute_daily(self):
         for i in self:
+            now = datetime.now()
+            minute = now.minute
+            
+            now_time = datetime.now().time()  # Get current time (without date)
+            start_time = time(16, 0, 0)
+            end_time = time(16, 10, 0)
+            
             i.total_transactions_daily_count = self.env["pi.transactions"].sudo().search_count([('create_date', '>=', datetime.now() - timedelta(days=1)), ('action', '=', 'complete')])
             i.total_users_daily_count = self.env["pi.users"].sudo().search_count([('last_connection', '>=', datetime.now() - timedelta(days=1))])
-            i.total_users_count = self.env["pi.users"].sudo().search_count([])
+            
             i.total_users_verified_count = self.env["pi.users"].sudo().search_count([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))])
             pi_user_list_ids = self.env["pi.users"].sudo()._search([('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('streaming_url', '!=', '')], limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
             i.top_50_streamers_ids = [(6, 0, pi_user_list_ids)]
@@ -458,19 +465,18 @@ class admin_apps(models.Model):
             
             i.points_latin_daily_total_notcomputed = i.points_latin_daily_total
             
-            now = datetime.now().time()  # Get current time (without date)
-            start_time = time(16, 0, 0)
-            end_time = time(16, 10, 0)
+            if minute % 15 == 0:
+                i.total_users_count = self.env["pi.users"].sudo().search_count([])
             
             if i.mainnet in ["Mainnet ON"]:
                 self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price()
             elif i.mainnet in ["Testnet ON", "Testnet OFF", "Mainnet OFF"]:
-                if start_time <= now <= end_time:
+                if minute % 15 == 0:
                     self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price()
                 else:
                     self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price_testnet()
-                
-            if start_time <= now <= end_time:
+            
+            if start_time <= now_time <= end_time:
                 self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])]).fill_winners()
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
