@@ -471,7 +471,7 @@ class admin_apps(models.Model):
             if i.mainnet in ["Mainnet ON"]:
                 self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price()
             elif i.mainnet in ["Testnet ON", "Testnet OFF", "Mainnet OFF"]:
-                if minute % 15 == 0:
+                if start_time <= now_time <= end_time:
                     self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price()
                 else:
                     self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price_testnet()
