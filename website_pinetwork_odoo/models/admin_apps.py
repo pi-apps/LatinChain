@@ -465,8 +465,8 @@ class admin_apps(models.Model):
             
             i.points_latin_daily_total_notcomputed = i.points_latin_daily_total
             
-            if minute % 15 == 0:
-                i.total_users_count = self.env["pi.users"].sudo().search_count([])
+            if start_time <= now_time <= end_time:
+                self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])]).fill_winners()
             
             if i.mainnet in ["Mainnet ON"]:
                 self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price()
@@ -476,8 +476,8 @@ class admin_apps(models.Model):
                 else:
                     self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])])._update_amount_price_testnet()
             
-            if start_time <= now_time <= end_time:
-                self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])]).fill_winners()
+            if minute % 15 == 0:
+                i.total_users_count = self.env["pi.users"].sudo().search_count([])
     
     @api.depends("pi_users_winners_ids", "pi_users_winners_paid_ids")
     def _compute_winners_all_paid(self):
