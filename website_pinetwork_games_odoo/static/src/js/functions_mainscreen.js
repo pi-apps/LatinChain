@@ -2075,8 +2075,21 @@ $( document ).ready(function() {
                     alert($("#piad_not_available").text().trim());
             }else
             {
-                $(".PiBrowserLink").show();
-                alert("This button only works inside Pi Browser.");
+                //$(".PiBrowserLink").show();
+                if(!localStorage.getItem("loggedIn"))
+                {
+                    if(confirm("This button only works inside Pi Browser. Do you want to login?"))
+                    {
+                        await doLogin();
+                        if(localStorage.getItem("loggedIn"))
+                            showRewardedPiAd();
+                        else
+                            alert("This button only works inside Pi Browser.");
+                    }
+                }else
+                {
+                    alert("This button only works inside Pi Browser.");
+                }
             }
         }
         else
