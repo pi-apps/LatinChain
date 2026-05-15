@@ -1613,31 +1613,6 @@ $( document ).ready(function() {
 
     $("#verified").hide();
     
-    async function displayAds()
-    {
-        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-        {
-            if(pi_user_id != "" && pi_user_code != "")
-            {
-                if(pi_ad_new)
-                {
-                    (async () => {
-                        showRewardedPiAd();
-                    })();
-                }
-                else
-                    alert($("#piad_not_available").text().trim());
-            }else
-            {
-                alert("This button only works inside Pi Browser.");
-            }
-        }
-        else
-        {
-            alert("This button only works on Mainnet inside Pi Browser.");
-        }
-    }
-    
     $( ".displayAds" ).click(async function() {
         displayAds();
     });
@@ -1785,39 +1760,9 @@ $( document ).ready(function() {
             // Not able to fetch the user
         }
     }
-    $(".referrer_username").html("");
     
-    // you usually would check the ads support ahead of time and store the information
-    (async () => {
-        /*
-        document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
-        document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
-        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-        document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-        */
-        
-        try{
-            await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
-        }catch(e){
-        }
-        
-        document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
-        document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
-        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-        document.getElementById('loading-message').style.display = 'flex'; // Use 'flex' instead of 'block'
-        
-        (async () => {
-            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-            {
-                const nativeFeaturesList = await Pi.nativeFeaturesList();
-                const adNetworkSupported = nativeFeaturesList.includes("ad_network");
-                
-                if(!adNetworkSupported)
-                    alert("Update Pi Browser version, please!.");
-            }
-          // store adNetworkSupported for later use
-        })();
-    
+    async function doLogin()
+    {
         if(localStorage.getItem("loggedIn"))
         {
             auth();
@@ -1912,6 +1857,80 @@ $( document ).ready(function() {
                 }
             }
         }
+    }
+    
+    async function displayAds()
+    {
+        if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+        {
+            if(pi_user_id != "" && pi_user_code != "")
+            {
+                if(pi_ad_new)
+                {
+                    (async () => {
+                        showRewardedPiAd();
+                    })();
+                }
+                else
+                    alert($("#piad_not_available").text().trim());
+            }else
+            {
+                if(!localStorage.getItem("loggedIn"))
+                {
+                    if(confirm("This button only works inside Pi Browser. Do you want to login?"))
+                    {
+                        await doLogin();
+                        if(localStorage.getItem("loggedIn"))
+                            showRewardedPiAd();
+                        else
+                            alert("This button only works inside Pi Browser.");
+                    }
+                }else
+                {
+                    alert("This button only works inside Pi Browser.");
+                }
+            }
+        }
+        else
+        {
+            alert("This button only works on Mainnet inside Pi Browser.");
+        }
+    }
+    
+    $(".referrer_username").html("");
+    
+    // you usually would check the ads support ahead of time and store the information
+    (async () => {
+        /*
+        document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        */
+        
+        try{
+            await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
+        }catch(e){
+        }
+        
+        document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+        document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+        document.getElementById('loading-message').style.display = 'flex'; // Use 'flex' instead of 'block'
+        
+        (async () => {
+            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+            {
+                const nativeFeaturesList = await Pi.nativeFeaturesList();
+                const adNetworkSupported = nativeFeaturesList.includes("ad_network");
+                
+                if(!adNetworkSupported)
+                    alert("Update Pi Browser version, please!.");
+            }
+          // store adNetworkSupported for later use
+        })();
+    
+        doLogin();
         
         if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
         {
