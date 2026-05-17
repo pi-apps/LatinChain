@@ -350,39 +350,82 @@ let touchStartX = 0;
 let touchEndX = 0;
 let touchStartY = 0;
 let touchCurrentY = 0;
+let initialPinchDistance = null; // Added to track pinch-to-zoom distance
 
 canvasWrapper.addEventListener('touchstart', e => {
+    // Check for pinch-to-zoom gesture (2 fingers)
+    if (e.touches.length === 2) {
+        initialPinchDistance = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+        );
+        return;
+    }
+
+    // Single finger handling
     touchStartX = e.changedTouches[0].screenX;
     touchStartY = e.changedTouches[0].screenY;
     edgeScrollAccumulator = 0; 
-}, { passive: true });
+}, { passive: false });
 
 canvasWrapper.addEventListener('touchmove', e => {
     if (!pdfDoc || pageIsRendering || isPageTransitioning) return;
     
-    touchCurrentY = e.changedTouches[0].screenY;
-    
-    const isAtTop = canvasWrapper.scrollTop <= 2;
-    const isAtBottom = Math.abs(canvasWrapper.scrollHeight - canvasWrapper.scrollTop - canvasWrapper.clientHeight) <= 2;
-    
-    const deltaY = touchStartY - touchCurrentY;
+    // Handle pinch-to-zoom
+    if (e.touches.length === 2 && initialPinchDistance !== null) {
+        e.preventDefault(); // Prevent the native browser from zooming the entire webpage layout
+        
+        const currentDistance = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+        );
+        
+        const diff = currentDistance - initialPinchDistance;
+        const PINCH_THRESHOLD = 50; // The pixel distance needed to trigger a zoom step
 
-    if (deltaY < 0 && isAtTop && pageNum > 1) { 
-        if (Math.abs(deltaY) > EDGE_THRESHOLD) {
-            touchStartY = touchCurrentY; 
-            goToPrevPageFromEdge();
+        if (diff > PINCH_THRESHOLD) {
+            onZoomIn();
+            initialPinchDistance = currentDistance; // Reset baseline
+        } else if (diff < -PINCH_THRESHOLD) {
+            onZoomOut();
+            initialPinchDistance = currentDistance; // Reset baseline
         }
-    } else if (deltaY > 0 && isAtBottom && pageNum < pdfDoc.numPages) { 
-        if (Math.abs(deltaY) > EDGE_THRESHOLD) {
-            touchStartY = touchCurrentY;
-            goToNextPageFromEdge();
+        return;
+    }
+
+    // Handle edge scrolling (1 finger)
+    if (e.touches.length === 1) {
+        touchCurrentY = e.changedTouches[0].screenY;
+        
+        const isAtTop = canvasWrapper.scrollTop <= 2;
+        const isAtBottom = Math.abs(canvasWrapper.scrollHeight - canvasWrapper.scrollTop - canvasWrapper.clientHeight) <= 2;
+        
+        const deltaY = touchStartY - touchCurrentY;
+
+        if (deltaY < 0 && isAtTop && pageNum > 1) { 
+            if (Math.abs(deltaY) > EDGE_THRESHOLD) {
+                touchStartY = touchCurrentY; 
+                goToPrevPageFromEdge();
+            }
+        } else if (deltaY > 0 && isAtBottom && pageNum < pdfDoc.numPages) { 
+            if (Math.abs(deltaY) > EDGE_THRESHOLD) {
+                touchStartY = touchCurrentY;
+                goToNextPageFromEdge();
+            }
         }
     }
-}, { passive: true });
+}, { passive: false });
 
 canvasWrapper.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
+    // Reset pinch calculation if fingers are lifted
+    if (e.touches.length < 2) {
+        initialPinchDistance = null;
+    }
+
+    if (e.changedTouches.length > 0) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }
 }, { passive: true });
 
 function handleSwipe() {
