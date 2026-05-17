@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-10 18:02+0000\n"
-"PO-Revision-Date: 2026-05-10 18:02+0000\n"
+"POT-Creation-Date: 2026-05-17 21:32+0000\n"
+"PO-Revision-Date: 2026-05-17 21:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -353,6 +353,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcode
 msgid "100% Client-Side Execution (Offline)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "100% Unlock (Pay Pi)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -919,7 +924,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.weboffice
 msgid ""
 "<i class=\"fas fa-cloud\"/>\n"
-"                                    <span id=\"app-title\">WebOffice Suite</span>"
+"                                    <span id=\"app-title\">Simple WebOffice Suite</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1420,6 +1425,13 @@ msgid "<span id=\"ui-btn-shot-text\">Take Screenshot Now</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid ""
+"<span id=\"zoom-level\" class=\"text-sm font-medium px-2 text-gray-700 "
+"min-w-[3rem] text-center\">100%</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 msgid "<span>BCE</span>"
 msgstr ""
@@ -1446,6 +1458,11 @@ msgstr ""
 msgid ""
 "<span>HP: <span id=\"ui-hp\">100</span>/<span id=\"ui-maxhp\">100</span></span>\n"
 "                                        <span>XP: <span id=\"ui-xp\">0</span>/<span id=\"ui-nextxp\">50</span></span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid "<span>PDF Reader</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -2650,6 +2667,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rpggame
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.soccer_penalty
@@ -2955,6 +2973,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rpggame
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.soccer_penalty
@@ -2997,11 +3016,6 @@ msgid "Earn Latin points ("
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Earn Latin points (Pi Ad)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
 msgid ""
 "Earn Latin points, doing tasks highlighted in the interface, plus the points"
@@ -3011,6 +3025,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Earn points"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Earn points (Pi Ad)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3252,6 +3271,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rpggame
@@ -3851,6 +3871,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rpggame
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.soccer_penalty
@@ -4180,6 +4201,11 @@ msgid "Next"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid "Next Page"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Next Pi Ad in"
@@ -4203,6 +4229,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "No Latin points shared. Try again."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid "No document open"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4315,7 +4346,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Office Suite"
+msgid "One Time Unlock"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4345,6 +4376,11 @@ msgid "Open Modal Login"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid "Open PDF"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Operations"
 msgstr ""
@@ -4366,6 +4402,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rpggame
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.soccer_penalty
@@ -4407,6 +4444,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "PAY PI (CLICK HERE)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "PDF READER"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "PDF Reader"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4467,16 +4514,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Pay 10 Latin points, earn 1 Chess points"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pay Here"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Pay Here (no ads)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4757,6 +4794,11 @@ msgid "Previous"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid "Previous Page"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 msgid "Previous song"
 msgstr ""
@@ -5026,6 +5068,11 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "SIMPLE WEBOFFICE SUITE"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "SNAKE"
 msgstr ""
 
@@ -5138,6 +5185,11 @@ msgid "Select Languages to Recognize"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid "Select PDF File"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webcamplayer
 msgid "Select Voice:"
 msgstr ""
@@ -5236,6 +5288,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.partners
 msgid "SilkRoad for Pi.<br/>Mainnet:"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Simple Office Suite"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -5824,11 +5881,6 @@ msgid "Undo"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Unlock (Click Here)"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.weboffice
 msgid "Untitled Document"
 msgstr ""
@@ -5838,6 +5890,18 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid "Updated each minute (on Mainnet), and each 1 day (on Testnet)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid "Upload Document"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid ""
+"Upload a PDF file from your device to start viewing and navigating its "
+"pages."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -5955,11 +6019,6 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "WEBCODE"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "WEBOFFICE SUITE"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -6269,6 +6328,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.musicplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.odoolearning
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pingpong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rpggame
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.soccer_penalty
@@ -6415,6 +6475,16 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Youtube video URL"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid "Zoom In"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
+msgid "Zoom Out"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

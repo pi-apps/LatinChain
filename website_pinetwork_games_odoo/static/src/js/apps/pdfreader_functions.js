@@ -24,6 +24,13 @@ const btnNext = document.getElementById('next-page');
 const btnZoomIn = document.getElementById('zoom-in');
 const btnZoomOut = document.getElementById('zoom-out');
 
+// Initialize zoom from localStorage immediately on page load
+const initialSavedZoom = localStorage.getItem('pdfReaderZoom');
+if (initialSavedZoom !== null) {
+    currentZoom = parseFloat(initialSavedZoom);
+    spanZoomLevel.textContent = `${Math.round(currentZoom * 100)}%`;
+}
+
 const renderPage = (num) => {
     pageIsRendering = true;
     
@@ -137,10 +144,16 @@ const goToSpecificPage = (e) => {
 pageNumInput.addEventListener('keydown', goToSpecificPage);
 pageNumInput.addEventListener('blur', goToSpecificPage);
 
+// Save Zoom utility
+const saveZoomLevel = (zoom) => {
+    localStorage.setItem('pdfReaderZoom', zoom.toString());
+};
+
 const onZoomIn = () => {
     if (currentZoom >= 3.0) return;
     currentZoom += 0.25;
     spanZoomLevel.textContent = `${Math.round(currentZoom * 100)}%`;
+    saveZoomLevel(currentZoom);
     queueRenderPage(pageNum);
 };
 
@@ -148,6 +161,7 @@ const onZoomOut = () => {
     if (currentZoom <= 0.5) return;
     currentZoom -= 0.25;
     spanZoomLevel.textContent = `${Math.round(currentZoom * 100)}%`;
+    saveZoomLevel(currentZoom);
     queueRenderPage(pageNum);
 };
 
@@ -165,8 +179,15 @@ const loadPDF = async (fileUrl) => {
         
         pageCount.textContent = pdfDoc.numPages;
         pageNum = 1;
-        currentZoom = 0.75;
-        spanZoomLevel.textContent = '75%';
+        
+        // Retrieve saved zoom or default to 0.75
+        const savedZoom = localStorage.getItem('pdfReaderZoom');
+        if (savedZoom !== null) {
+            currentZoom = parseFloat(savedZoom);
+        } else {
+            currentZoom = 0.75;
+        }
+        spanZoomLevel.textContent = `${Math.round(currentZoom * 100)}%`;
         
         emptyState.classList.add('hidden');
         canvasWrapper.classList.remove('hidden');
