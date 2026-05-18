@@ -88,6 +88,30 @@
                                         <span>PDF Reader</span>
                                         
                                         <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1/2 px-3 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                                        
+                                        <!-- Add this Dropdown Menu inside your Header / Toolbar, right next to the file upload or zoom controls -->
+                                        <div class="relative inline-block text-left">
+                                          <button id="menuButton" class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 text-gray-700 transition" aria-haspopup="true" aria-expanded="false">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                                            </svg>
+                                          </button>
+
+                                          <!-- Dropdown panel, hidden by default -->
+                                          <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50 ring-1 ring-black ring-opacity-5">
+                                            <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="menuButton">
+                                              <button id="btnSearch" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                                🔍 Search Words
+                                              </button>
+                                              <button id="btnPrint" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                                🖨️ Print PDF
+                                              </button>
+                                              <button id="btnDownload" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                                ⬇️ Download PDF
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
                                     </div>
                                     <label class="sm:hidden cursor-pointer bg-blue-50 text-blue-600 px-3 py-1 rounded-md text-sm font-medium border border-blue-200 hover:bg-blue-100 transition-colors">
                                         <input type="file" id="file-upload-mobile" class="hidden" accept="application/pdf"/>
@@ -160,7 +184,7 @@
                             </div>
                         </main>
                         
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/pdfreader_functions.js?v=1.104"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/pdfreader_functions.js?v=1.107"></script>
                     </body>
                 </html>
             </t>

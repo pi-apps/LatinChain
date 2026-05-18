@@ -10,6 +10,8 @@ let baseScale = 1.0;
 let currentZoom = 0.75;
 let isPageTransitioning = false; // Bloqueo para evitar scrolls locos
 
+var fileUrl;
+
 // Referencias al DOM
 const canvas = document.getElementById('pdf-canvas');
 const ctx = canvas.getContext('2d');
@@ -23,6 +25,10 @@ const btnPrev = document.getElementById('prev-page');
 const btnNext = document.getElementById('next-page');
 const btnZoomIn = document.getElementById('zoom-in');
 const btnZoomOut = document.getElementById('zoom-out');
+
+// --- Dropdown Menu UI Logic ---
+const menuButton = document.getElementById('menuButton');
+const dropdownMenu = document.getElementById('dropdownMenu');
 
 // Initialize zoom from localStorage immediately on page load
 const initialSavedZoom = localStorage.getItem('pdfReaderZoom');
@@ -206,7 +212,7 @@ const loadPDF = async (fileUrl) => {
 const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (file && file.type === 'application/pdf') {
-        const fileUrl = URL.createObjectURL(file);
+        fileUrl = URL.createObjectURL(file);
         loadPDF(fileUrl);
     } else if (file) {
         alert('Please select a valid PDF file.');
@@ -441,5 +447,80 @@ function handleSwipe() {
         onPrevPage(); 
     }
 }
+
+menuButton.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('hidden');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+    if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.add('hidden');
+    }
+});
+
+// --- Feature 1: Search Words ---
+document.getElementById('btnSearch').addEventListener('click', async () => {
+    dropdownMenu.classList.add('hidden');
+    if (!pdfDoc) return alert("Please load a PDF first.");
+
+    const query = prompt("Enter a word or phrase to search for:");
+    if (!query) return;
+    
+    const searchTerm = query.toLowerCase();
+    let foundPages = [];
+
+    // Alert user that scanning has started (helpful for large PDFs)
+    console.log(`Scanning document for: "${query}"...`);
+
+    for (let i = 1; i <= pdfDoc.numPages; i++) {
+        const page = await pdfDoc.getPage(i);
+        const textContent = await page.getTextContent();
+        const pageText = textContent.items.map(item => item.str).join(' ').toLowerCase();
+        
+        if (pageText.includes(searchTerm)) {
+            foundPages.push(i);
+        }
+    }
+
+    if (foundPages.length > 0) {
+        alert(`Word found on page(s): ${foundPages.join(', ')}`);
+        // Automatically jump to the first page where the word was found
+        queueRenderPage(foundPages[0]); 
+    } else {
+        alert("No matches found in this document.");
+    }
+});
+
+// --- Feature 2: Print PDF ---
+document.getElementById('btnPrint').addEventListener('click', () => {
+    dropdownMenu.classList.add('hidden');
+    if (!pdfDoc) return alert("Please load a PDF first.");
+    
+    // We create a temporary invisible iframe to trigger the browser's native print dialog
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    
+    // Assuming you have the original file URL or Blob saved in a variable like `currentPdfUrl`
+    // If you are using a File reader, you might need to create an ObjectURL from the loaded ArrayBuffer
+    iframe.src = fileUrl; //currentPdfUrl || URL.createObjectURL(new Blob([loadedPdfBytes], { type: 'application/pdf' }));
+    
+    document.body.appendChild(iframe);
+    iframe.onload = () => {
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+    };
+});
+
+// --- Feature 3: Download PDF ---
+document.getElementById('btnDownload').addEventListener('click', () => {
+    dropdownMenu.classList.add('hidden');
+    if (!pdfDoc) return alert("Please load a PDF first.");
+    
+    const downloadLink = document.createElement('a');
+    downloadLink.href = fileUrl; //currentPdfUrl || URL.createObjectURL(new Blob([loadedPdfBytes], { type: 'application/pdf' }));
+    downloadLink.download = "document.pdf"; // You can dynamically set this if you save the uploaded filename
+    downloadLink.click();
+});
 
 updateButtonStates();
