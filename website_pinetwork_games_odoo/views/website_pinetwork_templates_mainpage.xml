@@ -2423,23 +2423,25 @@
                                                 <div class="col-12"><button id="rules_button_2" class="col-12 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button></div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top getverified">
-                                            <div class="row" style="text-align: left;">
-                                                <div class="col-12" style="text-align: center"><div style="display:inline;">&#128071;</div> <div class="next-pi" style="display:inline; font-size: 18px">NEXT IS TO PAY PI</div></div>
-                                            </div>
-                                        </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top getverified">
-                                            <div class="row" style="text-align: center; padding: 10px">
-                                                <div class="col-12">
-                                                    <div style="margin-bottom:5px;" class="getverified">
-                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">PAY HERE</div></a>
-                                                    </div>
-                                                    <div class="getverified">
-                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                        <div class="getverified">
+                                            <li class="list-group-item border-left-0 border-bottom border-right-0 border-top getverified">
+                                                <div class="row" style="text-align: left;">
+                                                    <div class="col-12" style="text-align: center"><div style="display:inline;">&#128071;</div> <div class="next-pi" style="display:inline; font-size: 18px">NEXT IS TO PAY PI</div></div>
+                                                </div>
+                                            </li>
+                                            <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top getverified">
+                                                <div class="row" style="text-align: center; padding: 10px">
+                                                    <div class="col-12">
+                                                        <div style="margin-bottom:5px;" class="getverified">
+                                                            <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">PAY HERE</div></a>
+                                                        </div>
+                                                        <div class="getverified">
+                                                            <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </li>
+                                            </li>
+                                        </div>
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: left;">
                                                 <div class="col-12" style="text-align: center"><div style="display:inline;">&#128071;</div> <div class="next-pi" style="display:inline; font-size: 18px">NEXT ARE PAID APPS</div></div>
