@@ -2434,7 +2434,9 @@
                                                     <div style="margin-bottom:5px;" class="getverified">
                                                         <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">PAY HERE</div></a>
                                                     </div>
-                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                    <div class="getverified">
+                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">PAY HERE</div><div style="font-size:80%;">Donate Pi to unblock LatinChain Platform<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </li>
