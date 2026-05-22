@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="musicplayer" name="Music Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Advanced Music Player</title>
+                        <!-- Tailwind CSS CDN -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <!-- Font Awesome for icons -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                        <style>
+                            /* Custom styles for the player */
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #1a202c; /* Dark background */
+                                color: #e2e8f0; /* Light text */
+                                display: flex;
+                                flex-direction: column; /* Allow content to stack vertically */
+                                justify-content: center;
+                                align-items: center;
+                                min-height: 100vh;
+                                padding: 20px;
+                                box-sizing: border-box;
+                            }
+
+                            /* Custom scrollbar for playlist */
+                            .playlist-container::-webkit-scrollbar {
+                                width: 8px;
+                            }
+
+                            .playlist-container::-webkit-scrollbar-track {
+                                background: #2d3748; /* Darker track */
+                                border-radius: 10px;
+                            }
+
+                            .playlist-container::-webkit-scrollbar-thumb {
+                                background: #4a5568; /* Thumb color */
+                                border-radius: 10px;
+                            }
+
+                            .playlist-container::-webkit-scrollbar-thumb:hover {
+                                background: #6a768e; /* Darker thumb on hover */
+                            }
+
+                            /* Custom styling for range inputs (progress and volume bars) */
+                            input[type="range"]::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 16px;
+                                height: 16px;
+                                background: #60a5fa; /* Blue-400 */
+                                border-radius: 50%;
+                                cursor: pointer;
+                                box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.4); /* Focus ring effect */
+                                transition: background 0.2s ease-in-out;
+                            }
+
+                            input[type="range"]::-moz-range-thumb {
+                                width: 16px;
+                                height: 16px;
+                                background: #60a5fa; /* Blue-400 */
+                                border-radius: 50%;
+                                cursor: pointer;
+                                box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.4);
+                                transition: background 0.2s ease-in-out;
+                            }
+
+                            input[type="range"]::-webkit-slider-thumb:hover {
+                                background: #3b82f6; /* Blue-500 */
+                            }
+
+                            input[type="range"]::-moz-range-thumb:hover {
+                                background: #3b82f6; /* Blue-500 */
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Donate to unlock Apps
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="bg-gray-900 text-gray-100 flex items-center justify-center min-h-screen p-4">
+
+                        <div class="bg-gray-800 rounded-xl shadow-2xl p-6 w-full max-w-2xl flex flex-col gap-6">
+
+                            <!-- Music Player Section -->
+                            <div class="flex-1 flex flex-col items-center justify-center space-y-6">
+                                
+                                <style>
+                                    /* Adjustments for Google Translator to be visible */
+                                    .goog-te-banner-frame.skiptranslate,
+                                    .skiptranslate > iframe {
+                                        display: none !important;
+                                    }
+                                   
+                                    body {
+                                        top: 0px !important; 
+                                    }
+
+                                    .goog-te-menu-frame {
+                                        max-width:100% !important; 
+                                    }
+                                    .goog-te-menu2 { 
+                                        max-width: 100% !important;
+                                        overflow-x: scroll !important;
+                                        box-sizing:border-box !important; 
+                                        height:auto !important; 
+                                    }
+                                   
+                                    /* Hide unwanted elements without hiding the main widget */
+                                    #goog-gt-tt, 
+                                    #goog-gt-, 
+                                    .goog-te-balloon-frame {
+                                        display: none !important;
+                                    } 
+                                    .goog-text-highlight { 
+                                        background: none !important; 
+                                        box-shadow: none !important;
+                                    }
+                                   
+                                    .goog-logo-link {
+                                        display: none !important;
+                                    }
+                                    .goog-te-gadget {
+                                        height: 28px !important; 
+                                        overflow: hidden;
+                                    }
+                                </style>
+                                <script type="text/javascript">
+                                    $( document ).ready(function() {
+                                        $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                        $("#google_translate_element").appendTo(".translate_here");
+                                        
+                                        $("#translate_text_latinchain_2").show();
+                                        $("#google_translate_element").show();
+                                    });
+                                </script>
+                                
+                                <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                                </div>
+                                
+                                <div style="text-align:center; margin-bottom:15px;">
+                                    <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                                </div>
+                                
+                                <h1 class="text-3xl font-bold text-blue-400 mb-4">Music Player</h1>
+
+                                <!-- Current Song Info -->
+                                <div class="text-center w-full">
+                                    <p id="current-song-title" class="text-xl font-semibold text-gray-200 truncate">No song loaded</p>
+                                    <p id="current-song-time" class="text-sm text-gray-400 mt-1">0:00 / 0:00</p>
+                                </div>
+
+                                <!-- Album Art Placeholder -->
+                                <div class="w-48 h-48 bg-gray-700 rounded-lg flex items-center justify-center overflow-hidden shadow-lg">
+                                    <img id="album-art" src="https://latin-chain.com/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" alt="Album Art" class="w-full h-full object-cover" />
+                                </div>
+
+                                <!-- Progress Bar -->
+                                <input type="range" id="progress-bar" value="0" min="0" max="100" class="w-full h-2 bg-blue-600 rounded-lg appearance-none cursor-pointer accent-blue-400" />
+
+                                <!-- Controls -->
+                                <div class="flex items-center justify-center space-x-4 w-full">
+                                    <button id="shuffle-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Shuffle playlist">
+                                        <!-- Shuffle Icon (Updated to standard criss-cross) -->
+                                        <i class="fa-solid fa-shuffle"></i>
+                                    </button>
+                                    <button id="prev-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Previous song">
+                                        <!-- Previous Icon -->
+                                        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <button id="play-pause-btn" class="p-4 rounded-full bg-blue-600 hover:bg-blue-700 transition duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Play or pause">
+                                        <!-- Play Icon -->
+                                        <svg id="play-icon" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 5v14l11-7z"></path>
+                                        </svg>
+                                        <!-- Pause Icon -->
+                                        <svg id="pause-icon" class="w-8 h-8 text-white hidden" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                                        </svg>
+                                    </button>
+                                    <button id="next-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Next song">
+                                        <!-- Next Icon -->
+                                        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </button>
+                                    <button id="repeat-btn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Repeat mode">
+                                        <!-- Repeat Icon (Updated to standard repeat-one) -->
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 7h10v3l4-4-4-4v3H7a6 6 0 00-6 6v3h2v-3a4 4 0 014-4zm10 10H7v-3l-4 4 4 4v-3h10a6 6 0 006-6v-3h-2v3a4 4 0 01-4 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <!-- Small '1' for repeat one mode -->
+                                            <path id="repeat-one-indicator" class="hidden" d="M12 15a3 3 0 100-6 3 3 0 000 6z" fill="white"/>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Volume Control -->
+                                <div class="flex items-center space-x-2 w-full">
+                                    <!-- Volume Icons (Dynamic) -->
+                                    <svg id="volume-icon-low" class="w-6 h-6 text-gray-400 hidden" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5z"/>
+                                    </svg>
+                                    <svg id="volume-icon-medium" class="w-6 h-6 text-gray-400 hidden" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5zM19 12c0 .94-.28 1.81-.76 2.53l1.45 1.45C20.42 15.08 21 13.63 21 12c0-2.39-1.29-4.51-3.22-5.68l-1.45 1.45c1.16.71 1.97 1.97 1.97 3.23z"/>
+                                    </svg>
+                                    <svg id="volume-icon-high" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.81 5 3.54 5 6.71s-2.11 5.9-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                    <input type="range" id="volume-bar" value="100" min="0" max="100" class="flex-1 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-blue-400" aria-label="Volume control" />
+                                </div>
+
+                                <!-- File/Directory Input -->
+                                <div class="flex flex-col sm:flex-row gap-3 w-full justify-center mt-4">
+                                    <input type="file" id="file-input" accept="audio/*" class="hidden" aria-label="Select audio file"/>
+                                    <button id="select-file-btn" class="flex-1 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Load single audio file">
+                                        Load File
+                                    </button>
+
+                                    <input type="file" id="folder-input" multiple="multiple" class="hidden" aria-label="Select folder with audio files" />
+                                    <button id="select-folder-btn" class="flex-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500" aria-label="Load audio files from folder">
+                                        Load multiple files
+                                    </button>
+                                    <button id="clear-playlist-btn" class="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Clear playlist">
+                                        Clear Playlist
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Playlist Section -->
+                            <div class="flex-1 bg-gray-700 rounded-lg p-4 shadow-inner flex flex-col">
+                                <h2 class="text-2xl font-bold text-gray-200 mb-4 text-center">Playlist</h2>
+                                <!-- Search Input for Playlist -->
+                                <div class="mb-4">
+                                    <input type="text" id="playlist-search-input" placeholder="Search playlist..." class="w-full p-2 rounded-md bg-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Search playlist" />
+                                </div>
+                                <ul id="playlist" class="flex-1 overflow-y-auto space-y-2 playlist-container">
+                                    <!-- Playlist items will be added here by JavaScript -->
+                                    <li class="text-gray-400 text-center py-4">Load files or folders to start.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Audio element (hidden) -->
+                            <audio id="audio-player" class="hidden"></audio>
+                            
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/musicplayer_functions.js?v=1.114"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+</odoo>

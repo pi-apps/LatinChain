@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+        <template id="imgplayer" name="Photo Viewer">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Photo Viewer</title>
+                        <!-- Include Tailwind CSS from CDN -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <!-- Include Tesseract.js from CDN for text recognition -->
+                        <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
+                        <style>
+                            /* Custom styles for font and body */
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #f0f2f5; /* A light gray background */
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                min-height: 100vh; /* Ensures it takes full viewport height */
+                                margin: 0;
+                                padding: 1rem; /* General padding */
+                                box-sizing: border-box; /* Include padding in total size */
+                            }
+                            /* Styles to ensure the image fits and has rounded corners */
+                            #photo-display {
+                                width: 100%;
+                                height: auto;
+                                max-height: 70vh; /* Limits image height for small screens */
+                                object-fit: contain; /* Ensures the image fits without cropping */
+                                border-radius: 1rem; /* Rounded corners */
+                                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+                                cursor: zoom-in; /* Indicates the image is clickable for zoom */
+                            }
+                            /* Styles for navigation buttons */
+                            .nav-button {
+                                background-color: #4f46e5; /* Tailwind purple color */
+                                color: white;
+                                padding: 0.75rem 1.5rem;
+                                border-radius: 9999px; /* Fully rounded buttons */
+                                font-weight: bold;
+                                transition: background-color 0.3s ease, transform 0.2s ease;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 0.5rem;
+                            }
+                            .nav-button:hover {
+                                background-color: #4338ca; /* Darker purple on hover */
+                                transform: translateY(-2px); /* Small lift effect */
+                            }
+                            .nav-button:active {
+                                transform: translateY(0); /* Returns to normal position on click */
+                            }
+                            /* Style for the main application container */
+                            .app-container {
+                                background-color: white;
+                                border-radius: 1.5rem; /* More rounded corners for the container */
+                                padding: 1.5rem;
+                                box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                gap: 1.5rem; /* Spacing between elements */
+                                /* Adjustment for constant mobile view */
+                                max-width: 375px; /* Typical mobile max width */
+                                width: 100%; /* Ensures it takes 100% of max-width */
+                            }
+
+                            /* Styles for the upload photo button */
+                            .upload-button {
+                                background-color: #10b981; /* Tailwind green color */
+                                color: white;
+                                padding: 0.75rem 1.5rem;
+                                border-radius: 9999px;
+                                font-weight: bold;
+                                transition: background-color 0.3s ease, transform 0.2s ease;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 0.5rem;
+                                cursor: pointer; /* Indicates it's clickable */
+                            }
+                            .upload-button:hover {
+                                background-color: #059669; /* Darker green on hover */
+                                transform: translateY(-2px);
+                            }
+                            .upload-button:active {
+                                transform: translateY(0);
+                            }
+
+                            /* Styles for the clear photos button */
+                            .clear-button {
+                                background-color: #ef4444; /* Tailwind red color */
+                                color: white;
+                                padding: 0.75rem 1.5rem;
+                                border-radius: 9999px;
+                                font-weight: bold;
+                                transition: background-color 0.3s ease, transform 0.2s ease;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 0.5rem;
+                                cursor: pointer;
+                            }
+                            .clear-button:hover {
+                                background-color: #dc2626; /* Darker red on hover */
+                                transform: translateY(-2px);
+                            }
+                            .clear-button:active {
+                                transform: translateY(0);
+                            }
+
+                            /* Styles for the zoom modal */
+                            .zoom-modal {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                z-index: 1000; /* Ensures it's above other elements */
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: opacity 0.3s ease, visibility 0.3s ease;
+                            }
+
+                            .zoom-modal.active {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+
+                            .zoom-modal-content {
+                                max-width: 90%;
+                                max-height: 90%;
+                                object-fit: contain;
+                                border-radius: 0.5rem;
+                                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                            }
+
+                            .zoom-close-button {
+                                position: absolute;
+                                top: 1rem;
+                                right: 1rem;
+                                background-color: rgba(255, 255, 255, 0.2);
+                                color: white;
+                                border: none;
+                                border-radius: 50%;
+                                width: 2.5rem;
+                                height: 2.5rem;
+                                font-size: 1.5rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                            }
+
+                            .zoom-close-button:hover {
+                                background-color: rgba(255, 255, 255, 0.4);
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Donate to unlock Apps
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body>
+                        <div class="app-container">
+                            <style>
+                                /* Adjustments for Google Translator to be visible */
+                                .goog-te-banner-frame.skiptranslate,
+                                .skiptranslate > iframe {
+                                    display: none !important;
+                                }
+                               
+                                body {
+                                    top: 0px !important; 
+                                }
+
+                                .goog-te-menu-frame {
+                                    max-width:100% !important; 
+                                }
+                                .goog-te-menu2 { 
+                                    max-width: 100% !important;
+                                    overflow-x: scroll !important;
+                                    box-sizing:border-box !important; 
+                                    height:auto !important; 
+                                }
+                               
+                                /* Hide unwanted elements without hiding the main widget */
+                                #goog-gt-tt, 
+                                #goog-gt-, 
+                                .goog-te-balloon-frame {
+                                    display: none !important;
+                                } 
+                                .goog-text-highlight { 
+                                    background: none !important; 
+                                    box-shadow: none !important;
+                                }
+                               
+                                .goog-logo-link {
+                                    display: none !important;
+                                }
+                                .goog-te-gadget {
+                                    height: 28px !important; 
+                                    overflow: hidden;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                $( document ).ready(function() {
+                                    $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                    $("#google_translate_element").appendTo(".translate_here");
+                                    
+                                    $("#translate_text_latinchain_2").show();
+                                    $("#google_translate_element").show();
+                                });
+                            </script>
+                            
+                            <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                            </div>
+                            
+                            <div style="text-align:center; margin-bottom:15px;">
+                                <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                            </div>
+                            
+                            <h1 class="text-3xl font-extrabold text-gray-800 mb-4 text-center">My Photo Viewer</h1>
+
+                            <!-- Image Container -->
+                            <div class="w-full flex justify-center items-center bg-gray-100 rounded-xl p-2" style="min-height: 400px !important; max-height: 400px !important; height: 400px !important;">
+                                <img id="photo-display" src="" alt="Current photo" class="rounded-xl shadow-md" style="min-height: 100% !important; max-height: 100% !important; height: 100% !important;" />
+                                <p id="no-photo-message" class="text-gray-500 text-center hidden">Upload your photos to get started.</p>
+                            </div>
+
+                            <!-- Navigation Controls -->
+                            <div class="flex justify-between w-full mt-4">
+                                <button id="prev-btn" class="nav-button" disabled="disabled">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <button id="next-btn" class="nav-button" disabled="disabled">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Photo Title/Description -->
+                            <p id="photo-title" style="word-break: break-word;" class="text-lg text-gray-700 font-semibold text-center mt-2"></p>
+                            
+                            <!-- Recognized Text Display -->
+                            <div id="text-recognition-container" class="w-full mt-4 p-4 bg-gray-50 rounded-lg shadow-inner">
+                                <p id="recognized-text" class="text-sm text-gray-600 text-center italic"></p>
+                                <div id="ocr-loading" class="hidden text-center text-sm text-gray-500">
+                                    <span class="animate-pulse">Recognizing text...</span>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons: Upload and Clear -->
+                            <div class="flex flex-col flex-row justify-center gap-4 w-full mt-4">
+                                <!-- Language Selector -->
+                                <label for="language-select" class="block text-gray-700 font-medium mb-2">
+                                  Select Languages to Recognize
+                                </label>
+                                <select id="language-select" multiple="multiple" size="10"
+                                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all duration-200">
+                                  <option value="eng" selected="selected">English</option>
+                                  <option value="spa" selected="selected">Spanish</option>
+                                  <option value="afr">Afrikaans</option>
+                                  <option value="amh">Amharic</option>
+                                  <option value="ara">Arabic</option>
+                                  <option value="asm">Assamese</option>
+                                  <option value="aze">Azerbaijani</option>
+                                  <option value="aze_cyrl">Azerbaijani (Cyrillic)</option>
+                                  <option value="bel">Belarusian</option>
+                                  <option value="ben">Bengali</option>
+                                  <option value="bod">Tibetan</option>
+                                  <option value="bos">Bosnian</option>
+                                  <option value="bre">Breton</option>
+                                  <option value="bul">Bulgarian</option>
+                                  <option value="cat">Catalan</option>
+                                  <option value="ceb">Cebuano</option>
+                                  <option value="ces">Czech</option>
+                                  <option value="chi_sim">Chinese (Simplified)</option>
+                                  <option value="chi_sim_vert">Chinese (Simplified Vertical)</option>
+                                  <option value="chi_tra">Chinese (Traditional)</option>
+                                  <option value="chi_tra_vert">Chinese (Traditional Vertical)</option>
+                                  <option value="chr">Cherokee</option>
+                                  <option value="cos">Corsican</option>
+                                  <option value="cym">Welsh</option>
+                                  <option value="dan">Danish</option>
+                                  <option value="deu">German</option>
+                                  <option value="div">Divehi</option>
+                                  <option value="dzo">Dzongkha</option>
+                                  <option value="ell">Greek</option>
+                                  <option value="enm">English (Middle)</option>
+                                  <option value="epo">Esperanto</option>
+                                  <option value="est">Estonian</option>
+                                  <option value="eus">Basque</option>
+                                  <option value="fao">Faroese</option>
+                                  <option value="fas">Persian</option>
+                                  <option value="fil">Filipino</option>
+                                  <option value="fin">Finnish</option>
+                                  <option value="fra">French</option>
+                                  <option value="frk">Frankish</option>
+                                  <option value="frm">French (Middle)</option>
+                                  <option value="fry">Frisian</option>
+                                  <option value="gla">Scottish Gaelic</option>
+                                  <option value="gle">Irish</option>
+                                  <option value="glg">Galician</option>
+                                  <option value="grc">Greek (Ancient)</option>
+                                  <option value="guj">Gujarati</option>
+                                  <option value="hat">Haitian Creole</option>
+                                  <option value="heb">Hebrew</option>
+                                  <option value="hin">Hindi</option>
+                                  <option value="hrv">Croatian</option>
+                                  <option value="hun">Hungarian</option>
+                                  <option value="hye">Armenian</option>
+                                  <option value="iku">Inuktitut</option>
+                                  <option value="ind">Indonesian</option>
+                                  <option value="isl">Icelandic</option>
+                                  <option value="ita">Italian</option>
+                                  <option value="ita_old">Italian (Old)</option>
+                                  <option value="jav">Javanese</option>
+                                  <option value="jpn">Japanese</option>
+                                  <option value="jpn_vert">Japanese (Vertical)</option>
+                                  <option value="kan">Kannada</option>
+                                  <option value="kat">Georgian</option>
+                                  <option value="kat_old">Georgian (Old)</option>
+                                  <option value="kaz">Kazakh</option>
+                                  <option value="khm">Khmer</option>
+                                  <option value="kir">Kyrgyz</option>
+                                  <option value="kmr">Kurmanji</option>
+                                  <option value="kor">Korean</option>
+                                  <option value="kor_vert">Korean (Vertical)</option>
+                                  <option value="lao">Lao</option>
+                                  <option value="lat">Latin</option>
+                                  <option value="lav">Latvian</option>
+                                  <option value="lit">Lithuanian</option>
+                                  <option value="ltz">Luxembourgish</option>
+                                  <option value="mal">Malayalam</option>
+                                  <option value="mar">Marathi</option>
+                                  <option value="msa">Malay</option>
+                                  <option value="mlt">Maltese</option>
+                                  <option value="mon">Mongolian</option>
+                                  <option value="mri">Māori</option>
+                                  <option value="mya">Burmese</option>
+                                  <option value="nep">Nepali</option>
+                                  <option value="nld">Dutch</option>
+                                  <option value="nor">Norwegian</option>
+                                  <option value="osd">Orientation and script detection</option>
+                                  <option value="pan">Punjabi</option>
+                                  <option value="pol">Polish</option>
+                                  <option value="por">Portuguese</option>
+                                  <option value="pus">Pashto</option>
+                                  <option value="que">Quechua</option>
+                                  <option value="ron">Romanian</option>
+                                  <option value="rus">Russian</option>
+                                  <option value="san">Sanskrit</option>
+                                  <option value="sin">Sinhala</option>
+                                  <option value="slk">Slovak</option>
+                                  <option value="slv">Slovenian</option>
+                                  <option value="snd">Sindhi</option>
+                                  <option value="spa_old">Spanish (Old)</option>
+                                  <option value="sqi">Albanian</option>
+                                  <option value="srp">Serbian</option>
+                                  <option value="srp_latn">Serbian (Latin)</option>
+                                  <option value="swa">Swahili</option>
+                                  <option value="swe">Swedish</option>
+                                  <option value="syr">Syriac</option>
+                                  <option value="tam">Tamil</option>
+                                  <option value="tat">Tatar</option>
+                                  <option value="tel">Telugu</option>
+                                  <option value="tha">Thai</option>
+                                  <option value="tir">Tigrinya</option>
+                                  <option value="ton">Tongan</option>
+                                  <option value="tur">Turkish</option>
+                                  <option value="uig">Uighur</option>
+                                  <option value="ukr">Ukrainian</option>
+                                  <option value="urd">Urdu</option>
+                                  <option value="uzb">Uzbek</option>
+                                  <option value="uzb_cyrl">Uzbek (Cyrillic)</option>
+                                  <option value="vie">Vietnamese</option>
+                                  <option value="yid">Yiddish</option>
+                                  <option value="yor">Yoruba</option>
+                                </select>
+                                <!-- Output area for selected languages -->
+                                <div id="output" class="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg hidden">
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Selected Language Codes:</h3>
+                                    <p id="language-codes" class="font-mono text-gray-700 break-all"></p>
+                                </div>
+                                <label id="textrecognition-btn" class="upload-button">
+                                    <i class="fa-solid fa-language"></i>
+                                    Text Recognition
+                                </label>
+                                <input type="file" id="upload-input" accept="image/*" multiple="multiple" class="hidden" />
+                                <label for="upload-input" class="upload-button inline-flex items-center cursor-pointer">
+                                    <i class="fa-solid fa-upload"></i>
+                                    Upload Photos
+                                </label>
+                                <button id="clear-btn" class="clear-button">
+                                    <i class="fa-solid fa-trash"></i>
+                                    Clear Photos
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Image Zoom Modal -->
+                        <div id="zoom-modal" class="zoom-modal">
+                            <img id="zoomed-image" src="" alt="Zoomed image" class="zoom-modal-content" />
+                            <button id="zoom-close-button" class="zoom-close-button">
+                                x
+                            </button>
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/imgplayer_functions.js?v=1.148"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+</odoo>

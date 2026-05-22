@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+        <template id="webcamplayer" name="Webcam Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Object Detection on Webcam</title>
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+                        <style>
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #f0f4f8; /* A soft background color */
+                            }
+                            .container {
+                                max-width: 90%; /* Max width for the container */
+                                margin: 2rem auto; /* Center and add space */
+                                padding: 1.5rem;
+                                background-color: #ffffff;
+                                border-radius: 1rem; /* Rounded corners */
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+                            video, canvas {
+                                display: block;
+                                border-radius: 0.75rem; /* Rounded corners for video/canvas */
+                                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                                max-width: 100%; /* Ensure it fits the container */
+                                height: auto; /* Maintain aspect ratio */
+                            }
+                            .loading-message {
+                                color: #3b82f6; /* Blue color for loading message */
+                                font-weight: 600;
+                            }
+                            .error-message {
+                                color: #ef4444; /* Red color for error message */
+                                font-weight: 600;
+                            }
+                            .detection-info {
+                                margin-top: 1rem;
+                                width: 100%;
+                                text-align: center;
+                            }
+                            .detection-list {
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.5rem;
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;
+                                gap: 0.5rem;
+                            }
+                            .detection-item {
+                                background-color: #e0f2fe; /* Background color for detected items */
+                                color: #1e40af; /* Text color for detected items */
+                                padding: 0.3rem 0.8rem;
+                                border-radius: 0.5rem;
+                                font-size: 0.9rem;
+                                font-weight: 500;
+                            }
+                            .control-buttons {
+                                display: flex;
+                                gap: 1rem; /* Space between buttons */
+                                margin-top: 1rem;
+                                flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+                                justify-content: center;
+                            }
+                            .action-button {
+                                background-color: #4CAF50; /* Green */
+                                color: white;
+                                padding: 10px 20px;
+                                border: none;
+                                border-radius: 8px;
+                                font-size: 16px;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                            }
+                            .action-button:hover {
+                                background-color: #45a049;
+                            }
+                            .action-button:active {
+                                background-color: #3e8e41;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                                transform: translateY(1px);
+                            }
+                            #speechStatus {
+                                margin-top: 10px;
+                                font-style: italic;
+                                color: #6b7280;
+                            }
+                            .confidence-control {
+                                margin-top: 1rem;
+                                width: 80%;
+                                max-width: 400px;
+                                text-align: center;
+                            }
+                            .confidence-control label {
+                                display: block;
+                                margin-bottom: 0.5rem;
+                                font-weight: 600;
+                                color: #4b5563;
+                            }
+                            .confidence-control input[type="range"] {
+                                width: 100%;
+                                -webkit-appearance: none;
+                                height: 8px;
+                                background: #d1d5db;
+                                border-radius: 5px;
+                                outline: none;
+                                opacity: 0.7;
+                                transition: opacity .2s;
+                            }
+                            .confidence-control input[type="range"]::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 20px;
+                                height: 20px;
+                                background: #3b82f6;
+                                border-radius: 50%;
+                                cursor: pointer;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                            }
+                            .confidence-control input[type="range"]::-moz-range-thumb {
+                                width: 20px;
+                                height: 20px;
+                                background: #3b82f6;
+                                border-radius: 50%;
+                                cursor: pointer;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                            }
+                            /* Custom styling for the voice selection dropdown */
+                            .voice-select {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                margin-top: 1rem;
+                                width: 80%;
+                                max-width: 400px;
+                                text-align: center;
+                            }
+                            .voice-select select {
+                                width: 100%;
+                                padding: 0.5rem;
+                                border-radius: 0.5rem;
+                                border: 1px solid #d1d5db;
+                                background-color: #f9fafb;
+                                font-size: 1rem;
+                            }
+                            .voice-select label {
+                                display: block;
+                                margin-bottom: 0.5rem;
+                                font-weight: 600;
+                                color: #4b5563;
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Donate to unlock Apps
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+                        <div class="container bg-white p-6 rounded-xl shadow-lg">
+                            <style>
+                                /* Adjustments for Google Translator to be visible */
+                                .goog-te-banner-frame.skiptranslate,
+                                .skiptranslate > iframe {
+                                    display: none !important;
+                                }
+                               
+                                body {
+                                    top: 0px !important; 
+                                }
+
+                                .goog-te-menu-frame {
+                                    max-width:100% !important; 
+                                }
+                                .goog-te-menu2 { 
+                                    max-width: 100% !important;
+                                    overflow-x: scroll !important;
+                                    box-sizing:border-box !important; 
+                                    height:auto !important; 
+                                }
+                               
+                                /* Hide unwanted elements without hiding the main widget */
+                                #goog-gt-tt, 
+                                #goog-gt-, 
+                                .goog-te-balloon-frame {
+                                    display: none !important;
+                                } 
+                                .goog-text-highlight { 
+                                    background: none !important; 
+                                    box-shadow: none !important;
+                                }
+                               
+                                .goog-logo-link {
+                                    display: none !important;
+                                }
+                                .goog-te-gadget {
+                                    height: 28px !important; 
+                                    overflow: hidden;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                $( document ).ready(function() {
+                                    $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                    $("#google_translate_element").appendTo(".translate_here");
+                                    
+                                    $("#translate_text_latinchain_2").show();
+                                    $("#google_translate_element").show();
+                                });
+                            </script>
+                            
+                            <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                            </div>
+                            
+                            <div style="text-align:center; margin-bottom:15px;">
+                                <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                            </div>
+                            
+                            <h1 class="text-3xl font-bold text-gray-800 mb-4">Real-time Object Detection on Webcam</h1>
+                            
+                            <h3 class="text-1xl font-bold text-gray-800 mb-4">Developed with Gemini AI</h3>
+                            
+                            <div id="status" class="text-lg text-gray-600 mb-4 loading-message">Loading model... please wait.</div>
+                            <div id="error" class="text-lg text-red-600 mb-4 error-message hidden"></div>
+                            
+                            <div class="relative w-full max-w-xl">
+                                <video id="webcam" autoplay="autoplay" muted="muted" playsinline="playsinline" class="w-full rounded-lg"></video>
+                                <canvas id="outputCanvas" class="absolute top-0 left-0 w-full h-full rounded-lg"></canvas>
+                            </div>
+
+                            <!-- Updated control buttons section -->
+                            <div class="control-buttons">
+                                <button id="switchCameraButton" class="action-button">Switch Camera</button>
+                                <button id="askButton" class="action-button">Ask What I'm Seeing</button>
+                                <button id="toggleAutoSpeak" class="action-button" style="display: none;">Enable Continuous Detection</button>
+                            </div>
+                            <div id="speechStatus" class="text-sm"></div>
+                            
+                            <div class="whole-phrase">
+                            </div>
+
+                            <div class="confidence-control">
+                                <label for="confidenceThreshold">Min Confidence (the less confidence: the more detection, but the less accurate): <span id="confidenceValue">50%</span></label>
+                                <input type="range" id="confidenceThreshold" min="0" max="100" value="50"/>
+                            </div>
+
+                            <!-- New dropdown for voice selection -->
+                            <div id="voiceControl" class="voice-select">
+                                <label for="voiceSelect">Select Voice:</label>
+                                <select id="voiceSelect" class="rounded-lg">
+                                    <option>Voices...</option>
+                                </select>
+                            </div>
+
+                            <div id="detectionInfo" class="detection-info">
+                                <h2 class="text-xl font-semibold text-gray-700 mt-4 mb-2">Detected Objects:</h2>
+                                <ul id="detectionList" class="detection-list">
+                                </ul>
+                            </div>
+                           
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/webcamplayer_functions.js?v=1.200"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+</odoo>

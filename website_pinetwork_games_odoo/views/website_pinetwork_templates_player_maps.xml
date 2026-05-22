@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+        <template id="mapsplayer" name="Maps Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Place Finder</title>
+                        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+                         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+                         crossorigin=""/>
+                        <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap');
+                            
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #f0f4f8;
+                                color: #333;
+                                margin: 0;
+                                padding: 0;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                min-height: 100vh;
+                            }
+
+                            .container {
+                                width: 100%;
+                                max-width: 500px;
+                                padding: 16px;
+                                box-sizing: border-box;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+
+                            h1 {
+                                color: #1e3a5f;
+                                text-align: center;
+                                margin-bottom: 20px;
+                            }
+
+                            #search-form {
+                                width: 100%;
+                                display: flex;
+                                gap: 8px;
+                                margin-bottom: 16px;
+                            }
+
+                            #search-input {
+                                flex-grow: 1;
+                                padding: 12px 16px;
+                                border: 2px solid #cbd5e1;
+                                border-radius: 8px;
+                                font-size: 1rem;
+                                outline: none;
+                                transition: border-color 0.2s;
+                            }
+
+                            #search-input:focus {
+                                border-color: #3b82f6;
+                            }
+                            
+                            #search-button {
+                                padding: 12px 20px;
+                                background-color: #3b82f6;
+                                color: white;
+                                border: none;
+                                border-radius: 8px;
+                                font-size: 1rem;
+                                font-weight: bold;
+                                cursor: pointer;
+                                transition: background-color 0.2s;
+                            }
+
+                            #search-button:hover {
+                                background-color: #2563eb;
+                            }
+                            
+                            #map {
+                                width: 100%;
+                                height: 60vh;
+                                border-radius: 12px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                                margin-bottom: 16px;
+                            }
+                            
+                            #status-message {
+                                text-align: center;
+                                color: #64748b;
+                                font-style: italic;
+                                margin-top: 10px;
+                            }
+
+                            /* Custom styles for the routing control button */
+                            .leaflet-control-custom {
+                                font-size: 1.5em;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            /*
+                             * Responsive styles for the routing panel.
+                             * The height is now controlled by JavaScript.
+                             */
+                            .leaflet-routing-container.leaflet-control {
+                                overflow-y: auto; /* Enable vertical scrolling */
+                            }
+                            
+                            #back {
+                                padding: 12px 20px;
+                                background-color: #3b82f6;
+                                color: white;
+                                border: none;
+                                border-radius: 8px;
+                                font-size: 1rem;
+                                font-weight: bold;
+                                cursor: pointer;
+                                transition: background-color 0.2s;
+                            }
+                        </style>
+                       
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                       
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                       
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                       
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Donate to unlock Apps
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                       
+                    </head>
+                    <body>
+                       
+                        <div class="container">
+                            <style>
+                                /* Adjustments for Google Translator to be visible */
+                                .goog-te-banner-frame.skiptranslate,
+                                .skiptranslate > iframe {
+                                    display: none !important;
+                                }
+                               
+                                body {
+                                    top: 0px !important; 
+                                }
+
+                                .goog-te-menu-frame {
+                                    max-width:100% !important; 
+                                }
+                                .goog-te-menu2 { 
+                                    max-width: 100% !important;
+                                    overflow-x: scroll !important;
+                                    box-sizing:border-box !important; 
+                                    height:auto !important; 
+                                }
+                               
+                                /* Hide unwanted elements without hiding the main widget */
+                                #goog-gt-tt, 
+                                #goog-gt-, 
+                                .goog-te-balloon-frame {
+                                    display: none !important;
+                                } 
+                                .goog-text-highlight { 
+                                    background: none !important; 
+                                    box-shadow: none !important;
+                                }
+                               
+                                .goog-logo-link {
+                                    display: none !important;
+                                }
+                                .goog-te-gadget {
+                                    height: 28px !important; 
+                                    overflow: hidden;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                $( document ).ready(function() {
+                                    $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                    $("#google_translate_element").appendTo(".translate_here");
+                                    
+                                    $("#translate_text_latinchain_2").show();
+                                    $("#google_translate_element").show();
+                                });
+                            </script>
+                            
+                            <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                            </div>
+                            
+                            <div style="text-align:center; margin-bottom:15px;">
+                                <a id="back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                            </div>
+                            <h1>Place Finder</h1>
+                            <form id="search-form">
+                                <input type="text" id="search-input" placeholder="Search places..." required="required" />
+                                <button type="submit" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                            <div id="map" translate="no"></div>
+                            <div id="status-message">Finding your location...</div>
+                        </div>
+
+                        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+                         crossorigin=""></script>
+                         <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/mapsplayer_functions.js?v=1.128"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+</odoo>

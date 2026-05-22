@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+        <template id="videoplayer" name="Video Player">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Professional Video Player</title>
+                        <!-- Tailwind CSS CDN -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <style>
+                            /* Base styles (Mobile First) */
+                            body {
+                                font-family: "Inter", sans-serif;
+                                background-color: #f0f2f5;
+                                display: flex;
+                                justify-content: center;
+                                align-items: flex-start; /* Align items to start for content flow */
+                                min-height: 100vh;
+                                margin: 0;
+                                padding: 1rem; /* Smaller padding for mobile */
+                                box-sizing: border-box;
+                            }
+                            .main-container {
+                                background-color: #ffffff;
+                                border-radius: 1.5rem;
+                                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Lighter shadow for mobile */
+                                padding: 1.5rem; /* Smaller padding for mobile */
+                                max-width: 100%; /* Full width on mobile */
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1.5rem; /* Smaller gap for mobile */
+                            }
+
+                            /* Layout for video and playlist - Mobile default is column */
+                            .player-and-playlist-wrapper {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1.5rem; /* Smaller gap for mobile */
+                            }
+
+                            .video-player-section {
+                                flex: 1; /* Takes full space on mobile */
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1rem;
+                            }
+                            .playlist-section {
+                                flex: 1; /* Takes full space on mobile */
+                                background-color: #f8fafc;
+                                border-radius: 1rem;
+                                padding: 1rem; /* Smaller padding for mobile */
+                                border: 1px solid #e2e8f0;
+                            }
+
+                            video {
+                                width: 100%;
+                                min-height: 200px;
+                                max-height: auto; /* Adjusted max height for mobile */
+                                background-color: #000;
+                                border-radius: 1rem;
+                                object-fit: contain;
+                            }
+
+                            /* Custom Controls Styling */
+                            .controls {
+                                background-color: #1e293b;
+                                border-radius: 0.75rem;
+                                padding: 0.5rem; /* Smaller padding for mobile */
+                                display: flex;
+                                flex-wrap: wrap;
+                                align-items: center;
+                                justify-content: space-around; /* Distribute items on mobile */
+                                gap: 0.75rem; /* Smaller gap for mobile */
+                                color: white;
+                            }
+                            .controls button {
+                                background: none;
+                                border: none;
+                                color: white;
+                                font-size: 1.25rem; /* Slightly smaller icons for mobile */
+                                cursor: pointer;
+                                padding: 0.4rem; /* Smaller padding for touch targets */
+                                border-radius: 0.5rem;
+                                transition: background-color 0.2s ease-in-out;
+                            }
+                            .controls button:hover:not(:disabled) {
+                                background-color: #334155;
+                            }
+                            .controls button:disabled {
+                                opacity: 0.5;
+                                cursor: not-allowed;
+                            }
+
+                            .progress-bar-wrapper {
+                                flex-grow: 1;
+                                height: 0.4rem; /* Thinner progress bar for mobile */
+                                background-color: #475569;
+                                border-radius: 0.25rem;
+                                cursor: pointer;
+                                position: relative;
+                                margin: 0 0.5rem; /* Add some horizontal margin */
+                            }
+                            .progress-bar {
+                                height: 100%;
+                                width: 0%;
+                                background-color: #3b82f6;
+                                border-radius: 0.25rem;
+                            }
+                            .time-display {
+                                font-size: 0.8rem; /* Smaller font size for mobile */
+                                white-space: nowrap;
+                            }
+
+                            .volume-control, .speed-control {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.25rem; /* Smaller gap for mobile */
+                            }
+                            .volume-control input[type="range"],
+                            .speed-control select {
+                                background-color: #475569;
+                                border-radius: 0.25rem;
+                                height: 0.4rem; /* Thinner slider for mobile */
+                                cursor: pointer;
+                            }
+                            .volume-control input[type="range"]::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 14px; /* Smaller thumb for mobile */
+                                height: 14px;
+                                border-radius: 50%;
+                                background: #3b82f6;
+                                cursor: pointer;
+                                margin-top: -5px;
+                                box-shadow: 0 0 2px rgba(0,0,0,0.5);
+                            }
+                            .speed-control select {
+                                padding: 0.15rem 0.4rem; /* Smaller padding for mobile */
+                                border: none;
+                                background-color: #334155;
+                                color: white;
+                                border-radius: 0.5rem;
+                                cursor: pointer;
+                                font-size: 0.8rem; /* Smaller font for mobile */
+                                min-width: 3.5rem; /* Added min-width for better visibility */
+                                text-align: center; /* Center text */
+                                text-align-last: center; /* For Firefox compatibility */
+                                height: 18px; /* Set height to 18px as requested */
+                                line-height: 18px; /* Adjust line-height to match height */
+                                -webkit-appearance: none; /* Remove default select styling for better control */
+                                -moz-appearance: none;
+                                appearance: none;
+                            }
+
+                            /* File Input and General Buttons */
+                            .file-input-wrapper {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1rem; /* Smaller gap for mobile */
+                                margin-top: 0.5rem;
+                            }
+
+                            /* Custom styling for file input buttons */
+                            .custom-file-input-label {
+                                position: relative;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 0.6rem 1rem; /* Mobile padding */
+                                border-radius: 0.75rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.2s ease-in-out;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                                background-color: #3b82f6; /* bg-blue-500 */
+                                color: white;
+                                border: none;
+                                font-size: 0.9rem; /* Mobile font size */
+                                gap: 0.5rem;
+                                overflow: hidden; /* Hide overflow for input */
+                            }
+                            .custom-file-input-label:hover {
+                                background-color: #2563eb; /* bg-blue-600 */
+                            }
+                            .custom-file-input-label i {
+                                font-size: 1rem; /* Mobile icon size */
+                            }
+
+                            .custom-file-input-label input[type="file"] {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                opacity: 0;
+                                cursor: pointer;
+                                z-index: 1; /* Ensure it's above the label text */
+                            }
+
+                            .btn {
+                                padding: 0.6rem 1.2rem; /* Smaller padding for mobile */
+                                border-radius: 0.6rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.2s ease-in-out;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow for mobile */
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 0.4rem; /* Smaller gap for icons */
+                                font-size: 0.9rem; /* Smaller font for mobile */
+                            }
+                            .btn i {
+                                font-size: 1rem; /* Adjust icon size */
+                            }
+                            .btn-primary {
+                                background-color: #3b82f6; /* bg-blue-500 */
+                                color: white;
+                                border: none;
+                            }
+                            .btn-primary:hover {
+                                background-color: #2563eb; /* bg-blue-600 */
+                            }
+                            .btn-secondary {
+                                background-color: #e2e8f0; /* bg-slate-200 */
+                                color: #333;
+                                border: none;
+                            }
+                            .btn-secondary:hover {
+                                background-color: #cbd5e1; /* bg-slate-300 */
+                            }
+                            .btn-danger {
+                                background-color: #ef4444; /* bg-red-500 */
+                                color: white;
+                                border: none;
+                            }
+                            .btn-danger:hover {
+                                background-color: #dc2626; /* bg-red-600 */
+                            }
+
+                            .video-info {
+                                text-align: center;
+                                font-size: 1rem; /* Adjusted font size */
+                                font-weight: 500;
+                                color: #475569;
+                            }
+                            /* Error message is now hidden by default and only logs to console */
+                            .error-message {
+                                display: none; /* Hide error messages from UI */
+                            }
+
+                            /* Playlist Specific Styles */
+                            .playlist-list {
+                                list-style: none;
+                                padding: 0;
+                                margin: 0;
+                                max-height: 300px; /* Smaller max height for mobile */
+                                overflow-y: auto;
+                            }
+                            .playlist-item {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                background-color: #ffffff;
+                                border: 1px solid #e2e8f0;
+                                border-radius: 0.6rem;
+                                padding: 0.6rem 0.8rem; /* Smaller padding for mobile */
+                                margin-bottom: 0.6rem;
+                                cursor: grab;
+                                transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                                font-size: 0.9rem; /* Smaller font for mobile */
+                            }
+                            .playlist-item-name {
+                                flex-grow: 1;
+                                margin-right: 0.75rem;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                color: #333;
+                            }
+                            .playlist-item-remove {
+                                font-size: 1.1rem; /* Adjusted icon size */
+                                padding: 0.2rem;
+                            }
+
+                            /* Drag and Drop styles */
+                            .playlist-item.dragging {
+                                opacity: 0.5;
+                                border: 2px dashed #3b82f6;
+                            }
+                            .playlist-item.insert-before {
+                                border-top: 2px solid #3b82f6;
+                            }
+                            .playlist-item.insert-after {
+                                border-bottom: 2px solid #3b82f6;
+                            }
+                            .playlist-item.active {
+                                background-color: #e0f2fe; /* Light blue for active item */
+                                border-color: #3b82f6; /* Blue border for active item */
+                                box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Blue glow */
+                            }
+
+                            /* Fullscreen mode */
+                            .video-player-section.fullscreen {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100vw;
+                                height: 100vh;
+                                z-index: 9999;
+                                background-color: black;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            .video-player-section.fullscreen video {
+                                width: 100%;
+                                height: 100%;
+                                max-height: none;
+                                object-fit: contain;
+                                border-radius: 0;
+                            }
+                            .video-player-section.fullscreen .controls {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                border-radius: 0;
+                                background-color: rgba(0, 0, 0, 0.7);
+                            }
+                            /* No media queries for desktop/tablet views, keeping mobile-first styles for all sizes */
+                        </style>
+                        <!-- Font Awesome for icons -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Donate to unlock Apps
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body>
+                        <div class="main-container">
+                            <style>
+                                /* Adjustments for Google Translator to be visible */
+                                .goog-te-banner-frame.skiptranslate,
+                                .skiptranslate > iframe {
+                                    display: none !important;
+                                }
+                               
+                                body {
+                                    top: 0px !important; 
+                                }
+
+                                .goog-te-menu-frame {
+                                    max-width:100% !important; 
+                                }
+                                .goog-te-menu2 { 
+                                    max-width: 100% !important;
+                                    overflow-x: scroll !important;
+                                    box-sizing:border-box !important; 
+                                    height:auto !important; 
+                                }
+                               
+                                /* Hide unwanted elements without hiding the main widget */
+                                #goog-gt-tt, 
+                                #goog-gt-, 
+                                .goog-te-balloon-frame {
+                                    display: none !important;
+                                } 
+                                .goog-text-highlight { 
+                                    background: none !important; 
+                                    box-shadow: none !important;
+                                }
+                               
+                                .goog-logo-link {
+                                    display: none !important;
+                                }
+                                .goog-te-gadget {
+                                    height: 28px !important; 
+                                    overflow: hidden;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                $( document ).ready(function() {
+                                    $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                    $("#google_translate_element").appendTo(".translate_here");
+                                    
+                                    $("#translate_text_latinchain_2").show();
+                                    $("#google_translate_element").show();
+                                });
+                            </script>
+                            
+                            <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                            </div>
+                            
+                            <div style="text-align:center; margin-bottom:15px;">
+                                <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded back" style="margin-bottom:15px;" href="/"><i class="fa fa-step-backward"></i></a>
+                            </div>
+                           
+                            <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-4 md:mb-6">Professional Video Player</h1>
+
+                            <div class="player-and-playlist-wrapper">
+                                <div id="videoPlayerSection" class="video-player-section">
+                                    <video id="videoPlayer" controls="controls">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    
+                                    <div class="button-group flex justify-center gap-3 md:gap-4 mt-4 md:mt-6">
+                                        <button id="prevBtn" class="btn btn-secondary" disabled="disabled"><i class="fas fa-backward mr-1 md:mr-2"></i>Previous</button>
+                                        <button id="nextBtn" class="btn btn-primary" disabled="disabled">Next<i class="fas fa-forward ml-1 md:ml-2"></i></button>
+                                    </div>
+
+                                    <div class="controls">
+                                        <button id="playPauseBtn" title="Play/Pause"><i class="fas fa-play"></i></button>
+                                        <div class="time-display"><span id="currentTime">00:00</span> / <span id="duration">00:00</span></div>
+                                        <div id="progressBarWrapper" class="progress-bar-wrapper">
+                                            <div id="progressBar" class="progress-bar"></div>
+                                        </div>
+                                        <div class="volume-control">
+                                            <button id="muteBtn" title="Mute/Unmute"><i class="fas fa-volume-up"></i></button>
+                                            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" />
+                                        </div>
+                                        <div class="speed-control">
+                                            <select id="playbackSpeed">
+                                                <option value="0.5">0.5x</option>
+                                                <option value="0.75">0.75x</option>
+                                                <option value="1" selected="selected">1x</option>
+                                                <option value="1.25">1.25x</option>
+                                                <option value="1.5">1.5x</option>
+                                                <option value="2">2x</option>
+                                            </select>
+                                        </div>
+                                        <button id="fullscreenBtn" title="Fullscreen"><i class="fas fa-expand"></i></button>
+                                    </div>
+
+                                    <div id="videoInfo" class="video-info">No video loaded</div>
+                                    <div id="errorMessage" class="error-message hidden"></div>
+                                </div>
+
+                                <div class="playlist-section">
+                                    <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Playlist</h2>
+                                    <div class="file-input-wrapper mb-4 md:mb-6">
+                                        <label for="singleVideoInput" class="custom-file-input-label">
+                                            <i class="fas fa-file-video"></i>
+                                            <span>Add a video</span>
+                                            <input type="file" id="singleVideoInput" accept="video/*" />
+                                        </label>
+
+                                        <label for="multiVideoInput" class="custom-file-input-label">
+                                            <i class="fas fa-folder-plus"></i>
+                                            <span>Add multiple videos</span>
+                                            <input type="file" id="multiVideoInput" accept="video/*" multiple="multiple" />
+                                        </label>
+
+                                        <!-- Search Input and Clear Search Button -->
+                                        <div class="relative flex items-center">
+                                            <input type="text" id="playlistSearchInput" placeholder="Search playlist..."
+                                                class="flex-grow p-2 pl-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
+                                                style="background-color: #ffffff; max-width: 100%"/>
+                                            <i class="fas fa-search absolute left-3 text-gray-400"></i>
+                                            <button id="clearSearchBtn" class="absolute right-2 text-gray-500 hover:text-gray-700 focus:outline-none hidden">
+                                                <i class="fas fa-times-circle"></i>
+                                            </button>
+                                        </div>
+                                        <!-- End Search Input and Clear Search Button -->
+
+                                        <button id="clearPlaylistBtn" class="btn btn-danger" disabled="disabled"><i class="fas fa-trash-alt mr-1 md:mr-2"></i>Clear Playlist</button>
+                                    </div>
+
+                                    <ul id="playlist" class="playlist-list">
+                                        <!-- Playlist items will be added here -->
+                                        <li class="text-slate-500 text-center py-3 md:py-4">Playlist is empty.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/videoplayer_functions.js?v=1.107"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+        
+</odoo>
