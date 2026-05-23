@@ -70,7 +70,7 @@ function openInNewTabAds(url) {
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow1').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow2').style.display = 'flex'; // Use 'flex' instead of 'block'
-    document.getElementById('GoForwardShow3').style.display = 'none'; // Use 'flex' instead of 'block'
+    document.getElementById('GoForwardShow3').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('all-messages').style.display = 'none'; // Use 'flex' instead of 'block'
     
 }
@@ -129,7 +129,7 @@ function colorboxLoadedMainnet()
     var URLTestnet = "https://ecosystem.latin-chain.com/page-1/?v=1.126"+hashLatinChainGoogleTranslate;
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
-        //openInNewTabAds(URLMainnet);
+        openInNewTabAds(URLMainnet);
         //window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.115"+hashLatinChainGoogleTranslate;
         
         $('.darkmode-toggle').css('display', 'none');
