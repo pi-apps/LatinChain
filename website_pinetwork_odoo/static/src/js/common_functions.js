@@ -81,15 +81,15 @@ function startLatinChainAcademy(show_content_div)
 
 function getGeminiImage()
 {
-    var img_array = ["/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Buenos_Aires.png",
-                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Caracas.png",
-                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Los_Angeles.png",
-                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Mexico_City.png",
-                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Seoul.png",
-                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Shanghai.png",
-                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Tokyo.png",
-                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Vietnam.png",
-                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Honduras.png"];
+    var img_array = ["/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Buenos_Aires.png?v=1.101",
+                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Caracas.png?v=1.101",
+                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Los_Angeles.png?v=1.101",
+                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Mexico_City.png?v=1.101",
+                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Seoul.png?v=1.101",
+                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Shanghai.png?v=1.101",
+                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Tokyo.png?v=1.101",
+                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Vietnam.png?v=1.101",
+                    "/website_pinetwork_odoo/static/src/ai-images/Gemini_Generated_Image_Honduras.png?v=1.101"];
     
     var random_integer = Math.floor(Math.random() * img_array.length);
     
