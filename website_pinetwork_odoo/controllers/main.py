@@ -1834,6 +1834,7 @@ class PiNetworkBaseController(http.Controller):
 
         return "c31e6c84fe776276bd8ee62aa064f70c"
     
+    """
     @http.route('/gemini-native-image.png', type='http', auth='public')
     def gemini_image(self, **kwargs):
         file_folder = os.path.dirname(os.path.realpath(__file__))
@@ -1859,6 +1860,7 @@ class PiNetworkBaseController(http.Controller):
         )
         #except FileNotFoundError:
         #    return request.not_found()
+    """
 
     @http.route('/.well-known/pi.toml', type='http', auth="public", website=True, csrf=False)
     def pi_toml(self, **kw):
