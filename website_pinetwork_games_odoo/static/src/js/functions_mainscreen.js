@@ -1955,12 +1955,11 @@ $( document ).ready(function() {
     
     $(".close_latinchain").click(function(){
         //document.getElementById('PayPiLinkId1').style.display = 'none';
-        /*$('.darkmode-toggle').css('display', 'block');
+        $('.darkmode-toggle').css('display', 'block');
         if($('.darkmode-toggle--white').length === 0)
             $('.darkmode-layer--button').css('display', 'block');
         else
             $('.darkmode-toggle--white').css('display', 'block');
-        */
         
         document.getElementById('goforward-message').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('GoForwardShow1').style.display = 'none'; // Use 'flex' instead of 'block'
