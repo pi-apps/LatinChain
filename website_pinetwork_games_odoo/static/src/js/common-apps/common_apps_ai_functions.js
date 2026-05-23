@@ -101,6 +101,8 @@ var startCommonAppsAI = () => {
                 
                 if (showAdResponse.result === "AD_REWARDED")
                 {
+                    test_rewarded();
+                    
                     await delayAsync(2000);
                     if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                     {
@@ -126,7 +128,6 @@ var startCommonAppsAI = () => {
                             setConfirmAIUnloadPoints(false);
                         });
                     }
-                    test_rewarded();
                 }
             } catch (err) {
             }

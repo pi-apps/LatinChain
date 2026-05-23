@@ -267,6 +267,8 @@ async function showPiRewardedAds(Pi)
         
         if (showAdResponse.result === "AD_REWARDED")
         {
+            test_rewarded();
+            
             await delayAsync(2000);
             if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
             {
@@ -292,7 +294,6 @@ async function showPiRewardedAds(Pi)
                     setConfirmUnloadPoints(false);
                 });
             }
-            test_rewarded();
         }
     } catch (err) {
     }
