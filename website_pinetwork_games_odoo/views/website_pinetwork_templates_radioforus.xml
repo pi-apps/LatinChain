@@ -352,7 +352,7 @@
                                                     
                                                     <del>
                                                         <div style="display: inline">Pi <t t-esc="pi_total" /></div><!-- <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="usd_total" /></div>-->
-                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(usd_total) + '. Updated each minute (on Mainnet), and each 1 day (on Testnet)'">
+                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: ' + ''.join(c + '\u0336' for c in 'USD '+str(usd_total)) + '. Updated each minute (on Mainnet), and each 1 day (on Testnet)'">
                                                             <i class="fa-solid fa-circle-info"></i>
                                                         </div>
                                                     </del>
