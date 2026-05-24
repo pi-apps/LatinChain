@@ -29,6 +29,9 @@ var colorbox_opened = false;
 var colorbox_count_mainnet = 0;
 var colorbox_opened_mainnet = false;
 
+var is_open_tab = false;
+var is_open_tab_ads = false;
+
 function setConfirmUnload(on) {
     unloadMessage(on);
 }
@@ -51,6 +54,8 @@ function showImageModal(imageUrl, captionText) {
 
 function openInNewTab(url) {
   
+    is_open_tab = true;
+    
     document.getElementById('GoForwardLink').href = url;
     document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-forward"></i></div> <div style="display: inline">Go Forward</div>';
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
@@ -60,10 +65,18 @@ function openInNewTab(url) {
     document.getElementById('GoForwardShow3').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('all-messages').style.display = 'none'; // Use 'flex' instead of 'block'
     
+    $('.darkmode-toggle').css('display', 'none');
+    if($('.darkmode-toggle--white').length === 0)
+        $('.darkmode-layer--button').css('display', 'none');
+    else
+        $('.darkmode-toggle--white').css('display', 'none');
+    
 }
 
 function openInNewTabAds(url) {
-  
+    
+    is_open_tab_ads = true;
+    
     document.getElementById('GoForwardLink').href = url;
     document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">One Time Unlock</div>';
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
@@ -137,23 +150,23 @@ function colorboxLoadedMainnet()
             $('.darkmode-layer--button').css('display', 'none');
         else
             $('.darkmode-toggle--white').css('display', 'none');
-    }else if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
-    {
-        //openInNewTabAds(URLTestnet);
-        //window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.115"+hashLatinChainGoogleTranslate;
-        
-        /*$('.darkmode-toggle').css('display', 'none');
-        if($('.darkmode-toggle--white').length === 0)
-            $('.darkmode-layer--button').css('display', 'none');
-        else
-            $('.darkmode-toggle--white').css('display', 'none');*/
     }else
     {
-        $('.darkmode-toggle').css('display', 'block');
-        if($('.darkmode-toggle--white').length === 0)
-            $('.darkmode-layer--button').css('display', 'block');
-        else
-            $('.darkmode-toggle--white').css('display', 'block');
+        if(!is_open_tab && !is_open_tab_ads)
+        {
+            $('.darkmode-toggle').css('display', 'block');
+            if($('.darkmode-toggle--white').length === 0)
+                $('.darkmode-layer--button').css('display', 'block');
+            else
+                $('.darkmode-toggle--white').css('display', 'block');
+        }else
+        {
+            $('.darkmode-toggle').css('display', 'none');
+            if($('.darkmode-toggle--white').length === 0)
+                $('.darkmode-layer--button').css('display', 'none');
+            else
+                $('.darkmode-toggle--white').css('display', 'none');
+        }
     }
         
     /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
@@ -1714,10 +1727,13 @@ $( document ).ready(function() {
                                 $('.darkmode-layer--button').css('display', 'none');
                             else
                                 $('.darkmode-toggle--white').css('display', 'none');*/
-                            document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
-                            document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
-                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            if(!is_open_tab)
+                            {
+                                document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                                document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                                document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            }
                             
                             showing_paying = true;
 
@@ -1727,16 +1743,18 @@ $( document ).ready(function() {
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() != false))
                             {
                                 //document.getElementById('PayPiLinkId1').style.display = 'none';
-                                /*$('.darkmode-toggle').css('display', 'block');
-                                if($('.darkmode-toggle--white').length === 0)
-                                    $('.darkmode-layer--button').css('display', 'block');
-                                else
-                                    $('.darkmode-toggle--white').css('display', 'block');
-                                */
-                                document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
-                                document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                if(!is_open_tab)
+                                {
+                                    $('.darkmode-toggle').css('display', 'block');
+                                    if($('.darkmode-toggle--white').length === 0)
+                                        $('.darkmode-layer--button').css('display', 'block');
+                                    else
+                                        $('.darkmode-toggle--white').css('display', 'block');
+                                    document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                                    document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                }
                             }
                             
                             document.getElementById('GoForwardShow1').style.display = 'none';
@@ -1848,10 +1866,14 @@ $( document ).ready(function() {
                         else
                             $('.darkmode-toggle--white').css('display', 'none');
                         */
-                        document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
-                        document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
-                        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                        document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                        
+                        /*if(!is_open_tab)
+                        {
+                            document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                        }*/
 
                         colorboxLoadedMainnet();
                     }
@@ -1884,10 +1906,13 @@ $( document ).ready(function() {
                             else
                                 $('.darkmode-toggle--white').css('display', 'none');
                             */
-                            document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
-                            document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
-                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            if(!is_open_tab)
+                            {
+                                document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                                document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                                document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            }
 
                             colorboxLoadedMainnet();
                         }
@@ -1897,16 +1922,18 @@ $( document ).ready(function() {
             }else
             {
                 //document.getElementById('PayPiLinkId1').style.display = 'none';
-                /*$('.darkmode-toggle').css('display', 'block');
-                if($('.darkmode-toggle--white').length === 0)
-                    $('.darkmode-layer--button').css('display', 'block');
-                else
-                    $('.darkmode-toggle--white').css('display', 'block');
-                */
-                document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
-                document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                if(!is_open_tab)
+                {
+                    $('.darkmode-toggle').css('display', 'block');
+                    if($('.darkmode-toggle--white').length === 0)
+                        $('.darkmode-layer--button').css('display', 'block');
+                    else
+                        $('.darkmode-toggle--white').css('display', 'block');
+                    document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                    document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                }
                 
                 $(".loggedout").show();
                 
@@ -1954,6 +1981,9 @@ $( document ).ready(function() {
     })();
     
     $(".close_latinchain").click(function(){
+        is_open_tab = false;
+        is_open_tab_ads = false;
+        
         //document.getElementById('PayPiLinkId1').style.display = 'none';
         $('.darkmode-toggle').css('display', 'block');
         if($('.darkmode-toggle--white').length === 0)
@@ -1978,12 +2008,11 @@ $( document ).ready(function() {
         if(confirm($("#modal_logout_latinchain_v2_message").text()))
         {
             //document.getElementById('PayPiLinkId1').style.display = 'none';
-            /*$('.darkmode-toggle').css('display', 'block');
+            $('.darkmode-toggle').css('display', 'block');
             if($('.darkmode-toggle--white').length === 0)
                 $('.darkmode-layer--button').css('display', 'block');
             else
                 $('.darkmode-toggle--white').css('display', 'block');
-            */
             document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -2030,17 +2059,19 @@ $( document ).ready(function() {
                 {
                     //alert($("#pi_prowser_message").text());
                     
-                    //document.getElementById('PayPiLinkId1').style.display = 'none';
-                    /*$('.darkmode-toggle').css('display', 'none');
-                    if($('.darkmode-toggle--white').length === 0)
-                        $('.darkmode-layer--button').css('display', 'none');
-                    else
-                        $('.darkmode-toggle--white').css('display', 'none');
-                    */
-                    document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
-                    document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
-                    document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                    document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                    if(!is_open_tab)
+                    {
+                        //document.getElementById('PayPiLinkId1').style.display = 'none';
+                        $('.darkmode-toggle').css('display', 'block');
+                        if($('.darkmode-toggle--white').length === 0)
+                            $('.darkmode-layer--button').css('display', 'block');
+                        else
+                            $('.darkmode-toggle--white').css('display', 'block');
+                        document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                        document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                        document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                        document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                    }
                 }
             }, 10000);
         }, 10000);
