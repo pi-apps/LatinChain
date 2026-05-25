@@ -217,6 +217,7 @@ class PiNetworkController(http.Controller):
             mainnet = ""
             points_latin_amount = 1
             latinchain_specs = ""
+            block_points = False
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -237,8 +238,9 @@ class PiNetworkController(http.Controller):
             mainnet = admin_app_list[0].mainnet
             points_latin_amount = admin_app_list[0].points_latin_amount
             latinchain_specs = admin_app_list[0]._get_latinchain_specs()
+            block_points = admin_app_list[0].block_points
         
-        return http.request.render('website_pinetwork_games_odoo.radioforus', {'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'points_latin_amount': points_latin_amount, 'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.radioforus', {'block_points': block_points, 'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'points_latin_amount': points_latin_amount, 'link_back': link_back, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/get-transactions-radioforus/', type='http', auth="public", website=True, csrf=False)
     def get_transactions_radioforus(self, **kw):
@@ -948,6 +950,7 @@ class PiNetworkController(http.Controller):
             pi_ad_hours = 0
             pi_ad_max = 0
             latinchain_specs = ""
+            block_points = False
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -972,6 +975,7 @@ class PiNetworkController(http.Controller):
             #round(((admin_app_list[0].pi_ad_seconds/3600)*60)/100,4)
             pi_ad_max = admin_app_list[0].pi_ad_max
             latinchain_specs = admin_app_list[0]._get_latinchain_specs()
+            block_points = admin_app_list[0].block_points
             
         payoneclick = False
         if "payoneclick" in kw:
@@ -986,7 +990,7 @@ class PiNetworkController(http.Controller):
         else:
             pi_user_referred_by = "rockcesar"
         
-        return http.request.render('website_pinetwork_games_odoo.pinetwork', {'latinchain_specs': latinchain_specs, 'pi_user_referred_by': pi_user_referred_by, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_latinchain_token': amount_latinchain_token, 'amount_price_topay_usd': amount_price_topay_usd, 'payoneclick': payoneclick, 'showpiad': showpiad, 'amount_latin_pay': amount_latin_pay, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.pinetwork', {'block_points': block_points, 'latinchain_specs': latinchain_specs, 'pi_user_referred_by': pi_user_referred_by, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_latinchain_token': amount_latinchain_token, 'amount_price_topay_usd': amount_price_topay_usd, 'payoneclick': payoneclick, 'showpiad': showpiad, 'amount_latin_pay': amount_latin_pay, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/sudoku', type='http', auth="public", website=True, csrf=False)
     def sudoku(self, **kw):
@@ -1008,6 +1012,7 @@ class PiNetworkController(http.Controller):
             a_ads_style_3 = ""
             mainnet = ""
             points_latin_amount = 1
+            block_points = False
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -1024,8 +1029,9 @@ class PiNetworkController(http.Controller):
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
             points_latin_amount = admin_app_list[0].points_latin_amount
+            block_points = admin_app_list[0].block_points
         
-        return http.request.render('website_pinetwork_games_odoo.sudoku', {'amount_latin_pay': amount_latin_pay, 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.sudoku', {'block_points': block_points, 'amount_latin_pay': amount_latin_pay, 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/snake', type='http', auth="public", website=True, csrf=False)
     def snake(self, **kw):
@@ -1046,6 +1052,7 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = ""
             a_ads_style_3 = ""
             mainnet = ""
+            block_points = False
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -1061,8 +1068,9 @@ class PiNetworkController(http.Controller):
             a_ads_data_3 = admin_app_list[0].a_ads_data_3
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
+            block_points = admin_app_list[0].block_points
         
-        return http.request.render('website_pinetwork_games_odoo.snake', {'amount_latin_pay': amount_latin_pay, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 
+        return http.request.render('website_pinetwork_games_odoo.snake', {'block_points': block_points, 'amount_latin_pay': amount_latin_pay, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 
                                                                         'google_adsense': google_adsense, 'a_ads': a_ads, 
                                                                         'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style,
                                                                         'hide_google_translate': True,
@@ -1090,6 +1098,7 @@ class PiNetworkController(http.Controller):
             a_ads_style_3 = ""
             mainnet = ""
             points_latin_amount = 1
+            block_points = False
         else:
             sandbox = admin_app_list[0].sandbox
             amount = admin_app_list[0].amount
@@ -1106,8 +1115,9 @@ class PiNetworkController(http.Controller):
             a_ads_style_3 = admin_app_list[0].a_ads_style_3
             mainnet = admin_app_list[0].mainnet
             points_latin_amount = admin_app_list[0].points_latin_amount
+            block_points = admin_app_list[0].block_points
         
-        return http.request.render('website_pinetwork_games_odoo.chess', {'amount_latin_pay': amount_latin_pay, 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.chess', {'block_points': block_points, 'amount_latin_pay': amount_latin_pay, 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
     @http.route('/modal-vote', type='http', auth="public", website=True, csrf=False)
     def modal_vote(self, **kw):

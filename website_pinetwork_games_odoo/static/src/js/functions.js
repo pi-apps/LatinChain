@@ -257,6 +257,15 @@ $( document ).ready(function() {
                         //    showPiAds(Pi);
                         
                         function executepayment(){
+                            if(Boolean(($("#block_points").val().toLowerCase())))
+                            {
+                                if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                                    alert("Payments are not enabled. Go to Mainnet.");
+                                else
+                                    alert("Payments are not enabled.");
+                                return false;
+                            }
+                            
                             if(!$( "#acceptConditions" ).prop("checked"))
                             {
                                 if(!confirm($("#donation_message").text()))

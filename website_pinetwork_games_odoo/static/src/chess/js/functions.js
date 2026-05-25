@@ -519,6 +519,15 @@ $( document ).ready(function() {
                         //    showPiAds(Pi);
                         
                         $( "#button_click" ).click(function() {
+                            if(Boolean(($("#block_points").val().toLowerCase())))
+                            {
+                                if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                                    alert("Payments are not enabled. Go to Mainnet.");
+                                else
+                                    alert("Payments are not enabled.");
+                                return false;
+                            }
+                            
                             if(parseFloat($("#pi_donate").val()) == parseFloat(amount))
                             {
                                 $("#button_click").prop( "disabled", true );
