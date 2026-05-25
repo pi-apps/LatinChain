@@ -1619,7 +1619,38 @@
                                 </div>
                             </div>
                             
+                            <style>
+                                .progress-container {
+                                    position: relative;
+                                    height: 2rem; /* Matches Bootstrap 4 default progress bar height */
+                                }
+                                .progress-text {
+                                    position: absolute;
+                                    width: 100%;
+                                    text-align: center;
+                                    font-weight: bold;
+                                    color: black; /* Contrast color for dark bars */
+                                    line-height: 2rem; /* Centers the text vertically */
+                                    top: 0;
+                                    left: 0;
+                                }
+                            </style>
+                            
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="row justify-content-center text-center p-3 mb-2 bg-info bg-gradient text-white rounded" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
+                                <div class="container bg-white p-3 rounded shadow-sm" style="color: black !important">
+                                    <h3 class="mb-2" style="color: black !important">Monthly challenge: 100 total verified users.</h3>
+
+                                    <!-- Percentage Counter -->
+                                    <div class="progress-container mb-4">
+                                        <!-- Bootstrap 4 Progress Bar -->
+                                        <div class="progress" style="height: 2rem;">
+                                            <div class="progress-bar bg-primary" role="progressbar" t-att-style="'width: ' + str(total_users_verified_count) + '%;'" t-att-aria-valuenow="total_users_verified_count" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <!-- Counter Text -->
+                                        <div class="progress-text"><span t-esc="total_users_verified_count" /> verified users</div>
+                                    </div>
+
+                                </div>
                                 <div class="text-white" style="word-break: break-word;">
                                     Your referral link. You will earn <t t-esc="amount_latin_pay/10" /> Latin points for each payment made with your link:
                                     <br/>
