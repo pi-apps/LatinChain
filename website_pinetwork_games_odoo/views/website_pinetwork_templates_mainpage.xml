@@ -1641,13 +1641,21 @@
                                     <h4 class="mb-2" style="color: black !important">Monthly challenge: We need to get to 100 total verified users this month.</h4>
 
                                     <!-- Percentage Counter -->
-                                    <div class="progress-container mb-4">
+                                    <div class="progress-container mb-4" t-if="total_users_verified_count &lt; 101">
                                         <!-- Bootstrap 4 Progress Bar -->
                                         <div class="progress" style="height: 2rem;">
                                             <div class="progress-bar bg-primary" role="progressbar" t-att-style="'width: ' + str(total_users_verified_count) + '%;'" t-att-aria-valuenow="total_users_verified_count" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <!-- Counter Text -->
                                         <div class="progress-text"><span t-esc="total_users_verified_count" /> verified users</div>
+                                    </div>
+                                    <div class="progress-container mb-4" t-else="">
+                                        <!-- Bootstrap 4 Progress Bar -->
+                                        <div class="progress" style="height: 2rem;">
+                                            <div class="progress-bar bg-primary" role="progressbar" t-att-style="'width: 100%;'" t-att-aria-valuenow="total_users_verified_count" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <!-- Counter Text -->
+                                        <div class="progress-text">100+ verified users</div>
                                     </div>
 
                                 </div>
