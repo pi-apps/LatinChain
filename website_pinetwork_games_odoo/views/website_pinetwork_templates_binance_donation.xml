@@ -76,17 +76,12 @@
                                         <p class="text-2xl font-black text-blue-900 mt-0.5">500 <span class="text-lg font-bold text-blue-600">USDT</span></p>
                                     </div>
                                 </div>
-                                
-                                <t t-set="usd_discount" t-value="round(amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100), 2)"/>
-                                <t t-set="pi_total" t-value="round(((amount*amount_price_topay_usd)/usd_discount), 7)"/>
-                                <t t-set="usd_total" t-value="amount_price_topay_usd"/>
-                                <t t-set="pi_discount" t-value="amount"/>
 
                                 <p class="text-gray-600 text-sm leading-relaxed text-center px-2">
                                     We only need <strong class="text-gray-900">one payment by user</strong> each month to cover our infrastructure obligations. Your support empowers us to work even harder for the ecosystem!
                                 </p>
                                 
-                                <div style="justify-content: center !import; align-items: center; text-align: center; word-break: break-word;">
+                                <div class="text-gray-600 text-sm text-center" style="justify-content: center !import; align-items: center; text-align: center; word-break: break-word;">
                                     
                                     <div>
                                         <div style="display: inline" t-if="discount_active and discount_percentage">
