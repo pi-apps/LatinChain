@@ -1275,7 +1275,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.binance_donation_redirect', {'mainnet': mainnet})
 
-    @http.route('/binance-donation-stay-safe', type='http', auth="public", website=True, csrf=False)
+    @http.route(['/binance-donation-stay-safe', '/pi-donation-stay-safe'], type='http', auth="public", website=True, csrf=False)
     def binance_donation_stay_safe(self, **kw):
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
