@@ -1282,7 +1282,15 @@ class PiNetworkController(http.Controller):
         
         if len(admin_app_list) == 0:
             mainnet = ""
+            amount = 0
+            amount_price_topay_usd = 0
+            discount_active = 0
+            discount_percentage = 0
         else:
             mainnet = admin_app_list[0].mainnet
+            amount = admin_app_list[0].amount
+            amount_price_topay_usd = admin_app_list[0].amount_price_topay_usd
+            discount_active = admin_app_list[0].discount_active
+            discount_percentage = admin_app_list[0].discount_percentage
 
-        return http.request.render('website_pinetwork_games_odoo.binance_donation_stay_safe', {'hide_google_translate': True, 'mainnet': mainnet})
+        return http.request.render('website_pinetwork_games_odoo.binance_donation_stay_safe', {'amount': amount, 'amount_price_topay_usd': amount_price_topay_usd, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'hide_google_translate': True, 'mainnet': mainnet})
