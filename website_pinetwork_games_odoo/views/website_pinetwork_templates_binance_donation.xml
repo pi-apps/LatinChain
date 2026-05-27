@@ -87,6 +87,16 @@
                                 </p>
                                 
                                 <div style="justify-content: center !import; align-items: center; text-align: center; word-break: break-word;">
+                                    
+                                    <div>
+                                        <div style="display: inline" t-if="discount_active and discount_percentage">
+                                            Payment discount (-<t t-esc="discount_percentage" />%)
+                                        </div>
+                                        <div style="display: inline" t-if="not discount_active">
+                                            Payment amount
+                                        </div>
+                                    </div>
+                                    
                                     <div t-if="discount_active and discount_percentage">
                                         <t t-set="usd_discount" t-value="round(amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100), 2)"/>
                                         <t t-set="pi_total" t-value="round(((amount*amount_price_topay_usd)/usd_discount), 7)"/>
