@@ -115,6 +115,7 @@ https://www.youtube.com/watch?v=9KqcyAoCZzo
         'views/website_pinetwork_templates_player_video.xml',
         'views/website_pinetwork_templates_player_webcam.xml',
         'views/website_pinetwork_templates_iq_test.xml',
+        'views/website_pinetwork_templates_binance_donation.xml',
         'views/website_pinetwork_templates_mainpage.xml',
         'views/website_debranding_templates.xml',
         'views/website_pinetwork_templates_modal.xml',

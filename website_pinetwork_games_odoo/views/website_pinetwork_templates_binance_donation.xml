@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="binance_donation_redirect" name="Binance Donation Redirect">
+            &lt;!DOCTYPE html&gt;
+            <html lang="en">
+                <head>
+                    <script>
+                        location.href="https://s.binance.com/4XTRd04s";
+                    </script>
+                </head>
+            </html>
+		</template>
+        
+        <template id="binance_donation_stay_safe" name="Binance Donation Stay Safe">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                    <title>Support LatinChain Platform</title>
+                    <!-- Tailwind CSS for sleek, rapid styling -->
+                    <script src="https://cdn.tailwindcss.com"></script>
+                    <!-- FontAwesome for clean iconography -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+                    <style>
+                        .gradient-bg {
+                            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+                        }
+                        .card-glow {
+                            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+                        }
+                    </style>
+                </head>
+                <body class="bg-gray-50 font-sans text-gray-900 antialiased min-h-screen flex flex-col justify-between">
+
+                    <!-- Top Secure Banner -->
+                    <div class="bg-emerald-600 text-white text-xs md:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2 shadow-sm">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Official Verification URL: 
+                            <a href="https://latin-chain.com/binance-donation-stay-safe" target="_self" class="underline hover:text-emerald-100 transition">
+                                latin-chain.com/binance-donation-stay-safe
+                            </a>
+                        </span>
+                    </div>
+
+                    <!-- Main Content Container -->
+                    <main class="flex-grow flex items-center justify-center px-4 py-8 md:py-12">
+                        <div class="max-w-md w-full bg-white rounded-3xl shadow-xl overflow-hidden card-glow border border-gray-100 transition-all duration-300 hover:shadow-2xl">
+                            
+                            <!-- Header/Hero Section -->
+                            <div class="gradient-bg text-white px-6 py-8 text-center relative overflow-hidden">
+                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500 rounded-full opacity-20 blur-xl"></div>
+                                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-emerald-500 rounded-full opacity-10 blur-xl"></div>
+                                
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-2xl backdrop-blur-md mb-4 border border-white/20">
+                                    <i class="fas fa-hand-holding-heart text-3xl text-yellow-400"></i>
+                                </div>
+                                <h1 class="text-2xl font-bold tracking-tight">Hello, Pioneers!</h1>
+                                <p class="text-blue-200 text-sm mt-2 max-w-xs mx-auto">
+                                    Help support the LatinChain Platform so we can keep building and growing together.
+                                </p>
+                            </div>
+
+                            <!-- Content & Goals Block -->
+                            <div class="p-6 space-y-6">
+                                
+                                <!-- Monthly Goal Tracker Display -->
+                                <div class="bg-blue-50/70 border border-blue-100 rounded-2xl p-4 flex items-center justify-between">
+                                    <div>
+                                        <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Monthly Infrastructure Bill</p>
+                                        <p class="text-2xl font-black text-blue-900 mt-0.5">500 <span class="text-lg font-bold text-blue-600">USDT</span></p>
+                                    </div>
+                                    <div class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm text-center">
+                                        <i class="fas fa-calendar-alt mr-1"></i> Paid Once
+                                    </div>
+                                </div>
+
+                                <p class="text-gray-600 text-sm leading-relaxed text-center px-2">
+                                    We only need <strong class="text-gray-900">one single payment</strong> each month to cover our infrastructure obligations. Your support empowers us to work even harder for the ecosystem!
+                                </p>
+
+                                <!-- Action Options Divider -->
+                                <div class="relative flex py-2 items-center">
+                                    <div class="flex-grow border-t border-gray-200"></div>
+                                    <span class="flex-shrink mx-4 text-xs text-gray-400 font-semibold uppercase tracking-wider">Choose Payment Method</span>
+                                    <div class="flex-grow border-t border-gray-200"></div>
+                                </div>
+
+                                <!-- Payment Options Buttons -->
+                                <div class="space-y-3">
+                                    
+                                    <!-- Option 1: Binance USDT -->
+                                    <div class="group relative bg-gray-50 hover:bg-amber-50/40 border border-gray-200 hover:border-amber-300 rounded-2xl p-4 transition-all duration-200">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center font-bold text-lg shadow-sm">
+                                                    <i class="fab fa-bitcoin"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-bold text-gray-900 text-sm">Binance Pay (USDT)</h3>
+                                                    <p class="text-xs text-gray-500 mt-0.5">Account: <span class="font-mono bg-gray-200/60 px-1 rounded text-gray-700 font-semibold">rockcesar</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="https://latin-chain.com/binance-donation" target="_blank" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-2.5 px-4 rounded-xl text-center text-sm transition shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                                            <span>Donate via Binance</span>
+                                            <i class="fas fa-arrow-right text-xs"></i>
+                                        </a>
+                                    </div>
+
+                                    <!-- Option 2: Pi Network -->
+                                    <div class="group relative bg-gray-50 hover:bg-purple-50/40 border border-gray-200 hover:border-purple-300 rounded-2xl p-4 transition-all duration-200">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-xl flex items-center justify-center font-bold text-lg shadow-sm">
+                                                    <i class="fas fa-cubes"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-bold text-gray-900 text-sm">Pi Network Utility</h3>
+                                                    <p class="text-xs text-purple-600 font-semibold mt-0.5">Includes Premium Subscription</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="w-full bg-purple-700 hover:bg-purple-800 text-white font-bold py-2.5 px-4 rounded-xl text-center text-sm transition shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                                            <span>Pay with Pi Monthly</span>
+                                            <i class="fas fa-arrow-right text-xs"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            
+                            <!-- Trust / Safety Note Footer -->
+                            <div class="bg-gray-50 px-6 py-4 border-t border-gray-100 text-center">
+                                <p class="text-xs text-gray-400 flex items-center justify-center gap-1">
+                                    <i class="fas fa-lock text-gray-300"></i>
+                                    Thank you for supporting open source innovation!
+                                </p>
+                            </div>
+                        </div>
+                    </main>
+
+                    <!-- App Footer -->
+                    <footer class="py-4 text-center text-xs text-gray-400">
+                        LatinChain Platform. All rights reserved.
+                    </footer>
+
+                </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>
