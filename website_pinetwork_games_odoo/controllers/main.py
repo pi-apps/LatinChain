@@ -1284,24 +1284,5 @@ class PiNetworkController(http.Controller):
             mainnet = ""
         else:
             mainnet = admin_app_list[0].mainnet
-        
-        binance_donation = """
-            Hello Pioneers. If anyone can do a donation to LatinChain Platform,
-            so we can pay our bills this month. We will thank you very much
-            working even more hard!. (500 USDT, paid once)
-            We only need one payment monthly.
-            
-            The payment is 500 USDT in name of 'rockcesar'.
 
-            Curent Binance donation link is:
-            https://latin-chain.com/binance-donation
-            
-            Another way to help us is by paying Pi monthly in the following link,
-            and we will give you a monthly subscription to LatinChain:
-            https://latinchain.pinet.com/pinetwork
-            
-            Stay safe with this URL, where we have the donation info:
-            https://latin-chain.com/binance-donation-stay-safe
-                """
-
-        return http.request.render('website_pinetwork_games_odoo.binance_donation_stay_safe', {'mainnet': mainnet})
+        return http.request.render('website_pinetwork_games_odoo.binance_donation_stay_safe', {'hide_google_translate': True, 'mainnet': mainnet})
