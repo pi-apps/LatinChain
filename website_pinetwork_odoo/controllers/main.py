@@ -247,6 +247,14 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/boost-rank/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def boost_rank(self, **kw):
         return http.request.redirect('https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a')
+        
+    @http.route('/join-mexc/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def join_mexc(self, **kw):
+        return http.request.redirect('https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-latinchain')
+    
+    @http.route('/trade-pi-on-mexc/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def trade_pi_on_mexc(self, **kw):
+        return http.request.redirect('https://www.mexc.com/exchange/Pi_USDT?shareCode=mexc-latinchain')
     
     @http.route('/youtube-store/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def youtube_store(self, **kw):
