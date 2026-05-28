@@ -1867,13 +1867,13 @@ $( document ).ready(function() {
                             $('.darkmode-toggle--white').css('display', 'none');
                         */
                         
-                        /*if(!is_open_tab)
+                        if(!is_open_tab)
                         {
                             document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                        }*/
+                        }
 
                         colorboxLoadedMainnet();
                     }
