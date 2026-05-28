@@ -1727,7 +1727,7 @@ $( document ).ready(function() {
                                 $('.darkmode-layer--button').css('display', 'none');
                             else
                                 $('.darkmode-toggle--white').css('display', 'none');*/
-                            if(!is_open_tab)
+                            if(!is_open_tab && !is_open_tab_ads && $("#nopopup").val() != false)
                             {
                                 document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
@@ -1743,7 +1743,7 @@ $( document ).ready(function() {
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() != false))
                             {
                                 //document.getElementById('PayPiLinkId1').style.display = 'none';
-                                if(!is_open_tab)
+                                if(!is_open_tab && !is_open_tab_ads && $("#nopopup").val() != false)
                                 {
                                     $('.darkmode-toggle').css('display', 'block');
                                     if($('.darkmode-toggle--white').length === 0)
@@ -1867,7 +1867,7 @@ $( document ).ready(function() {
                             $('.darkmode-toggle--white').css('display', 'none');
                         */
                         
-                        if(!is_open_tab)
+                        if(!is_open_tab && !is_open_tab_ads && $("#nopopup").val() != false)
                         {
                             document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
@@ -1906,7 +1906,7 @@ $( document ).ready(function() {
                             else
                                 $('.darkmode-toggle--white').css('display', 'none');
                             */
-                            if(!is_open_tab)
+                            if(!is_open_tab && !is_open_tab_ads && $("#nopopup").val() != false)
                             {
                                 document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
@@ -1922,7 +1922,7 @@ $( document ).ready(function() {
             }else
             {
                 //document.getElementById('PayPiLinkId1').style.display = 'none';
-                if(!is_open_tab)
+                if(!is_open_tab && !is_open_tab_ads && $("#nopopup").val() != false)
                 {
                     $('.darkmode-toggle').css('display', 'block');
                     if($('.darkmode-toggle--white').length === 0)
@@ -2059,7 +2059,7 @@ $( document ).ready(function() {
                 {
                     //alert($("#pi_prowser_message").text());
                     
-                    if(!is_open_tab)
+                    if(!is_open_tab && !is_open_tab_ads && $("#nopopup").val() != false)
                     {
                         //document.getElementById('PayPiLinkId1').style.display = 'none';
                         $('.darkmode-toggle').css('display', 'block');
