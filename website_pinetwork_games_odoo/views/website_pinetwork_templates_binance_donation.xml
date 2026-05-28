@@ -77,7 +77,7 @@
                                     </div>
                                 </div>-->
                                 
-                                <div class="max-w-7xl mx-auto bg-white p-3 rounded shadow-sm text-black">
+                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="max-w-7xl mx-auto bg-white p-3 rounded shadow-sm text-black">
                                     <h4 class="mb-2 text-xl font-semibold text-black">Monthly challenge: We need to get to 100 total verified users this month.</h4>
 
                                     <div class="mb-4" t-if="total_users_verified_count &lt; 101">
