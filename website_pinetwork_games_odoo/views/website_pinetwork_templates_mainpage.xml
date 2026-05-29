@@ -3441,8 +3441,8 @@
                                         </div>
                                     </t>-->
                                     <div class="row">
-                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">100% Unlock (Pay Pi)</div></a>
-                                        <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">100% Unlock (Pay Pi)</div></a>
+                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">PREMIUM (Pay Pi)</div></a>
+                                        <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">PREMIUM (Pay Pi)</div></a>
                                     </div>
                                     
                                     <div style="margin-top: 10px;" class="row getverified">
@@ -3525,8 +3525,8 @@
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">100% Unlock (Pay Pi)</div></a>
-                                    <a t-else="" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">100% Unlock (Pay Pi)</div></a>
+                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">PREMIUM (Pay Pi)</div></a>
+                                    <a t-else="" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">PREMIUM (Pay Pi)</div></a>
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row">
