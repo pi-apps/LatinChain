@@ -57,7 +57,7 @@ function openInNewTab(url) {
     is_open_tab = true;
     
     document.getElementById('GoForwardLink').href = url;
-    document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-forward"></i></div> <div style="display: inline">Go Forward</div>';
+    document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-forward"></i></div> <div style="display: inline">Go to external link</div>';
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow1').style.display = 'none'; // Use 'flex' instead of 'block'
