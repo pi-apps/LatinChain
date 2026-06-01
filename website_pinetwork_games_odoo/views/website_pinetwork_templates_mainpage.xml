@@ -1327,7 +1327,9 @@
                         </div>
                         <div class="row getverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
                             <div style="text-align:center;" class="col-12">
-                                <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_lite.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
+                                <a class="rounded" href="/pinetwork" target="_self">
+                                    <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_lite.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
+                                </a>
                             </div>
                         </div>
                         <div class="row getverified" style="">
@@ -1343,58 +1345,6 @@
                                 <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_premium.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
                             </div>
                         </div>
-                    </div>
-
-                    <div style="display: none;">
-                        <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                            <div t-if="total_users_verified_count &lt; 400" class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <a id="MainnetLinkId1" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank" class="btn btn-link MainnetLink">Hello Pioneers, we need your help, <strong>we need at least 400 (now <span t-esc="'{:,}'.format(total_users_verified_count)" /> of 400) pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations. (This notification will disappear once you get verified)</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6" style="text-align: right">
-                                        <a href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank" class="btn btn-success rounded MainnetLink" style="border: 2px solid black;">GET PREMIUM</a>
-                                    </div>
-                                    <div class="col-6" style="text-align: left">
-                                        <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="btn btn-success rounded" style="border: 2px solid black;">Boost Rank</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div t-else="" class="alert alert-primary getverified" role="alert" style="text-align: center; margin-bottom: 0px !important">
-                                <div class="row">
-                                    <div class="col-12">
-                                        Thank you pioneers we reached 400 verified users this month!.
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6" style="text-align: right">
-                                        <a href="https://latinchain.pinet.com/pinetwork" target="_blank" class="btn btn-success rounded MainnetLink" style="border: 2px solid black;">GET PREMIUM</a>
-                                    </div>
-                                    <div class="col-6" style="text-align: left">
-                                        <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="btn btn-success rounded" style="border: 2px solid black;">Boost Rank</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </t>
-                        <t t-else="">
-                            <div class="alert alert-primary" role="alert" style="text-align: center; margin-bottom: 0px !important">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <a id="MainnetLinkId1" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank" class="btn btn-link MainnetLink">Hello Pioneers, we need your help, <strong>we need at least 400 pioneers verified monthly on Mainnet</strong> to keep paying our servers. Click here to get verified and fund our operations.</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6" style="text-align: right">
-                                        <a href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank" class="btn btn-success rounded MainnetLink" style="border: 2px solid black;">Mainnet</a>
-                                    </div>
-                                    <div class="col-6" style="text-align: left">
-                                        <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="btn btn-success rounded" style="border: 2px solid black;">Boost Rank</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </t>
                     </div>
                     
                     <div translate="no" class="justify-content-left text-left p-3 mb-2" style="color: #ffffff !important; background-color: #1f2434 !important">
@@ -3451,8 +3401,7 @@
                                         </div>
                                     </t>-->
                                     <div class="row">
-                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="PayPiLinkId1" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (Pay Pi)</div></a>
-                                        <a t-else="" id="PayPiLinkId1" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (Pay Pi)</div></a>
+                                        <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (Pay Pi)</div></a>
                                     </div>
                                     
                                     <div style="margin-top: 10px;" class="row getverified">
@@ -3521,9 +3470,22 @@
                                         <strong><span t-esc="'{:,}'.format(total_users_verified_count)" /> verified users out of 400</strong>
                                     </div>
                                 </t>-->
-                                <div class="row">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">One Time Unlock</div></a>
-                                    <a t-else="" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">One Time Unlock</div></a>
+                                
+                                <div class="row getverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
+                                    <div style="text-align:center;" class="col-12">
+                                        <a class="rounded" href="/pinetwork" target="_self">
+                                            <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_lite.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row isverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
+                                    <div style="text-align:center;" class="col-12">
+                                        <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_premium.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 10px;" class="row" id="GoForwardShow1">
+                                    <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (Pay Pi)</div></a>
                                 </div>
                                 
                                 <div class="getverified">
@@ -3536,9 +3498,9 @@
                                     </div>
                                 </div>
                                 
-                                <div style="margin-top: 10px;" class="row" id="GoForwardShow1">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchain.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (Pay Pi)</div></a>
-                                    <a t-else="" class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://latinchaintest9869.pinet.com/pinetwork" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (Pay Pi)</div></a>
+                                <div class="row" style="display: none;">
+                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">One Time Unlock</div></a>
+                                    <a t-else="" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">One Time Unlock</div></a>
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row">
