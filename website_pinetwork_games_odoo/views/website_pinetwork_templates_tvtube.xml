@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="tvtube" name="TV Tube">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html lang="en">
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Live TV | 24/7 Channels</title>
+                        <!-- Tailwind CSS -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <!-- Lucide Icons -->
+                        <script src="https://unpkg.com/lucide@0.469.0"></script>
+                        
+                        <script>
+                            tailwind.config = {
+                                darkMode: 'class',
+                                theme: {
+                                    extend: {
+                                        colors: {
+                                            brand: {
+                                                50: '#fef2f2',
+                                                100: '#fee2e2',
+                                                500: '#ef4444',
+                                                600: '#dc2626',
+                                                900: '#7f1d1d',
+                                            }
+                                        },
+                                        animation: {
+                                            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                                        }
+                                    }
+                                }
+                            }
+                        </script>
+                        <style>
+                            /* Modern Responsive 16:9 aspect ratio container for the video player */
+                            .video-container {
+                                width: 100%;
+                                aspect-ratio: 16 / 9;
+                                background-color: #000;
+                            }
+                            .video-container iframe {
+                                width: 100%;
+                                height: 100%;
+                                border: 0;
+                                display: block;
+                            }
+                            /* Smooth scrolling */
+                            html { scroll-behavior: smooth; }
+                            
+                            /* Hide scrollbar for category selector but keep functionality */
+                            .hide-scrollbar::-webkit-scrollbar {
+                                display: none;
+                            }
+                            .hide-scrollbar {
+                                -ms-overflow-style: none;  /* IE and Edge */
+                                scrollbar-width: none;  /* Firefox */
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Donate to unlock Apps
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+
+                    </head>
+                    <body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen font-sans antialiased transition-colors duration-300">
+
+                        <!-- Header / Navbar -->
+                        <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
+                            <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-brand-600 dark:text-brand-500 font-bold text-xl tracking-tight">
+                                    <i data-lucide="tv" class="w-6 h-6"></i>
+                                    <span>Live TV</span>
+                                </div>
+                                <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle theme">
+                                    <i data-lucide="moon" id="moonIcon" class="w-5 h-5 hidden dark:block"></i>
+                                    <i data-lucide="sun" id="sunIcon" class="w-5 h-5 block dark:hidden"></i>
+                                </button>
+                            </div>
+                        </header>
+
+                        <main class="max-w-7xl mx-auto px-4 py-6">
+
+                            <section style="justify-content: center; align-items: center; text-align: center; max-width: 500px;" class="mp-8 w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 transform origin-top">
+                                <style>
+                                    .goog-te-banner-frame.skiptranslate {
+                                        display: none !important;
+                                    }
+                                    .skiptranslate > iframe {
+                                        display: none !important;
+                                    }
+                                    
+                                    body {
+                                        top: 0px !important; 
+                                    }
+
+                                    .goog-te-menu-frame {
+                                        max-width:100% !important; 
+                                    }
+                                    .goog-te-menu2 { 
+                                        max-width: 100% !important;
+                                        overflow-x: scroll !important;
+                                        box-sizing:border-box !important; 
+                                        height:auto !important; 
+                                    }
+                                    
+                                    #goog-gt-tt, #goog-gt-, .goog-te-balloon-frame{display: none !important;} 
+                                    .goog-text-highlight { background: none !important; box-shadow: none !important;}
+                                    
+                                    .goog-logo-link{display: none !important;}
+                                    /*.goog-te-gadget{height: 28px !important;  overflow: hidden;}*/
+                                </style>
+
+                                <script type="text/javascript">
+                                    $( document ).ready(function() {
+                                        $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                        $("#google_translate_element").appendTo(".translate_here");
+                                        
+                                        $("#translate_text_latinchain_2").show();
+                                        $("#google_translate_element").show();
+                                    });
+                                </script>
+                                
+                                <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                                </div>
+                                <br/>
+                            </section>
+
+                            <!-- Video Player Section (Hidden by default) -->
+                            <section id="playerSection" translate="no" class="hidden mb-8 w-full max-w-4xl mx-auto bg-black rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 transform origin-top">
+                                <!-- Header of player (Now in normal document flow so it doesn't overlap the video) -->
+                                <div translate="yes" class="w-full p-4 bg-gray-900 border-b border-gray-800 flex justify-between items-center">
+                                    <div class="flex items-center gap-2 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-sm">
+                                        <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                                        Live TV
+                                    </div>
+                                    <button id="closePlayerBtn" class="bg-gray-800 hover:bg-red-600 text-white rounded-full p-2 transition-colors">
+                                        <i data-lucide="x" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                                
+                                <!-- Video Container with pure 16:9 aspect ratio -->
+                                <div class="video-container" id="videoContainer">
+                                    <!-- iframe will be injected here by JS -->
+                                </div>
+                                
+                                <!-- Player Footer with Fallback Button -->
+                                <div class="p-4 bg-gray-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-gray-800">
+                                    <div>
+                                        <h2 id="currentChannelName" class="font-bold text-lg md:text-xl">Select a channel</h2>
+                                        <p id="currentChannelCountry" class="text-sm text-gray-400">...</p>
+                                    </div>
+                                    
+                                    <!-- Fallback button if video is blocked by the owner -->
+                                    <div style="display:none">
+                                    <a id="openInYoutubeBtn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors w-full sm:w-auto shadow-lg shadow-brand-600/20">
+                                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                                        Watch original if it doesn't load
+                                    </a>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Information Notice -->
+                            <div style="display:none">
+                                <div class="mb-6 bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 p-4 rounded-xl text-sm flex items-start gap-3">
+                                    <i data-lucide="info" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                                    <p><strong>Note:</strong> Some channels block playback outside of YouTube. If a channel shows <strong>"Video unavailable"</strong>, use the red button below the player to open it directly in the YouTube app or website.</p>
+                                </div>
+                            </div>
+
+                            <!-- Search and Filters -->
+                            <section class="mb-6">
+                                <div class="relative max-w-md mx-auto md:mx-0 mb-4">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
+                                    </div>
+                                    <input type="text" id="searchInput" class="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-700 rounded-xl leading-5 bg-white dark:bg-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 sm:text-sm transition-colors" placeholder="Search channel or country..."/>
+                                </div>
+
+                                <!-- Categories -->
+                                <div translate="no" class="flex gap-2 overflow-x-auto py-2 hide-scrollbar" id="categoryFilter">
+                                    <button data-filter="all" class="filter-btn px-4 py-2 rounded-full bg-brand-600 text-white hover:bg-brand-500 border border-transparent text-sm font-medium whitespace-nowrap shadow-sm transition-transform active:scale-95">All</button>
+                                    <button data-filter="News" class="filter-btn px-4 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-sm font-medium whitespace-nowrap shadow-sm transition-transform active:scale-95">News</button>
+                                    <button data-filter="Radio" class="filter-btn px-4 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-sm font-medium whitespace-nowrap shadow-sm transition-transform active:scale-95">Radio</button>
+                                    <button data-filter="Exploration" class="filter-btn px-4 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-sm font-medium whitespace-nowrap shadow-sm transition-transform active:scale-95">Exploration</button>
+                                    <button data-filter="Entertainment" class="filter-btn px-4 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-sm font-medium whitespace-nowrap shadow-sm transition-transform active:scale-95">Entertainment</button>
+                                    <button data-filter="Sport" class="filter-btn px-4 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-sm font-medium whitespace-nowrap shadow-sm transition-transform active:scale-95">Sport</button>
+                                    <button data-filter="Cartoon" class="filter-btn px-4 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-sm font-medium whitespace-nowrap shadow-sm transition-transform active:scale-95">Cartoon</button>
+                                    <button data-filter="Movies" class="filter-btn px-4 py-2 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-sm font-medium whitespace-nowrap shadow-sm transition-transform active:scale-95">Movies</button>
+                                </div>
+                            </section>
+
+                            <!-- Channels Grid -->
+                            <div id="channelsGrid" translate="no" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-5">
+                                <!-- Channel Cards injected by JS -->
+                            </div>
+
+                            <!-- No Results Message -->
+                            <div id="noResults" class="hidden text-center py-12">
+                                <i data-lucide="tv-2" class="w-16 h-16 mx-auto text-gray-300 dark:text-gray-600 mb-4"></i>
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">No channels found</h3>
+                                <p class="text-gray-500 dark:text-gray-400 mt-1">Try a different search.</p>
+                            </div>
+
+                        </main>
+
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/tvtube_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>
