@@ -285,9 +285,10 @@
                           <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" style="margin-top:50px !important"><i class="fa-solid fa-x"></i></a>
                           <a href="javascript:void(0);"><button style="margin-left:5px; height:100%" class="clear_cache btn btn-info"><div style="display:inline;"><i class="fa fa-refresh"></i></div> <div style="display:inline;">Clear Cache</div></button></a>
                           <a href="javascript:void(0);"><button style="margin-left:5px; height:100%" class="back btn btn-info"><div style="display:inline;"><i class="fa fa-step-backward"></i></div> <div style="display:inline;">Back</div></button></a>
-                          <a href="javascript:void(0);"><button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
-                                        <div style="display:inline;"><i id="play" class="fa fa-volume-off"></i></div> <div style="display:inline;">Music</div>
-                                      </button>
+                          <a href="javascript:void(0);">
+                                <button id="play_button" style="margin-left:5px; height:100%" class="btn btn-info">
+                                    <div style="display:inline;"><i id="play" class="fa fa-volume-off"></i></div> <div style="display:inline;">Music</div>
+                                </button>
                           </a>
                         </div>
                         
@@ -308,6 +309,24 @@
                                     <h3 t-else="" align="center" style="font-weight:600">Testnet</h3>
                                     <h3 align="center" style="font-weight:600" class="show-not-verified-user">Get verified</h3>
                                     <h3 align="center" style="font-weight:600; display: none;" class="show-verified-user">You are already verified</h3>
+                                    
+                                    <div class="row show-not-verified-user" style="margin-top: 5px; margin-bottom: 5px;">
+                                        <div style="text-align:center; margin-bottom: 5px;" class="col-12">
+                                            <strong>You are LATINCHAIN LITE</strong>
+                                        </div>
+                                        <div style="text-align:center;" class="col-12">
+                                            <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_lite.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row show-verified-user" style="margin-top: 5px; margin-bottom: 5px; display: none;">
+                                        <div style="text-align:center; margin-bottom: 5px;" class="col-12">
+                                            <strong>You are LATINCHAIN PREMIUM</strong>
+                                        </div>
+                                        <div style="text-align:center;" class="col-12">
+                                            <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_premium.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
+                                        </div>
+                                    </div>
                                     
                                     <t t-set="amount_end" t-value="round(amount*3, 7)"/>
                                     
@@ -449,6 +468,8 @@
                                                     </div>
                                                     <div>
                                                         <strong>
+                                                        <u>General Benefits:</u> Become from LATINCHAIN LITE to LATINCHAIN PREMIUM.
+                                                        <br/>
                                                         <u>LatinChain Platform Benefits:</u> Auto ads switch (ON/OFF), change Avatar, Pi Ads <i class="fa-solid fa-plug-circle-bolt"></i>x2 points, access to all Games, all dApps and functionalities in LatinChain Platform.
                                                         <br/>
                                                         <u>Other LatinChain Platform Benefits:</u> Access to premium news, access to dApp tools, specialized technical formation.
