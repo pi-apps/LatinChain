@@ -3498,7 +3498,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="row" style="display: none;">
+                                <div class="row" style="">
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">One Time Unlock</div></a>
                                     <a t-else="" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">One Time Unlock</div></a>
                                 </div>
