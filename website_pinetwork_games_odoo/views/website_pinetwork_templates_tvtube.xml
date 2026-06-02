@@ -108,7 +108,8 @@
                             <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
                                 <div class="flex items-center gap-2 text-brand-600 dark:text-brand-500 font-bold text-xl tracking-tight">
                                     <i data-lucide="tv" class="w-6 h-6"></i>
-                                    <span>Live TV</span>
+                                    <span>Live TV</span> 
+                                    <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded back" style="" href="/"><i class="fa fa-step-backward"></i></a>
                                 </div>
                                 <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle theme">
                                     <i data-lucide="moon" id="moonIcon" class="w-5 h-5 hidden dark:block"></i>
