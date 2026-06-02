@@ -27,6 +27,10 @@ import os
 
 import textwrap
 
+import feedparser
+import json
+from time import mktime
+
 """
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
@@ -1939,3 +1943,88 @@ class PiNetworkBaseController(http.Controller):
 
         headers = {'Content-Type': 'text; charset=UTF-8'}
         return Response(pi_toml, headers=headers)
+
+    @http.route('/fetch-rss-as-json/<string:rss_url>/<string:order_by>/<string:order_dir>', type='http', auth="public", website=True, csrf=False)
+    def fetch_rss_as_json(self, rss_url, order_by='pubDate', order_dir='desc'):
+        """
+        Fetches an RSS feed and returns it as a JSON string, sorted by the specified parameters.
+        """
+        # 1. Parse the RSS feed
+        parsed_feed = feedparser.parse(rss_url)
+        
+        # Check if the feed was fetched successfully
+        if parsed_feed.bozo and not parsed_feed.entries:
+            return json.dumps({"status": "error", "message": "Failed to parse RSS feed."})
+
+        # 2. Extract Feed Metadata
+        feed_info = {
+            "url": rss_url,
+            "title": parsed_feed.feed.get("title", ""),
+            "link": parsed_feed.feed.get("link", ""),
+            "author": parsed_feed.feed.get("author", ""),
+            "description": parsed_feed.feed.get("description", ""),
+            "image": parsed_feed.feed.image.href if 'image' in parsed_feed.feed else ""
+        }
+
+        # 3. Extract and Process Items
+        items = []
+        for entry in parsed_feed.entries:
+            item = {
+                "title": entry.get("title", ""),
+                "pubDate": entry.get("published", ""),
+                "link": entry.get("link", ""),
+                "guid": entry.get("id", ""),
+                "author": entry.get("author", ""),
+                "thumbnail": "",
+                "description": entry.get("summary", ""),
+                "content": entry.get("content", [{"value": ""}])[0]["value"] if 'content' in entry else ""
+            }
+            
+            # Add a hidden datetime object specifically to ensure accurate date sorting
+            if 'published_parsed' in entry and entry.published_parsed:
+                item['_datetime_obj'] = datetime.fromtimestamp(mktime(entry.published_parsed))
+            else:
+                item['_datetime_obj'] = datetime.min # Fallback for missing dates
+                
+            items.append(item)
+
+        # 4. Sorting Logic
+        is_reverse = True if order_dir.lower() == 'desc' else False
+
+        if order_by == 'pubDate':
+            # Sort by actual date object rather than string to prevent alphabetical sorting errors
+            items = sorted(items, key=lambda x: x['_datetime_obj'], reverse=is_reverse)
+        else:
+            # Generic string sort for other keys (e.g., 'title', 'author')
+            items = sorted(items, key=lambda x: str(x.get(order_by, "")).lower(), reverse=is_reverse)
+
+        # Clean up the hidden datetime object before converting to JSON
+        for item in items:
+            item.pop('_datetime_obj', None)
+
+        # 5. Construct Final Payload
+        response = {
+            "status": "ok",
+            "feed": feed_info,
+            "items": items
+        }
+
+        return json.dumps(response, indent=4)
+
+        # ==========================================
+        # Example Usage
+        # ==========================================
+        """
+        if __name__ == "__main__":
+            test_url = "https://www.theguardian.com/international/rss"
+            
+            # Example 1: Sort by Publication Date, Descending (Newest First)
+            json_output_desc = fetch_rss_as_json(test_url, order_by="pubDate", order_dir="desc")
+            print("--- SORTED BY PUBDATE DESCENDING ---")
+            print(json_output_desc[:1000] + "\n...[truncated]...\n") 
+            
+            # Example 2: Sort by Title, Ascending (A-Z)
+            json_output_asc = fetch_rss_as_json(test_url, order_by="title", order_dir="asc")
+            print("--- SORTED BY TITLE ASCENDING ---")
+            print(json_output_asc[:1000] + "\n...[truncated]...\n")
+        """

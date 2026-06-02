@@ -53,7 +53,8 @@ async function fetchFeed(feedId) {
 
     // Attempt 1: rss2json API (clean, fast JSON format)
     try {
-        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`);
+        const res = await fetch(`/fetch-rss-as-json/${encodeURIComponent(feed.url)}/pubDate/desc`);
+        //const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&order_by=pubDate&order_dir=desc`);
         const data = await res.json();
         if (data.status === 'ok') {
             return data.items.map(item => ({
