@@ -27,8 +27,23 @@ function stripHtml(html) {
 // Utility: Human readable dates
 function formatDate(dateStr) {
     if (!dateStr) return '';
-    const date = new Date(dateStr);
-    return date.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+    
+    // Fix for rss2json API: it returns "YYYY-MM-DD HH:mm:ss" in UTC without a timezone indicator.
+    // We convert it to standard ISO 8601 so the browser correctly parses it as UTC first.
+    let safeDateStr = dateStr;
+    if (dateStr.match(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/)) {
+        safeDateStr = dateStr.replace(' ', 'T') + 'Z';
+    }
+    
+    const date = new Date(safeDateStr);
+    return date.toLocaleString(undefined, { 
+        weekday: 'short', 
+        month: 'short', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit',
+        timeZoneName: 'short' 
+    });
 }
 
 // Fetch Function using Public APIs to bypass CORS
