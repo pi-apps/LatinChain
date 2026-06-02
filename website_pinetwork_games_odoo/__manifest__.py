@@ -111,6 +111,7 @@ https://www.youtube.com/watch?v=9KqcyAoCZzo
         'views/website_pinetwork_templates_player_maps.xml',
         'views/website_pinetwork_templates_player_music.xml',
         'views/website_pinetwork_templates_player_news.xml',
+        'views/website_pinetwork_templates_player_sports.xml',
         'views/website_pinetwork_templates_player_texttospeech.xml',
         'views/website_pinetwork_templates_player_timezone.xml',
         'views/website_pinetwork_templates_player_video.xml',

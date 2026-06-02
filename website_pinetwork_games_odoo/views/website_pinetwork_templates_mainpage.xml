@@ -1155,7 +1155,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <button id="cryptonews" class="href-external btn btn-primary mb-2 o_default_snippet_text cryptonews"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">News</div></button>
+                                          <a href="/newsplayer" id="newsplayer" class="btn btn-primary mb-2 o_default_snippet_text newsplayer"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">News</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1743,7 +1743,7 @@
                                 </div>
                                 <div><strong>Watch our Crypto News</strong></div>
                                 <div>
-                                    <button class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success cryptonews" ><div><i class="fa fa-newspaper-o"></i></div><div>Crypto News</div></button>
+                                    <a href="/newsplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success newsplayer" ><div><i class="fa fa-newspaper-o"></i></div><div>Crypto News</div></a>
                                 </div>
                             </div>
                         </div>
@@ -1867,7 +1867,7 @@
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinChainCool &#128240;</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <button id="cryptonews_4" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Crypto news</div></button>
+                                <a href="/newsplayer" id="newsplayer_4" class="col-12 btn btn-outline-info font-weight-bold text-black border-info newsplayer" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Crypto news</div></a>
                             </div>
                             <!--<div style="margin-bottom:5px">
                                 <button id="trends-news_2" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info trends-news" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Trends news</div></button>
@@ -1975,7 +1975,7 @@
                             </div>
                             
                             <div style="margin-bottom:5px">
-                                <button id="cryptonews_3" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div></button>
+                                <a href="/newsplayer" id="newsplayer_3" class="col-12 btn btn-outline-success font-weight-bold text-black border-success newsplayer" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div></a>
                             </div>
                             
                             <!--<div style="margin-bottom:5px">
@@ -1983,7 +1983,7 @@
                             </div>-->
                             
                             <div style="margin-bottom:5px">
-                                <button id="sport-results-3" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div></button>
+                                <a href="/sportsplayer" id="sportsplayer-3" class="col-12 btn btn-outline-success font-weight-bold text-black border-success sportsplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div></a>
                             </div>
                             
                             <div class="" style="margin-bottom:5px;" t-if="pioneers_streaming">
@@ -2644,6 +2644,16 @@
                                                 <div class="col-12"><a id="iqtest" href="/iq-test" class="col-12 btn btn-outline-success font-weight-bold text-black border-success iqtest" style="border: 2px solid;"><div style=""><i class="fa-solid fa-brain"></i></div><div style="font-size:100%;" translate="no">IQ TEST</div><div style="font-size:80%;">Certified IQ Test</div><div style="font-size:80%;">Developed with AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">IQ Test</div></div></a></div>
                                             </div>
                                         </li>
+                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: center; padding: 10px">
+                                                <div class="col-12"><a href="/newsplayer" id="newsplayer_2" class="col-12 btn btn-outline-success font-weight-bold text-black border-success newsplayer" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></a></div>
+                                            </div>
+                                        </li>
+                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
+                                            <div class="row" style="text-align: center; padding: 10px">
+                                                <div class="col-12"><a href="/sportsplayer" id="sportsplayer" class="col-12 btn btn-outline-success font-weight-bold text-black border-success sportsplayer" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">Sports</div></div></a></div>
+                                            </div>
+                                        </li>
                                         <!--
                                         <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: center; padding: 10px">
@@ -2715,26 +2725,6 @@
                                                 </div>
                                             </li>
                                         </t>
-                                        <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                            <div class="row" style="text-align: left;">
-                                                <div class="col-12" style="text-align: center"><div class="next-pi" style="display:inline;"><i class="fa-regular fa-thumbs-up"></i></div> <div class="next-pi" style="display:inline; font-size: 18px">EXTERNAL APPS</div></div>
-                                            </div>
-                                        </li>
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                            <div class="row" style="text-align: center; padding: 10px">
-                                                <div class="col-12"><button id="cryptonews_2" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success cryptonews" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">Crypto news</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
-                                            </div>
-                                        </li>
-                                        <!--<li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                            <div class="row" style="text-align: center; padding: 10px">
-                                                <div class="col-12"><button id="trends-news" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success trends-news" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">TRENDS NEWS</div><div style="font-size:80%;">Trends news</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></button></div>
-                                            </div>
-                                        </li>-->
-                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
-                                            <div class="row" style="text-align: center; padding: 10px">
-                                                <div class="col-12"><button id="sport-results" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success sport-results" style="border: 2px solid;"><div style=""><i class="fa-solid fa-futbol"></i></div><div style="font-size:100%;" translate="no">SPORTS</div><div style="font-size:80%;">Sport results</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">Sports</div></div></button></div>
-                                            </div>
-                                        </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12"><a href="https://latinchainpal0712.pinet.com" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-hand-spock"></i></div><div style="font-size:100%;" translate="no">LATINCHAIN BOT PAL</div><div style="font-size:80%;">AI Chatbot</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">AI Chat</div></div></a></div>

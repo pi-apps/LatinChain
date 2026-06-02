@@ -1,19 +1,20 @@
-// Define our target Crypto RSS feeds globally
-const CRYPTO_FEEDS = [
-    { id: 'coindesk', name: 'CoinDesk', icon: '📰', url: 'https://www.coindesk.com/arc/outboundfeeds/rss/' },
-    { id: 'cointelegraph', name: 'Cointelegraph', icon: '⚡', url: 'https://cointelegraph.com/rss' },
-    { id: 'bitcoin', name: 'Bitcoin.com', icon: '₿', url: 'https://news.bitcoin.com/feed/' },
-    { id: 'cryptoslate', name: 'CryptoSlate', icon: '📈', url: 'https://cryptoslate.com/feed/' },
-    { id: 'decrypt', name: 'Decrypt', icon: '🌐', url: 'https://decrypt.co/feed' }
+// Define our target RSS feeds globally
+const SPORT_FEEDS = [
+    { id: 'soccer', name: 'Soccer', icon: '⚽', url: 'https://feeds.bbci.co.uk/sport/football/rss.xml' },
+    { id: 'basketball', name: 'Basketball', icon: '🏀', url: 'https://www.espn.com/espn/rss/nba/news' },
+    { id: 'f1', name: 'Formula 1', icon: '🏎️', url: 'https://feeds.bbci.co.uk/sport/formula1/rss.xml' },
+    { id: 'tennis', name: 'Tennis', icon: '🎾', url: 'https://feeds.bbci.co.uk/sport/tennis/rss.xml' },
+    { id: 'nfl', name: 'Amer. Football', icon: '🏈', url: 'https://www.espn.com/espn/rss/nfl/news' },
+    { id: 'golf', name: 'Golf', icon: '⛳', url: 'https://feeds.bbci.co.uk/sport/golf/rss.xml' }
 ];
 
 // Retrieve saved order from localStorage or use default
-const defaultOrder = CRYPTO_FEEDS.map(s => s.id);
-let userOrder = JSON.parse(localStorage.getItem('cryptoFeedOrder')) || defaultOrder;
+const defaultOrder = SPORT_FEEDS.map(s => s.id);
+let userOrder = JSON.parse(localStorage.getItem('sportsFeedOrder')) || defaultOrder;
 
 // Cleanup: In case feeds were added/removed from our list vs localStorage state
-userOrder = userOrder.filter(id => CRYPTO_FEEDS.some(s => s.id === id));
-CRYPTO_FEEDS.forEach(s => { if (!userOrder.includes(s.id)) userOrder.push(s.id); });
+userOrder = userOrder.filter(id => SPORT_FEEDS.some(s => s.id === id));
+SPORT_FEEDS.forEach(s => { if (!userOrder.includes(s.id)) userOrder.push(s.id); });
 
 let feedsDataCache = {}; // Prevent excessive API calls
 window.articleCache = {}; // Global cache for modals
@@ -32,13 +33,13 @@ function formatDate(dateStr) {
 }
 
 // Fetch Function using Public APIs to bypass CORS
-async function fetchFeed(feedId) {
-    const feed = CRYPTO_FEEDS.find(s => s.id === feedId);
-    if (!feed) return [];
+async function fetchFeed(sportId) {
+    const sport = SPORT_FEEDS.find(s => s.id === sportId);
+    if (!sport) return [];
 
     // Attempt 1: rss2json API (clean, fast JSON format)
     try {
-        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`);
+        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(sport.url)}`);
         const data = await res.json();
         if (data.status === 'ok') {
             return data.items.map(item => ({
@@ -55,7 +56,7 @@ async function fetchFeed(feedId) {
 
     // Attempt 2: AllOrigins proxy with native DOMParser fallback
     try {
-        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`;
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(sport.url)}`;
         const response = await fetch(proxyUrl);
         const data = await response.json();
         const parser = new DOMParser();
@@ -82,7 +83,7 @@ async function fetchFeed(feedId) {
             return { title: stripHtml(title), link, pubDate, description: stripHtml(description), thumbnail };
         });
     } catch (e) {
-        console.error("All fetch methods failed for:", feedId, e);
+        console.error("All fetch methods failed for:", sportId, e);
         return [];
     }
 }
@@ -120,35 +121,35 @@ function renderNewsSkeletons(containerId) {
 }
 
 // Establish the layout sections in the order specified by the user
-function renderFeedSections() {
+function renderSportSections() {
     const feedContainer = document.getElementById('feed-container');
     feedContainer.innerHTML = '';
 
-    userOrder.forEach(feedId => {
-        const feed = CRYPTO_FEEDS.find(s => s.id === feedId);
+    userOrder.forEach(sportId => {
+        const sport = SPORT_FEEDS.find(s => s.id === sportId);
         const section = document.createElement('div');
         section.className = 'pt-2 mb-10 border-b border-gray-200 pb-6 last:border-0';
         section.innerHTML = `
             <h2 class="text-xl font-extrabold mb-5 flex items-center gap-3 text-gray-800">
-                <span class="text-2xl bg-white shadow-sm border border-gray-100 p-2 rounded-xl">${feed.icon}</span> 
-                ${feed.name}
+                <span class="text-2xl bg-white shadow-sm border border-gray-100 p-2 rounded-xl">${sport.icon}</span> 
+                ${sport.name}
             </h2>
             
-            <!-- Market Updates Section (Shows First) -->
+            <!-- Results Section (Shows First) -->
             <div class="mb-6">
-                <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Market Updates & Prices</h3>
-                <div id="results-${feedId}" class="flex overflow-x-auto gap-4 pb-2 hide-scrollbar snap-x snap-mandatory"></div>
+                <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Recent Results & Updates</h3>
+                <div id="results-${sportId}" class="flex overflow-x-auto gap-4 pb-2 hide-scrollbar snap-x snap-mandatory"></div>
             </div>
 
             <!-- News Section -->
             <div>
-                <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Latest Stories</h3>
-                <div id="news-${feedId}" class="flex flex-col gap-4"></div>
+                <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Latest News</h3>
+                <div id="news-${sportId}" class="flex flex-col gap-4"></div>
             </div>
         `;
         feedContainer.appendChild(section);
-        renderResultsSkeletons(`results-${feedId}`);
-        renderNewsSkeletons(`news-${feedId}`);
+        renderResultsSkeletons(`results-${sportId}`);
+        renderNewsSkeletons(`news-${sportId}`);
     });
 }
 
@@ -156,30 +157,30 @@ function renderFeedSections() {
 async function fetchAndPopulate(forceRefresh = false) {
     if (forceRefresh) {
         feedsDataCache = {};
-        renderFeedSections(); // Clear and show skeletons again
+        renderSportSections(); // Clear and show skeletons again
     }
 
     // Map all fetches onto Promises so they execute simultaneously
-    const fetchPromises = userOrder.map(async feedId => {
-        if (!feedsDataCache[feedId]) {
-            feedsDataCache[feedId] = await fetchFeed(feedId);
+    const fetchPromises = userOrder.map(async sportId => {
+        if (!feedsDataCache[sportId]) {
+            feedsDataCache[sportId] = await fetchFeed(sportId);
         }
         
-        const resultsContainer = document.getElementById(`results-${feedId}`);
-        const newsContainer = document.getElementById(`news-${feedId}`);
+        const resultsContainer = document.getElementById(`results-${sportId}`);
+        const newsContainer = document.getElementById(`news-${sportId}`);
         if (!resultsContainer || !newsContainer) return; 
         
         resultsContainer.innerHTML = '';
         newsContainer.innerHTML = '';
         
-        const items = feedsDataCache[feedId] || [];
+        const items = feedsDataCache[sportId] || [];
         
-        // Crypto Smart Filter: Detect items related to price movements, market analysis, or rapid shifts
-        const marketRegex = /\$|\b(price|surges|plummets|drops|hits|rallies|analysis|prediction|bull|bear|ATH|ETF)\b/i;
-        let results = items.filter(item => marketRegex.test(item.title));
-        let news = items.filter(item => !marketRegex.test(item.title));
+        // Smart Filter: Detect items that look like match results or scores
+        const resultRegex = /\b\d+\s*-\s*\d+\b|\b(beats|wins|draws|defeats|stuns|crushes|routs|vs\.?|v\.)\b/i;
+        let results = items.filter(item => resultRegex.test(item.title));
+        let news = items.filter(item => !resultRegex.test(item.title));
 
-        // If feed doesn't have obvious market updates, borrow top items to act as the "Latest Updates" ticker
+        // If feed doesn't have obvious results, borrow top items to act as the "Latest Updates" ticker
         if (results.length < 4) {
             const needed = 4 - results.length;
             results = [...results, ...news.slice(0, needed)];
@@ -189,17 +190,17 @@ async function fetchAndPopulate(forceRefresh = false) {
         results = results.slice(0, 6); // Up to 6 results for the horizontal ticker
         news = news.slice(0, 5);       // Up to 5 news items for the vertical feed
 
-        // Populate Market Updates (Horizontal Ticker)
+        // Populate Results (Horizontal Ticker)
         if (results.length > 0) {
             results.forEach(item => {
                 window.articleCache[item.link] = item;
                 const card = document.createElement('button');
                 card.onclick = () => openNewsModal(item.link);
-                card.className = 'text-left min-w-[240px] max-w-[240px] h-32 bg-white rounded-xl shadow-sm border border-gray-100 p-4 active:scale-[0.98] transition-transform shrink-0 flex flex-col justify-between snap-start hover:border-indigo-300 focus:outline-none';
+                card.className = 'text-left min-w-[240px] max-w-[240px] h-32 bg-white rounded-xl shadow-sm border border-gray-100 p-4 active:scale-[0.98] transition-transform shrink-0 flex flex-col justify-between snap-start hover:border-blue-300 focus:outline-none';
                 card.innerHTML = `
                     <div>
-                        <p class="text-[10px] text-green-600 font-bold mb-2 uppercase tracking-wider flex items-center gap-1">
-                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                        <p class="text-[10px] text-red-600 font-bold mb-2 uppercase tracking-wider flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse"></span>
                             ${formatDate(item.pubDate)}
                         </p>
                         <h4 class="text-sm font-bold text-gray-900 leading-snug line-clamp-3">${item.title}</h4>
@@ -208,7 +209,7 @@ async function fetchAndPopulate(forceRefresh = false) {
                 resultsContainer.appendChild(card);
             });
         } else {
-            resultsContainer.innerHTML = `<p class="text-sm text-gray-400 italic">No recent updates found.</p>`;
+            resultsContainer.innerHTML = `<p class="text-sm text-gray-400 italic">No recent results found.</p>`;
         }
 
         // Populate News (Vertical Cards)
@@ -218,11 +219,11 @@ async function fetchAndPopulate(forceRefresh = false) {
                 const imgHtml = item.thumbnail ? `<img src="${item.thumbnail}" alt="Thumbnail" class="w-full h-48 object-cover border-b border-gray-100" onerror="this.style.display='none'">` : '';
                 const card = document.createElement('button');
                 card.onclick = () => openNewsModal(item.link);
-                card.className = 'text-left w-full block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden active:scale-[0.98] transition-transform hover:border-indigo-300 focus:outline-none';
+                card.className = 'text-left w-full block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden active:scale-[0.98] transition-transform hover:border-blue-300 focus:outline-none';
                 card.innerHTML = `
                     ${imgHtml}
                     <div class="p-5">
-                        <p class="text-xs text-indigo-600 font-bold mb-2 uppercase tracking-wider">${formatDate(item.pubDate)}</p>
+                        <p class="text-xs text-blue-600 font-bold mb-2 uppercase tracking-wider">${formatDate(item.pubDate)}</p>
                         <h3 class="text-lg font-bold leading-snug mb-2 text-gray-900">${item.title}</h3>
                         <p class="text-sm text-gray-600 line-clamp-2">${item.description}</p>
                     </div>
@@ -246,22 +247,22 @@ function renderSettingsList() {
     const list = document.getElementById('sortable-list');
     list.innerHTML = '';
     
-    userOrder.forEach((feedId, index) => {
-        const feed = CRYPTO_FEEDS.find(s => s.id === feedId);
+    userOrder.forEach((sportId, index) => {
+        const sport = SPORT_FEEDS.find(s => s.id === sportId);
         const li = document.createElement('li');
         li.className = 'flex items-center justify-between bg-gray-50 hover:bg-gray-100 p-3 rounded-xl border border-gray-200 transition-colors';
         li.innerHTML = `
             <div class="flex items-center gap-4">
-                <span class="text-2xl">${feed.icon}</span>
-                <span class="font-bold text-gray-700">${feed.name}</span>
+                <span class="text-2xl">${sport.icon}</span>
+                <span class="font-bold text-gray-700">${sport.name}</span>
             </div>
             <div class="flex gap-2">
                 <!-- Move Up -->
-                <button onclick="moveFeed(${index}, -1)" class="p-2.5 bg-white shadow-sm border border-gray-200 text-gray-600 hover:text-indigo-600 rounded-lg disabled:opacity-30 disabled:hover:text-gray-600 active:scale-95 transition-all" ${index === 0 ? 'disabled' : ''}>
+                <button onclick="moveSport(${index}, -1)" class="p-2.5 bg-white shadow-sm border border-gray-200 text-gray-600 hover:text-blue-600 rounded-lg disabled:opacity-30 disabled:hover:text-gray-600 active:scale-95 transition-all" ${index === 0 ? 'disabled' : ''}>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
                 </button>
                 <!-- Move Down -->
-                <button onclick="moveFeed(${index}, 1)" class="p-2.5 bg-white shadow-sm border border-gray-200 text-gray-600 hover:text-indigo-600 rounded-lg disabled:opacity-30 disabled:hover:text-gray-600 active:scale-95 transition-all" ${index === userOrder.length - 1 ? 'disabled' : ''}>
+                <button onclick="moveSport(${index}, 1)" class="p-2.5 bg-white shadow-sm border border-gray-200 text-gray-600 hover:text-blue-600 rounded-lg disabled:opacity-30 disabled:hover:text-gray-600 active:scale-95 transition-all" ${index === userOrder.length - 1 ? 'disabled' : ''}>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
             </div>
@@ -271,7 +272,7 @@ function renderSettingsList() {
 }
 
 // Global function attached to window for inline onclick handlers
-window.moveFeed = function(index, direction) {
+window.moveSport = function(index, direction) {
     const newIndex = index + direction;
     if (newIndex < 0 || newIndex >= userOrder.length) return;
     
@@ -296,9 +297,9 @@ document.getElementById('close-settings-btn').addEventListener('click', () => {
 
 // Save layout to LocalStorage and refresh the feed immediately
 document.getElementById('save-order-btn').addEventListener('click', () => {
-    localStorage.setItem('cryptoFeedOrder', JSON.stringify(userOrder));
+    localStorage.setItem('sportsFeedOrder', JSON.stringify(userOrder));
     document.getElementById('settings-modal').classList.add('hidden');
-    renderFeedSections(); 
+    renderSportSections(); 
     fetchAndPopulate(false); // Re-render using cached data (no need to re-fetch on simple re-order)
 });
 
@@ -354,6 +355,6 @@ document.getElementById('proceed-link-btn').addEventListener('click', () => {
 
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
-    renderFeedSections();
+    renderSportSections();
     fetchAndPopulate(false);
 });
