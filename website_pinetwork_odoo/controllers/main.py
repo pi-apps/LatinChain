@@ -1944,16 +1944,22 @@ class PiNetworkBaseController(http.Controller):
         headers = {'Content-Type': 'text; charset=UTF-8'}
         return Response(pi_toml, headers=headers)
 
-    @http.route('/fetch-rss-as-json/<string:rss_url>/<string:order_by>/<string:order_dir>', type='http', auth="public", website=True, csrf=False)
-    def fetch_rss_as_json(self, rss_url, order_by='pubDate', order_dir='desc'):
+    @http.route('/fetch-rss-as-json', type='http', auth="public", website=True, csrf=False)
+    def fetch_rss_as_json(self, **kw):
+        rss_url = kw['rss_url']
+        order_by = kw['order_by']
+        order_dir = kw['order_dir']
+        
         """
         Fetches an RSS feed and returns it as a JSON string, sorted by the specified parameters.
         """
         # 1. Parse the RSS feed
         parsed_feed = feedparser.parse(rss_url)
         
+        limited_entries = parsed_feed.entries[:10]
+        
         # Check if the feed was fetched successfully
-        if parsed_feed.bozo and not parsed_feed.entries:
+        if parsed_feed.bozo and not limited_entries:
             return json.dumps({"status": "error", "message": "Failed to parse RSS feed."})
 
         # 2. Extract Feed Metadata
@@ -1968,7 +1974,7 @@ class PiNetworkBaseController(http.Controller):
 
         # 3. Extract and Process Items
         items = []
-        for entry in parsed_feed.entries:
+        for entry in limited_entries:
             item = {
                 "title": entry.get("title", ""),
                 "pubDate": entry.get("published", ""),

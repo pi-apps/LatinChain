@@ -53,7 +53,7 @@ async function fetchFeed(feedId) {
 
     // Attempt 1: rss2json API (clean, fast JSON format)
     try {
-        const res = await fetch(`/fetch-rss-as-json/${encodeURIComponent(feed.url)}/pubDate/desc`);
+        const res = await fetch(`/fetch-rss-as-json?rss_url=${encodeURIComponent(sport.url)}&order_by=pubDate&order_dir=desc`);
         //const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&order_by=pubDate&order_dir=desc`);
         const data = await res.json();
         if (data.status === 'ok') {
@@ -70,8 +70,9 @@ async function fetchFeed(feedId) {
     }
 
     // Attempt 2: AllOrigins proxy with native DOMParser fallback
-    try {
-        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`;
+    /*try {
+        //const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(sport.url)}`;
+        const proxyUrl = `/fetch-rss-as-json?rss_url=${encodeURIComponent(sport.url)}&order_by=pubDate&order_dir=desc`;
         const response = await fetch(proxyUrl);
         const data = await response.json();
         const parser = new DOMParser();
@@ -100,7 +101,7 @@ async function fetchFeed(feedId) {
     } catch (e) {
         console.error("All fetch methods failed for:", feedId, e);
         return [];
-    }
+    }*/
 }
 
 // Render skeleton loading screens for results (horizontal ticker)
