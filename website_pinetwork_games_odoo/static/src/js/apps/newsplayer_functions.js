@@ -2,7 +2,7 @@
 const CRYPTO_FEEDS = [
     { id: 'cointelegraph', name: 'Cointelegraph', icon: '⚡', url: 'https://cointelegraph.com/rss' },
     { id: 'bitcoin', name: 'Bitcoin.com', icon: '₿', url: 'https://news.bitcoin.com/feed/' },
-    { id: 'cryptoslate', name: 'CryptoSlate', icon: '📈', url: 'https://cryptoslate.com/feed/' },
+    //{ id: 'cryptoslate', name: 'CryptoSlate', icon: '📈', url: 'https://cryptoslate.com/feed/' },
     { id: 'decrypt', name: 'Decrypt', icon: '🌐', url: 'https://decrypt.co/feed' },
     { id: 'coindesk', name: 'CoinDesk', icon: '📰', url: 'https://www.coindesk.com/arc/outboundfeeds/rss/' },
 ];
@@ -331,7 +331,7 @@ window.openNewsModal = function(link) {
 
     document.getElementById('news-modal-title').textContent = item.title;
     document.getElementById('news-modal-date').textContent = formatDate(item.pubDate);
-    document.getElementById('news-modal-content').innerHTML = item.description || 'No summary available.';
+    document.getElementById('news-modal-content').innerHTML = item.description || item.title || 'No summary available.';
     
     // Wire up the custom confirm button
     const linkBtn = document.getElementById('news-modal-link-btn');
