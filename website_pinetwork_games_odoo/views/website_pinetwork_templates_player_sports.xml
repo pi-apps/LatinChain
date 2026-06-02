@@ -127,7 +127,8 @@
                             <div class="max-w-2xl mx-auto px-4 h-16 flex items-center justify-between">
                                 <h1 class="text-xl font-bold text-blue-700 flex items-center gap-2">
                                     <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-                                    SportsFeed
+                                    SportsFeed 
+                                    <a id="back" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded back" style="" href="/"><i class="fa fa-step-backward"></i></a>
                                 </h1>
                                 <button id="open-settings-btn" class="p-2 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors active:scale-95" aria-label="Settings">
                                     <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
