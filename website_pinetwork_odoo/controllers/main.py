@@ -1946,23 +1946,51 @@ class PiNetworkBaseController(http.Controller):
 
     @http.route('/fetch-rss-as-json', type='http', auth="public", website=True, csrf=False)
     def fetch_rss_as_json(self, **kw):
-        rss_url = kw['rss_url']
-        order_by = kw['order_by']
-        order_dir = kw['order_dir']
+        # 1. Uso de .get() para evitar errores "KeyError" si falta un parámetro
+        rss_url = kw.get('rss_url')
+        order_by = kw.get('order_by', 'pubDate')
+        order_dir = kw.get('order_dir', 'desc')
         
+        if not rss_url:
+             return http.request.make_response(
+                 json.dumps({"status": "error", "message": "No RSS URL provided."}),
+                 headers=[('Content-Type', 'application/json')]
+             )
+
         """
-        Fetches an RSS feed and returns it as a JSON string, sorted by the specified parameters.
+        Fetches an RSS feed using a custom User-Agent, parses it, 
+        and returns it as a JSON string, sorted by the specified parameters.
         """
-        # 1. Parse the RSS feed
-        parsed_feed = feedparser.parse(rss_url)
         
+        try:
+            # 2. Descargar el XML simulando ser un navegador (Bypass básico de Cloudflare/WAF)
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'application/rss+xml, application/xml, application/atom+xml, text/xml, text/html, */*'
+            }
+            # Un timeout previene que tu servidor de Odoo se quede colgado si el feed no responde
+            response = requests.get(rss_url, headers=headers, timeout=10)
+            response.raise_for_status() # Lanza excepción si hay un error HTTP 4xx o 5xx
+
+            # 3. Parsear el contenido descargado en lugar de la URL
+            parsed_feed = feedparser.parse(response.content)
+
+        except requests.exceptions.RequestException as e:
+            return http.request.make_response(
+                json.dumps({"status": "error", "message": f"HTTP Error fetching RSS feed: {str(e)}"}),
+                headers=[('Content-Type', 'application/json')]
+            )
+
         limited_entries = parsed_feed.entries[:10]
         
         # Check if the feed was fetched successfully
         if parsed_feed.bozo and not limited_entries:
-            return json.dumps({"status": "error", "message": "Failed to parse RSS feed."})
+            return http.request.make_response(
+                json.dumps({"status": "error", "message": "Failed to parse RSS feed or feed is empty."}),
+                headers=[('Content-Type', 'application/json')]
+            )
 
-        # 2. Extract Feed Metadata
+        # 4. Extract Feed Metadata
         feed_info = {
             "url": rss_url,
             "title": parsed_feed.feed.get("title", ""),
@@ -1972,7 +2000,7 @@ class PiNetworkBaseController(http.Controller):
             "image": parsed_feed.feed.image.href if 'image' in parsed_feed.feed else ""
         }
 
-        # 3. Extract and Process Items
+        # 5. Extract and Process Items
         items = []
         for entry in limited_entries:
             item = {
@@ -1982,7 +2010,7 @@ class PiNetworkBaseController(http.Controller):
                 "guid": entry.get("id", ""),
                 "author": entry.get("author", ""),
                 "thumbnail": "",
-                "description": entry.get("summary", ""),
+                "description": entry.get("summary", "") or entry.get("description", ""),
                 "content": entry.get("content", [{"value": ""}])[0]["value"] if 'content' in entry else ""
             }
             
@@ -1994,7 +2022,7 @@ class PiNetworkBaseController(http.Controller):
                 
             items.append(item)
 
-        # 4. Sorting Logic
+        # 6. Sorting Logic
         is_reverse = True if order_dir.lower() == 'desc' else False
 
         if order_by == 'pubDate':
@@ -2008,29 +2036,15 @@ class PiNetworkBaseController(http.Controller):
         for item in items:
             item.pop('_datetime_obj', None)
 
-        # 5. Construct Final Payload
-        response = {
+        # 7. Construct Final Payload
+        response_data = {
             "status": "ok",
             "feed": feed_info,
             "items": items
         }
 
-        return json.dumps(response, indent=4)
-
-        # ==========================================
-        # Example Usage
-        # ==========================================
-        """
-        if __name__ == "__main__":
-            test_url = "https://www.theguardian.com/international/rss"
-            
-            # Example 1: Sort by Publication Date, Descending (Newest First)
-            json_output_desc = fetch_rss_as_json(test_url, order_by="pubDate", order_dir="desc")
-            print("--- SORTED BY PUBDATE DESCENDING ---")
-            print(json_output_desc[:1000] + "\n...[truncated]...\n") 
-            
-            # Example 2: Sort by Title, Ascending (A-Z)
-            json_output_asc = fetch_rss_as_json(test_url, order_by="title", order_dir="asc")
-            print("--- SORTED BY TITLE ASCENDING ---")
-            print(json_output_asc[:1000] + "\n...[truncated]...\n")
-        """
+        # Retornar una respuesta HTTP limpia con el Content-Type correcto para JSON
+        return http.request.make_response(
+            json.dumps(response_data, indent=4),
+            headers=[('Content-Type', 'application/json')]
+        )

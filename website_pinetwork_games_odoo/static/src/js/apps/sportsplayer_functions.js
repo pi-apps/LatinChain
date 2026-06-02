@@ -1,10 +1,10 @@
 // Define our target RSS feeds globally
 const SPORT_FEEDS = [
     { id: 'soccer', name: 'Soccer', icon: '⚽', url: 'https://feeds.bbci.co.uk/sport/football/rss.xml' },
-    { id: 'basketball', name: 'Basketball', icon: '🏀', url: 'https://www.espn.com/espn/rss/nba/news' },
+    { id: 'basketball', name: 'Basketball', icon: '🏀', url: 'https://www.cbssports.com/rss/headlines/nba/' },
     { id: 'f1', name: 'Formula 1', icon: '🏎️', url: 'https://feeds.bbci.co.uk/sport/formula1/rss.xml' },
     { id: 'tennis', name: 'Tennis', icon: '🎾', url: 'https://feeds.bbci.co.uk/sport/tennis/rss.xml' },
-    { id: 'nfl', name: 'Amer. Football', icon: '🏈', url: 'https://www.espn.com/espn/rss/nfl/news' },
+    { id: 'nfl', name: 'Amer. Football', icon: '🏈', url: 'https://www.cbssports.com/rss/headlines/nfl/' },
     { id: 'golf', name: 'Golf', icon: '⛳', url: 'https://feeds.bbci.co.uk/sport/golf/rss.xml' }
 ];
 

@@ -1,10 +1,10 @@
 // Define our target Crypto RSS feeds globally
 const CRYPTO_FEEDS = [
-    { id: 'coindesk', name: 'CoinDesk', icon: '📰', url: 'https://www.coindesk.com/arc/outboundfeeds/rss/' },
     { id: 'cointelegraph', name: 'Cointelegraph', icon: '⚡', url: 'https://cointelegraph.com/rss' },
     { id: 'bitcoin', name: 'Bitcoin.com', icon: '₿', url: 'https://news.bitcoin.com/feed/' },
     { id: 'cryptoslate', name: 'CryptoSlate', icon: '📈', url: 'https://cryptoslate.com/feed/' },
-    { id: 'decrypt', name: 'Decrypt', icon: '🌐', url: 'https://decrypt.co/feed' }
+    { id: 'decrypt', name: 'Decrypt', icon: '🌐', url: 'https://decrypt.co/feed' },
+    { id: 'coindesk', name: 'CoinDesk', icon: '📰', url: 'https://www.coindesk.com/arc/outboundfeeds/rss/' },
 ];
 
 // Retrieve saved order from localStorage or use default
@@ -53,7 +53,7 @@ async function fetchFeed(feedId) {
 
     // Attempt 1: rss2json API (clean, fast JSON format)
     try {
-        const res = await fetch(`/fetch-rss-as-json?rss_url=${encodeURIComponent(sport.url)}&order_by=pubDate&order_dir=desc`);
+        const res = await fetch(`/fetch-rss-as-json?rss_url=${encodeURIComponent(feed.url)}&order_by=pubDate&order_dir=desc`);
         //const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&order_by=pubDate&order_dir=desc`);
         const data = await res.json();
         if (data.status === 'ok') {
