@@ -78,7 +78,7 @@ function openInNewTabAds(url) {
     is_open_tab_ads = true;
     
     document.getElementById('GoForwardLink').href = url;
-    document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">LatinChain Center</div>';
+    document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-arrows-to-circle"></i></div> <div style="display: inline">LatinChain Center</div>';
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow1').style.display = 'flex'; // Use 'flex' instead of 'block'
