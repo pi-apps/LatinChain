@@ -52,27 +52,6 @@ function showImageModal(imageUrl, captionText) {
     $("#open_modal").click();
 }
 
-function openInNewTab(url) {
-  
-    is_open_tab = true;
-    
-    document.getElementById('GoForwardLink').href = url;
-    document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-forward"></i></div> <div style="display: inline">Go to external link</div>';
-    document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
-    document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
-    document.getElementById('GoForwardShow1').style.display = 'none'; // Use 'flex' instead of 'block'
-    document.getElementById('GoForwardShow2').style.display = 'none'; // Use 'flex' instead of 'block'
-    document.getElementById('GoForwardShow3').style.display = 'flex'; // Use 'flex' instead of 'block'
-    document.getElementById('all-messages').style.display = 'none'; // Use 'flex' instead of 'block'
-    
-    $('.darkmode-toggle').css('display', 'none');
-    if($('.darkmode-toggle--white').length === 0)
-        $('.darkmode-layer--button').css('display', 'none');
-    else
-        $('.darkmode-toggle--white').css('display', 'none');
-    
-}
-
 function openInNewTabAds(url) {
     
     is_open_tab_ads = true;
@@ -807,7 +786,7 @@ async function showPiInterstitialAds(Pi, url) {
             {
                 if(url && url != false && url != undefined)
                 {
-                    openInNewTab(url);
+                    //openInNewTab(url);
                     //window.location.href = url;
                 }
                 
@@ -840,7 +819,7 @@ async function showPiInterstitialAds(Pi, url) {
         
         if(url && url != false && url != undefined)
         {
-            openInNewTab(url);
+            //openInNewTab(url);
             //window.location.href = url;
         }
         
@@ -864,7 +843,7 @@ async function showPiInterstitialAds(Pi, url) {
         
         if(url && url != false && url != undefined)
         {
-            openInNewTab(url);
+            //openInNewTab(url);
             //window.location.href = url;
         }
         //$("#button_reward_ad").prop( "disabled", false );
@@ -2210,11 +2189,6 @@ $( document ).ready(function() {
         $.colorbox({fixed: true, href:"/get-credits", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
-    $( ".cryptonews" ).click(function() {
-        openInNewTab("https://news.latin-chain.com/?v=1.102"+hashLatinChainGoogleTranslate);
-        //window.location.href = "https://news.latin-chain.com/?v=1.102"+hashLatinChainGoogleTranslate;
-    });
-    
     /*$( ".fans-shopping-club" ).click(function() {
         window.location.href = "https://club.latin-chain.com";
     });*/
@@ -2257,12 +2231,6 @@ $( document ).ready(function() {
         $.colorbox({fixed: true, href:"https://www.odoo.com/slides", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     */
-
-    $( ".sport-results" ).click(function() {
-        openInNewTab("https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate);
-        //window.location.href = "https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate;
-        //$.colorbox({fixed: true, href:"https://sports.latin-chain.com/?v=1.103"+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
     
     /*
     $( ".mahjong" ).click(function() {
@@ -2367,13 +2335,6 @@ $( document ).ready(function() {
     
     $( ".cointelegraph" ).click(function() {
         $.colorbox({fixed: true, href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-    });
-    
-    $( ".tvonline" ).click(function() {
-        //window.location.href = "https://trends.latin-chain.com/plutotv/";
-        //$.colorbox({fixed: true, href:"https://trends.latin-chain.com/tvtube/?v=1.102", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
-        
-        openInNewTab("https://trends.latin-chain.com/tvtube/?v=1.115"+hashLatinChainGoogleTranslate);
     });
     
     $( ".latinchain-ecosystem" ).click(function() {
