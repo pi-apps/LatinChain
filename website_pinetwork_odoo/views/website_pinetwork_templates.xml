@@ -103,7 +103,7 @@
                                       // An explanation of the payment - will be shown to the user:
                                       memo: "Demo transfer request", // e.g: "Digital kitten #1234",
                                       // An arbitrary developer-provided metadata object - for your own usage:
-                                      metadata: { paymentType: "donation" /* ... */ }, // e.g: { kittenId: 1234 }
+                                      metadata: { paymentType: "payment" /* ... */ }, // e.g: { kittenId: 1234 }
                                     }, {
                                       // Callbacks you need to implement - read more about those in the detailed docs linked below:
                                       onReadyForServerApproval: function(paymentId) {

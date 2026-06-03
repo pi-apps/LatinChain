@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-03 11:12+0000\n"
-"PO-Revision-Date: 2026-06-03 11:12+0000\n"
+"POT-Creation-Date: 2026-06-03 19:59+0000\n"
+"PO-Revision-Date: 2026-06-03 19:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -642,7 +642,7 @@ msgstr ""
 msgid ""
 "<br/>\n"
 "                                    <br/>\n"
-"                                    Click in Clear Cache or <i class=\"fa fa-refresh\"/> if button Donate doesn't activate.\n"
+"                                    Click in Clear Cache or <i class=\"fa fa-refresh\"/> if button Pay doesn't activate.\n"
 "                                    <br/>\n"
 "                                    <br/>"
 msgstr ""
@@ -3016,22 +3016,8 @@ msgid "Domino"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-msgid "Donate Pi cryptocurrency here"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Donate Pi to unblock LatinChain Platform"
-msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-msgid "Donate to unblock with"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3513,7 +3499,7 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid ""
-"I accept this is a donation and if I pay, I will receive 30 available days "
+"I accept this is a payment and if I pay, I will receive 30 available days "
 "from today, to use this app!"
 msgstr ""
 
@@ -4670,6 +4656,20 @@ msgid "Pay 10 Latin points, earn 1 Chess points"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+msgid "Pay Pi cryptocurrency here"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
+msgid "Pay to unblock with"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "PayPi"
 msgstr ""
@@ -4679,7 +4679,7 @@ msgstr ""
 msgid ""
 "Paying Pi (Working now):\n"
 "                                                    <br/>\n"
-"                                                    I accept this is a donation and if I pay Pi, I will receive 30 available days from today, to use this app!\n"
+"                                                    I accept this is a payment and if I pay Pi, I will receive 30 available days from today, to use this app!\n"
 "                                                    <br/><br/>\n"
 "                                                    You'll get"
 msgstr ""
@@ -5782,14 +5782,18 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
+msgid "Thank you for your donation. You were unblocked."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.snake
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.test_your_brain
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
-msgid "Thank you for your donation. You were unblocked."
+msgid "Thank you for your payment. You were unblocked."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -6071,8 +6075,12 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Unblock LatinChain going to Donate button."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
+msgid "Unblock LatinChain going to Pay button."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -6583,8 +6591,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
 msgid ""
-"You should click on checkbox to accept this is a donation and if you pay, "
-"you will receive 30 available days from today, to use this app!"
+"You should click on checkbox to accept this is a payment and if you pay, you"
+" will receive 30 available days from today, to use this app!"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo

@@ -468,7 +468,7 @@ $( document ).ready(function() {
               // An explanation of the payment - will be shown to the user:
               memo: "Unlock LatinChain PREMIUM (Snake)", // e.g: "Digital kitten #1234",
               // An arbitrary developer-provided metadata object - for your own usage:
-              metadata: { paymentType: "donation", pi_user_referred_by: pi_user_referred /* ... */ }, // e.g: { kittenId: 1234 }
+              metadata: { paymentType: "payment", pi_user_referred_by: pi_user_referred /* ... */ }, // e.g: { kittenId: 1234 }
             }, {
                   // Callbacks you need to implement - read more about those in the detailed docs linked below:
                   onReadyForServerApproval: function(paymentId) { 
