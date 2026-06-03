@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-03 19:59+0000\n"
-"PO-Revision-Date: 2026-06-03 19:59+0000\n"
+"POT-Creation-Date: 2026-06-03 20:37+0000\n"
+"PO-Revision-Date: 2026-06-03 20:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -3144,11 +3144,6 @@ msgid "Domino"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Donate Pi to unblock LatinChain Platform"
-msgstr "Donar Pi para desbloquear LatinChain Platform"
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.bubble_shooter
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calcplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
@@ -4835,6 +4830,11 @@ msgid "Pay Pi cryptocurrency here"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Pay Pi to unblock LatinChain PREMIUM"
+msgstr "Paga Pi para desbloquear LatinChain PREMIUM"
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -6268,10 +6268,6 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Unblock LatinChain going to Donate button."
-msgstr "Desbloquea LatinChain yendo al botón Donar."
-
-#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Unblock LatinChain going to Pay button."
 msgstr "Desbloquea LatinChain yendo al botón Donar."
