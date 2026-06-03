@@ -1981,7 +1981,8 @@ class PiNetworkBaseController(http.Controller):
                 headers=[('Content-Type', 'application/json')]
             )
 
-        limited_entries = parsed_feed.entries[:10]
+        #limited_entries = parsed_feed.entries[:10]
+        limited_entries = parsed_feed.entries
         
         # Check if the feed was fetched successfully
         if parsed_feed.bozo and not limited_entries:
