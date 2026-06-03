@@ -362,7 +362,7 @@ class admin_apps(models.Model):
     """
     
     def _get_latinchain_specs(self):
-        return '/website_pinetwork_games_odoo/static/src/img/specs/latinchain-specs.jpg?v=1.104';
+        return '/website_pinetwork_games_odoo/static/src/img/specs/latinchain-specs.jpg?v=1.105';
     
     def _compute_points_latin_daily_total(self):
         for i in self:
