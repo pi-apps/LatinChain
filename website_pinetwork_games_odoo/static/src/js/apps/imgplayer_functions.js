@@ -109,7 +109,7 @@ async function recognizeText() {
             // Note: Some parameters might not be directly available in `createWorker` and
             // are better set using `setParameters`.
             await ocrWorker.setParameters({
-                preserve_word_spaces: '1', // Note: The parameter name is usually `preserve_word_spaces`
+                //preserve_word_spaces: '1', // Note: The parameter name is usually `preserve_word_spaces`
                 preserve_interword_spaces: '1',
                 tessedit_pageseg_mode: '11',
             });
