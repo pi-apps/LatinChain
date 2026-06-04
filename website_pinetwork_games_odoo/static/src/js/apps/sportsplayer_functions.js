@@ -193,7 +193,7 @@ async function fetchAndPopulate(forceRefresh = false) {
         const items = feedsDataCache[sportId] || [];
         
         // Smart Filter: Detect items that look like match results or scores
-        const resultRegex = /\b\d+\s*-\s*\d+\b|\b(beat|win|draw|defeat|stun|crushe|rout|vs\.?|v\.)\b/i;
+        const resultRegex = /\b\d+\s*-\s*\d+\b|\b(beat|win|draw|defeat|stun|crushe|rout|match|lose|vs\.?|v\.)\b/i;
         let results = items.filter(item => resultRegex.test(item.title));
         let news = items.filter(item => !resultRegex.test(item.title));
 
