@@ -111,7 +111,7 @@ async function recognizeText() {
             await ocrWorker.setParameters({
                 //preserve_word_spaces: '1', // Note: The parameter name is usually `preserve_word_spaces`
                 preserve_interword_spaces: '1',
-                tessedit_pageseg_mode: '11',
+                tessedit_pageseg_mode: '6',
             });
 
             const processedImageUrl = await preprocessImage(photos[currentPhotoIndex].url);
