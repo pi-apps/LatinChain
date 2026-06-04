@@ -114,10 +114,10 @@ async function recognizeText() {
                 tessedit_pageseg_mode: '11',
             });
 
-            const processedImageUrl = await preprocessImage(photos[currentPhotoIndex].url);
+            //const processedImageUrl = await preprocessImage(photos[currentPhotoIndex].url);
             // Recognize text from the current photo's URL
             //const { data: { text } } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
-            const { data } = await ocrWorker.recognize(processedImageUrl);
+            const { data } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
             
             const textoLimpio = data.words
                 .filter(word => word.confidence > 65) // Ajusta este número (0-100) según necesites
