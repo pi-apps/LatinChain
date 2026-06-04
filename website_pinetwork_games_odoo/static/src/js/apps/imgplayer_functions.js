@@ -116,10 +116,17 @@ async function recognizeText() {
 
             const processedImageUrl = await preprocessImage(photos[currentPhotoIndex].url);
             // Recognize text from the current photo's URL
-            const { data: { text } } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
+            //const { data: { text } } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
+            const { data } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
+            
+            const textoLimpio = data.words
+                .filter(word => word.confidence > 65) // Ajusta este número (0-100) según necesites
+                .map(word => word.text)
+                .join(' ');
              
             // Update the UI with the recognized text
-            recognizedTextElement.textContent = text.trim() || "No text found.";
+            //recognizedTextElement.textContent = text.trim() || "No text found.";
+            recognizedTextElement.textContent = textoLimpio.trim() || "No text found.";
              
             await ocrWorker.terminate();
         }
