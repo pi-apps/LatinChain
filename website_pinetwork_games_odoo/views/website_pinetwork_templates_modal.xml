@@ -157,7 +157,7 @@
 
                     <body t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                         
-                        <div id="open_mainnet_message" style="display:none;">You can Donate on LatinChain Mainnet and start using it everyday being verified during a month. Or access as unverified user.<br/>Which one you choose?.</div>
+                        <div id="open_mainnet_message" style="display:none;">You can Pay Pi on LatinChain Mainnet to become PREMIUM and start using it everyday being verified during a month. Or access as unverified user.<br/>Which one you choose?.</div>
                         <div class="container form-group" style="text-align:center; max-width: 810px">
                             <div style="font-size: 90%; word-break: break-word;">
                                 <div style="display: inline" t-if="not onlymainnet">

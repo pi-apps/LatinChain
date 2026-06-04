@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-12 22:30+0000\n"
-"PO-Revision-Date: 2025-11-12 22:30+0000\n"
+"POT-Creation-Date: 2026-06-04 01:08+0000\n"
+"PO-Revision-Date: 2026-06-04 01:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
+msgid "#Comment #Like #Share #Follow"
+msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.mainpage
@@ -43,14 +48,12 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_credits
-msgid "<strong>Donators</strong>"
+msgid "<strong>PREMIUM Users</strong>"
 msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_winners_zone
-msgid ""
-"<strong>None prize will be paid by now, but you can play anytime!. And we "
-"are incorporating the price of the market for Pi.</strong>"
+msgid "<strong>You can play anytime!.</strong>"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -167,6 +170,21 @@ msgid "Amount Latin Pay"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__amount_latinchain_token
+msgid "Amount LatinChain Token Pay"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
+msgid "Amount LatinChain Token Price config"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__amount_percentage_external_apps
+msgid "Amount Percentage External Apps"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
 msgid "Amount Price config"
 msgstr ""
@@ -179,6 +197,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__amount_price_apikey
 msgid "Amount price apikey"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__amount_price_topay_usd
+msgid "Amount price to pay (USD)"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -310,8 +333,6 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model:ir.actions.server,name:website_pinetwork_odoo.check_users_winners_base_v1_ir_actions_server
-#: model:ir.cron,cron_name:website_pinetwork_odoo.check_users_winners_base_v1
-#: model:ir.cron,name:website_pinetwork_odoo.check_users_winners_base_v1
 msgid "Check Users Winners"
 msgstr ""
 
@@ -416,12 +437,6 @@ msgid "Cut at:"
 msgstr ""
 
 #. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
-msgid "DONATE"
-msgstr ""
-
-#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__days_available
 msgid "Days available"
 msgstr ""
@@ -477,20 +492,20 @@ msgid "Devs config"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__discount_active
+msgid "Discount"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__discount_percentage
+msgid "Discount percentage"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__display_name
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__display_name
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__display_name
 msgid "Display Name"
-msgstr ""
-
-#. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
-msgid "Donate Pi to unblock LatinChain Academy"
-msgstr ""
-
-#. module: website_pinetwork_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
-msgid "Donate Pi to unblock LatinChain Sports"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -536,6 +551,16 @@ msgid "Global ranking ("
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+msgid "Go to Mainnet"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+msgid "Go to Testnet"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__google_adsense_ads_txt
 msgid "Google Adsense ads.txt"
 msgstr ""
@@ -550,6 +575,31 @@ msgstr ""
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__id
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__id
 msgid "ID"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.pi_users_view_form
+msgid "IQ"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__iq_category
+msgid "IQ Category"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__iq_date
+msgid "IQ Date"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__iq_name
+msgid "IQ Name"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__iq_result
+msgid "IQ Result"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -612,6 +662,7 @@ msgid "Latin points:"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__token_type__latinchain
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.general_ranking
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_points
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.list_streamer_zone
@@ -729,6 +780,22 @@ msgid "Pay Devs Percent"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
+msgid "Pay Pi"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_academy
+msgid "Pay Pi to unblock LatinChain Academy"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.latinchain_sports
+msgid "Pay Pi to unblock LatinChain Sports"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.admin_pi_apps_view_form
 msgid "Pay Winners"
 msgstr ""
@@ -746,6 +813,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__payment_id
 msgid "PaymentId"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields.selection,name:website_pinetwork_odoo.selection__pi_transactions__token_type__pinetwork
+msgid "Pi"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -834,6 +906,11 @@ msgid "Pi User Points"
 msgstr ""
 
 #. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__pi_user_referred_by
+msgid "Pi User Referred by"
+msgstr ""
+
+#. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__pi_user_role
 msgid "Pi User Role"
 msgstr ""
@@ -855,6 +932,21 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_datetime
 msgid "Points Datetime"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_users__points_latin_daily
+msgid "Points Latin_daily"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__points_latin_daily_total
+msgid "Points Latin_daily total"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_admin_apps__points_latin_daily_total_notcomputed
+msgid "Points Latin_daily total notcomputed"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -973,6 +1065,11 @@ msgstr ""
 #. module: website_pinetwork_odoo
 #: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__to_address
 msgid "To address"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.model.fields,field_description:website_pinetwork_odoo.field_pi_transactions__token_type
+msgid "Token type"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -1098,7 +1195,7 @@ msgstr ""
 msgid ""
 "UTC<br/><br/>\n"
 "                        \n"
-"                        <strong>LatinChain give its thanks to all the donators who donate Pi:</strong><br/>"
+"                        <strong>LatinChain give its thanks to all the PREMIUM users who pay Pi:</strong><br/>"
 msgstr ""
 
 #. module: website_pinetwork_odoo
@@ -1136,9 +1233,17 @@ msgstr ""
 
 #. module: website_pinetwork_odoo
 #: model:ir.actions.server,name:website_pinetwork_odoo.update_amount_price_ir_actions_server
-#: model:ir.cron,cron_name:website_pinetwork_odoo.update_amount_price
-#: model:ir.cron,name:website_pinetwork_odoo.update_amount_price
 msgid "Update Amount Price"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model:ir.actions.server,name:website_pinetwork_odoo.update_amount_price_v1_ir_actions_server
+msgid "Update Amount Price v1"
+msgstr ""
+
+#. module: website_pinetwork_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_odoo.pi_users_view_form
+msgid "User"
 msgstr ""
 
 #. module: website_pinetwork_odoo
