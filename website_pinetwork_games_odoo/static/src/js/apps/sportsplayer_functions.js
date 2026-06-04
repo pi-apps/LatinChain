@@ -1,11 +1,11 @@
 // Define our target RSS feeds globally
 const SPORT_FEEDS = [
-    { id: 'soccer', name: 'Soccer', icon: '⚽', url: 'https://feeds.bbci.co.uk/sport/football/rss.xml' },
+    { id: 'soccer', name: 'Soccer', icon: '⚽', url: 'https://www.cbssports.com/rss/headlines/soccer/' },
     { id: 'basketball', name: 'Basketball', icon: '🏀', url: 'https://www.cbssports.com/rss/headlines/nba/' },
-    { id: 'f1', name: 'Formula 1', icon: '🏎️', url: 'https://feeds.bbci.co.uk/sport/formula1/rss.xml' },
-    { id: 'tennis', name: 'Tennis', icon: '🎾', url: 'https://feeds.bbci.co.uk/sport/tennis/rss.xml' },
+    { id: 'f1', name: 'Formula 1', icon: '🏎️', url: 'https://www.motorsport.com/rss/f1/news/' },
+    { id: 'tennis', name: 'Tennis', icon: '🎾', url: 'https://www.cbssports.com/rss/headlines/tennis/' },
     { id: 'nfl', name: 'Amer. Football', icon: '🏈', url: 'https://www.cbssports.com/rss/headlines/nfl/' },
-    { id: 'golf', name: 'Golf', icon: '⛳', url: 'https://feeds.bbci.co.uk/sport/golf/rss.xml' }
+    { id: 'golf', name: 'Golf', icon: '⛳', url: 'https://www.cbssports.com/rss/headlines/golf/' }
 ];
 
 // Retrieve saved order from localStorage or use default

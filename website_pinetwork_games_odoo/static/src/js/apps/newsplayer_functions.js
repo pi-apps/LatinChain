@@ -4,7 +4,7 @@ const CRYPTO_FEEDS = [
     { id: 'bitcoin', name: 'Bitcoin.com', icon: '₿', url: 'https://news.bitcoin.com/feed/' },
     //{ id: 'cryptoslate', name: 'CryptoSlate', icon: '📈', url: 'https://cryptoslate.com/feed/' },
     { id: 'decrypt', name: 'Decrypt', icon: '🌐', url: 'https://decrypt.co/feed' },
-    { id: 'coindesk', name: 'CoinDesk', icon: '📰', url: 'https://www.coindesk.com/arc/outboundfeeds/rss/' },
+    //{ id: 'coindesk', name: 'CoinDesk', icon: '📰', url: 'https://www.coindesk.com/arc/outboundfeeds/rss/' },
 ];
 
 // Retrieve saved order from localStorage or use default
