@@ -26,6 +26,46 @@ const selectElement = document.getElementById('language-select');
 const outputDiv = document.getElementById('output');
 const codesParagraph = document.getElementById('language-codes');
 
+function preprocessImage(imageSrc) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Scaling the image up by 2x often helps Tesseract read smaller text
+            canvas.width = img.width * 2;
+            canvas.height = img.height * 2;
+            
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            
+            // Get image data to manipulate pixels
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            
+            // Convert to grayscale and bump contrast
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                // Standard grayscale conversion
+                const gray = 0.299 * r + 0.587 * g + 0.114 * b; 
+                
+                // Simple threshold (binarization) to make text black and background white
+                // Adjust the '128' threshold depending on your typical image lighting
+                const threshold = 128; 
+                const color = gray < threshold ? 0 : 255;
+                
+                data[i] = data[i+1] = data[i+2] = color;
+            }
+            
+            ctx.putImageData(imageData, 0, 0);
+            resolve(canvas.toDataURL());
+        };
+        img.src = imageSrc;
+    });
+}
+
 /**
  * Recognizes text from the current image and updates the UI.
  */
@@ -69,9 +109,12 @@ async function recognizeText() {
             // Note: Some parameters might not be directly available in `createWorker` and
             // are better set using `setParameters`.
             await ocrWorker.setParameters({
-                preserve_word_spaces: '1' // Note: The parameter name is usually `preserve_word_spaces`
+                preserve_word_spaces: '1', // Note: The parameter name is usually `preserve_word_spaces`
+                preserve_interword_spaces: '1',
+                tessedit_pageseg_mode: '11',
             });
 
+            const processedImageUrl = await preprocessImage(photos[currentPhotoIndex].url);
             // Recognize text from the current photo's URL
             const { data: { text } } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
              
