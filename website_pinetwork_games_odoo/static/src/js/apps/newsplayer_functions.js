@@ -192,7 +192,7 @@ async function fetchAndPopulate(forceRefresh = false) {
         const items = feedsDataCache[feedId] || [];
         
         // Crypto Smart Filter: Detect items related to price movements, market analysis, or rapid shifts
-        const marketRegex = /\$|\b(price|surge|plummet|drop|hit|rallies|rally|analyse|analysis|prediction|bull|bear|ATH|ETF)\b/i;
+        const marketRegex = /\$|\b(price|surges|plummets|drops|hits|rallies|analysis|prediction|bull|bear|ATH|ETF)\b/i;
         let results = items.filter(item => marketRegex.test(item.title));
         let news = items.filter(item => !marketRegex.test(item.title));
 
