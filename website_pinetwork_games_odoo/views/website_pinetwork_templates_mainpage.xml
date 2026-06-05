@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.181"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.182"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3475,7 +3475,7 @@
                                     </div>
                                 </t>-->
                                 
-                                <div class="row getverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
+                                <!--<div class="row getverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
                                     <div style="text-align:center;" class="col-12">
                                         <a class="rounded" href="/pinetwork" target="_self">
                                             <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_lite.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
@@ -3486,10 +3486,14 @@
                                     <div style="text-align:center;" class="col-12">
                                         <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_premium.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
                                     </div>
+                                </div>-->
+                                
+                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                    <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">One Time Unlock</div></a>
                                 </div>
                                 
-                                <div style="margin-top: 10px;" class="row" id="GoForwardShow1">
-                                    <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (Pay Pi)</div></a>
+                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">One Time Unlock</div></a>
                                 </div>
                                 
                                 <div class="getverified">
@@ -3502,12 +3506,8 @@
                                     </div>
                                 </div>
                                 
-                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                    <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-arrows-to-circle"></i></div> <div style="display: inline">LatinChain Center</div></a>
-                                </div>
-                                
-                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-arrows-to-circle"></i></div> <div style="display: inline">LatinChain Center</div></a>
+                                <div style="margin-top: 10px;" class="row" id="GoForwardShow1">
+                                    <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (Pay Pi)</div></a>
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row">
