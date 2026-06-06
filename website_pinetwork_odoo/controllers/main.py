@@ -1259,6 +1259,7 @@ class PiNetworkBaseController(http.Controller):
                     
                     if kw['app_client'] == "auth_platform":
                         if points > 0 and points <= 40:
+                            values.update({'points_latin': pi_users_list[0].points_latin + points})
                             values.update({'points_chess': pi_users_list[0].points_chess + points})
                             values.update({'points_chess_wins': pi_users_list[0].points_chess_wins + 1 })
                             if points > pi_users_list[0].points_chess_last:
@@ -1277,6 +1278,7 @@ class PiNetworkBaseController(http.Controller):
                                             exchanged_latin = True
                     elif kw['app_client'] == "auth_pidoku":
                         if points > 0 and points <= 24:
+                            values.update({'points_latin': pi_users_list[0].points_latin + points})
                             values.update({'points_sudoku': pi_users_list[0].points_sudoku + points})
                             values.update({'points_sudoku_wins': pi_users_list[0].points_sudoku_wins + 1 })
                             if points > pi_users_list[0].points_sudoku_last:
@@ -1295,6 +1297,7 @@ class PiNetworkBaseController(http.Controller):
                                             exchanged_latin = True
                     elif kw['app_client'] == "auth_snake":
                         if points > 0:
+                            values.update({'points_latin': pi_users_list[0].points_latin + points})
                             values.update({'points_snake': pi_users_list[0].points_snake + points})
                             values.update({'points_snake_wins': pi_users_list[0].points_snake_wins + 1 })
                             if points > pi_users_list[0].points_snake_last:
