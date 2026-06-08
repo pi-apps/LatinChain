@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.184"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.185"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1548,12 +1548,13 @@
                                 /* The scrollable track */
                                 .carousel-track {
                                   display: flex;
-                                  gap: 1rem; /* Space between slides */
+                                  gap: 1rem;
                                   overflow-x: auto;
                                   scroll-snap-type: x mandatory;
-                                  scroll-behavior: smooth;
-                                  -webkit-overflow-scrolling: touch; /* Smooth swiping on iOS */
-                                  scrollbar-width: none; /* Hides scrollbar in Firefox */
+                                  -webkit-overflow-scrolling: touch;
+                                  scrollbar-width: none;
+                                  position: relative; /* ADDED */
+                                  /* REMOVED: scroll-behavior: smooth; */
                                 }
 
                                 /* Hides scrollbar in Chrome/Safari/Edge */

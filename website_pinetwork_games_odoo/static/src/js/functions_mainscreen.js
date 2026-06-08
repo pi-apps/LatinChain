@@ -2411,50 +2411,73 @@ $( document ).ready(function() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('track');
+  let slides = Array.from(document.querySelectorAll('.carousel-slide'));
   const nextBtn = document.querySelector('.next');
   const prevBtn = document.querySelector('.prev');
   
-  const intervalTime = 10000; // 10 seconds in milliseconds
+  const intervalTime = 10000;
   let autoPlayTimer;
 
-  // Function to handle moving to the next slide
+  // 1. Create the Clones for infinite swiping
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
+  
+  // Add clones to the track
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+
+  // Update our slides array to include the newly added clones
+  slides = Array.from(document.querySelectorAll('.carousel-slide'));
+
+  // 2. Initial Setup
+  // Wait a fraction of a second for the browser to render, 
+  // then hide the left clone by scrolling to the first REAL slide.
+  setTimeout(() => {
+    track.scrollLeft = slides[1].offsetLeft;
+  }, 0);
+
+  // 3. The Infinite Loop Magic (Listens to native scrolling/swiping)
+  track.addEventListener('scroll', () => {
+    // If the user swipes all the way to the left-most clone...
+    if (track.scrollLeft === 0) {
+      // Instantly jump to the real last slide (disabling snap temporarily prevents a visual glitch)
+      track.style.scrollSnapType = 'none';
+      track.scrollLeft = slides[slides.length - 2].offsetLeft;
+      setTimeout(() => { track.style.scrollSnapType = 'x mandatory'; }, 10);
+    }
+    
+    // If the user swipes all the way to the right-most clone...
+    // (We use a 2px buffer because mobile screens sometimes use fractional pixels)
+    if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 2) {
+      track.style.scrollSnapType = 'none';
+      track.scrollLeft = slides[1].offsetLeft;
+      setTimeout(() => { track.style.scrollSnapType = 'x mandatory'; }, 10);
+    }
+  });
+
+  // 4. Update Navigation Buttons
+  // Dynamically calculate the exact scroll width (including CSS gaps)
+  const getScrollAmount = () => slides[1].offsetLeft - slides[0].offsetLeft;
+
   const moveToNextSlide = () => {
-    const slideWidth = track.clientWidth;
-    
-    // If at the last slide, scroll smoothly back to the first
-    if (track.scrollLeft + slideWidth >= track.scrollWidth - 5) {
-      track.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      // Otherwise, move one slide right
-      track.scrollBy({ left: slideWidth, behavior: 'smooth' });
-    }
+    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
   };
 
-  // Function to handle moving to the previous slide
   const moveToPrevSlide = () => {
-    const slideWidth = track.clientWidth;
-    
-    // If at the first slide (scrollLeft is 0, adding a 5px buffer), scroll to the last
-    if (track.scrollLeft <= 5) {
-      track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
-    } else {
-      // Otherwise, move one slide left
-      track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
-    }
+    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   };
 
-  // Start the timer
+  // 5. AutoPlay Logic
   const startAutoPlay = () => {
     autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
   };
 
-  // Reset the timer when the user manually interacts
   const resetAutoPlay = () => {
     clearInterval(autoPlayTimer);
     startAutoPlay();
   };
 
-  // Button Listeners
+  // Button Event Listeners
   nextBtn.addEventListener('click', () => {
     moveToNextSlide();
     resetAutoPlay();
@@ -2465,16 +2488,15 @@ document.addEventListener('DOMContentLoaded', () => {
     resetAutoPlay();
   });
 
-  // Pause autoplay while a user is actively swiping on mobile
+  // Pause autoplay while swiping on mobile
   track.addEventListener('touchstart', () => {
     clearInterval(autoPlayTimer);
   }, { passive: true });
 
-  // Resume autoplay when they finish swiping
   track.addEventListener('touchend', () => {
     startAutoPlay();
   }, { passive: true });
 
-  // Kick off the auto-play when the page loads
+  // Start the timer!
   startAutoPlay();
 });
