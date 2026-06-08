@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.183"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.184"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1607,67 +1607,6 @@
                                   }
                                 }
                             </style>
-                            
-                            <script>
-                                document.addEventListener('DOMContentLoaded', () => {
-                                  const track = document.getElementById('track');
-                                  const nextBtn = document.querySelector('.next');
-                                  const prevBtn = document.querySelector('.prev');
-                                  
-                                  const intervalTime = 10000; // 10 seconds in milliseconds
-                                  let autoPlayTimer;
-
-                                  // Function to handle moving to the next slide
-                                  const moveToNextSlide = () => {
-                                    const slideWidth = track.clientWidth;
-                                    
-                                    // Check if we've reached the last slide (adding a 5px buffer for rounding errors)
-                                    if (track.scrollLeft + slideWidth >= track.scrollWidth - 5) {
-                                      // If at the end, scroll smoothly back to the first slide
-                                      track.scrollTo({ left: 0, behavior: 'smooth' });
-                                    } else {
-                                      // Otherwise, just move one slide to the right
-                                      track.scrollBy({ left: slideWidth, behavior: 'smooth' });
-                                    }
-                                  };
-
-                                  // Start the timer
-                                  const startAutoPlay = () => {
-                                    autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
-                                  };
-
-                                  // Reset the timer when the user manually interacts
-                                  const resetAutoPlay = () => {
-                                    clearInterval(autoPlayTimer);
-                                    startAutoPlay();
-                                  };
-
-                                  // Button Listeners
-                                  nextBtn.addEventListener('click', () => {
-                                    moveToNextSlide();
-                                    resetAutoPlay(); // Reset timer so it doesn't double-skip
-                                  });
-
-                                  prevBtn.addEventListener('click', () => {
-                                    const slideWidth = track.clientWidth;
-                                    track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
-                                    resetAutoPlay();
-                                  });
-
-                                  // Pause autoplay while a user is actively swiping on mobile
-                                  track.addEventListener('touchstart', () => {
-                                    clearInterval(autoPlayTimer);
-                                  }, { passive: true });
-
-                                  // Resume autoplay when they finish swiping
-                                  track.addEventListener('touchend', () => {
-                                    startAutoPlay();
-                                  }, { passive: true });
-
-                                  // Kick off the auto-play when the page loads
-                                  startAutoPlay();
-                                });
-                            </script>
                             
                             <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                                 <div style="margin-bottom:5px" class="border-bottom">

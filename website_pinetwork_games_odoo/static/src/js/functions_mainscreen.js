@@ -2408,3 +2408,73 @@ $( document ).ready(function() {
     });
     
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('track');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+  
+  const intervalTime = 10000; // 10 seconds in milliseconds
+  let autoPlayTimer;
+
+  // Function to handle moving to the next slide
+  const moveToNextSlide = () => {
+    const slideWidth = track.clientWidth;
+    
+    // If at the last slide, scroll smoothly back to the first
+    if (track.scrollLeft + slideWidth >= track.scrollWidth - 5) {
+      track.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      // Otherwise, move one slide right
+      track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+    }
+  };
+
+  // Function to handle moving to the previous slide
+  const moveToPrevSlide = () => {
+    const slideWidth = track.clientWidth;
+    
+    // If at the first slide (scrollLeft is 0, adding a 5px buffer), scroll to the last
+    if (track.scrollLeft <= 5) {
+      track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+    } else {
+      // Otherwise, move one slide left
+      track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+    }
+  };
+
+  // Start the timer
+  const startAutoPlay = () => {
+    autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
+  };
+
+  // Reset the timer when the user manually interacts
+  const resetAutoPlay = () => {
+    clearInterval(autoPlayTimer);
+    startAutoPlay();
+  };
+
+  // Button Listeners
+  nextBtn.addEventListener('click', () => {
+    moveToNextSlide();
+    resetAutoPlay();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    moveToPrevSlide();
+    resetAutoPlay();
+  });
+
+  // Pause autoplay while a user is actively swiping on mobile
+  track.addEventListener('touchstart', () => {
+    clearInterval(autoPlayTimer);
+  }, { passive: true });
+
+  // Resume autoplay when they finish swiping
+  track.addEventListener('touchend', () => {
+    startAutoPlay();
+  }, { passive: true });
+
+  // Kick off the auto-play when the page loads
+  startAutoPlay();
+});
