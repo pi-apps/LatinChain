@@ -1532,32 +1532,214 @@
                         
                         <div id="loading_word_under" style="margin-top:10px; width: 100%; display: none;"></div>
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                            <div style="margin-bottom:5px" class="border-bottom">
-                                <h5 translate="no"><strong><div style="display:inline;">#Your #Avatar &#128526;</div></strong></h5>
-                            </div>
+                        <!--<t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">-->
+                        
+                        <t t-if="true">
                             
-                            <div class="text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
-                                <div class="row justify-content-center avatar_show_blocked" style="margin-left: 1px; margin-right: 1px">
-                                    Only verified users can change their Avatar.
+                            <style>
+                                /* Base styles and Wrapper */
+                                .carousel-wrapper {
+                                  position: relative;
+                                  width: 100%;
+                                  max-width: 800px; /* Limits size on desktop */
+                                  margin: 0 auto;
+                                }
+
+                                /* The scrollable track */
+                                .carousel-track {
+                                  display: flex;
+                                  gap: 1rem; /* Space between slides */
+                                  overflow-x: auto;
+                                  scroll-snap-type: x mandatory;
+                                  scroll-behavior: smooth;
+                                  -webkit-overflow-scrolling: touch; /* Smooth swiping on iOS */
+                                  scrollbar-width: none; /* Hides scrollbar in Firefox */
+                                }
+
+                                /* Hides scrollbar in Chrome/Safari/Edge */
+                                .carousel-track::-webkit-scrollbar {
+                                  display: none;
+                                }
+
+                                /* Individual Slides */
+                                .carousel-slide {
+                                  flex: 0 0 100%; /* Mobile: 1 slide visible at a time */
+                                  scroll-snap-align: center;
+                                  height: 300px;
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                  font-size: 2rem;
+                                  font-family: sans-serif;
+                                  color: #333;
+                                  border-radius: 12px;
+                                }
+
+                                /* Navigation Buttons */
+                                .carousel-btn {
+                                  position: absolute;
+                                  top: 50%;
+                                  transform: translateY(-50%);
+                                  background: rgba(255, 255, 255, 0.8);
+                                  border: none;
+                                  width: 40px;
+                                  height: 40px;
+                                  border-radius: 50%;
+                                  cursor: pointer;
+                                  z-index: 10;
+                                  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                                  display: none; /* Hide on mobile by default */
+                                  color: black !important;
+                                }
+
+                                /* Media Query: Show buttons and adjust sizing for larger screens */
+                                @media (min-width: 768px) {
+                                  .carousel-btn {
+                                    display: block; /* Show buttons on tablets and up */
+                                  }
+                                  
+                                  .prev { left: -20px; }
+                                  .next { right: -20px; }
+                                  
+                                  .carousel-slide {
+                                    height: 400px;
+                                    /* Optional: Change flex to '0 0 calc(50% - 0.5rem)' to show 2 slides at a time */
+                                  }
+                                }
+                            </style>
+                            
+                            <script>
+                                document.addEventListener('DOMContentLoaded', () => {
+                                  const track = document.getElementById('track');
+                                  const nextBtn = document.querySelector('.next');
+                                  const prevBtn = document.querySelector('.prev');
+                                  
+                                  const intervalTime = 10000; // 10 seconds in milliseconds
+                                  let autoPlayTimer;
+
+                                  // Function to handle moving to the next slide
+                                  const moveToNextSlide = () => {
+                                    const slideWidth = track.clientWidth;
+                                    
+                                    // Check if we've reached the last slide (adding a 5px buffer for rounding errors)
+                                    if (track.scrollLeft + slideWidth >= track.scrollWidth - 5) {
+                                      // If at the end, scroll smoothly back to the first slide
+                                      track.scrollTo({ left: 0, behavior: 'smooth' });
+                                    } else {
+                                      // Otherwise, just move one slide to the right
+                                      track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+                                    }
+                                  };
+
+                                  // Start the timer
+                                  const startAutoPlay = () => {
+                                    autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
+                                  };
+
+                                  // Reset the timer when the user manually interacts
+                                  const resetAutoPlay = () => {
+                                    clearInterval(autoPlayTimer);
+                                    startAutoPlay();
+                                  };
+
+                                  // Button Listeners
+                                  nextBtn.addEventListener('click', () => {
+                                    moveToNextSlide();
+                                    resetAutoPlay(); // Reset timer so it doesn't double-skip
+                                  });
+
+                                  prevBtn.addEventListener('click', () => {
+                                    const slideWidth = track.clientWidth;
+                                    track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+                                    resetAutoPlay();
+                                  });
+
+                                  // Pause autoplay while a user is actively swiping on mobile
+                                  track.addEventListener('touchstart', () => {
+                                    clearInterval(autoPlayTimer);
+                                  }, { passive: true });
+
+                                  // Resume autoplay when they finish swiping
+                                  track.addEventListener('touchend', () => {
+                                    startAutoPlay();
+                                  }, { passive: true });
+
+                                  // Kick off the auto-play when the page loads
+                                  startAutoPlay();
+                                });
+                            </script>
+                            
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                                <div style="margin-bottom:5px" class="border-bottom">
+                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#Quests #EarnPoints &#128240;</div></strong></h5>
                                 </div>
-                                <div class="row justify-content-center avatar_show_blocked" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
-                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
-                                </div>
-                                <div class="row justify-content-center avatar_show_unblocked" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
-                                    Change your Avatar here.
-                                </div>
-                                <div class="row justify-content-center">
-                                    <select id="avatar_user" class="form-control" disabled="true" style="margin-top: 5px; max-width: 250px; display: none; filter: contrast(100%) !important;">
-                                        <t t-foreach="avatar_user_options" t-as="avatar">
-                                            <option t-att-value="avatar[0]"><t t-esc="avatar[1]"/></option>
-                                        </t>
-                                    </select>
-                                </div>
-                                <div class="row justify-content-center" id="avatar_user_img_div" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
+                                
+                                <div class="carousel-wrapper">
+                                  <button class="carousel-btn prev" aria-label="Previous slide" style="color: black !important">&#10094;</button>
+                                  
+                                  <div class="carousel-track" id="track">
+                                    <div class="carousel-slide" style="background: #ff7675;">
+                                        <div>
+                                            <div style="margin-bottom:5px">
+                                                <h5>
+                                                    <strong>
+                                                        BOOST LATINCHAIN RANK.
+                                                    </strong>
+                                                </h5>
+                                            </div>
+                                            <div style="margin-bottom:5px">
+                                                <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide getverified" style="background: #74b9ff;">
+                                        <div class="getverified">
+                                            <div style="margin-bottom:5px">
+                                                <h5>
+                                                    <strong>
+                                                        Become LATINCHAIN PREMIUM.
+                                                    </strong>
+                                                </h5>
+                                            </div>
+                                            <div style="margin-bottom:5px">
+                                                <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide" style="background: #55efc4;">
+                                        <div>
+                                            <div style="margin-bottom:5px">
+                                                <h5>
+                                                    <strong>
+                                                        Use our dApps.
+                                                    </strong>
+                                                </h5>
+                                            </div>
+                                            <div style="margin-bottom:5px">
+                                                <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide" style="background: #ffeaa7;">
+                                        <div>
+                                            <div style="margin-bottom:5px">
+                                                <h5>
+                                                    <strong>
+                                                        GPM Ambassador Program.
+                                                    </strong>
+                                                </h5>
+                                            </div>
+                                            <div style="margin-bottom:5px">
+                                                <a href="https://globalpimarket.pinet.com/" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/gpm_quest1.png?v=1.101" alt="GPM Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+
+                                  <button class="carousel-btn next" aria-label="Next slide" style="color: black !important">&#10095;</button>
                                 </div>
                             </div>
-                        </div>
+                        </t>
                         
                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
@@ -1728,47 +1910,32 @@
                             </div>
                         </div>
                         
-                        <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
-                                <div style="margin-bottom:5px" class="border-bottom">
-                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#Quests #EarnPoints &#128240;</div></strong></h5>
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px" class="border-bottom">
+                                <h5 translate="no"><strong><div style="display:inline;">#Your #Avatar &#128526;</div></strong></h5>
+                            </div>
+                            
+                            <div class="text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
+                                <div class="row justify-content-center avatar_show_blocked" style="margin-left: 1px; margin-right: 1px">
+                                    Only verified users can change their Avatar.
                                 </div>
-                                <div class="getverified">
-                                    <div style="margin-bottom:5px">
-                                        <h5>
-                                            <strong>
-                                                Become LATINCHAIN PREMIUM.
-                                            </strong>
-                                        </h5>
-                                    </div>
-                                    <div style="margin-bottom:5px">
-                                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
-                                    </div>
+                                <div class="row justify-content-center avatar_show_blocked" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
+                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
                                 </div>
-                                
-                                <div style="margin-bottom:5px">
-                                    <h5>
-                                        <strong>
-                                            GPM Ambassador Program.
-                                        </strong>
-                                    </h5>
+                                <div class="row justify-content-center avatar_show_unblocked" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
+                                    Change your Avatar here.
                                 </div>
-                                <div style="margin-bottom:5px">
-                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/gpm_quest1.png?v=1.101" alt="GPM Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                <div class="row justify-content-center">
+                                    <select id="avatar_user" class="form-control" disabled="true" style="margin-top: 5px; max-width: 250px; display: none; filter: contrast(100%) !important;">
+                                        <t t-foreach="avatar_user_options" t-as="avatar">
+                                            <option t-att-value="avatar[0]"><t t-esc="avatar[1]"/></option>
+                                        </t>
+                                    </select>
                                 </div>
-                                
-                                <div style="margin-bottom:5px">
-                                    <h5>
-                                        <strong>
-                                            Use our dApps.
-                                        </strong>
-                                    </h5>
-                                </div>
-                                <div style="margin-bottom:5px">
-                                    <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
+                                <div class="row justify-content-center" id="avatar_user_img_div" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
                                 </div>
                             </div>
-                        </t>
+                        </div>
                         
                         <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                             <div style="margin-bottom:5px" class="border-bottom">
