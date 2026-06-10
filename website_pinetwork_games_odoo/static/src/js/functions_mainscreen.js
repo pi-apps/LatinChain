@@ -2410,34 +2410,34 @@ $( document ).ready(function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const track = document.getElementById('track');
-  let slides = Array.from(document.querySelectorAll('.carousel-slide'));
-  const nextBtn = document.querySelector('.next');
-  const prevBtn = document.querySelector('.prev');
-  
-  const intervalTime = 10000;
-  let autoPlayTimer;
+    const track = document.getElementById('track');
+    let slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
 
-  // 1. Create the Clones for infinite swiping
-  const firstClone = slides[0].cloneNode(true);
-  const lastClone = slides[slides.length - 1].cloneNode(true);
-  
-  // Add clones to the track
-  track.appendChild(firstClone);
-  track.insertBefore(lastClone, slides[0]);
+    const intervalTime = 30000;
+    let autoPlayTimer;
 
-  // Update our slides array to include the newly added clones
-  slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    // 1. Create the Clones for infinite swiping
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
 
-  // 2. Initial Setup
-  // Wait a fraction of a second for the browser to render, 
-  // then hide the left clone by scrolling to the first REAL slide.
-  setTimeout(() => {
+    // Add clones to the track
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+
+    // Update our slides array to include the newly added clones
+    slides = Array.from(document.querySelectorAll('.carousel-slide'));
+
+    // 2. Initial Setup
+    // Wait a fraction of a second for the browser to render, 
+    // then hide the left clone by scrolling to the first REAL slide.
+    setTimeout(() => {
     track.scrollLeft = slides[1].offsetLeft;
-  }, 0);
+    }, 0);
 
-  // 3. The Infinite Loop Magic (Listens to native scrolling/swiping)
-  track.addEventListener('scroll', () => {
+    // 3. The Infinite Loop Magic (Listens to native scrolling/swiping)
+    track.addEventListener('scroll', () => {
     // If the user swipes all the way to the left-most clone...
     if (track.scrollLeft === 0) {
       // Instantly jump to the real last slide (disabling snap temporarily prevents a visual glitch)
@@ -2445,7 +2445,7 @@ document.addEventListener('DOMContentLoaded', () => {
       track.scrollLeft = slides[slides.length - 2].offsetLeft;
       setTimeout(() => { track.style.scrollSnapType = 'x mandatory'; }, 10);
     }
-    
+
     // If the user swipes all the way to the right-most clone...
     // (We use a 2px buffer because mobile screens sometimes use fractional pixels)
     if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 2) {
@@ -2453,50 +2453,50 @@ document.addEventListener('DOMContentLoaded', () => {
       track.scrollLeft = slides[1].offsetLeft;
       setTimeout(() => { track.style.scrollSnapType = 'x mandatory'; }, 10);
     }
-  });
+    });
 
-  // 4. Update Navigation Buttons
-  // Dynamically calculate the exact scroll width (including CSS gaps)
-  const getScrollAmount = () => slides[1].offsetLeft - slides[0].offsetLeft;
+    // 4. Update Navigation Buttons
+    // Dynamically calculate the exact scroll width (including CSS gaps)
+    const getScrollAmount = () => slides[1].offsetLeft - slides[0].offsetLeft;
 
-  const moveToNextSlide = () => {
+    const moveToNextSlide = () => {
     track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-  };
+    };
 
-  const moveToPrevSlide = () => {
+    const moveToPrevSlide = () => {
     track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-  };
+    };
 
-  // 5. AutoPlay Logic
-  const startAutoPlay = () => {
+    // 5. AutoPlay Logic
+    const startAutoPlay = () => {
     autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
-  };
+    };
 
-  const resetAutoPlay = () => {
+    const resetAutoPlay = () => {
     clearInterval(autoPlayTimer);
     startAutoPlay();
-  };
+    };
 
-  // Button Event Listeners
-  nextBtn.addEventListener('click', () => {
+    // Button Event Listeners
+    nextBtn.addEventListener('click', () => {
     moveToNextSlide();
     resetAutoPlay();
-  });
+    });
 
-  prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener('click', () => {
     moveToPrevSlide();
     resetAutoPlay();
-  });
+    });
 
-  // Pause autoplay while swiping on mobile
-  track.addEventListener('touchstart', () => {
+    // Pause autoplay while swiping on mobile
+    track.addEventListener('touchstart', () => {
     clearInterval(autoPlayTimer);
-  }, { passive: true });
+    }, { passive: true });
 
-  track.addEventListener('touchend', () => {
+    track.addEventListener('touchend', () => {
     startAutoPlay();
-  }, { passive: true });
+    }, { passive: true });
 
-  // Start the timer!
-  startAutoPlay();
+    // Start the timer!
+    startAutoPlay();
 });
