@@ -2466,7 +2466,6 @@ document.addEventListener('DOMContentLoaded', () => {
         track.scrollLeft = allVisibleSlides[1].offsetLeft;
     });
 
-
     // --- 5. The Dynamic Width Calculation ---
     // Dynamically calculate slide width + CSS gaps on-the-fly.
     const getSlideWidth = () => {
@@ -2587,32 +2586,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (autoPlayTimer) clearInterval(autoPlayTimer);
     });
     track.addEventListener('mouseleave', startAutoPlay);
-
-    // Handle Window Resizing: Prevents carousel from breaking if viewport changes.
-    window.addEventListener('resize', () => {
-        // Stop current transitions/autoplay
-        if (autoPlayTimer) clearInterval(autoPlayTimer);
-        
-        // Find the index of the real slide closest to the current scroll position.
-        const currentScroll = track.scrollLeft;
-        let closestIndex = 1;
-        let minDiff = Infinity;
-        
-        // Check only real slides
-        for (let i = 1; i <= totalRealSlides; i++) {
-            const diff = Math.abs(allVisibleSlides[i].offsetLeft - currentScroll);
-            if (diff < minDiff) {
-                minDiff = diff;
-                closestIndex = i;
-            }
-        }
-        
-        // Instantly snap to the correct position (no smooth scroll)
-        track.style.scrollSnapType = 'none';
-        track.scrollLeft = allVisibleSlides[closestIndex].offsetLeft;
-        track.style.scrollSnapType = null;
-        startAutoPlay();
-    });
 
     // Start the autoplaytimer!
     startAutoPlay();
