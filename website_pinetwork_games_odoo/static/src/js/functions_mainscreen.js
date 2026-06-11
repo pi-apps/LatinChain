@@ -2411,91 +2411,104 @@ $( document ).ready(function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('track');
-    let slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    // Grab the original slides before we add any clones
+    const originalSlides = Array.from(document.querySelectorAll('.carousel-slide'));
     const nextBtn = document.querySelector('.next');
     const prevBtn = document.querySelector('.prev');
+
+    // Safety check: If there are 1 or 0 slides, a carousel isn't needed.
+    if (originalSlides.length <= 1) return;
 
     const intervalTime = 30000;
     let autoPlayTimer;
 
     // 1. Create the Clones for infinite swiping
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[slides.length - 1].cloneNode(true);
+    const firstClone = originalSlides[0].cloneNode(true);
+    const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
 
-    // Add clones to the track
+    // Optional: Add a class to clones in case you need to style them differently
+    firstClone.classList.add('carousel-clone');
+    lastClone.classList.add('carousel-clone');
+
     track.appendChild(firstClone);
-    track.insertBefore(lastClone, slides[0]);
+    track.insertBefore(lastClone, originalSlides[0]);
 
     // Update our slides array to include the newly added clones
-    slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const allSlides = Array.from(document.querySelectorAll('.carousel-slide'));
 
     // 2. Initial Setup
-    // Wait a fraction of a second for the browser to render, 
-    // then hide the left clone by scrolling to the first REAL slide.
     setTimeout(() => {
-    track.scrollLeft = slides[1].offsetLeft;
+        // Always jump to index 1 (the first REAL slide)
+        track.scrollLeft = allSlides[1].offsetLeft;
     }, 0);
 
-    // 3. The Infinite Loop Magic (Listens to native scrolling/swiping)
+    // 3. The Infinite Loop Magic 
     track.addEventListener('scroll', () => {
-    // If the user swipes all the way to the left-most clone...
-    if (track.scrollLeft === 0) {
-      // Instantly jump to the real last slide (disabling snap temporarily prevents a visual glitch)
-      track.style.scrollSnapType = 'none';
-      track.scrollLeft = slides[slides.length - 2].offsetLeft;
-      setTimeout(() => { track.style.scrollSnapType = 'x mandatory'; }, 10);
-    }
+        // Left boundary check (<= 2 accounts for mobile sub-pixel rendering)
+        if (track.scrollLeft <= 2) {
+            track.style.scrollSnapType = 'none';
+            // Jump to the LAST real slide dynamically
+            track.scrollLeft = allSlides[allSlides.length - 2].offsetLeft;
+            setTimeout(() => { track.style.scrollSnapType = 'x mandatory'; }, 10);
+        }
 
-    // If the user swipes all the way to the right-most clone...
-    // (We use a 2px buffer because mobile screens sometimes use fractional pixels)
-    if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 2) {
-      track.style.scrollSnapType = 'none';
-      track.scrollLeft = slides[1].offsetLeft;
-      setTimeout(() => { track.style.scrollSnapType = 'x mandatory'; }, 10);
-    }
+        // Right boundary check
+        if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 2) {
+            track.style.scrollSnapType = 'none';
+            // Jump to the FIRST real slide dynamically
+            track.scrollLeft = allSlides[1].offsetLeft;
+            setTimeout(() => { track.style.scrollSnapType = 'x mandatory'; }, 10);
+        }
     });
 
     // 4. Update Navigation Buttons
-    // Dynamically calculate the exact scroll width (including CSS gaps)
-    const getScrollAmount = () => slides[1].offsetLeft - slides[0].offsetLeft;
+    // This dynamically checks the exact distance between two real slides.
+    // By calculating this on the fly, it works beautifully on responsive 
+    // screens and supports ANY number of slides seamlessly.
+    const getScrollAmount = () => {
+        return allSlides[2].offsetLeft - allSlides[1].offsetLeft;
+    };
 
     const moveToNextSlide = () => {
-    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
     };
 
     const moveToPrevSlide = () => {
-    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
     };
 
     // 5. AutoPlay Logic
     const startAutoPlay = () => {
-    autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
+        autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
     };
 
     const resetAutoPlay = () => {
-    clearInterval(autoPlayTimer);
-    startAutoPlay();
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
     };
 
-    // Button Event Listeners
-    nextBtn.addEventListener('click', () => {
-    moveToNextSlide();
-    resetAutoPlay();
-    });
+    // 6. Event Listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            moveToNextSlide();
+            resetAutoPlay();
+        });
+    }
 
-    prevBtn.addEventListener('click', () => {
-    moveToPrevSlide();
-    resetAutoPlay();
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            moveToPrevSlide();
+            resetAutoPlay();
+        });
+    }
 
     // Pause autoplay while swiping on mobile
-    track.addEventListener('touchstart', () => {
-    clearInterval(autoPlayTimer);
-    }, { passive: true });
+    track.addEventListener('touchstart', () => clearInterval(autoPlayTimer), { passive: true });
+    track.addEventListener('touchend', startAutoPlay, { passive: true });
 
-    track.addEventListener('touchend', () => {
-    startAutoPlay();
-    }, { passive: true });
+    // Pause autoplay on mouse hover (great UX for desktop)
+    track.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+    track.addEventListener('mouseleave', startAutoPlay);
 
     // Start the timer!
     startAutoPlay();
