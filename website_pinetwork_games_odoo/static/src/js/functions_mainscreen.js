@@ -131,7 +131,16 @@ function colorboxLoadedMainnet()
             $('.darkmode-toggle--white').css('display', 'none');
     }else
     {
-        if(!is_open_tab && !is_open_tab_ads)
+        openInNewTabAds(URLTestnet);
+        //window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.115"+hashLatinChainGoogleTranslate;
+        
+        $('.darkmode-toggle').css('display', 'none');
+        if($('.darkmode-toggle--white').length === 0)
+            $('.darkmode-layer--button').css('display', 'none');
+        else
+            $('.darkmode-toggle--white').css('display', 'none');
+            
+        /*if(!is_open_tab && !is_open_tab_ads)
         {
             $('.darkmode-toggle').css('display', 'block');
             if($('.darkmode-toggle--white').length === 0)
@@ -145,7 +154,7 @@ function colorboxLoadedMainnet()
                 $('.darkmode-layer--button').css('display', 'none');
             else
                 $('.darkmode-toggle--white').css('display', 'none');
-        }
+        }*/
     }
         
     /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
