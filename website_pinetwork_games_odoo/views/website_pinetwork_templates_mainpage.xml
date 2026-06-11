@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.192"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.193"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1537,6 +1537,13 @@
                         <t t-if="true">
                             
                             <style>
+                                #track {
+                                    /* ADD THIS LINE: It prevents rendering flickering on scroll boundaries */
+                                    backface-visibility: hidden;
+                                    /* Optional: helps on some iOS versions */
+                                    -webkit-overflow-scrolling: touch; 
+                                }
+                                
                                 /* Base styles and Wrapper */
                                 .carousel-wrapper {
                                   position: relative;
@@ -1574,6 +1581,8 @@
                                   font-family: sans-serif;
                                   color: #333;
                                   border-radius: 12px;
+                                  transform: translate3d(0,0,0);
+                                  transform-style: preserve-3d;
                                 }
 
                                 /* Navigation Buttons */
