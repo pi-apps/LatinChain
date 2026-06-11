@@ -1706,7 +1706,7 @@ $( document ).ready(function() {
                                 $('.darkmode-layer--button').css('display', 'none');
                             else
                                 $('.darkmode-toggle--white').css('display', 'none');*/
-                            if(!is_open_tab && !is_open_tab_ads)
+                            if(!is_open_tab && !is_open_tab_ads && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
