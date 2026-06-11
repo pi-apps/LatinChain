@@ -2475,33 +2475,43 @@ document.addEventListener('DOMContentLoaded', () => {
         return allVisibleSlides[2].offsetLeft - allVisibleSlides[1].offsetLeft;
     };
 
-
-    // --- 6. The Boundary Loop Function (THE FLICKER FIX) ---
-    // This checks if we landed on a clone and instantly corrects the position.
-    // By re-enabling snapping INSTANTLY (without a setTimeout delay), 
-    // the "pestañeo" (flicker) is eliminated.
+    // --- 6. The Boundary Loop Function (COMPOSITOR SYNCHRONIZATION FIX) ---
     const handleInfiniteLoopJumps = () => {
-        isTransitioning = false; // Transition complete
+        isTransitioning = false;
         const currentScroll = track.scrollLeft;
         const maxScroll = track.scrollWidth - track.clientWidth;
-        const buffer = 2; // Buffer for mobile sub-pixel fractional values
+        const buffer = 2; // Buffer for mobile sub-pixel rendering
 
-        // LEFT BOUNDARY: Landed on the left clone (Clone of N)
+        // Check if we hit the Left Boundary (Landed on Left Clone)
         if (currentScroll <= buffer) {
-            // Instantly disable snapping to perform an invisible jump
+            // Frame 1: Disable snapping so we can move freely
             track.style.scrollSnapType = 'none';
-            // Jump to the equivalent real last slide dynamically
-            track.scrollLeft = allVisibleSlides[totalRealSlides].offsetLeft;
-            // RE-ENABLE Snapping instantly (using CSS value). NO delay needed here.
-            track.style.scrollSnapType = null; 
+            
+            // Frame 2: Wait for the next paint cycle to perform the jump
+            requestAnimationFrame(() => {
+                track.scrollLeft = allVisibleSlides[totalRealSlides].offsetLeft;
+                
+                // Frame 3: Wait one MORE cycle for textures to load before snapping
+                requestAnimationFrame(() => {
+                    track.style.scrollSnapType = 'x mandatory'; 
+                });
+            });
         }
         
-        // RIGHT BOUNDARY: Landed on the right clone (Clone of 1)
+        // Check if we hit the Right Boundary (Landed on Right Clone)
         else if (currentScroll >= maxScroll - buffer) {
+            // Frame 1: Disable snapping
             track.style.scrollSnapType = 'none';
-            // Jump to the real first slide dynamically
-            track.scrollLeft = allVisibleSlides[1].offsetLeft;
-            track.style.scrollSnapType = null; 
+            
+            // Frame 2: Perform the jump
+            requestAnimationFrame(() => {
+                track.scrollLeft = allVisibleSlides[1].offsetLeft;
+                
+                // Frame 3: Re-enable snapping after textures are ready
+                requestAnimationFrame(() => {
+                    track.style.scrollSnapType = 'x mandatory'; 
+                });
+            });
         }
     };
 
