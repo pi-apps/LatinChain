@@ -2412,7 +2412,16 @@ $( document ).ready(function() {
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('track');
     // Grab the original slides before we add any clones
-    const originalSlides = Array.from(document.querySelectorAll('.carousel-slide'));
+    //const originalSlides = Array.from(document.querySelectorAll('.carousel-slide'));
+    
+    // 1. Grab ONLY the slides that are actually visible
+    const originalSlides = Array.from(document.querySelectorAll('.carousel-slide'))
+        .filter(slide => {
+            const style = window.getComputedStyle(slide);
+            // Ignore if display: none or if it takes up no physical space
+            return style.display !== 'none' && slide.offsetWidth > 0;
+        });
+    
     const nextBtn = document.querySelector('.next');
     const prevBtn = document.querySelector('.prev');
 
@@ -2434,7 +2443,14 @@ document.addEventListener('DOMContentLoaded', () => {
     track.insertBefore(lastClone, originalSlides[0]);
 
     // Update our slides array to include the newly added clones
-    const allSlides = Array.from(document.querySelectorAll('.carousel-slide'));
+    //const allSlides = Array.from(document.querySelectorAll('.carousel-slide'));
+    
+    // 2. Later, when you update the array, filter it again!
+    const allSlides = Array.from(document.querySelectorAll('.carousel-slide'))
+        .filter(slide => {
+            const style = window.getComputedStyle(slide);
+            return style.display !== 'none' && slide.offsetWidth > 0;
+        });
 
     // 2. Initial Setup
     setTimeout(() => {
