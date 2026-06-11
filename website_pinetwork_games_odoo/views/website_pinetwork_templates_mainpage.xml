@@ -3539,8 +3539,11 @@
                                             <strong><span t-esc="'{:,}'.format(total_users_verified_count)" /> verified users out of 400</strong>
                                         </div>
                                     </t>-->
-                                    <div class="row">
+                                    <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                         <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (No Ads)</div></a>
+                                    </div>
+                                    <div class="row" t-else="">
+                                        <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM</div></a>
                                     </div>
                                     
                                     <div style="margin-top: 10px;" class="row getverified">
@@ -3641,8 +3644,11 @@
                                     </div>
                                 </div>
                                 
-                                <div style="margin-top: 10px;" class="row" id="GoForwardShow1">
+                                <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (No Ads)</div></a>
+                                </div>
+                                <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-else="">
+                                    <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM</div></a>
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row">
