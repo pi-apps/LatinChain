@@ -474,16 +474,17 @@
 
                         <title>LatinChain and César OpenSource Fans Shopping Club</title>
 
-                        <link rel="icon" type="img/png" href="/website_pinetwork_games_odoo/static/src/img/club/icon-latinchain-browser.png?v=1.104"/>
+                        <link rel="icon" type="image/png" href="/website_pinetwork_games_odoo/static/src/img/club/icon-latinchain-browser.png?v=1.104"/>
 
                         <meta name="description" content="Discover the LatinChain and César OpenSource Fans Shopping Club: Your centralized portal for online collectibles clothing in the OpenSource store, and educational books, products and courses in the Club. Shipping worldwide."/>
                         <meta name="author" content="LatinChain"/>
 
                         <meta property="og:type" content="website"/>
-                        <!--<meta property="og:url" content="https://club.latin-chain.com"/>-->
+                        <meta property="og:url" content="https://club.latin-chain.com"/>
                         <meta property="og:title" content="LatinChain and César OpenSource Fans Shopping Club"/>
                         <meta property="og:description" content="Explore the LatinChain and César OpenSource Fans Shopping Club. Collectibles clothes, and find educational books, products and courses, all in one place. Shipping worldwide."/>
                         <meta property="og:image" content="/website_pinetwork_games_odoo/static/src/img/club/og-social-share.png?v=1.104"/>
+                        <meta property="og:image:type" content="image/png"/>
                         <meta property="og:site_name" content="LatinChain and César OpenSource Fans Shopping Club"/>
 
                         <meta name="twitter:card" content="summary_large_image"/>
@@ -726,6 +727,63 @@
                     </head>
 
                     <body>
+                        <div style="justify-content: center; text-align: center">
+                            <img src="/website_pinetwork_games_odoo/static/src/img/club/icon-latinchain-browser.png?v=1.104" width="50px" height="50px" />
+                        </div>
+                        
+                        <style>
+                            /* Adjustments for Google Translator to be visible */
+                            .goog-te-banner-frame.skiptranslate,
+                            .skiptranslate > iframe {
+                                display: none !important;
+                            }
+                           
+                            body {
+                                top: 0px !important; 
+                            }
+
+                            .goog-te-menu-frame {
+                                max-width:100% !important; 
+                            }
+                            .goog-te-menu2 { 
+                                max-width: 100% !important;
+                                overflow-x: scroll !important;
+                                box-sizing:border-box !important; 
+                                height:auto !important; 
+                            }
+                           
+                            /* Hide unwanted elements without hiding the main widget */
+                            #goog-gt-tt, 
+                            #goog-gt-, 
+                            .goog-te-balloon-frame {
+                                display: none !important;
+                            } 
+                            .goog-text-highlight { 
+                                background: none !important; 
+                                box-shadow: none !important;
+                            }
+                           
+                            .goog-logo-link {
+                                display: none !important;
+                            }
+                            .goog-te-gadget {
+                                height: 28px !important; 
+                                overflow: hidden;
+                            }
+                        </style>
+                        <script type="text/javascript">
+                            $( document ).ready(function() {
+                                $("#translate_text_latinchain_2").appendTo(".translate_here");
+                                $("#google_translate_element").appendTo(".translate_here");
+                                
+                                $("#translate_text_latinchain_2").show();
+                                $("#google_translate_element").show();
+                            });
+                        </script>
+                        
+                        <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                        </div>
+                        
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <div id="messageBox" style="display: none;">
                                 <!-- Your message content goes here -->
@@ -756,6 +814,7 @@
                                 <br/>
                                 <t t-set="link_value" t-value="'https://www.amazon.com/?&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=f84d100dc0684303b0c16c600d90f848&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
                                 <a t-att-href="link_value" target="_blank">
+                                    <link rel="icon" type="image/png" href=""/>
                                     <img src="/website_pinetwork_games_odoo/static/src/img/club/amazon-purchase-image.png?v=1.104" width="250px" height="250px" />
                                 </a>
                             </div>
