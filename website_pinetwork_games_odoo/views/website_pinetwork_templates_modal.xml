@@ -727,63 +727,6 @@
                     </head>
 
                     <body>
-                        <div style="justify-content: center; text-align: center">
-                            <img src="/website_pinetwork_games_odoo/static/src/img/club/icon-latinchain-browser.png?v=1.105" width="50px" height="50px" />
-                        </div>
-                        
-                        <style>
-                            /* Adjustments for Google Translator to be visible */
-                            .goog-te-banner-frame.skiptranslate,
-                            .skiptranslate > iframe {
-                                display: none !important;
-                            }
-                           
-                            body {
-                                top: 0px !important; 
-                            }
-
-                            .goog-te-menu-frame {
-                                max-width:100% !important; 
-                            }
-                            .goog-te-menu2 { 
-                                max-width: 100% !important;
-                                overflow-x: scroll !important;
-                                box-sizing:border-box !important; 
-                                height:auto !important; 
-                            }
-                           
-                            /* Hide unwanted elements without hiding the main widget */
-                            #goog-gt-tt, 
-                            #goog-gt-, 
-                            .goog-te-balloon-frame {
-                                display: none !important;
-                            } 
-                            .goog-text-highlight { 
-                                background: none !important; 
-                                box-shadow: none !important;
-                            }
-                           
-                            .goog-logo-link {
-                                display: none !important;
-                            }
-                            .goog-te-gadget {
-                                height: 28px !important; 
-                                overflow: hidden;
-                            }
-                        </style>
-                        <script type="text/javascript">
-                            $( document ).ready(function() {
-                                $("#translate_text_latinchain_2").appendTo(".translate_here");
-                                $("#google_translate_element").appendTo(".translate_here");
-                                
-                                $("#translate_text_latinchain_2").show();
-                                $("#google_translate_element").show();
-                            });
-                        </script>
-                        
-                        <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
-                        </div>
-                        
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <div id="messageBox" style="display: none;">
                                 <!-- Your message content goes here -->
