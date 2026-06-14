@@ -74,12 +74,12 @@ class PiNetworkBaseController(http.Controller):
         
         try:
             # timeout=(connect_timeout, read_timeout)
-            response = requests.get(short_url, headers=headers, allow_redirects=True, timeout=(3, 10))
+            response = requests.get(short_url, headers=headers, allow_redirects=True, timeout=(10, 10))
             response.raise_for_status() # Check for HTTP errors
             long_url = response.url
         except requests.exceptions.RequestException as e:
             # Fallback if the request fails
-            return redirect('/')
+            return redirect('https://www.amazon.com?tag='+self.get_amazon_affiliate_code())
             
         long_url = response.url
         
