@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="latincats3d" name="Latin Cats 3D">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+                <head>
+                    <meta charset="UTF-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+                    <title>Latin Cats 3D</title>
+                    <script src="https://cdn.tailwindcss.com"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+                    <style>
+                        body, html {
+                            margin: 0;
+                            padding: 0;
+                            width: 100%;
+                            height: 100vh;
+                            height: 100dvh; 
+                            overflow: hidden;
+                            background-color: #87CEEB;
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            touch-action: none;
+                        }
+                        #canvas-container {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                        }
+                        #ui-layer {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 10;
+                            pointer-events: none;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+                        }
+                        .interactive-ui {
+                            pointer-events: auto;
+                        }
+                        
+                        /* Floating Text Animation for Clicks */
+                        @keyframes floatUp {
+                            0% { opacity: 1; transform: translateY(0) scale(1); }
+                            100% { opacity: 0; transform: translateY(-60px) scale(1.5); }
+                        }
+                        .floating-text {
+                            position: absolute;
+                            color: #f97316;
+                            font-weight: 900;
+                            font-size: 1.5rem;
+                            pointer-events: none;
+                            animation: floatUp 1s ease-out forwards;
+                            z-index: 20;
+                            text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
+                        }
+
+                        /* Modal Styles */
+                        .modal-overlay {
+                            display: none;
+                            position: fixed;
+                            inset: 0;
+                            background: rgba(0, 0, 0, 0.6);
+                            backdrop-filter: blur(4px);
+                            z-index: 50;
+                            align-items: center;
+                            justify-content: center;
+                            pointer-events: auto;
+                        }
+                        .modal-overlay.active {
+                            display: flex;
+                        }
+                        
+                        /* Hide scrollbar for shop */
+                        .no-scrollbar::-webkit-scrollbar {
+                            display: none;
+                        }
+                        .no-scrollbar {
+                            -ms-overflow-style: none;
+                            scrollbar-width: none;
+                        }
+                    </style>
+                    
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    
+                    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                    
+                    <script type="text/javascript">
+                        startCommonAppsAI();
+                    </script>
+                    
+                    <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                        <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                            <div id="blocking-message" style="display: none;">
+                                <div>
+                                    Go to Pi Browser
+                                </div>
+                                <div>
+                                    <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                </div>
+                            </div>
+                            <div id="paying-message" style="display: none;">
+                                <div>
+                                    Pay Pi to GET PREMIUM
+                                </div>
+                                <div>
+                                    <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                </div>
+                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <br/>
+                                    <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                </div>
+                            </div>
+                            <div id="loading-message" style="display: block;">
+                                Loading...
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                    <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                    <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                </head>
+                <body>
+
+                    <!-- 3D Canvas -->
+                    <div id="canvas-container"></div>
+
+                    <!-- UI Overlay -->
+                    <div id="ui-layer">
+                        
+                        <!-- Top HUD -->
+                        <div class="flex justify-between items-start interactive-ui p-4 sm:p-6">
+                            
+                            <!-- Left Side Controls -->
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <a href="/" class="bg-white/90 backdrop-blur-sm rounded-2xl p-3 sm:p-4 shadow-lg border border-gray-100 flex items-center justify-center text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Go Back">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                                </a>
+
+                                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-3 sm:p-4 shadow-lg border border-orange-100 flex items-center space-x-3">
+                                    <div class="bg-orange-100 p-2 rounded-full hidden sm:block">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider">Meow Coins</p>
+                                        <p id="coins-display" class="text-xl sm:text-2xl font-black text-gray-800">0</p>
+                                        <p id="income-display" class="text-[10px] text-orange-500 font-semibold">+0/sec</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Side Controls -->
+                            <div class="flex flex-col items-end space-y-2">
+                                <div class="bg-white/90 backdrop-blur-sm rounded-xl p-2 px-3 shadow flex flex-col items-end">
+                                    <p class="text-[10px] sm:text-xs text-gray-500 font-semibold uppercase">Save Status</p>
+                                    <div class="flex items-center space-x-1 mt-1">
+                                        <div id="save-indicator" class="w-2 h-2 rounded-full bg-green-500"></div>
+                                        <p id="save-text" class="text-[10px] sm:text-xs text-gray-700 font-medium">Local Save</p>
+                                    </div>
+                                </div>
+                                
+                                <button id="btn-restart" class="bg-white/90 backdrop-blur-sm rounded-xl p-2 px-3 shadow flex items-center space-x-2 text-red-500 hover:bg-red-50 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                                    <span class="text-xs font-bold uppercase">Restart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Controls -->
+                        <div class="flex justify-center items-end pb-6 sm:pb-8 px-4 interactive-ui w-full max-w-lg mx-auto space-x-3">
+                            
+                            <!-- Shop Button -->
+                            <button id="btn-open-shop" class="bg-blue-500 hover:bg-blue-600 text-white shadow-xl shadow-blue-500/30 rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-center transition-transform transform active:scale-95">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/></svg>
+                                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wide">Upgrades</span>
+                            </button>
+
+                            <!-- Buy Cat Button -->
+                            <button id="btn-buy-cat" class="flex-1 bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white shadow-xl shadow-orange-500/30 rounded-2xl px-4 py-4 sm:px-8 sm:py-5 flex items-center justify-center space-x-3 transition-transform transform active:scale-95 disabled:opacity-50 disabled:active:scale-100 disabled:cursor-not-allowed">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3.1-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z"/><path d="M8 14v.5"/><path d="M16 14v.5"/><path d="M11.25 16.25h1.5L12 17l-.75-.75Z"/></svg>
+                                <div class="text-left flex-col flex">
+                                    <span class="text-base sm:text-lg font-bold leading-tight">Adopt Cat</span>
+                                    <span id="cost-display" class="text-xs sm:text-sm text-orange-100 font-semibold">Cost: 10</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Shop Modal -->
+                    <div id="shop-modal" class="modal-overlay px-4">
+                        <div class="bg-white rounded-3xl w-full max-w-md mx-auto shadow-2xl flex flex-col max-h-[80vh] overflow-hidden">
+                            <div class="p-6 bg-blue-50 border-b border-blue-100 flex justify-between items-center">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-blue-500 text-white p-2 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/></svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900">Upgrades Shop</h3>
+                                </div>
+                                <button id="btn-close-shop" class="text-gray-400 hover:text-gray-700 bg-gray-100 rounded-full p-2 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                </button>
+                            </div>
+                            
+                            <div class="p-6 overflow-y-auto no-scrollbar space-y-4 flex-1 bg-gray-50">
+                                <!-- Food Upgrade -->
+                                <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 flex items-center space-x-2">
+                                            <span>Premium Food</span>
+                                            <span id="food-level" class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Lv 0</span>
+                                        </h4>
+                                        <p class="text-xs text-gray-500 mt-1">+1 passive coin/sec per cat</p>
+                                    </div>
+                                    <button id="btn-buy-food" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-xl shadow hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm flex flex-col items-center min-w-[80px]">
+                                        <span>Upgrade</span>
+                                        <span id="food-cost" class="text-[10px] text-blue-100">50 C</span>
+                                    </button>
+                                </div>
+
+                                <!-- Click Upgrade -->
+                                <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 flex items-center space-x-2">
+                                            <span>Catnip Box</span>
+                                            <span id="tap-level" class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Lv 0</span>
+                                        </h4>
+                                        <p class="text-xs text-gray-500 mt-1">Boosts coins when tapping cats</p>
+                                    </div>
+                                    <button id="btn-buy-tap" class="bg-purple-500 text-white font-bold py-2 px-4 rounded-xl shadow hover:bg-purple-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm flex flex-col items-center min-w-[80px]">
+                                        <span>Upgrade</span>
+                                        <span id="tap-cost" class="text-[10px] text-purple-100">50 C</span>
+                                    </button>
+                                </div>
+
+                                <!-- World Item: Yarn Ball -->
+                                <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex justify-between items-center relative overflow-hidden">
+                                    <div id="yarn-overlay" class="absolute inset-0 bg-green-500/10 backdrop-blur-[1px] z-10 hidden flex items-center justify-center">
+                                        <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Purchased</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 flex items-center space-x-2">
+                                            <span>Giant Yarn Ball</span>
+                                            <span class="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">Toy</span>
+                                        </h4>
+                                        <p class="text-xs text-gray-500 mt-1">+20% Global Multiplier!</p>
+                                    </div>
+                                    <button id="btn-buy-yarn" class="bg-orange-500 text-white font-bold py-2 px-4 rounded-xl shadow hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm flex flex-col items-center min-w-[80px]">
+                                        <span>Buy</span>
+                                        <span id="yarn-cost" class="text-[10px] text-orange-100">1.0k C</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message/Confirm Modal -->
+                    <div id="message-modal" class="modal-overlay px-4">
+                        <div class="bg-white rounded-3xl p-6 max-w-sm w-full mx-auto shadow-2xl transform transition-all text-center">
+                            <div id="modal-icon-bg" class="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg id="modal-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.26 3.27A1 1 0 0 1 11.14 3h1.72a1 1 0 0 1 .88.27l1.72 1.72a1 1 0 0 0 .71.3h2.41a1 1 0 0 1 1 1v2.41a1 1 0 0 0 .3.71l1.72 1.72a1 1 0 0 1 0 1.76l-1.72 1.72a1 1 0 0 0-.3.71v2.41a1 1 0 0 1-1 1h-2.41a1 1 0 0 0-.71.3l-1.72 1.72a1 1 0 0 1-1.76 0l-1.72-1.72a1 1 0 0 0-.71-.3H6.41a1 1 0 0 1-1-1v-2.41a1 1 0 0 0-.3-.71L3.38 13.8a1 1 0 0 1 0-1.76l1.72-1.72a1 1 0 0 0 .3-.71V7.21a1 1 0 0 1 1-1h2.41a1 1 0 0 0 .71-.3l1.72-1.72Z"/><path d="m9 12 2 2 4-4"/></svg>
+                            </div>
+                            <h3 id="modal-title" class="text-xl font-bold text-gray-900 mb-2">Notice</h3>
+                            <p id="modal-message" class="text-sm sm:text-base text-gray-600 mb-6">Message goes here</p>
+                            <div class="flex space-x-3">
+                                <button id="modal-cancel" class="hidden bg-gray-200 text-gray-800 rounded-xl px-4 py-3 w-full font-semibold hover:bg-gray-300 transition-colors">Cancel</button>
+                                <button id="modal-confirm" class="bg-gray-900 text-white rounded-xl px-4 py-3 w-full font-semibold hover:bg-gray-800 transition-colors">Awesome</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Application Logic (Local Storage & Three.js) -->
+                    <script type="module" src="/website_pinetwork_games_odoo/static/src/js/games/latincats3d_functions.js?v=1.101"></script>
+                </body>
+            </html>
+            </t>
+		</template>
+
+</odoo>
