@@ -31,6 +31,8 @@ import feedparser
 import json
 from time import mktime
 
+from urllib.parse import urlparse, urlunparse, parse_qs, urlencode
+
 """
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True)
@@ -56,6 +58,51 @@ class PiNetworkBaseController(http.Controller):
     
     def get_amazon_affiliate_code(self):
         return 'latinchain0d-20'
+
+    @http.route('/amzn.to/<string:amzn_short>', type='http', auth="public", website=True, csrf=False)
+    def amzn_to(self, amzn_short, **kw):
+        
+        # 1. Reconstruct the short URL
+        short_url = f"https://amzn.to/{amzn_short}"
+        
+        # 2. Follow the redirect to get the destination (long) URL
+        # allow_redirects=True ensures we get the final URL
+        # Define headers to mimic a common browser
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
+        }
+        
+        try:
+            # timeout=(connect_timeout, read_timeout)
+            response = requests.get(short_url, headers=headers, allow_redirects=True, timeout=(3, 10))
+            response.raise_for_status() # Check for HTTP errors
+            long_url = response.url
+        except requests.exceptions.RequestException as e:
+            # Fallback if the request fails
+            return redirect('/')
+            
+        long_url = response.url
+        
+        # 3. Parse the long URL
+        parsed_url = urlparse(long_url)
+        query_params = parse_qs(parsed_url.query)
+        
+        # 4. Inject or update the affiliate tag
+        affiliate_code = self.get_amazon_affiliate_code()
+        query_params['tag'] = [affiliate_code]
+        
+        # 5. Reconstruct the URL with the new query parameters
+        new_query = urlencode(query_params, doseq=True)
+        new_url = urlunparse((
+            parsed_url.scheme,
+            parsed_url.netloc,
+            parsed_url.path,
+            parsed_url.params,
+            new_query,
+            parsed_url.fragment
+        ))
+        
+        return redirect(new_url)
     
     def leaders_domain_def(self):
         winner_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
