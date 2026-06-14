@@ -844,6 +844,31 @@
                                         <h3 class="col-12">
                                             <div class="product">
                                                 <hr/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers/zgbs?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=45bacb11608bf5cd4e4c6eb38ca5f1cb&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
+                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers on Amazon</strong></a>
+                                            </div>
+                                            <div class="product">
+                                                <hr/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/gp/new-releases?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=f0129b8f66160f44dfa9d30ed7ea1056&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
+                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>New Releases on Amazon</strong></a>
+                                            </div>
+                                            <div class="product">
+                                                <hr/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/gp/movers-and-shakers?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=607791395c3b4c47f54be00ce103c920&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
+                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Move and Shakers on Amazon</strong></a>
+                                            </div>
+                                            <div class="product">
+                                                <hr/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Computers-Accessories/zgbs/pc?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=ba2187a1948f1d5901ce6c9276fcf991&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
+                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Computers and Accessories on Amazon</strong></a>
+                                            </div>
+                                            <div class="product">
+                                                <hr/>
+                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Electronics/zgbs/electronics?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=0fd3d267e98b7acff6a1a8c288c7568e&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
+                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Electronics on Amazon</strong></a>
+                                            </div>
+                                            <div class="product">
+                                                <hr/>
                                                 <t t-set="link_value" t-value="'https://www.amazon.com/stores/AmazonBasics/page/947C6949-CF8E-4BD3-914A-B411DD3E4433?&amp;linkCode=ll2&amp;tag=' + link_tag_code + '&amp;linkId=e23a9553d9d287363864232038921dc5&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Amazon Basics on Amazon</strong></a>
                                             </div>
@@ -941,31 +966,6 @@
                                                 <hr/>
                                                 <t t-set="link_value" t-value="'https://www.amazon.com/s?k=Shoes&amp;rh=p_123%3A197955&amp;ds=v1%3ASUj7UFT8%2Bh5PkJMR3iw%2FEX4ZfcfsE5iPqdItKGX%2Bf5c&amp;crid=QJT7YC8C8X8Y&amp;qid=1770837555&amp;rnid=85457740011&amp;sprefix=shoes%2Caps%2C236&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=778642ccf504a7da6bc6c201ecf1d6e8&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
                                                 <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Shoes New Balance on Amazon</strong></a>
-                                            </div>
-                                            <div class="product">
-                                                <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers/zgbs?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=45bacb11608bf5cd4e4c6eb38ca5f1cb&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
-                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers on Amazon</strong></a>
-                                            </div>
-                                            <div class="product">
-                                                <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/gp/new-releases?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=f0129b8f66160f44dfa9d30ed7ea1056&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
-                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>New Releases on Amazon</strong></a>
-                                            </div>
-                                            <div class="product">
-                                                <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/gp/movers-and-shakers?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=607791395c3b4c47f54be00ce103c920&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
-                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Move and Shakers on Amazon</strong></a>
-                                            </div>
-                                            <div class="product">
-                                                <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Computers-Accessories/zgbs/pc?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=ba2187a1948f1d5901ce6c9276fcf991&amp;language=en_US&amp;ref_=as_li_ss_tl'"/> 
-                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Computers and Accessories on Amazon</strong></a>
-                                            </div>
-                                            <div class="product">
-                                                <hr/>
-                                                <t t-set="link_value" t-value="'https://www.amazon.com/Best-Sellers-Electronics/zgbs/electronics?linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=0fd3d267e98b7acff6a1a8c288c7568e&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
-                                                <a t-att-href="link_value" target="_blank" class="btn btn-link amazon-list"><strong>Best Sellers Electronics on Amazon</strong></a>
                                             </div>
                                         </h3>
                                     </div>
