@@ -255,7 +255,17 @@
                             @media screen and (max-height: 450px) {
                               .sidenav {padding-top: 15px;}
                               .sidenav a {font-size: 18px;}
-                            } 
+                            }
+                            
+                            .darkmode--activated .payment-details {
+                                color: white !important;
+                                filter: contrast(100%) !important;
+                            }
+                            
+                            .payment-details {
+                                color: back !important;
+                                filter: contrast(100%) !important;
+                            }
                         </style>
                         
                         <script>
@@ -359,7 +369,7 @@
                                             </div>
                                         </div>
                                         
-                                        <div>
+                                        <h3 class="payment-details">
                                             <div>
                                                 <div style="display: inline" t-if="discount_active and discount_percentage">
                                                     Payment discount (-<t t-esc="discount_percentage" />%)
@@ -397,7 +407,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </h3>
                                         
                                         <div style="margin-top:5px" class="justify-content-center">
                                             <div style="margin-bottom:5px;">

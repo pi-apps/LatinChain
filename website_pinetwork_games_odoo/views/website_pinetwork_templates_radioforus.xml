@@ -260,7 +260,17 @@
                             @media screen and (max-height: 450px) {
                               .sidenav {padding-top: 15px;}
                               .sidenav a {font-size: 18px;}
-                            } 
+                            }
+                            
+                            .darkmode--activated .payment-details {
+                                color: white !important;
+                                filter: contrast(100%) !important;
+                            }
+                            
+                            .payment-details {
+                                color: back !important;
+                                filter: contrast(100%) !important;
+                            }
                         </style>
                         
                         <script>
@@ -356,7 +366,7 @@
                                             <button id="back_radioforus" class="btn btn-info back_radioforus" style="margin-left:30px;"><i class="fa fa-step-backward"></i></button>
                                         </div>
                                         
-                                        <div>
+                                        <h3 class="payment-details">
                                             <div>
                                                 <div style="display: inline" t-if="discount_active and discount_percentage">
                                                     Payment discount (-<t t-esc="discount_percentage" />%)
@@ -394,7 +404,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </h3>
                                         
                                         <div style="margin-top:5px" class="justify-content-center">
                                             <input t-att-value="amount" id="pi_donate" name="pi_donate" type="number" min="0" step="0.01" class="numeric-decimal form-control" style="display: none;" lang="en-US"/>

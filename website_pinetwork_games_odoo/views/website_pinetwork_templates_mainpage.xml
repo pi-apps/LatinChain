@@ -1385,7 +1385,7 @@
                         <div>
                             <script defer="defer" src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-6" lcw-coin="_______PI" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#1f2434" lcw-border-w="0" ></div>
                         </div>
-                        <div style="color: #ffffff !important; background-color: #1f2434 !important;">
+                        <h3 style="color: #ffffff !important; background-color: #1f2434 !important;">
                             <div>
                                 <div style="display: inline" t-if="discount_active and discount_percentage">
                                     Payment discount (-<t t-esc="discount_percentage" />%)
@@ -1423,7 +1423,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </h3>
                     </div>
                     
                     <div class="container" style="text-align:center;" t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup">
