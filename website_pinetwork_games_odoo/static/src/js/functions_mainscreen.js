@@ -2422,7 +2422,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Safety check: A carousel is only needed if there are 2 or more slides.
     if (originalVisibleSlides.length <= 1) return;
 
-    const intervalTime = 30000;
+    const intervalTime = 10000;
     let autoPlayTimer;
     let isTransitioning = false; 
 
