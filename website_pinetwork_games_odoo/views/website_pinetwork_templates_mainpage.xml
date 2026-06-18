@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.200"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.202"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1540,8 +1540,15 @@
                                 #track {
                                     /* ADD THIS LINE: It prevents rendering flickering on scroll boundaries */
                                     backface-visibility: hidden;
-                                    /* Optional: helps on some iOS versions */
-                                    -webkit-overflow-scrolling: touch; 
+                                    
+                                    /* Prevents users from swiping left/right on touch devices */
+                                    overflow-x: hidden; 
+                                    
+                                    /* Disables all touch-based panning and zooming interactions */
+                                    touch-action: none; 
+                                    
+                                    /* Disables mouse-dragging if you had any CSS/JS enabling it */
+                                    pointer-events: none;
                                 }
                                 
                                 /* Base styles and Wrapper */
@@ -1624,7 +1631,8 @@
                                 </div>
                                 
                                 <div class="carousel-wrapper">
-                                  <button class="carousel-btn prev" aria-label="Previous slide" style="color: black !important">&#10094;</button>
+                                  <!--<button class="carousel-btn prev" aria-label="Previous slide" style="color: black !important">&#10094;</button>
+                                  -->
                                   
                                   <div class="carousel-track" id="track">
                                     <div class="carousel-slide" style="background: #74b9ff;">
@@ -1793,7 +1801,8 @@
                                     </div>
                                   </div>
 
-                                  <button class="carousel-btn next" aria-label="Next slide" style="color: black !important">&#10095;</button>
+                                  <!--<button class="carousel-btn next" aria-label="Next slide" style="color: black !important">&#10095;</button>
+                                  -->
                                 </div>
                             </div>
                         </t>

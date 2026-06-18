@@ -2412,33 +2412,24 @@ $( document ).ready(function() {
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('track');
 
-    // --- 1. FILTER VISIBLE SLIDES ONLY (Critical fix from previous steps) ---
-    // This ignores display:none slides and hidden slides for perfect math.
+    // --- 1. FILTER VISIBLE SLIDES ONLY ---
     const originalVisibleSlides = Array.from(document.querySelectorAll('.carousel-slide'))
         .filter(slide => {
             const style = window.getComputedStyle(slide);
             return style.display !== 'none' && slide.offsetWidth > 0;
         });
 
-    const nextBtn = document.querySelector('.next');
-    const prevBtn = document.querySelector('.prev');
-
     // Safety check: A carousel is only needed if there are 2 or more slides.
     if (originalVisibleSlides.length <= 1) return;
 
     const intervalTime = 30000;
     let autoPlayTimer;
-
-    // We will use native smooth scrolling provided by CSS or scrollBy,
-    // so we need to track if we are in the middle of a transition.
     let isTransitioning = false; 
 
     // --- 2. Create the Clones ---
-    // The structure becomes: [Clone of N, Slide 1, Slide 2, ..., Slide N, Clone of 1]
     const firstClone = originalVisibleSlides[0].cloneNode(true);
     const lastClone = originalVisibleSlides[originalVisibleSlides.length - 1].cloneNode(true);
 
-    // Optional: add class for styling clones
     firstClone.classList.add('carousel-clone');
     lastClone.classList.add('carousel-clone');
 
@@ -2446,67 +2437,46 @@ document.addEventListener('DOMContentLoaded', () => {
     track.insertBefore(lastClone, originalVisibleSlides[0]);
 
     // --- 3. Update arrays and track indices ---
-    // Get all slides again to include new clones.
     const allSlides = Array.from(document.querySelectorAll('.carousel-slide'));
     
-    // We only need an array of *visible* slides (both real and clones)
-    // for our position calculations.
     const allVisibleSlides = allSlides.filter(slide => {
         const style = window.getComputedStyle(slide);
         return style.display !== 'none' && slide.offsetWidth > 0;
     });
 
-    // Our true logical slides are between Index 1 and Index N.
     const totalRealSlides = originalVisibleSlides.length;
 
     // --- 4. Initial Setup ---
-    // Position instantly on the first REAL slide (Index 1).
-    // We use requestAnimationFrame to make sure rendering is ready.
     requestAnimationFrame(() => {
         track.scrollLeft = allVisibleSlides[1].offsetLeft;
     });
 
     // --- 5. The Dynamic Width Calculation ---
-    // Dynamically calculate slide width + CSS gaps on-the-fly.
     const getSlideWidth = () => {
-        // Distance between the first real slide and the second real slide.
         if(allVisibleSlides.length < 3) return track.clientWidth;
         return allVisibleSlides[2].offsetLeft - allVisibleSlides[1].offsetLeft;
     };
 
-    // --- 6. The Boundary Loop Function (COMPOSITOR SYNCHRONIZATION FIX) ---
+    // --- 6. The Boundary Loop Function ---
     const handleInfiniteLoopJumps = () => {
         isTransitioning = false;
         const currentScroll = track.scrollLeft;
         const maxScroll = track.scrollWidth - track.clientWidth;
-        const buffer = 2; // Buffer for mobile sub-pixel rendering
+        const buffer = 2; 
 
-        // Check if we hit the Left Boundary (Landed on Left Clone)
         if (currentScroll <= buffer) {
-            // Frame 1: Disable snapping so we can move freely
             track.style.scrollSnapType = 'none';
-            
-            // Frame 2: Wait for the next paint cycle to perform the jump
             requestAnimationFrame(() => {
                 track.scrollLeft = allVisibleSlides[totalRealSlides].offsetLeft;
-                
-                // Frame 3: Wait one MORE cycle for textures to load before snapping
                 requestAnimationFrame(() => {
                     track.style.scrollSnapType = 'x mandatory'; 
                 });
             });
         }
-        
-        // Check if we hit the Right Boundary (Landed on Right Clone)
         else if (currentScroll >= maxScroll - buffer) {
-            // Frame 1: Disable snapping
             track.style.scrollSnapType = 'none';
-            
-            // Frame 2: Perform the jump
             requestAnimationFrame(() => {
                 track.scrollLeft = allVisibleSlides[1].offsetLeft;
-                
-                // Frame 3: Re-enable snapping after textures are ready
                 requestAnimationFrame(() => {
                     track.style.scrollSnapType = 'x mandatory'; 
                 });
@@ -2514,90 +2484,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-
     // --- 7. Listen for `scrollend` ---
-    // This event fires ONLY once the smooth scroll (or swipe) has completely settled.
     if ('onscrollend' in track) {
-        // Modern approach: Very robust for eliminating flickers
         track.addEventListener('scrollend', handleInfiniteLoopJumps);
     } else {
-        // Fallback approach for older browsers (not flicker-free, but functional)
         let scrollTimer;
         track.addEventListener('scroll', () => {
             clearTimeout(scrollTimer);
-            // Wait for movement to stop before checking loop
             scrollTimer = setTimeout(handleInfiniteLoopJumps, 60); 
         });
     }
 
-
-    // Navigation Control Functions
+    // --- 8. AutoPlay Logic ---
     const moveToNextSlide = () => {
         if (isTransitioning) return;
         isTransitioning = true;
         track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
     };
 
-    const moveToPrevSlide = () => {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        track.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
-    };
-
-
-    // --- 8. AutoPlay Logic ---
     const startAutoPlay = () => {
         if (autoPlayTimer) clearInterval(autoPlayTimer);
         autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
     };
 
-    const resetAutoPlay = () => {
-        if (autoPlayTimer) clearInterval(autoPlayTimer);
-        startAutoPlay();
-    };
-
-
-    // --- 9. Event Listeners ---
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            moveToNextSlide();
-            resetAutoPlay();
-        });
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            moveToPrevSlide();
-            resetAutoPlay();
-        });
-    }
-
-    // Pause autoplay during manual swipes on mobile
-    track.addEventListener('touchstart', () => {
-        // Prevent clicking buttons during swipe
-        isTransitioning = true; 
-        if (autoPlayTimer) clearInterval(autoPlayTimer);
-    }, { passive: true });
-
-    track.addEventListener('touchend', startAutoPlay, { passive: true });
-
-    // Desktop UX: Pause on mouse hover
-    track.addEventListener('mouseenter', () => {
-        if (autoPlayTimer) clearInterval(autoPlayTimer);
-    });
-    track.addEventListener('mouseleave', startAutoPlay);
-
-    // Handle Window Resizing: Prevents carousel from breaking if viewport changes.
+    // --- 9. Window Resizing ---
     window.addEventListener('resize', () => {
-        // Stop current transitions/autoplay
         if (autoPlayTimer) clearInterval(autoPlayTimer);
         
-        // Find the index of the real slide closest to the current scroll position.
         const currentScroll = track.scrollLeft;
         let closestIndex = 1;
         let minDiff = Infinity;
         
-        // Check only real slides
         for (let i = 1; i <= totalRealSlides; i++) {
             const diff = Math.abs(allVisibleSlides[i].offsetLeft - currentScroll);
             if (diff < minDiff) {
@@ -2606,13 +2523,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // Instantly snap to the correct position (no smooth scroll)
         track.style.scrollSnapType = 'none';
         track.scrollLeft = allVisibleSlides[closestIndex].offsetLeft;
         track.style.scrollSnapType = null;
         startAutoPlay();
     });
 
-    // Start the autoplaytimer!
+    // Start the autoplay timer!
     startAutoPlay();
 });
