@@ -1884,7 +1884,7 @@
 
                                 </div>
                                 <div class="text-white" style="word-break: break-word;">
-                                    Your referral link. You will earn <t t-esc="amount_latin_pay/10" /> Latin points for each payment made with your link:
+                                    Your referral link. You will earn <t t-esc="amount_latin_pay/10" /> Latin points for each payment made with your link. And the person who pays with your link will earn <t t-esc="amount_latin_pay" /> Latin points:
                                     <br/>
                                     <div translate="no">
                                         <button class="btn btn-success share_referrer_message">Share referral message</button>
