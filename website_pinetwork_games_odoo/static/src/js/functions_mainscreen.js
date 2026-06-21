@@ -1744,12 +1744,12 @@ $( document ).ready(function() {
                     get_user().always(function(){
                         
                         function executepayment(){
-                            if(parseFloat($("#pi_donate").val()) >= parseFloat(0.01) && parseFloat($("#pi_donate").val()) <= parseFloat(1))
+                            if(parseFloat($("#pi_donate").val()) >= parseFloat(0.01) && parseFloat($("#pi_donate").val()) <= parseFloat(6.28))
                             {
                                 $("#button_tip").prop( "disabled", true );
                                 transfer();
                             }else{
-                                alert("Payment must by greater or equal to 0.01 Pi, and less or equal to 1 Pi.");
+                                alert("Payment must by greater or equal to 0.01 Pi, and less or equal to 6.28 Pi.");
                             }
                         }
                         
