@@ -935,6 +935,12 @@ function copyToClipboard(text) {
 
 $( document ).ready(function() {
     
+    $('.numeric').on('input', function() {
+        // 1. Remove anything that isn't a number or a period
+        // 2. Prevent multiple periods by keeping only the first one
+        this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');
+    });
+    
     /*const video_latinchain = document.getElementById('loading-message-video');
     video_latinchain.style.display="block";
     video_latinchain.width=250;
