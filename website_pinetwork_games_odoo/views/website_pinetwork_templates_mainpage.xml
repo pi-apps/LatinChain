@@ -3748,10 +3748,6 @@
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">One Time Unlock</div></a>
                                 </div>
                                 
-                                <div style="margin-top: 10px;" class="row">
-                                    <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi</div></a>
-                                </div>
-                                
                                 <div class="getverified">
                                     <div style="margin-top: 10px;" class="row show_test_app">
                                         <button id="test_app" class="btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Earn points (Pi Ad)</div></button>
@@ -3767,6 +3763,10 @@
                                 </div>
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-else="">
                                     <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM</div></a>
+                                </div>
+                                
+                                <div style="margin-top: 10px;" class="row">
+                                    <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" rel="noopener" target="_blank" class="btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi</div></a>
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow2">
