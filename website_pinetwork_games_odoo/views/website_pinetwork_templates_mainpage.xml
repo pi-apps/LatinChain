@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.203"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.207"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1624,6 +1624,17 @@
                                   }
                                 }
                             </style>
+                            
+                            <div>
+                                <div class="input-group input-group-lg">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa-solid fa-money-bill-1"></i></span>
+                                  </div>
+                                  <input id="pi_donate" type="text" min="0.01" max="1" step="0.01" class="form-control" value="0.01" placeholder="Give us a tip" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                                  <br/>
+                                  <button id="button_tip" name="button_tip" class="btn btn-success form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">Give us a tip</button>
+                                </div>
+                            </div>
                             
                             <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                                 <div style="margin-bottom:5px" class="border-bottom">
@@ -3756,6 +3767,10 @@
                                     <div style="margin-top: 10px; display: none" class="row justify-content-center text-center show_test_app_loading">
                                         <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
                                     </div>
+                                </div>
+                                
+                                <div style="margin-top: 10px;" class="row" id="GivingTip">
+                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-money-bill-1"></i></div> <div style="display: inline">Give us a tip</div></button>
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">

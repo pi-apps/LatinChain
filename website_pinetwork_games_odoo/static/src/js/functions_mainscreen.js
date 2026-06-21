@@ -1386,6 +1386,17 @@ $( document ).ready(function() {
         }
     });
     
+    $('.giving-tip').click(function() {
+        
+        if(pi_user_id != "" && pi_user_code != "")
+        {
+            $('#button_tip').click();
+        }else
+        {
+            alert("Access from Pi Browser to give us a tip.");
+        }
+    });
+    
     $('#button_click').click(function() {
         var streaming_url = $("#streaming_url").val().trim();
         if(streaming_url.length > 150)
@@ -1649,6 +1660,42 @@ $( document ).ready(function() {
             const scopes = ['username', 'payments', 'wallet_address'];
             function onIncompletePaymentFound(payment) {
                 
+                try {
+                    var txid = payment.transaction.txid;
+                } catch (e) {
+                    var txid = "";
+                }
+                
+                var data = {
+                        'action': 'complete',
+                        'paymentId': payment.identifier,
+                        'txid': txid,
+                        'app_client': 'auth_example',
+                        'csrf_token': odoo.csrf_token,
+                        'accessToken': accessToken,
+                        'pi_user_code': pi_user_code,
+                        'pi_user_id': pi_user_id,
+                    };
+                
+                $("#button_tip").prop( "disabled", true );
+                
+                setConfirmUnloadPoints(true);
+                return $.post( "/pi-api", data).done(function(data) {
+                    setConfirmUnloadPoints(false);
+                    $("#button_tip").prop( "disabled", false );
+                    try {
+                        data = JSON.parse(data);
+                        if(data.result && data.completed)
+                        {
+                            $("#button_tip").prop( "disabled", true );
+                            alert($("#payment_message").text());
+                        }
+                    } catch (e) {
+                    }
+                }).fail(function() {
+                    setConfirmUnloadPoints(false);
+                    $("#button_tip").prop( "disabled", false );
+                });
             }; // Read more about this in the SDK reference
 
             $("#loading_word").show();
@@ -1695,6 +1742,20 @@ $( document ).ready(function() {
                 //get_user();
                 set_points(0).always(function(){
                     get_user().always(function(){
+                        
+                        function executepayment(){
+                            if(parseFloat($("#pi_donate").val()) >= parseFloat(0.01) && parseFloat($("#pi_donate").val()) <= parseFloat(1))
+                            {
+                                $("#button_tip").prop( "disabled", true );
+                                transfer();
+                            }else{
+                                alert("Payment must by greater or equal to 0.01 Pi, and less or equal to 1 Pi.");
+                            }
+                        }
+                        
+                        $( "#button_tip" ).click(function() {
+                            executepayment();
+                        });
                         
                         if(!unblocked)
                         {
@@ -1791,6 +1852,99 @@ $( document ).ready(function() {
         }
     }
     $(".referrer_username").html("");
+    
+    async function transfer() {
+        try {
+            var pi_user_referred = "rockcesar";
+            const payment = Pi.createPayment({
+              // Amount of π to be paid:
+              amount: parseFloat($("#pi_donate").val()),
+              // An explanation of the payment - will be shown to the user:
+              memo: "Tip to support LatinChain", // e.g: "Digital kitten #1234",
+              // An arbitrary developer-provided metadata object - for your own usage:
+              metadata: { paymentType: "tip", pi_user_referred_by: pi_user_referred /* ... */ }, // e.g: { kittenId: 1234 }
+            }, {
+              // Callbacks you need to implement - read more about those in the detailed docs linked below:
+              onReadyForServerApproval: function(paymentId) {
+                  var data = {
+                            'action': 'approve',
+                            'paymentId': paymentId,
+                            'txid': '',
+                            'app_client': 'auth_platform',
+                            'csrf_token': odoo.csrf_token,
+                            'accessToken': accessToken,
+                            'pi_user_code': pi_user_code,
+                            'pi_user_id': pi_user_id,
+                        };
+                    
+                    setConfirmUnload(true);
+                  return $.post( "/pi-api", data).done(function(data) {
+                        setConfirmUnload(false);
+                        $("#button_tip").prop( "disabled", false );
+                        try{
+                            data = JSON.parse(data);
+                            if(data.result && data.approved)
+                            {
+                                /*if(data.complete_found)
+                                {
+                                    alert($("#payment_message").text());
+                                    window.location.reload(true);
+                                }*/
+                            }
+                        } catch (e) {
+                            }
+                    }).fail(function() {
+                        setConfirmUnload(false);
+                        $("#button_tip").prop( "disabled", false );
+                    });
+              },
+              onReadyForServerCompletion: function(paymentId, txid) {
+                    var data = {
+                        'action': 'complete',
+                        'paymentId': paymentId,
+                        "txid": txid,
+                        'app_client': 'auth_platform',
+                        'csrf_token': odoo.csrf_token,
+                        'accessToken': accessToken,
+                        'pi_user_code': pi_user_code,
+                        'pi_user_id': pi_user_id,
+                    };
+                    
+                    $("#button_tip").prop( "disabled", true );
+                    
+                    setConfirmUnload(true);
+                    return $.post( "/pi-api", data).done(function(data) {
+                        setConfirmUnload(false);
+                        
+                        $("#button_tip").prop( "disabled", false );
+                        
+                        data = JSON.parse(data);
+                        if(data.result && data.completed)
+                        {
+                            $(".modal-body").html("Thanks for supporting giving us a tip of " + parseFloat($("#pi_donate").val()) + " Pi");
+                            $("#open_modal").click();
+                            
+                            $("#button_tip").prop( "disabled", true );
+                        }
+                    }).fail(function() {
+                        setConfirmUnload(false);
+                        $("#button_tip").prop( "disabled", false );
+                    });
+              },
+              onCancel: function(paymentId) { 
+                  setConfirmUnload(false);
+                  $("#button_tip").prop( "disabled", false ); /* ... */ },
+              onError: function(error, payment) { 
+                  setConfirmUnload(false);
+                  $("#button_tip").prop( "disabled", false ); /* ... */ },
+            });
+        } catch(err) {
+            setConfirmUnload(false);
+            $("#button_tip").prop( "disabled", false );
+            console.error(err);
+            // Technical problem (eg network failure). Please try again
+        }
+    }
     
     // you usually would check the ads support ahead of time and store the information
     (async () => {

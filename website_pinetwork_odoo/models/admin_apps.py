@@ -1307,6 +1307,26 @@ class admin_apps(models.Model):
             
             if kw['action'] == "approve":
                 if "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                    if "paymentType" in json_result["metadata"] and json_result["metadata"]["paymentType"] == "tip":
+                        if result_dict["status"]["developer_approved"]:
+                            result = {"result": True, "approved": True}
+                        else:
+                            result = {"result": True, "approved": False}
+
+                        return json.dumps(result)
+            elif kw['action'] == "complete":
+                if "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                    if "paymentType" in json_result["metadata"] and json_result["metadata"]["paymentType"] == "tip":
+                        if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
+                            result = {"result": True, "completed": True}
+                        else:
+                            result = {"result": True, "completed": False}
+                            
+                        return json.dumps(result)
+            
+            if kw['action'] == "approve":
+                if "direction" in result_dict and result_dict["direction"] == "user_to_app":
+                    
                     pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
                     
                     data_dict = {'name': kw['action'] + ". PaymentId: " + kw['paymentId'],
