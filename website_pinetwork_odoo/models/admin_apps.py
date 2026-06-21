@@ -1307,7 +1307,7 @@ class admin_apps(models.Model):
             
             if kw['action'] == "approve":
                 if "direction" in result_dict and result_dict["direction"] == "user_to_app":
-                    if "paymentType" in json_result["metadata"] and json_result["metadata"]["paymentType"] == "tip":
+                    if "paymentType" in result_dict["metadata"] and result_dict["metadata"]["paymentType"] == "tip":
                         if result_dict["status"]["developer_approved"]:
                             result = {"result": True, "approved": True}
                         else:
@@ -1316,7 +1316,7 @@ class admin_apps(models.Model):
                         return json.dumps(result)
             elif kw['action'] == "complete":
                 if "direction" in result_dict and result_dict["direction"] == "user_to_app":
-                    if "paymentType" in json_result["metadata"] and json_result["metadata"]["paymentType"] == "tip":
+                    if "paymentType" in result_dict["metadata"] and result_dict["metadata"]["paymentType"] == "tip":
                         if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
                             result = {"result": True, "completed": True}
                         else:

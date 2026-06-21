@@ -1919,12 +1919,16 @@ $( document ).ready(function() {
                         $("#button_tip").prop( "disabled", false );
                         
                         data = JSON.parse(data);
+                        
                         if(data.result && data.completed)
                         {
                             $(".modal-body").html("Thanks for supporting giving us a tip of " + parseFloat($("#pi_donate").val()) + " Pi");
                             $("#open_modal").click();
                             
-                            $("#button_tip").prop( "disabled", true );
+                            document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                         }
                     }).fail(function() {
                         setConfirmUnload(false);
