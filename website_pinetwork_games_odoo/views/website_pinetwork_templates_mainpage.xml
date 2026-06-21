@@ -1631,7 +1631,8 @@
                                     <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa-solid fa-money-bill-1"></i></span>
                                   </div>
                                   <input id="pi_donate" type="text" min="0.01" max="1" step="0.01" class="form-control" value="0.01" placeholder="Give us a tip" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
-                                  <br/>
+                                </div>
+                                <div class="input-group input-group-lg">
                                   <button id="button_tip" name="button_tip" class="btn btn-success form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">Give us a tip</button>
                                 </div>
                             </div>
