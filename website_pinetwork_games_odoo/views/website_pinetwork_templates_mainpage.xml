@@ -3764,7 +3764,7 @@
                                 </div>
                                 
                                 <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock Once (PayTip)</div></button>
+                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock Once (Send Tip)</div></button>
                                 </div>
                                 
                                 <div class="getverified">
