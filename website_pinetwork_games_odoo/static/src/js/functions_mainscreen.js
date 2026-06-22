@@ -1970,6 +1970,13 @@ $( document ).ready(function() {
         }catch(e){
         }
         
+        $('.openUrlInSystemBrowserLC').click(function(e) {
+            try{
+                Pi.openUrlInSystemBrowser("https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a");
+            }catch(e){
+            }
+        });
+        
         document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
         document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
