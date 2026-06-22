@@ -108,6 +108,9 @@
                 <header class="glass-panel sticky top-0 z-40 border-b border-guajira-clay/20 shadow-sm">
                     <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
                         <div class="flex items-center gap-3">
+                            <a href="/" class="text-guajira-clay hover:text-guajira-earth bg-white/50 hover:bg-white w-10 h-10 rounded-full transition-all shadow-sm border border-gray-200 hover:shadow-md flex items-center justify-center" aria-label="Volver / Go back">
+                                <i class="ph ph-arrow-left text-xl font-bold"></i>
+                            </a>
                             <div class="w-10 h-10 rounded-full bg-guajira-clay text-white flex items-center justify-center shadow-md">
                                 <i class="ph ph-sun text-2xl"></i>
                             </div>
