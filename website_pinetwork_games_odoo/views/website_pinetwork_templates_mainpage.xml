@@ -1639,7 +1639,7 @@
                                   <input id="pi_donate" type="number" lang="en" min="0.01" max="6.28" step="0.01" class="form-control" value="0.05" placeholder="0.01 to 6.28 Pi" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                                 </div>
                                 <div style="margin-bottom:5px">
-                                  Your tips: <span id="user_tips"/>
+                                  Your tips: <span id="user_tips">0</span>
                                 </div>
                                 <div class="input-group input-group-lg">
                                   <button id="button_tip" name="button_tip" class="btn btn-success form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">Send tip in Pi</button>
