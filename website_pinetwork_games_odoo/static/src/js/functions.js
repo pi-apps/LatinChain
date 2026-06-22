@@ -625,6 +625,21 @@ $( document ).ready(function() {
             await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });
         }catch(e){
         }
+        
+        $('.openUrlInSystemBrowserMEXCSignUp').click(function(e) {
+            try{
+                Pi.openUrlInSystemBrowser("https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-latinchain");
+            }catch(e){
+            }
+        });
+        
+        $('.openUrlInSystemBrowserMEXCTrade').click(function(e) {
+            try{
+                Pi.openUrlInSystemBrowser("https://www.mexc.com/exchange/Pi_USDT?shareCode=mexc-latinchain");
+            }catch(e){
+            }
+        });
+        
         (async () => {
             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
