@@ -1627,7 +1627,10 @@
                             
                             <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
                                 <div style="margin-bottom:5px" class="border-bottom">
-                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#Tip &#128240;</div></strong></h5>
+                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SendTip &#128240;</div></strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                  Do you like LatinChain?. Send us a tip here.
                                 </div>
                                 <div class="input-group input-group-lg" style="margin-bottom:5px">
                                   <div class="input-group-prepend">
@@ -1636,7 +1639,7 @@
                                   <input id="pi_donate" type="number" lang="en" min="0.01" max="6.28" step="0.01" class="form-control" value="0.05" placeholder="0.01 to 6.28 Pi" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                                 </div>
                                 <div class="input-group input-group-lg">
-                                  <button id="button_tip" name="button_tip" class="btn btn-success form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">Send tip on Pi</button>
+                                  <button id="button_tip" name="button_tip" class="btn btn-success form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">Send a tip on Pi</button>
                                 </div>
                             </div>
                             
@@ -3764,7 +3767,7 @@
                                 </div>
                                 
                                 <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock Once (Send Tip)</div></button>
+                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock Once (Send a tip)</div></button>
                                 </div>
                                 
                                 <div class="getverified">
@@ -3778,7 +3781,7 @@
                                 </div>
                                 
                                 <!--<div style="margin-top: 10px;" class="row" id="GivingTip">
-                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-money-bill-1"></i></div> <div style="display: inline">Send tip on Pi</div></button>
+                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-money-bill-1"></i></div> <div style="display: inline">Send a tip on Pi</div></button>
                                 </div>-->
                                 
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
