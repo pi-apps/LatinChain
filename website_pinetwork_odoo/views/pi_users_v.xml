@@ -47,6 +47,9 @@
                                 <field name="admin_apps_winners_paid_ids" widget="many2many_tags"/>
                                 <field name="pi_transactions_ids" readonly="True"/>
                             </group>
+                            <group string="Tips">
+                                <field name="user_tips" readonly="True"/>
+                            </group>
                             <group string="IQ">
                                 <field name="iq_name" readonly="True"/>
                                 <field name="iq_result" readonly="True"/>

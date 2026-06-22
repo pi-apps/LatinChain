@@ -338,6 +338,8 @@ function get_user_rewarded() {
                 $("#pi_ad_counter").html(data.pi_ad_counter);
                 $("#resting_time").html(data.resting_time);
                 
+                $("#user_tips").html(data.user_tips);
+                
                 if(data.unblocked)
                 {
                     unblocked = data.unblocked;
@@ -485,6 +487,8 @@ function get_user() {
                     alert($("#payment_message").text());
                     window.location.reload(true);
                 }
+                
+                $("#user_tips").html(data.user_tips);
                 
                 /*if(data.pi_user_code && data.pi_user_code == $("#pi_main_user").val())
                 {
@@ -1928,6 +1932,8 @@ $( document ).ready(function() {
                         
                         if(data.result && data.completed)
                         {
+                            get_user_rewarded();
+                            
                             $(".modal-body").html("Thanks for supporting giving us a tip of " + parseFloat($("#pi_donate").val()) + " Pi");
                             $("#open_modal").click();
                             

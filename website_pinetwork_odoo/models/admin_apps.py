@@ -1319,6 +1319,10 @@ class admin_apps(models.Model):
                     if "paymentType" in result_dict["metadata"] and result_dict["metadata"]["paymentType"] == "tip":
                         if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
                             result = {"result": True, "completed": True}
+                            
+                            pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
+                            
+                            pi_user[0].write({'user_tips': pi_user[0].user_tips + 1})
                         else:
                             result = {"result": True, "completed": False}
                             
@@ -1511,6 +1515,7 @@ class pi_users(models.Model):
     iq_result = fields.Float('IQ Result', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     iq_category = fields.Char('IQ Category', default='', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     iq_date = fields.Date('IQ Date', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    user_tips = fields.Float('User tips', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     @api.depends("avatar_user")
     def _compute_avatar_user_url(self):
