@@ -1934,7 +1934,7 @@ $( document ).ready(function() {
                         {
                             get_user_rewarded();
                             
-                            $(".modal-body").html("Thanks for supporting giving us a tip of " + parseFloat($("#pi_donate").val()) + " Pi");
+                            $(".modal-body").html("Thanks for supporting giving us a tip of " + parseFloat($("#pi_donate").val()) + " Pi. Latin points +1.");
                             $("#open_modal").click();
                             
                             document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
