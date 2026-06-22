@@ -1977,6 +1977,20 @@ $( document ).ready(function() {
             }
         });
         
+        $('.openUrlInSystemBrowserMEXCSignUp').click(function(e) {
+            try{
+                Pi.openUrlInSystemBrowser("https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-latinchain");
+            }catch(e){
+            }
+        });
+        
+        $('.openUrlInSystemBrowserMEXCTrade').click(function(e) {
+            try{
+                Pi.openUrlInSystemBrowser("https://www.mexc.com/exchange/Pi_USDT?shareCode=mexc-latinchain");
+            }catch(e){
+            }
+        });
+        
         document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
         document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
