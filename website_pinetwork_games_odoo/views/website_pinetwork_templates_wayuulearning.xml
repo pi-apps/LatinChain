@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="wayuulearning" name="Wayuu Learning">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+            <head translate="no">
+                <meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>Curso de Wayuunaiki - Inmersión Guajira</title>
+                
+                <!-- Tailwind CSS -->
+                <script src="https://cdn.tailwindcss.com"></script>
+                
+                <!-- Phosphor Icons -->
+                <script src="https://unpkg.com/@phosphor-icons/web"></script>
+                
+                <!-- Google Fonts -->
+                <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800" rel="stylesheet" />
+                
+                <script>
+                    tailwind.config = {
+                        theme: {
+                            extend: {
+                                colors: {
+                                    guajira: {
+                                        sand: '#F4ECD8',  // Color arena del desierto
+                                        clay: '#D97742',  // Color arcilla/terracota
+                                        earth: '#8C3F23', // Marrón oscuro, tierra seca
+                                        sun: '#EAAA00',   // Amarillo sol vibrante
+                                        dark: '#2D1B14'   // Casi negro para textos
+                                    }
+                                },
+                                fontFamily: {
+                                    sans: ['Nunito', 'sans-serif'],
+                                }
+                            }
+                        }
+                    }
+                </script>
+                <style>
+                    body {
+                        background-color: #F4ECD8; /* guajira-sand */
+                        color: #2D1B14; /* guajira-dark */
+                    }
+                    .glass-panel {
+                        background: rgba(255, 255, 255, 0.85);
+                        backdrop-filter: blur(12px);
+                        -webkit-backdrop-filter: blur(12px);
+                    }
+                    /* Ocultar barra de desplazamiento para un diseño más limpio en modal */
+                    #modal-content::-webkit-scrollbar {
+                        width: 6px;
+                    }
+                    #modal-content::-webkit-scrollbar-track {
+                        background: #f1f1f1; 
+                        border-radius: 10px;
+                    }
+                    #modal-content::-webkit-scrollbar-thumb {
+                        background: #D97742; 
+                        border-radius: 10px;
+                    }
+                </style>
+                
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                
+                <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                
+                <script type="text/javascript">
+                    startCommonAppsAI();
+                </script>
+                
+                <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                    <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                        <div id="blocking-message" style="display: none;">
+                            <div>
+                                Go to Pi Browser
+                            </div>
+                            <div>
+                                <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                            </div>
+                        </div>
+                        <div id="paying-message" style="display: none;">
+                            <div>
+                                Pay Pi to GET PREMIUM
+                            </div>
+                            <div>
+                                <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                            </div>
+                            <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                <br/>
+                                <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                            </div>
+                        </div>
+                        <div id="loading-message" style="display: block;">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+            </head>
+            <body translate="no" class="min-h-screen font-sans antialiased selection:bg-guajira-clay selection:text-white">
+
+                <!-- Header & Nav -->
+                <header class="glass-panel sticky top-0 z-40 border-b border-guajira-clay/20 shadow-sm">
+                    <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-guajira-clay text-white flex items-center justify-center shadow-md">
+                                <i class="ph ph-sun text-2xl"></i>
+                            </div>
+                            <div>
+                                <h1 class="text-xl font-bold tracking-tight text-guajira-earth leading-tight">Wayuunaiki</h1>
+                                <p class="text-xs text-guajira-clay font-semibold uppercase tracking-wider" id="header-subtitle">Aprende &amp; Conecta</p>
+                            </div>
+                        </div>
+
+                        <!-- Language Toggle -->
+                        <div class="flex bg-white/50 rounded-full p-1 border border-gray-200 shadow-inner">
+                            <button onclick="setLanguage('es')" id="btn-es" class="px-3 py-1 rounded-full text-sm font-semibold transition-colors bg-guajira-sun text-white">ES</button>
+                            <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded-full text-sm font-semibold transition-colors text-gray-500 hover:text-guajira-dark">EN</button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Main Content -->
+                <main class="max-w-4xl mx-auto px-4 py-8 pb-24">
+                    
+                    <!-- Welcome Section -->
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-extrabold text-guajira-dark mb-3" id="welcome-title">Bienvenido a la Guajira</h2>
+                        <p class="text-gray-600 max-w-xl mx-auto" id="welcome-desc">Aprende el idioma de la gente de arena, sol y viento. Selecciona tu nivel para comenzar tu inmersión cultural.</p>
+                    </div>
+
+                    <!-- Level Selector Tabs -->
+                    <div class="flex justify-center mb-8">
+                        <div class="inline-flex bg-white rounded-2xl p-1 shadow-sm border border-gray-100 overflow-x-auto w-full sm:w-auto">
+                            <button onclick="setLevel('beginner')" id="tab-beginner" class="flex-1 sm:flex-none px-6 py-2.5 rounded-xl text-sm font-bold transition-all bg-guajira-clay text-white shadow-md">
+                                <span id="lbl-beginner">Básico</span>
+                            </button>
+                            <button onclick="setLevel('intermediate')" id="tab-intermediate" class="flex-1 sm:flex-none px-6 py-2.5 rounded-xl text-sm font-bold transition-all text-gray-500 hover:text-guajira-earth">
+                                <span id="lbl-intermediate">Intermedio</span>
+                            </button>
+                            <button onclick="setLevel('advanced')" id="tab-advanced" class="flex-1 sm:flex-none px-6 py-2.5 rounded-xl text-sm font-bold transition-all text-gray-500 hover:text-guajira-earth">
+                                <span id="lbl-advanced">Avanzado</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Modules Grid -->
+                    <div id="modules-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- Cards will be injected here by JS -->
+                    </div>
+
+                </main>
+
+                <!-- Footer -->
+                <footer class="bg-guajira-dark text-guajira-sand py-6 text-center text-sm">
+                    <p id="footer-text">Diseñado para hablantes de Español e Inglés.</p>
+                </footer>
+
+                <!-- Lesson Modal (Hidden by default) -->
+                <div id="lesson-modal" class="fixed inset-0 z-50 bg-guajira-dark/60 backdrop-blur-sm hidden flex-col justify-end sm:justify-center items-center p-0 sm:p-4 transition-opacity">
+                    <div class="bg-white w-full sm:w-full max-w-2xl sm:rounded-3xl rounded-t-3xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden transform transition-transform translate-y-full sm:translate-y-0" id="modal-container">
+                        
+                        <!-- Modal Header -->
+                        <div class="px-6 py-5 border-b border-gray-100 flex justify-between items-center bg-gray-50 sm:rounded-t-3xl">
+                            <div class="flex items-center gap-3">
+                                <div id="modal-icon-container" class="w-10 h-10 rounded-full flex items-center justify-center text-xl">
+                                    <i id="modal-icon" class="ph ph-book"></i>
+                                </div>
+                                <h3 id="modal-title" class="text-xl font-bold text-guajira-dark">Título de la Lección</h3>
+                            </div>
+                            <button onclick="closeModal()" class="text-gray-400 hover:text-gray-700 bg-gray-200 hover:bg-gray-300 rounded-full p-2 transition-colors">
+                                <i class="ph ph-x font-bold"></i>
+                            </button>
+                        </div>
+
+                        <!-- Modal Content (Scrollable) -->
+                        <div id="modal-content" class="p-6 overflow-y-auto flex-1">
+                            <!-- Content injected by JS -->
+                        </div>
+
+                        <!-- Modal Footer -->
+                        <div class="p-6 border-t border-gray-100 bg-gray-50 flex justify-end">
+                            <button onclick="closeModal()" id="btn-close-modal" class="px-6 py-2 bg-guajira-sun text-white font-semibold rounded-xl hover:bg-guajira-clay transition-colors shadow-md">
+                                Completar Lección
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application Logic -->
+                <script src="/website_pinetwork_games_odoo/static/src/js/apps/wayuulearning_functions.js?v=1.101"></script>
+            </body>
+            </html>
+            </t>
+		</template>
+
+</odoo>
