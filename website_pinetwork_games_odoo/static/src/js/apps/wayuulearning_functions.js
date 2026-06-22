@@ -2,6 +2,40 @@
 const courseData = {
     beginner: [
         {
+            id: "b0",
+            title: { es: "Alfabeto Wayuunaiki", en: "Wayuunaiki Alphabet" },
+            desc: { es: "El alfabeto completo y sus sonidos fundamentales.", en: "The complete alphabet and its fundamental sounds." },
+            icon: "ph-text-aa", 
+            color: "bg-orange-100 text-guajira-clay",
+            vocab: [
+                { w: "a, aa", es: "Vocal A (corta y larga)", en: "Vowel A (short and long)", pron: { es: "a / aa", en: "ah / ahh" } },
+                { w: "ch", es: "Consonante Ch", en: "Consonant Ch", pron: { es: "che", en: "cheh" } },
+                { w: "e, ee", es: "Vocal E (corta y larga)", en: "Vowel E (short and long)", pron: { es: "e / ee", en: "eh / ehh" } },
+                { w: "i, ii", es: "Vocal I (corta y larga)", en: "Vowel I (short and long)", pron: { es: "i / ii", en: "ee / eee" } },
+                { w: "j", es: "Consonante J (suave, como la aspiración en inglés)", en: "Consonant J (soft, like English h)", pron: { es: "je", en: "heh" } },
+                { w: "k", es: "Consonante K", en: "Consonant K", pron: { es: "ke", en: "keh" } },
+                { w: "l", es: "Consonante L (lengua detrás de los dientes superiores)", en: "Consonant L (tongue behind upper teeth)", pron: { es: "le", en: "leh" } },
+                { w: "m", es: "Consonante M", en: "Consonant M", pron: { es: "me", en: "meh" } },
+                { w: "n", es: "Consonante N", en: "Consonant N", pron: { es: "ne", en: "neh" } },
+                { w: "ñ", es: "Consonante Ñ", en: "Consonant Ñ", pron: { es: "ñe", en: "nyeh" } },
+                { w: "o, oo", es: "Vocal O (corta y larga)", en: "Vowel O (short and long)", pron: { es: "o / oo", en: "oh / ohh" } },
+                { w: "p", es: "Consonante P", en: "Consonant P", pron: { es: "pe", en: "peh" } },
+                { w: "r", es: "Consonante R (vibrante fuerte)", en: "Consonant R (strong trill)", pron: { es: "re", en: "reh" } },
+                { w: "s", es: "Consonante S", en: "Consonant S", pron: { es: "se", en: "seh" } },
+                { w: "sh", es: "Consonante Sh (fricativa, como pedir silencio)", en: "Consonant Sh (fricative, like asking for silence)", pron: { es: "she", en: "sheh" } },
+                { w: "t", es: "Consonante T", en: "Consonant T", pron: { es: "te", en: "teh" } },
+                { w: "u, uu", es: "Vocal U (corta y larga)", en: "Vowel U (short and long)", pron: { es: "u / uu", en: "oo / ooo" } },
+                { w: "ü, üü", es: "Vocal Ü (cerrada, sonido gutural y palatal)", en: "Vowel Ü (close central unrounded)", pron: { es: "entre la i y la u", en: "between i and u" } },
+                { w: "w", es: "Consonante W", en: "Consonant W", pron: { es: "we", en: "weh" } },
+                { w: "y", es: "Consonante Y", en: "Consonant Y", pron: { es: "ye", en: "yeh" } },
+                { w: "' (Saltillo)", es: "Corte glotal (Pausa breve en la palabra)", en: "Glottal stop (Brief pause in the word)", pron: { es: "Pausa en la garganta", en: "Pause in the throat" } }
+            ],
+            extendedNote: {
+                es: "<strong>Inmersión Guajira:</strong> El alfabeto Wayuunaiki oficial está compuesto por 6 vocales (que pueden ser cortas o largas), 14 consonantes y el saltillo ('). La vocal 'ü' es un sonido particular que se pronuncia con los labios estirados como para decir 'i', pero intentando decir 'u'. El saltillo o corte glotal (') indica una interrupción o golpe seco de aire en la garganta, y es crucial porque puede cambiar por completo el significado de una palabra.",
+                en: "<strong>Guajira Immersion:</strong> The official Wayuunaiki alphabet consists of 6 vowels (which can be short or long), 14 consonants, and the glottal stop ('). The vowel 'ü' is a unique sound pronounced with lips stretched as if saying 'i', but trying to say 'u'. The glottal stop (') indicates an interruption or sharp burst of air in the throat, and it is crucial because it can completely change the meaning of a word."
+            }
+        },
+        {
             id: "b1",
             title: { es: "Saludos y Etiqueta", en: "Greetings & Etiquette" },
             desc: { es: "Lo básico para interactuar con respeto en la Guajira.", en: "Basics to interact respectfully in La Guajira." },
