@@ -1639,7 +1639,7 @@
                                   <input id="pi_donate" type="number" lang="en" min="0.01" max="6.28" step="0.01" class="form-control" value="0.05" placeholder="0.01 to 6.28 Pi" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                                 </div>
                                 <div class="input-group input-group-lg">
-                                  <button id="button_tip" name="button_tip" class="btn btn-success form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">Send tip on Pi</button>
+                                  <button id="button_tip" name="button_tip" class="btn btn-success form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">Send tip in Pi</button>
                                 </div>
                             </div>
                             
@@ -3781,7 +3781,7 @@
                                 </div>
                                 
                                 <!--<div style="margin-top: 10px;" class="row" id="GivingTip">
-                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-money-bill-1"></i></div> <div style="display: inline">Send tip on Pi</div></button>
+                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-money-bill-1"></i></div> <div style="display: inline">Send tip in Pi</div></button>
                                 </div>-->
                                 
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
