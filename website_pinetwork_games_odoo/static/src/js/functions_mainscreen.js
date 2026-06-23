@@ -1978,21 +1978,45 @@ $( document ).ready(function() {
         
         $('.openUrlInSystemBrowserLC').click(function(e) {
             try{
-                Pi.openUrlInSystemBrowser("https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a");
+                if(pi_user_id == "" && pi_user_code == "")
+                {
+                    $(this).prop("href", "https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a");
+                }else
+                {
+                    e.preventDefault();
+                    
+                    Pi.openUrlInSystemBrowser("https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a");
+                }
             }catch(e){
             }
         });
         
         $('.openUrlInSystemBrowserMEXCSignUp').click(function(e) {
             try{
-                Pi.openUrlInSystemBrowser("https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-latinchain");
+                if(pi_user_id == "" && pi_user_code == "")
+                {
+                    $(this).prop("href", "https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-latinchain");
+                }else
+                {
+                    e.preventDefault();
+                    
+                    Pi.openUrlInSystemBrowser("https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-latinchain");
+                }
             }catch(e){
             }
         });
         
         $('.openUrlInSystemBrowserMEXCTrade').click(function(e) {
             try{
-                Pi.openUrlInSystemBrowser("https://www.mexc.com/exchange/Pi_USDT?shareCode=mexc-latinchain");
+                if(pi_user_id == "" && pi_user_code == "")
+                {
+                    $(this).prop("href", "https://www.mexc.com/exchange/Pi_USDT?shareCode=mexc-latinchain");
+                }else
+                {
+                    e.preventDefault();
+                    
+                    Pi.openUrlInSystemBrowser("https://www.mexc.com/exchange/Pi_USDT?shareCode=mexc-latinchain");
+                }
             }catch(e){
             }
         });
