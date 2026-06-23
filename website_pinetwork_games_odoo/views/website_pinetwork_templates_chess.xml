@@ -216,7 +216,7 @@
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><i class="fa-solid fa-house"></i></button>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <button style="display: none;" class="nav-link" id="chess-tab" data-bs-toggle="tab" data-bs-target="#chess" type="button" role="tab" aria-controls="chess" aria-selected="false"><i class="fa-solid fa-chess-knight"></i><span id="counter_span"></span></button>
+                            <button style="display: none;" class="nav-link" id="chess-tab" data-bs-toggle="tab" data-bs-target="#chess" type="button" role="tab" aria-controls="chess" aria-selected="false"><i class="fa-solid fa-chess-queen"></i><span id="counter_span"></span></button>
                           </li>
                           
                           <li><button style="margin-left:5px; height:100%" class="btn btn-info" onclick="openNav()"><i class="fa-solid fa-bars"></i></button></li>
