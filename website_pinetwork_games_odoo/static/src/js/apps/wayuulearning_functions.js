@@ -402,12 +402,12 @@ const courseData = {
                 },
                 { 
                     w: "💬 Na wayuukana o'unushii eemüinre Jepira, süpüla nükülin juya.", 
-                    es: "💬Los hombres parten hacia Jepira, para luego regresar como la lluvia.", 
+                    es: "💬 Los hombres parten hacia Jepira, para luego regresar como la lluvia.", 
                     en: "💬 Men depart to Jepira, to later return as the rain.", 
                     pron: { es: "na wa-YUU-ka-na o-u-NU-shii ee-MUI-in-re je-PI-ra, su-PU-la nu-KU-lin ju-ya", en: "nah wah-YOO-kah-nah oh-oo-NOO-shee eh-MOO-een-reh heh-PEE-rah, soo-POO-lah noo-KOO-leen hoo-yah" } 
                 },
                 { 
-                    w: "💬Nnojoishii wanülüü yaa, eeshi wanee seyuu kachukuwa'ipakai.", 
+                    w: "💬 Nnojoishii wanülüü yaa, eeshi wanee seyuu kachukuwa'ipakai.", 
                     es: "💬 No hay espíritus malignos aquí, hay un espíritu protector cuidando.", 
                     en: "💬 There are no evil spirits here, there is a protector spirit watching over.", 
                     pron: { es: "nno-JOI-shii wa-nu-LUU ya-a, EE-shi wa-NEE se-YUU ka-chu-ku-wa-I-pa-kai", en: "nnoh-HOY-shee wah-noo-LOO yah-ah, EH-shee wah-NAY seh-YOO kah-choo-koo-wah-EE-pah-kye" } 
