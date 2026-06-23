@@ -2743,9 +2743,6 @@
                                             <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top getverified">
                                                 <div class="row" style="text-align: center; padding: 10px">
                                                     <div class="col-12">
-                                                        <div style="margin-bottom:5px;" class="getverified">
-                                                            <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint fa-2xl"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
-                                                        </div>
                                                         <div class="getverified">
                                                             <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple fa-2xl"></i></div><div style="font-size:100%;" translate="no">GET PREMIUM</div><div style="font-size:80%;">Pay Pi to unblock LatinChain PREMIUM<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                         </div>
@@ -3569,8 +3566,8 @@
                                 background-color: #021526;
                             }
                             
-                            .btn {
-                                padding: 10px !important;
+                            i.fa-2xl {
+                                margin: 20px !important;
                             }
                             
                     </style>
