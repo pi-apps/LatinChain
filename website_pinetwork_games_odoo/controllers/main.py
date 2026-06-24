@@ -165,7 +165,7 @@ class Website(Website):
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
         
         if mainnet in ['Mainnet OFF', 'Mainnet ON']:
-            return False
+            return redirect("/")
 
         #nopopup = False
         #if "nopopup" in kw:
