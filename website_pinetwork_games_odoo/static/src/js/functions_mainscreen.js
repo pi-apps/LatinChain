@@ -1962,9 +1962,9 @@ $( document ).ready(function() {
         if(parseFloat($("#pi_donate").val()) < parseFloat(0.01))
         {
             $("#pi_donate").val("0.01");
-        }else if(parseFloat($("#pi_donate").val()) > parseFloat(6.28))
+        }else if(parseFloat($("#pi_donate").val()) > parseFloat(62.8))
         {
-            $("#pi_donate").val("6.28");
+            $("#pi_donate").val("62.8");
         }
         
         $("#button_tip").prop( "disabled", true );
