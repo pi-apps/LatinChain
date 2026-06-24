@@ -163,6 +163,9 @@ class Website(Website):
             latinchain_specs = admin_app_list[0]._get_latinchain_specs()
         
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
+        
+        if mainnet in ['Mainnet OFF', 'Mainnet ON']:
+            return False
 
         #nopopup = False
         #if "nopopup" in kw:
