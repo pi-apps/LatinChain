@@ -1396,30 +1396,6 @@ $( document ).ready(function() {
         }
     });
     
-    function executepayment(){
-        if(parseFloat($("#pi_donate").val()) >= parseFloat(0.01) && parseFloat($("#pi_donate").val()) <= parseFloat(6.28))
-        {
-            $("#button_tip").prop( "disabled", true );
-            transfer();
-        }else{
-            alert("Payment must by greater or equal to 0.01 Pi, and less or equal to 6.28 Pi.");
-        }
-    }
-    
-    $( "#button_tip" ).off('click').on('click', function() {
-        if(pi_user_id != "" && pi_user_code != "")
-        {
-            executepayment();
-        }else
-        {
-            alert("Access from Pi Browser to give us a tip.");
-        }
-    });
-    
-    $('.giving-tip').click(function() {
-        $('#button_tip').click();
-    });
-    
     $('#button_click').click(function() {
         var streaming_url = $("#streaming_url").val().trim();
         if(streaming_url.length > 150)
@@ -1960,6 +1936,30 @@ $( document ).ready(function() {
             // Technical problem (eg network failure). Please try again
         }
     }
+    
+    function executepayment(){
+        if(parseFloat($("#pi_donate").val()) >= parseFloat(0.01) && parseFloat($("#pi_donate").val()) <= parseFloat(6.28))
+        {
+            $("#button_tip").prop( "disabled", true );
+            transfer();
+        }else{
+            alert("Payment must by greater or equal to 0.01 Pi, and less or equal to 6.28 Pi.");
+        }
+    }
+    
+    $( "#button_tip" ).off('click').on('click', function() {
+        if(pi_user_id != "" && pi_user_code != "")
+        {
+            executepayment();
+        }else
+        {
+            alert("Access from Pi Browser to give us a tip.");
+        }
+    });
+    
+    $('.giving-tip').click(function() {
+        $('#button_tip').click();
+    });
     
     // you usually would check the ads support ahead of time and store the information
     (async () => {
