@@ -119,14 +119,19 @@ async function recognizeText() {
             //const { data: { text } } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
             const { data } = await ocrWorker.recognize(photos[currentPhotoIndex].url);
             
-            const textoLimpio = data.words
-                .filter(word => word.confidence > 65) // Ajusta este número (0-100) según necesites
-                .map(word => word.text)
-                .join(' ');
-             
-            // Update the UI with the recognized text
-            //recognizedTextElement.textContent = text.trim() || "No text found.";
-            recognizedTextElement.textContent = textoLimpio.trim() || "No text found.";
+            // Loop through lines instead of just words to preserve physical formatting
+            const formattedText = data.lines.map(line => {
+                // Filter and join words within this specific line
+                return line.words
+                    .filter(word => word.confidence > 65)
+                    .map(word => word.text)
+                    .join(' ');
+            })
+            .filter(lineText => lineText.trim().length > 0) // Remove lines that ended up empty after filtering
+            .join('\n'); // Rejoin the separate lines with a newline character
+
+            // Use innerText instead of textContent so the browser respects the \n line breaks
+            recognizedTextElement.innerText = formattedText.trim() || "No text found.";
              
             await ocrWorker.terminate();
         }

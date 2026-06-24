@@ -67,10 +67,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (let i = 1; i <= pdfDoc.numPages; i++) {
                     const page = await pdfDoc.getPage(i);
                     const text = await page.getTextContent();
-                    textContent += text.items.map(item => item.str).join(' ') + '\n\n';
+                    
+                    let lastY = null;
+                    let pageText = '';
+
+                    text.items.forEach(item => {
+                        const currentY = item.transform[5]; // Y-coordinate
+
+                        if (lastY !== null && Math.abs(lastY - currentY) > 5) {
+                            if (Math.abs(lastY - currentY) > 15) {
+                                pageText += '\n\n'; // New paragraph
+                            } else {
+                                pageText += '\n'; // New line
+                            }
+                        } else if (lastY !== null && pageText.length > 0 && !pageText.endsWith(' ') && !pageText.endsWith('\n')) {
+                            pageText += ' '; // Add space
+                        }
+                        
+                        pageText += item.str.trim();
+                        lastY = currentY;
+                    });
+                    
+                    textContent += pageText + '\n\n';
                 }
                 
-                articleText.value = textContent;
+                // Clean up any excessive multiple newlines created by empty page elements
+                articleText.value = textContent.replace(/\n{3,}/g, '\n\n');
                 messageBox.textContent = '.pdf file loaded successfully.';
                 updateCharCounter();
             } catch (error) {
@@ -122,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // Cargar la lista de voces solo cuando esté disponible
+        // Load the voice list only when available
         if (window.speechSynthesis.getVoices().length > 0) {
             populateVoiceList();
         } else {
@@ -198,16 +220,14 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         // Message if the API is not available
         messageBox.textContent = 'Sorry, your browser does not support the Text-to-Speech API.';
-        //[playBtn, pauseBtn, stopBtn, fileInput, voiceSelect].forEach(el => el.disabled = true);
         [playBtn, pauseBtn, stopBtn, voiceSelect].forEach(el => el.disabled = true);
     }
 });
 
 window.onbeforeunload = () => {
     is_changing_page = true;
-    observer1.disconnect();
-    if ('speechSynthesis' in window)
-    {
+    if (typeof observer1 !== 'undefined') observer1.disconnect();
+    if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
     }
 };

@@ -169,6 +169,10 @@
                             .zoom-close-button:hover {
                                 background-color: rgba(255, 255, 255, 0.4);
                             }
+                            
+                            #recognized-text {
+                                white-space: pre-wrap; 
+                            }
                         </style>
                         
                         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -460,7 +464,7 @@
                             </button>
                         </div>
 
-                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/imgplayer_functions.js?v=1.156"></script>
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/imgplayer_functions.js?v=1.157"></script>
                     </body>
                 </html>
             </t>
