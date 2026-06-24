@@ -1943,7 +1943,9 @@ $( document ).ready(function() {
     
     function executepayment(){
         if(parseFloat($("#pi_donate").val()) < parseFloat(0.01))
+        {
             $("#pi_donate").val("0.01");
+        }
         
         $("#button_tip").prop( "disabled", true );
             transfer();
