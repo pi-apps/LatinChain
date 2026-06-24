@@ -1397,14 +1397,7 @@ $( document ).ready(function() {
     });
     
     $('.giving-tip').click(function() {
-        
-        if(pi_user_id != "" && pi_user_code != "")
-        {
-            $('#button_tip').click();
-        }else
-        {
-            alert("Access from Pi Browser to give us a tip.");
-        }
+        $('#button_tip').click();
     });
     
     $('#button_click').click(function() {
@@ -1764,7 +1757,13 @@ $( document ).ready(function() {
                         }
                         
                         $( "#button_tip" ).click(function() {
-                            executepayment();
+                            if(pi_user_id != "" && pi_user_code != "")
+                            {
+                                executepayment();
+                            }else
+                            {
+                                alert("Access from Pi Browser to give us a tip.");
+                            }
                         });
                         
                         if(!unblocked)
