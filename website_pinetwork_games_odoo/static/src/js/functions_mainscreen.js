@@ -1958,7 +1958,7 @@ $( document ).ready(function() {
         {
             alert("You need to set a value to send a tip");
         }
-        s
+        
         if(parseFloat($("#pi_donate").val()) < parseFloat(0.01))
         {
             $("#pi_donate").val("0.01");
@@ -1971,7 +1971,7 @@ $( document ).ready(function() {
             transfer();
     }
     
-    $( "#button_tip" ).off('click').on('click', function() {
+    $( "#button_tip" ).click(function() {
         if(pi_user_id != "" && pi_user_code != "")
         {
             executepayment();
