@@ -1396,6 +1396,13 @@ $( document ).ready(function() {
         }
     });
     
+    $( "#button_tip" ).off('click').on('click', function() {
+        if(pi_user_id == "" && pi_user_code == "")
+        {
+            alert("Access from Pi Browser to give us a tip.");
+        }
+    });
+    
     $('.giving-tip').click(function() {
         $('#button_tip').click();
     });
@@ -1756,7 +1763,7 @@ $( document ).ready(function() {
                             }
                         }
                         
-                        $( "#button_tip" ).click(function() {
+                        $( "#button_tip" ).off('click').on('click', function() {
                             if(pi_user_id != "" && pi_user_code != "")
                             {
                                 executepayment();
