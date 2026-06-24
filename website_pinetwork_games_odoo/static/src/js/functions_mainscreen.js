@@ -1138,6 +1138,11 @@ $( document ).ready(function() {
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
+                                $('.darkmode-toggle').css('display', 'block');
+                                if($('.darkmode-toggle--white').length === 0)
+                                    $('.darkmode-layer--button').css('display', 'block');
+                                else
+                                    $('.darkmode-toggle--white').css('display', 'block');
                                 document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1916,6 +1921,11 @@ $( document ).ready(function() {
                             $(".modal-body").html("Thanks for supporting giving us a tip of " + parseFloat($("#pi_donate").val()) + " Pi. Latin points +1.");
                             $("#open_modal").click();
                             
+                            $('.darkmode-toggle').css('display', 'block');
+                            if($('.darkmode-toggle--white').length === 0)
+                                $('.darkmode-layer--button').css('display', 'block');
+                            else
+                                $('.darkmode-toggle--white').css('display', 'block');
                             document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
