@@ -939,10 +939,12 @@ function copyToClipboard(text) {
 
 $( document ).ready(function() {
     
-    $('.numeric').on('input', function() {
-        // 1. Remove anything that isn't a number or a period
-        // 2. Prevent multiple periods by keeping only the first one
-        this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');
+    $(".numeric-decimal").on("keypress keyup blur",function (event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        //$(this).val($(this).val().replace(/[^0-9\.]/g,''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+            event.preventDefault();
+        }
     });
     
     /*const video_latinchain = document.getElementById('loading-message-video');
@@ -1952,9 +1954,17 @@ $( document ).ready(function() {
     }
     
     function executepayment(){
+        if($("#pi_donate").val().trim() == "")
+        {
+            alert("You need to set a value to send a tip");
+        }
+        s
         if(parseFloat($("#pi_donate").val()) < parseFloat(0.01))
         {
             $("#pi_donate").val("0.01");
+        }else if(parseFloat($("#pi_donate").val()) > parseFloat(6.28))
+        {
+            $("#pi_donate").val("6.28");
         }
         
         $("#button_tip").prop( "disabled", true );
