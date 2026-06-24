@@ -1396,8 +1396,21 @@ $( document ).ready(function() {
         }
     });
     
+    function executepayment(){
+        if(parseFloat($("#pi_donate").val()) >= parseFloat(0.01) && parseFloat($("#pi_donate").val()) <= parseFloat(6.28))
+        {
+            $("#button_tip").prop( "disabled", true );
+            transfer();
+        }else{
+            alert("Payment must by greater or equal to 0.01 Pi, and less or equal to 6.28 Pi.");
+        }
+    }
+    
     $( "#button_tip" ).off('click').on('click', function() {
-        if(pi_user_id == "" && pi_user_code == "")
+        if(pi_user_id != "" && pi_user_code != "")
+        {
+            executepayment();
+        }else
         {
             alert("Access from Pi Browser to give us a tip.");
         }
@@ -1752,26 +1765,6 @@ $( document ).ready(function() {
                 //get_user();
                 set_points(0).always(function(){
                     get_user().always(function(){
-                        
-                        function executepayment(){
-                            if(parseFloat($("#pi_donate").val()) >= parseFloat(0.01) && parseFloat($("#pi_donate").val()) <= parseFloat(6.28))
-                            {
-                                $("#button_tip").prop( "disabled", true );
-                                transfer();
-                            }else{
-                                alert("Payment must by greater or equal to 0.01 Pi, and less or equal to 6.28 Pi.");
-                            }
-                        }
-                        
-                        $( "#button_tip" ).off('click').on('click', function() {
-                            if(pi_user_id != "" && pi_user_code != "")
-                            {
-                                executepayment();
-                            }else
-                            {
-                                alert("Access from Pi Browser to give us a tip.");
-                            }
-                        });
                         
                         if(!unblocked)
                         {
