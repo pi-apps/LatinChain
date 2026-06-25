@@ -1954,7 +1954,7 @@ $( document ).ready(function() {
     }
     
     function executepayment(){
-        if($("#pi_donate").val().trim() == "")
+        if($("#pi_donate").val().trim() == "" || parseFloat($("#pi_donate").val()) == 0)
         {
             alert("You need to set a value to send a tip.");
             return false;
