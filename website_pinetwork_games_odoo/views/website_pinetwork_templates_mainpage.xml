@@ -3808,6 +3808,11 @@
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow2">
                                     <button class="latinchain-specs btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-list-ol"></i></div> <div style="display: inline">dApps list</div></button>
                                 </div>
+                                
+                                <div style="margin-top: 10px;" class="row">
+                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-danger rounded col-12 open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour</div></button>
+                                </div>
+                                
                                 <div style="margin-top: 10px; display: none;" class="row" id="GoForwardShow3">
                                     <button class="close_latinchain btn btn-block btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-xmark"></i></div> <div style="display: inline">Close</div></button>
                                 </div>
