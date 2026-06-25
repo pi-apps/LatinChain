@@ -1956,7 +1956,8 @@ $( document ).ready(function() {
     function executepayment(){
         if($("#pi_donate").val().trim() == "")
         {
-            alert("You need to set a value to send a tip");
+            alert("You need to set a value to send a tip.");
+            return false;
         }
         
         if(parseFloat($("#pi_donate").val()) < parseFloat(0.01))
