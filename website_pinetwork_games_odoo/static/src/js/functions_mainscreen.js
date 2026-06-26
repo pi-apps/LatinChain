@@ -1818,14 +1818,14 @@ $( document ).ready(function() {
                                 displayAds();
                             });
                             
-                            $( "#rewardedad-open" ).click(async function() {
-                                showRewardedPiAd();
-                                
-                                $( "#rewardedad-close" ).click();
-                            });
-                            
                             if(show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
+                                $( "#rewardedad-open" ).click(async function() {
+                                    showRewardedPiAd();
+                                    
+                                    $( "#rewardedad-close" ).click();
+                                });
+                                
                                 (async () => {
                                     $(".modal-body-rewardedad").html($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
                                     $("#open_rewardedad_modal").click();
