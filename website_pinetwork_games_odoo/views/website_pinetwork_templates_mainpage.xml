@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.255"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.256"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3624,6 +3624,32 @@
                           <div class="modal-footer button-group">
                             <a href="/pinetwork" class="href-external btn btn-success font-weight-bold text-white border-success getverified" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;" translate="no">GET PREMIUM</div><div style="font-size:80%;" translate="no">Earn Latin points (<t t-esc="amount_latin_pay" />)</div></a>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Button trigger modal -->
+                    <button id="open_rewardedad_modal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalRewardedad" style="display: none;">
+                      Open Modal
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="ModalRewardedad" tabindex="-1" aria-labelledby="ModalRewardedadLabel" aria-hidden="true" style="text-align:center; z-index: 9999999 !important;">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ModalRewardedadLabel">Message</h5>
+                            <button type="button" class="btn-close" style="background-color:white !important; color:black !important; filter: contrast(100%) !important;" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                            <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>-->
+                          </div>
+                          <div class="modal-body-rewardedad">
+                            
+                          </div>
+                          <div class="modal-footer button-group">
+                            <button type="button" id="rewardedad-open" class="btn btn-success font-weight-bold text-white border-success">Watch Rewarded Ad</button>
+                            <button type="button" id="rewardedad-close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>
                         </div>

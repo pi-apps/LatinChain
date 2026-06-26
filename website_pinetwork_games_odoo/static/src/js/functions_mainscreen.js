@@ -1663,6 +1663,12 @@ $( document ).ready(function() {
         displayAds();
     });
     
+    $( "#rewardedad-open" ).click(async function() {
+        showRewardedPiAd();
+        
+        $( "#rewardedad-close" ).click();
+    });
+    
     async function auth() {
         try {
             
@@ -1821,8 +1827,10 @@ $( document ).ready(function() {
                             if(show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 (async () => {
-                                    if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
-                                        showRewardedPiAd();
+                                    $(".modal-body-rewardedad").html($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
+                                    $("#open_rewardedad_modal").click();
+                                    //if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
+                                    //    showRewardedPiAd();
                                 })();
                             }/*else if(!unblocked)
                             {
