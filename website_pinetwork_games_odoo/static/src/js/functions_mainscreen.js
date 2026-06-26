@@ -1824,9 +1824,6 @@ $( document ).ready(function() {
                                 $( "#rewardedad-close" ).click();
                             });
                             
-                            $(".modal-body-rewardedad").html($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
-                            $("#open_rewardedad_modal").click();
-                            
                             if(show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 (async () => {
