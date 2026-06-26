@@ -1664,10 +1664,14 @@ $( document ).ready(function() {
     });
     
     $( "#rewardedad-open" ).click(async function() {
+        alert("123");
         showRewardedPiAd();
         
         $( "#rewardedad-close" ).click();
     });
+    
+    $(".modal-body-rewardedad").html($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
+    $("#open_rewardedad_modal").click();
     
     async function auth() {
         try {
