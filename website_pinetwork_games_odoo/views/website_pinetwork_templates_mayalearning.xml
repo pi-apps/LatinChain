@@ -187,7 +187,11 @@
                       padding: 0.8rem 0.3rem 0.5rem;
                       scroll-behavior: smooth;
                       -webkit-overflow-scrolling: touch;
-                      scrollbar-width: 3px;
+                      
+                      /* Ensure scrollbar is visible */
+                      scrollbar-width: thin; /* Firefox */
+                      scrollbar-color: #888 #f1f1f1; /* Firefox: thumb and track color */
+                      
                       flex-wrap: nowrap;
                       mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
                       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
@@ -313,10 +317,29 @@
                     .table-wrap {
                       overflow-x: scroll;
                       -webkit-overflow-scrolling: touch;
-                      scrollbar-width: 3px;
+                      
+                      /* Ensure scrollbar is visible */
+                      scrollbar-width: thin; /* Firefox */
+                      scrollbar-color: #888 #f1f1f1; /* Firefox: thumb and track color */
+                      
                       margin: 0.8rem 0;
                       border-radius: var(--radius-sm);
                       border: 1px solid #ede3d4;
+                    }
+                    
+                    /* Chrome, Edge, and Safari */
+                    .nav-tabs::-webkit-scrollbar, .table-wrap::-webkit-scrollbar {
+                        height: 6px;
+                        display: block; /* Force display */
+                    }
+
+                    .nav-tabs::-webkit-scrollbar-track, .table-wrap::-webkit-scrollbar-track {
+                        background: #f1f1f1;
+                    }
+
+                    .nav-tabs::-webkit-scrollbar-thumb, .table-wrap::-webkit-scrollbar-thumb {
+                        background: #888;
+                        border-radius: 4px;
                     }
 
                     table {
