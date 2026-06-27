@@ -183,7 +183,7 @@
                     .nav-tabs {
                       display: flex;
                       gap: 0.35rem;
-                      overflow-x: auto;
+                      overflow-x: scroll;
                       padding: 0.8rem 0.3rem 0.5rem;
                       scroll-behavior: smooth;
                       -webkit-overflow-scrolling: touch;
@@ -311,7 +311,7 @@
 
                     /* ── TABLES ── */
                     .table-wrap {
-                      overflow-x: auto;
+                      overflow-x: scroll;
                       -webkit-overflow-scrolling: touch;
                       scrollbar-width: 3px;
                       margin: 0.8rem 0;
