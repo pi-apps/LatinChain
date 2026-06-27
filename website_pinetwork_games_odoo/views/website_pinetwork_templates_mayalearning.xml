@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="mayalearning" name="Maya Learning">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+            <head>
+                <meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>Curso de Maya Yucateco - Maayat'aan</title>
+                <style>
+                    :root {
+                      --terracotta: #c4713b;
+                      --terracotta-light: #e8a87c;
+                      --jungle: #2d5a27;
+                      --jungle-light: #4a8a3f;
+                      --gold: #d4a843;
+                      --gold-light: #f0d078;
+                      --cream: #fdf6ec;
+                      --cream-dark: #f5e6d3;
+                      --brown: #3c2415;
+                      --brown-light: #6b4d3a;
+                      --white: #ffffff;
+                      --shadow: 0 4px 20px rgba(60, 36, 21, 0.1);
+                      --shadow-lg: 0 8px 40px rgba(60, 36, 21, 0.15);
+                      --radius: 16px;
+                      --radius-sm: 10px;
+                      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                      --font-heading: 'Georgia', 'Times New Roman', serif;
+                      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+                    }
+
+                    * {
+                      margin: 0;
+                      padding: 0;
+                      box-sizing: border-box;
+                    }
+
+                    html {
+                      scroll-behavior: smooth;
+                      font-size: 16px;
+                    }
+
+                    body {
+                      font-family: var(--font-body);
+                      background-color: var(--cream);
+                      color: var(--brown);
+                      line-height: 1.7;
+                      min-height: 100vh;
+                      -webkit-font-smoothing: antialiased;
+                      background-image:
+                        radial-gradient(ellipse at 20% 10%, rgba(212, 168, 67, 0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 90%, rgba(45, 90, 39, 0.06) 0%, transparent 60%);
+                    }
+
+                    /* ── HEADER ── */
+                    .header {
+                      background: linear-gradient(135deg, #3c2415 0%, #5a3828 40%, #3c2415 100%);
+                      color: var(--cream);
+                      padding: 1rem 1rem;
+                      position: sticky;
+                      top: 0;
+                      z-index: 100;
+                      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+                      border-bottom: 3px solid var(--gold);
+                    }
+
+                    .header-inner {
+                      max-width: 1100px;
+                      margin: 0 auto;
+                      display: flex;
+                      align-items: center;
+                      gap: 0.8rem;
+                      flex-wrap: wrap;
+                    }
+
+                    /* ── NUEVO BOTÓN DE REGRESO ── */
+                    .back-btn {
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      width: 42px;
+                      height: 42px;
+                      border-radius: 50%;
+                      background: rgba(255, 255, 255, 0.08);
+                      color: var(--cream);
+                      text-decoration: none;
+                      transition: var(--transition);
+                      backdrop-filter: blur(4px);
+                      border: 1px solid rgba(255, 255, 255, 0.15);
+                      flex-shrink: 0;
+                    }
+
+                    .back-btn:hover {
+                      background: rgba(255, 255, 255, 0.2);
+                      border-color: var(--gold-light);
+                      color: #fff;
+                      transform: translateX(-2px);
+                      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                    }
+
+                    .back-btn svg {
+                      width: 22px;
+                      height: 22px;
+                      stroke: currentColor;
+                      fill: none;
+                      stroke-width: 2.5;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                    }
+
+                    .logo-area {
+                      display: flex;
+                      align-items: center;
+                      gap: 0.6rem;
+                      flex: 1;
+                    }
+
+                    .logo-icon {
+                      font-size: 2.4rem;
+                      line-height: 1;
+                      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+                    }
+
+                    .logo-text h1 {
+                      font-family: var(--font-heading);
+                      font-size: clamp(1.1rem, 3vw, 1.5rem);
+                      letter-spacing: 0.02em;
+                      line-height: 1.2;
+                    }
+
+                    .logo-text span {
+                      font-size: 0.7rem;
+                      opacity: 0.8;
+                      letter-spacing: 0.05em;
+                      display: block;
+                      font-weight: 400;
+                    }
+
+                    .lang-toggle {
+                      display: flex;
+                      gap: 4px;
+                      background: rgba(255, 255, 255, 0.1);
+                      border-radius: 30px;
+                      padding: 3px;
+                      border: 1px solid rgba(255, 255, 255, 0.2);
+                    }
+
+                    .lang-btn {
+                      padding: 0.45rem 1rem;
+                      border-radius: 28px;
+                      border: none;
+                      cursor: pointer;
+                      font-weight: 600;
+                      font-size: 0.8rem;
+                      letter-spacing: 0.03em;
+                      transition: var(--transition);
+                      background: transparent;
+                      color: var(--cream);
+                      white-space: nowrap;
+                      font-family: var(--font-body);
+                    }
+
+                    .lang-btn.active {
+                      background: var(--gold);
+                      color: #3c2415;
+                      box-shadow: 0 2px 8px rgba(212, 168, 67, 0.4);
+                    }
+
+                    .lang-btn:hover:not(.active) {
+                      background: rgba(255, 255, 255, 0.15);
+                    }
+
+                    /* ── MAIN LAYOUT ── */
+                    .main-container {
+                      max-width: 1100px;
+                      margin: 0 auto;
+                      padding: 1rem;
+                    }
+
+                    /* ── NAV TABS ── */
+                    .nav-tabs {
+                      display: flex;
+                      gap: 0.35rem;
+                      overflow-x: auto;
+                      padding: 0.8rem 0.3rem 0.5rem;
+                      scroll-behavior: smooth;
+                      -webkit-overflow-scrolling: touch;
+                      scrollbar-width: none;
+                      flex-wrap: nowrap;
+                      mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+                      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+                    }
+
+                    .nav-tabs::-webkit-scrollbar {
+                      display: none;
+                    }
+
+                    .nav-tab {
+                      flex: 0 0 auto;
+                      padding: 0.6rem 1.1rem;
+                      border-radius: 30px;
+                      background: var(--white);
+                      border: 2px solid #e8ddd0;
+                      cursor: pointer;
+                      font-weight: 600;
+                      font-size: 0.82rem;
+                      white-space: nowrap;
+                      transition: var(--transition);
+                      color: var(--brown-light);
+                      font-family: var(--font-body);
+                      letter-spacing: 0.02em;
+                    }
+
+                    .nav-tab:hover {
+                      border-color: var(--terracotta-light);
+                      background: #fef9f3;
+                    }
+
+                    .nav-tab.active {
+                      background: var(--terracotta);
+                      color: #fff;
+                      border-color: var(--terracotta);
+                      box-shadow: 0 4px 14px rgba(196, 113, 59, 0.35);
+                    }
+
+                    /* ── CONTENT SECTIONS ── */
+                    .section {
+                      display: none;
+                      animation: fadeSlideIn 0.4s ease;
+                    }
+
+                    .section.active {
+                      display: block;
+                    }
+
+                    @keyframes fadeSlideIn {
+                      from {
+                        opacity: 0;
+                        transform: translateY(12px);
+                      }
+                      to {
+                        opacity: 1;
+                        transform: translateY(0);
+                      }
+                    }
+
+                    /* ── CARDS ── */
+                    .card {
+                      background: var(--white);
+                      border-radius: var(--radius);
+                      padding: 1.4rem 1.2rem;
+                      margin-bottom: 1.2rem;
+                      box-shadow: var(--shadow);
+                      border: 1px solid #ede3d4;
+                      transition: var(--transition);
+                    }
+
+                    .card:hover {
+                      box-shadow: var(--shadow-lg);
+                    }
+
+                    .card h2 {
+                      font-family: var(--font-heading);
+                      color: #5a3828;
+                      font-size: 1.3rem;
+                      margin-bottom: 0.7rem;
+                      display: flex;
+                      align-items: center;
+                      gap: 0.5rem;
+                    }
+
+                    .card h3 {
+                      font-family: var(--font-heading);
+                      color: var(--terracotta);
+                      font-size: 1.05rem;
+                      margin: 1rem 0 0.5rem;
+                    }
+
+                    .card h4 {
+                      color: var(--jungle);
+                      font-size: 0.95rem;
+                      margin: 0.8rem 0 0.3rem;
+                    }
+
+                    .badge {
+                      display: inline-block;
+                      padding: 0.2rem 0.6rem;
+                      border-radius: 14px;
+                      font-size: 0.7rem;
+                      font-weight: 700;
+                      letter-spacing: 0.04em;
+                      text-transform: uppercase;
+                    }
+
+                    .badge-es {
+                      background: #fce4d6;
+                      color: #c4713b;
+                    }
+
+                    .badge-en {
+                      background: #d6e8f0;
+                      color: #2a6496;
+                    }
+
+                    .badge-maya {
+                      background: #e8f5e0;
+                      color: #2d5a27;
+                    }
+
+                    /* ── TABLES ── */
+                    .table-wrap {
+                      overflow-x: auto;
+                      -webkit-overflow-scrolling: touch;
+                      margin: 0.8rem 0;
+                      border-radius: var(--radius-sm);
+                      border: 1px solid #ede3d4;
+                    }
+
+                    table {
+                      width: 100%;
+                      border-collapse: collapse;
+                      font-size: 0.85rem;
+                      min-width: 500px;
+                    }
+
+                    th,
+                    td {
+                      padding: 0.6rem 0.8rem;
+                      text-align: left;
+                      border-bottom: 1px solid #ede3d4;
+                    }
+
+                    th {
+                      background: #fdf6ec;
+                      font-weight: 700;
+                      color: #5a3828;
+                      position: sticky;
+                      top: 0;
+                      letter-spacing: 0.03em;
+                      font-size: 0.75rem;
+                      text-transform: uppercase;
+                    }
+
+                    tr:hover td {
+                      background: #fefbf6;
+                    }
+
+                    .maya-word {
+                      font-weight: 700;
+                      color: #2d5a27;
+                      font-size: 0.9rem;
+                      letter-spacing: 0.02em;
+                    }
+
+                    .phonetic {
+                      color: #888;
+                      font-style: italic;
+                      font-size: 0.8rem;
+                    }
+
+                    /* ── HIGHLIGHT BOX ── */
+                    .highlight-box {
+                      background: linear-gradient(135deg, #fef9f0, #fdf3e4);
+                      border-left: 4px solid var(--gold);
+                      padding: 1rem 1.2rem;
+                      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+                      margin: 1rem 0;
+                    }
+
+                    .highlight-box.green {
+                      border-left-color: var(--jungle);
+                      background: linear-gradient(135deg, #f6faf4, #edf5e8);
+                    }
+
+                    /* ── GRID ── */
+                    .grid-2 {
+                      display: grid;
+                      grid-template-columns: 1fr;
+                      gap: 1rem;
+                    }
+
+                    @media (min-width: 640px) {
+                      .grid-2 {
+                        grid-template-columns: 1fr 1fr;
+                      }
+                    }
+
+                    .grid-3 {
+                      display: grid;
+                      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                      gap: 0.6rem;
+                      margin: 0.8rem 0;
+                    }
+
+                    .mini-card {
+                      background: #fefbf6;
+                      border-radius: var(--radius-sm);
+                      padding: 0.7rem;
+                      text-align: center;
+                      border: 1px solid #ede3d4;
+                      transition: var(--transition);
+                    }
+
+                    .mini-card:hover {
+                      border-color: var(--gold);
+                      box-shadow: var(--shadow);
+                    }
+
+                    .mini-card .maya-word {
+                      font-size: 1rem;
+                      display: block;
+                    }
+
+                    .mini-card .translation {
+                      font-size: 0.75rem;
+                      color: #888;
+                    }
+
+                    /* ── FOOTER ── */
+                    .footer {
+                      text-align: center;
+                      padding: 2rem 1rem;
+                      color: #aaa;
+                      font-size: 0.75rem;
+                      border-top: 1px solid #ede3d4;
+                      margin-top: 2rem;
+                    }
+
+                    /* ── RESPONSIVE ── */
+                    @media (max-width: 480px) {
+                      .header {
+                        padding: 0.8rem 0.6rem;
+                      }
+
+                      .back-btn {
+                        width: 36px;
+                        height: 36px;
+                      }
+
+                      .back-btn svg {
+                        width: 20px;
+                        height: 20px;
+                      }
+
+                      .logo-icon {
+                        font-size: 1.8rem;
+                      }
+
+                      .logo-text h1 {
+                        font-size: 1rem;
+                      }
+
+                      .lang-btn {
+                        padding: 0.35rem 0.7rem;
+                        font-size: 0.7rem;
+                      }
+
+                      .card {
+                        padding: 1rem 0.8rem;
+                        border-radius: var(--radius-sm);
+                      }
+
+                      .card h2 {
+                        font-size: 1.1rem;
+                      }
+
+                      .nav-tab {
+                        padding: 0.45rem 0.8rem;
+                        font-size: 0.72rem;
+                      }
+
+                      table {
+                        font-size: 0.7rem;
+                        min-width: 380px;
+                      }
+
+                      th,
+                      td {
+                        padding: 0.4rem 0.5rem;
+                      }
+                    }
+
+                    @media (min-width: 768px) {
+                      .card {
+                        padding: 1.8rem 2rem;
+                      }
+
+                      .card h2 {
+                        font-size: 1.5rem;
+                      }
+
+                      body {
+                        font-size: 1.05rem;
+                      }
+                    }
+                </style>
+                
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                
+                <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                
+                <script type="text/javascript">
+                    startCommonAppsAI();
+                </script>
+                
+                <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                    <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                        <div id="blocking-message" style="display: none;">
+                            <div>
+                                Go to Pi Browser
+                            </div>
+                            <div>
+                                <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                            </div>
+                        </div>
+                        <div id="paying-message" style="display: none;">
+                            <div>
+                                Pay Pi to GET PREMIUM
+                            </div>
+                            <div>
+                                <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                            </div>
+                            <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                <br/>
+                                <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                            </div>
+                        </div>
+                        <div id="loading-message" style="display: block;">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+            </head>
+            <body>
+
+                <!-- ═══════════ HEADER ═══════════ -->
+                <header class="header">
+                    <div class="header-inner">
+                        <a href="/" class="back-btn" aria-label="Go back" title="Back">
+                          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                          </svg>
+                        </a>
+                        <div class="logo-area">
+                            <span class="logo-icon">🪶</span>
+                            <div class="logo-text">
+                                <h1>Maayat'aan</h1>
+                                <span>Maya Yucateco · Yucatec Maya</span>
+                            </div>
+                        </div>
+                        <div class="lang-toggle" id="langToggle">
+                            <button class="lang-btn active" data-lang="es" aria-label="Español">🇲🇽 ES</button>
+                            <button class="lang-btn" data-lang="en" aria-label="English">🇺🇸 EN</button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- ═══════════ MAIN ═══════════ -->
+                <main class="main-container">
+
+                    <!-- ── NAVIGATION TABS ── -->
+                    <nav class="nav-tabs" id="navTabs" aria-label="Secciones del curso">
+                        <button class="nav-tab active" data-section="inicio">🏠 <span data-es="Inicio" data-en="Home">Inicio</span></button>
+                        <button class="nav-tab" data-section="pronunciacion">🗣️ <span data-es="Pronunciación" data-en="Pronunciation">Pronunciación</span></button>
+                        <button class="nav-tab" data-section="pronombres">👤 <span data-es="Pronombres" data-en="Pronouns">Pronombres</span></button>
+                        <button class="nav-tab" data-section="numeros">🔢 <span data-es="Números" data-en="Numbers">Números</span></button>
+                        <button class="nav-tab" data-section="frases">💬 <span data-es="Frases" data-en="Phrases">Frases</span></button>
+                        <button class="nav-tab" data-section="gramatica">📚 <span data-es="Gramática" data-en="Grammar">Gramática</span></button>
+                        <button class="nav-tab" data-section="vocabulario">📖 <span data-es="Vocabulario" data-en="Vocabulary">Vocabulario</span></button>
+                    </nav>
+
+                    <!-- ═══════════ SECTION: INICIO ═══════════ -->
+                    <section class="section active" id="sec-inicio">
+                        <div class="card">
+                            <h2>🌿 <span data-es="¡Bienvenido al Curso de Maya Yucateco!" data-en="Welcome to the Yucatec Maya Course!">¡Bienvenido al Curso de Maya Yucateco!</span></h2>
+                            <p data-es="El &lt;strong&gt;maya yucateco&lt;/strong&gt; (&lt;em&gt;Maayat'aan&lt;/em&gt;) es una lengua mayense hablada por más de &lt;strong&gt;800,000 personas&lt;/strong&gt; en la península de Yucatán (México), norte de Belice y partes de Guatemala. Es una lengua viva, vibrante y llena de historia."
+                               data-en="&lt;strong&gt;Yucatec Maya&lt;/strong&gt; (&lt;em&gt;Maayat'aan&lt;/em&gt;) is a Mayan language spoken by over &lt;strong&gt;800,000 people&lt;/strong&gt; in the Yucatán Peninsula (Mexico), northern Belize, and parts of Guatemala. It is a living, vibrant language full of history.">
+                               <strong>Yucatec Maya</strong> (<em>Maayat'aan</em>) is a Mayan language spoken by over <strong>800,000 people</strong> in the Yucatán Peninsula.
+                            </p>
+                        </div>
+
+                        <div class="grid-2">
+                            <div class="card">
+                                <h3>📋 <span data-es="Características" data-en="Features">Características</span></h3>
+                                <ul>
+                                    <li data-es="&lt;strong&gt;5 vocales&lt;/strong&gt; (a, e, i, o, u) con versiones largas, cortas y glotalizadas."
+                                        data-en="&lt;strong&gt;5 vowels&lt;/strong&gt; (a, e, i, o, u) with long, short, and glottalized versions.">
+                                        <strong>5 vocales</strong> con versiones largas, cortas y glotalizadas.
+                                    </li>
+
+                                    <li data-es="&lt;strong&gt;Sistema vigesimal&lt;/strong&gt; (base 20) para los números."
+                                        data-en="&lt;strong&gt;Vigesimal system&lt;/strong&gt; (base 20) for numbers.">
+                                        <strong>Sistema vigesimal</strong> (base 20).
+                                    </li>
+
+                                    <li data-es="&lt;strong&gt;Dos juegos de pronombres&lt;/strong&gt; (ergativos y absolutivos)."
+                                        data-en="&lt;strong&gt;Two sets of pronouns&lt;/strong&gt; (ergative and absolutive).">
+                                        <strong>Dos juegos de pronombres</strong>.
+                                    </li>
+
+                                    <li data-es="&lt;strong&gt;Tono&lt;/strong&gt;: alto y bajo, que puede cambiar el significado."
+                                        data-en="&lt;strong&gt;Tone&lt;/strong&gt;: high and low, which can change meaning.">
+                                        <strong>Tono</strong> alto y bajo.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card">
+                                <h3>🎯 <span data-es="¿Por qué aprender?" data-en="Why Learn?">¿Por qué aprender?</span></h3>
+                                <p data-es="Si planeas mudarte a Yucatán, conocer el maya te abrirá puertas. La gente local aprecia profundamente el esfuerzo, y muchas comunidades rurales lo usan como primera lengua. Además, es una lengua de una riqueza cultural inmensa."
+                                data-en="If you plan to move to Yucatán, knowing Maya will open doors. Locals deeply appreciate the effort, and many rural communities use it as their first language. It's also a language of immense cultural richness.">
+                                Si planeas mudarte a Yucatán, conocer el maya te abrirá puertas.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ═══════════ SECTION: PRONUNCIACIÓN ═══════════ -->
+                    <section class="section" id="sec-pronunciacion">
+                        <div class="card">
+                            <h2>🗣️ <span data-es="Guía de Pronunciación" data-en="Pronunciation Guide">Guía de Pronunciación</span></h2>
+                            <p data-es="El maya yucateco tiene sonidos que no existen en español ni en inglés. Presta atención a las &lt;strong&gt;consonantes glotalizadas&lt;/strong&gt; (marcadas con apóstrofe ') y al &lt;strong&gt;tono&lt;/strong&gt;"
+                               data-en="Yucatec Maya has sounds that don't exist in Spanish or English. Pay attention to &lt;strong&gt;glottalized consonants&lt;/strong&gt; (marked with an apostrophe ') and &lt;strong&gt;tone&lt;/strong&gt;.">
+                               El maya yucateco tiene sonidos únicos. Presta atención a las consonantes glotalizadas (') y al tono.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <h3>🔤 <span data-es="Vocales" data-en="Vowels">Vocales</span></h3>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead>
+                                        <tr><th data-es="Vocal" data-en="Vowel">Vocal</th><th data-es="Sonido (ES)" data-en="Sound (EN)">Sonido</th><th data-es="Ejemplo Maya" data-en="Maya Example">Ejemplo</th><th data-es="Fonética" data-en="Phonetic">Fonética</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><strong>a</strong></td><td data-es="Como en 'casa'" data-en="Like in 'father'">Como en "casa"</td><td class="maya-word">ja'</td><td class="phonetic">/haʔ/</td></tr>
+                                        <tr><td><strong>a'a</strong></td><td data-es="A larga con pausa glotal" data-en="Long A with glottal stop">A larga con corte glotal</td><td class="maya-word">ka'a</td><td class="phonetic">/kaʔa/</td></tr>
+                                        <tr><td><strong>e</strong></td><td data-es="Como en 'mesa'" data-en="Like in 'bed'">Como en "mesa"</td><td class="maya-word">ek'</td><td class="phonetic">/ekʼ/</td></tr>
+                                        <tr><td><strong>i</strong></td><td data-es="Como en 'mí'" data-en="Like in 'see'">Como en "mí"</td><td class="maya-word">ich</td><td class="phonetic">/it͡ʃ/</td></tr>
+                                        <tr><td><strong>o</strong></td><td data-es="Como en 'oso'" data-en="Like in 'go'">Como en "oso"</td><td class="maya-word">ok</td><td class="phonetic">/ok/</td></tr>
+                                        <tr><td><strong>u</strong></td><td data-es="Como en 'tú'" data-en="Like in 'boot'">Como en "tú"</td><td class="maya-word">uk'</td><td class="phonetic">/ukʼ/</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3>💥 <span data-es="Consonantes Glotalizadas" data-en="Glottalized Consonants">Consonantes Glotalizadas</span></h3>
+                            <p data-es="Las consonantes con apóstrofe (p', t', k', ch', ts') se pronuncian con un cierre glotal simultáneo —como si cortaras el aire de golpe. Son &lt;strong&gt;eyectivas&lt;/strong&gt;."
+                               data-en="Consonants with an apostrophe (p', t', k', ch', ts') are pronounced with a simultaneous glottal closure — as if you cut off the air abruptly. They are &lt;strong&gt;ejective&lt;/strong&gt;.">
+                               Las consonantes con apóstrofe (p', t', k', ch', ts') son eyectivas: se pronuncian con un cierre glotal.
+                            </p>
+                            <div class="grid-3">
+                                <div class="mini-card"><span class="maya-word">p'</span><span class="translation">p'el (redondo)</span></div>
+                                <div class="mini-card"><span class="maya-word">t'</span><span class="translation">t'aan (habla)</span></div>
+                                <div class="mini-card"><span class="maya-word">k'</span><span class="translation">k'áak' (fuego)</span></div>
+                                <div class="mini-card"><span class="maya-word">ch'</span><span class="translation">ch'íich' (pájaro)</span></div>
+                                <div class="mini-card"><span class="maya-word">ts'</span><span class="translation">ts'íib (escritura)</span></div>
+                            </div>
+                            <div class="highlight-box">
+                                <strong>💡 <span data-es="Truco:" data-en="Tip:">Truco:</span></strong>
+                                <span data-es="Intenta decir la consonante mientras aguantas la respiración por un instante. El sonido debe salir 'explotando'."
+                                data-en="Try saying the consonant while holding your breath for a moment. The sound should come out 'popping'.">
+                                Intenta decir la consonante mientras aguantas la respiración. El sonido sale "explotando".</span>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3>🎵 <span data-es="Tono" data-en="Tone">Tono</span></h3>
+                            <p data-es="El maya yucateco distingue entre &lt;strong&gt;tono alto&lt;/strong&gt; (marcado con acento: á, é, í, ó, ú) y &lt;strong&gt;tono bajo&lt;/strong&gt; (sin marca). El tono puede cambiar el significado completamente."
+                               data-en="Yucatec Maya distinguishes between &lt;strong&gt;high tone&lt;/strong&gt; (marked with accent: á, é, í, ó, ú) and &lt;strong&gt;low tone&lt;/strong&gt; (unmarked). Tone can completely change meaning.">
+                               El tono alto (á, é, í, ó, ú) vs. tono bajo puede cambiar el significado.
+                            </p>
+                            <div class="grid-2">
+                                <div class="mini-card"><span class="maya-word">kaan</span><span class="translation" data-es="hilo/cuerda" data-en="thread/rope">hilo</span></div>
+                                <div class="mini-card"><span class="maya-word">káan</span><span class="translation" data-es="aprender" data-en="to learn">aprender</span></div>
+                                <div class="mini-card"><span class="maya-word">míis</span><span class="translation" data-es="escoba" data-en="broom">escoba</span></div>
+                                <div class="mini-card"><span class="maya-word">miis</span><span class="translation" data-es="gato" data-en="cat">gato</span></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ═══════════ SECTION: PRONOMBRES ═══════════ -->
+                    <section class="section" id="sec-pronombres">
+                        <div class="card">
+                            <h2>👤 <span data-es="Todos los Pronombres" data-en="All Pronouns">Todos los Pronombres</span></h2>
+                            <p data-es="El maya yucateco tiene &lt;strong&gt;tres tipos&lt;/strong&gt; de pronombres: independientes, ergativos (Set A) y absolutivos (Set B). Dominarlos es clave para formar frases."
+                               data-en="Yucatec Maya has &lt;strong&gt;three types&lt;/strong&gt; of pronouns: independent, ergative (Set A), and absolutive (Set B). Mastering them is key to forming sentences.">
+                               El maya yucateco tiene tres tipos de pronombres. Dominarlos es clave.
+                            </p>
+                        </div>
+
+                        <!-- Independientes -->
+                        <div class="card">
+                            <h3>1. <span data-es="Pronombres Independientes" data-en="Independent Pronouns">Pronombres Independientes</span></h3>
+                            <p data-es="Se usan para enfatizar o como sujeto de oraciones ecuacionales (con sustantivos/adjetivos)."
+                            data-en="Used for emphasis or as the subject of equational sentences (with nouns/adjectives).">Se usan para enfatizar o como sujeto de oraciones ecuacionales.</p>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead><tr><th data-es="Maya" data-en="Maya">Maya</th><th data-es="Fonética" data-en="Phonetic">Fonética</th><th data-es="Español" data-en="Spanish">ES</th><th data-es="Inglés" data-en="English">EN</th></tr></thead>
+                                    <tbody>
+                                        <tr><td class="maya-word">teen</td><td class="phonetic">/teːn/</td><td>yo</td><td>I</td></tr>
+                                        <tr><td class="maya-word">teech</td><td class="phonetic">/teːt͡ʃ/</td><td>tú / vos</td><td>you (sing.)</td></tr>
+                                        <tr><td class="maya-word">leti'</td><td class="phonetic">/letiʔ/</td><td>él / ella</td><td>he / she / it</td></tr>
+                                        <tr><td class="maya-word">to'on</td><td class="phonetic">/toʔon/</td><td>nosotros/as</td><td>we</td></tr>
+                                        <tr><td class="maya-word">te'ex</td><td class="phonetic">/teʔeʃ/</td><td>ustedes / vosotros</td><td>you (pl.)</td></tr>
+                                        <tr><td class="maya-word">leti'ob</td><td class="phonetic">/letiʔob/</td><td>ellos / ellas</td><td>they</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="highlight-box">
+                                <strong>📌</strong> <em>Teen xi'imben</em> = <span data-es="Yo camino" data-en="I walk">Yo camino / I walk</span>
+                            </div>
+                        </div>
+
+                        <!-- Set A - Ergativos -->
+                        <div class="card">
+                            <h3>2. <span data-es="Set A — Ergativos / Posesivos" data-en="Set A — Ergative / Possessive">Set A — Ergativos / Posesivos</span></h3>
+                            <p data-es="Se anteponen al sustantivo (para posesión) o al verbo transitivo (como sujeto). Equivalen a 'mi, tu, su...' o al sujeto de verbos transitivos."
+                            data-en="Prefixed to nouns (for possession) or to transitive verbs (as subject). Equivalent to 'my, your, his/her...' or the subject of transitive verbs.">
+                            Se anteponen al sustantivo o verbo transitivo. "Mi, tu, su..." o sujeto de verbo transitivo.</p>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead><tr><th data-es="Prefijo" data-en="Prefix">Prefijo</th><th data-es="Fonética" data-en="Phonetic">Fonética</th><th data-es="Español" data-en="Spanish">ES</th><th data-es="Inglés" data-en="English">EN</th><th data-es="Ejemplo" data-en="Example">Ejemplo</th></tr></thead>
+                                    <tbody>
+                                        <tr><td class="maya-word">in</td><td class="phonetic">/in/</td><td>mi / yo</td><td>my / I</td><td><em>in na'</em> (mi madre)</td></tr>
+                                        <tr><td class="maya-word">a</td><td class="phonetic">/a/</td><td>tu / tú</td><td>your / you</td><td><em>a na'</em> (tu madre)</td></tr>
+                                        <tr><td class="maya-word">u</td><td class="phonetic">/u/</td><td>su / él/ella</td><td>his, her, its</td><td><em>u na'</em> (su madre)</td></tr>
+                                        <tr><td class="maya-word">k</td><td class="phonetic">/k/</td><td>nuestro / nosotros</td><td>our / we</td><td><em>k na'</em> (nuestra madre)</td></tr>
+                                        <tr><td class="maya-word">a...e'ex</td><td class="phonetic">/a...eʔeʃ/</td><td>su (de uds.)</td><td>your (pl.)</td><td><em>a na'e'ex</em></td></tr>
+                                        <tr><td class="maya-word">u...o'ob</td><td class="phonetic">/u...oʔob/</td><td>su (de ellos)</td><td>their</td><td><em>u na'o'ob</em></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Set B - Absolutivos -->
+                        <div class="card">
+                            <h3>3. <span data-es="Set B — Absolutivos" data-en="Set B — Absolutive">Set B — Absolutivos</span></h3>
+                            <p data-es="Se usan como &lt;strong&gt;objeto&lt;/strong&gt; de verbos transitivos o como &lt;strong&gt;sujeto&lt;/strong&gt; de verbos intransitivos y predicados no verbales."
+                               data-en="Used as the &lt;strong&gt;object&lt;/strong&gt; of transitive verbs or as the &lt;strong&gt;subject&lt;/strong&gt; of intransitive verbs and non-verbal predicates.">
+                               Objeto de verbo transitivo o sujeto de verbo intransitivo.
+                            </p>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead><tr><th data-es="Sufijo/Pron." data-en="Suffix/Pron.">Sufijo</th><th data-es="Fonética" data-en="Phonetic">Fonética</th><th data-es="Español" data-en="Spanish">ES</th><th data-es="Inglés" data-en="English">EN</th></tr></thead>
+                                    <tbody>
+                                        <tr><td class="maya-word">-en / teen</td><td class="phonetic">/en/ /teːn/</td><td>me / yo</td><td>me / I</td></tr>
+                                        <tr><td class="maya-word">-ech / teech</td><td class="phonetic">/et͡ʃ/ /teːt͡ʃ/</td><td>te / tú</td><td>you (sing.)</td></tr>
+                                        <tr><td class="maya-word">-∅ / leti'</td><td class="phonetic">/letiʔ/</td><td>lo, la, le</td><td>him, her, it</td></tr>
+                                        <tr><td class="maya-word">-o'on / to'on</td><td class="phonetic">/oʔon/ /toʔon/</td><td>nos</td><td>us</td></tr>
+                                        <tr><td class="maya-word">-e'ex / te'ex</td><td class="phonetic">/eʔeʃ/ /teʔeʃ/</td><td>os, les</td><td>you (pl.)</td></tr>
+                                        <tr><td class="maya-word">-o'ob / leti'ob</td><td class="phonetic">/oʔob/ /letiʔob/</td><td>los, las, les</td><td>them</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="highlight-box green">
+                                <strong>📌</strong> <em>Táan in wil-ech</em> = <span data-es="Te estoy viendo" data-en="I am seeing you">Te estoy viendo / I am seeing you</span>
+                            </div>
+                        </div>
+
+                        <!-- Resumen rápido -->
+                        <div class="card">
+                            <h3>⚡ <span data-es="Resumen Rápido" data-en="Quick Summary">Resumen Rápido</span></h3>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead><tr><th data-es="Persona" data-en="Person">Persona</th><th>Independiente</th><th>Set A (erg.)</th><th>Set B (abs.)</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>1SG</td><td class="maya-word">teen</td><td class="maya-word">in</td><td class="maya-word">-en</td></tr>
+                                        <tr><td>2SG</td><td class="maya-word">teech</td><td class="maya-word">a</td><td class="maya-word">-ech</td></tr>
+                                        <tr><td>3SG</td><td class="maya-word">leti'</td><td class="maya-word">u</td><td class="maya-word">-∅</td></tr>
+                                        <tr><td>1PL</td><td class="maya-word">to'on</td><td class="maya-word">k</td><td class="maya-word">-o'on</td></tr>
+                                        <tr><td>2PL</td><td class="maya-word">te'ex</td><td class="maya-word">a...e'ex</td><td class="maya-word">-e'ex</td></tr>
+                                        <tr><td>3PL</td><td class="maya-word">leti'ob</td><td class="maya-word">u...o'ob</td><td class="maya-word">-o'ob</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ═══════════ SECTION: NÚMEROS ═══════════ -->
+                    <section class="section" id="sec-numeros">
+                        <div class="card">
+                            <h2>🔢 <span data-es="Números del 1 al Mil Millones" data-en="Numbers from 1 to 1 Billion">Números del 1 al Mil Millones</span></h2>
+                            <p data-es="El sistema maya es &lt;strong&gt;vigesimal&lt;/strong&gt; (base 20). Los números se construyen combinando unidades, veintenas, cuatrocientenas, etc. Aprende los patrones y podrás formar cualquier número."
+                               data-en="The Maya system is &lt;strong&gt;vigesimal&lt;/strong&gt; (base 20). Numbers are built by combining units, scores, four-hundreds, etc. Learn the patterns and you can form any number.">
+                               El sistema maya es vigesimal (base 20). Aprende los patrones y formarás cualquier número.
+                            </p>
+                        </div>
+
+                        <!-- 1-19 -->
+                        <div class="card">
+                            <h3>1️⃣–🔟 <span data-es="Números 1 al 19" data-en="Numbers 1 to 19">Números 1 al 19</span></h3>
+                            <div class="grid-3">
+                                <div class="mini-card"><span class="maya-word">jun</span><span class="translation">1</span><span class="phonetic">/hun/</span></div>
+                                <div class="mini-card"><span class="maya-word">ka'a</span><span class="translation">2</span><span class="phonetic">/kaʔa/</span></div>
+                                <div class="mini-card"><span class="maya-word">óox</span><span class="translation">3</span><span class="phonetic">/óːʃ/</span></div>
+                                <div class="mini-card"><span class="maya-word">kan</span><span class="translation">4</span><span class="phonetic">/kan/</span></div>
+                                <div class="mini-card"><span class="maya-word">jo'</span><span class="translation">5</span><span class="phonetic">/hoʔ/</span></div>
+                                <div class="mini-card"><span class="maya-word">wáak</span><span class="translation">6</span><span class="phonetic">/wáːk/</span></div>
+                                <div class="mini-card"><span class="maya-word">úuk</span><span class="translation">7</span><span class="phonetic">/úːk/</span></div>
+                                <div class="mini-card"><span class="maya-word">waxak</span><span class="translation">8</span><span class="phonetic">/waʃak/</span></div>
+                                <div class="mini-card"><span class="maya-word">bolon</span><span class="translation">9</span><span class="phonetic">/bolon/</span></div>
+                                <div class="mini-card"><span class="maya-word">lajun</span><span class="translation">10</span><span class="phonetic">/lahun/</span></div>
+                                <div class="mini-card"><span class="maya-word">buluk</span><span class="translation">11</span><span class="phonetic">/buluk/</span></div>
+                                <div class="mini-card"><span class="maya-word">lajka'a</span><span class="translation">12</span><span class="phonetic">/lahkaʔa/</span></div>
+                                <div class="mini-card"><span class="maya-word">óoxlajun</span><span class="translation">13</span><span class="phonetic">/óːʃlahun/</span></div>
+                                <div class="mini-card"><span class="maya-word">kanlajun</span><span class="translation">14</span><span class="phonetic">/kanlahun/</span></div>
+                                <div class="mini-card"><span class="maya-word">jo'lajun</span><span class="translation">15</span><span class="phonetic">/hoʔlahun/</span></div>
+                                <div class="mini-card"><span class="maya-word">wáaklajun</span><span class="translation">16</span><span class="phonetic">/wáːklahun/</span></div>
+                                <div class="mini-card"><span class="maya-word">úuklajun</span><span class="translation">17</span><span class="phonetic">/úːklahun/</span></div>
+                                <div class="mini-card"><span class="maya-word">waxaklajun</span><span class="translation">18</span><span class="phonetic">/waʃaklahun/</span></div>
+                                <div class="mini-card"><span class="maya-word">bolonlajun</span><span class="translation">19</span><span class="phonetic">/bolonlahun/</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Decenas y centenas vigesimales -->
+                        <div class="card">
+                            <h3>📐 <span data-es="Unidades del Sistema Vigesimal" data-en="Vigesimal System Units">Unidades del Sistema Vigesimal</span></h3>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead><tr><th data-es="Valor" data-en="Value">Valor</th><th data-es="Maya" data-en="Maya">Maya</th><th data-es="Fonética" data-en="Phonetic">Fonética</th><th data-es="Nota" data-en="Note">Nota</th></tr></thead>
+                                    <tbody>
+                                        <tr><td><strong>1</strong></td><td class="maya-word">jun</td><td class="phonetic">/hun/</td><td>Unidad base</td></tr>
+                                        <tr><td><strong>20</strong></td><td class="maya-word">jun k'aal</td><td class="phonetic">/hun kʼaːl/</td><td>1 × 20</td></tr>
+                                        <tr><td><strong>400</strong></td><td class="maya-word">jun baak'</td><td class="phonetic">/hun baːkʼ/</td><td>20²</td></tr>
+                                        <tr><td><strong>8,000</strong></td><td class="maya-word">jun pik</td><td class="phonetic">/hun pik/</td><td>20³</td></tr>
+                                        <tr><td><strong>160,000</strong></td><td class="maya-word">jun k'alab</td><td class="phonetic">/hun kʼalab/</td><td>20⁴</td></tr>
+                                        <tr><td><strong>3,200,000</strong></td><td class="maya-word">jun k'inchil</td><td class="phonetic">/hun kʼint͡ʃil/</td><td>20⁵</td></tr>
+                                        <tr><td><strong>64,000,000</strong></td><td class="maya-word">jun alaw</td><td class="phonetic">/hun alaw/</td><td>20⁶</td></tr>
+                                        <tr><td><strong>1,280,000,000</strong></td><td class="maya-word">jun [20⁷]</td><td class="phonetic">—</td><td>20⁷ (excede mil millones)</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p data-es="&lt;strong&gt;Para unir números se usa 'yéetel'&lt;/strong&gt; (y/and). Ej: 21 = &lt;em&gt;jun k'aal yéetel jun&lt;/em&gt; (20 + 1)."
+                               data-en="&lt;strong&gt;Use 'yéetel'&lt;/strong&gt; (and) to join numbers. Ex: 21 = &lt;em&gt;jun k'aal yéetel jun&lt;/em&gt; (20 + 1).">
+                               <strong>yéetel</strong> = "y" / "and". 21 = <em>jun k'aal yéetel jun</em> (20 + 1).
+                            </p>
+                        </div>
+
+                        <!-- Ejemplos de construcción -->
+                        <div class="card">
+                            <h3>🏗️ <span data-es="Ejemplos de Construcción" data-en="Construction Examples">Ejemplos de Construcción</span></h3>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead><tr><th data-es="Número" data-en="Number">#</th><th data-es="Maya" data-en="Maya">Maya</th><th data-es="Desglose" data-en="Breakdown">Desglose</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>30</td><td class="maya-word">lajun k'aal</td><td>10×20? No: 20+10 = <em>jun k'aal yéetel lajun</em> (forma común)</td></tr>
+                                        <tr><td>40</td><td class="maya-word">ka'a k'aal</td><td>2 × 20</td></tr>
+                                        <tr><td>50</td><td class="maya-word">ka'a k'aal yéetel lajun</td><td>(2×20) + 10</td></tr>
+                                        <tr><td>75</td><td class="maya-word">óox k'aal yéetel jo'lajun</td><td>(3×20) + 15</td></tr>
+                                        <tr><td>100</td><td class="maya-word">jo' k'aal</td><td>5 × 20</td></tr>
+                                        <tr><td>200</td><td class="maya-word">lajun k'aal</td><td>10 × 20</td></tr>
+                                        <tr><td>365</td><td class="maya-word">waxaklajun k'aal yéetel jo'</td><td>(18×20) + 5</td></tr>
+                                        <tr><td>400</td><td class="maya-word">jun baak'</td><td>1 × 400</td></tr>
+                                        <tr><td>1,000</td><td class="maya-word">ka'a baak' yéetel lajun k'aal</td><td>(2×400) + (10×20)</td></tr>
+                                        <tr><td>8,000</td><td class="maya-word">jun pik</td><td>1 × 8,000</td></tr>
+                                        <tr><td>1,000,000</td><td class="maya-word">óox k'alab yéetel ka'a pik yéetel jo' baak'</td><td>(3×160,000)+(2×8,000)+(5×400)</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Mil Millones -->
+                        <div class="card highlight-box green">
+                            <h3>💎 <span data-es="Mil Millones (1,000,000,000)" data-en="One Billion (1,000,000,000)">Mil Millones — 1,000,000,000</span></h3>
+                            <p data-es="Para expresar mil millones en el sistema vigesimal maya, descomponemos:"
+                            data-en="To express one billion in the Maya vigesimal system, we break it down:">
+                            Descomposición vigesimal de 1,000,000,000:</p>
+                            <p style="font-size:0.9rem;word-break:break-all;">
+                                <strong>1,000,000,000 ÷ 64,000,000</strong> = 15 resto 40,000,000<br/>
+                                <strong>40,000,000 ÷ 3,200,000</strong> = 12 resto 1,600,000<br/>
+                                <strong>1,600,000 ÷ 160,000</strong> = 10 resto 0<br/>
+                            </p>
+                            <p class="maya-word" style="font-size:1.2rem;text-align:center;padding:0.6rem;">
+                                Jo'lajun alaw, lajka'a k'inchil, lajun k'alab
+                            </p>
+                            <p style="text-align:center;" class="phonetic">/hoʔlahun alaw · lahkaʔa kʼint͡ʃil · lahun kʼalab/</p>
+                            <p style="text-align:center;font-size:0.8rem;" data-es="(15 × 64,000,000) + (12 × 3,200,000) + (10 × 160,000) = 1,000,000,000"
+                            data-en="(15 × 64,000,000) + (12 × 3,200,000) + (10 × 160,000) = 1,000,000,000">
+                            (15 × 64M) + (12 × 3.2M) + (10 × 160K) = 1,000,000,000 ✓</p>
+                        </div>
+
+                        <!-- Números ordinales -->
+                        <div class="card">
+                            <h3>🔢 <span data-es="Números Ordinales" data-en="Ordinal Numbers">Ordinales</span></h3>
+                            <p data-es="Se forman anteponiendo &lt;strong&gt;u...-il&lt;/strong&gt; al número."
+                               data-en="Formed by prefixing &lt;strong&gt;u...-il&lt;/strong&gt; to the number.">
+                               Se forman con <strong>u [número]-il</strong>.
+                            </p>
+                            <div class="grid-3">
+                                <div class="mini-card"><span class="maya-word">u juntúulil</span><span class="translation">1° / 1st</span></div>
+                                <div class="mini-card"><span class="maya-word">u ka'atúulil</span><span class="translation">2° / 2nd</span></div>
+                                <div class="mini-card"><span class="maya-word">u yóoxtúulil</span><span class="translation">3° / 3rd</span></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ═══════════ SECTION: FRASES ═══════════ -->
+                    <section class="section" id="sec-frases">
+                        <div class="card">
+                            <h2>💬 <span data-es="Frases Útiles para el Día a Día" data-en="Useful Everyday Phrases">Frases Útiles para el Día a Día</span></h2>
+                            <p data-es="Practica estas frases. Los yucatecos apreciarán muchísimo tu esfuerzo por hablar su lengua."
+                            data-en="Practice these phrases. Yucatecans will greatly appreciate your effort to speak their language.">
+                            Practica estas frases. ¡Los yucatecos apreciarán tu esfuerzo!</p>
+                        </div>
+                        <div class="card">
+                            <div class="table-wrap">
+                                <table>
+                                    <thead><tr><th data-es="Maya" data-en="Maya">Maya</th><th data-es="Fonética" data-en="Phonetic">Fonética</th><th data-es="Español" data-en="Spanish">ES</th><th data-es="Inglés" data-en="English">EN</th></tr></thead>
+                                    <tbody>
+                                        <tr><td class="maya-word">Ba'ax ka wa'alik?</td><td class="phonetic">/baʔaʃ ka waʔalik/</td><td>¿Cómo estás?</td><td>How are you?</td></tr>
+                                        <tr><td class="maya-word">Ma'alob, kux teech?</td><td class="phonetic">/maʔalob kuʃ teːt͡ʃ/</td><td>Bien, ¿y tú?</td><td>Good, and you?</td></tr>
+                                        <tr><td class="maya-word">Bix a k'aaba'?</td><td class="phonetic">/biʃ a kʼaːbaʔ/</td><td>¿Cómo te llamas?</td><td>What's your name?</td></tr>
+                                        <tr><td class="maya-word">In k'aaba'...</td><td class="phonetic">/in kʼaːbaʔ/</td><td>Me llamo...</td><td>My name is...</td></tr>
+                                        <tr><td class="maya-word">Jach ki'imak in wóol</td><td class="phonetic">/hat͡ʃ kiʔimak in wóːl/</td><td>Estoy muy feliz</td><td>I'm very happy</td></tr>
+                                        <tr><td class="maya-word">Yum bóotik</td><td class="phonetic">/jum bóːtik/</td><td>Gracias</td><td>Thank you</td></tr>
+                                        <tr><td class="maya-word">Mixba'</td><td class="phonetic">/miʃbaʔ/</td><td>De nada</td><td>You're welcome</td></tr>
+                                        <tr><td class="maya-word">Sáamal</td><td class="phonetic">/sáːmal/</td><td>Mañana</td><td>Tomorrow</td></tr>
+                                        <tr><td class="maya-word">Bejla'e'</td><td class="phonetic">/behlaʔeʔ/</td><td>Hoy</td><td>Today</td></tr>
+                                        <tr><td class="maya-word">Bix a bin?</td><td class="phonetic">/biʃ a bin/</td><td>¿A dónde vas?</td><td>Where are you going?</td></tr>
+                                        <tr><td class="maya-word">Táan in bin Mérida</td><td class="phonetic">/táːn in bin mérida/</td><td>Voy a Mérida</td><td>I'm going to Mérida</td></tr>
+                                        <tr><td class="maya-word">Bahux?</td><td class="phonetic">/bahuʃ/</td><td>¿Cuánto cuesta?</td><td>How much?</td></tr>
+                                        <tr><td class="maya-word">Ko'ox!</td><td class="phonetic">/koʔoʃ/</td><td>¡Vamos!</td><td>Let's go!</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ═══════════ SECTION: GRAMÁTICA ═══════════ -->
+                    <section class="section" id="sec-gramatica">
+                        <div class="card">
+                            <h2>📚 <span data-es="Gramática Básica" data-en="Basic Grammar">Gramática Básica</span></h2>
+                            <p data-es="El maya yucateco tiene una estructura diferente al español e inglés. Aquí los fundamentos."
+                            data-en="Yucatec Maya has a different structure from Spanish and English. Here are the fundamentals.">
+                            Estructura diferente al español e inglés. Aquí los fundamentos.</p>
+                        </div>
+                        <div class="card">
+                            <h3>📝 <span data-es="Orden de Palabras" data-en="Word Order">Orden de Palabras</span></h3>
+                            <p data-es="El orden básico es &lt;strong&gt;Verbo-Sujeto-Objeto (VSO)&lt;/strong&gt; en oraciones transitivas, aunque hay flexibilidad. En oraciones intransitivas: &lt;strong&gt;Verbo-Sujeto&lt;/strong&gt;."
+                               data-en="The basic order is &lt;strong&gt;Verb-Subject-Object (VSO)&lt;/strong&gt; in transitive sentences, though there is flexibility. In intransitive sentences: &lt;strong&gt;Verb-Subject&lt;/strong&gt;.">
+                               Orden básico: <strong>Verbo-Sujeto-Objeto (VSO)</strong> en transitivas.
+                            </p>
+                            <div class="highlight-box">
+                                <em>Táan u janal Juan</em> — <span data-es="Juan está comiendo" data-en="Juan is eating">Juan está comiendo / Juan is eating</span><br/>
+                                <small data-es="(Lit.: Está su-comer Juan)" data-en="(Lit.: Is his-eating Juan)">(Lit.: Está su-comer Juan)</small>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3>⏳ <span data-es="Tiempos y Aspectos" data-en="Tenses and Aspects">Tiempos / Aspectos</span></h3>
+                            <div class="grid-3">
+                                <div class="mini-card"><strong>táan</strong><span class="translation" data-es="presente continuo" data-en="present continuous">presente cont.</span></div>
+                                <div class="mini-card"><strong>ts'o'ok</strong><span class="translation" data-es="pasado/terminado" data-en="past/completed">terminado</span></div>
+                                <div class="mini-card"><strong>bíin</strong><span class="translation" data-es="futuro" data-en="future">futuro</span></div>
+                                <div class="mini-card"><strong>k-</strong><span class="translation" data-es="habitual" data-en="habitual">habitual</span></div>
+                                <div class="mini-card"><strong>ma'</strong><span class="translation" data-es="negación" data-en="negation">negación</span></div>
+                            </div>
+                            <p style="margin-top:0.8rem;"><span data-es="Ejemplos:" data-en="Examples:">Ejemplos:</span><br/>
+                                <em>Táan in xíimbal</em> — <span data-es="Estoy caminando" data-en="I am walking">Estoy caminando</span><br/>
+                                <em>Ts'o'ok in janal</em> — <span data-es="Ya comí" data-en="I already ate">Ya comí</span><br/>
+                                <em>Bíin in xi'ik</em> — <span data-es="Iré" data-en="I will go">Iré</span></p>
+                        </div>
+                    </section>
+
+                    <!-- ═══════════ SECTION: VOCABULARIO ═══════════ -->
+                    <section class="section" id="sec-vocabulario">
+                        <div class="card">
+                            <h2>📖 <span data-es="Vocabulario Esencial" data-en="Essential Vocabulary">Vocabulario Esencial</span></h2>
+                        </div>
+                        <div class="grid-2">
+                            <div class="card">
+                                <h3>👨‍👩‍👧 <span data-es="Familia" data-en="Family">Familia</span></h3>
+                                <div class="table-wrap"><table>
+                                        <tr><td class="maya-word">na'</td><td data-es="madre" data-en="mother">madre</td></tr>
+                                        <tr><td class="maya-word">yuum</td><td data-es="padre" data-en="father">padre</td></tr>
+                                        <tr><td class="maya-word">íicham</td><td data-es="esposo" data-en="husband">esposo</td></tr>
+                                        <tr><td class="maya-word">atan</td><td data-es="esposa" data-en="wife">esposa</td></tr>
+                                        <tr><td class="maya-word">paal</td><td data-es="hijo/a" data-en="child">hijo/a</td></tr>
+                                </table></div>
+                            </div>
+                            <div class="card">
+                                <h3>🏠 <span data-es="Casa y Entorno" data-en="Home &amp; Environment">Casa y Entorno</span></h3>
+                                <div class="table-wrap"><table>
+                                        <tr><td class="maya-word">naj</td><td data-es="casa" data-en="house">casa</td></tr>
+                                        <tr><td class="maya-word">ja'</td><td data-es="agua" data-en="water">agua</td></tr>
+                                        <tr><td class="maya-word">k'áak'</td><td data-es="fuego" data-en="fire">fuego</td></tr>
+                                        <tr><td class="maya-word">lu'um</td><td data-es="tierra" data-en="earth">tierra</td></tr>
+                                        <tr><td class="maya-word">che'</td><td data-es="árbol/madera" data-en="tree/wood">árbol</td></tr>
+                                </table></div>
+                            </div>
+                            <div class="card">
+                                <h3>🍽️ <span data-es="Comida" data-en="Food">Comida</span></h3>
+                                <div class="table-wrap"><table>
+                                        <tr><td class="maya-word">jan</td><td data-es="comer" data-en="to eat">comer</td></tr>
+                                        <tr><td class="maya-word">uk'</td><td data-es="beber" data-en="to drink">beber</td></tr>
+                                        <tr><td class="maya-word">waaj</td><td data-es="tortilla" data-en="tortilla">tortilla</td></tr>
+                                        <tr><td class="maya-word">k'éek'en</td><td data-es="cerdo/cochinita" data-en="pork">cerdo</td></tr>
+                                </table></div>
+                            </div>
+                            <div class="card">
+                                <h3>🌤️ <span data-es="Naturaleza" data-en="Nature">Naturaleza</span></h3>
+                                <div class="table-wrap"><table>
+                                        <tr><td class="maya-word">k'iin</td><td data-es="sol/día" data-en="sun/day">sol/día</td></tr>
+                                        <tr><td class="maya-word">u</td><td data-es="luna" data-en="moon">luna</td></tr>
+                                        <tr><td class="maya-word">ek'</td><td data-es="estrella" data-en="star">estrella</td></tr>
+                                        <tr><td class="maya-word">chaak</td><td data-es="lluvia" data-en="rain">lluvia</td></tr>
+                                </table></div>
+                            </div>
+                        </div>
+                    </section>
+
+                </main>
+
+                <footer class="footer">
+                    <p>🌿 Maayat'aan — <span data-es="Lengua viva de Yucatán" data-en="Living language of Yucatán">Lengua viva de Yucatán</span> 🌿</p>
+                    <p data-es="Creado con respeto para quienes desean aprender y conectar con la cultura maya."
+                    data-en="Created with respect for those who wish to learn and connect with Maya culture.">
+                    Creado con respeto para quienes desean aprender y conectar con la cultura maya.</p>
+                </footer>
+                
+                <script src="/website_pinetwork_games_odoo/static/src/js/apps/mayalearning_functions.js?v=1.101"></script>
+            </body>
+            </html>
+            </t>
+		</template>
+
+</odoo>
