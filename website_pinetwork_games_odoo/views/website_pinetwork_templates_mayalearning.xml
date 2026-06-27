@@ -187,7 +187,7 @@
                       padding: 0.8rem 0.3rem 0.5rem;
                       scroll-behavior: smooth;
                       -webkit-overflow-scrolling: touch;
-                      scrollbar-width: none;
+                      scrollbar-width: 3px;
                       flex-wrap: nowrap;
                       mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
                       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
@@ -313,6 +313,7 @@
                     .table-wrap {
                       overflow-x: auto;
                       -webkit-overflow-scrolling: touch;
+                      scrollbar-width: 3px;
                       margin: 0.8rem 0;
                       border-radius: var(--radius-sm);
                       border: 1px solid #ede3d4;
@@ -587,7 +588,7 @@
                         <div class="grid-2">
                             <div class="card">
                                 <h3>📋 <span data-es="Características" data-en="Features">Características</span></h3>
-                                <ul style="padding: 5px">
+                                <ul style="padding: 10px">
                                     <li data-es="&lt;strong&gt;5 vocales&lt;/strong&gt; (a, e, i, o, u) con versiones largas, cortas y glotalizadas."
                                         data-en="&lt;strong&gt;5 vowels&lt;/strong&gt; (a, e, i, o, u) with long, short, and glottalized versions.">
                                         <strong>5 vocales</strong> con versiones largas, cortas y glotalizadas.
