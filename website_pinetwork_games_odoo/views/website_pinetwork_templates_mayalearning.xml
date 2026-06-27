@@ -536,7 +536,7 @@
                 <input type="hidden" id="mainnet" t-att-value="mainnet"/>
                 <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
             </head>
-            <body>
+            <body translate="no">
 
                 <!-- ═══════════ HEADER ═══════════ -->
                 <header class="header">
@@ -587,7 +587,7 @@
                         <div class="grid-2">
                             <div class="card">
                                 <h3>📋 <span data-es="Características" data-en="Features">Características</span></h3>
-                                <ul>
+                                <ul style="padding: 5px">
                                     <li data-es="&lt;strong&gt;5 vocales&lt;/strong&gt; (a, e, i, o, u) con versiones largas, cortas y glotalizadas."
                                         data-en="&lt;strong&gt;5 vowels&lt;/strong&gt; (a, e, i, o, u) with long, short, and glottalized versions.">
                                         <strong>5 vocales</strong> con versiones largas, cortas y glotalizadas.
@@ -954,11 +954,11 @@
                         <div class="card">
                             <h3>⏳ <span data-es="Tiempos y Aspectos" data-en="Tenses and Aspects">Tiempos / Aspectos</span></h3>
                             <div class="grid-3">
-                                <div class="mini-card"><strong>táan</strong><span class="translation" data-es="presente continuo" data-en="present continuous">presente cont.</span></div>
-                                <div class="mini-card"><strong>ts'o'ok</strong><span class="translation" data-es="pasado/terminado" data-en="past/completed">terminado</span></div>
-                                <div class="mini-card"><strong>bíin</strong><span class="translation" data-es="futuro" data-en="future">futuro</span></div>
-                                <div class="mini-card"><strong>k-</strong><span class="translation" data-es="habitual" data-en="habitual">habitual</span></div>
-                                <div class="mini-card"><strong>ma'</strong><span class="translation" data-es="negación" data-en="negation">negación</span></div>
+                                <div class="mini-card"><strong>táan</strong><br/><span class="translation" data-es="presente continuo" data-en="present continuous">presente cont.</span></div>
+                                <div class="mini-card"><strong>ts'o'ok</strong><br/><span class="translation" data-es="pasado/terminado" data-en="past/completed">terminado</span></div>
+                                <div class="mini-card"><strong>bíin</strong><br/><span class="translation" data-es="futuro" data-en="future">futuro</span></div>
+                                <div class="mini-card"><strong>k-</strong><br/><span class="translation" data-es="habitual" data-en="habitual">habitual</span></div>
+                                <div class="mini-card"><strong>ma'</strong><br/><span class="translation" data-es="negación" data-en="negation">negación</span></div>
                             </div>
                             <p style="margin-top:0.8rem;"><span data-es="Ejemplos:" data-en="Examples:">Ejemplos:</span><br/>
                                 <em>Táan in xíimbal</em> — <span data-es="Estoy caminando" data-en="I am walking">Estoy caminando</span><br/>
