@@ -1322,7 +1322,7 @@ class admin_apps(models.Model):
                             
                             pi_user[0].write({'user_tips': pi_user[0].user_tips + 1, 'points_latin': pi_user[0].points_latin + 1, 'x2_game': True})
                             
-                            result = {"result": True, "completed": True, 'x2_game': True}
+                            result = {"result": True, "completed": True, 'x2_game': True, 'points_latin': 1}
                         else:
                             result = {"result": True, "completed": False}
                             
