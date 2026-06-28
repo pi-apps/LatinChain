@@ -1934,7 +1934,9 @@ $( document ).ready(function() {
                             if(data.x2_game)
                                 x2_game = "<br/>x2 points was activated. Now you have x2 points in your next game (Chess, Sudoku and Snake). Only if you are verified.";
                             
-                            $(".modal-body").html("Thanks for supporting giving us a tip of " + parseFloat($("#pi_donate").val()) + " Pi. Latin points +1. " + x2_game);
+                            var gemini_image = getGeminiImage();
+                            
+                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>Thanks for supporting giving us a tip of " + parseFloat($("#pi_donate").val()) + " Pi. Latin points +1. " + x2_game);
                             
                             $("#open_modal").click();
                             
