@@ -1318,11 +1318,11 @@ class admin_apps(models.Model):
                 if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                     if "paymentType" in result_dict["metadata"] and result_dict["metadata"]["paymentType"] == "tip":
                         if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
-                            result = {"result": True, "completed": True}
-                            
                             pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
                             
-                            pi_user[0].write({'user_tips': pi_user[0].user_tips + 1, 'points_latin': pi_user[0].points_latin + 1})
+                            pi_user[0].write({'user_tips': pi_user[0].user_tips + 1, 'points_latin': pi_user[0].points_latin + 1, 'x2_game': True})
+                            
+                            result = {"result": True, "completed": True, 'x2_game': True}
                         else:
                             result = {"result": True, "completed": False}
                             
