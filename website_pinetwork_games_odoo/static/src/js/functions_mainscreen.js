@@ -1642,8 +1642,14 @@ $( document ).ready(function() {
                         showRewardedPiAd();
                     })();
                 }
+                else if(show_pi_ad_user_time == 0 && pi_ad_max == 0)
+                {
+                    alert("Pi ads not fully loaded. Try again.");
+                }
                 else
+                {
                     alert($("#piad_not_available").text().trim());
+                }
             }else if(!localStorage.getItem("loggedIn"))
             {
                 alert("This button only works if you're logged in, inside Pi Browser. Reload this page to login.");
@@ -1983,7 +1989,8 @@ $( document ).ready(function() {
         }
         
         $("#button_tip").prop( "disabled", true );
-            transfer();
+        
+        transfer();
     }
     
     $( "#button_tip" ).click(function() {
@@ -2322,8 +2329,14 @@ $( document ).ready(function() {
                         showRewardedPiAd();
                     })();
                 }
+                else if(show_pi_ad_user_time == 0 && pi_ad_max == 0)
+                {
+                    alert("Pi ads not fully loaded. Try again.");
+                }
                 else
+                {
                     alert($("#piad_not_available").text().trim());
+                }
             }else if(!localStorage.getItem("loggedIn"))
             {
                 alert("This button only works if you're logged in, inside Pi Browser. Reload this page to login.");
