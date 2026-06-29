@@ -103,6 +103,7 @@ https://www.youtube.com/watch?v=9KqcyAoCZzo
         'views/website_pinetwork_templates_languagelearning.xml',
         'views/website_pinetwork_templates_wayuulearning.xml',
         'views/website_pinetwork_templates_mayalearning.xml',
+        'views/website_pinetwork_templates_external_login.xml',
         'views/website_pinetwork_templates_webcode.xml',
         'views/website_pinetwork_templates_weboffice.xml',
         'views/website_pinetwork_templates_webtorrent.xml',
