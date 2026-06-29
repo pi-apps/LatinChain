@@ -39,6 +39,9 @@
                             const params = new URLSearchParams(window.location.hash.slice(1));
                             const expectedState = sessionStorage.getItem("pi_oauth_state");
                             sessionStorage.removeItem("pi_oauth_state");
+                            
+                            alert(expectedState);
+                            alert(params.get("state"));
 
                             if (!params.get("access_token")) return; // Si no hay token, no hacer nada
 
