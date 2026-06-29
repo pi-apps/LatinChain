@@ -65,7 +65,7 @@
                             statusDiv.textContent = "Successful authentication";
 
                             // Limpiar URL
-                            history.replaceState(null, "", window.location.pathname);
+                            //history.replaceState(null, "", window.location.pathname);
 
                         } catch (err) {
                             statusDiv.textContent = "Error: " + err.message;
