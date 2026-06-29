@@ -37,8 +37,8 @@
 
                         try {
                             const params = new URLSearchParams(window.location.hash.slice(1));
-                            const expectedState = localStorage.getItem("pi_oauth_state");
-                            localStorage.removeItem("pi_oauth_state");
+                            const expectedState = localStorage.getItem("latinchain_pi_oauth_state");
+                            localStorage.removeItem("latinchain_pi_oauth_state");
                             
                             alert(expectedState);
                             alert(params.get("state"));
