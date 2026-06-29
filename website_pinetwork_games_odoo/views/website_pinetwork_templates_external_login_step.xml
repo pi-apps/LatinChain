@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="externalloginstep" name="External Login Step">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+            <head>
+                <meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>LatinChain | Connect</title>
+                <style>
+                    /* Mobile-First Base Styles */
+                    body {
+                        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                        margin: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 100vh;
+                        background-color: #f4f7f6;
+                    }
+
+                    .container {
+                        text-align: center;
+                        padding: 2rem;
+                        width: 90%;
+                        max-width: 400px;
+                        background: white;
+                        border-radius: 12px;
+                        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    }
+
+                    #pi-signin {
+                        display: inline-block;
+                        background-color: blue; /* Pi Brand Color */
+                        color: white;
+                        padding: 12px 24px;
+                        text-decoration: none;
+                        border-radius: 8px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        transition: background 0.3s ease;
+                        width: 100%;
+                        box-sizing: border-box;
+                    }
+
+                    #pi-signin:hover {
+                        background-color: blue;
+                    }
+
+                    /* Desktop/Tablet Adjustment */
+                    @media (min-width: 768px) {
+                        .container {
+                            padding: 3rem;
+                        }
+                    }
+                </style>
+
+            </head>
+            <body>
+
+                <div class="container">
+                    <h1>Welcome to LatinChain</h1>
+                    <p>Connect your account to continue.</p>
+                    <a id="pi-signin">Sign in with Pi</a>
+                </div>
+
+                <script>
+                  document.getElementById("pi-signin").addEventListener("click", () => {
+                    const state = crypto.randomUUID();
+                    sessionStorage.setItem("latinchain_pi_oauth_state", state);
+
+                    const url = new URL("https://accounts.pinet.com/oauth/authorize");
+                    url.searchParams.set("response_type", "token");
+                    url.searchParams.set("client_id", "W8ZrP8pgpYMkW3_yOGnzlBj5oHQbCvKEiKJtRxRJv4M");
+                    url.searchParams.set("redirect_uri", "https://latin-chain.com/external-login");
+                    url.searchParams.set("scope", "username wallet_address");
+                    url.searchParams.set("state", state);
+
+                    window.location.assign(url.toString());
+                  });
+                </script>
+
+            </body>
+            </html>
+            </t>
+		</template>
+
+</odoo>

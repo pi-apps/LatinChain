@@ -37,11 +37,8 @@
 
                         try {
                             const params = new URLSearchParams(window.location.hash.slice(1));
-                            const expectedState = localStorage.getItem("latinchain_pi_oauth_state");
-                            localStorage.removeItem("latinchain_pi_oauth_state");
-                            
-                            alert(expectedState);
-                            alert(params.get("state"));
+                            const expectedState = sessionStorage.getItem("latinchain_pi_oauth_state");
+                            sessionStorage.removeItem("latinchain_pi_oauth_state");
 
                             if (!params.get("access_token")) return; // Si no hay token, no hacer nada
 
