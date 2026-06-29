@@ -38,12 +38,12 @@
                         try {
                             const params = new URLSearchParams(window.location.hash.slice(1));
                             const expectedState = sessionStorage.getItem("latinchain_pi_oauth_state");
-                            sessionStorage.removeItem("latinchain_pi_oauth_state");
+                            //sessionStorage.removeItem("latinchain_pi_oauth_state");
 
                             if (!params.get("access_token")) return; // Si no hay token, no hacer nada
 
                             if (params.get("state") !== expectedState) {
-                                throw new Error("Error de seguridad: Estado no coincide.");
+                                throw new Error("Security error: State doesn't match.");
                             }
 
                             const accessToken = params.get("access_token");
@@ -52,7 +52,7 @@
                                 headers: { Authorization: `Bearer ${accessToken}` },
                             });
 
-                            if (!response.ok) throw new Error("No se pudo obtener la información.");
+                            if (!response.ok) throw new Error("The information can't be retrieved.");
                             
                             const me = await response.json();
 
@@ -62,7 +62,7 @@
                             
                             loader.classList.add("hidden");
                             userInfo.classList.remove("hidden");
-                            statusDiv.textContent = "Autenticación exitosa";
+                            statusDiv.textContent = "Successful authentication";
 
                             // Limpiar URL
                             history.replaceState(null, "", window.location.pathname);
