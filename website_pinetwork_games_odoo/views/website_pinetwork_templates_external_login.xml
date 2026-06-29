@@ -2,7 +2,6 @@
 <odoo>
 
         <template id="externallogin" name="External Login">
-            <t t-call="web.layout">
             &lt;!DOCTYPE html&gt;
             <html>
             <head>
@@ -78,7 +77,6 @@
                 </script>
             </body>
             </html>
-            </t>
 		</template>
 
 </odoo>
