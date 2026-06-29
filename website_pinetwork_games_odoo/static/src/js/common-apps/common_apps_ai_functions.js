@@ -309,7 +309,7 @@ var startCommonAppsAI = () => {
             }else
             {
                 $("#blocking-message").html('<div>' + 
-                '    Login in main screen' +
+                '    Test main screen' +
                 '</div>' +
                 '<div>' +
                 '    <a class="anchor-goback" style="color: blue;" href="/" target="_self">Go back</a>' +
