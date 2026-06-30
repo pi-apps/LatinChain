@@ -95,12 +95,9 @@ class Website(Website):
         
         return http.request.render('website_pinetwork_games_odoo.mainpage', {'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price': amount_price, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'pi_ad_seconds': pi_ad_seconds, 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'total_users_verified_count': total_users_verified_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
-    @http.route('/index-nopopup', type='http', auth="public", website=True, methods=['GET', 'POST'], csrf=False)
+    @http.route('/index-nopopup', type='http', auth="public", website=True, csrf=False)
     def index_no_popup(self, **kw):
         #super(Website, self).index(**kw)
-        
-        if request.httprequest.method == 'GET':
-            return redirect("/")
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
