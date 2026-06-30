@@ -133,22 +133,22 @@
                                         
                                         if(data.unblocked)
                                         {
-                                            document.getElementById("unblocked").textContent = data.unblocked + ": You are Unlocked!";
+                                            document.getElementById("unblocked").textContent = "Yes: You are Unlocked!";
                                             document.getElementById("days_available").textContent = data.days_available;
                                         }
                                         else
                                         {
-                                            document.getElementById("unblocked").textContent = data.unblocked + ": You are not Unlocked";
+                                            document.getElementById("unblocked").textContent = "No: You are not Unlocked";
                                             document.getElementById("days_available").textContent = data.days_available;
                                         }
                                         
                                         if(data.is_winner)
                                         {
-                                            document.getElementById("is_winner").textContent = data.is_winner + ": You are Winner!. Check LatinChain Mainscreen";
+                                            document.getElementById("is_winner").textContent = "Yes: You are Winner!. Check LatinChain Mainscreen";
                                         }
                                         else
                                         {
-                                            document.getElementById("is_winner").textContent = data.is_winner;
+                                            document.getElementById("is_winner").textContent = "No";
                                         }
                                     }
                                 });
