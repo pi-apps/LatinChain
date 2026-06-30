@@ -3,79 +3,127 @@
 
         <template id="externallogin" name="External Login">
             &lt;!DOCTYPE html&gt;
-            <html>
-            <head>
-                <meta charset="UTF-8"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <title>User profile | LatinChain</title>
-                <style>
-                    body { font-family: sans-serif; background: #f4f7f6; display: flex; justify-content: center; padding: 20px; }
-                    .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
-                    .hidden { display: none; }
-                    .loader { border: 4px solid #f3f3f3; border-top: 4px solid #533075; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto; }
-                    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-                </style>
-            </head>
-            <body>
-
-                <div class="card" id="app">
-                    <div id="status">Loading data...</div>
-                    <div class="loader" id="loader"></div>
-                    
-                    <div id="user-info" class="hidden">
-                        <h2>¡Welcome!</h2>
-                        <p><strong>User:</strong> <span id="username"></span></p>
-                        <p><a href="https://latinchain.pinet.com" target="_blank"><strong>Go to LatinChain</strong></a></p>
-                    </div>
-                </div>
-
-                <script>
-                    async function handlePiCallback() {
-                        const statusDiv = document.getElementById("status");
-                        const loader = document.getElementById("loader");
-                        const userInfo = document.getElementById("user-info");
-
-                        try {
-                            const params = new URLSearchParams(window.location.hash.slice(1));
-                            const expectedState = sessionStorage.getItem("latinchain_pi_oauth_state");
-                            sessionStorage.removeItem("latinchain_pi_oauth_state");
-
-                            if (!params.get("access_token")) return; // Si no hay token, no hacer nada
-
-                            if (params.get("state") !== expectedState) {
-                                throw new Error("Security error: State doesn't match.");
-                            }
-
-                            const accessToken = params.get("access_token");
-
-                            const response = await fetch("https://api.minepi.com/v2/me", {
-                                headers: { Authorization: `Bearer ${accessToken}` },
-                            });
-
-                            if (!response.ok) throw new Error("The information can't be retrieved.");
-                            
-                            const me = await response.json();
-
-                            // Mostrar datos
-                            document.getElementById("username").textContent = me.username;
-                            //document.getElementById("uid").textContent = me.uid;
-                            
-                            loader.classList.add("hidden");
-                            userInfo.classList.remove("hidden");
-                            statusDiv.textContent = "Successful authentication";
-
-                            // Limpiar URL
-                            history.replaceState(null, "", window.location.pathname);
-
-                        } catch (err) {
-                            statusDiv.textContent = "Error: " + err.message;
-                            loader.classList.add("hidden");
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                    <title>Welcome to LatinChain</title>
+                    <style>
+                        :root {
+                            --primary: #533075;
+                            --bg: #f4f7f6;
+                            --text: #333;
                         }
-                    }
+                        body { 
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                            background: var(--bg); 
+                            display: flex; 
+                            justify-content: center; 
+                            align-items: center; 
+                            min-height: 100vh;
+                            margin: 0;
+                            padding: 20px;
+                        }
+                        .card { 
+                            background: white; 
+                            padding: 2.5rem; 
+                            border-radius: 20px; 
+                            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+                            width: 100%; 
+                            max-width: 400px; 
+                            text-align: center; 
+                        }
+                        h1 { color: var(--primary); margin-top: 0; }
+                        .hidden { display: none; }
+                        .loader { 
+                            border: 4px solid #f3f3f3; 
+                            border-top: 4px solid var(--primary); 
+                            border-radius: 50%; 
+                            width: 40px; 
+                            height: 40px; 
+                            animation: spin 1s linear infinite; 
+                            margin: 20px auto; 
+                        }
+                        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                        .btn {
+                            display: inline-block;
+                            background: var(--primary);
+                            color: white;
+                            padding: 12px 24px;
+                            border-radius: 30px;
+                            text-decoration: none;
+                            font-weight: bold;
+                            margin-top: 20px;
+                            transition: transform 0.2s;
+                        }
+                        .btn:hover { transform: scale(1.05); }
+                    </style>
+                </head>
+                <body>
 
-                    handlePiCallback();
-                </script>
-            </body>
+                    <div class="card" id="app">
+                        <div id="brand-header">
+                            <h1>LatinChain</h1>
+                            <p id="status" style="word-break: break-word">Authenticating your connection...</p>
+                        </div>
+                        
+                        <div class="loader" id="loader"></div>
+                        
+                        <div id="user-info" class="hidden">
+                            <h2 style="color: var(--primary);">Welcome!</h2>
+                            <p><strong>User:</strong> <span id="username"></span></p>
+                            <p>You have successfully connected.</p>
+                            <a href="https://latinchain.pinet.com" class="btn" target="_blank">Go to LatinChain</a>
+                        </div>
+                    </div>
+
+                    <script>
+                        async function handlePiCallback() {
+                            const statusDiv = document.getElementById("status");
+                            const loader = document.getElementById("loader");
+                            const userInfo = document.getElementById("user-info");
+
+                            try {
+                                const params = new URLSearchParams(window.location.hash.slice(1));
+                                const expectedState = sessionStorage.getItem("latinchain_pi_oauth_state");
+
+                                if (!params.get("access_token")) {
+                                    statusDiv.textContent = "Please log in via the LatinChain portal (https://latin-chain.com/es/external-login-step).";
+                                    loader.classList.add("hidden");
+                                    return;
+                                }
+
+                                if (params.get("state") !== expectedState) {
+                                    throw new Error("Security error: State mismatch.");
+                                }
+
+                                const accessToken = params.get("access_token");
+
+                                const response = await fetch("https://api.minepi.com/v2/me", {
+                                    headers: { Authorization: `Bearer ${accessToken}` },
+                                });
+
+                                if (!response.ok) throw new Error("Could not retrieve account info.");
+                                
+                                const me = await response.json();
+
+                                document.getElementById("username").textContent = me.username;
+                                
+                                loader.classList.add("hidden");
+                                userInfo.classList.remove("hidden");
+                                statusDiv.textContent = "Authentication Successful";
+                                statusDiv.style.color = "green";
+
+                            } catch (err) {
+                                statusDiv.textContent = "Error: " + err.message;
+                                statusDiv.style.color = "red";
+                                loader.classList.add("hidden");
+                            }
+                        }
+
+                        handlePiCallback();
+                    </script>
+                </body>
             </html>
 		</template>
 
