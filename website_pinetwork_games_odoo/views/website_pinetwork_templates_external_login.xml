@@ -75,6 +75,7 @@
                             <h2 style="color: var(--primary);">Welcome!</h2>
                             <p><strong>User:</strong> <span id="username"></span></p>
                             <p><strong>Total points:</strong> <span id="points"></span></p>
+                            <p><strong>Latin points:</strong> <span id="points_latin"></span></p>
                             <p><strong>Chess points:</strong> <span id="points_chess"></span></p>
                             <p><strong>Sudoku points:</strong> <span id="points_sudoku"></span></p>
                             <p><strong>Snake points:</strong> <span id="points_snake"></span></p>
@@ -128,6 +129,7 @@
                                         document.getElementById("points_chess").textContent = data.points_chess;
                                         document.getElementById("points_sudoku").textContent = data.points_sudoku;
                                         document.getElementById("points_snake").textContent = data.points_snake;
+                                        document.getElementById("points_latin").textContent = data.points_latin;
                                         
                                         if(data.unblocked)
                                         {
