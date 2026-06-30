@@ -82,12 +82,11 @@
                             const statusDiv = document.getElementById("status");
                             const loader = document.getElementById("loader");
                             const userInfo = document.getElementById("user-info");
-                            
-                            sessionStorage.removeItem("latinchain_pi_oauth_state");
 
                             try {
                                 const params = new URLSearchParams(window.location.hash.slice(1));
                                 const expectedState = sessionStorage.getItem("latinchain_pi_oauth_state");
+                                sessionStorage.removeItem("latinchain_pi_oauth_state");
 
                                 if (!params.get("access_token")) {
                                     statusDiv.textContent = "Please log in via the LatinChain portal (https://latin-chain.com/es/external-login-step).";
