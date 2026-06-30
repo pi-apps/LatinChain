@@ -82,6 +82,8 @@
                             const statusDiv = document.getElementById("status");
                             const loader = document.getElementById("loader");
                             const userInfo = document.getElementById("user-info");
+                            
+                            sessionStorage.removeItem("latinchain_pi_oauth_state");
 
                             try {
                                 const params = new URLSearchParams(window.location.hash.slice(1));
@@ -113,6 +115,8 @@
                                 userInfo.classList.remove("hidden");
                                 statusDiv.textContent = "Authentication Successful";
                                 statusDiv.style.color = "green";
+                                
+                                history.replaceState(null, "", window.location.pathname);
 
                             } catch (err) {
                                 statusDiv.textContent = "Error: " + err.message;
