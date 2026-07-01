@@ -584,7 +584,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.mayalearning', {'sandbox': sandbox, 'hide_google_translate': True, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
-    @http.route('/external-login-step/', type='http', auth="public", website=True, csrf=False)
+    @http.route(['/external-login-step/', '/pi-sign-in/'], type='http', auth="public", website=True, csrf=False)
     def externalloginstep(self, **kw):
         
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
