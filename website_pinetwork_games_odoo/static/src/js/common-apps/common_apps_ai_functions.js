@@ -19,6 +19,7 @@ var startCommonAppsAI = () => {
     $( document ).ready(function() {
         
         document.body.style.overflow = 'hidden';
+        document.getElementById('blockingOverlay').style.wordBreak = 'break-word';
         
         const Pi = window.Pi;
         
