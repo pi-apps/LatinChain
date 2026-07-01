@@ -87,6 +87,7 @@ https://www.youtube.com/watch?v=9KqcyAoCZzo
         'views/website_pinetwork_templates_chess.xml',
         'views/website_pinetwork_templates_tetris.xml',
         'views/website_pinetwork_templates_mahjong.xml',
+        'views/website_pinetwork_templates_solitaire.xml',
         'views/website_pinetwork_templates_bubble_shooter.xml',
         'views/website_pinetwork_templates_test_your_brain.xml',
         'views/website_pinetwork_templates_15_puzzle.xml',

@@ -2555,6 +2555,10 @@ $( document ).ready(function() {
         $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Mahjong", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".solitaireinfo" ).click(function() {
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Klondike_(solitaire)", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".bubble-shooterinfo" ).click(function() {
         $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Puzzle_Bobble", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });

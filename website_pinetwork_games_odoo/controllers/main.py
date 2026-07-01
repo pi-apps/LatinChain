@@ -328,6 +328,22 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.mahjong', {'sandbox': sandbox, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
+    @http.route('/solitaire/', type='http', auth="public", website=True, csrf=False)
+    def solitaire(self, **kw):
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+            mainnet = ""
+            google_adsense = ""
+        else:
+            sandbox = admin_app_list[0].sandbox
+            mainnet = admin_app_list[0].mainnet
+            google_adsense = admin_app_list[0].google_adsense
+        
+        return http.request.render('website_pinetwork_games_odoo.solitaire', {'sandbox': sandbox, 'hide_google_translate': True, 'mainnet': mainnet, 'google_adsense': google_adsense})
+    
     @http.route('/bubble-shooter/', type='http', auth="public", website=True, csrf=False)
     def bubble_shooter(self, **kw):
         
