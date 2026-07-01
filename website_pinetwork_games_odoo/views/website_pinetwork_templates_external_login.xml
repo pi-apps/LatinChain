@@ -67,7 +67,9 @@
                         <div id="brand-header">
                             <h1>LatinChain</h1>
                             <p id="status" style="word-break: break-word">Authenticating your connection...</p>
-                            <a id="pisignin" class="hidden btn" href="https://latin-chain.com/pi-sign-in">Pi Sign-in</a>
+                            <div id="pisignin" class="hidden">
+                                <a class="btn" href="https://latin-chain.com/pi-sign-in">Pi Sign-in</a>
+                            </div>
                         </div>
                         
                         <div class="loader" id="loader"></div>
