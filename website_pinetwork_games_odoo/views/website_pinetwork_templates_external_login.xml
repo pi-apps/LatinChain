@@ -100,7 +100,7 @@
                                 sessionStorage.removeItem("latinchain_pi_oauth_state");
 
                                 if (!params.get("access_token")) {
-                                    statusDiv.textContent = "Please log in via the LatinChain portal (https://latin-chain.com/es/external-login-step).";
+                                    statusDiv.innerHTML = "Please log in via the LatinChain portal <a href='https://latin-chain.com/pi-sign-in' class='btn'>Pi Sign-in</a>.";
                                     loader.classList.add("hidden");
                                     return;
                                 }
