@@ -102,6 +102,7 @@ var startCommonAppsAI = () => {
                 
                 if (showAdResponse.result === "AD_REWARDED")
                 {
+                    $("#test_app").hide();
                     await delayAsync(2000);
                     if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                     {
@@ -114,30 +115,35 @@ var startCommonAppsAI = () => {
                             'csrf_token': odoo.csrf_token,
                         };
                         //$.ajaxSetup({async: false});
-                        setConfirmAIUnloadPoints(true);
+                        setConfirmUnloadPoints(true);
                         $.post( "/set-latin-points", data).done(function(data) {
                             end();
-                            setConfirmAIUnloadPoints(false);
+                            setConfirmUnloadPoints(false);
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
                                 test_rewarded();
                                 showModalAllApps('Congratulations, you won ' + data.points_latin + ' Latin points', 'Successful');
                             }else{
+                                $("#test_app").show();
                                 showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
                             }
                             start();
                         }).fail(function() {
+                            $("#test_app").show();
                             showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
-                            setConfirmAIUnloadPoints(false);
+                            setConfirmUnloadPoints(false);
                         });
                     }else{
+                        $("#test_app").show();
                         showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
                     }
                 }else{
+                    $("#test_app").show();
                     showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
                 }
             } catch (err) {
+                $("#test_app").show();
                 showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
             }
         }

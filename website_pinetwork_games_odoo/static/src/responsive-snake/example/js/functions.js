@@ -272,6 +272,7 @@ async function showPiRewardedAds(Pi)
         
         if (showAdResponse.result === "AD_REWARDED")
         {
+            $("#test_app").hide();
             await delayAsync(2000);
             if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
             {
@@ -294,20 +295,25 @@ async function showPiRewardedAds(Pi)
                         test_rewarded();
                         showModalAllApps('Congratulations, you won ' + data.points_latin + ' Latin points', 'Successful');
                     }else{
+                        $("#test_app").show();
                         showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
                     }
                     start();
                 }).fail(function() {
+                    $("#test_app").show();
                     showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
                     setConfirmUnloadPoints(false);
                 });
             }else{
+                $("#test_app").show();
                 showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
             }
         }else{
+            $("#test_app").show();
             showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
         }
     } catch (err) {
+        $("#test_app").show();
         showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
     }
 }
