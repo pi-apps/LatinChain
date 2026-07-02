@@ -293,6 +293,8 @@ async function showPiRewardedAds(Pi)
         start_flag = true;
     }
     
+    $("#test_app").hide();
+    
     try {
         
         const isAdReadyResponse = await Pi.Ads.isAdReady("rewarded");
@@ -317,7 +319,6 @@ async function showPiRewardedAds(Pi)
         
         if (showAdResponse.result === "AD_REWARDED")
         {
-            $("#test_app").hide();
             await delayAsync(2000);
             if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
             {
