@@ -291,7 +291,7 @@ async function showPiRewardedAds(Pi)
                         test_rewarded();
                         var text = 'Congratulations, you won ' + data.points_latin + ' Latin points.';
                         if(data.x2_game)
-                            text += '\nYou have now x2 in your next game (only Chess, Sudoku and Snake, for PREMIUM users).';
+                            text += '\nYou have now x2 points in your next game (only Chess, Sudoku and Snake, for PREMIUM users).';
                         showModalAllApps(text, 'Successful');
                     }else{
                         $("#test_app").show();
