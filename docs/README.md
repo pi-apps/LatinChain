@@ -1,6 +1,6 @@
 # Interaction with LatinChain Platform (LatinChain API docs)
 
-Watch a working example here: https://latin-chain.com/pi-sign-in/
+Watch a working example here. Watch your LatinChain Mainnet profile here: https://latin-chain.com/pi-sign-in/
 
 Watch these docs also at: https://latin-chain.com/api-docs/
 
