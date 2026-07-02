@@ -115,10 +115,10 @@ var startCommonAppsAI = () => {
                             'csrf_token': odoo.csrf_token,
                         };
                         //$.ajaxSetup({async: false});
-                        setConfirmUnloadPoints(true);
+                        setConfirmAIUnloadPoints(true);
                         $.post( "/set-latin-points", data).done(function(data) {
                             end();
-                            setConfirmUnloadPoints(false);
+                            setConfirmAIUnloadPoints(false);
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
@@ -132,7 +132,7 @@ var startCommonAppsAI = () => {
                         }).fail(function() {
                             $("#test_app").show();
                             showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
-                            setConfirmUnloadPoints(false);
+                            setConfirmAIUnloadPoints(false);
                         });
                     }else{
                         $("#test_app").show();
