@@ -3831,14 +3831,14 @@
                                 </div>
                                 
                                 <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Unlock Once (Send tip)</div></button>
+                                    <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Unlock Once (Send tip)</div></button>
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">All-access (PREMIUM)</div></a>
+                                    <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">All-access (PREMIUM)</div></a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-else="">
-                                    <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM</div></a>
+                                    <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM</div></a>
                                 </div>
                                 
                                 <!--<div style="margin-top: 10px;" class="row" id="GivingTip">
@@ -3846,7 +3846,7 @@
                                 </div>-->
                                 
                                 <div style="margin-top: 10px;" class="row">
-                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi</div></a>
+                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi</div></a>
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow2">
