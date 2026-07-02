@@ -51,6 +51,7 @@ function continueGame() {
     const saved = localStorage.getItem(SAVE_KEY);
     if (saved) {
         player = JSON.parse(saved);
+        turnInProgress = false; // FIX: Ensure turn is unlocked upon load
         updateUI();
         showScreen('screen-explore');
         addLog("Progress restored to last save point.", "log-event");
@@ -63,6 +64,7 @@ function newGame() {
         name: 'Hero', class: '', lvl: 1, hp: 100, maxHp: 100, xp: 0, 
         nextXp: 50, atk: 10, def: 5, skillName: 'Slash', floor: 1, isDefending: false
     };
+    turnInProgress = false; // FIX: Ensure turn is unlocked for a new game
     showScreen('screen-character');
 }
 
@@ -199,6 +201,7 @@ function enemyTurn() {
 
     if (player.hp <= 0) {
         document.getElementById('modal-death').style.display = 'flex';
+        turnInProgress = false; // FIX: Unlock the turn state so future battles work
     } else {
         turnInProgress = false;
     }
