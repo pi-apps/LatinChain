@@ -1092,12 +1092,12 @@
                     <div id="referrer_code_message" style="display:none;">You can't have more than 150 characters in your Referrer code.</div>
                     <div id="referrer_code_saved" style="display:none;">Your referrer code was saved.</div>
                     <div id="mainnet_version_message" style="display:none;">We are testing LatinChain Mainnet version. Do you want to visit LatinChain Mainnet version?.</div>
-                    <div id="modal_reward_message" style="display:none;">Congrats, you won </div>
+                    <div id="modal_reward_message" style="display:none;">Congratulations, you won </div>
                     <div id="modal_reward_nextpiad" style="display:none;">Next Pi Ad in </div>
                     <div id="modal_reward_nextpiad_time" style="display:none;"> hours.</div>
                     <div id="modal_not_latin_rewarded_message" style="display:none;">No Latin points shared. Try again.</div>
                     <div id="modal_not_rewarded_message" style="display:none;">No points shared. You need to login to earn points.</div>
-                    <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game (Chess, Sudoku and Snake). Only if you are verified.</div>
+                    <div id="modal_x2_game_message" style="display:none;">Now you have x2 points in your next game (Chess, Sudoku and Snake, only for PREMIUM users).</div>
                     <div id="modal_use_anytime" style="display:none;">You can use this app anytime, for testing purposes, until Pi OpenMainnet.</div>
                     <div id="modal_unlock_use_anytime" style="display:none;">You have to pay Pi, to unlock all the LatinChain apps.</div>
                     <div id="modal_pi_ad_automatic_enabled" style="display:none;">Automatic Pi Ads are enabled. Pi Ads will be shown automatically every so often.</div>
@@ -2005,7 +2005,7 @@
                             
                             <div class="text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
                                 <div class="row justify-content-center avatar_show_blocked" style="margin-left: 1px; margin-right: 1px">
-                                    Only verified users can change their Avatar.
+                                    Only PREMIUM users can change their Avatar.
                                 </div>
                                 <div class="row justify-content-center avatar_show_blocked" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
                                     <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
