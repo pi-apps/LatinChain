@@ -102,8 +102,6 @@ var startCommonAppsAI = () => {
                 
                 if (showAdResponse.result === "AD_REWARDED")
                 {
-                    test_rewarded();
-                    
                     await delayAsync(2000);
                     if(pi_user_id != "" && pi_user_code != "" && showAdResponse.adId)
                     {
@@ -123,14 +121,24 @@ var startCommonAppsAI = () => {
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
+                                test_rewarded();
+                                showModalAllApps('Congratulations, you won ' + data.points_latin + ' Latin points', 'Successful');
+                            }else{
+                                showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
                             }
                             start();
                         }).fail(function() {
+                            showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
                             setConfirmAIUnloadPoints(false);
                         });
+                    }else{
+                        showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
                     }
+                }else{
+                    showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
                 }
             } catch (err) {
+                showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');
             }
         }
         

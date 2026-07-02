@@ -634,3 +634,172 @@ var googleTranslateElementInit = () => {
 /*
  * Here finish the language translation
  * */
+
+function showModalAllApps(message, title = 'Notification') {
+    // 1. Prevent duplicate modals from stacking
+    if (document.getElementById('isolated-js-modal-host')) {
+        return;
+    }
+
+    // 2. Create the host element for the Shadow DOM
+    const host = document.createElement('div');
+    host.id = 'isolated-js-modal-host';
+    host.style.position = 'relative';
+    host.style.zIndex = '2147483647'; // Maximum possible z-index
+
+    // 3. Attach the Shadow DOM to isolate styles
+    const shadow = host.attachShadow({ mode: 'open' });
+
+    // 4. Define the HTML and Mobile-First CSS internally
+    const template = document.createElement('template');
+    template.innerHTML = `
+        <style>
+            :host {
+                all: initial; /* Reset inherited styles */
+            }
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.65);
+                display: flex;
+                justify-content: center;
+                /* MOBILE FIRST: Align bottom for easier thumb reach */
+                align-items: flex-end; 
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                backdrop-filter: blur(3px);
+                z-index: 2147483647;
+            }
+            .modal {
+                /* MOBILE FIRST Base Styles */
+                width: 100%;
+                margin: 0;
+                padding: 24px 20px 32px 20px; /* Extra bottom padding for mobile safe areas */
+                border-radius: 24px 24px 0 0; /* Rounded top corners only */
+                box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.2);
+                box-sizing: border-box;
+                animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                
+                background-color: #ffffff;
+                color: #111827;
+            }
+            .title {
+                margin: 0 0 12px 0;
+                font-size: 1.25rem;
+                font-weight: 700;
+                line-height: 1.4;
+            }
+            .message {
+                margin: 0 0 24px 0;
+                font-size: 1rem;
+                line-height: 1.6;
+                color: #4b5563;
+            }
+            .close-btn {
+                display: block;
+                width: 100%;
+                padding: 14px;
+                border: none;
+                border-radius: 12px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.2s ease, transform 0.1s ease;
+                background-color: #f3f4f6;
+                color: #1f2937;
+                touch-action: manipulation; /* Improves mobile tap responsiveness */
+            }
+            .close-btn:active { 
+                transform: scale(0.97); 
+                background-color: #e5e7eb;
+            }
+
+            /* Automatic Dark Mode Resistance */
+            @media (prefers-color-scheme: dark) {
+                .modal {
+                    background-color: #1f2937;
+                    color: #f9fafb;
+                    border-top: 1px solid #374151;
+                }
+                .message {
+                    color: #d1d5db;
+                }
+                .close-btn {
+                    background-color: #374151;
+                    color: #f9fafb;
+                }
+                .close-btn:active { 
+                    background-color: #4b5563; 
+                }
+            }
+
+            /* DESKTOP/TABLET OVERRIDES (min-width handles responsiveness) */
+            @media (min-width: 640px) {
+                .overlay {
+                    align-items: center; /* Center the modal on larger screens */
+                }
+                .modal {
+                    width: 90%;
+                    max-width: 420px;
+                    padding: 24px;
+                    border-radius: 16px; /* Fully rounded on desktop */
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+                    animation: popIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+                    border: none; /* Remove dark mode top-border override */
+                }
+                @media (prefers-color-scheme: dark) {
+                    .modal { border: 1px solid #374151; }
+                }
+                .close-btn:hover {
+                    background-color: #e5e7eb;
+                }
+                @media (prefers-color-scheme: dark) {
+                    .close-btn:hover { background-color: #4b5563; }
+                }
+            }
+
+            /* Animations */
+            @keyframes slideUp {
+                0% { transform: translateY(100%); }
+                100% { transform: translateY(0); }
+            }
+            @keyframes popIn {
+                0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+                100% { opacity: 1; transform: scale(1) translateY(0); }
+            }
+        </style>
+
+        <div class="overlay">
+            <div class="modal">
+                <h2 class="title"></h2>
+                <p class="message"></p>
+                <button class="close-btn">Close</button>
+            </div>
+        </div>
+    `;
+
+    // 5. Inject the template
+    shadow.appendChild(template.content.cloneNode(true));
+
+    // 6. Set text safely
+    shadow.querySelector('.title').textContent = title;
+    shadow.querySelector('.message').textContent = message;
+
+    // 7. Handle closing logic
+    const overlay = shadow.querySelector('.overlay');
+    const closeBtn = shadow.querySelector('.close-btn');
+
+    const closeModal = () => {
+        document.body.removeChild(host);
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal();
+    });
+
+    // 8. Append to display
+    document.body.appendChild(host);
+}
