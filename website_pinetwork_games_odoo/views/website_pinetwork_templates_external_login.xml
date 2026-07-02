@@ -76,6 +76,7 @@
                         
                         <div id="user-info" class="hidden">
                             <h2 style="color: var(--primary);">Welcome!</h2>
+                            <p><a href="https://latinchain.pinet.com" class="btn" target="_blank">Go to LatinChain</a></p>
                             <p><strong>User:</strong> <span id="username"></span></p>
                             <p><strong>Total points:</strong> <span id="points"></span></p>
                             <p><strong>Latin points:</strong> <span id="points_latin"></span></p>
@@ -87,7 +88,6 @@
                             <p><strong>Winner:</strong> <span id="is_winner"></span></p>
                             
                             <p>You have successfully connected.</p>
-                            <a href="https://latinchain.pinet.com" class="btn" target="_blank">Go to LatinChain</a>
                         </div>
                     </div>
 
