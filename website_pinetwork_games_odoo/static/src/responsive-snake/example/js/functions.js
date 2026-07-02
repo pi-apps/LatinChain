@@ -293,7 +293,10 @@ async function showPiRewardedAds(Pi)
                     if(data.result && data.points_latin > 0)
                     {
                         test_rewarded();
-                        showModalAllApps('Congratulations, you won ' + data.points_latin + ' Latin points', 'Successful');
+                        var text = 'Congratulations, you won ' + data.points_latin + ' Latin points.';
+                        if(data.x2_game)
+                            text += '\nYou have now x2 in your next game (only Chess, Sudoku and Snake, for PREMIUM users).';
+                        showModalAllApps(text, 'Successful');
                     }else{
                         $("#test_app").show();
                         showModalAllApps('Error setting points on Pi Ads. Try again.', 'Error');

@@ -696,6 +696,7 @@ function showModalAllApps(message, title = 'Notification') {
                 font-size: 1rem;
                 line-height: 1.6;
                 color: #4b5563;
+                white-space: pre-wrap;
             }
             .close-btn {
                 display: block;
