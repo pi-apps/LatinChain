@@ -939,52 +939,52 @@ function copyToClipboard(text) {
 
 $( document ).ready(function() {
     
+    var modalElement = document.getElementById('Modal');
+
+    // 2. Move the modal to the body so it breaks out of its parent
+    document.body.appendChild(modalElement);
+
+    // 3. Create the fresh modal instance
+    var openModal = new bootstrap.Modal(modalElement, {
+        backdrop: true
+    });
+    
     $("#open_modal").off("click").click(function()
     {
-        var modalElement = document.getElementById('Modal');
-
-        // 2. Move the modal to the body so it breaks out of its parent
-        document.body.appendChild(modalElement);
-
-        // 3. Create the fresh modal instance
-        var myModal = new bootstrap.Modal(modalElement, {
-            backdrop: true
-        });
-
         // 4. Show it
-        myModal.show();
+        openModal.show();
+    });
+    
+    var modalRewardedadElement = document.getElementById('ModalRewardedad');
+
+    // 2. Move the modal to the body so it breaks out of its parent
+    document.body.appendChild(modalRewardedadElement);
+
+    // 3. Create the fresh modal instance
+    var openRewardedadModal = new bootstrap.Modal(modalRewardedadElement, {
+        backdrop: true
     });
     
     $("#open_rewardedad_modal").off("click").click(function()
     {
-        var modalElement = document.getElementById('ModalRewardedad');
-
-        // 2. Move the modal to the body so it breaks out of its parent
-        document.body.appendChild(modalElement);
-
-        // 3. Create the fresh modal instance
-        var myModal = new bootstrap.Modal(modalElement, {
-            backdrop: true
-        });
-
         // 4. Show it
-        myModal.show();
+        openRewardedadModal.show();
+    });
+    
+    var modalLoginElement = document.getElementById('ModalLogin');
+
+    // 2. Move the modal to the body so it breaks out of its parent
+    document.body.appendChild(modalLoginElement);
+
+    // 3. Create the fresh modal instance
+    var openModalLogin = new bootstrap.Modal(modalLoginElement, {
+        backdrop: true
     });
     
     $("#open_modal_login").off("click").click(function()
     {
-        var modalElement = document.getElementById('ModalLogin');
-
-        // 2. Move the modal to the body so it breaks out of its parent
-        document.body.appendChild(modalElement);
-
-        // 3. Create the fresh modal instance
-        var myModal = new bootstrap.Modal(modalElement, {
-            backdrop: true
-        });
-
         // 4. Show it
-        myModal.show();
+        openModalLogin.show();
     });
     
     $(".numeric-decimal").on("keypress keyup blur",function (event) {

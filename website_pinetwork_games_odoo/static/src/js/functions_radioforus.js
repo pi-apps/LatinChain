@@ -151,20 +151,20 @@ async function showPiAds(Pi, activated) {
 }
 
 $( document ).ready(function() {
+    var modalElement = document.getElementById('Modal');
+
+    // 2. Move the modal to the body so it breaks out of its parent
+    document.body.appendChild(modalElement);
+
+    // 3. Create the fresh modal instance
+    var openModal = new bootstrap.Modal(modalElement, {
+        backdrop: true
+    });
+    
     $("#open_modal").off("click").click(function()
     {
-        var modalElement = document.getElementById('Modal');
-
-        // 2. Move the modal to the body so it breaks out of its parent
-        document.body.appendChild(modalElement);
-
-        // 3. Create the fresh modal instance
-        var myModal = new bootstrap.Modal(modalElement, {
-            backdrop: true
-        });
-
         // 4. Show it
-        myModal.show();
+        openModal.show();
     });
     
     $(document).ajaxStop(function() {
