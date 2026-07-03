@@ -963,7 +963,6 @@ $( document ).ready(function() {
     
     $("#open_rewardedad_modal").click(function()
     {
-        alert("123");
         var modalElement = document.getElementById('ModalRewardedad');
 
         // 1. Check if a modal instance already exists and delete/dispose of it
