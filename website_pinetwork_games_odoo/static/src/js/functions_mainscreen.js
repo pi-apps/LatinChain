@@ -1707,6 +1707,12 @@ $( document ).ready(function() {
                             
                             get_user_rewarded();
                             
+                            $('.darkmode-toggle').css('display', 'block');
+                            if($('.darkmode-toggle--white').length === 0)
+                                $('.darkmode-layer--button').css('display', 'block');
+                            else
+                                $('.darkmode-toggle--white').css('display', 'block');
+                            
                             document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                             document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
