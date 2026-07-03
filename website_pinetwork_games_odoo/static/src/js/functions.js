@@ -181,11 +181,11 @@ $( document ).ready(function() {
         backdrop: true
     });
     
-    $("#open_modal").off("click").click(function()
+    /*$("#open_modal").off("click").click(function()
     {
         // 4. Show it
         openModal.show();
-    });
+    });*/
     
     btnvalue = $("#button_reward_ad").html();
     

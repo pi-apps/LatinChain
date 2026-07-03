@@ -949,11 +949,11 @@ $( document ).ready(function() {
         backdrop: true
     });
     
-    $("#open_modal").off("click").click(function()
+    /*$("#open_modal").off("click").click(function()
     {
         // 4. Show it
         openModal.show();
-    });
+    });*/
     
     var modalRewardedadElement = document.getElementById('ModalRewardedad');
 
@@ -965,11 +965,11 @@ $( document ).ready(function() {
         backdrop: true
     });
     
-    $("#open_rewardedad_modal").off("click").click(function()
+    /*$("#open_rewardedad_modal").off("click").click(function()
     {
         // 4. Show it
         openRewardedadModal.show();
-    });
+    });*/
     
     var modalLoginElement = document.getElementById('ModalLogin');
 
@@ -981,11 +981,11 @@ $( document ).ready(function() {
         backdrop: true
     });
     
-    $("#open_modal_login").off("click").click(function()
+    /*$("#open_modal_login").off("click").click(function()
     {
         // 4. Show it
         openModalLogin.show();
-    });
+    });*/
     
     $(".numeric-decimal").on("keypress keyup blur",function (event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');

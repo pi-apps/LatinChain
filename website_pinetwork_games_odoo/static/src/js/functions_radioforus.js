@@ -161,11 +161,11 @@ $( document ).ready(function() {
         backdrop: true
     });
     
-    $("#open_modal").off("click").click(function()
+    /*$("#open_modal").off("click").click(function()
     {
         // 4. Show it
         openModal.show();
-    });
+    });*/
     
     $(document).ajaxStop(function() {
                 $("#loading_section").hide();
