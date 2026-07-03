@@ -44,8 +44,7 @@ function showImageModal(imageUrl, captionText) {
         </div>
     `;
     
-    $(".modal-body").html(modalHTML);
-    $("#open_modal").click();
+    showModalAllAppsHTML(modalHTML);
 }
 
 function set_points(points) {
@@ -101,11 +100,9 @@ function get_user(donation) {
                     {
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
-                            $(".modal-body").html($("#unblocked_message").text() + "<br/>" + $("#modal_total_latinpoints_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
-                            $("#open_modal").click();
+                            showModalAllAppsHTML($("#unblocked_message").text() + "<br/>" + $("#modal_total_latinpoints_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                         }else{
-                            $(".modal-body").html($("#unblocked_message").text());
-                            $("#open_modal").click();
+                            showModalAllAppsHTML($("#unblocked_message").text());
                         }
                     }
                     
@@ -396,12 +393,12 @@ $( document ).ready(function() {
                                                     $("#button_reward_ad").prop( "disabled", true );
                                                     $("#button_reward_ad").html("+" + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                                                     var gemini_image = getGeminiImage();
-                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                                                     
                                                     if(data.x2_game)
-                                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
-                                                    
-                                                    $("#open_modal").click();
+                                                        showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                                    else
+                                                        showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
+                                                        
                                                     /*setTimeout(function ()
                                                     {
                                                         $("#button_reward_ad").html(btnvalue);
@@ -438,9 +435,8 @@ $( document ).ready(function() {
                                                     }, 5000);
                                                     
                                                     var gemini_image = getGeminiImage();
-                                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error) Result: " + data.result);
                                                     
-                                                    $("#open_modal").click();
+                                                    showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error) Result: " + data.result);
                                                 }
                                                 start();
                                             }).fail(function() {
@@ -454,18 +450,16 @@ $( document ).ready(function() {
                                                 setConfirmUnloadPoints(false);
                                                 
                                                 var gemini_image = getGeminiImage();
-                                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (Post failed Error)");
                                                 
-                                                $("#open_modal").click();
+                                                showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>" + $("#modal_not_latin_rewarded_message").text() + " (Post failed Error)");
                                             });
                                         }else{
                                             $("#button_reward_ad").html(btnvalue);
                                             $("#button_reward_ad").prop( "disabled", false );
                                             
                                             var gemini_image = getGeminiImage();
-                                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (adId Error)");
                                             
-                                            $("#open_modal").click();
+                                            showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>" + $("#modal_not_latin_rewarded_message").text() + " (adId Error)");
                                         }
                                     } else {
                                         $("#button_reward_ad").html(btnvalue);
@@ -473,9 +467,8 @@ $( document ).ready(function() {
                                         // fallback logic
                                         // showAdErrorModal()
                                         var gemini_image = getGeminiImage();
-                                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (AD_REWARDED Error)");
                                         
-                                        $("#open_modal").click();
+                                        showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>" + $("#modal_not_latin_rewarded_message").text() + " (AD_REWARDED Error)");
                                     }
                                     
                                 } catch (err) {
@@ -484,9 +477,8 @@ $( document ).ready(function() {
                                     // good practice to handle any potential errors
                                     
                                     var gemini_image = getGeminiImage();
-                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error) " + err);
                                     
-                                    $("#open_modal").click();
+                                    showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error) " + err);
                                 }
                             }else
                             {

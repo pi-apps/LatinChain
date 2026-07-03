@@ -1324,9 +1324,11 @@ class admin_apps(models.Model):
                         if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
                             pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
                             
-                            pi_user[0].write({'user_tips': pi_user[0].user_tips + 1, 'points_latin': pi_user[0].points_latin + 1, 'x2_game': True})
+                            admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
                             
-                            result = {"result": True, "completed": True, 'x2_game': True, 'points_latin': 1}
+                            pi_user[0].sudo().write({'user_tips': pi_user[0].user_tips + 1, 'points_latin': pi_user[0].points_latin + admin_app_list[0].points_latin_amount, 'x2_game': True})
+                            
+                            result = {"result": True, "completed": True, 'x2_game': pi_user[0].x2_game, 'points_latin': admin_app_list[0].points_latin_amount}
                         else:
                             result = {"result": True, "completed": False}
                             

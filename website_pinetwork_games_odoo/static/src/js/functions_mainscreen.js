@@ -48,8 +48,7 @@ function showImageModal(imageUrl, captionText) {
         </div>
     `;
     
-    $(".modal-body").html(modalHTML);
-    $("#open_modal").click();
+    showModalAllAppsHTML(modalHTML);
 }
 
 function openInNewTabAds(url) {
@@ -281,8 +280,7 @@ function set_points_exchange(value_client) {
                             x2_game = "";
                         }
                         
-                        $(".modal-body").html($("#modal_exchange_message_1").text() + latin_points + " Latin points" + $("#modal_exchange_message_2").text() + new Intl.NumberFormat('en-US').format(data.points) + " " + app_client_message + " " + x2_game);
-                        $("#open_modal").click();
+                        showModalAllAppsHTML($("#modal_exchange_message_1").text() + latin_points + " Latin points" + $("#modal_exchange_message_2").text() + new Intl.NumberFormat('en-US').format(data.points) + " " + app_client_message + " " + x2_game);
                         
                         //alert($("#modal_exchange_message_1").text() + latin_points + " Latin points" + $("#modal_exchange_message_2").text() + data.points + " " + app_client_message + " " + x2_game);
                     }
@@ -290,8 +288,7 @@ function set_points_exchange(value_client) {
                     {
                         if(data.reason == 'not_enough_latin_points')
                         {
-                            $(".modal-body").html($("#modal_exchange_message_4").text() + " Latin points.");
-                            $("#open_modal").click();
+                            showModalAllAppsHTML($("#modal_exchange_message_4").text() + " Latin points.");
                         }
                         
                         //alert($("#modal_exchange_message_4").text() + " Latin points.");
@@ -1151,12 +1148,11 @@ $( document ).ready(function() {
                                 document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                 
                                 var gemini_image = getGeminiImage();
-                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                                 
                                 if(data.x2_game)
-                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
-                                
-                                $("#open_modal").click();
+                                    showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                else
+                                    showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                                 
                                 $(".show_test_app").hide();
                                 $(".show_test_app_loading").show();
@@ -1207,9 +1203,8 @@ $( document ).ready(function() {
                                 }, 5000);
                                 
                                 var gemini_image = getGeminiImage();
-                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error) Result: " + data.result);
                                 
-                                $("#open_modal").click();
+                                showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>" + $("#modal_not_latin_rewarded_message").text() + " (No points shared Error) Result: " + data.result);
                                 
                             }
                             start();
@@ -1226,9 +1221,8 @@ $( document ).ready(function() {
                             setConfirmUnloadPoints(false);
                             
                             var gemini_image = getGeminiImage();
-                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (Post failed Error)");
                             
-                            $("#open_modal").click();
+                            showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>" + $("#modal_not_latin_rewarded_message").text() + " (Post failed Error)");
                             
                         });
                     }else{
@@ -1238,9 +1232,8 @@ $( document ).ready(function() {
                         $("#button_reward_ad").prop( "disabled", false );
                         
                         var gemini_image = getGeminiImage();
-                        $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (adId Error)");
                         
-                        $("#open_modal").click();
+                        showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>" + $("#modal_not_latin_rewarded_message").text() + " (adId Error)");
                         
                     }
                 } else {
@@ -1251,9 +1244,8 @@ $( document ).ready(function() {
                     // fallback logic
                     // showAdErrorModal()
                     var gemini_image = getGeminiImage();
-                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (AD_REWARDED Error)");
                     
-                    $("#open_modal").click();
+                    showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>" + $("#modal_not_latin_rewarded_message").text() + " (AD_REWARDED Error)");
                     
                 }
                 
@@ -1265,9 +1257,8 @@ $( document ).ready(function() {
                 // good practice to handle any potential errors
                 
                 var gemini_image = getGeminiImage();
-                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/><br/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error) " + err);
                 
-                $("#open_modal").click();
+                showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 200px; max-height: 200px'/>" + $("#modal_not_latin_rewarded_message").text() + " (try-catch Error) " + err);
                 
             }
         }else
@@ -1504,8 +1495,7 @@ $( document ).ready(function() {
                 data = JSON.parse(data);
                 if(data.result)
                 {
-                    $(".modal-body").html($("#modal_latinchain_avatar_saved").text());
-                    $("#open_modal").click();
+                    showModalAllAppsHTML($("#modal_latinchain_avatar_saved").text());
                     
                     $("#avatar_user_img_div").html('<img src="' + data.avatar_user_url + '" alt="LatinChain" class="img-fluid" style="max-width: 350px; border-radius: 25px;" width="100%" height="170px" />');
                     $("#avatar_user_img_div").show();
@@ -1546,12 +1536,10 @@ $( document ).ready(function() {
                 {
                     if(data.pi_ad_automatic)
                     {
-                        $(".modal-body").html("<i class='fa-solid fa-square-check'></i> " + $("#modal_pi_ad_automatic_enabled").text());
-                        $("#open_modal").click();
+                        showModalAllAppsHTML("<i class='fa-solid fa-square-check'></i> " + $("#modal_pi_ad_automatic_enabled").text());
                     }else
                     {
-                        $(".modal-body").html("<i class='fa-solid fa-square-xmark'></i> " + $("#modal_pi_ad_automatic_disabled").text());
-                        $("#open_modal").click();
+                        showModalAllAppsHTML("<i class='fa-solid fa-square-xmark'></i> " + $("#modal_pi_ad_automatic_disabled").text());
                     }
                 }
                 
@@ -1844,8 +1832,7 @@ $( document ).ready(function() {
                                     $( "#rewardedad-close" ).click();
                                 });
                                 
-                                $(".modal-body-rewardedad").html($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
-                                $("#open_rewardedad_modal").click();
+                                showModalAllAppsHTML($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
                                 
                                 //(async () => {
                                     //if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
@@ -1948,12 +1935,11 @@ $( document ).ready(function() {
                             get_user_rewarded();
                             
                             var gemini_image = getGeminiImage();
-                            $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                             
                             if(data.x2_game)
-                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
-                            
-                            $("#open_modal").click();
+                                showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                            else
+                                showModalAllAppsHTML("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                             
                             $('.darkmode-toggle').css('display', 'block');
                             if($('.darkmode-toggle--white').length === 0)
