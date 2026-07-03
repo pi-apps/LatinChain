@@ -1308,8 +1308,12 @@ class admin_apps(models.Model):
             if kw['action'] == "approve":
                 if "direction" in result_dict and result_dict["direction"] == "user_to_app":
                     if "paymentType" in result_dict["metadata"] and result_dict["metadata"]["paymentType"] == "tip":
+                        
+                        result_found = self.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
+                                                                ('pi_user_id', '=', result_dict["user_uid"])]).check_transactions_one_user()
+                    
                         if result_dict["status"]["developer_approved"]:
-                            result = {"result": True, "approved": True}
+                            result = {"result": True, "approved": True, 'complete_found': result_found['complete_found']}
                         else:
                             result = {"result": True, "approved": False}
 

@@ -1703,8 +1703,14 @@ $( document ).ready(function() {
                         data = JSON.parse(data);
                         if(data.result && data.completed)
                         {
-                            $("#button_tip").prop( "disabled", true );
                             alert($("#payment_message").text());
+                            
+                            get_user_rewarded();
+                            
+                            document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                         }
                     } catch (e) {
                     }
@@ -1896,11 +1902,11 @@ $( document ).ready(function() {
                             data = JSON.parse(data);
                             if(data.result && data.approved)
                             {
-                                /*if(data.complete_found)
+                                if(data.complete_found)
                                 {
                                     alert($("#payment_message").text());
                                     window.location.reload(true);
-                                }*/
+                                }
                             }
                         } catch (e) {
                             }
