@@ -939,6 +939,73 @@ function copyToClipboard(text) {
 
 $( document ).ready(function() {
     
+    $("#open_modal").click(function()
+    {
+        var modalElement = document.getElementById('Modal');
+
+        // 1. Check if a modal instance already exists and delete/dispose of it
+        var existingModal = bootstrap.Modal.getInstance(modalElement);
+        if (existingModal) {
+            existingModal.dispose();
+        }
+
+        // 2. Move the modal to the body so it breaks out of its parent
+        document.body.appendChild(modalElement);
+
+        // 3. Create the fresh modal instance
+        var myModal = new bootstrap.Modal(modalElement, {
+            backdrop: true
+        });
+
+        // 4. Show it
+        myModal.show();
+    });
+    
+    $("#open_rewardedad_modal").click(function()
+    {
+        alert("123");
+        var modalElement = document.getElementById('ModalRewardedad');
+
+        // 1. Check if a modal instance already exists and delete/dispose of it
+        var existingModal = bootstrap.Modal.getInstance(modalElement);
+        if (existingModal) {
+            existingModal.dispose();
+        }
+
+        // 2. Move the modal to the body so it breaks out of its parent
+        document.body.appendChild(modalElement);
+
+        // 3. Create the fresh modal instance
+        var myModal = new bootstrap.Modal(modalElement, {
+            backdrop: true
+        });
+
+        // 4. Show it
+        myModal.show();
+    });
+    
+    $("#open_modal_login").click(function()
+    {
+        var modalElement = document.getElementById('ModalLogin');
+
+        // 1. Check if a modal instance already exists and delete/dispose of it
+        var existingModal = bootstrap.Modal.getInstance(modalElement);
+        if (existingModal) {
+            existingModal.dispose();
+        }
+
+        // 2. Move the modal to the body so it breaks out of its parent
+        document.body.appendChild(modalElement);
+
+        // 3. Create the fresh modal instance
+        var myModal = new bootstrap.Modal(modalElement, {
+            backdrop: true
+        });
+
+        // 4. Show it
+        myModal.show();
+    });
+    
     $(".numeric-decimal").on("keypress keyup blur",function (event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         //$(this).val($(this).val().replace(/[^0-9\.]/g,''));
