@@ -171,7 +171,7 @@ async function showPiAds(Pi) {
 
 $( document ).ready(function() {
     
-    $("#open_modal").click(function()
+    $("#open_modal").off("click").click(function()
     {
         var modalElement = document.getElementById('Modal');
 

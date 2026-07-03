@@ -939,7 +939,7 @@ function copyToClipboard(text) {
 
 $( document ).ready(function() {
     
-    $("#open_modal").click(function()
+    $("#open_modal").off("click").click(function()
     {
         var modalElement = document.getElementById('Modal');
 
@@ -961,7 +961,7 @@ $( document ).ready(function() {
         myModal.show();
     });
     
-    $("#open_rewardedad_modal").click(function()
+    $("#open_rewardedad_modal").off("click").click(function()
     {
         var modalElement = document.getElementById('ModalRewardedad');
 
@@ -983,7 +983,7 @@ $( document ).ready(function() {
         myModal.show();
     });
     
-    $("#open_modal_login").click(function()
+    $("#open_modal_login").off("click").click(function()
     {
         var modalElement = document.getElementById('ModalLogin');
 
