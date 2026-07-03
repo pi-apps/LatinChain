@@ -40,7 +40,8 @@ function showImageModal(imageUrl, captionText) {
         </div>
     `;
     
-    showModalAllAppsHTML(modalHTML);
+    $(".modal-body").html(modalHTML);
+    $("#open_modal").click();
 }
 
 function set_points(points) {
@@ -95,9 +96,11 @@ function get_user(donation) {
                     {
                         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                         {
-                            showModalAllAppsHTML($("#unblocked_message").text() + "<br/>" + $("#modal_total_latinpoints_message").text() + data.points_latin + " Latin points.");
+                            $(".modal-body").html($("#unblocked_message").text() + "<br/>" + $("#modal_total_latinpoints_message").text() + data.points_latin + " Latin points.");
+                            $("#open_modal").click();
                         }else{
-                            showModalAllAppsHTML($("#unblocked_message").text());
+                            $(".modal-body").html($("#unblocked_message").text());
+                            $("#open_modal").click();
                         }
                     }
                     $(".show-verified-user").show();
