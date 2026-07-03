@@ -943,12 +943,6 @@ $( document ).ready(function() {
     {
         var modalElement = document.getElementById('Modal');
 
-        // 1. Check if a modal instance already exists and delete/dispose of it
-        var existingModal = bootstrap.Modal.getInstance(modalElement);
-        if (existingModal) {
-            existingModal.dispose();
-        }
-
         // 2. Move the modal to the body so it breaks out of its parent
         document.body.appendChild(modalElement);
 
@@ -965,12 +959,6 @@ $( document ).ready(function() {
     {
         var modalElement = document.getElementById('ModalRewardedad');
 
-        // 1. Check if a modal instance already exists and delete/dispose of it
-        var existingModal = bootstrap.Modal.getInstance(modalElement);
-        if (existingModal) {
-            existingModal.dispose();
-        }
-
         // 2. Move the modal to the body so it breaks out of its parent
         document.body.appendChild(modalElement);
 
@@ -986,12 +974,6 @@ $( document ).ready(function() {
     $("#open_modal_login").off("click").click(function()
     {
         var modalElement = document.getElementById('ModalLogin');
-
-        // 1. Check if a modal instance already exists and delete/dispose of it
-        var existingModal = bootstrap.Modal.getInstance(modalElement);
-        if (existingModal) {
-            existingModal.dispose();
-        }
 
         // 2. Move the modal to the body so it breaks out of its parent
         document.body.appendChild(modalElement);
