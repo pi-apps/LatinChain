@@ -48,8 +48,14 @@ function updateStartScreenLang() {
     document.getElementById('t-hair').innerText = t('hair');
     document.getElementById('t-shirt').innerText = t('shirt');
     document.getElementById('t-pants').innerText = t('pants');
-    document.getElementById('t-startbtn').innerText = t('startbtn');
     document.getElementById('t-clearbtn').innerText = t('clearbtn');
+    
+    // Check if we are loading a game or starting new for the button text
+    if(localStorage.getItem('losLatinosSave')) {
+        document.getElementById('t-startbtn').innerText = currentLang === 'en' ? "Continue Life" : "Continuar Vida";
+    } else {
+        document.getElementById('t-startbtn').innerText = t('startbtn');
+    }
 }
 
 // --- GAME STATE ---
@@ -93,20 +99,20 @@ controls.minDistance = 5;
 controls.maxDistance = 40; 
 
 // PLAYER MOVEMENT CONTROLS
-const keys = { w: false, a: false, s: false, d: false };
+const keys = { w: false, a: false, s: false, d: false, ArrowUp: false, ArrowLeft: false, ArrowDown: false, ArrowRight: false };
 window.addEventListener('keydown', (e) => {
-    const k = e.key.toLowerCase();
-    if(k === 'w' || e.key === 'ArrowUp') keys.w = true;
-    if(k === 'a' || e.key === 'ArrowLeft') keys.a = true;
-    if(k === 's' || e.key === 'ArrowDown') keys.s = true;
-    if(k === 'd' || e.key === 'ArrowRight') keys.d = true;
+    const k = e.key;
+    if(k.toLowerCase() === 'w' || k === 'ArrowUp') keys.w = keys.ArrowUp = true;
+    if(k.toLowerCase() === 'a' || k === 'ArrowLeft') keys.a = keys.ArrowLeft = true;
+    if(k.toLowerCase() === 's' || k === 'ArrowDown') keys.s = keys.ArrowDown = true;
+    if(k.toLowerCase() === 'd' || k === 'ArrowRight') keys.d = keys.ArrowRight = true;
 });
 window.addEventListener('keyup', (e) => {
-    const k = e.key.toLowerCase();
-    if(k === 'w' || e.key === 'ArrowUp') keys.w = false;
-    if(k === 'a' || e.key === 'ArrowLeft') keys.a = false;
-    if(k === 's' || e.key === 'ArrowDown') keys.s = false;
-    if(k === 'd' || e.key === 'ArrowRight') keys.d = false;
+    const k = e.key;
+    if(k.toLowerCase() === 'w' || k === 'ArrowUp') keys.w = keys.ArrowUp = false;
+    if(k.toLowerCase() === 'a' || k === 'ArrowLeft') keys.a = keys.ArrowLeft = false;
+    if(k.toLowerCase() === 's' || k === 'ArrowDown') keys.s = keys.ArrowDown = false;
+    if(k.toLowerCase() === 'd' || k === 'ArrowRight') keys.d = keys.ArrowRight = false;
 });
 
 // Lighting with Expanded Shadows
@@ -368,6 +374,21 @@ function watchTV() {
     saveGame(); updateHUD();
 }
 
+// --- CAMERA ZOOM CONTROLS ---
+function zoomCamera(direction) {
+    const zoomFactor = 1.3;
+    const currentDist = camera.position.distanceTo(controls.target);
+    
+    let newDist = currentDist;
+    if (direction === 'in') newDist /= zoomFactor;
+    if (direction === 'out') newDist *= zoomFactor;
+    
+    newDist = Math.max(controls.minDistance, Math.min(controls.maxDistance, newDist));
+    
+    const dirVector = new THREE.Vector3().subVectors(camera.position, controls.target).normalize();
+    camera.position.copy(controls.target).add(dirVector.multiplyScalar(newDist));
+}
+
 function buildShop() {
     const c = document.getElementById('shop-items');
     c.innerHTML = '';
@@ -375,8 +396,10 @@ function buildShop() {
         if(state.inventory.includes(item.id)) return;
         const name = currentLang === 'en' ? item.nameEn : item.nameEs;
         const btn = document.createElement('button');
-        btn.className = 'bg-gray-100 p-3 rounded-lg flex justify-between items-center hover:bg-gray-200';
-        btn.innerHTML = `<span class="font-bold">${name}</span> <span class="bg-purple-500 text-white px-2 py-1 rounded text-sm">${t('buy')} $${item.cost}</span>`;
+        // Added 'gap-2' to space the text properly
+        btn.className = 'bg-gray-100 p-3 rounded-lg flex justify-between items-center hover:bg-gray-200 gap-2';
+        // Added 'truncate' to the name and 'shrink-0' to the price tag
+        btn.innerHTML = `<span class="font-bold truncate">${name}</span> <span class="bg-purple-500 text-white px-2 py-1 rounded text-sm shrink-0">${t('buy')} $${item.cost}</span>`;
         btn.onclick = () => buyItem(item.id, item.cost);
         c.appendChild(btn);
     });
@@ -492,10 +515,8 @@ function startGame() {
     document.getElementById('start-screen').classList.add('hidden');
     document.getElementById('hud').classList.remove('hidden');
     
-    // Check if a save exists to know if this is a brand-new run
     const isNewGame = !localStorage.getItem('losLatinosSave');
     
-    // ALWAYS update state with whatever is currently selected in the UI
     currentLang = document.getElementById('lang-select').value;
     state.lang = currentLang;
     state.city = document.getElementById('city-select').value;
@@ -508,7 +529,6 @@ function startGame() {
         pants: document.getElementById('color-pants').value
     };
     
-    // Only generate the initial neighbor if it's a completely new game
     if(isNewGame) {
         const firstNeighborSex = state.sex === 'male' ? 'female' : 'male';
         const initialNeighbor = generateNeighborObj(firstNeighborSex);
@@ -525,6 +545,55 @@ function startGame() {
     state.neighbors.forEach(n => spawnNeighborMesh(n));
 }
 
+// --- MOBILE JOYSTICK CONTROLS ---
+const joystick = { active: false, x: 0, y: 0 };
+const joyZone = document.getElementById('joystick-zone');
+const joyKnob = document.getElementById('joystick-knob');
+let joyCenter = { x: 0, y: 0 };
+const maxJoyRadius = 40;
+
+if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    joyZone.classList.remove('hidden');
+}
+
+joyZone.addEventListener('pointerdown', (e) => {
+    joystick.active = true;
+    const rect = joyZone.getBoundingClientRect();
+    joyCenter = { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+    joyZone.setPointerCapture(e.pointerId);
+    updateJoystick(e);
+});
+
+joyZone.addEventListener('pointermove', (e) => {
+    if (!joystick.active) return;
+    updateJoystick(e);
+});
+
+const resetJoystick = () => {
+    joystick.active = false;
+    joystick.x = 0;
+    joystick.y = 0;
+    joyKnob.style.transform = `translate(-50%, -50%)`;
+};
+
+joyZone.addEventListener('pointerup', resetJoystick);
+joyZone.addEventListener('pointercancel', resetJoystick);
+
+function updateJoystick(e) {
+    let dx = e.clientX - joyCenter.x;
+    let dy = e.clientY - joyCenter.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    
+    if (distance > maxJoyRadius) {
+        dx = (dx / distance) * maxJoyRadius;
+        dy = (dy / distance) * maxJoyRadius;
+    }
+    
+    joyKnob.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`;
+    joystick.x = dx / maxJoyRadius;
+    joystick.y = dy / maxJoyRadius;
+}
+
 const clock = new THREE.Clock();
 function animate() {
     requestAnimationFrame(animate);
@@ -533,55 +602,55 @@ function animate() {
     if(playerMesh) {
         const speed = 0.15;
         let isMoving = false;
-        const moveDir = new THREE.Vector3(0, 0, 0);
+        
+        let inputX = 0;
+        let inputY = 0;
 
-        // 1. Get the camera's current forward direction
-        const cameraForward = new THREE.Vector3();
-        camera.getWorldDirection(cameraForward);
-        
-        // 2. Flatten the direction so the player doesn't fly up or dig into the ground
-        cameraForward.y = 0; 
-        
-        // Safeguard: If looking perfectly top-down, default to -Z to avoid math errors
-        if (cameraForward.lengthSq() < 0.01) {
-            cameraForward.set(0, 0, -1);
-        } else {
-            cameraForward.normalize();
+        // Check Keyboard
+        if(keys.w || keys.ArrowUp) inputY += 1;
+        if(keys.s || keys.ArrowDown) inputY -= 1;
+        if(keys.a || keys.ArrowLeft) inputX -= 1;
+        if(keys.d || keys.ArrowRight) inputX += 1;
+
+        // Check Mobile Joystick
+        if(joystick.active) {
+            inputX = joystick.x;
+            inputY = -joystick.y;
         }
 
-        // 3. Get the camera's left/right direction using the Cross Product
-        const cameraLeft = new THREE.Vector3();
-        cameraLeft.crossVectors(camera.up, cameraForward).normalize();
+        const moveDir = new THREE.Vector3(0, 0, 0);
 
-        // 4. Map the WASD keys to the camera's actual view
-        if(keys.w) { moveDir.add(cameraForward); isMoving = true; }
-        if(keys.s) { moveDir.sub(cameraForward); isMoving = true; }
-        if(keys.a) { moveDir.add(cameraLeft); isMoving = true; }
-        if(keys.d) { moveDir.sub(cameraLeft); isMoving = true; }
+        if(Math.abs(inputX) > 0.05 || Math.abs(inputY) > 0.05) {
+            isMoving = true;
 
-        if(isMoving) {
-            moveDir.normalize(); // Ensure diagonal movement isn't twice as fast
-            
-            // Calculate the exact movement steps
+            const cameraForward = new THREE.Vector3();
+            camera.getWorldDirection(cameraForward);
+            cameraForward.y = 0; 
+            if (cameraForward.lengthSq() < 0.01) cameraForward.set(0, 0, -1);
+            else cameraForward.normalize();
+
+            const cameraLeft = new THREE.Vector3();
+            cameraLeft.crossVectors(camera.up, cameraForward).normalize();
+
+            if (inputY !== 0) moveDir.addScaledVector(cameraForward, inputY);
+            if (inputX !== 0) moveDir.addScaledVector(cameraLeft, -inputX);
+
+            moveDir.normalize();
+
             const stepX = moveDir.x * speed;
             const stepZ = moveDir.z * speed;
 
-            // Move the player
             playerMesh.position.x += stepX;
             playerMesh.position.z += stepZ;
             
-            // Move the camera by the exact same amount so it seamlessly follows
             camera.position.x += stepX;
             camera.position.z += stepZ;
 
-            // Rotate character to face movement direction
             playerMesh.rotation.y = Math.atan2(moveDir.x, moveDir.z);
         }
         
-        // Add a "walking bob" animation when moving, standard breathing when still
         playerMesh.position.y = Math.sin(time * 3) * 0.05 + (isMoving ? Math.abs(Math.sin(time * 15)) * 0.15 : 0);
         
-        // Update the OrbitControls target to look at the player
         controls.target.set(playerMesh.position.x, 1, playerMesh.position.z);
     }
 
@@ -594,28 +663,8 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-// --- CAMERA ZOOM CONTROLS ---
-function zoomCamera(direction) {
-    const zoomFactor = 1.3; // How fast it zooms per click
-    const currentDist = camera.position.distanceTo(controls.target);
-    
-    let newDist = currentDist;
-    if (direction === 'in') newDist /= zoomFactor;
-    if (direction === 'out') newDist *= zoomFactor;
-    
-    // Clamp the zoom so we don't go through the character's head or too far into the sky
-    newDist = Math.max(controls.minDistance, Math.min(controls.maxDistance, newDist));
-    
-    // Calculate the direction vector from the target to the camera
-    const dirVector = new THREE.Vector3().subVectors(camera.position, controls.target).normalize();
-    
-    // Move the camera to the new distance
-    camera.position.copy(controls.target).add(dirVector.multiplyScalar(newDist));
-}
-
 // --- INITIALIZE UI WITH SAVE DATA ---
 if (loadGame()) {
-    // If a save exists, populate the UI menus to match the saved character
     document.getElementById('lang-select').value = state.lang;
     document.getElementById('city-select').value = state.city;
     document.getElementById('sex-select').value = state.sex;
@@ -624,9 +673,6 @@ if (loadGame()) {
     document.getElementById('color-hair').value = state.playerAppearance.hair;
     document.getElementById('color-shirt').value = state.playerAppearance.shirt;
     document.getElementById('color-pants').value = state.playerAppearance.pants;
-    
-    // Change the button text so the player knows they are continuing
-    document.getElementById('t-startbtn').innerText = state.lang === 'en' ? "Continue Life" : "Continuar Vida";
 }
 
 updateStartScreenLang();
