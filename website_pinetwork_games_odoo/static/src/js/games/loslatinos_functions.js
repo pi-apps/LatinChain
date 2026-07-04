@@ -663,6 +663,12 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+// --- QUIT GAME ---
+function quitGame() {
+    saveGame(); // Ensure the latest stats and location are stored
+    location.reload(); // Reloads the page to safely clear the 3D memory and return to the main menu
+}
+
 // --- INITIALIZE UI WITH SAVE DATA ---
 if (loadGame()) {
     document.getElementById('lang-select').value = state.lang;
