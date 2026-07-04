@@ -188,7 +188,7 @@
                     </div>
 
                     <!-- Phone Menu -->
-                    <div id="phone-menu" class="ui-layer interactive hidden absolute bottom-24 right-6 w-64 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+                    <div id="phone-menu" class="ui-layer interactive hidden absolute bottom-40 sm:bottom-24 left-4 right-4 sm:left-auto sm:right-24 sm:w-64 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
                         <div class="bg-blue-600 text-white p-3 font-bold text-center" id="t-phone">Phone</div>
                         <div class="p-4 flex flex-col gap-2 max-h-64 overflow-y-auto">
                             <button onclick="goToWork()" class="bg-gray-100 p-3 rounded-lg text-left hover:bg-gray-200 font-semibold text-gray-800 transition" id="t-work">💼 Go to Work (+ $50)</button>
@@ -205,7 +205,7 @@
                     </div>
 
                     <!-- Shop Menu -->
-                    <div id="shop-menu" class="ui-layer interactive hidden absolute bottom-24 left-4 right-4 sm:left-auto sm:right-24 sm:w-72 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+                    <div id="shop-menu" class="ui-layer interactive hidden absolute bottom-40 sm:bottom-24 left-4 right-4 sm:left-auto sm:right-24 sm:w-72 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
                         <div class="bg-purple-600 text-white p-3 font-bold text-center" id="t-shop">Furniture Shop</div>
                         <div class="p-4 flex flex-col gap-2 max-h-64 overflow-y-auto" id="shop-items">
                             <!-- Populated via JS -->
