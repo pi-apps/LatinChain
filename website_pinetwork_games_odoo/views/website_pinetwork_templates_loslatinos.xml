@@ -79,13 +79,21 @@
 
                     <!-- Start Screen -->
                     <div id="start-screen" class="ui-layer interactive w-full h-full bg-gray-900 text-white z-50 absolute top-0 left-0 overflow-y-auto">
+                        
+                        <!-- NEW: Back Button -->
+                        <a href="/" class="absolute top-4 left-4 sm:top-6 sm:left-6 bg-gray-800/80 p-3 rounded-full text-gray-300 hover:text-white hover:bg-gray-700 hover:scale-105 transition shadow-lg z-50 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                        </a>
+
                         <!-- Inner wrapper to handle safe scrolling and padding -->
                         <div class="min-h-full flex flex-col items-center py-12 px-4">
                             
                             <!-- my-auto safely centers content vertically, but only if there is extra room -->
                             <div class="my-auto w-full flex flex-col items-center">
                                 
-                                <h1 class="text-5xl font-bold mb-2 text-green-400 text-center">Los Latinos</h1>
+                                <h1 class="text-5xl font-bold mb-2 text-green-400 text-center mt-8 sm:mt-0">Los Latinos</h1>
                                 <p class="mb-8 text-gray-400 text-center" id="t-subtitle">The Ultimate Life Simulator</p>
                                 
                                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-sm">
@@ -116,19 +124,19 @@
                                         <div class="grid grid-cols-2 gap-4">
                                             <div>
                                                 <label class="block text-xs mb-1 text-gray-400" id="t-skin">Skin Color</label>
-                                                <input type="color" id="color-skin" value="#d09b68" class="w-full h-8 cursor-pointer rounded bg-gray-700"/>
+                                                <input type="color" id="color-skin" value="#d09b68" class="w-full h-8 cursor-pointer rounded bg-gray-700">
                                             </div>
                                             <div>
                                                 <label class="block text-xs mb-1 text-gray-400" id="t-hair">Hair Color</label>
-                                                <input type="color" id="color-hair" value="#111111" class="w-full h-8 cursor-pointer rounded bg-gray-700"/>
+                                                <input type="color" id="color-hair" value="#111111" class="w-full h-8 cursor-pointer rounded bg-gray-700">
                                             </div>
                                             <div>
                                                 <label class="block text-xs mb-1 text-gray-400" id="t-shirt">Shirt Color</label>
-                                                <input type="color" id="color-shirt" value="#3b82f6" class="w-full h-8 cursor-pointer rounded bg-gray-700"/>
+                                                <input type="color" id="color-shirt" value="#3b82f6" class="w-full h-8 cursor-pointer rounded bg-gray-700">
                                             </div>
                                             <div>
                                                 <label class="block text-xs mb-1 text-gray-400" id="t-pants">Pants Color</label>
-                                                <input type="color" id="color-pants" value="#1f2937" class="w-full h-8 cursor-pointer rounded bg-gray-700"/>
+                                                <input type="color" id="color-pants" value="#1f2937" class="w-full h-8 cursor-pointer rounded bg-gray-700">
                                             </div>
                                         </div>
                                     </div>
