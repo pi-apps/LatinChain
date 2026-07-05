@@ -215,7 +215,7 @@ var startCommonAppsAI = () => {
             const lastRun = localStorage.getItem('lastSetPointsLatiChainAI');
             const now = Date.now();
 
-            if (lastAlert) {
+            if (lastRun) {
                 const elapsed = now - parseInt(lastRun, 10);
 
                 // If 60 or more minutes passed while the page was closed/reloaded
