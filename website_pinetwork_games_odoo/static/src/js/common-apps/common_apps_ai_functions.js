@@ -184,7 +184,7 @@ var startCommonAppsAI = () => {
                 };
                 //$.ajaxSetup({async: false});
                 setConfirmAIUnloadPoints(true);
-                $.post( "/set-latin-points-ai", data).done(function(data) {
+                return $.post( "/set-latin-points-ai", data).done(function(data) {
                     end();
                     setConfirmAIUnloadPoints(false);
                     data = JSON.parse(data);
@@ -212,20 +212,16 @@ var startCommonAppsAI = () => {
         
         async function startHourlySetPointsLatiChainAI() {
             const interval = 60 * 60 * 1000; // 60 minutes in milliseconds
-            const lastAlert = localStorage.getItem('lastSetPointsLatiChainAI');
+            const lastRun = localStorage.getItem('lastSetPointsLatiChainAI');
             const now = Date.now();
-            let delay = interval;
 
             if (lastAlert) {
-                const elapsed = now - parseInt(lastAlert, 10);
+                const elapsed = now - parseInt(lastRun, 10);
 
                 // If 60 or more minutes passed while the page was closed/reloaded
                 if (elapsed >= interval) {
                     if(await setLatinPointsAI())
                         localStorage.setItem('lastSetPointsLatiChainAI', now);
-                } else {
-                    // Calculate exact remaining time if less than 60 minutes have passed
-                    delay = interval - elapsed;
                 }
             } else {
                 // First time the script ever runs: save the current time
