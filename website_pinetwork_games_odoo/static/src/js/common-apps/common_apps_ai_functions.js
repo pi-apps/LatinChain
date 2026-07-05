@@ -171,88 +171,6 @@ var startCommonAppsAI = () => {
             }
         });
         
-        function set_points(points) {
-            if(pi_user_id != "" && pi_user_code != "")
-            {
-                var data = {
-                    'pi_user_id': pi_user_id,
-                    'pi_user_code': pi_user_code,
-                    'points': points,
-                    'passkey': passkey,
-                    'accessToken': accessToken,
-                    'csrf_token': odoo.csrf_token,
-                };
-                //$.ajaxSetup({async: false});
-                return $.post( "/pi-points", data).done(function(data) {
-                    data = JSON.parse(data);
-                    //if(data.result)
-                    //    alert("You won " + points + " points");
-                    //$("#refresh").click();
-
-                }).fail(function() {
-                });
-            }
-        }
-        
-        function get_user() {
-            if(pi_user_id != "" && pi_user_code != "")
-            {
-                var data = {
-                            'pi_user_id': pi_user_id,
-                            'pi_user_code': pi_user_code,
-                            'accessToken': accessToken,
-                            'csrf_token': odoo.csrf_token,
-                        };
-                //$.ajaxSetup({async: false});
-                return $.post( "/get-user", data).done(function(data) {
-                    data = JSON.parse(data);
-                    if(data.result)
-                    {
-                        unblocked = data.unblocked;
-                        
-                        startCommonAppsAIVars.iq_name = data.iq_name;
-                        startCommonAppsAIVars.iq_result = data.iq_result;
-                        startCommonAppsAIVars.iq_category = data.iq_category;
-                        startCommonAppsAIVars.iq_date = data.iq_date;
-                        startCommonAppsAIVars.show_pi_ad_user = data.show_pi_ad;
-                        startCommonAppsAIVars.show_pi_ad_user_time = data.show_pi_ad_time;
-                        startCommonAppsAIVars.pi_ad_new = data.pi_ad_new;
-                        startCommonAppsAIVars.pi_ad_max = data.pi_ad_max;
-                        startCommonAppsAIVars.unblocked = data.unblocked;
-                        
-                        if(data.unblocked)
-                        {
-                            document.body.style.overflow = "auto";
-                            document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
-                            document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                        }else
-                        {
-                            if(window.location.hostname == "localhost")
-                            {
-                                $("a.anchor-click").attr('href', window.location.origin + "/pinetwork");
-                            }
-                            else if(window.location.hostname == "test.latin-chain.com")
-                            {
-                                $("a.anchor-click").attr('href', "/pinetwork");
-                            }
-                            else
-                            {
-                                $("a.anchor-click").attr('href', "/pinetwork");
-                            }
-                            
-                            document.body.style.overflow = 'hidden';
-                            document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
-                            document.getElementById('paying-message').style.display = 'block'; // Use 'flex' instead of 'block'
-                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                        }
-                    }
-                });
-            }
-        }
-        
         async function setLatinPointsAI()
         {
             try
@@ -316,6 +234,91 @@ var startCommonAppsAI = () => {
             }
         }
         
+        function set_points(points) {
+            if(pi_user_id != "" && pi_user_code != "")
+            {
+                var data = {
+                    'pi_user_id': pi_user_id,
+                    'pi_user_code': pi_user_code,
+                    'points': points,
+                    'passkey': passkey,
+                    'accessToken': accessToken,
+                    'csrf_token': odoo.csrf_token,
+                };
+                //$.ajaxSetup({async: false});
+                return $.post( "/pi-points", data).done(function(data) {
+                    data = JSON.parse(data);
+                    //if(data.result)
+                    //    alert("You won " + points + " points");
+                    //$("#refresh").click();
+
+                }).fail(function() {
+                });
+            }
+        }
+        
+        function get_user() {
+            if(pi_user_id != "" && pi_user_code != "")
+            {
+                var data = {
+                            'pi_user_id': pi_user_id,
+                            'pi_user_code': pi_user_code,
+                            'accessToken': accessToken,
+                            'csrf_token': odoo.csrf_token,
+                        };
+                //$.ajaxSetup({async: false});
+                return $.post( "/get-user", data).done(function(data) {
+                    data = JSON.parse(data);
+                    if(data.result)
+                    {
+                        unblocked = data.unblocked;
+                        
+                        startCommonAppsAIVars.iq_name = data.iq_name;
+                        startCommonAppsAIVars.iq_result = data.iq_result;
+                        startCommonAppsAIVars.iq_category = data.iq_category;
+                        startCommonAppsAIVars.iq_date = data.iq_date;
+                        startCommonAppsAIVars.show_pi_ad_user = data.show_pi_ad;
+                        startCommonAppsAIVars.show_pi_ad_user_time = data.show_pi_ad_time;
+                        startCommonAppsAIVars.pi_ad_new = data.pi_ad_new;
+                        startCommonAppsAIVars.pi_ad_max = data.pi_ad_max;
+                        startCommonAppsAIVars.unblocked = data.unblocked;
+                        
+                        if(data.unblocked)
+                        {
+                            document.body.style.overflow = "auto";
+                            document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            
+                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                startHourlySetPointsLatiChainAI();
+                        }else
+                        {
+                            if(window.location.hostname == "localhost")
+                            {
+                                $("a.anchor-click").attr('href', window.location.origin + "/pinetwork");
+                            }
+                            else if(window.location.hostname == "test.latin-chain.com")
+                            {
+                                $("a.anchor-click").attr('href', "/pinetwork");
+                            }
+                            else
+                            {
+                                $("a.anchor-click").attr('href', "/pinetwork");
+                            }
+                            
+                            document.body.style.overflow = 'hidden';
+                            document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
+                            document.getElementById('paying-message').style.display = 'block'; // Use 'flex' instead of 'block'
+                            document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                            document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                        }
+                    }
+                });
+            }
+        }
+        
         async function auth() {
             try {
                 // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
@@ -335,9 +338,6 @@ var startCommonAppsAI = () => {
                     
                     set_points(0).always(function(){
                         get_user().always(function(){
-                            
-                            if(pi_user_id && pi_user_code && unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
-                                startHourlySetPointsLatiChainAI();
                             //document.getElementById('blockingOverlay').style.display = 'none';
                         });
                     });
