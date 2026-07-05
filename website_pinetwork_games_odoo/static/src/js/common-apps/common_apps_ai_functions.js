@@ -272,7 +272,6 @@ var startCommonAppsAI = () => {
                     data = JSON.parse(data);
                     if(data.result && data.points_latin > 0)
                     {
-                        test_rewarded();
                         var text = 'Congratulations, you won ' + data.points_latin + ' Latin points, because you are PREMIUM.';
                         if(data.x2_game)
                             text += '\nYou have now x2 points in your next game (Chess, Sudoku and Snake).';
@@ -294,7 +293,7 @@ var startCommonAppsAI = () => {
         }
         
         async function startHourlySetPointsLatiChainAI() {
-            const interval = 60 * 60 * 1000; // 60 minutes in milliseconds
+            const interval = 1 * 1 * 1000; // 60 minutes in milliseconds
             const lastAlert = localStorage.getItem('lastSetPointsLatiChainAI');
             const now = Date.now();
             let delay = interval;
