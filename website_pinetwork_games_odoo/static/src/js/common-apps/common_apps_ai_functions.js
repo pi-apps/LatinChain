@@ -336,7 +336,7 @@ var startCommonAppsAI = () => {
                     set_points(0).always(function(){
                         get_user().always(function(){
                             
-                            if(pi_user_id && pi_user_code && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(pi_user_id && pi_user_code && unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 startHourlySetPointsLatiChainAI();
                             //document.getElementById('blockingOverlay').style.display = 'none';
                         });
