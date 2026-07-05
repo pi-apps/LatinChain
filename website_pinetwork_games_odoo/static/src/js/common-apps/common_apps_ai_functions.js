@@ -12,6 +12,7 @@ var startCommonAppsAIVars = {
     'show_pi_ad_user_time': 0,
     'pi_ad_new': false,
     'pi_ad_max': 0,
+    'unblocked': false,
 };
 
 var startCommonAppsAI = () => {
@@ -27,6 +28,7 @@ var startCommonAppsAI = () => {
         var pi_user_code = "";
         var accessToken = "";
         var passkey = "";
+        var unblocked = false;
         
         function setConfirmAIUnload(on) {
             unloadMessage(on);
@@ -206,6 +208,8 @@ var startCommonAppsAI = () => {
                     data = JSON.parse(data);
                     if(data.result)
                     {
+                        unblocked = data.unblocked;
+                        
                         startCommonAppsAIVars.iq_name = data.iq_name;
                         startCommonAppsAIVars.iq_result = data.iq_result;
                         startCommonAppsAIVars.iq_category = data.iq_category;
@@ -214,6 +218,7 @@ var startCommonAppsAI = () => {
                         startCommonAppsAIVars.show_pi_ad_user_time = data.show_pi_ad_time;
                         startCommonAppsAIVars.pi_ad_new = data.pi_ad_new;
                         startCommonAppsAIVars.pi_ad_max = data.pi_ad_max;
+                        startCommonAppsAIVars.unblocked = data.unblocked;
                         
                         if(data.unblocked)
                         {
@@ -248,6 +253,70 @@ var startCommonAppsAI = () => {
             }
         }
         
+        async function setLatinPointsAI()
+        {
+            try
+            {
+                var data = {
+                    'pi_user_id': pi_user_id,
+                    'pi_user_code': pi_user_code,
+                    'passkey': passkey,
+                    'accessToken': accessToken,
+                    'csrf_token': odoo.csrf_token,
+                };
+                //$.ajaxSetup({async: false});
+                setConfirmAIUnloadPoints(true);
+                $.post( "/set-latin-points-ai", data).done(function(data) {
+                    end();
+                    setConfirmAIUnloadPoints(false);
+                    data = JSON.parse(data);
+                    if(data.result && data.points_latin > 0)
+                    {
+                        test_rewarded();
+                        var text = 'Congratulations, you won ' + data.points_latin + ' Latin points.';
+                        if(data.x2_game)
+                            text += '\nYou have now x2 points in your next game (Chess, Sudoku and Snake, only for PREMIUM users, and you are PREMIUM).';
+                        showModalAllApps(text, 'Successful');
+                        start();
+                        return true;
+                    }
+                    
+                    start();
+                    return false;
+                }).fail(function() {
+                    setConfirmAIUnloadPoints(false);
+                    return false;
+                });
+            
+            } catch (err) {
+                return false;
+            }
+        }
+        
+        async function startHourlySetPointsLatiChainAI() {
+            const interval = 1 * 1 * 1000; // 60 minutes in milliseconds
+            const lastAlert = localStorage.getItem('lastSetPointsLatiChainAI');
+            const now = Date.now();
+            let delay = interval;
+
+            if (lastAlert) {
+                const elapsed = now - parseInt(lastAlert, 10);
+
+                // If 60 or more minutes passed while the page was closed/reloaded
+                if (elapsed >= interval) {
+                    if(await setLatinPointsAI())
+                        localStorage.setItem('lastSetPointsLatiChainAI', now);
+                } else {
+                    // Calculate exact remaining time if less than 60 minutes have passed
+                    delay = interval - elapsed;
+                }
+            } else {
+                // First time the script ever runs: save the current time
+                if(await setLatinPointsAI())
+                    localStorage.setItem('lastSetPointsLatiChainAI', now);
+            }
+        }
+        
         async function auth() {
             try {
                 // Identify the user with their username / unique network-wide ID, and  qget permission to request payments from them.
@@ -268,6 +337,8 @@ var startCommonAppsAI = () => {
                     set_points(0).always(function(){
                         get_user().always(function(){
                             
+                            if(pi_user_id && pi_user_code && unblocked) //&& ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                                startHourlySetPointsLatiChainAI();
                             //document.getElementById('blockingOverlay').style.display = 'none';
                         });
                     });
