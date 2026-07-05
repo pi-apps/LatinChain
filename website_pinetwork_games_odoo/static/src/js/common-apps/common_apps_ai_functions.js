@@ -293,7 +293,7 @@ var startCommonAppsAI = () => {
         }
         
         async function startHourlySetPointsLatiChainAI() {
-            const interval = 1 * 1 * 1000; // 60 minutes in milliseconds
+            const interval = 60 * 60 * 1000; // 60 minutes in milliseconds
             const lastAlert = localStorage.getItem('lastSetPointsLatiChainAI');
             const now = Date.now();
             let delay = interval;
@@ -336,7 +336,7 @@ var startCommonAppsAI = () => {
                     set_points(0).always(function(){
                         get_user().always(function(){
                             
-                            if(pi_user_id && pi_user_code && unblocked) //&& ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(pi_user_id && pi_user_code && unblocked && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                                 startHourlySetPointsLatiChainAI();
                             //document.getElementById('blockingOverlay').style.display = 'none';
                         });
