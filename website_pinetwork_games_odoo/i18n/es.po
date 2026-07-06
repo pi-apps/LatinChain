@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-01 23:15+0000\n"
-"PO-Revision-Date: 2026-07-01 23:15+0000\n"
+"POT-Creation-Date: 2026-07-06 20:30+0000\n"
+"PO-Revision-Date: 2026-07-06 20:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1652,6 +1652,18 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid ""
+"<select id=\"city-select\" class=\"w-full mb-4 p-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none\">\n"
+"                                        <option value=\"caracas\">Caracas, Venezuela</option>\n"
+"                                        <option value=\"mexico\">Ciudad de México</option>\n"
+"                                        <option value=\"buenosaires\">Buenos Aires, Argentina</option>\n"
+"                                        <option value=\"miami\">Miami, USA</option>\n"
+"                                        <option value=\"tegucigalpa\">Tegucigalpa, Honduras</option>\n"
+"                                    </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid ""
 "<select id=\"exchange_latin\" class=\"form-control\" disabled=\"true\" style=\"filter: contrast(100%) !important;\">\n"
@@ -1689,6 +1701,15 @@ msgid ""
 "                                            <option value=\"10\">November</option>\n"
 "                                            <option value=\"11\">December</option>\n"
 "                                        </select>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid ""
+"<select id=\"lang-select\" class=\"w-full mb-4 p-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none\" onchange=\"updateStartScreenLang()\">\n"
+"                                        <option value=\"en\">English</option>\n"
+"                                        <option value=\"es\">Español Latino</option>\n"
+"                                    </select>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -1846,6 +1867,15 @@ msgstr ""
 "                                                 <option value=\"n\">Caballo</option>\n"
 "                                                 <option value=\"r\">Torre</option>\n"
 "                                               </select>"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid ""
+"<select id=\"sex-select\" class=\"w-full mb-4 p-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none\">\n"
+"                                        <option value=\"male\" id=\"t-male\">Male</option>\n"
+"                                        <option value=\"female\" id=\"t-female\">Female</option>\n"
+"                                    </select>"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.tetris
@@ -2631,7 +2661,8 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.texttospeechplayer
-msgid "<span>Upload .txt or .pdf file</span>"
+msgid ""
+"<span>Upload .txt or .pdf (will read only text, not images) file</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -3623,6 +3654,11 @@ msgid "Amount"
 msgstr "Monto"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Appearance / Apariencia"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.solitaire
 msgid "Apply &amp; Restart"
 msgstr ""
@@ -3826,7 +3862,7 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Boost Pi utility usage bonus here"
+msgid "Boost Pi mining power <i class=\"fa fa-bolt\"/> here"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4081,6 +4117,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincats3d
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
@@ -4112,6 +4149,7 @@ msgstr "Click aquí"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.radioforus
@@ -4189,7 +4227,6 @@ msgid "Confirm"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid "Congrats, you won"
 msgstr "Felicidades, ganaste"
@@ -4197,6 +4234,11 @@ msgstr "Felicidades, ganaste"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.solitaire
 msgid "Congratulations on completing the game."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Congratulations, you won"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4349,6 +4391,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rpggame
 msgid "Defend"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Delete Save / Borrar Partida"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -4558,6 +4605,11 @@ msgid "Enable Continuous Detection"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Energy"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Engine Toggle (On/Off)"
 msgstr "Cambiar PC (On/Off)"
@@ -4702,6 +4754,16 @@ msgid "Fullscreen"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Fun"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Furniture Shop"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "GAMES"
 msgstr "JUEGOS"
@@ -4815,6 +4877,7 @@ msgstr "Ir a Mainnet"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincats3d
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
@@ -4877,6 +4940,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Gunter"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Hair Color"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -5010,6 +5078,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mayalearning
 msgid "Hoy"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Hunger"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -5190,6 +5263,16 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "LATINCHAIN BOT PAL"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "LOS LATINOS"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Language / Idioma"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -5528,6 +5611,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincats3d
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
@@ -5580,6 +5664,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.calendarplayer
 msgid "Long Count"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Los Latinos"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -5784,10 +5873,17 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Minigame (you won't earn points from it, just for passing the time)"
+msgid ""
+"Miniapp (you will earn Latin points, each 1 hour, only if you're PREMIUM on "
+"Mainnet)"
 msgstr ""
-"Minijuego (no vas a ganar puntos de este minijuego, es sólo para pasar el "
-"rato)"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"Minigame (you will earn Latin points, each 1 hour, only if you're PREMIUM on"
+" Mainnet)"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -5924,6 +6020,11 @@ msgstr "ESTOS SON GANADORES"
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "NEXT IS TO PAY PI"
 msgstr "AQUÍ PARA PAGAR PI"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Neighbor"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.solitaire
@@ -6069,7 +6170,6 @@ msgid "Now you can consult an Expert if you need their services:"
 msgstr "Ahora puedes consultar un Experto si necesitas de sus servicios:"
 
 #. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pinetwork
 msgid ""
 "Now you have x2 points in your next game (Chess, Sudoku and Snake). Only if "
@@ -6077,6 +6177,13 @@ msgid ""
 msgstr ""
 "Ahora tienes x2 puntos en tu próximo juego (Chess, Sudoku y Snake). Sólo si "
 "estás verificado."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid ""
+"Now you have x2 points in your next game (Chess, Sudoku and Snake, only for "
+"PREMIUM users)."
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -6131,17 +6238,17 @@ msgid "Official Verification URLs:"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "Only PREMIUM users can change their Avatar."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.webtorrent
 msgid ""
 "Only WebRTC peers, like a (but not limited to) PeerTube torrent. We don't "
 "provide torrent files. The user is totally responsible of the torrent "
 "content that he sees here."
 msgstr ""
-
-#. module: website_pinetwork_games_odoo
-#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
-msgid "Only verified users can change their Avatar."
-msgstr "Sólo usuarios verificados pueden cambiar su Avatar."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latinchain_mainnet_redirect
@@ -6179,6 +6286,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincats3d
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mayalearning
@@ -6273,6 +6381,11 @@ msgid "Paid Games:"
 msgstr "Juegos pagos:"
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Pants Color"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.reading_club
 msgid "Paperback"
 msgstr ""
@@ -6331,6 +6444,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincats3d
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mayalearning
@@ -6415,6 +6529,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mayalearning
 msgid "Persona"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Phone"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -6709,6 +6828,11 @@ msgid "Quick and deadly. High critical strike chance."
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Quit Game"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rpggame
 msgid "Quit to Menu"
 msgstr ""
@@ -6806,6 +6930,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sudoku
 msgid "Refresh"
 msgstr "Refrescar"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Relationship: <span id=\"ui-rel\" class=\"text-pink-500\">0</span>%"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rpggame
@@ -7123,6 +7252,11 @@ msgid "Secciones del curso"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Select City"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.imgplayer
 msgid "Select Languages to Recognize"
 msgstr ""
@@ -7211,6 +7345,11 @@ msgid "Share referral message"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Shirt Color"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.soccer_penalty
 msgid "Shoot Again"
 msgstr ""
@@ -7273,6 +7412,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Simple Office Viewer"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Skin Color"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -7375,6 +7519,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
 msgid "Start"
 msgstr "Iniciar"
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Start Life / Empezar"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.domino
@@ -7664,6 +7813,11 @@ msgid ""
 "mechanics of the <strong>LatinChain token</strong> without using real Pi. It"
 " is the perfect training ground for new pioneers to get comfortable with "
 "Web3 interactions before moving to the Mainnet."
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "The Ultimate Life Simulator"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -8386,6 +8540,16 @@ msgid "You Won!"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "You are LATINCHAIN LITE<br/>GET LATINCHAIN PREMIUM"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
+msgid "You are LATINCHAIN PREMIUM"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.newsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.sportsplayer
 msgid ""
@@ -8482,6 +8646,7 @@ msgstr "Debes pagar Pi, para desbloquear todas las apps en LatinChain."
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.languagelearning
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincats3d
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.latincrush
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mahjong
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mapsplayer
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mayalearning
@@ -8591,6 +8756,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mainpage
 msgid "Your Memo ID or Payment ID was saved and completed."
 msgstr "Tu Memo ID ó Payment ID fue guardada y completada."
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "Your Sex"
+msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.chess
@@ -9478,6 +9648,11 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "❤️ Flirt"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
 msgid "⬇️ Download PDF"
 msgstr ""
@@ -9523,8 +9698,18 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "🍕 Order Food (- $15)"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mayalearning
 msgid "🍽️ <span data-es=\"Comida\" data-en=\"Food\">Comida</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "🎮 Play Games"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -9556,6 +9741,11 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mayalearning
 msgid "🏠 <span data-es=\"Inicio\" data-en=\"Home\">Inicio</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "👋 Invite New Neighbor"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -9599,6 +9789,16 @@ msgstr ""
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.mayalearning
 msgid "💬 <span data-es=\"Frases\" data-en=\"Phrases\">Frases</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "💬 Chat"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "💼 Go to Work (+ $50)"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
@@ -9652,6 +9852,11 @@ msgid ""
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "📺 Watch TV"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
 msgid "🔍 Search Words"
 msgstr ""
@@ -9681,6 +9886,11 @@ msgid "🔤 <span data-es=\"Vocales\" data-en=\"Vowels\">Vocales</span>"
 msgstr ""
 
 #. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "🕺 Dance"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.pdfreader
 msgid "🖨️ Print PDF"
 msgstr ""
@@ -9697,4 +9907,14 @@ msgstr ""
 msgid ""
 "🗣️ <span data-es=\"Pronunciación\" data-"
 "en=\"Pronunciation\">Pronunciación</span>"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "😂 Tell a Joke"
+msgstr ""
+
+#. module: website_pinetwork_games_odoo
+#: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.loslatinos
+msgid "🛏️ Sleep"
 msgstr ""
