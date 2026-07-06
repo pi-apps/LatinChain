@@ -1324,6 +1324,10 @@ class admin_apps(models.Model):
                         if result_dict["status"]["transaction_verified"] and result_dict["status"]["developer_approved"] and result_dict["status"]["developer_completed"]:
                             pi_user = self.env['pi.users'].sudo().search([('pi_user_code', '=', kw['pi_user_code'])])
                             
+                            request.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [pi_user[0].id])
+            
+                            pi_user[0].invalidate_cache(fnames=['points_latin'], ids=[pi_user[0].id])
+                            
                             admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
                             
                             pi_user[0].sudo().write({'user_tips': pi_user[0].user_tips + 1, 'points_latin': pi_user[0].points_latin + admin_app_list[0].points_latin_amount, 'x2_game': True})
