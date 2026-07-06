@@ -171,7 +171,12 @@ class Website(Website):
         #if "nopopup" in kw:
         #    nopopup = kw["nopopup"]
         
-        nopopup = True
+        #nopopup = True
+        
+        if mainnet in ['Mainnet OFF', 'Mainnet ON']:
+            nopopup = False
+        else:
+            nopopup = True
         
         return http.request.render('website_pinetwork_games_odoo.mainpage', {'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price': amount_price, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'pi_ad_seconds': pi_ad_seconds, 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'total_users_verified_count': total_users_verified_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
