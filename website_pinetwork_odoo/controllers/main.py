@@ -961,75 +961,20 @@ class PiNetworkBaseController(http.Controller):
             return json.dumps({'result': False})
         else:
             
+            if not (pi_users_list[0].unblocked and admin_app_list[0].mainnet in ['Mainnet OFF', 'Mainnet ON']):
+                return json.dumps({'result': False})
+            
             request.env.cr.execute("SELECT id FROM pi_users WHERE id = %s FOR UPDATE", [pi_users_list[0].id])
             
             pi_users_list[0].invalidate_cache(fnames=['points_latin'], ids=[pi_users_list[0].id])
             
-            """
-            if pi_users_list[0].pi_user_id != kw['pi_user_id']:
-                _logger.info("not equeals pi_user_id")
-                return json.dumps({'result': False})
-            """
-            
-            now = datetime.now()  # Get current time (without date)
-            current_date = now.date() # Obtenemos solo la fecha (sin hora), ej: 2023-11-23
-            
-            if pi_users_list[0].points_latin_daily:
-                points_latin_daily = pi_users_list[0].points_latin_daily
-            else:
-                points_latin_daily = 0
-
-            if not pi_users_list[0].pi_ad_datetime:
-                points_latin_daily = 1
-            elif pi_users_list[0].pi_ad_datetime.date() != current_date:
-                points_latin_daily = 1
-            else:
-                points_latin_daily = points_latin_daily + 1
-            
-            values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount, 
-                        'points_latin_daily': points_latin_daily}
+            values = {'points_latin': pi_users_list[0].points_latin + admin_app_list[0].points_latin_amount}
             
             values.update({'x2_game': True})
-            
-            apps_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
-            
-            pi_ad_seconds = apps_list[0].pi_ad_seconds
-            pi_ad_max = apps_list[0].pi_ad_max
-            
-            """
-            if pi_users_list[0].unblocked:
-                pi_ad_seconds = pi_ad_seconds*8
-                pi_ad_max = (pi_ad_max+1)*8
-            """
-            
-            if not pi_users_list[0].pi_ad_datetime:
-                values.update({'pi_ad_datetime': datetime.now()})
-                if pi_users_list[0].pi_ad_counter+1 >= pi_ad_max:
-                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
-                    pi_ad_new = False
-                else:
-                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
-                    pi_ad_new = True
-            elif pi_users_list[0].pi_ad_datetime >= (datetime.now() - timedelta(seconds=pi_ad_seconds)) and \
-                pi_users_list[0].pi_ad_datetime <= datetime.now():
-                if pi_users_list[0].pi_ad_counter+1 >= pi_ad_max:
-                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
-                    pi_ad_new = False
-                else:
-                    values.update({'pi_ad_counter': pi_users_list[0].pi_ad_counter+1})
-                    pi_ad_new = True
-            else:
-                values.update({'pi_ad_datetime': datetime.now()})
-                values.update({'pi_ad_counter': 1})
-                
-                if 1 >= pi_ad_max:
-                    pi_ad_new = False
-                else:
-                    pi_ad_new = True
         
         pi_users_list[0].sudo().write(values)
         
-        return json.dumps({'result': True, 'points_latin': admin_app_list[0].points_latin_amount, 'pi_ad_new': pi_ad_new, 'x2_game': pi_users_list[0].x2_game})
+        return json.dumps({'result': True, 'points_latin': admin_app_list[0].points_latin_amount, 'x2_game': pi_users_list[0].x2_game})
     
     @http.route('/pi-ad-automatic', type='http', auth="public", website=True, methods=['POST'], csrf=False)
     def pi_ad_automatic(self, **kw):
