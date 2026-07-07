@@ -583,6 +583,7 @@ function get_user() {
                     if(data.im_winner)
                         winner = $("#winner_message").html();
                     
+                    $(".days_available_total").html(data.days_available);
                     $("#user_logged").html(data.pi_user_code);
                     $(".div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
                     $(".user_status").html("(" + $("#verified_message").html() + ", " + data.unblocked_datetime + "). " + $("#available_days_message").text() + data.days_available + winner);
