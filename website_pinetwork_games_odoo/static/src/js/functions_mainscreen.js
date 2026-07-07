@@ -1159,8 +1159,6 @@ $( document ).ready(function() {
                             data = JSON.parse(data);
                             if(data.result && data.points_latin > 0)
                             {
-                                $( "#rewardedad-close" ).click();
-                                
                                 document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -1840,7 +1838,7 @@ $( document ).ready(function() {
                                 $( "#rewardedad-open" ).click(async function() {
                                     showRewardedPiAd();
                                     
-                                    //$( "#rewardedad-close" ).click();
+                                    $( "#rewardedad-close" ).click();
                                 });
                                 
                                 $(".modal-body-rewardedad").html($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
