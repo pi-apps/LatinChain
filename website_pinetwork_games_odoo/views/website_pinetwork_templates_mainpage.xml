@@ -3825,7 +3825,8 @@
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock Once</div></a>
                                 </div>
                                 
-                                <div class="getverified">
+                                <!--<div class="getverified">-->
+                                <div style="display: none;">
                                     <div style="margin-top: 10px;" class="row show_test_app">
                                         <button id="test_app" class="btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Unlock Once (Pi Ad)</div></button>
                                     </div>
