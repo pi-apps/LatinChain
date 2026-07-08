@@ -1987,11 +1987,11 @@ $( document ).ready(function() {
         
         var amount_price_result = Math.max(parseFloat((0.50 / parseFloat($("#amount_price").text())).toFixed(2)), 6.28);
         
-        var minimum payment = $("#minimum payment").text();
+        var minimum_payment = $("#minimum_payment").text();
         
-        if(parseFloat($("#pi_donate").val()) < parseFloat(minimum payment))
+        if(parseFloat($("#pi_donate").val()) < parseFloat(minimum_payment))
         {
-            $("#pi_donate").val(minimum payment);
+            $("#pi_donate").val(minimum_payment);
         }else if(parseFloat($("#pi_donate").val()) > parseFloat(amount_price_result))
         {
             $("#pi_donate").val(amount_price_result);
