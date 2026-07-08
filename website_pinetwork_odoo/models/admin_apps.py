@@ -1262,6 +1262,15 @@ class admin_apps(models.Model):
     def _send_payment_tip_email(self, pi_user_code, token_type, payment_result):
         try:
             
+            txid_url = ""
+            
+            if "mainnet" in payment_result['transaction']['_link']:
+                if payment_result['transaction']['txid']:
+                    txid_url = "https://blockexplorer.minepi.com/mainnet/tx/" + payment_result['transaction']['txid']
+            elif "testnet" in payment_result['transaction']['_link']:
+                if payment_result['transaction']['txid']:
+                    txid_url = "https://blockexplorer.minepi.com/testnet/tx/" + payment_result['transaction']['txid']
+            
             body_html = f"""
                 The pioneer <strong>{pi_user_code}</strong> paid a tip of {round(payment_result['amount'], 7)} {token_type}
                 <br/><br/>
@@ -1269,7 +1278,7 @@ class admin_apps(models.Model):
                 <br/><br/>
                 Memo: {payment_result['memo']}
                 <br/><br/>
-                TXID: {payment_result['transaction']['_link']}
+                TXID: {txid_url}
                 <br/>
                 Payment ID: {payment_result['identifier']}
                 <br/><br/>
