@@ -1263,7 +1263,7 @@ class admin_apps(models.Model):
         try:
             
             body_html = f"""
-                The pioneer <strong>{pi_user_code}</strong> paid {round(payment_result['amount'], 7)} {token_type}
+                The pioneer <strong>{pi_user_code}</strong> paid a tip of {round(payment_result['amount'], 7)} {token_type}
                 <br/><br/>
                 Type of payment: {payment_result['direction']}
                 <br/><br/>
