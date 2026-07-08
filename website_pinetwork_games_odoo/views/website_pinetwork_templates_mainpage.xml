@@ -1639,7 +1639,7 @@
                                   <span style="display:none;" id="amount_price"><t t-esc="amount_price" /></span>
                                   <t t-set="amount_price_1" t-value="str(max(round(0.50/amount_price, 2), 6.28))"/>
                                   <t t-set="amount_price_2" t-value="str(max(round(0.50/amount_price, 2), 0.01))"/>
-                                  <input id="pi_donate" type="number" lang="en" min="0.01" t-att-max="str(amount_price_1)" step="0.01" class="form-control numeric-decimal" t-att-value="str(amount_price_2)" t-att-placeholder="'0.01 to ' + str(amount_price_1) + 'Pi'" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                                  <input id="pi_donate" type="number" lang="en" min="0.01" t-att-max="str(amount_price_1)" step="0.01" class="form-control numeric-decimal" t-att-value="str(amount_price_2)" t-att-placeholder="'0.01 to ' + str(amount_price_1) + ' Pi'" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                                   <!--t-att-value="round(0.50/amount_price, 2)"-->
                                 </div>
                                 <div style="margin-bottom:5px; word-break: break-word;">
