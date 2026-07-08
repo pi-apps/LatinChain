@@ -1985,7 +1985,9 @@ $( document ).ready(function() {
             return false;
         }
         
-        var amount_price_result = Math.max(parseFloat((0.50 / parseFloat($("#amount_price").text())).toFixed(2)), 6.28);
+        var decimal_numbers = parseInt($("#decimal_numbers").text());
+        
+        var amount_price_result = Math.max(parseFloat((0.50 / parseFloat($("#amount_price").text())).toFixed(decimal_numbers)), 6.28);
         
         var minimum_payment = $("#minimum_payment").text();
         
