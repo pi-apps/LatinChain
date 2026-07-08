@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.298"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.299"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1636,7 +1636,8 @@
                                   <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-lg">Pi</span>
                                   </div>
-                                  <input id="pi_donate" type="number" lang="en" min="0.01" max="6.28" step="0.01" class="form-control numeric-decimal" t-att-value="max(min(round(0.50/amount_price, 2), 6.28), 0.01)" placeholder="0.01 to 6.28 Pi" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
+                                  <span style="display:none;" id="amount_price"><t t-esc="amount_price" /></span>
+                                  <input id="pi_donate" type="number" lang="en" min="0.01" t-att-max="max(round(0.50/amount_price, 2), 6.28)" step="0.01" class="form-control numeric-decimal" t-att-value="max(round(0.50/amount_price, 2), 0.01)" t-att-placeholder="0.01 to max(round(0.50/amount_price, 2), 6.28) Pi" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                                   <!--t-att-value="round(0.50/amount_price, 2)"-->
                                 </div>
                                 <div style="margin-bottom:5px; word-break: break-word;">

@@ -1985,12 +1985,14 @@ $( document ).ready(function() {
             return false;
         }
         
+        var amount_price_result = Math.max(parseFloat((0.50 / parseFloat($("#amount_price").text())).toFixed(2)), 6.28);
+        
         if(parseFloat($("#pi_donate").val()) < parseFloat(0.01))
         {
             $("#pi_donate").val("0.01");
-        }else if(parseFloat($("#pi_donate").val()) > parseFloat(6.28))
+        }else if(parseFloat($("#pi_donate").val()) > amount_price_result)
         {
-            $("#pi_donate").val("6.28");
+            $("#pi_donate").val(amount_price_result);
         }
         
         $("#button_tip").prop( "disabled", true );
