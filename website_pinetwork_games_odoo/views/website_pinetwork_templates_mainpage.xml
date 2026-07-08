@@ -1638,11 +1638,11 @@
                                   </div>
                                   
                                   <span style="display:none;" id="amount_price"><t t-esc="amount_price" /></span>
-                                  <t t-set="minimum_payment" t-value="'0.01'"/>
+                                  <t t-set="minimum_payment" t-value="0.01"/>
                                   <span style="display:none;" id="minimum_payment"><t t-esc="minimum_payment" /></span>
                                   
                                   <t t-set="amount_price_1" t-value="str(max(round(0.50/amount_price, 2), 6.28))"/>
-                                  <t t-set="amount_price_2" t-value="str(max(round(0.50/amount_price, 2), parseFloat(minimum_payment)))"/>
+                                  <t t-set="amount_price_2" t-value="str(max(round(0.50/amount_price, 2), minimum_payment))"/>
                                   <input id="pi_donate" type="number" lang="en" t-att-min="str(minimum_payment)" t-att-max="str(amount_price_1)" t-att-step="str(minimum_payment)" class="form-control numeric-decimal" t-att-value="str(amount_price_2)" t-att-placeholder="str(minimum_payment) + ' to ' + str(amount_price_1) + ' Pi'" aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
                                   <!--t-att-value="round(0.50/amount_price, 2)"-->
                                 </div>
