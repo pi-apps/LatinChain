@@ -7,7 +7,7 @@
     
     <template id="new_header_common_apps_latinchain_ai" inherit_id="web.layout">
         <xpath expr="//head//script[last()]" position="after">
-            <script src="/website_pinetwork_games_odoo/static/src/js/common-apps/common_apps_ai_functions.js?v=1.186"></script>
+            <script src="/website_pinetwork_games_odoo/static/src/js/common-apps/common_apps_ai_functions.js?v=1.188"></script>
         </xpath>
     </template>
     
@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.307"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.310"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1363,7 +1363,6 @@
                                 <button class="logout_latinchain btn btn-danger font-weight-bold text-white border-white loggedin" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div><i class="fa-solid fa-right-from-bracket"></i></div></button>
                                 <button class="login_latinchain btn btn-success font-weight-bold text-white border-white loggedout" style="display: none; border: 2px solid; max-width: 100px; font-size: 100% !important"><div><i class="fa-solid fa-right-to-bracket"></i></div></button>
                                 <button class="btn btn-outline-info font-weight-bold text-white border-white clear_cache" style="border-radius: 50%; border: 2px solid; font-size: 100% !important"><div style=""><i class="fa fa-refresh"></i></div></button>
-                                <button class="btn btn-outline-info font-weight-bold text-white border-white button-share" style="border-radius: 50%; border: 2px solid; font-size: 100% !important"><div style=""><i class="fa fa-share-alt"></i></div></button>
                             </div>
                         </div>
                         <div class="row getverified" style="">
@@ -1524,6 +1523,10 @@
                             <div class="row">
                                 <div class="col-12"><a href="https://www.facebook.com/groups/365500906588396" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-facebook"></i></div></a>
                                                     <a href="https://www.instagram.com/rockcesar85/" target="_blank" class="btn btn-outline-secondary mb-2 o_default_snippet_text" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fab fa-instagram"></i></div></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12"><button class="btn btn-outline-info font-weight-bold text-white border-white button-share" style="border-radius: 50%; border: 2px solid; font-size: 100% !important"><div style=""><i class="fa fa-share-alt"></i></div></button>
                                 </div>
                             </div>
                         </div>
