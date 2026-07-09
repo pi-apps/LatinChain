@@ -225,8 +225,7 @@ var startCommonAppsAI = () => {
                 }
             } else {
                 // First time the script ever runs: save the current time
-                if(await setLatinPointsAI())
-                    localStorage.setItem('lastSetPointsLatiChainAI', now);
+                localStorage.setItem('lastSetPointsLatiChainAI', now);
             }
         }
         
