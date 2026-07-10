@@ -281,6 +281,28 @@ function renderDecorations() {
         bed.castShadow = true;
         scene.add(bed);
     }
+    if(state.inventory.includes('plant')) {
+        // Create a pot
+        const pot = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.3, 0.25, 0.6), 
+            new THREE.MeshStandardMaterial({color: 0x8b5a2b}) // Brown clay color
+        );
+        pot.position.set(2, 0.3, -2); // Placed in the corner
+        pot.castShadow = true;
+
+        // Create the leafy top
+        const leaves = new THREE.Mesh(
+            new THREE.DodecahedronGeometry(0.5), 
+            new THREE.MeshStandardMaterial({color: 0x2ea52c}) // Green color
+        );
+        leaves.position.y = 0.6; // Sit on top of the pot
+        leaves.castShadow = true;
+
+        // Group them together by adding the leaves to the pot
+        pot.add(leaves);
+        
+        scene.add(pot);
+    }
 }
 
 // --- LOGIC & UI ---
@@ -640,11 +662,33 @@ function animate() {
             const stepX = moveDir.x * speed;
             const stepZ = moveDir.z * speed;
 
-            playerMesh.position.x += stepX;
-            playerMesh.position.z += stepZ;
+            // --- MAP BOUNDARY LOGIC ---
+            const mapLimit = 49; 
             
-            camera.position.x += stepX;
-            camera.position.z += stepZ;
+            let allowedStepX = stepX;
+            let allowedStepZ = stepZ;
+
+            // Check X axis limits
+            if (playerMesh.position.x + allowedStepX > mapLimit) {
+                allowedStepX = mapLimit - playerMesh.position.x;
+            } else if (playerMesh.position.x + allowedStepX < -mapLimit) {
+                allowedStepX = -mapLimit - playerMesh.position.x;
+            }
+            
+            // Check Z axis limits
+            if (playerMesh.position.z + allowedStepZ > mapLimit) {
+                allowedStepZ = mapLimit - playerMesh.position.z;
+            } else if (playerMesh.position.z + allowedStepZ < -mapLimit) {
+                allowedStepZ = -mapLimit - playerMesh.position.z;
+            }
+
+            // Apply clamped movement to player
+            playerMesh.position.x += allowedStepX;
+            playerMesh.position.z += allowedStepZ;
+            
+            // Apply clamped movement to camera to keep them synchronized
+            camera.position.x += allowedStepX;
+            camera.position.z += allowedStepZ;
 
             playerMesh.rotation.y = Math.atan2(moveDir.x, moveDir.z);
         }
