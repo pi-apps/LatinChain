@@ -3850,7 +3850,7 @@
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">PREMIUM-access (+<t t-esc="amount_latin_pay" /> pts)</div></a>
+                                    <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="amount_latin_pay" /> pts)</div></a>
                                 </div>
                                 <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-else="">
                                     <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM</div></a>
