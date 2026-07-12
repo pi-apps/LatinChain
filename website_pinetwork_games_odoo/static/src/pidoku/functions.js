@@ -10,6 +10,7 @@ var startTime=new Date(), endTime=new Date(), seconds=0;
 var unblocked = false;
 var show_pi_ad_user = true;
 var show_pi_ad_user_time = 0;
+var resting_time = 0;
 var pi_ad_new = false;
 var pi_ad_max = 0;
 
@@ -141,6 +142,7 @@ function get_user() {
                 
                 show_pi_ad_user = data.show_pi_ad;
                 show_pi_ad_user_time = data.show_pi_ad_time;
+                resting_time = data.resting_time;
                 
                 passkey=data.passkey;
                 
@@ -201,7 +203,7 @@ function get_user() {
                             showPiRewardedAds(Pi);
                         }else
                         {
-                            alert("Max rewarded ads number reached. " + pi_ad_max + " rewarded ads each " + show_pi_ad_user_time + "h");
+                            alert("Max rewarded ads number reached. " + pi_ad_max + " rewarded ads each " + show_pi_ad_user_time + "h. Resting time: " + resting_time + "h.");
                         }
                     });
                 }

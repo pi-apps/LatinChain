@@ -168,7 +168,7 @@ var startCommonAppsAI = () => {
                 //showPiRewardedAds(Pi);
             }else
             {
-                alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_max + " rewarded ads each " + startCommonAppsAIVars.show_pi_ad_user_time + "h. Resting time: " + startCommonAppsAIVars.resting_time);
+                alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_max + " rewarded ads each " + startCommonAppsAIVars.show_pi_ad_user_time + "h. Resting time: " + startCommonAppsAIVars.resting_time + "h.");
             }
         });
         
