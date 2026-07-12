@@ -1786,6 +1786,7 @@ $( document ).ready(function() {
                             
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
+                                alert("1234");
                                 document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
