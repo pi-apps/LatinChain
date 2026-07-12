@@ -1797,7 +1797,7 @@ $( document ).ready(function() {
                             colorboxLoadedMainnet();
                         }else
                         {
-                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) //|| (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() != false))
+                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() != false))
                             {
                                 //document.getElementById('PayPiLinkId1').style.display = 'none';
                                 document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
