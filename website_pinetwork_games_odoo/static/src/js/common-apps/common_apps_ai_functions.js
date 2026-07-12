@@ -10,6 +10,7 @@ var startCommonAppsAIVars = {
     'iq_date': '',
     'show_pi_ad_user': true,
     'show_pi_ad_user_time': 0,
+    'resting_time': 0,
     'pi_ad_new': false,
     'pi_ad_max': 0,
     'unblocked': false,
@@ -167,7 +168,7 @@ var startCommonAppsAI = () => {
                 //showPiRewardedAds(Pi);
             }else
             {
-                alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_max + " rewarded ads each " + startCommonAppsAIVars.show_pi_ad_user_time + "h");
+                alert("Max rewarded ads number reached. " + startCommonAppsAIVars.pi_ad_max + " rewarded ads each " + startCommonAppsAIVars.show_pi_ad_user_time + "h. Resting time: " + startCommonAppsAIVars.resting_time);
             }
         });
         
@@ -274,6 +275,7 @@ var startCommonAppsAI = () => {
                         startCommonAppsAIVars.iq_date = data.iq_date;
                         startCommonAppsAIVars.show_pi_ad_user = data.show_pi_ad;
                         startCommonAppsAIVars.show_pi_ad_user_time = data.show_pi_ad_time;
+                        startCommonAppsAIVars.resting_time = data.resting_time;
                         startCommonAppsAIVars.pi_ad_new = data.pi_ad_new;
                         startCommonAppsAIVars.pi_ad_max = data.pi_ad_max;
                         startCommonAppsAIVars.unblocked = data.unblocked;
