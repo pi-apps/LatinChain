@@ -1784,17 +1784,23 @@ $( document ).ready(function() {
                         {
                             $(".PiBrowserLink").hide();
                             
-                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() != false))
+                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                 document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                            }
-                            
-                            showing_paying = true;
+                            }else if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() != false)
+                            {
+                                document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                                document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
+                                document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                
+                                showing_paying = true;
 
-                            colorboxLoadedMainnet();
+                                colorboxLoadedMainnet();
+                            }
                         }else
                         {
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() != false))
