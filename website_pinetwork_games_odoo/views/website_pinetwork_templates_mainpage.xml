@@ -1843,7 +1843,7 @@
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#PiAds #EarnPoints &#128240;</div></strong></h5>
                             </div>
-                            <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; display: none;">
+                            <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px">
                                 <button id="button_reward_ad" name="button_reward_ad" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" disabled="true" style="border: 2px solid;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Rewarded Ads</div><div style="font-size:80%;">Earn Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%;"><i class="fa-solid fa-plug-circle-bolt"></i>x2 points <i class="fa-solid fa-arrow-right"></i> (Chess, Sudoku, Snake)</div><div style="font-size:80%; display: none">Testing feature</div></button>
                                 <span id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
                                     Pi Rewarded Ads not available (<div id="pi_ad_max" style="display:inline;"></div> ads / <div id="pi_ad_hours" style="display:inline;"></div>h). Remaining time: <span id="resting_time">0</span>h.
@@ -2466,11 +2466,9 @@
                                                     <li class="list-group-item"><a href="/chess" class="btn btn-link">Play Chess</a></li>
                                                     <li class="list-group-item"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
                                                     <li class="list-group-item"><a href="/snake" class="btn btn-link">Play Snake</a></li>
-                                                    <div style="display: none">
-                                                        <li t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="list-group-item show_test_app"><button class="displayAds href-external btn btn-link">Earn points (Pi Ad)</button></li>
-                                                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display: none" class="list-group-item justify-content-center text-center show_test_app_loading">
-                                                            <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
-                                                        </div>
+                                                    <li t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="list-group-item show_test_app"><button class="displayAds href-external btn btn-link">Earn points (Pi Ad)</button></li>
+                                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display: none" class="list-group-item justify-content-center text-center show_test_app_loading">
+                                                        <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
                                                     </div>
                                                     <li class="list-group-item"><button class="href-external btn btn-link go-to-home-tab">Use Cool Apps</button></li>
                                                     <li class="list-group-item"><button class="href-external btn btn-link go-to-home-tab">Play Other Games</button></li>
