@@ -22,8 +22,6 @@ class PiNetwork:
     server = ""
     keypair = ""
     fee = ""
-    asset_code = ""
-    issuer = ""
 
     def initialize(self, api_key, wallet_private_key, network):
         try:
@@ -35,9 +33,6 @@ class PiNetwork:
             self.open_payments = {}        
             self.network = network
             self.fee = self.server.fetch_base_fee()
-            
-            self.asset_code = "LatinChain"
-            self.issuer = "GAORGY7GWJYSARCO7KZH3QRX2FQKD25KQSTQJPKWE7WZTEBBHTSUDAA5"
             #self.fee = fee
         except:
             return False
@@ -47,8 +42,7 @@ class PiNetwork:
             balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
             balance_found = False
             for i in balances:
-                if 'asset_code' in i and i["asset_code"] == self.asset_code and \
-                    'asset_issuer' in i and i["asset_issuer"] == self.issuer:
+                if i["asset_type"] == "native":
                     return float(i["balance"])
                 
             return 0
@@ -69,8 +63,7 @@ class PiNetwork:
             balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
             balance_found = False
             for i in balances:
-                if 'asset_code' in i and i["asset_code"] == self.asset_code and \
-                    'asset_issuer' in i and i["asset_issuer"] == self.issuer:
+                if i["asset_type"] == "native":
                     balance_found = True
                     if (float(payment_data["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
                         return ""
@@ -115,8 +108,7 @@ class PiNetwork:
         balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
         balance_found = False
         for i in balances:
-            if 'asset_code' in i and i["asset_code"] == self.asset_code and \
-                'asset_issuer' in i and i["asset_issuer"] == self.issuer:
+            if i["asset_type"] == "native":
                 balance_found = True
                 if (float(payment["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
                     return ""
@@ -217,8 +209,6 @@ class PiNetwork:
         
         if __debug__:
             print("MEMO " + str(memo))
-            
-        custom_asset = s_sdk.Asset(code=self.asset_code, issuer=self.issuer)
         
         from_address = transaction_data["from_address"]
         transaction = (
@@ -228,7 +218,7 @@ class PiNetwork:
                 base_fee=fee,
             )
             .add_text_memo(memo)
-            .append_payment_op(to_address, custom_asset, amount)
+            .append_payment_op(to_address, s_sdk.Asset.native(), amount)
             .set_timeout(180)
             .build()
         )

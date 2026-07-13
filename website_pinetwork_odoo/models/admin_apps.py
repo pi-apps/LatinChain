@@ -622,6 +622,7 @@ class admin_apps(models.Model):
     
     def pay_winners(self):
         for self_i in self:
+            
             self_i.pi_users_winners_paying = True
             self_i.env.cr.commit()
             
@@ -1036,12 +1037,18 @@ class admin_apps(models.Model):
                 counter_winner = len(i.pi_users_winners_ids.ids)
                 winners = list()
                 for j in i.pi_users_winners_ids:
-                    winner_paid = False
-                    for k in i.pi_users_winners_paid_ids:
-                        if j.pi_user_code == k.pi_user_code:
-                            winner_paid = True
-                            counter_winner-=1
-                            break
+                    admin_app_main_user = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+                    if j.pi_user_code == admin_app_main_user[0].pi_main_user.pi_user_code:
+                        winner_paid = True
+                        counter_winner-=1
+                    else:
+                        winner_paid = False
+                        for k in i.pi_users_winners_paid_ids:
+                            if j.pi_user_code == k.pi_user_code:
+                                winner_paid = True
+                                counter_winner-=1
+                                break
+                                
                     if not winner_paid:
                         winners.append(j)
                         
@@ -1060,10 +1067,14 @@ class admin_apps(models.Model):
             devs = list()
             for j in i.pi_users_devs_ids:
                 dev_paid = False
-                for k in i.pi_users_devs_paid_ids:
-                    if j.pi_user_code == k.pi_user_code:
-                        dev_paid = True
-                        break
+                admin_app_main_user = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+                if j.pi_user_code == admin_app_main_user[0].pi_main_user.pi_user_code:
+                    dev_paid = True
+                else:
+                    for k in i.pi_users_devs_paid_ids:
+                        if j.pi_user_code == k.pi_user_code:
+                            dev_paid = True
+                            break
                 if not dev_paid:
                     devs.append(j)
                 
@@ -1451,7 +1462,7 @@ class admin_apps(models.Model):
                     admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
                     
                     if "direction" in result_dict and result_dict["direction"] == "app_to_user":
-                        data_dict.update({'action_type': 'send'})
+                        data_dict.update({'action_type': 'send', 'token_type': 'latinchain'})
                     elif "direction" in result_dict and result_dict["direction"] == "user_to_app":
                         data_dict.update({'action_type': 'receive'})
                         #if not admin_app[0].pi_users_winners_paying:
