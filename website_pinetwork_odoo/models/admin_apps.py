@@ -1588,12 +1588,17 @@ class pi_users(models.Model):
     def has_paid_latinchain_token(self):
         for i in self:
             
-            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('token_type', '=', 'latinchain')], order="id desc", limit=1)
+            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('token_type', '=', 'latinchain')], order="id desc", limit=1)
             
-            if len(transaction) > 0 and i._get_balance_by_wallet(transaction.to_address) != "no-balance":
+            if len(transaction) > 0:
                 return True
-            else:
-                return False
+            
+            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive')], order="id desc", limit=1)
+            
+            if len(transaction) > 0 and i._get_balance_by_wallet(transaction.from_address) != "no-balance":
+                return True
+                
+            return False
     
     def _get_balance_by_wallet(self, public_key):
         for i in self:
