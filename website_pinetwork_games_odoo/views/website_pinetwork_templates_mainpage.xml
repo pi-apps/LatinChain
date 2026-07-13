@@ -1638,7 +1638,7 @@
                                   </div>
                                   
                                   <span style="display:none;" id="amount_price"><t t-esc="amount_price" /></span>
-                                  <t t-set="minimum_payment" t-value="0.01"/>
+                                  <t t-set="minimum_payment" t-value="base_fee"/>
                                   <span style="display:none;" id="minimum_payment"><t t-esc="minimum_payment" /></span>
                                   
                                   <t t-set="decimal_numbers" t-value="2"/>

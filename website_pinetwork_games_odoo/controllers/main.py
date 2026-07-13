@@ -86,6 +86,22 @@ class Website(Website):
             pi_ad_max = admin_app_list[0].pi_ad_max
             pi_ad_seconds = admin_app_list[0].pi_ad_seconds
             latinchain_specs = admin_app_list[0]._get_latinchain_specs()
+
+        url = "https://api.mainnet.minepi.com/fee_stats"
+
+        try:
+            # Make the GET request (equivalent to curl)
+            response = requests.get(url)
+            response.raise_for_status()  # Check for HTTP errors
+            
+            # Parse the JSON response and extract the key (equivalent to jq)
+            data = response.json()
+            base_fee = data.get('last_ledger_base_fee')
+            
+            base_fee = (float(base_fee)/10000000)
+
+        except requests.exceptions.RequestException as e:
+            base_fee = 0.01
         
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
 
@@ -93,7 +109,7 @@ class Website(Website):
         #if "nopopup" in kw:
         #    nopopup = kw["nopopup"]
         
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price': amount_price, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'pi_ad_seconds': pi_ad_seconds, 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'total_users_verified_count': total_users_verified_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'base_fee': base_fee, 'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price': amount_price, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'pi_ad_seconds': pi_ad_seconds, 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'total_users_verified_count': total_users_verified_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
     @http.route('/index-nopopup', type='http', auth="public", website=True, csrf=False)
     def index_no_popup(self, **kw):
@@ -162,6 +178,22 @@ class Website(Website):
             pi_ad_seconds = admin_app_list[0].pi_ad_seconds
             latinchain_specs = admin_app_list[0]._get_latinchain_specs()
         
+        url = "https://api.mainnet.minepi.com/fee_stats"
+
+        try:
+            # Make the GET request (equivalent to curl)
+            response = requests.get(url)
+            response.raise_for_status()  # Check for HTTP errors
+            
+            # Parse the JSON response and extract the key (equivalent to jq)
+            data = response.json()
+            base_fee = data.get('last_ledger_base_fee')
+            
+            base_fee = (float(base_fee)/10000000)
+
+        except requests.exceptions.RequestException as e:
+            base_fee = 0.01
+        
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
         
         #if mainnet in ['Mainnet OFF', 'Mainnet ON']:
@@ -178,7 +210,7 @@ class Website(Website):
         else:
             nopopup = True
         
-        return http.request.render('website_pinetwork_games_odoo.mainpage', {'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price': amount_price, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'pi_ad_seconds': pi_ad_seconds, 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'total_users_verified_count': total_users_verified_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
+        return http.request.render('website_pinetwork_games_odoo.mainpage', {'base_fee': base_fee, 'latinchain_specs': latinchain_specs, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_price': amount_price, 'amount_price_topay_usd': amount_price_topay_usd, 'amount_latin_pay': amount_latin_pay, 'avatar_user_options': avatar_user_options, 'nopopup': nopopup, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'pi_ad_seconds': pi_ad_seconds, 'points_latin_amount': points_latin_amount, 'pi_main_user': pi_main_user, 'pioneers_streaming': pioneers_streaming, 'total_transactions_daily_count': total_transactions_daily_count, 'total_users_daily_count': total_users_daily_count, 'total_users_verified_count': total_users_verified_count, 'no_footer': True, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
 
 class PiNetworkController(http.Controller):
     @http.route('/radioforus', type='http', auth="public", website=True, csrf=False)
