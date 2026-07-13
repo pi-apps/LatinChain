@@ -1038,9 +1038,8 @@ class admin_apps(models.Model):
                 winners = list()
                 for j in i.pi_users_winners_ids:
                     admin_app_main_user = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
-                    if j.pi_user_code == admin_app_main_user[0].pi_main_user.pi_user_code:
-                        winner_paid = True
-                        counter_winner-=1
+                    if j.pi_user_code == admin_app_main_user[0].pi_main_user.pi_user_code or not j.has_paid_latinchain_token():
+                        continue
                     else:
                         winner_paid = False
                         for k in i.pi_users_winners_paid_ids:
@@ -1068,8 +1067,8 @@ class admin_apps(models.Model):
             for j in i.pi_users_devs_ids:
                 dev_paid = False
                 admin_app_main_user = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
-                if j.pi_user_code == admin_app_main_user[0].pi_main_user.pi_user_code:
-                    dev_paid = True
+                if j.pi_user_code == admin_app_main_user[0].pi_main_user.pi_user_code or not j.has_paid_latinchain_token():
+                    continue
                 else:
                     for k in i.pi_users_devs_paid_ids:
                         if j.pi_user_code == k.pi_user_code:
@@ -1585,6 +1584,34 @@ class pi_users(models.Model):
     iq_category = fields.Char('IQ Category', default='', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     iq_date = fields.Date('IQ Date', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     user_tips = fields.Float('User tips', default=0, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    
+    def has_paid_latinchain_token(self):
+        for i in self:
+            
+            transaction = self.env['pi.transactions'].search([('id', 'in', i.pi_transactions_ids.ids), ('action', '=', 'complete'), ('action_type', '=', 'receive'), ('token_type', '=', 'latinchain')], order="id desc", limit=1)
+            
+            if len(transaction) > 0 and i._get_balance_by_wallet(transaction.to_address) != "no-balance":
+                return True
+            else:
+                return False
+    
+    def _get_balance_by_wallet(self, public_key):
+        for i in self:
+            admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
+            
+            api_key = admin_app[0].admin_key
+            wallet_private_seed = admin_app[0].wallet_private_seed
+            
+            if admin_app[0].mainnet == "Mainnet ON":
+                network = "Pi Network"
+            else:
+                network = "Pi Testnet"
+
+            """ Initialization """
+            pi = pi_python.PiNetwork()
+            pi.initialize(api_key, wallet_private_seed, network)
+    
+            return pi.get_balance_by_wallet(public_key)
     
     @api.depends("avatar_user")
     def _compute_avatar_user_url(self):

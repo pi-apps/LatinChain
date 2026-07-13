@@ -42,6 +42,19 @@ class PiNetwork:
         except:
             return False
 
+    def get_balance_by_wallet(self, public_key):
+        try:
+            balances = self.server.accounts().account_id(public_key).call()["balances"]
+            balance_found = False
+            for i in balances:
+                if 'asset_code' in i and i["asset_code"] == self.asset_code and \
+                    'asset_issuer' in i and i["asset_issuer"] == self.issuer:
+                    return float(i["balance"])
+                
+            return "no-balance"
+        except:
+            return "no-balance"
+
     def get_balance(self):
         try:
             balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
@@ -105,45 +118,48 @@ class PiNetwork:
             return ""
 
     def submit_payment(self, payment_id, pending_payment):
-        if payment_id not in self.open_payments:
-            return False
-        if pending_payment == False or payment_id in self.open_payments:
-            payment = self.open_payments[payment_id]
-        else:
-            payment = pending_payment
-        
-        balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
-        balance_found = False
-        for i in balances:
-            if 'asset_code' in i and i["asset_code"] == self.asset_code and \
-                'asset_issuer' in i and i["asset_issuer"] == self.issuer:
-                balance_found = True
-                if (float(payment["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
-                    return ""
-                break
-                
-        if balance_found == False:
-            return ""
-        
-        if __debug__:
-            print("Debug_Data: Payment information\n" + str(payment))
-
-        self.set_horizon_client(payment["network"])
-        from_address = payment["from_address"]
-
-        transaction_data = {
-          "amount": payment["amount"],
-          "identifier": payment["identifier"],
-          "recipient": payment["to_address"]
-        }
-
-        transaction = self.build_a2u_transaction(payment)
-        txid = self.submit_transaction(transaction)
-        if payment_id in self.open_payments:
-            del self.open_payments[payment_id]
-
-        return txid
+        try:
+            if payment_id not in self.open_payments:
+                return False
+            if pending_payment == False or payment_id in self.open_payments:
+                payment = self.open_payments[payment_id]
+            else:
+                payment = pending_payment
             
+            balances = self.server.accounts().account_id(self.keypair.public_key).call()["balances"]
+            balance_found = False
+            for i in balances:
+                if 'asset_code' in i and i["asset_code"] == self.asset_code and \
+                    'asset_issuer' in i and i["asset_issuer"] == self.issuer:
+                    balance_found = True
+                    if (float(payment["amount"]) + (float(self.fee)/10000000)) > float(i["balance"]):
+                        return ""
+                    break
+                    
+            if balance_found == False:
+                return ""
+            
+            if __debug__:
+                print("Debug_Data: Payment information\n" + str(payment))
+
+            self.set_horizon_client(payment["network"])
+            from_address = payment["from_address"]
+
+            transaction_data = {
+              "amount": payment["amount"],
+              "identifier": payment["identifier"],
+              "recipient": payment["to_address"]
+            }
+
+            transaction = self.build_a2u_transaction(payment)
+            txid = self.submit_transaction(transaction)
+            if payment_id in self.open_payments:
+                del self.open_payments[payment_id]
+            
+            return txid
+        except Exception as e:
+            _logger.info(e)
+            return ""
 
     def complete_payment(self, identifier, txid):
         if not txid:
