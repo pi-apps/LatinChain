@@ -172,14 +172,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 computation = prev % current;
                 break;
             case 'nthroot':
-                if (rootIndex === 0) {
-                    computation = 'Error';
-                } else if (current < 0 && rootIndex % 2 === 0) {
-                    computation = 'Error';
-                } else {
-                    computation = Math.pow(current, 1/rootIndex);
-                }
-                break;
+                if (rootIndex === 0) {
+                    computation = 'Error';
+                } else if (current < 0 && rootIndex % 2 === 0) {
+                    computation = 'Error'; // Even root of a negative number is imaginary
+                } else if (current < 0 && Math.abs(rootIndex % 2) === 1) {
+                    // Fix for JS Math.pow returning NaN for negative bases with fractional exponents
+                    computation = -Math.pow(Math.abs(current), 1 / rootIndex);
+                } else {
+                    computation = Math.pow(current, 1 / rootIndex);
+                }
+                break;
             default:
                 return;
         }
@@ -323,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Memory functions
     function memoryFunction(func) {
         const current = parseFloat(currentOperand);
-        if (isNaN(current)) return;
+        if (isNaN(current) || currentOperand === 'Error') return;
         
         switch (func) {
             case 'mc': // Memory Clear
@@ -359,15 +362,20 @@ document.addEventListener('DOMContentLoaded', function() {
         rootIndex = null;
     }
     
-    // Delete last digit
     function deleteDigit() {
-        if (waitingForSecondOperand) return;
-        
-        currentOperand = currentOperand.slice(0, -1);
-        if (currentOperand === '') {
-            currentOperand = '0';
-        }
-    }
+        if (waitingForSecondOperand) return;
+        
+        // Clear whole words instead of slicing them letter by letter
+        if (['Error', 'Infinity', '-Infinity', 'NaN'].includes(currentOperand)) {
+            currentOperand = '0';
+            return;
+        }
+        
+        currentOperand = currentOperand.slice(0, -1);
+        if (currentOperand === '') {
+            currentOperand = '0';
+        }
+    }
     
     // Event listeners for buttons
     document.querySelectorAll('.number').forEach(button => {
