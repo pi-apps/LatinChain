@@ -55,7 +55,7 @@ class Website(Website):
             pi_ad_max = 0
             pi_ad_seconds = 0
             latinchain_specs = ""
-            base_fee = 0.02
+            base_fee = 0.01
         else:
             sandbox = admin_app_list[0].sandbox
             amount_price = admin_app_list[0].amount_price
@@ -132,7 +132,7 @@ class Website(Website):
             pi_ad_max = 0
             pi_ad_seconds = 0
             latinchain_specs = ""
-            base_fee = 0.02
+            base_fee = 0.01
         else:
             sandbox = admin_app_list[0].sandbox
             amount_price = admin_app_list[0].amount_price
