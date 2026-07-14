@@ -55,6 +55,7 @@ class Website(Website):
             pi_ad_max = 0
             pi_ad_seconds = 0
             latinchain_specs = ""
+            base_fee = 0.02
         else:
             sandbox = admin_app_list[0].sandbox
             amount_price = admin_app_list[0].amount_price
@@ -86,22 +87,7 @@ class Website(Website):
             pi_ad_max = admin_app_list[0].pi_ad_max
             pi_ad_seconds = admin_app_list[0].pi_ad_seconds
             latinchain_specs = admin_app_list[0]._get_latinchain_specs()
-
-        url = "https://api.mainnet.minepi.com/fee_stats"
-
-        try:
-            # Make the GET request (equivalent to curl)
-            response = requests.get(url)
-            response.raise_for_status()  # Check for HTTP errors
-            
-            # Parse the JSON response and extract the key (equivalent to jq)
-            data = response.json()
-            base_fee = data.get('last_ledger_base_fee')
-            
-            base_fee = (float(base_fee)/10000000)
-
-        except requests.exceptions.RequestException as e:
-            base_fee = 0.01
+            base_fee = admin_app_list[0].get_fee()
         
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
 
@@ -146,6 +132,7 @@ class Website(Website):
             pi_ad_max = 0
             pi_ad_seconds = 0
             latinchain_specs = ""
+            base_fee = 0.02
         else:
             sandbox = admin_app_list[0].sandbox
             amount_price = admin_app_list[0].amount_price
@@ -177,22 +164,7 @@ class Website(Website):
             pi_ad_max = admin_app_list[0].pi_ad_max
             pi_ad_seconds = admin_app_list[0].pi_ad_seconds
             latinchain_specs = admin_app_list[0]._get_latinchain_specs()
-        
-        url = "https://api.mainnet.minepi.com/fee_stats"
-
-        try:
-            # Make the GET request (equivalent to curl)
-            response = requests.get(url)
-            response.raise_for_status()  # Check for HTTP errors
-            
-            # Parse the JSON response and extract the key (equivalent to jq)
-            data = response.json()
-            base_fee = data.get('last_ledger_base_fee')
-            
-            base_fee = (float(base_fee)/10000000)
-
-        except requests.exceptions.RequestException as e:
-            base_fee = 0.01
+            base_fee = admin_app_list[0].get_fee()
         
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
         

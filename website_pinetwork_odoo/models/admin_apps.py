@@ -364,6 +364,29 @@ class admin_apps(models.Model):
             i.amount_latin_pay = i.amount * 100
     """
     
+    def get_fee(self):
+        for i in self:
+            if i.mainnet in ["Mainnet ON", "Mainnet OFF"]:
+                url = "https://api.mainnet.minepi.com/fee_stats"
+            else:
+                url = "https://api.testnet.minepi.com/fee_stats"
+
+            try:
+                # Make the GET request (equivalent to curl)
+                response = requests.get(url)
+                response.raise_for_status()  # Check for HTTP errors
+                
+                # Parse the JSON response and extract the key (equivalent to jq)
+                data = response.json()
+                base_fee = data.get('last_ledger_base_fee')
+                
+                base_fee = (float(base_fee)/10000000)
+
+            except requests.exceptions.RequestException as e:
+                base_fee = 0.01
+            
+            return base_fee
+    
     def _get_latinchain_specs(self):
         return '/website_pinetwork_games_odoo/static/src/img/specs/latinchain-specs.jpg?v=1.107';
     
