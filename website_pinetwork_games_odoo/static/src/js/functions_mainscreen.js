@@ -1842,8 +1842,10 @@ $( document ).ready(function() {
                                     $( "#rewardedad-close" ).click();
                                 });
                                 
+                                /*
                                 $(".modal-body-rewardedad").html($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
                                 $("#open_rewardedad_modal").click();
+                                */
                                 
                                 //(async () => {
                                     //if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
