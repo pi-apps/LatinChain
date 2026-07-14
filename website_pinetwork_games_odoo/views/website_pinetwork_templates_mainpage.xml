@@ -1318,10 +1318,10 @@
                         <div class="row">
                             <div class="col-12">
                                 <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <h3 align="center" style="font-weight:600; color: white !important">LatinChain Mainnet<br/><div style="font-size: 80%;">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="font-size: 80%; display: none;" class="isverified">You're PREMIUM by <span class="days_available_total"/> days</div><div style="font-size: 80%; display: none;" class="getverified">You're LITE<br/>GET PREMIUM by 30 days</div></h3>
+                                    <h3 align="center" style="font-weight:600; color: white !important">LatinChain Mainnet<br/><div style="font-size: 80%;">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="font-size: 80%; display: none;" class="isverified">You're PREMIUM by <span class="days_available_total"/> days</div><div style="font-size: 80%; display: none;" class="getverified">You're LITE<br/>GET PREMIUM by 30 days</div><div style="font-size: 80%; display: none;" class="im-winner-paid">You are winner and you were paid, check your wallet</div></h3>
                                 </t>
                                 <t t-else="">
-                                    <h3 align="center" style="font-weight:600; color: white !important">LatinChain Testnet<br/><div style="font-size: 80%;">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="font-size: 80%; display: none;" class="isverified">You're PREMIUM by <span class="days_available_total"/> days</div><div style="font-size: 80%; display: none;" class="getverified">You're LITE<br/>GET PREMIUM by 30 days</div></h3>
+                                    <h3 align="center" style="font-weight:600; color: white !important">LatinChain Testnet<br/><div style="font-size: 80%;">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="font-size: 80%; display: none;" class="isverified">You're PREMIUM by <span class="days_available_total"/> days</div><div style="font-size: 80%; display: none;" class="getverified">You're LITE<br/>GET PREMIUM by 30 days</div><div style="font-size: 80%; display: none;" class="im-winner-paid">You're winner and you were paid, check your wallet</div></h3>
                                 </t>
                             </div>
                         </div>

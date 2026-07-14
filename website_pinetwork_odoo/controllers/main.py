@@ -428,6 +428,10 @@ class PiNetworkBaseController(http.Controller):
         if pi_users_list[0].id in apps_list.pi_users_winners_ids.ids:
             im_winner = True
         
+        im_winner_paid = False
+        if pi_users_list[0].id in apps_list.pi_users_winners_paid_ids.ids:
+            im_winner_paid = True
+        
         if not pi_users_list[0].unblocked_datetime:
             unblocked_datetime = ""
         else:
@@ -530,7 +534,8 @@ class PiNetworkBaseController(http.Controller):
                             'amount': pi_amount,
                             'amount_latin_pay': pi_amount_latin_pay,
                             'passkey': passkey,
-                            'im_winner': im_winner, 'pi_wallet_address': pi_users_list[0].pi_wallet_address,
+                            'im_winner': im_winner, 'im_winner_paid': im_winner_paid, 
+                            'pi_wallet_address': pi_users_list[0].pi_wallet_address,
                             'streaming_url': pi_users_list[0].streaming_url,
                             'referrer_code': referrer_code,
                             'complete_found': result_found['complete_found'],

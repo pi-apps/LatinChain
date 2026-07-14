@@ -583,6 +583,9 @@ function get_user() {
                     if(data.im_winner)
                         winner = $("#winner_message").html();
                     
+                    if(data.im_winner_paid)
+                        $(".im-winner-paid").show();
+                    
                     $(".days_available_total").html(data.days_available);
                     $("#user_logged").html(data.pi_user_code);
                     $(".div_user_status").addClass("p-3 mb-2 bg-secondary bg-gradient text-white rounded");
