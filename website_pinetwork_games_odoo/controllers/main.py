@@ -101,7 +101,7 @@ class Website(Website):
             base_fee = (float(base_fee)/10000000)
 
         except requests.exceptions.RequestException as e:
-            base_fee = 0.02
+            base_fee = 0.01
         
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
 
@@ -192,7 +192,7 @@ class Website(Website):
             base_fee = (float(base_fee)/10000000)
 
         except requests.exceptions.RequestException as e:
-            base_fee = 0.02
+            base_fee = 0.01
         
         avatar_user_options = request.env["pi.users"].sudo()._get_dynamic_avatar_options()
         
