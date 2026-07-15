@@ -1979,6 +1979,7 @@ $( document ).ready(function() {
     }
     
     function executepayment(){
+        /*
         if($("#pi_donate").val().trim() == "" || parseFloat($("#pi_donate").val()) == 0)
         {
             alert("You need to set a value to send a tip.");
@@ -1997,6 +1998,13 @@ $( document ).ready(function() {
         }else if(parseFloat($("#pi_donate").val()) > parseFloat(amount_price_result))
         {
             $("#pi_donate").val(amount_price_result);
+        }
+        * */
+        
+        if($("#pi_donate").val().trim() == "" || parseFloat($("#pi_donate").val()) == 0)
+        {
+            alert("You need to set a value to send a tip.");
+            return false;
         }
         
         $("#button_tip").prop( "disabled", true );
