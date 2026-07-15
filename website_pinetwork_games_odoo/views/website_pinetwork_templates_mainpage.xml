@@ -3840,6 +3840,16 @@
                                     <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Tip to Unlock (+<t t-esc="int(points_latin_amount*2)" /> pts)</div></button>
                                 </div>
                                 
+                                <div class="getverified">
+                                    <div style="margin-top: 10px;" class="row show_test_app">
+                                        <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Ad to Unlock (+<t t-esc="int(points_latin_amount)" /> pts)</div></button>
+                                    </div>
+                                    
+                                    <div style="margin-top: 10px; display: none" class="row justify-content-center text-center show_test_app_loading">
+                                        <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                    </div>
+                                </div>
+                                
                                 <div style="margin-top: 10px;" class="row">
                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi</div></a>
                                 </div>
@@ -3850,16 +3860,6 @@
                                 
                                 <div class="row" style="margin-top: 10px; display: none;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock Once</div></a>
-                                </div>
-                                
-                                <div class="getverified">
-                                    <div style="margin-top: 10px;" class="row show_test_app">
-                                        <button id="test_app" class="btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Ad to Unlock (+<t t-esc="int(points_latin_amount)" /> pts)</div></button>
-                                    </div>
-                                    
-                                    <div style="margin-top: 10px; display: none" class="row justify-content-center text-center show_test_app_loading">
-                                        <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
-                                    </div>
                                 </div>
                                 
                                 <!--<div style="margin-top: 10px;" class="row" id="GivingTip">
