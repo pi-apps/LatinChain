@@ -3831,7 +3831,7 @@
                                 
                                 <div class="getverified">
                                     <div style="margin-top: 5px; font-size: bold;" class="row justify-content-center text-center">
-                                        <h3 style="color: black !important;"><span class="badge bg-secondary"><strong>Paid Options:</strong></span></h3>
+                                        <h1 style="color: black !important;"><span class="badge bg-secondary"><strong>Paid Options:</strong></span></h1>
                                     </div>
                                     
                                     <div style="margin-top: 5px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
@@ -3847,7 +3847,7 @@
                                 </div>
                                 
                                 <div style="margin-top: 5px; font-size: bold;" class="row justify-content-center text-center">
-                                    <h3 style="color: black !important;"><span class="badge bg-secondary"><strong>Free Options:</strong></span></h3>
+                                    <h1 style="color: black !important;"><span class="badge bg-secondary"><strong>Free Options:</strong></span></h1>
                                 </div>
                                 
                                 <div class="getverified">
