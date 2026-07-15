@@ -911,6 +911,10 @@ function copyToClipboard(text) {
 
 $( document ).ready(function() {
     
+    $(document).on('cbox_open', function() {
+        $('#cboxOverlay, #colorbox').appendTo('body');
+    });
+    
     var blockingOverlayElement = document.getElementById('blockingOverlay');
     document.body.appendChild(blockingOverlayElement);
     
@@ -1363,6 +1367,7 @@ $( document ).ready(function() {
     $(".open_streaming").click(function(){
         var streaming_url = validateYouTubeUrl($(this).attr("videourl"));
         streaming_url = streaming_url[1];
+        
         $.colorbox({fixed: true, width: "80%", height: "80%", maxWidth: "80%", maxHeight: "80%", html:'<iframe id="latin-chain" width="100%" height="100%" src="https://www.youtube.com/embed/' + streaming_url + '?autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>'});
     });
     
