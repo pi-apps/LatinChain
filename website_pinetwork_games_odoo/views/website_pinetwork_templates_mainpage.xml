@@ -3829,18 +3829,18 @@
                                     </div>
                                 </div>
                                 
-                                <div style="margin-top: 5px; font-size: bold;" class="row justify-content-center text-center">
+                                <div style="margin-top: 5px; font-size: bold;" class="row justify-content-center text-center getverified">
                                     <h3 style="color: black !important; font-size: 80%"><strong>Paid Options:</strong></h3>
                                 </div>
                                 
-                                <div style="margin-top: 5px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                <div style="margin-top: 5px;" class="row getverified" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)<br/>Best value</div></a>
                                 </div>
-                                <div style="margin-top: 5px;" class="row" id="GoForwardShow1" t-else="">
+                                <div style="margin-top: 5px;" class="row getverified" id="GoForwardShow1" t-else="">
                                     <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Best value</div></a>
                                 </div>
                                 
-                                <div class="row" style="margin-top: 5px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                <div class="row getverified" style="margin-top: 5px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Tip to Unlock (+<t t-esc="int(points_latin_amount*2)" /> pts)</div></button>
                                 </div>
                                 
