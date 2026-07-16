@@ -3829,11 +3829,11 @@
                                     </div>
                                 </div>
                                 
+                                <div style="margin-top: 5px; font-size: bold;" class="row justify-content-center text-center">
+                                    <h1 style="color: black !important;"><span class="badge rounded-pill bg-secondary"><div style="display:inline;">&#128071;</div> <div style="display:inline;"><strong>Main Options</strong></div></span></h1>
+                                </div>
+                                
                                 <div class="getverified">
-                                    <div style="margin-top: 5px; font-size: bold;" class="row justify-content-center text-center">
-                                        <h1 style="color: black !important;"><span class="badge rounded-pill bg-secondary"><div style="display:inline;">&#128071;</div> <div style="display:inline;"><strong>Main Options</strong></div></span></h1>
-                                    </div>
-                                    
                                     <div style="margin-top: 5px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                         <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)<br/>Best value</div></a>
                                     </div>
@@ -3856,12 +3856,12 @@
                                     </div>
                                 </div>
                                 
-                                <div style="margin-top: 5px; font-size: bold;" class="row justify-content-center text-center">
-                                    <h1 style="color: black !important;"><span class="badge rounded-pill bg-secondary"><div style="display:inline;">&#128071;</div> <div style="display:inline;"><strong>Other Options</strong></div></span></h1>
-                                </div>
-                                
                                 <div style="margin-top: 5px;" class="row">
                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi</div></a>
+                                </div>
+                                
+                                <div style="margin-top: 5px; font-size: bold;" class="row justify-content-center text-center">
+                                    <h1 style="color: black !important;"><span class="badge rounded-pill bg-secondary"><div style="display:inline;">&#128071;</div> <div style="display:inline;"><strong>Other Options</strong></div></span></h1>
                                 </div>
                                 
                                 <div class="row" style="margin-top: 5px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
