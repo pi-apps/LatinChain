@@ -1641,7 +1641,7 @@
                                   <t t-set="minimum_payment" t-value="base_fee"/>
                                   <span style="display:none;" id="minimum_payment"><t t-esc="minimum_payment" /></span>
                                   
-                                  <t t-set="decimal_numbers" t-value="2"/>
+                                  <t t-set="decimal_numbers" t-value="7"/>
                                   <span style="display:none;" id="decimal_numbers"><t t-esc="decimal_numbers" /></span>
                                   
                                   <t t-set="amount_price_1" t-value="str(round(1/amount_price, decimal_numbers))"/>
