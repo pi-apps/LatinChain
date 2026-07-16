@@ -1984,7 +1984,6 @@ $( document ).ready(function() {
     }
     
     function executepayment(){
-        /*
         if($("#pi_donate").val().trim() == "" || parseFloat($("#pi_donate").val()) == 0)
         {
             alert("You need to set a value to send a tip.");
@@ -1993,23 +1992,16 @@ $( document ).ready(function() {
         
         var decimal_numbers = parseInt($("#decimal_numbers").text());
         
-        var amount_price_result = Math.max(parseFloat((0.50 / parseFloat($("#amount_price").text())).toFixed(decimal_numbers)), 6.28);
+        var amount_price_minimum = parseFloat((0.50 / parseFloat($("#amount_price").text())).toFixed(decimal_numbers));
         
-        var minimum_payment = $("#minimum_payment").text();
+        var amount_price_maximum = parseFloat((1 / parseFloat($("#amount_price").text())).toFixed(decimal_numbers));
         
-        if(parseFloat($("#pi_donate").val()) < parseFloat(minimum_payment))
+        if(parseFloat($("#pi_donate").val()) < parseFloat(amount_price_minimum))
         {
-            $("#pi_donate").val(minimum_payment);
-        }else if(parseFloat($("#pi_donate").val()) > parseFloat(amount_price_result))
+            $("#pi_donate").val(amount_price_minimum);
+        }else if(parseFloat($("#pi_donate").val()) > parseFloat(amount_price_maximum))
         {
-            $("#pi_donate").val(amount_price_result);
-        }
-        * */
-        
-        if($("#pi_donate").val().trim() == "" || parseFloat($("#pi_donate").val()) == 0)
-        {
-            alert("You need to set a value to send a tip.");
-            return false;
+            $("#pi_donate").val(amount_price_maximum);
         }
         
         $("#button_tip").prop( "disabled", true );
