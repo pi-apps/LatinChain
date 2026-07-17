@@ -345,6 +345,7 @@ class admin_apps(models.Model):
     pi_users_general_ranking_ids = fields.Many2many('pi.users', 'admin_apps_pi_users_general_ranking_rel', string='General Ranking', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_main_user = fields.Many2one('pi.users', string='Main User', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     points_latin_amount = fields.Float('Latin points amount', digits=(50,7), default=1, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    points_latin_amount_tip = fields.Float('Latin points amount tip', digits=(50,7), default=5, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_seconds = fields.Integer('Pi Ad seconds', default=300, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_ad_max = fields.Integer('Pi Ad max', default=5, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     amount_latin_pay = fields.Float('Amount Latin Pay', digits=(50,7), store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
@@ -1409,11 +1410,11 @@ class admin_apps(models.Model):
                             
                             admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
                             
-                            pi_user[0].sudo().write({'user_tips': pi_user[0].user_tips + 1, 'points_latin': pi_user[0].points_latin + admin_app_list[0].points_latin_amount*5, 'x2_game': True})
+                            pi_user[0].sudo().write({'user_tips': pi_user[0].user_tips + 1, 'points_latin': pi_user[0].points_latin + admin_app_list[0].points_latin_amount_tip, 'x2_game': True})
                             
                             self._send_payment_tip_email(pi_user[0].pi_user_code, 'Pi', result_dict)
                             
-                            result = {"result": True, "completed": True, 'x2_game': pi_user[0].x2_game, 'points_latin': admin_app_list[0].points_latin_amount*5}
+                            result = {"result": True, "completed": True, 'x2_game': pi_user[0].x2_game, 'points_latin': admin_app_list[0].points_latin_amount_tip}
                         else:
                             result = {"result": True, "completed": False}
                             

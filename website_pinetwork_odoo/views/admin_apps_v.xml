@@ -46,6 +46,7 @@
                             </group>
                             <group string="Pi Ad config">
                                 <field name="points_latin_amount"/>
+                                <field name="points_latin_amount_tip"/>
                                 <field name="pi_ad_seconds"/>
                                 <field name="pi_ad_max"/>
                                 <field name="amount_latin_pay" readonly="False"/>
