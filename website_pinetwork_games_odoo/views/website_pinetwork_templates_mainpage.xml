@@ -3832,62 +3832,69 @@
                                     </div>
                                 </div>
                                 
-                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                <div class="getverified">
+                                    <div style="margin-top: 5px; font-size: bold;" class="row justify-content-center text-center">
+                                        <h1 style="color: black !important;"><span class="badge rounded-pill bg-secondary"><div style="display:inline;">&#128071;</div> <div style="display:inline;"><strong>Pay with...</strong></div></span></h1>
+                                    </div>
+                                    <div style="margin-top: 5px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)<br/>Best value (All-access)</div></a>
+                                    </div>
+                                    <div style="margin-top: 5px;" class="row" id="GoForwardShow1" t-else="">
+                                        <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Best value</div></a>
+                                    </div>
+                                    
+                                    <div class="row" style="margin-top: 5px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Tip: Test app (+<t t-esc="int(points_latin_amount*2)" /> pts)</div></button>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 5px; font-size: bold;" class="row justify-content-center text-center">
+                                    <h1 style="color: black !important;"><span class="badge rounded-pill bg-secondary"><div style="display:inline;">&#128071;</div> <div style="display:inline;"><strong>Free options</strong></div></span></h1>
+                                </div>
+                                
+                                <div class="row" style="margin-top: 5px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                     <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock Once</div></a>
                                 </div>
                                 
-                                <div class="row" style="margin-top: 10px; display: none;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                <div class="row" style="margin-top: 5px; display: none;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock Once</div></a>
                                 </div>
                                 
                                 <div class="getverified">
-                                    <div style="margin-top: 10px;" class="row show_test_app">
-                                        <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Ad to Unlock (+<t t-esc="int(points_latin_amount)" /> pts)</div></button>
+                                    <div style="margin-top: 5px;" class="row show_test_app">
+                                        <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Ad: Test app (+<t t-esc="int(points_latin_amount)" /> pts)</div></button>
                                     </div>
                                     
-                                    <div style="margin-top: 10px; display: none" class="row justify-content-center text-center show_test_app_loading">
+                                    <div style="margin-top: 5px; display: none" class="row justify-content-center text-center show_test_app_loading">
                                         <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
                                     </div>
                                 </div>
                                 
-                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Tip to Unlock (+<t t-esc="int(points_latin_amount*2)" /> pts)</div></button>
-                                </div>
-                                
-                                <div class="getverified">
-                                    <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)</div></a>
-                                    </div>
-                                    <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-else="">
-                                        <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM</div></a>
-                                    </div>
-                                </div>
-                                
-                                <div style="margin-top: 10px;" class="row">
+                                <div style="margin-top: 5px;" class="row">
                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi</div></a>
                                 </div>
                                 
-                                <!--<div style="margin-top: 10px;" class="row" id="GivingTip">
+                                <!--<div style="margin-top: 5px;" class="row" id="GivingTip">
                                     <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-money-bill-1"></i></div> <div style="display: inline">Send tip in Pi</div></button>
                                 </div>-->
                                 
-                                <div style="margin-top: 10px;" class="row" id="GoForwardShow2">
+                                <div style="margin-top: 5px;" class="row" id="GoForwardShow2">
                                     <button class="latinchain-specs btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-list-ol"></i></div> <div style="display: inline">dApps list</div></button>
                                 </div>
                                 
-                                <div style="margin-top: 10px;" class="row">
+                                <div style="margin-top: 5px;" class="row">
                                     <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-danger rounded col-12 open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour</div></button>
                                 </div>
                                 
-                                <div style="margin-top: 10px; display: none;" class="row loggedin">
+                                <div style="margin-top: 5px; display: none;" class="row loggedin">
                                     <button class="logout_latinchain btn btn-block btn-danger rounded col-12 loggedin" style="display: none; border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-from-bracket"></i></div> <div style="display: inline">Logout</div></button>
                                 </div>
                                 
-                                <div style="margin-top: 10px; display: none;" class="row loggedout">
+                                <div style="margin-top: 5px; display: none;" class="row loggedout">
                                     <button class="login_latinchain btn btn-block btn-success rounded col-12 loggedout" style="display: none; border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-to-bracket"></i></div> <div style="display: inline">Login</div></button>
                                 </div>
                                 
-                                <div style="margin-top: 10px; display: none;" class="row loggedout" id="GoForwardShow3">
+                                <div style="margin-top: 5px; display: none;" class="row loggedout" id="GoForwardShow3">
                                     <button class="close_latinchain btn btn-block btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-xmark"></i></div> <div style="display: inline">Close</div></button>
                                 </div>
                             </div>
