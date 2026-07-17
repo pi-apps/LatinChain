@@ -1409,11 +1409,11 @@ class admin_apps(models.Model):
                             
                             admin_app_list = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
                             
-                            pi_user[0].sudo().write({'user_tips': pi_user[0].user_tips + 1, 'points_latin': pi_user[0].points_latin + admin_app_list[0].points_latin_amount*2, 'x2_game': True})
+                            pi_user[0].sudo().write({'user_tips': pi_user[0].user_tips + 1, 'points_latin': pi_user[0].points_latin + admin_app_list[0].points_latin_amount*5, 'x2_game': True})
                             
                             self._send_payment_tip_email(pi_user[0].pi_user_code, 'Pi', result_dict)
                             
-                            result = {"result": True, "completed": True, 'x2_game': pi_user[0].x2_game, 'points_latin': admin_app_list[0].points_latin_amount*2}
+                            result = {"result": True, "completed": True, 'x2_game': pi_user[0].x2_game, 'points_latin': admin_app_list[0].points_latin_amount*5}
                         else:
                             result = {"result": True, "completed": False}
                             

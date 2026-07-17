@@ -1630,7 +1630,7 @@
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SendTip &#128240;</div></strong></h5>
                                 </div>
                                 <div style="margin-bottom:5px">
-                                  Do you like LatinChain?. Send us a tip here. You will earn +<t t-esc="points_latin_amount*2" /> Latin points.
+                                  Do you like LatinChain?. Send us a tip here. You will earn +<t t-esc="points_latin_amount*5" /> Latin points.
                                 </div>
                                 <div class="input-group input-group-md" style="margin-bottom:5px">
                                   <div class="input-group-prepend">
@@ -3844,7 +3844,7 @@
                                     </div>
                                     
                                     <div class="row" style="margin-top: 5px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Tip to Unlock (+<t t-esc="int(points_latin_amount*2)" /> pts)</div></button>
+                                        <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Tip to Unlock (+<t t-esc="int(points_latin_amount*5)" /> pts)</div></button>
                                     </div>
                                 </div>
                                 
