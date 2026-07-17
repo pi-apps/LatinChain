@@ -1992,9 +1992,9 @@ $( document ).ready(function() {
         
         var decimal_numbers = parseInt($("#decimal_numbers").text());
         
-        var amount_price_minimum = parseFloat((0.50 / parseFloat($("#amount_price").text())).toFixed(decimal_numbers));
+        var amount_price_minimum = parseFloat($("#amount_price_min").text()).toFixed(decimal_numbers);
         
-        var amount_price_maximum = parseFloat((1 / parseFloat($("#amount_price").text())).toFixed(decimal_numbers));
+        var amount_price_maximum = parseFloat($("#amount_price_max").text()).toFixed(decimal_numbers);
         
         if(parseFloat($("#pi_donate").val()) < parseFloat(amount_price_minimum))
         {

@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.323"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.324"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1646,6 +1646,9 @@
                                   
                                   <t t-set="amount_price_1" t-value="str(round(1/amount_price, decimal_numbers))"/>
                                   <t t-set="amount_price_2" t-value="str(round(0.50/amount_price, decimal_numbers))"/>
+                                  
+                                  <span style="display:none;" id="amount_price_max"><t t-esc="amount_price_1" /></span>
+                                  <span style="display:none;" id="amount_price_min"><t t-esc="amount_price_2" /></span>
                                   
                                   <input id="pi_donate" type="number" lang="en" t-att-min="str(amount_price_2)" t-att-max="str(amount_price_1)" t-att-step="str(minimum_payment)" class="form-control numeric-decimal" t-att-value="str(amount_price_2)" t-att-placeholder="str(amount_price_2) + ' to ' + str(amount_price_1) + ' Pi'" aria-label="Large" aria-describedby="inputGroupPi" />
                                   
