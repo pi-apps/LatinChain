@@ -3844,7 +3844,7 @@
                                     </div>
                                     
                                     <div class="row" style="margin-top: 5px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Tip: Test app (+<t t-esc="int(points_latin_amount*2)" /> pts)</div></button>
+                                        <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Tip to Unlock (+<t t-esc="int(points_latin_amount*2)" /> pts)</div></button>
                                     </div>
                                 </div>
                                 
@@ -3862,7 +3862,7 @@
                                 
                                 <div class="getverified">
                                     <div style="margin-top: 5px;" class="row show_test_app">
-                                        <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Ad: Test app (+<t t-esc="int(points_latin_amount)" /> pts)</div></button>
+                                        <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Ad to Unlock (+<t t-esc="int(points_latin_amount)" /> pts)</div></button>
                                     </div>
                                     
                                     <div style="margin-top: 5px; display: none" class="row justify-content-center text-center show_test_app_loading">
