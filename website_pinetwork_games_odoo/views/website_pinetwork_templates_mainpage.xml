@@ -1645,7 +1645,7 @@
                                   <span style="display:none;" id="decimal_numbers"><t t-esc="decimal_numbers" /></span>
                                   
                                   <t t-set="amount_price_1" t-value="str(round(1/amount_price, decimal_numbers))"/>
-                                  <t t-set="amount_price_2" t-value="str(round(0.50/amount_price, decimal_numbers))"/>
+                                  <t t-set="amount_price_2" t-value="str(round(0.05/amount_price, decimal_numbers))"/>
                                   
                                   <span style="display:none;" id="amount_price_max"><t t-esc="amount_price_1" /></span>
                                   <span style="display:none;" id="amount_price_min"><t t-esc="amount_price_2" /></span>
@@ -3850,7 +3850,7 @@
                                         <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Tip to Unlock (+<t t-esc="int(points_latin_amount_tip)" /> pts)</div></button>
                                     </div>
                                     
-                                    <div class="getverified">
+                                    <div style="display: none">
                                         <div style="margin-top: 10px;" class="row show_test_app">
                                             <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Ad to Unlock (+<t t-esc="int(points_latin_amount)" /> pts)</div></button>
                                         </div>
