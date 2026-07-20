@@ -588,11 +588,9 @@ class PiNetworkBaseController(http.Controller):
             pi_ad_seconds = apps_list[0].pi_ad_seconds
             pi_ad_max = apps_list[0].pi_ad_max
             
-            """
             if pi_users_list[0].unblocked:
-                pi_ad_seconds = pi_ad_seconds*8
-                pi_ad_max = (pi_ad_max+1)*8
-            """
+                pi_ad_seconds = 28800
+                pi_ad_max = 480
             
             if not pi_users_list[0].pi_ad_datetime:
                 values.update({'pi_ad_datetime': datetime.now()})
@@ -896,11 +894,9 @@ class PiNetworkBaseController(http.Controller):
             pi_ad_seconds = apps_list[0].pi_ad_seconds
             pi_ad_max = apps_list[0].pi_ad_max
             
-            """
             if pi_users_list[0].unblocked:
-                pi_ad_seconds = pi_ad_seconds*8
-                pi_ad_max = (pi_ad_max+1)*8
-            """
+                pi_ad_seconds = 28800
+                pi_ad_max = 480
             
             if not pi_users_list[0].pi_ad_datetime:
                 values.update({'pi_ad_datetime': datetime.now()})
