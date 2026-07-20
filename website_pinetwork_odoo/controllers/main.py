@@ -450,7 +450,7 @@ class PiNetworkBaseController(http.Controller):
         
         if pi_users_list[0].unblocked:
             pi_ad_seconds = 28800
-            #pi_ad_max = (pi_ad_max+1)*8
+            pi_ad_max = 480
         
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
