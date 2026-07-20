@@ -452,17 +452,27 @@ class PiNetworkBaseController(http.Controller):
             pi_ad_seconds = 28800
             pi_ad_max = 480
         
+        _logger.info("pi_ad_seconds " + str(pi_ad_seconds))
+        _logger.info("show_pi_ad_time " + str(show_pi_ad_time))
+        
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
             show_pi_ad_time = str(timedelta(seconds=pi_ad_seconds))
+            _logger.info("pi_ad_seconds " + str(pi_ad_seconds))
+            _logger.info("show_pi_ad_time " + str(show_pi_ad_time))
             #round(((pi_ad_seconds/3600)*60)/100,4)
         elif pi_users_list[0].pi_ad_datetime <= (datetime.now() - timedelta(seconds=pi_ad_seconds)):
             show_pi_ad = True
             show_pi_ad_time = str(timedelta(seconds=pi_ad_seconds))
+            _logger.info("pi_ad_seconds " + str(pi_ad_seconds))
+            _logger.info("show_pi_ad_time " + str(show_pi_ad_time))
             #round(((pi_ad_seconds/3600)*60)/100,4)
         else:
             show_pi_ad = False
             show_pi_ad_time = str(timedelta(seconds=pi_ad_seconds))
+            
+            _logger.info("pi_ad_seconds " + str(pi_ad_seconds))
+            _logger.info("show_pi_ad_time " + str(show_pi_ad_time))
             #round(((pi_ad_seconds/3600)*60)/100,4)
             
         if not pi_users_list[0].pi_ad_datetime:
@@ -508,8 +518,6 @@ class PiNetworkBaseController(http.Controller):
         pi_ad_counter = pi_users_list[0].pi_ad_counter
         if pi_users_list[0].pi_ad_counter > pi_ad_max:
             pi_ad_counter = pi_ad_max
-        
-        _logger.info("show_pi_ad_time" + str(show_pi_ad_time))
         
         #if apps_list[0].mainnet in ['Testnet OFF']:
         #    apps_list[0].sudo()._pay_onincomplete_a2u(pi_users_list[0])
