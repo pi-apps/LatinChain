@@ -3887,7 +3887,7 @@
                                 </div>
                                 
                                 <div style="margin-top: 5px;" class="row">
-                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-danger rounded col-12 open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour</div></button>
+                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour</div></button>
                                 </div>
                                 
                                 <div style="margin-top: 5px; display: none;" class="row loggedin">
