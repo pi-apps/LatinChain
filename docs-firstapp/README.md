@@ -259,8 +259,8 @@ TOML FILE CONTENT:
 
 LOGIN PAGE:
 
-    https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login_step.xml
+https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login_step.xml
 
 SHOW DATA AFTER LOGIN:
 
-    https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login.xml
+https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login.xml
