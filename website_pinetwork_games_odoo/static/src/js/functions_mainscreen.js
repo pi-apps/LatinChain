@@ -1717,11 +1717,13 @@ $( document ).ready(function() {
                     };
                 
                 $("#button_tip").prop( "disabled", true );
+                $(".giving-tip").prop( "disabled", true );
                 
                 setConfirmUnloadPoints(true);
                 return $.post( "/pi-api", data).done(function(data) {
                     setConfirmUnloadPoints(false);
                     $("#button_tip").prop( "disabled", false );
+                    $(".giving-tip").prop( "disabled", false );
                     try {
                         data = JSON.parse(data);
                         if(data.result && data.completed)
@@ -1740,6 +1742,7 @@ $( document ).ready(function() {
                 }).fail(function() {
                     setConfirmUnloadPoints(false);
                     $("#button_tip").prop( "disabled", false );
+                    $(".giving-tip").prop( "disabled", false );
                 });
             }; // Read more about this in the SDK reference
 
@@ -1907,6 +1910,7 @@ $( document ).ready(function() {
                   return $.post( "/pi-api", data).done(function(data) {
                         setConfirmUnload(false);
                         $("#button_tip").prop( "disabled", false );
+                        $(".giving-tip").prop( "disabled", false );
                         try{
                             data = JSON.parse(data);
                             if(data.result && data.approved)
@@ -1922,6 +1926,7 @@ $( document ).ready(function() {
                     }).fail(function() {
                         setConfirmUnload(false);
                         $("#button_tip").prop( "disabled", false );
+                        $(".giving-tip").prop( "disabled", false );
                     });
               },
               onReadyForServerCompletion: function(paymentId, txid) {
@@ -1937,12 +1942,14 @@ $( document ).ready(function() {
                     };
                     
                     $("#button_tip").prop( "disabled", true );
+                    $(".giving-tip").prop( "disabled", true );
                     
                     setConfirmUnload(true);
                     return $.post( "/pi-api", data).done(function(data) {
                         setConfirmUnload(false);
                         
                         $("#button_tip").prop( "disabled", false );
+                        $(".giving-tip").prop( "disabled", false );
                         
                         data = JSON.parse(data);
                         
@@ -1966,18 +1973,22 @@ $( document ).ready(function() {
                     }).fail(function() {
                         setConfirmUnload(false);
                         $("#button_tip").prop( "disabled", false );
+                        $(".giving-tip").prop( "disabled", false );
                     });
               },
               onCancel: function(paymentId) { 
                   setConfirmUnload(false);
-                  $("#button_tip").prop( "disabled", false ); /* ... */ },
+                  $("#button_tip").prop( "disabled", false ); 
+                  $(".giving-tip").prop( "disabled", false ); /* ... */ },
               onError: function(error, payment) { 
                   setConfirmUnload(false);
-                  $("#button_tip").prop( "disabled", false ); /* ... */ },
+                  $("#button_tip").prop( "disabled", false ); 
+                  $(".giving-tip").prop( "disabled", false ); /* ... */ },
             });
         } catch(err) {
             setConfirmUnload(false);
             $("#button_tip").prop( "disabled", false );
+            $(".giving-tip").prop( "disabled", false );
             console.error(err);
             // Technical problem (eg network failure). Please try again
         }
@@ -2005,6 +2016,7 @@ $( document ).ready(function() {
         }
         
         $("#button_tip").prop( "disabled", true );
+        $(".giving-tip").prop( "disabled", true );
         
         transfer();
     }
