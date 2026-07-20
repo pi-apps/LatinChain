@@ -533,6 +533,10 @@ class PiNetworkBaseController(http.Controller):
             
         #request.env.cr.commit()
         
+        show_pi_ad_time = str(show_pi_ad_time)
+        
+        _logger.info("show_pi_ad_time 7.0 " + str(show_pi_ad_time))
+        
         return json.dumps({'result': True, 'pi_user_id': pi_users_list[0].pi_user_id, 'pi_user_code': pi_users_list[0].pi_user_code,
                             'points': pi_users_list[0].points, 
                             'points_chess_wins': pi_users_list[0].points_chess_wins, 
