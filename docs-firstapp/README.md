@@ -255,11 +255,9 @@ TOML FILE CONTENT:
     desc="This is a test token that is created as an example and has no value."
     image="https://image-of-your-token.com/image.png"
 
-# External Login (pi-sign-in)
+# External Login (pi-sign-in, My version)
 
-OFFICIAL DOCS:
-
-https://github.com/pi-apps/pi-platform-docs/blob/master/pi-sign-in.md
+OFFICIAL DOCS: https://github.com/pi-apps/pi-platform-docs/blob/master/pi-sign-in.md
 
 LOGIN PAGE:
 
