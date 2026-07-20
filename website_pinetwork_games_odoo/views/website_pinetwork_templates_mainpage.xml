@@ -3841,11 +3841,11 @@
                                     </div>
                                     
                                     <div>
-                                        <div style="margin-top: 10px;" class="row show_test_app">
+                                        <div style="margin-top: 5px;" class="row show_test_app">
                                             <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Ad: Test app (+<t t-esc="int(points_latin_amount)" /> pts)</div></button>
                                         </div>
                                         
-                                        <div style="margin-top: 10px; display: none" class="row justify-content-center text-center show_test_app_loading">
+                                        <div style="margin-top: 5px; display: none" class="row justify-content-center text-center show_test_app_loading">
                                             <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
                                         </div>
                                     </div>
@@ -3854,10 +3854,10 @@
                                         <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Tip: Test app (+<t t-esc="int(points_latin_amount_tip)" /> pts)</div></button>
                                     </div>
                                     
-                                    <div style="margin-top: 5px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                         <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)<br/>All-access for 30 days</div></a>
                                     </div>
-                                    <div style="margin-top: 5px;" class="row" id="GoForwardShow1" t-else="">
+                                    <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-else="">
                                         <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM</div></a>
                                     </div>
                                 </div>
