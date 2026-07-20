@@ -1,55 +1,92 @@
-LatinChain Platform
------------------
+<div align="center">
 
-Pi, Pi Network and the Pi logo are trademarks of the Pi Community Company.
+# 🚀 LatinChain Platform
+### The Premier Web3 Gaming Ecosystem on Pi Network
 
-Original Repository: https://github.com/rockcesar/LatinChainDevelopments
+[![Pi Network](https://img.shields.io/badge/Pi_Network-Mainnet_Ready-purple.svg)](https://minepi.com/)
+[![Pi Hackathon Winner](https://img.shields.io/badge/Pi_Hackathon_2021-Honorable_Mention-gold.svg)](https://minepi.com/blog/hackathon-winners-announcement)
+[![Odoo Version](https://img.shields.io/badge/Odoo-13.0%20%7C%2014.0-blue.svg)](https://apps.odoo.com/)
+[![License](https://img.shields.io/badge/License-PiOS-green.svg)](#license)
 
-Institutional Repository: https://github.com/rockcesar/LatinChainDevelops
+*Bringing interactive gaming and seamless Pi cryptocurrency integration to millions of Pioneers worldwide.*
 
-Currently https://latin-chain.com is working with website_pinetwork_odoo and website_pinetwork_games_odoo, made in Odoo.
+[Live Platform](https://latin-chain.com) • [App Presentation](https://www.youtube.com/watch?v=9KqcyAoCZzo) • [Developer Portal](https://developers.minepi.com/)
 
-We won an Honorable mention in Pi Hackathon with our project, Games from Latin America for Pi!!!:
-https://minepi.com/blog/hackathon-winners-announcement
+---
 
-To use these sources codes in Pi Sandbox (https://developers.minepi.com/), put it in the root of HTTP Server.
-In the HTTP Server, where you put these codes, you can use domains or subdomains.
+</div>
 
-Apps
------------------
+## 📖 About LatinChain
 
-website_pinetwork_odoo (PiOS License) is a LatinChain Platform (First App in Odoo for Pi).
-#Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
+**LatinChain** is a decentralized gaming engine and app platform built specifically for the **Pi Network** ecosystem. Recognized as an **Honorable Mention Winner in the Pi Hackathon 2021**, LatinChain enables Pioneers to authenticate smoothly and use Pi for fast, secure in-game transactions and micro-payments via the Pi SDK.
 
-website_pinetwork_games_odoo (PiOS License) is a LatinChain Platform (Games Engine and Platform in Odoo for Pi).
-#Run it in Odoo 13.0 or 14.0 Server. (You can use domains or subdomains)
+> 📢 *Trademarks Notice: Pi, Pi Network, and the Pi logo are official trademarks of the Pi Community Company.*
 
-Apps Sandbox
------------------
+---
 
-In client, for using Sandbox you must set, sandox: true, in Pi.init().
+## 🔥 Featured Games & Apps
 
-```javascript
-  <script src="https://sdk.minepi.com/pi-sdk.js" ></script>
-  <script> Pi.init({ version: "2.0", sandbox: true }) </script>
-```
+LatinChain powers a suite of classic and engaging games integrated directly with Pi authentication and payments:
 
-Apps published
------------------
+* 🧩 **Pidoku** – Sudoku powered by Pi rewards.
+* 🐍 **Snake** – Classic Snake game with competitive challenges.
+* ♟️ **Chess** – Turn-based strategic game supporting Pioneer matches.
+* ⚡ **App Example for Pi** – Reference implementation for developers building on Pi SDK.
 
-LatinChain Platform:
-https://latin-chain.com
+---
 
-Pidoku, Snake, Chess, App Example for Pi
+## 🛠️ Tech Stack & Architecture
 
-LatinChain Platform (First App in Odoo for Pi):
-https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/
+LatinChain is built on top of **Odoo ERP Framework**, providing scalable modular backend capabilities for managing platform assets, users, and transactions.
 
-LatinChain Platform (Games Engine and Platform in Odoo for Pi):
-https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/
+* **Backend Framework:** Odoo 13.0 / 14.0
+* **Frontend Integration:** Pi SDK v2.0 (JavaScript / HTML5 Engine)
+* **Hosting:** Configurable for HTTP Servers supporting domain/subdomain routing.
 
-Link for info:
-https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html
+### Platform Modules:
+1. **`website_pinetwork_odoo`** *(PiOS License)* – Core LatinChain integration and base platform logic.
+2. **`website_pinetwork_games_odoo`** *(PiOS License)* – Specialized Games Engine and platform management module.
 
-Final Presentation of the Apps:
-https://www.youtube.com/watch?v=9KqcyAoCZzo
+---
+
+## 🚀 Sandbox & Local Setup Guide
+
+To run and test LatinChain source codes using the [Pi Developer Sandbox](https://developers.minepi.com/):
+
+1. **Deploy to HTTP Server:** 
+   Place the source files in the root directory of your web server (Apache/Nginx/Odoo Server). Domains and subdomains are fully supported.
+
+2. **Configure Pi SDK Sandbox Mode:**
+   Ensure `sandbox: true` is enabled in your client-side initialization snippet:
+
+   ```html
+   <script src="[https://sdk.minepi.com/pi-sdk.js](https://sdk.minepi.com/pi-sdk.js)"></script>
+   <script>
+     Pi.init({ version: "2.0", sandbox: true });
+   </script>
+   3. **Run Odoo Modules:**  
+   Install and run the modules on an active **Odoo 13.0** or **14.0** instance.
+
+---
+
+## 🔗 Official Links & Resources
+
+* 🌐 **Live Website:** [latin-chain.com](https://latin-chain.com)
+* 📹 **Video Demo & Final Presentation:** [Watch on YouTube](https://www.youtube.com/watch?v=9KqcyAoCZzo)
+* 📦 **Odoo App Store (Core Platform):** [website_pinetwork_odoo](https://apps.odoo.com/apps/modules/14.0/website_pinetwork_odoo/)
+* 🎮 **Odoo App Store (Games Engine):** [website_pinetwork_games_odoo](https://apps.odoo.com/apps/modules/14.0/website_pinetwork_games_odoo/)
+* 📝 **Development Blog Post:** [Read Info & Update History](https://dev-rockcesar.blogspot.com/2021/05/pi-apps-published.html)
+
+---
+
+## 🏛️ Repositories & Attribution
+
+* **Current Main Repository:** [EslaM-X/LatinChain](https://github.com/EslaM-X/LatinChain)
+* **Original Repository:** [rockcesar/LatinChainDevelopments](https://github.com/rockcesar/LatinChainDevelopments)
+* **Institutional Repository:** [rockcesar/LatinChainDevelops](https://github.com/rockcesar/LatinChainDevelops)
+
+---
+
+## 📜 License
+
+This project is open-sourced under the **PiOS (Pi Open Source) License**. See individual module directories for specific licensing conditions.
