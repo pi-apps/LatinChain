@@ -257,7 +257,7 @@ TOML FILE CONTENT:
 
 # External Login (pi-sign-in, My version)
 
-OFFICIAL DOCS: https://github.com/pi-apps/pi-platform-docs/blob/master/pi-sign-in.md
+Official DOCS: https://github.com/pi-apps/pi-platform-docs/blob/master/pi-sign-in.md
 
 LOGIN PAGE:
 
