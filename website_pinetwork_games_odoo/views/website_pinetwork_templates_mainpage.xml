@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.327"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.328"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3838,7 +3838,7 @@
                                 <div class="getverified">
                                     <div>
                                         <div style="margin-top: 10px;" class="row show_test_app">
-                                            <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad (+<t t-esc="int(points_latin_amount)" /> pts)<br/>Unlock Once</div></button>
+                                            <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad (+<t t-esc="int(points_latin_amount)" /> pts)<br/>Earn points</div></button>
                                         </div>
                                         
                                         <div style="margin-top: 10px; display: none" class="row justify-content-center text-center show_test_app_loading">
