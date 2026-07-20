@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.331"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.332"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1854,7 +1854,7 @@
                             <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px;">
                                 <button id="button_reward_ad" name="button_reward_ad" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" disabled="true" style="border: 2px solid;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Rewarded Ads</div><div style="font-size:80%;">Earn Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%;"><i class="fa-solid fa-plug-circle-bolt"></i>x2 points <i class="fa-solid fa-arrow-right"></i> (Chess, Sudoku, Snake)</div><div style="font-size:80%; display: none">Testing feature</div></button>
                                 <span id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
-                                    Pi Rewarded Ads not available (<div id="pi_ad_max" style="display:inline;"></div> ads / <div id="pi_ad_hours" style="display:inline;"></div>h). Remaining time: <span id="resting_time">0</span>h.
+                                    Pi Rewarded Ads not available (<div class="pi_ad_max" style="display:inline;"></div> ads / <div class="pi_ad_hours" style="display:inline;"></div>h). Remaining time: <span id="resting_time">0</span>h.
                                 </span>
                             </div>
                             
@@ -1875,7 +1875,7 @@
                                 <div class="text-white">
                                     Max rewarded ads:
                                     <br/>
-                                    (<span id="pi_ad_counter">0</span>/<t t-esc="pi_ad_max" /> Pi Ads | <t t-esc="pi_ad_hours" />h)
+                                    (<div id="pi_ad_counter" style="display:inline;">0</div>/<div class="pi_ad_max" style="display:inline;"></div> Pi Ads | <div class="pi_ad_hours" style="display:inline;"></div>h)
                                     <!--<br/>
                                     Max interstitial ads:
                                     <br/>
