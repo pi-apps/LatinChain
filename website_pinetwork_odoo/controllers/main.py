@@ -489,6 +489,8 @@ class PiNetworkBaseController(http.Controller):
             pi_users_list[0].write({'pi_ad_counter': 0})
             pi_ad_new = True
         
+        _logger.info("show_pi_ad_time 2.0 " + str(show_pi_ad_time))
+        
         if pi_users_list[0].unblocked:
             if not pi_users_list[0].pi_ad_automatic:
                 show_pi_ad = False
@@ -501,6 +503,8 @@ class PiNetworkBaseController(http.Controller):
         else:
             pi_ad_automatic = True
         
+        _logger.info("show_pi_ad_time 3.0 " + str(show_pi_ad_time))
+        
         result_found = request.env["pi.transactions"].sudo().search([('action', '!=', 'complete'), ('action_type', '=', 'receive'), 
                                                                 ('pi_user_id', '=', pi_users_list[0].pi_user_id)]).check_transactions_one_user()
         
@@ -509,14 +513,20 @@ class PiNetworkBaseController(http.Controller):
         else:
             referrer_code = ""
         
+        _logger.info("show_pi_ad_time 4.0 " + str(show_pi_ad_time))
+        
         if pi_users_list[0].pi_ad_datetime:
             resting_time = str((pi_users_list[0].pi_ad_datetime-(datetime.now() - timedelta(seconds=pi_ad_seconds)))).split(".")[0]
         else:
             resting_time = ""
         
+        _logger.info("show_pi_ad_time 5.0 " + str(show_pi_ad_time))
+        
         pi_ad_counter = pi_users_list[0].pi_ad_counter
         if pi_users_list[0].pi_ad_counter > pi_ad_max:
             pi_ad_counter = pi_ad_max
+        
+        _logger.info("show_pi_ad_time 6.0 " + str(show_pi_ad_time))
         
         #if apps_list[0].mainnet in ['Testnet OFF']:
         #    apps_list[0].sudo()._pay_onincomplete_a2u(pi_users_list[0])
