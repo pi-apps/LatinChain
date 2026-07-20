@@ -254,3 +254,13 @@ TOML FILE CONTENT:
     name="Pi Core Team"
     desc="This is a test token that is created as an example and has no value."
     image="https://image-of-your-token.com/image.png"
+
+# External Login
+
+LOGIN PAGE:
+
+    https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login_step.xml
+
+SHOW DATA AFTER LOGIN:
+
+    https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login.xml
