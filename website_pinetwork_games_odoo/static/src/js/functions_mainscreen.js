@@ -1844,17 +1844,14 @@ $( document ).ready(function() {
                             
                             if(show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
-                                if(unblocked)
-                                {
-                                    $( "#rewardedad-open" ).click(async function() {
-                                        showRewardedPiAd();
-                                        
-                                        $( "#rewardedad-close" ).click();
-                                    });
+                                $( "#rewardedad-open" ).click(async function() {
+                                    showRewardedPiAd();
                                     
-                                    $(".modal-body-rewardedad").html($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
-                                    $("#open_rewardedad_modal").click();
-                                }
+                                    $( "#rewardedad-close" ).click();
+                                });
+                                
+                                $(".modal-body-rewardedad").html($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
+                                $("#open_rewardedad_modal").click();
                                 
                                 //(async () => {
                                     //if(confirm($("#rewarded_message_1").text() + "\n\n" + $("#rewarded_message_2").text()))
