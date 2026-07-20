@@ -453,7 +453,6 @@ class PiNetworkBaseController(http.Controller):
             pi_ad_max = 480
         
         _logger.info("pi_ad_seconds " + str(pi_ad_seconds))
-        _logger.info("show_pi_ad_time " + str(show_pi_ad_time))
         
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
