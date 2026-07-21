@@ -3849,7 +3849,7 @@
                                     
                                     <div>
                                         <div style="margin-top: 10px;" class="row show_test_app">
-                                            <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad (+<t t-esc="int(points_latin_amount)" /> pts)<br/>Earn points</div></button>
+                                            <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad (+<t t-esc="int(points_latin_amount)" /> pts)<br/>Unlock Once</div></button>
                                         </div>
                                         
                                         <div style="margin-top: 10px; display: none" class="row justify-content-center text-center show_test_app_loading">
