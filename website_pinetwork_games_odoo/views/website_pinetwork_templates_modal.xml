@@ -729,6 +729,20 @@
                     </head>
 
                     <body>
+                        <br/>
+                        <div t-if="shopping">
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-2334449220276386"
+                                 data-ad-slot="6625994850"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                        <br/>
+                        
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <div id="messageBox" style="display: none;">
                                 <!-- Your message content goes here -->
@@ -746,18 +760,6 @@
                               </div>
                             </nav>
                             
-                            <br/>
-                            <div t-if="shopping">
-                                <ins class="adsbygoogle"
-                                     style="display:block"
-                                     data-ad-client="ca-pub-2334449220276386"
-                                     data-ad-slot="6625994850"
-                                     data-ad-format="auto"
-                                     data-full-width-responsive="true"></ins>
-                                <script>
-                                     (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
-                            </div>
                             <br/>
                             <div t-if="link_back">
                                 <a id="back" class="btn btn-info rounded back" style="margin-bottom:15px;" t-att-href="link_back" target="_blank"><div><i class="fa fa-step-backward"></i></div><div t-if="link_text"><span t-esc="link_text"/></div></a>
@@ -1014,20 +1016,22 @@
                                 <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71o65qmDIsL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Curso de Computación Cuántica, de Cero a Experto<br/> (ASIN: B0GFGTML2P, ASIN: B0GFK2VL31)<br/> (ISBN: 979-8243027755)</strong><br/> (<div style="display:inline;">Software Development</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/quantum-book/ebook" target="_blank">eBook</a> | <a href="/quantum-book/paperback" target="_blank">Paperback</a></t></h5>
                                 <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61L4Ju0dOcL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>My Sci and Sci-Fi Books' Collection 2025 - Mi Colección de Libros Sci y Sci-Fi 2025<br/> (ASIN: B0FPPVRGWG and ASIN: B0G4WK2WT7)<br/> (ISBN: 979-8277179994)</strong><br/> (<div style="display:inline;">Books compilation</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/collection-2025-book/ebook" target="_blank">eBook</a> | <a href="/collection-2025-book/paperback" target="_blank">Paperback</a></t></h5>
                             </div>
-                            
-                            <br/>
-                            <div t-if="shopping">
-                                <ins class="adsbygoogle"
-                                     style="display:block"
-                                     data-ad-client="ca-pub-2334449220276386"
-                                     data-ad-slot="6625994850"
-                                     data-ad-format="auto"
-                                     data-full-width-responsive="true"></ins>
-                                <script>
-                                     (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
-                            </div>
                         </div>
+                        
+                        <br/>
+                        <div t-if="shopping">
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-2334449220276386"
+                                 data-ad-slot="6625994850"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                        <br/>
+                        
                         <br/><br/><br/><br/><br/><br/><br/>
                     </body>
                 </html>
