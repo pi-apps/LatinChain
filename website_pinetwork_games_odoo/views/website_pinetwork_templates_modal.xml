@@ -792,6 +792,18 @@
                             <h3 t-elif="with_links" id="share-message-1">LatinChain Fans &amp; Learning Club: Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
                             <h5 t-if="with_links">Contact: latinchain.info@gmail.com</h5>
                             <br/>
+                            <div t-if="shopping">
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-2334449220276386"
+                                     data-ad-slot="6625994850"
+                                     data-ad-format="auto"
+                                     data-full-width-responsive="true"></ins>
+                                <script>
+                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                            <br/>
                             <div style="margin-bottom:10px;" id="choosing-section">
                                 <h3 style="text-align:left">
                                     <div class="form-check" style="margin-bottom: 10px">
@@ -835,6 +847,17 @@
                                   <input type="text" class="search-collectibles form-control" placeholder="Search Shopping Items" aria-label="Search collectibles" aria-describedby="inputGroup-sizing-lg" />
                                 </div>
                             </div>
+                            <div t-if="shopping">
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-2334449220276386"
+                                     data-ad-slot="6625994850"
+                                     data-ad-format="auto"
+                                     data-full-width-responsive="true"></ins>
+                                <script>
+                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
                             <div t-if="with_links" class="spring-clothing" id="spring-clothing">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
@@ -845,6 +868,18 @@
                                 </h5>
                             </div>
                             <div t-if="with_links" class="amazon-best-deals" id="amazon-best-deals">
+                                <br/>
+                                <div t-if="shopping">
+                                    <ins class="adsbygoogle"
+                                         style="display:block"
+                                         data-ad-client="ca-pub-2334449220276386"
+                                         data-ad-slot="6625994850"
+                                         data-ad-format="auto"
+                                         data-full-width-responsive="true"></ins>
+                                    <script>
+                                         (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                </div>
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                     <h3>Today's Best Products on Amazon</h3>
@@ -989,6 +1024,18 @@
                             </div>
                             <div class="udemy-courses" id="udemy-courses">
                                 <br/>
+                                <div t-if="shopping">
+                                    <ins class="adsbygoogle"
+                                         style="display:block"
+                                         data-ad-client="ca-pub-2334449220276386"
+                                         data-ad-slot="6625994850"
+                                         data-ad-format="auto"
+                                         data-full-width-responsive="true"></ins>
+                                    <script>
+                                         (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                </div>
+                                <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                     <h3>Udemy courses</h3>
                                     <h5>(all courses with personalized Certificate of Completion)</h5>
@@ -1000,6 +1047,18 @@
                                 <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6595211_0834_3.jpg" width="180px" height="110px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/brand-course/" target="_blank">Udemy course</a></t></h5>
                             </div>
                             <div class="amazon-books" id="amazon-books">
+                                <br/>
+                                <div t-if="shopping">
+                                    <ins class="adsbygoogle"
+                                         style="display:block"
+                                         data-ad-client="ca-pub-2334449220276386"
+                                         data-ad-slot="6625994850"
+                                         data-ad-format="auto"
+                                         data-full-width-responsive="true"></ins>
+                                    <script>
+                                         (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                </div>
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                     <h3>Amazon books</h3>
