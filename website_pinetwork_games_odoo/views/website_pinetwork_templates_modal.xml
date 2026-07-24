@@ -847,6 +847,19 @@
                                   <input type="text" class="search-collectibles form-control" placeholder="Search Shopping Items" aria-label="Search collectibles" aria-describedby="inputGroup-sizing-lg" />
                                 </div>
                             </div>
+                            <br/>
+                            <div t-if="shopping">
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-2334449220276386"
+                                     data-ad-slot="6625994850"
+                                     data-ad-format="auto"
+                                     data-full-width-responsive="true"></ins>
+                                <script>
+                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                            <br/>
                             <div t-if="with_links" class="spring-clothing" id="spring-clothing">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
