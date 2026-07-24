@@ -2068,9 +2068,9 @@
                                 <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#FansClub</div></strong></h5>
                             </div>
                             <div style="margin-bottom:5px">
-                                <div><strong>Watch our LatinChain and César OpenSource Fans Shopping Club</strong></div>
+                                <div><strong>Watch our LatinChain and César OpenSource Fans Club</strong></div>
                                 <div>
-                                    <a href="https://club.latin-chain.com" rel="noopener" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success fans-shopping-club" ><div><i class="fa-solid fa-store"></i></div><div>Fans Shopping Club</div></a>
+                                    <a href="https://club.latin-chain.com" rel="noopener" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success fans-shopping-club" ><div><i class="fa-solid fa-store"></i></div><div>LatinChain Fans Club</div></a>
                                 </div>
                                 <div><strong>Watch our Crypto News</strong></div>
                                 <div>
@@ -3849,6 +3849,10 @@
                                 
                                 <div class="row" style="margin-top: 10px;">
                                     <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">News<br/>LatinChain News</div></a>
+                                </div>
+                                
+                                <div class="row" style="margin-top: 10px;">
+                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">Fans Club<br/>LatinChain Fans Club</div></a>
                                 </div>
                                 
                                 <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
