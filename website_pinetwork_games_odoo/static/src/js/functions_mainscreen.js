@@ -910,6 +910,17 @@ function copyToClipboard(text) {
 }
 
 $( document ).ready(function() {
+
+    // Seleccionar todos los <a> cuyo href comience con las URLs indicadas
+    $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').click(function() {
+        let currentHref = $(this).attr('href');
+
+        // Validar que el enlace no tenga ya el hash para evitar que se duplique
+        // si el código se ejecuta más de una vez
+        if (!currentHref.includes(hashLatinChainGoogleTranslate)) {
+            $(this).attr('href', currentHref + hashLatinChainGoogleTranslate);
+        }
+    });
     
     $(document).on('cbox_open', function() {
         $('#cboxOverlay, #colorbox').appendTo('body');
