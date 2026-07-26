@@ -501,12 +501,22 @@
                         <script t-if="shopping" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
                         -->
                         
-                        <script>
-                            document.addEventListener('DOMContentLoaded', function() {
-                                document.body.style.wordBreak = 'break-word';
-                                document.body.style.maxWidth = '100vw';
-                            });
-                        </script>
+                        <style>
+                            body {
+                              word-break: break-word;
+                            }
+
+                            /* Fuerza al contenedor insertado por Google a respetar el ancho máximo */
+                            .google-auto-placed,
+                            .google-auto-placed iframe,
+                            ins.adsbygoogle,
+                            ins.adsbygoogle iframe {
+                              max-width: 100% !important;
+                              width: 100% !important;
+                              box-sizing: border-box !important;
+                              overflow: hidden !important;
+                            }
+                        </style>
 
                         <script t-if="shopping">
                             document.addEventListener("DOMContentLoaded", function() {
