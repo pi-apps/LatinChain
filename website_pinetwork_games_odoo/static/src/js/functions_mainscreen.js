@@ -1822,7 +1822,7 @@ $( document ).ready(function() {
                             colorboxLoadedMainnet();
                         }else
                         {
-                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
+                            if(["Mainnet ON", "Mainnet OFF", "Testnet ON"].includes($("#mainnet").val()))
                             {
                                 $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').off('click').on('click', function() {
                                     let currentHref = $(this).attr('href');
@@ -1831,10 +1831,10 @@ $( document ).ready(function() {
                                         // 1. Convertir el href en un objeto URL para manipularlo de forma segura
                                         let url = new URL(currentHref);
 
-                                        // 2. Agregar el parámetro 'no_ads' ANTES del hash, comprobando que no exista ya
-                                        if (!url.searchParams.has('no_ads')) {
+                                        // 2. Agregar el parámetro 'pi_user' ANTES del hash, comprobando que no exista ya
+                                        if (!url.searchParams.has('pi_user')) {
                                             // Modificamos '.search' para inyectar '?no_ads' exacto (evitando que inserte '?no_ads=')
-                                            url.search += (url.search ? '&' : '') + 'no_ads';
+                                            url.search += (url.search ? '&' : '') + 'pi_user=' + pi_user_code;
                                         }
 
                                         // 3. Volver a convertir a string con el parámetro ya integrado en la posición correcta
