@@ -1834,7 +1834,7 @@ $( document ).ready(function() {
                                         // 2. Agregar el parámetro 'pi_user' ANTES del hash, comprobando que no exista ya
                                         if (!url.searchParams.has('pi_user')) {
                                             // Modificamos '.search' para inyectar '?no_ads' exacto (evitando que inserte '?no_ads=')
-                                            url.search += (url.search ? '&' : '') + 'pi_user=' + pi_user_code;
+                                            url.search += (url.search ? '&' : '') + 'pi_user=' + encodeURIComponent(pi_user_code);
                                         }
 
                                         // 3. Volver a convertir a string con el parámetro ya integrado en la posición correcta
