@@ -69,12 +69,12 @@ function openInNewTabAds(url) {
 
 function colorboxLoaded()
 {
-    var URLTestnet = "https://ecosystem.latin-chain.com/page-1/?v=1.137"+hashLatinChainGoogleTranslate;
+    var URLTestnet = "https://ecosystem.latin-chain.com/page-1/?v=1.138"+hashLatinChainGoogleTranslate;
     
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         openInNewTabAds(URLTestnet);
-        //window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.137"+hashLatinChainGoogleTranslate;
+        //window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.138"+hashLatinChainGoogleTranslate;
     }else
     {
     }
@@ -84,7 +84,7 @@ function colorboxLoaded()
     {
         if($.colorbox && !colorbox_opened)
         {
-            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-1?v=1.137"+hashLatinChainGoogleTranslate, closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-1?v=1.138"+hashLatinChainGoogleTranslate, closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened = true;
             return false;
         }else{
@@ -106,12 +106,12 @@ function colorboxLoaded()
 
 function colorboxLoadedMainnet()
 {
-    var URLMainnet = "https://ecosystem.latin-chain.com/page-mainnet/?v=1.137"+hashLatinChainGoogleTranslate;
-    var URLTestnet = "https://ecosystem.latin-chain.com/page-1/?v=1.137"+hashLatinChainGoogleTranslate;
+    var URLMainnet = "https://ecosystem.latin-chain.com/page-mainnet/?v=1.138"+hashLatinChainGoogleTranslate;
+    var URLTestnet = "https://ecosystem.latin-chain.com/page-1/?v=1.138"+hashLatinChainGoogleTranslate;
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
     {
         openInNewTabAds(URLMainnet);
-        //window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.137"+hashLatinChainGoogleTranslate;
+        //window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.138"+hashLatinChainGoogleTranslate;
     }else
     {
     }
@@ -120,7 +120,7 @@ function colorboxLoadedMainnet()
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
-            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-mainnet?v=1.137"+hashLatinChainGoogleTranslate, closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+            $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com/page-mainnet?v=1.138"+hashLatinChainGoogleTranslate, closeButton:false, overlayClose:false, escKey:false, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
             colorbox_opened_mainnet = true;
             return false;
         }else{
