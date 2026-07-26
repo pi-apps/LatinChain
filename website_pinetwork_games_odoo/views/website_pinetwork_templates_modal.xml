@@ -519,6 +519,45 @@
                                 }
                             });
                         </script>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                document.body.style.wordBreak = 'break-word';
+                            });
+                            
+                            document.addEventListener("DOMContentLoaded", function() {
+                                
+                                function showAdsExternalApp()
+                                {
+                                    // --- Cargar AdSense ---
+                                    var adsenseScript = document.createElement('script');
+                                    adsenseScript.async = true;
+                                    adsenseScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386";
+                                    adsenseScript.crossOrigin = "anonymous";
+                                    document.head.appendChild(adsenseScript);
+                                }
+                                
+                                // 1. Leemos la URL actual
+                                const urlParams = new URLSearchParams(window.location.search);
+                                
+                                // 2. REEMPLAZA 'sin_ads' por el parámetro que quieres usar
+                                // La condición dice: Si la URL NO (!) tiene el parámetro, carga los anuncios.
+                                if (!urlParams.has('pi_user')) {
+                                    showAdsExternalApp();
+                                }else
+                                {
+                                    $.post("https://latin-chain.com/api/get-external-user", data={'pi_user_code': urlParams.get('pi_user')}, function(data, status){
+                                        if(data.result)
+                                        {
+                                            if(!data.unblocked)
+                                            {
+                                                showAdsExternalApp();
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        </script>
                         
                         <!--<base target="_blank" />-->
                         
