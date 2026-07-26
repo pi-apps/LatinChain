@@ -1822,7 +1822,7 @@ $( document ).ready(function() {
                             colorboxLoadedMainnet();
                         }else
                         {
-                            if(["Mainnet ON", "Mainnet OFF", "Testnet ON"].includes($("#mainnet").val()))
+                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').off('click').on('click', function() {
                                     let currentHref = $(this).attr('href');
