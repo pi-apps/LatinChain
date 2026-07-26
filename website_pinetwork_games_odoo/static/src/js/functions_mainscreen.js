@@ -912,7 +912,7 @@ function copyToClipboard(text) {
 $( document ).ready(function() {
 
     // Seleccionar todos los <a> cuyo href comience con las URLs indicadas
-    $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').click(function() {
+    $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').on('click', function() {
         let currentHref = $(this).attr('href');
 
         // Validar que el enlace no tenga ya el hash para evitar que se duplique
@@ -1820,6 +1820,35 @@ $( document ).ready(function() {
                             showing_paying = true;
 
                             colorboxLoadedMainnet();
+                            
+                            $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').off('click').on('click', function() {
+                                let currentHref = $(this).attr('href');
+
+                                try {
+                                    // 1. Convertir el href en un objeto URL para manipularlo de forma segura
+                                    let url = new URL(currentHref);
+
+                                    // 2. Agregar el parámetro 'no_ads' ANTES del hash, comprobando que no exista ya
+                                    if (!url.searchParams.has('no_ads')) {
+                                        // Modificamos '.search' para inyectar '?no_ads' exacto (evitando que inserte '?no_ads=')
+                                        url.search += (url.search ? '&' : '') + 'no_ads';
+                                    }
+
+                                    // 3. Volver a convertir a string con el parámetro ya integrado en la posición correcta
+                                    let newHref = url.toString();
+
+                                    // 4. Tu lógica original: Validar y agregar el hash de Google Translate
+                                    if (!newHref.includes(hashLatinChainGoogleTranslate)) {
+                                        newHref += hashLatinChainGoogleTranslate;
+                                    }
+
+                                    // 5. Aplicar el nuevo enlace
+                                    $(this).attr('href', newHref);
+
+                                } catch (e) {
+                                    $(this).attr('href', currentHref);
+                                }
+                            });
                         }else
                         {
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() != false))
