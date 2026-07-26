@@ -501,30 +501,13 @@
                         <script t-if="shopping" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
                         -->
                         
-                        <script t-if="shopping">
-                            document.addEventListener("DOMContentLoaded", function() {
-                                
-                                // 1. Leemos la URL actual
-                                const urlParams = new URLSearchParams(window.location.search);
-                                
-                                // 2. REEMPLAZA 'sin_ads' por el parámetro que quieres usar
-                                // La condición dice: Si la URL NO (!) tiene el parámetro, carga los anuncios.
-                                if (!urlParams.has('no_ads')) {
-                                    // --- Cargar AdSense ---
-                                    var adsenseScript = document.createElement('script');
-                                    adsenseScript.async = true;
-                                    adsenseScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386";
-                                    adsenseScript.crossOrigin = "anonymous";
-                                    document.head.appendChild(adsenseScript);
-                                }
-                            });
-                        </script>
-
                         <script>
                             document.addEventListener('DOMContentLoaded', function() {
                                 document.body.style.wordBreak = 'break-word';
                             });
-                            
+                        </script>
+
+                        <script t-if="shopping">
                             document.addEventListener("DOMContentLoaded", function() {
                                 
                                 function showAdsExternalApp()
