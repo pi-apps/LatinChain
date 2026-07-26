@@ -504,6 +504,7 @@
                         <script>
                             document.addEventListener('DOMContentLoaded', function() {
                                 document.body.style.wordBreak = 'break-word';
+                                document.body.style.maxWidth = '100vw';
                             });
                         </script>
 
