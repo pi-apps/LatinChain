@@ -918,10 +918,7 @@ $( document ).ready(function() {
     if($("#nopopup").val().toLowerCase() == "")
         $("#nopopup").val("false");
     
-    if(JSON.parse($("#nopopup").val().toLowerCase()) == false)
-    {
-        localStorage.setItem("popup_latinchain", true);
-    }else
+    if(JSON.parse($("#nopopup").val().toLowerCase()) != false)
     {
         if(localStorage.getItem("popup_latinchain"))
         {
