@@ -918,17 +918,21 @@ $( document ).ready(function() {
     
     if(JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
-        localStorage.setItem("nopopup_latinchaub", true);
+        localStorage.setItem("popup_latinchain", true);
     }else
     {
-        if(localStorage.getItem("nopopup_latinchaub"))
+        if(localStorage.getItem("popup_latinchain"))
         {
-            localStorage.removeItem("nopopup_latinchaub");
+            localStorage.removeItem("popup_latinchain");
         }else
         {
             $("#nopopup").val("false");
         }
     }
+    
+    $('a[href^="https://ecosystem.latin-chain.com/page-"]').on('click', function() {
+        localStorage.setItem("popup_latinchain", true);
+    });
 
     // Seleccionar todos los <a> cuyo href comience con las URLs indicadas
     $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').on('click', function() {
