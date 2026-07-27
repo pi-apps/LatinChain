@@ -71,7 +71,7 @@ function colorboxLoaded()
 {
     var URLTestnet = "https://ecosystem.latin-chain.com/page-1/?v=1.138"+hashLatinChainGoogleTranslate;
     
-    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
+    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
         openInNewTabAds(URLTestnet);
         //window.location.href = "https://ecosystem.latin-chain.com/page-1?v=1.138"+hashLatinChainGoogleTranslate;
@@ -80,7 +80,7 @@ function colorboxLoaded()
     }
         
     /*
-    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
+    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
         if($.colorbox && !colorbox_opened)
         {
@@ -108,7 +108,7 @@ function colorboxLoadedMainnet()
 {
     var URLMainnet = "https://ecosystem.latin-chain.com/page-mainnet/?v=1.138"+hashLatinChainGoogleTranslate;
     var URLTestnet = "https://ecosystem.latin-chain.com/page-1/?v=1.138"+hashLatinChainGoogleTranslate;
-    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
+    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
         openInNewTabAds(URLMainnet);
         //window.location.href = "https://ecosystem.latin-chain.com/page-mainnet?v=1.138"+hashLatinChainGoogleTranslate;
@@ -116,7 +116,7 @@ function colorboxLoadedMainnet()
     {
     }
         
-    /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() == false)
+    /*if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
         if($.colorbox && !colorbox_opened_mainnet)
         {
@@ -910,6 +910,25 @@ function copyToClipboard(text) {
 }
 
 $( document ).ready(function() {
+    
+    //if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && 
+    
+    if($("#nopopup").val().toLowerCase() == "")
+        $("#nopopup").val("false");
+    
+    if(JSON.parse($("#nopopup").val().toLowerCase()) == false)
+    {
+        localStorage.setItem("nopopup_latinchaub", true);
+    }else
+    {
+        if(localStorage.getItem("nopopup_latinchaub"))
+        {
+            localStorage.removeItem("nopopup_latinchaub");
+        }else
+        {
+            $("#nopopup").val("false");
+        }
+    }
 
     // Seleccionar todos los <a> cuyo href comience con las URLs indicadas
     $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').on('click', function() {
@@ -1809,7 +1828,7 @@ $( document ).ready(function() {
                         {
                             $(".PiBrowserLink").hide();
                             
-                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() != false))
+                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && JSON.parse($("#nopopup").val().toLowerCase()) != false))
                             {
                                 document.getElementById('blockingOverlay').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
                                 document.getElementById('paying-message').style.display = 'none'; //'flex'; // Use 'flex' instead of 'block'
@@ -1854,7 +1873,7 @@ $( document ).ready(function() {
                                 });
                             }
                             
-                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && $("#nopopup").val() != false))
+                            if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && JSON.parse($("#nopopup").val().toLowerCase()) != false))
                             {
                                 //document.getElementById('PayPiLinkId1').style.display = 'none';
                                 document.getElementById('blockingOverlay').style.display = 'none'; // Use 'flex' instead of 'block'
