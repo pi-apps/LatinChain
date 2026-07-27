@@ -32,7 +32,7 @@ var colorbox_opened_mainnet = false;
 var is_open_tab = false;
 var is_open_tab_ads = false;
 
-var eco_page_version = "?v=1.139";
+var eco_page_version = "?v=1.140";
 
 function setConfirmUnload(on) {
     unloadMessage(on);
