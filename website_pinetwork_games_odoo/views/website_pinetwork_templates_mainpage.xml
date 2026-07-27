@@ -3855,6 +3855,10 @@
                                     <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Learning Club</div></a>
                                 </div>
                                 
+                                <div class="row" style="margin-top: 10px;">
+                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://dev-rockcesar.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">Cesar's Blog<br/>LatinChain Blog</div></a>
+                                </div>
+                                
                                 <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                     <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                 </div>
