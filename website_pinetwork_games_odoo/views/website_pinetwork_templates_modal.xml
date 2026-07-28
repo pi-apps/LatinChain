@@ -783,7 +783,7 @@
 
                     <body>
                         <br/>
-                        <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                        <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                             <ins class="adsbygoogle"
                                  style="display:block"
                                  data-ad-client="ca-pub-2334449220276386"
@@ -845,7 +845,7 @@
                             <h3 t-elif="with_links" id="share-message-1">LatinChain Fans &amp; Learning Club: Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
                             <h5 t-if="with_links">Contact: latinchain.info@gmail.com</h5>
                             <br/>
-                            <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                            <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                                 <ins class="adsbygoogle"
                                      style="display:block"
                                      data-ad-client="ca-pub-2334449220276386"
@@ -901,7 +901,7 @@
                                 </div>
                             </div>
                             <br/>
-                            <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                            <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                                 <ins class="adsbygoogle"
                                      style="display:block"
                                      data-ad-client="ca-pub-2334449220276386"
@@ -923,7 +923,7 @@
                                 </h5>
                             </div>
                             <br/>
-                            <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                            <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                                 <ins class="adsbygoogle"
                                      style="display:block"
                                      data-ad-client="ca-pub-2334449220276386"
@@ -1079,7 +1079,7 @@
                                 </div>
                             </div>
                             <br/>
-                            <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                            <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                                 <ins class="adsbygoogle"
                                      style="display:block"
                                      data-ad-client="ca-pub-2334449220276386"
@@ -1104,7 +1104,7 @@
                                 <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6595211_0834_3.jpg" width="180px" height="110px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/brand-course/" target="_blank">Udemy course</a></t></h5>
                             </div>
                             <br/>
-                            <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                            <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                                 <ins class="adsbygoogle"
                                      style="display:block"
                                      data-ad-client="ca-pub-2334449220276386"
@@ -1136,7 +1136,7 @@
                         </div>
                         
                         <br/>
-                        <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                        <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                             <ins class="adsbygoogle"
                                  style="display:block"
                                  data-ad-client="ca-pub-2334449220276386"
