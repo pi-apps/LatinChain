@@ -1844,6 +1844,7 @@ $( document ).ready(function() {
                             colorboxLoadedMainnet();
                         }else
                         {
+                            /*
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').off('click').on('click', function() {
@@ -1875,6 +1876,7 @@ $( document ).ready(function() {
                                     }
                                 });
                             }
+                            */
                             
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && JSON.parse($("#nopopup").val().toLowerCase()) != false))
                             {
