@@ -259,10 +259,91 @@ TOML FILE CONTENT:
 
 Official DOCS: https://github.com/pi-apps/pi-platform-docs/blob/master/pi-sign-in.md
 
-LOGIN PAGE:
+THIS IS MY WAY.
+
+LOGIN PAGE: Click in button to login.
+
+Using this file:
 
 https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login_step.xml
 
-SHOW DATA AFTER LOGIN:
+You need this:
+
+    <script>
+        document.getElementById("pi-signin").addEventListener("click", () => {
+            const state = crypto.randomUUID();
+            sessionStorage.setItem("latinchain_pi_oauth_state", state);
+
+            const url = new URL("https://accounts.pinet.com/oauth/authorize");
+            url.searchParams.set("response_type", "token");
+            url.searchParams.set("client_id", "W8ZrP8pgpYMkW3_yOGnzlBj5oHQbCvKEiKJtRxRJv4M");
+            url.searchParams.set("redirect_uri", "https://latin-chain.com/external-login");
+            url.searchParams.set("scope", "username wallet_address");
+            url.searchParams.set("state", state);
+
+            window.location.assign(url.toString());
+        });
+    </script>
+
+SHOW DATA AFTER LOGIN: Receive the login data.
+
+Using this file:
 
 https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login.xml
+
+You need this:
+
+    <script>
+        async function handlePiCallback() {
+            // You need these ids in the HTML
+            const statusDiv = document.getElementById("status");
+            const loader = document.getElementById("loader");
+            const userInfo = document.getElementById("user-info");
+            const pisignin = document.getElementById("pisignin");
+
+            try {
+                const params = new URLSearchParams(window.location.hash.slice(1));
+                const expectedState = sessionStorage.getItem("latinchain_pi_oauth_state");
+                sessionStorage.removeItem("latinchain_pi_oauth_state");
+
+                if (!params.get("access_token")) {
+                    statusDiv.textContent = "Please log in via the LatinChain portal.";
+                    loader.classList.add("hidden");
+                    pisignin.classList.remove("hidden");
+                    return;
+                }
+
+                if (params.get("state") !== expectedState) {
+                    throw new Error("Security error: State mismatch.");
+                }
+
+                const accessToken = params.get("access_token");
+
+                const response = await fetch("https://api.minepi.com/v2/me", {
+                    headers: { Authorization: `Bearer ${accessToken}` },
+                });
+
+                if (!response.ok) throw new Error("Could not retrieve account info.");
+                
+                const me = await response.json();
+
+                // DO SOME THING WITH THE: me.username.
+                
+                //document.getElementById("username").textContent = me.username;
+                
+                loader.classList.add("hidden");
+                userInfo.classList.remove("hidden");
+                statusDiv.textContent = "Authentication Successful";
+                statusDiv.style.color = "green";
+                
+                history.replaceState(null, "", window.location.pathname);
+
+            } catch (err) {
+                statusDiv.textContent = "Error: " + err.message;
+                statusDiv.style.color = "red";
+                loader.classList.add("hidden");
+            }
+        }
+
+        handlePiCallback();
+    </script>
