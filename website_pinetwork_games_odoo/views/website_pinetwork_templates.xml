@@ -372,10 +372,10 @@
                                         <h3 class="payment-details">
                                             <div>
                                                 <div style="display: inline" t-if="discount_active and discount_percentage">
-                                                    Payment discount (-<t t-esc="discount_percentage" />%)
+                                                    PREMIUM discount (-<t t-esc="discount_percentage" />%)
                                                 </div>
                                                 <div style="display: inline" t-if="not discount_active">
-                                                    Payment amount
+                                                    PREMIUM amount
                                                 </div>
                                             </div>
                                             <div style="word-break: break-word;" translate="no">
