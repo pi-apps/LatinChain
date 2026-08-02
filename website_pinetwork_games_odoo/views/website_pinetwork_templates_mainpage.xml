@@ -3838,12 +3838,14 @@
                                             <t t-set="usd_total" t-value="amount_price_topay_usd"/>
                                             <t t-set="pi_discount" t-value="amount"/>
                                             
-                                            <del style="margin-bottom: 8px">
-                                                <div style="display: inline">Pi <t t-esc="pi_total" /></div><!-- <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="usd_total" /></div>-->
-                                                <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: ' + ''.join(c + '\u0336' for c in 'USD '+str(usd_total)) + '. Updated each minute (on Mainnet), and each 1 day (on Testnet)'">
-                                                    <i class="fa-solid fa-circle-info"></i>
-                                                </div>
-                                            </del>
+                                            <div style="margin-bottom: 8px">
+                                                <del>
+                                                    <div style="display: inline">Pi <t t-esc="pi_total" /></div><!-- <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="usd_total" /></div>-->
+                                                    <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: ' + ''.join(c + '\u0336' for c in 'USD '+str(usd_total)) + '. Updated each minute (on Mainnet), and each 1 day (on Testnet)'">
+                                                        <i class="fa-solid fa-circle-info"></i>
+                                                    </div>
+                                                </del>
+                                            </div>
                                             <div style="margin-bottom: 8px">
                                                 <div style="display: inline">Pi <t t-esc="pi_discount" /></div><!-- <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="usd_discount" /></div>-->
                                                 <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(usd_discount) + '. Updated each minute (on Mainnet), and each 1 day (on Testnet)'">
