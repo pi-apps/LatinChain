@@ -3824,7 +3824,7 @@
                                 
                                 <div class="row">
                                     <div class="col-12 px-0">
-                                        <h5 style="color: #ffffff !important; background-color: #1f2434 !important; padding: 5px !important; border-radius: 20px;">
+                                        <h5 style="color: #ffffff !important; background-color: #1f2434 !important; padding: 10px !important; border-radius: 20px;">
                                             <div>
                                                 <div style="display: inline" t-if="discount_active and discount_percentage">
                                                     PREMIUM discount (-<t t-esc="discount_percentage" />%)
