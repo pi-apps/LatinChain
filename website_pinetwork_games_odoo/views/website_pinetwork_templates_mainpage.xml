@@ -3822,7 +3822,47 @@
                                     <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet<br/><div style="font-size: 80%;">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="font-size: 80%; display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div><div style="font-size: 80%; display: none;" class="getverified">You're LITE<br/>GET PREMIUM for 30 days</div></strong></h3>
                                 </div>
                                 
-                                <div class="row">
+                                <!--<t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <div t-if="total_users_verified_count &lt; 400" class="row justify-content-center text-center" style="color: black !important; max-width: 250px; font-size: 14px">
+                                        <strong><span t-esc="'{:,}'.format(total_users_verified_count)" /> verified users out of 400</strong>
+                                    </div>
+                                </t>-->
+                                
+                                <!--<div class="row getverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
+                                    <div style="text-align:center;" class="col-12">
+                                        <a class="rounded" href="/pinetwork" target="_self">
+                                            <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_lite.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
+                                        </a>
+                                    </div>
+                                </div>-->
+                                
+                                <div class="row isverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
+                                    <div style="text-align:center;" class="col-12">
+                                        <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_premium.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
+                                    </div>
+                                </div>
+                                
+                                <div class="row" style="margin-top: 10px;">
+                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">News<br/>LatinChain News</div></a>
+                                </div>
+                                
+                                <div class="row" style="margin-top: 10px;">
+                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Learning Club</div></a>
+                                </div>
+                                
+                                <div class="row" style="margin-top: 10px;">
+                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://dev-rockcesar.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">Cesar's Blog<br/>AI &amp; OpenSource</div></a>
+                                </div>
+                                
+                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                    <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                </div>
+                                
+                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                </div>
+                                
+                                <div class="row" style="margin-top: 10px;">
                                     <div class="col-12 px-0">
                                         <h5 style="color: #ffffff !important; background-color: #1f2434 !important; padding: 10px !important; border-radius: 20px;">
                                             <div>
@@ -3873,45 +3913,6 @@
                                             </div>
                                         </h5>
                                     </div>
-                                </div>
-                                <!--<t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <div t-if="total_users_verified_count &lt; 400" class="row justify-content-center text-center" style="color: black !important; max-width: 250px; font-size: 14px">
-                                        <strong><span t-esc="'{:,}'.format(total_users_verified_count)" /> verified users out of 400</strong>
-                                    </div>
-                                </t>-->
-                                
-                                <!--<div class="row getverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
-                                    <div style="text-align:center;" class="col-12">
-                                        <a class="rounded" href="/pinetwork" target="_self">
-                                            <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_lite.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
-                                        </a>
-                                    </div>
-                                </div>-->
-                                
-                                <div class="row isverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
-                                    <div style="text-align:center;" class="col-12">
-                                        <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_premium.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
-                                    </div>
-                                </div>
-                                
-                                <div class="row" style="margin-top: 10px;">
-                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">News<br/>LatinChain News</div></a>
-                                </div>
-                                
-                                <div class="row" style="margin-top: 10px;">
-                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Learning Club</div></a>
-                                </div>
-                                
-                                <div class="row" style="margin-top: 10px;">
-                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://dev-rockcesar.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">Cesar's Blog<br/>AI &amp; OpenSource</div></a>
-                                </div>
-                                
-                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                    <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-1" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                </div>
-                                
-                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                 </div>
                                 
                                 <div class="getverified">
