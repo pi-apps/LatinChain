@@ -3822,7 +3822,7 @@
                                     <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet<br/><div style="font-size: 80%;">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="font-size: 80%; display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div><div style="font-size: 80%; display: none;" class="getverified">You're LITE<br/>GET PREMIUM for 30 days</div></strong></h3>
                                 </div>
                                 
-                                <h5 style="color: #ffffff !important; background-color: #1f2434 !important; padding: 5px" class="rounded">
+                                <h5 style="color: #ffffff !important; background-color: #1f2434 !important; padding: 5px; border-radius: 20px;">
                                     <div>
                                         <div style="display: inline" t-if="discount_active and discount_percentage">
                                             PREMIUM discount (-<t t-esc="discount_percentage" />%)
