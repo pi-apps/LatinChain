@@ -54,6 +54,21 @@ function showImageModal(imageUrl, captionText) {
     $("#open_modal").click();
 }
 
+// 1. Creas la función
+function inicializarTooltips() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        // Verifica si ya tiene un tooltip para no inicializarlo dos veces
+        var existingTooltip = bootstrap.Tooltip.getInstance(tooltipTriggerEl);
+        if (!existingTooltip) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        }
+    });
+}
+
+// 2. La llamas cuando el DOM carga por primera vez
+document.addEventListener('DOMContentLoaded', inicializarTooltips);
+
 function openInNewTabAds(url) {
     
     is_open_tab_ads = true;
@@ -67,6 +82,7 @@ function openInNewTabAds(url) {
     //document.getElementById('GoForwardShow3').style.display = 'none'; // Use 'flex' instead of 'block'
     document.getElementById('all-messages').style.display = 'none'; // Use 'flex' instead of 'block'
     
+    inicializarTooltips();
 }
 
 function colorboxLoaded()
@@ -1789,6 +1805,8 @@ $( document ).ready(function() {
               $("#loading_word").hide();
               $("#loading_word_under").hide();
             }, 5000);
+            
+            inicializarTooltips();
 
             Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
                 pi_user_id = auth.user.uid;
@@ -1826,6 +1844,8 @@ $( document ).ready(function() {
                 //get_user();
                 set_points(0).always(function(){
                     get_user().always(function(){
+                        
+                        inicializarTooltips();
                         
                         if(!unblocked)
                         {
@@ -2113,6 +2133,8 @@ $( document ).ready(function() {
         document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
         document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
         */
+        
+        inicializarTooltips();
         
         try{
             await Pi.init({ version: "2.0", sandbox: $("#sandbox").val() });

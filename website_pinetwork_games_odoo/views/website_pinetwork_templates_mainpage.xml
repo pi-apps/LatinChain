@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.364"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.367"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3625,13 +3625,6 @@
                     </script>
                     -->
                     
-                    <script>
-                        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-                        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                            return new bootstrap.Tooltip(tooltipTriggerEl)
-                        })
-                    </script>
-                    
                     <style>
                         /* 1. The parent container for the buttons */
                         .button-group {
@@ -3840,6 +3833,11 @@
                                     </div>
                                     <div style="word-break: break-word;">
                                         <div t-if="discount_active and discount_percentage">
+                                            <t t-set="usd_discount" t-value="round(amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100), 2)"/>
+                                            <t t-set="pi_total" t-value="round(((amount*amount_price_topay_usd)/usd_discount), 7)"/>
+                                            <t t-set="usd_total" t-value="amount_price_topay_usd"/>
+                                            <t t-set="pi_discount" t-value="amount"/>
+                                            
                                             <del>
                                                 <div style="display: inline">Pi <t t-esc="pi_total" /></div><!-- <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="usd_total" /></div>-->
                                                 <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: ' + ''.join(c + '\u0336' for c in 'USD '+str(usd_total)) + '. Updated each minute (on Mainnet), and each 1 day (on Testnet)'">
@@ -3957,7 +3955,6 @@
                             </div>
                         </div>
                     </div>
-                    
                 </body>
             </html>
             </t>
