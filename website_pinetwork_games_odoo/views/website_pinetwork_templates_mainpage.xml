@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.367"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.370"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3955,6 +3955,22 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            new bootstrap.Tooltip(document.body, {
+                                selector: '[data-bs-toggle="tooltip"]'
+                            });
+                        });
+                    </script>
+                    
+                    <style>
+                        /* Eleva todos los tooltips de Bootstrap por encima del blockingOverlay */
+                        .tooltip {
+                            z-index: 10000 !important;
+                        }
+                    </style>
+                    
                 </body>
             </html>
             </t>
