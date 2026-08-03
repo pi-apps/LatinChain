@@ -276,7 +276,7 @@ You need this:
 
             const url = new URL("https://accounts.pinet.com/oauth/authorize");
             url.searchParams.set("response_type", "token");
-            url.searchParams.set("client_id", "W8ZrP8pgpYMkW3_yOGnzlBj5oHQbCvKEiKJtRxRJv4M");
+            url.searchParams.set("client_id", "YOUR-CLIENT-ID-FROM-DEV-PORTAL");
             url.searchParams.set("redirect_uri", "https://latin-chain.com/external-login");
             url.searchParams.set("scope", "username wallet_address");
             url.searchParams.set("state", state);
