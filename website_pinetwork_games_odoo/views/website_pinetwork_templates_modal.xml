@@ -859,7 +859,7 @@
                                 </script>
                             </div>
                             <br/>
-                            <div style="margin-bottom:10px;" id="choosing-section">
+                            <div data-google-query-id="none" style="margin-bottom:10px;" id="choosing-section">
                                 <h3 style="text-align:left">
                                     <div class="form-check" style="margin-bottom: 10px">
                                       <input class="form-check-input" type="radio" name="show-section" id="show-all" value="show-all" checked="true"/>
@@ -915,7 +915,7 @@
                                 </script>
                             </div>
                             <br/>
-                            <div t-if="with_links" class="spring-clothing" id="spring-clothing">
+                            <div data-google-query-id="none" t-if="with_links" class="spring-clothing" id="spring-clothing">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                     <h3>Clothing and Collectibles in César OpenSource and LatinChain Store with Spring</h3>
@@ -937,7 +937,7 @@
                                 </script>
                             </div>
                             <br/>
-                            <div t-if="with_links" class="amazon-best-deals" id="amazon-best-deals">
+                            <div data-google-query-id="none" t-if="with_links" class="amazon-best-deals" id="amazon-best-deals">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                     <h3>Today's Best Products on Amazon</h3>
@@ -1093,7 +1093,7 @@
                                 </script>
                             </div>
                             <br/>
-                            <div class="udemy-courses" id="udemy-courses">
+                            <div data-google-query-id="none" class="udemy-courses" id="udemy-courses">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                     <h3>Udemy courses</h3>
@@ -1118,7 +1118,7 @@
                                 </script>
                             </div>
                             <br/>
-                            <div class="amazon-books" id="amazon-books">
+                            <div data-google-query-id="none" class="amazon-books" id="amazon-books">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                     <h3>Amazon books</h3>
