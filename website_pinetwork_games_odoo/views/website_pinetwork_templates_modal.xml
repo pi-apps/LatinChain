@@ -499,9 +499,7 @@
                         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                         
-                        <!--
                         <script t-if="shopping" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2334449220276386" crossorigin="anonymous"></script>
-                        -->
                         
                         <style>
                             body {
@@ -787,7 +785,6 @@
 
                     <body>
                         <br/>
-                        <!--
                         <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                             <ins class="adsbygoogle"
                                  style="display:block"
@@ -800,7 +797,6 @@
                             </script>
                         </div>
                         <br/>
-                        -->
                         
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <div id="messageBox" style="display: none;">
@@ -851,7 +847,6 @@
                             <h3 t-elif="with_links" id="share-message-1">LatinChain Fans &amp; Learning Club: Spring clothing, Amazon best sellers and deals, Udemy courses, Amazon Books. Shipping worldwide.</h3>
                             <h5 t-if="with_links">Contact: latinchain.info@gmail.com</h5>
                             <br/>
-                            <!--
                             <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                                 <ins class="adsbygoogle"
                                      style="display:block"
@@ -864,7 +859,6 @@
                                 </script>
                             </div>
                             <br/>
-                            -->
                             <div style="margin-bottom:10px;" id="choosing-section">
                                 <h3 style="text-align:left">
                                     <div class="form-check" style="margin-bottom: 10px">
@@ -909,7 +903,6 @@
                                 </div>
                             </div>
                             <br/>
-                            <!--
                             <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                                 <ins class="adsbygoogle"
                                      style="display:block"
@@ -922,7 +915,6 @@
                                 </script>
                             </div>
                             <br/>
-                            -->
                             <div t-if="with_links" class="spring-clothing" id="spring-clothing">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
@@ -933,7 +925,6 @@
                                 </h5>
                             </div>
                             <br/>
-                            <!--
                             <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                                 <ins class="adsbygoogle"
                                      style="display:block"
@@ -946,7 +937,6 @@
                                 </script>
                             </div>
                             <br/>
-                            -->
                             <div t-if="with_links" class="amazon-best-deals" id="amazon-best-deals">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
@@ -1091,7 +1081,6 @@
                                 </div>
                             </div>
                             <br/>
-                            <!--
                             <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                                 <ins class="adsbygoogle"
                                      style="display:block"
@@ -1104,7 +1093,6 @@
                                 </script>
                             </div>
                             <br/>
-                            -->
                             <div class="udemy-courses" id="udemy-courses">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
@@ -1118,7 +1106,6 @@
                                 <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6595211_0834_3.jpg" width="180px" height="110px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/brand-course/" target="_blank">Udemy course</a></t></h5>
                             </div>
                             <br/>
-                            <!--
                             <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                                 <ins class="adsbygoogle"
                                      style="display:block"
@@ -1131,7 +1118,6 @@
                                 </script>
                             </div>
                             <br/>
-                            -->
                             <div class="amazon-books" id="amazon-books">
                                 <br/>
                                 <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
@@ -1152,7 +1138,6 @@
                         </div>
                         
                         <br/>
-                        <!--
                         <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px">
                             <ins class="adsbygoogle"
                                  style="display:block"
@@ -1165,7 +1150,6 @@
                             </script>
                         </div>
                         <br/>
-                        -->
                         
                         <br/><br/><br/><br/><br/><br/><br/>
                     </body>
