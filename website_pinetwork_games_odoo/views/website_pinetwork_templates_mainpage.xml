@@ -3858,6 +3858,14 @@
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                 </div>
                                 
+                                <div style="margin-top: 10px;" class="row" id="GoForwardShow2">
+                                    <button class="latinchain-specs btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-list-ol"></i></div> <div style="display: inline">dApps list</div></button>
+                                </div>
+                                
+                                <div style="margin-top: 10px;" class="row">
+                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour</div></button>
+                                </div>
+                                
                                 <div class="row getverified" style="margin-top: 10px;">
                                     <div class="col-12 px-0">
                                         <h5 style="color: #ffffff !important; background-color: #1f2434 !important; padding: 10px !important; border-radius: 20px;">
@@ -3945,14 +3953,6 @@
                                 <!--<div style="margin-top: 5px;" class="row" id="GivingTip">
                                     <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-money-bill-1"></i></div> <div style="display: inline">Send tip in Pi</div></button>
                                 </div>-->
-                                
-                                <div style="margin-top: 10px;" class="row" id="GoForwardShow2">
-                                    <button class="latinchain-specs btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-list-ol"></i></div> <div style="display: inline">dApps list</div></button>
-                                </div>
-                                
-                                <div style="margin-top: 10px;" class="row">
-                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour</div></button>
-                                </div>
                                 
                                 <div style="margin-top: 10px; display: none;" class="row loggedin">
                                     <button class="logout_latinchain btn btn-block btn-danger rounded col-12 loggedin" style="display: none; border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-from-bracket"></i></div> <div style="display: inline">Logout</div></button>
