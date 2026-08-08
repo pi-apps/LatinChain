@@ -3859,7 +3859,14 @@
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row">
-                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour</div></button>
+                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour</div></button>
+                                </div>
+                                
+                                <div style="margin-top: 10px;" class="row">
+                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCSignUp href-external btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">JOIN MEXC AND TRADE PI<br/>Pi KYB ready</div></a>
+                                </div>
+                                <div style="margin-top: 10px;" class="row">
+                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCTrade href-external btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">TRADE PI ON MEXC<br/>Pi KYB ready</div></a>
                                 </div>
                                 
                                 <div class="row getverified" style="margin-top: 10px;">
@@ -3955,7 +3962,7 @@
                                 </div>
                                 
                                 <div style="margin-top: 10px;" class="row">
-                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" ><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour</div></button>
+                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour</div></button>
                                 </div>
                                 
                                 <div style="margin-top: 10px; display: none;" class="row loggedin">
