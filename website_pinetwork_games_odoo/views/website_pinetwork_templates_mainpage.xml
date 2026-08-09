@@ -3898,15 +3898,6 @@
                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCTrade href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">TRADE PI ON MEXC<br/>Pi KYB ready</div></a>
                                 </div>
                                 
-                                <div class="getverified">
-                                    <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)<br/>Unlock for 30 days</div></a>
-                                    </div>
-                                    <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-else="">
-                                        <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
-                                    </div>
-                                </div>
-                                
                                 <div class="row getverified" style="margin-top: 10px;">
                                     <div class="col-12 px-0">
                                         <h5 style="color: #ffffff !important; background-color: #1f2434 !important; padding: 10px !important; border-radius: 20px;">
