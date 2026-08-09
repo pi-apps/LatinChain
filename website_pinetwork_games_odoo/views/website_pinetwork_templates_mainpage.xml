@@ -3862,6 +3862,15 @@
                                     <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour<br/>LatinChain tour</div></button>
                                 </div>
                                 
+                                <div class="getverified">
+                                    <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)<br/>Unlock for 30 days</div></a>
+                                    </div>
+                                    <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-else="">
+                                        <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                    </div>
+                                </div>
+                                
                                 <div style="margin-top: 10px;" class="row">
                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCSignUp href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">JOIN MEXC AND TRADE PI<br/>Pi KYB ready</div></a>
                                 </div>
@@ -3870,7 +3879,7 @@
                                 </div>
                                 
                                 <div class="row" style="margin-top: 10px;">
-                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Learning Club</div></a>
+                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Academy</div></a>
                                 </div>
                                 
                                 <div class="row getverified" style="margin-top: 10px;">
