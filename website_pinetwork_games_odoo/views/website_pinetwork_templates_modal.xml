@@ -888,14 +888,14 @@
                                         <div class="form-check" style="margin-bottom: 10px">
                                           <input class="form-check-input" type="radio" name="show-section" id="show-amazon-books" value="show-amazon-books" />
                                           <label class="form-check-label" for="show-amazon-books">
-                                            <h3>Show only Amazon books</h3>
+                                            <h3>Show only Amazon books: LatinChain Academy</h3>
                                           </label>
                                         </div>
                                         <hr t-if="with_links"/>
                                         <div class="form-check" style="margin-bottom: 10px">
                                           <input class="form-check-input" type="radio" name="show-section" id="show-udemy-courses" value="show-udemy-courses" />
                                           <label class="form-check-label" for="show-udemy-courses">
-                                            <h3>Show only Udemy courses</h3>
+                                            <h3>Show only Udemy courses: LatinChain Academy</h3>
                                           </label>
                                         </div>
                                         <hr t-if="with_links"/>
@@ -958,7 +958,7 @@
                                 <div class="amazon-books" id="amazon-books">
                                     <br/>
                                     <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
-                                        <h3>Amazon books</h3>
+                                        <h3>Amazon books: LatinChain Academy</h3>
                                     </div>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71Ir+19r4+L._CLa|2909,2525|81JvHXej7bL.jpg,71eGkTh9m0L.jpg|0,0,1322,2525+1587,0,1322,2525+661,0,1587,2525_._SY300_.jpg" width="210px" height="180px" /><br/><strong>Books Collection (more than 40 published books)<br/>(ASIN: B0F771VKRF)</strong><div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/books-collection/" target="_blank">Books Collection link</a></t></h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61HydA6aoZL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>How to develop a Pi App (webapp) on the Pi Network<br/> (ASIN: B0DK3NJ23V and ASIN: B0DK4N3XTB)<br/> (ISBN: 979-8343272321)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-book/ebook" target="_blank">eBook</a> | <a href="/piapps-book/paperback" target="_blank">Paperback</a></t></h5>
@@ -992,14 +992,14 @@
                                 <div class="udemy-courses" id="udemy-courses">
                                     <br/>
                                     <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
-                                        <h3>Udemy courses</h3>
+                                        <h3>Udemy courses: LatinChain Academy</h3>
                                         <h5>(all courses with personalized Certificate of Completion)</h5>
                                     </div>
-                                    <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6505675_3364_4.jpg" width="180px" height="110px" /><br/><strong>Learn how to develop a Pi App (webapp) on the Pi Network</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-course/" target="_blank">Udemy course</a></t></h5>
-                                    <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/4538222_ce85_5.jpg" width="180px" height="110px" /><br/><strong>Odoo 14 Technical Training en Español</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/odoo-tech-course/" target="_blank">Udemy course</a></t></h5>
-                                    <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6956213_6b6f.jpg" width="180px" height="110px" /><br/><strong>Mastering Google Gemini AI y NotebookLM</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/ai-master-course/" target="_blank">Udemy course</a></t></h5>
-                                    <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6522069_77ba.jpg" width="180px" height="110px" /><br/><strong>Aprende Inglés práctico hoy mismo (con IA)</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/english-course/" target="_blank">Udemy course</a></t></h5>
-                                    <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6595211_0834_3.jpg" width="180px" height="110px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/brand-course/" target="_blank">Udemy course</a></t></h5>
+                                    <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6505675_3364_4.jpg" width="180px" height="110px" /><br/><strong>Learn how to develop a Pi Network App (webapp): LatinChain Academy</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-course/" target="_blank">Udemy course</a></t></h5>
+                                    <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/4538222_ce85_5.jpg" width="180px" height="110px" /><br/><strong>Odoo 14 Technical Training en Español: LatinChain Academy</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/odoo-tech-course/" target="_blank">Udemy course</a></t></h5>
+                                    <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6956213_6b6f.jpg" width="180px" height="110px" /><br/><strong>Mastering Google Gemini AI y NotebookLM: LatinChain Academy</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/ai-master-course/" target="_blank">Udemy course</a></t></h5>
+                                    <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6522069_77ba.jpg" width="180px" height="110px" /><br/><strong>Aprende Inglés práctico hoy mismo: LatinChain Academy</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/english-course/" target="_blank">Udemy course</a></t></h5>
+                                    <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6595211_0834_3.jpg" width="180px" height="110px" /><br/><strong>Cómo crear tu marca personal: LatinChain Academy</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/brand-course/" target="_blank">Udemy course</a></t></h5>
                                 </div>
                                 
                                 <!--
