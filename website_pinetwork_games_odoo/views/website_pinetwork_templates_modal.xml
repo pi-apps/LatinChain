@@ -849,7 +849,7 @@
                                 <a href="https://latinchain.pinet.com/" target="_blank">https://latinchain.pinet.com/</a></h3>-->
                                 <h3 t-if="with_links">From Venezuela you can use mailboxes to import from the USA (find your own in your country): Zoom, Telocomproenusa, etc.</h3>
                                 <h3 t-if="not with_links">Udemy courses, Amazon Books.</h3>
-                                <h3 t-elif="with_links" id="share-message-1">LatinChain Fans &amp; Learning Club: Spring clothing, Amazon best sellers and deals, LatinChain Academy (Amazon Books, Udemy courses). Shipping worldwide.</h3>
+                                <h3 t-elif="with_links" id="share-message-1">LatinChain Fans &amp; Learning Club: Spring clothing, LatinChain Academy (Amazon Books, Udemy courses). Shipping worldwide.</h3>
                                 <h5 t-if="with_links">Contact: latinchain.info@gmail.com</h5>
                                 
                                 <!--
