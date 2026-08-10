@@ -19,6 +19,8 @@ from datetime import datetime, timedelta, time
 
 import textwrap
 
+mainuser = "rockcesar";
+
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True, csrf=False)
     def index(self, **kw):
@@ -1156,7 +1158,7 @@ class PiNetworkController(http.Controller):
         if pi_user_referrer:
             pi_user_referred_by = pi_user_referrer
         else:
-            pi_user_referred_by = "rockcesar"
+            pi_user_referred_by = mainuser
         
         return http.request.render('website_pinetwork_games_odoo.pinetwork', {'block_points': block_points, 'latinchain_specs': latinchain_specs, 'pi_user_referred_by': pi_user_referred_by, 'discount_active': discount_active, 'discount_percentage': discount_percentage, 'amount_latinchain_token': amount_latinchain_token, 'amount_price_topay_usd': amount_price_topay_usd, 'payoneclick': payoneclick, 'showpiad': showpiad, 'amount_latin_pay': amount_latin_pay, 'pi_ad_max': pi_ad_max, 'pi_ad_hours': pi_ad_hours, 'points_latin_amount': points_latin_amount, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     

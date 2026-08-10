@@ -1,5 +1,7 @@
 "use strict";
 
+var mainuser = "rockcesar";
+
 const delayAsync = ms => new Promise(res => setTimeout(res, ms));
 
 async function loadMessageLatinChain(){

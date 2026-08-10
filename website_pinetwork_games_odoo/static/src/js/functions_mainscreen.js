@@ -32,6 +32,8 @@ var colorbox_opened_mainnet = false;
 var is_open_tab = false;
 var is_open_tab_ads = false;
 
+//mainuser is at website_pinetwork_odoo/static/src/js/common_functions.js
+
 var eco_page_version = "?v=1.148";
 
 function setConfirmUnload(on) {
@@ -1040,8 +1042,8 @@ $( document ).ready(function() {
         var username_referrer = "";
         if($("#username").html().trim() == "")
         {
-            link_referrer = "https://latinchain.pinet.com/pinetwork/rockcesar";
-            username_referrer = "rockcesar";
+            link_referrer = "https://latinchain.pinet.com/pinetwork/" + mainuser;
+            username_referrer = mainuser;
         }
         else
         {
@@ -1954,7 +1956,7 @@ $( document ).ready(function() {
     
     async function transfer() {
         try {
-            var pi_user_referred = "rockcesar";
+            var pi_user_referred = mainuser;
             const payment = Pi.createPayment({
               // Amount of π to be paid:
               amount: parseFloat($("#pi_donate").val()),

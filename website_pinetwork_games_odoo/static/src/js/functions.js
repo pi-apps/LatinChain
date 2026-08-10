@@ -13,6 +13,7 @@ var show_pi_ad_user_time = 0;
 var pi_ad_new = false;
 var pi_ad_max = 0;
 var btnvalue = "";
+//mainuser is at website_pinetwork_odoo/static/src/js/common_functions.js
 
 function setConfirmUnload(on) {
     unloadMessage(on);
@@ -547,7 +548,7 @@ $( document ).ready(function() {
         try {
             var pi_user_referred = $("#pi-user-referred-by").val().trim();
             if(pi_user_referred == "")
-                pi_user_referred = "rockcesar";
+                pi_user_referred = mainuser;
             const payment = Pi.createPayment({
               // Amount of π to be paid:
               amount: parseFloat($("#pi_donate").val()),

@@ -22,6 +22,8 @@ import textwrap
 
 from . import pi_python
 
+mainuser = "rockcesar";
+
 class pi_transactions(models.Model):
     _name = "pi.transactions"
     _description = "Pi Transactions"
@@ -53,7 +55,7 @@ class pi_transactions(models.Model):
     cancelled = fields.Boolean('cancelled')
     user_cancelled = fields.Boolean('user_cancelled')
     json_result = fields.Text('JSON Result', required=False)
-    pi_user_referred_by = fields.Char('Pi User Referred by', default="rockcesar")
+    pi_user_referred_by = fields.Char('Pi User Referred by', default=mainuser)
     
     def action_complete_payment(self):
         """
@@ -170,12 +172,12 @@ class pi_transactions(models.Model):
                     if "pi_user_referred_by" in json_result["metadata"]:
                         pit.pi_user_referred_by = json_result["metadata"]["pi_user_referred_by"]
                     else:
-                        pit.pi_user_referred_by = "rockcesar"
+                        pit.pi_user_referred_by = mainuser
                 else:
-                    pit.pi_user_referred_by = "rockcesar"
+                    pit.pi_user_referred_by = mainuser
             else:
                 pit.from_address = ""
-                pit.pi_user_referred_by = "rockcesar"
+                pit.pi_user_referred_by = mainuser
     
     def _compute_txid_url(self):
         for pit in self:
