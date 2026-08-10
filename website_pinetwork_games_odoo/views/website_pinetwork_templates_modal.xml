@@ -816,7 +816,7 @@
                                     <a class="navbar-brand" href="#spring-clothing" onclick="$('#show-spring-clothing').click()"><i class="fa-solid fa-shirt"></i></a>
                                     <a class="navbar-brand" href="#amazon-books" onclick="$('#show-amazon-books').click()"><i class="fa-solid fa-book-open"></i></a>
                                     <a class="navbar-brand" href="#udemy-courses" onclick="$('#show-udemy-courses').click()"><i class="fa-solid fa-graduation-cap"></i></a>
-                                    <a class="navbar-brand" href="#amazon-best-deals" onclick="$('#show-amazon-best-deals').click()"><i class="fa-brands fa-amazon"></i></a>
+                                    <!--<a class="navbar-brand" href="#amazon-best-deals" onclick="$('#show-amazon-best-deals').click()"><i class="fa-brands fa-amazon"></i></a>-->
                                     <!-- Toggler button and menu items here -->
                                   </div>
                                 </nav>
@@ -898,6 +898,7 @@
                                             <h3>Show only Udemy courses: LatinChain Academy</h3>
                                           </label>
                                         </div>
+                                        <!--
                                         <hr t-if="with_links"/>
                                         <div class="form-check" style="margin-bottom: 10px" t-if="with_links">
                                           <input class="form-check-input" type="radio" name="show-section" id="show-amazon-best-deals" value="show-amazon-best-deals" />
@@ -905,6 +906,7 @@
                                             <h3>Show only Amazon best sellers and deals</h3>
                                           </label>
                                         </div>
+                                        -->
                                         <hr/>
                                     </h3>
                                     <div class="input-group input-group-lg search-section">
@@ -1018,6 +1020,7 @@
                                 </div>
                                 -->
                                 
+                                <!--
                                 <div t-if="with_links" class="amazon-best-deals" id="amazon-best-deals">
                                     <br/>
                                     <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
@@ -1161,6 +1164,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                -->
                                 
                                 <!--
                                 <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
