@@ -93,29 +93,29 @@ INSTALL:
 
 PREREQUISITES:
 
-    You need two different wallet addresses. First for issuer and the second for distributor.
+You need two different wallet addresses. First for issuer and the second for distributor.
 
-    Consider use these tools to get secret key from the wallets:
+Consider use these tools to get secret key from the wallets:
     
-    https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/mnemonicToSecret
+https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/mnemonicToSecret
 
 And this is my code version (run it in a .cjs file):
 
 CREATE TOKEN (TRUST LINE):
 
-    https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/createTrustLine.js
+https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/createTrustLine.js
     
 MINTING TOKEN:
 
-    https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/mintingToken.js
+https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/mintingToken.js
 
 SETTING HOME DOMAIN (FOR THE TOML FILE):
 
-    https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/settingHomeDomain.js
+https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/settingHomeDomain.js
 
 TOML FILE CONTENT:
 
-    https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/pi.toml
+https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/pi.toml
 
 # External Login (pi-sign-in, My version)
 
