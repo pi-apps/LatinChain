@@ -19,7 +19,7 @@ from datetime import datetime, timedelta, time
 
 import textwrap
 
-mainuser = "rockcesar";
+mainuser = "rockcesar"
 
 class Website(Website):
     @http.route('/', type='http', auth="public", website=True, csrf=False)

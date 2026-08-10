@@ -22,7 +22,7 @@ import textwrap
 
 from . import pi_python
 
-mainuser = "rockcesar";
+mainuser = "rockcesar"
 
 class pi_transactions(models.Model):
     _name = "pi.transactions"
