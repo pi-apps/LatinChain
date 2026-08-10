@@ -103,157 +103,19 @@ And this is my code version (run it in a .cjs file):
 
 CREATE TOKEN (TRUST LINE):
 
-    //Create Token (Trust line)
-    async function creatingToken()
-    {
-        const StellarSDK = require("@stellar/stellar-sdk");
-
-        const server = new StellarSDK.Horizon.Server("https://api.testnet.minepi.com");
-        const NETWORK_PASSPHRASE = "Pi Testnet";
-
-        // prepare keypairs
-        const issuerKeypair = StellarSDK.Keypair.fromSecret(""); // use actual secret key here
-        const distributorKeypair = StellarSDK.Keypair.fromSecret(""); // use actual secret key here
-
-        // define a token
-        // token code should be alphanumeric and up to 12 characters, case sensitive
-        //CHANGE THIS (TOKEN NAME)
-        const customToken = new StellarSDK.Asset("TokenName", issuerKeypair.publicKey());
-
-        const distributorAccount = await server.loadAccount(distributorKeypair.publicKey());
-
-        // look up base fee
-        const response = await server.ledgers().order("desc").limit(1).call();
-        const latestBlock = response.records[0];
-        const baseFee = latestBlock.base_fee_in_stroops;
-        
-        // prepare a transaction that establishes trustline
-        const trustlineTransaction = new StellarSDK.TransactionBuilder(distributorAccount, {
-          fee: baseFee,
-          networkPassphrase: NETWORK_PASSPHRASE,
-          timebounds: await server.fetchTimebounds(90),
-        })
-        //CHANGE THIS (LIMIT)
-          .addOperation(StellarSDK.Operation.changeTrust({ asset: customToken, limit: "100000000" }))
-          .build();
-
-        trustlineTransaction.sign(distributorKeypair);
-
-        // submit a tx
-        await server.submitTransaction(trustlineTransaction);
-        console.log("Trustline created successfully");
-    }
+    https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/createTrustLine.js
     
 MINTING TOKEN:
 
-    //Mint Token
-    async function mintingToken()
-    {
-        const StellarSDK = require("@stellar/stellar-sdk");
-        
-        const server = new StellarSDK.Horizon.Server("https://api.testnet.minepi.com");
-        const NETWORK_PASSPHRASE = "Pi Testnet";
-
-        // prepare keypairs
-        const issuerKeypair = StellarSDK.Keypair.fromSecret(""); // use actual secret key here
-        const distributorKeypair = StellarSDK.Keypair.fromSecret(""); // use actual secret key here
-
-        // define a token
-        // token code should be alphanumeric and up to 12 characters, case sensitive
-        //CHANGE THIS (TOKEN NAME)
-        const customToken = new StellarSDK.Asset("TokenName", issuerKeypair.publicKey());
-
-        const distributorAccount = await server.loadAccount(distributorKeypair.publicKey());
-
-        // look up base fee
-        const response = await server.ledgers().order("desc").limit(1).call();
-        const latestBlock = response.records[0];
-        const baseFee = latestBlock.base_fee_in_stroops;
-
-        //====================================================================================
-        // now mint LatinChain by sending from issuer account to distributor account
-
-        const issuerAccount = await server.loadAccount(issuerKeypair.publicKey());
-
-        const paymentTransaction = new StellarSDK.TransactionBuilder(issuerAccount, {
-          fee: baseFee,
-          networkPassphrase: NETWORK_PASSPHRASE,
-          timebounds: await server.fetchTimebounds(90),
-        })
-          .addOperation(
-            StellarSDK.Operation.payment({
-              destination: distributorKeypair.publicKey(),
-              asset: customToken,
-              //CHANGE THIS (AMOUNT, NO MORE THAN LIMIT IN TOKEN CREATION)
-              amount: "100000000", // amount to mint
-            })
-          )
-          .build();
-
-        paymentTransaction.sign(issuerKeypair);
-
-        // submit a tx
-        await server.submitTransaction(paymentTransaction);
-        console.log("Token issued successfully");
-
-        // checking new balance of the distributor account
-        const updatedDistributorAccount = await server.loadAccount(distributorKeypair.publicKey());
-        updatedDistributorAccount.balances.forEach((balance) => {
-          if (balance.asset_type === "native") {
-            console.log(`Test-Pi Balance: ${balance.balance}`);
-          } else {
-            console.log(`${balance.asset_code} Balance: ${balance.balance}`);
-          }
-        });
-    }
+    https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/mintingToken.js
 
 SETTING HOME DOMAIN (FOR THE TOML FILE):
 
-    //Setting Home Domain (TOML file should be at https://yourdomain.com/.well-known/pi.toml)
-    async function settingHomeDomainTOMLToken()
-    {
-        const StellarSDK = require("@stellar/stellar-sdk");
-
-        const server = new StellarSDK.Horizon.Server("https://api.testnet.minepi.com");
-        const NETWORK_PASSPHRASE = "Pi Testnet";
-
-        // prepare keypairs
-        const issuerKeypair = StellarSDK.Keypair.fromSecret(""); // use actual secret key here
-
-        const issuerAccount = await server.loadAccount(issuerKeypair.publicKey());
-        
-        // look up base fee
-        const response = await server.ledgers().order("desc").limit(1).call();
-        const latestBlock = response.records[0];
-        const baseFee = latestBlock.base_fee_in_stroops;
-
-        const setOptionsTransaction = new StellarSDK.TransactionBuilder(issuerAccount, {
-          fee: baseFee,
-          networkPassphrase: NETWORK_PASSPHRASE,
-          timebounds: await server.fetchTimebounds(90),
-        })
-        //CHANGE THIS (HOME DOMAIN)
-          .addOperation(StellarSDK.Operation.setOptions({ homeDomain: "yourdomain.com" })) // replace with your actual domain
-          .build();
-
-        setOptionsTransaction.sign(issuerKeypair);
-
-        await server.submitTransaction(setOptionsTransaction);
-        console.log("Home Domain is set successfully.");
-    }
+    https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/settingHomeDomain.js
 
 TOML FILE CONTENT:
 
-    # You can use my file example as reference in the following link:
-    # https://test.latin-chain.com/es/.well-known/pi.toml
-    
-    # And another short file example starts here
-    [[CURRENCIES]]
-    code="TestToken"
-    issuer="GCNCQ6RRVEERQXWGKB3XMRK6VGJRIHGT5UTDAAU6QEU5NL2AHFOJDYLC"
-    name="Pi Core Team"
-    desc="This is a test token that is created as an example and has no value."
-    image="https://image-of-your-token.com/image.png"
+    https://github.com/rockcesar/LatinChainDevelopments/tree/master/Pi_A2U_payment/newToken/pi.toml
 
 # External Login (pi-sign-in, My version)
 
@@ -263,87 +125,12 @@ THIS IS MY WAY.
 
 LOGIN PAGE: Click in button to login.
 
-Using this file:
+Use this file:
 
 https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login_step.xml
 
-You need this:
-
-    <script>
-        document.getElementById("pi-signin").addEventListener("click", () => {
-            const state = crypto.randomUUID();
-            sessionStorage.setItem("latinchain_pi_oauth_state", state);
-
-            const url = new URL("https://accounts.pinet.com/oauth/authorize");
-            url.searchParams.set("response_type", "token");
-            url.searchParams.set("client_id", "YOUR-CLIENT-ID-FROM-DEV-PORTAL");
-            url.searchParams.set("redirect_uri", "https://latin-chain.com/external-login");
-            url.searchParams.set("scope", "username wallet_address");
-            url.searchParams.set("state", state);
-
-            window.location.assign(url.toString());
-        });
-    </script>
-
 SHOW DATA AFTER LOGIN: Receive the login data.
 
-Using this file:
+Use this file:
 
 https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login.xml
-
-You need this:
-
-    <script>
-        async function handlePiCallback() {
-            // You need these ids in the HTML
-            const statusDiv = document.getElementById("status");
-            const loader = document.getElementById("loader");
-            const userInfo = document.getElementById("user-info");
-            const pisignin = document.getElementById("pisignin");
-
-            try {
-                const params = new URLSearchParams(window.location.hash.slice(1));
-                const expectedState = sessionStorage.getItem("latinchain_pi_oauth_state");
-                sessionStorage.removeItem("latinchain_pi_oauth_state");
-
-                if (!params.get("access_token")) {
-                    statusDiv.textContent = "Please log in via the LatinChain portal.";
-                    loader.classList.add("hidden");
-                    pisignin.classList.remove("hidden");
-                    return;
-                }
-
-                if (params.get("state") !== expectedState) {
-                    throw new Error("Security error: State mismatch.");
-                }
-
-                const accessToken = params.get("access_token");
-
-                const response = await fetch("https://api.minepi.com/v2/me", {
-                    headers: { Authorization: `Bearer ${accessToken}` },
-                });
-
-                if (!response.ok) throw new Error("Could not retrieve account info.");
-                
-                const me = await response.json();
-
-                // DO SOME THING WITH THE: me.username.
-                
-                //document.getElementById("username").textContent = me.username;
-                
-                loader.classList.add("hidden");
-                userInfo.classList.remove("hidden");
-                statusDiv.textContent = "Authentication Successful";
-                statusDiv.style.color = "green";
-                
-                history.replaceState(null, "", window.location.pathname);
-
-            } catch (err) {
-                statusDiv.textContent = "Error: " + err.message;
-                statusDiv.style.color = "red";
-                loader.classList.add("hidden");
-            }
-        }
-
-        handlePiCallback();
-    </script>
