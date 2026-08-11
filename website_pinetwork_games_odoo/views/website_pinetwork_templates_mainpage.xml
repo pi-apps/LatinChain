@@ -3941,10 +3941,14 @@
                                 </div>-->
                                 
                                 <div class="getverified">
-                                    <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                    <div class="row">
+                                        <hr style="max-width: 100%; width: 100%"/>
+                                    </div>
+                                    
+                                    <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                         <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)<br/>Unlock for 30 days</div></a>
                                     </div>
-                                    <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-else="">
+                                    <div class="row" id="GoForwardShow1" t-else="">
                                         <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                     </div>
                                     
@@ -3961,13 +3965,17 @@
                                             <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
                                         </div>
                                     </div>
+                                    
+                                    <div style="margin-top: 10px;" class="row">
+                                        <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                    </div>
                                 </div>
                                 
-                                <div style="margin-top: 10px;" class="row">
-                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                <div class="row">
+                                    <hr style="max-width: 100%; width: 100%"/>
                                 </div>
                                 
-                                <div class="row" style="margin-top: 10px;">
+                                <div class="row">
                                     <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Academy</div></a>
                                 </div>
                                 
@@ -3978,11 +3986,15 @@
                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCTrade href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">TRADE PI ON MEXC<br/>Pi KYB ready</div></a>
                                 </div>
                                 
+                                <div class="row">
+                                    <hr style="max-width: 100%; width: 100%"/>
+                                </div>
+                                
                                 <!--<div style="margin-top: 5px;" class="row" id="GivingTip">
                                     <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-money-bill-1"></i></div> <div style="display: inline">Send tip in Pi</div></button>
                                 </div>-->
                                 
-                                <div style="margin-top: 10px;" class="row" id="GoForwardShow2">
+                                <div class="row" id="GoForwardShow2">
                                     <button class="latinchain-specs btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-list-ol"></i></div> <div style="display: inline">dApps list<br/>LatinChain specs</div></button>
                                 </div>
                                 
