@@ -830,14 +830,14 @@
                                 
                                 <t t-set="link_tag_code" t-value="amazon_aff_code"/>
                                 
-                                <div t-if="with_links">
+                                <!--<div t-if="with_links">
                                     <br/>
                                     <t t-set="link_value" t-value="'https://www.amazon.com/?&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=f84d100dc0684303b0c16c600d90f848&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
                                     <a t-att-href="link_value" target="_blank">
                                         <link rel="icon" type="image/png" href=""/>
                                         <img src="/website_pinetwork_games_odoo/static/src/img/club/amazon-purchase-image.png?v=1.104" width="250px" height="250px" />
                                     </a>
-                                </div>
+                                </div>-->
                                 
                                 <h5 t-if="with_links">
                                     Go down for more
