@@ -3887,18 +3887,7 @@
                                     <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour<br/>LatinChain tour</div></button>
                                 </div>
                                 
-                                <div class="row" style="margin-top: 10px;">
-                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Academy</div></a>
-                                </div>
-                                
-                                <div style="margin-top: 10px;" class="row">
-                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCSignUp href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">JOIN MEXC AND TRADE PI<br/>Pi KYB ready</div></a>
-                                </div>
-                                <div style="margin-top: 10px; display: none;" class="row">
-                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCTrade href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">TRADE PI ON MEXC<br/>Pi KYB ready</div></a>
-                                </div>
-                                
-                                <div class="row getverified" style="margin-top: 10px;">
+                                <!--<div class="row getverified" style="margin-top: 10px;">
                                     <div class="col-12 px-0">
                                         <h5 style="color: #ffffff !important; background-color: #1f2434 !important; padding: 10px !important; border-radius: 20px;">
                                             <div>
@@ -3918,14 +3907,14 @@
                                                     
                                                     <div style="margin-bottom: 8px">
                                                         <del>
-                                                            <div style="display: inline">Pi <t t-esc="pi_total" /></div><!-- <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="usd_total" /></div>-->
+                                                            <div style="display: inline">Pi <t t-esc="pi_total" /></div>
                                                             <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: ' + ''.join(c + '\u0336' for c in 'USD '+str(usd_total)) + '. Updated each minute (on Mainnet), and each 1 day (on Testnet)'">
                                                                 <i class="fa-solid fa-circle-info"></i>
                                                             </div>
                                                         </del>
                                                     </div>
                                                     <div style="margin-bottom: 8px">
-                                                        <div style="display: inline">Pi <t t-esc="pi_discount" /></div><!-- <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="usd_discount" /></div>-->
+                                                        <div style="display: inline">Pi <t t-esc="pi_discount" /></div>
                                                         <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(usd_discount) + '. Updated each minute (on Mainnet), and each 1 day (on Testnet)'">
                                                             <i class="fa-solid fa-circle-info"></i>
                                                         </div>
@@ -3933,7 +3922,7 @@
                                                 </div>
                                                 <div t-else="">
                                                     <div style="margin-bottom: 8px">
-                                                        <div style="display: inline">Pi <t t-esc="amount" /></div><!-- <div style="display: inline">&#8776;</div> <div style="display: inline">USD <t t-esc="amount_price_topay_usd" /></div> -->
+                                                        <div style="display: inline">Pi <t t-esc="amount" /></div>
                                                         <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(amount_price_topay_usd) + '. Updated each minute (on Mainnet), and each 1 day (on Testnet)'">
                                                             <i class="fa-solid fa-circle-info"></i>
                                                         </div>
@@ -3949,7 +3938,7 @@
                                             </div>
                                         </h5>
                                     </div>
-                                </div>
+                                </div>-->
                                 
                                 <div class="getverified">
                                     <div style="margin-top: 10px;" class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
@@ -3976,6 +3965,17 @@
                                 
                                 <div style="margin-top: 10px;" class="row">
                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                </div>
+                                
+                                <div class="row" style="margin-top: 10px;">
+                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Academy</div></a>
+                                </div>
+                                
+                                <div style="margin-top: 10px;" class="row">
+                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCSignUp href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">JOIN MEXC AND TRADE PI<br/>Pi KYB ready</div></a>
+                                </div>
+                                <div style="margin-top: 10px; display: none;" class="row">
+                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCTrade href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">TRADE PI ON MEXC<br/>Pi KYB ready</div></a>
                                 </div>
                                 
                                 <!--<div style="margin-top: 5px;" class="row" id="GivingTip">
