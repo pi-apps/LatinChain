@@ -3883,9 +3883,9 @@
                                     <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://ecosystem.latin-chain.com/page-mainnet" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                 </div>
                                 
-                                <div style="margin-top: 10px;" class="row">
+                                <!--<div style="margin-top: 10px;" class="row">
                                     <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour<br/>LatinChain tour</div></button>
-                                </div>
+                                </div>-->
                                 
                                 <!--<div class="row getverified" style="margin-top: 10px;">
                                     <div class="col-12 px-0">
