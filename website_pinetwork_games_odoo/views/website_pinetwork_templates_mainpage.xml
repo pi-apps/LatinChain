@@ -3732,6 +3732,31 @@
                       </div>
                     </div>
                     
+                    <style>
+                        .hr-title {
+                          display: flex;
+                          flex-direction: row;
+                          align-items: center;
+                        }
+
+                        .hr-title::before,
+                        .hr-title::after {
+                          content: "";
+                          flex: 1 1;
+                          border-bottom: 2px solid black;
+                          margin: auto;
+                        }
+
+                        .hr-title::before {
+                          margin-right: 10px;
+                        }
+
+                        .hr-title::after {
+                          margin-left: 10px;
+                        }
+
+                    </style>
+                    
                     <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999 !important; justify-content: center; align-items: center; word-break: break-word;">
                         <div style="display: flex; flex-direction: column; top: 20px; position: fixed; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333; min-width: 250px; max-width: 90%; max-height: calc(100% - 40px); overflow-y: auto;">
                             <div id="all-messages" style="display: flex;">
@@ -3867,7 +3892,11 @@
                                     </div>
                                 </div>
                                 
-                                <div class="row" style="margin-top: 10px;">
+                                <div class="hr-title">
+                                    <h5>1st floor</h5>
+                                </div>
+                                
+                                <div class="row">
                                     <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">News<br/>LatinChain News</div></a>
                                 </div>
                                 
@@ -3941,8 +3970,8 @@
                                 </div>-->
                                 
                                 <div class="getverified">
-                                    <div class="row">
-                                        <hr style="max-width: 100%; width: 100%"/>
+                                    <div class="hr-title">
+                                        <h5>Unlock</h5>
                                     </div>
                                     
                                     <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
@@ -3971,8 +4000,8 @@
                                     </div>
                                 </div>
                                 
-                                <div class="row">
-                                    <hr style="max-width: 100%; width: 100%"/>
+                                <div class="hr-title">
+                                    <h5>Various</h5>
                                 </div>
                                 
                                 <div class="row">
@@ -3986,8 +4015,8 @@
                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCTrade href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">TRADE PI ON MEXC<br/>Pi KYB ready</div></a>
                                 </div>
                                 
-                                <div class="row">
-                                    <hr style="max-width: 100%; width: 100%"/>
+                                <div class="hr-title">
+                                    <h5>Info</h5>
                                 </div>
                                 
                                 <!--<div style="margin-top: 5px;" class="row" id="GivingTip">
