@@ -123,13 +123,13 @@ Official DOCS: https://github.com/pi-apps/pi-platform-docs/blob/master/pi-sign-i
 
 THIS IS MY WAY.
 
-LOGIN PAGE: Click in button to login.
+LOGIN PAGE: Click in button to login. Working URL: https://latin-chain.com/pi-sign-in
 
 Use this file:
 
 https://github.com/rockcesar/LatinChainDevelopments/blob/master/website_pinetwork_games_odoo/views/website_pinetwork_templates_external_login_step.xml
 
-SHOW DATA AFTER LOGIN: Receive the login data.
+SHOW DATA AFTER LOGIN: Receive the login data. Working URL: https://latin-chain.com/external-login
 
 Use this file:
 
