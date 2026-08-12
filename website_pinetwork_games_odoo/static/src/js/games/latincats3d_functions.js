@@ -170,6 +170,9 @@ async function saveGameData() {
         // Save the raw object to IndexedDB
         await setItem(SAVE_KEY, GAME.state);
         
+        if(localStorage.getItem(SAVE_KEY))
+            localStorage.removeItem(SAVE_KEY);
+        
         GAME.lastSavedState = currentStateStr;
         
         setTimeout(() => {

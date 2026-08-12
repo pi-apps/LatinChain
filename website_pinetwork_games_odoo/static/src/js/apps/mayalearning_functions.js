@@ -53,6 +53,9 @@
             
             try {
                 await setItem('maya-course-lang', currentLang);
+                
+                if(localStorage.getItem('maya-course-lang'))
+                    localStorage.removeItem('maya-course-lang');
             } catch (error) {
                 console.error('Error al guardar el idioma en IndexedDB:', error);
             }
@@ -109,6 +112,9 @@
         
         try {
             await setItem('maya-course-section', sectionId);
+            
+            if(localStorage.getItem('maya-course-section'))
+                localStorage.removeItem('maya-course-section');
         } catch (error) {
             console.error('Error al guardar la sección en IndexedDB:', error);
         }

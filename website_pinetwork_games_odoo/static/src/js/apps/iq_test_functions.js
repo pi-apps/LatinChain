@@ -488,6 +488,9 @@ async function finishQuiz() {
         date: dateString
     };
     await setItem('iq_test_last_result', resultData);
+    
+    if(localStorage.getItem('iq_test_last_result'))
+        localStorage.removeItem('iq_test_last_result');
 
     // Show Certificate
     renderCertificate(userName, iq, category, dateStringCert);

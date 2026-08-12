@@ -198,6 +198,9 @@ async function saveLanguagesToIndexedDB() {
     
     try {
         await setItem('selectedLanguages', languageCodes);
+        
+        if(localStorage.getItem('selectedLanguages'))
+            localStorage.removeItem('selectedLanguages');
     } catch (e) {
         console.error("Failed to save languages to IndexedDB:", e);
     }

@@ -541,6 +541,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     async function saveProgress() {
         try {
             await setItem('odooLearningProgress', progress); // No JSON stringification needed
+            
+            if(localStorage.getItem('odooLearningProgress'))
+                localStorage.removeItem('odooLearningProgress');
         } catch (e) {
             console.error("Failed to save progress to IndexedDB:", e);
         }

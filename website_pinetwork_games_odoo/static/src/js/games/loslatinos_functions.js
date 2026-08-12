@@ -135,6 +135,9 @@ async function removeItem(key) {
 async function saveGame() {
     try {
         await setItem(SAVE_KEY, state);
+        
+        if(localStorage.getItem(SAVE_KEY))
+            localStorage.removeItem(SAVE_KEY);
     } catch (e) {
         console.error("Error saving game:", e);
     }

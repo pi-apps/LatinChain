@@ -230,6 +230,10 @@ async function saveGameState() {
     };
     try {
         await setItem(STORAGE_KEY, gameState);
+        
+        if(localStorage.getItem(STORAGE_KEY))
+            localStorage.removeItem(STORAGE_KEY);
+        
         console.log('Game state saved to IndexedDB.');
     } catch (e) {
         console.error('Error saving game state to IndexedDB:', e);

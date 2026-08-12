@@ -201,6 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedVoiceName = voiceSelect.selectedOptions[0].getAttribute('data-name');
             try {
                 await setItem('lastVoiceName', selectedVoiceName);
+                
+                if(localStorage.getItem('lastVoiceName'))
+                    localStorage.removeItem('lastVoiceName');
             } catch (error) {
                 console.error('Failed to save last voice to IndexedDB:', error);
             }

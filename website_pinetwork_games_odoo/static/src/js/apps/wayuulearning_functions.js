@@ -502,6 +502,9 @@ async function setLanguage(lang) {
     // Guardar en IndexedDB asíncronamente
     try {
         await setItem('wayuunaiki_lang', lang);
+        
+        if(localStorage.getItem('wayuunaiki_lang'))
+            localStorage.removeItem('wayuunaiki_lang');
     } catch (e) {
         console.warn("Error al guardar idioma en IndexedDB", e);
     }

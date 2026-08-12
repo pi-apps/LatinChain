@@ -82,6 +82,10 @@ async function removeItem(key) {
 // --- SAVE / LOAD LOGIC ---
 async function saveGame() {
     await setItem(SAVE_KEY, player);
+    
+    if(localStorage.getItem(SAVE_KEY))
+        localStorage.removeItem(SAVE_KEY);
+    
     await checkSaveUI();
 }
 

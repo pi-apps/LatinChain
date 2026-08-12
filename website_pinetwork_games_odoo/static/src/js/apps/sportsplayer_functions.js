@@ -351,6 +351,10 @@ document.getElementById('close-settings-btn').addEventListener('click', () => {
 // Save layout to IndexedDB and refresh the feed immediately
 document.getElementById('save-order-btn').addEventListener('click', async () => {
     await setItem('sportsFeedOrder', userOrder);
+    
+    if(localStorage.getItem('sportsFeedOrder'))
+        localStorage.removeItem('sportsFeedOrder');
+    
     document.getElementById('settings-modal').classList.add('hidden');
     renderSportSections(); 
     fetchAndPopulate(false); // Re-render using cached data (no need to re-fetch on simple re-order)

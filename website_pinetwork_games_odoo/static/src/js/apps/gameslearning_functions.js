@@ -657,6 +657,9 @@ async function saveProgress() {
     try {
         const storageKey = `${currentCourse}LearningProgress`;
         await setItem(storageKey, progress); // No JSON.stringify needed
+        
+        if(localStorage.getItem(storageKey))
+            localStorage.removeItem(storageKey);
     } catch (e) {
         console.error("Failed to save progress to IndexedDB:", e);
     }
@@ -852,6 +855,9 @@ async function switchCourse(courseName) {
     updateProgressDisplay(); // Update progress display for the new course
 
     await setItem('lastActiveCourse', currentCourse);
+    
+    if(localStorage.getItem('lastActiveCourse'))
+        localStorage.removeItem('lastActiveCourse');
 }
 
 // Event listeners for course selector buttons

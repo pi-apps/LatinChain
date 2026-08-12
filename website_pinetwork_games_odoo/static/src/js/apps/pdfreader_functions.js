@@ -203,6 +203,9 @@ pageNumInput.addEventListener('blur', goToSpecificPage);
 const saveZoomLevel = async (zoom) => {
     try {
         await setItem('pdfReaderZoom', zoom.toString());
+        
+        if(localStorage.getItem('pdfReaderZoom'))
+            localStorage.removeItem('pdfReaderZoom');
     } catch (e) {
         console.error("Error saving zoom level to IndexedDB:", e);
     }
