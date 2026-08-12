@@ -1,15 +1,61 @@
-(function() {
+(async function() {
+    // --- INDEXEDDB SETUP ---
+    const DB_NAME = 'MayaCourseDB';
+    const STORE_NAME = 'SettingsStore';
+    const DB_VERSION = 1;
+
+    function openDB() {
+        return new Promise((resolve, reject) => {
+            const request = indexedDB.open(DB_NAME, DB_VERSION);
+            request.onupgradeneeded = (e) => {
+                const db = e.target.result;
+                if (!db.objectStoreNames.contains(STORE_NAME)) {
+                    db.createObjectStore(STORE_NAME);
+                }
+            };
+            request.onsuccess = (e) => resolve(e.target.result);
+            request.onerror = (e) => reject(e.target.error);
+        });
+    }
+
+    async function setItem(key, value) {
+        const db = await openDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readwrite');
+            const store = tx.objectStore(STORE_NAME);
+            const req = store.put(value, key);
+            req.onsuccess = () => resolve();
+            req.onerror = (e) => reject(e.target.error);
+        });
+    }
+
+    async function getItem(key) {
+        const db = await openDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readonly');
+            const store = tx.objectStore(STORE_NAME);
+            const req = store.get(key);
+            req.onsuccess = () => resolve(req.result);
+            req.onerror = (e) => reject(e.target.error);
+        });
+    }
+
     // ── LANGUAGE TOGGLE ──
     const langBtns = document.querySelectorAll('.lang-btn');
     let currentLang = 'es';
 
     langBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', async () => {
             langBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentLang = btn.dataset.lang;
             updateLanguage(currentLang);
-            localStorage.setItem('maya-course-lang', currentLang);
+            
+            try {
+                await setItem('maya-course-lang', currentLang);
+            } catch (error) {
+                console.error('Error al guardar el idioma en IndexedDB:', error);
+            }
         });
     });
 
@@ -26,20 +72,24 @@
     }
 
     // Load saved language
-    const savedLang = localStorage.getItem('maya-course-lang');
-    if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
-        currentLang = savedLang;
-        langBtns.forEach(b => {
-            b.classList.toggle('active', b.dataset.lang === savedLang);
-        });
-        updateLanguage(currentLang);
+    try {
+        const savedLang = await getItem('maya-course-lang');
+        if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
+            currentLang = savedLang;
+            langBtns.forEach(b => {
+                b.classList.toggle('active', b.dataset.lang === savedLang);
+            });
+            updateLanguage(currentLang);
+        }
+    } catch (error) {
+        console.error('Error al cargar el idioma desde IndexedDB:', error);
     }
 
     // ── NAVIGATION TABS ──
     const navTabs = document.querySelectorAll('.nav-tab');
     const sections = document.querySelectorAll('.section');
 
-    function activateSection(sectionId) {
+    async function activateSection(sectionId) {
         sections.forEach(s => s.classList.remove('active'));
         navTabs.forEach(t => t.classList.remove('active'));
 
@@ -56,28 +106,42 @@
         if (history.pushState) {
             history.pushState(null, null, '#' + sectionId);
         }
-        localStorage.setItem('maya-course-section', sectionId);
+        
+        try {
+            await setItem('maya-course-section', sectionId);
+        } catch (error) {
+            console.error('Error al guardar la sección en IndexedDB:', error);
+        }
     }
 
     navTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            activateSection(tab.dataset.section);
+        tab.addEventListener('click', async () => {
+            await activateSection(tab.dataset.section);
         });
     });
 
-    // Load section from hash or localStorage
-    const hash = window.location.hash.replace('#', '');
-    const savedSection = localStorage.getItem('maya-course-section');
-    const initialSection = hash || savedSection || 'inicio';
-    if (document.getElementById('sec-' + initialSection)) {
-        activateSection(initialSection);
+    // Load section from hash or IndexedDB
+    try {
+        const hash = window.location.hash.replace('#', '');
+        const savedSection = await getItem('maya-course-section');
+        const initialSection = hash || savedSection || 'inicio';
+        
+        if (document.getElementById('sec-' + initialSection)) {
+            await activateSection(initialSection);
+        }
+    } catch (error) {
+        console.error('Error al cargar la sección desde IndexedDB:', error);
+        // Fallback en caso de error
+        if (document.getElementById('sec-inicio')) {
+            await activateSection('inicio');
+        }
     }
 
     // Handle back/forward browser buttons
-    window.addEventListener('hashchange', () => {
+    window.addEventListener('hashchange', async () => {
         const h = window.location.hash.replace('#', '');
         if (h && document.getElementById('sec-' + h)) {
-            activateSection(h);
+            await activateSection(h);
         }
     });
 

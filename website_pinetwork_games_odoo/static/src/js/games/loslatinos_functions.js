@@ -35,6 +35,9 @@ const dict = {
 let currentLang = 'en';
 function t(key) { return dict[currentLang][key]; }
 
+// Flag to check if we loaded a saved game asynchronously
+let hasSavedGame = false;
+
 function updateStartScreenLang() {
     currentLang = document.getElementById('lang-select').value;
     document.getElementById('t-subtitle').innerText = t('subtitle');
@@ -51,7 +54,7 @@ function updateStartScreenLang() {
     document.getElementById('t-clearbtn').innerText = t('clearbtn');
     
     // Check if we are loading a game or starting new for the button text
-    if(localStorage.getItem('losLatinosSave')) {
+    if(hasSavedGame) {
         document.getElementById('t-startbtn').innerText = currentLang === 'en' ? "Continue Life" : "Continuar Vida";
     } else {
         document.getElementById('t-startbtn').innerText = t('startbtn');
@@ -74,6 +77,89 @@ const shopCatalog = [
     { id: 'bed', nameEn: 'Fancy Bed', nameEs: 'Cama Lujosa', cost: 500, energyBonus: 30 },
     { id: 'plant', nameEn: 'Indoor Plant', nameEs: 'Planta de Interior', cost: 50, funBonus: 5 }
 ];
+
+
+// --- INDEXEDDB SETUP ---
+const DB_NAME = 'LifeSimulatorDB';
+const STORE_NAME = 'SaveStore';
+const SAVE_KEY = 'losLatinosSave';
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (e) => resolve(e.target.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.put(value, key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.get(key);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function removeItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.delete(key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function saveGame() {
+    try {
+        await setItem(SAVE_KEY, state);
+    } catch (e) {
+        console.error("Error saving game:", e);
+    }
+}
+
+async function loadGame() {
+    try {
+        const saved = await getItem(SAVE_KEY);
+        if(saved) {
+            state = saved; 
+            hasSavedGame = true;
+            return true;
+        }
+    } catch (e) {
+        console.error("Error loading game:", e);
+    }
+    hasSavedGame = false;
+    return false;
+}
+
+async function clearSave() {
+    await removeItem(SAVE_KEY);
+    location.reload();
+}
+
 
 // --- THREE.JS SETUP ---
 const scene = new THREE.Scene();
@@ -518,26 +604,11 @@ window.addEventListener('pointerdown', (e) => {
     }
 });
 
-function saveGame() {
-    localStorage.setItem('losLatinosSave', JSON.stringify(state));
-}
-function loadGame() {
-    const saved = localStorage.getItem('losLatinosSave');
-    if(saved) {
-        try { state = JSON.parse(saved); return true; } catch(e){}
-    }
-    return false;
-}
-function clearSave() {
-    localStorage.removeItem('losLatinosSave');
-    location.reload();
-}
-
 function startGame() {
     document.getElementById('start-screen').classList.add('hidden');
     document.getElementById('hud').classList.remove('hidden');
     
-    const isNewGame = !localStorage.getItem('losLatinosSave');
+    const isNewGame = !hasSavedGame;
     
     currentLang = document.getElementById('lang-select').value;
     state.lang = currentLang;
@@ -708,25 +779,29 @@ function animate() {
 }
 
 // --- QUIT GAME ---
-function quitGame() {
-    saveGame(); // Ensure the latest stats and location are stored
+async function quitGame() {
+    await saveGame(); // Ensure the latest stats and location are stored using await
     location.reload(); // Reloads the page to safely clear the 3D memory and return to the main menu
 }
 
-// --- INITIALIZE UI WITH SAVE DATA ---
-if (loadGame()) {
-    document.getElementById('lang-select').value = state.lang;
-    document.getElementById('city-select').value = state.city;
-    document.getElementById('sex-select').value = state.sex;
+// --- INITIALIZE APP WITH ASYNC DATA LOAD ---
+window.onload = async () => {
+    const isLoaded = await loadGame();
     
-    document.getElementById('color-skin').value = state.playerAppearance.skin;
-    document.getElementById('color-hair').value = state.playerAppearance.hair;
-    document.getElementById('color-shirt').value = state.playerAppearance.shirt;
-    document.getElementById('color-pants').value = state.playerAppearance.pants;
-}
-
-updateStartScreenLang();
-animate();
+    if (isLoaded) {
+        document.getElementById('lang-select').value = state.lang;
+        document.getElementById('city-select').value = state.city;
+        document.getElementById('sex-select').value = state.sex;
+        
+        document.getElementById('color-skin').value = state.playerAppearance.skin;
+        document.getElementById('color-hair').value = state.playerAppearance.hair;
+        document.getElementById('color-shirt').value = state.playerAppearance.shirt;
+        document.getElementById('color-pants').value = state.playerAppearance.pants;
+    }
+    
+    updateStartScreenLang();
+    animate();
+};
 
 window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;

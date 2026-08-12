@@ -281,12 +281,60 @@ const nameInput = document.getElementById('username');
 const lastResultBtn = document.getElementById('last-result-btn');
 const highResultBtn = document.getElementById('high-result-btn');
 
+
+// --- INDEXEDDB SETUP ---
+const DB_NAME = 'IQTestDB';
+const STORE_NAME = 'ResultsStore';
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (e) => resolve(e.target.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.put(value, key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.get(key);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+
 // Check for saved result on load
-window.onload = function() {
+window.onload = async function() {
     applyLanguage();
-    const savedData = localStorage.getItem('iq_test_last_result');
-    if (savedData) {
-        lastResultBtn.classList.remove('hidden');
+    
+    try {
+        const savedData = await getItem('iq_test_last_result');
+        if (savedData) {
+            lastResultBtn.classList.remove('hidden');
+        }
+    } catch (e) {
+        console.error("Error loading data from IndexedDB:", e);
     }
     
     highResultBtn.classList.remove('hidden');
@@ -418,7 +466,7 @@ function getIQCategory(iq) {
     return translations.levels["Below Average"];
 }
 
-function finishQuiz() {
+async function finishQuiz() {
     clearInterval(timerInterval);
     const timeTaken = (Date.now() - startTime) / 1000; // in seconds
     
@@ -432,14 +480,14 @@ function finishQuiz() {
     const dateString = year + "-" + month + "-" + day;
     const dateStringCert = day + "/" + month + "/" + year;
 
-    // Save to LocalStorage
+    // Save to IndexedDB
     const resultData = {
         name: userName,
         iq: iq,
         category: category,
         date: dateString
     };
-    localStorage.setItem('iq_test_last_result', JSON.stringify(resultData));
+    await setItem('iq_test_last_result', resultData);
 
     // Show Certificate
     renderCertificate(userName, iq, category, dateStringCert);
@@ -453,22 +501,26 @@ function finishQuiz() {
     lastResultBtn.classList.remove('hidden');
 }
 
-function viewLastCertificate() {
-    const savedData = JSON.parse(localStorage.getItem('iq_test_last_result'));
-    if (savedData) {
-        var dateObj = new Date(savedData.date);
-        const month   = dateObj.getMonth() + 1; // months from 1-12
-        const day     = dateObj.getDate();
-        const year    = dateObj.getFullYear();
-        dateObj = new Date(year + "-" + month + "-" + day);
-        const dateString = year + "-" + month + "-" + day;
-        
-        const dateStringCert = day + "/" + month + "/" + year;
-        
-        setIQResult(savedData.name, savedData.iq, savedData.category, dateString);
-        renderCertificate(savedData.name, savedData.iq, savedData.category, dateStringCert);
-        startScreen.classList.add('hidden');
-        resultScreen.classList.remove('hidden');
+async function viewLastCertificate() {
+    try {
+        const savedData = await getItem('iq_test_last_result');
+        if (savedData) {
+            var dateObj = new Date(savedData.date);
+            const month   = dateObj.getMonth() + 1; // months from 1-12
+            const day     = dateObj.getDate();
+            const year    = dateObj.getFullYear();
+            dateObj = new Date(year + "-" + month + "-" + day);
+            const dateString = year + "-" + month + "-" + day;
+            
+            const dateStringCert = day + "/" + month + "/" + year;
+            
+            setIQResult(savedData.name, savedData.iq, savedData.category, dateString);
+            renderCertificate(savedData.name, savedData.iq, savedData.category, dateStringCert);
+            startScreen.classList.add('hidden');
+            resultScreen.classList.remove('hidden');
+        }
+    } catch (e) {
+        console.error("Error retrieving data from IndexedDB:", e);
     }
 }
 

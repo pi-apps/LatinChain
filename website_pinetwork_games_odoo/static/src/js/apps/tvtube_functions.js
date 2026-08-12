@@ -2,7 +2,7 @@
 lucide.createIcons();
 
 // Dark Mode Logic
-const themeToggle = document.getElementById('themeToggle');
+/*const themeToggle = document.getElementById('themeToggle');
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
@@ -17,7 +17,7 @@ themeToggle.addEventListener('click', () => {
     } else {
         localStorage.theme = 'light';
     }
-});
+});*/
 
 // Data: YouTube Channels (Custom user list)
 const channelsData = [

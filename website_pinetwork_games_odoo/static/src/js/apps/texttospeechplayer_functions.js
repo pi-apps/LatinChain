@@ -1,3 +1,44 @@
+// --- INDEXEDDB SETUP ---
+const DB_NAME = 'TTSAppDB';
+const STORE_NAME = 'SettingsStore';
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (e) => resolve(e.target.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.put(value, key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.get(key);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // References to DOM elements
     const articleText = document.getElementById('articleText');
@@ -116,8 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let speech = new SpeechSynthesisUtterance();
         let voices = [];
 
-        // Function to fill the voice selector and restore last selection
-        function populateVoiceList() {
+        // Function to fill the voice selector and restore last selection asynchronously
+        async function populateVoiceList() {
             voices = window.speechSynthesis.getVoices().sort((a, b) => {
                 const aname = a.name.toUpperCase();
                 const bname = b.name.toUpperCase();
@@ -134,13 +175,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 voiceSelect.appendChild(option);
             });
 
-            // Restore the last selected voice from localStorage
-            const lastVoiceName = localStorage.getItem('lastVoiceName');
-            if (lastVoiceName) {
-                const savedVoiceOption = [...voiceSelect.options].find(option => option.dataset.name === lastVoiceName);
-                if (savedVoiceOption) {
-                    savedVoiceOption.selected = true;
+            // Restore the last selected voice from IndexedDB
+            try {
+                const lastVoiceName = await getItem('lastVoiceName');
+                if (lastVoiceName) {
+                    const savedVoiceOption = [...voiceSelect.options].find(option => option.dataset.name === lastVoiceName);
+                    if (savedVoiceOption) {
+                        savedVoiceOption.selected = true;
+                    }
                 }
+            } catch (error) {
+                console.error('Failed to load last voice from IndexedDB:', error);
             }
         }
         
@@ -151,10 +196,14 @@ document.addEventListener('DOMContentLoaded', () => {
             window.speechSynthesis.onvoiceschanged = populateVoiceList;
         }
 
-        // Save the selected voice to localStorage
-        voiceSelect.addEventListener('change', () => {
+        // Save the selected voice to IndexedDB asynchronously
+        voiceSelect.addEventListener('change', async () => {
             const selectedVoiceName = voiceSelect.selectedOptions[0].getAttribute('data-name');
-            localStorage.setItem('lastVoiceName', selectedVoiceName);
+            try {
+                await setItem('lastVoiceName', selectedVoiceName);
+            } catch (error) {
+                console.error('Failed to save last voice to IndexedDB:', error);
+            }
         });
 
         // Play event listener

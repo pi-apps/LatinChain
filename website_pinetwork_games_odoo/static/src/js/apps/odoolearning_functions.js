@@ -410,8 +410,60 @@ const lessonsData = [
     }
 ];
 
-// Initialize the app when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize the app when the DOM is fully loaded asíncronamente
+document.addEventListener('DOMContentLoaded', async () => {
+
+    // --- INDEXEDDB SETUP ---
+    const DB_NAME = 'OdooLearningDB';
+    const STORE_NAME = 'ProgressStore';
+    const DB_VERSION = 1;
+
+    function openDB() {
+        return new Promise((resolve, reject) => {
+            const request = indexedDB.open(DB_NAME, DB_VERSION);
+            request.onupgradeneeded = (e) => {
+                const db = e.target.result;
+                if (!db.objectStoreNames.contains(STORE_NAME)) {
+                    db.createObjectStore(STORE_NAME);
+                }
+            };
+            request.onsuccess = (e) => resolve(e.target.result);
+            request.onerror = (e) => reject(e.target.error);
+        });
+    }
+
+    async function setItem(key, value) {
+        const db = await openDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readwrite');
+            const store = tx.objectStore(STORE_NAME);
+            const req = store.put(value, key);
+            req.onsuccess = () => resolve();
+            req.onerror = (e) => reject(e.target.error);
+        });
+    }
+
+    async function getItem(key) {
+        const db = await openDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readonly');
+            const store = tx.objectStore(STORE_NAME);
+            const req = store.get(key);
+            req.onsuccess = () => resolve(req.result);
+            req.onerror = (e) => reject(e.target.error);
+        });
+    }
+
+    async function removeItem(key) {
+        const db = await openDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readwrite');
+            const store = tx.objectStore(STORE_NAME);
+            const req = store.delete(key);
+            req.onsuccess = () => resolve();
+            req.onerror = (e) => reject(e.target.error);
+        });
+    }
 
     // Object to store the completion status of each lesson
     let progress = {};
@@ -466,31 +518,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Loads the user's progress from LocalStorage.
+     * Loads the user's progress from IndexedDB.
      * If no progress is found, initializes an empty object.
      */
-    function loadProgress() {
+    async function loadProgress() {
         try {
-            const storedProgress = localStorage.getItem('odooLearningProgress');
+            const storedProgress = await getItem('odooLearningProgress');
             if (storedProgress) {
-                progress = JSON.parse(storedProgress);
+                progress = storedProgress; // No JSON parsing needed
             } else {
                 progress = {}; // Initialize empty if nothing found
             }
         } catch (e) {
-            console.error("Failed to load progress from LocalStorage:", e);
+            console.error("Failed to load progress from IndexedDB:", e);
             progress = {}; // Fallback to empty progress on error
         }
     }
 
     /**
-     * Saves the current progress object to LocalStorage.
+     * Saves the current progress object to IndexedDB.
      */
-    function saveProgress() {
+    async function saveProgress() {
         try {
-            localStorage.setItem('odooLearningProgress', JSON.stringify(progress));
+            await setItem('odooLearningProgress', progress); // No JSON stringification needed
         } catch (e) {
-            console.error("Failed to save progress to LocalStorage:", e);
+            console.error("Failed to save progress to IndexedDB:", e);
         }
     }
 
@@ -510,10 +562,10 @@ document.addEventListener('DOMContentLoaded', () => {
      * Toggles the completion status of a lesson.
      * @param {string} lessonId - The ID of the lesson to toggle.
      */
-    function toggleLessonCompletion(lessonId) {
+    async function toggleLessonCompletion(lessonId) {
         // Toggle the status
         progress[lessonId] = !progress[lessonId];
-        saveProgress(); // Save updated progress
+        await saveProgress(); // Save updated progress asíncronamente
         renderLessons(); // Re-render to update UI
         updateProgressDisplay(); // Update progress text and bar
     }
@@ -603,10 +655,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     completeButton.classList.remove('completed');
                 }
 
-                // Add event listener to toggle completion status
-                completeButton.addEventListener('click', (event) => {
+                // Add event listener to toggle completion status asíncronamente
+                completeButton.addEventListener('click', async (event) => {
                     event.stopPropagation(); // Prevent card's click event from firing
-                    toggleLessonCompletion(lesson.id);
+                    await toggleLessonCompletion(lesson.id);
                 });
                 lessonCard.appendChild(completeButton);
 
@@ -618,12 +670,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Resets all progress by clearing LocalStorage and re-rendering.
+     * Resets all progress by clearing IndexedDB and re-rendering.
      */
     async function resetProgress() {
         const confirmed = await showConfirmation('Are you sure you want to reset all your progress? This action cannot be undone.');
         if (confirmed) {
-            localStorage.removeItem('odooLearningProgress');
+            await removeItem('odooLearningProgress');
             progress = {}; // Reset the progress object
             renderLessons(); // Re-render to reflect reset
             updateProgressDisplay(); // Update progress display
@@ -637,7 +689,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxCloseBtn.addEventListener('click', closeLightbox);
     overlay.addEventListener('click', closeLightbox); // Close lightbox when clicking outside
 
-    loadProgress(); // Load saved progress
+    await loadProgress(); // Load saved progress asynchronously
     renderLessons(); // Render lessons based on loaded progress
     updateProgressDisplay(); // Update the progress display
 });

@@ -7,7 +7,7 @@ let pageNum = 1;
 let pageIsRendering = false;
 let pageNumPending = null;
 let baseScale = 1.0; 
-let currentZoom = 0.75;
+let currentZoom = 0.75; // Default fallback
 let isPageTransitioning = false; // Bloqueo para evitar scrolls locos
 
 var fileUrl;
@@ -30,12 +30,61 @@ const btnZoomOut = document.getElementById('zoom-out');
 const menuButton = document.getElementById('menuButton');
 const dropdownMenu = document.getElementById('dropdownMenu');
 
-// Initialize zoom from localStorage immediately on page load
-const initialSavedZoom = localStorage.getItem('pdfReaderZoom');
-if (initialSavedZoom !== null) {
-    currentZoom = parseFloat(initialSavedZoom);
-    spanZoomLevel.textContent = `${Math.round(currentZoom * 100)}%`;
+
+// --- INDEXEDDB SETUP ---
+const DB_NAME = 'PDFReaderDB';
+const STORE_NAME = 'SettingsStore';
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (e) => resolve(e.target.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
 }
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.put(value, key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.get(key);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+// Initialize zoom from IndexedDB on page load asynchronously
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const savedZoom = await getItem('pdfReaderZoom');
+        if (savedZoom !== undefined && savedZoom !== null) {
+            currentZoom = parseFloat(savedZoom);
+        }
+    } catch (e) {
+        console.error("Could not load zoom level from IndexedDB:", e);
+    }
+    spanZoomLevel.textContent = `${Math.round(currentZoom * 100)}%`;
+});
+
 
 const renderPage = (num) => {
     pageIsRendering = true;
@@ -150,9 +199,13 @@ const goToSpecificPage = (e) => {
 pageNumInput.addEventListener('keydown', goToSpecificPage);
 pageNumInput.addEventListener('blur', goToSpecificPage);
 
-// Save Zoom utility
-const saveZoomLevel = (zoom) => {
-    localStorage.setItem('pdfReaderZoom', zoom.toString());
+// Save Zoom utility (Asynchronous)
+const saveZoomLevel = async (zoom) => {
+    try {
+        await setItem('pdfReaderZoom', zoom.toString());
+    } catch (e) {
+        console.error("Error saving zoom level to IndexedDB:", e);
+    }
 };
 
 const onZoomIn = () => {
@@ -186,13 +239,17 @@ const loadPDF = async (fileUrl) => {
         pageCount.textContent = pdfDoc.numPages;
         pageNum = 1;
         
-        // Retrieve saved zoom or default to 0.75
-        const savedZoom = localStorage.getItem('pdfReaderZoom');
-        if (savedZoom !== null) {
-            currentZoom = parseFloat(savedZoom);
-        } else {
+        // Retrieve saved zoom asynchronously
+        try {
+            const savedZoom = await getItem('pdfReaderZoom');
+            if (savedZoom !== undefined && savedZoom !== null) {
+                currentZoom = parseFloat(savedZoom);
+            }
+        } catch (e) {
+            console.error("Could not load zoom level from IndexedDB during loadPDF:", e);
             currentZoom = 0.75;
         }
+
         spanZoomLevel.textContent = `${Math.round(currentZoom * 100)}%`;
         
         emptyState.classList.add('hidden');

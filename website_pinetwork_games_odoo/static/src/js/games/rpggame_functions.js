@@ -27,14 +27,66 @@ let player = {
 let currentEnemy = null;
 let turnInProgress = false;
 
-// --- SAVE / LOAD LOGIC ---
-function saveGame() {
-    localStorage.setItem(SAVE_KEY, JSON.stringify(player));
-    checkSaveUI();
+// --- INDEXEDDB LOGIC ---
+const DB_NAME = "EmbersReachDB";
+const STORE_NAME = "SaveStore";
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (e) => resolve(e.target.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
 }
 
-function checkSaveUI() {
-    const saved = localStorage.getItem(SAVE_KEY);
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, "readwrite");
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.put(value, key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, "readonly");
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.get(key);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function removeItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, "readwrite");
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.delete(key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+// --- SAVE / LOAD LOGIC ---
+async function saveGame() {
+    await setItem(SAVE_KEY, player);
+    await checkSaveUI();
+}
+
+async function checkSaveUI() {
+    const saved = await getItem(SAVE_KEY);
     if (saved) {
         document.getElementById('btn-continue').classList.remove('hidden');
         document.getElementById('btn-restore-explore').classList.remove('hidden');
@@ -47,10 +99,11 @@ function confirmLoad() {
     document.getElementById('modal-confirm').style.display = 'flex';
 }
 
-function continueGame() {
-    const saved = localStorage.getItem(SAVE_KEY);
+async function continueGame() {
+    const saved = await getItem(SAVE_KEY);
     if (saved) {
-        player = JSON.parse(saved);
+        // IndexedDB retrieves the object naturally, no JSON.parse required
+        player = saved; 
         turnInProgress = false; // FIX: Ensure turn is unlocked upon load
         updateUI();
         showScreen('screen-explore');
@@ -58,8 +111,8 @@ function continueGame() {
     }
 }
 
-function newGame() {
-    localStorage.removeItem(SAVE_KEY);
+async function newGame() {
+    await removeItem(SAVE_KEY);
     player = {
         name: 'Hero', class: '', lvl: 1, hp: 100, maxHp: 100, xp: 0, 
         nextXp: 50, atk: 10, def: 5, skillName: 'Slash', floor: 1, isDefending: false
@@ -68,8 +121,8 @@ function newGame() {
     showScreen('screen-character');
 }
 
-function resetGame() {
-    localStorage.removeItem(SAVE_KEY);
+async function resetGame() {
+    await removeItem(SAVE_KEY);
     location.reload();
 }
 
@@ -287,7 +340,8 @@ function animateHit(id) {
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-window.onload = () => {
-    checkSaveUI();
+// Inicialización asíncrona de la ventana
+window.onload = async () => {
+    await checkSaveUI();
     updateUI();
 };

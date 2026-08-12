@@ -8,16 +8,52 @@ const SPORT_FEEDS = [
     { id: 'golf', name: 'Golf', icon: '⛳', url: 'https://www.cbssports.com/rss/headlines/golf/' }
 ];
 
-// Retrieve saved order from localStorage or use default
 const defaultOrder = SPORT_FEEDS.map(s => s.id);
-let userOrder = JSON.parse(localStorage.getItem('sportsFeedOrder')) || defaultOrder;
-
-// Cleanup: In case feeds were added/removed from our list vs localStorage state
-userOrder = userOrder.filter(id => SPORT_FEEDS.some(s => s.id === id));
-SPORT_FEEDS.forEach(s => { if (!userOrder.includes(s.id)) userOrder.push(s.id); });
+let userOrder = []; // Populated asynchronously during initialization
 
 let feedsDataCache = {}; // Prevent excessive API calls
 window.articleCache = {}; // Global cache for modals
+
+// --- INDEXEDDB SETUP ---
+const DB_NAME = 'SportsNewsDB';
+const STORE_NAME = 'SettingsStore';
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (event) => {
+            const db = event.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (event) => resolve(event.target.result);
+        request.onerror = (event) => reject(event.target.error);
+    });
+}
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.put(value, key);
+        request.onsuccess = () => resolve();
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, 'readonly');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.get(key);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
 
 // Utility: Strip HTML tags to ensure safe and clean description output
 function stripHtml(html) {
@@ -312,9 +348,9 @@ document.getElementById('close-settings-btn').addEventListener('click', () => {
     document.getElementById('settings-modal').classList.add('hidden');
 });
 
-// Save layout to LocalStorage and refresh the feed immediately
-document.getElementById('save-order-btn').addEventListener('click', () => {
-    localStorage.setItem('sportsFeedOrder', JSON.stringify(userOrder));
+// Save layout to IndexedDB and refresh the feed immediately
+document.getElementById('save-order-btn').addEventListener('click', async () => {
+    await setItem('sportsFeedOrder', userOrder);
     document.getElementById('settings-modal').classList.add('hidden');
     renderSportSections(); 
     fetchAndPopulate(false); // Re-render using cached data (no need to re-fetch on simple re-order)
@@ -371,7 +407,23 @@ document.getElementById('proceed-link-btn').addEventListener('click', () => {
 });
 
 // Initialization
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const savedOrder = await getItem('sportsFeedOrder');
+        if (savedOrder && Array.isArray(savedOrder)) {
+            userOrder = savedOrder;
+        } else {
+            userOrder = [...defaultOrder];
+        }
+    } catch (e) {
+        console.error("Failed to load user order from IndexedDB:", e);
+        userOrder = [...defaultOrder];
+    }
+
+    // Cleanup: In case feeds were added/removed from our list vs saved state
+    userOrder = userOrder.filter(id => SPORT_FEEDS.some(s => s.id === id));
+    SPORT_FEEDS.forEach(s => { if (!userOrder.includes(s.id)) userOrder.push(s.id); });
+
     renderSportSections();
     fetchAndPopulate(false);
 });

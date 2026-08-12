@@ -26,6 +26,49 @@ const selectElement = document.getElementById('language-select');
 const outputDiv = document.getElementById('output');
 const codesParagraph = document.getElementById('language-codes');
 
+
+// --- INDEXEDDB SETUP ---
+const DB_NAME = 'OCRAppDB';
+const STORE_NAME = 'SettingsStore';
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (e) => resolve(e.target.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.put(value, key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.get(key);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+
 function preprocessImage(imageSrc) {
     return new Promise((resolve) => {
         const img = new Image();
@@ -91,7 +134,7 @@ async function recognizeText() {
 
             if(ocrWorker)
                 await ocrWorker.terminate();
-             
+            
             ocrWorker = await Tesseract.createWorker(languageString,
                 1, 
                 {
@@ -132,7 +175,7 @@ async function recognizeText() {
 
             // Use innerText instead of textContent so the browser respects the \n line breaks
             recognizedTextElement.innerText = formattedText.trim() || "No text found.";
-             
+            
             await ocrWorker.terminate();
         }
     } catch (error) {
@@ -147,34 +190,45 @@ async function recognizeText() {
 
 
 /**
- * Saves the selected language codes to local storage.
+ * Saves the selected language codes to IndexedDB.
  */
-function saveLanguagesToLocalStorage() {
+async function saveLanguagesToIndexedDB() {
     const selectedOptions = Array.from(selectElement.selectedOptions);
     const languageCodes = selectedOptions.map(option => option.value);
-    localStorage.setItem('selectedLanguages', JSON.stringify(languageCodes));
+    
+    try {
+        await setItem('selectedLanguages', languageCodes);
+    } catch (e) {
+        console.error("Failed to save languages to IndexedDB:", e);
+    }
+    
     detectLanguages(); // Update the UI display after saving
 }
 
 /**
- * Loads the selected language codes from local storage and updates the UI.
+ * Loads the selected language codes from IndexedDB and updates the UI.
  */
-function loadLanguagesFromLocalStorage() {
-    const savedLanguages = localStorage.getItem('selectedLanguages');
-    if (savedLanguages) {
-        const languageCodes = JSON.parse(savedLanguages);
-        // Deselect all options first
-        Array.from(selectElement.options).forEach(option => {
-            option.selected = false;
-        });
-        // Then select the saved ones
-        languageCodes.forEach(code => {
-            const option = selectElement.querySelector(`option[value="${code}"]`);
-            if (option) {
-                option.selected = true;
-            }
-        });
+async function loadLanguagesFromIndexedDB() {
+    try {
+        const languageCodes = await getItem('selectedLanguages');
+        
+        if (languageCodes && Array.isArray(languageCodes)) {
+            // Deselect all options first
+            Array.from(selectElement.options).forEach(option => {
+                option.selected = false;
+            });
+            // Then select the saved ones
+            languageCodes.forEach(code => {
+                const option = selectElement.querySelector(`option[value="${code}"]`);
+                if (option) {
+                    option.selected = true;
+                }
+            });
+        }
+    } catch (e) {
+        console.error("Failed to load languages from IndexedDB:", e);
     }
+    
     detectLanguages(); // Update the UI display with the loaded languages
 }
 
@@ -185,7 +239,7 @@ async function detectLanguages() {
     // Create a comma-separated string of language codes
     const selectedOptions = Array.from(selectElement.selectedOptions);
     const languageCodes = selectedOptions.map(option => option.value);
-     
+    
     if (languageCodes.length > 0) {
         const languageString = languageCodes.join('+');
         codesParagraph.textContent = languageString;
@@ -343,7 +397,7 @@ clearBtn.addEventListener('click', clearPhotos);
 textrecognitionBtn.addEventListener('click', recognizeText);
 
 // Call the save function whenever the selection changes
-selectElement.addEventListener('change', saveLanguagesToLocalStorage);
+selectElement.addEventListener('change', saveLanguagesToIndexedDB);
 
 // New: Assign click event to the main image to open zoom
 photoDisplay.addEventListener('click', openZoomModal);
@@ -357,9 +411,9 @@ zoomModal.addEventListener('click', (e) => {
 });
 
 
-// Display initial state on page load (no photos)
-document.addEventListener('DOMContentLoaded', () => {
-    // Load languages from local storage before displaying anything
-    loadLanguagesFromLocalStorage();
+// Display initial state on page load (no photos) - ASYNC
+document.addEventListener('DOMContentLoaded', async () => {
+    // Load languages from IndexedDB before displaying anything
+    await loadLanguagesFromIndexedDB();
     displayPhoto();
 });

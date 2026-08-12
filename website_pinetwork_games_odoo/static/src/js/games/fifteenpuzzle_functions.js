@@ -9,8 +9,61 @@ const movesCountElement = document.getElementById('moves-count');
 const messageAreaElement = document.getElementById('message-area');
 const newGameButton = document.getElementById('new-game-button');
 
-// Key for storing game state in localStorage
-const LOCAL_STORAGE_KEY = '15PuzzleGameState';
+// Keys and config for storing game state in IndexedDB
+const STORAGE_KEY = '15PuzzleGameState';
+const DB_NAME = 'PuzzleGameDB';
+const STORE_NAME = 'GameStateStore';
+const DB_VERSION = 1;
+
+/**
+ * --- IndexedDB Helper Functions ---
+ */
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (event) => {
+            const db = event.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (event) => resolve(event.target.result);
+        request.onerror = (event) => reject(event.target.error);
+    });
+}
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.put(value, key);
+        request.onsuccess = () => resolve();
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, 'readonly');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.get(key);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function removeItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.delete(key);
+        request.onsuccess = () => resolve();
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
 
 /**
  * Initializes the puzzle board with numbers 1-15 and a blank space.
@@ -49,7 +102,6 @@ function renderBoard() {
 
 /**
  * Shuffles the puzzle board to create a solvable configuration.
- * This uses a common method to ensure solvability by performing a series of random valid moves.
  */
 function shuffleBoard() {
     let shuffledBoard = [...board];
@@ -76,21 +128,16 @@ function shuffleBoard() {
 
 /**
  * Gets the indices of tiles that can be swapped with the empty space.
- * @param {number} emptyIndex - The current index of the empty tile.
- * @returns {Array<number>} An array of indices of movable tiles.
  */
 function getPossibleMoves(emptyIndex) {
     const moves = [];
     const row = Math.floor(emptyIndex / 4);
     const col = emptyIndex % 4;
 
-    // Check up
+    // Check up, down, left, right
     if (row > 0) moves.push(emptyIndex - 4);
-    // Check down
     if (row < 3) moves.push(emptyIndex + 4);
-    // Check left
     if (col > 0) moves.push(emptyIndex - 1);
-    // Check right
     if (col < 3) moves.push(emptyIndex + 1);
 
     return moves;
@@ -98,9 +145,8 @@ function getPossibleMoves(emptyIndex) {
 
 /**
  * Handles a tile click event. Swaps the clicked tile with the empty space if valid.
- * @param {Event} event - The click event.
  */
-function handleTileClick(event) {
+async function handleTileClick(event) {
     if (gameSolved) return; // Do nothing if game is already solved
 
     const clickedIndex = parseInt(event.target.dataset.index);
@@ -111,21 +157,20 @@ function handleTileClick(event) {
         moves++;
         movesCountElement.textContent = `Moves: ${moves}`;
         renderBoard();
-        saveGameState(); // Save state after each valid move
+        
+        saveGameState(); // Save state asynchronously after each valid move
+        
         if (checkWin()) {
             gameSolved = true;
             showMessage('Congratulations! You solved the puzzle!');
-            // Optionally, clear saved state on win
-            localStorage.removeItem(LOCAL_STORAGE_KEY);
+            // Clear saved state on win
+            await removeItem(STORAGE_KEY);
         }
     }
 }
 
 /**
  * Checks if a move is valid (clicked tile is adjacent to the empty space).
- * @param {number} clickedIndex - The index of the clicked tile.
- * @param {number} emptyIndex - The index of the empty tile.
- * @returns {boolean} True if the move is valid, false otherwise.
  */
 function isValidMove(clickedIndex, emptyIndex) {
     const clickedRow = Math.floor(clickedIndex / 4);
@@ -133,7 +178,6 @@ function isValidMove(clickedIndex, emptyIndex) {
     const emptyRow = Math.floor(emptyIndex / 4);
     const emptyCol = emptyIndex % 4;
 
-    // Check if adjacent horizontally or vertically
     const isHorizontalAdjacent = clickedRow === emptyRow && Math.abs(clickedCol - emptyCol) === 1;
     const isVerticalAdjacent = clickedCol === emptyCol && Math.abs(clickedRow - emptyRow) === 1;
 
@@ -142,8 +186,6 @@ function isValidMove(clickedIndex, emptyIndex) {
 
 /**
  * Swaps the positions of two tiles on the board array.
- * @param {number} index1 - First tile index.
- * @param {number} index2 - Second tile index.
  */
 function swapTiles(index1, index2) {
     [board[index1], board[index2]] = [board[index2], board[index1]];
@@ -151,10 +193,8 @@ function swapTiles(index1, index2) {
 
 /**
  * Checks if the puzzle is solved.
- * @returns {boolean} True if the puzzle is in the solved state, false otherwise.
  */
 function checkWin() {
-    // Solved state: 1, 2, 3, ..., 15, 0 (empty at the end)
     for (let i = 0; i < 15; i++) {
         if (board[i] !== i + 1) {
             return false;
@@ -165,7 +205,6 @@ function checkWin() {
 
 /**
  * Displays a message in the message area.
- * @param {string} message - The message to display.
  */
 function showMessage(message) {
     messageAreaElement.textContent = message;
@@ -181,31 +220,30 @@ function hideMessage() {
 }
 
 /**
- * Saves the current game state (board and moves) to localStorage.
+ * Saves the current game state (board and moves) to IndexedDB.
  */
-function saveGameState() {
+async function saveGameState() {
     const gameState = {
         board: board,
         moves: moves,
         gameSolved: gameSolved
     };
     try {
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(gameState));
-        console.log('Game state saved to localStorage.');
+        await setItem(STORAGE_KEY, gameState);
+        console.log('Game state saved to IndexedDB.');
     } catch (e) {
-        console.error('Error saving game state to localStorage:', e);
+        console.error('Error saving game state to IndexedDB:', e);
     }
 }
 
 /**
- * Loads the game state from localStorage.
+ * Loads the game state from IndexedDB.
  * @returns {boolean} True if state was loaded successfully, false otherwise.
  */
-function loadGameState() {
+async function loadGameState() {
     try {
-        const savedState = localStorage.getItem(LOCAL_STORAGE_KEY);
-        if (savedState) {
-            const gameState = JSON.parse(savedState);
+        const gameState = await getItem(STORAGE_KEY);
+        if (gameState) {
             board = gameState.board;
             moves = gameState.moves;
             gameSolved = gameState.gameSolved;
@@ -216,13 +254,13 @@ function loadGameState() {
                 hideMessage();
             }
             renderBoard();
-            console.log('Game state loaded from localStorage.');
+            console.log('Game state loaded from IndexedDB.');
             return true;
         }
     } catch (e) {
-        console.error('Error loading game state from localStorage:', e);
+        console.error('Error loading game state from IndexedDB:', e);
         // If there's an error, clear the corrupted state
-        localStorage.removeItem(LOCAL_STORAGE_KEY);
+        await removeItem(STORAGE_KEY);
     }
     return false;
 }
@@ -239,15 +277,10 @@ function startNewGame() {
 // Event listener for the New Game button
 newGameButton.addEventListener('click', startNewGame);
 
-// On window load, try to load saved game state, otherwise start a new game.
-/*window.onload = function() {
-    if (!loadGameState()) {
-        startNewGame();
-    }
-};*/
-
-$( document ).ready(function() {
-    if (!loadGameState()) {
+// On document load, try to load saved game state using async/await, otherwise start a new game.
+$(document).ready(async function() {
+    const hasSavedState = await loadGameState();
+    if (!hasSavedState) {
         startNewGame();
     }
 });

@@ -87,24 +87,63 @@ modalCancel.addEventListener('click', () => modal.classList.remove('active'));
 btnOpenShop.addEventListener('click', () => shopModal.classList.add('active'));
 btnCloseShop.addEventListener('click', () => shopModal.classList.remove('active'));
 
-// --- Local Storage Setup ---
-const SAVE_KEY = 'purrfect_tycoon_save';
 
-function loadGameData() {
+// --- IndexedDB Setup & Integration ---
+const SAVE_KEY = 'purrfect_tycoon_save';
+const DB_NAME = 'PurrfectTycoonDB';
+const STORE_NAME = 'GameStateStore';
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (event) => {
+            const db = event.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (event) => resolve(event.target.result);
+        request.onerror = (event) => reject(event.target.error);
+    });
+}
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.put(value, key);
+        request.onsuccess = () => resolve();
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, 'readonly');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.get(key);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function loadGameData() {
     try {
-        const savedData = localStorage.getItem(SAVE_KEY);
+        const savedData = await getItem(SAVE_KEY);
         
         if (savedData) {
-            const data = JSON.parse(savedData);
-            GAME.state.coins = data.coins || 0;
-            GAME.state.catsCount = data.catsCount || 0;
-            // Merge new properties safely
-            GAME.state.foodLevel = data.foodLevel || 0;
-            GAME.state.tapLevel = data.tapLevel || 0;
-            GAME.state.hasYarn = data.hasYarn || false;
+            // No JSON.parse needed, IndexedDB stores objects natively
+            GAME.state.coins = savedData.coins || 0;
+            GAME.state.catsCount = savedData.catsCount || 0;
+            GAME.state.foodLevel = savedData.foodLevel || 0;
+            GAME.state.tapLevel = savedData.tapLevel || 0;
+            GAME.state.hasYarn = savedData.hasYarn || false;
         } else {
             GAME.state.coins = 50; 
-            saveGameData(); 
+            await saveGameData(); 
         }
 
         GAME.lastSavedState = JSON.stringify(GAME.state);
@@ -114,21 +153,22 @@ function loadGameData() {
         if(GAME.state.hasYarn) spawnYarnBall();
 
     } catch (error) {
-        console.error("Failed to load data from localStorage:", error);
-        // Fallback to fresh state if corrupted
+        console.error("Failed to load data from IndexedDB:", error);
+        // Fallback to fresh state if corrupted or failed
         GAME.state.coins = 50;
         updateUI();
     }
 }
 
-function saveGameData() {
+async function saveGameData() {
     const currentStateStr = JSON.stringify(GAME.state);
     if (currentStateStr === GAME.lastSavedState) return; 
 
     try {
         uiSaveIndicator.classList.replace('bg-green-500', 'bg-yellow-500');
         
-        localStorage.setItem(SAVE_KEY, currentStateStr);
+        // Save the raw object to IndexedDB
+        await setItem(SAVE_KEY, GAME.state);
         
         GAME.lastSavedState = currentStateStr;
         
@@ -136,7 +176,7 @@ function saveGameData() {
             uiSaveIndicator.classList.replace('bg-yellow-500', 'bg-green-500');
         }, 500); // Small visual delay to show it saved
     } catch (error) {
-        console.error("Save to localStorage failed:", error);
+        console.error("Save to IndexedDB failed:", error);
         uiSaveIndicator.classList.replace('bg-green-500', 'bg-red-500');
     }
 }
@@ -667,9 +707,10 @@ function animateThreeJS() {
     renderer.render(scene, camera);
 }
 
-window.onload = () => {
+// Inicialización asíncrona usando async/await
+window.onload = async () => {
     initThreeJS();
-    loadGameData();
+    await loadGameData();
     
     // Show welcome modal if it's a completely new game (0 coins, 0 cats)
     if(GAME.state.coins === 50 && GAME.state.catsCount === 0) {

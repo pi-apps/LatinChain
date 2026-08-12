@@ -421,8 +421,49 @@ const courseData = {
     ]
 };
 
+// --- INDEXEDDB SETUP ---
+const DB_NAME = 'WayuuAppDB';
+const STORE_NAME = 'SettingsStore';
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (e) => resolve(e.target.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.put(value, key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.get(key);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
 // State variables
-let currentLang = localStorage.getItem('wayuunaiki_lang') || 'es';
+let currentLang = 'es'; // Default
 let currentLevel = 'beginner';
 
 // i18n Dictionary
@@ -455,14 +496,14 @@ const i18n = {
     }
 };
 
-function setLanguage(lang) {
+async function setLanguage(lang) {
     currentLang = lang;
     
-    // Guardar en localStorage
+    // Guardar en IndexedDB asíncronamente
     try {
-        localStorage.setItem('wayuunaiki_lang', lang);
+        await setItem('wayuunaiki_lang', lang);
     } catch (e) {
-        console.warn("localStorage no está disponible", e);
+        console.warn("Error al guardar idioma en IndexedDB", e);
     }
     
     // Update toggle UI
@@ -610,5 +651,16 @@ function closeModal() {
     }, 300);
 }
 
-// Initialize App
-setLanguage(currentLang); // This also calls renderModules()
+// Initialize App Asynchronously
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const savedLang = await getItem('wayuunaiki_lang');
+        if (savedLang) {
+            currentLang = savedLang;
+        }
+    } catch (e) {
+        console.warn("No se pudo cargar el idioma desde IndexedDB", e);
+    }
+    
+    setLanguage(currentLang);
+});

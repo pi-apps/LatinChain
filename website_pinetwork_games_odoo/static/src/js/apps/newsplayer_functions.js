@@ -7,16 +7,52 @@ const CRYPTO_FEEDS = [
     //{ id: 'coindesk', name: 'CoinDesk', icon: '📰', url: 'https://www.coindesk.com/arc/outboundfeeds/rss/' },
 ];
 
-// Retrieve saved order from localStorage or use default
 const defaultOrder = CRYPTO_FEEDS.map(s => s.id);
-let userOrder = JSON.parse(localStorage.getItem('cryptoFeedOrder')) || defaultOrder;
-
-// Cleanup: In case feeds were added/removed from our list vs localStorage state
-userOrder = userOrder.filter(id => CRYPTO_FEEDS.some(s => s.id === id));
-CRYPTO_FEEDS.forEach(s => { if (!userOrder.includes(s.id)) userOrder.push(s.id); });
+let userOrder = []; // Populated asynchronously during initialization
 
 let feedsDataCache = {}; // Prevent excessive API calls
 window.articleCache = {}; // Global cache for modals
+
+// --- INDEXEDDB SETUP ---
+const DB_NAME = 'CryptoNewsDB';
+const STORE_NAME = 'SettingsStore';
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (event) => {
+            const db = event.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (event) => resolve(event.target.result);
+        request.onerror = (event) => reject(event.target.error);
+    });
+}
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.put(value, key);
+        request.onsuccess = () => resolve();
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, 'readonly');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.get(key);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
 
 // Utility: Strip HTML tags to ensure safe and clean description output
 function stripHtml(html) {
@@ -68,40 +104,6 @@ async function fetchFeed(feedId) {
     } catch (e) {
         console.warn("Primary RSS fetch failed, attempting fallback...", e);
     }
-
-    // Attempt 2: AllOrigins proxy with native DOMParser fallback
-    /*try {
-        //const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(sport.url)}`;
-        const proxyUrl = `/fetch-rss-as-json?rss_url=${encodeURIComponent(sport.url)}&order_by=pubDate&order_dir=desc`;
-        const response = await fetch(proxyUrl);
-        const data = await response.json();
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(data.contents, 'application/xml');
-        const items = xml.querySelectorAll('item');
-        
-        return Array.from(items).map(item => {
-            const title = item.querySelector('title')?.textContent || '';
-            const link = item.querySelector('link')?.textContent || '';
-            const pubDate = item.querySelector('pubDate')?.textContent || '';
-            const description = item.querySelector('description')?.textContent || '';
-            let thumbnail = null;
-            
-            // Locate image elements in XML
-            const enclosure = item.querySelector('enclosure');
-            if (enclosure && enclosure.getAttribute('type')?.startsWith('image')) {
-                thumbnail = enclosure.getAttribute('url');
-            } else {
-                const media = item.getElementsByTagNameNS('*', 'thumbnail')[0];
-                if(media && media.getAttribute('url')) {
-                    thumbnail = media.getAttribute('url');
-                }
-            }
-            return { title: stripHtml(title), link, pubDate, description: stripHtml(description), thumbnail };
-        });
-    } catch (e) {
-        console.error("All fetch methods failed for:", feedId, e);
-        return [];
-    }*/
 }
 
 // Render skeleton loading screens for results (horizontal ticker)
@@ -311,9 +313,9 @@ document.getElementById('close-settings-btn').addEventListener('click', () => {
     document.getElementById('settings-modal').classList.add('hidden');
 });
 
-// Save layout to LocalStorage and refresh the feed immediately
-document.getElementById('save-order-btn').addEventListener('click', () => {
-    localStorage.setItem('cryptoFeedOrder', JSON.stringify(userOrder));
+// Save layout to IndexedDB and refresh the feed immediately
+document.getElementById('save-order-btn').addEventListener('click', async () => {
+    await setItem('cryptoFeedOrder', userOrder);
     document.getElementById('settings-modal').classList.add('hidden');
     renderFeedSections(); 
     fetchAndPopulate(false); // Re-render using cached data (no need to re-fetch on simple re-order)
@@ -370,7 +372,23 @@ document.getElementById('proceed-link-btn').addEventListener('click', () => {
 });
 
 // Initialization
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const savedOrder = await getItem('cryptoFeedOrder');
+        if (savedOrder && Array.isArray(savedOrder)) {
+            userOrder = savedOrder;
+        } else {
+            userOrder = [...defaultOrder];
+        }
+    } catch (e) {
+        console.error("Failed to load user order from IndexedDB:", e);
+        userOrder = [...defaultOrder];
+    }
+
+    // Cleanup: In case feeds were added/removed from our list vs saved state
+    userOrder = userOrder.filter(id => CRYPTO_FEEDS.some(s => s.id === id));
+    CRYPTO_FEEDS.forEach(s => { if (!userOrder.includes(s.id)) userOrder.push(s.id); });
+
     renderFeedSections();
     fetchAndPopulate(false);
 });

@@ -547,6 +547,58 @@ const lightboxTitle = document.getElementById('lightboxTitle');
 const lightboxContent = document.getElementById('lightboxContent');
 const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
 
+// --- INDEXEDDB SETUP ---
+const DB_NAME = 'LearningPathDB';
+const STORE_NAME = 'DataStore';
+const DB_VERSION = 1;
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+            }
+        };
+        request.onsuccess = (e) => resolve(e.target.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function setItem(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.put(value, key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.get(key);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function removeItem(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.delete(key);
+        req.onsuccess = () => resolve();
+        req.onerror = (e) => reject(e.target.error);
+    });
+}
+
 /**
  * Shows a custom confirmation dialog.
  * @param {string} message - The message to display.
@@ -580,33 +632,33 @@ function showConfirmation(message) {
 }
 
 /**
- * Loads the user's progress from LocalStorage based on the current course.
+ * Loads the user's progress from IndexedDB based on the current course.
  * If no progress is found, initializes an empty object.
  */
-function loadProgress() {
+async function loadProgress() {
     try {
         const storageKey = `${currentCourse}LearningProgress`;
-        const storedProgress = localStorage.getItem(storageKey);
+        const storedProgress = await getItem(storageKey);
         if (storedProgress) {
-            progress = JSON.parse(storedProgress);
+            progress = storedProgress; // No JSON.parse needed
         } else {
-            progress = {}; // Initialize empty if nothing found
+            progress = {}; 
         }
     } catch (e) {
-        console.error("Failed to load progress from LocalStorage:", e);
-        progress = {}; // Fallback to empty progress on error
+        console.error("Failed to load progress from IndexedDB:", e);
+        progress = {}; 
     }
 }
 
 /**
- * Saves the current progress object to LocalStorage based on the current course.
+ * Saves the current progress object to IndexedDB based on the current course.
  */
-function saveProgress() {
+async function saveProgress() {
     try {
         const storageKey = `${currentCourse}LearningProgress`;
-        localStorage.setItem(storageKey, JSON.stringify(progress));
+        await setItem(storageKey, progress); // No JSON.stringify needed
     } catch (e) {
-        console.error("Failed to save progress to LocalStorage:", e);
+        console.error("Failed to save progress to IndexedDB:", e);
     }
 }
 
@@ -626,10 +678,10 @@ function updateProgressDisplay() {
  * Toggles the completion status of a lesson.
  * @param {string} lessonId - The ID of the lesson to toggle.
  */
-function toggleLessonCompletion(lessonId) {
+async function toggleLessonCompletion(lessonId) {
     // Toggle the status
     progress[lessonId] = !progress[lessonId];
-    saveProgress(); // Save updated progress
+    await saveProgress(); // Save updated progress asynchronously
     renderLessons(); // Re-render to update UI
     updateProgressDisplay(); // Update progress text and bar
 }
@@ -723,10 +775,10 @@ function renderLessons() {
                     completeButton.classList.remove('completed');
                 }
 
-                // Add event listener to toggle completion status
-                completeButton.addEventListener('click', (event) => {
+                // Add event listener to toggle completion status asíncronamente
+                completeButton.addEventListener('click', async (event) => {
                     event.stopPropagation(); // Prevent card's click event from firing
-                    toggleLessonCompletion(lesson.id);
+                    await toggleLessonCompletion(lesson.id);
                 });
                 lessonCard.appendChild(completeButton);
 
@@ -745,7 +797,7 @@ async function resetProgress() {
     const confirmed = await showConfirmation(`Are you sure you want to reset all your progress for the current course? This action cannot be undone.`);
     if (confirmed) {
         const storageKey = `${currentCourse}LearningProgress`;
-        localStorage.removeItem(storageKey);
+        await removeItem(storageKey);
         progress = {}; // Reset the progress object
         renderLessons(); // Re-render to reflect reset
         updateProgressDisplay(); // Update progress display
@@ -756,9 +808,7 @@ async function resetProgress() {
  * Switches the active learning course.
  * @param {string} courseName - 'chess', 'sudoku', or 'snake'.
  */
-function switchCourse(courseName) {
-    // if (currentCourse === courseName) return; // No change needed
-
+async function switchCourse(courseName) {
     currentCourse = courseName;
 
     // Update main titles and subtitles and set lessonsData
@@ -797,11 +847,11 @@ function switchCourse(courseName) {
         }
     });
 
-    loadProgress(); // Load progress for the new course
+    await loadProgress(); // Load progress for the new course
     renderLessons(); // Render lessons for the new course
     updateProgressDisplay(); // Update progress display for the new course
 
-    localStorage.setItem('lastActiveCourse', currentCourse);
+    await setItem('lastActiveCourse', currentCourse);
 }
 
 // Event listeners for course selector buttons
@@ -816,18 +866,15 @@ resetProgressBtn.addEventListener('click', resetProgress);
 lightboxCloseBtn.addEventListener('click', closeLightbox);
 overlay.addEventListener('click', closeLightbox); // Close lightbox when clicking outside
 
-// Initialize the app when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize the app when the DOM is fully loaded asíncronamente
+document.addEventListener('DOMContentLoaded', async () => {
     // Determine initial course based on previous state or default to Chess
-    const lastCourse = localStorage.getItem('lastActiveCourse');
+    const lastCourse = await getItem('lastActiveCourse');
     const validCourses = ['chess', 'sudoku', 'snake'];
+    
     if (lastCourse && validCourses.includes(lastCourse)) {
-        switchCourse(lastCourse);
+        await switchCourse(lastCourse);
     } else {
-        switchCourse('chess'); // Default to Chess
+        await switchCourse('chess'); // Default to Chess
     }
-    // Save the last active course when the page is closed or reloaded
-    window.addEventListener('beforeunload', () => {
-        localStorage.setItem('lastActiveCourse', currentCourse);
-    });
 });
