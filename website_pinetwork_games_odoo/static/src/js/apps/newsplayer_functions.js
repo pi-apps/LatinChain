@@ -1,11 +1,11 @@
 // Define our target Crypto RSS feeds globally
 const CRYPTO_FEEDS = [
-    { id: 'coinpedia', name: 'Coinpedia', icon: '📰', url: 'https://coinpedia.org/feed/' },
-    { id: 'cointelegraph', name: 'Cointelegraph', icon: '⚡', url: 'https://cointelegraph.com/rss' },
-    { id: 'bitcoin', name: 'Bitcoin.com', icon: '₿', url: 'https://news.bitcoin.com/feed/' },
-    //{ id: 'cryptoslate', name: 'CryptoSlate', icon: '📈', url: 'https://cryptoslate.com/feed/' },
-    { id: 'decrypt', name: 'Decrypt', icon: '🌐', url: 'https://decrypt.co/feed' },
-    //{ id: 'coindesk', name: 'CoinDesk', icon: '📰', url: 'https://www.coindesk.com/arc/outboundfeeds/rss/' },
+    { id: 'coinpedia', name: 'coinpedia.org', icon: '📰', url: 'https://coinpedia.org/feed/' },
+    { id: 'cointelegraph', name: 'cointelegraph.com', icon: '⚡', url: 'https://cointelegraph.com/rss' },
+    { id: 'bitcoin', name: 'news.bitcoin.com', icon: '₿', url: 'https://news.bitcoin.com/feed/' },
+    //{ id: 'cryptoslate', name: 'cryptoslate.com', icon: '📈', url: 'https://cryptoslate.com/feed/' },
+    { id: 'decrypt', name: 'decrypt.co', icon: '🌐', url: 'https://decrypt.co/feed' },
+    //{ id: 'coindesk', name: 'www.coindesk.com', icon: '📰', url: 'https://www.coindesk.com/arc/outboundfeeds/rss/' },
 ];
 
 const defaultOrder = CRYPTO_FEEDS.map(s => s.id);
