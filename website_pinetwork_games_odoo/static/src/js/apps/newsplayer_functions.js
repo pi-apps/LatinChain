@@ -1,5 +1,6 @@
 // Define our target Crypto RSS feeds globally
 const CRYPTO_FEEDS = [
+    { id: 'coinpedia', name: 'Coinpedia', icon: '📰', url: 'https://coinpedia.org/feed/' },
     { id: 'cointelegraph', name: 'Cointelegraph', icon: '⚡', url: 'https://cointelegraph.com/rss' },
     { id: 'bitcoin', name: 'Bitcoin.com', icon: '₿', url: 'https://news.bitcoin.com/feed/' },
     //{ id: 'cryptoslate', name: 'CryptoSlate', icon: '📈', url: 'https://cryptoslate.com/feed/' },
