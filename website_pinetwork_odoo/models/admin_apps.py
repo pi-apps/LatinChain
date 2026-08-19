@@ -418,10 +418,10 @@ class admin_apps(models.Model):
             obj = {"currency":"USD","code":"_______PI","meta":True}
             
             admin_app = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
-            
-            re = requests.post(url,json=obj,headers={ 'x-api-key': admin_app[0].amount_price_apikey }, timeout=(6.05, 6))
         
             try:
+                re = requests.post(url,json=obj,headers={ 'x-api-key': admin_app[0].amount_price_apikey }, timeout=(6.05, 6))
+                
                 result = re.json()
                 result_dict = json.loads(str(json.dumps(result)))
                 
