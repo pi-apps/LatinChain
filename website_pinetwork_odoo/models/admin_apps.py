@@ -1380,9 +1380,9 @@ class admin_apps(models.Model):
             else:
                 obj = {'txid': kw['txid']}
         
-        re = requests.post(url,data=obj,json=obj,headers={'Authorization': "Key " + admin_app_list[0].admin_key})
-        
         try:
+            re = requests.post(url,data=obj,json=obj,headers={'Authorization': "Key " + admin_app_list[0].admin_key})
+            
             result = re.json()
             
             result_dict = json.loads(str(json.dumps(result)))
