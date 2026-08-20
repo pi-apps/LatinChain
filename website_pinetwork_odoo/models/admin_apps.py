@@ -481,7 +481,7 @@ class admin_apps(models.Model):
             
             now_time = now.time()  # Get current time (without date)
             start_time = time(16, 0, 0)
-            end_time = time(16, 10, 0)
+            end_time = time(16, 30, 0)
             
             i.total_transactions_daily_count = self.env["pi.transactions"].sudo().search_count([('create_date', '>=', datetime.now() - timedelta(days=1)), ('action', '=', 'complete')])
             i.total_users_daily_count = self.env["pi.users"].sudo().search_count([('last_connection', '>=', datetime.now() - timedelta(days=1))])
