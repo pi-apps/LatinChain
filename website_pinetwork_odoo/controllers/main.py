@@ -448,9 +448,9 @@ class PiNetworkBaseController(http.Controller):
         pi_amount = apps_list[0].amount
         pi_amount_latin_pay = apps_list[0].amount_latin_pay
         
-        if pi_users_list[0].unblocked:
-            pi_ad_seconds = 28800
-            pi_ad_max = 480
+        #if pi_users_list[0].unblocked:
+        #    pi_ad_seconds = 28800
+        #    pi_ad_max = 480
         
         if not pi_users_list[0].pi_ad_datetime:
             show_pi_ad = True
@@ -588,9 +588,9 @@ class PiNetworkBaseController(http.Controller):
             pi_ad_seconds = apps_list[0].pi_ad_seconds
             pi_ad_max = apps_list[0].pi_ad_max
             
-            if pi_users_list[0].unblocked:
-                pi_ad_seconds = 28800
-                pi_ad_max = 480
+            #if pi_users_list[0].unblocked:
+            #    pi_ad_seconds = 28800
+            #    pi_ad_max = 480
             
             if not pi_users_list[0].pi_ad_datetime:
                 values.update({'pi_ad_datetime': datetime.now()})
@@ -894,9 +894,9 @@ class PiNetworkBaseController(http.Controller):
             pi_ad_seconds = apps_list[0].pi_ad_seconds
             pi_ad_max = apps_list[0].pi_ad_max
             
-            if pi_users_list[0].unblocked:
-                pi_ad_seconds = 28800
-                pi_ad_max = 480
+            #if pi_users_list[0].unblocked:
+            #    pi_ad_seconds = 28800
+            #    pi_ad_max = 480
             
             if not pi_users_list[0].pi_ad_datetime:
                 values.update({'pi_ad_datetime': datetime.now()})
