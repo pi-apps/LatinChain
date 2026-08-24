@@ -1,0 +1,489 @@
+// State Variables
+let currentScreen = 'languages';
+let selectedLangId = null;
+let selectedLevel = null;
+let currentQuestions = [];
+let currentQuestionIndex = 0;
+let score = 0;
+let isAnimating = false;
+
+const DB_NAME = 'LingoQuestDB';
+const DB_VERSION = 1;
+let db;
+
+// Data Structure
+const languages = [
+    {
+        id: 'es',
+        name: 'Spanish',
+        target: 'Spanish',
+        source: 'English speakers',
+        icon: '🇪🇸',
+        promptFormat: 'How do you say',
+        bg: 'bg-orange-100',
+        border: 'border-orange-200'
+    },
+    {
+        id: 'en',
+        name: 'English',
+        target: 'English',
+        source: 'Spanish speakers',
+        icon: '🇬🇧',
+        promptFormat: '¿Cómo se dice',
+        bg: 'bg-blue-100',
+        border: 'border-blue-200'
+    },
+    {
+        id: 'kr',
+        name: 'Korean',
+        target: 'Korean',
+        source: 'English speakers',
+        icon: '🇰🇷',
+        promptFormat: 'How do you say',
+        bg: 'bg-pink-100',
+        border: 'border-pink-200'
+    },
+    {
+        id: 'cn',
+        name: 'Chinese (Mandarin)',
+        target: 'Chinese',
+        source: 'English speakers',
+        icon: '🇨🇳',
+        promptFormat: 'How do you say',
+        bg: 'bg-red-100',
+        border: 'border-red-200'
+    },
+    {
+        id: 'jp',
+        name: 'Japanese',
+        target: 'Japanese',
+        source: 'English speakers',
+        icon: '🇯🇵',
+        promptFormat: 'How do you say',
+        bg: 'bg-purple-100',
+        border: 'border-purple-200'
+    },
+    {
+        id: 'vn',
+        name: 'Vietnamese',
+        target: 'Vietnamese',
+        source: 'English speakers',
+        icon: '🇻🇳',
+        promptFormat: 'How do you say',
+        bg: 'bg-yellow-100',
+        border: 'border-yellow-200'
+    }
+];
+
+// Question Database
+const initialQuestionDB = {
+    'es': {
+        'Beginner': [
+            { q: 'Hello', a: 'Hola', wrong: ['Adiós', 'Gracias', 'Por favor'] },
+            { q: 'Cat', a: 'Gato', wrong: ['Perro', 'Pájaro', 'Ratón'] },
+            { q: 'Water', a: 'Agua', wrong: ['Leche', 'Jugo', 'Vino'] },
+            { q: 'Book', a: 'Libro', wrong: ['Mesa', 'Silla', 'Lápiz'] },
+            { q: 'Yes', a: 'Sí', wrong: ['No', 'Tal vez', 'Nunca'] }
+        ],
+        'Intermediate': [
+            { q: 'Library', a: 'Biblioteca', wrong: ['Librería', 'Escuela', 'Edificio'] },
+            { q: 'Always', a: 'Siempre', wrong: ['Nunca', 'A veces', 'Pronto'] },
+            { q: 'To understand', a: 'Entender', wrong: ['Hablar', 'Caminar', 'Dormir'] },
+            { q: 'Window', a: 'Ventana', wrong: ['Puerta', 'Pared', 'Techo'] },
+            { q: 'Fast', a: 'Rápido', wrong: ['Lento', 'Fuerte', 'Débil'] }
+        ],
+        'Advanced': [
+            { q: 'Although', a: 'Aunque', wrong: ['Sin embargo', 'Además', 'Por lo tanto'] },
+            { q: 'Development', a: 'Desarrollo', wrong: ['Investigación', 'Descubrimiento', 'Proceso'] },
+            { q: 'Environment', a: 'Medio ambiente', wrong: ['Naturaleza', 'Clima', 'Paisaje'] },
+            { q: 'To summarize', a: 'Resumir', wrong: ['Explicar', 'Analizar', 'Evaluar'] },
+            { q: 'Challenge', a: 'Desafío', wrong: ['Problema', 'Oportunidad', 'Misterio'] }
+        ]
+    },
+    'en': {
+        'Beginner': [
+            { q: 'Perro', a: 'Dog', wrong: ['Cat', 'Bird', 'Fish'] },
+            { q: 'Manzana', a: 'Apple', wrong: ['Banana', 'Orange', 'Grape'] },
+            { q: 'Casa', a: 'House', wrong: ['Car', 'Tree', 'Road'] },
+            { q: 'Rojo', a: 'Red', wrong: ['Blue', 'Green', 'Yellow'] },
+            { q: 'Hola', a: 'Hello', wrong: ['Goodbye', 'Please', 'Thanks'] }
+        ],
+        'Intermediate': [
+            { q: 'Ciudad', a: 'City', wrong: ['Town', 'Village', 'Country'] },
+            { q: 'Pensar', a: 'Think', wrong: ['Know', 'Believe', 'Feel'] },
+            { q: 'Viaje', a: 'Journey', wrong: ['Ticket', 'Station', 'Luggage'] },
+            { q: 'Hermano', a: 'Brother', wrong: ['Sister', 'Father', 'Uncle'] },
+            { q: 'Llover', a: 'Rain', wrong: ['Snow', 'Wind', 'Cloud'] }
+        ],
+        'Advanced': [
+            { q: 'Lograr', a: 'Achieve', wrong: ['Fail', 'Attempt', 'Ignore'] },
+            { q: 'Conocimiento', a: 'Knowledge', wrong: ['Wisdom', 'Ignorance', 'Thought'] },
+            { q: 'Desafío', a: 'Challenge', wrong: ['Agreement', 'Comfort', 'Routine'] },
+            { q: 'Abordar', a: 'Tackle', wrong: ['Avoid', 'Release', 'Drop'] },
+            { q: 'Sutil', a: 'Subtle', wrong: ['Obvious', 'Loud', 'Bright'] }
+        ]
+    },
+    'kr': {
+        'Beginner': [
+            { q: 'Hello', a: '안녕하세요 (Annyeonghaseyo)', wrong: ['감사합니다', '네', '아니요'] },
+            { q: 'Thank you', a: '감사합니다 (Gamsahamnida)', wrong: ['사랑해요', '미안해요', '괜찮아요'] },
+            { q: 'Yes', a: '네 (Ne)', wrong: ['아니요', '아마도', '절대'] },
+            { q: 'Water', a: '물 (Mul)', wrong: ['불', '흙', '바람'] },
+            { q: 'Friend', a: '친구 (Chingu)', wrong: ['가족', '선생님', '학생'] }
+        ],
+        'Intermediate': [
+            { q: 'School', a: '학교 (Hakgyo)', wrong: ['병원', '식당', '공원'] },
+            { q: 'Time', a: '시간 (Sigan)', wrong: ['날짜', '요일', '년도'] },
+            { q: 'To eat', a: '먹다 (Meokda)', wrong: ['마시다', '자다', '가다'] },
+            { q: 'Weather', a: '날씨 (Nalssi)', wrong: ['기분', '하늘', '계절'] },
+            { q: 'Beautiful', a: '아름답다 (Areumdapda)', wrong: ['귀엽다', '멋있다', '나쁘다'] }
+        ],
+        'Advanced': [
+            { q: 'Experience', a: '경험 (Gyeongheom)', wrong: ['기억', '상상', '이론'] },
+            { q: 'Responsibility', a: '책임 (Chaegim)', wrong: ['의무', '권리', '자유'] },
+            { q: 'Society', a: '사회 (Sahoe)', wrong: ['국가', '세계', '자연'] },
+            { q: 'To improve', a: '개선하다 (Gaeseonhada)', wrong: ['악화되다', '유지하다', '포기하다'] },
+            { q: 'Complex', a: '복잡한 (Bokjaphan)', wrong: ['단순한', '명확한', '평범한'] }
+        ]
+    },
+    'cn': {
+        'Beginner': [
+            { q: 'Hello', a: '你好 (Nǐ hǎo)', wrong: ['谢谢', '再见', '对不起'] },
+            { q: 'Thank you', a: '谢谢 (Xièxiè)', wrong: ['不客气', '好', '是'] },
+            { q: 'Good', a: '好 (Hǎo)', wrong: ['坏', '大', '小'] },
+            { q: 'Water', a: '水 (Shuǐ)', wrong: ['火', '茶', '酒'] },
+            { q: 'Person', a: '人 (Rén)', wrong: ['狗', '猫', '鸟'] }
+        ],
+        'Intermediate': [
+            { q: 'Computer', a: '电脑 (Diànnǎo)', wrong: ['电视', '电话', '冰箱'] },
+            { q: 'Tomorrow', a: '明天 (Míngtiān)', wrong: ['昨天', '今天', '后天'] },
+            { q: 'Because', a: '因为 (Yīnwèi)', wrong: ['所以', '但是', '如果'] },
+            { q: 'To eat', a: '吃 (Chī)', wrong: ['喝', '跑', '走'] },
+            { q: 'Beautiful', a: '漂亮 (Piàoliang)', wrong: ['丑陋', '奇怪', '聪明'] }
+        ],
+        'Advanced': [
+            { q: 'Influence', a: '影响 (Yǐngxiǎng)', wrong: ['结果', '原因', '目的'] },
+            { q: 'Experience', a: '经验 (Jīngyàn)', wrong: ['理论', '知识', '猜测'] },
+            { q: 'Complicated', a: '复杂 (Fùzá)', wrong: ['简单', '容易', '清楚'] },
+            { q: 'To develop', a: '发展 (Fāzhǎn)', wrong: ['停止', '破坏', '消失'] },
+            { q: 'Society', a: '社会 (Shèhuì)', wrong: ['自然', '太空', '个人的'] }
+        ]
+    },
+    'jp': {
+        'Beginner': [
+            { q: 'Hello', a: 'こんにちは (Konnichiwa)', wrong: ['さようなら', 'ありがとう', 'はい'] },
+            { q: 'Cat', a: '猫 (Neko)', wrong: ['犬', '鳥', '魚'] },
+            { q: 'Water', a: '水 (Mizu)', wrong: ['お茶', '酒', '牛乳'] },
+            { q: 'Yes', a: 'はい (Hai)', wrong: ['いいえ', 'たぶん', 'いつも'] },
+            { q: 'Thank you', a: 'ありがとう (Arigatou)', wrong: ['すみません', 'おはよう', 'おやすみ'] }
+        ],
+        'Intermediate': [
+            { q: 'Book', a: '本 (Hon)', wrong: ['雑誌', '新聞', '手紙'] },
+            { q: 'Tomorrow', a: '明日 (Ashita)', wrong: ['昨日', '今日', '来週'] },
+            { q: 'To eat', a: '食べる (Taberu)', wrong: ['飲む', '寝る', '行く'] },
+            { q: 'Friend', a: '友達 (Tomodachi)', wrong: ['家族', '先生', '学生'] },
+            { q: 'Fast', a: '早い (Hayai)', wrong: ['遅い', '高い', '安い'] }
+        ],
+        'Advanced': [
+            { q: 'Economy', a: '経済 (Keizai)', wrong: ['政治', '文化', '歴史'] },
+            { q: 'Preparation', a: '準備 (Junbi)', wrong: ['結果', '原因', '計画'] },
+            { q: 'To solve', a: '解決する (Kaiketsu suru)', wrong: ['失敗する', '無視する', '忘れる'] },
+            { q: 'Environment', a: '環境 (Kankyō)', wrong: ['自然', '都市', '宇宙'] },
+            { q: 'Complicated', a: '複雑な (Fukuzatsuna)', wrong: ['簡単な', '明らかな', '普通の'] }
+        ]
+    },
+    'vn': {
+        'Beginner': [
+            { q: 'Hello', a: 'Xin chào', wrong: ['Cảm ơn', 'Tạm biệt', 'Vâng'] },
+            { q: 'Thank you', a: 'Cảm ơn', wrong: ['Xin lỗi', 'Không', 'Có'] },
+            { q: 'Water', a: 'Nước', wrong: ['Lửa', 'Đất', 'Gió'] },
+            { q: 'Cat', a: 'Con mèo', wrong: ['Con chó', 'Con chim', 'Con cá'] },
+            { q: 'House', a: 'Ngôi nhà', wrong: ['Trường học', 'Bệnh viện', 'Chợ'] }
+        ],
+        'Intermediate': [
+            { q: 'School', a: 'Trường học', wrong: ['Công viên', 'Nhà hàng', 'Khách sạn'] },
+            { q: 'Today', a: 'Hôm nay', wrong: ['Ngày mai', 'Hôm qua', 'Tuần tới'] },
+            { q: 'Delicious', a: 'Ngon', wrong: ['Dở', 'Ngọt', 'Mặn'] },
+            { q: 'To sleep', a: 'Ngủ', wrong: ['Ăn', 'Uống', 'Chạy'] },
+            { q: 'Beautiful', a: 'Đẹp', wrong: ['Xấu', 'Cao', 'Thấp'] }
+        ],
+        'Advanced': [
+            { q: 'Environment', a: 'Môi trường', wrong: ['Khí hậu', 'Tự nhiên', 'Thời tiết'] },
+            { q: 'Development', a: 'Phát triển', wrong: ['Suy thoái', 'Dừng lại', 'Phá hủy'] },
+            { q: 'Experience', a: 'Kinh nghiệm', wrong: ['Lý thuyết', 'Thực hành', 'Kiến thức'] },
+            { q: 'To protect', a: 'Bảo vệ', wrong: ['Tấn công', 'Bỏ qua', 'Phá hoại'] },
+            { q: 'Challenge', a: 'Thử thách', wrong: ['Cơ hội', 'Thất bại', 'Dễ dàng'] }
+        ]
+    }
+};
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        await initDB();
+        initLanguageList();
+        updateHeader();
+    } catch (error) {
+        console.error("Failed to initialize database", error);
+    }
+});
+
+async function initDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+        request.onupgradeneeded = (event) => {
+            const database = event.target.result;
+            if (!database.objectStoreNames.contains('questions')) {
+                const store = database.createObjectStore('questions', { keyPath: 'id', autoIncrement: true });
+                // Create a compound index to search quickly by language and level
+                store.createIndex('lang_level', ['lang', 'level'], { unique: false });
+            }
+        };
+
+        request.onsuccess = (event) => {
+            db = event.target.result;
+            checkAndSeedDB().then(resolve).catch(reject);
+        };
+
+        request.onerror = (event) => reject(event.target.error);
+    });
+}
+
+async function checkAndSeedDB() {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(['questions'], 'readonly');
+        const store = transaction.objectStore('questions');
+        const countRequest = store.count();
+
+        countRequest.onsuccess = () => {
+            if (countRequest.result === 0) {
+                seedDB().then(resolve).catch(reject);
+            } else {
+                resolve();
+            }
+        };
+        countRequest.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function seedDB() {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(['questions'], 'readwrite');
+        const store = transaction.objectStore('questions');
+
+        for (const lang in initialQuestionDB) {
+            for (const level in initialQuestionDB[lang]) {
+                initialQuestionDB[lang][level].forEach(q => {
+                    store.add({ ...q, lang, level });
+                });
+            }
+        }
+
+        transaction.oncomplete = () => resolve();
+        transaction.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getQuestionsFromDB(lang, level) {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(['questions'], 'readonly');
+        const store = transaction.objectStore('questions');
+        const index = store.index('lang_level');
+        const request = index.getAll([lang, level]);
+
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+function initLanguageList() {
+    const list = document.getElementById('language-list');
+    list.innerHTML = '';
+    
+    languages.forEach(lang => {
+        const btn = document.createElement('button');
+        btn.className = `w-full flex items-center p-4 rounded-2xl bg-white border-2 border-gray-100 hover:${lang.border} shadow-sm transition group text-left relative`;
+        btn.onclick = () => selectLanguage(lang.id);
+        
+        btn.innerHTML = `
+            <div class="w-14 h-14 ${lang.bg} rounded-xl flex items-center justify-center text-3xl mr-4 z-10 shrink-0">
+                ${lang.icon}
+            </div>
+            <div class="z-10 flex-1">
+                <h3 class="font-bold text-gray-800 text-lg">${lang.name}</h3>
+                <p class="text-gray-400 text-xs font-medium">For ${lang.source}</p>
+            </div>
+            <div class="absolute right-4 text-gray-300 group-hover:text-indigo-500 transition z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </div>
+        `;
+        list.appendChild(btn);
+    });
+}
+
+function switchScreen(screenId) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(`screen-${screenId}`).classList.add('active');
+    currentScreen = screenId;
+    updateHeader();
+}
+
+function updateHeader() {
+    const backBtn = document.getElementById('btn-back');
+    if (currentScreen === 'languages') {
+        backBtn.classList.add('invisible');
+    } else if (currentScreen === 'levels' || currentScreen === 'game') {
+        backBtn.classList.remove('invisible');
+    } else if (currentScreen === 'results') {
+        backBtn.classList.add('invisible');
+    }
+}
+
+function navigateBack() {
+    if (currentScreen === 'levels') {
+        switchScreen('languages');
+    } else if (currentScreen === 'game') {
+        // Confirm implicitly via UX, but avoiding alert() 
+        // We just send them back to levels and reset.
+        switchScreen('levels');
+    }
+}
+
+function navigateHome() {
+    switchScreen('languages');
+}
+
+function selectLanguage(langId) {
+    selectedLangId = langId;
+    const lang = languages.find(l => l.id === langId);
+    document.getElementById('level-lang-icon').textContent = lang.icon;
+    document.getElementById('level-title').textContent = `${lang.target} Levels`;
+    switchScreen('levels');
+}
+
+async function selectLevel(level) {
+    selectedLevel = level;
+    
+    try {
+        const dbQuestions = await getQuestionsFromDB(selectedLangId, level);
+        if (!dbQuestions || dbQuestions.length === 0) {
+            console.error("No data for this combination.");
+            return;
+        }
+        
+        // Deep copy and shuffle questions
+        currentQuestions = [...dbQuestions].sort(() => Math.random() - 0.5);
+        currentQuestionIndex = 0;
+        score = 0;
+        
+        updateScoreUI();
+        switchScreen('game');
+        renderQuestion();
+    } catch (error) {
+        console.error("Error fetching questions:", error);
+    }
+}
+
+function renderQuestion() {
+    if (currentQuestionIndex >= currentQuestions.length) {
+        endGame();
+        return;
+    }
+
+    isAnimating = false;
+    const lang = languages.find(l => l.id === selectedLangId);
+    const qData = currentQuestions[currentQuestionIndex];
+    
+    // Update Progress
+    const progressPercent = ((currentQuestionIndex) / currentQuestions.length) * 100;
+    document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+    document.getElementById('game-progress-text').textContent = `${currentQuestionIndex + 1} / ${currentQuestions.length}`;
+    
+    // Update Prompt
+    document.getElementById('question-prompt').textContent = `${lang.promptFormat}:`;
+    document.getElementById('question-word').textContent = `"${qData.q}"`;
+
+    // Prepare Options (1 correct, 3 wrong)
+    const options = [qData.a, ...qData.wrong];
+    // Shuffle Options
+    options.sort(() => Math.random() - 0.5);
+
+    const container = document.getElementById('options-container');
+    container.innerHTML = '';
+
+    options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = `w-full text-left p-4 rounded-2xl border-2 border-gray-200 bg-white shadow-sm hover:border-indigo-300 hover:bg-indigo-50 font-medium text-gray-700 text-lg transition-all duration-200 outline-none tap-highlight-transparent`;
+        btn.textContent = opt;
+        
+        // Keep reference for checking
+        btn.onclick = () => checkAnswer(btn, opt, qData.a);
+        container.appendChild(btn);
+    });
+}
+
+function checkAnswer(clickedBtn, selectedAnswer, correctAnswer) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const isCorrect = selectedAnswer === correctAnswer;
+    
+    if (isCorrect) {
+        clickedBtn.classList.add('anim-correct');
+        score++;
+        updateScoreUI();
+    } else {
+        clickedBtn.classList.add('anim-wrong');
+        // Highlight the correct one
+        const buttons = document.getElementById('options-container').querySelectorAll('button');
+        buttons.forEach(btn => {
+            if (btn.textContent === correctAnswer) {
+                btn.classList.add('anim-reveal-correct');
+            }
+        });
+    }
+
+    // Wait for animation, then next question
+    setTimeout(() => {
+        currentQuestionIndex++;
+        renderQuestion();
+    }, 1000);
+}
+
+function updateScoreUI() {
+    document.getElementById('game-score-text').textContent = `Score: ${score}`;
+}
+
+function endGame() {
+    // Set final progress bar to 100%
+    document.getElementById('progress-bar').style.width = `100%`;
+    
+    setTimeout(() => {
+        const total = currentQuestions.length;
+        document.getElementById('final-score').textContent = `${score} / ${total}`;
+        
+        const emojiEl = document.getElementById('result-emoji');
+        const titleEl = document.getElementById('result-title');
+        const msgEl = document.getElementById('result-message');
+        
+        const percentage = score / total;
+        
+        if (percentage === 1) {
+            emojiEl.textContent = '🏆';
+            titleEl.textContent = 'Perfect!';
+            msgEl.textContent = 'Flawless victory. You are a natural!';
+        } else if (percentage >= 0.6) {
+            emojiEl.textContent = '👏';
+            titleEl.textContent = 'Great Job!';
+            msgEl.textContent = 'You have a solid understanding. Keep going!';
+        } else {
+            emojiEl.textContent = '💪';
+            titleEl.textContent = 'Good Effort!';
+            msgEl.textContent = 'Practice makes perfect. Try again!';
+        }
+
+        switchScreen('results');
+    }, 300);
+}

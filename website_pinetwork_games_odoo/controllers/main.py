@@ -583,6 +583,22 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.odoolearning', {'sandbox': sandbox, 'hide_google_translate': True, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
+    @http.route('/odooquizes/', type='http', auth="public", website=True, csrf=False)
+    def odooquizes(self, **kw):
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+            mainnet = ""
+            google_adsense = ""
+        else:
+            sandbox = admin_app_list[0].sandbox
+            mainnet = admin_app_list[0].mainnet
+            google_adsense = admin_app_list[0].google_adsense
+        
+        return http.request.render('website_pinetwork_games_odoo.odooquizes', {'sandbox': sandbox, 'hide_google_translate': True, 'mainnet': mainnet, 'google_adsense': google_adsense})
+    
     @http.route('/languagelearning/', type='http', auth="public", website=True, csrf=False)
     def languagelearning(self, **kw):
         
@@ -598,6 +614,22 @@ class PiNetworkController(http.Controller):
             google_adsense = admin_app_list[0].google_adsense
         
         return http.request.render('website_pinetwork_games_odoo.languagelearning', {'sandbox': sandbox, 'hide_google_translate': True, 'mainnet': mainnet, 'google_adsense': google_adsense})
+    
+    @http.route('/languagequizes/', type='http', auth="public", website=True, csrf=False)
+    def languagequizes(self, **kw):
+        
+        admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
+        
+        if len(admin_app_list) == 0:
+            sandbox = False
+            mainnet = ""
+            google_adsense = ""
+        else:
+            sandbox = admin_app_list[0].sandbox
+            mainnet = admin_app_list[0].mainnet
+            google_adsense = admin_app_list[0].google_adsense
+        
+        return http.request.render('website_pinetwork_games_odoo.languagequizes', {'sandbox': sandbox, 'hide_google_translate': True, 'mainnet': mainnet, 'google_adsense': google_adsense})
     
     @http.route('/wayuulearning/', type='http', auth="public", website=True, csrf=False)
     def wayuulearning(self, **kw):

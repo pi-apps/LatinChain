@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="languagequizes" name="Language Quizes">
+            <t t-call="web.layout">
+            &lt;!DOCTYPE html&gt;
+            <html>
+            <head>
+                <meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+                <title>LingoQuest - Language Learning Game</title>
+                <script src="https://cdn.tailwindcss.com"></script>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+                <style>
+                    body {
+                        font-family: 'Inter', sans-serif;
+                        margin: 0;
+                    }
+
+                    /* Screen Transitions */
+                    .screen {
+                        display: none !important;
+                        flex-direction: column;
+                        width: 100%;
+                        height: 100%;
+                        animation: fadeIn 0.3s ease-in-out;
+                    }
+                    
+                    .screen.active {
+                        display: flex !important;
+                    }
+
+                    @keyframes fadeIn {
+                        from { opacity: 0; transform: translateY(10px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+
+                    /* Game Animations */
+                    @keyframes correctPop {
+                        0% { transform: scale(1); }
+                        50% { transform: scale(1.05); background-color: #10b981; color: white; border-color: #10b981;}
+                        100% { transform: scale(1); background-color: #10b981; color: white; border-color: #10b981;}
+                    }
+
+                    @keyframes wrongShake {
+                        0% { transform: translateX(0); }
+                        20% { transform: translateX(-5px); background-color: #ef4444; color: white; border-color: #ef4444;}
+                        40% { transform: translateX(5px); }
+                        60% { transform: translateX(-5px); }
+                        80% { transform: translateX(5px); }
+                        100% { transform: translateX(0); background-color: #ef4444; color: white; border-color: #ef4444;}
+                    }
+
+                    .anim-correct { animation: correctPop 0.5s forwards; }
+                    .anim-wrong { animation: wrongShake 0.5s forwards; }
+                    
+                    /* Reveal correct answer when user gets it wrong */
+                    .anim-reveal-correct { background-color: #10b981 !important; color: white !important; border-color: #10b981 !important; transition: all 0.3s ease; }
+
+                    .hide-scrollbar::-webkit-scrollbar { display: none; }
+                    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+                </style>
+                
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                
+                <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                
+                <script type="text/javascript">
+                    startCommonAppsAI();
+                </script>
+                
+                <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                    <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                        <div id="blocking-message" style="display: none;">
+                            <div>
+                                Go to Pi Browser
+                            </div>
+                            <div>
+                                <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                            </div>
+                        </div>
+                        <div id="paying-message" style="display: none;">
+                            <div>
+                                Pay Pi to GET PREMIUM
+                            </div>
+                            <div>
+                                <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                            </div>
+                            <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                <br/>
+                                <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                            </div>
+                        </div>
+                        <div id="loading-message" style="display: block;">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                
+            </head>
+            
+            <body class="flex justify-center items-center min-h-screen bg-gray-100">
+
+                <div id="app-container" class="w-full h-[100dvh] bg-white relative flex flex-col md:h-[90vh] md:max-w-md md:rounded-[2rem] md:shadow-2xl">
+                    
+                    <!-- Header -->
+                    <header class="flex items-center p-4 bg-indigo-600 text-white z-10 shrink-0 relative h-16">
+                        <a href="/" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-indigo-700 transition z-20" aria-label="Return to Main">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                        </a>
+                        <button id="btn-back" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-indigo-700 transition invisible z-20 ml-1" onclick="navigateBack()">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <h1 class="text-xl font-bold tracking-wide absolute w-full text-center left-0 top-1/2 -translate-y-1/2 z-10 pointer-events-none">LingoQuest</h1>
+                    </header>
+
+                    <!-- Screen 1: Language Selection -->
+                    <main id="screen-languages" class="screen active p-6 overflow-y-auto hide-scrollbar bg-gray-50 flex-1">
+                        <div class="text-center mb-8 mt-4">
+                            <h2 class="text-2xl font-extrabold text-gray-800 mb-2">Choose a Language</h2>
+                            <p class="text-gray-500 text-sm">Select a course to start your learning journey.</p>
+                        </div>
+                        <div class="grid grid-cols-1 gap-4" id="language-list">
+                            <!-- Languages populated by JS -->
+                        </div>
+                    </main>
+
+                    <!-- Screen 2: Level Selection -->
+                    <main id="screen-levels" class="screen p-6 overflow-y-auto hide-scrollbar bg-gray-50 flex-1">
+                        <div class="text-center mb-8 mt-4">
+                            <div class="text-6xl mb-4" id="level-lang-icon">🌍</div>
+                            <h2 class="text-2xl font-extrabold text-gray-800 mb-2" id="level-title">Select Level</h2>
+                            <p class="text-gray-500 text-sm">Choose your difficulty to begin.</p>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <button onclick="selectLevel('Beginner')" class="p-5 rounded-2xl bg-white border-2 border-emerald-400 hover:bg-emerald-50 shadow-sm transition flex flex-col items-center text-emerald-600">
+                                <span class="text-xl font-bold mb-1">Beginner</span>
+                                <span class="text-xs text-emerald-500 font-medium">Start with the basics</span>
+                            </button>
+                            <button onclick="selectLevel('Intermediate')" class="p-5 rounded-2xl bg-white border-2 border-amber-400 hover:bg-amber-50 shadow-sm transition flex flex-col items-center text-amber-600">
+                                <span class="text-xl font-bold mb-1">Intermediate</span>
+                                <span class="text-xs text-amber-500 font-medium">Build your vocabulary</span>
+                            </button>
+                            <button onclick="selectLevel('Advanced')" class="p-5 rounded-2xl bg-white border-2 border-rose-400 hover:bg-rose-50 shadow-sm transition flex flex-col items-center text-rose-600">
+                                <span class="text-xl font-bold mb-1">Advanced</span>
+                                <span class="text-xs text-rose-500 font-medium">Master the complex words</span>
+                            </button>
+                        </div>
+                    </main>
+
+                    <!-- Screen 3: Game -->
+                    <main id="screen-game" class="screen flex-1 bg-white">
+                        <!-- Progress Bar -->
+                        <div class="w-full bg-gray-200 h-2">
+                            <div id="progress-bar" class="bg-indigo-600 h-2 transition-all duration-300" style="width: 0%"></div>
+                        </div>
+                        
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="text-sm font-semibold text-gray-400" id="game-progress-text">1 / 5</span>
+                                <span class="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full" id="game-score-text">Score: 0</span>
+                            </div>
+
+                            <div class="flex-1 flex flex-col justify-center items-center text-center mb-8">
+                                <p class="text-sm text-gray-500 mb-2 font-medium uppercase tracking-wider" id="question-prompt">How do you say:</p>
+                                <h3 class="text-4xl font-extrabold text-gray-900" id="question-word">...</h3>
+                            </div>
+
+                            <div class="grid grid-cols-1 gap-3 mt-auto" id="options-container">
+                                <!-- Options populated by JS -->
+                            </div>
+                        </div>
+                    </main>
+
+                    <!-- Screen 4: Results -->
+                    <main id="screen-results" class="screen p-6 overflow-y-auto hide-scrollbar bg-gray-50 flex-1 items-center justify-center">
+                        <div class="text-6xl mb-6" id="result-emoji">🎉</div>
+                        <h2 class="text-3xl font-extrabold text-gray-800 mb-2" id="result-title">Great Job!</h2>
+                        <p class="text-gray-500 text-center mb-8" id="result-message">You completed the level.</p>
+                        
+                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 w-full mb-8 text-center">
+                            <p class="text-sm text-gray-400 font-semibold uppercase tracking-wider mb-1">Final Score</p>
+                            <p class="text-5xl font-black text-indigo-600" id="final-score">0 / 0</p>
+                        </div>
+
+                        <button onclick="navigateHome()" class="w-full bg-indigo-600 text-white font-bold text-lg p-4 rounded-2xl shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition active:scale-95">
+                            Play Again
+                        </button>
+                    </main>
+                </div>
+
+                <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/games/languagequizes_functions.js?v=1.102"></script>
+            </body>
+            </html>
+                </t>
+		</template>
+
+</odoo>
