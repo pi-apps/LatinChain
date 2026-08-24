@@ -125,71 +125,71 @@ const initialQuestionDB = {
     },
     'kr': {
         'Beginner': [
-            { q: 'Hello', a: '안녕하세요 (Annyeonghaseyo)', wrong: ['감사합니다', '네', '아니요'] },
-            { q: 'Thank you', a: '감사합니다 (Gamsahamnida)', wrong: ['사랑해요', '미안해요', '괜찮아요'] },
-            { q: 'Yes', a: '네 (Ne)', wrong: ['아니요', '아마도', '절대'] },
-            { q: 'Water', a: '물 (Mul)', wrong: ['불', '흙', '바람'] },
-            { q: 'Friend', a: '친구 (Chingu)', wrong: ['가족', '선생님', '학생'] }
+            { q: 'Hello', a: '안녕하세요 (Annyeonghaseyo)', wrong: ['감사합니다 (Gamsahamnida)', '네 (Ne)', '아니요 (Aniyo)'] },
+            { q: 'Thank you', a: '감사합니다 (Gamsahamnida)', wrong: ['사랑해요 (Saranghaeyo)', '미안해요 (Mianhaeyo)', '괜찮아요 (Gwaenchanayo)'] },
+            { q: 'Yes', a: '네 (Ne)', wrong: ['아니요 (Aniyo)', '아마도 (Amado)', '절대 (Jeoldae)'] },
+            { q: 'Water', a: '물 (Mul)', wrong: ['불 (Bul)', '흙 (Heuk)', '바람 (Baram)'] },
+            { q: 'Friend', a: '친구 (Chingu)', wrong: ['가족 (Gajok)', '선생님 (Seonsaengnim)', '학생 (Haksaeng)'] }
         ],
         'Intermediate': [
-            { q: 'School', a: '학교 (Hakgyo)', wrong: ['병원', '식당', '공원'] },
-            { q: 'Time', a: '시간 (Sigan)', wrong: ['날짜', '요일', '년도'] },
-            { q: 'To eat', a: '먹다 (Meokda)', wrong: ['마시다', '자다', '가다'] },
-            { q: 'Weather', a: '날씨 (Nalssi)', wrong: ['기분', '하늘', '계절'] },
-            { q: 'Beautiful', a: '아름답다 (Areumdapda)', wrong: ['귀엽다', '멋있다', '나쁘다'] }
+            { q: 'School', a: '학교 (Hakgyo)', wrong: ['병원 (Byeongwon)', '식당 (Sikdang)', '공원 (Gongwon)'] },
+            { q: 'Time', a: '시간 (Sigan)', wrong: ['날짜 (Naljja)', '요일 (Yoil)', '년도 (Nyeondo)'] },
+            { q: 'To eat', a: '먹다 (Meokda)', wrong: ['마시다 (Masida)', '자다 (Jada)', '가다 (Gada)'] },
+            { q: 'Weather', a: '날씨 (Nalssi)', wrong: ['기분 (Gibun)', '하늘 (Haneul)', '계절 (Gyejeol)'] },
+            { q: 'Beautiful', a: '아름답다 (Areumdapda)', wrong: ['귀엽다 (Gwiyeopda)', '멋있다 (Meositda)', '나쁘다 (Nappeuda)'] }
         ],
         'Advanced': [
-            { q: 'Experience', a: '경험 (Gyeongheom)', wrong: ['기억', '상상', '이론'] },
-            { q: 'Responsibility', a: '책임 (Chaegim)', wrong: ['의무', '권리', '자유'] },
-            { q: 'Society', a: '사회 (Sahoe)', wrong: ['국가', '세계', '자연'] },
-            { q: 'To improve', a: '개선하다 (Gaeseonhada)', wrong: ['악화되다', '유지하다', '포기하다'] },
-            { q: 'Complex', a: '복잡한 (Bokjaphan)', wrong: ['단순한', '명확한', '평범한'] }
+            { q: 'Experience', a: '경험 (Gyeongheom)', wrong: ['기억 (Gieok)', '상상 (Sangsang)', '이론 (Iron)'] },
+            { q: 'Responsibility', a: '책임 (Chaegim)', wrong: ['의무 (Uimu)', '권리 (Gwonri)', '자유 (Jayu)'] },
+            { q: 'Society', a: '사회 (Sahoe)', wrong: ['국가 (Gukga)', '세계 (Segye)', '자연 (Jayeon)'] },
+            { q: 'To improve', a: '개선하다 (Gaeseonhada)', wrong: ['악화되다 (Akhwadoeda)', '유지하다 (Yujihada)', '포기하다 (Pogihada)'] },
+            { q: 'Complex', a: '복잡한 (Bokjaphan)', wrong: ['단순한 (Dansunhan)', '명확한 (Myeonghwakhan)', '평범한 (Pyeongbeomhan)'] }
         ]
     },
     'cn': {
         'Beginner': [
-            { q: 'Hello', a: '你好 (Nǐ hǎo)', wrong: ['谢谢', '再见', '对不起'] },
-            { q: 'Thank you', a: '谢谢 (Xièxiè)', wrong: ['不客气', '好', '是'] },
-            { q: 'Good', a: '好 (Hǎo)', wrong: ['坏', '大', '小'] },
-            { q: 'Water', a: '水 (Shuǐ)', wrong: ['火', '茶', '酒'] },
-            { q: 'Person', a: '人 (Rén)', wrong: ['狗', '猫', '鸟'] }
+            { q: 'Hello', a: '你好 (Nǐ hǎo)', wrong: ['谢谢 (Xièxiè)', '再见 (Zàijiàn)', '对不起 (Duìbùqǐ)'] },
+            { q: 'Thank you', a: '谢谢 (Xièxiè)', wrong: ['不客气 (Bù kèqì)', '好 (Hǎo)', '是 (Shì)'] },
+            { q: 'Good', a: '好 (Hǎo)', wrong: ['坏 (Huài)', '大 (Dà)', '小 (Xiǎo)'] },
+            { q: 'Water', a: '水 (Shuǐ)', wrong: ['火 (Huǒ)', '茶 (Chá)', '酒 (Jiǔ)'] },
+            { q: 'Person', a: '人 (Rén)', wrong: ['狗 (Gǒu)', '猫 (Māo)', '鸟 (Niǎo)'] }
         ],
         'Intermediate': [
-            { q: 'Computer', a: '电脑 (Diànnǎo)', wrong: ['电视', '电话', '冰箱'] },
-            { q: 'Tomorrow', a: '明天 (Míngtiān)', wrong: ['昨天', '今天', '后天'] },
-            { q: 'Because', a: '因为 (Yīnwèi)', wrong: ['所以', '但是', '如果'] },
-            { q: 'To eat', a: '吃 (Chī)', wrong: ['喝', '跑', '走'] },
-            { q: 'Beautiful', a: '漂亮 (Piàoliang)', wrong: ['丑陋', '奇怪', '聪明'] }
+            { q: 'Computer', a: '电脑 (Diànnǎo)', wrong: ['电视 (Diànshì)', '电话 (Diànhuà)', '冰箱 (Bīngxiāng)'] },
+            { q: 'Tomorrow', a: '明天 (Míngtiān)', wrong: ['昨天 (Zuótiān)', '今天 (Jīntiān)', '后天 (Hòutiān)'] },
+            { q: 'Because', a: '因为 (Yīnwèi)', wrong: ['所以 (Suǒyǐ)', '但是 (Dànshì)', '如果 (Rúguǒ)'] },
+            { q: 'To eat', a: '吃 (Chī)', wrong: ['喝 (Hē)', '跑 (Pǎo)', '走 (Zǒu)'] },
+            { q: 'Beautiful', a: '漂亮 (Piàoliang)', wrong: ['丑陋 (Chǒulòu)', '奇怪 (Qíguài)', '聪明 (Cōngmíng)'] }
         ],
         'Advanced': [
-            { q: 'Influence', a: '影响 (Yǐngxiǎng)', wrong: ['结果', '原因', '目的'] },
-            { q: 'Experience', a: '经验 (Jīngyàn)', wrong: ['理论', '知识', '猜测'] },
-            { q: 'Complicated', a: '复杂 (Fùzá)', wrong: ['简单', '容易', '清楚'] },
-            { q: 'To develop', a: '发展 (Fāzhǎn)', wrong: ['停止', '破坏', '消失'] },
-            { q: 'Society', a: '社会 (Shèhuì)', wrong: ['自然', '太空', '个人的'] }
+            { q: 'Influence', a: '影响 (Yǐngxiǎng)', wrong: ['结果 (Jiéguǒ)', '原因 (Yuányīn)', '目的 (Mùdì)'] },
+            { q: 'Experience', a: '经验 (Jīngyàn)', wrong: ['理论 (Lǐlùn)', '知识 (Zhīshì)', '猜测 (Cāicè)'] },
+            { q: 'Complicated', a: '复杂 (Fùzá)', wrong: ['简单 (Jiǎndān)', '容易 (Róngyì)', '清楚 (Qīngchǔ)'] },
+            { q: 'To develop', a: '发展 (Fāzhǎn)', wrong: ['停止 (Tíngzhǐ)', '破坏 (Pòhuài)', '消失 (Xiāoshī)'] },
+            { q: 'Society', a: '社会 (Shèhuì)', wrong: ['自然 (Zìrán)', '太空 (Tàikōng)', '个人的 (Gèrén de)'] }
         ]
     },
     'jp': {
         'Beginner': [
-            { q: 'Hello', a: 'こんにちは (Konnichiwa)', wrong: ['さようなら', 'ありがとう', 'はい'] },
-            { q: 'Cat', a: '猫 (Neko)', wrong: ['犬', '鳥', '魚'] },
-            { q: 'Water', a: '水 (Mizu)', wrong: ['お茶', '酒', '牛乳'] },
-            { q: 'Yes', a: 'はい (Hai)', wrong: ['いいえ', 'たぶん', 'いつも'] },
-            { q: 'Thank you', a: 'ありがとう (Arigatou)', wrong: ['すみません', 'おはよう', 'おやすみ'] }
+            { q: 'Hello', a: 'こんにちは (Konnichiwa)', wrong: ['さようなら (Sayounara)', 'ありがとう (Arigatou)', 'はい (Hai)'] },
+            { q: 'Cat', a: '猫 (Neko)', wrong: ['犬 (Inu)', '鳥 (Tori)', '魚 (Sakana)'] },
+            { q: 'Water', a: '水 (Mizu)', wrong: ['お茶 (Ocha)', '酒 (Sake)', '牛乳 (Gyūnyū)'] },
+            { q: 'Yes', a: 'はい (Hai)', wrong: ['いいえ (Iie)', 'たぶん (Tabun)', 'いつも (Itsumo)'] },
+            { q: 'Thank you', a: 'ありがとう (Arigatou)', wrong: ['すみません (Sumimasen)', 'おはよう (Ohayou)', 'おやすみ (Oyasumi)'] }
         ],
         'Intermediate': [
-            { q: 'Book', a: '本 (Hon)', wrong: ['雑誌', '新聞', '手紙'] },
-            { q: 'Tomorrow', a: '明日 (Ashita)', wrong: ['昨日', '今日', '来週'] },
-            { q: 'To eat', a: '食べる (Taberu)', wrong: ['飲む', '寝る', '行く'] },
-            { q: 'Friend', a: '友達 (Tomodachi)', wrong: ['家族', '先生', '学生'] },
-            { q: 'Fast', a: '早い (Hayai)', wrong: ['遅い', '高い', '安い'] }
+            { q: 'Book', a: '本 (Hon)', wrong: ['雑誌 (Zasshi)', '新聞 (Shinbun)', '手紙 (Tegami)'] },
+            { q: 'Tomorrow', a: '明日 (Ashita)', wrong: ['昨日 (Kinō)', '今日 (Kyō)', '来週 (Raishū)'] },
+            { q: 'To eat', a: '食べる (Taberu)', wrong: ['飲む (Nomu)', '寝る (Neru)', '行く (Iku)'] },
+            { q: 'Friend', a: '友達 (Tomodachi)', wrong: ['家族 (Kazoku)', '先生 (Sensei)', '学生 (Gakusei)'] },
+            { q: 'Fast', a: '早い (Hayai)', wrong: ['遅い (Osoi)', '高い (Takai)', '安い (Yasui)'] }
         ],
         'Advanced': [
-            { q: 'Economy', a: '経済 (Keizai)', wrong: ['政治', '文化', '歴史'] },
-            { q: 'Preparation', a: '準備 (Junbi)', wrong: ['結果', '原因', '計画'] },
-            { q: 'To solve', a: '解決する (Kaiketsu suru)', wrong: ['失敗する', '無視する', '忘れる'] },
-            { q: 'Environment', a: '環境 (Kankyō)', wrong: ['自然', '都市', '宇宙'] },
-            { q: 'Complicated', a: '複雑な (Fukuzatsuna)', wrong: ['簡単な', '明らかな', '普通の'] }
+            { q: 'Economy', a: '経済 (Keizai)', wrong: ['政治 (Seiji)', '文化 (Bunka)', '歴史 (Rekishi)'] },
+            { q: 'Preparation', a: '準備 (Junbi)', wrong: ['結果 (Kekka)', '原因 (Gen\'in)', '計画 (Keikaku)'] },
+            { q: 'To solve', a: '解決する (Kaiketsu suru)', wrong: ['失敗する (Shippai suru)', '無視する (Mushi suru)', '忘れる (Wasureru)'] },
+            { q: 'Environment', a: '環境 (Kankyō)', wrong: ['自然 (Shizen)', '都市 (Toshi)', '宇宙 (Uchū)'] },
+            { q: 'Complicated', a: '複雑な (Fukuzatsuna)', wrong: ['簡単な (Kantan na)', '明らかな (Akiraka na)', '普通の (Futsū no)'] }
         ]
     },
     'vn': {
