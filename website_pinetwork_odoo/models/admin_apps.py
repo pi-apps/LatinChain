@@ -1093,17 +1093,13 @@ class admin_apps(models.Model):
             for j in i.pi_users_devs_ids:
                 dev_paid = False
                 admin_app_main_user = self.env["admin.apps"].sudo().search([('app', '=', "auth_platform")])
-                #if j.pi_user_code == admin_app_main_user[0].pi_main_user.pi_user_code or not j.has_paid_latinchain_token():
-                #    continue
-                #else:
-                #    for k in i.pi_users_devs_paid_ids:
-                #        if j.pi_user_code == k.pi_user_code:
-                #            dev_paid = True
-                #            break
-                for k in i.pi_users_devs_paid_ids:
-                    if j.pi_user_code == k.pi_user_code:
-                        dev_paid = True
-                        break
+                if j.pi_user_code == admin_app_main_user[0].pi_main_user.pi_user_code or not j.has_paid_latinchain_token():
+                    continue
+                else:
+                    for k in i.pi_users_devs_paid_ids:
+                        if j.pi_user_code == k.pi_user_code:
+                            dev_paid = True
+                            break
                 if not dev_paid:
                     devs.append(j)
                 
