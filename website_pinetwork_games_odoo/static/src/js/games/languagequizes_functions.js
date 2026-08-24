@@ -233,15 +233,21 @@ async function initDB() {
 
         request.onupgradeneeded = (event) => {
             const database = event.target.result;
-            if (!database.objectStoreNames.contains('questions')) {
-                const store = database.createObjectStore('questions', { keyPath: 'id', autoIncrement: true });
-                // Create a compound index to search quickly by language and level
-                store.createIndex('lang_level', ['lang', 'level'], { unique: false });
+            
+            // If the store already exists (from version 1), delete it so we can start fresh
+            if (database.objectStoreNames.contains('questions')) {
+                database.deleteObjectStore('questions');
             }
+            
+            // Create the new store
+            const store = database.createObjectStore('questions', { keyPath: 'id', autoIncrement: true });
+            store.createIndex('lang_level', ['lang', 'level'], { unique: false });
         };
 
         request.onsuccess = (event) => {
             db = event.target.result;
+            // Since we deleted the store on upgrade, it will be empty, 
+            // and checkAndSeedDB will naturally re-seed the new questions.
             checkAndSeedDB().then(resolve).catch(reject);
         };
 
