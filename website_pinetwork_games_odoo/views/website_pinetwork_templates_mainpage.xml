@@ -3320,6 +3320,9 @@
                                 <div style="margin-bottom:5px; padding-top:5px;" class="border rounded">
                                     <h5 translate="no"><strong>#LatinChain #User &#128526;</strong></h5>
                                 </div>
+                                <div class="div-certification" style="display: none; margin-bottom: 5px">
+                                    <button class="col-12 btn btn-info certification font-weight-bold" ><div style="display:inline;"><i class="fa-solid fa-graduation-cap"></i></div> <div style="display:inline;">certification</div></button>
+                                </div>
                                 <div class="p-3 mb-2 bg-secondary bg-gradient text-white rounded">
                                     <br/>User: <strong id="user_logged" translate="no">--</strong><br/>
                                     <br/>Status: <strong class="user_status_account">Access through Pi Browser.<br/></strong>
