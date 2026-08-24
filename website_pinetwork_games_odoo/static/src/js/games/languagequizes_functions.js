@@ -8,7 +8,7 @@ let score = 0;
 let isAnimating = false;
 
 const DB_NAME = 'LingoQuestDB';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 let db;
 
 // Data Structure
