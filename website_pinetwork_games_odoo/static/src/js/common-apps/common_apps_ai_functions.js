@@ -48,6 +48,19 @@ var startCommonAppsAI = () => {
             document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
         }
         
+        function showCert(text)
+        {
+            if(pi_user_code != "")
+            {
+                showModalAllApps(text, 'Cert of ' + pi_user_code);
+            }else
+            {
+                showModalAllApps("You need to login", 'Login');
+            }
+        }
+        
+        startCommonAppsAIVars.showCert = showCert;
+        
         var startTime=new Date(), endTime=new Date(), seconds=0;
 
         function start() {
