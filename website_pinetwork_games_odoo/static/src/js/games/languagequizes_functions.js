@@ -263,12 +263,12 @@ async function updateGlobalScoreDisplay() {
                 scoreWrapper.innerHTML = `🌟 <span id="global-total-score">${totalScore}</span> pts`;
                 
                 headerElement.appendChild(scoreWrapper);
-                
-                $('#global-score-container').off('click').on('click', function(){
-                    startCommonAppsAIVars.showCert('You have currently 🌟 ' + totalScore + ' pts in Language Quizes');
-                });
             }
         }
+        
+        $('#global-score-container').off('click').on('click', function(){
+            startCommonAppsAIVars.showCert('You have currently 🌟 ' + totalScore + ' pts in Odoo Quizes');
+        });
     } catch (error) {
         console.error("Error updating global score:", error);
     }
