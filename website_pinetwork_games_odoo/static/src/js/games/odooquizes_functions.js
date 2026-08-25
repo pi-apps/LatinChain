@@ -263,20 +263,30 @@ async function getGlobalScore() {
 async function updateGlobalScoreDisplay() {
     try {
         const totalScore = await getGlobalScore();
-        let scoreContainer = document.getElementById('global-score-container');
         
-        // Inyectamos un div arriba para mostrar el total (con un estilo purple/Odoo)
-        if (!scoreContainer) {
-            scoreContainer = document.createElement('div');
-            scoreContainer.id = 'global-score-container';
-            scoreContainer.className = 'fixed top-0 left-0 w-full bg-purple-700 text-white text-center py-2 text-sm font-bold z-50 shadow-md transition-all';
-            scoreContainer.innerHTML = `🌟 Puntos Totales: <span id="global-total-score">${totalScore}</span>`;
-            
-            // Damos margen al body para no tapar contenido
-            document.body.style.paddingTop = '40px'; 
-            document.body.prepend(scoreContainer);
+        // 1. Look for an existing element in your HTML with id="global-total-score"
+        const existingScoreSpan = document.getElementById('global-total-score');
+        
+        if (existingScoreSpan) {
+            // If you added <span id="global-total-score"></span> manually, just update it
+            existingScoreSpan.textContent = totalScore;
         } else {
-            document.getElementById('global-total-score').textContent = totalScore;
+            // 2. If it doesn't exist, automatically find the <header> tag and append a styled badge
+            const headerElement = document.querySelector('header');
+            
+            if (headerElement) {
+                // Ensure the header doesn't cut off our new element
+                headerElement.style.display = 'flex';
+                headerElement.style.alignItems = 'center';
+                headerElement.style.justifyContent = 'space-between';
+                
+                const scoreWrapper = document.createElement('div');
+                scoreWrapper.id = 'global-score-container';
+                scoreWrapper.className = 'flex items-center gap-1 font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full text-sm ml-auto';
+                scoreWrapper.innerHTML = `🌟 <span id="global-total-score">${totalScore}</span> pts`;
+                
+                headerElement.appendChild(scoreWrapper);
+            }
         }
     } catch (error) {
         console.error("Error updating global score:", error);
