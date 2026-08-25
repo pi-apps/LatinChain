@@ -52,7 +52,7 @@ var startCommonAppsAI = () => {
         {
             if(pi_user_code != "")
             {
-                showModalAllApps(text, 'Cert of ' + pi_user_code);
+                showModalAllApps(text, 'Cert for ' + pi_user_code);
             }else
             {
                 showModalAllApps("You need to login", 'Login');
