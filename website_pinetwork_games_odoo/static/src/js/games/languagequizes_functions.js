@@ -8,74 +8,21 @@ let score = 0;
 let isAnimating = false;
 
 const DB_NAME = 'LingoQuestDB';
-const DB_VERSION = 2;
+// 1. Aumentamos la versión de la base de datos para forzar la actualización
+const DB_VERSION = 3; 
 let db;
 
 // Data Structure
 const languages = [
-    {
-        id: 'es',
-        name: 'Spanish',
-        target: 'Spanish',
-        source: 'English speakers',
-        icon: '🇪🇸',
-        promptFormat: 'How do you say',
-        bg: 'bg-orange-100',
-        border: 'border-orange-200'
-    },
-    {
-        id: 'en',
-        name: 'English',
-        target: 'English',
-        source: 'Spanish speakers',
-        icon: '🇬🇧',
-        promptFormat: '¿Cómo se dice',
-        bg: 'bg-blue-100',
-        border: 'border-blue-200'
-    },
-    {
-        id: 'kr',
-        name: 'Korean',
-        target: 'Korean',
-        source: 'English speakers',
-        icon: '🇰🇷',
-        promptFormat: 'How do you say',
-        bg: 'bg-pink-100',
-        border: 'border-pink-200'
-    },
-    {
-        id: 'cn',
-        name: 'Chinese (Mandarin)',
-        target: 'Chinese',
-        source: 'English speakers',
-        icon: '🇨🇳',
-        promptFormat: 'How do you say',
-        bg: 'bg-red-100',
-        border: 'border-red-200'
-    },
-    {
-        id: 'jp',
-        name: 'Japanese',
-        target: 'Japanese',
-        source: 'English speakers',
-        icon: '🇯🇵',
-        promptFormat: 'How do you say',
-        bg: 'bg-purple-100',
-        border: 'border-purple-200'
-    },
-    {
-        id: 'vn',
-        name: 'Vietnamese',
-        target: 'Vietnamese',
-        source: 'English speakers',
-        icon: '🇻🇳',
-        promptFormat: 'How do you say',
-        bg: 'bg-yellow-100',
-        border: 'border-yellow-200'
-    }
+    { id: 'es', name: 'Spanish', target: 'Spanish', source: 'English speakers', icon: '🇪🇸', promptFormat: 'How do you say', bg: 'bg-orange-100', border: 'border-orange-200' },
+    { id: 'en', name: 'English', target: 'English', source: 'Spanish speakers', icon: '🇬🇧', promptFormat: '¿Cómo se dice', bg: 'bg-blue-100', border: 'border-blue-200' },
+    { id: 'kr', name: 'Korean', target: 'Korean', source: 'English speakers', icon: '🇰🇷', promptFormat: 'How do you say', bg: 'bg-pink-100', border: 'border-pink-200' },
+    { id: 'cn', name: 'Chinese (Mandarin)', target: 'Chinese', source: 'English speakers', icon: '🇨🇳', promptFormat: 'How do you say', bg: 'bg-red-100', border: 'border-red-200' },
+    { id: 'jp', name: 'Japanese', target: 'Japanese', source: 'English speakers', icon: '🇯🇵', promptFormat: 'How do you say', bg: 'bg-purple-100', border: 'border-purple-200' },
+    { id: 'vn', name: 'Vietnamese', target: 'Vietnamese', source: 'English speakers', icon: '🇻🇳', promptFormat: 'How do you say', bg: 'bg-yellow-100', border: 'border-yellow-200' }
 ];
 
-// Question Database
+// Question Database (Mantenida intacta)
 const initialQuestionDB = {
     'es': {
         'Beginner': [
@@ -222,6 +169,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         await initDB();
         initLanguageList();
         updateHeader();
+        // 2. Cargamos y mostramos el score total apenas inicia la app
+        await updateGlobalScoreDisplay();
     } catch (error) {
         console.error("Failed to initialize database", error);
     }
@@ -234,25 +183,81 @@ async function initDB() {
         request.onupgradeneeded = (event) => {
             const database = event.target.result;
             
-            // If the store already exists (from version 1), delete it so we can start fresh
             if (database.objectStoreNames.contains('questions')) {
                 database.deleteObjectStore('questions');
             }
             
-            // Create the new store
             const store = database.createObjectStore('questions', { keyPath: 'id', autoIncrement: true });
             store.createIndex('lang_level', ['lang', 'level'], { unique: false });
+
+            // 3. Creamos un store nuevo para los puntajes del usuario
+            if (!database.objectStoreNames.contains('userScores')) {
+                database.createObjectStore('userScores', { keyPath: 'sectionId' });
+            }
         };
 
         request.onsuccess = (event) => {
             db = event.target.result;
-            // Since we deleted the store on upgrade, it will be empty, 
-            // and checkAndSeedDB will naturally re-seed the new questions.
             checkAndSeedDB().then(resolve).catch(reject);
         };
 
         request.onerror = (event) => reject(event.target.error);
     });
+}
+
+// 4. Funciones nuevas para manejar el puntaje total
+async function saveScoreToDB(lang, level, finalScore) {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(['userScores'], 'readwrite');
+        const store = transaction.objectStore('userScores');
+        
+        // Creamos un ID único por sección (ej. "es_Beginner")
+        const sectionId = `${lang}_${level}`;
+        
+        // .put() sobrescribe si el ID ya existe, ideal para el recálculo
+        const request = store.put({ sectionId, score: finalScore });
+        
+        request.onsuccess = () => resolve();
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getGlobalScore() {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(['userScores'], 'readonly');
+        const store = transaction.objectStore('userScores');
+        const request = store.getAll();
+        
+        request.onsuccess = () => {
+            const scores = request.result;
+            const total = scores.reduce((sum, item) => sum + item.score, 0);
+            resolve(total);
+        };
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function updateGlobalScoreDisplay() {
+    try {
+        const totalScore = await getGlobalScore();
+        let scoreContainer = document.getElementById('global-score-container');
+        
+        // Si el elemento no existe, lo inyectamos fijado arriba (usando clases de Tailwind)
+        if (!scoreContainer) {
+            scoreContainer = document.createElement('div');
+            scoreContainer.id = 'global-score-container';
+            scoreContainer.className = 'fixed top-0 left-0 w-full bg-indigo-600 text-white text-center py-2 text-sm font-bold z-50 shadow-md transition-all';
+            scoreContainer.innerHTML = `🌟 Puntos Totales: <span id="global-total-score">${totalScore}</span>`;
+            
+            // Damos margen al body para que el banner fijo no tape el contenido superior
+            document.body.style.paddingTop = '40px'; 
+            document.body.prepend(scoreContainer);
+        } else {
+            document.getElementById('global-total-score').textContent = totalScore;
+        }
+    } catch (error) {
+        console.error("Error updating global score:", error);
+    }
 }
 
 async function checkAndSeedDB() {
@@ -351,8 +356,6 @@ function navigateBack() {
     if (currentScreen === 'levels') {
         switchScreen('languages');
     } else if (currentScreen === 'game') {
-        // Confirm implicitly via UX, but avoiding alert() 
-        // We just send them back to levels and reset.
         switchScreen('levels');
     }
 }
@@ -379,7 +382,6 @@ async function selectLevel(level) {
             return;
         }
         
-        // Deep copy and shuffle questions
         currentQuestions = [...dbQuestions].sort(() => Math.random() - 0.5);
         currentQuestionIndex = 0;
         score = 0;
@@ -402,18 +404,14 @@ function renderQuestion() {
     const lang = languages.find(l => l.id === selectedLangId);
     const qData = currentQuestions[currentQuestionIndex];
     
-    // Update Progress
     const progressPercent = ((currentQuestionIndex) / currentQuestions.length) * 100;
     document.getElementById('progress-bar').style.width = `${progressPercent}%`;
     document.getElementById('game-progress-text').textContent = `${currentQuestionIndex + 1} / ${currentQuestions.length}`;
     
-    // Update Prompt
     document.getElementById('question-prompt').textContent = `${lang.promptFormat}:`;
     document.getElementById('question-word').textContent = `"${qData.q}"`;
 
-    // Prepare Options (1 correct, 3 wrong)
     const options = [qData.a, ...qData.wrong];
-    // Shuffle Options
     options.sort(() => Math.random() - 0.5);
 
     const container = document.getElementById('options-container');
@@ -424,7 +422,6 @@ function renderQuestion() {
         btn.className = `w-full text-left p-4 rounded-2xl border-2 border-gray-200 bg-white shadow-sm hover:border-indigo-300 hover:bg-indigo-50 font-medium text-gray-700 text-lg transition-all duration-200 outline-none tap-highlight-transparent`;
         btn.textContent = opt;
         
-        // Keep reference for checking
         btn.onclick = () => checkAnswer(btn, opt, qData.a);
         container.appendChild(btn);
     });
@@ -442,7 +439,6 @@ function checkAnswer(clickedBtn, selectedAnswer, correctAnswer) {
         updateScoreUI();
     } else {
         clickedBtn.classList.add('anim-wrong');
-        // Highlight the correct one
         const buttons = document.getElementById('options-container').querySelectorAll('button');
         buttons.forEach(btn => {
             if (btn.textContent === correctAnswer) {
@@ -451,7 +447,6 @@ function checkAnswer(clickedBtn, selectedAnswer, correctAnswer) {
         });
     }
 
-    // Wait for animation, then next question
     setTimeout(() => {
         currentQuestionIndex++;
         renderQuestion();
@@ -462,9 +457,13 @@ function updateScoreUI() {
     document.getElementById('game-score-text').textContent = `Score: ${score}`;
 }
 
-function endGame() {
-    // Set final progress bar to 100%
+// 5. Convertimos endGame en asíncrono para guardar los datos al terminar
+async function endGame() {
     document.getElementById('progress-bar').style.width = `100%`;
+    
+    // Guardar el puntaje en DB y actualizar el total global de inmediato
+    await saveScoreToDB(selectedLangId, selectedLevel, score);
+    await updateGlobalScoreDisplay();
     
     setTimeout(() => {
         const total = currentQuestions.length;

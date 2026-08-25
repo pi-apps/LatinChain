@@ -8,75 +8,20 @@ let score = 0;
 let isAnimating = false;
 
 const DB_NAME = 'OdooQuestDB';
-const DB_VERSION = 2;
+// 1. Aumentamos la versión a 3 para forzar la actualización de IndexedDB y crear la nueva tabla
+const DB_VERSION = 3; 
 let db;
 
 // Data Structure for Categories
 const categories = [
-    {
-        id: 'python',
-        name: 'Python',
-        desc: 'Models, Controllers, Reports, ORM',
-        icon: '🐍',
-        bg: 'bg-green-100',
-        border: 'border-green-200'
-    },
-    {
-        id: 'javascript',
-        name: 'JavaScript',
-        desc: 'Dynamic views, OWL framework',
-        icon: '⚡',
-        bg: 'bg-yellow-100',
-        border: 'border-yellow-200'
-    },
-    {
-        id: 'xml',
-        name: 'XML',
-        desc: 'Views, Actions, Menus, Data',
-        icon: '📄',
-        bg: 'bg-blue-100',
-        border: 'border-blue-200'
-    },
-    {
-        id: 'qweb',
-        name: 'QWeb',
-        desc: 'Web templating engine, Reports',
-        icon: '🌐',
-        bg: 'bg-teal-100',
-        border: 'border-teal-200'
-    },
-    {
-        id: 'csv',
-        name: 'CSV Data',
-        desc: 'Access Rights, Security, Imports',
-        icon: '📊',
-        bg: 'bg-emerald-100',
-        border: 'border-emerald-200'
-    },
-    {
-        id: 'html',
-        name: 'HTML',
-        desc: 'Website snippets, Views structure',
-        icon: '🖥️',
-        bg: 'bg-orange-100',
-        border: 'border-orange-200'
-    },
-    {
-        id: 'translations',
-        name: 'Translations',
-        desc: '.po files, Multi-language',
-        icon: '🌍',
-        bg: 'bg-indigo-100',
-        border: 'border-indigo-200'
-    },
-    {
-        id: 'erppeek',
-        name: 'ERPPeek',
-        desc: 'External API client',
-        icon: '🛠️',
-        bg: 'bg-gray-200',
-        border: 'border-gray-300'
-    }
+    { id: 'python', name: 'Python', desc: 'Models, Controllers, Reports, ORM', icon: '🐍', bg: 'bg-green-100', border: 'border-green-200' },
+    { id: 'javascript', name: 'JavaScript', desc: 'Dynamic views, OWL framework', icon: '⚡', bg: 'bg-yellow-100', border: 'border-yellow-200' },
+    { id: 'xml', name: 'XML', desc: 'Views, Actions, Menus, Data', icon: '📄', bg: 'bg-blue-100', border: 'border-blue-200' },
+    { id: 'qweb', name: 'QWeb', desc: 'Web templating engine, Reports', icon: '🌐', bg: 'bg-teal-100', border: 'border-teal-200' },
+    { id: 'csv', name: 'CSV Data', desc: 'Access Rights, Security, Imports', icon: '📊', bg: 'bg-emerald-100', border: 'border-emerald-200' },
+    { id: 'html', name: 'HTML', desc: 'Website snippets, Views structure', icon: '🖥️', bg: 'bg-orange-100', border: 'border-orange-200' },
+    { id: 'translations', name: 'Translations', desc: '.po files, Multi-language', icon: '🌍', bg: 'bg-indigo-100', border: 'border-indigo-200' },
+    { id: 'erppeek', name: 'ERPPeek', desc: 'External API client', icon: '🛠️', bg: 'bg-gray-200', border: 'border-gray-300' }
 ];
 
 const initialQuestionDB = {
@@ -247,6 +192,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         await initDB();
         initCategoryList();
         updateHeader();
+        // 2. Cargamos y mostramos el score total apenas inicia la app
+        await updateGlobalScoreDisplay();
     } catch (error) {
         console.error("Failed to initialize database", error);
     }
@@ -259,25 +206,81 @@ async function initDB() {
         request.onupgradeneeded = (event) => {
             const database = event.target.result;
             
-            // If the store already exists (from version 1), delete it so we can start fresh
             if (database.objectStoreNames.contains('questions')) {
                 database.deleteObjectStore('questions');
             }
             
-            // Create the new store
             const store = database.createObjectStore('questions', { keyPath: 'id', autoIncrement: true });
             store.createIndex('cat_level', ['category', 'level'], { unique: false });
+
+            // 3. Creamos un nuevo almacén para guardar los puntos del usuario
+            if (!database.objectStoreNames.contains('userScores')) {
+                database.createObjectStore('userScores', { keyPath: 'sectionId' });
+            }
         };
 
         request.onsuccess = (event) => {
             db = event.target.result;
-            // Since we deleted the store on upgrade, it will be empty, 
-            // and checkAndSeedDB will naturally re-seed the new questions.
             checkAndSeedDB().then(resolve).catch(reject);
         };
 
         request.onerror = (event) => reject(event.target.error);
     });
+}
+
+// 4. Funciones para manejar el puntaje total por secciones
+async function saveScoreToDB(category, level, finalScore) {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(['userScores'], 'readwrite');
+        const store = transaction.objectStore('userScores');
+        
+        // Creamos un ID único por sección (ej. "python_Beginner")
+        const sectionId = `${category}_${level}`;
+        
+        // .put() sobrescribe si la sección ya existe
+        const request = store.put({ sectionId, score: finalScore });
+        
+        request.onsuccess = () => resolve();
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function getGlobalScore() {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(['userScores'], 'readonly');
+        const store = transaction.objectStore('userScores');
+        const request = store.getAll();
+        
+        request.onsuccess = () => {
+            const scores = request.result;
+            const total = scores.reduce((sum, item) => sum + item.score, 0);
+            resolve(total);
+        };
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+async function updateGlobalScoreDisplay() {
+    try {
+        const totalScore = await getGlobalScore();
+        let scoreContainer = document.getElementById('global-score-container');
+        
+        // Inyectamos un div arriba para mostrar el total (con un estilo purple/Odoo)
+        if (!scoreContainer) {
+            scoreContainer = document.createElement('div');
+            scoreContainer.id = 'global-score-container';
+            scoreContainer.className = 'fixed top-0 left-0 w-full bg-purple-700 text-white text-center py-2 text-sm font-bold z-50 shadow-md transition-all';
+            scoreContainer.innerHTML = `🌟 Puntos Totales: <span id="global-total-score">${totalScore}</span>`;
+            
+            // Damos margen al body para no tapar contenido
+            document.body.style.paddingTop = '40px'; 
+            document.body.prepend(scoreContainer);
+        } else {
+            document.getElementById('global-total-score').textContent = totalScore;
+        }
+    } catch (error) {
+        console.error("Error updating global score:", error);
+    }
 }
 
 async function checkAndSeedDB() {
@@ -402,7 +405,6 @@ async function selectLevel(level) {
             return;
         }
         
-        // Deep copy and shuffle questions
         currentQuestions = [...dbQuestions].sort(() => Math.random() - 0.5);
         currentQuestionIndex = 0;
         score = 0;
@@ -424,17 +426,13 @@ function renderQuestion() {
     isAnimating = false;
     const qData = currentQuestions[currentQuestionIndex];
     
-    // Update Progress
     const progressPercent = ((currentQuestionIndex) / currentQuestions.length) * 100;
     document.getElementById('progress-bar').style.width = `${progressPercent}%`;
     document.getElementById('game-progress-text').textContent = `${currentQuestionIndex + 1} / ${currentQuestions.length}`;
     
-    // Update Prompt
     document.getElementById('question-text').textContent = qData.q;
 
-    // Prepare Options (1 correct, 3 wrong)
     const options = [qData.a, ...qData.wrong];
-    // Shuffle Options
     options.sort(() => Math.random() - 0.5);
 
     const container = document.getElementById('options-container');
@@ -443,10 +441,8 @@ function renderQuestion() {
     options.forEach(opt => {
         const btn = document.createElement('button');
         btn.className = `w-full text-left p-4 rounded-2xl border-2 border-gray-200 bg-white shadow-sm hover:border-purple-300 hover:bg-purple-50 font-medium text-gray-700 text-[15px] transition-all duration-200 outline-none tap-highlight-transparent`;
-        // Use textContent to safely inject code/HTML characters without breaking DOM
         btn.textContent = opt; 
         
-        // Keep reference for checking
         btn.onclick = () => checkAnswer(btn, opt, qData.a);
         container.appendChild(btn);
     });
@@ -464,7 +460,6 @@ function checkAnswer(clickedBtn, selectedAnswer, correctAnswer) {
         updateScoreUI();
     } else {
         clickedBtn.classList.add('anim-wrong');
-        // Highlight the correct one
         const buttons = document.getElementById('options-container').querySelectorAll('button');
         buttons.forEach(btn => {
             if (btn.textContent === correctAnswer) {
@@ -473,20 +468,23 @@ function checkAnswer(clickedBtn, selectedAnswer, correctAnswer) {
         });
     }
 
-    // Wait for animation, then next question
     setTimeout(() => {
         currentQuestionIndex++;
         renderQuestion();
-    }, 1200); // Slightly longer wait to read the correct answer if wrong
+    }, 1200); 
 }
 
 function updateScoreUI() {
     document.getElementById('game-score-text').textContent = `Score: ${score}`;
 }
 
-function endGame() {
-    // Set final progress bar to 100%
+// 5. Convertimos a asíncrono para guardar el progreso antes de mostrar los resultados
+async function endGame() {
     document.getElementById('progress-bar').style.width = `100%`;
+    
+    // Guardamos el puntaje y actualizamos el banner de forma inmediata
+    await saveScoreToDB(selectedCategoryId, selectedLevel, score);
+    await updateGlobalScoreDisplay();
     
     setTimeout(() => {
         const total = currentQuestions.length;
