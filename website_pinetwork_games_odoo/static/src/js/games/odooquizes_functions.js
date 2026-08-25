@@ -288,7 +288,7 @@ async function updateGlobalScoreDisplay() {
                 headerElement.appendChild(scoreWrapper);
                 
                 $('#global-score-container').off('click').on('click', function(){
-                    startCommonAppsAIVars.showCert('You have currently 🌟 ' + totalScore + ' pts');
+                    startCommonAppsAIVars.showCert('You have currently 🌟 ' + totalScore + ' pts in Odoo Quizes');
                 });
             }
         }
