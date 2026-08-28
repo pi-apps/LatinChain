@@ -917,6 +917,9 @@ $( document ).ready(function() {
     
     //if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && 
     
+    $(".news-latinchain-url").prop("href", "https://news.latin-chain.com/"+hashLatinChainGoogleTranslate);
+    $(".blog-latinchain-url").prop("href", "https://blog-rockcesar.latin-chain.com/"+hashLatinChainGoogleTranslate);
+    
     if($("#nopopup").val().toLowerCase() == "")
         $("#nopopup").val("false");
     

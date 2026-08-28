@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.378"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.379"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1155,7 +1155,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                          <a href="https://news.latin-chain.com" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">LatinChain News</div></a>
+                                          <a href="https://news.latin-chain.com" target="_blank" class="btn btn-primary mb-2 o_default_snippet_text news-latinchain-url"><div style="display:inline;"><i class="fa fa-newspaper-o"></i></div> <div style="display:inline;">LatinChain News</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -1272,7 +1272,7 @@
                                   <div class="row content">
                                     <div class="carousel-content col-lg-8 offset-lg-2 text-center pt8 pb4 o_colored_level bg-black-50">
                                       <h2 style="font-size: 30px;" class="o_default_snippet_text">
-                                      <a href="https://blog-rockcesar.latin-chain.com/2021/05/pi-apps-published.html" rel="noopener" target="_blank" class="href-external btn btn-primary mb-2 o_default_snippet_text"><div style="display:inline;"><i class="fa fa-info"></i></div> <div style="display:inline;">More Info</div></a>
+                                      <a href="https://blog-rockcesar.latin-chain.com/2021/05/pi-apps-published.html" rel="noopener" target="_blank" class="href-external btn btn-primary mb-2 o_default_snippet_text blog-latinchain-url"><div style="display:inline;"><i class="fa fa-info"></i></div> <div style="display:inline;">More Info</div></a>
                                       </h2>
                                       <br/>
                                     </div>
@@ -2074,7 +2074,7 @@
                                 </div>
                                 <div><strong>Watch our Crypto News</strong></div>
                                 <div>
-                                    <a href="https://news.latin-chain.com" target="_blank" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" ><div><i class="fa fa-newspaper-o"></i></div><div>LatinChain News</div></a>
+                                    <a href="https://news.latin-chain.com" target="_blank" class="col-12 btn btn-outline-success font-weight-bold text-black border-success news-latinchain-url" ><div><i class="fa fa-newspaper-o"></i></div><div>LatinChain News</div></a>
                                 </div>
                             </div>
                         </div>
@@ -2201,7 +2201,7 @@
                                 <a href="/newsplayer" id="newsplayer_4" class="col-12 btn btn-outline-info font-weight-bold text-black border-info newsplayer" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Crypto news</div></a>
                             </div>
                             <div style="margin-bottom:5px">
-                                <a href="https://news.latin-chain.com" target="_blank" class="col-12 btn btn-outline-info font-weight-bold text-black border-info" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>LatinChain News</div></a>
+                                <a href="https://news.latin-chain.com" target="_blank" class="col-12 btn btn-outline-info font-weight-bold text-black border-info news-latinchain-url" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>LatinChain News</div></a>
                             </div>
                             <!--<div style="margin-bottom:5px">
                                 <button id="trends-news_2" class="href-external col-12 btn btn-outline-info font-weight-bold text-black border-info trends-news" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div>Trends news</div></button>
@@ -2313,7 +2313,7 @@
                             </div>
                             
                             <div style="margin-bottom:5px">
-                                <a href="https://news.latin-chain.com" target="_blank" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">LatinChain News</div></a>
+                                <a href="https://news.latin-chain.com" target="_blank" class="col-12 btn btn-outline-success font-weight-bold text-black border-success news-latinchain-url" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">LatinChain News</div></a>
                             </div>
                             
                             <!--<div style="margin-bottom:5px">
@@ -3047,7 +3047,7 @@
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
                                             <div class="row" style="text-align: center; padding: 10px">
-                                                <div class="col-12"><a href="https://news.latin-chain.com" target="_blank" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o fa-2xl"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">LatinChain News</div><div style="font-size:80%;">Miniapp (you will earn Latin points, each 1 hour, only if you're PREMIUM on Mainnet)</div><div style="font-size:80%;">Developed with AI</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></a></div>
+                                                <div class="col-12"><a href="https://news.latin-chain.com" target="_blank" class="col-12 btn btn-outline-success font-weight-bold text-black border-success news-latinchain-url" style="border: 2px solid;"><div style=""><i class="fa fa-newspaper-o fa-2xl"></i></div><div style="font-size:100%;" translate="no">NEWS</div><div style="font-size:80%;">LatinChain News</div><div style="font-size:80%;">Miniapp (you will earn Latin points, each 1 hour, only if you're PREMIUM on Mainnet)</div><div style="font-size:80%;">Developed with AI</div><div style="font-size:80%;" ><div style="display:inline">Cool App</div> <div style="display:inline">|</div> <div style="display:inline">News</div></div></a></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top">
@@ -3152,7 +3152,7 @@
                             
                                 <img src="/website_pinetwork_games_odoo/static/src/img/latin-chain-logo.jpeg" alt="LatinChain" class="img-fluid rounded" style="width: 100px; height: 100px;" /><br/><br/>
                                 <!--<a href="https://weblatin.latin-chain.com" class="btn btn-link">LATINCHAIN</a><br/><br/>-->
-                                <a href="https://blog-rockcesar.latin-chain.com/2021/05/pi-apps-published.html" class="btn btn-link" rel="noopener" target="_blank">MORE INFO</a>
+                                <a href="https://blog-rockcesar.latin-chain.com/2021/05/pi-apps-published.html" class="btn btn-link blog-latinchain-url" rel="noopener" target="_blank">MORE INFO</a>
                                 
                                 <div style="min-height: 15px"></div>
                                 
@@ -3216,7 +3216,7 @@
                                 </li>
                                 <li class="list-group-item border-left-0 border-bottom border-right-0 border-top">
                                     <div class="row" style="text-align: center; padding: 10px">
-                                        <div class="col-12"><a href="https://blog-rockcesar.latin-chain.com/2021/03/proyecto-para-red-social-gigante.html" rel="noopener" target="_blank" class="col-12 btn btn-outline-dark font-weight-bold border-dark rounded" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain dSocial</div></a></div>
+                                        <div class="col-12"><a href="https://blog-rockcesar.latin-chain.com/2021/03/proyecto-para-red-social-gigante.html" rel="noopener" target="_blank" class="col-12 btn btn-outline-dark font-weight-bold border-dark rounded blog-latinchain-url" style="border: 2px solid;"><div style=""><i class="fas fa-laptop"></i></div><div style="font-size:100%;">LatinChain dSocial</div></a></div>
                                     </div>
                                 </li>
                                 
@@ -4007,11 +4007,11 @@
                                 </div>
                                 
                                 <div class="row">
-                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">News<br/>LatinChain News</div></a>
+                                    <a class="btn btn-block btn-success rounded col-12 news-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">News<br/>LatinChain News</div></a>
                                 </div>
                                 
                                 <div class="row" style="margin-top: 10px;">
-                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://blog-rockcesar.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">Cesar's Blog<br/>AI &amp; OpenSource</div></a>
+                                    <a class="btn btn-block btn-success rounded col-12 blog-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://blog-rockcesar.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">Cesar's Blog<br/>AI &amp; OpenSource</div></a>
                                 </div>
                                 
                                 <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
