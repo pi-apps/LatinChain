@@ -34,7 +34,7 @@ var is_open_tab_ads = false;
 
 //mainuser is at website_pinetwork_odoo/static/src/js/common_functions.js
 
-var eco_page_version = "?v=1.149";
+var eco_page_version = "?v=1.150";
 
 function setConfirmUnload(on) {
     unloadMessage(on);
