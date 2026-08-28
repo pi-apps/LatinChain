@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.381"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.382"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1313,6 +1313,9 @@
                             </div>
                         </div>
                     </t>-->
+                    
+                    <div class="translate_here_first" style="display: none; text-align:center; width:100% !important; margin-bottom:15px;">
+                    </div>
                     
                     <div class="justify-content-center text-center p-3 mb-2" style="color: #ffffff !important; background-color: #1f2434 !important; text-align: center; margin-bottom: 0px !important">
                         <div class="row">
@@ -3858,6 +3861,10 @@
                             <div id="goforward-message" class="container justify-content-center text-center" style="display: none; flex-direction: column; margin-top: auto; text-align: center;">
                                 <!--<div style="text-align: center;" class="row justify-content-center text-center">-->
                                 <div class="row justify-content-center text-center" style="color: #ffffff !important; background-color: #1f2434 !important; padding: 10px !important; border-radius: 20px;">
+                                    
+                                    <div class="translate_here" style="text-align:center; width:100% !important; margin-bottom:15px;">
+                                    </div>
+                                    
                                     <h5 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="font-size: 80% !important; color: white !important;">
                                         <div>LatinChain Mainnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
                                             <div style="display: none;" class="getverified">

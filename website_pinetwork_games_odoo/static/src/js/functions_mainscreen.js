@@ -914,6 +914,53 @@ function copyToClipboard(text) {
 }
 
 $( document ).ready(function() {
+    $("#translate_text_latinchain_2").appendTo(".translate_here");
+    $("#google_translate_element").appendTo(".translate_here");
+
+    $(".translate_here").show();
+
+    $("#translate_text_latinchain_2").show();
+    $("#google_translate_element").show();
+
+    // 1. Select the element you want to track
+    const targetElement = document.querySelector('.translate_here');
+
+    // 2. Create the observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // entry.isIntersecting is false when the element or its parent is hidden
+        if (!entry.isIntersecting) {
+            console.log('.translate_here (or one of its parents) is now hidden!');
+        
+            $("#translate_text_latinchain_2").appendTo(".translate_here_first");
+            $("#google_translate_element").appendTo(".translate_here_first");
+            
+            $(".translate_here_first").show();
+            
+            $("#translate_text_latinchain_2").show();
+            $("#google_translate_element").show();
+          // Your code runs here
+        } else {
+            $("#translate_text_latinchain_2").appendTo(".translate_here");
+            $("#google_translate_element").appendTo(".translate_here");
+            
+            $(".translate_here").show();
+            
+            $("#translate_text_latinchain_2").show();
+            $("#google_translate_element").show();
+        }
+      });
+    }, { 
+      root: null, // Tracks visibility relative to the browser viewport
+      threshold: 0 // Triggers as soon as the last pixel disappears
+    });
+
+    // 3. Start monitoring
+    observer.observe(targetElement);
+
+});
+
+$( document ).ready(function() {
     
     //if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && 
     
