@@ -923,7 +923,9 @@ $( document ).ready(function() {
     $("#google_translate_element").show();
 
     // 1. Select the element you want to track
-    const targetElement = document.querySelector('.translate_here');
+    //const targetElement = document.querySelector('.translate_here');
+    
+    const targetElement = document.querySelector('#goforward-message');
 
     // 2. Create the observer
     const observer = new IntersectionObserver((entries) => {
