@@ -382,6 +382,10 @@ if(location.pathname.substring(0, 5) != "/web" &&
 
 var hashLatinChainGoogleTranslate = "";
 
+function changingHashLatinChainGoogleTranslate()
+{
+}
+
 var checkLang = () => {
     if(!is_changing_page)
     {
@@ -436,31 +440,37 @@ var loadLang = () => {
                 original_lang = "es";
                 window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
                 hashLatinChainGoogleTranslate = window.location.hash;
+                changingHashLatinChainGoogleTranslate();
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 != "en")
             {
                 original_lang = "en";
                 window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
                 hashLatinChainGoogleTranslate = window.location.hash;
+                changingHashLatinChainGoogleTranslate();
             }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "es")
             {
                 original_lang = "es";
                 window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
                 hashLatinChainGoogleTranslate = window.location.hash;
+                changingHashLatinChainGoogleTranslate();
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "en")
             {
                 original_lang = "en";
                 window.location.hash = `#googtrans(${original_lang}|${savedLanguage1})`;
                 hashLatinChainGoogleTranslate = window.location.hash;
+                changingHashLatinChainGoogleTranslate();
             }else if(window.location.pathname.substring(0, 3) == "/es" && savedLanguage1 == "auto")
             {
                 original_lang = "es";
                 window.location.hash = `#googtrans(es|es)`;
                 hashLatinChainGoogleTranslate = window.location.hash;
+                changingHashLatinChainGoogleTranslate();
             }else if(window.location.pathname.substring(0, 3) != "/es" && savedLanguage1 == "auto")
             {
                 original_lang = "en";
                 window.location.hash = `#googtrans(en|en)`;
                 hashLatinChainGoogleTranslate = window.location.hash;
+                changingHashLatinChainGoogleTranslate();
             }
         }
     }

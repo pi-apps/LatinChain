@@ -34,7 +34,7 @@ var is_open_tab_ads = false;
 
 //mainuser is at website_pinetwork_odoo/static/src/js/common_functions.js
 
-var eco_page_version = "?v=1.152";
+var eco_page_version = "?v=1.154";
 
 function setConfirmUnload(on) {
     unloadMessage(on);
@@ -60,7 +60,7 @@ function openInNewTabAds(url) {
     
     is_open_tab_ads = true;
     
-    document.getElementById('GoForwardLink').href = url;
+    //document.getElementById('GoForwardLink').href = url;
     //document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock Once</div>';
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
@@ -73,7 +73,7 @@ function openInNewTabAds(url) {
 
 function colorboxLoaded()
 {
-    var URLTestnet = "https://ecosystem.latin-chain.com/page-1/"+eco_page_version+hashLatinChainGoogleTranslate;
+    var URLTestnet = ""; //"https://ecosystem.latin-chain.com/page-1/"+eco_page_version+hashLatinChainGoogleTranslate;
     
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
@@ -110,8 +110,8 @@ function colorboxLoaded()
 
 function colorboxLoadedMainnet()
 {
-    var URLMainnet = "https://ecosystem.latin-chain.com/page-mainnet/"+eco_page_version+hashLatinChainGoogleTranslate;
-    var URLTestnet = "https://ecosystem.latin-chain.com/page-1/"+eco_page_version+hashLatinChainGoogleTranslate;
+    var URLMainnet = ""; //"https://ecosystem.latin-chain.com/page-mainnet/"+eco_page_version+hashLatinChainGoogleTranslate;
+    var URLTestnet = ""; //"https://ecosystem.latin-chain.com/page-1/"+eco_page_version+hashLatinChainGoogleTranslate;
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
         openInNewTabAds(URLMainnet);
@@ -962,12 +962,25 @@ $( document ).ready(function() {
 
 });
 
+function changingHashLatinChainGoogleTranslate()
+{
+    $(".news-latinchain-url").prop("href", "https://news.latin-chain.com/"+hashLatinChainGoogleTranslate);
+    $(".blog-latinchain-url").prop("href", "https://blog-rockcesar.latin-chain.com/"+hashLatinChainGoogleTranslate);
+    if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
+    {
+        $("#GoForwardLink").prop('href', "https://ecosystem.latin-chain.com/page-1/"+eco_page_version+hashLatinChainGoogleTranslate);
+    }
+    if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
+    {
+        $("#GoForwardLink").prop('href', "https://ecosystem.latin-chain.com/page-mainnet/"+eco_page_version+hashLatinChainGoogleTranslate);
+    }
+}
+
 $( document ).ready(function() {
     
     //if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && 
     
-    $(".news-latinchain-url").prop("href", "https://news.latin-chain.com/"+hashLatinChainGoogleTranslate);
-    $(".blog-latinchain-url").prop("href", "https://blog-rockcesar.latin-chain.com/"+hashLatinChainGoogleTranslate);
+    changingHashLatinChainGoogleTranslate();
     
     if($("#nopopup").val().toLowerCase() == "")
         $("#nopopup").val("false");
