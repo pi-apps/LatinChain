@@ -1061,11 +1061,6 @@
                 </head>
                 <body>
                     
-                    <div id="piad_not_fully_loaded" style="display:none;">Pi ads not fully loaded. Try again.</div>
-                    <div id="piad_not_button_1" style="display:none;">This button only works if you're logged in, inside Pi Browser. Reload this page to login.</div>
-                    <div id="piad_not_button_2" style="display:none;">This button only works inside Pi Browser.</div>
-                    <div id="piad_not_button_3" style="display:none;">This button only works on Mainnet inside Pi Browser.</div>
-
                     <input type="hidden" id="nopopup" t-att-value="nopopup"/>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>
                     <input type="hidden" id="a_ads_val" t-att-value="a_ads"/>
@@ -1118,6 +1113,11 @@
                     <div id="modal_exchange_message_4" style="display:none;">Not exchanged. Not enough</div>
                     <div id="modal_exchange_message_5" style="display:none;">Are you sure you want to exchange the Latin points?. This action is irreversible.</div>
                     <div id="share_referrer_latinchain_message" style="display:none;">Hi. Use this link to join LatinChain each month, by Paying Pi. You'll get <t t-esc="amount_latin_pay" /> Latin points and I'll get <t t-esc="amount_latin_pay/10" /> Latin points.</div>
+                    
+                    <div id="piad_not_fully_loaded" style="display:none;">Pi ads not fully loaded. Try again.</div>
+                    <div id="piad_not_button_1" style="display:none;">This button only works if you're logged in, inside Pi Browser. Reload this page to login.</div>
+                    <div id="piad_not_button_2" style="display:none;">This button only works inside Pi Browser.</div>
+                    <div id="piad_not_button_3" style="display:none;">This button only works on Mainnet inside Pi Browser.</div>
                     
                     <!--<input type="hidden" id="a_ads_val_2" t-att-value="a_ads_2"/>
                     <input type="hidden" id="a_ads_val_3" t-att-value="a_ads_3"/>-->
