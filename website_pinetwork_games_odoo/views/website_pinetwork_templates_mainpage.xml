@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.398"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.399"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1065,6 +1065,9 @@
                     <div id="piad_not_button_1" style="display:none;">This button only works if you're logged in, inside Pi Browser. Reload this page to login.</div>
                     <div id="piad_not_button_2" style="display:none;">This button only works inside Pi Browser.</div>
                     <div id="piad_not_button_3" style="display:none;">This button only works on Mainnet inside Pi Browser.</div>
+                    
+                    <div id="access_pibrowser_tip" style="display:none;">Access from Pi Browser to give us a tip.</div>
+                    <div id="set_a_value_tip" style="display:none;">You need to set a value to send a tip.</div>
                     
                     <input type="hidden" id="nopopup" t-att-value="nopopup"/>
                     <input type="hidden" id="sandbox" t-att-value="sandbox"/>

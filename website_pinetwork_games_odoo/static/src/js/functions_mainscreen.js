@@ -2138,7 +2138,8 @@ $( document ).ready(function() {
     function executepayment(){
         if($("#pi_donate").val().trim() == "" || parseFloat($("#pi_donate").val()) == 0)
         {
-            alert("You need to set a value to send a tip.");
+            alert($("#set_a_value_tip").text().trim());
+            //"You need to set a value to send a tip."
             return false;
         }
         
@@ -2168,7 +2169,8 @@ $( document ).ready(function() {
             executepayment();
         }else
         {
-            alert("Access from Pi Browser to give us a tip.");
+            alert($("#access_pibrowser_tip").text().trim());
+            //"Access from Pi Browser to give us a tip."
         }
     });
     
