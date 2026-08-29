@@ -3869,131 +3869,133 @@
                                 <!--<div style="text-align: center;" class="row justify-content-center text-center">-->
                                 <div class="row justify-content-center text-center" style="color: #ffffff !important; background-color: #1f2434 !important; padding: 10px !important; border-radius: 20px;">
                                     
-                                    <div class="translate_here" style="font-size: 70% !important; text-align:center; width:100% !important; margin-bottom:0px;">
+                                    <div class="col-12">
+                                        <div class="translate_here" style="font-size: 70% !important; text-align:center; margin-bottom:0px;">
+                                        </div>
+                                        
+                                        <h5 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="font-size: 80% !important; color: white !important;">
+                                            <div>LatinChain Mainnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
+                                                <div style="display: none;" class="getverified">
+                                                    You're LITE<br/>
+                                                    <div style="display: inline">
+                                                        <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
+                                                    </div>
+                                                    <div style="display: inline">
+                                                        for 30 days
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!--
+                                            <div>
+                                                <div style="display: inline" t-if="discount_active and discount_percentage">
+                                                    PREMIUM discount (-<t t-esc="discount_percentage" />%)
+                                                </div>
+                                                <div style="display: inline" t-if="not discount_active">
+                                                    PREMIUM amount
+                                                </div>
+                                            </div>
+                                            <div style="word-break: break-word;">
+                                                <div t-if="discount_active and discount_percentage">
+                                                    <t t-set="usd_discount" t-value="round(amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100), 2)"/>
+                                                    <t t-set="pi_total" t-value="round(((amount*amount_price_topay_usd)/usd_discount), 7)"/>
+                                                    <t t-set="usd_total" t-value="amount_price_topay_usd"/>
+                                                    <t t-set="pi_discount" t-value="amount"/>
+                                                    
+                                                    <div style="margin-bottom: 8px">
+                                                        <del>
+                                                            <div style="display: inline">Pi <t t-esc="pi_total" /></div>
+                                                            <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: ' + ''.join(c + '\u0336' for c in 'USD '+str(usd_total)) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
+                                                                <i class="fa-solid fa-circle-info"></i>
+                                                            </div>
+                                                        </del>
+                                                    </div>
+                                                    <div>
+                                                        <div style="display: inline">Pi <t t-esc="pi_discount" /></div>
+                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(usd_discount) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
+                                                            <i class="fa-solid fa-circle-info"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div t-else="">
+                                                    <div>
+                                                        <div style="display: inline">Pi <t t-esc="amount" /></div>
+                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(amount_price_topay_usd) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
+                                                            <i class="fa-solid fa-circle-info"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="getverified" style="margin-bottom: 8px">
+                                                    <div style="text-align:center; word-break: break-word;" class="col-12">
+                                                        <div class="text-white">
+                                                            <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                                        </h5>
+                                        <h5 t-else="" style="font-size: 80% !important; color: white !important;">
+                                            <div>LatinChain Testnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
+                                                <div style="display: none;" class="getverified">
+                                                    You're LITE<br/>
+                                                    <div style="display: inline">
+                                                        <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
+                                                    </div>
+                                                    <div style="display: inline">
+                                                        for 30 days
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!--
+                                            <div>
+                                                <div style="display: inline" t-if="discount_active and discount_percentage">
+                                                    PREMIUM discount (-<t t-esc="discount_percentage" />%)
+                                                </div>
+                                                <div style="display: inline" t-if="not discount_active">
+                                                    PREMIUM amount
+                                                </div>
+                                            </div>
+                                            <div style="word-break: break-word;">
+                                                <div t-if="discount_active and discount_percentage">
+                                                    <t t-set="usd_discount" t-value="round(amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100), 2)"/>
+                                                    <t t-set="pi_total" t-value="round(((amount*amount_price_topay_usd)/usd_discount), 7)"/>
+                                                    <t t-set="usd_total" t-value="amount_price_topay_usd"/>
+                                                    <t t-set="pi_discount" t-value="amount"/>
+                                                    
+                                                    <div style="margin-bottom: 8px">
+                                                        <del>
+                                                            <div style="display: inline">Pi <t t-esc="pi_total" /></div>
+                                                            <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: ' + ''.join(c + '\u0336' for c in 'USD '+str(usd_total)) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
+                                                                <i class="fa-solid fa-circle-info"></i>
+                                                            </div>
+                                                        </del>
+                                                    </div>
+                                                    <div>
+                                                        <div style="display: inline">Pi <t t-esc="pi_discount" /></div>
+                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(usd_discount) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
+                                                            <i class="fa-solid fa-circle-info"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div t-else="">
+                                                    <div>
+                                                        <div style="display: inline">Pi <t t-esc="amount" /></div>
+                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(amount_price_topay_usd) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
+                                                            <i class="fa-solid fa-circle-info"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="getverified" style="margin-bottom: 8px">
+                                                    <div style="text-align:center; word-break: break-word;" class="col-12">
+                                                        <div class="text-white">
+                                                            <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                                        </h5>
                                     </div>
-                                    
-                                    <h5 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="font-size: 80% !important; color: white !important;">
-                                        <div>LatinChain Mainnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
-                                            <div style="display: none;" class="getverified">
-                                                You're LITE<br/>
-                                                <div style="display: inline">
-                                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
-                                                </div>
-                                                <div style="display: inline">
-                                                    for 30 days
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!--
-                                        <div>
-                                            <div style="display: inline" t-if="discount_active and discount_percentage">
-                                                PREMIUM discount (-<t t-esc="discount_percentage" />%)
-                                            </div>
-                                            <div style="display: inline" t-if="not discount_active">
-                                                PREMIUM amount
-                                            </div>
-                                        </div>
-                                        <div style="word-break: break-word;">
-                                            <div t-if="discount_active and discount_percentage">
-                                                <t t-set="usd_discount" t-value="round(amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100), 2)"/>
-                                                <t t-set="pi_total" t-value="round(((amount*amount_price_topay_usd)/usd_discount), 7)"/>
-                                                <t t-set="usd_total" t-value="amount_price_topay_usd"/>
-                                                <t t-set="pi_discount" t-value="amount"/>
-                                                
-                                                <div style="margin-bottom: 8px">
-                                                    <del>
-                                                        <div style="display: inline">Pi <t t-esc="pi_total" /></div>
-                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: ' + ''.join(c + '\u0336' for c in 'USD '+str(usd_total)) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
-                                                            <i class="fa-solid fa-circle-info"></i>
-                                                        </div>
-                                                    </del>
-                                                </div>
-                                                <div>
-                                                    <div style="display: inline">Pi <t t-esc="pi_discount" /></div>
-                                                    <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(usd_discount) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
-                                                        <i class="fa-solid fa-circle-info"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div t-else="">
-                                                <div>
-                                                    <div style="display: inline">Pi <t t-esc="amount" /></div>
-                                                    <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(amount_price_topay_usd) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
-                                                        <i class="fa-solid fa-circle-info"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="getverified" style="margin-bottom: 8px">
-                                                <div style="text-align:center; word-break: break-word;" class="col-12">
-                                                    <div class="text-white">
-                                                        <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>-->
-                                    </h5>
-                                    <h5 t-else="" style="font-size: 80% !important; color: white !important;">
-                                        <div>LatinChain Testnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
-                                            <div style="display: none;" class="getverified">
-                                                You're LITE<br/>
-                                                <div style="display: inline">
-                                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
-                                                </div>
-                                                <div style="display: inline">
-                                                    for 30 days
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!--
-                                        <div>
-                                            <div style="display: inline" t-if="discount_active and discount_percentage">
-                                                PREMIUM discount (-<t t-esc="discount_percentage" />%)
-                                            </div>
-                                            <div style="display: inline" t-if="not discount_active">
-                                                PREMIUM amount
-                                            </div>
-                                        </div>
-                                        <div style="word-break: break-word;">
-                                            <div t-if="discount_active and discount_percentage">
-                                                <t t-set="usd_discount" t-value="round(amount_price_topay_usd - amount_price_topay_usd*(discount_percentage/100), 2)"/>
-                                                <t t-set="pi_total" t-value="round(((amount*amount_price_topay_usd)/usd_discount), 7)"/>
-                                                <t t-set="usd_total" t-value="amount_price_topay_usd"/>
-                                                <t t-set="pi_discount" t-value="amount"/>
-                                                
-                                                <div style="margin-bottom: 8px">
-                                                    <del>
-                                                        <div style="display: inline">Pi <t t-esc="pi_total" /></div>
-                                                        <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: ' + ''.join(c + '\u0336' for c in 'USD '+str(usd_total)) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
-                                                            <i class="fa-solid fa-circle-info"></i>
-                                                        </div>
-                                                    </del>
-                                                </div>
-                                                <div>
-                                                    <div style="display: inline">Pi <t t-esc="pi_discount" /></div>
-                                                    <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(usd_discount) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
-                                                        <i class="fa-solid fa-circle-info"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div t-else="">
-                                                <div>
-                                                    <div style="display: inline">Pi <t t-esc="amount" /></div>
-                                                    <div style="border-radius: 50%; display: inline" data-bs-toggle="tooltip" t-att-title="'Equal to: USD ' + str(amount_price_topay_usd) + '. Updated each 5 minutes (on Mainnet), and each 1 day (on Testnet)'">
-                                                        <i class="fa-solid fa-circle-info"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="getverified" style="margin-bottom: 8px">
-                                                <div style="text-align:center; word-break: break-word;" class="col-12">
-                                                    <div class="text-white">
-                                                        <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>-->
-                                    </h5>
                                 </div>
                                 
                                 <!--<t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
