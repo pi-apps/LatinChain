@@ -1770,7 +1770,8 @@ $( document ).ready(function() {
                 }
                 else if(show_pi_ad_user_time == 0 && pi_ad_max == 0)
                 {
-                    alert("Pi ads not fully loaded. Try again.");
+                    alert($("#piad_not_fully_loaded").text().trim());
+                    //"Pi ads not fully loaded. Try again."
                 }
                 else
                 {
@@ -1778,16 +1779,19 @@ $( document ).ready(function() {
                 }
             }else if(!localStorage.getItem("loggedIn"))
             {
-                alert("This button only works if you're logged in, inside Pi Browser. Reload this page to login.");
+                alert($("#piad_not_button_1").text().trim());
+                //"This button only works if you're logged in, inside Pi Browser. Reload this page to login."
             }else
             {
                 //$(".PiBrowserLink").show();
-                alert("This button only works inside Pi Browser.");
+                alert($("#piad_not_button_2").text().trim());
+                //"This button only works inside Pi Browser."
             }
         }
         else
         {
-            alert("This button only works on Mainnet inside Pi Browser.");
+            alert($("#piad_not_button_3").text().trim());
+            //"This button only works on Mainnet inside Pi Browser."
         }
     }
     
@@ -2447,7 +2451,8 @@ $( document ).ready(function() {
                 }
                 else if(show_pi_ad_user_time == 0 && pi_ad_max == 0)
                 {
-                    alert("Pi ads not fully loaded. Try again.");
+                    alert($("#piad_not_fully_loaded").text().trim());
+                    //"Pi ads not fully loaded. Try again."
                 }
                 else
                 {
@@ -2455,16 +2460,19 @@ $( document ).ready(function() {
                 }
             }else if(!localStorage.getItem("loggedIn"))
             {
-                alert("This button only works if you're logged in, inside Pi Browser. Reload this page to login.");
+                alert($("#piad_not_button_1").text().trim());
+                //"This button only works if you're logged in, inside Pi Browser. Reload this page to login."
             }else
             {
                 //$(".PiBrowserLink").show();
-                alert("This button only works inside Pi Browser.");
+                alert($("#piad_not_button_2").text().trim());
+                //"This button only works inside Pi Browser."
             }
         }
         else
         {
-            alert("This button only works on Mainnet inside Pi Browser.");
+            alert($("#piad_not_button_3").text().trim());
+            //"This button only works on Mainnet inside Pi Browser."
         }
     });
     
