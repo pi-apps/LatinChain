@@ -968,11 +968,11 @@ function changingHashLatinChainGoogleTranslate()
     $(".blog-latinchain-url").prop("href", "https://blog-rockcesar.latin-chain.com/"+hashLatinChainGoogleTranslate);
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
-        $("#GoForwardLink").prop('href', "https://ecosystem.latin-chain.com/page-1/"+eco_page_version+hashLatinChainGoogleTranslate);
+        $("#GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html"+eco_page_version+hashLatinChainGoogleTranslate);
     }
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
-        $("#GoForwardLink").prop('href', "https://ecosystem.latin-chain.com/page-mainnet/"+eco_page_version+hashLatinChainGoogleTranslate);
+        $("#GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html"+eco_page_version+hashLatinChainGoogleTranslate);
     }
 }
 
@@ -996,7 +996,7 @@ $( document ).ready(function() {
         }
     }
     
-    $('a[href^="https://ecosystem.latin-chain.com/page-"]').on('click', function() {
+    $('a[href^="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network"]').on('click', function() {
         localStorage.setItem("popup_latinchain", true);
     });
 
