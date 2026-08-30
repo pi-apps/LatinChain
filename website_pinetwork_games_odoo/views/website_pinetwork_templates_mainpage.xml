@@ -3884,7 +3884,6 @@
                                         <h5 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="font-size: 70% !important; color: white !important;">
                                             <div>LatinChain Mainnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
                                                 <div style="display: none;" class="getverified">
-                                                    You're LITE<br/>
                                                     <div style="display: inline">
                                                         <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
                                                     </div>
@@ -3944,7 +3943,6 @@
                                         <h5 t-else="" style="font-size: 70% !important; color: white !important;">
                                             <div>LatinChain Testnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
                                                 <div style="display: none;" class="getverified">
-                                                    You're LITE<br/>
                                                     <div style="display: inline">
                                                         <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
                                                     </div>
