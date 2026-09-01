@@ -1986,9 +1986,9 @@ $( document ).ready(function() {
                             if(show_pi_ad_user && pi_ad_new && ["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
                                 $( "#rewardedad-open" ).click(async function() {
-                                    showRewardedPiAd(false);
-                                    
                                     $( "#rewardedad-close" ).click();
+                                    
+                                    showRewardedPiAd(false);
                                 });
                                 
                                 $(".modal-body-rewardedad").html($("#rewarded_message_1").text() + "<br/><br/>" + $("#rewarded_message_2").text());
