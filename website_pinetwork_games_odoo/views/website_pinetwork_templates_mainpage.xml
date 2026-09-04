@@ -3929,7 +3929,7 @@
                                         </div>
                                         
                                         <h5 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="font-size: 80% !important; color: white !important;">
-                                            <div>LatinChain Mainnet <button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button><br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
+                                            <div><button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button> LatinChain Mainnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
                                                 <div style="display: none;" class="getverified">
                                                     You're LITE<br/>
                                                     <div style="display: inline">
@@ -3990,7 +3990,7 @@
                                             </div>-->
                                         </h5>
                                         <h5 t-else="" style="font-size: 80% !important; color: white !important;">
-                                            <div>LatinChain Testnet <button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button><br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
+                                            <div><button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button> LatinChain Testnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
                                                 <div style="display: none;" class="getverified">
                                                     You're LITE<br/>
                                                     <div style="display: inline">
