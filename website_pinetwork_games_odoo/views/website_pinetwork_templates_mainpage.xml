@@ -3715,13 +3715,17 @@
                             /* You might remove fixed heights if they are present */
                         }
                         
-                        /*#blockingOverlay > div::-webkit-scrollbar {
+                        #blockingOverlay > div::-webkit-scrollbar {
                             width: 8px;
                         }
                         #blockingOverlay > div::-webkit-scrollbar-thumb {
                             background-color: #888;
                             border-radius: 4px;
-                        }*/
+                        }
+                        #blockingOverlay > div
+                        {
+                            overflow-y: clip;
+                        }
                     </style>
                     
                     <!-- Button trigger modal -->
