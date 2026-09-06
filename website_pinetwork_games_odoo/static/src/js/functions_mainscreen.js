@@ -965,7 +965,7 @@ $( document ).ready(function() {
 function changingHashLatinChainGoogleTranslate()
 {
     $(".news-latinchain-url").prop("href", "https://news.latin-chain.com/"+hashLatinChainGoogleTranslate);
-    $(".blog-latinchain-url").prop("href", "https://blog-rockcesar.latin-chain.com/"+hashLatinChainGoogleTranslate);
+    $(".blog-latinchain-url").prop("href", "https://news.latin-chain.com/"+hashLatinChainGoogleTranslate);
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
         $("#GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html"+eco_page_version+hashLatinChainGoogleTranslate);
