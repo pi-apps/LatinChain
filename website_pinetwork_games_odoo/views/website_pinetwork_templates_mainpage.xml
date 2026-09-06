@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.406"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.407"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -4073,106 +4073,129 @@
                                     </div>
                                 </div>
                                 
-                                <div class="hr-title" style="margin-top: 5px;">
-                                    <h5>1st floor</h5>
+                                <div class="row" style="margin-top: 5px;">
+                                    <div class="col-6" style="padding: 0px">
+                                        <button class="1-floor btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa fa-newspaper-o"></i></div><div>1st floor</div></button>
+                                    </div>
+                                    <div class="col-6 getverified" style="padding: 0px">
+                                        <button class="1-unlock btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-battery-full"></i></div><div>Unlock</div></button>
+                                    </div>
+                                    <div class="col-6" style="padding: 0px">
+                                        <button class="1-various btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-store"></i></div><div>Various</div></button>
+                                    </div>
+                                    <div class="col-6" style="padding: 0px">
+                                        <button class="1-info btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i></div><div>Info</div></button>
+                                    </div>
                                 </div>
                                 
-                                <div class="row">
-                                    <a class="btn btn-block btn-success rounded col-12 news-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">News<br/>LatinChain News</div></a>
-                                </div>
-                                
-                                <div class="row" style="margin-top: 10px;">
-                                    <a class="btn btn-block btn-success rounded col-12 blog-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">Latest News<br/>On LatinChain</div></a>
-                                </div>
-                                
-                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                    <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                </div>
-                                
-                                <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                    <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                </div>
-                                
-                                <!--<div style="margin-top: 10px;" class="row">
-                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour<br/>LatinChain tour</div></button>
-                                </div>-->
-                                
-                                <div class="getverified">
+                                <div class="1-floor-div">
                                     <div class="hr-title" style="margin-top: 5px;">
-                                        <h5>Unlock</h5>
+                                        <h5>1st floor</h5>
                                     </div>
                                     
-                                    <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)<br/>Unlock for 30 days</div></a>
+                                    <div class="row">
+                                        <a class="btn btn-block btn-success rounded col-12 news-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">News<br/>LatinChain News</div></a>
                                     </div>
-                                    <div class="row" id="GoForwardShow1" t-else="">
-                                        <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                    
+                                    <div class="row" style="margin-top: 10px;">
+                                        <a class="btn btn-block btn-success rounded col-12 blog-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">Latest News<br/>On LatinChain</div></a>
+                                    </div>
+                                    
+                                    <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                     </div>
                                     
                                     <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Send tip (+<t t-esc="int(points_latin_amount_tip)" /> pts)<br/>Unlock Once</div></button>
+                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" id="GoForwardLink" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                     </div>
                                     
-                                    <div>
-                                        <div class="row show_test_app" style="margin-top: 10px;">
-                                            <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad (+<t t-esc="int(points_latin_amount)" /> pts)<br/>Unlock Once</div></button>
+                                    <!--<div style="margin-top: 10px;" class="row">
+                                        <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour<br/>LatinChain tour</div></button>
+                                    </div>-->
+                                </div>
+                                
+                                <div class="1-unlock-div">
+                                    <div class="getverified">
+                                        <div class="hr-title" style="margin-top: 5px;">
+                                            <h5>Unlock</h5>
                                         </div>
                                         
-                                        <div style="display: none; margin-top: 10px;" class="row justify-content-center text-center show_test_app_loading">
-                                            <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                        <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                            <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)<br/>Unlock for 30 days</div></a>
                                         </div>
+                                        <div class="row" id="GoForwardShow1" t-else="">
+                                            <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                        </div>
+                                        
+                                        <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                            <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Send tip (+<t t-esc="int(points_latin_amount_tip)" /> pts)<br/>Unlock Once</div></button>
+                                        </div>
+                                        
+                                        <div>
+                                            <div class="row show_test_app" style="margin-top: 10px;">
+                                                <button id="test_app" class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad (+<t t-esc="int(points_latin_amount)" /> pts)<br/>Unlock Once</div></button>
+                                            </div>
+                                            
+                                            <div style="display: none; margin-top: 10px;" class="row justify-content-center text-center show_test_app_loading">
+                                                <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="margin-top: 10px;" class="row">
+                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="1-various-div">
+                                    <div class="hr-title" style="margin-top: 5px;">
+                                        <h5>Various</h5>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Academy</div></a>
                                     </div>
                                     
                                     <div style="margin-top: 10px;" class="row">
-                                        <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCSignUp href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">JOIN MEXC AND TRADE PI<br/>Pi KYB ready</div></a>
+                                    </div>
+                                    <div style="margin-top: 10px; display: none;" class="row">
+                                        <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCTrade href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">TRADE PI ON MEXC<br/>Pi KYB ready</div></a>
                                     </div>
                                 </div>
                                 
-                                <div class="hr-title" style="margin-top: 5px;">
-                                    <h5>Various</h5>
-                                </div>
-                                
-                                <div class="row">
-                                    <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Academy</div></a>
-                                </div>
-                                
-                                <div style="margin-top: 10px;" class="row">
-                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCSignUp href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">JOIN MEXC AND TRADE PI<br/>Pi KYB ready</div></a>
-                                </div>
-                                <div style="margin-top: 10px; display: none;" class="row">
-                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCTrade href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">TRADE PI ON MEXC<br/>Pi KYB ready</div></a>
-                                </div>
-                                
-                                <div class="hr-title" style="margin-top: 5px;">
-                                    <h5>Info</h5>
-                                </div>
-                                
-                                <!--<div style="margin-top: 5px;" class="row" id="GivingTip">
-                                    <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-money-bill-1"></i></div> <div style="display: inline">Send tip in Pi</div></button>
-                                </div>-->
-                                
-                                <div class="row" id="GoForwardShow2">
-                                    <button class="latinchain-specs btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-list-ol"></i></div> <div style="display: inline">dApps list<br/>LatinChain specs</div></button>
-                                </div>
-                                
-                                <div style="margin-top: 10px;" class="row">
-                                    <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour<br/>LatinChain tour</div></button>
-                                </div>
-                                
-                                <div style="margin-top: 10px;" class="row">
-                                    <button class="btn btn-block btn-warning rounded col-12 rules_button" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Rules<br/>Knowledge base</div></button>
-                                </div>
-                                
-                                <div style="margin-top: 10px; display: none;" class="row loggedin">
-                                    <button class="logout_latinchain btn btn-block btn-danger rounded col-12 loggedin" style="display: none; border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-from-bracket"></i></div> <div style="display: inline">Logout</div></button>
-                                </div>
-                                
-                                <div style="margin-top: 10px; display: none;" class="row loggedout">
-                                    <button class="login_latinchain btn btn-block btn-success rounded col-12 loggedout" style="display: none; border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-to-bracket"></i></div> <div style="display: inline">Login</div></button>
-                                </div>
-                                
-                                <div style="margin-top: 10px; display: none;" class="row loggedout" id="GoForwardShow3">
-                                    <button class="close_latinchain btn btn-block btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-xmark"></i></div> <div style="display: inline">Close</div></button>
+                                <div class="1-info-div">
+                                    <div class="hr-title" style="margin-top: 5px;">
+                                        <h5>Info</h5>
+                                    </div>
+                                    
+                                    <!--<div style="margin-top: 5px;" class="row" id="GivingTip">
+                                        <button class="giving-tip btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-money-bill-1"></i></div> <div style="display: inline">Send tip in Pi</div></button>
+                                    </div>-->
+                                    
+                                    <div class="row" id="GoForwardShow2">
+                                        <button class="latinchain-specs btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-list-ol"></i></div> <div style="display: inline">dApps list<br/>LatinChain specs</div></button>
+                                    </div>
+                                    
+                                    <div style="margin-top: 10px;" class="row">
+                                        <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour<br/>LatinChain tour</div></button>
+                                    </div>
+                                    
+                                    <div style="margin-top: 10px;" class="row">
+                                        <button class="btn btn-block btn-warning rounded col-12 rules_button" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Rules<br/>Knowledge base</div></button>
+                                    </div>
+                                    
+                                    <div style="margin-top: 10px; display: none;" class="row loggedin">
+                                        <button class="logout_latinchain btn btn-block btn-danger rounded col-12 loggedin" style="display: none; border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-from-bracket"></i></div> <div style="display: inline">Logout</div></button>
+                                    </div>
+                                    
+                                    <div style="margin-top: 10px; display: none;" class="row loggedout">
+                                        <button class="login_latinchain btn btn-block btn-success rounded col-12 loggedout" style="display: none; border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-to-bracket"></i></div> <div style="display: inline">Login</div></button>
+                                    </div>
+                                    
+                                    <div style="margin-top: 10px; display: none;" class="row loggedout" id="GoForwardShow3">
+                                        <button class="close_latinchain btn btn-block btn-dark rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-xmark"></i></div> <div style="display: inline">Close</div></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

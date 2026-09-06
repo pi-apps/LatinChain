@@ -982,6 +982,31 @@ $( document ).ready(function() {
     
     changingHashLatinChainGoogleTranslate();
     
+    $('.1-floor').on('click', function() {
+        $('.1-floor-div').show();
+        $('.1-unlock-div').hide();
+        $('.1-various-div').hide();
+        $('.1-info-div').hide();
+    });
+    $('.1-unlock').on('click', function() {
+        $('.1-floor-div').hide();
+        $('.1-unlock-div').show();
+        $('.1-various-div').hide();
+        $('.1-info-div').hide();
+    });
+    $('.1-various').on('click', function() {
+        $('.1-floor-div').hide();
+        $('.1-unlock-div').hide();
+        $('.1-various-div').show();
+        $('.1-info-div').hide();
+    });
+    $('.1-info').on('click', function() {
+        $('.1-floor-div').hide();
+        $('.1-unlock-div').hide();
+        $('.1-various-div').hide();
+        $('.1-info-div').show();
+    });
+    
     if($("#nopopup").val().toLowerCase() == "")
         $("#nopopup").val("false");
     
