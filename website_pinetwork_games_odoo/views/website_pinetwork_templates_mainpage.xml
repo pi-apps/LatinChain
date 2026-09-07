@@ -2197,7 +2197,7 @@
                         </t>
                         
                         <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                            <div t-if="discount_active and discount_percentage" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-discount-div">
+                            <div t-if="discount_active and discount_percentage" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-pay-discount-div">
                                 <div style="margin-bottom:5px" class="border-bottom">
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount -<t t-esc="discount_percentage"/>%</div></strong></h5>
                                 </div>
@@ -2207,7 +2207,7 @@
                             </div>
                         </t>
                         <t t-elif="mainnet in ['Testnet ON', 'Testnet OFF']">
-                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-discount-div">
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-pay-discount-div">
                                 <div style="margin-bottom:5px" class="border-bottom">
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount #Mainnet</div></strong></h5>
                                 </div>
