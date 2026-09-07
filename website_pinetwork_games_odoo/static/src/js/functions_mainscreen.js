@@ -1016,24 +1016,6 @@ $( document ).ready(function() {
     
     $('.latin-show-all').on('click', function() {
         $('[class*="latin-sharp-"]').show();
-        
-        /*$('.latin-sharp-sendtip-div').show();
-        $('.latin-sharp-quests-div').show();
-        $('.latin-sharp-piads-div').show();
-        $('.latin-sharp-avatar-div').show();
-        $('.latin-sharp-stakepi-div').show();
-        $('.latin-sharp-fansclub-div').show();
-        $('.latin-sharp-accessibility-div').show();
-        $('.latin-sharp-referral-promo-div').show();
-        $('.latin-sharp-pay-discount-div').show();
-        $('.latin-sharp-network-div').show();
-        $('.latin-sharp-latinchaintv-div').show();
-        $('.latin-sharp-latinchaincool-div').show();
-        $('.latin-sharp-latin-paypi-div').show();
-        $('.latin-sharp-magazine-div').show();
-        $('.latin-sharp-dev-div').show();
-        $('.latin-sharp-warrior-div').show();
-        $('.latin-sharp-welcome-div').show();*/
     });
     
     $('[class*="latin-option-"]').on('click', function() {
