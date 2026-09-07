@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.409"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.415"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1639,7 +1639,74 @@
                                 }
                             </style>
                             
-                            <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                                <div style="margin-bottom:5px" class="border-bottom">
+                                    <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#Options &#128240;</div></strong></h5>
+                                </div>
+                                
+                                <div style="padding: 10px">
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col-12" style="padding: 2px">
+                                            <button class="latin-show-all btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i> Show all sections</div></button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 2px;">
+                                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-3" style="padding: 2px">
+                                            <button class="latin-option-sendtip btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#tip</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-quests btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#quest</div></button>
+                                        </div>
+                                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-3" style="padding: 2px">
+                                            <button class="latin-option-piads btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#piads</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-avatar btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#avatar</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-stakepi btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#stake</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-fansclub btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#fans</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-accessibility btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#access</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-referral-promo btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#promo</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-pay-discount btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#disount</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-network btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#network</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-latinchaintv btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#tv</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-latinchaincool btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#cool</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-paypi btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#paypi</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-magazine btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#magazine</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-dev btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#dev</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-warrior btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#warrior</div></button>
+                                        </div>
+                                        <div class="col-3" style="padding: 2px">
+                                            <button class="latin-option-welcome btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#welcome</div></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-sendtip-div">
                                 <div style="margin-bottom:5px" class="border-bottom">
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#SendTip &#128240;</div></strong></h5>
                                 </div>
@@ -1679,7 +1746,7 @@
                                 </div>
                             </div>
                             
-                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-quests-div">
                                 <div style="margin-bottom:5px" class="border-bottom">
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#Quests &#128240;</div></strong></h5>
                                 </div>
@@ -1861,7 +1928,7 @@
                             </div>
                         </t>
                         
-                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-piads-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#PiAds #EarnPoints &#128240;</div></strong></h5>
                             </div>
@@ -2030,7 +2097,7 @@
                             </div>
                         </div>
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-avatar-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#Your #Avatar &#128526;</div></strong></h5>
                             </div>
@@ -2057,7 +2124,7 @@
                             </div>
                         </div>
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-stakepi-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#StakePi &#128202;</div></strong></h5>
                             </div>
@@ -2077,7 +2144,7 @@
                             </div>
                         </div>
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-fansclub-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#FansClub</div></strong></h5>
                             </div>
@@ -2093,7 +2160,7 @@
                             </div>
                         </div>
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-accessibility-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#Accessibility &#128240;</div></strong></h5>
                             </div>
@@ -2109,7 +2176,7 @@
                         </div>
                         
                         <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-referral-promo-div">
                                 <div style="margin-bottom:5px" class="border-bottom">
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#Referral #Promo</div></strong></h5>
                                 </div>
@@ -2119,7 +2186,7 @@
                             </div>
                         </t>
                         <t t-elif="mainnet in ['Testnet ON', 'Testnet OFF']">
-                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-referral-promo-div">
                                 <div style="margin-bottom:5px" class="border-bottom">
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#Referral #Promo #Mainnet</div></strong></h5>
                                 </div>
@@ -2130,7 +2197,7 @@
                         </t>
                         
                         <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                            <div t-if="discount_active and discount_percentage" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div t-if="discount_active and discount_percentage" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-discount-div">
                                 <div style="margin-bottom:5px" class="border-bottom">
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount -<t t-esc="discount_percentage"/>%</div></strong></h5>
                                 </div>
@@ -2140,7 +2207,7 @@
                             </div>
                         </t>
                         <t t-elif="mainnet in ['Testnet ON', 'Testnet OFF']">
-                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded">
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-discount-div">
                                 <div style="margin-bottom:5px" class="border-bottom">
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount #Mainnet</div></strong></h5>
                                 </div>
@@ -2159,7 +2226,7 @@
                             </div>
                         </div>-->
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="border-gradient-rounded latin-sharp-network-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">You are at</div> <div style="display:inline;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">#Mainnet &#128241;</div><div style="display:inline;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">#Testnet &#128241;</div></strong></h5>
                             </div>
@@ -2168,7 +2235,8 @@
                                 <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" href="https://latinchain.pinet.com" rel="noopener" target="_blank" class="col-12 gotomainnet btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-network-wired"></i></div><div style="font-size:100%;">Go to Mainnet</div></a>
                             </div>
                         </div>
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center;" class="border-gradient-rounded showInterstitialAd">
+                        
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center;" class="border-gradient-rounded showInterstitialAd latin-sharp-latinchaintv-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinChainTV &#128250;</div></strong></h5>
                             </div>
@@ -2207,7 +2275,7 @@
                             </script>
                         </div>-->
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="border-gradient-rounded showInterstitialAd">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="border-gradient-rounded showInterstitialAd latin-sharp-latinchaincool-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinChainCool &#128240;</div></strong></h5>
                             </div>
@@ -2248,7 +2316,7 @@
                             </script>
                         </div>-->
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="getverified border-gradient-rounded showInterstitialAd">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="getverified border-gradient-rounded showInterstitialAd latin-sharp-paypi-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#LatinChain #PayPi &#128177;</strong></h5>
                             </div>
@@ -2317,7 +2385,7 @@
                             </div>
                         </div>-->
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="border-gradient-rounded showInterstitialAd">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="border-gradient-rounded showInterstitialAd latin-sharp-magazine-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#LatinChain #Magazine &#127909;</strong></h5>
                             </div>
@@ -2405,7 +2473,7 @@
                             </script>
                         </div>-->
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center;" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center;" class="border-gradient-rounded latin-sharp-dev-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#Dev &#128187;</div></strong></h5>
                             </div>
@@ -2416,7 +2484,7 @@
                             </div>
                         </div>
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center;" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center;" class="border-gradient-rounded latin-sharp-warrior-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong><div style="display:inline;">#LatinWarrior &#128187;</div></strong></h5>
                             </div>
@@ -2427,7 +2495,7 @@
                             </div>
                         </div>
                         
-                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="border-gradient-rounded">
+                        <div style="margin-bottom:5px; padding:10px; width: 100%;" class="border-gradient-rounded latin-sharp-welcome-div">
                             <div style="margin-bottom:5px" class="border-bottom">
                                 <h5 translate="no"><strong>#LatinChain #Welcome &#128220;</strong></h5>
                             </div>
