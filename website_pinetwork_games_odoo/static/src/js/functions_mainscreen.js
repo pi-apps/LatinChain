@@ -982,6 +982,12 @@ $( document ).ready(function() {
     
     changingHashLatinChainGoogleTranslate();
     
+    $('.1-show-all').on('click', function() {
+        $('.1-floor-div').show();
+        $('.1-unlock-div').show();
+        $('.1-various-div').show();
+        $('.1-info-div').show();
+    });
     $('.1-floor').on('click', function() {
         $('.1-floor-div').show();
         $('.1-unlock-div').hide();
