@@ -983,34 +983,14 @@ $( document ).ready(function() {
     changingHashLatinChainGoogleTranslate();
     
     $('.1-show-all').on('click', function() {
-        $('.1-floor-div').show();
-        $('.1-unlock-div').show();
-        $('.1-various-div').show();
-        $('.1-info-div').show();
+        $('[class*="1-sharp-"]').show();
     });
-    $('.1-floor').on('click', function() {
-        $('.1-floor-div').show();
-        $('.1-unlock-div').hide();
-        $('.1-various-div').hide();
-        $('.1-info-div').hide();
-    });
-    $('.1-unlock').on('click', function() {
-        $('.1-floor-div').hide();
-        $('.1-unlock-div').show();
-        $('.1-various-div').hide();
-        $('.1-info-div').hide();
-    });
-    $('.1-various').on('click', function() {
-        $('.1-floor-div').hide();
-        $('.1-unlock-div').hide();
-        $('.1-various-div').show();
-        $('.1-info-div').hide();
-    });
-    $('.1-info').on('click', function() {
-        $('.1-floor-div').hide();
-        $('.1-unlock-div').hide();
-        $('.1-various-div').hide();
-        $('.1-info-div').show();
+    $('[class*="1-option-"]').on('click', function() {
+        let valorExtraido = this.className.split('1-option-')[1].split(' ')[0];
+        
+        $('[class*="1-sharp-"]').hide();
+        
+        $('.1-sharp-' + valorExtraido + '-div').show();
     });
     
     

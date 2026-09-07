@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.417"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.418"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -4152,20 +4152,20 @@
                                 </div>
                                 <div class="row" style="margin-top: 2px;">
                                     <div class="col-6" style="padding: 2px">
-                                        <button class="1-floor btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa fa-newspaper-o"></i></div><div>1st floor</div></button>
+                                        <button class="1-option-floor btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa fa-newspaper-o"></i></div><div>1st floor</div></button>
                                     </div>
                                     <div class="col-6 getverified" style="padding: 2px">
-                                        <button class="1-unlock btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-battery-full"></i></div><div>Unlock</div></button>
+                                        <button class="1-option-unlock btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-battery-full"></i></div><div>Unlock</div></button>
                                     </div>
                                     <div class="col-6" style="padding: 2px">
-                                        <button class="1-various btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-store"></i></div><div>Various</div></button>
+                                        <button class="1-option-various btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-store"></i></div><div>Various</div></button>
                                     </div>
                                     <div class="col-6" style="padding: 2px">
-                                        <button class="1-info btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i></div><div>Info</div></button>
+                                        <button class="1-option-info btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i></div><div>Info</div></button>
                                     </div>
                                 </div>
                                 
-                                <div class="1-floor-div">
+                                <div class="1-sharp-floor-div">
                                     <div class="hr-title" style="margin-top: 5px;">
                                         <h5>1st floor</h5>
                                     </div>
@@ -4191,7 +4191,7 @@
                                     </div>-->
                                 </div>
                                 
-                                <div class="1-unlock-div">
+                                <div class="1-sharp-unlock-div">
                                     <div class="getverified">
                                         <div class="hr-title" style="margin-top: 5px;">
                                             <h5>Unlock</h5>
@@ -4224,7 +4224,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="1-various-div">
+                                <div class="1-sharp-various-div">
                                     <div class="hr-title" style="margin-top: 5px;">
                                         <h5>Various</h5>
                                     </div>
@@ -4241,7 +4241,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="1-info-div">
+                                <div class="1-sharp-info-div">
                                     <div class="hr-title" style="margin-top: 5px;">
                                         <h5>Info</h5>
                                     </div>
