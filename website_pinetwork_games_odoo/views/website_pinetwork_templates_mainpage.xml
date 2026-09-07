@@ -1651,55 +1651,55 @@
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top: 2px;">
-                                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-3" style="padding: 2px">
+                                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-4" style="padding: 2px">
                                             <button class="latin-option-sendtip btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#tip</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-quests btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#quest</div></button>
                                         </div>
-                                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-3" style="padding: 2px">
+                                        <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-4" style="padding: 2px">
                                             <button class="latin-option-piads btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#piads</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-avatar btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#avatar</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-stakepi btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#stake</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-fansclub btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#fans</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-accessibility btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#access</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-referral-promo btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#promo</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-pay-discount btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#disount</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-network btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#network</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-latinchaintv btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#tv</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-latinchaincool btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#cool</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-paypi btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#paypi</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-magazine btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#magazine</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-dev btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#dev</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-warrior btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#warrior</div></button>
                                         </div>
-                                        <div class="col-3" style="padding: 2px">
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-welcome btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#welcome</div></button>
                                         </div>
                                     </div>
