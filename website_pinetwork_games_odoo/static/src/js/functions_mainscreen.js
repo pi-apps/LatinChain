@@ -1938,13 +1938,16 @@ $( document ).ready(function() {
                             }
                         }*/
                         
-                        if(localStorage.getItem("popup_latinchain"))
+                        if(window.location.href.includes('/index-nopopup'))
                         {
-                            localStorage.removeItem("popup_latinchain");
-                            $("#nopopup").val("true");
-                        }else
-                        {
-                            $("#nopopup").val("false");
+                            if(localStorage.getItem("popup_latinchain"))
+                            {
+                                localStorage.removeItem("popup_latinchain");
+                                $("#nopopup").val("true");
+                            }else
+                            {
+                                $("#nopopup").val("false");
+                            }
                         }
                         
                         if(!unblocked)
