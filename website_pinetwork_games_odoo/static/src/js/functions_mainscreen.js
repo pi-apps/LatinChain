@@ -1011,7 +1011,7 @@ $( document ).ready(function() {
     if($("#nopopup").val().toLowerCase() == "")
         $("#nopopup").val("false");
     
-    if(JSON.parse($("#nopopup").val().toLowerCase()) != false)
+    /*if(JSON.parse($("#nopopup").val().toLowerCase()) != false)
     {
         if(localStorage.getItem("popup_latinchain"))
         {
@@ -1020,7 +1020,7 @@ $( document ).ready(function() {
         {
             $("#nopopup").val("false");
         }
-    }
+    }*/
     
     $('a[href^="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network"]').on('click', function() {
         localStorage.setItem("popup_latinchain", true);
