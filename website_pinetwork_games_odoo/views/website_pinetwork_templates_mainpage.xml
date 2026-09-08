@@ -1647,60 +1647,60 @@
                                 <div style="padding: 10px;">
                                     <div class="row" style="margin-top: 5px;">
                                         <div class="col-12" style="padding: 2px">
-                                            <button class="latin-show-all btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i> Show all sections</div></button>
+                                            <button class="latin-show-all btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i> Show all sections</div></button>
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top: 2px;" translate="no">
                                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-4" style="padding: 2px">
-                                            <button class="latin-option-sendtip btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#tip</div></button>
+                                            <button class="latin-option-sendtip btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#tip</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-quests btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#quest</div></button>
+                                            <button class="latin-option-quests btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#quest</div></button>
                                         </div>
                                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-4" style="padding: 2px">
-                                            <button class="latin-option-piads btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#piad</div></button>
+                                            <button class="latin-option-piads btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#piad</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-avatar btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#avi</div></button>
+                                            <button class="latin-option-avatar btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#avi</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-stakepi btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#stake</div></button>
+                                            <button class="latin-option-stakepi btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#stake</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-fansclub btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#fans</div></button>
+                                            <button class="latin-option-fansclub btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#fans</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-accessibility btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#a11y</div></button>
+                                            <button class="latin-option-accessibility btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#a11y</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-referral-promo btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#prom</div></button>
+                                            <button class="latin-option-referral-promo btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#prom</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-pay-discount btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#disc</div></button>
+                                            <button class="latin-option-pay-discount btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#disc</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-network btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#net</div></button>
+                                            <button class="latin-option-network btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#net</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-latinchaintv btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#tv</div></button>
+                                            <button class="latin-option-latinchaintv btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#tv</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-latinchaincool btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#cool</div></button>
+                                            <button class="latin-option-latinchaincool btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#cool</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-paypi btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#pay</div></button>
+                                            <button class="latin-option-paypi btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#pay</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-magazine btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#mag</div></button>
+                                            <button class="latin-option-magazine btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#mag</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-dev btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#dev</div></button>
+                                            <button class="latin-option-dev btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#dev</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-warrior btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#war</div></button>
+                                            <button class="latin-option-warrior btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#war</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-welcome btn btn-block btn-success rounded" style="border: 2px solid black;"><div>#hi</div></button>
+                                            <button class="latin-option-welcome btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#hi</div></button>
                                         </div>
                                     </div>
                                 </div>
@@ -4145,23 +4145,25 @@
                                     </div>
                                 </div>
                                 
-                                <div class="row" style="margin-top: 5px;">
-                                    <div class="col-12" style="padding: 2px">
-                                        <button class="1-show-all btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i> Show all sections</div></button>
+                                <div>
+                                    <div class="row" style="margin-top: 5px;">
+                                        <div class="col-12" style="padding: 2px">
+                                            <button class="1-show-all btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i> Show all sections</div></button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row" style="margin-top: 2px;" translate="no">
-                                    <div class="col-6" style="padding: 2px">
-                                        <button class="1-option-floor btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa fa-newspaper-o"></i></div><div>1st floor</div></button>
-                                    </div>
-                                    <div class="col-6 getverified" style="padding: 2px">
-                                        <button class="1-option-unlock btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-battery-full"></i></div><div>Unlock</div></button>
-                                    </div>
-                                    <div class="col-6" style="padding: 2px">
-                                        <button class="1-option-various btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-store"></i></div><div>Various</div></button>
-                                    </div>
-                                    <div class="col-6" style="padding: 2px">
-                                        <button class="1-option-info btn btn-block btn-success rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i></div><div>Info</div></button>
+                                    <div class="row" style="margin-top: 2px;" translate="no">
+                                        <div class="col-6" style="padding: 2px">
+                                            <button class="1-option-floor btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa fa-newspaper-o"></i></div><div>1st floor</div></button>
+                                        </div>
+                                        <div class="col-6 getverified" style="padding: 2px">
+                                            <button class="1-option-unlock btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-battery-full"></i></div><div>Unlock</div></button>
+                                        </div>
+                                        <div class="col-6" style="padding: 2px">
+                                            <button class="1-option-various btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-store"></i></div><div>Various</div></button>
+                                        </div>
+                                        <div class="col-6" style="padding: 2px">
+                                            <button class="1-option-info btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i></div><div>Info</div></button>
+                                        </div>
                                     </div>
                                 </div>
                                 
