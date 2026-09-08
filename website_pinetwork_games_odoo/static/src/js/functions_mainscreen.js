@@ -968,11 +968,11 @@ function changingHashLatinChainGoogleTranslate()
     $(".blog-latinchain-url").prop("href", "https://news.latin-chain.com/"+hashLatinChainGoogleTranslate);
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
-        $("#GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html"+eco_page_version+hashLatinChainGoogleTranslate);
+        $(".GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html"+eco_page_version+hashLatinChainGoogleTranslate);
     }
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
-        $("#GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html"+eco_page_version+hashLatinChainGoogleTranslate);
+        $(".GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html"+eco_page_version+hashLatinChainGoogleTranslate);
     }
 }
 
