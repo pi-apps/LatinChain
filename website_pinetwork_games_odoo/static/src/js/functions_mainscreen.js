@@ -1010,17 +1010,19 @@ $( document ).ready(function() {
     
     if($("#nopopup").val().toLowerCase() == "")
         $("#nopopup").val("false");
-    
-    /*if(JSON.parse($("#nopopup").val().toLowerCase()) != false)
+        
+    if(JSON.parse($("#nopopup").val().toLowerCase()) != false)
     {
-        if(localStorage.getItem("popup_latinchain"))
+        $("#nopopup").val("false");
+        
+        /*if(localStorage.getItem("popup_latinchain"))
         {
             localStorage.removeItem("popup_latinchain");
         }else
         {
             $("#nopopup").val("false");
-        }
-    }*/
+        }*/
+    }
     
     $('a[href^="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network"]').on('click', function() {
         localStorage.setItem("popup_latinchain", true);
@@ -1923,6 +1925,27 @@ $( document ).ready(function() {
                 //get_user();
                 set_points(0).always(function(){
                     get_user().always(function(){
+                        
+                        /*if(JSON.parse($("#nopopup").val().toLowerCase()) != false)
+                        {
+                            if(localStorage.getItem("popup_latinchain"))
+                            {
+                                localStorage.removeItem("popup_latinchain");
+                                $("#nopopup").val("true");
+                            }else
+                            {
+                                $("#nopopup").val("false");
+                            }
+                        }*/
+                        
+                        if(localStorage.getItem("popup_latinchain"))
+                        {
+                            localStorage.removeItem("popup_latinchain");
+                            $("#nopopup").val("true");
+                        }else
+                        {
+                            $("#nopopup").val("false");
+                        }
                         
                         if(!unblocked)
                         {
