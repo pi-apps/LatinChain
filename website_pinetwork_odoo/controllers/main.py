@@ -241,6 +241,14 @@ class PiNetworkBaseController(http.Controller):
             return http.request.redirect('https://www.amazon.com/dp/B0HGH1V2JT')
         elif accessed_path in ['/history-ven-book/hardcover']:
             return http.request.redirect('https://www.amazon.com/dp/B0HGHPHPBY')
+    
+    @http.route(['/bstocks-book/', '/bstocks-book/paperback', '/bstocks-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def bstocks_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/bstocks-book/', '/bstocks-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HJ8Q649H')
+        elif accessed_path in ['/bstocks-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0GX2YC5M7')
         
     @http.route(['/collection-2025-book/', '/collection-2025-book/paperback', '/collection-2025-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def collection_2025_book(self, **kw):
