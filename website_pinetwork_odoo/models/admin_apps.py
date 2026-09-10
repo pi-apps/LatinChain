@@ -359,6 +359,11 @@ class admin_apps(models.Model):
     points_latin_daily_total_notcomputed = fields.Integer('Points Latin_daily total notcomputed', store=True, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     discount_active = fields.Boolean('Discount', default=False, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     discount_percentage = fields.Float('Discount percentage', digits=(50,7), default=50, groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_top10_ids = fields.Many2many('pi.users', 'admin_apps_users_top10_rel', string='Top 10 users', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_top10_chess_ids = fields.Many2many('pi.users', 'admin_apps_users_top10_chess_rel', string='Top 10 users chess', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_top10_sudoku_ids = fields.Many2many('pi.users', 'admin_apps_users_top10_sudoku_rel', string='Top 10 users sudoku', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_top10_snake_ids = fields.Many2many('pi.users', 'admin_apps_users_top10_snake_rel', string='Top 10 users snake', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    pi_users_leaders_ids = fields.Many2many('pi.users', 'admin_apps_users_leaders_rel', string='Users leaders', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     """
     @api.depends("amount")
@@ -473,9 +478,15 @@ class admin_apps(models.Model):
                 i.pioneers_streaming = True
             else:
                 i.pioneers_streaming = False
-
+                
     def _compute_daily(self):
         for i in self:
+            winner_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
+            winner_chess_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20)]
+            winner_sudoku_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_sudoku', '>', 18)]
+            winner_snake_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_snake', '>', 20)]
+            leaders_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30))]
+            
             now = datetime.now()
             minute = now.minute
             
@@ -493,6 +504,17 @@ class admin_apps(models.Model):
             i.pi_users_general_ranking_ids = [(6, 0, pi_user_list_ids)]
             
             i.points_latin_daily_total_notcomputed = i.points_latin_daily_total
+            
+            pi_user_list_ids = self.env["pi.users"].sudo()._search(winner_domain, limit=10, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+            i.pi_users_top10_ids = [(6, 0, pi_user_list_ids)]
+            pi_user_list_ids = self.env["pi.users"].sudo()._search(winner_chess_domain, limit=10, order="points_chess desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
+            i.pi_users_top10_chess_ids = [(6, 0, pi_user_list_ids)]
+            pi_user_list_ids = self.env["pi.users"].sudo()._search(winner_snake_domain, limit=10, order="points_snake desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
+            i.pi_users_top10_snake_ids = [(6, 0, pi_user_list_ids)]
+            pi_user_list_ids = self.env["pi.users"].sudo()._search(winner_sudoku_domain, limit=10, order="points_sudoku desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
+            i.pi_users_top10_sudoku_ids = [(6, 0, pi_user_list_ids)]
+            pi_user_list_ids = self.env["pi.users"].sudo()._search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+            i.pi_users_leaders_ids = [(6, 0, pi_user_list_ids)]
             
             if start_time <= now_time <= end_time:
                 self.env["admin.apps"].sudo().search([('app', 'in', ['auth_platform'])]).fill_winners()

@@ -1474,15 +1474,17 @@ class PiNetworkBaseController(http.Controller):
         if len(admin_app_list) == 0:
             total_users_count = 0
             total_users_verified_count = 0
+            pi_users_leaders_ids = []
         else:
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
+            pi_users_leaders_ids = admin_app_list[0].pi_users_leaders_ids
         
         pi_users_verified_count = int(total_users_verified_count)
         
         pi_users_count = int(total_users_count)
         
-        pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+        pi_users_list = pi_users_leaders_ids
         
         pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
@@ -1502,15 +1504,17 @@ class PiNetworkBaseController(http.Controller):
         if len(admin_app_list) == 0:
             total_users_count = 0
             total_users_verified_count = 0
+            pi_users_leaders_ids = []
         else:
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
+            pi_users_leaders_ids = admin_app_list[0].pi_users_leaders_ids
         
         pi_users_verified_count = int(total_users_verified_count)
         
         pi_users_count = int(total_users_count)
         
-        pi_users_list = request.env["pi.users"].sudo().search(leaders_domain, limit=50, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+        pi_users_list = pi_users_leaders_ids
         
         return http.request.render('website_pinetwork_odoo.list_points', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list})
     
@@ -1542,19 +1546,27 @@ class PiNetworkBaseController(http.Controller):
         if len(admin_app_list) == 0:
             total_users_count = 0
             total_users_verified_count = 0
+            pi_users_top10_ids = []
+            pi_users_top10_chess_ids = []
+            pi_users_top10_snake_ids = []
+            pi_users_top10_sudoku_ids = []
         else:
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
+            pi_users_top10_ids = admin_app_list[0].pi_users_top10_ids
+            pi_users_top10_chess_ids = admin_app_list[0].pi_users_top10_chess_ids
+            pi_users_top10_snake_ids = admin_app_list[0].pi_users_top10_snake_ids
+            pi_users_top10_sudoku_ids = admin_app_list[0].pi_users_top10_sudoku_ids
         
         pi_users_verified_count = int(total_users_verified_count)
         
         pi_users_count = int(total_users_count)
         
-        pi_users_list = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+        pi_users_list = pi_users_top10_ids
         
-        pi_users_list_chess = request.env["pi.users"].sudo().search(winner_chess_domain, limit=10, order="points_chess desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
-        pi_users_list_snake = request.env["pi.users"].sudo().search(winner_snake_domain, limit=10, order="points_snake desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
-        pi_users_list_sudoku = request.env["pi.users"].sudo().search(winner_sudoku_domain, limit=10, order="points_sudoku desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
+        pi_users_list_chess = pi_users_top10_chess_ids
+        pi_users_list_snake = pi_users_top10_snake_ids
+        pi_users_list_sudoku = pi_users_top10_sudoku_ids
 
         return http.request.render('website_pinetwork_odoo.list_winners', {'pi_users_verified_count': pi_users_verified_count, 'pi_users_count': pi_users_count, 'pi_users_list': pi_users_list, 'pi_users_list_chess': pi_users_list_chess, 'pi_users_list_snake': pi_users_list_snake, 'pi_users_list_sudoku': pi_users_list_sudoku})
     
@@ -1572,19 +1584,27 @@ class PiNetworkBaseController(http.Controller):
         if len(admin_app_list) == 0:
             total_users_count = 0
             total_users_verified_count = 0
+            pi_users_top10_ids = []
+            pi_users_top10_chess_ids = []
+            pi_users_top10_snake_ids = []
+            pi_users_top10_sudoku_ids = []
         else:
             total_users_count = admin_app_list[0].total_users_count
             total_users_verified_count = admin_app_list[0].total_users_verified_count
+            pi_users_top10_ids = admin_app_list[0].pi_users_top10_ids
+            pi_users_top10_chess_ids = admin_app_list[0].pi_users_top10_chess_ids
+            pi_users_top10_snake_ids = admin_app_list[0].pi_users_top10_snake_ids
+            pi_users_top10_sudoku_ids = admin_app_list[0].pi_users_top10_sudoku_ids
         
         pi_users_verified_count = int(total_users_verified_count)
         
         pi_users_count = int(total_users_count)
         
-        pi_users_list = request.env["pi.users"].sudo().search(winner_domain, limit=10, order="points desc,unblocked_datetime desc,points_datetime asc,id asc")
+        pi_users_list = pi_users_top10_ids
         
-        pi_users_list_chess = request.env["pi.users"].sudo().search(winner_chess_domain, limit=10, order="points_chess desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
-        pi_users_list_snake = request.env["pi.users"].sudo().search(winner_snake_domain, limit=10, order="points_snake desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
-        pi_users_list_sudoku = request.env["pi.users"].sudo().search(winner_sudoku_domain, limit=10, order="points_sudoku desc,unblocked_datetime desc,points_datetime asc,points desc,id asc")
+        pi_users_list_chess = pi_users_top10_chess_ids
+        pi_users_list_snake = pi_users_top10_snake_ids
+        pi_users_list_sudoku = pi_users_top10_sudoku_ids
         
         pi_user = request.env["pi.users"].sudo().search([('pi_user_code', '=', pi_user_code)])
         
