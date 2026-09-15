@@ -4001,7 +4001,7 @@
                                         </div>
                                         
                                         <h5 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="font-size: 80% !important; color: white !important;">
-                                            <div><button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button> LatinChain Mainnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
+                                            <div><button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button> LatinChain Mainnet<br/><div style="font-size: 80%">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
                                                 <div style="display: none;" class="getverified">
                                                     <div style="margin-top: 3px">
                                                         <a href="/pinetwork" class="href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
@@ -4067,7 +4067,7 @@
                                             </div>-->
                                         </h5>
                                         <h5 t-else="" style="font-size: 80% !important; color: white !important;">
-                                            <div><button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button> LatinChain Testnet<br/><div>Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
+                                            <div><button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button> LatinChain Testnet<br/><div style="font-size: 80%">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
                                                 <div style="display: none;" class="getverified">
                                                     <div style="margin-top: 3px">
                                                         <a href="/pinetwork" class="href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
