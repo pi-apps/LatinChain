@@ -3909,7 +3909,7 @@
                     </style>
                     
                     <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999 !important; justify-content: center; align-items: center; word-break: break-word;">
-                        <div style="display: flex; flex-direction: column; top: 20px; position: fixed; background-color: white; padding: 20px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333; min-width: 250px; max-width: 90%; max-height: calc(100% - 40px); overflow-y: auto;">
+                        <div style="display: flex; flex-direction: column; top: 20px; position: fixed; background-color: white; padding: 25px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333; min-width: 250px; max-width: 90%; max-height: calc(100% - 40px); overflow-y: auto;">
                             <div id="all-messages" style="display: flex;">
                                 <div id="blocking-message" style="display: none; flex-direction: column; margin-top: auto;">
                                     <div style="margin-top: 5px;">
@@ -3922,7 +3922,7 @@
                                 <div id="paying-message" class="container justify-content-center text-center" style="display: none; flex-direction: column; margin-top: auto; text-align: center;">
                                     <div style="text-align: center;" class="row justify-content-center text-center">
                                         <h3 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="color: black !important;"><strong>LatinChain Mainnet<br/><div style="font-size: 80%;">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="font-size: 80%; display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div><div style="font-size: 80%; display: none;" class="getverified">You're LITE<br/>GET PREMIUM for 30 days</div></strong></h3>
-                                        <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet<br/><div style="font-size: 90%;">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="font-size: 80%; display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div><div style="font-size: 80%; display: none;" class="getverified">You're LITE<br/>GET PREMIUM for 30 days</div></strong></h3>
+                                        <h3 t-else="" style="color: black !important;"><strong>LatinChain Testnet<br/><div style="font-size: 80%;">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="font-size: 80%; display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div><div style="font-size: 80%; display: none;" class="getverified">You're LITE<br/>GET PREMIUM for 30 days</div></strong></h3>
                                     </div>
                                     <!--<t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                         <div t-if="total_users_verified_count &lt; 400" class="row justify-content-center text-center" style="color: black !important; max-width: 250px; font-size: 14px">
@@ -4001,7 +4001,7 @@
                                         </div>
                                         
                                         <h5 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="font-size: 80% !important; color: white !important;">
-                                            <div><button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button> LatinChain Mainnet<br/><div style="font-size: 90%">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
+                                            <div><button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button> LatinChain Mainnet<br/><div style="font-size: 80%">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
                                                 <div style="display: none;" class="getverified">
                                                     <div style="margin-top: 3px">
                                                         <a href="/pinetwork" class="href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
