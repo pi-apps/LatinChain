@@ -259,6 +259,30 @@ class PiNetworkBaseController(http.Controller):
             return http.request.redirect('https://www.amazon.com/dp/B0HJ91NRJN')
         elif accessed_path in ['/bitcoin-book/hardcover']:
             return http.request.redirect('https://www.amazon.com/dp/B0HJ99FVB9')
+    
+    @http.route(['/all-blockchains-book/', '/all-blockchains-book/paperback', '/all-blockchains-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def all_blockchains_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/all-blockchains-book/', '/all-blockchains-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0FL89BPL5')
+        elif accessed_path in ['/all-blockchains-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0FL53TJGV')
+    
+    @http.route(['/all-ias-book/', '/all-ias-book/paperback', '/all-ias-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def all_ias_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/all-ias-book/', '/all-ias-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0FL2RHD7D')
+        elif accessed_path in ['/all-ias-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0FL1F2B33')
+    
+    @http.route(['/all-biometrics-book/', '/all-biometrics-book/paperback', '/all-biometrics-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def all_biometrics_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/all-biometrics-book/', '/all-biometrics-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0DL45M8C4')
+        elif accessed_path in ['/all-biometrics-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0DL3DCHMT')
         
     @http.route(['/collection-2025-book/', '/collection-2025-book/paperback', '/collection-2025-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def collection_2025_book(self, **kw):
