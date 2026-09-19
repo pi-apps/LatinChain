@@ -190,13 +190,15 @@ class PiNetworkBaseController(http.Controller):
         elif accessed_path in ['/sudoku-book/hardcover']:
             return http.request.redirect('https://www.amazon.com/dp/B0G4L9T3J5')
     
-    @http.route(['/english-book/', '/english-book/paperback', '/english-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    @http.route(['/english-book/', '/english-book/paperback', '/english-book/ebook', '/english-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_book(self, **kw):
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/english-book/', '/english-book/paperback']:
             return http.request.redirect('https://www.amazon.com/dp/B0F79L26F6')
         elif accessed_path in ['/english-book/ebook']:
             return http.request.redirect('https://www.amazon.com/dp/B0F7792QFW')
+        elif accessed_path in ['/english-book/hardcover']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HK9QJ7FS')
     
     @http.route(['/english-workbook/', '/english-workbook/paperback', '/english-workbook/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_workbook(self, **kw):
