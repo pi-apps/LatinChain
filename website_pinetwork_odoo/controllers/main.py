@@ -251,6 +251,8 @@ class PiNetworkBaseController(http.Controller):
             return http.request.redirect('https://www.amazon.com/dp/B0HJ8Q649H')
         elif accessed_path in ['/bstocks-book/ebook']:
             return http.request.redirect('https://www.amazon.com/dp/B0GX2YC5M7')
+        elif accessed_path in ['/bstocks-book/hardcover']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HKPW2XXS')
     
     @http.route(['/bitcoin-book/', '/bitcoin-book/paperback', '/bitcoin-book/ebook', '/bitcoin-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def bitcoin_book(self, **kw):
