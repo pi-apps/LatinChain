@@ -4166,7 +4166,7 @@
                                             <button class="1-option-floor btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa fa-newspaper-o"></i></div><div>1st floor</div></button>
                                         </div>
                                         <div class="col-6 getverified" style="padding: 2px">
-                                            <button class="1-option-unlock btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-battery-full"></i></div><div>Unlock</div></button>
+                                            <button class="1-option-unlock btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-battery-full"></i></div><div>Premium</div></button>
                                         </div>
                                         <div class="col-6" style="padding: 2px">
                                             <button class="1-option-various btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-store"></i></div><div>Various</div></button>
@@ -4205,7 +4205,7 @@
                                 <div class="1-sharp-unlock-div">
                                     <div class="getverified">
                                         <div class="hr-title" style="margin-top: 5px;" translate="no">
-                                            <h5>Unlock</h5>
+                                            <h5>Get Premium</h5>
                                         </div>
                                         
                                         <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
@@ -4264,6 +4264,10 @@
                                     <div style="margin-top: 10px; display: none;" class="row">
                                         <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCTrade href-external btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-right-left"></i></div> <div style="display: inline" translate="no">TRADE PI ON MEXC<br/>Pi KYB ready</div></a>
                                     </div>
+                                    
+                                    <div style="margin-top: 10px;" class="row">
+                                        <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                    </div>
                                 </div>
                                 
                                 <div class="1-sharp-info-div">
@@ -4280,6 +4284,10 @@
                                     </div>
                                     <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                         <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                    </div>
+                                    
+                                    <div style="margin-top: 10px;" class="row">
+                                        <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                                     </div>
                                     
                                     <div class="row" style="margin-top: 10px;" id="GoForwardShow2">
