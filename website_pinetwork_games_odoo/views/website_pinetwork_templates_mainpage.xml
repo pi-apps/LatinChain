@@ -4236,7 +4236,7 @@
                                         </div>
                                         
                                         <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                            <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline"><div>Send tip</div><div>+<t t-esc="int(points_latin_amount_tip)" /> Latin points)</div><div>Unlock Once</div></div></button>
+                                            <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline"><div>Send tip</div><div>+<t t-esc="int(points_latin_amount_tip)" /> Latin points</div><div>Unlock Once</div></div></button>
                                         </div>
                                         
                                         <div style="margin-top: 10px;" class="row">
