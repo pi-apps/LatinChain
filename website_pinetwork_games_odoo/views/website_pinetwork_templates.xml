@@ -413,7 +413,7 @@
                                             <div style="margin-bottom:5px;">
                                                 LatinChain's referrer (<t t-esc="pi_user_referred_by"/> is inviting you).
                                             </div>
-                                            <div class="input-group mb-3">
+                                            <div class="input-group mb-3" translate="no">
                                               <span style="color: black !important;" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-mobile-screen-button"></i></span>
                                               <input id="pi-user-referred-by" disabled="disabled" t-att-value="pi_user_referred_by" maxlength="40" type="text" class="form-control" placeholder="¿LatinChain's referrer?" aria-label="¿LatinChain's referrer?" aria-describedby="basic-addon1"/>
                                             </div>
@@ -422,7 +422,7 @@
                                                 Welcome
                                             </div>
                                             
-                                            <div class="input-group mb-3">
+                                            <div class="input-group mb-3" translate="no">
                                               <span style="color: black !important;" class="input-group-text" id="basic-addon-username1">@</span>
                                               <input id="pi-username" disabled="disabled" type="text" class="form-control pi-username" placeholder="Go to Pi Browser" aria-label="Go to Pi Browser" aria-describedby="basic-addon-username1"/>
                                             </div>
