@@ -978,8 +978,6 @@ function changingHashLatinChainGoogleTranslate()
 
 $( document ).ready(function() {
     
-    $("#open_rewardedad_modal").click();
-    
     //if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && 
     
     changingHashLatinChainGoogleTranslate();
