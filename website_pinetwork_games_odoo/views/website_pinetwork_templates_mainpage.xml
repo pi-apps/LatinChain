@@ -3844,7 +3844,7 @@
                             <button type="button" id="rewardedad-close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                           </div>
                           <div class="modal-footer button-group getverified" style="display: none;">
-                            <a href="/pinetwork" class="href-external btn btn-success font-weight-bold text-white border-success getverified" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;">GET PREMIUM (+<t t-esc="amount_latin_pay" /> pts)</div><div>Unlock for 30 days</div></a>
+                            <a href="/pinetwork" class="href-external btn btn-success font-weight-bold text-white border-success getverified" style="border: 2px solid; filter: contrast(100%) !important;"><div><i class="fa-solid fa-fingerprint"></i></div><div style="font-size:100%;">GET PREMIUM (+<t t-esc="int(amount_latin_pay)" /> pts)</div><div>Unlock for 30 days</div></a>
                             <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                           </div>
                         </div>
