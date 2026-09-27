@@ -1144,8 +1144,9 @@
                               <li data-target="#myCarousel1647794696348" data-slide-to="11"/>
                             </ol>
                             <div class="carousel-inner">
-                              <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" t-set="background" t-value="'background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;'"/>
-                              <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']" t-set="background" t-value="'background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); background-size: 100% 100%;'"/>
+                                <!-- /web/image/website.s_carousel_default_image_2 -->
+                              <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" t-set="background" t-value="'background-image: url(&quot;/website_pinetwork_games_odoo/static/src/img/website_top.jpeg?v=1.104&quot;); background-size: min(100%, 760px) 100%; background-position: center;'"/>
+                              <t t-if="mainnet in ['Testnet ON', 'Testnet OFF']" t-set="background" t-value="'background-image: url(&quot;/website_pinetwork_games_odoo/static/src/img/website_top.jpeg?v=1.104&quot;); background-size: min(100%, 760px) 100%; background-position: center;'"/>
                               <div class="carousel-item pt10 pb10 oe_img_bg o_colored_level active" t-att-style="background" data-name="Slide">
                                 <div class="container">
                                   <div class="row content">
