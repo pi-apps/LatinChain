@@ -1992,6 +1992,10 @@ $( document ).ready(function() {
                             colorboxLoadedMainnet();
                         }else
                         {
+                            var video_latinchain_v1 = document.getElementById('get-premium-video');
+                            
+                            video_latinchain_v1.muted = true;
+                            
                             /*
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
