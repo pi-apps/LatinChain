@@ -1992,10 +1992,6 @@ $( document ).ready(function() {
                             colorboxLoadedMainnet();
                         }else
                         {
-                            var video_latinchain_v1 = document.getElementById('get-premium-video');
-                            
-                            video_latinchain_v1.muted = true;
-                            
                             /*
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                             {
@@ -2037,6 +2033,10 @@ $( document ).ready(function() {
                                 document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                 document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
+                                
+                                var video_latinchain_v1 = document.getElementById('get-premium-video');
+                            
+                                video_latinchain_v1.muted = true;
                             }
                             
                             document.getElementById('GoForwardShow1').style.display = 'none';
