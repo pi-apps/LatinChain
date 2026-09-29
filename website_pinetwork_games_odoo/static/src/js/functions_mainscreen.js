@@ -1827,6 +1827,29 @@ $( document ).ready(function() {
         displayAds();
     });
     
+    async function loadLatinChainNotPremium(){
+        
+        try{
+            
+            const video_latinchain = document.getElementById('get-premium-video');
+            const video_latinchain_section = document.getElementById('get-premium-video-section');
+            video_latinchain.addEventListener('playing', () => {
+                video_latinchain.style.display="block";
+                //video_latinchain.width=250;
+                //video_latinchain.height=150;
+                video_latinchain_section.style.display="block";
+            }, { once: true });
+            
+            video_latinchain.play();
+            
+        }catch(e)
+        {
+        }
+        
+    }
+    
+    loadLatinChainNotPremium();
+    
     async function auth() {
         try {
             
@@ -1952,6 +1975,8 @@ $( document ).ready(function() {
                         
                         if(!unblocked)
                         {
+                            loadLatinChainNotPremium();
+                            
                             $(".PiBrowserLink").hide();
                             
                             if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()) || (["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()) && JSON.parse($("#nopopup").val().toLowerCase()) != false))
