@@ -941,6 +941,9 @@ $( document ).ready(function() {
             
             $("#translate_text_latinchain_2").show();
             $("#google_translate_element").show();
+            
+            document.getElementById('get-premium-video').muted = true;
+            
           // Your code runs here
         } else {
             $("#translate_text_latinchain_2").appendTo(".translate_here");
@@ -2033,10 +2036,6 @@ $( document ).ready(function() {
                                 document.getElementById('paying-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                 document.getElementById('blocking-message').style.display = 'none'; // Use 'flex' instead of 'block'
                                 document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
-                                
-                                var video_latinchain_v1 = document.getElementById('get-premium-video');
-                            
-                                video_latinchain_v1.muted = true;
                             }
                             
                             document.getElementById('GoForwardShow1').style.display = 'none';
