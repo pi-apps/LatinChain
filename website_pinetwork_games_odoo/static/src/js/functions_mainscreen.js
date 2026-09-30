@@ -1236,6 +1236,8 @@ $( document ).ready(function() {
             start_flag = true;
         }
         
+        document.getElementById('get-premium-video').muted = true;
+        
         $(".show_test_app").hide();
         $(".show_test_app_loading").show();
         $("#button_reward_ad").prop( "disabled", true );
@@ -2236,6 +2238,8 @@ $( document ).ready(function() {
         {
             $("#pi_donate").val(amount_price_maximum);
         }
+        
+        document.getElementById('get-premium-video').muted = true;
         
         $("#button_tip").prop( "disabled", true );
         $(".giving-tip").prop( "disabled", true );
