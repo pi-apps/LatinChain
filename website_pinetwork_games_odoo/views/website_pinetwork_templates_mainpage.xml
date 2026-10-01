@@ -4166,11 +4166,11 @@
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top: 2px;" translate="no">
-                                        <div class="col-6" style="padding: 2px">
-                                            <button class="1-option-floor btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa fa-newspaper-o"></i></div><div>1st floor</div></button>
-                                        </div>
                                         <div class="col-6 getverified" style="padding: 2px">
                                             <button class="1-option-unlock btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-battery-full"></i></div><div>Premium</div></button>
+                                        </div>
+                                        <div class="col-6" style="padding: 2px">
+                                            <button class="1-option-floor btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa fa-newspaper-o"></i></div><div>1st floor</div></button>
                                         </div>
                                         <div class="col-6" style="padding: 2px">
                                             <button class="1-option-various btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-store"></i></div><div>Various</div></button>
@@ -4179,31 +4179,6 @@
                                             <button class="1-option-info btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div><i class="fa-solid fa-list-ol"></i></div><div>Info</div></button>
                                         </div>
                                     </div>
-                                </div>
-                                
-                                <div class="1-sharp-floor-div">
-                                    <div class="hr-title" style="margin-top: 5px;" translate="no">
-                                        <h5>1st floor</h5>
-                                    </div>
-                                    
-                                    <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                    </div>
-                                    <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                    </div>
-                                    
-                                    <div class="row" style="margin-top: 10px;">
-                                        <a class="btn btn-block btn-success rounded col-12 news-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">News<br/>LatinChain News</div></a>
-                                    </div>
-                                    
-                                    <div class="row" style="margin-top: 10px;">
-                                        <a class="btn btn-block btn-success rounded col-12 blog-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">Latest News<br/>On LatinChain</div></a>
-                                    </div>
-                                    
-                                    <!--<div style="margin-top: 10px;" class="row">
-                                        <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour<br/>LatinChain tour</div></button>
-                                    </div>-->
                                 </div>
                                 
                                 <div class="1-sharp-unlock-div">
@@ -4220,12 +4195,12 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                        <!--<div class="row" style="margin-top: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                             <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                         </div>
                                         <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                             <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                        </div>
+                                        </div>-->
                                         
                                         <div>
                                             <div class="row show_test_app" style="margin-top: 10px;">
@@ -4251,6 +4226,27 @@
                                         <div style="margin-top: 10px;" class="row">
                                             <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                                         </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="1-sharp-floor-div">
+                                    <div class="hr-title" style="margin-top: 5px;" translate="no">
+                                        <h5>1st floor</h5>
+                                    </div>
+                                    
+                                    <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                    </div>
+                                    <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                    </div>
+                                    
+                                    <div class="row" style="margin-top: 10px;">
+                                        <a class="btn btn-block btn-success rounded col-12 news-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">News<br/>LatinChain News</div></a>
+                                    </div>
+                                    
+                                    <div class="row" style="margin-top: 10px;">
+                                        <a class="btn btn-block btn-success rounded col-12 blog-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">Latest News<br/>On LatinChain</div></a>
                                     </div>
                                 </div>
                                 
