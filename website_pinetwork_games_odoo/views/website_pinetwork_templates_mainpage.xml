@@ -1652,6 +1652,9 @@
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top: 2px;" translate="no">
+                                        <div class="col-4" style="padding: 2px">
+                                            <button class="latin-option-losttransaction btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#lost</div></button>
+                                        </div>
                                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-4" style="padding: 2px">
                                             <button class="latin-option-sendtip btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#tip</div></button>
                                         </div>
@@ -1703,6 +1706,54 @@
                                         <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-welcome btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#hi</div></button>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center;" class="border-gradient-rounded latin-sharp-losttransaction-div">
+                                <div style="margin-bottom:5px" class="border-bottom">
+                                    <h5 translate="no"><strong><div style="display:inline;">#Recover #Transactions</div></strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <div style="margin-bottom:5px">Recover lost transactions, if it was failed, not found or not loaded</div>
+                                    <div id="accordionThree" style="margin-bottom:5px">
+                              
+                                      <div class="card">
+                                        <!--<div class="card-header" id="headingThree">
+                                          <h5 class="mb-0">
+                                            <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                              <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
+                                            </button>
+                                          </h5>
+                                        </div>-->
+                                        
+                                        <h2 class="accordion-header" id="headingThree">
+                                          <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                            <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
+                                          </button>
+                                        </h2>
+
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionThree">
+                                          <div class="card-body">
+                                            <div style="text-align:center" class="form-group container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        Hello, did you lost a transaction?. Now you can register your transaction. <strong>Set your Memo ID or Payment ID here and click in Save. You can find your Memo ID or Payment ID by accessing to TXID link in Pi Blockexplorer</strong>:
+                                                        <textarea id="memo_id" name="memo_id" placeholder="Memo ID" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
+                                                        <br/>
+                                                        <button id="button_click_memo" name="button_click_memo" class="btn btn-success" disabled="true">Save</button>
+                                                        <br/>
+                                                        <div>
+                                                        <br/>Place your Memo ID or Payment ID in the text box above.<br/>
+                                                        <br/>A Memo ID or Payment ID looks like this:<br/>
+                                                        <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">WVV68I9Nz2VGHoWUV9mH3P5Te8Dn</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
@@ -2656,46 +2707,6 @@
                                                 <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/live/AXOtWxSETew?si=3bKFA_mjb0ethVqe</textarea>
                                                 <br/>A Youtube short video URL looks like this:<br/>
                                                 <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">https://www.youtube.com/shorts/SZEljmi-wr4</textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                      </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            <div id="accordionThree" style="margin-bottom:5px">
-                          
-                              <div class="card">
-                                <!--<div class="card-header" id="headingThree">
-                                  <h5 class="mb-0">
-                                    <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                      <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
-                                    </button>
-                                  </h5>
-                                </div>-->
-                                
-                                <h2 class="accordion-header" id="headingThree">
-                                  <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                    <div style=""><i class="fa fa-list-ol"></i></div><div style="">Lost a transaction?</div>
-                                  </button>
-                                </h2>
-
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionThree">
-                                  <div class="card-body">
-                                    <div style="text-align:center" class="form-group container">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                Hello, did you lost a transaction?. Now you can register your transaction. <strong>Set your Memo ID or Payment ID here and click in Save. You can find your Memo ID or Payment ID by accessing to TXID link in Pi Blockexplorer</strong>:
-                                                <textarea id="memo_id" name="memo_id" placeholder="Memo ID" class="form-control" disabled="true" style="font-size: 80%; resize: none;" rows="3" ></textarea>
-                                                <br/>
-                                                <button id="button_click_memo" name="button_click_memo" class="btn btn-success" disabled="true">Save</button>
-                                                <br/>
-                                                <div>
-                                                <br/>Place your Memo ID or Payment ID in the text box above.<br/>
-                                                <br/>A Memo ID or Payment ID looks like this:<br/>
-                                                <textarea class="form-control" readonly="true" style="font-size: 80%; resize: none;" rows="3">WVV68I9Nz2VGHoWUV9mH3P5Te8Dn</textarea>
                                                 </div>
                                             </div>
                                         </div>
