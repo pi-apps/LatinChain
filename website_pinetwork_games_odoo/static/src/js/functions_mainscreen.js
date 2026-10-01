@@ -942,7 +942,7 @@ $( document ).ready(function() {
             $("#translate_text_latinchain_2").show();
             $("#google_translate_element").show();
             
-            document.getElementById('get-premium-video').muted = true;
+            //document.getElementById('get-premium-video').muted = true;
             
           // Your code runs here
         } else {
@@ -1236,7 +1236,7 @@ $( document ).ready(function() {
             start_flag = true;
         }
         
-        document.getElementById('get-premium-video').muted = true;
+        //document.getElementById('get-premium-video').muted = true;
         
         $(".show_test_app").hide();
         $(".show_test_app_loading").show();
@@ -1832,7 +1832,7 @@ $( document ).ready(function() {
         displayAds();
     });
     
-    async function loadLatinChainNotPremium(){
+    /*async function loadLatinChainNotPremium(){
         
         try{
             
@@ -1854,6 +1854,7 @@ $( document ).ready(function() {
     }
     
     loadLatinChainNotPremium();
+    */
     
     async function auth() {
         try {
@@ -1980,7 +1981,7 @@ $( document ).ready(function() {
                         
                         if(!unblocked)
                         {
-                            loadLatinChainNotPremium();
+                            //loadLatinChainNotPremium();
                             
                             $(".PiBrowserLink").hide();
                             
@@ -2239,7 +2240,7 @@ $( document ).ready(function() {
             $("#pi_donate").val(amount_price_maximum);
         }
         
-        document.getElementById('get-premium-video').muted = true;
+        //document.getElementById('get-premium-video').muted = true;
         
         $("#button_tip").prop( "disabled", true );
         $(".giving-tip").prop( "disabled", true );
