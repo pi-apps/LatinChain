@@ -2524,7 +2524,7 @@ $( document ).ready(function() {
         $(".loggedout").hide();
     });
     
-    $( "#test_app" ).click(async function() {
+    $( ".test_app" ).click(async function() {
         if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
         {
             if(pi_user_id != "" && pi_user_code != "")
