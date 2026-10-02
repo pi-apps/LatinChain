@@ -4205,6 +4205,10 @@
                                     </div>
                                     
                                     <div style="">
+                                        <div style="margin-top: 10px;" class="row">
+                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        </div>
+                                        
                                         <div class="getverified">
                                             <div style="margin-top: 10px;">
                                                 <div class="row show_test_app" style="">
@@ -4226,10 +4230,6 @@
                                             <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                 <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Send tip<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once</div></button>
                                             </div>
-                                        </div>
-                                            
-                                        <div style="margin-top: 10px;" class="row">
-                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                                         </div>
                                     </div>
                                     
@@ -4263,6 +4263,10 @@
                                             <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                         </div>
                                         
+                                        <div style="margin-top: 10px;" class="row">
+                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        </div>
+                                        
                                         <div>
                                             <div class="row show_test_app" style="margin-top: 10px;">
                                                 <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
@@ -4283,10 +4287,6 @@
                                         <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                             <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Send tip<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once</div></button>
                                         </div>
-                                        
-                                        <div style="margin-top: 10px;" class="row">
-                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
-                                        </div>
                                     </div>
                                 </div>
                                 
@@ -4303,6 +4303,10 @@
                                     </div>
                                     
                                     <div style="">
+                                        <div style="margin-top: 10px;" class="row">
+                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        </div>
+                                        
                                         <div class="getverified">
                                             <div style="margin-top: 10px;">
                                                 <div class="row show_test_app" style="">
@@ -4324,10 +4328,6 @@
                                             <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                 <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Send tip<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once</div></button>
                                             </div>
-                                        </div>
-                                            
-                                        <div style="margin-top: 10px;" class="row">
-                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                                         </div>
                                     </div>
                                     
@@ -4360,6 +4360,10 @@
                                     </div>
                                     
                                     <div style="">
+                                        <div style="margin-top: 10px;" class="row">
+                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        </div>
+                                        
                                         <div class="getverified">
                                             <div style="margin-top: 10px;">
                                                 <div class="row show_test_app" style="">
@@ -4381,10 +4385,6 @@
                                             <div class="row" style="margin-top: 10px;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                                 <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Send tip<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once</div></button>
                                             </div>
-                                        </div>
-                                            
-                                        <div style="margin-top: 10px;" class="row">
-                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                                         </div>
                                     </div>
                                     
