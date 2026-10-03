@@ -4203,21 +4203,23 @@
                                         <h5>1st floor</h5>
                                     </div>
                                     
-                                    <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                    </div>
-                                    <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                    </div>
-                                    
                                     <div style="">
-                                        <div style="margin-top: 10px;">
+                                        <div>
                                             <div class="row show_test_app" style="">
                                                 <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
                                             </div>
                                             
                                             <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                 <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="margin-top: 10px;">
+                                            <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                            </div>
+                                            <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                             </div>
                                         </div>
                                         
@@ -4262,20 +4264,22 @@
                                             </div>
                                         </div>-->
                                         
-                                        <div class="row" style="" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                            <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                        </div>
-                                        <div class="row" style="" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                            <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                        </div>
-                                        
                                         <div>
-                                            <div class="row show_test_app" style="margin-top: 10px;">
+                                            <div class="row show_test_app" style="">
                                                 <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
                                             </div>
                                             
-                                            <div style="display: none; margin-top: 10px;" class="row justify-content-center text-center show_test_app_loading">
+                                            <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                 <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="margin-top: 10px;">
+                                            <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                            </div>
+                                            <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                             </div>
                                         </div>
                                         
@@ -4301,21 +4305,23 @@
                                         <h5>Various</h5>
                                     </div>
                                     
-                                    <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                    </div>
-                                    <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                    </div>
-                                    
                                     <div style="">
-                                        <div style="margin-top: 10px;">
+                                        <div>
                                             <div class="row show_test_app" style="">
                                                 <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
                                             </div>
                                             
                                             <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                 <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="margin-top: 10px;">
+                                            <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                            </div>
+                                            <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                             </div>
                                         </div>
                                         
@@ -4358,21 +4364,23 @@
                                         <h5>Info</h5>
                                     </div>
                                     
-                                    <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                    </div>
-                                    <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                    </div>
-                                    
                                     <div style="">
-                                        <div style="margin-top: 10px;">
+                                        <div>
                                             <div class="row show_test_app" style="">
                                                 <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
                                             </div>
                                             
                                             <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                 <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="margin-top: 10px;">
+                                            <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                            </div>
+                                            <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
                                             </div>
                                         </div>
                                         
