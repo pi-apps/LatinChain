@@ -4204,14 +4204,8 @@
                                     </div>
                                     
                                     <div style="">
-                                        <div>
-                                            <div class="row show_test_app" style="">
-                                                <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
-                                            </div>
-                                            
-                                            <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
-                                                <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
-                                            </div>
+                                        <div class="row">
+                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                                         </div>
                                         
                                         <div style="margin-top: 10px;">
@@ -4223,8 +4217,14 @@
                                             </div>
                                         </div>
                                         
-                                        <div style="margin-top: 10px;" class="row">
-                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        <div style="margin-top: 10px;">
+                                            <div class="row show_test_app" style="">
+                                                <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
+                                            </div>
+                                            
+                                            <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
+                                                <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                            </div>
                                         </div>
                                         
                                         <div class="getverified">
@@ -4264,14 +4264,8 @@
                                             </div>
                                         </div>-->
                                         
-                                        <div>
-                                            <div class="row show_test_app" style="">
-                                                <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
-                                            </div>
-                                            
-                                            <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
-                                                <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
-                                            </div>
+                                        <div class="row">
+                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                                         </div>
                                         
                                         <div style="margin-top: 10px;">
@@ -4283,8 +4277,14 @@
                                             </div>
                                         </div>
                                         
-                                        <div style="margin-top: 10px;" class="row">
-                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        <div style="margin-top: 10px;">
+                                            <div class="row show_test_app" style="">
+                                                <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
+                                            </div>
+                                            
+                                            <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
+                                                <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                            </div>
                                         </div>
                                         
                                         <div class="row" style="margin-top: 10px;" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
@@ -4306,14 +4306,8 @@
                                     </div>
                                     
                                     <div style="">
-                                        <div>
-                                            <div class="row show_test_app" style="">
-                                                <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
-                                            </div>
-                                            
-                                            <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
-                                                <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
-                                            </div>
+                                        <div class="row">
+                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                                         </div>
                                         
                                         <div style="margin-top: 10px;">
@@ -4325,8 +4319,14 @@
                                             </div>
                                         </div>
                                         
-                                        <div style="margin-top: 10px;" class="row">
-                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        <div style="margin-top: 10px;">
+                                            <div class="row show_test_app" style="">
+                                                <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
+                                            </div>
+                                            
+                                            <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
+                                                <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                            </div>
                                         </div>
                                         
                                         <div class="getverified">
@@ -4365,14 +4365,8 @@
                                     </div>
                                     
                                     <div style="">
-                                        <div>
-                                            <div class="row show_test_app" style="">
-                                                <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
-                                            </div>
-                                            
-                                            <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
-                                                <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
-                                            </div>
+                                        <div class="row">
+                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                                         </div>
                                         
                                         <div style="margin-top: 10px;">
@@ -4384,8 +4378,14 @@
                                             </div>
                                         </div>
                                         
-                                        <div style="margin-top: 10px;" class="row">
-                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        <div style="margin-top: 10px;">
+                                            <div class="row show_test_app" style="">
+                                                <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
+                                            </div>
+                                            
+                                            <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
+                                                <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                            </div>
                                         </div>
                                         
                                         <div class="getverified">
