@@ -1922,8 +1922,6 @@ window.addEventListener('DOMContentLoaded', () => {
     {
         app = new IRCClientApp();
         app.init();
-    }else{
-        alert("There was an error. Use the Pi Browser or reload the page.");
     }
   })();
 });
