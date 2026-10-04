@@ -1764,7 +1764,7 @@ class IRCClientApp {
   }
   shareDeveloperInfoToChannel() {
     const target = this.state.activeBuffer;
-    const msg = '⚡ Developer: César (OpenSource Expert) Cordero Rodríguez | LatinChain: https://latinchain.pinet.com | For contracts: https://rockcesar.github.io#contact | Code (AGPLv3): https://github.com/rockcesar/rockcesar.github.io/tree/main/chatirc';
+    const msg = '⚡ Developer: César (OpenSource Expert) Cordero Rodríguez | LatinChain: https://latinchain.pinet.com | For contracts: https://rockcesar.github.io#contact | Code (PiOS):  https://github.com/pi-apps/LatinChain/tree/main/website_pinetwork_games_odoo/static/src/js/chatirc ';
     if (this.state.connected && target !== '*status') {
       if (this.sendRaw(`PRIVMSG ${target} :${msg}`)) {
         if (!this.state.enabledCaps.has('echo-message')) {
