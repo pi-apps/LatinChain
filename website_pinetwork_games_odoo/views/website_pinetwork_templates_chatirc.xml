@@ -118,9 +118,10 @@
                                 setTimeout(function ()
                                 {
                                     cont_complete+=1;
+                                    
+                                    if(cont_complete >= 20 || (startCommonAppsAIVars.pi_user_id != "" &amp;&amp; startCommonAppsAIVars.pi_user_code != ""))
+                                        break;
                                 }, 1000);
-                                if(cont_complete >= 20 || (startCommonAppsAIVars.pi_user_id != "" &amp;&amp; startCommonAppsAIVars.pi_user_code != ""))
-                                    break;
                             }
                             
                             if(startCommonAppsAIVars.pi_user_id != "" &amp;&amp; startCommonAppsAIVars.pi_user_code != "")
