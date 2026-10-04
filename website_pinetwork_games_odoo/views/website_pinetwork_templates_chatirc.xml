@@ -382,7 +382,7 @@
                       <!-- Active Channel Name & Topic -->
                       <div class="min-w-0">
                         <div class="flex items-center gap-2">
-                          <h2 id="activeBufferTitle" class="font-mono font-bold text-sm sm:text-base text-white truncate">#pi-network</h2>
+                          <h2 id="activeBufferTitle" class="font-mono font-bold text-sm sm:text-base text-white truncate">#latinchain</h2>
                           <span id="activeBufferModes" class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-obsidian-700 text-cyan-400 border border-obsidian-600 hidden sm:inline">+nt</span>
                           <span id="activeCategoryPill" class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-purple-500/15 text-purple-300 border border-purple-500/30 hidden sm:inline">Pi Open Mainnet</span>
                         </div>
@@ -461,7 +461,7 @@
 
                     <!-- Mobile-First Quick Command & Crypto Action Strip -->
                     <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-2 mb-1.5 border-b border-obsidian-700/80 text-[11px] font-mono">
-                      <button type="button" onclick="app.joinOrSwitchChannel('#pi-network')" class="px-2 py-1 rounded bg-purple-500/15 hover:bg-purple-500/25 text-purple-300 border border-purple-500/30 shrink-0 font-semibold">π #pi-network</button>
+                      <button type="button" onclick="app.joinOrSwitchChannel('#latinchain')" class="px-2 py-1 rounded bg-purple-500/15 hover:bg-purple-500/25 text-purple-300 border border-purple-500/30 shrink-0 font-semibold">#latinchain</button>
                       <button type="button" onclick="app.shareTickerToChannel('PI')" class="px-2 py-1 rounded bg-purple-500/15 hover:bg-purple-500/25 text-amber-300 border border-purple-500/30 shrink-0">📊 Post PI</button>
                       <button type="button" onclick="app.shareTickerToChannel('BTC')" class="px-2 py-1 rounded bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 shrink-0">📊 Post BTC</button>
                       <button type="button" onclick="app.shareTickerToChannel('ETH')" class="px-2 py-1 rounded bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 border border-indigo-500/30 shrink-0">📊 Post ETH</button>
@@ -620,8 +620,8 @@
 
                     <!-- Auto-Join Crypto Channels -->
                     <div>
-                      <label class="block text-xs font-mono uppercase text-slate-400 mb-1">Auto-Join Pi Network, Crypto &amp; Blockchain Channels (comma-separated)</label>
-                      <input id="inputAutoChannels" type="text" value="#pi-network,#pi-node,#bitcoin,#ethereum,#monero,#defi,#blockchain,#crypto-trading" class="w-full bg-obsidian-900 border border-obsidian-600 rounded-xl px-3 py-2 font-mono text-xs text-emerald-300 focus:outline-none focus:border-cyan-500" />
+                      <label class="block text-xs font-mono uppercase text-slate-400 mb-1">Auto-Join LatinChain, Pi Network, Crypto &amp; Blockchain Channels (comma-separated)</label>
+                      <input id="inputAutoChannels" type="text" value="#latinchain,#pi-network,#pi-node,#bitcoin,#ethereum,#monero,#defi,#blockchain,#crypto-trading" class="w-full bg-obsidian-900 border border-obsidian-600 rounded-xl px-3 py-2 font-mono text-xs text-emerald-300 focus:outline-none focus:border-cyan-500" />
                     </div>
                   </div>
 
@@ -664,10 +664,11 @@
                   <form onsubmit="app.handleJoinSubmit(event)" class="p-5 space-y-4">
                     <div>
                       <label class="block text-xs font-mono uppercase text-slate-400 mb-1">Channel Name (starts with #) or Peer Nickname</label>
-                      <input id="joinTargetInput" type="text" placeholder="#pi-network, #pi-ecosystem or #solana" required="required" class="w-full bg-obsidian-900 border border-obsidian-600 rounded-xl px-3.5 py-2.5 font-mono text-sm text-white focus:outline-none focus:border-cyan-500" />
+                      <input id="joinTargetInput" type="text" placeholder="#latinchain, #pi-network, #pi-ecosystem or #solana" required="required" class="w-full bg-obsidian-900 border border-obsidian-600 rounded-xl px-3.5 py-2.5 font-mono text-sm text-white focus:outline-none focus:border-cyan-500" />
                     </div>
                     <div class="flex flex-wrap gap-1.5">
                       <span class="text-[11px] font-mono text-slate-400 w-full">Popular Pi Network, Crypto &amp; Blockchain Channels:</span>
+                      <button type="button" onclick="document.getElementById('joinTargetInput').value='#latinchain'" class="px-2 py-1 rounded bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/40 text-xs font-mono text-purple-300 font-semibold">#latinchain</button>
                       <button type="button" onclick="document.getElementById('joinTargetInput').value='#pi-network'" class="px-2 py-1 rounded bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/40 text-xs font-mono text-purple-300 font-semibold">π #pi-network</button>
                       <button type="button" onclick="document.getElementById('joinTargetInput').value='#pi-node'" class="px-2 py-1 rounded bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/40 text-xs font-mono text-amber-300">#pi-node</button>
                       <button type="button" onclick="document.getElementById('joinTargetInput').value='#pi-ecosystem'" class="px-2 py-1 rounded bg-obsidian-700 hover:bg-obsidian-600 text-xs font-mono text-purple-400">#pi-ecosystem</button>
