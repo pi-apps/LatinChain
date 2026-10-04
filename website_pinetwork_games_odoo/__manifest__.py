@@ -112,6 +112,7 @@ https://www.youtube.com/watch?v=9KqcyAoCZzo
         'views/website_pinetwork_templates_webcode.xml',
         'views/website_pinetwork_templates_weboffice.xml',
         'views/website_pinetwork_templates_webtorrent.xml',
+        'views/website_pinetwork_templates_chatirc.xml',
         'views/website_pinetwork_templates_tvtube.xml',
         'views/website_pinetwork_templates_pdfreader.xml',
         'views/website_pinetwork_templates_player_calculator.xml',
