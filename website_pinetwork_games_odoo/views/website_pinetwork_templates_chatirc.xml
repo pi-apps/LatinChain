@@ -551,7 +551,7 @@
                       <label class="block text-xs font-mono uppercase text-slate-400 mb-1.5">Select Public WebSocket IRC Server</label>
                       <select id="serverPresetSelect" onchange="app.handleServerPresetChange(this.value)" class="w-full bg-obsidian-900 border border-obsidian-600 rounded-xl px-3 py-2.5 font-mono text-xs text-white focus:outline-none focus:border-cyan-500">
                         <option value="wss://testnet.ergo.chat/webirc|ircv3">Ergo IRC Public Network (wss://testnet.ergo.chat/webirc) — Fast + History</option>
-                        <option value="wss://irc.ergo.chat:443/webirc|ircv3">Ergo Official Mainnet (wss://irc.ergo.chat/webirc) — IRCv3</option>
+                        <!--<option value="wss://irc.ergo.chat/webirc|ircv3">Ergo Official Mainnet (wss://irc.ergo.chat/webirc) — IRCv3</option>-->
                         <option value="wss://irc.milkmedicine.net/webirc|ircv3">MilkMedicine IRCv3 (wss://irc.milkmedicine.net/webirc)</option>
                         <option value="wss://irc.unrealircd.org|plain">UnrealIRCd Public Network (wss://irc.unrealircd.org)</option>
                         <option value="custom">Custom WSS IRC Server (Enter URL below)...</option>
