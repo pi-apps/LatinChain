@@ -1659,7 +1659,7 @@ class IRCClientApp {
     this.state.nick = newNick;
     this.state.pendingNick = null;
     try {
-      localStorage.setItem(STORAGE_KEYS.NICK, newNick);
+      //localStorage.setItem(STORAGE_KEYS.NICK, newNick);
     } catch (e) {}
     document.getElementById('sidebarNickDisplay').textContent = `nick: ${newNick}`;
     document.getElementById('composerNickBadge').textContent = newNick;
@@ -1886,15 +1886,15 @@ class IRCClientApp {
 }
 
 async function getUserData() {
-    let cont_complete=0;
+    let count_complete=0;
     
     while(startCommonAppsAIVars.pi_user_id == "" || startCommonAppsAIVars.pi_user_code == "")
     {
         await delayAsync(1000);
         
-        cont_complete+=1;
+        count_complete+=1;
         
-        if(cont_complete >= 30 || (startCommonAppsAIVars.pi_user_id != "" && startCommonAppsAIVars.pi_user_code != ""))
+        if(count_complete >= 30 || (startCommonAppsAIVars.pi_user_id != "" && startCommonAppsAIVars.pi_user_code != ""))
             break;
     }
     
@@ -1912,11 +1912,12 @@ async function getUserData() {
         if(completed >= 1)
         {
             return true;
-        }else
-        {
-            return false;
         }
+        
+        return false;
     }
+    
+    return false;
 }
 
 // Boot application on window load
@@ -1925,6 +1926,7 @@ window.addEventListener('DOMContentLoaded', () => {
   (async () => {
     let userDataVar = await getUserData();
   
+    alert(userDataVar);
     if(userDataVar)
     {
         app = new IRCClientApp();
