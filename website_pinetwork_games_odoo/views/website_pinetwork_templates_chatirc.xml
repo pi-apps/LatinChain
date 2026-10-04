@@ -112,6 +112,9 @@
                     
                     $( document ).ready(function() {
                         (async () => {
+                            let pi_user_id = startCommonAppsAIVars.pi_user_id;
+                            let pi_user_code = startCommonAppsAIVars.pi_user_code;
+                        
                             let cont_complete=0;
                             while(pi_user_id == "" || pi_user_code == "")
                             {
