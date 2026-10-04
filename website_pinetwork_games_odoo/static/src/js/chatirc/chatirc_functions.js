@@ -1902,16 +1902,13 @@ async function getUserData() {
     
     if(startCommonAppsAIVars.pi_user_id != "" && startCommonAppsAIVars.pi_user_code != "")
     {
-        let completed = 0;
         try {
-          if(localStorage.getItem(STORAGE_KEYS.NICK) != startCommonAppsAIVars.pi_user_code)
-          {
-            localStorage.setItem(STORAGE_KEYS.NICK, startCommonAppsAIVars.pi_user_code);
-            completed += 1;
-          }
+          localStorage.setItem(STORAGE_KEYS.NICK, startCommonAppsAIVars.pi_user_code);
           
           return true;
         } catch (e) {}
+        
+        return false;
     }
     
     return false;
