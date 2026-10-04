@@ -466,7 +466,9 @@
                       <button type="button" onclick="app.shareTickerToChannel('BTC')" class="px-2 py-1 rounded bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 shrink-0">📊 Post BTC</button>
                       <button type="button" onclick="app.shareTickerToChannel('ETH')" class="px-2 py-1 rounded bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 border border-indigo-500/30 shrink-0">📊 Post ETH</button>
                       <button type="button" onclick="app.insertCommandPrefix('/join #')" class="px-2 py-1 rounded bg-obsidian-700 hover:bg-obsidian-600 text-cyan-400 border border-obsidian-600 shrink-0">/join</button>
+                      <!--
                       <button type="button" onclick="app.insertCommandPrefix('/nick ')" class="px-2 py-1 rounded bg-obsidian-700 hover:bg-obsidian-600 text-cyan-400 border border-obsidian-600 shrink-0">/nick</button>
+                      -->
                       <button type="button" onclick="app.insertCommandPrefix('/me ')" class="px-2 py-1 rounded bg-obsidian-700 hover:bg-obsidian-600 text-cyan-400 border border-obsidian-600 shrink-0">/me</button>
                       <button type="button" onclick="app.insertCommandPrefix('/whois ')" class="px-2 py-1 rounded bg-obsidian-700 hover:bg-obsidian-600 text-cyan-400 border border-obsidian-600 shrink-0">/whois</button>
                       <button type="button" onclick="app.insertCommandPrefix('/topic ')" class="px-2 py-1 rounded bg-obsidian-700 hover:bg-obsidian-600 text-cyan-400 border border-obsidian-600 shrink-0">/topic</button>
@@ -802,7 +804,7 @@
               <!-- TOAST NOTIFICATION CONTAINER -->
               <div id="toastContainer" class="fixed top-10 right-4 z-50 space-y-2 pointer-events-none"></div>
 
-              <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/chatirc/chatirc_functions.js?v=1.102"></script>
+              <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/chatirc/chatirc_functions.js?v=1.103"></script>
             </body>
             </html>
             </t>

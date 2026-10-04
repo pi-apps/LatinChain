@@ -63,7 +63,7 @@ const CRYPTO_CHANNEL_DIRECTORY = [
 const SLASH_COMMANDS = [
   { cmd: '/join', syntax: '/join #channel', desc: 'Join a real IRC channel on the server' },
   { cmd: '/part', syntax: '/part [#channel] [reason]', desc: 'Leave the current or specified IRC channel' },
-  { cmd: '/nick', syntax: '/nick <new_nickname>', desc: 'Change your active IRC nickname' },
+  /*{ cmd: '/nick', syntax: '/nick <new_nickname>', desc: 'Change your active IRC nickname' },*/
   { cmd: '/msg', syntax: '/msg <target> <message>', desc: 'Send a private PRIVMSG to a user or channel' },
   { cmd: '/me', syntax: '/me <action text>', desc: 'Send a CTCP ACTION message to the channel' },
   { cmd: '/whois', syntax: '/whois <nickname>', desc: 'Query real server WHOIS details for a user' },
@@ -1147,7 +1147,12 @@ class IRCClientApp {
 
     const target = this.state.activeBuffer;
     if (target === '*status') {
-      // Allow typing raw IRC commands in *status console
+      if (/^nick(\s|$)/i.test(text)) {
+        this.showToast('Raw NICK command is disabled.', 'red');
+        this.addSystemMessage('*status', 'Command denied: NICK changes are disabled.');
+        return;
+      }
+      // Allow typing other raw IRC commands in *status console
       this.sendRaw(text);
       return;
     }
@@ -1189,22 +1194,11 @@ class IRCClientApp {
       }
 
       case 'nick': {
-        const newNick = parts[0];
-        if (!newNick) {
-          this.showToast('Usage: /nick <new_nickname>', 'amber');
-          return;
-        }
-        const oldNick = this.state.nick;
-        this.state.pendingNick = newNick;
-        this.updateOwnNickname(newNick);
-        if (this.state.connected) {
-          this.sendRaw(`NICK ${newNick}`);
-        } else {
-          this.showToast(`Nickname saved as ${newNick}`, 'emerald');
-        }
-        if (oldNick && oldNick.toLowerCase() !== newNick.toLowerCase()) {
-          this.removeNickFromAllPeerLists(oldNick);
-        }
+        this.showToast('The /nick command is disabled.', 'red');
+        this.addSystemMessage(
+          this.state.activeBuffer,
+          'Command denied: /nick is disabled by the client policy.'
+        );
         break;
       }
 
@@ -1289,6 +1283,14 @@ class IRCClientApp {
 
       case 'raw':
       case 'quote': {
+        if (/^nick(\s|$)/i.test(rest.trim())) {
+          this.showToast('Raw NICK command is disabled.', 'red');
+          this.addSystemMessage(
+            this.state.activeBuffer,
+            'Command denied: Raw NICK changes are disabled.'
+          );
+          break;
+        }
         if (rest) this.sendRaw(rest);
         break;
       }
