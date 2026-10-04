@@ -1922,6 +1922,8 @@ window.addEventListener('DOMContentLoaded', () => {
     {
         app = new IRCClientApp();
         app.init();
+    }else{
+        alert("There was an error, reload the page.");
     }
   })();
 });
