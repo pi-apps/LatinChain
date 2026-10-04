@@ -113,12 +113,12 @@
                     $( document ).ready(function() {
                         (async () => {
                             let cont_complete=0;
+                            
                             while(startCommonAppsAIVars.pi_user_id == "" || startCommonAppsAIVars.pi_user_code == "")
                             {
-                                setTimeout(function ()
-                                {
-                                    cont_complete+=1;
-                                }, 1000);
+                                await delayAsync(1000);
+                                
+                                cont_complete+=1;
                                 
                                 if(cont_complete >= 20 || (startCommonAppsAIVars.pi_user_id != "" &amp;&amp; startCommonAppsAIVars.pi_user_code != ""))
                                     break;
@@ -133,16 +133,20 @@
                                 let completed = 0;
                                 try {
                                   if(localStorage.getItem(STORAGE_KEYS_COMPLETED.USERNAME) != 'pinode')
+                                  {
                                     localStorage.setItem(STORAGE_KEYS_COMPLETED.USERNAME, 'pinode');
-                                  completed += 1;
+                                    completed += 1;
+                                  }
                                 } catch (e) {}
                                 try {
-                                  if(localStorage.getItem(STORAGE_KEYS_COMPLETED.NICK) != pi_user_code)
-                                    localStorage.setItem(STORAGE_KEYS_COMPLETED.NICK, pi_user_code);
-                                  completed += 1;
+                                  if(localStorage.getItem(STORAGE_KEYS_COMPLETED.NICK) != startCommonAppsAIVars.pi_user_code)
+                                  {
+                                    localStorage.setItem(STORAGE_KEYS_COMPLETED.NICK, startCommonAppsAIVars.pi_user_code);
+                                    completed += 1;
+                                  }
                                 } catch (e) {}
                                 
-                                if(completed >= 2)
+                                if(completed >= 1)
                                     window.location.reload(true);
                             }
                         })();
