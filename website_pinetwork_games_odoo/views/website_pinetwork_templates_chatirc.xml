@@ -112,21 +112,18 @@
                     
                     $( document ).ready(function() {
                         (async () => {
-                            let pi_user_id = startCommonAppsAIVars.pi_user_id;
-                            let pi_user_code = startCommonAppsAIVars.pi_user_code;
-                        
                             let cont_complete=0;
-                            while(pi_user_id == "" || pi_user_code == "")
+                            while(startCommonAppsAIVars.pi_user_id == "" || startCommonAppsAIVars.pi_user_code == "")
                             {
                                 setTimeout(function ()
                                 {
                                     cont_complete+=1;
                                 }, 1000);
-                                if(cont_complete >= 20 || (pi_user_id != "" &amp;&amp; pi_user_code != ""))
+                                if(cont_complete >= 20 || (startCommonAppsAIVars.pi_user_id != "" &amp;&amp; startCommonAppsAIVars.pi_user_code != ""))
                                     break;
                             }
                             
-                            if(pi_user_id != "" &amp;&amp; pi_user_code != "")
+                            if(startCommonAppsAIVars.pi_user_id != "" &amp;&amp; startCommonAppsAIVars.pi_user_code != "")
                             {
                                 const STORAGE_KEYS_COMPLETED = {
                                   NICK: 'nexus_irc_nick',
