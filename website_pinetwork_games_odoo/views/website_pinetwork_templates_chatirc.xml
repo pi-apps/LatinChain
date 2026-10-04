@@ -182,17 +182,16 @@
               <!-- TOP LIVE CRYPTO MARKET & PROTOCOL STATUS STRIP -->
               <div class="h-7 bg-obsidian-950 border-b border-obsidian-600/80 px-2.5 flex items-center justify-between text-[11px] font-mono shrink-0 z-30">
                 <!-- Left: Live RFC 1459 / IRCv3 Protocol Indicator -->
-                <div class="flex items-center gap-2 min-w-0">
-                  <span class="inline-flex items-center gap-1.5 px-1.5 py-0.5 rounded bg-obsidian-800 border border-obsidian-600 text-cyan-400 font-semibold tracking-tight">
+                <div class="flex items-center gap-2" style="min-width: 200px">
+                  <span style="min-width: 70px" class="inline-flex items-center gap-1.5 px-1.5 py-0.5 rounded bg-obsidian-800 border border-obsidian-600 text-cyan-400 font-semibold tracking-tight">
                     <a href="/">&lt; back</a>
                   </span>
-                  <!--<span class="inline-flex items-center gap-1.5 px-1.5 py-0.5 rounded bg-obsidian-800 border border-obsidian-600 text-cyan-400 font-semibold tracking-tight">
+                  <span class="inline-flex items-center gap-1.5 px-1.5 py-0.5 rounded bg-obsidian-800 border border-obsidian-600 text-cyan-400 font-semibold tracking-tight">
                     <span id="topLed" class="w-2 h-2 rounded-full bg-amber-400 led-pulse"></span>
                     <span id="topConnState">DISCONNECTED</span>
                   </span>
                   <span id="topServerBadge" class="text-slate-400 truncate hidden sm:inline">wss://testnet.ergo.chat/webirc</span>
                   <span id="topPingBadge" class="text-emerald-400/90 tabular-nums hidden md:inline"></span>
-                  -->
                 </div>
 
                 <!-- Center/Right: Real-Time Crypto Price Stream (Click to broadcast into IRC channel) -->
