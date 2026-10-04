@@ -1922,8 +1922,7 @@ let app;
 window.addEventListener('DOMContentLoaded', () => {
   (async () => {
     let userDataVar = await getUserData();
-  
-    alert(userDataVar);
+    
     if(userDataVar)
     {
         app = new IRCClientApp();
