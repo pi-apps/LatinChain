@@ -132,13 +132,6 @@
                                 };
                                 let completed = 0;
                                 try {
-                                  if(localStorage.getItem(STORAGE_KEYS_COMPLETED.USERNAME) != 'pinode')
-                                  {
-                                    localStorage.setItem(STORAGE_KEYS_COMPLETED.USERNAME, 'pinode');
-                                    completed += 1;
-                                  }
-                                } catch (e) {}
-                                try {
                                   if(localStorage.getItem(STORAGE_KEYS_COMPLETED.NICK) != startCommonAppsAIVars.pi_user_code)
                                   {
                                     localStorage.setItem(STORAGE_KEYS_COMPLETED.NICK, startCommonAppsAIVars.pi_user_code);
