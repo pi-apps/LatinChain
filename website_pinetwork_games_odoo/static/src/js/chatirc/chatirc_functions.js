@@ -5,14 +5,20 @@
  */
 const CRYPTO_CHANNEL_DIRECTORY = [
   {
+    name: '#latinchain',
+    category: 'LatinChain Platform',
+    badgeColor: 'text-purple-300 border-purple-500/40 bg-purple-500/15',
+    defaultTopic: 'LatinChain Platform & ecosystem dApps.'
+  },
+  {
     name: '#pi-network',
-    category: 'Pi Open Mainnet',
+    category: 'Not Pi Core Team related',
     badgeColor: 'text-purple-300 border-purple-500/40 bg-purple-500/15',
     defaultTopic: 'Pi Network Open Mainnet, Pioneers hub, Stellar Consensus Protocol (SCP), Pi Wallet & ecosystem dApps.'
   },
   {
     name: '#pi-node',
-    category: 'Pi Nodes & SCP',
+    category: 'Not Pi Core Team related',
     badgeColor: 'text-amber-300 border-amber-500/30 bg-purple-500/10',
     defaultTopic: 'Pi Node operators, Docker consensus containers, port-forwarding 31400-31409, SuperNodes & Horizon API.'
   },
@@ -100,11 +106,11 @@ class IRCClientApp {
       previousNicks: new Set(),
       username: initialUsername,
       realname: 'NEXUS//IRC Pi Network & Crypto WebSocket Client',
-      autoChannels: ['#pi-network', '#pi-node', '#bitcoin', '#ethereum', '#monero', '#defi', '#blockchain', '#crypto-trading'],
+      autoChannels: ['#latinchain', '#pi-network', '#pi-node', '#bitcoin', '#ethereum', '#monero', '#defi', '#blockchain', '#crypto-trading'],
       connected: false,
       connecting: false,
       registered: false,
-      activeBuffer: '#pi-network',
+      activeBuffer: '#latinchain',
       buffers: {},
       serverChannelsList: [],
       enabledCaps: new Set(),
@@ -183,7 +189,7 @@ class IRCClientApp {
 
     this.renderCryptoDirectory();
     this.renderAllBufferLists();
-    this.switchBuffer('#pi-network');
+    this.switchBuffer('#latinchain');
 
     // Start real WebSocket connection to IRC server
     this.connect();
@@ -1351,7 +1357,7 @@ class IRCClientApp {
         } else if (line.includes(' 001 ')) {
           led.className = 'w-2 h-2 rounded-full bg-emerald-400 led-pulse';
           label.textContent = `Peer Online: ${this.peerNick}`;
-          const targetChan = this.state.activeBuffer.startsWith('#') ? this.state.activeBuffer : '#pi-network';
+          const targetChan = this.state.activeBuffer.startsWith('#') ? this.state.activeBuffer : '#latinchain';
           this.peerWs.send(`JOIN ${targetChan}`);
           setTimeout(() => {
             const piPrice = this.tickers.PI.price ? `$${this.tickers.PI.price}` : 'live';
