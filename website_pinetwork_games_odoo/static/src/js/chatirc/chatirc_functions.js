@@ -1896,8 +1896,6 @@ async function getUserData() {
         
         if(count_complete >= 30 || (startCommonAppsAIVars.pi_user_id != "" && startCommonAppsAIVars.pi_user_code != ""))
             break;
-        
-        alert("1");
     }
     
     if(startCommonAppsAIVars.pi_user_id != "" && startCommonAppsAIVars.pi_user_code != "")
