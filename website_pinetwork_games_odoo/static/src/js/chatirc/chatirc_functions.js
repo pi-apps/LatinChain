@@ -91,8 +91,10 @@ class IRCClientApp {
     let savedNick = null;
     let savedUsername = null;
     try {
-      savedNick = localStorage.getItem(STORAGE_KEYS.NICK);
-      savedUsername = localStorage.getItem(STORAGE_KEYS.USERNAME);
+
+        savedNick = localStorage.getItem(STORAGE_KEYS.NICK);
+        savedUsername = localStorage.getItem(STORAGE_KEYS.USERNAME);
+        
     } catch (e) {}
 
     const initialNick = (savedNick && savedNick.trim()) ? savedNick.trim() : `Pioneer_${randSuffix}`;
@@ -1883,9 +1885,50 @@ class IRCClientApp {
   }
 }
 
+async function getUserData() {
+    let cont_complete=0;
+    
+    while(startCommonAppsAIVars.pi_user_id == "" || startCommonAppsAIVars.pi_user_code == "")
+    {
+        await delayAsync(1000);
+        
+        cont_complete+=1;
+        
+        if(cont_complete >= 30 || (startCommonAppsAIVars.pi_user_id != "" && startCommonAppsAIVars.pi_user_code != ""))
+            break;
+    }
+    
+    if(startCommonAppsAIVars.pi_user_id != "" && startCommonAppsAIVars.pi_user_code != "")
+    {
+        let completed = 0;
+        try {
+          if(localStorage.getItem(STORAGE_KEYS.NICK) != startCommonAppsAIVars.pi_user_code)
+          {
+            localStorage.setItem(STORAGE_KEYS.NICK, startCommonAppsAIVars.pi_user_code);
+            completed += 1;
+          }
+        } catch (e) {}
+        
+        if(completed >= 1)
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
+}
+
 // Boot application on window load
 let app;
 window.addEventListener('DOMContentLoaded', () => {
-  app = new IRCClientApp();
-  app.init();
+  (async () => {
+    let userDataVar = await getUserData();
+  
+    if(userDataVar)
+    {
+        app = new IRCClientApp();
+        app.init();
+    }
+  })();
 });

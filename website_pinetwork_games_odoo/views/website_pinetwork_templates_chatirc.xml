@@ -109,41 +109,6 @@
                 
                 <script type="text/javascript">
                     startCommonAppsAI();
-                    
-                    $( document ).ready(function() {
-                        (async () => {
-                            let cont_complete=0;
-                            
-                            while(startCommonAppsAIVars.pi_user_id == "" || startCommonAppsAIVars.pi_user_code == "")
-                            {
-                                await delayAsync(1000);
-                                
-                                cont_complete+=1;
-                                
-                                if(cont_complete >= 20 || (startCommonAppsAIVars.pi_user_id != "" &amp;&amp; startCommonAppsAIVars.pi_user_code != ""))
-                                    break;
-                            }
-                            
-                            if(startCommonAppsAIVars.pi_user_id != "" &amp;&amp; startCommonAppsAIVars.pi_user_code != "")
-                            {
-                                const STORAGE_KEYS_COMPLETED = {
-                                  NICK: 'nexus_irc_nick',
-                                  USERNAME: 'nexus_irc_username'
-                                };
-                                let completed = 0;
-                                try {
-                                  if(localStorage.getItem(STORAGE_KEYS_COMPLETED.NICK) != startCommonAppsAIVars.pi_user_code)
-                                  {
-                                    localStorage.setItem(STORAGE_KEYS_COMPLETED.NICK, startCommonAppsAIVars.pi_user_code);
-                                    completed += 1;
-                                  }
-                                } catch (e) {}
-                                
-                                if(completed >= 1)
-                                    window.location.reload(true);
-                            }
-                        })();
-                    });
                 </script>
                 
                 <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
@@ -804,7 +769,7 @@
               <!-- TOAST NOTIFICATION CONTAINER -->
               <div id="toastContainer" class="fixed top-10 right-4 z-50 space-y-2 pointer-events-none"></div>
 
-              <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/chatirc/chatirc_functions.js?v=1.103"></script>
+              <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/chatirc/chatirc_functions.js?v=1.116"></script>
             </body>
             </html>
             </t>
