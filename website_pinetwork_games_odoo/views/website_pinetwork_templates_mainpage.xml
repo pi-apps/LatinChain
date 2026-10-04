@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.433"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.434"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -3005,6 +3005,11 @@
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-webtorrent" style="">
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12"><a id="webtorrent" href="/webtorrent" class="btn btn-outline-success font-weight-bold text-black border-success webtorrent" style="width: 100% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-tornado fa-2xl"></i></div><div style="font-size:100%;" translate="no">WEBTORRENT</div><div style="font-size:80%;">WebTorrent P2P Player (we don't provide torrent files)</div><div style="font-size:80%;">Miniapp (you will earn Latin points, each 1 hour, only if you're PREMIUM on Mainnet)</div><div style="font-size:80%;">Developed with AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Multimedia</div></div></a><button id="webtorrentinfo" class="col-auto btn btn-sm btn-outline-info webtorrentinfo" style="position: absolute; top: 0; right: -2;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
+                                            </div>
+                                        </li>
+                                        <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-chatirc" style="">
+                                            <div class="row" style="text-align: center; padding: 10px">
+                                                <div class="col-12"><a id="chatirc" href="/chatirc" class="btn btn-outline-success font-weight-bold text-black border-success chatirc" style="width: 100% !important; border: 2px solid;"><div style=""><i class="fa-solid fa-comments fa-2xl"></i></div><div style="font-size:100%;" translate="no">CHAT IRC</div><div style="font-size:80%;">ChatIRC P2P Conversations (It's a public IRC server, not private conversations really)</div><div style="font-size:80%;">Miniapp (you will earn Latin points, each 1 hour, only if you're PREMIUM on Mainnet)</div><div style="font-size:80%;">Developed with AI</div><div style="font-size:80%;" ><div style="display:inline">Utility</div> <div style="display:inline">|</div> <div style="display:inline">Chats</div></div></a><button id="chatircinfo" class="col-auto btn btn-sm btn-outline-info chatircinfo" style="position: absolute; top: 0; right: -2;"><div style=""><i class="fas fa-circle-info"></i></div><div style="font-size:100%;" translate="no"></div></button></div>
                                             </div>
                                         </li>
                                         <li class="search-apps-li list-group-item border-left-0 border-bottom border-right-0 border-top show-weboffice" style="">

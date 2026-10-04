@@ -2814,6 +2814,10 @@ $( document ).ready(function() {
         $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/WebTorrent", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".chatircinfo" ).click(function() {
+        $.colorbox({fixed: true, href:"https://en.wikipedia.org/wiki/Internet_Relay_Chat", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".cointelegraph" ).click(function() {
         $.colorbox({fixed: true, href:"https://cointelegraph.com", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
