@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
           '<!-- Ad before post -->' +
 
-          '<script>atOptions = {"key": "965f52969e90286ccd9b08a873f54c8a", "format": "iframe", "height": 250, "width": 300, "params": {}};</script>' +
-          '<script src="https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js"</script>' +
+          //'<script>atOptions = {"key": "965f52969e90286ccd9b08a873f54c8a", "format": "iframe", "height": 250, "width": 300, "params": {}};</script>' +
+          //'<script src="https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js"</script>' +
           
           //'<div class="hrf-ad-container" style="margin: 15px 0; text-align: center; width: 100%;"></div>' +
 
@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
           '<!-- Ad after post -->' +
           
-          '<script>atOptions = {"key": "965f52969e90286ccd9b08a873f54c8a", "format": "iframe", "height": 250, "width": 300, "params": {}};</script>' +
-          '<script src="https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js"</script>' +
+          //'<script>atOptions = {"key": "965f52969e90286ccd9b08a873f54c8a", "format": "iframe", "height": 250, "width": 300, "params": {}};</script>' +
+          //'<script src="https://www.highrevenueformat.com/965f52969e90286ccd9b08a873f54c8a/invoke.js"</script>' +
           
           //'<div class="hrf-ad-container" style="margin: 15px 0; text-align: center; width: 100%;"></div>' +
           
@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function() {
           console.error(e);
         }
       }
-      alert("1");
     }).catch(function(err) {
       console.error('Error al cargar los posts recientes:', err);
     });
