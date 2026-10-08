@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  fetch('/feeds/posts/default?alt=json&max-results=10')
+  fetch('https://news.latin-chain.com/feeds/posts/default?alt=json&max-results=10')
     .then(function(response) { return response.json(); })
     .then(function(data) {
       var container = document.getElementById('recent-posts-resume-list');
