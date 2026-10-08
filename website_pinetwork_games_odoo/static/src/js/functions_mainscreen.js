@@ -967,15 +967,15 @@ $( document ).ready(function() {
 
 function changingHashLatinChainGoogleTranslate()
 {
-    $(".news-latinchain-url").prop("href", "https://news.latin-chain.com/"+hashLatinChainGoogleTranslate);
-    $(".blog-latinchain-url").prop("href", "https://news.latin-chain.com/"+hashLatinChainGoogleTranslate);
+    $(".news-latinchain-url").prop("href", "https://blog-rockcesar.latin-chain.com/"+hashLatinChainGoogleTranslate);
+    $(".blog-latinchain-url").prop("href", "https://blog-rockcesar.latin-chain.com/"+hashLatinChainGoogleTranslate);
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
-        $(".GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html"+eco_page_version+hashLatinChainGoogleTranslate);
+        $(".GoForwardLink").prop('href', "https://blog-rockcesar.latin-chain.com/p/latinchain-ecosystem-pi-network_0696745817.html"+eco_page_version+hashLatinChainGoogleTranslate);
     }
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
-        $(".GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html"+eco_page_version+hashLatinChainGoogleTranslate);
+        $(".GoForwardLink").prop('href', "https://blog-rockcesar.latin-chain.com/p/latinchain-ecosystem-pi-network.html"+eco_page_version+hashLatinChainGoogleTranslate);
     }
 }
 
@@ -1027,12 +1027,12 @@ $( document ).ready(function() {
         }*/
     }
     
-    $('a[href^="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network"]').on('click', function() {
+    $('a[href^="https://blog-rockcesar.latin-chain.com/p/latinchain-ecosystem-pi-network"]').on('click', function() {
         localStorage.setItem("popup_latinchain", true);
     });
 
     // Seleccionar todos los <a> cuyo href comience con las URLs indicadas
-    $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').on('click', function() {
+    $('a[href^="https://blog-rockcesar.latin-chain.com"], a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').on('click', function() {
         let currentHref = $(this).attr('href');
 
         // Validar que el enlace no tenga ya el hash para evitar que se duplique
