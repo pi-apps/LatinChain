@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
           console.error(e);
         }
       }
-      return true;
+      alert("1");
     }).catch(function(err) {
       console.error('Error al cargar los posts recientes:', err);
     });
