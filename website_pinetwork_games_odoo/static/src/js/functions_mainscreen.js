@@ -971,11 +971,11 @@ function changingHashLatinChainGoogleTranslate()
     $(".blog-latinchain-url").prop("href", "https://news.latin-chain.com/"+hashLatinChainGoogleTranslate);
     if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
-        $(".GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html"+eco_page_version+hashLatinChainGoogleTranslate);
+        $(".GoForwardLink").prop('href', "https://ecosystem.latin-chain.com/page-1/"+eco_page_version+hashLatinChainGoogleTranslate);
     }
     if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val())) // && JSON.parse($("#nopopup").val().toLowerCase()) == false)
     {
-        $(".GoForwardLink").prop('href', "https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html"+eco_page_version+hashLatinChainGoogleTranslate);
+        $(".GoForwardLink").prop('href', "https://ecosystem.latin-chain.com/page-mainnet/"+eco_page_version+hashLatinChainGoogleTranslate);
     }
 }
 
@@ -1027,12 +1027,12 @@ $( document ).ready(function() {
         }*/
     }
     
-    $('a[href^="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network"]').on('click', function() {
+    $('a[href^="https://ecosystem.latin-chain.com/page-"]').on('click', function() {
         localStorage.setItem("popup_latinchain", true);
     });
 
     // Seleccionar todos los <a> cuyo href comience con las URLs indicadas
-    $('a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').on('click', function() {
+    $('a[href^="https://ecosystem.latin-chain.com"], a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').on('click', function() {
         let currentHref = $(this).attr('href');
 
         // Validar que el enlace no tenga ya el hash para evitar que se duplique
@@ -2824,7 +2824,7 @@ $( document ).ready(function() {
     
     $( ".latinchain-ecosystem" ).click(function() {
         //window.location.href = "https://ecosystem.latin-chain.com";
-        $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com?v=1.102", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+        $.colorbox({fixed: true, href:"https://ecosystem.latin-chain.com"+eco_page_version+hashLatinChainGoogleTranslate, iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
     $( ".search-apps" ).keyup(function() {
