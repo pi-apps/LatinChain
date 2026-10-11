@@ -3831,9 +3831,15 @@
                             
                           </div>
                           <div class="modal-footer button-group" style="display: flex; flex-direction: column;">
-                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                          </div>
+                          <div class="modal-footer button-group" style="display: flex; gap: 10px;">
+                            <a href="/pinetwork" class="btn btn-success rounded flex-fill d-flex align-items-center justify-content-center" style="border: 2px solid black; font-weight: bold;">
+                                <div style="display: inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display: inline">PREMIUM</div>
+                            </a>
+                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-success rounded flex-fill d-flex align-items-center justify-content-center" style="border: 2px solid black; font-weight: bold;">
+                                <div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">STAKE</div>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -3860,16 +3866,23 @@
                             <button type="button" id="rewardedad-open" class="btn btn-success font-weight-bold text-white border-success"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Rewarded Ad</div></button>
                             <button type="button" id="rewardedad-close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                           </div>
-                          <div class="modal-footer button-group">
-                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
-                            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                          <div class="modal-footer button-group" style="display: flex; gap: 10px;">
+                            <a href="/pinetwork" class="btn btn-success rounded flex-fill d-flex align-items-center justify-content-center" style="border: 2px solid black; font-weight: bold;">
+                                <div style="display: inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display: inline">PREMIUM</div>
+                            </a>
+                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-success rounded flex-fill d-flex align-items-center justify-content-center" style="border: 2px solid black; font-weight: bold;">
+                                <div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">STAKE</div>
+                            </a>
                           </div>
                         </div>
                       </div>
                     </div>
                     
                     <!--<script>
-                        $("#open_modal").click();
+                        $( document ).ready(function() {
+                            $("#open_rewardedad_modal").click();
+                            $("#open_modal").click();
+                        });
                     </script>-->
                     
                     <!-- Button trigger modal -->
