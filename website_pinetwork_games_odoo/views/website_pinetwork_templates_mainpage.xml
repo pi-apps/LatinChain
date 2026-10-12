@@ -4222,6 +4222,15 @@
                                     </div>
                                     
                                     <div style="">
+                                        <div class="getverified" style="margin-bottom: 10px;">
+                                            <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
+                                            </div>
+                                            <div class="row" id="GoForwardShow1" t-else="">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                            </div>
+                                        </div>
+                                        
                                         <div style="">
                                             <div class="row show_test_app" style="">
                                                 <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
@@ -4229,15 +4238,6 @@
                                             
                                             <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                 <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="getverified" style="margin-top: 10px;">
-                                            <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
-                                            </div>
-                                            <div class="row" id="GoForwardShow1" t-else="">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                             </div>
                                         </div>
                                         
@@ -4284,6 +4284,15 @@
                                             </div>
                                         </div>-->
                                         
+                                        <div class="getverified" style="margin-bottom: 10px;">
+                                            <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
+                                            </div>
+                                            <div class="row" id="GoForwardShow1" t-else="">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                            </div>
+                                        </div>
+                                        
                                         <div style="">
                                             <div class="row show_test_app" style="">
                                                 <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
@@ -4291,15 +4300,6 @@
                                             
                                             <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                 <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="getverified" style="margin-top: 10px;">
-                                            <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
-                                            </div>
-                                            <div class="row" id="GoForwardShow1" t-else="">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                             </div>
                                         </div>
                                         
@@ -4330,6 +4330,15 @@
                                     </div>
                                     
                                     <div style="">
+                                        <div class="getverified" style="margin-bottom: 10px;">
+                                            <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
+                                            </div>
+                                            <div class="row" id="GoForwardShow1" t-else="">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                            </div>
+                                        </div>
+                                        
                                         <div style="">
                                             <div class="row show_test_app" style="">
                                                 <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
@@ -4337,15 +4346,6 @@
                                             
                                             <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                 <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="getverified" style="margin-top: 10px;">
-                                            <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
-                                            </div>
-                                            <div class="row" id="GoForwardShow1" t-else="">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                             </div>
                                         </div>
                                         
@@ -4391,6 +4391,15 @@
                                     </div>
                                     
                                     <div style="">
+                                        <div class="getverified" style="margin-bottom: 10px;">
+                                            <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
+                                            </div>
+                                            <div class="row" id="GoForwardShow1" t-else="">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                            </div>
+                                        </div>
+                                        
                                         <div style="">
                                             <div class="row show_test_app" style="">
                                                 <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
@@ -4398,15 +4407,6 @@
                                             
                                             <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                 <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="getverified" style="margin-top: 10px;">
-                                            <div class="row" id="GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
-                                            </div>
-                                            <div class="row" id="GoForwardShow1" t-else="">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                             </div>
                                         </div>
                                         
