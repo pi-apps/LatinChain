@@ -154,13 +154,15 @@ class PiNetworkBaseController(http.Controller):
         elif accessed_path in ['/odoo-tech-book/ebook']:
             return http.request.redirect('https://www.amazon.com/dp/B0DJVY51LS')
     
-    @http.route(['/piapps-book/', '/piapps-book/paperback', '/piapps-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    @http.route(['/piapps-book/', '/piapps-book/paperback', '/piapps-book/ebook', '/piapps-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def piapps_book(self, **kw):
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/piapps-book/', '/piapps-book/paperback']:
             return http.request.redirect('https://www.amazon.com/dp/B0DK4N3XTB')
         elif accessed_path in ['/piapps-book/ebook']:
             return http.request.redirect('https://www.amazon.com/dp/B0DK3NJ23V')
+        elif accessed_path in ['/piapps-book/hardcover']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HMFFKM4J')
     
     @http.route(['/ml-piapps-book/', '/ml-piapps-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def mercado_libre_piapps_book(self, **kw):
