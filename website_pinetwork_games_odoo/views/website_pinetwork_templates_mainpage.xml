@@ -4224,7 +4224,7 @@
                                     <div style="">
                                         <div style="margin-bottom: 10px;">
                                             <div class="row" style="margin-top: 2px;" translate="no">
-                                                <div class="col-6" style="padding: 2px">
+                                                <div class="col-6 getverified" style="padding: 2px">
                                                     <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
@@ -4236,6 +4236,9 @@
                                                     <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                         <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
                                                     </div>
+                                                </div>
+                                                <div class="col-6 getverified" style="padding: 2px">
+                                                    <button class="giving-tip btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="">Tip</div></button>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
