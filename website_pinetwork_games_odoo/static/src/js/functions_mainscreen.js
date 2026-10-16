@@ -64,7 +64,7 @@ function openInNewTabAds(url) {
     //document.getElementById('GoForwardLink').innerHTML = '<div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Unlock Once</div>';
     document.getElementById('blockingOverlay').style.display = 'flex'; // Use 'flex' instead of 'block'
     document.getElementById('goforward-message').style.display = 'flex'; // Use 'flex' instead of 'block'
-    document.getElementById('GoForwardShow1').style.display = 'flex'; // Use 'flex' instead of 'block'
+    $('.GoForwardShow1').css('display', 'flex'); // Use 'flex' instead of 'block'
     document.getElementById('GoForwardShow2').style.display = 'flex'; // Use 'flex' instead of 'block'
     //document.getElementById('GoForwardShow3').style.display = 'none'; // Use 'flex' instead of 'block'
     document.getElementById('all-messages').style.display = 'none'; // Use 'flex' instead of 'block'
@@ -2045,7 +2045,7 @@ $( document ).ready(function() {
                                 document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
                             }
                             
-                            document.getElementById('GoForwardShow1').style.display = 'none';
+                            $('.GoForwardShow1').css('display', 'none');
                             
                         }
                         
@@ -2460,7 +2460,7 @@ $( document ).ready(function() {
         is_open_tab_ads = false;
         
         document.getElementById('goforward-message').style.display = 'none'; // Use 'flex' instead of 'block'
-        document.getElementById('GoForwardShow1').style.display = 'none'; // Use 'flex' instead of 'block'
+        $('.GoForwardShow1').css('display', 'none'); // Use 'flex' instead of 'block'
         document.getElementById('GoForwardShow2').style.display = 'none'; // Use 'flex' instead of 'block'
         //document.getElementById('GoForwardShow3').style.display = 'none'; // Use 'flex' instead of 'block'
             
