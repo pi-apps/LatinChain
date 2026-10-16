@@ -1316,7 +1316,7 @@ $( document ).ready(function() {
                                 $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                                 
                                 if(data.x2_game)
-                                    $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                    $(".modal-body").html($(".modal-body").html() + "<br/>" + $("#modal_x2_game_message").text());
                                 
                                 $("#open_modal").click();
                                 
@@ -2189,7 +2189,7 @@ $( document ).ready(function() {
                             $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $("#modal_reward_message").text() + new Intl.NumberFormat('en-US').format(data.points_latin) + " Latin points.");
                             
                             if(data.x2_game)
-                                $(".modal-body").html("<img src='" + gemini_image + "' class='rounded' style='max-width: 150px; max-height: 150px'/><br/>" + $(".modal-body").text() + "<br/>" + $("#modal_x2_game_message").text());
+                                $(".modal-body").html($(".modal-body").html() + "<br/>" + $("#modal_x2_game_message").text());
                             
                             $("#open_modal").click();
                             
