@@ -4225,10 +4225,10 @@
                                         <div style="margin-bottom: 10px;">
                                             <div class="row" style="margin-top: 2px;" translate="no">
                                                 <div class="col-6" style="padding: 2px">
-                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">PREMIUM</div></a>
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
-                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">PREMIUM</div></a>
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -4295,12 +4295,14 @@
                                             </div>
                                         </div>-->
                                         
-                                        <div style="margin-bottom: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                            <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                            </div>
-                                            <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                        <div style="margin-bottom: 10px;">
+                                            <div class="row" style="margin-top: 2px;" translate="no">
+                                                <div class="col-6" style="padding: 2px">
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                </div>
+                                                <div class="col-6" style="padding: 2px">
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                </div>
                                             </div>
                                         </div>
                                         
@@ -4350,12 +4352,14 @@
                                     </div>
                                     
                                     <div style="">
-                                        <div style="margin-bottom: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                            <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                            </div>
-                                            <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                        <div style="margin-bottom: 10px;">
+                                            <div class="row" style="margin-top: 2px;" translate="no">
+                                                <div class="col-6" style="padding: 2px">
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                </div>
+                                                <div class="col-6" style="padding: 2px">
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                </div>
                                             </div>
                                         </div>
                                         
@@ -4420,12 +4424,14 @@
                                     </div>
                                     
                                     <div style="">
-                                        <div style="margin-bottom: 10px;" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                            <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                                <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
-                                            </div>
-                                            <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-unlock-keyhole"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
+                                        <div style="margin-bottom: 10px;">
+                                            <div class="row" style="margin-top: 2px;" translate="no">
+                                                <div class="col-6" style="padding: 2px">
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                </div>
+                                                <div class="col-6" style="padding: 2px">
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                </div>
                                             </div>
                                         </div>
                                         
