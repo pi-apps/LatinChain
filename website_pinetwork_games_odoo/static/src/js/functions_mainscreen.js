@@ -1036,7 +1036,7 @@ $( document ).ready(function() {
     });
 
     // Seleccionar todos los <a> cuyo href comience con las URLs indicadas
-    $('a[href^="https://ecosystem.latin-chain.com"], a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').on('click', function() {
+    $('a[href^="https://ecosystem.latin-chain.com"], a[href^="https://blog-rockcesar.latin-chain.com"], a[href^="https://news.latin-chain.com"], a[href^="https://club.latin-chain.com"]').on('click', function() {
         let currentHref = $(this).attr('href');
 
         // Validar que el enlace no tenga ya el hash para evitar que se duplique
