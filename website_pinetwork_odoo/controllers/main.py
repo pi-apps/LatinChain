@@ -145,6 +145,10 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/brand-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def brand_course(self, **kw):
         return http.request.redirect('https://www.udemy.com/course/como-crear-tu-marca-personal-by-cesar-opensource-expert/?referralCode=755FB82D3B05FA01F3D5')
+    
+    @http.route('/websec-linux-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def websec_linux_course(self, **kw):
+        return http.request.redirect('https://www.udemy.com/course/curso-de-seguridad-web-y-gnulinux/?referralCode=A4361CB0DF704A463430')
         
     @http.route(['/odoo-tech-book/', '/odoo-tech-book/paperback', '/odoo-tech-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def odoo_technical_book(self, **kw):
