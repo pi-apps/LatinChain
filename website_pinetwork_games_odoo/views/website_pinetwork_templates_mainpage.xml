@@ -4232,8 +4232,9 @@
                                                         <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-unlock-keyhole"></i></div><div style="">Unlock</div></a>
                                                     </div>
                                                 </div>
-                                                <div class="col-6 getverified" style="padding: 2px">
-                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                <div class="col-6" style="padding: 2px">
+                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
+                                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="">Stake Pi</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
@@ -4246,11 +4247,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-6 getverified" style="padding: 2px">
-                                                    <button class="giving-tip btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="">Send Tip</div></button>
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
                                                 </div>
-                                                <div class="col-6" style="padding: 2px">
-                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
-                                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="">Stake Pi</div></a>
+                                                <div class="col-6 getverified" style="padding: 2px">
+                                                    <button class="giving-tip btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="">Send Tip</div></button>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
@@ -4291,6 +4291,10 @@
                                             </div>
                                         </div>
                                         
+                                        <div class="row" style="margin-bottom: 10px;">
+                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
+                                        </div>
+                                        
                                         <div style="margin-bottom: 10px;">
                                             <div class="row show_test_app" style="">
                                                 <button class="test_app btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rectangle-ad"></i></div> <div style="display: inline">Pi Ad<br/>+<t t-esc="int(points_latin_amount)" /> Latin points<br/>Unlock Once</div></button>
@@ -4308,10 +4312,6 @@
                                             <div class="row GoForwardShow1" t-else="">
                                                 <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                             </div>
-                                        </div>
-                                        
-                                        <div class="row" style="">
-                                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-rocket"></i></div> <div style="display: inline">Stake Pi<br/>Boost LatinChain Rank</div></a>
                                         </div>
                                         
                                         <div class="getverified" style="margin-top: 10px;">
