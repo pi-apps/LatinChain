@@ -289,6 +289,14 @@ class PiNetworkBaseController(http.Controller):
             return http.request.redirect('https://www.amazon.com/dp/B0DL45M8C4')
         elif accessed_path in ['/all-biometrics-book/ebook']:
             return http.request.redirect('https://www.amazon.com/dp/B0DL3DCHMT')
+    
+    @http.route(['/websec-linux-book/', '/websec-linux-book/paperback', '/websec-linux-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def websec_linux_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/websec-linux-book/', '/websec-linux-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HNTSGH7B')
+        elif accessed_path in ['/websec-linux-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HNTPSBXG')
         
     @http.route(['/collection-2025-book/', '/collection-2025-book/paperback', '/collection-2025-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def collection_2025_book(self, **kw):
