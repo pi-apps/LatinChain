@@ -149,7 +149,11 @@ class PiNetworkBaseController(http.Controller):
     @http.route('/websec-linux-course/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def websec_linux_course(self, **kw):
         return http.request.redirect('https://www.udemy.com/course/curso-de-seguridad-web-y-gnulinux/?referralCode=A4361CB0DF704A463430')
-        
+    
+    @http.route('/latin-store/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def latin_store(self, **kw):
+        return http.request.redirect('https://app.amazecommerce.com/shop/cesar-opensource-fans-store')
+    
     @http.route(['/odoo-tech-book/', '/odoo-tech-book/paperback', '/odoo-tech-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def odoo_technical_book(self, **kw):
         accessed_path = http.request.httprequest.path
