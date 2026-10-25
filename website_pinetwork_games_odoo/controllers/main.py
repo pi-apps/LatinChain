@@ -1141,7 +1141,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.latinchain_x', {'announcement_html': announcement_html, 'mainnet': mainnet, 'sandbox': sandbox, 'amount': amount, 'google_adsense': google_adsense, 'a_ads': a_ads, 'a_ads_data': a_ads_data, 'a_ads_style': a_ads_style, 'a_ads_2': a_ads_2, 'a_ads_data_2': a_ads_data_2, 'a_ads_style_2': a_ads_style_2, 'a_ads_3': a_ads_3, 'a_ads_data_3': a_ads_data_3, 'a_ads_style_3': a_ads_style_3})
     
-    @http.route(['/pinetwork', '/pinetwork/<string:pi_user_referrer>'], type='http', auth="public", website=True, csrf=False)
+    @http.route(['/pinetwork', '/pinetwork/<string:pi_user_referrer>', '/premium', '/premium/<string:pi_user_referrer>'], type='http', auth="public", website=True, csrf=False)
     def index(self, pi_user_referrer=None, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_example')])
         
