@@ -1658,11 +1658,11 @@
                                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-4" style="padding: 2px">
                                             <button class="latin-option-sendtip btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#tip</div></button>
                                         </div>
-                                        <div class="col-4" style="padding: 2px">
-                                            <button class="latin-option-quests btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#quest</div></button>
-                                        </div>
                                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-4" style="padding: 2px">
                                             <button class="latin-option-piads btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#piad</div></button>
+                                        </div>
+                                        <div class="col-4" style="padding: 2px">
+                                            <button class="latin-option-quests btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#quest</div></button>
                                         </div>
                                         <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-avatar btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#avi</div></button>
@@ -1795,6 +1795,175 @@
                                 </div>
                                 <div class="input-group input-group-lg">
                                   <button id="button_tip" name="button_tip" class="btn btn-success form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">Send tip in Pi</button>
+                                </div>
+                            </div>
+                            
+                            <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px; padding:10px; width: 100%; text-align: center" class="border-gradient-rounded latin-sharp-piads-div">
+                                <div style="margin-bottom:5px" class="border-bottom">
+                                    <h5 translate="no"><strong><div style="display:inline;">#PiAds #EarnPoints &#128240;</div></strong></h5>
+                                </div>
+                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="margin-bottom:5px;">
+                                    <button id="button_reward_ad" name="button_reward_ad" class="col-12 btn btn-outline-success font-weight-bold text-black border-success" disabled="true" style="border: 2px solid;"><div><i class="fa-solid fa-rectangle-ad"></i></div><div>Watch Pi Rewarded Ads</div><div style="font-size:80%;">Earn Latin points (<t t-esc="points_latin_amount" />)</div><div style="font-size:80%;"><i class="fa-solid fa-plug-circle-bolt"></i>x2 points <i class="fa-solid fa-arrow-right"></i> (Chess, Sudoku, Snake)</div><div style="font-size:80%; display: none">Testing feature</div></button>
+                                    <span id="piad_not_available" style="max-width: 200px; display:none; text-align: center">
+                                        Pi Rewarded Ads not available (<div class="pi_ad_max" style="display:inline;"></div> ads / <div class="pi_ad_hours" style="display:inline;"></div>h). Remaining time: <span id="resting_time">0</span>h.
+                                    </span>
+                                </div>
+                                
+                                <div class="row justify-content-center text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
+                                  <input class="form-check-input" type="checkbox" id="pi_ad_automatic" disabled="true" checked="true" />
+                                  <label class="form-check-label" for="pi_ad_automatic">
+                                    <br/>
+                                    <div class="text-white">
+                                        Activate automatic Pi Ads.
+                                    </div>
+                                    <!--<div class="text-white">
+                                        (<t t-esc="pi_ad_max" /> Pi Ads / <t t-esc="pi_ad_hours" />h)
+                                    </div>-->
+                                  </label>
+                                </div>
+                                
+                                <div class="row justify-content-center text-center p-3 mb-2 bg-info bg-gradient text-white rounded show_pi_ad_automatic" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
+                                    <div class="text-white">
+                                        Max rewarded ads:
+                                        <br/>
+                                        (<div id="pi_ad_counter" style="display:inline;">0</div>/<div class="pi_ad_max" style="display:inline;"></div> Pi Ads | <div class="pi_ad_hours" style="display:inline;"></div>h)
+                                        <!--<br/>
+                                        Max interstitial ads:
+                                        <br/>
+                                        (1 Pi Ads | 10 minutes)-->
+                                    </div>
+                                </div>
+                                
+                                <style>
+                                    .progress-container {
+                                        position: relative;
+                                        height: 2rem; /* Matches Bootstrap 4 default progress bar height */
+                                    }
+                                    .progress-text {
+                                        position: absolute;
+                                        width: 100%;
+                                        text-align: center;
+                                        font-weight: bold;
+                                        color: black; /* Contrast color for dark bars */
+                                        line-height: 2rem; /* Centers the text vertically */
+                                        top: 0;
+                                        left: 0;
+                                    }
+                                </style>
+                                
+                                <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="row justify-content-center text-center p-3 mb-2 bg-info bg-gradient text-white rounded" style="filter: contrast(100%) !important; margin-left: 1px; margin-right: 1px">
+                                    <div class="container bg-white p-3 rounded shadow-sm" style="color: black !important">
+                                        <h4 class="mb-2" style="color: black !important">Monthly challenge: We need to get to 100 total verified users this month.</h4>
+
+                                        <!-- Percentage Counter -->
+                                        <div class="progress-container mb-4" t-if="total_users_verified_count &lt; 101">
+                                            <!-- Bootstrap 4 Progress Bar -->
+                                            <div class="progress" style="height: 2rem;">
+                                                <div class="progress-bar bg-primary" role="progressbar" t-att-style="'width: ' + str(total_users_verified_count) + '%;'" t-att-aria-valuenow="total_users_verified_count" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <!-- Counter Text -->
+                                            <div class="progress-text"><span t-esc="total_users_verified_count" /> verified users</div>
+                                        </div>
+                                        <div class="progress-container mb-4" t-else="">
+                                            <!-- Bootstrap 4 Progress Bar -->
+                                            <div class="progress" style="height: 2rem;">
+                                                <div class="progress-bar bg-primary" role="progressbar" t-att-style="'width: 100%;'" t-att-aria-valuenow="total_users_verified_count" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <!-- Counter Text -->
+                                            <div class="progress-text">100+ verified users</div>
+                                        </div>
+
+                                    </div>
+                                    <div class="text-white" style="word-break: break-word;">
+                                        Your referral link. You will earn <t t-esc="amount_latin_pay/10" /> Latin points for each payment made with your link. And the person who pays with your link will earn <t t-esc="amount_latin_pay" /> Latin points:
+                                        <br/>
+                                        <div translate="no">
+                                            <button class="btn btn-success share_referrer_message">Share referral message</button>
+                                        </div>
+                                        <div translate="no">
+                                            <strong>https://latinchain.pinet.com/pinetwork/<span translate="no" class="referrer_username"></span></strong>
+                                            <br/>
+                                            <button class="btn btn-success copy_referrer_link">Copy referral link</button>
+                                        </div>
+                                        Your referral code:
+                                        <br/>
+                                        <div translate="no">
+                                            <strong><span translate="no" class="referrer_username"></span></strong>
+                                            <br/>
+                                            <button class="btn btn-success copy_referrer_username">Copy referral code</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="accordionExchange" style="margin-bottom:5px" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                  <div class="card">
+                                    <!--<div class="card-header" id="headingExchange">
+                                      <h5 class="mb-0">
+                                        <button class="btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" data-toggle="collapse" data-target="#collapseExchange" aria-expanded="true" aria-controls="collapseExchange">
+                                          <div style=""><i class="fab fa-youtube"></i></div><div style="">Are you Youtuber?</div>
+                                        </button>
+                                      </h5>
+                                    </div>-->
+                                    
+                                    <h2 class="accordion-header" id="headingExchange">
+                                      <button class="accordion-button btn btn-outline-primary font-weight-bold text-black border-primary" style="border: 2px solid;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExchange" aria-expanded="true" aria-controls="collapseExchange">
+                                        <div style=""><i class="fa-solid fa-right-left"></i></div><div style="">Exchange Latin points</div>
+                                      </button>
+                                    </h2>
+
+                                    <div id="collapseExchange" class="collapse" aria-labelledby="headingExchange" data-parent="#accordionExchange">
+                                      <div class="card-body">
+                                        <div style="text-align:center" class="form-group container justify-content-center">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div>
+                                                        Exchange Latin points (You need to be verified):
+                                                    </div>
+                                                    <div>
+                                                        <select id="exchange_latin" class="form-control" disabled="true" style="filter: contrast(100%) !important;">
+                                                            <option value="Chess10x1" selected="true">Pay 10 Latin points, earn 1 Chess points</option>
+                                                            <option value="Sudoku10x3">Pay 10 Latin points, earn 3 Sudoku points</option>
+                                                            <option value="Snake10x1">Pay 10 Latin points, earn 1 Snake points</option>
+                                                            <option value="Chess100x10">Pay 100 Latin points, earn 10 Chess points</option>
+                                                            <option value="Sudoku100x12">Pay 100 Latin points, earn 12 Sudoku points</option>
+                                                            <option value="Snake100x10">Pay 100 Latin points, earn 10 Snake points</option>
+                                                        </select>
+                                                    </div>
+                                                    <br/>
+                                                    <div id="show_exchange_value">Pay 10 Latin points, earn 1 Chess points</div>
+                                                    <div>
+                                                    <button id="button_exchange" name="button_exchange" class="btn btn-success" disabled="true">Exchange</button>
+                                                    </div>
+                                                    <div style="">
+                                                        <br/>
+                                                        <button id="go-to-user-tab" name="go-to-user-tab" class="btn btn-info go-to-user-tab">Watch user</button>
+                                                    </div>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                <div class="p-3 mb-2 bg-info bg-gradient text-white rounded total-points-latin-div" style="display:none">
+                                    Your Latin points:
+                                    <br/>
+                                    <table class="table text-white table-hover table-dark" style="word-break: break-word;">
+                                        <thead>
+                                            <tr>
+                                                <td>Latin points</td>
+                                                <!--<td>Transactions</td>-->
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="total_points_latin" /></td>
+                                                <!--<td><span t-esc="'{:,}'.format(total_transactions_daily_count)" /></td>-->
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             
