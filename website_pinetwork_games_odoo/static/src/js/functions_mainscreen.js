@@ -570,6 +570,8 @@ function get_user() {
                     
                     $(".getverified").hide();
                     $(".isverified").show();
+                    document.getElementsByTagName('body')[0].style = 'padding-top: 20px';
+                    
                     $(".isverified-username").html(data.pi_user_code);
                     $(".isverified-username").show();
                     
@@ -665,6 +667,8 @@ function get_user() {
                     $("#memo_id").prop( "disabled", false );
                 }else{
                     $(".getverified").show();
+                    document.getElementsByTagName('body')[0].style = 'padding-top: 20px';
+                    
                     $(".isverified").hide();
                     $(".isverified-username").hide();
                     
@@ -2419,6 +2423,8 @@ $( document ).ready(function() {
                 $(".loggedout").show();
                 
                 $(".getverified").show();
+                document.getElementsByTagName('body')[0].style = 'padding-top: 20px';
+                
                 $(".isverified").hide();
                 $(".isverified-username").hide();
                 
