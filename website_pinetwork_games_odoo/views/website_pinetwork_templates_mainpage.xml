@@ -1059,7 +1059,7 @@
                         }
                     </style>
                 </head>
-                <body style="padding-top: 60px;">
+                <body>
                     
                     <div id="piad_not_fully_loaded" style="display:none;">Pi ads not fully loaded. Try again.</div>
                     <div id="piad_not_button_1" style="display:none;">This button only works if you're logged in, inside Pi Browser. Reload this page to login.</div>
@@ -4804,7 +4804,7 @@
                       </div>
                     </div>
                     
-                    <div id="important-welcome-message" class="isverified fixed-top z-3 bg-info text-black text-center py-2 px-3 shadow" style="z-index: 9999999;">
+                    <div id="important-welcome-message" class="isverified fixed-top z-3 bg-info text-black text-center py-2 px-3 shadow" style="z-index: 9999999; display: none;">
                       <div class="d-flex justify-content-between align-items-center">
                         <span class="isverified mx-auto fw-bold">
                           <strong>Welcome to LatinChain</strong>
