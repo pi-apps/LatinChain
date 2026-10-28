@@ -1053,6 +1053,12 @@ $( document ).ready(function() {
     var blockingOverlayElement = document.getElementById('blockingOverlay');
     document.body.appendChild(blockingOverlayElement);
     
+    var importantMessageElement = document.getElementById('important-message');
+    document.body.appendChild(importantMessageElement);
+    
+    var importantWelcomeMessageElement = document.getElementById('important-welcome-message');
+    document.body.appendChild(importantWelcomeMessageElement);
+    
     var modalElement = document.getElementById('Modal');
 
     // 2. Move the modal to the body so it breaks out of its parent
