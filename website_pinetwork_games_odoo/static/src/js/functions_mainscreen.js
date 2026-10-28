@@ -570,8 +570,8 @@ function get_user() {
                     
                     $(".getverified").hide();
                     $(".isverified").show();
-                    document.body.style.paddingTop = '55px';
-                    document.getElementById('goforward-message').style.paddingTop = '30px';
+                    document.body.style.paddingTop = '0px';
+                    document.getElementById('goforward-message').style.paddingTop = '0px';
                     
                     $(".isverified-username").html(data.pi_user_code);
                     $(".isverified-username").show();
@@ -1062,8 +1062,8 @@ $( document ).ready(function() {
     var importantMessageElement = document.getElementById('important-message');
     document.body.appendChild(importantMessageElement);
     
-    var importantWelcomeMessageElement = document.getElementById('important-welcome-message');
-    document.body.appendChild(importantWelcomeMessageElement);
+    /*var importantWelcomeMessageElement = document.getElementById('important-welcome-message');
+    document.body.appendChild(importantWelcomeMessageElement);*/
     
     var modalElement = document.getElementById('Modal');
 

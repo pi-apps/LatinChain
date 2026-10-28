@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.460"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.461"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -4804,14 +4804,14 @@
                       </div>
                     </div>
                     
-                    <div id="important-welcome-message" class="isverified fixed-top z-3 bg-info text-black text-center py-2 px-3 shadow" style="z-index: 9999999; display: none;">
+                    <!--<div id="important-welcome-message" class="isverified fixed-top z-3 bg-info text-black text-center py-2 px-3 shadow" style="z-index: 9999999; display: none;">
                       <div class="d-flex justify-content-between align-items-center">
                         <span class="isverified mx-auto fw-bold">
                           <strong>Welcome to LatinChain</strong>
                         </span>
                         <button type="button" class="btn btn-danger btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close" onclick="document.body.style.paddingTop = '0px'; document.getElementById('goforward-message').style.paddingTop = '0px'; this.parentElement.parentElement.remove()">X</button>
                       </div>
-                    </div>
+                    </div>-->
 
                     
                     <script>
