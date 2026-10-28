@@ -4793,7 +4793,7 @@
                         </div>
                     </div>
                     
-                    <div id="important-message" class="getverified fixed-top z-3 bg-info text-black text-center py-2 px-3 shadow" style="z-index: 9999999;">
+                    <div id="important-message" class="getverified fixed-top z-3 bg-info text-black text-center py-2 px-3 shadow" style="z-index: 9999999; display: none;">
                       <div class="d-flex justify-content-between align-items-center">
                         <span class="mx-auto fw-bold">
                           <strong>🚨:</strong> 
@@ -4804,7 +4804,7 @@
                       </div>
                     </div>
                     
-                    <div id="important-welcome-message" class="isverified fixed-top z-3 bg-info text-black text-center py-2 px-3 shadow" style="z-index: 9999999; display: none;">
+                    <div id="important-welcome-message" class="isverified fixed-top z-3 bg-info text-black text-center py-2 px-3 shadow" style="z-index: 9999999;">
                       <div class="d-flex justify-content-between align-items-center">
                         <span class="isverified mx-auto fw-bold">
                           <strong>Welcome to LatinChain</strong>
