@@ -570,7 +570,7 @@ function get_user() {
                     
                     $(".getverified").hide();
                     $(".isverified").show();
-                    document.body.style.paddingTop = '60px';
+                    document.body.style.paddingTop = '55px';
                     document.getElementById('goforward-message').style.paddingTop = '30px';
                     
                     $(".isverified-username").html(data.pi_user_code);
@@ -668,7 +668,7 @@ function get_user() {
                     $("#memo_id").prop( "disabled", false );
                 }else{
                     $(".getverified").show();
-                    document.body.style.paddingTop = '60px';
+                    document.body.style.paddingTop = '55px';
                     document.getElementById('goforward-message').style.paddingTop = '30px';
                     
                     $(".isverified").hide();
@@ -2425,7 +2425,7 @@ $( document ).ready(function() {
                 $(".loggedout").show();
                 
                 $(".getverified").show();
-                document.body.style.paddingTop = '60px';
+                document.body.style.paddingTop = '55px';
                 document.getElementById('goforward-message').style.paddingTop = '30px';
                 $(".isverified").hide();
                 $(".isverified-username").hide();
