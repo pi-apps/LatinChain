@@ -260,6 +260,26 @@ class PiNetworkBaseController(http.Controller):
         elif accessed_path in ['/history-ven-book/hardcover']:
             return http.request.redirect('https://www.amazon.com/dp/B0HGHPHPBY')
     
+    @http.route(['/dialectic-book/', '/dialectic-book/paperback', '/dialectic-book/ebook', '/dialectic-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def dialectic_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/dialectic-book/', '/dialectic-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HPJRXYWQ')
+        elif accessed_path in ['/dialectic-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HPHZ9YZ3')
+        elif accessed_path in ['/dialectic-book/hardcover']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HPJK4T21')
+    
+    @http.route(['/free-book/', '/free-book/paperback', '/free-book/ebook', '/free-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def free_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/free-book/', '/free-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HPJPRG62')
+        elif accessed_path in ['/free-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HPJPRG62')
+        elif accessed_path in ['/free-book/hardcover']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HPJPRG62')
+    
     @http.route(['/bstocks-book/', '/bstocks-book/paperback', '/bstocks-book/ebook', '/bstocks-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def bstocks_book(self, **kw):
         accessed_path = http.request.httprequest.path
