@@ -571,6 +571,7 @@ function get_user() {
                     $(".getverified").hide();
                     $(".isverified").show();
                     document.getElementsByTagName('body')[0].style = 'padding-top: 60px';
+                    document.getElementById('goforward-message').style = 'padding-top: 30px';
                     
                     $(".isverified-username").html(data.pi_user_code);
                     $(".isverified-username").show();
@@ -668,6 +669,7 @@ function get_user() {
                 }else{
                     $(".getverified").show();
                     document.getElementsByTagName('body')[0].style = 'padding-top: 60px';
+                    document.getElementById('goforward-message').style = 'padding-top: 30px';
                     
                     $(".isverified").hide();
                     $(".isverified-username").hide();
@@ -2424,7 +2426,7 @@ $( document ).ready(function() {
                 
                 $(".getverified").show();
                 document.getElementsByTagName('body')[0].style = 'padding-top: 60px';
-                
+                document.getElementById('goforward-message').style = 'padding-top: 30px';
                 $(".isverified").hide();
                 $(".isverified-username").hide();
                 
