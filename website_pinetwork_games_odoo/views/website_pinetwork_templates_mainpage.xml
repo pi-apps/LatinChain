@@ -4403,20 +4403,14 @@
                                     </div>
                                     
                                     <div style="">
-                                        <div class="getverified" style="margin-bottom: 10px;">
+                                        <!--<div class="getverified" style="margin-bottom: 10px;">
                                             <div class="row">
                                                 <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Donate<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once<t t-if="amount_price_2 and float(amount_price_2) &gt; 0"><br/><t t-esc="str(amount_price_2)" /> Pi</t></div></button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         
                                         <div style="margin-bottom: 10px;">
                                             <div class="row" style="margin-top: 2px;" translate="no">
-                                                <div class="col-6 getverified" style="padding: 2px">
-                                                    <button class="giving-tip btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="">Donate</div></button>
-                                                </div>
-                                                <div class="col-6 getverified" style="padding: 2px">
-                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
-                                                </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                                         <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock</div></a>
@@ -4433,6 +4427,12 @@
                                                     <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                         <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
                                                     </div>
+                                                </div>
+                                                <div class="col-6 getverified" style="padding: 2px">
+                                                    <button class="giving-tip btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="">Donate</div></button>
+                                                </div>
+                                                <div class="col-6 getverified" style="padding: 2px">
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
@@ -4479,21 +4479,6 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="getverified" style="margin-bottom: 10px;">
-                                            <div class="row">
-                                                <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Donate<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once<t t-if="amount_price_2 and float(amount_price_2) &gt; 0"><br/><t t-esc="str(amount_price_2)" /> Pi</t></div></button>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="getverified" style="margin-bottom: 10px;">
-                                            <div class="row GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
-                                            </div>
-                                            <div class="row GoForwardShow1" t-else="">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
-                                            </div>
-                                        </div>
-                                        
                                         <div style="margin-bottom: 10px;">
                                             <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                                 <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-lock-open"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
@@ -4510,6 +4495,21 @@
                                             
                                             <div style="display: none;" class="row justify-content-center text-center show_test_app_loading">
                                                 <img width="100" height="56" src="/website_pinetwork_games_odoo/static/src/img/Rolling.gif?v=1.101" />
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="getverified" style="margin-bottom: 10px;">
+                                            <div class="row">
+                                                <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Donate<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once<t t-if="amount_price_2 and float(amount_price_2) &gt; 0"><br/><t t-esc="str(amount_price_2)" /> Pi</t></div></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="getverified" style="margin-bottom: 10px;">
+                                            <div class="row GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
+                                            </div>
+                                            <div class="row GoForwardShow1" t-else="">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                             </div>
                                         </div>
                                         
