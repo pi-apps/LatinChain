@@ -2384,7 +2384,7 @@
                                 </div>
                                 <div><strong>Watch our LatinChain and César OpenSource Fans &amp; Learning Club</strong></div>
                                 <div>
-                                    <a href="https://club.latin-chain.com" rel="noopener" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success fans-shopping-club" ><div><i class="fa-solid fa-store"></i></div><div>Fans &amp; Learning Club</div></a>
+                                    <a href="https://club.latin-chain.com" rel="noopener" target="_blank" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success fans-shopping-club" ><div><i class="fa-solid fa-store"></i></div><div>Merchandise for Fans</div></a>
                                 </div>
                                 <div><strong>Watch our Crypto News</strong></div>
                                 <div>
@@ -4410,6 +4410,9 @@
                                         </div>-->
                                         
                                         <div style="margin-bottom: 10px;">
+                                            <div class="row" style="margin-bottom: 10px;">
+                                                <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">Merchandise<br/>for Fans</div></a>
+                                            </div>
                                             <div class="row" style="margin-top: 2px;" translate="no">
                                                 <div class="col-6" style="padding: 2px">
                                                     <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
@@ -4479,6 +4482,10 @@
                                             </div>
                                         </div>
                                         
+                                        <div class="row" style="margin-bottom: 10px;">
+                                            <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">Merchandise<br/>for Fans</div></a>
+                                        </div>
+                                        
                                         <div style="margin-bottom: 10px;">
                                             <div class="row" t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                                 <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-lock-open"></i></div> <div style="display: inline">Go Forward<br/>Unlock Once</div></a>
@@ -4524,10 +4531,6 @@
                                     
                                     <div class="row" style="margin-top: 10px;">
                                         <a class="btn btn-block btn-success rounded col-12 blog-latinchain-url" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa fa-newspaper-o"></i></div> <div style="display: inline">Latest News<br/>On LatinChain</div></a>
-                                    </div>
-                                    
-                                    <div class="row" style="margin-top: 10px;">
-                                        <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">LatinChain Club<br/>Fans &amp; Academy</div></a>
                                     </div>
                                     
                                     <div class="row" style="margin-top: 10px;" id="GoForwardShow2">
