@@ -4405,7 +4405,7 @@
                                     <div style="">
                                         <div class="getverified" style="margin-bottom: 10px;">
                                             <div class="row">
-                                                <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Donate<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once</div></button>
+                                                <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Donate<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once<t t-if="amount_price_2 and float(amount_price_2) &gt; 0"><br/><t t-esc="str(amount_price_2)" /> Pi</t></div></button>
                                             </div>
                                         </div>
                                         
@@ -4481,7 +4481,7 @@
                                         
                                         <div class="getverified" style="margin-bottom: 10px;">
                                             <div class="row">
-                                                <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Donate<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once</div></button>
+                                                <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Donate<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once<t t-if="amount_price_2 and float(amount_price_2) &gt; 0"><br/><t t-esc="str(amount_price_2)" /> Pi</t></div></button>
                                             </div>
                                         </div>
                                         
