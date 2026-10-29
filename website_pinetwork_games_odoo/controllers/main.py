@@ -1372,8 +1372,8 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links, 'amazon_aff_code': amazon_aff_code})
     
-    @http.route(['/reading-club-links', '/shopping-club', '/latinchain-store'], type='http', auth="public", website=True, csrf=False)
-    def reading_club_links(self, **kw):
+    @http.route(['/reading-club-links', '/reading-club-links/<string:option>', '/shopping-club', '/latinchain-store'], type='http', auth="public", website=True, csrf=False)
+    def reading_club_links(self, option=None, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
         
         if len(admin_app_list) == 0:
@@ -1385,10 +1385,10 @@ class PiNetworkController(http.Controller):
         
         amazon_aff_code = PiNetworkBaseController.get_amazon_affiliate_code(self)
         
-        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links, 'amazon_aff_code': amazon_aff_code})
+        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'with_links': with_links, 'amazon_aff_code': amazon_aff_code, 'option': option})
     
-    @http.route(['/shopping'], type='http', auth="public", website=True, csrf=False)
-    def shopping(self, **kw):
+    @http.route(['/shopping', '/shopping/<string:option>'], type='http', auth="public", website=True, csrf=False)
+    def shopping(self, option=None, **kw):
         
         if http.request.httprequest.host not in ['club.latin-chain.com', 'localhost', 'localhost:8014']:
             return Response(template='website.page_404', status=404)
@@ -1419,7 +1419,7 @@ class PiNetworkController(http.Controller):
         
         amazon_aff_code = PiNetworkBaseController.get_amazon_affiliate_code(self)
         
-        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'link_back': link_back, 'link_text': link_text, 'with_links': with_links, 'shopping': shopping, 'amazon_aff_code': amazon_aff_code})
+        return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'link_back': link_back, 'link_text': link_text, 'with_links': with_links, 'shopping': shopping, 'amazon_aff_code': amazon_aff_code, 'option': option})
         
     @http.route('/askanexpert', type='http', auth="public", website=True, csrf=False)
     def askanexpert(self, **kw):

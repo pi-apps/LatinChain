@@ -720,10 +720,6 @@
                                     $(".search-collectibles").trigger(e_keyup);
                                 });
                                 
-                                $('input[name="show-section"][value="show-all"]').prop('checked', true);
-                                $(".search-collectibles").val("");
-                                $(".search-collectibles").trigger(e_keyup);
-                                
                                 function copyToClipboard(text) {
                                     // Create a temporary input field
                                     var $temp = $("&lt;textarea&gt;");
@@ -780,12 +776,46 @@
                                         }
                                     });
                                 }
+                                
+                                var selectedValue = $("#option").val();
+                                if(selectedValue == "all")
+                                {
+                                    $('input[name="show-section"][value="show-all"]').prop('checked', true).trigger('change');
+                                    $(".search-collectibles").val("");
+                                    $(".search-collectibles").trigger(e_keyup);
+                                }else if(selectedValue == "clothing")
+                                {
+                                    $('input[name="show-section"][value="show-spring-clothing"]').prop('checked', true).trigger('change');
+                                    $(".search-collectibles").val("");
+                                    $(".search-collectibles").trigger(e_keyup);
+                                }else if(selectedValue == "amazon")
+                                {
+                                    $('input[name="show-section"][value="show-amazon-best-deals"]').prop('checked', true).trigger('change');
+                                    $(".search-collectibles").val("");
+                                    $(".search-collectibles").trigger(e_keyup);
+                                }else if(selectedValue == "courses")
+                                {
+                                    $('input[name="show-section"][value="show-udemy-courses"]').prop('checked', true).trigger('change');
+                                    $(".search-collectibles").val("");
+                                    $(".search-collectibles").trigger(e_keyup);
+                                }else if(selectedValue == "books")
+                                {
+                                    $('input[name="show-section"][value="show-amazon-books"]').prop('checked', true).trigger('change');
+                                    $(".search-collectibles").val("");
+                                    $(".search-collectibles").trigger(e_keyup);
+                                }else
+                                {
+                                    $('input[name="show-section"][value="show-all"]').prop('checked', true).trigger('change');
+                                    $(".search-collectibles").val("");
+                                    $(".search-collectibles").trigger(e_keyup);
+                                }
                             });
                         </script>
                         
                     </head>
 
                     <body>
+                        <input type="hidden" id="option" t-att-value="option"/>
                         
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <div class="row justify-content-center text-center">
