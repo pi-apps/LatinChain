@@ -817,7 +817,7 @@
                         
                         <div class="container form-group" style="text-align:center; max-width: 810px;">
                             <div class="row justify-content-center text-center">
-                                <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                                <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                     <br/>
                                     <ins class="adsbygoogle"
                                          style="display:block"
@@ -880,7 +880,7 @@
                                 <h5 t-if="with_links">Contact: latinchain.info@gmail.com</h5>
                                 
                                 <!--
-                                <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                                <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                     <br/>
                                     <ins class="adsbygoogle"
                                          style="display:block"
@@ -942,7 +942,7 @@
                                 </div>
                                 
                                 <!--
-                                <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                                <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                     <br/>
                                     <ins class="adsbygoogle"
                                          style="display:block"
@@ -966,7 +966,7 @@
                                         <!--<iframe style="border-radius:24px;border:none" src="https://embed.creator-spring.com/widget?slug=my-store-10dea32&amp;per=30&amp;currency=&amp;page=1&amp;layout=carousel-wide&amp;theme=light" title="César OpenSource Store Merch store powered by Spring" width="100%" height="420" data-reactroot=""></iframe>-->
                                         Here for all clothing:<br/>
                                         <a href="https://app.amazecommerce.com/shop/cesar-opensource-fans-store" target="_blank" class="col-12 href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div><i class="fa-solid fa-store"></i></div><div>César&amp;LatinChain Fans Store</div></strong></a>
-                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -981,7 +981,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/b457dc0b-22ea-41a5-8f44-20cec4314ce8/listing-mockups/e4dc00b8-fa31-42c7-bb3e-76385ff470fe/8c0edf3c5126913be25912c87a0499eb16313e1c256b10c1f84787db2f869d58.webp" width="210px" height="180px" /><br/><strong>Cesar OpenSource Hat v2</strong><t t-if="with_links"><br/><a href="https://app.amazecommerce.com/shop/cesar-opensource-fans-store/cesar-opensource-hat-v2" target="_blank">Link</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -996,7 +996,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/b457dc0b-22ea-41a5-8f44-20cec4314ce8/listing-mockups/98d900cd-b944-4282-8585-b8cf58155c05/ece0c36978acabf3d94d3b1c35b2da27f2a3af3dd7f43dd0ed8c0a4720b47416.webp" width="210px" height="180px" /><br/><strong>Cesar OpenSource Hat v3</strong><t t-if="with_links"><br/><a href="https://app.amazecommerce.com/shop/cesar-opensource-fans-store/cesar-opensource-hat-v3" target="_blank">Link</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1011,7 +1011,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/b457dc0b-22ea-41a5-8f44-20cec4314ce8/listing-mockups/59c6077e-b989-404d-8ec4-b43ea776e02b/ad199cd6205c00767dfc485f09c213321fe5080d538711e8b78f9860b5920c2c.webp" width="210px" height="180px" /><br/><strong>Cesar OpenSource Mug v2</strong><t t-if="with_links"><br/><a href="https://app.amazecommerce.com/shop/cesar-opensource-fans-store/cesar-opensource-mug-v2" target="_blank">Link</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1026,7 +1026,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/b457dc0b-22ea-41a5-8f44-20cec4314ce8/listing-mockups/85eba0af-d571-47e9-a3c5-5e196d8c3d6c/a8223a81a7476e8d5305105f550d6d98a0d3a3affdb02a1b4783e011797dbe36.webp" width="210px" height="180px" /><br/><strong>Cesar OpenSource LatinChain Hoodie1</strong><t t-if="with_links"><br/><a href="https://app.amazecommerce.com/shop/cesar-opensource-fans-store/cesar-opensource-latinchain-hoodie1" target="_blank">Link</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1041,7 +1041,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/b457dc0b-22ea-41a5-8f44-20cec4314ce8/listing-mockups/f692388b-f141-4cef-a95b-7757353da550/d28f73488e9fa2ad2b59c96ea3b9b8882a7885fae07c6cbb15d6405e3c5f38a6.webp" width="210px" height="180px" /><br/><strong>Cesar OpenSource Pi Node Backpack</strong><t t-if="with_links"><br/><a href="https://app.amazecommerce.com/shop/cesar-opensource-fans-store/cesar-opensource-pi-node-bagpack" target="_blank">Link</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='clothing')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1058,7 +1058,7 @@
                                 </div>
                                 
                                 <!--
-                                <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                                <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                     <br/>
                                     <ins class="adsbygoogle"
                                          style="display:block"
@@ -1079,7 +1079,7 @@
                                         <h3>Amazon books: LatinChain Academy</h3>
                                     </div>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71Ir+19r4+L._CLa|2909,2525|81tR0HtCmQL.jpg,71eGkTh9m0L.jpg|0,0,1322,2525+1587,0,1322,2525+661,0,1587,2525__UY300_FMwebp_.jpg?aicid=books-design-system-web" width="210px" height="180px" /><br/><strong>Books Collection (more than 40 published books)<br/>(ASIN: B0F771VKRF)</strong><div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/books-collection/" target="_blank">Books Collection link</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1094,7 +1094,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61HydA6aoZL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>How to develop a Pi App (webapp) on the Pi Network<br/> (ASIN: B0DK3NJ23V, ASIN: B0DK4N3XTB and ASIN: B0HMFFKM4J)<br/> (ISBN: 979-8343272321 and ISBN: 979-8160746227)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-book/ebook" target="_blank">eBook</a> | <a href="/piapps-book/paperback" target="_blank">Paperback</a> | <a href="/piapps-book/hardcover" target="_blank">Hardcover</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1109,7 +1109,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/713nh2zLqQL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Odoo Technical Training en Español<br/> (ASIN: B0DJVY51LS and ASIN: B0DJX718Q2)<br/> (ISBN: 979-8342822534)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/odoo-tech-book/ebook" target="_blank">eBook</a> | <a href="/odoo-tech-book/paperback" target="_blank">Paperback</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1124,7 +1124,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71JaQ3aIceL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>El Algoritmo del Capital, Criptos y bStocks. Ingeniería financiera en Web3<br/> (ASIN: B0GX2YC5M7, ASIN: B0HJ8Q649H and ASIN: B0HKPW2XXS)<br/> (ISBN: 979-8176405972)</strong><br/> (<div style="display:inline;">Web3, Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/bstocks-book/ebook" target="_blank">eBook</a> | <a href="/bstocks-book/paperback" target="_blank">Paperback</a> | <a href="/bstocks-book/hardcover" target="_blank">Hardcover</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1139,7 +1139,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71aeCxjMfWL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>La Odisea del Código. Historia del Bitcoin y Criptomonedas<br/> (ASIN: B0HJ91NRJN, ASIN: B0HJ99J7RX and ASIN: B0HJ99FVB9)<br/> (ISBN: 979-8173031334 and ISBN: 979-8173033307)</strong><br/> (<div style="display:inline;">Web3, Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/bitcoin-book/ebook" target="_blank">eBook</a> | <a href="/bitcoin-book/paperback" target="_blank">Paperback</a> | <a href="/bitcoin-book/hardcover" target="_blank">Hardcover</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1154,7 +1154,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/712UDT1bssL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Mastering Google Gemini AI y NotebookLM<br/> (ASIN: B0G4GZMTND and ASIN: B0G4H6W7PX)<br/> (ISBN: 979-8276636375)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/ai-master-book/ebook" target="_blank">eBook</a> | <a href="/ai-master-book/paperback" target="_blank">Paperback</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1169,7 +1169,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61lPIa7CwiL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Aprende Inglés hoy (para Hispanohablantes)<br/> (ASIN: B0F7792QFW, ASIN: B0F79L26F6 and ASIN: B0HK9QJ7FS)<br/> (ISBN: 979-8282175301 and ISBN: 979-8175409230)</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/english-book/ebook" target="_blank">eBook</a> | <a href="/english-book/paperback" target="_blank">Paperback</a> | <a href="/english-book/hardcover" target="_blank">Hardcover</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1184,7 +1184,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/51TyKwYsFqL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Workbook de Inglés (para Hispanohablantes)<br/> (ASIN: B0GM9SKH13 and ASIN: B0GL3B3WVS)<br/> (ISBN: 979-8246628348 and ISBN: 979-8246629185)</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/english-workbook/paperback" target="_blank">Paperback</a> | <a href="/english-workbook/hardcover" target="_blank">Hardcover</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1199,7 +1199,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61HiN2CksyL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Cómo crear tu marca personal by Cesar - OpenSource Expert<br/> (ASIN: B0F79N2ZWQ, ASIN: B0F7G4RV6Y and ASIN: B0HPGFH2BJ)<br/> (ISBN: 979-8282242003 and ISBN: 979-8165792403)</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/brand-book/ebook" target="_blank">eBook</a> | <a href="/brand-book/paperback" target="_blank">Paperback</a> | <a href="/brand-book/hardcover" target="_blank">Hardcover</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1214,7 +1214,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71UuyX2Z5GL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Sudoku Notebook Vol. 1<br/> (ASIN: B0G4L8YGY3 and ASIN: B0G4L9T3J5)<br/> (ISBN: 979-8276786056 and ISBN: 979-8276787473)</strong><br/> (<div style="display:inline;">Puzzles</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/sudoku-book/paperback" target="_blank">Paperback</a> | <a href="/sudoku-book/hardcover" target="_blank">Hardcover</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1229,7 +1229,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71GWMwNA61L._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Curso de Programación Completo, de Cero a Experto<br/> (ASIN: B0GCNT449Q, ASIN: B0GCNQ5TJJ and ASIN: B0GCNVNLQJ)<br/> (ISBN: 979-8241341686 and ISBN: 979-8241342508)</strong><br/> (<div style="display:inline;">Software Development</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/dev-book/ebook" target="_blank">eBook</a> | <a href="/dev-book/paperback" target="_blank">Paperback</a> | <a href="/dev-book/hardcover" target="_blank">Hardcover</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1244,7 +1244,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71o65qmDIsL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Curso de Computación Cuántica, de Cero a Experto<br/> (ASIN: B0GFGTML2P, ASIN: B0GFK2VL31)<br/> (ISBN: 979-8243027755)</strong><br/> (<div style="display:inline;">Software Development</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/quantum-book/ebook" target="_blank">eBook</a> | <a href="/quantum-book/paperback" target="_blank">Paperback</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1259,7 +1259,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/718cpAmtUuL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Seguridad Web, Routers, Switches y GNU/Linux<br/> (ASIN: B0HNTPSBXG and ASIN: B0HNTSGH7B)<br/> (ISBN: 979-8164296575)</strong><br/> (<div style="display:inline;">Web Security/Operative Systems</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/websec-linux-book/ebook" target="_blank">eBook</a> | <a href="/websec-linux-book/paperback" target="_blank">Paperback</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1274,7 +1274,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61L4Ju0dOcL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>My Sci and Sci-Fi Books' Collection 2025 - Mi Colección de Libros Sci y Sci-Fi 2025<br/> (ASIN: B0FPPVRGWG and ASIN: B0G4WK2WT7)<br/> (ISBN: 979-8277179994)</strong><br/> (<div style="display:inline;">Books compilation</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/collection-2025-book/ebook" target="_blank">eBook</a> | <a href="/collection-2025-book/paperback" target="_blank">Paperback</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1289,7 +1289,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61tZGiD-fUL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>La Historia antes de la Historia de Venezuela<br/> (ASIN: B0HGH1V2JT, ASIN: B0HGGXFLJ1 and ASIN: B0HGHPHPBY)<br/> (ISBN: 979-8194843909 and ISBN: 979-8194845231)</strong><br/> (<div style="display:inline;">History</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/history-ven-book/ebook" target="_blank">eBook</a> | <a href="/history-ven-book/paperback" target="_blank">Paperback</a> | <a href="/history-ven-book/hardcover" target="_blank">Hardcover</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1304,7 +1304,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71Fm1cnXAAL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>La Dialéctica, su historia y principios<br/> (ASIN: B0HPHZ9YZ3, ASIN: B0HPJRXYWQ and ASIN: B0HPJK4T21)<br/> (ISBN: 979-8165940231 and ISBN: 979-8165941955)</strong><br/> (<div style="display:inline;">Phylosophy</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/dialectic-book/ebook" target="_blank">eBook</a> | <a href="/dialectic-book/paperback" target="_blank">Paperback</a> | <a href="/dialectic-book/hardcover" target="_blank">Hardcover</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1319,7 +1319,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71U-i+4GUAL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>El Software Libre<br/> (ASIN: B0HPJPRG62 and ASIN: B0HPKRS1X4)<br/> (ISBN: 979-8165947766)</strong><br/> (<div style="display:inline;">Phylosophy</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/free-book/ebook" target="_blank">eBook</a> | <a href="/free-book/paperback" target="_blank">Paperback</a><!-- | <a href="/free-book/hardcover" target="_blank">Hardcover</a>--></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1334,7 +1334,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/619q1XjAMkL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Todo sobre las Blockchains<br/> (ASIN: B0FL53TJGV and ASIN: B0FL89BPL5)<br/> (ISBN: 979-8296613585)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/all-blockchains-book/ebook" target="_blank">eBook</a> | <a href="/all-blockchains-book/paperback" target="_blank">Paperback</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1349,7 +1349,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/61VVEagg4dL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Todo sobre las IAs (Inteligencias Artificiales)<br/> (ASIN: B0FL1F2B33 and ASIN: B0FL2RHD7D)<br/> (ISBN: 979-8296453549)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/all-ias-book/ebook" target="_blank">eBook</a> | <a href="/all-ias-book/paperback" target="_blank">Paperback</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1364,7 +1364,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71im17Zl6AL._SL1499_.jpg" width="120px" height="180px" /><br/><strong>Todo sobre Biometría en Español<br/> (ASIN: B0DL3DCHMT and ASIN: B0DL45M8C4)<br/> (ISBN: 979-8344533957)</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/all-biometrics-book/ebook" target="_blank">eBook</a> | <a href="/all-biometrics-book/paperback" target="_blank">Paperback</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1381,7 +1381,7 @@
                                 </div>
                                 
                                 <!--
-                                <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                                <div t-if="shopping" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                     <br/>
                                     <ins class="adsbygoogle"
                                          style="display:block"
@@ -1403,7 +1403,7 @@
                                         <h5>(all courses with personalized Certificate of Completion)</h5>
                                     </div>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6505675_3364_4.jpg" width="180px" height="110px" /><br/><strong>How to develop a Pi App on Pi Network: LatinChain Academy</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">English</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/piapps-course/" target="_blank">Udemy course</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1418,7 +1418,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/4538222_ce85_5.jpg" width="180px" height="110px" /><br/><strong>Odoo 14 Technical Training en Español: LatinChain Academy</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/odoo-tech-course/" target="_blank">Udemy course</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1433,7 +1433,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6956213_6b6f.jpg" width="180px" height="110px" /><br/><strong>Mastering Google Gemini AI y NotebookLM: LatinChain Academy</strong><br/> (<div style="display:inline;">Tech</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/ai-master-course/" target="_blank">Udemy course</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1448,7 +1448,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/7391823_72b6_2.jpg" width="180px" height="110px" /><br/><strong>Curso de Seguridad Web y GNU/Linux: LatinChain Academy</strong><br/> (<div style="display:inline;">Web Security/Operative Systems</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/websec-linux-course/" target="_blank">Udemy course</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1463,7 +1463,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6522069_77ba.jpg" width="180px" height="110px" /><br/><strong>Aprende Inglés práctico hoy mismo: LatinChain Academy</strong><br/> (<div style="display:inline;">Languages</div>) (<div style="display:inline;">English</div> <div style="display:inline;">and</div> <div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/english-course/" target="_blank">Udemy course</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
@@ -1478,7 +1478,7 @@
                                         </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://img-c.udemycdn.com/course/200_H/6595211_0834_3.jpg" width="180px" height="110px" /><br/><strong>Cómo crear tu marca personal: LatinChain Academy</strong><br/> (<div style="display:inline;">Business improvement</div>) (<div style="display:inline;">Spanish</div>)<div style="">Udemy Course Author: César Cordero</div> <t t-if="with_links"><a href="/brand-course/" target="_blank">Udemy course</a></t>
-                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center;">
+                                        <div t-if="(shopping and not option) or (shopping and option=='courses')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
                                             <br/>
                                             <ins class="adsbygoogle"
                                                  style="display:block"
