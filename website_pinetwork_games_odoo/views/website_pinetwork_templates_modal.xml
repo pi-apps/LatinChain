@@ -1494,6 +1494,10 @@
                                     </h5>
                                 </div>
                                 
+                                <div id='recent-posts-resume-list' style='margin-top: 30px; box-sizing: border-box; width: 100%;'></div>
+                                
+                                <script t-if="shopping" type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_club_modal.js?v=1.105"></script>
+                                
                                 <!--
                                 <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
                                     <br/>
