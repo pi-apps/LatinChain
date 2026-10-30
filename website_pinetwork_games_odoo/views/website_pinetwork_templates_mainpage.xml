@@ -4416,18 +4416,18 @@
                                             <div class="row" style="margin-top: 2px;" translate="no">
                                                 <div class="col-6" style="padding: 2px">
                                                     <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock</div></a>
+                                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock v1</div></a>
                                                     </div>
                                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock</div></a>
+                                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="GoForwardLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock v1</div></a>
                                                     </div>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
-                                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://blog-rockcesar.latin-chain.com/p/latinchain-ecosystem-pi-network_0696745817.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock</div></a>
+                                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://blog-rockcesar.latin-chain.com/p/latinchain-ecosystem-pi-network_0696745817.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock v2</div></a>
                                                     </div>
                                                     <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://blog-rockcesar.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock</div></a>
+                                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://blog-rockcesar.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock v2</div></a>
                                                     </div>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
