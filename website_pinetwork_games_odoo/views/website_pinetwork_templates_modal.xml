@@ -966,6 +966,19 @@
                                         <!--<iframe style="border-radius:24px;border:none" src="https://embed.creator-spring.com/widget?slug=my-store-10dea32&amp;per=30&amp;currency=&amp;page=1&amp;layout=carousel-wide&amp;theme=light" title="César OpenSource Store Merch store powered by Spring" width="100%" height="420" data-reactroot=""></iframe>-->
                                         Here for all clothing:<br/>
                                         <a href="https://app.amazecommerce.com/shop/cesar-opensource-fans-store" target="_blank" class="col-12 href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div><i class="fa-solid fa-store"></i></div><div>César&amp;LatinChain Fans Store</div></strong></a>
+                                        <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
+                                            <br/>
+                                            <ins class="adsbygoogle"
+                                                 style="display:block"
+                                                 data-ad-client="ca-pub-2334449220276386"
+                                                 data-ad-slot="6625994850"
+                                                 data-ad-format="auto"
+                                                 data-full-width-responsive="true"></ins>
+                                            <script>
+                                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                                            </script>
+                                            <br/>
+                                        </div>
                                     </h5>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/b457dc0b-22ea-41a5-8f44-20cec4314ce8/listing-mockups/e4dc00b8-fa31-42c7-bb3e-76385ff470fe/8c0edf3c5126913be25912c87a0499eb16313e1c256b10c1f84787db2f869d58.webp" width="210px" height="180px" /><br/><strong>Cesar OpenSource Hat v2</strong><t t-if="with_links"><br/><a href="https://app.amazecommerce.com/shop/cesar-opensource-fans-store/cesar-opensource-hat-v2" target="_blank">Link</a></t>
                                         <div t-if="shopping" class="col-12 my-3" style="text-align:center;">
