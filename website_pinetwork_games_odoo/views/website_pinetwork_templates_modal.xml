@@ -851,8 +851,8 @@
                                 <div t-if="link_back">
                                     <a id="back" class="btn btn-info rounded back" style="margin-bottom:15px;" t-att-href="link_back" target="_blank"><div><i class="fa fa-step-backward"></i></div><div t-if="link_text"><span t-esc="link_text"/></div></a>
                                 </div>
-                                <h1 t-if="not with_links">Welcome to the merchandise buying center for LatinChain, Pi and Cesar OpenSource Fans</h1>
-                                <h1 t-elif="with_links"><div style="display:inline;">Welcome to the merchandise buying center for LatinChain, Pi and Cesar OpenSource Fans</div> <div style="display:inline;"><button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></div></h1>
+                                <h1 t-if="not with_links">Welcome to the merchandise buying center for LatinChain (Pi Network Crypto) and Cesar OpenSource (Youtube) Fans</h1>
+                                <h1 t-elif="with_links"><div style="display:inline;">Welcome to the merchandise buying center for LatinChain (Pi Network Crypto) and Cesar OpenSource (Youtube) Fans</div> <div style="display:inline;"><button class="btn btn-info button-share" style="border-radius: 50%; filter: contrast(100%) !important;"><div style=""><i class="fa fa-share-alt"></i></div></button></div></h1>
                                 
                                 <t t-set="link_tag_code" t-value="amazon_aff_code"/>
                                 
