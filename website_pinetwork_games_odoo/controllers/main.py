@@ -1419,6 +1419,8 @@ class PiNetworkController(http.Controller):
         
         amazon_aff_code = PiNetworkBaseController.get_amazon_affiliate_code(self)
         
+        option=None
+        
         return http.request.render('website_pinetwork_games_odoo.reading_club', {'mainnet': mainnet, 'link_back': link_back, 'link_text': link_text, 'with_links': with_links, 'shopping': shopping, 'amazon_aff_code': amazon_aff_code, 'option': option})
         
     @http.route('/askanexpert', type='http', auth="public", website=True, csrf=False)
