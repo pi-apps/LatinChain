@@ -655,10 +655,10 @@
                                     }
                                     else
                                     {
-                                        if($('input[name="show-section"]:checked').val() == "show-spring-clothing")
+                                        /*if($('input[name="show-section"]:checked').val() == "show-spring-clothing")
                                             $(".product").show();
                                         else
-                                        {
+                                        {*/
                                             $(".product").hide();
                                             $(".product").each(function() {
                                                 // 'this' refers to the current DOM element in the loop
@@ -673,7 +673,7 @@
                                                 }
                                                 //console.log($(this).text()); // Example: log the text content of each element
                                             });
-                                        }
+                                        //}
                                     }
                                 });
                                 
@@ -693,7 +693,7 @@
                                         $(".amazon-best-deals").hide();
                                         $(".udemy-courses").hide();
                                         $(".amazon-books").hide();
-                                        $(".search-section").hide();
+                                        $(".search-section").show();
                                     }else if(selectedValue == "show-amazon-best-deals")
                                     {
                                         $(".spring-clothing").hide();
