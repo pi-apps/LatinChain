@@ -4423,6 +4423,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
+                                                    <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
+                                                        <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://blog-rockcesar.latin-chain.com/p/latinchain-ecosystem-pi-network_0696745817.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock</div></a>
+                                                    </div>
+                                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                                        <a t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://blog-rockcesar.latin-chain.com/p/latinchain-ecosystem-pi-network.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock</div></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6" style="padding: 2px">
                                                     <div class="show_test_app" style="">
                                                         <button class="test_app btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-rectangle-ad"></i></div><div style="">Pi Ad</div></button>
                                                     </div>
@@ -4453,10 +4461,9 @@
                                                     <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/latin-store/latin-pullover" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-shirt"></i></div><div style="">Wear Pi</div></a>
                                                 </div>
-                                                <div class="col-6" style="padding: 2px">
-                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
+                                                <!--<div class="col-6" style="padding: 2px">
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-store"></i></div><div style="">Club</div></a>
-                                                </div>
+                                                </div>-->
                                                 <!--<div class="col-6" style="padding: 2px">
                                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCSignUp href-external btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="" translate="no">Join MEXC</div></a>
                                                 </div>
