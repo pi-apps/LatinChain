@@ -68,7 +68,7 @@
       let article = document.createElement('article');
       article.className = 'post';
       article.setAttribute('role', 'article');
-      article.style.cssText = 'filter: contrast(100%) !important; background: white; margin-bottom: 16px; box-sizing: border-box; width: 100%; word-break: break-word;';
+      article.style.cssText = 'filter: contrast(100%) !important; background: white; margin-bottom: 16px; box-sizing: border-box; width: 100%; word-break: break-word; padding: 10px';
 
       // 2. Comentario: Ad before post
       article.appendChild(document.createComment(' Ad before post '));
