@@ -44,6 +44,9 @@
                                     <field name="block_points"/>
                                     <field name="pi_main_user"/>
                             </group>
+                            <group string="Prizes Premium">
+                                <field name="udemy_course"/>
+                            </group>
                             <group string="Pi Ad config">
                                 <field name="points_latin_amount"/>
                                 <field name="points_latin_amount_tip"/>
