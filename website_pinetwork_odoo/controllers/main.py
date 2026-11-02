@@ -542,7 +542,9 @@ class PiNetworkBaseController(http.Controller):
             
             if len(apps_list_temp) > 0:
                 apps_list = apps_list_temp
-            
+        
+        udemy_course = apps_list[0].udemy_course
+        
         pi_ad_seconds = apps_list[0].pi_ad_seconds
         pi_ad_max = apps_list[0].pi_ad_max
         pi_amount = apps_list[0].amount
@@ -651,7 +653,8 @@ class PiNetworkBaseController(http.Controller):
                             'iq_result': pi_users_list[0].iq_result,
                             'iq_category': pi_users_list[0].iq_category,
                             'iq_date': str(pi_users_list[0].iq_date),
-                            'user_tips': pi_users_list[0].user_tips
+                            'user_tips': pi_users_list[0].user_tips,
+                            'udemy_course': udemy_course
                             })
     
     @http.route('/set-pi-ad-datetime', type='http', auth="public", website=True, methods=['POST'], csrf=False)

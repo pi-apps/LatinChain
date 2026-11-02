@@ -520,6 +520,18 @@ function get_user() {
                 {
                     $(".show_pi_ad_automatic").show();
                     $("#pi_ad_automatic").prop("checked", data.pi_ad_automatic);
+                    
+                    if(data.unblocked)
+                    {
+                        $(".udemy_course").prop('target', '_blank');
+                        $(".udemy_course").prop('href', data.udemy_course);
+                    }
+                }
+                
+                if(!data.unblocked)
+                {
+                    $(".udemy_course").prop('target', '_self');
+                    $(".udemy_course").prop('href', "javascript:void(0);");
                 }
                 
                 /*var options = $("#avatar_user");

@@ -364,6 +364,7 @@ class admin_apps(models.Model):
     pi_users_top10_sudoku_ids = fields.Many2many('pi.users', 'admin_apps_users_top10_sudoku_rel', string='Top 10 users sudoku', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_top10_snake_ids = fields.Many2many('pi.users', 'admin_apps_users_top10_snake_rel', string='Top 10 users snake', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     pi_users_leaders_ids = fields.Many2many('pi.users', 'admin_apps_users_leaders_rel', string='Users leaders', groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
+    udemy_course = fields.Char('Udemy course link', default="", groups="website_pinetwork_odoo.group_pi_admin,base.group_system")
     
     """
     @api.depends("amount")

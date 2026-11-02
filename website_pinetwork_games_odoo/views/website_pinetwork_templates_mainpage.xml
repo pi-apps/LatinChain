@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.461"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.462"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1653,6 +1653,9 @@
                                     </div>
                                     <div class="row" style="margin-top: 2px;" translate="no">
                                         <div class="col-4" style="padding: 2px">
+                                            <button class="latin-option-onlypremium btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#prime</div></button>
+                                        </div>
+                                        <div class="col-4" style="padding: 2px">
                                             <button class="latin-option-losttransaction btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#lost</div></button>
                                         </div>
                                         <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" class="col-4" style="padding: 2px">
@@ -1707,6 +1710,19 @@
                                             <button class="latin-option-welcome btn btn-block btn-secondary rounded" style="border: 2px solid black;"><div>#hi</div></button>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom:5px; padding:10px; width: 100%; text-align: center;" class="border-gradient-rounded latin-sharp-onlypremium-div">
+                                <div style="margin-bottom:5px" class="border-bottom">
+                                    <h5 translate="no"><strong><div style="display:inline;">#Premium #Reward</div></strong></h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <strong>Only for Premium users on LatinChain Mainnet. If you aren't Premium, become one today.</strong><br/>
+                                    This month the prize is this Udemy course, with limited amount of uses. You can share it with your people.
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <a href="javascript:void(0)" class="udemy_course" target="_self" rel="noopener">Link to course</a>
                                 </div>
                             </div>
                             
