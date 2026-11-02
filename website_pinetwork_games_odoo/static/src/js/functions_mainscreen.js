@@ -521,7 +521,7 @@ function get_user() {
                     $(".show_pi_ad_automatic").show();
                     $("#pi_ad_automatic").prop("checked", data.pi_ad_automatic);
                     
-                    if(data.unblocked)
+                    if(data.unblocked && data.udemy_course)
                     {
                         $(".udemy_course").prop('target', '_blank');
                         $(".udemy_course").prop('href', data.udemy_course);
