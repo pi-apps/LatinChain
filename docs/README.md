@@ -1,3 +1,15 @@
+# NEW: Now you can set LatinChain Ads in a side of your webpage
+
+It's a simple iframe not competition of Pi Ads of course. Because we don't pay you for setting it. It's only if you want to have LatinChain inside your app.
+
+How to add it:
+
+```
+<div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+    <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center" />
+</div>
+```
+
 # Interaction with LatinChain Platform (LatinChain API docs)
 
 A working example. Watch your LatinChain Mainnet profile, here: https://latin-chain.com/pi-sign-in/
