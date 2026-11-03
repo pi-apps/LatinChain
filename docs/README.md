@@ -1,4 +1,4 @@
-# NEW: Now you can set LatinChain Ads in a side of your webpage
+# NEW: Now you can set LatinChain Ads inside of your webpage
 
 It's a simple iframe not competition of Pi Ads of course. Because we don't pay you for setting it. It's only if you want to have LatinChain inside your app.
 
