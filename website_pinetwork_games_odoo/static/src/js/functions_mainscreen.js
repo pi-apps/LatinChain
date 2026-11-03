@@ -986,7 +986,7 @@ $( document ).ready(function() {
     const observerLatinChainAds = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) {
-            $(".latinchain-ads").html('<div class="row"><iframe class="col-12" src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center" /></div>');
+            $(".latinchain-ads").html('<div class="row"><iframe class="col-12" src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; margin-left: 2px; margin-right: 2px" /></div>');
         }else
         {
             $(".latinchain-ads").html('');
