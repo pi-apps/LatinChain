@@ -464,6 +464,417 @@
             </t>
 		</template>
         
+        <template id="latinchain_ads" name="LatinChain Ads">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html lang="en">
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+                        <title>LatinChain Ads</title>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                        
+                        <style>
+                            body {
+                              word-break: break-word;
+                            }
+
+                            /* Fuerza al contenedor insertado por Google a respetar el ancho máximo */
+                            .google-auto-placed,
+                            ins.adsbygoogle {
+                              max-width: 100% !important;
+                              display: block !important;
+                            }
+                        </style>
+                        
+                        <style>
+                            #track {
+                                /* ADD THIS LINE: It prevents rendering flickering on scroll boundaries */
+                                backface-visibility: hidden;
+                                
+                                /* Prevents users from swiping left/right on touch devices */
+                                overflow-x: hidden; 
+                                
+                                /* Disables all touch-based panning and zooming interactions */
+                                /* touch-action: none; */
+                                
+                                /* Disables mouse-dragging if you had any CSS/JS enabling it */
+                                /* pointer-events: none; */
+                            }
+                            
+                            /* Base styles and Wrapper */
+                            .carousel-wrapper {
+                              position: relative;
+                              width: 100%;
+                              max-width: 800px; /* Limits size on desktop */
+                              margin: 0 auto;
+                            }
+
+                            /* The scrollable track */
+                            .carousel-track {
+                              display: flex;
+                              gap: 1rem;
+                              overflow-x: auto;
+                              scroll-snap-type: x mandatory;
+                              -webkit-overflow-scrolling: touch;
+                              scrollbar-width: none;
+                              position: relative; /* ADDED */
+                              /* REMOVED: scroll-behavior: smooth; */
+                            }
+
+                            /* Hides scrollbar in Chrome/Safari/Edge */
+                            .carousel-track::-webkit-scrollbar {
+                              display: none;
+                            }
+
+                            /* Individual Slides */
+                            .carousel-slide {
+                              flex: 0 0 100%; /* Mobile: 1 slide visible at a time */
+                              scroll-snap-align: center;
+                              height: 300px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              font-size: 2rem;
+                              font-family: sans-serif;
+                              color: #333;
+                              border-radius: 12px;
+                              transform: translate3d(0,0,0);
+                              transform-style: preserve-3d;
+                            }
+
+                            /* Navigation Buttons */
+                            .carousel-btn {
+                              position: absolute;
+                              top: 50%;
+                              transform: translateY(-50%);
+                              background: rgba(255, 255, 255, 0.8);
+                              border: none;
+                              width: 40px;
+                              height: 40px;
+                              border-radius: 50%;
+                              cursor: pointer;
+                              z-index: 10;
+                              box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                              display: none; /* Hide on mobile by default */
+                              color: black !important;
+                            }
+
+                            /* Media Query: Show buttons and adjust sizing for larger screens */
+                            @media (min-width: 768px) {
+                              .carousel-btn {
+                                display: block; /* Show buttons on tablets and up */
+                              }
+                              
+                              .prev { left: -20px; }
+                              .next { right: -20px; }
+                              
+                              .carousel-slide {
+                                height: 400px;
+                                /* Optional: Change flex to '0 0 calc(50% - 0.5rem)' to show 2 slides at a time */
+                              }
+                            }
+                        </style>
+                        
+                        <script>
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const track = document.getElementById('track');
+
+                                // --- 1. FILTER VISIBLE SLIDES ONLY ---
+                                const originalVisibleSlides = Array.from(document.querySelectorAll('.carousel-slide'))
+                                    .filter(slide => {
+                                        const style = window.getComputedStyle(slide);
+                                        return style.display !== 'none' &amp;&amp; slide.offsetWidth > 0;
+                                    });
+
+                                // Safety check: A carousel is only needed if there are 2 or more slides.
+                                if (originalVisibleSlides.length &lt; 2) return;
+
+                                const intervalTime = 10000;
+                                let autoPlayTimer;
+                                let isTransitioning = false; 
+
+                                // --- 2. Create the Clones ---
+                                const firstClone = originalVisibleSlides[0].cloneNode(true);
+                                const lastClone = originalVisibleSlides[originalVisibleSlides.length - 1].cloneNode(true);
+
+                                firstClone.classList.add('carousel-clone');
+                                lastClone.classList.add('carousel-clone');
+
+                                track.appendChild(firstClone);
+                                track.insertBefore(lastClone, originalVisibleSlides[0]);
+
+                                // --- 3. Update arrays and track indices ---
+                                const allSlides = Array.from(document.querySelectorAll('.carousel-slide'));
+                                
+                                const allVisibleSlides = allSlides.filter(slide => {
+                                    const style = window.getComputedStyle(slide);
+                                    return style.display !== 'none' &amp;&amp; slide.offsetWidth > 0;
+                                });
+
+                                const totalRealSlides = originalVisibleSlides.length;
+
+                                // --- 4. Initial Setup ---
+                                requestAnimationFrame(() => {
+                                    track.scrollLeft = allVisibleSlides[1].offsetLeft;
+                                });
+
+                                // --- 5. The Dynamic Width Calculation ---
+                                const getSlideWidth = () => {
+                                    if(allVisibleSlides.length &lt; 3) return track.clientWidth;
+                                    return allVisibleSlides[2].offsetLeft - allVisibleSlides[1].offsetLeft;
+                                };
+
+                                // --- 6. The Boundary Loop Function ---
+                                const handleInfiniteLoopJumps = () => {
+                                    isTransitioning = false;
+                                    const currentScroll = track.scrollLeft;
+                                    const maxScroll = track.scrollWidth - track.clientWidth;
+                                    const buffer = 2; 
+
+                                    if (currentScroll &lt; buffer+1) {
+                                        track.style.scrollSnapType = 'none';
+                                        requestAnimationFrame(() => {
+                                            track.scrollLeft = allVisibleSlides[totalRealSlides].offsetLeft;
+                                            requestAnimationFrame(() => {
+                                                track.style.scrollSnapType = 'x mandatory'; 
+                                            });
+                                        });
+                                    }
+                                    else if (currentScroll >= maxScroll - buffer) {
+                                        track.style.scrollSnapType = 'none';
+                                        requestAnimationFrame(() => {
+                                            track.scrollLeft = allVisibleSlides[1].offsetLeft;
+                                            requestAnimationFrame(() => {
+                                                track.style.scrollSnapType = 'x mandatory'; 
+                                            });
+                                        });
+                                    }
+                                };
+
+                                // --- 7. Listen for `scrollend` ---
+                                if ('onscrollend' in track) {
+                                    track.addEventListener('scrollend', handleInfiniteLoopJumps);
+                                } else {
+                                    let scrollTimer;
+                                    track.addEventListener('scroll', () => {
+                                        clearTimeout(scrollTimer);
+                                        scrollTimer = setTimeout(handleInfiniteLoopJumps, 60); 
+                                    });
+                                }
+
+                                // --- 8. AutoPlay Logic ---
+                                const moveToNextSlide = () => {
+                                    if (isTransitioning) return;
+                                    isTransitioning = true;
+                                    track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
+                                };
+
+                                const startAutoPlay = () => {
+                                    if (autoPlayTimer) clearInterval(autoPlayTimer);
+                                    autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
+                                };
+
+                                // --- 9. Window Resizing ---
+                                window.addEventListener('resize', () => {
+                                    if (autoPlayTimer) clearInterval(autoPlayTimer);
+                                    
+                                    const currentScroll = track.scrollLeft;
+                                    let closestIndex = 1;
+                                    let minDiff = Infinity;
+                                    
+                                    for (let i = 1; i &lt; totalRealSlides+1; i++) {
+                                        const diff = Math.abs(allVisibleSlides[i].offsetLeft - currentScroll);
+                                        if (diff &lt; minDiff) {
+                                            minDiff = diff;
+                                            closestIndex = i;
+                                        }
+                                    }
+                                    
+                                    track.style.scrollSnapType = 'none';
+                                    track.scrollLeft = allVisibleSlides[closestIndex].offsetLeft;
+                                    track.style.scrollSnapType = null;
+                                    startAutoPlay();
+                                });
+
+                                // Start the autoplay timer!
+                                startAutoPlay();
+                            });
+                        </script>
+                        
+                    </head>
+
+                    <body translate="no">
+                        <div class="carousel-wrapper justify-content-center text-center">
+                          <!--<button class="carousel-btn prev" aria-label="Previous slide" style="color: black !important">&#10094;</button>
+                          -->
+                          
+                          <div class="carousel-track" id="track">
+                            <div class="carousel-slide" style="background: #74b9ff;">
+                                <div>
+                                    <div style="margin-bottom:5px">
+                                        <h5 class="getverified">
+                                            <strong>
+                                                Get PREMIUM.
+                                            </strong>
+                                        </h5>
+                                        <h5 style="display:none;" class="isverified">
+                                            <strong>
+                                                You are PREMIUM.
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div style="margin-bottom:5px;" class="getverified">
+                                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    </div>
+                                    <div style="margin-bottom:5px; display:none;" class="isverified">
+                                        <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" style="background: #ff7675;">
+                                <div>
+                                    <div style="margin-bottom:5px">
+                                        <h5>
+                                            <strong>
+                                                STAKE PI.
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div style="margin-bottom:5px">
+                                        <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" style="background: #55efc4;">
+                                <div>
+                                    <div style="margin-bottom:5px">
+                                        <h5>
+                                            <strong>
+                                                Use our dApps.
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div style="margin-bottom:5px">
+                                        <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" style="background: #74b9ff;">
+                                <div>
+                                    <div style="margin-bottom:5px">
+                                        <h5 class="getverified">
+                                            <strong>
+                                                Get PREMIUM.
+                                            </strong>
+                                        </h5>
+                                        <h5 style="display:none;" class="isverified">
+                                            <strong>
+                                                You are PREMIUM.
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div style="margin-bottom:5px;" class="getverified">
+                                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    </div>
+                                    <div style="margin-bottom:5px; display:none;" class="isverified">
+                                        <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" style="background: #ff7675;">
+                                <div>
+                                    <div style="margin-bottom:5px">
+                                        <h5>
+                                            <strong>
+                                                STAKE PI.
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div style="margin-bottom:5px">
+                                        <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" style="background: #55efc4;">
+                                <div>
+                                    <div style="margin-bottom:5px">
+                                        <h5>
+                                            <strong>
+                                                Use our dApps.
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div style="margin-bottom:5px">
+                                        <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" style="background: #74b9ff;">
+                                <div>
+                                    <div style="margin-bottom:5px">
+                                        <h5 class="getverified">
+                                            <strong>
+                                                Get PREMIUM.
+                                            </strong>
+                                        </h5>
+                                        <h5 style="display:none;" class="isverified">
+                                            <strong>
+                                                You are PREMIUM.
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div style="margin-bottom:5px;" class="getverified">
+                                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    </div>
+                                    <div style="margin-bottom:5px; display:none;" class="isverified">
+                                        <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" style="background: #ff7675;">
+                                <div>
+                                    <div style="margin-bottom:5px">
+                                        <h5>
+                                            <strong>
+                                                STAKE PI.
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div style="margin-bottom:5px">
+                                        <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide" style="background: #55efc4;">
+                                <div>
+                                    <div style="margin-bottom:5px">
+                                        <h5>
+                                            <strong>
+                                                Use our dApps.
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div style="margin-bottom:5px">
+                                        <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+
+                          <!--<button class="carousel-btn next" aria-label="Next slide" style="color: black !important">&#10095;</button>
+                          -->
+                        </div>
+                    </body>
+                </html>
+            </t>
+        </template>
+        
         <template id="reading_club" name="Reading club View">
             <t t-call="web.layout">
                 &lt;!DOCTYPE html&gt;
