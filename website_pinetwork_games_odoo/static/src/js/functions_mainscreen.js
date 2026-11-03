@@ -971,6 +971,8 @@ $( document ).ready(function() {
             
             $("#translate_text_latinchain_2").show();
             $("#google_translate_element").show();
+            
+            $(".latinchain-ads").html('<iframe src="/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center" />');
         }
       });
     }, { 
@@ -980,6 +982,19 @@ $( document ).ready(function() {
 
     // 3. Start monitoring
     observer.observe(targetElement);
+    
+    const observerLatinChainAds = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            $(".latinchain-ads").html('<iframe src="/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center" />');
+        }else
+        {
+            $(".latinchain-ads").html('');
+        }
+      });
+    });
+
+    observerLatinChainAds.observe(document.querySelector('#loading-message'));
 
 });
 
