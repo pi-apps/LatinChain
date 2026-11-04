@@ -294,7 +294,7 @@ class PiNetworkBaseController(http.Controller):
     def richv2_book(self, **kw):
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/richv2-book/', '/richv2-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQDVRZ58')
         elif accessed_path in ['/richv2-book/ebook']:
             return http.request.redirect('https://www.amazon.com/dp/B0HQD4L94N')
         #elif accessed_path in ['/richv2-book/hardcover']:
