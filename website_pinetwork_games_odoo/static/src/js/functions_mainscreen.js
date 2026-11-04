@@ -986,7 +986,180 @@ $( document ).ready(function() {
     const observerLatinChainAds = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) {
-            $(".latinchain-ads").html('<div class="row"><iframe class="col-12" src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; margin-left: 2px; margin-right: 2px" /></div>');
+            if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
+                $(".latinchain-ads").html('<div class="row"><iframe class="col-12" src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; margin-left: 2px; margin-right: 2px" /></div>');
+            else
+                $(".latinchain-ads").html(`
+                    <div class="carousel-wrapper col-12" style="margin-left: 2px; margin-right: 2px;">
+          
+                      <div class="carousel-track" id="track">
+                        <div class="carousel-slide" style="background: #74b9ff;">
+                            <div>
+                                <div style="margin-bottom:5px">
+                                    <h5 class="getverified">
+                                        <strong>
+                                            Get PREMIUM.
+                                        </strong>
+                                    </h5>
+                                    <h5 style="display:none;" class="isverified">
+                                        <strong>
+                                            You are PREMIUM.
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="margin-bottom:5px;" class="getverified">
+                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                </div>
+                                <div style="margin-bottom:5px; display:none;" class="isverified">
+                                    <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background: #ff7675;">
+                            <div>
+                                <div style="margin-bottom:5px">
+                                    <h5>
+                                        <strong>
+                                            STAKE PI.
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background: #55efc4;">
+                            <div>
+                                <div style="margin-bottom:5px">
+                                    <h5>
+                                        <strong>
+                                            Use our dApps.
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background: #74b9ff;">
+                            <div>
+                                <div style="margin-bottom:5px">
+                                    <h5 class="getverified">
+                                        <strong>
+                                            Get PREMIUM.
+                                        </strong>
+                                    </h5>
+                                    <h5 style="display:none;" class="isverified">
+                                        <strong>
+                                            You are PREMIUM.
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="margin-bottom:5px;" class="getverified">
+                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                </div>
+                                <div style="margin-bottom:5px; display:none;" class="isverified">
+                                    <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background: #ff7675;">
+                            <div>
+                                <div style="margin-bottom:5px">
+                                    <h5>
+                                        <strong>
+                                            STAKE PI.
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background: #55efc4;">
+                            <div>
+                                <div style="margin-bottom:5px">
+                                    <h5>
+                                        <strong>
+                                            Use our dApps.
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background: #74b9ff;">
+                            <div>
+                                <div style="margin-bottom:5px">
+                                    <h5 class="getverified">
+                                        <strong>
+                                            Get PREMIUM.
+                                        </strong>
+                                    </h5>
+                                    <h5 style="display:none;" class="isverified">
+                                        <strong>
+                                            You are PREMIUM.
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="margin-bottom:5px;" class="getverified">
+                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                </div>
+                                <div style="margin-bottom:5px; display:none;" class="isverified">
+                                    <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background: #ff7675;">
+                            <div>
+                                <div style="margin-bottom:5px">
+                                    <h5>
+                                        <strong>
+                                            STAKE PI.
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background: #55efc4;">
+                            <div>
+                                <div style="margin-bottom:5px">
+                                    <h5>
+                                        <strong>
+                                            Use our dApps.
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide" style="background: #ffeaa7;">
+                            <div>
+                                <div style="margin-bottom:5px">
+                                    <h5>
+                                        <strong>
+                                            Get GPM Ambassador.
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="margin-bottom:5px">
+                                    <a href="https://globalpimarket.pinet.com/" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/gpm_quest1.png?v=1.101" alt="GPM Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                `);
         }else
         {
             $(".latinchain-ads").html('');
