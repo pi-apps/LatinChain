@@ -972,20 +972,6 @@ function addLatinChainAdsMainnet(){
                     </div>
                 </div>
             </div>
-            <div class="carousel-slide" style="background: #55efc4;">
-                <div>
-                    <div style="margin-bottom:5px">
-                        <h5>
-                            <strong>
-                                Use our dApps.
-                            </strong>
-                        </h5>
-                    </div>
-                    <div style="margin-bottom:5px">
-                        <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
-                    </div>
-                </div>
-            </div>
             <div class="carousel-slide" style="background: #74b9ff;">
                 <div>
                     <div style="margin-bottom:5px">
@@ -1022,20 +1008,6 @@ function addLatinChainAdsMainnet(){
                     </div>
                 </div>
             </div>
-            <div class="carousel-slide" style="background: #55efc4;">
-                <div>
-                    <div style="margin-bottom:5px">
-                        <h5>
-                            <strong>
-                                Use our dApps.
-                            </strong>
-                        </h5>
-                    </div>
-                    <div style="margin-bottom:5px">
-                        <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
-                    </div>
-                </div>
-            </div>
             <div class="carousel-slide" style="background: #74b9ff;">
                 <div>
                     <div style="margin-bottom:5px">
@@ -1069,20 +1041,6 @@ function addLatinChainAdsMainnet(){
                     </div>
                     <div style="margin-bottom:5px">
                         <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-slide" style="background: #55efc4;">
-                <div>
-                    <div style="margin-bottom:5px">
-                        <h5>
-                            <strong>
-                                Use our dApps.
-                            </strong>
-                        </h5>
-                    </div>
-                    <div style="margin-bottom:5px">
-                        <span style="cursor: pointer;" class="go-to-home-tab"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest_dapps.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></span>
                     </div>
                 </div>
             </div>
