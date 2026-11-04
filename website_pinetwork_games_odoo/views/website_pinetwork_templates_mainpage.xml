@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.484"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.485"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1342,7 +1342,7 @@
                         </div>
                         <div class="row getverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
                             <div style="text-align:center;" class="col-12">
-                                <a class="rounded" href="/pinetwork" target="_self">
+                                <a class="rounded" href="/premium" target="_self">
                                     <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_lite.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
                                 </a>
                             </div>
@@ -1350,7 +1350,7 @@
                         <div class="row" style="">
                             <div style="text-align:left; word-break: break-word;" class="col-12">
                                 <div class="text-white text-center">
-                                    <a href="/pinetwork" class="getverified href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
+                                    <a href="/premium" class="getverified href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-rocket"></i></div> <div style="font-size:100%; display:inline" translate="no">STAKE PI</div></a>
                                 </div>
                             </div>
@@ -1383,7 +1383,7 @@
                         <div class="row getverified" style="">
                             <div style="text-align:left; word-break: break-word;" class="col-12">
                                 <div class="text-white">
-                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
+                                    <a href="/premium" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
                                 </div>
                             </div>
                         </div>
@@ -1391,7 +1391,7 @@
                         <div class="row isverified" style="display: none;">
                             <div style="text-align:left; word-break: break-word;" class="col-12">
                                 <div class="text-white">
-                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">LatinChain Token (SOON)</div></a>
+                                    <a href="/premium" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">LatinChain Token (SOON)</div></a>
                                 </div>
                             </div>
                         </div>
@@ -1894,7 +1894,7 @@
                                             <button class="btn btn-success share_referrer_message">Share referral message</button>
                                         </div>
                                         <div translate="no">
-                                            <strong>https://latinchain.pinet.com/pinetwork/<span translate="no" class="referrer_username"></span></strong>
+                                            <strong>https://latinchain.pinet.com/premium/<span translate="no" class="referrer_username"></span></strong>
                                             <br/>
                                             <button class="btn btn-success copy_referrer_link">Copy referral link</button>
                                         </div>
@@ -1992,7 +1992,7 @@
                                     Only PREMIUM users can change their Avatar.
                                 </div>
                                 <div class="row justify-content-center avatar_show_blocked" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
-                                    <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
+                                    <a href="/premium" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
                                 </div>
                                 <div class="row justify-content-center avatar_show_unblocked" style="margin-top: 5px; margin-left: 1px; margin-right: 1px">
                                     Change your Avatar here.
@@ -2078,7 +2078,7 @@
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#Referral #Promo</div></strong></h5>
                                 </div>
                                 <div style="margin-bottom:5px">
-                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/promo/referral-program.png?v=1.103" alt="Referral promo" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/promo/referral-program.png?v=1.103" alt="Referral promo" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="250px" /></a>
                                 </div>
                             </div>
                         </t>
@@ -2088,7 +2088,7 @@
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#Referral #Promo #Mainnet</div></strong></h5>
                                 </div>
                                 <div style="margin-bottom:5px">
-                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/promo/referral-program.png?v=1.103" alt="Referral promo" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/promo/referral-program.png?v=1.103" alt="Referral promo" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="250px" /></a>
                                 </div>
                             </div>
                         </t>
@@ -2099,7 +2099,7 @@
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount -<t t-esc="discount_percentage"/>%</div></strong></h5>
                                 </div>
                                 <div style="margin-bottom:5px">
-                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="250px" /></a>
                                 </div>
                             </div>
                         </t>
@@ -2109,7 +2109,7 @@
                                     <h5 translate="no"><strong><div style="display:inline; font-size: 90%; font-style: italic;">#PayHere #Discount #Mainnet</div></strong></h5>
                                 </div>
                                 <div style="margin-bottom:5px">
-                                    <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="250px" /></a>
+                                    <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/holiday/holiday-sales.png?v=1.104" alt="Holiday sales" class="img-fluid" style="max-width: 350px; border-radius: 20px;" width="100%" height="250px" /></a>
                                 </div>
                             </div>
                         </t>
@@ -2221,10 +2221,10 @@
                                 <strong class="user_status"></strong>
                             </div>
                             <div style="margin-top:5px;" class="getverified">
-                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
+                                <a href="/premium" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
                             </div>
                             <div style="margin-top:5px">
-                                <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">GET PREMIUM</div><div style="font-size:80%;">Pay Pi to unblock LatinChain PREMIUM<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                <a href="/premium" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;">GET PREMIUM</div><div style="font-size:80%;">Pay Pi to unblock LatinChain PREMIUM<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                             </div>
                             <div style="margin-top:5px; margin-bottom: 5px">
                                 <button id="rules_button_4" class="col-12 btn btn-outline-warning font-weight-bold text-black border-warning rules_button" style="border: 2px solid;"><div style=""><i class="fa fa-list-ol"></i></div><div style="font-size:100%;" translate="no">Rules</div><div style="font-size:80%;">Rules and Knowledge base</div></button>
@@ -2456,7 +2456,7 @@
                                             <div class="col-12">
                                                 <h3 class="text-black" style="color:black !important">Today's tasks</h3>
                                                 <ul class="list-group">
-                                                    <li class="list-group-item getverified" style=""><a href="/pinetwork" class="href-external btn btn-link">GET PREMIUM</a></li>
+                                                    <li class="list-group-item getverified" style=""><a href="/premium" class="href-external btn btn-link">GET PREMIUM</a></li>
                                                     <li class="list-group-item"><a href="/chess" class="btn btn-link">Play Chess</a></li>
                                                     <li class="list-group-item"><a href="/sudoku" class="btn btn-link">Play Sudoku</a></li>
                                                     <li class="list-group-item"><a href="/snake" class="btn btn-link">Play Snake</a></li>
@@ -2709,7 +2709,7 @@
                                                 <div class="row" style="text-align: center; padding: 10px">
                                                     <div class="col-12">
                                                         <div class="getverified">
-                                                            <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple fa-2xl"></i></div><div style="font-size:100%;">GET PREMIUM</div><div style="font-size:80%;">Pay Pi to unblock LatinChain PREMIUM<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                            <a href="/premium" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple fa-2xl"></i></div><div style="font-size:100%;">GET PREMIUM</div><div style="font-size:80%;">Pay Pi to unblock LatinChain PREMIUM<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -3065,9 +3065,9 @@
                                             <div class="row" style="text-align: center; padding: 10px">
                                                 <div class="col-12">
                                                     <div style="margin-bottom:5px;" class="getverified">
-                                                        <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
+                                                        <a href="/premium" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
                                                     </div>
-                                                    <a href="/pinetwork" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">GET PREMIUM</div><div style="font-size:80%;">Pay Pi to unblock LatinChain PREMIUM<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
+                                                    <a href="/premium" class="href-external col-12 btn btn-outline-success font-weight-bold text-black border-success donation" style="border: 2px solid;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="font-size:100%;" translate="no">GET PREMIUM</div><div style="font-size:80%;">Pay Pi to unblock LatinChain PREMIUM<div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="display:none;">and watch ads</div></div><div style="font-size:80%;" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">Earn Latin points (<t t-esc="amount_latin_pay" />)</div><div style="font-size:80%;" >Payment</div></a>
                                                 </div>
                                             </div>
                                         </li>
@@ -3534,7 +3534,7 @@
                             <i class="fa-solid fa-rocket"></i>
                         </button>
                         <ul class="dropdown-menu mb-2 item-latin-menu" style="background-color: #021526 !important; max-width: 30% !important">
-                            <li class="item-latin-action getverified"><a class="dropdown-item" style="color: white !important;" href="/pinetwork"><div style="display:inline;"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline;">GET PREMIUM</div></a></li>
+                            <li class="item-latin-action getverified"><a class="dropdown-item" style="color: white !important;" href="/premium"><div style="display:inline;"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline;">GET PREMIUM</div></a></li>
                             <li class="item-latin-action getverified"><hr class="dropdown-divider" style="color: white !important;"/></li>
                             <li class="item-latin-action"><a class="dropdown-item go-to-home-tab" style="color: white !important;" href="javascript:void(0)"><div style="display:inline;"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline;">dApps</div></a></li>
                         </ul>
@@ -3682,7 +3682,7 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                           </div>
                           <div class="modal-footer button-group" style="display: flex; gap: 10px;">
-                            <a href="/pinetwork" class="btn btn-success rounded flex-fill d-flex align-items-center justify-content-center" style="border: 2px solid black; font-weight: bold;">
+                            <a href="/premium" class="btn btn-success rounded flex-fill d-flex align-items-center justify-content-center" style="border: 2px solid black; font-weight: bold;">
                                 <div style="display: inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display: inline">PREMIUM</div>
                             </a>
                             <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-success rounded flex-fill d-flex align-items-center justify-content-center" style="border: 2px solid black; font-weight: bold;">
@@ -3715,7 +3715,7 @@
                             <button type="button" id="rewardedad-close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                           </div>
                           <div class="modal-footer button-group" style="display: flex; gap: 10px;">
-                            <a href="/pinetwork" class="btn btn-success rounded flex-fill d-flex align-items-center justify-content-center" style="border: 2px solid black; font-weight: bold;">
+                            <a href="/premium" class="btn btn-success rounded flex-fill d-flex align-items-center justify-content-center" style="border: 2px solid black; font-weight: bold;">
                                 <div style="display: inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display: inline">PREMIUM</div>
                             </a>
                             <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-success rounded flex-fill d-flex align-items-center justify-content-center" style="border: 2px solid black; font-weight: bold;">
@@ -3811,10 +3811,10 @@
                                         </div>
                                     </t>-->
                                     <div class="row" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                        <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (No Ads)</div></a>
+                                        <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM (No Ads)</div></a>
                                     </div>
                                     <div class="row" t-else="">
-                                        <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM</div></a>
+                                        <a class="PayPiLink btn btn-block btn-primary rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM</div></a>
                                     </div>
                                     
                                     <div style="margin-top: 10px;" class="row">
@@ -3886,7 +3886,7 @@
                                                 <div> <!-- style="display: none;" class="getverified">-->
                                                     <div style="margin-top: 2px;" class="row">
                                                         <div class="col-12" style="padding: 1px">
-                                                            <a href="/pinetwork" class="getverified href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !importan;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline">PREMIUM</div></a> 
+                                                            <a href="/premium" class="getverified href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !importan;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline">PREMIUM</div></a> 
                                                             <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline">STAKE</div></a>
                                                         </div>
                                                     </div>
@@ -3894,7 +3894,7 @@
                                                 <!--<div style="display: none;" class="getverified">
                                                     You're LITE<br/>
                                                     <div style="display: inline">
-                                                        <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
+                                                        <a href="/premium" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
                                                     </div>
                                                     <div style="display: inline">
                                                         for 30 days
@@ -3944,7 +3944,7 @@
                                                 <div class="getverified" style="margin-bottom: 8px">
                                                     <div style="text-align:center; word-break: break-word;" class="col-12">
                                                         <div class="text-white">
-                                                            <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
+                                                            <a href="/premium" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -3955,7 +3955,7 @@
                                                 <div> <!-- style="display: none;" class="getverified">-->
                                                     <div style="margin-top: 2px;" class="row">
                                                         <div class="col-12" style="padding: 1px">
-                                                            <a href="/pinetwork" class="getverified href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !importan;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline">PREMIUM</div></a> 
+                                                            <a href="/premium" class="getverified href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !importan;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline">PREMIUM</div></a> 
                                                             <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline">STAKE</div></a>
                                                         </div>
                                                     </div>
@@ -3963,7 +3963,7 @@
                                                 <!--<div style="display: none;" class="getverified">
                                                     You're LITE<br/>
                                                     <div style="display: inline">
-                                                        <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
+                                                        <a href="/premium" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline" translate="no">GET PREMIUM</div></a>
                                                     </div>
                                                     <div style="display: inline">
                                                         for 30 days
@@ -4013,7 +4013,7 @@
                                                 <div class="getverified" style="margin-bottom: 8px">
                                                     <div style="text-align:center; word-break: break-word;" class="col-12">
                                                         <div class="text-white">
-                                                            <a href="/pinetwork" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
+                                                            <a href="/premium" class="href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="font-size:100%; display:inline" translate="no">GET PREMIUM</div></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -4030,7 +4030,7 @@
                                 
                                 <!--<div class="row getverified" style="margin-top: 5px; margin-bottom: 5px; display: none;">
                                     <div style="text-align:center;" class="col-12">
-                                        <a class="rounded" href="/pinetwork" target="_self">
+                                        <a class="rounded" href="/premium" target="_self">
                                             <img src="/website_pinetwork_games_odoo/static/src/img/badges/badge_latinchain_lite.png?v=1.105" style="cursor: pointer;" class="img-fluid rounded" width="250px" height="50px" />
                                         </a>
                                     </div>
@@ -4118,22 +4118,22 @@
                                                     <button class="giving-tip btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="">Donate</div></button>
                                                 </div>
                                                 <div class="col-6 getverified" style="padding: 2px">
-                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
-                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
+                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
                                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="">Stake Pi</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
-                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
+                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/piapps-book/ebook" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-book-open"></i></div><div style="">Read Pi</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
-                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
+                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/piapps-course" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-laptop"></i></div><div style="">Learn Pi</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
-                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
+                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/latin-store/latin-pullover" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-shirt"></i></div><div style="">Wear Pi</div></a>
                                                 </div>
                                                 <!--<div class="col-6" style="padding: 2px">
@@ -4146,7 +4146,7 @@
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://blog-rockcesar.latin-chain.com/2026/10/earn-with-your-bandwidth.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-store"></i></div><div style="">Earn</div></a>
                                                 </div>-->
                                                 <div class="col-6" style="padding: 2px">
-                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
+                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pi-sign-in" target="_self"><div style=""><i class="fa-solid fa-at"></i></div><div style="">PiSignIn</div></a>
                                                 </div>
                                                 <!--<div class="col-6" style="padding: 2px">
@@ -4199,10 +4199,10 @@
                                         
                                         <div class="getverified" style="margin-bottom: 10px;">
                                             <div class="row GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
                                             </div>
                                             <div class="row GoForwardShow1" t-else="">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                             </div>
                                         </div>
                                         
@@ -4254,7 +4254,7 @@
                                         <div style="margin-bottom: 10px;">
                                             <div class="row" style="margin-top: 2px;" translate="no">
                                                 <div class="col-6" style="padding: 2px">
-                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCSignUp href-external btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="" translate="no">JOIN MEXC</div></a>
@@ -4286,10 +4286,10 @@
                                         
                                         <div class="getverified" style="margin-bottom: 10px;">
                                             <div class="row GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
                                             </div>
                                             <div class="row GoForwardShow1" t-else="">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                             </div>
                                         </div>
                                         
@@ -4323,7 +4323,7 @@
                                         <div style="margin-bottom: 10px;">
                                             <div class="row" style="margin-top: 2px;" translate="no">
                                                 <div class="col-6" style="padding: 2px">
-                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCSignUp href-external btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="" translate="no">JOIN MEXC</div></a>
@@ -4355,10 +4355,10 @@
                                         
                                         <div class="getverified" style="margin-bottom: 10px;">
                                             <div class="row GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
                                             </div>
                                             <div class="row GoForwardShow1" t-else="">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                             </div>
                                         </div>
                                         
@@ -4399,7 +4399,7 @@
                                         <div style="margin-bottom: 10px;">
                                             <div class="row" style="margin-top: 2px;" translate="no">
                                                 <div class="col-6" style="padding: 2px">
-                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserMEXCSignUp href-external btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-right-left"></i></div><div style="" translate="no">JOIN MEXC</div></a>
@@ -4431,10 +4431,10 @@
                                         
                                         <div class="getverified" style="margin-bottom: 10px;">
                                             <div class="row GoForwardShow1" t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>+<t t-esc="int(amount_latin_pay)" /> Latin points<br/>Unlock for 30 days</div></a>
                                             </div>
                                             <div class="row GoForwardShow1" t-else="">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/pinetwork" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style="display: inline"><i class="fa-solid fa-battery-full"></i></div> <div style="display: inline">GET PREMIUM<br/>Unlock for 30 days</div></a>
                                             </div>
                                         </div>
                                         
@@ -4491,7 +4491,7 @@
                       <div class="d-flex justify-content-between align-items-center">
                         <span class="mx-auto fw-bold">
                           <strong>🚨:</strong> 
-                          <a href="/pinetwork" class="getverified href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div translate="no">Premium</div></a>
+                          <a href="/premium" class="getverified href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div translate="no">Premium</div></a>
                           <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div translate="no">Stake Pi</div></a> 
                         </span>
                         <button type="button" class="btn btn-danger btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close" onclick="document.body.style.paddingTop = '0px'; document.getElementById('goforward-message').style.paddingTop = '0px'; this.parentElement.parentElement.remove()">X</button>

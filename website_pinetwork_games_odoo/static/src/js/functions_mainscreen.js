@@ -952,7 +952,7 @@ function addLatinChainAdsMainnet(){
                         </h5>
                     </div>
                     <div style="margin-bottom:5px;" class="getverified">
-                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                        <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
                     </div>
                     <div style="margin-bottom:5px; display:none;" class="isverified">
                         <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
@@ -997,7 +997,7 @@ function addLatinChainAdsMainnet(){
                         </h5>
                     </div>
                     <div style="margin-bottom:5px;">
-                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest4.png?v=1.103" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                        <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest4.png?v=1.103" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
                     </div>
                 </div>
             </div>
@@ -1016,7 +1016,7 @@ function addLatinChainAdsMainnet(){
                         </h5>
                     </div>
                     <div style="margin-bottom:5px;" class="getverified">
-                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                        <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
                     </div>
                     <div style="margin-bottom:5px; display:none;" class="isverified">
                         <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
@@ -1061,7 +1061,7 @@ function addLatinChainAdsMainnet(){
                         </h5>
                     </div>
                     <div style="margin-bottom:5px;">
-                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest4.png?v=1.103" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                        <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest4.png?v=1.103" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
                     </div>
                 </div>
             </div>
@@ -1080,7 +1080,7 @@ function addLatinChainAdsMainnet(){
                         </h5>
                     </div>
                     <div style="margin-bottom:5px;" class="getverified">
-                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                        <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
                     </div>
                     <div style="margin-bottom:5px; display:none;" class="isverified">
                         <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
@@ -1125,7 +1125,7 @@ function addLatinChainAdsMainnet(){
                         </h5>
                     </div>
                     <div style="margin-bottom:5px;">
-                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest4.png?v=1.103" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                        <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest4.png?v=1.103" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
                     </div>
                 </div>
             </div>
@@ -1144,7 +1144,7 @@ function addLatinChainAdsMainnet(){
                         </h5>
                     </div>
                     <div style="margin-bottom:5px;" class="getverified">
-                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                        <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest1.png?v=1.102" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
                     </div>
                     <div style="margin-bottom:5px; display:none;" class="isverified">
                         <a href="javascript:void(0)" class="openUrlInSystemBrowserLC" target="_blank" rel="noopener"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest2.png?v=1.101" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
@@ -1189,7 +1189,7 @@ function addLatinChainAdsMainnet(){
                         </h5>
                     </div>
                     <div style="margin-bottom:5px;">
-                        <a href="/pinetwork"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest4.png?v=1.103" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
+                        <a href="/premium"><img src="/website_pinetwork_games_odoo/static/src/img/quests/latinchain_quest4.png?v=1.103" alt="LatinChain Quest" class="img-fluid" style="max-width: 250px; border-radius: 20px;" width="100%" height="250px" /></a>
                     </div>
                 </div>
             </div>
@@ -1572,9 +1572,9 @@ $( document ).ready(function() {
      
     $(".copy_referrer_link").click(function(){
         if($("#username").html().trim() == "")
-            copyToClipboard("https://latinchain.pinet.com/pinetwork");
+            copyToClipboard("https://latinchain.pinet.com/premium");
         else
-            copyToClipboard("https://latinchain.pinet.com/pinetwork/" + $("#username").html().trim());
+            copyToClipboard("https://latinchain.pinet.com/premium/" + $("#username").html().trim());
     });
     
     $(".copy_referrer_username").click(function(){
@@ -1590,12 +1590,12 @@ $( document ).ready(function() {
         var username_referrer = "";
         if($("#username").html().trim() == "")
         {
-            link_referrer = "https://latinchain.pinet.com/pinetwork/" + mainuser;
+            link_referrer = "https://latinchain.pinet.com/premium/" + mainuser;
             username_referrer = mainuser;
         }
         else
         {
-            link_referrer = "https://latinchain.pinet.com/pinetwork/" + $("#username").html().trim();
+            link_referrer = "https://latinchain.pinet.com/premium/" + $("#username").html().trim();
             username_referrer = $("#username").html().trim();
         }
         
@@ -2392,11 +2392,11 @@ $( document ).ready(function() {
                 
                 if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
                 {
-                    $(".MainnetLink").prop('href', '/pinetwork');
+                    $(".MainnetLink").prop('href', '/premium');
                     $(".MainnetLink").prop('target', '_self');
                 }
                 
-                $(".PayPiLink").prop('href', '/pinetwork');
+                $(".PayPiLink").prop('href', '/premium');
                 $(".PayPiLink").prop('target', '_self');
                 
                 /*$("#leaderboard").attr("href", "/get-points/" + auth.user.username);
@@ -2538,7 +2538,7 @@ $( document ).ready(function() {
                                 if($("#total_users_verified_count").val() < 400)
                                 {
                                     if(confirm($("#MainnetLinkId1").text()))
-                                        window.location.href="/pinetwork";
+                                        window.location.href="/premium";
                                 }
                             }*/
                         }
