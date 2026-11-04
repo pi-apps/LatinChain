@@ -989,6 +989,7 @@ $( document ).ready(function() {
             if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
                 $(".latinchain-ads").html('<div class="row"><iframe class="col-12" src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; margin-left: 2px; margin-right: 2px" /></div>');
             else
+            {
                 $(".latinchain-ads").html(`
                     <div class="carousel-wrapper col-12" style="margin-left: 2px; margin-right: 2px;">
           
@@ -1160,6 +1161,129 @@ $( document ).ready(function() {
                       </div>
                     </div>
                 `);
+                
+                const track = document.getElementById('track');
+
+                // --- 1. FILTER VISIBLE SLIDES ONLY ---
+                const originalVisibleSlides = Array.from(document.querySelectorAll('.carousel-slide'))
+                    .filter(slide => {
+                        const style = window.getComputedStyle(slide);
+                        return style.display !== 'none' && slide.offsetWidth > 0;
+                    });
+
+                // Safety check: A carousel is only needed if there are 2 or more slides.
+                if (originalVisibleSlides.length <= 1) return;
+
+                const intervalTime = 10000;
+                let autoPlayTimer;
+                let isTransitioning = false; 
+
+                // --- 2. Create the Clones ---
+                const firstClone = originalVisibleSlides[0].cloneNode(true);
+                const lastClone = originalVisibleSlides[originalVisibleSlides.length - 1].cloneNode(true);
+
+                firstClone.classList.add('carousel-clone');
+                lastClone.classList.add('carousel-clone');
+
+                track.appendChild(firstClone);
+                track.insertBefore(lastClone, originalVisibleSlides[0]);
+
+                // --- 3. Update arrays and track indices ---
+                const allSlides = Array.from(document.querySelectorAll('.carousel-slide'));
+                
+                const allVisibleSlides = allSlides.filter(slide => {
+                    const style = window.getComputedStyle(slide);
+                    return style.display !== 'none' && slide.offsetWidth > 0;
+                });
+
+                const totalRealSlides = originalVisibleSlides.length;
+
+                // --- 4. Initial Setup ---
+                requestAnimationFrame(() => {
+                    track.scrollLeft = allVisibleSlides[1].offsetLeft;
+                });
+
+                // --- 5. The Dynamic Width Calculation ---
+                const getSlideWidth = () => {
+                    if(allVisibleSlides.length < 3) return track.clientWidth;
+                    return allVisibleSlides[2].offsetLeft - allVisibleSlides[1].offsetLeft;
+                };
+
+                // --- 6. The Boundary Loop Function ---
+                const handleInfiniteLoopJumps = () => {
+                    isTransitioning = false;
+                    const currentScroll = track.scrollLeft;
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    const buffer = 2; 
+
+                    if (currentScroll <= buffer) {
+                        track.style.scrollSnapType = 'none';
+                        requestAnimationFrame(() => {
+                            track.scrollLeft = allVisibleSlides[totalRealSlides].offsetLeft;
+                            requestAnimationFrame(() => {
+                                track.style.scrollSnapType = 'x mandatory'; 
+                            });
+                        });
+                    }
+                    else if (currentScroll >= maxScroll - buffer) {
+                        track.style.scrollSnapType = 'none';
+                        requestAnimationFrame(() => {
+                            track.scrollLeft = allVisibleSlides[1].offsetLeft;
+                            requestAnimationFrame(() => {
+                                track.style.scrollSnapType = 'x mandatory'; 
+                            });
+                        });
+                    }
+                };
+
+                // --- 7. Listen for `scrollend` ---
+                if ('onscrollend' in track) {
+                    track.addEventListener('scrollend', handleInfiniteLoopJumps);
+                } else {
+                    let scrollTimer;
+                    track.addEventListener('scroll', () => {
+                        clearTimeout(scrollTimer);
+                        scrollTimer = setTimeout(handleInfiniteLoopJumps, 60); 
+                    });
+                }
+
+                // --- 8. AutoPlay Logic ---
+                const moveToNextSlide = () => {
+                    if (isTransitioning) return;
+                    isTransitioning = true;
+                    track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
+                };
+
+                const startAutoPlay = () => {
+                    if (autoPlayTimer) clearInterval(autoPlayTimer);
+                    autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
+                };
+
+                // --- 9. Window Resizing ---
+                window.addEventListener('resize', () => {
+                    if (autoPlayTimer) clearInterval(autoPlayTimer);
+                    
+                    const currentScroll = track.scrollLeft;
+                    let closestIndex = 1;
+                    let minDiff = Infinity;
+                    
+                    for (let i = 1; i <= totalRealSlides; i++) {
+                        const diff = Math.abs(allVisibleSlides[i].offsetLeft - currentScroll);
+                        if (diff < minDiff) {
+                            minDiff = diff;
+                            closestIndex = i;
+                        }
+                    }
+                    
+                    track.style.scrollSnapType = 'none';
+                    track.scrollLeft = allVisibleSlides[closestIndex].offsetLeft;
+                    track.style.scrollSnapType = null;
+                    startAutoPlay();
+                });
+
+                // Start the autoplay timer!
+                startAutoPlay();
+            }
         }else
         {
             $(".latinchain-ads").html('');
@@ -3110,128 +3234,4 @@ $( document ).ready(function() {
         }
     });
     
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const track = document.getElementById('track');
-
-    // --- 1. FILTER VISIBLE SLIDES ONLY ---
-    const originalVisibleSlides = Array.from(document.querySelectorAll('.carousel-slide'))
-        .filter(slide => {
-            const style = window.getComputedStyle(slide);
-            return style.display !== 'none' && slide.offsetWidth > 0;
-        });
-
-    // Safety check: A carousel is only needed if there are 2 or more slides.
-    if (originalVisibleSlides.length <= 1) return;
-
-    const intervalTime = 10000;
-    let autoPlayTimer;
-    let isTransitioning = false; 
-
-    // --- 2. Create the Clones ---
-    const firstClone = originalVisibleSlides[0].cloneNode(true);
-    const lastClone = originalVisibleSlides[originalVisibleSlides.length - 1].cloneNode(true);
-
-    firstClone.classList.add('carousel-clone');
-    lastClone.classList.add('carousel-clone');
-
-    track.appendChild(firstClone);
-    track.insertBefore(lastClone, originalVisibleSlides[0]);
-
-    // --- 3. Update arrays and track indices ---
-    const allSlides = Array.from(document.querySelectorAll('.carousel-slide'));
-    
-    const allVisibleSlides = allSlides.filter(slide => {
-        const style = window.getComputedStyle(slide);
-        return style.display !== 'none' && slide.offsetWidth > 0;
-    });
-
-    const totalRealSlides = originalVisibleSlides.length;
-
-    // --- 4. Initial Setup ---
-    requestAnimationFrame(() => {
-        track.scrollLeft = allVisibleSlides[1].offsetLeft;
-    });
-
-    // --- 5. The Dynamic Width Calculation ---
-    const getSlideWidth = () => {
-        if(allVisibleSlides.length < 3) return track.clientWidth;
-        return allVisibleSlides[2].offsetLeft - allVisibleSlides[1].offsetLeft;
-    };
-
-    // --- 6. The Boundary Loop Function ---
-    const handleInfiniteLoopJumps = () => {
-        isTransitioning = false;
-        const currentScroll = track.scrollLeft;
-        const maxScroll = track.scrollWidth - track.clientWidth;
-        const buffer = 2; 
-
-        if (currentScroll <= buffer) {
-            track.style.scrollSnapType = 'none';
-            requestAnimationFrame(() => {
-                track.scrollLeft = allVisibleSlides[totalRealSlides].offsetLeft;
-                requestAnimationFrame(() => {
-                    track.style.scrollSnapType = 'x mandatory'; 
-                });
-            });
-        }
-        else if (currentScroll >= maxScroll - buffer) {
-            track.style.scrollSnapType = 'none';
-            requestAnimationFrame(() => {
-                track.scrollLeft = allVisibleSlides[1].offsetLeft;
-                requestAnimationFrame(() => {
-                    track.style.scrollSnapType = 'x mandatory'; 
-                });
-            });
-        }
-    };
-
-    // --- 7. Listen for `scrollend` ---
-    if ('onscrollend' in track) {
-        track.addEventListener('scrollend', handleInfiniteLoopJumps);
-    } else {
-        let scrollTimer;
-        track.addEventListener('scroll', () => {
-            clearTimeout(scrollTimer);
-            scrollTimer = setTimeout(handleInfiniteLoopJumps, 60); 
-        });
-    }
-
-    // --- 8. AutoPlay Logic ---
-    const moveToNextSlide = () => {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
-    };
-
-    const startAutoPlay = () => {
-        if (autoPlayTimer) clearInterval(autoPlayTimer);
-        autoPlayTimer = setInterval(moveToNextSlide, intervalTime);
-    };
-
-    // --- 9. Window Resizing ---
-    window.addEventListener('resize', () => {
-        if (autoPlayTimer) clearInterval(autoPlayTimer);
-        
-        const currentScroll = track.scrollLeft;
-        let closestIndex = 1;
-        let minDiff = Infinity;
-        
-        for (let i = 1; i <= totalRealSlides; i++) {
-            const diff = Math.abs(allVisibleSlides[i].offsetLeft - currentScroll);
-            if (diff < minDiff) {
-                minDiff = diff;
-                closestIndex = i;
-            }
-        }
-        
-        track.style.scrollSnapType = 'none';
-        track.scrollLeft = allVisibleSlides[closestIndex].offsetLeft;
-        track.style.scrollSnapType = null;
-        startAutoPlay();
-    });
-
-    // Start the autoplay timer!
-    startAutoPlay();
 });
