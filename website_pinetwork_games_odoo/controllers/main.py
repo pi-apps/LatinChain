@@ -1357,6 +1357,7 @@ class PiNetworkController(http.Controller):
         
         return http.request.render('website_pinetwork_games_odoo.rules', {'mainnet': mainnet, 'amount': amount, 'pi_users_winners_paid_datetime': pi_users_winners_paid_datetime})
     
+    """
     @http.route('/latinchain-ads', type='http', auth="public", website=True, csrf=False)
     def latinchain_ads(self, **kw):
         admin_app_list = request.env["admin.apps"].sudo().search([('app', '=', 'auth_platform')])
@@ -1367,6 +1368,7 @@ class PiNetworkController(http.Controller):
             mainnet = admin_app_list[0].mainnet
         
         return http.request.render('website_pinetwork_games_odoo.latinchain_ads', {'mainnet': mainnet, 'hide_google_translate': True})
+    """
 
     @http.route('/reading-club', type='http', auth="public", website=True, csrf=False)
     def reading_club(self, **kw):
