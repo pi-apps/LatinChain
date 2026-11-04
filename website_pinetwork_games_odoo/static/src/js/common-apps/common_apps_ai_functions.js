@@ -313,15 +313,15 @@ var startCommonAppsAI = () => {
                         {
                             if(window.location.hostname == "localhost")
                             {
-                                $("a.anchor-click").attr('href', window.location.origin + "/pinetwork");
+                                $("a.anchor-click").attr('href', window.location.origin + "/premium");
                             }
                             else if(window.location.hostname == "test.latin-chain.com")
                             {
-                                $("a.anchor-click").attr('href', "/pinetwork");
+                                $("a.anchor-click").attr('href', "/premium");
                             }
                             else
                             {
-                                $("a.anchor-click").attr('href', "/pinetwork");
+                                $("a.anchor-click").attr('href', "/premium");
                             }
                             
                             document.body.style.overflow = 'hidden';
