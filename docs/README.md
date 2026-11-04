@@ -6,7 +6,7 @@ How to add it:
 
 ```
 <div class="latinchain-ads" style="display: flex; justify-content: center; align-items: center; width: 100%;">
-    <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center" />
+    <iframe src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; border-radius: 20px;" />
 </div>
 ```
 
