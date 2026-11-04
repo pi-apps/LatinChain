@@ -1225,8 +1225,6 @@ $( document ).ready(function() {
             
             $("#translate_text_latinchain_2").show();
             $("#google_translate_element").show();
-            
-            $(".latinchain-ads").html('<iframe src="/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center" />');
         }
       });
     }, { 
@@ -1242,12 +1240,10 @@ $( document ).ready(function() {
         if (!entry.isIntersecting) {
             if(["Testnet ON", "Testnet OFF"].includes($("#mainnet").val()))
             {
-                alert("Testnet. You are at: " + $("#mainnet").val());
                 $(".latinchain-ads").html('<div class="row"><iframe class="col-12" src="https://latin-chain.com/latinchain-ads" width="100%" height="300" frameborder="0" align="center" style="max-width: 300px; height: 300px; border: none; text-align: center; margin-left: 2px; margin-right: 2px" /></div>');
             }
             else if(["Mainnet ON", "Mainnet OFF"].includes($("#mainnet").val()))
             {
-                alert("Mainnet. You are at: " + $("#mainnet").val());
                 addLatinChainAdsMainnet();
             }
         }else
