@@ -933,7 +933,7 @@ function copyToClipboard(text) {
 
 function addLatinChainAdsMainnet(){
     $(".latinchain-ads").html(`
-      <div class="row">
+      <div class="row" style="max-width: 300px;">
         <div class="carousel-wrapper col-12" style="margin-left: 2px; margin-right: 2px;">
 
           <div class="carousel-track" id="track">
