@@ -4232,6 +4232,12 @@
                                         <button t-att-videourl="pi_main_user.streaming_url" class="btn btn-block btn-primary rounded col-12 open_streaming" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">Video tour<br/>LatinChain tour</div></button>
                                     </div>
                                     
+                                    <t t-if="pioneers_streaming">
+                                        <div style="margin-top: 10px;" class="row">
+                                            <button class="btn btn-block btn-primary rounded col-12 streamerzoneboard" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fab fa-youtube"></i></div> <div style="display:inline;">LatinChain dSocial<br/>Pioneers Videos</div></button>
+                                        </div>
+                                    </t>
+                                    
                                     <div style="margin-top: 10px;" class="row">
                                         <button class="btn btn-block btn-warning rounded col-12 rules_button" style="border: 2px solid black; font-weight: bold;"><div style="display:inline;"><i class="fa fa-list-ol"></i></div> <div style="display:inline;">Rules<br/>Knowledge base</div></button>
                                     </div>
