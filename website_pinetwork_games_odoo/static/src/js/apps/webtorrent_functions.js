@@ -132,61 +132,51 @@ function addTorrent(torrentId) {
         }
 
         if (file) {
-            file.select(); // Priorizar descarga de este archivo
-            showMessage(`Preparando streaming para: ${file.name}`);
+            showMessage(`Playing: ${file.name}`);
 
-            const mediaElement = document.createElement(
-                file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav') ? 'audio' : 'video'
-            );
-            mediaElement.controls = true;
-            mediaElement.classList.add('rounded-xl');
-            playerContainer.appendChild(mediaElement);
+            // Create a video or audio element
+            const mediaElement = document.createElement(file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav') ? 'audio' : 'video');
+            mediaElement.controls = true; // Enable player controls
+            mediaElement.autoplay = true; // Autoplay
+            mediaElement.classList.add('rounded-xl'); // Add Tailwind classes
 
-            // CORRECCIÓN ERROR 1: useBlob: false evita el límite de los 200MB usando streams por bloques
+            // Render the file to the media element
             file.renderTo(mediaElement, {
-                autoplay: false, // Lo manejaremos de forma segura con el evento canplay
+                autoplay: true,
                 controls: true,
-                useBlob: false 
-            }, (err, elem) => {
+                useBlob: false
+            }, err => {
                 if (err) {
                     showMessage(`Error rendering file: ${err.message}`, 'error');
                     console.error('Error rendering file:', err);
-                    return;
                 }
-
-                // CORRECCIÓN ERROR 2: Esperar a que el buffer tenga suficiente datos antes de reproducir
-                elem.addEventListener('canplay', () => {
-                    showMessage(`Reproduciendo: ${file.name}`);
-                    
-                    // Manejo seguro de la promesa de reproducción para evitar interrupciones de pause()
-                    const playPromise = elem.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(error => {
-                            console.log("Reproducción automática evitada por políticas del navegador:", error);
-                        });
-                    }
-                });
             });
+
+            // Add the media element to the player container
+            playerContainer.appendChild(mediaElement);
 
             // Listen for download progress
             torrent.on('download', () => {
                 updateProgress(torrent.progress);
-                statusMessage.textContent = `Descargando: ${(torrent.progress * 100).toFixed(2)}% - Velocidad: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
+                statusMessage.textContent = `Downloading: ${(torrent.progress * 100).toFixed(2)}% - Speed: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
             });
 
             torrent.on('done', () => {
-                showMessage('Descarga completa.', 'info');
+                showMessage('Download complete.', 'info');
                 hideProgress();
             });
 
+            // Listen for peer events to update the display
             torrent.on('peer', () => updatePeerDisplay(torrent));
             torrent.on('noPeers', () => updatePeerDisplay(torrent));
-            torrent.on('wire', () => updatePeerDisplay(torrent));
-            torrent.on('close', () => updatePeerDisplay(torrent));
+            torrent.on('wire', () => updatePeerDisplay(torrent)); // When a new wire (connection) is established
+            torrent.on('close', () => updatePeerDisplay(torrent)); // When a connection closes
 
+            // Initial peer display update
             updatePeerDisplay(torrent);
+
         } else {
-            showMessage('No se encontraron archivos multimedia reproducibles en este torrent.', 'error');
+            showMessage('No playable media files found in this torrent.', 'error');
         }
     });
 
