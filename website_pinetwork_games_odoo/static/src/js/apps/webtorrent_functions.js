@@ -1,4 +1,4 @@
-// Initialize WebTorrent client
+// Initialize WebTorrent client with streaming enabled
 const client = new WebTorrent();
 
 // Get references to DOM elements
@@ -71,7 +71,6 @@ function updatePeerDisplay(torrent) {
 
 // Event listener for "Load Torrent" button click
 loadTorrentBtn.addEventListener('click', () => {
-    // Stop all active torrents
     client.torrents.forEach(torrent => {
         torrent.destroy();
     });
@@ -79,7 +78,6 @@ loadTorrentBtn.addEventListener('click', () => {
     const magnetURI = magnetLinkInput.value.trim();
     const torrentFile = torrentFileInput.files[0];
 
-    // Clear previous player and messages
     playerContainer.innerHTML = '';
     hideProgress();
     messageArea.classList.add('hidden');
@@ -130,7 +128,7 @@ function addTorrent(torrentId) {
         if (file) {
             showMessage(`Preparing: ${file.name}`);
 
-            // Force sequential downloading
+            // Force sequential downloading so the stream doesn't starve mid-way
             file.select();
 
             const isAudio = file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav');
@@ -140,35 +138,40 @@ function addTorrent(torrentId) {
             mediaElement.playsInline = true;
             mediaElement.classList.add('rounded-xl', 'w-full', 'max-h-[70vh]');
 
-            // Add stall recovery event listeners to prevent freezing when peer chunks are delayed
-            mediaElement.addEventListener('waiting', () => {
-                showMessage(`Buffering from peers (Waiting for data)...`, 'info');
+            // Add player to container early
+            playerContainer.appendChild(mediaElement);
+
+            // Use WebTorrent's built-in HTTP server stream URL to feed the video element natively
+            file.createServer((err, serverUrl) => {
+                if (err) {
+                    console.error('Stream server error:', err);
+                    showMessage(`Error creating stream server: ${err.message}`, 'error');
+                    return;
+                }
+
+                // Point the video element source directly to the local torrent HTTP stream
+                mediaElement.src = serverUrl;
+                mediaElement.load();
+                
+                mediaElement.play().catch(e => {
+                    console.log("Autoplay blocked or waiting for initial buffer:", e);
+                    showMessage('Buffering initial pieces from peers...', 'info');
+                });
             });
 
-            mediaElement.addEventListener('stalled', () => {
-                showMessage(`Stream stalled. Waiting for peer connection...`, 'error');
+            // Stall recovery & status event listeners
+            mediaElement.addEventListener('waiting', () => {
+                showMessage(`Buffering chunks from peer swarm...`, 'info');
             });
 
             mediaElement.addEventListener('playing', () => {
                 showMessage(`Playing: ${file.name}`, 'info');
             });
 
-            mediaElement.addEventListener('canplay', () => {
-                if (mediaElement.paused) {
-                    mediaElement.play().catch(e => console.log("Autoplay waiting for interaction:", e));
-                }
+            mediaElement.addEventListener('error', (e) => {
+                console.error('Media element error:', mediaElement.error);
+                showMessage(`Playback Error: Browser cannot decode format (${mediaElement.error ? mediaElement.error.message : 'unknown'}).`, 'error');
             });
-
-            // Render the file using WebTorrent's built-in streaming server
-            file.renderTo(mediaElement, { autoplay: true, controls: true }, (err, elem) => {
-                if (err) {
-                    showMessage(`Error rendering file: ${err.message}`, 'error');
-                    console.error('Render error:', err);
-                }
-            });
-
-            // Add the media element to the player container
-            playerContainer.appendChild(mediaElement);
 
             // Listen for download progress
             torrent.on('download', () => {
