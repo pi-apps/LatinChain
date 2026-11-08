@@ -1,4 +1,4 @@
-// Initialize WebTorrent client with streaming enabled
+// Initialize WebTorrent client
 const client = new WebTorrent();
 
 // Get references to DOM elements
@@ -109,11 +109,29 @@ cancelTorrentBtn.addEventListener('click', () => {
 
 // Function to add a torrent to the WebTorrent client
 function addTorrent(torrentId) {
-    showMessage('Loading torrent, please wait...');
+    showMessage('Connecting to peer swarm, fetching metadata...');
 
     client.add(torrentId, torrent => {
-        showMessage('Torrent loaded. Searching for media files...');
+        showMessage('Metadata received. Searching for media files...');
         updateProgress(0);
+
+        // Listen for download progress immediately upon torrent connection
+        torrent.on('download', () => {
+            updateProgress(torrent.progress);
+            statusMessage.textContent = `Downloading: ${(torrent.progress * 100).toFixed(2)}% - Speed: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
+        });
+
+        torrent.on('done', () => {
+            showMessage('Download complete.', 'info');
+            hideProgress();
+        });
+
+        // Listen for peer events to update the display
+        torrent.on('peer', () => updatePeerDisplay(torrent));
+        torrent.on('noPeers', () => updatePeerDisplay(torrent));
+        torrent.on('wire', () => updatePeerDisplay(torrent));
+        torrent.on('close', () => updatePeerDisplay(torrent));
+        updatePeerDisplay(torrent);
 
         // Find the best video/audio file
         let file = torrent.files.find(f => {
@@ -126,9 +144,9 @@ function addTorrent(torrentId) {
         }
 
         if (file) {
-            showMessage(`Preparing: ${file.name}`);
+            showMessage(`Preparing playback for: ${file.name}`);
 
-            // Force sequential downloading so the stream doesn't starve mid-way
+            // Force sequential downloading so chunks arrive in order for streaming
             file.select();
 
             const isAudio = file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav');
@@ -138,10 +156,9 @@ function addTorrent(torrentId) {
             mediaElement.playsInline = true;
             mediaElement.classList.add('rounded-xl', 'w-full', 'max-h-[70vh]');
 
-            // Add player to container early
             playerContainer.appendChild(mediaElement);
 
-            // Use WebTorrent's built-in HTTP server stream URL to feed the video element natively
+            // Create streaming server endpoint immediately
             file.createServer((err, serverUrl) => {
                 if (err) {
                     console.error('Stream server error:', err);
@@ -149,48 +166,29 @@ function addTorrent(torrentId) {
                     return;
                 }
 
-                // Point the video element source directly to the local torrent HTTP stream
+                // Feed the local stream server URL into the media element
                 mediaElement.src = serverUrl;
                 mediaElement.load();
                 
                 mediaElement.play().catch(e => {
-                    console.log("Autoplay blocked or waiting for initial buffer:", e);
-                    showMessage('Buffering initial pieces from peers...', 'info');
+                    console.log("Autoplay waiting for initial peer buffer:", e);
+                    showMessage('Waiting for initial peer buffer...', 'info');
                 });
             });
 
             // Stall recovery & status event listeners
             mediaElement.addEventListener('waiting', () => {
-                showMessage(`Buffering chunks from peer swarm...`, 'info');
+                showMessage(`Buffering from peers...`, 'info');
             });
 
             mediaElement.addEventListener('playing', () => {
                 showMessage(`Playing: ${file.name}`, 'info');
             });
 
-            mediaElement.addEventListener('error', (e) => {
+            mediaElement.addEventListener('error', () => {
                 console.error('Media element error:', mediaElement.error);
-                showMessage(`Playback Error: Browser cannot decode format (${mediaElement.error ? mediaElement.error.message : 'unknown'}).`, 'error');
+                showMessage(`Playback Error: Browser cannot decode format.`, 'error');
             });
-
-            // Listen for download progress
-            torrent.on('download', () => {
-                updateProgress(torrent.progress);
-                statusMessage.textContent = `Downloading: ${(torrent.progress * 100).toFixed(2)}% - Speed: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
-            });
-
-            torrent.on('done', () => {
-                showMessage('Download complete.', 'info');
-                hideProgress();
-            });
-
-            // Listen for peer events to update the display
-            torrent.on('peer', () => updatePeerDisplay(torrent));
-            torrent.on('noPeers', () => updatePeerDisplay(torrent));
-            torrent.on('wire', () => updatePeerDisplay(torrent));
-            torrent.on('close', () => updatePeerDisplay(torrent));
-
-            updatePeerDisplay(torrent);
 
         } else {
             showMessage('No playable media files found in this torrent.', 'error');
