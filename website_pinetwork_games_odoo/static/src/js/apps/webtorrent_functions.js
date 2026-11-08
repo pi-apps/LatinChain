@@ -132,6 +132,9 @@ function addTorrent(torrentId) {
         }
 
         if (file) {
+            // CRITICAL: Tells WebTorrent to start downloading pieces for this specific file
+            file.select();
+
             showMessage(`Preparing stream for: ${file.name}`);
 
             // Create a video or audio element
@@ -142,10 +145,10 @@ function addTorrent(torrentId) {
             mediaElement.autoplay = true;
             mediaElement.classList.add('rounded-xl');
 
-            // Add the media element to the container early so the player UI is visible
+            // Add the media element to the container early
             playerContainer.appendChild(mediaElement);
 
-            // Use renderTo, but handle readiness via standard media events
+            // Render the file once selection is active
             file.renderTo(mediaElement, {
                 autoplay: true,
                 controls: true
@@ -156,25 +159,17 @@ function addTorrent(torrentId) {
                     return;
                 }
 
-                // Listen for when enough data is downloaded to play
+                // Wait until the browser has enough buffer to play smoothly
                 elem.addEventListener('canplay', () => {
                     showMessage(`Playing: ${file.name}`);
-                    elem.play().catch(e => console.log("Autoplay blocked or waiting for interaction:", e));
-                });
-
-                elem.addEventListener('waiting', () => {
-                    showMessage(`Buffering initial chunks for long video... ${(torrent.progress * 100).toFixed(0)}%`);
+                    elem.play().catch(e => console.log("Autoplay waiting for interaction:", e));
                 });
             });
 
             // Listen for download progress
             torrent.on('download', () => {
                 updateProgress(torrent.progress);
-                if (mediaElement.readyState < 3) {
-                    statusMessage.textContent = `Buffering: ${(torrent.progress * 100).toFixed(2)}% - Speed: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
-                } else {
-                    statusMessage.textContent = `Downloading: ${(torrent.progress * 100).toFixed(2)}% - Speed: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
-                }
+                statusMessage.textContent = `Buffering: ${(torrent.progress * 100).toFixed(2)}% - Speed: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
             });
 
             torrent.on('done', () => {
