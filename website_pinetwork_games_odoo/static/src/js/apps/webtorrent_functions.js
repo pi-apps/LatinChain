@@ -13,7 +13,6 @@ const progressBar = document.getElementById('progress-bar');
 const playerContainer = document.getElementById('player-container');
 const peerCountSpan = document.getElementById('peer-count');
 const peerIndicatorsDiv = document.getElementById('peer-indicators');
-
 const fileNameDisplay = document.getElementById('file-name-display');
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (torrentFileInput.files.length > 0) {
             fileNameDisplay.textContent = `Selected file: ${torrentFileInput.files[0].name}`;
         } else {
-            fileNameDisplay.textContent = ''; // Clear the text if no file is selected
+            fileNameDisplay.textContent = ''; 
         }
     });
 });
@@ -55,7 +54,7 @@ function hideProgress() {
 function updatePeerDisplay(torrent) {
     const numPeers = torrent.numPeers;
     peerCountSpan.textContent = numPeers;
-    peerIndicatorsDiv.innerHTML = ''; // Clear existing indicators
+    peerIndicatorsDiv.innerHTML = ''; 
 
     if (numPeers === 0) {
         const noPeerIndicator = document.createElement('div');
@@ -72,7 +71,7 @@ function updatePeerDisplay(torrent) {
 
 // Event listener for "Load Torrent" button click
 loadTorrentBtn.addEventListener('click', () => {
-    // Stop all active torrents
+    // Stop all active torrents & revoke blob URLs if any
     client.torrents.forEach(torrent => {
         torrent.destroy();
     });
@@ -88,10 +87,8 @@ loadTorrentBtn.addEventListener('click', () => {
     peerIndicatorsDiv.innerHTML = '';
 
     if (magnetURI) {
-        // If magnet link is provided, add it to WebTorrent client
         addTorrent(magnetURI);
     } else if (torrentFile) {
-        // If a .torrent file is provided, add it to WebTorrent client
         addTorrent(torrentFile);
     } else {
         showMessage('Please enter a magnet link or upload a .torrent file.', 'error');
@@ -100,16 +97,16 @@ loadTorrentBtn.addEventListener('click', () => {
 
 // Event listener for "Cancel Torrent" button click
 cancelTorrentBtn.addEventListener('click', () => {
-    try {
-        Cache.delete();
-    } catch (err) {
-        console.error(err);
-    }
-    try {
-        window.location.reload(true);
-    } catch (err) {
-        console.error(err);
-    }
+    client.torrents.forEach(torrent => torrent.destroy());
+    playerContainer.innerHTML = '';
+    hideProgress();
+    messageArea.classList.add('hidden');
+    magnetLinkInput.value = '';
+    torrentFileInput.value = '';
+    fileNameDisplay.textContent = '';
+    peerCountSpan.textContent = '0';
+    peerIndicatorsDiv.innerHTML = '';
+    showMessage('Torrent session cleared.', 'info');
 });
 
 // Function to add a torrent to the WebTorrent client
@@ -117,42 +114,60 @@ function addTorrent(torrentId) {
     showMessage('Loading torrent, please wait...');
 
     client.add(torrentId, torrent => {
-        showMessage('Torrent loaded. Searching for files...');
-        updateProgress(0); // Reset progress
+        showMessage('Torrent loaded. Searching for media files...');
+        updateProgress(0);
 
-        // Find the largest file (usually the main video or audio)
+        // Find the best video/audio file
         let file = torrent.files.find(f => {
             return f.name.endsWith('.mp4') || f.name.endsWith('.mkv') || f.name.endsWith('.webm') ||
                    f.name.endsWith('.mp3') || f.name.endsWith('.ogg') || f.name.endsWith('.wav');
         });
 
-        // If no specific video/audio file found, take the largest one
         if (!file) {
             file = torrent.files.reduce((a, b) => a.length > b.length ? a : b);
         }
 
         if (file) {
-            showMessage(`Playing: ${file.name}`);
+            showMessage(`Preparing: ${file.name}`);
 
-            // Create a video or audio element
-            const mediaElement = document.createElement(file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav') ? 'audio' : 'video');
-            mediaElement.controls = true; // Enable player controls
-            mediaElement.autoplay = true; // Autoplay
-            mediaElement.classList.add('rounded-xl'); // Add Tailwind classes
+            const isAudio = file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav');
+            const mediaElement = document.createElement(isAudio ? 'audio' : 'video');
+            mediaElement.controls = true;
+            mediaElement.autoplay = true;
+            mediaElement.playsInline = true;
+            mediaElement.classList.add('rounded-xl', 'w-full', 'max-h-[70vh]');
 
-            // Render the file to the media element
-            file.renderTo(mediaElement, {
-                autoplay: true,
-                controls: true
-            }, err => {
-                if (err) {
-                    showMessage(`Error rendering file: ${err.message}`, 'error');
-                    console.error('Error rendering file:', err);
-                }
-            });
-
-            // Add the media element to the player container
+            // Add the media element to the player container early
             playerContainer.appendChild(mediaElement);
+
+            // Attempt rendering with WebTorrent's renderTo, with fallback to Blob URL stream
+            try {
+                file.renderTo(mediaElement, { autoplay: true, controls: true }, (err, elem) => {
+                    if (err) {
+                        console.warn('renderTo failed, attempting Blob URL fallback...', err);
+                        fallbackToBlobStream(file, mediaElement);
+                    }
+                });
+            } catch (ex) {
+                console.warn('renderTo exception, falling back to Blob URL...', ex);
+                fallbackToBlobStream(file, mediaElement);
+            }
+
+            // Fallback strategy for stubborn PeerTube/MKV codecs
+            function fallbackToBlobStream(targetFile, targetElement) {
+                targetFile.getBlob((err, blob) => {
+                    if (err) {
+                        showMessage(`Error rendering file: ${err.message}`, 'error');
+                        console.error('Blob generation error:', err);
+                        return;
+                    }
+                    const blobURL = URL.createObjectURL(blob);
+                    targetElement.src = blobURL;
+                    targetElement.load();
+                    targetElement.play().catch(e => console.log("Autoplay blocked or waiting for buffer:", e));
+                    showMessage(`Playing via stream fallback: ${targetFile.name}`);
+                });
+            }
 
             // Listen for download progress
             torrent.on('download', () => {
@@ -168,10 +183,9 @@ function addTorrent(torrentId) {
             // Listen for peer events to update the display
             torrent.on('peer', () => updatePeerDisplay(torrent));
             torrent.on('noPeers', () => updatePeerDisplay(torrent));
-            torrent.on('wire', () => updatePeerDisplay(torrent)); // When a new wire (connection) is established
-            torrent.on('close', () => updatePeerDisplay(torrent)); // When a connection closes
+            torrent.on('wire', () => updatePeerDisplay(torrent));
+            torrent.on('close', () => updatePeerDisplay(torrent));
 
-            // Initial peer display update
             updatePeerDisplay(torrent);
 
         } else {
@@ -183,19 +197,5 @@ function addTorrent(torrentId) {
     client.on('error', err => {
         showMessage(`WebTorrent Error: ${err.message}`, 'error');
         console.error('WebTorrent Error:', err);
-        
-        /*setTimeout(function() {
-            try {
-                Cache.delete();
-            } catch (err) {
-                console.error(err);
-            }
-            try {
-                window.location.reload(true);
-            } catch (err) {
-                console.error(err);
-            }
-        }, 2000);*/
-        
     });
 }
