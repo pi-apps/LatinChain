@@ -71,7 +71,7 @@ function updatePeerDisplay(torrent) {
 
 // Event listener for "Load Torrent" button click
 loadTorrentBtn.addEventListener('click', () => {
-    // Stop all active torrents & revoke blob URLs if any
+    // Stop all active torrents
     client.torrents.forEach(torrent => {
         torrent.destroy();
     });
@@ -130,6 +130,9 @@ function addTorrent(torrentId) {
         if (file) {
             showMessage(`Preparing: ${file.name}`);
 
+            // Force sequential downloading so the video streams smoothly from start to finish
+            file.select();
+
             const isAudio = file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav');
             const mediaElement = document.createElement(isAudio ? 'audio' : 'video');
             mediaElement.controls = true;
@@ -153,7 +156,7 @@ function addTorrent(torrentId) {
                 fallbackToBlobStream(file, mediaElement);
             }
 
-            // Fallback strategy for stubborn PeerTube/MKV codecs
+            // Fallback strategy for stubborn PeerTube codecs/headers
             function fallbackToBlobStream(targetFile, targetElement) {
                 targetFile.getBlob((err, blob) => {
                     if (err) {
@@ -164,7 +167,7 @@ function addTorrent(torrentId) {
                     const blobURL = URL.createObjectURL(blob);
                     targetElement.src = blobURL;
                     targetElement.load();
-                    targetElement.play().catch(e => console.log("Autoplay blocked or waiting for buffer:", e));
+                    targetElement.play().catch(e => console.log("Autoplay waiting for buffer:", e));
                     showMessage(`Playing via stream fallback: ${targetFile.name}`);
                 });
             }
