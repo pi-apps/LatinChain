@@ -132,6 +132,16 @@ function addTorrent(torrentId) {
         }
 
         if (file) {
+            const MAX_SIZE_BYTES = 200 * 1024 * 1024;
+            const fileSizeMB = (file.length / (1024 * 1024)).toFixed(2);
+
+            if (file.length > MAX_SIZE_BYTES) {
+                showMessage(`File skipped: Size (${fileSizeMB} MB) exceeds the 200 MB limit.`, 'error');
+                torrent.destroy();
+                hideProgress();
+                return;
+            }
+            
             showMessage(`Playing: ${file.name}`);
 
             // Create a video or audio element
