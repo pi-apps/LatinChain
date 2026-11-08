@@ -132,6 +132,9 @@ function addTorrent(torrentId) {
         }
 
         if (file) {
+            // Select the file for streaming (prioritizes sequential/streaming chunks)
+            file.select();
+
             showMessage(`Playing: ${file.name}`);
 
             // Create a video or audio element
