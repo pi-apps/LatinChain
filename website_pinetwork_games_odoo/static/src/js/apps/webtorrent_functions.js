@@ -132,35 +132,49 @@ function addTorrent(torrentId) {
         }
 
         if (file) {
-            // Select the file for streaming (prioritizes sequential/streaming chunks)
-            file.select();
-
-            showMessage(`Playing: ${file.name}`);
+            showMessage(`Preparing stream for: ${file.name}`);
 
             // Create a video or audio element
-            const mediaElement = document.createElement(file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav') ? 'audio' : 'video');
-            mediaElement.controls = true; // Enable player controls
-            mediaElement.autoplay = true; // Autoplay
-            mediaElement.classList.add('rounded-xl'); // Add Tailwind classes
+            const mediaElement = document.createElement(
+                file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav') ? 'audio' : 'video'
+            );
+            mediaElement.controls = true;
+            mediaElement.autoplay = true;
+            mediaElement.classList.add('rounded-xl');
 
-            // Render the file to the media element
+            // Add the media element to the container early so the player UI is visible
+            playerContainer.appendChild(mediaElement);
+
+            // Use renderTo, but handle readiness via standard media events
             file.renderTo(mediaElement, {
                 autoplay: true,
                 controls: true
-            }, err => {
+            }, (err, elem) => {
                 if (err) {
                     showMessage(`Error rendering file: ${err.message}`, 'error');
                     console.error('Error rendering file:', err);
+                    return;
                 }
-            });
 
-            // Add the media element to the player container
-            playerContainer.appendChild(mediaElement);
+                // Listen for when enough data is downloaded to play
+                elem.addEventListener('canplay', () => {
+                    showMessage(`Playing: ${file.name}`);
+                    elem.play().catch(e => console.log("Autoplay blocked or waiting for interaction:", e));
+                });
+
+                elem.addEventListener('waiting', () => {
+                    showMessage(`Buffering initial chunks for long video... ${(torrent.progress * 100).toFixed(0)}%`);
+                });
+            });
 
             // Listen for download progress
             torrent.on('download', () => {
                 updateProgress(torrent.progress);
-                statusMessage.textContent = `Downloading: ${(torrent.progress * 100).toFixed(2)}% - Speed: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
+                if (mediaElement.readyState < 3) {
+                    statusMessage.textContent = `Buffering: ${(torrent.progress * 100).toFixed(2)}% - Speed: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
+                } else {
+                    statusMessage.textContent = `Downloading: ${(torrent.progress * 100).toFixed(2)}% - Speed: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
+                }
             });
 
             torrent.on('done', () => {
@@ -171,12 +185,10 @@ function addTorrent(torrentId) {
             // Listen for peer events to update the display
             torrent.on('peer', () => updatePeerDisplay(torrent));
             torrent.on('noPeers', () => updatePeerDisplay(torrent));
-            torrent.on('wire', () => updatePeerDisplay(torrent)); // When a new wire (connection) is established
-            torrent.on('close', () => updatePeerDisplay(torrent)); // When a connection closes
+            torrent.on('wire', () => updatePeerDisplay(torrent));
+            torrent.on('close', () => updatePeerDisplay(torrent));
 
-            // Initial peer display update
             updatePeerDisplay(torrent);
-
         } else {
             showMessage('No playable media files found in this torrent.', 'error');
         }
