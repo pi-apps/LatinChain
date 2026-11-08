@@ -143,8 +143,7 @@ function addTorrent(torrentId) {
             // Render the file to the media element
             file.renderTo(mediaElement, {
                 autoplay: true,
-                controls: true,
-                useBlob: false
+                controls: true
             }, err => {
                 if (err) {
                     showMessage(`Error rendering file: ${err.message}`, 'error');
