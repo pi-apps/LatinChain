@@ -132,26 +132,21 @@ function addTorrent(torrentId) {
         }
 
         if (file) {
-            // CRITICAL: Tells WebTorrent to start downloading pieces for this specific file
-            file.select();
+            file.select(); // Priorizar descarga de este archivo
+            showMessage(`Preparando streaming para: ${file.name}`);
 
-            showMessage(`Preparing stream for: ${file.name}`);
-
-            // Create a video or audio element
             const mediaElement = document.createElement(
                 file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav') ? 'audio' : 'video'
             );
             mediaElement.controls = true;
-            mediaElement.autoplay = true;
             mediaElement.classList.add('rounded-xl');
-
-            // Add the media element to the container early
             playerContainer.appendChild(mediaElement);
 
-            // Render the file once selection is active
+            // CORRECCIÓN ERROR 1: useBlob: false evita el límite de los 200MB usando streams por bloques
             file.renderTo(mediaElement, {
-                autoplay: true,
-                controls: true
+                autoplay: false, // Lo manejaremos de forma segura con el evento canplay
+                controls: true,
+                useBlob: false 
             }, (err, elem) => {
                 if (err) {
                     showMessage(`Error rendering file: ${err.message}`, 'error');
@@ -159,25 +154,31 @@ function addTorrent(torrentId) {
                     return;
                 }
 
-                // Wait until the browser has enough buffer to play smoothly
+                // CORRECCIÓN ERROR 2: Esperar a que el buffer tenga suficiente datos antes de reproducir
                 elem.addEventListener('canplay', () => {
-                    showMessage(`Playing: ${file.name}`);
-                    elem.play().catch(e => console.log("Autoplay waiting for interaction:", e));
+                    showMessage(`Reproduciendo: ${file.name}`);
+                    
+                    // Manejo seguro de la promesa de reproducción para evitar interrupciones de pause()
+                    const playPromise = elem.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            console.log("Reproducción automática evitada por políticas del navegador:", error);
+                        });
+                    }
                 });
             });
 
             // Listen for download progress
             torrent.on('download', () => {
                 updateProgress(torrent.progress);
-                statusMessage.textContent = `Buffering: ${(torrent.progress * 100).toFixed(2)}% - Speed: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
+                statusMessage.textContent = `Descargando: ${(torrent.progress * 100).toFixed(2)}% - Velocidad: ${(torrent.downloadSpeed / 1024 / 1024).toFixed(2)} MB/s`;
             });
 
             torrent.on('done', () => {
-                showMessage('Download complete.', 'info');
+                showMessage('Descarga completa.', 'info');
                 hideProgress();
             });
 
-            // Listen for peer events to update the display
             torrent.on('peer', () => updatePeerDisplay(torrent));
             torrent.on('noPeers', () => updatePeerDisplay(torrent));
             torrent.on('wire', () => updatePeerDisplay(torrent));
@@ -185,7 +186,7 @@ function addTorrent(torrentId) {
 
             updatePeerDisplay(torrent);
         } else {
-            showMessage('No playable media files found in this torrent.', 'error');
+            showMessage('No se encontraron archivos multimedia reproducibles en este torrent.', 'error');
         }
     });
 
