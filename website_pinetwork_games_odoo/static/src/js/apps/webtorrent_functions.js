@@ -130,7 +130,7 @@ function addTorrent(torrentId) {
         if (file) {
             showMessage(`Preparing: ${file.name}`);
 
-            // Force sequential downloading so the video streams smoothly from start to finish
+            // Force sequential downloading
             file.select();
 
             const isAudio = file.name.endsWith('.mp3') || file.name.endsWith('.ogg') || file.name.endsWith('.wav');
@@ -140,37 +140,35 @@ function addTorrent(torrentId) {
             mediaElement.playsInline = true;
             mediaElement.classList.add('rounded-xl', 'w-full', 'max-h-[70vh]');
 
-            // Add the media element to the player container early
+            // Add stall recovery event listeners to prevent freezing when peer chunks are delayed
+            mediaElement.addEventListener('waiting', () => {
+                showMessage(`Buffering from peers (Waiting for data)...`, 'info');
+            });
+
+            mediaElement.addEventListener('stalled', () => {
+                showMessage(`Stream stalled. Waiting for peer connection...`, 'error');
+            });
+
+            mediaElement.addEventListener('playing', () => {
+                showMessage(`Playing: ${file.name}`, 'info');
+            });
+
+            mediaElement.addEventListener('canplay', () => {
+                if (mediaElement.paused) {
+                    mediaElement.play().catch(e => console.log("Autoplay waiting for interaction:", e));
+                }
+            });
+
+            // Render the file using WebTorrent's built-in streaming server
+            file.renderTo(mediaElement, { autoplay: true, controls: true }, (err, elem) => {
+                if (err) {
+                    showMessage(`Error rendering file: ${err.message}`, 'error');
+                    console.error('Render error:', err);
+                }
+            });
+
+            // Add the media element to the player container
             playerContainer.appendChild(mediaElement);
-
-            // Attempt rendering with WebTorrent's renderTo, with fallback to Blob URL stream
-            try {
-                file.renderTo(mediaElement, { autoplay: true, controls: true }, (err, elem) => {
-                    if (err) {
-                        console.warn('renderTo failed, attempting Blob URL fallback...', err);
-                        fallbackToBlobStream(file, mediaElement);
-                    }
-                });
-            } catch (ex) {
-                console.warn('renderTo exception, falling back to Blob URL...', ex);
-                fallbackToBlobStream(file, mediaElement);
-            }
-
-            // Fallback strategy for stubborn PeerTube codecs/headers
-            function fallbackToBlobStream(targetFile, targetElement) {
-                targetFile.getBlob((err, blob) => {
-                    if (err) {
-                        showMessage(`Error rendering file: ${err.message}`, 'error');
-                        console.error('Blob generation error:', err);
-                        return;
-                    }
-                    const blobURL = URL.createObjectURL(blob);
-                    targetElement.src = blobURL;
-                    targetElement.load();
-                    targetElement.play().catch(e => console.log("Autoplay waiting for buffer:", e));
-                    showMessage(`Playing via stream fallback: ${targetFile.name}`);
-                });
-            }
 
             // Listen for download progress
             torrent.on('download', () => {
