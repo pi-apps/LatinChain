@@ -241,11 +241,9 @@ function initDB() {
 
         request.onupgradeneeded = function(e) {
             const dbInstance = e.target.result;
-            // Store for completed lesson IDs
             if (!dbInstance.objectStoreNames.contains('progress')) {
                 dbInstance.createObjectStore('progress', { keyPath: 'id' });
             }
-            // Store for user notes
             if (!dbInstance.objectStoreNames.contains('notes')) {
                 dbInstance.createObjectStore('notes', { keyPath: 'id' });
             }
@@ -310,7 +308,6 @@ function loadNotesFromDB() {
 
         request.onsuccess = function() {
             savedNotes = request.result || [];
-            // Sort notes descending by date
             savedNotes.sort((a, b) => new Date(b.date) - new Date(a.date));
             renderNotesList();
             resolve();
@@ -345,6 +342,33 @@ window.onload = async function() {
     generateStudioPrompt();
 };
 
+// --- Mobile Drawer Controls ---
+function openSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    if (!sidebar) return;
+    sidebar.classList.remove('-translate-x-full');
+    if (backdrop) backdrop.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+}
+
+function closeSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    if (!sidebar) return;
+    sidebar.classList.add('-translate-x-full');
+    if (backdrop) backdrop.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeSidebar();
+});
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth >= 1024) closeSidebar();
+});
+
 // Render All Course Modules
 function renderModules() {
     const container = document.getElementById('modules-container');
@@ -352,36 +376,35 @@ function renderModules() {
 
     courseData.forEach(module => {
         const moduleEl = document.createElement('div');
-        moduleEl.className = 'glass-panel rounded-3xl p-5 sm:p-6 border border-slate-800 space-y-4';
+        moduleEl.className = 'glass-panel rounded-3xl p-4 sm:p-6 border border-slate-800 space-y-4 scroll-mt-24';
         moduleEl.id = `module-${module.id}`;
 
-        // Header
         let lessonsListHTML = '';
         module.lessons.forEach(lesson => {
             const isChecked = completedLessons.has(lesson.id);
             lessonsListHTML += `
                 <div class="lesson-item bg-slate-900/90 rounded-2xl border border-slate-800 overflow-hidden transition hover:border-slate-700" data-title="${lesson.title.toLowerCase()}" data-detail="${lesson.detail.toLowerCase()}">
-                    <div class="p-4 flex items-start justify-between gap-3 cursor-pointer select-none" onclick="toggleAccordion('${lesson.id}')">
-                        <div class="flex items-start space-x-3">
-                            <input type="checkbox" 
-                                   id="chk-${lesson.id}" 
-                                   ${isChecked ? 'checked' : ''} 
-                                   onclick="event.stopPropagation(); toggleLessonDone('${lesson.id}')" 
-                                   class="mt-1 w-4 h-4 rounded border-slate-700 bg-slate-800 text-ai-purple focus:ring-ai-purple focus:ring-offset-slate-900 cursor-pointer">
-                            <div>
-                                <h4 class="text-xs sm:text-sm font-bold text-slate-100 flex items-center gap-2">
+                    <div class="p-3 sm:p-4 flex items-start justify-between gap-2 sm:gap-3 cursor-pointer select-none" onclick="toggleAccordion('${lesson.id}')">
+                        <div class="flex items-start gap-2 sm:gap-3 min-w-0 flex-1">
+                            <input type="checkbox"
+                                   id="chk-${lesson.id}"
+                                   ${isChecked ? 'checked' : ''}
+                                   onclick="event.stopPropagation(); toggleLessonDone('${lesson.id}')"
+                                   class="mt-0.5 w-4 h-4 flex-shrink-0 rounded border-slate-700 bg-slate-800 text-ai-purple focus:ring-ai-purple focus:ring-offset-slate-900 cursor-pointer">
+                            <div class="min-w-0">
+                                <h4 class="text-xs sm:text-sm font-bold text-slate-100 break-words">
                                     ${lesson.title}
                                 </h4>
                                 <p class="text-[11px] text-slate-400 mt-1 line-clamp-2">${lesson.detail}</p>
                             </div>
                         </div>
-                        <button class="text-slate-500 hover:text-slate-300 transition text-xs pt-1">
+                        <button class="flex-shrink-0 text-slate-500 hover:text-slate-300 transition text-xs pt-1">
                             <i class="fa-solid fa-chevron-down transition-transform duration-300" id="icon-${lesson.id}"></i>
                         </button>
                     </div>
 
                     <!-- Accordion Content -->
-                    <div id="body-${lesson.id}" class="hidden px-4 pb-4 pt-2 border-t border-slate-800/80 space-y-3 bg-slate-950/50">
+                    <div id="body-${lesson.id}" class="hidden px-3 sm:px-4 pb-4 pt-2 border-t border-slate-800/80 space-y-3 bg-slate-950/50">
                         <div>
                             <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Lesson Breakdown</span>
                             <p class="text-xs text-slate-300 leading-relaxed">${lesson.detail}</p>
@@ -389,7 +412,7 @@ function renderModules() {
 
                         <!-- Example Prompt Box -->
                         <div class="space-y-1.5">
-                            <div class="flex justify-between items-center">
+                            <div class="flex flex-wrap justify-between items-center gap-2">
                                 <span class="text-[10px] font-bold uppercase tracking-wider text-ai-cyan flex items-center gap-1">
                                     <i class="fa-solid fa-terminal"></i> Production Prompt Template
                                 </span>
@@ -397,13 +420,13 @@ function renderModules() {
                                     <i class="fa-regular fa-copy"></i> Copy
                                 </button>
                             </div>
-                            <pre id="prompt-${lesson.id}" class="bg-slate-900 text-slate-200 text-[11px] font-mono p-3 rounded-xl border border-slate-800 overflow-x-auto whitespace-pre-wrap leading-relaxed">${escapeHtml(lesson.prompt)}</pre>
+                            <pre id="prompt-${lesson.id}" class="bg-slate-900 text-slate-200 text-[11px] font-mono p-3 rounded-xl border border-slate-800 overflow-x-auto whitespace-pre-wrap break-words leading-relaxed">${escapeHtml(lesson.prompt)}</pre>
                         </div>
 
                         <!-- Pro Tip Box -->
                         <div class="p-3 bg-ai-purple/10 border border-ai-purple/20 rounded-xl flex items-start space-x-2 text-xs text-slate-300">
-                            <i class="fa-solid fa-lightbulb text-amber-400 mt-0.5 text-sm"></i>
-                            <div>
+                            <i class="fa-solid fa-lightbulb text-amber-400 mt-0.5 text-sm flex-shrink-0"></i>
+                            <div class="min-w-0">
                                 <span class="font-bold text-ai-purple text-[11px] block">PRO TIP</span>
                                 <span class="text-[11px] text-slate-300">${lesson.tip}</span>
                             </div>
@@ -420,15 +443,13 @@ function renderModules() {
         });
 
         moduleEl.innerHTML = `
-            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-2xl bg-slate-800/90 border border-slate-700/80 flex items-center justify-center">
-                        <i class="fa-solid ${module.icon} ${module.color} text-lg"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-bold text-white">${module.title}</h3>
-                        <p class="text-xs text-slate-400">${module.description}</p>
-                    </div>
+            <div class="flex items-start sm:items-center gap-3 pb-3 border-b border-slate-800">
+                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-slate-800/90 border border-slate-700/80 flex items-center justify-center">
+                    <i class="fa-solid ${module.icon} ${module.color} text-lg"></i>
+                </div>
+                <div class="min-w-0">
+                    <h3 class="text-sm sm:text-base font-bold text-white break-words">${module.title}</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">${module.description}</p>
                 </div>
             </div>
             <div class="space-y-3 mt-4">
@@ -469,7 +490,7 @@ function toggleLessonDone(lessonId) {
 
 // Update Progress UI Elements
 function updateProgressUI() {
-    const totalLessons = 24; // 6 modules * 4 lessons
+    const totalLessons = 24;
     const doneCount = completedLessons.size;
     const percentage = Math.round((doneCount / totalLessons) * 100);
 
@@ -501,13 +522,16 @@ function switchTab(tabName) {
 
     // Show selected tab content
     document.getElementById(`tab-${tabName}`).classList.remove('hidden');
-    
+
     // Set active state on button
     const activeBtn = document.getElementById(`tab-btn-${tabName}`);
     if(activeBtn) {
         activeBtn.classList.add('bg-slate-800/90', 'text-white', 'border', 'border-slate-700/60');
         activeBtn.classList.remove('text-slate-400');
     }
+
+    // Close mobile drawer after navigation
+    closeSidebar();
 }
 
 // Search and Filter Functionality
@@ -524,7 +548,6 @@ function filterLessons() {
             return;
         }
 
-        // Check lessons inside module
         const lessonItems = moduleEl.querySelectorAll('.lesson-item');
         lessonItems.forEach(item => {
             const title = item.getAttribute('data-title');
@@ -581,14 +604,14 @@ function renderNotesList() {
 
     savedNotes.forEach(note => {
         const noteDiv = document.createElement('div');
-        noteDiv.className = `p-2.5 rounded-xl border text-xs cursor-pointer flex justify-between items-center transition ${activeNoteId === note.id ? 'bg-slate-800 border-ai-cyan text-white' : 'bg-slate-900/60 border-slate-800 text-slate-300 hover:bg-slate-800/50'}`;
+        noteDiv.className = `p-2.5 rounded-xl border text-xs cursor-pointer flex justify-between items-center gap-2 transition ${activeNoteId === note.id ? 'bg-slate-800 border-ai-cyan text-white' : 'bg-slate-900/60 border-slate-800 text-slate-300 hover:bg-slate-800/50'}`;
         noteDiv.onclick = () => loadNote(note.id);
         noteDiv.innerHTML = `
-            <div class="truncate pr-2">
+            <div class="truncate pr-2 min-w-0">
                 <div class="font-semibold truncate">${escapeHtml(note.title || 'Untitled Note')}</div>
                 <div class="text-[10px] text-slate-500">${new Date(note.date).toLocaleDateString()}</div>
             </div>
-            <button onclick="event.stopPropagation(); deleteNote('${note.id}')" class="text-slate-500 hover:text-rose-400 p-1">
+            <button onclick="event.stopPropagation(); deleteNote('${note.id}')" class="text-slate-500 hover:text-rose-400 p-1 flex-shrink-0">
                 <i class="fa-regular fa-trash-can"></i>
             </button>
         `;
@@ -607,7 +630,6 @@ function saveCurrentNote() {
 
     let noteObj;
     if (activeNoteId) {
-        // Update existing
         const index = savedNotes.findIndex(n => n.id === activeNoteId);
         if (index !== -1) {
             savedNotes[index].title = title || 'Untitled Note';
@@ -616,7 +638,6 @@ function saveCurrentNote() {
             noteObj = savedNotes[index];
         }
     } else {
-        // Create new
         noteObj = {
             id: 'note_' + Date.now(),
             title: title || 'Untitled Note',
@@ -669,11 +690,13 @@ function sendToSandbox(title, prompt) {
 
 // Clipboard Copy Helper
 function copyToClipboard(elementId) {
-    const text = document.getElementById(elementId).innerText || document.getElementById(elementId).value;
-    
-    // execCommand fallback for iFrame compatibility
+    const el = document.getElementById(elementId);
+    const text = el.innerText || el.value;
+
     const textarea = document.createElement('textarea');
     textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
     document.body.appendChild(textarea);
     textarea.select();
     try {
@@ -692,7 +715,7 @@ function showToast(message, type = "success") {
     const toastIcon = document.getElementById('toast-icon');
 
     toastMsg.innerText = message;
-    
+
     if(type === "error") {
         toastIcon.className = "fa-solid fa-circle-xmark text-rose-400 text-base";
     } else if(type === "info") {
@@ -712,10 +735,10 @@ function showToast(message, type = "success") {
 
 // Helper string escape
 function escapeHtml(str) {
-    return str
+    return String(str)
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
-        .replace(/>/g, "&to;")
+        .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
 }
