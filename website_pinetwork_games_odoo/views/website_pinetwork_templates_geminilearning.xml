@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="geminilearning" name="Gemini Learning">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html class="dark">
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Gemini AI &amp; NotebookLM Mastery Suite</title>
+                        <!-- Tailwind CSS CDN -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <script>
+                            tailwind.config = {
+                                darkMode: 'class',
+                                theme: {
+                                    extend: {
+                                        colors: {
+                                            brand: {
+                                                50: '#f0f4ff',
+                                                500: '#6366f1',
+                                                600: '#4f46e5',
+                                                700: '#4338ca',
+                                                900: '#1e1b4b',
+                                            },
+                                            ai: {
+                                                purple: '#a855f7',
+                                                cyan: '#06b6d4',
+                                                pink: '#ec4899',
+                                                dark: '#0f172a',
+                                                card: '#1e293b'
+                                            }
+                                        },
+                                        fontFamily: {
+                                            sans: ['Inter', 'sans-serif'],
+                                        }
+                                    }
+                                }
+                            }
+                        </script>
+                        <!-- FontAwesome &amp; Lucide Icons -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+                        <style>
+                            body {
+                                font-family: 'Inter', sans-serif;
+                                background-color: #090d16;
+                                color: #f1f5f9;
+                            }
+                            .glass-panel {
+                                background: rgba(30, 41, 59, 0.7);
+                                backdrop-filter: blur(12px);
+                                -webkit-backdrop-filter: blur(12px);
+                                border: 1px solid rgba(255, 255, 255, 0.08);
+                            }
+                            .glass-nav {
+                                background: rgba(15, 23, 42, 0.85);
+                                backdrop-filter: blur(16px);
+                                -webkit-backdrop-filter: blur(16px);
+                                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                            }
+                            .gradient-text {
+                                background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                            }
+                            .gradient-border {
+                                position: relative;
+                                border-radius: 0.75rem;
+                                background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(6, 182, 212, 0.3));
+                                padding: 1px;
+                            }
+                            .gradient-border-inner {
+                                background: #1e293b;
+                                border-radius: calc(0.75rem - 1px);
+                            }
+                            /* Custom Scrollbar */
+                            ::-webkit-scrollbar {
+                                width: 6px;
+                                height: 6px;
+                            }
+                            ::-webkit-scrollbar-track {
+                                background: #0f172a;
+                            }
+                            ::-webkit-scrollbar-thumb {
+                                background: #334155;
+                                border-radius: 3px;
+                            }
+                            ::-webkit-scrollbar-thumb:hover {
+                                background: #475569;
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Pay Pi to GET PREMIUM
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="min-h-screen flex flex-col pb-20 md:pb-6">
+
+                        <!-- Header Navigation -->
+                        <header class="sticky top-0 z-50 glass-nav px-4 py-3">
+                            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <!-- Back Anchor Link -->
+                                    <a href="/" class="p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition border border-slate-700/50 flex items-center justify-center group" title="Return Home">
+                                        <i class="fa-solid fa-arrow-left text-sm group-hover:-translate-x-0.5 transition-transform"></i>
+                                        <span class="sr-only">Back</span>
+                                    </a>
+
+                                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-ai-purple to-ai-cyan flex items-center justify-center shadow-lg shadow-ai-purple/20">
+                                        <i class="fa-solid fa-wand-magic-sparkles text-white text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h1 class="font-bold text-base md:text-lg leading-tight tracking-tight">Gemini &amp; NotebookLM</h1>
+                                        <p class="text-xs text-slate-400 font-medium">Masterclass Studio</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-2">
+                                    <!-- Global Progress Pill -->
+                                    <div class="hidden sm:flex items-center space-x-2 bg-slate-800/80 px-3 py-1.5 rounded-full border border-slate-700/50">
+                                        <i class="fa-solid fa-trophy text-amber-400 text-xs"></i>
+                                        <span class="text-xs font-semibold text-slate-200" id="header-progress-text">0% Complete</span>
+                                    </div>
+                                    <button onclick="switchTab('notes')" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition relative" title="Saved Notes">
+                                        <i class="fa-solid fa-bookmark text-sm"></i>
+                                        <span id="notes-badge" class="hidden absolute -top-1 -right-1 bg-ai-purple text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </header>
+
+                        <!-- Main Content Area -->
+                        <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+                            <!-- Sidebar Navigation (Desktop) / Quick Selector -->
+                            <aside class="lg:col-span-3 space-y-4">
+                                <!-- Progress Card -->
+                                <div class="glass-panel rounded-2xl p-4 sm:p-5">
+                                    <div class="flex justify-between items-center mb-3">
+                                        <h2 class="text-sm font-semibold text-slate-300">Course Completion</h2>
+                                        <span class="text-xs font-bold text-ai-cyan" id="progress-percent">0%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                                        <div id="progress-bar" class="bg-gradient-to-r from-ai-purple to-ai-cyan h-2.5 rounded-full transition-all duration-500 w-0"></div>
+                                    </div>
+                                    <p class="text-[11px] text-slate-400 mt-2 flex justify-between">
+                                        <span id="completed-count">0 of 24 lessons completed</span>
+                                        <button onclick="resetProgress()" class="text-slate-500 hover:text-rose-400 text-[10px] underline">Reset</button>
+                                    </p>
+                                </div>
+
+                                <!-- Navigation Tabs -->
+                                <nav class="flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 pb-2 lg:pb-0 no-scrollbar">
+                                    <button onclick="switchTab('course')" id="tab-btn-course" class="nav-tab active flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap transition bg-slate-800/90 text-white border border-slate-700/60 shadow-sm w-full">
+                                        <i class="fa-solid fa-book-open text-ai-purple"></i>
+                                        <span>Course Modules</span>
+                                    </button>
+                                    <button onclick="switchTab('builder')" id="tab-btn-builder" class="nav-tab flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap transition text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 w-full">
+                                        <i class="fa-solid fa-sliders text-ai-cyan"></i>
+                                        <span>Prompt Studio</span>
+                                    </button>
+                                    <button onclick="switchTab('notes')" id="tab-btn-notes" class="nav-tab flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap transition text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 w-full">
+                                        <i class="fa-solid fa-note-sticky text-amber-400"></i>
+                                        <span>Sandbox &amp; Notes</span>
+                                    </button>
+                                    <button onclick="switchTab('cheat')" id="tab-btn-cheat" class="nav-tab flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap transition text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 w-full">
+                                        <i class="fa-solid fa-bolt text-emerald-400"></i>
+                                        <span>Quick Specs &amp; Cheat Sheet</span>
+                                    </button>
+                                </nav>
+
+                                <!-- Quick Module Jumper (Desktop) -->
+                                <div class="hidden lg:block glass-panel rounded-2xl p-4">
+                                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Jump to Module</h3>
+                                    <ul class="space-y-1.5 text-xs">
+                                        <li><a href="#module-1" class="text-slate-300 hover:text-ai-cyan block py-1 transition flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-slate-500"></i>1. Gemini Prompt Foundations</a></li>
+                                        <li><a href="#module-2" class="text-slate-300 hover:text-ai-cyan block py-1 transition flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-slate-500"></i>2. Books &amp; Manuals Architecture</a></li>
+                                        <li><a href="#module-3" class="text-slate-300 hover:text-ai-cyan block py-1 transition flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-slate-500"></i>3. Visual Arts &amp; Image Prompts</a></li>
+                                        <li><a href="#module-4" class="text-slate-300 hover:text-ai-cyan block py-1 transition flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-slate-500"></i>4. Music, Audio &amp; Lyrics</a></li>
+                                        <li><a href="#module-5" class="text-slate-300 hover:text-ai-cyan block py-1 transition flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-slate-500"></i>5. Video Scripts &amp; Storyboarding</a></li>
+                                        <li><a href="#module-6" class="text-slate-300 hover:text-ai-cyan block py-1 transition flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-slate-500"></i>6. NotebookLM Masterclass</a></li>
+                                    </ul>
+                                </div>
+                            </aside>
+
+                            <!-- Main View Tabs Container -->
+                            <section class="lg:col-span-9 space-y-6">
+
+                                <!-- TAB 1: COURSE MODULES -->
+                                <div id="tab-course" class="tab-content space-y-6">
+
+                                    <!-- Hero Header -->
+                                    <div class="relative overflow-hidden glass-panel rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-slate-900 via-slate-900/90 to-indigo-950/40 border border-slate-700/50">
+                                        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-ai-purple/10 rounded-full blur-3xl pointer-events-none"></div>
+                                        <div class="absolute bottom-0 left-1/3 -mb-10 w-64 h-64 bg-ai-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+                                        
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-ai-purple/10 text-ai-purple border border-ai-purple/20 mb-3">
+                                            <i class="fa-solid fa-graduation-cap text-xs"></i> Complete AI Creator Curriculum
+                                        </span>
+                                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+                                            Build Anything with <span class="gradient-text">Gemini &amp; NotebookLM</span>
+                                        </h2>
+                                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl mb-6">
+                                            From drafting 600+ page books to generating full video storyboards, AI art prompts, lyricism, and synthesis of thousands of PDFs with NotebookLM. Master the workflows of next-generation creators.
+                                        </p>
+
+                                        <!-- Search &amp; Filter Controls -->
+                                        <div class="flex flex-col sm:flex-row gap-3">
+                                            <div class="relative flex-grow">
+                                                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+                                                <input type="text" id="search-input" onkeyup="filterLessons()" placeholder="Search lessons, prompts, or workflows..." class="w-full bg-slate-950/70 text-slate-200 text-xs sm:text-sm pl-9 pr-4 py-2.5 rounded-xl border border-slate-700/60 focus:outline-none focus:border-ai-cyan transition"/>
+                                            </div>
+                                            <select id="module-filter" onchange="filterLessons()" class="bg-slate-950/70 text-slate-300 text-xs sm:text-sm px-3 py-2.5 rounded-xl border border-slate-700/60 focus:outline-none focus:border-ai-cyan transition">
+                                                <option value="all">All 6 Modules</option>
+                                                <option value="1">Module 1: Gemini Prompts</option>
+                                                <option value="2">Module 2: Books &amp; Manuals</option>
+                                                <option value="3">Module 3: Visual Arts &amp; Image</option>
+                                                <option value="4">Module 4: Music &amp; Audio</option>
+                                                <option value="5">Module 5: Video Scripting</option>
+                                                <option value="6">Module 6: NotebookLM Masterclass</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Course Modules List Container -->
+                                    <div id="modules-container" class="space-y-6">
+                                        <!-- Modules injected via JS or template -->
+                                    </div>
+                                </div>
+
+                                <!-- TAB 2: PROMPT STUDIO / BUILDER -->
+                                <div id="tab-builder" class="tab-content hidden space-y-6">
+                                    <div class="glass-panel rounded-3xl p-6 border border-slate-700/50">
+                                        <div class="flex items-center space-x-3 mb-4">
+                                            <div class="p-2.5 bg-ai-cyan/10 rounded-xl border border-ai-cyan/20 text-ai-cyan">
+                                                <i class="fa-solid fa-sliders text-xl"></i>
+                                            </div>
+                                            <div>
+                                                <h2 class="text-xl font-bold text-white">Interactive Prompt Studio</h2>
+                                                <p class="text-xs text-slate-400">Configure parameters to generate production-ready prompts for Gemini or NotebookLM.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                            <div>
+                                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Target AI Engine</label>
+                                                <select id="pb-engine" onchange="generateStudioPrompt()" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-slate-200 focus:outline-none focus:border-ai-cyan">
+                                                    <option value="gemini-advanced">Gemini 1.5 Pro / Advanced (Long Context)</option>
+                                                    <option value="gemini-flash">Gemini Flash (Speed &amp; API)</option>
+                                                    <option value="notebooklm">NotebookLM (Source Grounded)</option>
+                                                    <option value="imagen">Imagen 3 / Midjourney (Visual Prompts)</option>
+                                                </select>
+                                            </div>
+
+                                            <div>
+                                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Content Asset Type</label>
+                                                <select id="pb-type" onchange="generateStudioPrompt()" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-slate-200 focus:outline-none focus:border-ai-cyan">
+                                                    <option value="book-chapter">Comprehensive Book Chapter (KDP ready)</option>
+                                                    <option value="tech-manual">Technical Manual / Step-by-Step Guide</option>
+                                                    <option value="image-art">Photorealistic / Artistic Concept Art</option>
+                                                    <option value="music-lyrics">Song Structure &amp; Audio Prompt Set</option>
+                                                    <option value="video-script">Video Script &amp; Storyboard Grid</option>
+                                                    <option value="notebook-audio">NotebookLM Audio Overview / Podcast Script</option>
+                                                </select>
+                                            </div>
+
+                                            <div>
+                                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Tone / Persona / Aesthetic</label>
+                                                <input type="text" id="pb-tone" oninput="generateStudioPrompt()" placeholder="e.g. Authoritative, Cinematic Cyberpunk, Technical &amp; Concise" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-slate-200 focus:outline-none focus:border-ai-cyan" value="Authoritative &amp; Engaging"/>
+                                            </div>
+
+                                            <div>
+                                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Primary Subject / Core Concept</label>
+                                                <input type="text" id="pb-topic" oninput="generateStudioPrompt()" placeholder="e.g. Quantum Computing for Beginners, Neon Tokyo Cyberpunk Alley" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-slate-200 focus:outline-none focus:border-ai-cyan" value="Building Autonomous AI Agents"/>
+                                            </div>
+                                        </div>
+
+                                        <!-- Output Box -->
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between items-center">
+                                                <span class="text-xs font-bold text-slate-300 flex items-center"><i class="fa-solid fa-code text-ai-purple mr-2"></i> Generated Master Prompt</span>
+                                                <button onclick="copyToClipboard('studio-output-text')" class="px-3 py-1 bg-ai-purple/20 hover:bg-ai-purple/40 text-ai-purple text-xs font-semibold rounded-lg border border-ai-purple/30 transition flex items-center gap-1.5">
+                                                    <i class="fa-regular fa-copy"></i> Copy Prompt
+                                                </button>
+                                            </div>
+                                            <div class="relative">
+                                                <textarea id="studio-output-text" readonly="readonly" rows="8" class="w-full bg-slate-950/90 text-slate-200 font-mono text-xs p-4 rounded-xl border border-slate-800 focus:outline-none resize-none leading-relaxed"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- TAB 3: SANDBOX &amp; NOTES -->
+                                <div id="tab-notes" class="tab-content hidden space-y-6">
+                                    <div class="glass-panel rounded-3xl p-6 border border-slate-700/50 space-y-4">
+                                        <div class="flex justify-between items-center flex-wrap gap-2">
+                                            <div>
+                                                <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                                                    <i class="fa-solid fa-pen-to-square text-amber-400"></i> Practice Sandbox &amp; Local Notes
+                                                </h2>
+                                                <p class="text-xs text-slate-400">Draft ideas, test Gemini responses, and save notes directly to local storage.</p>
+                                            </div>
+                                            <button onclick="saveCurrentNote()" class="px-4 py-2 bg-gradient-to-r from-ai-purple to-ai-cyan text-white text-xs font-bold rounded-xl shadow-lg hover:opacity-90 transition">
+                                                <i class="fa-solid fa-floppy-disk mr-1.5"></i> Save Note
+                                            </button>
+                                        </div>
+
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <div class="md:col-span-1 space-y-3 border-r border-slate-800 pr-0 md:pr-4">
+                                                <div class="flex justify-between items-center">
+                                                    <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Saved Notes</h3>
+                                                    <button onclick="newNote()" class="text-xs text-ai-cyan hover:underline">+ New</button>
+                                                </div>
+                                                <div id="notes-list" class="space-y-2 max-h-80 overflow-y-auto pr-1">
+                                                    <!-- Notes items injected via JS -->
+                                                </div>
+                                            </div>
+                                            <div class="md:col-span-2 space-y-3">
+                                                <input type="text" id="note-title" placeholder="Note Title (e.g., Chapter 1 Outline)" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-slate-100 font-semibold focus:outline-none focus:border-ai-cyan"/>
+                                                <textarea id="note-body" rows="12" placeholder="Write your notes, prompt drafts, or custom responses here..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 focus:outline-none focus:border-ai-cyan leading-relaxed font-mono"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- TAB 4: CHEAT SHEET -->
+                                <div id="tab-cheat" class="tab-content hidden space-y-6">
+                                    <div class="glass-panel rounded-3xl p-6 border border-slate-700/50 space-y-6">
+                                        <div>
+                                            <h2 class="text-xl font-bold text-white mb-1"><i class="fa-solid fa-bolt text-emerald-400 mr-2"></i> Gemini &amp; NotebookLM Reference Cheat Sheet</h2>
+                                            <p class="text-xs text-slate-400">Quick technical reference parameters, limits, and system instruction syntax.</p>
+                                        </div>
+
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                                                <h3 class="text-xs font-bold text-ai-cyan uppercase tracking-wider">Temperature Settings</h3>
+                                                <ul class="text-xs space-y-1.5 text-slate-300">
+                                                    <li class="flex justify-between"><span class="font-mono text-emerald-400">0.0 - 0.2:</span> <span>Coding, Math, Factual Extraction</span></li>
+                                                    <li class="flex justify-between"><span class="font-mono text-emerald-400">0.3 - 0.5:</span> <span>Technical Manuals, Business Docs</span></li>
+                                                    <li class="flex justify-between"><span class="font-mono text-emerald-400">0.7 - 0.9:</span> <span>Creative Books, Storytelling, Lyrics</span></li>
+                                                    <li class="flex justify-between"><span class="font-mono text-emerald-400">1.0+:</span> <span>High Chaos Brainstorming &amp; Visual Art</span></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+                                                <h3 class="text-xs font-bold text-ai-purple uppercase tracking-wider">NotebookLM Source Capacities</h3>
+                                                <ul class="text-xs space-y-1.5 text-slate-300">
+                                                    <li class="flex justify-between"><span>Max Sources per Notebook:</span> <span class="font-bold text-white">50 Sources</span></li>
+                                                    <li class="flex justify-between"><span>Words per Source:</span> <span class="font-bold text-white">500,000 Words</span></li>
+                                                    <li class="flex justify-between"><span>Supported Formats:</span> <span class="text-slate-400">PDF, Google Docs, Audio, Web, YouTube</span></li>
+                                                    <li class="flex justify-between"><span>Audio Overview Output:</span> <span class="text-slate-400">Deep-Dive 2-Host Podcast (.wav/.mp3)</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3">
+                                            <h3 class="text-xs font-bold text-amber-400 uppercase tracking-wider">Prompt Framework: System Role Anchoring</h3>
+                                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80 font-mono text-xs text-slate-300">
+                                                [ROLE]: You are a world-class {expert discipline}.<br/>
+                                                [CONTEXT]: The goal is to produce {specific content artifact}.<br/>
+                                                [CONSTRAINTS]: Avoid cliches like "In this fast-paced digital world", enforce active voice.<br/>
+                                                [FORMAT]: Output using Markdown with H2, H3 headers, table formats, and callout blocks.<br/>
+                                                [INPUT]: {insert core source text or prompt details}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </section>
+                        </main>
+
+                        <!-- Floating Toast Notification -->
+                        <div id="toast" class="fixed bottom-20 md:bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-800 text-white border border-slate-700 px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-2 text-xs font-medium">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-base" id="toast-icon"></i>
+                            <span id="toast-message">Notification message</span>
+                        </div>
+
+                        <!-- Mobile Bottom Fixed Bar for quick navigation -->
+                        <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 glass-nav border-t border-slate-800 py-2 px-4 flex justify-around items-center">
+                            <button onclick="switchTab('course')" class="flex flex-col items-center text-slate-400 hover:text-ai-purple text-[10px] font-medium" id="mob-tab-course">
+                                <i class="fa-solid fa-book-open text-base mb-0.5"></i>
+                                <span>Course</span>
+                            </button>
+                            <button onclick="switchTab('builder')" class="flex flex-col items-center text-slate-400 hover:text-ai-cyan text-[10px] font-medium" id="mob-tab-builder">
+                                <i class="fa-solid fa-sliders text-base mb-0.5"></i>
+                                <span>Studio</span>
+                            </button>
+                            <button onclick="switchTab('notes')" class="flex flex-col items-center text-slate-400 hover:text-amber-400 text-[10px] font-medium" id="mob-tab-notes">
+                                <i class="fa-solid fa-note-sticky text-base mb-0.5"></i>
+                                <span>Notes</span>
+                            </button>
+                            <button onclick="switchTab('cheat')" class="flex flex-col items-center text-slate-400 hover:text-emerald-400 text-[10px] font-medium" id="mob-tab-cheat">
+                                <i class="fa-solid fa-bolt text-base mb-0.5"></i>
+                                <span>Specs</span>
+                            </button>
+                        </div>
+
+                        <!-- Application Script -->
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/geminilearning_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>

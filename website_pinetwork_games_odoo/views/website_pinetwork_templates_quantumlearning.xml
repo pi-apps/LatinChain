@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="quantumlearning" name="Quantum Learning">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html class="dark">
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Mastering Qiskit: Quantum App Development</title>
+                        <!-- Tailwind CSS CDN -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <!-- Lucide Icons -->
+                        <script src="https://unpkg.com/lucide@latest"></script>
+                        <!-- Font Inter -->
+                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet"/>
+                        <script>
+                            tailwind.config = {
+                                theme: {
+                                    extend: {
+                                        fontFamily: {
+                                            sans: ['Inter', 'sans-serif'],
+                                            mono: ['Fira Code', 'monospace'],
+                                        },
+                                        colors: {
+                                            qiskit: {
+                                                50: '#f4f0ff',
+                                                100: '#ebd9ff',
+                                                500: '#a259ff',
+                                                600: '#8a2be2',
+                                                700: '#6929c4',
+                                                900: '#1c0d38',
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        </script>
+                        <style>
+                            /* Custom Scrollbar for Code Blocks */
+                            pre::-webkit-scrollbar {
+                                height: 8px;
+                                width: 8px;
+                            }
+                            pre::-webkit-scrollbar-track {
+                                background: #0f172a;
+                            }
+                            pre::-webkit-scrollbar-thumb {
+                                background: #334155;
+                                border-radius: 4px;
+                            }
+                            /* Circuit Grid Lines */
+                            .circuit-wire {
+                                background: linear-gradient(to right, #475569 0%, #475569 100%);
+                                background-size: 100% 2px;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                            }
+                            /* Prevent long unbroken strings (code, bitstrings) from blowing out the layout */
+                            #lesson-body, #lesson-body * {
+                                overflow-wrap: anywhere;
+                                word-break: break-word;
+                            }
+                            /* Textarea: never force intrinsic height on small screens */
+                            #code-editor {
+                                min-height: 0;
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Pay Pi to GET PREMIUM
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="h-full min-h-0 flex flex-col font-sans antialiased selection:bg-qiskit-500 selection:text-white overflow-hidden">
+
+                        <!-- Top Header Navigation Bar -->
+                        <header class="sticky top-0 z-50 shrink-0 bg-slate-900/90 backdrop-blur border-b border-slate-800 px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+                            <div class="flex items-center space-x-2 sm:space-x-3 min-w-0">
+                                <!-- Anchor to go back to href="/" -->
+                                <a href="/" id="back-home-link" class="shrink-0 p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors flex items-center gap-1 text-sm font-medium" title="Return to Main Portal">
+                                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                                    <span class="hidden sm:inline">Home</span>
+                                </a>
+                                <div class="flex items-center space-x-2 min-w-0">
+                                    <div class="w-8 h-8 shrink-0 rounded-lg bg-gradient-to-tr from-qiskit-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-lg shadow-qiskit-600/30">
+                                        Q
+                                    </div>
+                                    <div class="min-w-0">
+                                        <h1 class="text-sm sm:text-base font-bold leading-tight text-white truncate">Qiskit Academy</h1>
+                                        <p class="text-xs text-slate-400 hidden sm:block truncate">Building Quantum Apps with IBM Qiskit</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Course Overall Progress Tracker -->
+                            <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+                                <div class="text-right hidden sm:block">
+                                    <div class="text-xs text-slate-400">Course Progress</div>
+                                    <div id="progress-percent" class="text-sm font-bold text-qiskit-500">0%</div>
+                                </div>
+                                <div class="w-16 sm:w-32 bg-slate-800 h-2.5 rounded-full overflow-hidden border border-slate-700 shrink-0">
+                                    <div id="progress-bar" class="bg-gradient-to-r from-qiskit-600 to-indigo-400 h-full w-0 transition-all duration-500"></div>
+                                </div>
+                                <button id="mobile-menu-toggle" class="md:hidden shrink-0 p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Open curriculum menu">
+                                    <i data-lucide="menu" class="w-6 h-6"></i>
+                                </button>
+                            </div>
+                        </header>
+
+                        <!-- Main Content Container -->
+                        <div class="flex-1 min-h-0 flex overflow-hidden relative">
+
+                            <!-- Mobile Sidebar Backdrop -->
+                            <div id="sidebar-backdrop" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-30 hidden md:hidden"></div>
+
+                            <!-- Sidebar Navigation (Lessons List) -->
+                            <aside id="sidebar" class="absolute md:relative inset-y-0 left-0 w-72 max-w-[85vw] md:max-w-none bg-slate-900 border-r border-slate-800 z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col min-h-0 shrink-0">
+                                <div class="p-4 border-b border-slate-800 flex justify-between items-center shrink-0">
+                                    <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Course Curriculum</h2>
+                                    <button id="close-sidebar" class="md:hidden text-slate-400 hover:text-white" aria-label="Close curriculum menu">
+                                        <i data-lucide="x" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                                
+                                <nav id="module-list" class="flex-1 min-h-0 overflow-y-auto p-3 space-y-1">
+                                    <!-- Modules injected by JS -->
+                                </nav>
+
+                                <div class="p-4 border-t border-slate-800 bg-slate-950/50 shrink-0">
+                                    <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                                        <span>IndexedDB Persistence</span>
+                                        <span id="db-status-badge" class="px-2 py-0.5 rounded text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800">Connected</span>
+                                    </div>
+                                    <button id="reset-progress-btn" class="w-full py-1.5 px-3 text-xs bg-slate-800 hover:bg-rose-950 hover:text-rose-300 text-slate-400 rounded transition-colors flex items-center justify-center gap-1.5">
+                                        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                                        Reset All Progress
+                                    </button>
+                                </div>
+                            </aside>
+
+                            <!-- Main Workspace (Content Area + Interactive Simulator) -->
+                            <main class="flex-1 min-h-0 min-w-0 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden bg-slate-950">
+                                
+                                <!-- Lesson Text / Guide Area -->
+                                <div class="w-full shrink-0 lg:flex-1 lg:min-h-0 lg:min-w-0 lg:overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-6 lg:max-w-4xl lg:border-r border-slate-800">
+                                    <!-- Module Badge &amp; Navigation Top -->
+                                    <div class="flex items-center justify-between gap-2 border-b border-slate-800/80 pb-4">
+                                        <span id="lesson-module-tag" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-qiskit-900/80 text-qiskit-500 border border-qiskit-700/50 truncate">
+                                            Module 1
+                                        </span>
+                                        <span id="lesson-read-time" class="shrink-0 text-xs text-slate-400 flex items-center gap-1">
+                                            <i data-lucide="clock" class="w-3.5 h-3.5"></i> 10 min
+                                        </span>
+                                    </div>
+
+                                    <!-- Lesson Content Header -->
+                                    <div>
+                                        <h2 id="lesson-title" class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Loading Quantum Lesson...</h2>
+                                        <p id="lesson-subtitle" class="text-slate-400 mt-2 text-sm sm:text-base leading-relaxed"></p>
+                                    </div>
+
+                                    <!-- Lesson Main Body Dynamic Content -->
+                                    <div id="lesson-body" class="prose prose-invert max-w-none text-slate-300 space-y-4 text-sm sm:text-base">
+                                        <!-- Dynamic Html injected here -->
+                                    </div>
+
+                                    <!-- Interactive Code / Quiz Dynamic Block -->
+                                    <div id="lesson-interactive-block" class="pt-4">
+                                        <!-- Dynamic interactive component -->
+                                    </div>
+
+                                    <!-- Bottom Module Navigation Actions -->
+                                    <div class="flex flex-wrap items-center justify-between gap-3 pt-8 border-t border-slate-800">
+                                        <button id="prev-lesson-btn" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors text-sm font-medium flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                                            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                                            Previous
+                                        </button>
+                                        <button id="mark-complete-btn" class="px-5 py-2.5 rounded-lg bg-qiskit-600 hover:bg-qiskit-500 text-white font-semibold transition-all shadow-lg shadow-qiskit-600/25 flex items-center gap-2 text-sm">
+                                            <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                            Complete &amp; Next
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Quantum Simulator &amp; Live Python Execution Sandbox Panel -->
+                                <div class="w-full shrink-0 lg:w-[480px] xl:w-[540px] lg:shrink-0 lg:min-h-0 bg-slate-900 flex flex-col border-t lg:border-t-0 border-slate-800 h-[520px] sm:h-[600px] lg:h-auto">
+                                    <!-- Sandbox Toolbar Header -->
+                                    <div class="px-4 py-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between gap-2 shrink-0">
+                                        <div class="flex items-center space-x-2 min-w-0">
+                                            <i data-lucide="terminal" class="w-4 h-4 shrink-0 text-qiskit-500"></i>
+                                            <span class="text-xs font-mono font-semibold text-slate-200 truncate">Interactive Qiskit Simulator</span>
+                                        </div>
+                                        <button id="run-code-btn" class="shrink-0 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded text-xs font-semibold flex items-center gap-1.5 transition-colors shadow">
+                                            <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+                                            Run Circuit
+                                        </button>
+                                    </div>
+
+                                    <!-- Interactive Code Editor Simulation Area -->
+                                    <div class="flex-1 min-h-0 flex flex-col p-3 gap-3 overflow-hidden bg-slate-950">
+                                        <div class="relative flex-1 min-h-0 rounded-lg border border-slate-800 bg-slate-900/90 font-mono text-xs overflow-hidden flex flex-col">
+                                            <div class="shrink-0 bg-slate-950/80 px-3 py-1.5 border-b border-slate-800 text-slate-400 text-[11px] flex justify-between items-center gap-2">
+                                                <span>qiskit_app.py</span>
+                                                <span class="text-slate-500 hidden xs:inline truncate">Python 3.10 + Qiskit v1.0</span>
+                                            </div>
+                                            <textarea id="code-editor" class="w-full flex-1 min-h-0 bg-transparent p-3 text-slate-200 focus:outline-none resize-none font-mono text-xs leading-relaxed" spellcheck="false"></textarea>
+                                        </div>
+
+                                        <!-- Output &amp; Visual Circuit Visualizer -->
+                                        <div class="flex-1 min-h-0 rounded-lg border border-slate-800 bg-slate-900 p-3 flex flex-col overflow-hidden">
+                                            <div class="shrink-0 flex items-center justify-between gap-2 border-b border-slate-800 pb-2 mb-2">
+                                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1 min-w-0">
+                                                    <i data-lucide="cpu" class="w-3.5 h-3.5 shrink-0 text-indigo-400"></i>
+                                                    <span class="truncate">Execution Output &amp; State Vector</span>
+                                                </span>
+                                                <span id="exec-status" class="shrink-0 text-[10px] font-mono text-slate-500">Ready</span>
+                                            </div>
+                                            
+                                            <div id="output-tabs-container" class="flex-1 min-h-0 overflow-y-auto space-y-3">
+                                                <!-- Visual Circuit Diagram Display -->
+                                                <div>
+                                                    <div class="text-[10px] uppercase font-mono text-slate-500 mb-1">Visual Quantum Circuit</div>
+                                                    <div id="circuit-diagram" class="p-3 bg-slate-950 rounded border border-slate-800 font-mono text-xs text-indigo-300 overflow-x-auto min-h-[70px] flex items-center justify-center">
+                                                        <span class="text-slate-600 italic">Click "Run Circuit" to render output...</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Measurement Results / State Probabilities -->
+                                                <div>
+                                                    <div class="text-[10px] uppercase font-mono text-slate-500 mb-1">Measurement Histogram (Counts)</div>
+                                                    <div id="measurement-counts" class="p-3 bg-slate-950 rounded border border-slate-800 font-mono text-xs text-slate-300 min-h-[60px]">
+                                                        <span class="text-slate-600 italic">No execution data yet.</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Console Logs -->
+                                                <div>
+                                                    <div class="text-[10px] uppercase font-mono text-slate-500 mb-1">Execution Console Log</div>
+                                                    <pre id="console-output" class="p-2 bg-slate-950 rounded text-emerald-400 font-mono text-[11px] whitespace-pre-wrap break-words border border-slate-800/80">Qiskit Simulator initialized.</pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+
+                        <!-- Notification Toast Container -->
+                        <div id="toast-container" class="fixed bottom-4 right-4 left-4 sm:left-auto z-50 flex flex-col items-end space-y-2 pointer-events-none"></div>
+
+                        <!-- JavaScript Application Logic -->
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/quantumlearning_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>

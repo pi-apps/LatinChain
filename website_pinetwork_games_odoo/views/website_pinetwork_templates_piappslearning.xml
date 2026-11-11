@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <template id="piappslearning" name="Pi Apps Learning">
+            <t t-call="web.layout">
+                &lt;!DOCTYPE html&gt;
+                <html>
+                    <head>
+                        <meta charset="UTF-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <title>Pi Network App Development Masterclass</title>
+                        <!-- Tailwind CSS CDN -->
+                        <script src="https://cdn.tailwindcss.com"></script>
+                        <!-- FontAwesome Icons -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+                        <!-- Google Fonts Inter -->
+                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+                        <script>
+                            tailwind.config = {
+                                theme: {
+                                    extend: {
+                                        colors: {
+                                            pi: {
+                                                purple: '#4a154b',
+                                                darkPurple: '#2d0c2e',
+                                                gold: '#f2a900',
+                                                accent: '#8a2be2',
+                                                lightBg: '#f8f9fa',
+                                                cardDark: '#1e1b2e'
+                                            }
+                                        },
+                                        fontFamily: {
+                                            sans: ['Inter', 'sans-serif'],
+                                        }
+                                    }
+                                }
+                            }
+                        </script>
+                        <style>
+                            /* Custom scrollbars and code block formatting */
+                            pre {
+                                background-color: #1a1b26;
+                                color: #a9b1d6;
+                                padding: 1rem;
+                                border-radius: 0.5rem;
+                                overflow-x: auto;
+                                font-size: 0.875rem;
+                            }
+                            .code-keyword { color: #bb9af7; font-weight: bold; }
+                            .code-function { color: #7aa2f7; }
+                            .code-string { color: #9ece6a; }
+                            .code-comment { color: #565f89; font-style: italic; }
+                            .custom-scrollbar::-webkit-scrollbar {
+                                width: 6px;
+                            }
+                            .custom-scrollbar::-webkit-scrollbar-track {
+                                background: rgba(0, 0, 0, 0.05);
+                            }
+                            .custom-scrollbar::-webkit-scrollbar-thumb {
+                                background: #f2a900;
+                                border-radius: 3px;
+                            }
+                        </style>
+                        
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        
+                        <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+                        
+                        <script type="text/javascript">
+                            startCommonAppsAI();
+                        </script>
+                        
+                        <div id="blockingOverlay" style="display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+                            <div style="display: flex; background-color: white; padding: 30px; border-radius: 10px; text-align: center; font-family: Arial, sans-serif; font-size: 24px; color: #333;">
+                                <div id="blocking-message" style="display: none;">
+                                    <div>
+                                        Go to Pi Browser
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#" target="_blank">Click here</a>
+                                    </div>
+                                </div>
+                                <div id="paying-message" style="display: none;">
+                                    <div>
+                                        Pay Pi to GET PREMIUM
+                                    </div>
+                                    <div>
+                                        <a class="anchor-click" style="color: blue;" href="#">Click here</a>
+                                    </div>
+                                    <div t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
+                                        <br/>
+                                        <a id="test_app" style="color: blue;" href="#">Or here to test this app</a>
+                                    </div>
+                                </div>
+                                <div id="loading-message" style="display: block;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sandbox" t-att-value="sandbox"/>
+                        <input type="hidden" id="mainnet" t-att-value="mainnet"/>
+                        <div id="pi_prowser_message" style="display:none;">You need to access from Pi Browser.</div>
+                        
+                    </head>
+                    <body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between selection:bg-pi-gold selection:text-pi-darkPurple">
+
+                        <!-- Top Navigation Header -->
+                        <header class="sticky top-0 z-50 bg-pi-darkPurple text-white shadow-lg border-b border-pi-gold/30">
+                            <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <!-- Anchor with back symbol to go to href="/" -->
+                                    <a href="/" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-pi-gold hover:text-pi-darkPurple transition-colors duration-200" title="Return Home" aria-label="Home">
+                                        <i class="fa-solid fa-arrow-left text-lg"></i>
+                                    </a>
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-8 h-8 rounded-full bg-pi-gold flex items-center justify-center text-pi-darkPurple font-bold text-lg shadow-sm">
+                                            π
+                                        </div>
+                                        <div>
+                                            <h1 class="font-bold text-base md:text-lg leading-tight tracking-tight">Pi Dev Academy</h1>
+                                            <p class="text-xs text-pi-gold/80 hidden sm:block">Building Decentralized Apps on Pi</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Global Progress Badge -->
+                                <div class="flex items-center bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
+                                    <i class="fa-solid fa-trophy text-pi-gold mr-2 text-xs sm:text-sm"></i>
+                                    <span class="text-xs sm:text-sm font-semibold" id="global-progress-text">0% Complete</span>
+                                </div>
+                            </div>
+                        </header>
+
+                        <!-- Main Container -->
+                        <main class="flex-grow max-w-4xl w-full mx-auto p-4 md:p-6 space-y-6">
+
+                            <!-- Course Banner / Intro -->
+                            <section class="bg-gradient-to-r from-pi-purple to-indigo-900 text-white rounded-2xl p-6 shadow-xl relative overflow-hidden">
+                                <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none text-9xl font-extrabold text-white">
+                                    π
+                                </div>
+                                <div class="relative z-10 space-y-3">
+                                    <span class="inline-block bg-pi-gold/20 text-pi-gold text-xs px-2.5 py-1 rounded-full font-semibold border border-pi-gold/30 uppercase tracking-wider">
+                                        Full Interactive Guide
+                                    </span>
+                                    <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">How to Build Pi Network Apps (Basics)</h2>
+                                    <p class="text-slate-200 text-sm md:text-base max-w-2xl leading-relaxed">
+                                        Learn everything needed to build, integrate, and launch decentralized applications (dApps) in the Pi Ecosystem using Javascript SDK, backend verification, and payments.
+                                        For advanced functionalities, go to Official Docs. 
+                                    </p>
+
+                                    <!-- Course Progress Bar -->
+                                    <div class="pt-2">
+                                        <div class="flex justify-between text-xs text-slate-300 mb-1 font-medium">
+                                            <span>Overall Course Progress</span>
+                                            <span id="progress-percent-label">0%</span>
+                                        </div>
+                                        <div class="w-full bg-white/20 h-2.5 rounded-full overflow-hidden">
+                                            <div id="course-progress-bar" class="bg-pi-gold h-full w-0 transition-all duration-500 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Course Modules List -->
+                            <section class="space-y-4">
+                                <div class="flex justify-between items-center px-1">
+                                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                                        <i class="fa-solid fa-layer-group text-pi-purple"></i> Course Modules
+                                    </h3>
+                                    <button id="reset-progress-btn" class="text-xs text-rose-500 hover:text-rose-700 underline font-medium transition-colors">
+                                        Reset Progress
+                                    </button>
+                                </div>
+
+                                <div id="modules-container" class="space-y-4">
+                                    <!-- Modules will be injected dynamically via JS -->
+                                </div>
+                            </section>
+
+                            <!-- Interactive Sandbox / Playground Section -->
+                            <section class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+                                <div class="border-b border-slate-100 pb-3">
+                                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                                        <i class="fa-solid fa-vial text-pi-gold"></i> Interactive Pi SDK Simulator
+                                    </h3>
+                                    <p class="text-xs text-slate-500 mt-1">Test Pi SDK calls right here in your browser context.</p>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="space-y-3">
+                                        <label class="block text-xs font-semibold uppercase text-slate-500">Select API Function</label>
+                                        <select id="sdk-sim-select" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-sm font-medium focus:ring-2 focus:ring-pi-purple focus:outline-none">
+                                            <option value="init">Pi.init({ version: "2.0" })</option>
+                                            <option value="authenticate">Pi.authenticate(['username', 'payments'])</option>
+                                            <option value="payment">Pi.createPayment({...})</option>
+                                        </select>
+
+                                        <button id="run-sim-btn" class="w-full bg-pi-purple hover:bg-pi-darkPurple text-white py-2.5 px-4 rounded-lg font-semibold text-sm transition-colors shadow flex items-center justify-center gap-2">
+                                            <i class="fa-solid fa-play"></i> Execute Function
+                                        </button>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-xs font-semibold uppercase text-slate-500 mb-1">Simulated Output</label>
+                                        <div id="sim-output" class="bg-slate-900 text-emerald-400 p-3 rounded-lg text-xs font-mono h-32 overflow-y-auto custom-scrollbar border border-slate-800">
+                                            // Output will appear here after execution...
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- User Notes Section (Persisted in IndexedDB) -->
+                            <section class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+                                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                                        <i class="fa-solid fa-pen-to-square text-indigo-600"></i> Dev Notes &amp; Sandbox (IndexedDB Saved)
+                                    </h3>
+                                    <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-medium" id="notes-status-tag">Auto-saved</span>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <textarea id="user-notes" rows="4" placeholder="Jot down notes, API keys, or project ideas here... Changes auto-save to IndexedDB." class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-pi-purple focus:outline-none resize-y"></textarea>
+                                    <div class="flex justify-end">
+                                        <button id="save-notes-btn" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5">
+                                            <i class="fa-solid fa-floppy-disk"></i> Manual Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </section>
+                        </main>
+
+                        <!-- Footer -->
+                        <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 text-center py-6 px-4 mt-8 text-xs">
+                            <div class="max-w-4xl mx-auto space-y-2">
+                                <div class="flex justify-center items-center gap-2 text-slate-300 font-semibold">
+                                    <a href="/" class="hover:text-pi-gold transition-colors flex items-center gap-1">
+                                        <i class="fa-solid fa-arrow-left"></i> Exit to Main
+                                    </a>
+                                    <span>•</span>
+                                    <span>Pi Network Dev Guide</span>
+                                </div>
+                                <p>Designed for mobile &amp; desktop developers building on Pi Ecosystem.</p>
+                            </div>
+                        </footer>
+
+                        <!-- Course Logic & IndexedDB Engine Script -->
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/apps/piappslearning_functions.js?v=1.101"></script>
+                    </body>
+                </html>
+            </t>
+		</template>
+
+</odoo>
