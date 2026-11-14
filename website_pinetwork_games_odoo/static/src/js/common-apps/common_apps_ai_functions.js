@@ -430,6 +430,18 @@ var startCommonAppsAI = () => {
                 document.getElementById('loading-message').style.display = 'none'; // Use 'flex' instead of 'block'
             }
             
+            $('a[href="/"], a[href="/es"], a[href="/es/"]').off('click').on('click', function(e) {
+                // Previene el comportamiento por defecto del enlace si lo deseas (opcional)
+                e.preventDefault();
+                
+                var result = confirm("Are you sure you want to go back?.");
+                if(result)
+                {
+                    //history.back();
+                    window.location.href="/";
+                }
+            });
+            
         })();
     });
 };
