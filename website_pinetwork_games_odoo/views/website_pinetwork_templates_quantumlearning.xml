@@ -240,7 +240,7 @@
                                                 <span>qiskit_app.py</span>
                                                 <span class="text-slate-500 hidden xs:inline truncate">Python 3.10 + Qiskit v1.0</span>
                                             </div>
-                                            <textarea id="code-editor" class="w-full flex-1 min-h-0 bg-transparent p-3 text-slate-200 focus:outline-none resize-none font-mono text-xs leading-relaxed" spellcheck="false"></textarea>
+                                            <textarea id="code-editor" readonly="readonly" class="w-full flex-1 min-h-0 bg-transparent p-3 text-slate-200 focus:outline-none resize-none font-mono text-xs leading-relaxed" spellcheck="false"></textarea>
                                         </div>
 
                                         <!-- Output &amp; Visual Circuit Visualizer -->
