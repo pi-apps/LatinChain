@@ -3088,6 +3088,10 @@ $( document ).ready(function() {
         $.colorbox({fixed: true, href:"/modal-vote", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });
     
+    $( ".not-gcv-info" ).click(function() {
+        $.colorbox({fixed: true, href:"/modal-not-gcv", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
+    });
+    
     $( ".rules_button" ).click(function() {
         $.colorbox({fixed: true, href:"/modal-rules", iframe:true, width: "100%", height: "100%", maxWidth: "100%", maxHeight: "100%"});
     });

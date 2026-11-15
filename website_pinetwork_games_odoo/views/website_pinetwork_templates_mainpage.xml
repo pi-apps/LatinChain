@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.488"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.489"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -1332,7 +1332,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <h3 align="center" style="font-weight:600; color: white !important">GCV isn't accepted</h3>
+                                <button class="btn btn-info not-gcv-info rounded" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-trophy"></i></div> <div style="display: inline">GCV isn't accepted</div></button>
                             </div>
                             <div class="col-12">
                                 <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
@@ -3906,9 +3906,7 @@
                                         
                                         <div style="margin-top: 2px;" class="row">
                                             <div class="col-12" style="padding: 1px">
-                                                <h5 style="color: white !important;">
-                                                    GCV isn't accepted
-                                                </h5>
+                                                <button class="btn btn-info not-gcv-info rounded" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-trophy"></i></div> <div style="display: inline">GCV isn't accepted</div></button>
                                             </div>
                                         </div>
                                         
