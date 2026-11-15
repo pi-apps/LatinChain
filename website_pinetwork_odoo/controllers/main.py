@@ -310,7 +310,7 @@ class PiNetworkBaseController(http.Controller):
         elif accessed_path in ['/richv3-book/hardcover']:
             return http.request.redirect('https://www.amazon.com/dp/B0HQXN42MX')
             
-    @http.route(['/python-book/', '/python-book/paperback', '/python-book/ebook', '/python-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    @http.route(['/python-book/', '/python-book/paperback', '/python-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def python_book(self, **kw):
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/python-book/', '/python-book/paperback']:
@@ -319,6 +319,22 @@ class PiNetworkBaseController(http.Controller):
             return http.request.redirect('https://www.amazon.com/dp/B0HQY8QQ8V')
         #elif accessed_path in ['/python-book/hardcover']:
         #    return http.request.redirect('https://www.amazon.com/dp/B0HQXN42MX')
+    
+    @http.route(['/javascript-book/', '/javascript-book/paperback', '/javascript-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def javascript_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/javascript-book/', '/javascript-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HRSC1W22')
+        elif accessed_path in ['/javascript-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HRS4GBS1')
+    
+    @http.route(['/c-cpp-book/', '/c-cpp-book/paperback', '/c-cpp-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def c_cpp_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/c-cpp-book/', '/c-cpp-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HRS9LQKR')
+        elif accessed_path in ['/c-cpp-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HRS6DM6S')
     
     @http.route(['/bstocks-book/', '/bstocks-book/paperback', '/bstocks-book/ebook', '/bstocks-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def bstocks_book(self, **kw):
