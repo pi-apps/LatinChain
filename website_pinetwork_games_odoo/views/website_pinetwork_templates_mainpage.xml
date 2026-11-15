@@ -1332,7 +1332,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <button class="btn btn-info not-gcv-info rounded" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-trophy"></i></div> <div style="display: inline">GCV isn't accepted</div></button>
+                                <button class="btn btn-info not-gcv-info rounded" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-circle-xmark"></i></div> <div style="display: inline">GCV isn't accepted</div></button>
                             </div>
                             <div class="col-12">
                                 <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
@@ -3906,7 +3906,7 @@
                                         
                                         <div style="margin-top: 2px;" class="row">
                                             <div class="col-12" style="padding: 1px">
-                                                <button class="btn btn-info not-gcv-info rounded" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-trophy"></i></div> <div style="display: inline">GCV isn't accepted</div></button>
+                                                <button class="btn btn-info not-gcv-info rounded" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-circle-xmark"></i></div> <div style="display: inline">GCV isn't accepted</div></button>
                                             </div>
                                         </div>
                                         
