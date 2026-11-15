@@ -1332,6 +1332,9 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
+                                <h3 align="center" style="font-weight:600; color: white !important">GCV isn't accepted</h3>
+                            </div>
+                            <div class="col-12">
                                 <t t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']">
                                     <h3 align="center" style="font-weight:600; color: white !important">LatinChain Mainnet<br/><div style="font-size: 80%;">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><div style="font-size: 80%; display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div><div style="font-size: 80%; display: none;" class="getverified">You're LITE<br/>GET PREMIUM for 30 days</div><div style="font-size: 80%; display: none;" class="im-winner-paid">You are winner and you were paid, check your wallet</div></h3>
                                 </t>
@@ -3901,6 +3904,14 @@
                                         <div class="translate_here" style="font-size: 70% !important; text-align:center; margin-bottom:0px;">
                                         </div>
                                         
+                                        <div style="margin-top: 2px;" class="row">
+                                            <div class="col-12" style="padding: 1px">
+                                                <h5 style="color: white !important;">
+                                                    GCV isn't accepted
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        
                                         <h5 t-if="mainnet in ['Mainnet ON', 'Mainnet OFF']" style="font-size: 80% !important; color: white !important;">
                                             <div><button class="btn btn-sm btn-outline-info mb-2 o_default_snippet_text button-share" style="border-radius: 50%; border: 2px solid;"><div style="display:inline;"><i class="fa fa-share-alt"></i></div></button> LatinChain Mainnet<br/><div style="font-size: 80%">Boost Pi mining power <i class="fa fa-bolt"></i> here</div><!--<div style="display: none;" class="getverified">You're LITE, get PREMIUM</div>--><div style="display: none;" class="isverified">You're PREMIUM for <span class="days_available_total"/> days</div>
                                                 <div> <!-- style="display: none;" class="getverified">-->
@@ -3977,13 +3988,6 @@
                                                         <div class="col-12" style="padding: 1px">
                                                             <a href="/premium" class="getverified href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !importan;"><div style="display:inline"><i class="fa-solid fa-fingerprint"></i></div> <div style="display:inline">PREMIUM</div></a> 
                                                             <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC href-external btn btn-outline-success text-white border-success" style="border: 2px solid; font-size: 80% !important;"><div style="display:inline"><i class="fa-solid fa-rocket"></i></div> <div style="display:inline">STAKE</div></a>
-                                                        </div>
-                                                    </div>
-                                                    <div style="margin-top: 2px;" class="row">
-                                                        <div class="col-12" style="padding: 1px">
-                                                            <h5 style="color: white !important;">
-                                                                GCV isn't accepted
-                                                            </h5>
                                                         </div>
                                                     </div>
                                                 </div>
