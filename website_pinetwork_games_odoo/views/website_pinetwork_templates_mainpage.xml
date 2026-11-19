@@ -4119,9 +4119,12 @@
                                                 <!--<div class="col-6" style="padding: 2px">
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-store"></i></div><div style="">Products</div><div style="">for Fans</div></a>
                                                 </div>-->
-                                                <!--<div class="col-6 getverified" style="padding: 2px">
+                                                <div class="col-6 getverified" style="padding: 2px">
                                                     <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">Unlock-All</div><div style="">PREMIUM</div></a>
-                                                </div>-->
+                                                </div>
+                                                <div class="col-6" style="padding: 2px">
+                                                    <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="">Boost app</div><div style="">Stake Pi</div></a>
+                                                </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
                                                         <a t-if="mainnet in ['Testnet ON', 'Testnet OFF']" class="GoForwardLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://news.latin-chain.com/p/latinchain-ecosystem-pi-network_01394312742.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-lock-open"></i></div><div style="">Unlock v1</div><div style="">News</div></a>
@@ -4158,13 +4161,12 @@
                                                 <div class="col-6 getverified" style="padding: 2px">
                                                     <button class="giving-tip btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="">Unlock v4</div><div style="">Send tip</div></button>
                                                 </div>
-                                                <div class="col-6 getverified" style="padding: 2px">
+                                                <!--<div class="col-6 getverified" style="padding: 2px">
                                                     <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">Unlock-All</div><div style="">PREMIUM</div></a>
-                                                </div>
-                                                <div class="col-6" style="padding: 2px">
-                                                    <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
+                                                </div>-->
+                                                <!--<div class="col-6" style="padding: 2px">
                                                     <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-rocket"></i></div><div style="">Boost app</div><div style="">Stake Pi</div></a>
-                                                </div>
+                                                </div>-->
                                                 <div class="col-6" style="padding: 2px">
                                                     <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/piapps-book/ebook" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-book-open"></i></div><div style="">Book</div><div style="">Read Pi</div></a>
