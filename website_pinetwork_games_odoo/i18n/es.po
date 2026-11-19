@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-19 17:38+0000\n"
-"PO-Revision-Date: 2026-11-19 17:38+0000\n"
+"POT-Creation-Date: 2026-11-19 18:09+0000\n"
+"PO-Revision-Date: 2026-11-19 18:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -358,6 +358,7 @@ msgstr ""
 msgid ""
 "* GCV or any fixed Pi price is not being accepted on LatinChain Platform."
 msgstr ""
+"* En la plataforma LatinChain no se acepta GCV ni ningún precio fijo de Pi."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -421,6 +422,9 @@ msgid ""
 "every pioneer can contribute what they are able to, we won't accept the GCV "
 "or any fixed Pi price."
 msgstr ""
+"* Dado que buscamos una economía saludable en el ecosistema Pi, en la que "
+"cada pionero pueda contribuir según sus posibilidades, no aceptaremos el GCV"
+" ni ningún precio fijo para Pi."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.rules
@@ -454,7 +458,7 @@ msgstr "* Usa este link para unirte a Pi Network:"
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal_not_gcv
 msgid "* We only accept Pi market price, on Exchanges."
-msgstr ""
+msgstr "* Solo aceptamos el precio de mercado de Pi en los exchanges."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal_not_gcv
@@ -462,6 +466,8 @@ msgid ""
 "* You can support us by: Staking Pi, becoming Premium, giving us tips or "
 "donations."
 msgstr ""
+"* Puedes apoyarnos mediante: el staking de Pi, la suscripción Premium, o "
+"enviándonos propinas o donaciones."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.geminilearning
@@ -6516,6 +6522,8 @@ msgid ""
 "Hello pioneers, we aren't accepting GCV or any fixed Pi price. We only "
 "accept Pi market price."
 msgstr ""
+"Hola, pioneros: no aceptamos GCV ni ningún precio fijo para Pi. Solo "
+"aceptamos el precio de mercado de Pi."
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.binance_donation_stay_safe
@@ -9875,8 +9883,8 @@ msgstr ""
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal_not_gcv
-msgid "Thank you very much for your support throught years!."
-msgstr ""
+msgid "Thank you very much for your support over the years!."
+msgstr "¡Muchas gracias por tu apoyo a lo largo de los años!"
 
 #. module: website_pinetwork_games_odoo
 #: model_terms:ir.ui.view,arch_db:website_pinetwork_games_odoo.modal
