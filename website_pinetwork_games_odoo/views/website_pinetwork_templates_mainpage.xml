@@ -4101,7 +4101,7 @@
                                     <div style="">
                                         <!--<div class="getverified" style="margin-bottom: 10px;">
                                             <div class="row">
-                                                <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Donate<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once<t t-if="amount_price_2 and float(amount_price_2) &gt; 0"><br/><t t-esc="str(amount_price_2)" /> Pi</t></div></button>
+                                                <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Send tip<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once<t t-if="amount_price_2 and float(amount_price_2) &gt; 0"><br/><t t-esc="str(amount_price_2)" /> Pi</t></div></button>
                                             </div>
                                         </div>-->
                                         
@@ -4147,7 +4147,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-6 getverified" style="padding: 2px">
-                                                    <button class="giving-tip btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="">Unlock v4</div><div style="">Donate</div></button>
+                                                    <button class="giving-tip btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;"><div style=""><i class="fa-solid fa-handshake-simple"></i></div><div style="">Unlock v4</div><div style="">Send tip</div></button>
                                                 </div>
                                                 <div class="col-6 getverified" style="padding: 2px">
                                                     <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">All-Unlock</div><div style="">PREMIUM</div></a>
@@ -4225,7 +4225,7 @@
                                         
                                         <div class="getverified" style="margin-bottom: 10px;">
                                             <div class="row">
-                                                <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Donate<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once<t t-if="amount_price_2 and float(amount_price_2) &gt; 0"><br/><t t-esc="str(amount_price_2)" /> Pi</t></div></button>
+                                                <button class="giving-tip btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-handshake-simple"></i></div> <div style="display: inline">Send tip<br/>+<t t-esc="int(points_latin_amount_tip)" /> Latin points<br/>Unlock Once<t t-if="amount_price_2 and float(amount_price_2) &gt; 0"><br/><t t-esc="str(amount_price_2)" /> Pi</t></div></button>
                                             </div>
                                         </div>
                                         
