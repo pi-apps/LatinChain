@@ -3435,6 +3435,12 @@
                         </div>
                         
                         <br/><br/>
+                        
+                        <div id='recent-posts-resume-list' class='container justify-content-center' style='text-align: center; margin-top: 30px; box-sizing: border-box; max-width: 810px;'></div>
+                                
+                        <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_cryptonewsfeed_noads.js?v=1.107"></script>
+                        
+                        <br/><br/>
                         <div id="social_div">Share in Social Networks:<br/><br/>
                             <button class="btn btn-outline-primary button-share" style="border-radius: 50%; border: 2px solid;"><i class="fa fa-share-alt"></i></button><br/><br/>
                             
@@ -3476,12 +3482,6 @@
                         </div>
                         
                     </div>
-                    
-                    <div id='recent-posts-resume-list' class='container justify-content-center' style='text-align: center; margin-top: 30px; box-sizing: border-box; max-width: 810px;'></div>
-                                
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_cryptonewsfeed_noads.js?v=1.107"></script>
-                    
-                    <br/><br/>
                     
                     <!--
                     <div class="container" style="text-align:center;" t-if="mainnet in [False]">
