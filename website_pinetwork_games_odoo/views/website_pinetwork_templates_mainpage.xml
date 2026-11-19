@@ -4109,15 +4109,18 @@
                                             <div class="row" style="margin-bottom: 10px;">
                                                 <button class="btn btn-block btn-info pi-hackathon-info rounded col-12" style="border: 2px solid black; font-weight: bold;"><div style="display: inline"><i class="fa-solid fa-trophy"></i></div> <div style="display: inline">Pi Hackathon winners</div></button>
                                             </div>
-                                            <!--<div class="row" style="margin-bottom: 10px;">
+                                            <div class="row" style="margin-bottom: 10px;">
                                                 <a class="btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style="display: inline"><i class="fa-solid fa-store"></i></div> <div style="display: inline">Merchandise<br/>for Fans</div></a>
-                                            </div>-->
-                                            <div class="row getverified" style="margin-bottom: 10px;">
-                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">Unlock Everything</div><div style="">GET PREMIUM</div></a>
                                             </div>
+                                            <!--<div class="row getverified" style="margin-bottom: 10px;">
+                                                <a class="PayPiLink btn btn-block btn-success rounded col-12" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">Unlock Everything</div><div style="">GET PREMIUM</div></a>
+                                            </div>-->
                                             <div class="row" style="margin-top: 2px;" translate="no">
-                                                <div class="col-6" style="padding: 2px">
+                                                <!--<div class="col-6" style="padding: 2px">
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://club.latin-chain.com" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-store"></i></div><div style="">Products</div><div style="">for Fans</div></a>
+                                                </div>-->
+                                                <div class="col-6 getverified" style="padding: 2px">
+                                                    <a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">Unlock 100%</div><div style="">PREMIUM</div></a>
                                                 </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <div t-if="mainnet in ['Testnet ON', 'Testnet OFF']">
