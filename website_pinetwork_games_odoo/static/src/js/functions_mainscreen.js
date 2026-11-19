@@ -1486,6 +1486,8 @@ $( document ).ready(function() {
         if (!currentHref.includes(hashLatinChainGoogleTranslate)) {
             $(this).attr('href', currentHref + hashLatinChainGoogleTranslate);
         }
+        
+        localStorage.setItem("popup_latinchain", true);
     });
     
     $(document).on('cbox_open', function() {

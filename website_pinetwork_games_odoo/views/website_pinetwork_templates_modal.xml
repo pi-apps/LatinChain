@@ -1248,6 +1248,20 @@
                                 
                                 <t t-set="link_tag_code" t-value="amazon_aff_code"/>
                                 
+                                <h5 t-if="with_links">
+                                    But first, do you like LatinChain Platfom?. Try the following links.
+                                </h5>
+                                
+                                <div style="margin-bottom:5px; margin-top: 5px;" class="col-12">
+                                    <a href="https://latinchain.pinet.com/index-nopopup" target="_blank" class="col-12 href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div><i class="fa-solid fa-rocket"></i></div><div>CLICK HERE</div><div>(Go to LatinChain Mainnet)</div></strong></a>
+                                </div>
+                                <div style="margin-bottom:5px" class="col-12">
+                                    <a href="https://ecosystem.pinet.com/apps/62e0897afd5e7a022ac34e5a" target="_blank" class="col-12 href-external btn btn-success font-weight-bold text-white border-success" style="border: 2px solid; filter: contrast(100%) !important;"><strong><div><i class="fa-solid fa-rocket"></i></div><div style="">STAKE PI</div><div style="">Boost LatinChain Rank on Mainnet</div></strong></a>
+                                </div>
+                                <div style="margin-bottom:5px" class="col-12">
+                                    <a href="https://latinchaintest9869.pinet.com/index-nopopup" target="_blank" class="col-12 btn btn-link mb-2 o_default_snippet_text">Go to LatinChain Testnet</a>
+                                </div>
+                                
                                 <!--<div t-if="with_links">
                                     <br/>
                                     <t t-set="link_value" t-value="'https://www.amazon.com/?&amp;linkCode=sl2&amp;tag=' + link_tag_code + '&amp;linkId=f84d100dc0684303b0c16c600d90f848&amp;language=en_US&amp;ref_=as_li_ss_tl'"/>
