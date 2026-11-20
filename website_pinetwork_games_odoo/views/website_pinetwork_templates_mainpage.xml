@@ -1029,7 +1029,7 @@
                     
                     <!--<script src="/website_pinetwork_odoo/static/src/js/common_functions.js?v=1.107"></script>-->
                     
-                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.490"></script>
+                    <script type="text/javascript" src="/website_pinetwork_games_odoo/static/src/js/functions_mainscreen.js?v=1.1.491"></script>
                     
                     <!--<script t-if="mainnet in ['Testnet ON', 'Testnet OFF'] and nopopup" async="true" t-att-src="google_adsense" crossorigin="anonymous"></script>
                     -->
@@ -4543,7 +4543,7 @@
                           <a href="/premium" class="getverified href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div translate="no">Premium</div></a>
                           <a href="javascript:void(0)" rel="noopener" target="_blank" class="openUrlInSystemBrowserLC href-external btn btn-outline-success font-weight-bold text-white border-success" style="border: 2px solid;"><div translate="no">Stake Pi</div></a> 
                         </span>
-                        <button type="button" class="btn btn-danger btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close" onclick="document.body.style.paddingTop = '0px'; document.getElementById('goforward-message').style.paddingTop = '0px'; this.parentElement.parentElement.remove(); jQuery.colorbox.close();">X</button>
+                        <button type="button" class="btn btn-danger btn-close btn-close-white close-alert-getverified" data-bs-dismiss="alert" aria-label="Close" onclick="document.body.style.paddingTop = '0px'; document.getElementById('goforward-message').style.paddingTop = '0px'; this.parentElement.parentElement.remove();">X</button>
                       </div>
                     </div>
                     

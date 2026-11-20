@@ -1492,6 +1492,7 @@ $( document ).ready(function() {
     
     $(document).on('cbox_open', function() {
         $('#cboxOverlay, #colorbox').appendTo('body');
+        $('.close-alert-getverified').click();
     });
     
     var blockingOverlayElement = document.getElementById('blockingOverlay');
