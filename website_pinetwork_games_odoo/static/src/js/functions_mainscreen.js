@@ -1490,9 +1490,15 @@ $( document ).ready(function() {
         localStorage.setItem("popup_latinchain", true);
     });
     
-    $(document).on('cbox_open', function() {
-        $('#cboxOverlay, #colorbox').appendTo('body');
-        $('.close-alert-getverified').click();
+    //$(document).on('cbox_open', function() {
+        //$('#cboxOverlay, #colorbox').appendTo('body');
+        //$('.close-alert-getverified').click();
+    //});
+    
+    $(document).on('cbox_complete', function() {
+      // Runs after Colorbox opens and content is loaded
+      $('#cboxOverlay, #colorbox').appendTo('body');
+      $('.close-alert-getverified').click();
     });
     
     var blockingOverlayElement = document.getElementById('blockingOverlay');
