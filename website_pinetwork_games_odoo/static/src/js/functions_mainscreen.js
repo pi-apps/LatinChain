@@ -36,6 +36,8 @@ var is_open_tab_ads = false;
 
 var eco_page_version = ""; //"?v=1.154";
 
+var latinOpenedIt = true;
+
 function setConfirmUnload(on) {
     unloadMessage(on);
 }
@@ -1512,11 +1514,12 @@ $( document ).ready(function() {
         const $ = await waitForColorbox();
         // Colorbox is now guaranteed to be available
         
-        let latinOpenedIt = false;
         $(document).on('cbox_open', function() {
             $('#cboxOverlay, #colorbox').appendTo('body');
-            $('.close-alert-getverified').click();
-            latinOpenedIt = true;
+            //$('.close-alert-getverified').click();
+            document.body.style.paddingTop = '0px';
+            document.getElementById('goforward-message').style.paddingTop = '0px';
+            document.getElementById('important-message').style.display = 'none';
         });
         
         $(document).on('cbox_closed', function () {
@@ -1525,7 +1528,6 @@ $( document ).ready(function() {
                 document.body.style.paddingTop = '55px';
                 document.getElementById('goforward-message').style.paddingTop = '30px';
                 document.getElementById('important-message').style.display = 'block';
-                latinOpenedIt = false;
             }
         });
         
