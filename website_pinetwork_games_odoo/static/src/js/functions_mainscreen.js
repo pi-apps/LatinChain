@@ -1490,16 +1490,37 @@ $( document ).ready(function() {
         localStorage.setItem("popup_latinchain", true);
     });
     
-    //$(document).on('cbox_open', function() {
-        //$('#cboxOverlay, #colorbox').appendTo('body');
-        //$('.close-alert-getverified').click();
-    //});
-    
-    $(document).on('cbox_complete', function() {
-      // Runs after Colorbox opens and content is loaded
-      $('#cboxOverlay, #colorbox').appendTo('body');
-      $('.close-alert-getverified').click();
-    });
+    function waitForColorbox(timeout = 20000) {
+      return new Promise((resolve, reject) => {
+        const startTime = Date.now();
+
+        const checkInterval = setInterval(() => {
+          if (window.jQuery && typeof window.jQuery.colorbox !== 'undefined') {
+            clearInterval(checkInterval);
+            resolve(window.jQuery);
+          } else if (Date.now() - startTime >= timeout) {
+            clearInterval(checkInterval);
+            reject(new Error('Colorbox failed to load within the timeout period.'));
+          }
+        }, 50);
+      });
+    }
+
+    // Usage:
+    async function initColorbox() {
+      try {
+        const $ = await waitForColorbox();
+        // Colorbox is now guaranteed to be available
+        $(document).on('cbox_open', function() {
+            $('#cboxOverlay, #colorbox').appendTo('body');
+            $('.close-alert-getverified').click();
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    initColorbox();
     
     var blockingOverlayElement = document.getElementById('blockingOverlay');
     document.body.appendChild(blockingOverlayElement);
