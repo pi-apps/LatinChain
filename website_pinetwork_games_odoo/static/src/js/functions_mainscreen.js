@@ -1521,7 +1521,7 @@ $( document ).ready(function() {
             {
                 document.body.style.paddingTop = '55px';
                 document.getElementById('goforward-message').style.paddingTop = '30px';
-                document.getElementById('important-message').style.display = 'flex';
+                document.getElementById('important-message').style.display = 'block';
             }
         });
         
