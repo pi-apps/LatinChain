@@ -1513,7 +1513,7 @@ $( document ).ready(function() {
         // Colorbox is now guaranteed to be available
         $(document).on('cbox_open', function() {
             $('#cboxOverlay, #colorbox').appendTo('body');
-            //$('.close-alert-getverified').click();
+            $('.close-alert-getverified').click();
         });
       } catch (error) {
         console.error(error);
