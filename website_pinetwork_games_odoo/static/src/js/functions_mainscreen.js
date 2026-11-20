@@ -1511,17 +1511,21 @@ $( document ).ready(function() {
       try {
         const $ = await waitForColorbox();
         // Colorbox is now guaranteed to be available
+        
+        let latinOpenedIt = false;
         $(document).on('cbox_open', function() {
             $('#cboxOverlay, #colorbox').appendTo('body');
             $('.close-alert-getverified').click();
+            latinOpenedIt = true;
         });
         
         $(document).on('cbox_closed', function () {
-            if(!unblocked && pi_user_id != "" && pi_user_code != "")
+            if(!unblocked && pi_user_id != "" && pi_user_code != "" && latinOpenedIt)
             {
                 document.body.style.paddingTop = '55px';
                 document.getElementById('goforward-message').style.paddingTop = '30px';
                 document.getElementById('important-message').style.display = 'block';
+                latinOpenedIt = false;
             }
         });
         
