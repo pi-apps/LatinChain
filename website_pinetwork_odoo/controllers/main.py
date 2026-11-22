@@ -336,6 +336,24 @@ class PiNetworkBaseController(http.Controller):
         elif accessed_path in ['/c-cpp-book/ebook']:
             return http.request.redirect('https://www.amazon.com/dp/B0HRS6DM6S')
     
+    @http.route(['/php-book/', '/php-book/paperback', '/php-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def php_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/php-book/', '/php-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HSLQ926C')
+        elif accessed_path in ['/php-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HSKDR315')
+    
+    @http.route(['/java-book/', '/java-book/paperback', '/java-book/ebook', '/java-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
+    def java_book(self, **kw):
+        accessed_path = http.request.httprequest.path
+        if accessed_path in ['/java-book/', '/java-book/paperback']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HSM49VQG')
+        elif accessed_path in ['/java-book/ebook']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HSLL9K2L')
+        elif accessed_path in ['/java-book/hardcover']:
+            return http.request.redirect('https://www.amazon.com/dp/B0HSM29TXB')
+    
     @http.route(['/bstocks-book/', '/bstocks-book/paperback', '/bstocks-book/ebook', '/bstocks-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def bstocks_book(self, **kw):
         accessed_path = http.request.httprequest.path
