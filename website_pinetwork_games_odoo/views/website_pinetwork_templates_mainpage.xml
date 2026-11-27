@@ -3544,9 +3544,10 @@
                     
                     <div class="btn-group dropup position-fixed bottom-0 end-0 m-4" translate="no" style="z-index:100;">
                         <button type="button" id="myPayPiBtn" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-robot"></i>
+                            <i class="fa-solid fa-comments"></i>
                         </button>
                         <ul class="dropdown-menu mb-2 item-latin-menu" style="background-color: #021526 !important; max-width: 30% !important">
+                            <li class="item-latin-action"><a class="dropdown-item" style="color: white !important;" href="/chatirc" target="_blank"><div style="display:inline;"><i class="fa-solid fa-comments"></i></div> <div style="display:inline;">Chat IRC</div></a></li>
                             <li class="item-latin-action"><a class="dropdown-item" style="color: white !important;" href="https://latinchainpal0712.pinet.com" target="_blank"><div style="display:inline;"><i class="fa-solid fa-robot"></i></div> <div style="display:inline;">Bot Pal</div></a></li>
                         </ul>
                     </div>
@@ -4182,6 +4183,12 @@
                                                 <div class="col-6" style="padding: 2px">
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://blog-rockcesar.latin-chain.com/2026/10/earn-with-your-bandwidth.html" rel="noopener" target="_blank"><div style=""><i class="fa-solid fa-store"></i></div><div style="">Earn</div></a>
                                                 </div>-->
+                                                <div class="col-6" style="padding: 2px">
+                                                    <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/chatirc" target="_self"><div style=""><i class="fa-solid fa-comments"></i></div><div style="">Chat IRC</div><div style="">Community</div></a>
+                                                </div>
+                                                <div class="col-6" style="padding: 2px">
+                                                    <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="https://latinchainpal0712.pinet.com" target="_blank"><div style=""><i class="fa-solid fa-robot"></i></div><div style="">Bot Pal</div><div style="">Help Chat</div></a>
+                                                </div>
                                                 <div class="col-6" style="padding: 2px">
                                                     <!--<a class="PayPiLink btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/premium" target="_self"><div style=""><i class="fa-solid fa-battery-full"></i></div><div style="">PREMIUM</div></a>-->
                                                     <a class="btn btn-block btn-success rounded" style="border: 2px solid black; font-weight: bold;" href="/pi-sign-in" target="_self"><div style=""><i class="fa-solid fa-at"></i></div><div style="">Ext-Login</div><div style="">PiSignIn</div></a>
