@@ -55,7 +55,7 @@ class CustomerPortalInherit(CustomerPortal):
 class PiNetworkBaseController(http.Controller):
     
     def get_amazon_affiliate_code(self):
-        return 'latinchain0d-20'
+        return 'latinchain09-20'
     
     def leaders_domain_def(self):
         winner_domain = [('unblocked_datetime', '>=', datetime.now() - timedelta(days=30)), ('points_chess', '>=', 20), ('points_sudoku', '>', 18), ('points_snake', '>', 20), ('points', '>', 200)]
