@@ -160,21 +160,25 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route(['/odoo-tech-book/', '/odoo-tech-book/paperback', '/odoo-tech-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def odoo_technical_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/odoo-tech-book/', '/odoo-tech-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0DJX718Q2')
+            return http.request.redirect('https://www.amazon.com/dp/B0DJX718Q2' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/odoo-tech-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0DJVY51LS')
+            return http.request.redirect('https://www.amazon.com/dp/B0DJVY51LS' + '?tag=' + amazon_aff_code)
     
     @http.route(['/piapps-book/', '/piapps-book/paperback', '/piapps-book/ebook', '/piapps-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def piapps_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/piapps-book/', '/piapps-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0DK4N3XTB')
+            return http.request.redirect('https://www.amazon.com/dp/B0DK4N3XTB' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/piapps-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0DK3NJ23V')
+            return http.request.redirect('https://www.amazon.com/dp/B0DK3NJ23V' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/piapps-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HMFFKM4J')
+            return http.request.redirect('https://www.amazon.com/dp/B0HMFFKM4J' + '?tag=' + amazon_aff_code)
     
     @http.route(['/ml-piapps-book/', '/ml-piapps-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def mercado_libre_piapps_book(self, **kw):
@@ -190,233 +194,285 @@ class PiNetworkBaseController(http.Controller):
     
     @http.route(['/ai-master-book/', '/ai-master-book/paperback', '/ai-master-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def ai_master_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/ai-master-book/', '/ai-master-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0G4H6W7PX')
+            return http.request.redirect('https://www.amazon.com/dp/B0G4H6W7PX' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/ai-master-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0G4GZMTND')
+            return http.request.redirect('https://www.amazon.com/dp/B0G4GZMTND' + '?tag=' + amazon_aff_code)
     
     @http.route(['/sudoku-book/', '/sudoku-book/paperback', '/sudoku-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def sudoku_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/sudoku-book/', '/sudoku-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0G4L8YGY3')
+            return http.request.redirect('https://www.amazon.com/dp/B0G4L8YGY3' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/sudoku-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0G4L9T3J5')
+            return http.request.redirect('https://www.amazon.com/dp/B0G4L9T3J5' + '?tag=' + amazon_aff_code)
     
     @http.route(['/english-book/', '/english-book/paperback', '/english-book/ebook', '/english-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/english-book/', '/english-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0F79L26F6')
+            return http.request.redirect('https://www.amazon.com/dp/B0F79L26F6' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/english-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0F7792QFW')
+            return http.request.redirect('https://www.amazon.com/dp/B0F7792QFW' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/english-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HK9QJ7FS')
+            return http.request.redirect('https://www.amazon.com/dp/B0HK9QJ7FS' + '?tag=' + amazon_aff_code)
     
     @http.route(['/english-workbook/', '/english-workbook/paperback', '/english-workbook/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def english_workbook(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/english-workbook/', '/english-workbook/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0GM9SKH13')
+            return http.request.redirect('https://www.amazon.com/dp/B0GM9SKH13' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/english-workbook/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0GL3B3WVS')
+            return http.request.redirect('https://www.amazon.com/dp/B0GL3B3WVS' + '?tag=' + amazon_aff_code)
     
     @http.route(['/dev-book/', '/dev-book/paperback', '/dev-book/ebook', '/dev-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def dev_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/dev-book/', '/dev-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0GCNQ5TJJ')
+            return http.request.redirect('https://www.amazon.com/dp/B0GCNQ5TJJ' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/dev-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0GCNT449Q')
+            return http.request.redirect('https://www.amazon.com/dp/B0GCNT449Q' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/dev-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0GCNVNLQJ')
+            return http.request.redirect('https://www.amazon.com/dp/B0GCNVNLQJ' + '?tag=' + amazon_aff_code)
     
     @http.route(['/quantum-book/', '/quantum-book/paperback', '/quantum-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def quantum_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/quantum-book/', '/quantum-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0GFK2VL31')
+            return http.request.redirect('https://www.amazon.com/dp/B0GFK2VL31' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/quantum-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0GFGTML2P')
+            return http.request.redirect('https://www.amazon.com/dp/B0GFGTML2P' + '?tag=' + amazon_aff_code)
     
     @http.route(['/brand-book/', '/brand-book/paperback', '/brand-book/ebook', '/brand-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def brand_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/brand-book/', '/brand-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0F7G4RV6Y')
+            return http.request.redirect('https://www.amazon.com/dp/B0F7G4RV6Y' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/brand-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0F79N2ZWQ')
+            return http.request.redirect('https://www.amazon.com/dp/B0F79N2ZWQ' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/brand-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HPGFH2BJ')
+            return http.request.redirect('https://www.amazon.com/dp/B0HPGFH2BJ' + '?tag=' + amazon_aff_code)
     
     @http.route(['/history-ven-book/', '/history-ven-book/paperback', '/history-ven-book/ebook', '/history-ven-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def history_ven_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/history-ven-book/', '/history-ven-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HGGXFLJ1')
+            return http.request.redirect('https://www.amazon.com/dp/B0HGGXFLJ1' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/history-ven-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HGH1V2JT')
+            return http.request.redirect('https://www.amazon.com/dp/B0HGH1V2JT' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/history-ven-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HGHPHPBY')
+            return http.request.redirect('https://www.amazon.com/dp/B0HGHPHPBY' + '?tag=' + amazon_aff_code)
     
     @http.route(['/dialectic-book/', '/dialectic-book/paperback', '/dialectic-book/ebook', '/dialectic-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def dialectic_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/dialectic-book/', '/dialectic-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HPJRXYWQ')
+            return http.request.redirect('https://www.amazon.com/dp/B0HPJRXYWQ' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/dialectic-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HPHZ9YZ3')
+            return http.request.redirect('https://www.amazon.com/dp/B0HPHZ9YZ3' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/dialectic-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HPJK4T21')
+            return http.request.redirect('https://www.amazon.com/dp/B0HPJK4T21' + '?tag=' + amazon_aff_code)
     
     @http.route(['/free-book/', '/free-book/paperback', '/free-book/ebook', '/free-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def free_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/free-book/', '/free-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HPKRS1X4')
+            return http.request.redirect('https://www.amazon.com/dp/B0HPKRS1X4' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/free-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HPJPRG62')
+            return http.request.redirect('https://www.amazon.com/dp/B0HPJPRG62' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/free-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQ3VP19V')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQ3VP19V' + '?tag=' + amazon_aff_code)
     
     @http.route(['/rich-book/', '/rich-book/paperback', '/rich-book/ebook', '/rich-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def rich_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/rich-book/', '/rich-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQ8KG3JJ')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQ8KG3JJ' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/rich-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQ8WM3CD')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQ8WM3CD' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/rich-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQ8Q533Z')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQ8Q533Z' + '?tag=' + amazon_aff_code)
             
     @http.route(['/richv2-book/', '/richv2-book/paperback', '/richv2-book/ebook', '/richv2-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def richv2_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/richv2-book/', '/richv2-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQDVRZ58')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQDVRZ58' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/richv2-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQD4L94N')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQD4L94N' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/richv2-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQXKYKV4')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQXKYKV4' + '?tag=' + amazon_aff_code)
     
     @http.route(['/richv3-book/', '/richv3-book/paperback', '/richv3-book/ebook', '/richv3-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def richv3_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/richv3-book/', '/richv3-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQYB8MGK')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQYB8MGK' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/richv3-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQXWG6PK')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQXWG6PK' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/richv3-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQXN42MX')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQXN42MX' + '?tag=' + amazon_aff_code)
             
     @http.route(['/python-book/', '/python-book/paperback', '/python-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def python_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/python-book/', '/python-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQYD7CP8')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQYD7CP8' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/python-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HQY8QQ8V')
+            return http.request.redirect('https://www.amazon.com/dp/B0HQY8QQ8V' + '?tag=' + amazon_aff_code)
         #elif accessed_path in ['/python-book/hardcover']:
-        #    return http.request.redirect('https://www.amazon.com/dp/B0HQXN42MX')
+        #    return http.request.redirect('https://www.amazon.com/dp/B0HQXN42MX' + '?tag=' + amazon_aff_code)
     
     @http.route(['/javascript-book/', '/javascript-book/paperback', '/javascript-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def javascript_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/javascript-book/', '/javascript-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HRSC1W22')
+            return http.request.redirect('https://www.amazon.com/dp/B0HRSC1W22' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/javascript-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HRS4GBS1')
+            return http.request.redirect('https://www.amazon.com/dp/B0HRS4GBS1' + '?tag=' + amazon_aff_code)
     
     @http.route(['/c-cpp-book/', '/c-cpp-book/paperback', '/c-cpp-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def c_cpp_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/c-cpp-book/', '/c-cpp-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HRS9LQKR')
+            return http.request.redirect('https://www.amazon.com/dp/B0HRS9LQKR' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/c-cpp-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HRS6DM6S')
+            return http.request.redirect('https://www.amazon.com/dp/B0HRS6DM6S' + '?tag=' + amazon_aff_code)
     
     @http.route(['/php-book/', '/php-book/paperback', '/php-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def php_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/php-book/', '/php-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HSLQ926C')
+            return http.request.redirect('https://www.amazon.com/dp/B0HSLQ926C' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/php-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HSKDR315')
+            return http.request.redirect('https://www.amazon.com/dp/B0HSKDR315' + '?tag=' + amazon_aff_code)
     
     @http.route(['/java-book/', '/java-book/paperback', '/java-book/ebook', '/java-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def java_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/java-book/', '/java-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HSM49VQG')
+            return http.request.redirect('https://www.amazon.com/dp/B0HSM49VQG' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/java-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HSLL9K2L')
+            return http.request.redirect('https://www.amazon.com/dp/B0HSLL9K2L' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/java-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HSM29TXB')
+            return http.request.redirect('https://www.amazon.com/dp/B0HSM29TXB' + '?tag=' + amazon_aff_code)
     
     @http.route(['/bstocks-book/', '/bstocks-book/paperback', '/bstocks-book/ebook', '/bstocks-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def bstocks_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/bstocks-book/', '/bstocks-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HJ8Q649H')
+            return http.request.redirect('https://www.amazon.com/dp/B0HJ8Q649H' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/bstocks-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0GX2YC5M7')
+            return http.request.redirect('https://www.amazon.com/dp/B0GX2YC5M7' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/bstocks-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HKPW2XXS')
+            return http.request.redirect('https://www.amazon.com/dp/B0HKPW2XXS' + '?tag=' + amazon_aff_code)
     
     @http.route(['/bitcoin-book/', '/bitcoin-book/paperback', '/bitcoin-book/ebook', '/bitcoin-book/hardcover'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def bitcoin_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/bitcoin-book/', '/bitcoin-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HJ99J7RX')
+            return http.request.redirect('https://www.amazon.com/dp/B0HJ99J7RX' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/bitcoin-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HJ91NRJN')
+            return http.request.redirect('https://www.amazon.com/dp/B0HJ91NRJN' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/bitcoin-book/hardcover']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HJ99FVB9')
+            return http.request.redirect('https://www.amazon.com/dp/B0HJ99FVB9' + '?tag=' + amazon_aff_code)
     
     @http.route(['/all-blockchains-book/', '/all-blockchains-book/paperback', '/all-blockchains-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def all_blockchains_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/all-blockchains-book/', '/all-blockchains-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0FL89BPL5')
+            return http.request.redirect('https://www.amazon.com/dp/B0FL89BPL5' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/all-blockchains-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0FL53TJGV')
+            return http.request.redirect('https://www.amazon.com/dp/B0FL53TJGV' + '?tag=' + amazon_aff_code)
     
     @http.route(['/all-ias-book/', '/all-ias-book/paperback', '/all-ias-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def all_ias_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/all-ias-book/', '/all-ias-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0FL2RHD7D')
+            return http.request.redirect('https://www.amazon.com/dp/B0FL2RHD7D' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/all-ias-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0FL1F2B33')
+            return http.request.redirect('https://www.amazon.com/dp/B0FL1F2B33' + '?tag=' + amazon_aff_code)
     
     @http.route(['/all-biometrics-book/', '/all-biometrics-book/paperback', '/all-biometrics-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def all_biometrics_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/all-biometrics-book/', '/all-biometrics-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0DL45M8C4')
+            return http.request.redirect('https://www.amazon.com/dp/B0DL45M8C4' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/all-biometrics-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0DL3DCHMT')
+            return http.request.redirect('https://www.amazon.com/dp/B0DL3DCHMT' + '?tag=' + amazon_aff_code)
     
     @http.route(['/websec-linux-book/', '/websec-linux-book/paperback', '/websec-linux-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def websec_linux_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/websec-linux-book/', '/websec-linux-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HNTSGH7B')
+            return http.request.redirect('https://www.amazon.com/dp/B0HNTSGH7B' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/websec-linux-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0HNTPSBXG')
+            return http.request.redirect('https://www.amazon.com/dp/B0HNTPSBXG' + '?tag=' + amazon_aff_code)
         
     @http.route(['/collection-2025-book/', '/collection-2025-book/paperback', '/collection-2025-book/ebook'], type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def collection_2025_book(self, **kw):
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
         accessed_path = http.request.httprequest.path
         if accessed_path in ['/collection-2025-book/', '/collection-2025-book/paperback']:
-            return http.request.redirect('https://www.amazon.com/dp/B0G4WK2WT7')
+            return http.request.redirect('https://www.amazon.com/dp/B0G4WK2WT7' + '?tag=' + amazon_aff_code)
         elif accessed_path in ['/collection-2025-book/ebook']:
-            return http.request.redirect('https://www.amazon.com/dp/B0FPPVRGWG')
+            return http.request.redirect('https://www.amazon.com/dp/B0FPPVRGWG' + '?tag=' + amazon_aff_code)
         
     @http.route('/books-collection/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def books_collection(self, **kw):
-        return http.request.redirect('https://www.amazon.com/dp/B0F771VKRF')
+        amazon_aff_code = self.get_amazon_affiliate_code()
+        
+        return http.request.redirect('https://www.amazon.com/dp/B0F771VKRF' + '?tag=' + amazon_aff_code)
         
     @http.route('/spring-store/', type='http', auth="public", website=True, methods=['GET'], csrf=False)
     def spring_store(self, **kw):
