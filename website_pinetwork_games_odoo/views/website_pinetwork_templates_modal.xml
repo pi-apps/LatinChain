@@ -1484,6 +1484,7 @@
                                     <br/>
                                     <div style="margin-bottom:5px; padding:5px" class="border border-top-0">
                                         <h3>Amazon books: LatinChain Academy</h3>
+                                        <h5>(As Amazon associates we earn from qualifying purchases - Como afiliados de Amazon, ganamos con las compras que califican)</h5>
                                     </div>
                                     <h5 style="padding:10px;" class="border-gradient-rounded product"><img src="https://m.media-amazon.com/images/I/71Ir+19r4+L._CLa|2909,2525|81tR0HtCmQL.jpg,71eGkTh9m0L.jpg|0,0,1322,2525+1587,0,1322,2525+661,0,1587,2525__UY300_FMwebp_.jpg?aicid=books-design-system-web" width="210px" height="180px" /><br/><strong>Books Collection (more than 40 published books)<br/>(ASIN: B0F771VKRF)</strong><div style="">Amazon Book Author: César Cordero</div> <t t-if="with_links"><a href="/books-collection/" target="_blank">Books Collection link</a></t>
                                         <div t-if="(shopping and not option) or (shopping and option=='books')" class="col-12 my-3" style="text-align:center; min-height: 250px;">
